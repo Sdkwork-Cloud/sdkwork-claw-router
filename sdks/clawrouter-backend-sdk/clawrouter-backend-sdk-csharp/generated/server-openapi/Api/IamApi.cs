@@ -62,6 +62,29 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List group channel bindings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsListResult?> AccessGroupsChannelBindingsListAsync(string groupId)
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsListResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}/channel_bindings"));
+        }
+
+        /// <summary>
+        /// Replace group channel bindings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult?> AccessGroupsChannelBindingsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupChannelBindingsReplaceRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// List API key map
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysListResult?> ApiKeysListAsync()

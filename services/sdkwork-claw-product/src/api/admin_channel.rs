@@ -12,6 +12,7 @@ use serde::Serialize;
 use serde_json::{Map, Value};
 use sha2::{Digest, Sha256};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::{DomainError, ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
@@ -32,12 +33,10 @@ const MAX_EXPIRES_AT_LEN: usize = 64;
 const MAX_MODEL_LEN: usize = 128;
 const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MIN_TIMEOUT_MS: i64 = 1;
 const MAX_TIMEOUT_MS: i64 = 600_000;
 const MIN_WEIGHT: i64 = 1;
 const MAX_WEIGHT: i64 = 10_000;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminChannelState {
@@ -1288,7 +1287,7 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
 
 fn build_create_command(
     state: AdminChannelState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminChannelSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminChannelCommand, ChannelCommandBuildError> {
@@ -1319,14 +1318,14 @@ fn build_create_command(
         expires_at: request.expires_at,
         weight: request.weight,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_command(
     state: AdminChannelState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminChannelSubject,
     request: NormalizedUpdateRequest,
 ) -> Result<UpdateAdminChannelCommand, ChannelCommandBuildError> {
@@ -1362,14 +1361,14 @@ fn build_update_command(
         expires_at: request.expires_at,
         weight: request.weight,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_command(
     state: AdminChannelState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminChannelSubject,
     channel_id: i64,
 ) -> Result<DeleteAdminChannelCommand, ChannelCommandBuildError> {
@@ -1378,14 +1377,14 @@ fn build_delete_command(
         channel_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_test_command(
     state: AdminChannelState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminChannelSubject,
     channel_id: i64,
 ) -> Result<TestAdminChannelCommand, ChannelCommandBuildError> {
@@ -1394,7 +1393,7 @@ fn build_test_command(
         channel_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -1413,29 +1412,13 @@ fn generate_entity_uuids(
     (0..count).map(|_| generate_entity_uuid(state)).collect()
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminChannelState,
-) -> Result<String, ChannelCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(ChannelCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> ChannelCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => ChannelCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            ChannelCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {

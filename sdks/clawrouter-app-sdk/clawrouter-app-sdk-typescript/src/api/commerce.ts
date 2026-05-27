@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AccountsCurrentSummaryRetrieveResult, AddressesCreateResult, AddressesDefaultSelectionCreateResult, AddressesDeleteResult, AddressesListResult, AddressesUpdateResult, CartCurrentRetrieveResult, CartItemsCreateResult, CartItemsDeleteResult, CartItemsUpdateResult, CatalogCategoriesListResult, CatalogProductsListResult, CatalogProductsRetrieveResult, CatalogSkusRetrieveResult, CheckoutSessionsCreateResult, CheckoutSessionsOrdersCreateResult, CheckoutSessionsQuotesCreateResult, CheckoutSessionsRetrieveResult, CommerceMembershipPurchaseRequest, CommercePaymentAttemptCreateRequest, CommercePaymentIntentCreateRequest, CommerceStandardCommandRequest, CouponsClaimsCreateResult, CouponsListResult, CouponsRedemptionsCreateResult, FulfillmentsListResult, FulfillmentsRetrieveResult, InvoicesCreateResult, InvoicesListResult, InvoicesRetrieveResult, MembershipsBenefitsListResult, MembershipsCurrentRetrieveResult, MembershipsCurrentStatusRetrieveResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsPackagesListResult, MembershipsPackageGroupsRetrieveResult, MembershipsPackagesListResult, MembershipsPackagesRetrieveResult, MembershipsPlansListResult, MembershipsPointsBalanceRetrieveResult, MembershipsPointsDailyRewardsCreateRequest, MembershipsPointsDailyRewardsCreateResult, MembershipsPointsDailyRewardsStatusRetrieveResult, MembershipsPointsHistoryListResult, MembershipsPrivilegesSpeedUpsCreateRequest, MembershipsPrivilegesSpeedUpsCreateResult, MembershipsPrivilegesUsageRetrieveResult, MembershipsPurchasesCreateResult, MembershipsPurchasesRenewResult, MembershipsPurchasesUpgradeResult, OrdersCancellationsCreateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsRetrieveResult, PaymentsIntentsAttemptsCreateResult, PaymentsIntentsCreateResult, PaymentsIntentsRetrieveResult, PaymentsMethodsListResult, RechargesOrdersCreateResult, RechargesOrdersRetrieveResult, RechargesPackagesListResult, RefundsCreateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsRetrieveResult, WalletAccountsListResult, WalletExchangeRateRetrieveResult, WalletLedgerEntriesListResult, WalletLedgerEntriesRetrieveResult, WalletOverviewRetrieveResult, WalletPointsExchangeRulesListResult, WalletTokensRetrieveResult } from '../types';
+import type { AccountsCurrentSummaryRetrieveResult, AddressesCreateResult, AddressesDefaultSelectionCreateResult, AddressesDeleteResult, AddressesListResult, AddressesUpdateResult, BillingHistoryListResult, CartCurrentRetrieveResult, CartItemsCreateResult, CartItemsDeleteResult, CartItemsUpdateResult, CatalogCategoriesListResult, CatalogProductsListResult, CatalogProductsRetrieveResult, CatalogSkusRetrieveResult, CheckoutSessionsCreateResult, CheckoutSessionsOrdersCreateResult, CheckoutSessionsQuotesCreateResult, CheckoutSessionsRetrieveResult, CommerceMembershipPurchaseRequest, CommercePaymentAttemptCreateRequest, CommercePaymentIntentCreateRequest, CommerceStandardCommandRequest, FulfillmentsListResult, FulfillmentsRetrieveResult, InvoicesCreateResult, InvoicesListResult, InvoicesRetrieveResult, MembershipsBenefitsListResult, MembershipsCurrentRetrieveResult, MembershipsCurrentStatusRetrieveResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsPackagesListResult, MembershipsPackageGroupsRetrieveResult, MembershipsPackagesListResult, MembershipsPackagesRetrieveResult, MembershipsPlansListResult, MembershipsPointsBalanceRetrieveResult, MembershipsPointsDailyRewardsCreateRequest, MembershipsPointsDailyRewardsCreateResult, MembershipsPointsDailyRewardsStatusRetrieveResult, MembershipsPointsHistoryListResult, MembershipsPrivilegesSpeedUpsCreateRequest, MembershipsPrivilegesSpeedUpsCreateResult, MembershipsPrivilegesUsageRetrieveResult, MembershipsPurchasesCreateResult, MembershipsPurchasesRenewResult, MembershipsPurchasesUpgradeResult, OrdersCancellationsCreateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsRetrieveResult, PaymentsIntentsAttemptsCreateResult, PaymentsIntentsCreateResult, PaymentsIntentsRetrieveResult, PaymentsMethodsListResult, RechargesOrdersCreateResult, RechargesOrdersRetrieveResult, RechargesPackagesListResult, RefundsCreateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsRetrieveResult, WalletAccountsListResult, WalletExchangeRateRetrieveResult, WalletLedgerEntriesListResult, WalletOverviewRetrieveResult, WalletPointsExchangeRulesListResult, WalletTokensRetrieveResult } from '../types';
 
 
 export class CommerceWalletTokensApi {
@@ -89,11 +89,6 @@ export class CommerceWalletLedgerEntriesApi {
     ]);
     return this.client.get<WalletLedgerEntriesListResult>(appendQueryString(appApiPath(`/wallet/ledger_entries`), query));
   }
-
-/** Wallet Ledger Entries Retrieve */
-  async retrieve(ledgerEntryId: string): Promise<WalletLedgerEntriesRetrieveResult> {
-    return this.client.get<WalletLedgerEntriesRetrieveResult>(appApiPath(`/wallet/ledger_entries/${serializePathParameter(ledgerEntryId, { name: 'ledgerEntryId', style: 'simple', explode: false })}`));
-  }
 }
 
 export class CommerceWalletExchangeRateApi {
@@ -178,7 +173,6 @@ export interface CommerceRefundsListParams {
 
 export interface CommerceRefundsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceRefundsApi {
@@ -204,7 +198,6 @@ export class CommerceRefundsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -244,7 +237,6 @@ export class CommerceRechargesPackagesApi {
 
 export interface CommerceRechargesOrdersCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceRechargesOrdersApi {
@@ -260,7 +252,6 @@ export class CommerceRechargesOrdersApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -313,7 +304,6 @@ export class CommercePaymentsMethodsApi {
 
 export interface CommercePaymentsIntentsAttemptsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommercePaymentsIntentsAttemptsApi {
@@ -329,7 +319,6 @@ export class CommercePaymentsIntentsAttemptsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -339,7 +328,6 @@ export class CommercePaymentsIntentsAttemptsApi {
 
 export interface CommercePaymentsIntentsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommercePaymentsIntentsApi {
@@ -357,7 +345,6 @@ export class CommercePaymentsIntentsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -426,7 +413,6 @@ export class CommerceOrdersEventsApi {
 
 export interface CommerceOrdersCancellationsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceOrdersCancellationsApi {
@@ -442,7 +428,6 @@ export class CommerceOrdersCancellationsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -486,17 +471,14 @@ export class CommerceOrdersApi {
 
 export interface CommerceMembershipsPurchasesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceMembershipsPurchasesRenewParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceMembershipsPurchasesUpgradeParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceMembershipsPurchasesApi {
@@ -512,7 +494,6 @@ export class CommerceMembershipsPurchasesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -524,7 +505,6 @@ export class CommerceMembershipsPurchasesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -536,7 +516,6 @@ export class CommerceMembershipsPurchasesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -558,10 +537,6 @@ export class CommerceMembershipsPrivilegesUsageApi {
   }
 }
 
-export interface CommerceMembershipsPrivilegesSpeedUpsCreateParams {
-  xRequestId?: string;
-}
-
 export class CommerceMembershipsPrivilegesSpeedUpsApi {
   private client: HttpClient;
 
@@ -571,14 +546,8 @@ export class CommerceMembershipsPrivilegesSpeedUpsApi {
 
 
 /** Memberships Privileges Speed Ups Create */
-  async create(body?: MembershipsPrivilegesSpeedUpsCreateRequest, params?: CommerceMembershipsPrivilegesSpeedUpsCreateParams): Promise<MembershipsPrivilegesSpeedUpsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<MembershipsPrivilegesSpeedUpsCreateResult>(appApiPath(`/memberships/privileges/speed_ups`), body, undefined, requestHeaders, 'application/json');
+  async create(body?: MembershipsPrivilegesSpeedUpsCreateRequest): Promise<MembershipsPrivilegesSpeedUpsCreateResult> {
+    return this.client.post<MembershipsPrivilegesSpeedUpsCreateResult>(appApiPath(`/memberships/privileges/speed_ups`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -634,10 +603,6 @@ export class CommerceMembershipsPointsDailyRewardsStatusApi {
   }
 }
 
-export interface CommerceMembershipsPointsDailyRewardsCreateParams {
-  xRequestId?: string;
-}
-
 export class CommerceMembershipsPointsDailyRewardsApi {
   private client: HttpClient;
   public readonly status: CommerceMembershipsPointsDailyRewardsStatusApi;
@@ -649,14 +614,8 @@ export class CommerceMembershipsPointsDailyRewardsApi {
 
 
 /** Memberships Points Daily Rewards Create */
-  async create(body?: MembershipsPointsDailyRewardsCreateRequest, params?: CommerceMembershipsPointsDailyRewardsCreateParams): Promise<MembershipsPointsDailyRewardsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<MembershipsPointsDailyRewardsCreateResult>(appApiPath(`/memberships/points/daily_rewards`), body, undefined, requestHeaders, 'application/json');
+  async create(body?: MembershipsPointsDailyRewardsCreateRequest): Promise<MembershipsPointsDailyRewardsCreateResult> {
+    return this.client.post<MembershipsPointsDailyRewardsCreateResult>(appApiPath(`/memberships/points/daily_rewards`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -868,7 +827,6 @@ export interface CommerceInvoicesListParams {
 
 export interface CommerceInvoicesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceInvoicesApi {
@@ -894,7 +852,6 @@ export class CommerceInvoicesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -937,90 +894,8 @@ export class CommerceFulfillmentsApi {
   }
 }
 
-export interface CommerceCouponsRedemptionsCreateParams {
-  idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export class CommerceCouponsRedemptionsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Coupons Redemptions Create */
-  async create(body: CommerceStandardCommandRequest, params: CommerceCouponsRedemptionsCreateParams): Promise<CouponsRedemptionsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CouponsRedemptionsCreateResult>(appApiPath(`/coupons/redemptions`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceCouponsClaimsCreateParams {
-  idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export class CommerceCouponsClaimsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Coupons Claims Create */
-  async create(body: CommerceStandardCommandRequest, params: CommerceCouponsClaimsCreateParams): Promise<CouponsClaimsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CouponsClaimsCreateResult>(appApiPath(`/coupons/claims`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceCouponsListParams {
-  page?: number;
-  pageSize?: number;
-  status?: string;
-}
-
-export class CommerceCouponsApi {
-  private client: HttpClient;
-  public readonly claims: CommerceCouponsClaimsApi;
-  public readonly redemptions: CommerceCouponsRedemptionsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.claims = new CommerceCouponsClaimsApi(client);
-    this.redemptions = new CommerceCouponsRedemptionsApi(client);
-  }
-
-
-/** Coupons List */
-  async list(params?: CommerceCouponsListParams): Promise<CouponsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CouponsListResult>(appendQueryString(appApiPath(`/coupons`), query));
-  }
-}
-
 export interface CommerceCheckoutSessionsQuotesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCheckoutSessionsQuotesApi {
@@ -1036,7 +911,6 @@ export class CommerceCheckoutSessionsQuotesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1046,7 +920,6 @@ export class CommerceCheckoutSessionsQuotesApi {
 
 export interface CommerceCheckoutSessionsOrdersCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCheckoutSessionsOrdersApi {
@@ -1062,7 +935,6 @@ export class CommerceCheckoutSessionsOrdersApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1072,7 +944,6 @@ export class CommerceCheckoutSessionsOrdersApi {
 
 export interface CommerceCheckoutSessionsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCheckoutSessionsApi {
@@ -1092,7 +963,6 @@ export class CommerceCheckoutSessionsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1212,17 +1082,14 @@ export class CommerceCatalogApi {
 
 export interface CommerceCartItemsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceCartItemsDeleteParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceCartItemsUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCartItemsApi {
@@ -1238,7 +1105,6 @@ export class CommerceCartItemsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1250,7 +1116,6 @@ export class CommerceCartItemsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1262,7 +1127,6 @@ export class CommerceCartItemsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1297,9 +1161,46 @@ export class CommerceCartApi {
 
 }
 
+export interface CommerceBillingHistoryListParams {
+  page?: number;
+  pageSize?: number;
+  type_?: 'redeem' | 'recharge';
+  status?: string;
+}
+
+export class CommerceBillingHistoryApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Billing History List */
+  async list(params?: CommerceBillingHistoryListParams): Promise<BillingHistoryListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'type', value: params?.type_, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<BillingHistoryListResult>(appendQueryString(appApiPath(`/billing/history`), query));
+  }
+}
+
+export class CommerceBillingApi {
+  private client: HttpClient;
+  public readonly history: CommerceBillingHistoryApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.history = new CommerceBillingHistoryApi(client);
+  }
+
+}
+
 export interface CommerceAddressesDefaultSelectionCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceAddressesDefaultSelectionApi {
@@ -1315,7 +1216,6 @@ export class CommerceAddressesDefaultSelectionApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1331,17 +1231,14 @@ export interface CommerceAddressesListParams {
 
 export interface CommerceAddressesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceAddressesDeleteParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceAddressesUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceAddressesApi {
@@ -1369,7 +1266,6 @@ export class CommerceAddressesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1381,7 +1277,6 @@ export class CommerceAddressesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1393,7 +1288,6 @@ export class CommerceAddressesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1441,10 +1335,10 @@ export class CommerceApi {
   private client: HttpClient;
   public readonly accounts: CommerceAccountsApi;
   public readonly addresses: CommerceAddressesApi;
+  public readonly billing: CommerceBillingApi;
   public readonly cart: CommerceCartApi;
   public readonly catalog: CommerceCatalogApi;
   public readonly checkout: CommerceCheckoutApi;
-  public readonly coupons: CommerceCouponsApi;
   public readonly fulfillments: CommerceFulfillmentsApi;
   public readonly invoices: CommerceInvoicesApi;
   public readonly memberships: CommerceMembershipsApi;
@@ -1459,10 +1353,10 @@ export class CommerceApi {
     this.client = client;
     this.accounts = new CommerceAccountsApi(client);
     this.addresses = new CommerceAddressesApi(client);
+    this.billing = new CommerceBillingApi(client);
     this.cart = new CommerceCartApi(client);
     this.catalog = new CommerceCatalogApi(client);
     this.checkout = new CommerceCheckoutApi(client);
-    this.coupons = new CommerceCouponsApi(client);
     this.fulfillments = new CommerceFulfillmentsApi(client);
     this.invoices = new CommerceInvoicesApi(client);
     this.memberships = new CommerceMembershipsApi(client);

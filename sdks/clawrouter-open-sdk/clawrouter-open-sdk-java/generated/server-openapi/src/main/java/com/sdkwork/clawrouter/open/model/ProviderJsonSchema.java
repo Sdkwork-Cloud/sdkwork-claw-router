@@ -15,7 +15,7 @@ public class ProviderJsonSchema {
     public Boolean getAdditionalProperties() {
         return this.additionalProperties;
     }
-    
+
     public void setAdditionalProperties(Boolean additionalProperties) {
         this.additionalProperties = additionalProperties;
     }
@@ -23,7 +23,7 @@ public class ProviderJsonSchema {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -31,7 +31,7 @@ public class ProviderJsonSchema {
     public List<String> getEnum_() {
         return this.enum_;
     }
-    
+
     public void setEnum_(List<String> enum_) {
         this.enum_ = enum_;
     }
@@ -39,7 +39,7 @@ public class ProviderJsonSchema {
     public Object getItems() {
         return this.items;
     }
-    
+
     public void setItems(Object items) {
         this.items = items;
     }
@@ -47,7 +47,7 @@ public class ProviderJsonSchema {
     public Map<String, Object> getProperties() {
         return this.properties;
     }
-    
+
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
     }
@@ -55,7 +55,7 @@ public class ProviderJsonSchema {
     public List<String> getRequired() {
         return this.required;
     }
-    
+
     public void setRequired(List<String> required) {
         this.required = required;
     }
@@ -63,7 +63,7 @@ public class ProviderJsonSchema {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

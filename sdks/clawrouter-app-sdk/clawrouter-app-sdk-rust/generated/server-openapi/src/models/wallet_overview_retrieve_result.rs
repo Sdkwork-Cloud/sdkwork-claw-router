@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{CommerceWalletOverviewResponse};
+use crate::models::{CommerceStandardResourceResponse};
 
 /// Wallet overview retrieve result schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -10,7 +10,7 @@ pub struct WalletOverviewRetrieveResult {
 
     /// Data field on wallet overview retrieve result.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub data: Option<CommerceWalletOverviewResponse>,
+    pub data: Option<CommerceStandardResourceResponse>,
 
     /// Human-readable response message.
     #[serde(default, skip_serializing_if = "Option::is_none")]

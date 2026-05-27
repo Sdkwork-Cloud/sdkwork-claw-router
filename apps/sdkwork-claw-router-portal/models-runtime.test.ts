@@ -17,6 +17,8 @@ import {
   deriveModelCatalogPricingView,
   modelCatalogCategoryLabelKey,
   modelCatalogCapabilityLabelKey,
+  modelCatalogGroupFallbackLabel,
+  modelCatalogGroupLabelKey,
   resolveDisplayedProvidersForCatalog,
   resolveProviderShowMoreStateForCatalog,
   filterProvidersForCatalog,
@@ -204,6 +206,9 @@ test("model catalog filter options derive unique sorted provider modality and ca
     providers: ["Anthropic", "OpenAI"],
     modalities: ["Image", "Text"],
     capabilities: ["Function Calling", "JSON Mode", "Vision"],
+    groups: [
+      { key: "default", label: "Default group" },
+    ],
   });
   assert.deepEqual(modelIds(models), ["openai/global/text", "anthropic/global/text", "openai/global/image"]);
   assert.deepEqual(models[0].capabilities, ["Vision", "Function Calling"]);
@@ -216,6 +221,9 @@ test("model catalog i18n label keys are normalized outside page rendering", () =
   assert.equal(modelCatalogCapabilityLabelKey("Function Calling"), "models.capability.functioncalling");
   assert.equal(modelCatalogCapabilityLabelKey("  JSON   Mode "), "models.capability.jsonmode");
   assert.equal(modelCatalogCapabilityLabelKey("Vision"), "models.capability.vision");
+  assert.equal(modelCatalogGroupLabelKey("premium-lab"), "models.group.premium-lab");
+  assert.equal(modelCatalogGroupFallbackLabel("premium-lab"), "Premium Lab");
+  assert.equal(modelCatalogGroupFallbackLabel("vip"), "VIP group");
 });
 
 test("model catalog card view derives stable route copy and capability label keys", () => {
@@ -820,6 +828,51 @@ test("runtime model catalog maps backend-owned model taxonomy instead of derivin
   );
 });
 
+test("runtime model catalog preserves backend-configured custom model groups for sidebar filters", () => {
+  const models = mergeRuntimeModelCatalog([
+    {
+      model: "gpt-4o-mini",
+      catalogKey: "openai/global/gpt-4o-mini",
+      displayName: "GPT-4o mini",
+      vendorCode: "openai",
+      regionCode: "global",
+      vendor: "openai",
+      capabilities: ["chat", "tools"],
+      groups: ["standard-group", "premium-lab", "enterprise"],
+      categories: ["Recommended", "Proprietary"],
+      providerCodes: ["openai"],
+      officialReferenceUnitPrice: "0.150000",
+      officialReferenceCurrency: "USD",
+      officialReferencePrices: [
+        { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+      ],
+      priceAvailability: { status: "reference" },
+    },
+  ]);
+  const options = deriveModelCatalogFilterOptions(models);
+  const configuredOptions = deriveModelCatalogFilterOptions(models, [
+    { key: "standard-group", label: "Standard Users", modelCount: 1 },
+    { key: "premium-lab", label: "Premium Lab", modelCount: 1 },
+    { key: "empty-admin-group", label: "Empty Admin Group", modelCount: 0 },
+  ]);
+
+  assert.deepEqual(models[0].groups, ["standard-group", "premium-lab", "enterprise"]);
+  assert.deepEqual(options.groups, [
+    { key: "enterprise", label: "Enterprise exclusive" },
+    { key: "premium-lab", label: "Premium Lab" },
+    { key: "standard-group", label: "Standard Group" },
+  ]);
+  assert.deepEqual(configuredOptions.groups, [
+    { key: "standard-group", label: "Standard Users", modelCount: 1 },
+    { key: "premium-lab", label: "Premium Lab", modelCount: 1 },
+    { key: "empty-admin-group", label: "Empty Admin Group", modelCount: 0 },
+  ]);
+  assert.deepEqual(
+    modelIds(filterModelsForCatalog(models, catalogFilters({ selectedGroups: ["premium-lab"] }))),
+    ["openai/global/gpt-4o-mini"],
+  );
+});
+
 test("runtime model catalog keeps unknown public prices unavailable instead of free", () => {
   const models = mergeRuntimeModelCatalog([
     {
@@ -1278,6 +1331,59 @@ test("model service loads the runtime catalog through the generated app SDK", as
       assert.equal(models[0].pricing.cachedInput, 0.125);
       assert.equal(captured.every((request) => request.method === "GET"), true);
       assert.deepEqual(requestedUrls, ["/app/v3/api/ai/models"]);
+    },
+  );
+});
+
+test("model service preserves the backend admin group catalog for model library filters", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/models");
+      return {
+        items: [
+          {
+            model: "runtime-sdk-model",
+            catalogKey: "openai/global/runtime-sdk-model",
+            displayName: "Runtime SDK Model",
+            vendorCode: "openai",
+            regionCode: "global",
+            vendor: "OpenAI",
+            capabilities: ["chat", "tools"],
+            groups: ["premium-lab"],
+            categories: ["Recommended", "Proprietary"],
+            modalities: ["text"],
+            inputModalities: ["text"],
+            outputModalities: ["text"],
+            providerCodes: ["openai"],
+            officialReferenceUnitPrice: "1.250000",
+            officialReferenceCurrency: "USD",
+            officialReferencePrices: [
+              { billingMeter: "llm_input_token", unitPrice: "1.250000", currency: "USD" },
+            ],
+            priceAvailability: {
+              status: "reference",
+            },
+          },
+        ],
+        groups: [
+          { key: "standard-group", label: "Standard Users", modelCount: 12 },
+          { key: "premium-lab", label: "Premium Lab", modelCount: 1 },
+          { key: "empty-admin-group", label: "Empty Admin Group", modelCount: 0 },
+        ],
+      };
+    },
+    async () => {
+      const catalog = await ModelService.fetchModelCatalog();
+      const options = deriveModelCatalogFilterOptions(catalog.models, catalog.groups);
+
+      assert.deepEqual(catalog.models.map((model) => model.groups), [["premium-lab"]]);
+      assert.deepEqual(catalog.groups, [
+        { key: "standard-group", label: "Standard Users", modelCount: 12 },
+        { key: "premium-lab", label: "Premium Lab", modelCount: 1 },
+        { key: "empty-admin-group", label: "Empty Admin Group", modelCount: 0 },
+      ]);
+      assert.deepEqual(options.groups, catalog.groups);
     },
   );
 });

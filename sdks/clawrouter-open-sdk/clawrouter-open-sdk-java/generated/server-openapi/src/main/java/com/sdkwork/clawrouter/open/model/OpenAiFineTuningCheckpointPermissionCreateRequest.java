@@ -7,7 +7,7 @@ public class OpenAiFineTuningCheckpointPermissionCreateRequest {
     public String getProjectId() {
         return this.projectId;
     }
-    
+
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }

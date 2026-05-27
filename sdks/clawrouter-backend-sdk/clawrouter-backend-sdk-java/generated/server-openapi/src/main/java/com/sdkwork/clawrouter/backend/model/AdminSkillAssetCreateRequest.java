@@ -20,7 +20,7 @@ public class AdminSkillAssetCreateRequest {
     public String getAltText() {
         return this.altText;
     }
-    
+
     public void setAltText(String altText) {
         this.altText = altText;
     }
@@ -28,7 +28,7 @@ public class AdminSkillAssetCreateRequest {
     public String getArtifactId() {
         return this.artifactId;
     }
-    
+
     public void setArtifactId(String artifactId) {
         this.artifactId = artifactId;
     }
@@ -36,7 +36,7 @@ public class AdminSkillAssetCreateRequest {
     public Integer getAssetType() {
         return this.assetType;
     }
-    
+
     public void setAssetType(Integer assetType) {
         this.assetType = assetType;
     }
@@ -44,7 +44,7 @@ public class AdminSkillAssetCreateRequest {
     public String getAssetUrl() {
         return this.assetUrl;
     }
-    
+
     public void setAssetUrl(String assetUrl) {
         this.assetUrl = assetUrl;
     }
@@ -52,7 +52,7 @@ public class AdminSkillAssetCreateRequest {
     public String getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -60,7 +60,7 @@ public class AdminSkillAssetCreateRequest {
     public Integer getFileSize() {
         return this.fileSize;
     }
-    
+
     public void setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
     }
@@ -68,7 +68,7 @@ public class AdminSkillAssetCreateRequest {
     public Integer getHeight() {
         return this.height;
     }
-    
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -76,7 +76,7 @@ public class AdminSkillAssetCreateRequest {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -84,7 +84,7 @@ public class AdminSkillAssetCreateRequest {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -92,7 +92,7 @@ public class AdminSkillAssetCreateRequest {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -100,7 +100,7 @@ public class AdminSkillAssetCreateRequest {
     public Integer getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -108,7 +108,7 @@ public class AdminSkillAssetCreateRequest {
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
-    
+
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
@@ -116,7 +116,7 @@ public class AdminSkillAssetCreateRequest {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -124,7 +124,7 @@ public class AdminSkillAssetCreateRequest {
     public Integer getWidth() {
         return this.width;
     }
-    
+
     public void setWidth(Integer width) {
         this.width = width;
     }

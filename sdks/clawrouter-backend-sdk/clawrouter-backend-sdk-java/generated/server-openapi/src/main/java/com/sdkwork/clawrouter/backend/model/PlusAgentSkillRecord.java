@@ -28,7 +28,7 @@ public class PlusAgentSkillRecord {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -36,7 +36,7 @@ public class PlusAgentSkillRecord {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -44,7 +44,7 @@ public class PlusAgentSkillRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -52,7 +52,7 @@ public class PlusAgentSkillRecord {
     public String getDocumentationUrl() {
         return this.documentationUrl;
     }
-    
+
     public void setDocumentationUrl(String documentationUrl) {
         this.documentationUrl = documentationUrl;
     }
@@ -60,7 +60,7 @@ public class PlusAgentSkillRecord {
     public String getEntrypoint() {
         return this.entrypoint;
     }
-    
+
     public void setEntrypoint(String entrypoint) {
         this.entrypoint = entrypoint;
     }
@@ -68,7 +68,7 @@ public class PlusAgentSkillRecord {
     public String getHomepageUrl() {
         return this.homepageUrl;
     }
-    
+
     public void setHomepageUrl(String homepageUrl) {
         this.homepageUrl = homepageUrl;
     }
@@ -76,7 +76,7 @@ public class PlusAgentSkillRecord {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -84,7 +84,7 @@ public class PlusAgentSkillRecord {
     public String getLatestPublishedAt() {
         return this.latestPublishedAt;
     }
-    
+
     public void setLatestPublishedAt(String latestPublishedAt) {
         this.latestPublishedAt = latestPublishedAt;
     }
@@ -92,7 +92,7 @@ public class PlusAgentSkillRecord {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -100,7 +100,7 @@ public class PlusAgentSkillRecord {
     public String getManifestUrl() {
         return this.manifestUrl;
     }
-    
+
     public void setManifestUrl(String manifestUrl) {
         this.manifestUrl = manifestUrl;
     }
@@ -108,7 +108,7 @@ public class PlusAgentSkillRecord {
     public String getPackageId() {
         return this.packageId;
     }
-    
+
     public void setPackageId(String packageId) {
         this.packageId = packageId;
     }
@@ -116,7 +116,7 @@ public class PlusAgentSkillRecord {
     public String getPrice() {
         return this.price;
     }
-    
+
     public void setPrice(String price) {
         this.price = price;
     }
@@ -124,7 +124,7 @@ public class PlusAgentSkillRecord {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -132,7 +132,7 @@ public class PlusAgentSkillRecord {
     public String getRepositoryUrl() {
         return this.repositoryUrl;
     }
-    
+
     public void setRepositoryUrl(String repositoryUrl) {
         this.repositoryUrl = repositoryUrl;
     }
@@ -140,7 +140,7 @@ public class PlusAgentSkillRecord {
     public String getReviewComment() {
         return this.reviewComment;
     }
-    
+
     public void setReviewComment(String reviewComment) {
         this.reviewComment = reviewComment;
     }
@@ -148,7 +148,7 @@ public class PlusAgentSkillRecord {
     public String getReviewedAt() {
         return this.reviewedAt;
     }
-    
+
     public void setReviewedAt(String reviewedAt) {
         this.reviewedAt = reviewedAt;
     }
@@ -156,7 +156,7 @@ public class PlusAgentSkillRecord {
     public String getReviewedBy() {
         return this.reviewedBy;
     }
-    
+
     public void setReviewedBy(String reviewedBy) {
         this.reviewedBy = reviewedBy;
     }
@@ -164,7 +164,7 @@ public class PlusAgentSkillRecord {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -172,7 +172,7 @@ public class PlusAgentSkillRecord {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -180,7 +180,7 @@ public class PlusAgentSkillRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -188,7 +188,7 @@ public class PlusAgentSkillRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -196,7 +196,7 @@ public class PlusAgentSkillRecord {
     public String getVersionName() {
         return this.versionName;
     }
-    
+
     public void setVersionName(String versionName) {
         this.versionName = versionName;
     }

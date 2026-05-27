@@ -72,6 +72,8 @@ export interface AiRequestTraceRecord {
   provider_id?: string;
   /** Provider model field on ai request trace record. */
   provider_model?: string;
+  /** Provider native model field on ai request trace record. */
+  provider_native_model?: string;
   /** Reasoning effort field on ai request trace record. */
   reasoning_effort?: string;
   /** Request bytes field on ai request trace record. */
@@ -84,6 +86,8 @@ export interface AiRequestTraceRecord {
   request_payload_hash?: string;
   /** Requested model field on ai request trace record. */
   requested_model?: string;
+  /** Requested model catalog key field on ai request trace record. */
+  requested_model_catalog_key?: string;
   /** Response bytes field on ai request trace record. */
   response_bytes?: string;
   /** Response payload hash field on ai request trace record. */

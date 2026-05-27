@@ -48,14 +48,6 @@ export class OpenPlatformManifestsApi {
   }
 }
 
-export interface OpenPlatformAccountsPayBindingsCreateParams {
-  xRequestId?: string;
-}
-
-export interface OpenPlatformAccountsPayBindingsDeleteParams {
-  xRequestId?: string;
-}
-
 export class OpenPlatformAccountsPayBindingsApi {
   private client: HttpClient;
 
@@ -70,38 +62,14 @@ export class OpenPlatformAccountsPayBindingsApi {
   }
 
 /** Create open platform account pay binding */
-  async create(accountId: string, body: OpenPlatformPayBindingCreateRequest, params?: OpenPlatformAccountsPayBindingsCreateParams): Promise<AccountsPayBindingsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AccountsPayBindingsCreateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/pay_bindings`), body, undefined, requestHeaders, 'application/json');
+  async create(accountId: string, body: OpenPlatformPayBindingCreateRequest): Promise<AccountsPayBindingsCreateResult> {
+    return this.client.post<AccountsPayBindingsCreateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/pay_bindings`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete open platform account pay binding */
-  async delete(accountId: string, bindingId: string, params?: OpenPlatformAccountsPayBindingsDeleteParams): Promise<AccountsPayBindingsDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<AccountsPayBindingsDeleteResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/pay_bindings/${serializePathParameter(bindingId, { name: 'bindingId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(accountId: string, bindingId: string): Promise<AccountsPayBindingsDeleteResult> {
+    return this.client.delete<AccountsPayBindingsDeleteResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/pay_bindings/${serializePathParameter(bindingId, { name: 'bindingId', style: 'simple', explode: false })}`));
   }
-}
-
-export interface OpenPlatformAccountsEntriesCreateParams {
-  xRequestId?: string;
-}
-
-export interface OpenPlatformAccountsEntriesDeleteParams {
-  xRequestId?: string;
-}
-
-export interface OpenPlatformAccountsEntriesUpdateParams {
-  xRequestId?: string;
 }
 
 export class OpenPlatformAccountsEntriesApi {
@@ -118,36 +86,18 @@ export class OpenPlatformAccountsEntriesApi {
   }
 
 /** Create open platform account entry */
-  async create(accountId: string, body: OpenPlatformEntryCreateRequest, params?: OpenPlatformAccountsEntriesCreateParams): Promise<AccountsEntriesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AccountsEntriesCreateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/entries`), body, undefined, requestHeaders, 'application/json');
+  async create(accountId: string, body: OpenPlatformEntryCreateRequest): Promise<AccountsEntriesCreateResult> {
+    return this.client.post<AccountsEntriesCreateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/entries`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete open platform account entry */
-  async delete(accountId: string, entryId: string, params?: OpenPlatformAccountsEntriesDeleteParams): Promise<AccountsEntriesDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<AccountsEntriesDeleteResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/entries/${serializePathParameter(entryId, { name: 'entryId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(accountId: string, entryId: string): Promise<AccountsEntriesDeleteResult> {
+    return this.client.delete<AccountsEntriesDeleteResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/entries/${serializePathParameter(entryId, { name: 'entryId', style: 'simple', explode: false })}`));
   }
 
 /** Update open platform account entry */
-  async update(accountId: string, entryId: string, body: OpenPlatformEntryUpdateRequest, params?: OpenPlatformAccountsEntriesUpdateParams): Promise<AccountsEntriesUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<AccountsEntriesUpdateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/entries/${serializePathParameter(entryId, { name: 'entryId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(accountId: string, entryId: string, body: OpenPlatformEntryUpdateRequest): Promise<AccountsEntriesUpdateResult> {
+    return this.client.patch<AccountsEntriesUpdateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}/entries/${serializePathParameter(entryId, { name: 'entryId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -157,18 +107,6 @@ export interface OpenPlatformAccountsListParams {
   status?: 'active' | 'inactive';
   page?: number;
   pageSize?: number;
-}
-
-export interface OpenPlatformAccountsCreateParams {
-  xRequestId?: string;
-}
-
-export interface OpenPlatformAccountsDeleteParams {
-  xRequestId?: string;
-}
-
-export interface OpenPlatformAccountsUpdateParams {
-  xRequestId?: string;
 }
 
 export class OpenPlatformAccountsApi {
@@ -196,25 +134,13 @@ export class OpenPlatformAccountsApi {
   }
 
 /** Create open platform account */
-  async create(body: OpenPlatformAccountCreateRequest, params?: OpenPlatformAccountsCreateParams): Promise<AccountsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AccountsCreateResult>(backendApiPath(`/open_platform/accounts`), body, undefined, requestHeaders, 'application/json');
+  async create(body: OpenPlatformAccountCreateRequest): Promise<AccountsCreateResult> {
+    return this.client.post<AccountsCreateResult>(backendApiPath(`/open_platform/accounts`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete open platform account */
-  async delete(accountId: string, params?: OpenPlatformAccountsDeleteParams): Promise<AccountsDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<AccountsDeleteResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(accountId: string): Promise<AccountsDeleteResult> {
+    return this.client.delete<AccountsDeleteResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}`));
   }
 
 /** Retrieve open platform account */
@@ -223,14 +149,8 @@ export class OpenPlatformAccountsApi {
   }
 
 /** Update open platform account */
-  async update(accountId: string, body: OpenPlatformAccountUpdateRequest, params?: OpenPlatformAccountsUpdateParams): Promise<AccountsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<AccountsUpdateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(accountId: string, body: OpenPlatformAccountUpdateRequest): Promise<AccountsUpdateResult> {
+    return this.client.patch<AccountsUpdateResult>(backendApiPath(`/open_platform/accounts/${serializePathParameter(accountId, { name: 'accountId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -483,79 +403,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

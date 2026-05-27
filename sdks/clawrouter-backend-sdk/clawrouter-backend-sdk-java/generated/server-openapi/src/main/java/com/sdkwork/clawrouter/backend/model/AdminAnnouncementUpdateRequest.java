@@ -11,7 +11,7 @@ public class AdminAnnouncementUpdateRequest {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -19,7 +19,7 @@ public class AdminAnnouncementUpdateRequest {
     public Boolean getShowAsPopup() {
         return this.showAsPopup;
     }
-    
+
     public void setShowAsPopup(Boolean showAsPopup) {
         this.showAsPopup = showAsPopup;
     }
@@ -27,7 +27,7 @@ public class AdminAnnouncementUpdateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -35,7 +35,7 @@ public class AdminAnnouncementUpdateRequest {
     public String getTarget() {
         return this.target;
     }
-    
+
     public void setTarget(String target) {
         this.target = target;
     }
@@ -43,7 +43,7 @@ public class AdminAnnouncementUpdateRequest {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

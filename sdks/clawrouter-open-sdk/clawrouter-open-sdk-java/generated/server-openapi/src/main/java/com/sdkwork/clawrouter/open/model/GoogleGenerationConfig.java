@@ -16,7 +16,7 @@ public class GoogleGenerationConfig {
     public Integer getCandidateCount() {
         return this.candidateCount;
     }
-    
+
     public void setCandidateCount(Integer candidateCount) {
         this.candidateCount = candidateCount;
     }
@@ -24,7 +24,7 @@ public class GoogleGenerationConfig {
     public Integer getMaxOutputTokens() {
         return this.maxOutputTokens;
     }
-    
+
     public void setMaxOutputTokens(Integer maxOutputTokens) {
         this.maxOutputTokens = maxOutputTokens;
     }
@@ -32,7 +32,7 @@ public class GoogleGenerationConfig {
     public String getResponseMimeType() {
         return this.responseMimeType;
     }
-    
+
     public void setResponseMimeType(String responseMimeType) {
         this.responseMimeType = responseMimeType;
     }
@@ -40,7 +40,7 @@ public class GoogleGenerationConfig {
     public GoogleSchema getResponseSchema() {
         return this.responseSchema;
     }
-    
+
     public void setResponseSchema(GoogleSchema responseSchema) {
         this.responseSchema = responseSchema;
     }
@@ -48,7 +48,7 @@ public class GoogleGenerationConfig {
     public List<String> getStopSequences() {
         return this.stopSequences;
     }
-    
+
     public void setStopSequences(List<String> stopSequences) {
         this.stopSequences = stopSequences;
     }
@@ -56,7 +56,7 @@ public class GoogleGenerationConfig {
     public Double getTemperature() {
         return this.temperature;
     }
-    
+
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
@@ -64,7 +64,7 @@ public class GoogleGenerationConfig {
     public GoogleThinkingConfig getThinkingConfig() {
         return this.thinkingConfig;
     }
-    
+
     public void setThinkingConfig(GoogleThinkingConfig thinkingConfig) {
         this.thinkingConfig = thinkingConfig;
     }
@@ -72,7 +72,7 @@ public class GoogleGenerationConfig {
     public Integer getTopK() {
         return this.topK;
     }
-    
+
     public void setTopK(Integer topK) {
         this.topK = topK;
     }
@@ -80,7 +80,7 @@ public class GoogleGenerationConfig {
     public Double getTopP() {
         return this.topP;
     }
-    
+
     public void setTopP(Double topP) {
         this.topP = topP;
     }

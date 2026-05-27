@@ -2,6 +2,7 @@ package types
 
 // Create api key request schema exposed by Claw Router.
 type CreateApiKeyRequest struct {
+	DefaultForRuntime bool `json:"defaultForRuntime"`
 	Expires string `json:"expires"`
 	Group string `json:"group"`
 	IpLimit string `json:"ipLimit"`

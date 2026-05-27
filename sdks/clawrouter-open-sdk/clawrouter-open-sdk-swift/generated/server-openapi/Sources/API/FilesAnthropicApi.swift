@@ -2,7 +2,7 @@ import Foundation
 
 public class FilesAnthropicApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }

@@ -7,6 +7,7 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-common
 import { CheckoutService } from "./packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts";
 import { MembershipService } from "./packages/sdkwork-claw-router-console-memberships/src/membershipService.ts";
 import { RechargeService } from "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts";
+import { SettlementsService } from "./packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts";
 import { WalletService } from "./packages/sdkwork-claw-router-console-wallet/src/walletService.ts";
 
 type CapturedSdkRequest = {
@@ -98,7 +99,7 @@ test("commerce routes are owned by business-scoped packages without retired aggr
   const tsconfig = readPortalFile("./tsconfig.typecheck.json");
   const routeClassification = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
   const consoleLayout = readPortalFile("./packages/sdkwork-claw-router-console-core/src/ConsoleLayout.tsx");
-  const adminLayout = readPortalFile("./src/AdminLayout.tsx");
+  const adminModuleRegistry = readPortalFile("./src/adminModuleRegistry.ts");
 
   for (const [packageName, routePath] of Object.entries(consoleBusinessPackages)) {
     assert.equal(existsSync(new URL(`./packages/${packageName}/package.json`, import.meta.url)), true);
@@ -122,7 +123,7 @@ test("commerce routes are owned by business-scoped packages without retired aggr
     assert.match(tsconfig, new RegExp(`"${packageName}"`));
     assert.match(appSource, new RegExp(`import\\('${packageName}'\\)`));
     assert.match(appSource, new RegExp(escapeRegExp(routePath)));
-    assert.match(adminLayout, new RegExp(escapeRegExp(routePath)));
+    assert.match(adminModuleRegistry, new RegExp(escapeRegExp(routePath)));
     assert.match(routeClassification, new RegExp(`route: ${escapeRegExp(routePath)}[\\s\\S]*package: ${packageName}`));
   }
 
@@ -284,12 +285,14 @@ test("console business services use standard membership, recharge, checkout, wal
       data: {
         items: [
           {
-            id: "ledger-1",
-            orderNo: "recharge-order-1",
+            id: "billing-history-1",
+            historyNo: "BH-recharge-1",
+            type: "recharge",
+            relatedOrderNo: "recharge-order-1",
             amount: "99.90",
-            payment_method: "wechat",
-            created_at: "2026-05-21T00:00:00Z",
-            status: "posted",
+            paymentMethod: "wechat",
+            occurredAt: "2026-05-21T00:00:00Z",
+            status: "success",
           },
         ],
       },
@@ -297,9 +300,10 @@ test("console business services use standard membership, recharge, checkout, wal
     async (captured) => {
       const history = await WalletService.fetchRechargeHistory();
 
-      assert.equal(history[0]?.id, "ledger-1");
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/wallet/ledger_entries");
+      assert.equal(history[0]?.id, "billing-history-1");
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/billing/history");
       assert.equal(captured[0]?.method, "GET");
+      assert.match(captured[0]?.url ?? "", /type=recharge/);
     },
   );
 
@@ -319,10 +323,48 @@ test("console business services use standard membership, recharge, checkout, wal
         message: "Redeemed",
         success: true,
       });
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/coupons/redemptions");
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/promotions/codes/redemptions");
       assert.equal(captured[0]?.method, "POST");
-      assert.match(captured[0]?.body ?? "", /console-wallet/);
-      assert.match(captured[0]?.body ?? "", /GIFT-2026/);
+      const body = JSON.parse(captured[0]?.body ?? "{}");
+      assert.equal(body.code, "GIFT-2026");
+      assert.equal(body.source, "console-wallet");
+      assert.equal(body.metadata, undefined);
+    },
+  );
+});
+
+test("settlements dashboard uses generated app SDK wallet ledger and invoice paths", async () => {
+  await withCommerceSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            amount: "12.3456",
+            createdAt: "2026-05-21T00:00:00Z",
+            id: "settlement-entry-1",
+            invoiceAmount: "12.3456",
+            invoiceNo: "INV-2026-05",
+            sourceType: "image_generation",
+            status: "issued",
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const dashboard = await SettlementsService.fetchDashboardData({ year: "2026" });
+
+      assert.deepEqual(
+        captured.map((request) => requestPath(request.url)).sort(),
+        ["/app/v3/api/invoices", "/app/v3/api/wallet/ledger_entries"],
+      );
+      assert.equal(captured.every((request) => request.method === "GET"), true);
+      const ledgerRequestUrl = new URL(captured.find((request) => requestPath(request.url) === "/app/v3/api/wallet/ledger_entries")?.url ?? "", "http://localhost");
+      const invoiceRequestUrl = new URL(captured.find((request) => requestPath(request.url) === "/app/v3/api/invoices")?.url ?? "", "http://localhost");
+      assert.equal(ledgerRequestUrl.searchParams.get("page_size"), "200");
+      assert.equal(invoiceRequestUrl.searchParams.get("page_size"), "100");
+      assert.equal(dashboard.chartData[0]?.image, "12.345600");
+      assert.equal(dashboard.bills[0]?.id, "INV-2026-05");
     },
   );
 });
@@ -352,17 +394,27 @@ test("admin commerce packages are split by product, inventory, order, payment, m
       "PaymentsAdmin",
       "getClawRouterBackendSdkClient().commerce.payments.providers.list",
       "getClawRouterBackendSdkClient().commerce.payments.providerAccounts.list",
+      "getClawRouterBackendSdkClient().commerce.payments.providerAccounts.create",
+      "getClawRouterBackendSdkClient().commerce.payments.methods.list",
+      "getClawRouterBackendSdkClient().commerce.payments.channels.list",
       "getClawRouterBackendSdkClient().commerce.payments.routeRules.list",
+      "getClawRouterBackendSdkClient().commerce.payments.intents.list",
+      "getClawRouterBackendSdkClient().commerce.payments.attempts.list",
+      "getClawRouterBackendSdkClient().commerce.payments.webhookEvents.list",
+      "getClawRouterBackendSdkClient().commerce.payments.reconciliationRuns.list",
     ],
     "sdkwork-claw-router-admin-memberships": [
       "MembershipsAdmin",
       "getClawRouterBackendSdkClient().commerce.memberships.plans.list",
       "getClawRouterBackendSdkClient().commerce.memberships.packages.list",
       "getClawRouterBackendSdkClient().commerce.memberships.entitlements.list",
+      "getClawRouterBackendSdkClient().commerce.recharges.packages.list",
+      "getClawRouterBackendSdkClient().commerce.recharges.packages.create",
+      "getClawRouterBackendSdkClient().commerce.recharges.packages.update",
+      "getClawRouterBackendSdkClient().commerce.recharges.packages.delete",
     ],
     "sdkwork-claw-router-admin-wallet": [
       "WalletAdmin",
-      "getClawRouterBackendSdkClient().commerce.recharges.packages.list",
       "getClawRouterBackendSdkClient().commerce.wallet.accounts.list",
       "getClawRouterBackendSdkClient().commerce.wallet.ledgerEntries.list",
     ],
@@ -392,6 +444,209 @@ test("admin commerce packages are split by product, inventory, order, payment, m
     }
     assert.doesNotMatch(viewSource, /sdkwork-claw-router-commons\/runtime/);
     assert.match(serviceSource, /sdkwork-claw-router-commons\/runtime/);
+    if (packageName === "sdkwork-claw-router-admin-wallet") {
+      assert.doesNotMatch(viewSource, /rechargePackages/);
+      assert.doesNotMatch(serviceSource, /recharges\.packages\.list/);
+      assert.doesNotMatch(serviceSource, /backendRechargesPackagesList/);
+    }
+  }
+});
+
+test("admin payments center exposes complete payment modules and aligned provider account controls", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/index.tsx");
+  const serviceSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts");
+  const i18nSource = [
+    readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/payments.ts"),
+    readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-columns.ts"),
+  ].join("\n");
+  const contractSource = readFileSync(new URL("../../docs/schema-registry/frontend-field-contracts/operations/backend-commerce-payments.yaml", import.meta.url), "utf8");
+
+  for (const sectionId of [
+    "providers",
+    "providerAccounts",
+    "methods",
+    "channels",
+    "routeRules",
+    "intents",
+    "attempts",
+    "webhookEvents",
+    "reconciliationRuns",
+  ]) {
+    assert.match(viewSource, new RegExp(`id: '${sectionId}'`));
+  }
+  assert.match(viewSource, /activeSectionId=\{activeSectionId\}/);
+  assert.match(viewSource, /initialSectionId=\{DEFAULT_PAYMENTS_SECTION_ID\}/);
+  assert.match(viewSource, /key=\{activeSectionId\}/);
+  assert.match(viewSource, /showSectionNavigation=\{false\}/);
+  assert.doesNotMatch(viewSource, /showSectionNavigation=\{true\}/);
+  assert.match(viewSource, /refreshKey=\{providerAccountRefreshKey\}/);
+  assert.match(viewSource, /setProviderAccountRefreshKey\(\(current\) => current \+ 1\)/);
+  assert.match(viewSource, /PaymentProviderAccountSelect/);
+  assert.match(viewSource, /const \[paymentProviderCodeOptions, setPaymentProviderCodeOptions\] = useState/);
+  assert.match(viewSource, /void loadPaymentProviderOptions\(\)/);
+  assert.match(viewSource, /backendPaymentsProvidersList\(DEFAULT_PAGE_PARAMS\)/);
+  assert.match(viewSource, /readPaymentProviderCodeOptions/);
+  assert.match(viewSource, /paymentProviderCodeOptions\.length === 0/);
+  assert.doesNotMatch(viewSource, /const paymentProviderCodeOptions = useMemo<readonly PaymentProviderAccountSelectOption\[]>/);
+  assert.match(viewSource, /PAYMENT_PROVIDER_CODES/);
+  assert.match(viewSource, /PAYMENT_PROVIDER_ENVIRONMENTS/);
+  assert.match(viewSource, /PAYMENT_PROVIDER_ACCOUNT_STATUSES/);
+  assert.match(viewSource, /PaymentProviderAccountTextArea/);
+  assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.note/);
+  assert.match(viewSource, /note: form\.note\.trim\(\)/);
+  assert.match(contractSource, /operation_id: payments\.providerAccounts\.list[\s\S]*read_sources:[\s\S]*- commerce_payment_provider_account[\s\S]*- ops_audit_log/);
+  assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.rotatedAt/);
+  assert.match(viewSource, /rotatedAt: form\.rotatedAt\.trim\(\)/);
+  for (const key of [
+    "admin.commerce.payments.providerAccounts.accountNo",
+    "admin.commerce.payments.providerAccounts.status",
+    "admin.commerce.payments.providerAccounts.note",
+    "admin.commerce.payments.providerAccounts.rotatedAt",
+    "admin.commerce.payments.providerAccounts.environment.sandbox",
+    "admin.commerce.payments.providerAccounts.environment.production",
+    "admin.commerce.payments.providerAccounts.status.active",
+    "admin.commerce.payments.providerAccounts.status.inactive",
+    "admin.commerce.payments.providerAccounts.status.disabled",
+    "admin.commerce.payments.providerAccounts.providerOptionsEmpty",
+    "admin.commerce.payments.providerAccounts.providerOptionsError",
+  ]) {
+    assert.match(i18nSource, new RegExp(`"${escapeRegExp(key)}"`));
+  }
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.providerCode'/,
+  );
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.environment'/,
+  );
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.status'/,
+  );
+  assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+});
+
+test("admin payments center table columns match payment SDK list item contracts", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/index.tsx");
+  const i18nSource = [
+    readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/payments.ts"),
+    readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-columns.ts"),
+  ].join("\n");
+
+  assertPaymentSectionColumns(viewSource, "providers", [
+    "providerCode",
+    "displayName",
+    "providerType",
+    "supportedCountries",
+    "supportedCurrencies",
+    "capabilities",
+    "status",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "providerAccounts", [
+    "accountNo",
+    "providerCode",
+    "merchantId",
+    "environment",
+    "countryCode",
+    "settlementCurrency",
+    "status",
+    "rotatedAt",
+    "note",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "methods", [
+    "methodCode",
+    "displayName",
+    "methodType",
+    "providerCode",
+    "checkoutScenes",
+    "sortOrder",
+    "status",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "channels", [
+    "channelNo",
+    "methodCode",
+    "providerCode",
+    "providerAccountId",
+    "sceneCode",
+    "countryCode",
+    "currencyCode",
+    "priority",
+    "status",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "routeRules", [
+    "ruleNo",
+    "methodCode",
+    "sceneCode",
+    "countryCode",
+    "currencyCode",
+    "channelId",
+    "fallbackEnabled",
+    "priority",
+    "status",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "intents", [
+    "intentNo",
+    "orderId",
+    "subjectType",
+    "methodCode",
+    "providerCode",
+    "amount",
+    "currencyCode",
+    "status",
+    "createdAt",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "attempts", [
+    "attemptNo",
+    "intentId",
+    "methodCode",
+    "providerCode",
+    "externalTradeNo",
+    "amount",
+    "currencyCode",
+    "status",
+    "paidAt",
+    "createdAt",
+    "updatedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "webhookEvents", [
+    "eventNo",
+    "providerCode",
+    "eventType",
+    "externalEventId",
+    "processStatus",
+    "receivedAt",
+    "processedAt",
+  ]);
+  assertPaymentSectionColumns(viewSource, "reconciliationRuns", [
+    "runNo",
+    "providerCode",
+    "businessDate",
+    "status",
+    "createdAt",
+    "finishedAt",
+  ]);
+
+  for (const key of [
+    "admin.col.scene",
+    "admin.col.fallback",
+    "admin.col.externalTrade",
+    "admin.col.externalEvent",
+    "admin.col.paid",
+    "admin.col.processed",
+    "admin.col.countries",
+    "admin.col.currencies",
+    "admin.col.capabilities",
+    "admin.col.scenes",
+    "admin.col.rotated",
+  ]) {
+    assert.match(i18nSource, new RegExp(`"${escapeRegExp(key)}"`));
   }
 });
 
@@ -437,6 +692,21 @@ function adminServiceFileName(packageName: string): string {
     default:
       throw new Error(`Unknown admin package ${packageName}`);
   }
+}
+
+function assertPaymentSectionColumns(source: string, sectionId: string, expectedKeys: readonly string[]): void {
+  const sectionSource = paymentSectionSource(source, sectionId);
+  for (const key of expectedKeys) {
+    assert.match(sectionSource, new RegExp(`key: '${escapeRegExp(key)}'`));
+  }
+}
+
+function paymentSectionSource(source: string, sectionId: string): string {
+  const startToken = `id: '${sectionId}'`;
+  const start = source.indexOf(startToken);
+  assert.notEqual(start, -1, `payment section ${sectionId} must exist`);
+  const next = source.indexOf("\n    {\n      id: '", start + startToken.length);
+  return next === -1 ? source.slice(start) : source.slice(start, next);
 }
 
 function requestPath(url: string | undefined): string {

@@ -8,7 +8,7 @@ public class CreateApiKeyResponse {
     public AppApiKeyItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AppApiKeyItem item) {
         this.item = item;
     }
@@ -16,7 +16,7 @@ public class CreateApiKeyResponse {
     public String getRawKey() {
         return this.rawKey;
     }
-    
+
     public void setRawKey(String rawKey) {
         this.rawKey = rawKey;
     }

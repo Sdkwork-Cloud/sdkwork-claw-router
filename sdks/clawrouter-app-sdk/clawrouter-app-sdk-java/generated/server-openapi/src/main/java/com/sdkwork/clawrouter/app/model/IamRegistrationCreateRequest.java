@@ -15,7 +15,7 @@ public class IamRegistrationCreateRequest {
     public String getChannel() {
         return this.channel;
     }
-    
+
     public void setChannel(String channel) {
         this.channel = channel;
     }
@@ -23,7 +23,7 @@ public class IamRegistrationCreateRequest {
     public String getConfirmPassword() {
         return this.confirmPassword;
     }
-    
+
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
@@ -31,7 +31,7 @@ public class IamRegistrationCreateRequest {
     public String getEmail() {
         return this.email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -39,7 +39,7 @@ public class IamRegistrationCreateRequest {
     public String getOrganizationCode() {
         return this.organizationCode;
     }
-    
+
     public void setOrganizationCode(String organizationCode) {
         this.organizationCode = organizationCode;
     }
@@ -47,7 +47,7 @@ public class IamRegistrationCreateRequest {
     public String getPassword() {
         return this.password;
     }
-    
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -55,7 +55,7 @@ public class IamRegistrationCreateRequest {
     public String getPhone() {
         return this.phone;
     }
-    
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -63,7 +63,7 @@ public class IamRegistrationCreateRequest {
     public String getTenantCode() {
         return this.tenantCode;
     }
-    
+
     public void setTenantCode(String tenantCode) {
         this.tenantCode = tenantCode;
     }
@@ -71,7 +71,7 @@ public class IamRegistrationCreateRequest {
     public String getUsername() {
         return this.username;
     }
-    
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -79,7 +79,7 @@ public class IamRegistrationCreateRequest {
     public String getVerificationCode() {
         return this.verificationCode;
     }
-    
+
     public void setVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
     }

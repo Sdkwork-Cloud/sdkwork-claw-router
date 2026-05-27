@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -17,7 +19,10 @@ async fn app_agent_run_create_route_creates_run_under_session_with_memory_and_ru
     let store = Arc::new(TestAppAgentRunStore::default());
     let router = sdkwork_claw_product::api::app_agent_run_router_with_store(
         store.clone(),
-        Arc::new(SequentialUuidGenerator::new(vec!["agent-run-uuid-1"])),
+        Arc::new(SequentialUuidGenerator::new(vec![
+            "agent-run-uuid-1",
+            "server-request-id-1",
+        ])),
     );
 
     let response = router
@@ -26,14 +31,11 @@ async fn app_agent_run_create_route_creates_run_under_session_with_memory_and_ru
                 .method("POST")
                 .uri("/app/v3/api/agents/sessions/agent-session-1/runs")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "agentId":"101",
                       "agentVersionId":"201",
-                      "requestId":"req-agent-run-1",
                       "traceId":"trace-agent-run-1",
                       "sourceSurface":"chat",
                       "inputMessage":"Refine the chat schema",
@@ -54,6 +56,7 @@ async fn app_agent_run_create_route_creates_run_under_session_with_memory_and_ru
     assert_eq!("2000", payload["code"]);
     assert_eq!("agent-run-1", payload["data"]["item"]["id"]);
     assert_eq!("agent-session-1", payload["data"]["item"]["sessionId"]);
+    assert_eq!("server-request-id-1", payload["data"]["item"]["requestId"]);
     assert_eq!("memory-space-1", payload["data"]["item"]["memorySpaceId"]);
     assert_eq!("codex", payload["data"]["item"]["runtime"]);
 
@@ -66,7 +69,7 @@ async fn app_agent_run_create_route_creates_run_under_session_with_memory_and_ru
     assert_eq!("agent-run-uuid-1", commands[0].run_uuid);
     assert_eq!("101", commands[0].agent_id);
     assert_eq!("201", commands[0].agent_version_id);
-    assert_eq!("req-agent-run-1", commands[0].request_id);
+    assert_eq!("server-request-id-1", commands[0].request_id);
     assert_eq!(
         "trace-agent-run-1",
         commands[0].trace_id.as_deref().unwrap()
@@ -86,11 +89,14 @@ async fn app_agent_run_create_route_creates_run_under_session_with_memory_and_ru
 }
 
 #[tokio::test]
-async fn app_agent_run_create_route_accepts_standard_agent_resource_ids() {
+async fn app_agent_run_create_route_generates_request_id_when_client_omits_it() {
     let store = Arc::new(TestAppAgentRunStore::default());
     let router = sdkwork_claw_product::api::app_agent_run_router_with_store(
         store.clone(),
-        Arc::new(SequentialUuidGenerator::new(vec!["agent-run-uuid-1"])),
+        Arc::new(SequentialUuidGenerator::new(vec![
+            "agent-run-uuid-1",
+            "server-request-id-1",
+        ])),
     );
 
     let response = router
@@ -99,14 +105,53 @@ async fn app_agent_run_create_route_accepts_standard_agent_resource_ids() {
                 .method("POST")
                 .uri("/app/v3/api/agents/sessions/agent-session-1/runs")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{
+                      "agentId":"101",
+                      "agentVersionId":"201",
+                      "sourceSurface":"playground",
+                      "inputMessage":"Generate without a client request id"
+                    }"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+
+    let commands = store.create_run_commands.lock().unwrap();
+    assert_eq!(1, commands.len());
+    assert_eq!("agent-run-uuid-1", commands[0].run_uuid);
+    assert_eq!("server-request-id-1", commands[0].request_id);
+    assert_eq!("server-request-id-1", payload["data"]["item"]["requestId"]);
+}
+
+#[tokio::test]
+async fn app_agent_run_create_route_accepts_standard_agent_resource_ids() {
+    let store = Arc::new(TestAppAgentRunStore::default());
+    let router = sdkwork_claw_product::api::app_agent_run_router_with_store(
+        store.clone(),
+        Arc::new(SequentialUuidGenerator::new(vec![
+            "agent-run-uuid-1",
+            "server-request-id-1",
+        ])),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/agents/sessions/agent-session-1/runs")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "agentId":"agent-1",
                       "agentVersionId":"agent-version-1",
-                      "requestId":"req-agent-run-1",
                       "sourceSurface":"playground",
                       "inputMessage":"Run the standard playground agent",
                       "runtime":"openai_compatible",
@@ -127,6 +172,7 @@ async fn app_agent_run_create_route_accepts_standard_agent_resource_ids() {
     assert_eq!(1, commands.len());
     assert_eq!("agent-1", commands[0].agent_id);
     assert_eq!("agent-version-1", commands[0].agent_version_id);
+    assert_eq!("server-request-id-1", commands[0].request_id);
     assert_eq!("playground", commands[0].source_surface);
     assert_eq!("openai_compatible", commands[0].runtime.as_deref().unwrap());
 }
@@ -148,9 +194,7 @@ async fn app_agent_run_step_route_records_ordered_runtime_step() {
                 .method("POST")
                 .uri("/app/v3/api/agents/runs/agent-run-1/steps")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "stepType":"model",
@@ -214,9 +258,7 @@ async fn app_agent_run_routes_list_detail_steps_and_complete_run() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents/sessions/agent-session-1/runs?page=1&pageSize=20")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -232,9 +274,7 @@ async fn app_agent_run_routes_list_detail_steps_and_complete_run() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents/runs/agent-run-1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -250,9 +290,7 @@ async fn app_agent_run_routes_list_detail_steps_and_complete_run() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents/runs/agent-run-1/steps")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -268,9 +306,7 @@ async fn app_agent_run_routes_list_detail_steps_and_complete_run() {
                 .method("POST")
                 .uri("/app/v3/api/agents/runs/agent-run-1/complete")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "status":"completed",
@@ -322,9 +358,7 @@ async fn app_agent_run_step_complete_route_records_terminal_step_status() {
                 .method("POST")
                 .uri("/app/v3/api/agents/runs/agent-run-1/steps/agent-step-1/complete")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "status":"completed",
@@ -379,9 +413,7 @@ async fn app_agent_run_complete_rejects_non_numeric_usage_fact_id() {
                 .method("POST")
                 .uri("/app/v3/api/agents/runs/agent-run-1/complete")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "status":"completed",
@@ -422,9 +454,7 @@ async fn app_agent_run_step_rejects_non_numeric_usage_fact_id() {
                 .method("POST")
                 .uri("/app/v3/api/agents/runs/agent-run-1/steps")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "stepType":"model",
@@ -461,9 +491,7 @@ async fn app_agent_run_does_not_expose_playground_backend_namespace() {
                 .method("POST")
                 .uri("/app/v3/api/playground/agents/runs")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -509,8 +537,12 @@ impl AppAgentRunStore for TestAppAgentRunStore {
         command: CreateAppAgentRunCommand,
     ) -> AppAgentRunFuture<'a, AppAgentRunItem> {
         Box::pin(async move {
+            let request_id = command.request_id.clone();
             self.create_run_commands.lock().unwrap().push(command);
-            Ok(sample_run())
+            Ok(AppAgentRunItem {
+                request_id,
+                ..sample_run()
+            })
         })
     }
 

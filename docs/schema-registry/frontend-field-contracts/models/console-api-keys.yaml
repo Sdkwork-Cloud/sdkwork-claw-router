@@ -17,6 +17,7 @@ frontend_models:
   - created
   - expires
   - status
+  - defaultForRuntime
   derived_fields:
   - displayName
   - groupName
@@ -59,6 +60,7 @@ frontend_models:
   - key.created
   - key.expires
   - key.status
+  - key.defaultForRuntime
   - rawKey
   derived_fields:
   - key.groupName
@@ -75,6 +77,7 @@ frontend_models:
   - modalities
   - ipLimit
   - expires
+  - defaultForRuntime
   data_sources:
   - iam_gateway_api_key_group
   - iam_gateway_access_policy

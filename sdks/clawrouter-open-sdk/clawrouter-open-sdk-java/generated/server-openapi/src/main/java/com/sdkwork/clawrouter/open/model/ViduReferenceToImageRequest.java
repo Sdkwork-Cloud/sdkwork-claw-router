@@ -15,7 +15,7 @@ public class ViduReferenceToImageRequest {
     public String getAspectRatio() {
         return this.aspectRatio;
     }
-    
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -23,7 +23,7 @@ public class ViduReferenceToImageRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -31,7 +31,7 @@ public class ViduReferenceToImageRequest {
     public List<String> getImages() {
         return this.images;
     }
-    
+
     public void setImages(List<String> images) {
         this.images = images;
     }
@@ -39,7 +39,7 @@ public class ViduReferenceToImageRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -47,7 +47,7 @@ public class ViduReferenceToImageRequest {
     public String getPayload() {
         return this.payload;
     }
-    
+
     public void setPayload(String payload) {
         this.payload = payload;
     }
@@ -55,7 +55,7 @@ public class ViduReferenceToImageRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -63,7 +63,7 @@ public class ViduReferenceToImageRequest {
     public Integer getSeed() {
         return this.seed;
     }
-    
+
     public void setSeed(Integer seed) {
         this.seed = seed;
     }
@@ -71,7 +71,7 @@ public class ViduReferenceToImageRequest {
     public String getStyle() {
         return this.style;
     }
-    
+
     public void setStyle(String style) {
         this.style = style;
     }

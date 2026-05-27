@@ -28,7 +28,7 @@ public class IamUserPreferenceRecord {
     public Map<String, String> getAppearanceConfig() {
         return this.appearanceConfig;
     }
-    
+
     public void setAppearanceConfig(Map<String, String> appearanceConfig) {
         this.appearanceConfig = appearanceConfig;
     }
@@ -36,7 +36,7 @@ public class IamUserPreferenceRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -44,7 +44,7 @@ public class IamUserPreferenceRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -52,7 +52,7 @@ public class IamUserPreferenceRecord {
     public String getDefaultConsolePath() {
         return this.defaultConsolePath;
     }
-    
+
     public void setDefaultConsolePath(String defaultConsolePath) {
         this.defaultConsolePath = defaultConsolePath;
     }
@@ -60,7 +60,7 @@ public class IamUserPreferenceRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -68,7 +68,7 @@ public class IamUserPreferenceRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -76,7 +76,7 @@ public class IamUserPreferenceRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -84,7 +84,7 @@ public class IamUserPreferenceRecord {
     public String getLanguage() {
         return this.language;
     }
-    
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -92,7 +92,7 @@ public class IamUserPreferenceRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -100,7 +100,7 @@ public class IamUserPreferenceRecord {
     public Map<String, String> getNotificationPreferences() {
         return this.notificationPreferences;
     }
-    
+
     public void setNotificationPreferences(Map<String, String> notificationPreferences) {
         this.notificationPreferences = notificationPreferences;
     }
@@ -108,7 +108,7 @@ public class IamUserPreferenceRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -116,7 +116,7 @@ public class IamUserPreferenceRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -124,7 +124,7 @@ public class IamUserPreferenceRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -132,7 +132,7 @@ public class IamUserPreferenceRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -140,7 +140,7 @@ public class IamUserPreferenceRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -148,7 +148,7 @@ public class IamUserPreferenceRecord {
     public String getThemeMode() {
         return this.themeMode;
     }
-    
+
     public void setThemeMode(String themeMode) {
         this.themeMode = themeMode;
     }
@@ -156,7 +156,7 @@ public class IamUserPreferenceRecord {
     public String getTimezone() {
         return this.timezone;
     }
-    
+
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
@@ -164,7 +164,7 @@ public class IamUserPreferenceRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -172,7 +172,7 @@ public class IamUserPreferenceRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -180,7 +180,7 @@ public class IamUserPreferenceRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -188,7 +188,7 @@ public class IamUserPreferenceRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

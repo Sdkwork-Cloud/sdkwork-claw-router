@@ -11,7 +11,7 @@ public class OpenAiConversation {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -19,7 +19,7 @@ public class OpenAiConversation {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -27,7 +27,7 @@ public class OpenAiConversation {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -35,7 +35,7 @@ public class OpenAiConversation {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronDown, Zap, Search, Cpu, Info, AlignLeft, User } from 'lucide-react';
+import { ChevronRight, ChevronDown, Zap, Search, Cpu, Info, User } from 'lucide-react';
 import { AdminTableShell, BusinessStateTableRow } from 'sdkwork-claw-router-commons';
 import { formatDecimalAmount } from 'sdkwork-claw-router-commons/runtime';
 import { RecordService, LogRecord } from './recordService';
@@ -70,19 +70,8 @@ export function RecordAdmin() {
   const streamCount = logs.filter((log) => log.isStream).length;
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
-
-      {/* Page Header & Stats */}
-      <div className="flex shrink-0 flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/10">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <AlignLeft className="w-6 h-6 text-indigo-500" />
-            <h1 className="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{t("admin.record.index.text.1trrvl5", "全站调用明细")}</h1>
-          </div>
-          <p className="text-sm text-slate-500">{t("admin.record.index.text.knx8o5", "审计全平台所有用户的原生模型接口调用日志，用于财务核对与风控排查。")}</p>
-        </div>
-
-        {/* Top-right Stats Badges */}
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
+      <div className="flex shrink-0 justify-end">
         <div className="flex items-center gap-3 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-lg p-1.5 shadow-sm text-sm shrink-0">
           <div className="px-3 py-1 flex items-center gap-1.5 border-r border-slate-200 dark:border-white/10">
             <span className="text-slate-500">{t("admin.record.index.text.pdja6l", "当前页消耗:")}</span>
@@ -205,7 +194,7 @@ export function RecordAdmin() {
           <table className="w-full text-left text-sm whitespace-nowrap min-w-[1300px]">
             <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10 select-none text-xs uppercase font-semibold">
               <tr>
-                <th className="px-4 py-3.5 pl-6 font-medium">{t("admin.marketing.index.text.1f90xvr", "时间")}</th>
+                <th className="px-4 py-3.5 pl-6 font-medium">{t("admin.col.created", "时间")}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.1in002o", "用户")}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.16rfi2", "令牌 / 分组")}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.1ow6qt", "模型")}</th>

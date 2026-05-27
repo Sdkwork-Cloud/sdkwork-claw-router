@@ -16,4 +16,5 @@ class ProblemDetail:
     detail: Optional[str] = None
     errors: Optional[List[FieldError]] = None
     instance: Optional[str] = None
+    request_id: Optional[str] = None
     trace_id: Optional[str] = None

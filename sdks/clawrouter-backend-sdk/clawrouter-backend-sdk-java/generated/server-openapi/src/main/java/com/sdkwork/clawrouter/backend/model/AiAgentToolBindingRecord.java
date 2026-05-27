@@ -32,7 +32,7 @@ public class AiAgentToolBindingRecord {
     public String getAgentId() {
         return this.agentId;
     }
-    
+
     public void setAgentId(String agentId) {
         this.agentId = agentId;
     }
@@ -40,7 +40,7 @@ public class AiAgentToolBindingRecord {
     public String getAgentVersionId() {
         return this.agentVersionId;
     }
-    
+
     public void setAgentVersionId(String agentVersionId) {
         this.agentVersionId = agentVersionId;
     }
@@ -48,7 +48,7 @@ public class AiAgentToolBindingRecord {
     public String getBindingKey() {
         return this.bindingKey;
     }
-    
+
     public void setBindingKey(String bindingKey) {
         this.bindingKey = bindingKey;
     }
@@ -56,7 +56,7 @@ public class AiAgentToolBindingRecord {
     public String getBindingType() {
         return this.bindingType;
     }
-    
+
     public void setBindingType(String bindingType) {
         this.bindingType = bindingType;
     }
@@ -64,7 +64,7 @@ public class AiAgentToolBindingRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -72,7 +72,7 @@ public class AiAgentToolBindingRecord {
     public String getCredentialRef() {
         return this.credentialRef;
     }
-    
+
     public void setCredentialRef(String credentialRef) {
         this.credentialRef = credentialRef;
     }
@@ -80,7 +80,7 @@ public class AiAgentToolBindingRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -88,7 +88,7 @@ public class AiAgentToolBindingRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -96,7 +96,7 @@ public class AiAgentToolBindingRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -104,7 +104,7 @@ public class AiAgentToolBindingRecord {
     public Boolean getEnabled() {
         return this.enabled;
     }
-    
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -112,7 +112,7 @@ public class AiAgentToolBindingRecord {
     public String getHealthStatus() {
         return this.healthStatus;
     }
-    
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -120,7 +120,7 @@ public class AiAgentToolBindingRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -128,7 +128,7 @@ public class AiAgentToolBindingRecord {
     public String getLastCheckedAt() {
         return this.lastCheckedAt;
     }
-    
+
     public void setLastCheckedAt(String lastCheckedAt) {
         this.lastCheckedAt = lastCheckedAt;
     }
@@ -136,7 +136,7 @@ public class AiAgentToolBindingRecord {
     public String getMcpServerId() {
         return this.mcpServerId;
     }
-    
+
     public void setMcpServerId(String mcpServerId) {
         this.mcpServerId = mcpServerId;
     }
@@ -144,7 +144,7 @@ public class AiAgentToolBindingRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -152,7 +152,7 @@ public class AiAgentToolBindingRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -160,7 +160,7 @@ public class AiAgentToolBindingRecord {
     public Map<String, String> getPermissionPolicy() {
         return this.permissionPolicy;
     }
-    
+
     public void setPermissionPolicy(Map<String, String> permissionPolicy) {
         this.permissionPolicy = permissionPolicy;
     }
@@ -168,7 +168,7 @@ public class AiAgentToolBindingRecord {
     public Map<String, String> getRuntimeConfig() {
         return this.runtimeConfig;
     }
-    
+
     public void setRuntimeConfig(Map<String, String> runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
     }
@@ -176,7 +176,7 @@ public class AiAgentToolBindingRecord {
     public String getSkillId() {
         return this.skillId;
     }
-    
+
     public void setSkillId(String skillId) {
         this.skillId = skillId;
     }
@@ -184,7 +184,7 @@ public class AiAgentToolBindingRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -192,7 +192,7 @@ public class AiAgentToolBindingRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -200,7 +200,7 @@ public class AiAgentToolBindingRecord {
     public String getToolName() {
         return this.toolName;
     }
-    
+
     public void setToolName(String toolName) {
         this.toolName = toolName;
     }
@@ -208,7 +208,7 @@ public class AiAgentToolBindingRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -216,7 +216,7 @@ public class AiAgentToolBindingRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -224,7 +224,7 @@ public class AiAgentToolBindingRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

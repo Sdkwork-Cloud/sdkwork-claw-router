@@ -30,7 +30,7 @@ public class AiGenerationAssetActionRecord {
     public Map<String, String> getActionParams() {
         return this.actionParams;
     }
-    
+
     public void setActionParams(Map<String, String> actionParams) {
         this.actionParams = actionParams;
     }
@@ -38,7 +38,7 @@ public class AiGenerationAssetActionRecord {
     public String getActionType() {
         return this.actionType;
     }
-    
+
     public void setActionType(String actionType) {
         this.actionType = actionType;
     }
@@ -46,7 +46,7 @@ public class AiGenerationAssetActionRecord {
     public String getAssetId() {
         return this.assetId;
     }
-    
+
     public void setAssetId(String assetId) {
         this.assetId = assetId;
     }
@@ -54,7 +54,7 @@ public class AiGenerationAssetActionRecord {
     public String getClientIpHash() {
         return this.clientIpHash;
     }
-    
+
     public void setClientIpHash(String clientIpHash) {
         this.clientIpHash = clientIpHash;
     }
@@ -62,7 +62,7 @@ public class AiGenerationAssetActionRecord {
     public String getClientIpRegion() {
         return this.clientIpRegion;
     }
-    
+
     public void setClientIpRegion(String clientIpRegion) {
         this.clientIpRegion = clientIpRegion;
     }
@@ -70,7 +70,7 @@ public class AiGenerationAssetActionRecord {
     public String getCompletedAt() {
         return this.completedAt;
     }
-    
+
     public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
     }
@@ -78,7 +78,7 @@ public class AiGenerationAssetActionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -86,7 +86,7 @@ public class AiGenerationAssetActionRecord {
     public String getFailureCode() {
         return this.failureCode;
     }
-    
+
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
     }
@@ -94,7 +94,7 @@ public class AiGenerationAssetActionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -102,7 +102,7 @@ public class AiGenerationAssetActionRecord {
     public String getJobId() {
         return this.jobId;
     }
-    
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -110,7 +110,7 @@ public class AiGenerationAssetActionRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -118,7 +118,7 @@ public class AiGenerationAssetActionRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -126,7 +126,7 @@ public class AiGenerationAssetActionRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -134,7 +134,7 @@ public class AiGenerationAssetActionRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -142,7 +142,7 @@ public class AiGenerationAssetActionRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -150,7 +150,7 @@ public class AiGenerationAssetActionRecord {
     public String getResultAssetId() {
         return this.resultAssetId;
     }
-    
+
     public void setResultAssetId(String resultAssetId) {
         this.resultAssetId = resultAssetId;
     }
@@ -158,7 +158,7 @@ public class AiGenerationAssetActionRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -166,7 +166,7 @@ public class AiGenerationAssetActionRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -174,7 +174,7 @@ public class AiGenerationAssetActionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -182,7 +182,7 @@ public class AiGenerationAssetActionRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -190,7 +190,7 @@ public class AiGenerationAssetActionRecord {
     public String getUserAgentHash() {
         return this.userAgentHash;
     }
-    
+
     public void setUserAgentHash(String userAgentHash) {
         this.userAgentHash = userAgentHash;
     }
@@ -198,7 +198,7 @@ public class AiGenerationAssetActionRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -206,7 +206,7 @@ public class AiGenerationAssetActionRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

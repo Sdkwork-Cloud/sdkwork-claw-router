@@ -121,17 +121,17 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "POST",
-                            "api_path": "/app/v3/api/billing/coupons/redeem",
-                            "operation": "redeemCoupon",
-                            "operation_id": "coupons.redeem",
-                            "tag": "billing",
+                            "api_path": "/app/v3/api/promotions/codes/redemptions",
+                            "operation": "redeemPromotionCode",
+                            "operation_id": "promotions.codes.redemptions.create",
+                            "tag": "promotions",
                             "sdk_domain": "commerce",
                             "kind": "action",
-                            "module": "billing",
+                            "module": "wallet",
                             "path_params": [],
-                            "source": "apps/portal/couponService.ts",
-                            "read_sources": ["plus_coupon"],
-                            "write_tables": ["plus_coupon_use"],
+                            "source": "apps/portal/promotionService.ts",
+                            "read_sources": ["promotion_code", "promotion_coupon_stock"],
+                            "write_tables": ["promotion_code_redemption", "promotion_user_coupon"],
                         },
                         {
                             "api_surface": "app",
@@ -187,34 +187,34 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/billing/coupons/mine",
-                            "operation": "fetchRedeemHistory",
-                            "operation_id": "coupons.mine.list",
-                            "tag": "billing",
+                            "api_path": "/app/v3/api/promotions/user_coupons",
+                            "operation": "fetchUserCoupons",
+                            "operation_id": "promotions.userCoupons.wallet.list",
+                            "tag": "promotions",
                             "sdk_domain": "commerce",
                             "kind": "read",
-                            "module": "billing",
+                            "module": "wallet",
                             "path_params": [],
-                            "source": "apps/portal/billingService.ts",
-                            "read_sources": ["plus_user_coupon", "plus_coupon"],
+                            "source": "apps/portal/promotionService.ts",
+                            "read_sources": ["promotion_user_coupon", "promotion_offer"],
                             "write_tables": [],
                             "query_parameters_declared": True,
                             "query_parameters": [],
                             "response_schema": {
-                                "name": "BillingRedeemHistoryResponse",
+                                "name": "PromotionUserCouponWalletResponse",
                                 "schema": {
                                     "type": "array",
                                     "items": {
                                         "type": "object",
                                         "additionalProperties": False,
-                                        "name": "BillingRedeemHistoryItem",
-                                        "required": ["id", "code", "amount", "date", "status"],
+                                        "name": "PromotionUserCouponWalletItem",
+                                        "required": ["id", "coupon_no", "face_value_minor", "currency_code", "status"],
                                         "properties": {
-                                            "id": {"type": "integer", "format": "int64"},
-                                            "code": {"type": "string"},
-                                            "amount": {"type": "string", "pattern": "^\\d+(?:\\.\\d{2})$"},
-                                            "date": {"type": "string"},
-                                            "status": {"type": "string", "enum": ["success", "pending", "failed"]},
+                                            "id": {"type": "string"},
+                                            "coupon_no": {"type": "string"},
+                                            "face_value_minor": {"type": "integer", "format": "int64"},
+                                            "currency_code": {"type": "string", "minLength": 3, "maxLength": 3},
+                                            "status": {"type": "string", "enum": ["active", "redeemed", "expired"]},
                                         },
                                     },
                                 },
@@ -379,7 +379,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.assertEqual("SDKWork Claw Router App API", app_spec["info"]["title"])
             self.assertEqual("SdkworkAppClient", app_spec["x-sdk-client"])
             self.assertEqual("http://localhost:18082", app_spec["servers"][0]["url"])
-            self.assertIn("/app/v3/api/billing/coupons/redeem", app_spec["paths"])
+            self.assertIn("/app/v3/api/promotions/codes/redemptions", app_spec["paths"])
             self.assertNotIn("/backend/v3/api/content/announcements/{announcementId}", app_spec["paths"])
             self.assertNotIn("/v1/chat/completions", app_spec["paths"])
 
@@ -387,7 +387,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.assertEqual("SdkworkBackendClient", backend_spec["x-sdk-client"])
             self.assertEqual("http://localhost:18081", backend_spec["servers"][0]["url"])
             self.assertIn("/backend/v3/api/content/announcements/{announcementId}", backend_spec["paths"])
-            self.assertNotIn("/app/v3/api/billing/coupons/redeem", backend_spec["paths"])
+            self.assertNotIn("/app/v3/api/promotions/codes/redemptions", backend_spec["paths"])
 
     def test_emits_problem_detail_error_responses_and_domain_extensions(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -721,25 +721,25 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_manifest(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/billing/coupons/mine"]["get"]
+            operation = app_spec["paths"]["/app/v3/api/promotions/user_coupons"]["get"]
             schemas = app_spec["components"]["schemas"]
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/CouponsMineListResult"},
+                {"$ref": "#/components/schemas/PromotionsUserCouponsWalletListResult"},
                 operation["responses"]["200"]["content"]["application/json"]["schema"],
             )
             self.assertDescribedSchemaRef(
-                schemas["CouponsMineListResult"]["properties"]["data"],
-                "#/components/schemas/BillingRedeemHistoryResponse",
+                schemas["PromotionsUserCouponsWalletListResult"]["properties"]["data"],
+                "#/components/schemas/PromotionUserCouponWalletResponse",
             )
-            self.assertEqual("array", schemas["BillingRedeemHistoryResponse"]["type"])
+            self.assertEqual("array", schemas["PromotionUserCouponWalletResponse"]["type"])
             self.assertEqual(
-                {"$ref": "#/components/schemas/BillingRedeemHistoryItem"},
-                schemas["BillingRedeemHistoryResponse"]["items"],
+                {"$ref": "#/components/schemas/PromotionUserCouponWalletItem"},
+                schemas["PromotionUserCouponWalletResponse"]["items"],
             )
             self.assertEqual(
-                ["id", "code", "amount", "date", "status"],
-                schemas["BillingRedeemHistoryItem"]["required"],
+                ["id", "coupon_no", "face_value_minor", "currency_code", "status"],
+                schemas["PromotionUserCouponWalletItem"]["required"],
             )
 
     def test_merges_schema_components_into_final_openapi_specs(self) -> None:
@@ -754,15 +754,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.assertEqual(["vendor_code", "enabled"], schema["required"])
             self.assertEqual(64, schema["properties"]["vendor_code"]["maxLength"])
             self.assertNotIn("OperationRequest", app_spec["components"]["schemas"])
-            self.assertIn("CouponsRedeemRequest", app_spec["components"]["schemas"])
+            self.assertIn(
+                "PromotionsCodesRedemptionsCreateRequest",
+                app_spec["components"]["schemas"],
+            )
             self.assertEqual(
                 {
                     "type": "object",
                     "additionalProperties": False,
-                    "description": "Explicit empty request body for redeem coupon.",
+                    "description": "Explicit empty request body for redeem promotion code.",
                     "properties": {},
                 },
-                app_spec["components"]["schemas"]["CouponsRedeemRequest"],
+                app_spec["components"]["schemas"]["PromotionsCodesRedemptionsCreateRequest"],
             )
 
     def test_get_single_read_source_uses_record_response_wrapper(self) -> None:
@@ -881,14 +884,14 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             tag_names = {tag["name"] for tag in app_spec["tags"]}
             self.assertIn("platform", tag_names)
             self.assertTrue(all(tag.get("description") for tag in app_spec["tags"]))
-            self.assertEqual([{"AuthToken": [], "SdkworkAccessToken": []}], app_spec["security"])
+            self.assertEqual([{"AuthToken": [], "AccessToken": []}], app_spec["security"])
             self.assertEqual(
                 {"type": "http", "scheme": "bearer", "bearerFormat": "SDKWork auth token"},
                 app_spec["components"]["securitySchemes"]["AuthToken"],
             )
             self.assertEqual(
-                {"type": "apiKey", "in": "header", "name": "Sdkwork-Access-Token"},
-                app_spec["components"]["securitySchemes"]["SdkworkAccessToken"],
+                {"type": "apiKey", "in": "header", "name": "Access-Token"},
+                app_spec["components"]["securitySchemes"]["AccessToken"],
             )
 
             self.assertEqual(
@@ -903,18 +906,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                 app_spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]["responses"]["default"],
             )
 
-            redeem_operation = app_spec["paths"]["/app/v3/api/billing/coupons/redeem"]["post"]
+            redeem_operation = app_spec["paths"]["/app/v3/api/promotions/codes/redemptions"]["post"]
             self.assertEqual(
-                {"$ref": "#/components/schemas/CouponsRedeemRequest"},
+                {"$ref": "#/components/schemas/PromotionsCodesRedemptionsCreateRequest"},
                 redeem_operation["requestBody"]["content"]["application/json"]["schema"],
             )
             self.assertEqual(
-                {"$ref": "#/components/schemas/CouponsRedeemResult"},
+                {"$ref": "#/components/schemas/PromotionsCodesRedemptionsCreateResult"},
                 redeem_operation["responses"]["200"]["content"]["application/json"]["schema"],
             )
-            self.assertIn("CouponsRedeemResult", schemas)
+            self.assertIn("PromotionsCodesRedemptionsCreateResult", schemas)
             self.assertDescribedSchemaRef(
-                schemas["CouponsRedeemResult"]["properties"]["data"],
+                schemas["PromotionsCodesRedemptionsCreateResult"]["properties"]["data"],
                 "#/components/schemas/NoData",
             )
             self.assertTrue(redeem_operation["requestBody"]["description"])
@@ -945,7 +948,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.assertNotIn("ErrorResponse", schemas)
             self.assertIn("ProblemDetail", schemas)
             self.assertIn("NoData", schemas)
-            self.assertIn("CouponsRedeemRequest", schemas)
+            self.assertIn("PromotionsCodesRedemptionsCreateRequest", schemas)
             self.assertIn("JsonValue", schemas)
             self.assertIn("JsonNull", schemas)
             self.assertEqual({"code", "msg", "message", "data"}, set(schemas["PlusApiResult"]["properties"]))
@@ -989,8 +992,8 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                 app_spec["paths"]["/app/v3/api/content/feeds/{id}/collect"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
             )
             self.assertEqual(
-                {"$ref": "#/components/schemas/CouponsRedeemResult"},
-                app_spec["paths"]["/app/v3/api/billing/coupons/redeem"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
+                {"$ref": "#/components/schemas/PromotionsCodesRedemptionsCreateResult"},
+                app_spec["paths"]["/app/v3/api/promotions/codes/redemptions"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
             )
             self.assertEqual(
                 {"$ref": "#/components/schemas/CommentsDeleteResult"},

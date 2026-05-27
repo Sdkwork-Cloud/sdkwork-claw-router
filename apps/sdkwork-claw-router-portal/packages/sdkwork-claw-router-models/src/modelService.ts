@@ -1,4 +1,12 @@
-import { ensureSdkworkApiSuccess, getClawRouterAppSdkClient, readRequiredApiItems } from 'sdkwork-claw-router-commons/runtime';
+import {
+  ensureSdkworkApiSuccess,
+  getClawRouterAppSdkClient,
+  readApiRecord,
+  readNumber,
+  readRecordArray,
+  readRequiredApiItems,
+  readString,
+} from 'sdkwork-claw-router-commons/runtime';
 import type { Model, ModelCategoryKey, ModelGroupKey } from './data/models';
 import {
   findModelByCatalogRouteId,
@@ -21,21 +29,58 @@ export interface ModelCatalogServiceFilters {
   limit?: number;
 }
 
+export interface ModelCatalogGroup {
+  key: ModelGroupKey;
+  label: string;
+  modelCount: number;
+}
+
+export interface ModelCatalogResult {
+  models: Model[];
+  groups: ModelCatalogGroup[];
+}
+
 export class ModelService {
   static async fetchModels(filters: ModelCatalogServiceFilters = {}): Promise<Model[]> {
-    const result = await getClawRouterAppSdkClient().ai.models.list({
-      billingMeter: normalizeQueryString(filters.billingMeter),
-      vendorCodes: normalizeQueryValues(filters.vendorCodes),
-      modalities: normalizeQueryValues(filters.modalities),
-      capabilities: normalizeQueryValues(filters.capabilities),
-      categories: normalizeQueryValues(filters.categories),
-      groups: normalizeQueryValues(filters.groups),
-      q: normalizeQueryString(filters.searchQuery),
-      limit: filters.limit,
-    });
-    ensureSdkworkApiSuccess(result, 'Failed to fetch models');
-    return resolveRuntimeModelCatalog(readRequiredApiItems(result, 'Failed to fetch models'));
+    return (await fetchModelCatalogResult(filters)).models;
   }
+
+  static fetchModelCatalog(filters: ModelCatalogServiceFilters = {}): Promise<ModelCatalogResult> {
+    return fetchModelCatalogResult(filters);
+  }
+}
+
+async function fetchModelCatalogResult(filters: ModelCatalogServiceFilters): Promise<ModelCatalogResult> {
+  const result = await getClawRouterAppSdkClient().ai.models.list({
+    billingMeter: normalizeQueryString(filters.billingMeter),
+    vendorCodes: normalizeQueryValues(filters.vendorCodes),
+    modalities: normalizeQueryValues(filters.modalities),
+    capabilities: normalizeQueryValues(filters.capabilities),
+    categories: normalizeQueryValues(filters.categories),
+    groups: normalizeQueryValues(filters.groups),
+    q: normalizeQueryString(filters.searchQuery),
+    limit: filters.limit,
+  });
+  ensureSdkworkApiSuccess(result, 'Failed to fetch models');
+  const data = readApiRecord(result);
+  return {
+    models: resolveRuntimeModelCatalog(readRequiredApiItems(result, 'Failed to fetch models')),
+    groups: resolveRuntimeModelCatalogGroups(readRecordArray(data, 'groups')),
+  };
+}
+
+function resolveRuntimeModelCatalogGroups(records: readonly Record<string, unknown>[]): ModelCatalogGroup[] {
+  const groups = new Map<string, ModelCatalogGroup>();
+  for (const record of records) {
+    const key = readString(record, 'key').trim();
+    if (key.length === 0 || groups.has(key)) {
+      continue;
+    }
+    const label = readString(record, 'label').trim() || key;
+    const modelCount = Math.max(0, Math.trunc(readNumber(record, 'modelCount', 0)));
+    groups.set(key, { key, label, modelCount });
+  }
+  return Array.from(groups.values());
 }
 
 function normalizeQueryValues(values: readonly string[] | undefined): string[] | undefined {

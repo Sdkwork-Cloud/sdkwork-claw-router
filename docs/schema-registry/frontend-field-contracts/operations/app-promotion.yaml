@@ -1,0 +1,396 @@
+fragment: operations/app-promotion
+frontend_operations:
+- route: /console/wallet
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  operation: appPromotionUserCouponsList
+  operation_id: promotions.userCoupons.wallet.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/promotions/user_coupons
+  sdk_domain: promotion
+  summary: Promotion User Coupons Wallet List
+  description: Lists wallet coupons with current lifecycle status, source code attribution, lock state, redemption state, and expiry.
+  read_sources:
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_discount_application
+  query_parameters:
+  - name: status
+    schema:
+      type: string
+      maxLength: 64
+  response_schema: &id003
+    name: PromotionUserCouponWalletListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: PromotionCouponWalletItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - couponNo
+          - offerId
+          - stockId
+          - status
+          - claimSource
+          - currencyCode
+          - claimedAt
+          - validFrom
+          - expiresAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Stable promotion_user_coupon id.
+            couponNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            offerId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            stockId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            codeId:
+              type: string
+              nullable: true
+              maxLength: 128
+            sourceCodeLast4:
+              type: string
+              nullable: true
+              maxLength: 16
+            discountType:
+              type: string
+              nullable: true
+              maxLength: 64
+            faceValueMinor:
+              type: integer
+              format: int64
+              nullable: true
+            currencyCode:
+              type: string
+              minLength: 3
+              maxLength: 3
+            status:
+              type: string
+              enum:
+              - available
+              - locked
+              - redeemed
+              - expired
+              - disabled
+              - returned
+            claimSource:
+              type: string
+              minLength: 1
+              maxLength: 64
+            claimedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            validFrom:
+              type: string
+              minLength: 1
+              maxLength: 64
+            expiresAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            lockedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            lockExpiresAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            redeemedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            returnedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+- route: /console/wallet
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  operation: appPromotionUserCouponClaimsCreate
+  operation_id: promotions.userCoupons.claims.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/user_coupon_claims
+  sdk_domain: promotion
+  summary: Promotion User Coupon Claim Create
+  description: Standard appbase promotion API for promotions.userCoupons.claims.create.
+  read_sources:
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_budget_account
+  idempotency_required: true
+  write_tables:
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  request_schema: &id001
+    name: PromotionCommandRequest
+    type: object
+    additionalProperties: false
+    properties:
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      note:
+        type: string
+        maxLength: 512
+      metadata:
+        type: object
+        additionalProperties: true
+  response_schema: &id002
+    name: PromotionOperationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - success
+    - requestNo
+    - status
+    properties:
+      success:
+        type: boolean
+      requestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentId:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 128
+      qrCodePayload:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+      qrCodeImageUrl:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+- route: /console/wallet
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  operation: appPromotionCodeRedemptionsCreate
+  operation_id: promotions.codes.redemptions.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/codes/redemptions
+  sdk_domain: promotion
+  summary: Promotion Code Redemption Create
+  description: Standard appbase promotion API for promotions.codes.redemptions.create.
+  read_sources:
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_budget_account
+  idempotency_required: true
+  write_tables:
+  - promotion_code_redemption
+  - promotion_code
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  request_schema:
+    name: PromotionCodeRedemptionRequest
+    type: object
+    additionalProperties: false
+    required:
+    - code
+    properties:
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      code:
+        type: string
+        minLength: 1
+        maxLength: 128
+      source:
+        type: string
+        minLength: 1
+        maxLength: 64
+      scene:
+        type: string
+        minLength: 1
+        maxLength: 64
+      note:
+        type: string
+        maxLength: 512
+  response_schema: *id002
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appPromotionDiscountApplicationsCreate
+  operation_id: promotions.discountApplications.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/discount_applications
+  sdk_domain: promotion
+  summary: Promotion Discount Application Create
+  description: Reserves and applies a wallet coupon to an order with item-level allocation and lock expiry.
+  read_sources:
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  - promotion_budget_account
+  - commerce_order
+  - commerce_order_item
+  idempotency_required: true
+  write_tables:
+  - promotion_user_coupon
+  - promotion_coupon_stock
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appPromotionDiscountApplicationsSettle
+  operation_id: promotions.discountApplications.settle
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/discount_applications/{applicationId}/settlements
+  sdk_domain: promotion
+  summary: Promotion Discount Application Settle
+  description: Settles a reserved discount after order/payment acceptance and writes coupon and budget ledgers.
+  read_sources:
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_user_coupon
+  - promotion_budget_account
+  idempotency_required: true
+  write_tables:
+  - promotion_discount_application
+  - promotion_user_coupon
+  - promotion_coupon_stock
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appPromotionDiscountApplicationsRelease
+  operation_id: promotions.discountApplications.release
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/discount_applications/{applicationId}/releases
+  sdk_domain: promotion
+  summary: Promotion Discount Application Release
+  description: Releases a reserved discount after checkout timeout or order cancellation.
+  read_sources:
+  - promotion_discount_application
+  - promotion_user_coupon
+  - promotion_budget_account
+  idempotency_required: true
+  write_tables:
+  - promotion_discount_application
+  - promotion_user_coupon
+  - promotion_coupon_stock
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appPromotionDiscountApplicationReversalsCreate
+  operation_id: promotions.discountApplications.reversals.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/discount_applications/reversals
+  sdk_domain: promotion
+  summary: Promotion Discount Application Reversal Create
+  description: Reverses settled or applied discounts during refund and uses immutable allocation rows.
+  read_sources:
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_user_coupon
+  - promotion_budget_account
+  idempotency_required: true
+  write_tables:
+  - promotion_discount_application
+  - promotion_user_coupon
+  - promotion_coupon_stock
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /console/wallet
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  operation: redeemCode
+  operation_id: console.promotionCodeRedemptions.create
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/promotions/codes/redemptions
+  read_sources:
+  - promotion_offer
+  - promotion_code
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  write_tables:
+  - promotion_code_redemption
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_coupon_ledger_entry
+  - promotion_event_outbox
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false

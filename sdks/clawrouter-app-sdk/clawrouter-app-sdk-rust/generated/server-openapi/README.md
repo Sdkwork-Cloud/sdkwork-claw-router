@@ -34,7 +34,7 @@ Choose exactly one mode for the same client instance.
 ```rust
 let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
 client.set_api_key("your-api-key");
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -45,7 +45,7 @@ client.set_auth_token("your-auth-token");
 client.set_access_token("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
@@ -59,27 +59,37 @@ client.set_header("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.commerce()` - commerce API
 - `client.agents()` - agents API
 - `client.ai()` - ai API
 - `client.auth()` - auth API
-- `client.billing()` - billing API
 - `client.chat()` - chat API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.memory()` - memory API
 - `client.notification()` - notification API
+- `client.open_platform()` - open_platform API
 - `client.platform()` - platform API
-- `client.runtime()` - runtime API
 - `client.system()` - system API
+- `client.runtime()` - runtime API
+- `client.sdk_reference()` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```rust
+// Accounts Current Summary Retrieve
+let result = client.commerce().accounts_current_summary_retrieve().await?;
+println!("{result:?}");
+```
 
 ### agents
 
 ```rust
 use std::collections::HashMap;
-// List user agents
+// List Playground agent definitions
 let mut query = HashMap::new();
 query.insert("page".to_string(), serde_json::json!(1));
 query.insert("page_size".to_string(), serde_json::json!(2));
@@ -101,14 +111,6 @@ println!("{result:?}");
 ```rust
 // Retrieve current IAM session
 let result = client.auth().sessions_current_retrieve().await?;
-println!("{result:?}");
-```
-
-### billing
-
-```rust
-// Retrieve account points
-let result = client.billing().account_points_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -174,11 +176,32 @@ let result = client.notification().notifications_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
+### open_platform
+
+```rust
+use clawrouter_app_sdk::*;
+// Create open platform QR auth session
+let body = OpenPlatformQrAuthSessionCreateRequest {
+    purpose: "login".to_string(),
+    ..Default::default()
+};
+let result = client.open_platform().qr_auth_sessions_create(&body).await?;
+println!("{result:?}");
+```
+
 ### platform
 
 ```rust
 // Get categories
 let result = client.platform().apps_store_categories_list().await?;
+println!("{result:?}");
+```
+
+### system
+
+```rust
+// Retrieve public IAM verification policy
+let result = client.system().iam_verification_policy_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -199,15 +222,18 @@ let result = client.runtime().invocations_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
-### system
+### sdk_reference
 
 ```rust
-use std::collections::HashMap;
-// Retrieve public site runtime branding settings
-let mut query = HashMap::new();
-query.insert("tenant_code".to_string(), serde_json::json!("ok"));
-query.insert("organization_code".to_string(), serde_json::json!("ok"));
-let result = client.system().site_runtime_retrieve(Some(&query)).await?;
+use clawrouter_app_sdk::*;
+// Generate SDK archive
+let body = SdkReferenceArchiveGenerateRequest {
+    config: serde_json::json!({"apiPrefix":"apiprefix","apiSpecPath":"apispecpath","author":"author","baseUrl":"baseurl","description":"description","language":"language","license":"license","name":"name","outputPath":"outputpath","packageName":"name","sdkType":"sdktype","version":"version"}),
+    language: "language".to_string(),
+    spec: serde_json::json!({"value":"value"}),
+    ..Default::default()
+};
+let result = client.sdk_reference().archives_create(&body).await?;
 println!("{result:?}");
 ```
 

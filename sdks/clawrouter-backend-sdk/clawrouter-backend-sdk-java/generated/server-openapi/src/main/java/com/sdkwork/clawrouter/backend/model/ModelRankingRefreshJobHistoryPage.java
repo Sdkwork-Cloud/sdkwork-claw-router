@@ -8,7 +8,7 @@ public class ModelRankingRefreshJobHistoryPage {
     public List<ModelRankingRefreshJobItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<ModelRankingRefreshJobItem> items) {
         this.items = items;
     }

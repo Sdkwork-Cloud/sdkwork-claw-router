@@ -7,7 +7,7 @@ public class GoogleEmptyResponse {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

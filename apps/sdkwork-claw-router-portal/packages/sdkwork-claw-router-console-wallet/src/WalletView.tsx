@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { AlertCircle, CheckCircle2, Gift, Link as LinkIcon, RefreshCw, Wallet, Zap } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Gift, Link as LinkIcon, Wallet, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BusinessStatePanel, BusinessStateTableRow } from 'sdkwork-claw-router-commons';
+import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { AccountService, type AccountStats } from 'sdkwork-claw-router-console-account';
-import { RechargePanel } from 'sdkwork-claw-router-console-recharge';
-import { WalletService, type RedeemHistoryItem } from './walletService';
+import { RechargePanel, RechargeRecordsTabs } from 'sdkwork-claw-router-console-recharge';
+import { WalletService } from './walletService';
 
 import { useTranslation } from 'react-i18next';
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
@@ -40,10 +40,7 @@ export function WalletView() {
   const [accountLoadError, setAccountLoadError] = useState<string | null>(null);
   const [redeemSuccessMsg, setRedeemSuccessMsg] = useState('');
   const [redeemErrorMsg, setRedeemErrorMsg] = useState('');
-  const [redeemHistory, setRedeemHistory] = useState<RedeemHistoryItem[]>([]);
-  const [loadingHistory, setLoadingHistory] = useState(true);
-  const [historyLoadError, setHistoryLoadError] = useState<string | null>(null);
-  const loadError = accountLoadError || (activeTab === 'redeem' ? historyLoadError : null);
+  const [recordsRefreshSeed, setRecordsRefreshSeed] = useState(0);
 
   const loadAccountSummary = useCallback(async (isActive: () => boolean = () => true) => {
     setAccountLoading(true);
@@ -64,34 +61,6 @@ export function WalletView() {
       }
     }
   }, [t]);
-
-  const loadHistory = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoadingHistory(true);
-    setHistoryLoadError(null);
-    try {
-      const data = await WalletService.fetchRedeemHistory();
-      if (isActive()) {
-        setRedeemHistory(data);
-      }
-    } catch (error) {
-      if (isActive()) {
-        setHistoryLoadError(getWalletErrorMessage(error, t('console.billing.historyLoadError', '账单记录加载失败'), t));
-        setRedeemHistory([]);
-      }
-    } finally {
-      if (isActive()) {
-        setLoadingHistory(false);
-      }
-    }
-  }, [t]);
-
-  useEffect(() => {
-    let active = true;
-    void loadHistory(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadHistory]);
 
   useEffect(() => {
     let active = true;
@@ -117,7 +86,8 @@ export function WalletView() {
       if (res.success) {
         setRedeemSuccessMsg(res.message);
         setRedeemCode('');
-        await Promise.all([loadAccountSummary(), loadHistory()]);
+        await loadAccountSummary();
+        setRecordsRefreshSeed(seed => seed + 1);
       } else {
         setRedeemErrorMsg(getWalletMessageText(res.message, t('console.billing.errors.redeemFallback', '兑换码处理失败。'), t));
       }
@@ -130,16 +100,9 @@ export function WalletView() {
 
   return (
     <div
-      data-business-state={loadError ? 'error' : undefined}
-      className="p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]"
+      data-business-state={accountLoadError ? 'error' : undefined}
+      className="w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212]"
     >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4">
-        <div className="flex items-center gap-2">
-          <Wallet className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t("console.billing.billingview.text.gd62li", "充值兑换")}</h1>
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         <div className="xl:col-span-2 space-y-6">
           <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl p-6 shadow-sm overflow-hidden relative border-t-4 border-t-lobster-500">
@@ -315,104 +278,7 @@ export function WalletView() {
         </div>
       </div>
 
-      {activeTab === 'redeem' ? (
-        <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm overflow-hidden mt-6">
-          <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 p-4 sm:px-6">
-            <h2 className="text-sm font-semibold text-slate-800 dark:text-white">
-              {t('console.billing.redeemHistoryTitle', '兑换记录')}
-            </h2>
-            <button onClick={() => { void loadHistory(); }} disabled={loadingHistory} className="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors flex items-center gap-1.5 text-xs">
-              <RefreshCw className={`w-3.5 h-3.5 ${loadingHistory ? 'animate-spin' : ''}`} /> {t("console.billing.billingview.text.12qo56a", "刷新")}</button>
-          </div>
-
-          <RedeemHistoryTable
-            loadingHistory={loadingHistory}
-            historyLoadError={historyLoadError}
-            redeemHistory={redeemHistory}
-            loadHistory={loadHistory}
-            t={t}
-          />
-        </div>
-      ) : null}
+      <RechargeRecordsTabs refreshSignal={recordsRefreshSeed} />
     </div>
   );
-}
-
-function RedeemHistoryTable({
-  loadingHistory,
-  historyLoadError,
-  redeemHistory,
-  loadHistory,
-  t,
-}: {
-  loadingHistory: boolean;
-  historyLoadError: string | null;
-  redeemHistory: RedeemHistoryItem[];
-  loadHistory: () => Promise<void>;
-  t: ReturnType<typeof useTranslation>['t'];
-}) {
-  return (
-    <div className="overflow-x-auto min-h-[300px]">
-      <table className="w-full text-left text-sm whitespace-nowrap">
-        <thead className="bg-slate-50 dark:bg-[#1e1e1e]/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/5 text-xs">
-          <tr>
-            <th className="px-6 py-3 font-medium">{t("console.billing.billingview.text.1j0afxi", "卡密 (Code)")}</th>
-            <th className="px-6 py-3 font-medium">{t("admin.finance.index.text.1jl9r8z", "金额")}</th>
-            <th className="px-6 py-3 font-medium">{t("admin.finance.index.text.1ccx4t4", "状态")}</th>
-            <th className="px-6 py-3 font-medium">{t("admin.marketing.index.text.1k661o0", "兑换时间")}</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-slate-100 dark:divide-white/5 text-slate-700 dark:text-slate-300 text-xs">
-          {loadingHistory ? (
-            <BusinessStateTableRow colSpan={4} kind="loading" title={t('console.billing.loadingRedeemHistory', '正在加载兑换记录...')} />
-          ) : historyLoadError ? (
-            <BusinessStateTableRow
-              colSpan={4}
-              kind="error"
-              title={t('console.billing.redeemHistoryLoadFailed', '兑换记录加载失败')}
-              description={historyLoadError}
-              onRetry={() => { void loadHistory(); }}
-            />
-          ) : redeemHistory.length > 0 ? (
-            redeemHistory.map(item => (
-              <tr key={item.id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors">
-                <td className="px-6 py-3 font-mono text-slate-800 dark:text-slate-300">{item.code}</td>
-                <td className="px-6 py-3 font-medium text-emerald-500 dark:text-emerald-400">+{formatMoneyAmount(item.amount)} USD</td>
-                <td className="px-6 py-3">
-                  <span className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 px-2 py-0.5 rounded text-[10px]">
-                    {item.status === 'success' ? t("console.billing.billingview.text.11zp40j", "兑换成功") : t("console.billing.billingview.text.12db3qz", "失败")}
-                  </span>
-                </td>
-                <td className="px-6 py-3 text-slate-500 dark:text-slate-400">{item.date}</td>
-              </tr>
-            ))
-          ) : (
-            <BusinessStateTableRow
-              colSpan={4}
-              kind="empty"
-              title={t('console.billing.noRedeemHistory', '暂无兑换记录')}
-              description={t('console.billing.redeemHistoryHint', '兑换成功后会在这里显示记录。')}
-            />
-          )}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function moneyCents(amount: string): number {
-  const value = amount.trim();
-  if (!/^\d+(?:\.\d{1,2})?$/.test(value)) {
-    return 0;
-  }
-  const [whole, fraction = ''] = value.split('.');
-  const cents = Number.parseInt(whole, 10) * 100 + Number.parseInt(fraction.padEnd(2, '0'), 10);
-  return Number.isSafeInteger(cents) ? cents : 0;
-}
-
-function formatMoneyAmount(amount: string): string {
-  const cents = moneyCents(amount);
-  const whole = Math.floor(cents / 100);
-  const fraction = String(cents % 100).padStart(2, '0');
-  return `${whole}.${fraction}`;
 }

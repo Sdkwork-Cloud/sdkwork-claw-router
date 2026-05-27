@@ -10,7 +10,7 @@ public class OpenAiEmbedding {
     public List<Double> getEmbedding() {
         return this.embedding;
     }
-    
+
     public void setEmbedding(List<Double> embedding) {
         this.embedding = embedding;
     }
@@ -18,7 +18,7 @@ public class OpenAiEmbedding {
     public Integer getIndex() {
         return this.index;
     }
-    
+
     public void setIndex(Integer index) {
         this.index = index;
     }
@@ -26,7 +26,7 @@ public class OpenAiEmbedding {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

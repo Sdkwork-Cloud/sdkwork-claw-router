@@ -9,7 +9,7 @@ public class GoogleFunctionResponse {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -17,7 +17,7 @@ public class GoogleFunctionResponse {
     public Map<String, Object> getResponse() {
         return this.response;
     }
-    
+
     public void setResponse(Map<String, Object> response) {
         this.response = response;
     }

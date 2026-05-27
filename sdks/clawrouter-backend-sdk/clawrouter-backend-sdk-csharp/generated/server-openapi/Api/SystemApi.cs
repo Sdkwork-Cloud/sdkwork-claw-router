@@ -16,6 +16,150 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// Promotion Budget Ledger Entries List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsBudgetLedgerEntriesListResult?> PromotionsBudgetLedgerEntriesListAsync(string? budgetAccountId = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("budget_account_id", budgetAccountId, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsBudgetLedgerEntriesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/budget_ledger_entries"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Coupon Codes List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsCodesListResult?> PromotionsCodesListAsync(int? page = null, int? pageSize = null, string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsCodesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/codes"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Coupon Code Redemptions List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsCodesRedemptionsListResult?> PromotionsCodesRedemptionsListAsync(int? page = null, int? pageSize = null, string? codeStatus = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+                new QueryParameterSpec("code_status", codeStatus, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsCodesRedemptionsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/codes/redemptions"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Coupon Ledger Entries List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsCouponLedgerEntriesListResult?> PromotionsCouponLedgerEntriesListAsync(string? stockId = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("stock_id", stockId, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsCouponLedgerEntriesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/coupon_ledger_entries"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Coupon Stocks List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsCouponStocksListResult?> PromotionsCouponStocksListAsync(int? page = null, int? pageSize = null, string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsCouponStocksListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/coupon_stocks"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Discount Allocations List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsDiscountAllocationsListResult?> PromotionsDiscountAllocationsListAsync(string? applicationId = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("application_id", applicationId, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsDiscountAllocationsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/discount_allocations"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Discount Applications List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsDiscountApplicationsListResult?> PromotionsDiscountApplicationsListAsync(int? page = null, int? pageSize = null, string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsDiscountApplicationsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/discount_applications"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Events List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsEventsListResult?> PromotionsEventsListAsync(string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsEventsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/events"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion External Bindings List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsExternalBindingsListResult?> PromotionsExternalBindingsListAsync(string? platform = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("platform", platform, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsExternalBindingsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/external_bindings"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion Offers List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsOffersManagementListResult?> PromotionsOffersManagementListAsync(int? page = null, int? pageSize = null, string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsOffersManagementListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/offers"), queryString));
+        }
+
+        /// <summary>
+        /// Promotion User Coupons Management List
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PromotionsUserCouponsManagementListResult?> PromotionsUserCouponsManagementListAsync(int? page = null, int? pageSize = null, string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PromotionsUserCouponsManagementListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/promotions/user_coupons"), queryString));
+        }
+
+        /// <summary>
         /// List overview
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.AnalyticsAdminOverviewRetrieveResult?> AnalyticsAdminOverviewRetrieveAsync(string? timeRange = null, string? startTime = null, string? endTime = null, int? limit = null)
@@ -284,6 +428,51 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("model", model, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.RecordsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/system/records"), queryString));
+        }
+
+        /// <summary>
+        /// List service nodes
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServiceNodesListResult?> ServiceNodesListAsync(string? q = null, string? status = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("q", q, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ServiceNodesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/system/service_nodes"), queryString));
+        }
+
+        /// <summary>
+        /// Create service node
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServiceNodesCreateResult?> ServiceNodesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminServiceNodeCreateRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ServiceNodesCreateResult>(ApiPaths.BackendPath("/system/service_nodes"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Delete service node
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServiceNodesDeleteResult?> ServiceNodesDeleteAsync(string nodeId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.ServiceNodesDeleteResult>(ApiPaths.BackendPath($"/system/service_nodes/{SerializePathParameter(nodeId, new PathParameterSpec("nodeId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Update service node
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServiceNodesUpdateResult?> ServiceNodesUpdateAsync(string nodeId, Sdkwork.ClawRouter.Backend.Models.AdminServiceNodeUpdateRequest body)
+        {
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ServiceNodesUpdateResult>(ApiPaths.BackendPath($"/system/service_nodes/{SerializePathParameter(nodeId, new PathParameterSpec("nodeId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Update service node status
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServiceNodesStatusUpdateResult?> ServiceNodesStatusUpdateAsync(string nodeId, Sdkwork.ClawRouter.Backend.Models.AdminServiceNodeStatusUpdateRequest body)
+        {
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ServiceNodesStatusUpdateResult>(ApiPaths.BackendPath($"/system/service_nodes/{SerializePathParameter(nodeId, new PathParameterSpec("nodeId", "simple", false))}/status"), body, null, null, "application/json");
         }
 
         /// <summary>

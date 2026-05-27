@@ -51,7 +51,7 @@ test("user-center validation node contract exports canonical package identity an
   assert.equal(plugin.dependency.providerKey, "router-remote");
   assert.equal(plugin.dependency.activeIntegrationKind, "sdkwork-cloud-app-api");
   assert.equal(plugin.validation.authMode, "upstream-app-api-token-bridge");
-  assert.equal(plugin.validation.validationStrategy, "auth-Sdkwork-Access-Token");
+  assert.equal(plugin.validation.validationStrategy, "dual-token");
   assert.deepEqual(plugin.validation.secretResolution, {
     organizationClaimKey: "organizationId",
     resolverKind: "upstream-secret-bridge",
@@ -64,7 +64,7 @@ test("user-center validation node contract exports canonical package identity an
   assert.equal(plugin.validation.cachePolicy.unverifiedClaimsTtlMs, 30000);
   assert.deepEqual(plugin.validation.governedHeaderNames, [
     "Authorization",
-    "Sdkwork-Access-Token",
+    "Access-Token",
     "Refresh-Token",
     "x-sdkwork-user-center-session-id",
     "x-sdkwork-app-id",
@@ -128,7 +128,7 @@ test("user-center validation node contract resolves and requires protected token
     resolveUserCenterProtectedToken({
       providedToken: "session-token",
       tokenBundle: {
-        accessToken: "Sdkwork-Access-Token",
+        accessToken: "Access-Token",
         authToken: "auth-token",
         sessionToken: "session-token",
       },
@@ -139,10 +139,10 @@ test("user-center validation node contract resolves and requires protected token
   assert.equal(
     resolveUserCenterProtectedToken({
       tokenBundle: {
-        accessToken: "Sdkwork-Access-Token",
+        accessToken: "Access-Token",
       },
     }),
-    "Sdkwork-Access-Token",
+    "Access-Token",
   );
 
   assert.equal(

@@ -180,7 +180,7 @@ export function DashboardView() {
   const maxModelRequests = snapshot.topModels[0]?.requests ?? 0;
 
   return (
-    <div className="min-h-[calc(100vh-72px)] w-full space-y-5 bg-slate-50 px-4 pb-4 pt-2 text-slate-800 dark:bg-[#121212] dark:text-slate-100 lg:px-6 lg:pb-6 lg:pt-3">
+    <div className="min-h-[calc(100vh-72px)] w-full space-y-5 bg-slate-50 p-[5px] text-slate-800 dark:bg-[#121212] dark:text-slate-100">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard
           icon={<Wallet className="h-4 w-4 text-blue-500" />}
@@ -412,14 +412,16 @@ export function DashboardView() {
                 <Server className="h-4 w-4 text-sky-500" /> {t("console.dashboard.dashboardview.text.configInfo", "配置信息")}
               </h3>
               <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-300">
-                {t("console.dashboard.dashboardview.text.domainCount", "{{count}} 个域名", { count: snapshot.configurationDomains.length })}
+                {t("console.dashboard.dashboardview.text.domainCount", "{{count}} 个服务节点", { count: snapshot.configurationDomains.length })}
               </span>
             </div>
             <div className="overflow-x-auto">
-              <div className="min-w-[500px]">
-              <div className="grid grid-cols-[minmax(72px,0.8fr)_minmax(120px,1.25fr)_minmax(72px,0.85fr)_auto_auto] items-center gap-2 border-b border-slate-100 bg-slate-50/70 px-3 py-2 text-[11px] font-semibold text-slate-400 dark:border-white/5 dark:bg-white/[0.02] dark:text-slate-500">
+              <div className="min-w-[680px]">
+              <div className="grid grid-cols-[minmax(72px,0.75fr)_minmax(120px,1.15fr)_minmax(88px,0.8fr)_minmax(72px,0.65fr)_minmax(72px,0.75fr)_auto_auto] items-center gap-2 border-b border-slate-100 bg-slate-50/70 px-3 py-2 text-[11px] font-semibold text-slate-400 dark:border-white/5 dark:bg-white/[0.02] dark:text-slate-500">
                 <span>{t("console.dashboard.dashboardview.text.configName", "名称")}</span>
                 <span>{t("console.dashboard.dashboardview.text.configDomain", "域名")}</span>
+                <span>{t("console.dashboard.dashboardview.text.configIp", "IP")}</span>
+                <span>{t("console.dashboard.dashboardview.text.configStatus", "状态")}</span>
                 <span>{t("console.dashboard.dashboardview.text.configRemark", "备注")}</span>
                 <span className="text-right">{t("console.dashboard.dashboardview.text.speedTest", "测速")}</span>
                 <span className="text-right">{t("common.actions.actions", "操作")}</span>
@@ -428,14 +430,27 @@ export function DashboardView() {
               {snapshot.configurationDomains.map((item) => {
                 const speedState = domainSpeedStates[item.id];
                 const speedLabel = formatConfigurationDomainSpeedState(speedState, t);
+                const nodeStatusLabel = formatConfigurationDomainStatus(item.status, t);
                 return (
-                  <div key={item.id} className="grid grid-cols-[minmax(72px,0.8fr)_minmax(120px,1.25fr)_minmax(72px,0.85fr)_auto_auto] items-center gap-2 px-3 py-2.5">
+                  <div key={item.id} className="grid grid-cols-[minmax(72px,0.75fr)_minmax(120px,1.15fr)_minmax(88px,0.8fr)_minmax(72px,0.65fr)_minmax(72px,0.75fr)_auto_auto] items-center gap-2 px-3 py-2.5">
                     <div className="min-w-0 truncate text-sm font-semibold text-slate-800 dark:text-slate-100" title={item.name}>
                       {item.name}
                     </div>
                     <div className="min-w-0 truncate font-mono text-xs text-slate-600 dark:text-slate-300" title={item.domain}>
                       {item.domain}
                     </div>
+                    <div
+                      className="min-w-0 truncate font-mono text-xs text-slate-500 dark:text-slate-400"
+                      title={item.ip || t("console.dashboard.dashboardview.text.noConfigIp", "未配置 IP")}
+                    >
+                      {item.ip || t("console.dashboard.dashboardview.text.noConfigIp", "未配置 IP")}
+                    </div>
+                    <span
+                      className={`w-fit whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-semibold ${configurationStatusClassName(item.status)}`}
+                      title={nodeStatusLabel}
+                    >
+                      {nodeStatusLabel}
+                    </span>
                     <div
                       className="min-w-0 truncate text-xs text-slate-500 dark:text-slate-400"
                       title={item.remark || t("console.dashboard.dashboardview.text.noConfigRemark", "未配置备注")}
@@ -630,6 +645,34 @@ function formatConfigurationDomainSpeedState(
     return t("console.dashboard.dashboardview.text.speedMs", "{{value}} ms", { value: state.latencyMs });
   }
   return state.message || t("console.dashboard.dashboardview.text.speedFailed", "测速失败");
+}
+
+function formatConfigurationDomainStatus(status: string, t: TranslationFunction): string {
+  const normalized = status.toLowerCase();
+  if (normalized === 'online') {
+    return t("console.dashboard.dashboardview.text.statusOnline", "在线");
+  }
+  if (normalized === 'warning') {
+    return t("console.dashboard.dashboardview.text.statusWarning", "告警");
+  }
+  if (normalized === 'offline') {
+    return t("console.dashboard.dashboardview.text.statusOffline", "离线");
+  }
+  return t("console.dashboard.dashboardview.text.statusUnknown", "未知");
+}
+
+function configurationStatusClassName(status: string): string {
+  const normalized = status.toLowerCase();
+  if (normalized === 'online') {
+    return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300';
+  }
+  if (normalized === 'warning') {
+    return 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300';
+  }
+  if (normalized === 'offline') {
+    return 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-300';
+  }
+  return 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-300';
 }
 
 function configurationSpeedClassName(state: ConfigurationDomainSpeedState | undefined): string {

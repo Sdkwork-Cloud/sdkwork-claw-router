@@ -20,7 +20,7 @@ public class IamAuditEventRecord {
     public String getAction() {
         return this.action;
     }
-    
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -28,7 +28,7 @@ public class IamAuditEventRecord {
     public String getActorUserId() {
         return this.actorUserId;
     }
-    
+
     public void setActorUserId(String actorUserId) {
         this.actorUserId = actorUserId;
     }
@@ -36,7 +36,7 @@ public class IamAuditEventRecord {
     public String getAppId() {
         return this.appId;
     }
-    
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -44,7 +44,7 @@ public class IamAuditEventRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -52,7 +52,7 @@ public class IamAuditEventRecord {
     public Map<String, String> getDetailJson() {
         return this.detailJson;
     }
-    
+
     public void setDetailJson(Map<String, String> detailJson) {
         this.detailJson = detailJson;
     }
@@ -60,7 +60,7 @@ public class IamAuditEventRecord {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -68,7 +68,7 @@ public class IamAuditEventRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -76,7 +76,7 @@ public class IamAuditEventRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -84,7 +84,7 @@ public class IamAuditEventRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -92,7 +92,7 @@ public class IamAuditEventRecord {
     public String getResourceId() {
         return this.resourceId;
     }
-    
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -100,7 +100,7 @@ public class IamAuditEventRecord {
     public String getResourceType() {
         return this.resourceType;
     }
-    
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -108,7 +108,7 @@ public class IamAuditEventRecord {
     public String getShardingKey() {
         return this.shardingKey;
     }
-    
+
     public void setShardingKey(String shardingKey) {
         this.shardingKey = shardingKey;
     }
@@ -116,7 +116,7 @@ public class IamAuditEventRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

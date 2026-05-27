@@ -13,7 +13,7 @@ public class AgentsApi {
         this.client = client;
     }
 
-    /** List user agents */
+    /** List Playground agent definitions */
     public AgentDefinitionsListResult agentDefinitionsList(Integer page, Integer pageSize, String q) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
@@ -24,7 +24,7 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentDefinitionsListResult>() {});
     }
 
-    /** Create user agent */
+    /** Create Playground agent definition */
     public AgentDefinitionsCreateResult agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
@@ -34,13 +34,13 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentDefinitionsCreateResult>() {});
     }
 
-    /** Retrieve agent run */
+    /** Retrieve Playground agent run */
     public AgentRunsRetrieveResult agentRunsRetrieve(String runId) throws Exception {
         Object raw = client.get(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AgentRunsRetrieveResult>() {});
     }
 
-    /** Complete agent run */
+    /** Complete Playground agent run */
     public AgentRunsSubmitResult agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
@@ -50,7 +50,7 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentRunsSubmitResult>() {});
     }
 
-    /** List agent run steps */
+    /** List Playground agent run steps */
     public AgentRunStepsListResult agentRunStepsList(String runId, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
@@ -60,7 +60,7 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentRunStepsListResult>() {});
     }
 
-    /** Create agent run step */
+    /** Create Playground agent run step */
     public AgentRunStepsCreateResult agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
@@ -70,7 +70,7 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentRunStepsCreateResult>() {});
     }
 
-    /** Complete agent run step */
+    /** Complete Playground agent run step */
     public AgentRunStepsSubmitResult agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
@@ -80,13 +80,13 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentRunStepsSubmitResult>() {});
     }
 
-    /** Retrieve agent session */
+    /** Retrieve Playground agent session */
     public AgentSessionsRetrieveResult agentSessionsRetrieve(String sessionId) throws Exception {
         Object raw = client.get(ApiPaths.appPath("/agents/sessions/" + serializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AgentSessionsRetrieveResult>() {});
     }
 
-    /** List agent session runs */
+    /** List Playground agent runs */
     public AgentRunsListResult agentRunsList(String sessionId, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
@@ -96,7 +96,7 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentRunsListResult>() {});
     }
 
-    /** Create agent run */
+    /** Create Playground agent run */
     public AgentRunsCreateResult agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
@@ -106,13 +106,13 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentRunsCreateResult>() {});
     }
 
-    /** Retrieve user agent */
+    /** Retrieve Playground agent definition */
     public AgentDefinitionsRetrieveResult agentDefinitionsRetrieve(String agentId) throws Exception {
         Object raw = client.get(ApiPaths.appPath("/agents/" + serializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AgentDefinitionsRetrieveResult>() {});
     }
 
-    /** List agent sessions */
+    /** List Playground agent sessions */
     public AgentSessionsListResult agentSessionsList(String agentId, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
@@ -122,7 +122,7 @@ public class AgentsApi {
         return client.convertValue(raw, new TypeReference<AgentSessionsListResult>() {});
     }
 
-    /** Create agent session */
+    /** Create Playground agent session */
     public AgentSessionsCreateResult agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),

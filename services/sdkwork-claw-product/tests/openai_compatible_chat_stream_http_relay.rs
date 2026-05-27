@@ -20,7 +20,7 @@ struct CapturedUpstreamRequest {
 }
 
 #[tokio::test]
-async fn openai_compatible_chat_stream_relay_posts_provider_model_and_passes_through_sse_body() {
+async fn openai_compatible_chat_stream_relay_uses_provider_model_and_passes_through_sse_body() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
         .route("/v1/chat/completions", post(capture_chat_stream))
@@ -35,6 +35,16 @@ async fn openai_compatible_chat_stream_relay_posts_provider_model_and_passes_thr
         UpstreamProviderEndpoint::new(format!("http://{addr}"), "sk-upstream-provider-secret")
             .unwrap();
     let relay = OpenAiCompatibleChatCompletionStreamRelay::new(endpoint);
+    let request_body = json!({
+        "model": "openai/global/gpt-4o-mini",
+        "messages": [{"role": "user", "content": "ping"}],
+        "temperature": 0.2,
+        "stream": true,
+        "stream_options": {
+            "include_usage": false,
+            "provider_metadata": "keep"
+        }
+    });
     let response = relay
         .create_chat_completion_stream(ChatCompletionRelayRequest {
             api_key_id: 101,
@@ -47,21 +57,13 @@ async fn openai_compatible_chat_stream_relay_posts_provider_model_and_passes_thr
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
-            provider_model: "openai/global/gpt-4o-mini".to_owned(),
+            provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "gpt-4o-mini",
-                "messages": [{"role": "user", "content": "ping"}],
-                "stream": true,
-                "stream_options": {
-                    "include_usage": false,
-                    "provider_metadata": "keep"
-                }
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -81,14 +83,9 @@ async fn openai_compatible_chat_stream_relay_posts_provider_model_and_passes_thr
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
-    assert_eq!(true, captured[0].body["stream"]);
-    assert_eq!(true, captured[0].body["stream_options"]["include_usage"]);
-    assert_eq!(
-        "keep",
-        captured[0].body["stream_options"]["provider_metadata"]
-    );
-    assert_eq!("ping", captured[0].body["messages"][0]["content"]);
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("gpt-4o-mini");
+    assert_eq!(expected_body, captured[0].body);
 }
 
 #[tokio::test]

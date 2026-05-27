@@ -7,7 +7,7 @@ public class AdminProviderSecretMutationResponse {
     public AdminProviderSecretItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminProviderSecretItem item) {
         this.item = item;
     }

@@ -9,11 +9,6 @@ import {
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 
-export async function backendRechargesPackagesList(params?: Parameters<BackendCommerce['recharges']['packages']['list']>[0]) {
-  const result = await getClawRouterBackendSdkClient().commerce.recharges.packages.list(params);
-  return readRequiredRechargeItems(result, 'Recharge package records are required');
-}
-
 export async function backendRechargesOrdersList(params?: Parameters<BackendCommerce['recharges']['orders']['list']>[0]) {
   const result = await getClawRouterBackendSdkClient().commerce.recharges.orders.list(params);
   return readRequiredRechargeItems(result, 'Recharge order records are required');

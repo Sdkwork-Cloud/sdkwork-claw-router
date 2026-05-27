@@ -6,10 +6,9 @@ use sqlx::{PgPool, Postgres, Row, Transaction};
 use crate::read_model::is_missing_postgres_read_model;
 use crate::shared::{
     benefits_for_plan, build_package_group_from_packages, decimal_string,
-    map_membership_package_record, method_alias, normalize_payment_method,
-    parse_membership_plan_benefit_json, parse_points_amount, plan_code_from_rank,
-    plan_rank_from_code, privilege_usage_from_benefits, ParsedMembershipPackage,
-    StoredMembershipPlan, POINTS_ASSET_TYPE, POINTS_CURRENCY_CODE,
+    map_membership_package_record, method_alias, normalize_payment_method, parse_points_amount,
+    plan_code_from_rank, plan_rank_from_code, privilege_usage_from_benefits,
+    ParsedMembershipPackage, StoredMembershipPlan, POINTS_ASSET_TYPE, POINTS_CURRENCY_CODE,
 };
 use crate::{
     AdminMembershipEntitlementItem, AdminMembershipFuture, AdminMembershipMemberItem,
@@ -33,15 +32,34 @@ use crate::{
 
 const LOAD_MEMBERSHIP_PLANS: &str = r#"
 SELECT
-    id,
-    plan_no AS plan_no,
-    name,
-    benefits_json AS benefit_json
-FROM commerce_membership_plan
-WHERE (tenant_id = '0' OR tenant_id IS NULL)
-  AND (organization_id = '0' OR organization_id IS NULL)
-  AND status = 'active'
-ORDER BY rank ASC, plan_no ASC, id ASC
+    p.id,
+    p.plan_no AS plan_no,
+    p.name,
+    CAST(p.rank AS BIGINT) AS rank,
+    p.description,
+    b.id AS plan_benefit_id,
+    b.benefit_code,
+    CAST(b.grant_quantity AS TEXT) AS grant_quantity,
+    b.usage_policy,
+    d.name AS benefit_name,
+    d.benefit_type,
+    d.description AS benefit_description
+FROM membership_plan p
+LEFT JOIN membership_plan_version v
+    ON v.plan_id = p.id
+   AND v.tenant_id = p.tenant_id
+   AND v.lifecycle_status = 'published'
+LEFT JOIN membership_plan_benefit b
+    ON b.plan_version_id = v.id
+   AND b.tenant_id = p.tenant_id
+   AND b.status = 'active'
+LEFT JOIN benefit_definition d
+    ON d.id = b.benefit_id
+   AND d.tenant_id = b.tenant_id
+WHERE (p.tenant_id = '0' OR p.tenant_id IS NULL)
+  AND (p.organization_id = '0' OR p.organization_id IS NULL)
+  AND p.status = 'active'
+ORDER BY p.rank ASC, p.plan_no ASC, b.sort_weight ASC, b.id ASC
 "#;
 
 const LOAD_MEMBERSHIP_PACKAGES: &str = r#"
@@ -55,7 +73,7 @@ SELECT
     CAST(p.duration_days AS BIGINT) AS duration_days,
     CAST(COALESCE(p.sort_weight, 0) AS BIGINT) AS sort_weight,
     CAST(COALESCE(p.recommended, 0) AS BIGINT) AS recommended,
-    COALESCE(p.tags_json, '[]') AS tags_json,
+    '[]' AS tags_json,
     p.id AS package_storage_id,
     p.package_group_id AS package_group_storage_id,
     p.plan_id AS plan_storage_id,
@@ -67,10 +85,10 @@ SELECT
     l.plan_no AS plan_no,
     l.name AS plan_name,
     CAST(l.rank AS BIGINT) AS rank
-FROM commerce_membership_package p
-JOIN commerce_membership_package_group g
+FROM membership_package p
+JOIN membership_package_group g
     ON g.id = p.package_group_id
-LEFT JOIN commerce_membership_plan l
+LEFT JOIN membership_plan l
     ON l.id = p.plan_id
 WHERE (p.tenant_id = '0' OR p.tenant_id IS NULL)
   AND (p.organization_id = '0' OR p.organization_id IS NULL)
@@ -90,10 +108,10 @@ SELECT
     CAST(m.expires_at AS TEXT) AS expires_at,
     l.plan_no AS plan_no,
     l.name AS plan_name,
-    l.benefits_json AS benefit_json,
+    CAST(l.rank AS BIGINT) AS rank,
     CAST(COALESCE(ab.payable_amount, pi.amount, '0') AS TEXT) AS total_spent
-FROM commerce_membership m
-LEFT JOIN commerce_membership_plan l
+FROM membership_subscription m
+LEFT JOIN membership_plan l
     ON l.id = m.plan_id
 LEFT JOIN commerce_order_amount_breakdown ab
     ON ab.order_id = m.source_order_id
@@ -101,7 +119,8 @@ LEFT JOIN commerce_payment_intent pi
     ON pi.id = m.source_payment_intent_id
 WHERE m.tenant_id = CAST($1 AS TEXT)
   AND (m.organization_id IS NULL OR m.organization_id = CAST($2 AS TEXT))
-  AND m.owner_user_id = CAST($3 AS TEXT)
+  AND m.subject_type = 'user'
+  AND m.subject_id = CAST($3 AS TEXT)
 ORDER BY m.created_at DESC NULLS LAST, m.id DESC
 LIMIT 1
 "#;
@@ -516,11 +535,34 @@ async fn list_admin_membership_plans(
 ) -> AppMembershipResult<Vec<AdminMembershipPlanItem>> {
     let rows = sqlx::query(
         r#"
-        SELECT id, plan_no AS plan_no, name, CAST(rank AS BIGINT) AS rank, benefits_json AS benefit_json, status
-        FROM commerce_membership_plan
-        WHERE (tenant_id = '0' OR tenant_id = CAST($1 AS TEXT))
-          AND ($2 IS NULL OR status = $2)
-        ORDER BY rank ASC, plan_no ASC, id ASC
+        SELECT
+            p.id,
+            p.plan_no AS plan_no,
+            p.name,
+            CAST(p.rank AS BIGINT) AS rank,
+            p.status,
+            b.id AS plan_benefit_id,
+            b.benefit_code,
+            CAST(b.grant_quantity AS TEXT) AS grant_quantity,
+            b.usage_policy,
+            d.name AS benefit_name,
+            d.benefit_type,
+            d.description AS benefit_description
+        FROM membership_plan p
+        LEFT JOIN membership_plan_version v
+            ON v.plan_id = p.id
+           AND v.tenant_id = p.tenant_id
+           AND v.lifecycle_status = 'published'
+        LEFT JOIN membership_plan_benefit b
+            ON b.plan_version_id = v.id
+           AND b.tenant_id = p.tenant_id
+           AND b.status = 'active'
+        LEFT JOIN benefit_definition d
+            ON d.id = b.benefit_id
+           AND d.tenant_id = b.tenant_id
+        WHERE (p.tenant_id = '0' OR p.tenant_id = CAST($1 AS TEXT))
+          AND ($2 IS NULL OR p.status = $2)
+        ORDER BY p.rank ASC, p.plan_no ASC, b.sort_weight ASC NULLS LAST, b.id ASC
         "#,
     )
     .bind(query.subject.tenant_id)
@@ -528,33 +570,47 @@ async fn list_admin_membership_plans(
     .fetch_all(pool)
     .await
     .or_else(empty_rows_when_read_model_is_missing)?;
-    Ok(rows.iter().map(map_admin_plan).collect())
+    Ok(admin_plans_from_rows(&rows))
 }
 
 async fn create_admin_membership_plan(
     pool: &PgPool,
     command: CreateAdminMembershipPlanCommand,
 ) -> AppMembershipResult<AdminMembershipPlanItem> {
-    let benefit_json =
-        admin_plan_benefit_json("{}", command.input.rank, command.input.benefits.as_deref());
+    let plan_version_id = admin_plan_version_id(&command.plan_id);
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership_plan
-            (id, tenant_id, organization_id, plan_no, name, plan_code, rank, duration_days, benefits_json, visible_surfaces, status, created_at, updated_at)
+        INSERT INTO membership_plan
+            (id, tenant_id, organization_id, plan_no, plan_code, name, rank, description, status, created_at, updated_at)
         VALUES
-            ($1, '0', '0', $2, $3, $2, $7, 0, $4, '["membership","console","playground","api"]', $5, $6, $6)
+            ($1, '0', '0', $2, $2, $3, $4, NULL, $5, $6, $6)
         "#,
     )
     .bind(&command.plan_id)
     .bind(&command.input.code)
     .bind(&command.input.name)
-    .bind(benefit_json)
+    .bind(command.input.rank)
     .bind(&command.input.status)
     .bind(&command.requested_at)
-    .bind(command.input.rank)
     .execute(pool)
     .await
     .map_err(|error| store_error("failed to create membership plan", error))?;
+    upsert_admin_membership_plan_version(
+        pool,
+        &command.plan_id,
+        &plan_version_id,
+        &command.input.name,
+        &command.requested_at,
+    )
+    .await?;
+    replace_admin_plan_benefits(
+        pool,
+        &command.plan_id,
+        &plan_version_id,
+        command.input.benefits.as_deref().unwrap_or(&[]),
+        &command.requested_at,
+    )
+    .await?;
     load_admin_membership_plan(pool, &command.plan_id).await
 }
 
@@ -564,8 +620,8 @@ async fn update_admin_membership_plan(
 ) -> AppMembershipResult<AdminMembershipPlanItem> {
     let row = sqlx::query(
         r#"
-        SELECT id, benefits_json AS benefit_json
-        FROM commerce_membership_plan
+        SELECT id
+        FROM membership_plan
         WHERE id = $1 OR plan_no = $2
         ORDER BY CASE WHEN id = $1 THEN 0 ELSE 1 END
         LIMIT 1
@@ -578,34 +634,44 @@ async fn update_admin_membership_plan(
     .or_else(none_when_read_model_is_missing)?
     .ok_or_else(|| CommerceServiceError::conflict("membership plan was not found"))?;
     let plan_id = string_cell(&row, "id");
-    let benefit_json = admin_plan_benefit_json(
-        &string_cell(&row, "benefit_json"),
-        command.input.rank,
-        command.input.benefits.as_deref(),
-    );
+    let plan_version_id = ensure_admin_membership_plan_version(
+        pool,
+        &plan_id,
+        &command.input.name,
+        &command.requested_at,
+    )
+    .await?;
     sqlx::query(
         r#"
-        UPDATE commerce_membership_plan
+        UPDATE membership_plan
         SET plan_no = $1,
             plan_code = $1,
             name = $2,
             rank = $3,
-            benefits_json = $4,
-            status = $5,
-            updated_at = $6
-        WHERE id = $7
+            status = $4,
+            updated_at = $5
+        WHERE id = $6
         "#,
     )
     .bind(&command.input.code)
     .bind(&command.input.name)
     .bind(command.input.rank)
-    .bind(benefit_json)
     .bind(&command.input.status)
     .bind(&command.requested_at)
     .bind(&plan_id)
     .execute(pool)
     .await
     .map_err(|error| store_error("failed to update membership plan", error))?;
+    if let Some(benefits) = command.input.benefits.as_deref() {
+        replace_admin_plan_benefits(
+            pool,
+            &plan_id,
+            &plan_version_id,
+            benefits,
+            &command.requested_at,
+        )
+        .await?;
+    }
     load_admin_membership_plan(pool, &plan_id).await
 }
 
@@ -615,7 +681,7 @@ async fn delete_admin_membership_plan(
 ) -> AppMembershipResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE commerce_membership_plan
+        UPDATE membership_plan
         SET status = 'disabled',
             updated_at = $2
         WHERE id = $1 OR plan_no = $1
@@ -637,7 +703,7 @@ async fn list_admin_membership_packages(
         r#"
         SELECT id, package_no, package_group_id AS package_group_id, plan_id AS plan_id, name, CAST(price_amount AS TEXT) AS price_amount,
                currency_code, duration_days AS duration_days, status
-        FROM commerce_membership_package
+        FROM membership_package
         WHERE (tenant_id = '0' OR tenant_id = CAST($1 AS TEXT))
           AND ($2 IS NULL OR package_group_id = $2)
           AND ($3 IS NULL OR plan_id = $3)
@@ -663,7 +729,7 @@ async fn list_admin_membership_package_groups(
         r#"
         SELECT id, group_no, name, description, billing_cycle, duration_days,
                sort_weight, status
-        FROM commerce_membership_package_group
+        FROM membership_package_group
         WHERE (tenant_id = '0' OR tenant_id = CAST($1 AS TEXT))
           AND ($2 IS NULL OR status = $2)
         ORDER BY sort_weight ASC NULLS LAST, external_id ASC, id ASC
@@ -684,10 +750,10 @@ async fn create_admin_membership_package_group(
     let external_id = next_admin_package_group_external_id(pool).await?;
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership_package_group
-            (id, tenant_id, organization_id, external_id, group_no, name, description, billing_cycle, duration_days, sort_weight, status, created_at, updated_at)
+        INSERT INTO membership_package_group
+            (id, tenant_id, organization_id, external_id, group_no, name, description, billing_cycle, duration_days, display_channel, sort_weight, status, created_at, updated_at)
         VALUES
-            ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, $10, $10)
+            ($1, '0', '0', $2, $3, $4, $5, $6, $7, 'app', $8, $9, $10, $10)
         "#,
     )
     .bind(&command.package_group_id)
@@ -714,7 +780,7 @@ async fn update_admin_membership_package_group(
         package_group_external_id_for_update(pool, &command.package_group_id).await?;
     sqlx::query(
         r#"
-        UPDATE commerce_membership_package_group
+        UPDATE membership_package_group
         SET group_no = $1,
             name = $2,
             description = $3,
@@ -747,7 +813,7 @@ async fn delete_admin_membership_package_group(
 ) -> AppMembershipResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE commerce_membership_package_group
+        UPDATE membership_package_group
         SET status = 'disabled',
             updated_at = $2
         WHERE id = $1 OR group_no = $1
@@ -769,6 +835,13 @@ async fn create_admin_membership_package(
     ensure_admin_package_group_exists(pool, &command.input.package_group_id).await?;
     let external_id = next_admin_package_external_id(pool).await?;
     let sku_id = format!("{}-sku", command.package_id);
+    let plan_version_id = ensure_admin_membership_plan_version(
+        pool,
+        &command.input.plan_id,
+        &command.input.name,
+        &command.requested_at,
+    )
+    .await?;
     sqlx::query(
         r#"
         INSERT INTO commerce_product_sku
@@ -797,10 +870,10 @@ async fn create_admin_membership_package(
     .map_err(|error| store_error("failed to upsert membership package sku", error))?;
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership_package
-            (id, tenant_id, organization_id, external_id, package_no, package_group_id, plan_id, sku_id, name, description, price_amount, original_price_amount, currency_code, point_amount, duration_days, recurrence_cycle, sort_weight, recommended, tags_json, status, starts_at, ends_at, created_at, updated_at)
+        INSERT INTO membership_package
+            (id, tenant_id, organization_id, external_id, package_no, package_group_id, plan_id, plan_version_id, sku_id, name, description, price_amount, original_price_amount, currency_code, point_amount, duration_days, recurrence_cycle, sort_weight, recommended, status, starts_at, ends_at, created_at, updated_at)
         VALUES
-            ($1, '0', '0', $2, $3, $4, $5, $6, $7, NULL, $8, NULL, $9, 0, $10, $13, $2, 0, '[]', $11, NULL, NULL, $12, $12)
+            ($1, '0', '0', $2, $3, $4, $5, $14, $6, $7, NULL, $8, NULL, $9, 0, $10, $13, $2, 0, $11, NULL, NULL, $12, $12)
         "#,
     )
     .bind(&command.package_id)
@@ -816,6 +889,7 @@ async fn create_admin_membership_package(
     .bind(&command.input.status)
     .bind(&command.requested_at)
     .bind(recurrence_cycle_from_duration(command.input.duration_days))
+    .bind(plan_version_id)
     .execute(pool)
     .await
     .map_err(|error| store_error("failed to create membership package", error))?;
@@ -829,7 +903,7 @@ async fn update_admin_membership_package(
     ensure_admin_plan_exists(pool, &command.input.plan_id).await?;
     ensure_admin_package_group_exists(pool, &command.input.package_group_id).await?;
     let current = sqlx::query(
-        "SELECT sku_id FROM commerce_membership_package WHERE id = $1 OR package_no = $1 LIMIT 1",
+        "SELECT sku_id FROM membership_package WHERE id = $1 OR package_no = $1 LIMIT 1",
     )
     .bind(&command.package_id)
     .fetch_optional(pool)
@@ -840,6 +914,13 @@ async fn update_admin_membership_package(
     let sku_id = optional_string_cell(&current, "sku_id")
         .filter(|value| !value.trim().is_empty())
         .unwrap_or_else(|| format!("{package_id}-sku"));
+    let plan_version_id = ensure_admin_membership_plan_version(
+        pool,
+        &command.input.plan_id,
+        &command.input.name,
+        &command.requested_at,
+    )
+    .await?;
     sqlx::query(
         r#"
         INSERT INTO commerce_product_sku
@@ -868,23 +949,25 @@ async fn update_admin_membership_package(
     .map_err(|error| store_error("failed to upsert membership package sku", error))?;
     sqlx::query(
         r#"
-        UPDATE commerce_membership_package
+        UPDATE membership_package
         SET package_no = $1,
             package_group_id = $2,
             plan_id = $3,
-            sku_id = $4,
-            name = $5,
-            price_amount = $6,
-            currency_code = $7,
-            duration_days = $8,
-            status = $9,
-            updated_at = $10
-        WHERE id = $11
+            plan_version_id = $4,
+            sku_id = $5,
+            name = $6,
+            price_amount = $7,
+            currency_code = $8,
+            duration_days = $9,
+            status = $10,
+            updated_at = $11
+        WHERE id = $12
         "#,
     )
     .bind(&command.input.code)
     .bind(&command.input.package_group_id)
     .bind(&command.input.plan_id)
+    .bind(&plan_version_id)
     .bind(&sku_id)
     .bind(&command.input.name)
     .bind(&command.input.price_amount)
@@ -905,7 +988,7 @@ async fn delete_admin_membership_package(
 ) -> AppMembershipResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE commerce_membership_package
+        UPDATE membership_package
         SET status = 'disabled',
             updated_at = $2
         WHERE id = $1 OR package_no = $1
@@ -927,11 +1010,11 @@ async fn list_admin_membership_members(
         r#"
         SELECT m.id, m.owner_user_id, m.status, CAST(m.starts_at AS TEXT) AS starts_at,
                CAST(m.expires_at AS TEXT) AS expires_at, l.plan_no AS plan_no, m.plan_id AS plan_id
-        FROM commerce_membership m
-        LEFT JOIN commerce_membership_plan l ON l.id = m.plan_id
+        FROM membership_subscription m
+        LEFT JOIN membership_plan l ON l.id = m.plan_id
         WHERE m.tenant_id = CAST($1 AS TEXT)
           AND ($2 IS NULL OR m.organization_id IS NULL OR m.organization_id = CAST($2 AS TEXT))
-          AND ($3 IS NULL OR m.owner_user_id = $3)
+          AND ($3 IS NULL OR m.owner_user_id = $3 OR m.subject_id = $3)
           AND ($4 IS NULL OR m.plan_id = $4 OR l.plan_no = $4)
           AND ($5 IS NULL OR m.status = $5)
         ORDER BY m.created_at DESC NULLS LAST, m.id DESC
@@ -955,7 +1038,7 @@ async fn update_admin_membership_member_status(
 ) -> AppMembershipResult<AdminMembershipMemberItem> {
     let result = sqlx::query(
         r#"
-        UPDATE commerce_membership
+        UPDATE membership_subscription
         SET status = $1,
             updated_at = $2
         WHERE tenant_id = CAST($3 AS TEXT)
@@ -983,14 +1066,25 @@ async fn list_admin_membership_entitlements(
 ) -> AppMembershipResult<Vec<AdminMembershipEntitlementItem>> {
     let rows = sqlx::query(
         r#"
-        SELECT e.id, e.entitlement_code, e.membership_id, e.granted_quantity, e.used_quantity,
+        SELECT a.id, d.benefit_code AS entitlement_code, g.source_id AS membership_id,
+               a.total_granted AS granted_quantity, a.total_used AS used_quantity,
                m.plan_id AS plan_id
-        FROM commerce_membership_entitlement e
-        LEFT JOIN commerce_membership m ON m.id = e.membership_id AND m.tenant_id = e.tenant_id
-        WHERE e.tenant_id = CAST($1 AS TEXT)
+        FROM entitlement_account a
+        JOIN benefit_definition d
+          ON d.id = a.benefit_id
+        LEFT JOIN entitlement_grant g
+          ON g.benefit_id = a.benefit_id
+         AND g.subject_type = a.subject_type
+         AND g.subject_id = a.subject_id
+         AND g.source_type = 'membership_subscription'
+         AND g.tenant_id = a.tenant_id
+        LEFT JOIN membership_subscription m
+          ON m.id = g.source_id
+         AND m.tenant_id = a.tenant_id
+        WHERE a.tenant_id = CAST($1 AS TEXT)
           AND ($2 IS NULL OR m.plan_id = $2)
-          AND ($3 IS NULL OR e.membership_id = $3)
-        ORDER BY e.created_at DESC NULLS LAST, e.id DESC
+          AND ($3 IS NULL OR g.source_id = $3)
+        ORDER BY a.created_at DESC NULLS LAST, a.id DESC
         LIMIT 200
         "#,
     )
@@ -1016,15 +1110,45 @@ async fn load_admin_membership_plan(
     pool: &PgPool,
     plan_id: &str,
 ) -> AppMembershipResult<AdminMembershipPlanItem> {
-    let row = sqlx::query(
-        "SELECT id, plan_no AS plan_no, name, CAST(rank AS BIGINT) AS rank, benefits_json AS benefit_json, status FROM commerce_membership_plan WHERE id = $1 LIMIT 1",
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            p.id,
+            p.plan_no AS plan_no,
+            p.name,
+            CAST(p.rank AS BIGINT) AS rank,
+            p.status,
+            b.id AS plan_benefit_id,
+            b.benefit_code,
+            CAST(b.grant_quantity AS TEXT) AS grant_quantity,
+            b.usage_policy,
+            d.name AS benefit_name,
+            d.benefit_type,
+            d.description AS benefit_description
+        FROM membership_plan p
+        LEFT JOIN membership_plan_version v
+            ON v.plan_id = p.id
+           AND v.tenant_id = p.tenant_id
+           AND v.lifecycle_status = 'published'
+        LEFT JOIN membership_plan_benefit b
+            ON b.plan_version_id = v.id
+           AND b.tenant_id = p.tenant_id
+           AND b.status = 'active'
+        LEFT JOIN benefit_definition d
+            ON d.id = b.benefit_id
+           AND d.tenant_id = b.tenant_id
+        WHERE p.id = $1 OR p.plan_no = $1
+        ORDER BY b.sort_weight ASC NULLS LAST, b.id ASC
+        "#,
     )
     .bind(plan_id)
-    .fetch_optional(pool)
+    .fetch_all(pool)
     .await
-    .or_else(none_when_read_model_is_missing)?
-    .ok_or_else(|| CommerceServiceError::conflict("membership plan was not found"))?;
-    Ok(map_admin_plan(&row))
+    .or_else(empty_rows_when_read_model_is_missing)?;
+    admin_plans_from_rows(&rows)
+        .into_iter()
+        .next()
+        .ok_or_else(|| CommerceServiceError::conflict("membership plan was not found"))
 }
 
 async fn load_admin_membership_package(
@@ -1035,7 +1159,7 @@ async fn load_admin_membership_package(
         r#"
         SELECT id, package_no, package_group_id AS package_group_id, plan_id AS plan_id, name, CAST(price_amount AS TEXT) AS price_amount,
                currency_code, duration_days AS duration_days, status
-        FROM commerce_membership_package
+        FROM membership_package
         WHERE id = $1 OR package_no = $1
         LIMIT 1
         "#,
@@ -1056,7 +1180,7 @@ async fn load_admin_membership_package_group(
         r#"
         SELECT id, group_no, name, description, billing_cycle, duration_days,
                sort_weight, status
-        FROM commerce_membership_package_group
+        FROM membership_package_group
         WHERE id = $1 OR group_no = $1
         LIMIT 1
         "#,
@@ -1078,8 +1202,8 @@ async fn load_admin_membership(
         r#"
         SELECT m.id, m.owner_user_id, m.status, CAST(m.starts_at AS TEXT) AS starts_at,
                CAST(m.expires_at AS TEXT) AS expires_at, l.plan_no AS plan_no, m.plan_id AS plan_id
-        FROM commerce_membership m
-        LEFT JOIN commerce_membership_plan l ON l.id = m.plan_id
+        FROM membership_subscription m
+        LEFT JOIN membership_plan l ON l.id = m.plan_id
         WHERE m.tenant_id = CAST($1 AS TEXT) AND m.id = $2
         LIMIT 1
         "#,
@@ -1094,16 +1218,160 @@ async fn load_admin_membership(
 }
 
 async fn ensure_admin_plan_exists(pool: &PgPool, plan_id: &str) -> AppMembershipResult<()> {
-    let exists: Option<i64> = sqlx::query_scalar(
-        "SELECT 1 FROM commerce_membership_plan WHERE id = $1 OR plan_no = $1 LIMIT 1",
-    )
-    .bind(plan_id)
-    .fetch_optional(pool)
-    .await
-    .map_err(sql_error)?;
+    let exists: Option<i64> =
+        sqlx::query_scalar("SELECT 1 FROM membership_plan WHERE id = $1 OR plan_no = $1 LIMIT 1")
+            .bind(plan_id)
+            .fetch_optional(pool)
+            .await
+            .map_err(sql_error)?;
     exists
         .map(|_| ())
         .ok_or_else(|| CommerceServiceError::conflict("membership target plan was not found"))
+}
+
+async fn ensure_admin_membership_plan_version(
+    pool: &PgPool,
+    plan_id_or_no: &str,
+    title: &str,
+    requested_at: &str,
+) -> AppMembershipResult<String> {
+    let row = sqlx::query(
+        r#"
+        SELECT id
+        FROM membership_plan
+        WHERE id = $1 OR plan_no = $1
+        ORDER BY CASE WHEN id = $1 THEN 0 ELSE 1 END
+        LIMIT 1
+        "#,
+    )
+    .bind(plan_id_or_no)
+    .fetch_optional(pool)
+    .await
+    .or_else(none_when_read_model_is_missing)?
+    .ok_or_else(|| CommerceServiceError::conflict("membership target plan was not found"))?;
+    let plan_id = string_cell(&row, "id");
+    let existing: Option<String> = sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM membership_plan_version
+        WHERE plan_id = $1
+          AND lifecycle_status = 'published'
+        ORDER BY version_no DESC, id DESC
+        LIMIT 1
+        "#,
+    )
+    .bind(&plan_id)
+    .fetch_optional(pool)
+    .await
+    .map_err(sql_error)?;
+    if let Some(version_id) = existing {
+        return Ok(version_id);
+    }
+    let version_id = admin_plan_version_id(&plan_id);
+    upsert_admin_membership_plan_version(pool, &plan_id, &version_id, title, requested_at).await?;
+    Ok(version_id)
+}
+
+async fn upsert_admin_membership_plan_version(
+    pool: &PgPool,
+    plan_id: &str,
+    plan_version_id: &str,
+    title: &str,
+    requested_at: &str,
+) -> AppMembershipResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO membership_plan_version
+            (id, tenant_id, organization_id, plan_id, version_no, title, description, lifecycle_status, effective_from, effective_to, published_at, created_at, updated_at)
+        VALUES
+            ($1, '0', '0', $2, 'v1', $3, NULL, 'published', $4, NULL, $4, $4, $4)
+        ON CONFLICT (tenant_id, plan_id, version_no) DO UPDATE SET
+            id = EXCLUDED.id,
+            title = EXCLUDED.title,
+            lifecycle_status = EXCLUDED.lifecycle_status,
+            published_at = EXCLUDED.published_at,
+            updated_at = EXCLUDED.updated_at
+        "#,
+    )
+    .bind(plan_version_id)
+    .bind(plan_id)
+    .bind(title)
+    .bind(requested_at)
+    .execute(pool)
+    .await
+    .map_err(|error| store_error("failed to upsert membership plan version", error))?;
+    Ok(())
+}
+
+async fn replace_admin_plan_benefits(
+    pool: &PgPool,
+    plan_id: &str,
+    plan_version_id: &str,
+    benefits: &[AppMembershipBenefitItem],
+    requested_at: &str,
+) -> AppMembershipResult<()> {
+    sqlx::query("DELETE FROM membership_plan_benefit WHERE plan_version_id = $1")
+        .bind(plan_version_id)
+        .execute(pool)
+        .await
+        .map_err(|error| store_error("failed to clear membership plan benefits", error))?;
+    for (index, benefit) in benefits.iter().enumerate() {
+        let benefit_code = admin_benefit_code(benefit, index + 1);
+        let benefit_id = benefit_definition_id_for_code(&benefit_code);
+        let benefit_type = benefit
+            .r#type
+            .as_deref()
+            .filter(|value| !value.trim().is_empty())
+            .unwrap_or("quota");
+        sqlx::query(
+            r#"
+            INSERT INTO benefit_definition
+                (id, tenant_id, organization_id, benefit_code, name, benefit_type, value_unit, measurement_type, description, status, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, 'count', 'counter', $5, 'active', $6, $6)
+            ON CONFLICT (tenant_id, organization_id, benefit_code) DO UPDATE SET
+                id = EXCLUDED.id,
+                name = EXCLUDED.name,
+                benefit_type = EXCLUDED.benefit_type,
+                description = EXCLUDED.description,
+                status = EXCLUDED.status,
+                updated_at = EXCLUDED.updated_at
+            "#,
+        )
+        .bind(&benefit_id)
+        .bind(&benefit_code)
+        .bind(&benefit.name)
+        .bind(benefit_type)
+        .bind(benefit.description.as_deref())
+        .bind(requested_at)
+        .execute(pool)
+        .await
+        .map_err(|error| store_error("failed to upsert benefit definition", error))?;
+
+        let plan_benefit_id = format!("{plan_version_id}-benefit-{}", index + 1);
+        let grant_quantity = benefit.usage_limit.unwrap_or(0).max(0).to_string();
+        sqlx::query(
+            r#"
+            INSERT INTO membership_plan_benefit
+                (id, tenant_id, organization_id, plan_id, plan_version_id, benefit_id, benefit_code, grant_quantity, grant_period, reset_policy, usage_policy, sort_weight, status, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, 'membership_period', NULL, $7, $8, 'active', $9, $9)
+            "#,
+        )
+        .bind(&plan_benefit_id)
+        .bind(plan_id)
+        .bind(plan_version_id)
+        .bind(&benefit_id)
+        .bind(&benefit_code)
+        .bind(grant_quantity)
+        .bind(benefit_type)
+        .bind((index + 1) as i64)
+        .bind(requested_at)
+        .execute(pool)
+        .await
+        .map_err(|error| store_error("failed to upsert membership plan benefit", error))?;
+    }
+    Ok(())
 }
 
 async fn ensure_admin_package_group_exists(
@@ -1111,7 +1379,7 @@ async fn ensure_admin_package_group_exists(
     package_group_id: &str,
 ) -> AppMembershipResult<()> {
     let exists: Option<i64> = sqlx::query_scalar(
-        "SELECT 1 FROM commerce_membership_package_group WHERE id = $1 OR group_no = $1 LIMIT 1",
+        "SELECT 1 FROM membership_package_group WHERE id = $1 OR group_no = $1 LIMIT 1",
     )
     .bind(package_group_id)
     .fetch_optional(pool)
@@ -1123,17 +1391,16 @@ async fn ensure_admin_package_group_exists(
 }
 
 async fn next_admin_package_external_id(pool: &PgPool) -> AppMembershipResult<i64> {
-    let max_id: Option<i64> =
-        sqlx::query_scalar("SELECT MAX(external_id) FROM commerce_membership_package")
-            .fetch_one(pool)
-            .await
-            .map_err(sql_error)?;
+    let max_id: Option<i64> = sqlx::query_scalar("SELECT MAX(external_id) FROM membership_package")
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)?;
     Ok(max_id.unwrap_or(0) + 1)
 }
 
 async fn next_admin_package_group_external_id(pool: &PgPool) -> AppMembershipResult<i64> {
     let max_id: Option<i64> =
-        sqlx::query_scalar("SELECT MAX(external_id) FROM commerce_membership_package_group")
+        sqlx::query_scalar("SELECT MAX(external_id) FROM membership_package_group")
             .fetch_one(pool)
             .await
             .map_err(sql_error)?;
@@ -1141,14 +1408,13 @@ async fn next_admin_package_group_external_id(pool: &PgPool) -> AppMembershipRes
 }
 
 async fn package_id_for_update(pool: &PgPool, value: &str) -> AppMembershipResult<String> {
-    let row = sqlx::query(
-        "SELECT id FROM commerce_membership_package WHERE id = $1 OR package_no = $1 LIMIT 1",
-    )
-    .bind(value)
-    .fetch_optional(pool)
-    .await
-    .or_else(none_when_read_model_is_missing)?
-    .ok_or_else(|| CommerceServiceError::conflict("membership package was not found"))?;
+    let row =
+        sqlx::query("SELECT id FROM membership_package WHERE id = $1 OR package_no = $1 LIMIT 1")
+            .bind(value)
+            .fetch_optional(pool)
+            .await
+            .or_else(none_when_read_model_is_missing)?
+            .ok_or_else(|| CommerceServiceError::conflict("membership package was not found"))?;
     Ok(string_cell(&row, "id"))
 }
 
@@ -1157,7 +1423,7 @@ async fn package_group_external_id_for_update(
     value: &str,
 ) -> AppMembershipResult<String> {
     let row = sqlx::query(
-        "SELECT id FROM commerce_membership_package_group WHERE id = $1 OR group_no = $1 LIMIT 1",
+        "SELECT id FROM membership_package_group WHERE id = $1 OR group_no = $1 LIMIT 1",
     )
     .bind(value)
     .fetch_optional(pool)
@@ -1167,23 +1433,39 @@ async fn package_group_external_id_for_update(
     Ok(string_cell(&row, "id"))
 }
 
-fn map_admin_plan(row: &sqlx::postgres::PgRow) -> AdminMembershipPlanItem {
-    let code = string_cell(row, "plan_no");
-    let (_, _, _, _, benefits) =
-        parse_membership_plan_benefit_json(&string_cell(row, "benefit_json"));
-    let rank = integer_cell(row, "rank");
-    AdminMembershipPlanItem {
-        id: string_cell(row, "id"),
-        code: code.clone(),
-        name: string_cell(row, "name"),
-        rank: if rank == 0 {
-            plan_rank_from_code(&code)
-        } else {
-            rank
-        },
-        benefits,
-        status: string_cell(row, "status"),
+fn admin_plans_from_rows(rows: &[sqlx::postgres::PgRow]) -> Vec<AdminMembershipPlanItem> {
+    let mut grouped = BTreeMap::<String, AdminMembershipPlanItem>::new();
+    for row in rows.iter() {
+        let id = string_cell(row, "id");
+        let code = string_cell(row, "plan_no");
+        let rank = integer_cell(row, "rank");
+        let plan = grouped
+            .entry(id.clone())
+            .or_insert_with(|| AdminMembershipPlanItem {
+                id,
+                code: code.clone(),
+                name: string_cell(row, "name"),
+                rank: if rank == 0 {
+                    plan_rank_from_code(&code)
+                } else {
+                    rank
+                },
+                benefits: Vec::new(),
+                status: string_cell(row, "status"),
+            });
+        if let Some(benefit) = plan_benefit_from_row(row, (plan.benefits.len() + 1) as i64) {
+            if !plan
+                .benefits
+                .iter()
+                .any(|item| item.benefit_key.as_deref() == benefit.benefit_key.as_deref())
+            {
+                plan.benefits.push(benefit);
+            }
+        }
     }
+    let mut plans = grouped.into_values().collect::<Vec<_>>();
+    plans.sort_by_key(|plan| (plan.rank, plan.code.clone(), plan.id.clone()));
+    plans
 }
 
 fn map_admin_package(row: &sqlx::postgres::PgRow) -> AdminMembershipPackageItem {
@@ -1231,8 +1513,8 @@ fn map_admin_membership(row: &sqlx::postgres::PgRow) -> AdminMembershipMemberIte
 }
 
 fn map_admin_entitlement(row: &sqlx::postgres::PgRow) -> AdminMembershipEntitlementItem {
-    let granted = integer_cell(row, "granted_quantity");
-    let used = integer_cell(row, "used_quantity");
+    let granted = parse_points_amount(&string_cell(row, "granted_quantity"));
+    let used = parse_points_amount(&string_cell(row, "used_quantity"));
     AdminMembershipEntitlementItem {
         id: string_cell(row, "id"),
         code: string_cell(row, "entitlement_code"),
@@ -1245,28 +1527,6 @@ fn map_admin_entitlement(row: &sqlx::postgres::PgRow) -> AdminMembershipEntitlem
             "active".to_owned()
         },
     }
-}
-
-fn admin_plan_benefit_json(
-    existing: &str,
-    rank: i64,
-    benefits: Option<&[AppMembershipBenefitItem]>,
-) -> String {
-    let mut value = serde_json::from_str::<serde_json::Value>(existing)
-        .unwrap_or_else(|_| serde_json::json!({}));
-    if !value.is_object() {
-        value = serde_json::json!({});
-    }
-    if let Some(object) = value.as_object_mut() {
-        object.insert("planRank".to_owned(), serde_json::json!(rank));
-        if let Some(benefits) = benefits {
-            object.insert(
-                "items".to_owned(),
-                serde_json::to_value(benefits).unwrap_or_else(|_| serde_json::json!([])),
-            );
-        }
-    }
-    value.to_string()
 }
 
 fn admin_membership_status(status: &str) -> &'static str {
@@ -1378,38 +1638,84 @@ async fn load_plans(pool: &PgPool) -> AppMembershipResult<Vec<StoredMembershipPl
         .fetch_all(pool)
         .await
         .or_else(empty_rows_when_read_model_is_missing)?;
-    let mut plans = rows.iter().map(map_plan).collect::<Vec<_>>();
-    plans.sort_by_key(|plan| (plan.rank, plan.id));
-    Ok(plans)
+    Ok(stored_plans_from_rows(&rows))
 }
 
-fn map_plan(row: &sqlx::postgres::PgRow) -> StoredMembershipPlan {
-    let storage_id = string_cell(row, "id");
-    let plan_no = string_cell(row, "plan_no");
-    let name = string_cell(row, "name");
-    let benefit_json = string_cell(row, "benefit_json");
-    let (parsed_rank, required_points, badge, description, benefits) =
-        parse_membership_plan_benefit_json(&benefit_json);
-    let rank = if parsed_rank == 0 {
-        plan_rank_from_code(&plan_no)
-    } else {
-        parsed_rank
-    };
-    StoredMembershipPlan {
-        id: rank,
-        storage_id,
-        plan_no,
-        item: AppMembershipPlanItem {
-            id: rank,
-            name,
-            rank: rank,
-            required_points,
-            description,
-            icon: None,
-            badge,
-        },
-        benefits,
-        rank,
+fn stored_plans_from_rows(rows: &[sqlx::postgres::PgRow]) -> Vec<StoredMembershipPlan> {
+    let mut grouped = BTreeMap::<String, StoredMembershipPlan>::new();
+    for row in rows.iter() {
+        let id_text = string_cell(row, "id");
+        let plan_no = string_cell(row, "plan_no");
+        let rank = integer_cell(row, "rank");
+        let plan = grouped
+            .entry(id_text.clone())
+            .or_insert_with(|| StoredMembershipPlan {
+                id: rank,
+                storage_id: id_text,
+                plan_no: plan_no.clone(),
+                item: AppMembershipPlanItem {
+                    id: rank,
+                    name: string_cell(row, "name"),
+                    rank,
+                    required_points: Some(plan_required_points(&plan_no)),
+                    description: optional_string_cell(row, "description"),
+                    icon: None,
+                    badge: Some(plan_badge(&plan_no).to_owned()),
+                },
+                benefits: Vec::new(),
+                rank,
+            });
+        if let Some(benefit) = plan_benefit_from_row(row, (plan.benefits.len() + 1) as i64) {
+            if !plan
+                .benefits
+                .iter()
+                .any(|item| item.benefit_key.as_deref() == benefit.benefit_key.as_deref())
+            {
+                plan.benefits.push(benefit);
+            }
+        }
+    }
+    let mut plans = grouped.into_values().collect::<Vec<_>>();
+    plans.sort_by_key(|plan| (plan.rank, plan.id));
+    plans
+}
+
+fn plan_benefit_from_row(
+    row: &sqlx::postgres::PgRow,
+    fallback_id: i64,
+) -> Option<AppMembershipBenefitItem> {
+    let benefit_code = optional_string_cell(row, "benefit_code")?;
+    let grant_quantity =
+        optional_string_cell(row, "grant_quantity").map(|value| parse_points_amount(&value));
+    Some(AppMembershipBenefitItem {
+        id: numeric_suffix(&string_cell(row, "plan_benefit_id")).unwrap_or(fallback_id),
+        name: optional_string_cell(row, "benefit_name").unwrap_or_else(|| benefit_code.clone()),
+        benefit_key: Some(benefit_code),
+        r#type: optional_string_cell(row, "benefit_type")
+            .or_else(|| optional_string_cell(row, "usage_policy")),
+        description: optional_string_cell(row, "benefit_description"),
+        icon: None,
+        claimed: false,
+        usage_limit: grant_quantity,
+        used_count: Some(0),
+    })
+}
+
+fn plan_required_points(plan_no: &str) -> i64 {
+    match plan_no {
+        "pro" => 5_000,
+        "max" => 12_000,
+        "vip" => 20_000,
+        _ => 0,
+    }
+}
+
+fn plan_badge(plan_no: &str) -> &'static str {
+    match plan_no {
+        "pro" => "Pro",
+        "max" => "Max",
+        "vip" => "VIP",
+        _ => "Free",
     }
 }
 
@@ -1625,18 +1931,17 @@ async fn load_current_membership(
         .fetch_optional(pool)
         .await
         .or_else(none_when_read_model_is_missing)?;
-    Ok(row.as_ref().map(map_membership))
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let mut membership = map_membership(&row);
+    membership.benefits = benefits_for_plan(&load_plans(pool).await?, membership.rank);
+    Ok(Some(membership))
 }
 
 fn map_membership(row: &sqlx::postgres::PgRow) -> CurrentMembership {
     let plan_no = string_cell(row, "plan_no");
-    let (parsed_rank, _, _, _, benefits) =
-        parse_membership_plan_benefit_json(&string_cell(row, "benefit_json"));
-    let rank = if parsed_rank == 0 {
-        plan_rank_from_code(&plan_no)
-    } else {
-        parsed_rank
-    };
+    let rank = integer_cell(row, "rank").max(plan_rank_from_code(&plan_no));
     CurrentMembership {
         rank,
         plan_name: string_cell(row, "plan_name"),
@@ -1648,7 +1953,7 @@ fn map_membership(row: &sqlx::postgres::PgRow) -> CurrentMembership {
             "membership membership total spent",
         )
         .unwrap_or_else(|_| "0.00".to_owned()),
-        benefits,
+        benefits: Vec::new(),
     }
 }
 
@@ -1670,7 +1975,7 @@ async fn submit_purchase(
     insert_order_item(&mut tx, &command, &package).await?;
     insert_order_amount_breakdown(&mut tx, &command, &package).await?;
     insert_payment(&mut tx, &command, &package, &method).await?;
-    insert_membership(&mut tx, &command, &plan, &membership_expires_at).await?;
+    insert_membership(&mut tx, &command, &package, &plan, &membership_expires_at).await?;
     insert_entitlements(&mut tx, &command, &plan, &membership_expires_at).await?;
     tx.commit()
         .await
@@ -1749,10 +2054,34 @@ async fn load_plan_for_package(
         .fetch_all(&mut **tx)
         .await
         .map_err(|error| store_error("failed to load membership plans for purchase", error))?;
-    rows.iter()
-        .map(map_plan)
+    stored_plans_from_rows(&rows)
+        .into_iter()
         .find(|plan| plan.plan_no == package.plan_no || plan.rank == package.rank)
         .ok_or_else(|| CommerceServiceError::conflict("membership target plan is unavailable"))
+}
+
+async fn membership_package_id_for_storage(
+    tx: &mut Transaction<'_, Postgres>,
+    external_id: i64,
+) -> AppMembershipResult<String> {
+    let row = sqlx::query(
+        r#"
+        SELECT id
+        FROM membership_package
+        WHERE external_id = $1
+          AND (tenant_id = '0' OR tenant_id IS NULL)
+          AND (organization_id = '0' OR organization_id IS NULL)
+          AND status = 'active'
+        ORDER BY id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(external_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load membership package storage id", error))?
+    .ok_or_else(|| CommerceServiceError::conflict("membership package is unavailable"))?;
+    Ok(string_cell(&row, "id"))
 }
 
 async fn insert_order(
@@ -1895,15 +2224,23 @@ async fn insert_payment(
 async fn insert_membership(
     tx: &mut Transaction<'_, Postgres>,
     command: &SubmitMembershipPurchaseCommand,
+    package: &ParsedMembershipPackage,
     plan: &StoredMembershipPlan,
     expires_at: &str,
 ) -> AppMembershipResult<()> {
+    let period_id = membership_period_id(command);
+    let package_id = membership_package_id_for_storage(tx, package.item.id).await?;
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership
-            (id, tenant_id, organization_id, membership_no, owner_user_id, plan_id, source_order_id, source_payment_intent_id, status, starts_at, expires_at, grace_until, request_no, idempotency_key, created_at, updated_at)
+        INSERT INTO membership_subscription
+            (id, tenant_id, organization_id, subscription_no, subject_type, subject_id,
+             owner_user_id, plan_id, plan_version_id, package_id, current_period_id,
+             source_order_id, source_payment_intent_id, status, starts_at, expires_at,
+             grace_until, cancel_at_period_end, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $4, CAST($5 AS TEXT), $6, $7, $8, 'pending_activation', $9, $10, NULL, $11, $12, $13, $13)
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $4, 'user', CAST($5 AS TEXT),
+             CAST($5 AS TEXT), $6, $7, $8, $9, $10, $11, 'pending_activation', $12, $13,
+             NULL, 0, $14, $15, $16, $16)
         "#,
     )
     .bind(&command.membership_uuid)
@@ -1912,6 +2249,9 @@ async fn insert_membership(
     .bind(&command.membership_uuid)
     .bind(command.subject.user_id)
     .bind(plan_id_for_storage(plan))
+    .bind(plan_version_id_for_storage(plan))
+    .bind(&package_id)
+    .bind(&period_id)
     .bind(&command.order_uuid)
     .bind(&command.payment_uuid)
     .bind(&command.requested_at)
@@ -1921,7 +2261,38 @@ async fn insert_membership(
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to insert membership membership", error))?;
+    .map_err(|error| store_error("failed to insert membership subscription", error))?;
+
+    sqlx::query(
+        r#"
+        INSERT INTO membership_period
+            (id, tenant_id, organization_id, period_no, subscription_id, subject_type,
+             subject_id, plan_id, plan_version_id, starts_at, ends_at, status,
+             source_order_id, source_payment_intent_id, request_no, idempotency_key,
+             created_at, updated_at)
+        VALUES
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, 'user',
+             CAST($5 AS TEXT), $6, $7, $8, $9, 'pending_activation',
+             $10, $11, $12, $13, $14, $14)
+        "#,
+    )
+    .bind(&period_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.membership_uuid)
+    .bind(command.subject.user_id)
+    .bind(plan_id_for_storage(plan))
+    .bind(plan_version_id_for_storage(plan))
+    .bind(&command.requested_at)
+    .bind(expires_at)
+    .bind(&command.order_uuid)
+    .bind(&command.payment_uuid)
+    .bind(&command.order_no)
+    .bind(&command.out_trade_no)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert membership period", error))?;
     Ok(())
 }
 
@@ -1932,32 +2303,105 @@ async fn insert_entitlements(
     expires_at: &str,
 ) -> AppMembershipResult<()> {
     for (index, benefit) in plan.benefits.iter().enumerate() {
-        let entitlement_code = benefit
+        let benefit_code = benefit
             .benefit_key
             .clone()
             .unwrap_or_else(|| format!("membership-benefit-{}", benefit.id));
+        let benefit_id = benefit_definition_id_for_code(&benefit_code);
+        let quantity = benefit.usage_limit.unwrap_or(0).max(0).to_string();
+        let account_id = format!(
+            "{}-entitlement-account-{}",
+            command.membership_uuid,
+            index + 1
+        );
+        let grant_id = format!(
+            "{}-entitlement-grant-{}",
+            command.membership_uuid,
+            index + 1
+        );
+        let ledger_id = format!(
+            "{}-entitlement-ledger-{}",
+            command.membership_uuid,
+            index + 1
+        );
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_entitlement
-                (id, tenant_id, organization_id, membership_id, entitlement_code, plan_id, name, quota_amount, quota_period, reset_policy, granted_quantity, used_quantity, expires_at, status, created_at, updated_at)
+            INSERT INTO entitlement_grant
+                (id, tenant_id, organization_id, grant_no, benefit_id, subject_type, subject_id,
+                 source_type, source_id, grant_policy, granted_quantity, status, starts_at,
+                 expires_at, request_no, idempotency_key, created_at, updated_at)
             VALUES
-                ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $4, $5, $6, $7, CAST($8 AS TEXT), NULL, NULL, $9, 0, $10, 'active', $11, $11)
+                ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, 'user', CAST($5 AS TEXT),
+                 'membership_subscription', $6, 'membership_plan', $7, 'active', $8, $9,
+                 $10, $11, $12, $12)
             "#,
         )
-        .bind(format!("{}-entitlement-{}", command.membership_uuid, index + 1))
+        .bind(&grant_id)
         .bind(command.subject.tenant_id)
         .bind(command.subject.organization_id)
+        .bind(&benefit_id)
+        .bind(command.subject.user_id)
         .bind(&command.membership_uuid)
-        .bind(entitlement_code)
-        .bind(plan_id_for_storage(plan))
-        .bind(&benefit.name)
-        .bind(benefit.usage_limit.unwrap_or(0).max(0))
-        .bind(benefit.usage_limit.unwrap_or(0).max(0))
+        .bind(&quantity)
+        .bind(&command.requested_at)
+        .bind(expires_at)
+        .bind(format!("{}-grant-{}", command.order_no, index + 1))
+        .bind(&command.out_trade_no)
+        .bind(&command.requested_at)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to insert entitlement grant", error))?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO entitlement_account
+                (id, tenant_id, organization_id, account_no, benefit_id, subject_type,
+                 subject_id, total_granted, total_used, balance, status, expires_at,
+                 version, created_at, updated_at)
+            VALUES
+                ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, 'user',
+                 CAST($5 AS TEXT), $6, '0', $6, 'active', $7, 0, $8, $8)
+            "#,
+        )
+        .bind(&account_id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(&benefit_id)
+        .bind(command.subject.user_id)
+        .bind(&quantity)
         .bind(expires_at)
         .bind(&command.requested_at)
         .execute(&mut **tx)
         .await
-        .map_err(|error| store_error("failed to insert membership entitlement", error))?;
+        .map_err(|error| store_error("failed to insert entitlement account", error))?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO entitlement_ledger_entry
+                (id, tenant_id, organization_id, ledger_no, account_id, grant_id, benefit_id,
+                 subject_type, subject_id, direction, amount, balance_after, business_type,
+                 source_type, source_id, request_no, idempotency_key, occurred_at, created_at)
+            VALUES
+                ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, $5, $6,
+                 'user', CAST($7 AS TEXT), 'credit', $8, $8, 'membership_grant',
+                 'membership_subscription', $9, $10, $11, $12, $12)
+            "#,
+        )
+        .bind(&ledger_id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(&account_id)
+        .bind(&grant_id)
+        .bind(&benefit_id)
+        .bind(command.subject.user_id)
+        .bind(&quantity)
+        .bind(&command.membership_uuid)
+        .bind(format!("{}-ledger-{}", command.order_no, index + 1))
+        .bind(&command.out_trade_no)
+        .bind(&command.requested_at)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to insert entitlement ledger", error))?;
     }
     Ok(())
 }
@@ -1973,26 +2417,34 @@ async fn consume_speed_up(
         .map_err(|error| store_error("failed to begin membership speed up transaction", error))?;
     let row = sqlx::query(
         r#"
-        SELECT id, entitlement_code, membership_id, granted_quantity, used_quantity
-        FROM commerce_membership_entitlement
-        WHERE tenant_id = CAST($1 AS TEXT)
-          AND membership_id IN (
-              SELECT id
-              FROM commerce_membership
-              WHERE tenant_id = CAST($1 AS TEXT)
-                AND (organization_id IS NULL OR organization_id = CAST($2 AS TEXT))
-                AND owner_user_id = CAST($3 AS TEXT)
-              ORDER BY created_at DESC NULLS LAST, id DESC
-              LIMIT 1
-          )
-          AND entitlement_code IN ('top_priority', 'high_priority', 'normal_priority')
-          AND used_quantity < granted_quantity
-        ORDER BY CASE entitlement_code
-            WHEN 'top_priority' THEN 0
-            WHEN 'high_priority' THEN 1
-            WHEN 'normal_priority' THEN 2
-            ELSE 3
-        END, updated_at ASC NULLS LAST, created_at ASC NULLS LAST, id ASC
+        SELECT
+            a.id,
+            d.benefit_code AS entitlement_code,
+            COALESCE(g.source_id, '') AS membership_id,
+            g.id AS grant_id,
+            a.total_granted AS granted_quantity,
+            a.total_used AS used_quantity,
+            a.balance AS balance
+        FROM entitlement_account a
+        JOIN benefit_definition d
+          ON d.id = a.benefit_id
+        LEFT JOIN entitlement_grant g
+          ON g.benefit_id = a.benefit_id
+         AND g.subject_type = a.subject_type
+         AND g.subject_id = a.subject_id
+         AND g.source_type = 'membership_subscription'
+         AND g.tenant_id = a.tenant_id
+        LEFT JOIN membership_subscription m
+          ON m.id = g.source_id
+         AND m.tenant_id = a.tenant_id
+        WHERE a.tenant_id = CAST($1 AS TEXT)
+          AND (a.organization_id IS NULL OR a.organization_id = CAST($2 AS TEXT))
+          AND a.subject_type = 'user'
+          AND a.subject_id = CAST($3 AS TEXT)
+          AND a.status = 'active'
+          AND d.benefit_code = 'priority_speed_up'
+          AND CAST(a.balance AS BIGINT) > 0
+        ORDER BY a.expires_at DESC NULLS LAST, a.updated_at ASC NULLS LAST, a.created_at ASC NULLS LAST, a.id ASC
         LIMIT 1
         "#,
     )
@@ -2006,12 +2458,13 @@ async fn consume_speed_up(
         CommerceServiceError::conflict("membership speed up privilege is unavailable")
     })?;
 
-    let entitlement_id = string_cell(&row, "id");
+    let account_id = string_cell(&row, "id");
     let membership_id = string_cell(&row, "membership_id");
-    let entitlement_code = string_cell(&row, "entitlement_code");
-    let granted_quantity = integer_cell(&row, "granted_quantity").max(0);
-    let used_quantity = integer_cell(&row, "used_quantity").max(0);
-    if used_quantity >= granted_quantity || granted_quantity <= 0 {
+    let grant_id = optional_string_cell(&row, "grant_id");
+    let granted_quantity = parse_points_amount(&string_cell(&row, "granted_quantity")).max(0);
+    let used_quantity = parse_points_amount(&string_cell(&row, "used_quantity")).max(0);
+    let balance = parse_points_amount(&string_cell(&row, "balance")).max(0);
+    if balance <= 0 || used_quantity >= granted_quantity || granted_quantity <= 0 {
         return Err(CommerceServiceError::conflict(
             "membership speed up privilege is exhausted",
         ));
@@ -2019,14 +2472,16 @@ async fn consume_speed_up(
 
     let updated_rows = sqlx::query(
         r#"
-        UPDATE commerce_membership_entitlement
-        SET used_quantity = used_quantity + 1,
+        UPDATE entitlement_account
+        SET total_used = CAST(CAST(total_used AS BIGINT) + 1 AS TEXT),
+            balance = CAST(CAST(balance AS BIGINT) - 1 AS TEXT),
+            version = version + 1,
             updated_at = $2
         WHERE id = $1
-          AND used_quantity < granted_quantity
+          AND CAST(balance AS BIGINT) > 0
         "#,
     )
-    .bind(&entitlement_id)
+    .bind(&account_id)
     .bind(&requested_at)
     .execute(&mut *tx)
     .await
@@ -2038,7 +2493,7 @@ async fn consume_speed_up(
         ));
     }
 
-    let usage_id = format!("{entitlement_id}-usage-{used_quantity}");
+    let usage_id = format!("{account_id}-ledger-debit-{}", used_quantity + 1);
     let request_no = format!(
         "membership-speed-up-{}-{}",
         subject.user_id,
@@ -2046,24 +2501,32 @@ async fn consume_speed_up(
     );
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership_entitlement_usage
-            (id, tenant_id, organization_id, membership_id, entitlement_id, owner_user_id, entitlement_code, usage_no, used_amount, balance_after, idempotency_key, source_type, source_id, occurred_at, created_at)
-        VALUES
-            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $4, $5, CAST($6 AS TEXT), $7, $8, '1', CAST($9 AS TEXT), $10, 'membership_speed_up', $11, $12, $12)
+        INSERT INTO entitlement_ledger_entry
+            (id, tenant_id, organization_id, ledger_no, account_id, grant_id, benefit_id,
+             subject_type, subject_id, direction, amount, balance_after, business_type,
+             source_type, source_id, request_no, idempotency_key, occurred_at, created_at)
+        SELECT
+            $1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, a.id, $4, a.benefit_id,
+            'user', CAST($5 AS TEXT), 'debit', '1', CAST($6 AS TEXT), 'membership_speed_up',
+            'membership_subscription', $7, $8, $8, $9, $9
+        FROM entitlement_account a
+        WHERE a.id = $10
         "#,
     )
     .bind(&usage_id)
     .bind(subject.tenant_id)
     .bind(subject.organization_id)
-    .bind(&membership_id)
-    .bind(&entitlement_id)
+    .bind(grant_id.as_deref())
     .bind(subject.user_id)
-    .bind(&entitlement_code)
-    .bind(&usage_id)
-    .bind((granted_quantity - used_quantity - 1).max(0))
+    .bind((balance - 1).max(0).to_string())
+    .bind(if membership_id.trim().is_empty() {
+        "membership-speed-up"
+    } else {
+        membership_id.as_str()
+    })
     .bind(&request_no)
-    .bind("speed_up")
     .bind(&requested_at)
+    .bind(&account_id)
     .execute(&mut *tx)
     .await
     .map_err(|error| store_error("failed to insert membership speed up usage", error))?;
@@ -2081,6 +2544,64 @@ fn plan_id_for_storage(plan: &StoredMembershipPlan) -> String {
         format!("membership-plan-{}", plan_code_from_rank(plan.rank))
     } else {
         format!("membership-plan-{}", plan.plan_no.trim())
+    }
+}
+
+fn plan_version_id_for_storage(plan: &StoredMembershipPlan) -> String {
+    match plan.plan_no.as_str() {
+        "free" => "seed-membership-plan-version-free-v1".to_owned(),
+        "pro" => "seed-membership-plan-version-pro-v1".to_owned(),
+        "max" => "seed-membership-plan-version-max-v1".to_owned(),
+        "vip" => "seed-membership-plan-version-vip-v1".to_owned(),
+        _ => format!("{}-version-v1", plan_id_for_storage(plan)),
+    }
+}
+
+fn membership_period_id(command: &SubmitMembershipPurchaseCommand) -> String {
+    format!("{}-period-1", command.membership_uuid)
+}
+
+fn admin_plan_version_id(plan_id: &str) -> String {
+    format!("{}-version-v1", storage_key(plan_id))
+}
+
+fn admin_benefit_code(benefit: &AppMembershipBenefitItem, fallback_index: usize) -> String {
+    benefit
+        .benefit_key
+        .as_deref()
+        .filter(|value| !value.trim().is_empty())
+        .map(|value| value.trim().to_ascii_lowercase())
+        .unwrap_or_else(|| format!("membership_benefit_{fallback_index}"))
+}
+
+fn benefit_definition_id_for_code(benefit_code: &str) -> String {
+    match benefit_code {
+        "ai_quota" => "seed-benefit-ai-quota".to_owned(),
+        "priority_speed_up" => "seed-benefit-priority-speed-up".to_owned(),
+        "member_discount" => "seed-benefit-member-discount".to_owned(),
+        "monthly_coupon_grant" => "seed-benefit-monthly-coupon-grant".to_owned(),
+        value => format!("benefit-definition-{}", storage_key(value)),
+    }
+}
+
+fn storage_key(value: &str) -> String {
+    let key = value
+        .trim()
+        .to_ascii_lowercase()
+        .chars()
+        .map(|character| {
+            if character.is_ascii_alphanumeric() || character == '-' || character == '_' {
+                character
+            } else {
+                '-'
+            }
+        })
+        .collect::<String>();
+    let key = key.trim_matches('-').to_owned();
+    if key.is_empty() {
+        "standard".to_owned()
+    } else {
+        key
     }
 }
 
@@ -2146,6 +2667,10 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
     let month = month_prime + if month_prime < 10 { 3 } else { -9 };
     let year = year + if month <= 2 { 1 } else { 0 };
     (year, month, day)
+}
+
+fn numeric_suffix(value: &str) -> Option<i64> {
+    value.rsplit('-').next()?.parse::<i64>().ok()
 }
 
 fn optional_string_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<String> {

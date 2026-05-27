@@ -17,7 +17,7 @@ public class IamApiKeyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -25,7 +25,7 @@ public class IamApiKeyRecord {
     public String getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -33,7 +33,7 @@ public class IamApiKeyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -41,7 +41,7 @@ public class IamApiKeyRecord {
     public String getKeyHash() {
         return this.keyHash;
     }
-    
+
     public void setKeyHash(String keyHash) {
         this.keyHash = keyHash;
     }
@@ -49,7 +49,7 @@ public class IamApiKeyRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,7 +57,7 @@ public class IamApiKeyRecord {
     public Map<String, String> getPermissionScopeJson() {
         return this.permissionScopeJson;
     }
-    
+
     public void setPermissionScopeJson(Map<String, String> permissionScopeJson) {
         this.permissionScopeJson = permissionScopeJson;
     }
@@ -65,7 +65,7 @@ public class IamApiKeyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -73,7 +73,7 @@ public class IamApiKeyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -81,7 +81,7 @@ public class IamApiKeyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -89,7 +89,7 @@ public class IamApiKeyRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

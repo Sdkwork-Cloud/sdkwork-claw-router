@@ -11,7 +11,7 @@ public class OpenAiImageGenerationRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -19,7 +19,7 @@ public class OpenAiImageGenerationRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -27,7 +27,7 @@ public class OpenAiImageGenerationRequest {
     public String getQuality() {
         return this.quality;
     }
-    
+
     public void setQuality(String quality) {
         this.quality = quality;
     }
@@ -35,7 +35,7 @@ public class OpenAiImageGenerationRequest {
     public String getResponseFormat() {
         return this.responseFormat;
     }
-    
+
     public void setResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
     }
@@ -43,7 +43,7 @@ public class OpenAiImageGenerationRequest {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }

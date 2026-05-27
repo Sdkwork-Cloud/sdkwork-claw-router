@@ -432,16 +432,16 @@ function buildSubscriptionPlans(
     (left, right) => left.priceCny - right.priceCny || left.name.localeCompare(right.name),
   );
   const currentLevelName = subscriptionDashboard.summary.currentLevelName || "";
-  const isVip = Boolean(subscriptionDashboard.summary.isVip);
+  const isMember = Boolean(subscriptionDashboard.summary.isMember);
 
   return plans.map((plan, index) => {
     const cadence = inferCadence(plan.durationDays);
     const serviceTier = inferServiceTier(plan, index, plans.length);
     const seatLimit = resolveSeatLimit(serviceTier, "subscription");
-    const isCurrent = isVip && planMatchesCurrentLevel(plan, currentLevelName);
+    const isCurrent = isMember && planMatchesCurrentLevel(plan, currentLevelName);
     const action = isCurrent
       ? "renew"
-      : isVip
+      : isMember
         ? "upgrade"
         : "purchase";
     const includedUsage = cadence === "annual"
@@ -451,7 +451,7 @@ function buildSubscriptionPlans(
     const formattedPrice = formatSdkworkCurrencyCny(plan.priceCny);
     const actionLabel = isCurrent
       ? copy.service.actionRenewCurrentPlan
-      : isVip
+      : isMember
         ? formatSdkworkPricingTemplate(copy.service.actionUpgradeToValue, plan.name)
         : formatSdkworkPricingTemplate(copy.service.actionStartValue, plan.name);
 

@@ -9,7 +9,7 @@ public class GoogleCountTokensRequest {
     public List<GoogleContent> getContents() {
         return this.contents;
     }
-    
+
     public void setContents(List<GoogleContent> contents) {
         this.contents = contents;
     }
@@ -17,7 +17,7 @@ public class GoogleCountTokensRequest {
     public GoogleGenerateContentRequest getGenerateContentRequest() {
         return this.generateContentRequest;
     }
-    
+
     public void setGenerateContentRequest(GoogleGenerateContentRequest generateContentRequest) {
         this.generateContentRequest = generateContentRequest;
     }

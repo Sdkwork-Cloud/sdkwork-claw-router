@@ -1,7 +1,7 @@
 #[test]
 fn sensitive_headers_are_matched_case_insensitively() {
     assert!(sdkwork_claw_security::is_sensitive_header("Authorization"));
-    assert!(sdkwork_claw_security::is_sensitive_header("access-token"));
+    assert!(sdkwork_claw_security::is_sensitive_header("Access-Token"));
     assert!(sdkwork_claw_security::is_sensitive_header("X-API-Key"));
     assert!(sdkwork_claw_security::is_sensitive_header("set-cookie"));
     assert!(!sdkwork_claw_security::is_sensitive_header("x-request-id"));

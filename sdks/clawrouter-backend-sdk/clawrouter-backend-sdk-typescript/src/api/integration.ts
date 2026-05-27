@@ -9,14 +9,6 @@ export interface IntegrationProviderSecretsListParams {
   status?: 'active' | 'disabled';
 }
 
-export interface IntegrationProviderSecretsCreateParams {
-  xRequestId?: string;
-}
-
-export interface IntegrationProviderSecretsUpdateParams {
-  xRequestId?: string;
-}
-
 export class IntegrationProviderSecretsApi {
   private client: HttpClient;
 
@@ -35,43 +27,19 @@ export class IntegrationProviderSecretsApi {
   }
 
 /** Create provider secret */
-  async create(body: AdminProviderSecretCreateRequest, params?: IntegrationProviderSecretsCreateParams): Promise<ProviderSecretsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<ProviderSecretsCreateResult>(backendApiPath(`/integration/provider_secrets`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminProviderSecretCreateRequest): Promise<ProviderSecretsCreateResult> {
+    return this.client.post<ProviderSecretsCreateResult>(backendApiPath(`/integration/provider_secrets`), body, undefined, undefined, 'application/json');
   }
 
 /** Update provider secret */
-  async update(body: AdminProviderSecretUpdateRequest, params?: IntegrationProviderSecretsUpdateParams): Promise<ProviderSecretsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<ProviderSecretsUpdateResult>(backendApiPath(`/integration/provider_secrets`), body, undefined, requestHeaders, 'application/json');
+  async update(body: AdminProviderSecretUpdateRequest): Promise<ProviderSecretsUpdateResult> {
+    return this.client.put<ProviderSecretsUpdateResult>(backendApiPath(`/integration/provider_secrets`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete provider secret */
   async delete(secretId: string): Promise<ProviderSecretsDeleteResult> {
     return this.client.delete<ProviderSecretsDeleteResult>(backendApiPath(`/integration/provider_secrets/${serializePathParameter(secretId, { name: 'secretId', style: 'simple', explode: false })}`));
   }
-}
-
-export interface IntegrationChannelsCreateParams {
-  xRequestId?: string;
-}
-
-export interface IntegrationChannelsUpdateParams {
-  xRequestId?: string;
-}
-
-export interface IntegrationChannelsVerifyParams {
-  xRequestId?: string;
 }
 
 export class IntegrationChannelsApi {
@@ -88,25 +56,13 @@ export class IntegrationChannelsApi {
   }
 
 /** Create channel */
-  async create(body: AdminChannelCreateRequest, params?: IntegrationChannelsCreateParams): Promise<ChannelsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<ChannelsCreateResult>(backendApiPath(`/integration/channels`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminChannelCreateRequest): Promise<ChannelsCreateResult> {
+    return this.client.post<ChannelsCreateResult>(backendApiPath(`/integration/channels`), body, undefined, undefined, 'application/json');
   }
 
 /** Update channel */
-  async update(body: AdminChannelUpdateRequest, params?: IntegrationChannelsUpdateParams): Promise<ChannelsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<ChannelsUpdateResult>(backendApiPath(`/integration/channels`), body, undefined, requestHeaders, 'application/json');
+  async update(body: AdminChannelUpdateRequest): Promise<ChannelsUpdateResult> {
+    return this.client.put<ChannelsUpdateResult>(backendApiPath(`/integration/channels`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete channel */
@@ -115,14 +71,8 @@ export class IntegrationChannelsApi {
   }
 
 /** Test channel */
-  async verify(channelId: string, params?: IntegrationChannelsVerifyParams): Promise<ChannelsVerifyResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<ChannelsVerifyResult>(backendApiPath(`/integration/channels/${serializePathParameter(channelId, { name: 'channelId', style: 'simple', explode: false })}/verify`), undefined, undefined, requestHeaders);
+  async verify(channelId: string): Promise<ChannelsVerifyResult> {
+    return this.client.post<ChannelsVerifyResult>(backendApiPath(`/integration/channels/${serializePathParameter(channelId, { name: 'channelId', style: 'simple', explode: false })}/verify`));
   }
 }
 
@@ -373,79 +323,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

@@ -23,7 +23,7 @@ public class ContentCourseRelationRecord {
     public String getCourseId() {
         return this.courseId;
     }
-    
+
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
@@ -31,7 +31,7 @@ public class ContentCourseRelationRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -39,7 +39,7 @@ public class ContentCourseRelationRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -47,7 +47,7 @@ public class ContentCourseRelationRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -55,7 +55,7 @@ public class ContentCourseRelationRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -63,7 +63,7 @@ public class ContentCourseRelationRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,7 +71,7 @@ public class ContentCourseRelationRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -79,7 +79,7 @@ public class ContentCourseRelationRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -87,7 +87,7 @@ public class ContentCourseRelationRecord {
     public String getRelatedCourseId() {
         return this.relatedCourseId;
     }
-    
+
     public void setRelatedCourseId(String relatedCourseId) {
         this.relatedCourseId = relatedCourseId;
     }
@@ -95,7 +95,7 @@ public class ContentCourseRelationRecord {
     public String getRelationType() {
         return this.relationType;
     }
-    
+
     public void setRelationType(String relationType) {
         this.relationType = relationType;
     }
@@ -103,7 +103,7 @@ public class ContentCourseRelationRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -111,7 +111,7 @@ public class ContentCourseRelationRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -119,7 +119,7 @@ public class ContentCourseRelationRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -127,7 +127,7 @@ public class ContentCourseRelationRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -135,7 +135,7 @@ public class ContentCourseRelationRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -143,7 +143,7 @@ public class ContentCourseRelationRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -10,6 +10,7 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -20,10 +21,8 @@ use crate::ports::{
 
 const MAX_MODEL_LEN: usize = 128;
 const MAX_GROUP_LEN: usize = 128;
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MIN_LIMIT_VALUE: i64 = 1;
 const MAX_LIMIT_VALUE: i64 = 1_000_000_000;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const ACCESS_GROUP_NOT_FOUND: &str = "access group was not found";
 
 #[derive(Clone)]
@@ -242,7 +241,7 @@ fn normalize_limit_value(value: Option<i64>, field_name: &str) -> Result<i64, St
 
 fn build_create_command(
     state: AdminModelRateLimitState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminModelRateLimitSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminModelRateLimitCommand, ModelRateLimitCommandBuildError> {
@@ -258,7 +257,7 @@ fn build_create_command(
         group: request.group,
         rpm: request.rpm,
         tpm: request.tpm,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -272,29 +271,13 @@ fn generate_entity_uuid(
         .map_err(ModelRateLimitCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminModelRateLimitState,
-) -> Result<String, ModelRateLimitCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(ModelRateLimitCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> ModelRateLimitCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => ModelRateLimitCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            ModelRateLimitCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_item_response(item: AdminModelRateLimitItem) -> AdminModelRateLimitItemResponse {

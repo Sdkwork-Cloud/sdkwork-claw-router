@@ -7,7 +7,7 @@ public class GoogleCachedContentUsageMetadata {
     public Integer getTotalTokenCount() {
         return this.totalTokenCount;
     }
-    
+
     public void setTotalTokenCount(Integer totalTokenCount) {
         this.totalTokenCount = totalTokenCount;
     }

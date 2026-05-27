@@ -1,5 +1,8 @@
+use std::sync::Arc;
+
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
+use crate::application::ApiKeySecretCodec;
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AdminOpenPlatformAccountItem, AdminOpenPlatformCommandFuture, AdminOpenPlatformEntryItem,
@@ -19,14 +22,38 @@ const OPEN_PLATFORM_ACCOUNT_TARGET_TYPE: i32 = 81;
 const OPEN_PLATFORM_ENTRY_TARGET_TYPE: i32 = 82;
 const OPEN_PLATFORM_PAY_BINDING_TARGET_TYPE: i32 = 83;
 
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 pub struct PostgresAdminOpenPlatformStore {
     pool: PgPool,
+    api_key_secret_codec: Option<Arc<dyn ApiKeySecretCodec + Send + Sync>>,
+}
+
+impl std::fmt::Debug for PostgresAdminOpenPlatformStore {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        formatter
+            .debug_struct("PostgresAdminOpenPlatformStore")
+            .field("pool", &self.pool)
+            .field("api_key_secret_codec", &self.api_key_secret_codec.is_some())
+            .finish()
+    }
 }
 
 impl PostgresAdminOpenPlatformStore {
     pub fn new(pool: PgPool) -> Self {
-        Self { pool }
+        Self {
+            pool,
+            api_key_secret_codec: None,
+        }
+    }
+
+    pub fn with_api_key_secret_codec(
+        pool: PgPool,
+        api_key_secret_codec: Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    ) -> Self {
+        Self {
+            pool,
+            api_key_secret_codec: Some(api_key_secret_codec),
+        }
     }
 }
 
@@ -90,7 +117,8 @@ impl AdminOpenPlatformStore for PostgresAdminOpenPlatformStore {
             let mut tx = self.pool.begin().await.map_err(|error| {
                 store_error("failed to begin open platform account transaction", error)
             })?;
-            let id = insert_account(&mut tx, &command).await?;
+            let id =
+                insert_account(&mut tx, &command, self.api_key_secret_codec.as_deref()).await?;
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -140,7 +168,8 @@ impl AdminOpenPlatformStore for PostgresAdminOpenPlatformStore {
             let mut tx = self.pool.begin().await.map_err(|error| {
                 store_error("failed to begin open platform account transaction", error)
             })?;
-            let updated = update_account(&mut tx, &command).await?;
+            let updated =
+                update_account(&mut tx, &command, self.api_key_secret_codec.as_deref()).await?;
             if !updated {
                 tx.commit().await.map_err(|error| {
                     store_error("failed to commit open platform account transaction", error)
@@ -737,13 +766,16 @@ async fn find_qr_default_entry(
 async fn insert_account(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminOpenPlatformAccountCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<i64> {
+    let metadata_json =
+        open_platform_account_metadata_json_for_create(command, api_key_secret_codec)?;
     sqlx::query_scalar(
         r#"
         INSERT INTO open_platform_account
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, account_key, name, provider, account_type, app_id, secret_ref, token_ref, aes_key_ref, qr_default)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12, $13, false)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, false)
         RETURNING id
         "#,
     )
@@ -752,6 +784,7 @@ async fn insert_account(
     .bind(command.subject.organization_id)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
+    .bind(metadata_json)
     .bind(&command.key)
     .bind(&command.name)
     .bind(&command.provider)
@@ -768,6 +801,7 @@ async fn insert_account(
 async fn update_account(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminOpenPlatformAccountCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<bool> {
     let Some(current) = load_account_by_id(
         tx,
@@ -831,6 +865,8 @@ async fn update_account(
         .aes_key_ref
         .clone()
         .unwrap_or_else(|| current.aes_key_ref.clone());
+    let next_metadata_json =
+        open_platform_account_metadata_json_for_update(tx, command, api_key_secret_codec).await?;
 
     let result = sqlx::query(
         r#"
@@ -843,11 +879,12 @@ async fn update_account(
             default_entry_id = $6,
             qr_default = $7,
             status = $8,
-            updated_at = $9::timestamptz,
+            metadata = COALESCE($9::jsonb, metadata),
+            updated_at = $10::timestamptz,
             version = COALESCE(version, 0) + 1
-        WHERE id = $10
-          AND tenant_id = $11
-          AND organization_id = $12
+        WHERE id = $11
+          AND tenant_id = $12
+          AND organization_id = $13
           AND deleted_at IS NULL
         "#,
     )
@@ -865,6 +902,7 @@ async fn update_account(
             .map(status_code)
             .unwrap_or_else(|| status_code(&current.status)),
     )
+    .bind(next_metadata_json.as_deref())
     .bind(&command.requested_at)
     .bind(command.account_id)
     .bind(command.subject.tenant_id)
@@ -874,6 +912,187 @@ async fn update_account(
     .map_err(|error| store_error("failed to update open platform account", error))?;
 
     Ok(result.rows_affected() > 0)
+}
+
+fn open_platform_account_metadata_json_for_create(
+    command: &CreateAdminOpenPlatformAccountCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<String> {
+    open_platform_account_metadata_json(
+        None,
+        [
+            (
+                "appSecret",
+                command.secret_ref.as_deref(),
+                command.secret_material.as_deref(),
+            ),
+            (
+                "token",
+                command.token_ref.as_deref(),
+                command.token_material.as_deref(),
+            ),
+            (
+                "encodingAesKey",
+                command.aes_key_ref.as_deref(),
+                command.aes_key_material.as_deref(),
+            ),
+        ],
+        api_key_secret_codec,
+    )
+}
+
+async fn open_platform_account_metadata_json_for_update(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UpdateAdminOpenPlatformAccountCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<Option<String>> {
+    if command.secret_material.is_none()
+        && command.token_material.is_none()
+        && command.aes_key_material.is_none()
+    {
+        return Ok(None);
+    }
+    let current_metadata = load_account_metadata_by_id(
+        tx,
+        command.account_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?;
+    open_platform_account_metadata_json(
+        Some(&current_metadata),
+        [
+            (
+                "appSecret",
+                command
+                    .secret_ref
+                    .as_ref()
+                    .and_then(|value| value.as_deref()),
+                command.secret_material.as_deref(),
+            ),
+            (
+                "token",
+                command
+                    .token_ref
+                    .as_ref()
+                    .and_then(|value| value.as_deref()),
+                command.token_material.as_deref(),
+            ),
+            (
+                "encodingAesKey",
+                command
+                    .aes_key_ref
+                    .as_ref()
+                    .and_then(|value| value.as_deref()),
+                command.aes_key_material.as_deref(),
+            ),
+        ],
+        api_key_secret_codec,
+    )
+    .map(Some)
+}
+
+fn open_platform_account_metadata_json(
+    current_metadata_json: Option<&str>,
+    materials: [(&str, Option<&str>, Option<&str>); 3],
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<String> {
+    let has_material = materials.iter().any(|(_, _, material)| material.is_some());
+    if !has_material {
+        return Ok(current_metadata_json
+            .map(str::trim)
+            .filter(|value| !value.is_empty())
+            .unwrap_or("{}")
+            .to_owned());
+    }
+    let Some(api_key_secret_codec) = api_key_secret_codec else {
+        return Err(DomainError::new(
+            "open platform credential material requires an encrypted secret codec",
+        ));
+    };
+    let mut metadata = parse_account_metadata_json(current_metadata_json)?;
+    let Some(metadata_object) = metadata.as_object_mut() else {
+        return Err(DomainError::new(
+            "open platform account metadata must be a JSON object",
+        ));
+    };
+    let mut credential_material = metadata_object
+        .remove("credentialMaterial")
+        .filter(serde_json::Value::is_object)
+        .unwrap_or_else(|| serde_json::json!({}));
+    let credential_object = credential_material.as_object_mut().ok_or_else(|| {
+        DomainError::new("open platform credential metadata must be a JSON object")
+    })?;
+    credential_object.insert(
+        "storage".to_owned(),
+        serde_json::Value::String("encrypted-open-platform-account-metadata".to_owned()),
+    );
+    for (material_key, secret_ref, material) in materials {
+        let Some(material) = material else {
+            continue;
+        };
+        let ciphertext = api_key_secret_codec.encode_secret(material)?;
+        credential_object.insert(
+            material_key.to_owned(),
+            serde_json::json!({
+                "ref": secret_ref,
+                "ciphertext": ciphertext
+            }),
+        );
+    }
+    metadata_object.insert("credentialMaterial".to_owned(), credential_material);
+    serde_json::to_string(&metadata).map_err(|error| {
+        DomainError::new(format!(
+            "failed to serialize open platform metadata: {error}"
+        ))
+    })
+}
+
+fn parse_account_metadata_json(
+    current_metadata_json: Option<&str>,
+) -> DomainResult<serde_json::Value> {
+    let Some(current_metadata_json) = current_metadata_json
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+    else {
+        return Ok(serde_json::json!({}));
+    };
+    serde_json::from_str(current_metadata_json).map_err(|error| {
+        DomainError::new(format!(
+            "open platform account metadata must be valid JSON: {error}"
+        ))
+    })
+}
+
+async fn load_account_metadata_by_id(
+    tx: &mut Transaction<'_, Postgres>,
+    account_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<String> {
+    let metadata: Option<serde_json::Value> = sqlx::query_scalar(
+        r#"
+        SELECT COALESCE(metadata, '{}'::jsonb)
+        FROM open_platform_account
+        WHERE id = $1
+          AND tenant_id = $2
+          AND organization_id = $3
+          AND deleted_at IS NULL
+        LIMIT 1
+        "#,
+    )
+    .bind(account_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load open platform account metadata", error))?;
+
+    serde_json::to_string(&metadata.unwrap_or_else(|| serde_json::json!({}))).map_err(|error| {
+        DomainError::new(format!(
+            "failed to serialize open platform metadata: {error}"
+        ))
+    })
 }
 
 async fn soft_delete_account(

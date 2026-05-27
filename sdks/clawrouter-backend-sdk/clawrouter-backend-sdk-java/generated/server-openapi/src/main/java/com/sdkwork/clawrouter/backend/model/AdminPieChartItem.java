@@ -9,7 +9,7 @@ public class AdminPieChartItem {
     public String getColor() {
         return this.color;
     }
-    
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -17,7 +17,7 @@ public class AdminPieChartItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -25,7 +25,7 @@ public class AdminPieChartItem {
     public Double getValue() {
         return this.value;
     }
-    
+
     public void setValue(Double value) {
         this.value = value;
     }

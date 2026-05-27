@@ -4,15 +4,21 @@ pub fn promotion_service_contract() -> CommerceServiceContract {
     CommerceServiceContract::new(
         "promotion",
         "commerce.promotion",
-        vec!["coupons.claims.create", "coupons.redemptions.create"],
         vec![
-            "coupons.list",
+            "promotions.userCoupons.claims.create",
+            "promotions.codes.redemptions.create",
+            "promotions.discountApplications.create",
+            "promotions.discountApplications.reversals.create",
+        ],
+        vec![
+            "promotions.userCoupons.list",
             "wallet.exchangeRate.retrieve",
             "wallet.points.exchangeRules.list",
-            "coupons.templates.list",
-            "coupons.campaigns.list",
-            "coupons.codes.list",
-            "coupons.redemptions.list",
+            "promotions.offers.list",
+            "promotions.couponStocks.list",
+            "promotions.codes.list",
+            "promotions.discountApplications.list",
+            "promotions.discountAllocations.list",
         ],
         vec![
             crate::ports::PROMOTION_APPLICATION_PORT,

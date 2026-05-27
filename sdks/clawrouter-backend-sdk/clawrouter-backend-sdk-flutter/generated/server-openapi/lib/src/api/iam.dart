@@ -61,6 +61,31 @@ class IamApi {
     })();
   }
 
+  /// List group channel bindings
+  Future<AccessGroupsChannelBindingsListResult?> accessGroupsChannelBindingsList(String groupId) async {
+    final response = await _client.get(ApiPaths.backendPath('/iam/access_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}/channel_bindings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AccessGroupsChannelBindingsListResult.fromJson(map);
+    })();
+  }
+
+  /// Replace group channel bindings
+  Future<AccessGroupsChannelBindingsUpdateResult?> accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/iam/access_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}/channel_bindings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AccessGroupsChannelBindingsUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List API key map
   Future<ApiKeysListResult?> apiKeysList() async {
     final response = await _client.get(ApiPaths.backendPath('/iam/api_keys'));

@@ -2,7 +2,7 @@ import Foundation
 
 public class FineTuningApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }

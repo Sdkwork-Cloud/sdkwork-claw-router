@@ -1,4 +1,4 @@
-﻿export type UserCenterMode = "local-native" | "app-api-hub" | "external-hub";
+export type UserCenterMode = "local-native" | "app-api-hub" | "external-hub";
 export type UserCenterProviderKind =
   | "header"
   | "builtin-local"
@@ -12,10 +12,10 @@ export type UserCenterIntegrationKind =
 export type UserCenterSessionTransport = "header";
 export type UserCenterUserSystemScope = "application";
 export type UserCenterAuthMode =
-  | "auth-Sdkwork-Access-Token"
+  | "dual-token"
   | "upstream-app-api-token-bridge"
   | "upstream-external-token-bridge";
-export type UserCenterAuthValidationStrategy = "auth-Sdkwork-Access-Token";
+export type UserCenterAuthValidationStrategy = "dual-token";
 export type UserCenterHandshakeMode = "disabled" | "provider-shared-secret";
 export type UserCenterSecretResolverKind =
   | "local-static"
@@ -26,7 +26,7 @@ export type UserCenterStandardEntityName =
   | "IamUser"
   | "IamTenant"
   | "IamAccount"
-  | "IamVipMembership"
+  | "IamMembership"
   | "IamOrganizationMember"
   | "IamMemberRelation";
 
@@ -39,8 +39,8 @@ export interface UserCenterProviderConfig {
 
 export interface UserCenterRoutes {
   authBasePath: string;
+  membershipRoutePath: string;
   userRoutePath: string;
-  vipRoutePath: string;
 }
 
 export interface UserCenterStoragePlan {
@@ -92,7 +92,6 @@ export interface UserCenterLocalApiRoutes {
   tenantRoot: string;
   userProfile: string;
   userSettings: string;
-  vipInfo: string;
 }
 
 export interface UserCenterSqliteStorageConfig {
@@ -430,7 +429,7 @@ export interface StandardUserCenterMembershipRecord {
   userId?: string;
   validFrom?: string;
   validTo?: string;
-  vipLevelId?: string;
+  membershipLevelId?: string;
 }
 
 export interface StandardUserCenterOrganizationRelationRecord {
@@ -495,7 +494,7 @@ export interface CanonicalUserCenterMembershipSnapshot {
   userId?: string;
   validFrom?: string;
   validTo?: string;
-  vipLevelId?: string;
+  membershipLevelId?: string;
 }
 
 export interface CanonicalUserCenterOrganizationSnapshot {
@@ -516,7 +515,7 @@ export interface CanonicalUserCenterSnapshot {
   user: CanonicalUserCenterUserSnapshot;
 }
 
-export type UserCenterPluginCapabilityName = "auth" | "user" | "vip";
+export type UserCenterPluginCapabilityName = "auth" | "user" | "membership";
 export type UserCenterDeploymentProfileKind =
   | "builtin-local"
   | "sdkwork-cloud-app-api"
@@ -729,8 +728,8 @@ export interface UserCenterUserWorkspaceManifest extends UserCenterWorkspaceMani
   sectionRoutePattern: string;
 }
 
-export interface UserCenterVipWorkspaceManifest extends UserCenterWorkspaceManifestBase {
-  capability: "vip";
+export interface UserCenterMembershipWorkspaceManifest extends UserCenterWorkspaceManifestBase {
+  capability: "membership";
   routePath: string;
 }
 
@@ -743,8 +742,8 @@ export interface UserCenterPluginDefinition {
   integration: UserCenterBridgeConfig["integration"];
   manifests: Partial<{
     auth: UserCenterAuthWorkspaceManifest;
+    membership: UserCenterMembershipWorkspaceManifest;
     user: UserCenterUserWorkspaceManifest;
-    vip: UserCenterVipWorkspaceManifest;
   }>;
   storageTopology: UserCenterBridgeConfig["storageTopology"];
   storagePlan: UserCenterBridgeConfig["storagePlan"];
@@ -752,7 +751,7 @@ export interface UserCenterPluginDefinition {
 
 export type UserCenterProtectedTokenName =
   | "auth-token"
-  | "Sdkwork-Access-Token"
+  | "Access-Token"
   | "session-token";
 
 export type UserCenterLocalAuthorityColumnRole =
@@ -838,8 +837,8 @@ export type UserCenterServerRouteKey =
   | "userProfileUpdate"
   | "userSettingsGet"
   | "userSettingsUpdate"
-  | "vipInfoGet"
-  | "vipInfoUpdate";
+  | "membershipCurrentGet"
+  | "membershipCurrentUpdate";
 
 export interface UserCenterServerApiContract {
   basePath: string;

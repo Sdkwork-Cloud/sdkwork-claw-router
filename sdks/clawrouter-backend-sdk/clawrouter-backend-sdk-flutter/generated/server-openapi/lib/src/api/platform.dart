@@ -12,12 +12,13 @@ class PlatformApi {
   PlatformApi(this._client);
 
   /// List apps
-  Future<AppsListResult?> appsList([String? q, String? status, String? marketStatus, String? appType, int? page, int? pageSize, String? xRequestId]) async {
+  Future<AppsListResult?> appsList([String? q, String? status, String? marketStatus, String? appType, int? categoryId, int? page, int? pageSize, String? xRequestId]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('status', status, 'form', true, false, null),
       QueryParameterSpec('market_status', marketStatus, 'form', true, false, null),
       QueryParameterSpec('app_type', appType, 'form', true, false, null),
+      QueryParameterSpec('category_id', categoryId, 'form', true, false, null),
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
     ]);
@@ -103,6 +104,122 @@ class PlatformApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsCategoriesUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List app templates
+  Future<AppsTemplatesListResult?> appsTemplatesList([String? q, String? publishStatus, String? templateType, String? runtime, int? categoryId, int? page, int? pageSize, String? xRequestId]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('q', q, 'form', true, false, null),
+      QueryParameterSpec('publish_status', publishStatus, 'form', true, false, null),
+      QueryParameterSpec('template_type', templateType, 'form', true, false, null),
+      QueryParameterSpec('runtime', runtime, 'form', true, false, null),
+      QueryParameterSpec('category_id', categoryId, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
+    ]);
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/platform/apps/templates'), query), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesListResult.fromJson(map);
+    })();
+  }
+
+  /// Create app template
+  Future<AppsTemplatesCreateResult?> appsTemplatesCreate(AdminAppTemplateCreateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete app template
+  Future<AppsTemplatesDeleteResult?> appsTemplatesDelete(String templateId, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// List app template
+  Future<AppsTemplatesRetrieveResult?> appsTemplatesRetrieve(String templateId, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.get(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Update app template
+  Future<AppsTemplatesUpdateResult?> appsTemplatesUpdate(String templateId, AdminAppTemplateUpdateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// Publish app template
+  Future<AppsTemplatesPublishResult?> appsTemplatesPublish(String templateId, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/publish'), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesPublishResult.fromJson(map);
+    })();
+  }
+
+  /// Offline app template
+  Future<AppsTemplatesUnpublishResult?> appsTemplatesUnpublish(String templateId, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/unpublish'), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsTemplatesUnpublishResult.fromJson(map);
     })();
   }
 

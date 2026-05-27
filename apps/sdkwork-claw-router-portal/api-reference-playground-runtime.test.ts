@@ -3,6 +3,8 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 import {
   buildApiCategorySidebarTree,
@@ -49,6 +51,18 @@ import {
   SdkEndpointView,
 } from "./packages/sdkwork-claw-router-sdk-reference/src/components/SdkEndpointView.tsx";
 
+if (!i18n.isInitialized) {
+  void i18n
+    .use(initReactI18next)
+    .init({
+      lng: "en",
+      fallbackLng: "en",
+      resources: { en: { translation: {} } },
+      interpolation: { escapeValue: false },
+      initImmediate: false,
+    });
+}
+
 const { createApiPlaygroundResponseDownload } = apiPlaygroundResponse;
 const apiReferencePageSource = () => readFileSync(
   new URL("./packages/sdkwork-claw-router-api-reference/src/pages/ApiReference.tsx", import.meta.url),
@@ -62,14 +76,23 @@ const sdkEndpointViewSource = () => readFileSync(
   new URL("./packages/sdkwork-claw-router-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
   "utf8",
 );
+const sdkReferenceGenerationServiceSource = () => readFileSync(
+  new URL("./packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts", import.meta.url),
+  "utf8",
+);
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
-function withClawRouterRuntimeEnv<T>(env: Record<string, string>, fn: () => T): T {
+function withClawRouterRuntimeEnv<T>(
+  env: Record<string, string>,
+  fn: () => T,
+  origin = "https://portal.example.test",
+): T {
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
     value: {
       __CLAWROUTER_ENV__: env,
+      location: { origin },
     },
   });
 
@@ -403,6 +426,52 @@ const conversationGatewaySpec = {
             content: {
               "application/json": {
                 schema: { $ref: "#/components/schemas/OpenAiConversation" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+const fineTuningGatewaySpec = {
+  components: {
+    schemas: {
+      OpenAiFineTuningJobEventList: {
+        type: "object",
+        properties: {
+          data: {
+            type: "array",
+            items: { $ref: "#/components/schemas/OpenAiFineTuningJobEvent" },
+          },
+        },
+      },
+      OpenAiFineTuningJobEvent: {
+        type: "object",
+        properties: {
+          id: { type: "string", description: "Event identifier." },
+        },
+      },
+    },
+  },
+  paths: {
+    "/v1/fine_tuning/jobs/{fine_tuning_job_id}/events": {
+      get: {
+        operationId: "listFineTuningEvents",
+        summary: "List fine tuning events",
+        description: "Lists fine tuning events.",
+        tags: ["Fine Tuning"],
+        parameters: [
+          { name: "fine_tuning_job_id", in: "path", required: true, description: "Fine tuning job identifier.", schema: { type: "string" } },
+          { name: "limit", in: "query", required: false, description: "Maximum number of objects to return.", schema: { type: "integer" } },
+        ],
+        responses: {
+          "200": {
+            description: "ok",
+            content: {
+              "application/json": {
+                schema: { $ref: "#/components/schemas/OpenAiFineTuningJobEventList" },
               },
             },
           },
@@ -1178,6 +1247,27 @@ test("sdk reference gateway base URL uses SDK-specific runtime override and fall
   assert.equal(overriddenConfig.baseUrl, "https://open.example.com");
 });
 
+test("sdk reference gateway base URL does not collapse root-relative open API routes to empty config", () => {
+  const inheritedConfig = withClawRouterRuntimeEnv(
+    {
+      VITE_API_BASE_URL: "/v1",
+    },
+    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+    "https://tenant.example.test",
+  );
+  const overriddenConfig = withClawRouterRuntimeEnv(
+    {
+      VITE_API_BASE_URL: "https://tenant.example.com/v1",
+      VITE_CLAWROUTER_OPEN_API_BASE_URL: "/v1",
+    },
+    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+    "https://open.example.test",
+  );
+
+  assert.equal(inheritedConfig.baseUrl, "https://tenant.example.test");
+  assert.equal(overriddenConfig.baseUrl, "https://open.example.test");
+});
+
 test("sdk reference sidebar builds nested modality vendor tree", async () => {
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
@@ -1235,16 +1325,16 @@ test("sdk reference endpoint documentation uses resolved schema details", async 
     baseUrl: "https://api.example.test",
   });
 
-  assert.equal(docs.methodName, "viduCreateTextToVideo");
+  assert.equal(docs.methodName, "create");
   assert.equal(docs.requestType, "ViduTextToVideoRequest");
   assert.equal(docs.responseType, "ViduVideoGenerationTask");
-  assert.equal(docs.signature, "async viduCreateTextToVideo(body: ViduTextToVideoRequest): Promise<ViduVideoGenerationTask>");
+  assert.equal(docs.signature, "async create(body: ViduTextToVideoRequest): Promise<ViduVideoGenerationTask>");
   assert.equal(docs.parameters.some((param) => param.name === "model" && param.type === "string" && param.required), true);
   assert.equal(docs.parameters.some((param) => param.name === "prompt" && param.type === "string" && param.required), true);
   assert.equal(docs.returns.some((param) => param.name === "task_id" && param.type === "string"), true);
   assert.equal(docs.codeDefinition.includes("body: unknown"), false);
   assert.equal(docs.codeDefinition.includes("Promise<unknown>"), false);
-  assert.equal(docs.exampleUsage.includes("viduCreateTextToVideo({"), true);
+  assert.equal(docs.exampleUsage.includes("client.videosVidu.ent.v2.text2video.create({"), true);
   assert.equal(docs.exampleUsage.includes("model: \"string\""), true);
   assert.equal(docs.exampleUsage.includes("null"), false);
 });
@@ -1274,7 +1364,7 @@ test("sdk reference endpoint documentation keeps JsonObject as explicit free-for
   });
 
   assert.equal(docs.responseType, "Record<string, unknown>");
-  assert.equal(docs.signature, "async googleListFiles(): Promise<Record<string, unknown>>");
+  assert.equal(docs.signature, "async list(): Promise<Record<string, unknown>>");
   assert.deepEqual(docs.returns, [
     {
       name: "*",
@@ -1283,7 +1373,7 @@ test("sdk reference endpoint documentation keeps JsonObject as explicit free-for
       required: false,
     },
   ]);
-  assert.equal(docs.exampleUsage.includes("googleListFiles()"), true);
+  assert.equal(docs.exampleUsage.includes("client.filesGoogle.v1beta.files.list()"), true);
 });
 
 test("sdk reference endpoint documentation supports multipart requests and binary responses", async () => {
@@ -1320,11 +1410,12 @@ test("sdk reference endpoint documentation supports multipart requests and binar
   assert.equal(uploadDocs.requestType, "ProviderMultipartRequest");
   assert.equal(uploadDocs.parameters.some((param) => param.name === "file" && param.type === "string<binary>" && param.required), true);
   assert.equal(uploadDocs.codeDefinition.includes("@param body.file"), true);
-  assert.equal(uploadDocs.exampleUsage.includes("googleUploadFile({"), true);
+  assert.equal(uploadDocs.exampleUsage.includes("client.filesGoogle.v1beta.files.create({"), true);
 
-  assert.equal(binaryDocs.responseType, "string");
+  assert.equal(binaryDocs.responseType, "Blob");
+  assert.equal(binaryDocs.signature, "async content(fileId: string): Promise<Blob>");
   assert.equal(binaryDocs.returns.some((param) => param.name === "value" && param.type === "string<binary>"), true);
-  assert.equal(binaryDocs.exampleUsage.includes("anthropicRetrieveFileContent({"), true);
+  assert.equal(binaryDocs.exampleUsage.includes('client.filesAnthropic.v1.files.content("file_id")'), true);
 });
 
 test("sdk endpoint view renders nested return fields instead of only top level rows", async () => {
@@ -1388,11 +1479,11 @@ test("sdk reference endpoint documentation follows the selected SDK language", a
   assert.notEqual(pythonDocs.codeDefinition, typescriptDocs.codeDefinition);
   assert.equal(typescriptDocs.languageLabel, "typescript");
   assert.equal(pythonDocs.languageLabel, "python");
-  assert.equal(pythonDocs.methodName, "vidu_create_text_to_video");
-  assert.equal(pythonDocs.signature, "def vidu_create_text_to_video(body: ViduTextToVideoRequest) -> ViduVideoGenerationTask");
+  assert.equal(pythonDocs.methodName, "create");
+  assert.equal(pythonDocs.signature, "def create(body: ViduTextToVideoRequest) -> ViduVideoGenerationTask");
   assert.equal(pythonDocs.codeDefinition.includes("async viduCreateTextToVideo"), false);
-  assert.equal(pythonDocs.codeDefinition.includes("def vidu_create_text_to_video"), true);
-  assert.equal(pythonDocs.exampleUsage.includes("client.videos.vidu_create_text_to_video({"), true);
+  assert.equal(pythonDocs.codeDefinition.includes("def create"), true);
+  assert.equal(pythonDocs.exampleUsage.includes("client.videos_vidu.ent.v2.text2video.create({"), true);
 });
 
 test("sdk reference endpoint documentation includes path and query parameters", async () => {
@@ -1426,15 +1517,89 @@ test("sdk reference endpoint documentation includes path and query parameters", 
   const listDocs = buildSdkEndpointDocumentation(listEndpoint, sdkData, "typescript");
   const retrieveDocs = buildSdkEndpointDocumentation(retrieveEndpoint, sdkData, "python");
 
-  assert.equal(listDocs.requestType, "ListConversationsParams");
-  assert.equal(listDocs.signature, "async listConversations(params?: ListConversationsParams): Promise<OpenAiConversationList>");
+  assert.equal(listDocs.requestType, "ConversationListParams");
+  assert.equal(listDocs.signature, "async list(params?: ConversationListParams): Promise<OpenAiConversationList>");
   assert.equal(listDocs.parameters.some((param) => param.name === "limit" && param.type === "integer"), true);
   assert.equal(listDocs.returns.some((param) => param.name === "data" && param.type === "array<OpenAiConversation>"), true);
-  assert.equal(listDocs.exampleUsage.includes("client.conversations.listConversations({"), true);
-  assert.equal(retrieveDocs.requestType, "RetrieveConversationParams");
-  assert.equal(retrieveDocs.signature, "def retrieve_conversation(params: RetrieveConversationParams) -> OpenAiConversation");
+  assert.equal(listDocs.exampleUsage.includes("client.conversation.list({"), true);
+  assert.equal(retrieveDocs.signature, "def retrieve(conversation_id: str) -> OpenAiConversation");
   assert.equal(retrieveDocs.parameters.some((param) => param.name === "conversation_id" && param.required), true);
-  assert.equal(retrieveDocs.exampleUsage.includes("client.conversations.retrieve_conversation({"), true);
+  assert.equal(retrieveDocs.exampleUsage.includes('client.conversation.retrieve("conversation_id")'), true);
+});
+
+test("sdk reference endpoint documentation derives gateway root from configured prefix paths", async () => {
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+
+  const systems = await buildSdkReferenceSystems(manifest, async (url) => {
+    if (url === "/openapi.json") return {
+      paths: {
+        "/v1/evals": {
+          get: {
+            operationId: "listEvals",
+            summary: "List evals",
+            description: "Lists evals.",
+            tags: ["Evaluations"],
+            responses: { "200": { description: "ok" } },
+          },
+        },
+      },
+    };
+    throw new Error(`unexpected sdk reference url ${url}`);
+  });
+
+  const endpoint = systems[0].categories
+    .flatMap((category) => category.endpoints)
+    .find((item) => item.path === "/v1/evals" && item.method === "GET");
+
+  assert.ok(endpoint);
+
+  const docs = buildSdkEndpointDocumentation(endpoint, {
+    name: "ClawRouterGatewaySdk",
+    packageName: "@sdkwork/clawrouter-gateway-sdk",
+    baseUrl: "https://api.example.test",
+  }, "typescript");
+
+  assert.equal(docs.signature, "async list(): Promise<void>");
+  assert.equal(docs.exampleUsage.includes("client.eval.list()"), true);
+  assert.equal(docs.exampleUsage.includes("client.evaluations.list()"), false);
+});
+
+test("sdk reference endpoint documentation uses terminal collection action methods", async () => {
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    ],
+  };
+
+  const systems = await buildSdkReferenceSystems(manifest, async (url) => {
+    if (url === "/openapi.json") return fineTuningGatewaySpec;
+    throw new Error(`unexpected sdk reference url ${url}`);
+  });
+
+  const endpoint = systems[0].categories
+    .flatMap((category) => category.endpoints)
+    .find((item) => item.path === "/v1/fine_tuning/jobs/{fine_tuning_job_id}/events" && item.method === "GET");
+
+  assert.ok(endpoint);
+
+  const docs = buildSdkEndpointDocumentation(endpoint, {
+    name: "ClawRouterGatewaySdk",
+    packageName: "@sdkwork/clawrouter-gateway-sdk",
+    baseUrl: "https://api.example.test",
+  }, "typescript");
+
+  assert.equal(
+    docs.signature,
+    "async listEvents(fineTuningJobId: string, params?: FineTuningJobsListEventsParams): Promise<OpenAiFineTuningJobEventList>",
+  );
+  assert.equal(docs.exampleUsage.includes('client.fineTuning.jobs.listEvents("fine_tuning_job_id", {'), true);
+  assert.equal(docs.exampleUsage.includes("client.fineTuning.jobs.events.list"), false);
 });
 
 test("sdk reference endpoint examples use provider native base URLs when endpoints are vendor-prefixed", async () => {
@@ -1512,6 +1677,28 @@ test("sdk reference generation uses app SDK instead of local tool API fetches", 
   assert.match(serviceSource, /sdkReference\.archives\.create/u);
   assert.match(appSdkSource, /appApiPath\(`\/sdk_reference\/documentation`\)/u);
   assert.match(appSdkSource, /appApiPath\(`\/sdk_reference\/archives`\)/u);
+});
+
+test("sdk endpoint view sends selected endpoint metadata to documentation generation", () => {
+  const source = sdkEndpointViewSource();
+
+  assert.match(source, /endpointPath:\s*endpoint\.path/u);
+  assert.match(source, /endpointMethod:\s*endpoint\.method/u);
+  assert.match(source, /operationId:\s*endpoint\.openApiOperation\?\.operationId/u);
+  assert.match(source, /language:\s*normalizedLanguage/u);
+  assert.match(source, /\[\s*spec,\s*normalizedLanguage,\s*sdkConfig,\s*endpoint\.path,\s*endpoint\.method,\s*endpoint\.openApiOperation\?\.operationId,\s*\]/u);
+});
+
+test("sdk reference generation requests keep config language aligned with selected language", () => {
+  const runtimeSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceRuntime.ts", import.meta.url),
+    "utf8",
+  );
+  const serviceSource = sdkReferenceGenerationServiceSource();
+
+  assert.match(runtimeSource, /const language = normalizeSdkReferenceLanguage\(languageId\);/u);
+  assert.match(serviceSource, /const language = normalizeSdkReferenceLanguage\(input\.language\);/u);
+  assert.match(serviceSource, /config:\s*normalizeJsonObject\(\{\s*\.\.\.input\.config,\s*language,\s*\}/u);
 });
 
 test("sdk endpoint docs show code definition and example before parameter details", () => {
@@ -1874,7 +2061,7 @@ test("api playground request builder focuses validation and rejects managed head
     endpoint,
     pathParams: [{ id: "schema-path-0-model", key: "model", value: "gpt-4o", description: "", enabled: true, isSchema: true, required: true }],
     queryParams: [],
-    headerParams: [{ id: "custom-header-2", key: "Sdkwork-Access-Token", value: "unsafe", description: "", enabled: true, isSchema: false }],
+    headerParams: [{ id: "custom-header-2", key: "Access-Token", value: "unsafe", description: "", enabled: true, isSchema: false }],
     bodyValue: "{}",
     authType: "current_user",
     authToken: "auth-token",
@@ -1886,9 +2073,46 @@ test("api playground request builder focuses validation and rejects managed head
   assert.deepEqual(managedAccessTokenHeader.errors, { "custom-header-2": true });
   assert.equal(managedAccessTokenHeader.response.statusText, "Managed Header");
 
-  const currentUserRequest = buildPlaygroundRequest({
+  const managedBrandedAccessTokenHeader = buildPlaygroundRequest({
     baseUrl: "https://api.example.test",
     endpoint,
+    pathParams: [{ id: "schema-path-0-model", key: "model", value: "gpt-4o", description: "", enabled: true, isSchema: true, required: true }],
+    queryParams: [],
+    headerParams: [{ id: "custom-header-3", key: "Vendor-Access-Token", value: "unsafe", description: "", enabled: true, isSchema: false }],
+    bodyValue: "{}",
+    authType: "current_user",
+    authToken: "auth-token",
+    accessToken: "access-token",
+  });
+
+  assert.equal(managedBrandedAccessTokenHeader.ok, false);
+  assert.equal(managedBrandedAccessTokenHeader.activeTab, "headers");
+  assert.deepEqual(managedBrandedAccessTokenHeader.errors, { "custom-header-3": true });
+  assert.equal(managedBrandedAccessTokenHeader.response.statusText, "Managed Header");
+
+  const managedRequestIdHeader = buildPlaygroundRequest({
+    baseUrl: "https://api.example.test",
+    endpoint,
+    pathParams: [{ id: "schema-path-0-model", key: "model", value: "gpt-4o", description: "", enabled: true, isSchema: true, required: true }],
+    queryParams: [],
+    headerParams: [{ id: "custom-header-4", key: "X-Request-Id", value: "client-generated", description: "", enabled: true, isSchema: false }],
+    bodyValue: "{}",
+    authType: "current_user",
+    authToken: "auth-token",
+    accessToken: "access-token",
+  });
+
+  assert.equal(managedRequestIdHeader.ok, false);
+  assert.equal(managedRequestIdHeader.activeTab, "headers");
+  assert.deepEqual(managedRequestIdHeader.errors, { "custom-header-4": true });
+  assert.equal(managedRequestIdHeader.response.statusText, "Managed Header");
+
+  const currentUserRequest = buildPlaygroundRequest({
+    baseUrl: "https://api.example.test",
+    endpoint: {
+      ...endpoint,
+      path: "/app/v3/api/models/{model}/responses",
+    },
     pathParams: [{ id: "schema-path-0-model", key: "model", value: "gpt-4o", description: "", enabled: true, isSchema: true, required: true }],
     queryParams: [],
     headerParams: [],
@@ -1900,8 +2124,33 @@ test("api playground request builder focuses validation and rejects managed head
 
   assert.equal(currentUserRequest.ok, true);
   assert.equal(currentUserRequest.requestInit.headers.Authorization, "Bearer auth-token");
-  assert.equal(currentUserRequest.requestInit.headers["Sdkwork-Access-Token"], "access-token");
-  assert.equal(currentUserRequest.requestInit.headers["Access-Token"], undefined);
+  assert.equal(currentUserRequest.requestInit.headers["Access-Token"], "access-token");
+
+  const gatewayCurrentUserRequest = buildPlaygroundRequest({
+    baseUrl: "https://api.example.test",
+    endpoint: {
+      method: "POST",
+      path: "/v1/chat/completions",
+      openApiOperation: {
+        requestBody: {
+          content: {
+            "application/json": {},
+          },
+        },
+      },
+    },
+    pathParams: [],
+    queryParams: [],
+    headerParams: [],
+    bodyValue: "{}",
+    authType: "current_user",
+    authToken: "auth-token",
+    accessToken: "access-token",
+  });
+
+  assert.equal(gatewayCurrentUserRequest.ok, false);
+  assert.equal(gatewayCurrentUserRequest.activeTab, "auth");
+  assert.equal(gatewayCurrentUserRequest.response.statusText, "Gateway API Key Required");
 
   const invalidBody = buildPlaygroundRequest({
     baseUrl: "https://api.example.test",

@@ -46,7 +46,7 @@ pub enum CommerceLedgerDirection {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub enum CommerceCouponStatus {
+pub enum PromotionCouponStatus {
     Draft,
     Active,
     Redeemed,
@@ -250,7 +250,7 @@ impl CommerceLedgerDirection {
     }
 }
 
-impl CommerceCouponStatus {
+impl PromotionCouponStatus {
     pub fn as_str(&self) -> &'static str {
         match self {
             Self::Draft => "draft",

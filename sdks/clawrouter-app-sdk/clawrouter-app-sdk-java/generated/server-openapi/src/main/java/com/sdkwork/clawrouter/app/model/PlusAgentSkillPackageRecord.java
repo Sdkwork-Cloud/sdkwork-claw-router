@@ -13,7 +13,7 @@ public class PlusAgentSkillPackageRecord {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -21,7 +21,7 @@ public class PlusAgentSkillPackageRecord {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -29,7 +29,7 @@ public class PlusAgentSkillPackageRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -37,7 +37,7 @@ public class PlusAgentSkillPackageRecord {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -45,7 +45,7 @@ public class PlusAgentSkillPackageRecord {
     public String getLatestPublishedAt() {
         return this.latestPublishedAt;
     }
-    
+
     public void setLatestPublishedAt(String latestPublishedAt) {
         this.latestPublishedAt = latestPublishedAt;
     }
@@ -53,7 +53,7 @@ public class PlusAgentSkillPackageRecord {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -61,7 +61,7 @@ public class PlusAgentSkillPackageRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

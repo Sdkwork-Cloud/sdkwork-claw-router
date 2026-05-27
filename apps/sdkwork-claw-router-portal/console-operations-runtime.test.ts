@@ -7,9 +7,9 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-common
 import { createApiKeyInputFromForm, createApiKeyInputsFromForm } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyForm.ts";
 import { ApiKeyService } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts";
 import { DashboardService } from "./packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts";
-import { ProviderService } from "./packages/sdkwork-claw-router-console-providers/src/providerService.ts";
 import { SettingsService } from "./packages/sdkwork-claw-router-console-settings/src/settingsService.ts";
 import {
+  buildSettlementDisplayData,
   buildSettlementSummary,
   buildSettlementYearOptions,
   getDefaultSettlementYear,
@@ -147,7 +147,7 @@ test("console dashboard service reads overview data from generated app SDK", asy
   );
 });
 
-test("console dashboard service preserves configured domain rows from overview data", async () => {
+test("console dashboard service preserves configured service node rows from overview data", async () => {
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
@@ -158,12 +158,16 @@ test("console dashboard service preserves configured domain rows from overview d
             id: "main-gateway",
             name: "Main Gateway",
             domain: "https://api-a.example.com",
+            ip: "10.0.0.11",
+            status: "online",
             remark: "Primary OpenAI-compatible endpoint",
           },
           {
             key: "backup-gateway",
             title: "Backup Gateway",
             baseUrl: "https://api-b.example.com/v1",
+            ipAddress: "10.0.0.12",
+            healthStatus: "warning",
             description: "Secondary endpoint for failover",
           },
         ],
@@ -177,12 +181,16 @@ test("console dashboard service preserves configured domain rows from overview d
           id: "main-gateway",
           name: "Main Gateway",
           domain: "https://api-a.example.com",
+          ip: "10.0.0.11",
+          status: "online",
           remark: "Primary OpenAI-compatible endpoint",
         },
         {
           id: "backup-gateway",
           name: "Backup Gateway",
           domain: "https://api-b.example.com/v1",
+          ip: "10.0.0.12",
+          status: "warning",
           remark: "Secondary endpoint for failover",
         },
       ]);
@@ -235,6 +243,7 @@ test("console dashboard service initializes chart/model scaffolding but never fa
       assert.equal(result.chartData.every((item) => item["llm (Text)"] === 0), true);
       assert.equal(result.topModels.every((item) => item.requests === 0 && item.cost === 0), true);
       assert.equal(result.configurationDomains.some((item) => item.domain.includes("sdkwork.com")), true);
+      assert.equal(result.configurationDomains.every((item) => typeof item.ip === "string" && typeof item.status === "string"), true);
     },
   );
 });
@@ -247,10 +256,13 @@ test("console dashboard view shows configuration info above modality distributio
   assert.ok(configInfoIndex > 0);
   assert.ok(modalityDistributionIndex > configInfoIndex);
   assert.match(source, /configurationDomains/);
+  assert.match(source, /console\.dashboard\.dashboardview\.text\.configIp/);
+  assert.match(source, /console\.dashboard\.dashboardview\.text\.configStatus/);
+  assert.match(source, /formatConfigurationDomainStatus/);
   assert.match(source, /ExternalLink/);
   assert.match(source, /Gauge/);
   assert.match(source, /measureConfigurationDomain/);
-  assert.match(source, /grid-cols-\[minmax\(72px,0\.8fr\)_minmax\(120px,1\.25fr\)_minmax\(72px,0\.85fr\)_auto_auto\]/);
+  assert.match(source, /grid-cols-\[minmax\(72px,0\.75fr\)_minmax\(120px,1\.15fr\)_minmax\(88px,0\.8fr\)_minmax\(72px,0\.65fr\)_minmax\(72px,0\.75fr\)_auto_auto\]/);
   assert.doesNotMatch(source, /<div key=\{item\.id\} className="p-4">/);
 });
 
@@ -515,7 +527,7 @@ test("console usage service reads logs and total from generated app SDK data", a
             requestId: "req-1",
             time: "2026-05-05T08:00:00Z",
             tokenName: "prod-key",
-            group: "default",
+            group: "Production Group",
             type: "chat",
             model: "gpt-4o-mini",
             totalTime: "120ms",
@@ -524,7 +536,7 @@ test("console usage service reads logs and total from generated app SDK data", a
             inputTokens: "100",
             cacheReadTokens: 20,
             outputTokens: 40,
-            cost: "0.012345",
+            cost: "0.000000990",
             multiplier: "1.5",
             baseInputPrice: "0.15",
             baseOutputPrice: "0.60",
@@ -544,7 +556,8 @@ test("console usage service reads logs and total from generated app SDK data", a
       assert.doesNotMatch(captured[0].url, /search_query=/);
       assert.equal(result.total, 1);
       assert.equal(result.logs[0].inputTokens, 100);
-      assert.equal(result.logs[0].cost, "0.012345");
+      assert.equal(result.logs[0].group, "Production Group");
+      assert.equal(result.logs[0].cost, "0.000000990");
     },
   );
 });
@@ -687,6 +700,38 @@ test("console settlements view model derives year options and current-month tota
   assert.equal(summary.nextSettlementDate, "2027-02-28 00:00:00");
   assert.equal(summary.billCount, 2);
   assert.equal(summary.supportsYearOverYearComparison, false);
+});
+
+test("console settlements view model provides default visual data when API returns no bills", () => {
+  const display = buildSettlementDisplayData({
+    selectedYear: "2027",
+    referenceDate: new Date("2027-02-15T10:00:00Z"),
+    chartData: [],
+    bills: [],
+  });
+
+  assert.equal(display.isUsingDefaultVisuals, true);
+  assert.ok(display.chartData.length >= 5);
+  assert.equal(display.bills.length, 1);
+  assert.equal(display.bills[0].period, "2027-02");
+  assert.equal(display.bills[0].status, "preview");
+  assert.equal(display.summary.annualTotalCost, "0.000000");
+  assert.equal(display.summary.currentMonthUnbilledCost, "0.000000");
+  assert.equal(display.summary.billCount, 0);
+  assert.equal(display.summary.nextSettlementDate, "-");
+  assert.deepEqual(
+    Object.values(display.bills[0].breakdown).map((item) => item.cost),
+    ["0.000000", "0.000000", "0.000000", "0.000000", "0.000000"],
+  );
+
+  const populated = buildSettlementDisplayData({
+    selectedYear: "2027",
+    referenceDate: new Date("2027-02-15T10:00:00Z"),
+    chartData: [{ day: "2027-02-01", text: "1.000000", image: "0", video: "0", audio: "0", music: "0" }],
+    bills: [],
+  });
+  assert.equal(populated.isUsingDefaultVisuals, false);
+  assert.equal(populated.bills.length, 0);
 });
 
 test("console settings service reads and updates settings through generated app SDK", async () => {
@@ -884,35 +929,6 @@ test("console settings update fails closed unless app SDK confirms success", asy
       },
     );
   }
-});
-
-test("console provider service reads provider configs through generated app SDK", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      assert.equal(url, "/app/v3/api/ai/providers");
-      return {
-        items: [
-          {
-            id: "provider-1",
-            providerFamily: "gemini",
-            integrationType: "model_vendor_direct",
-            name: "Gemini",
-            description: "Google model provider",
-            url: "https://generativelanguage.googleapis.com",
-            status: "inactive",
-          },
-        ],
-      };
-    },
-    async (captured) => {
-      const result = await ProviderService.fetchProviders();
-
-      assert.equal(captured.length, 1);
-      assert.equal(result[0].providerFamily, "gemini");
-      assert.equal(result[0].integrationType, "model_vendor_direct");
-      assert.equal(result[0].status, "inactive");
-    },
-  );
 });
 
 test("console API key form rejects invalid command fields while defaulting blank groups", () => {
@@ -1338,154 +1354,4 @@ test("console usage logs fail closed when app SDK omits or corrupts pagination t
       },
     );
   }
-});
-
-test("console provider configs fail closed when app SDK omits stable provider ids", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/ai/providers") {
-        return {
-          items: [
-            {
-              providerFamily: "gemini",
-              integrationType: "model_vendor_direct",
-              name: "Gemini",
-              description: "Google model provider",
-              url: "https://generativelanguage.googleapis.com",
-              status: "inactive",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => ProviderService.fetchProviders(),
-        /Provider id is required/,
-      );
-    },
-  );
-});
-
-test("console provider configs fail closed when app SDK returns malformed provider rows", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/ai/providers") {
-        return {
-          items: [
-            {
-              id: "provider-1",
-              providerFamily: "gemini",
-              integrationType: "model_vendor_direct",
-              name: "Gemini",
-              description: "Google model provider",
-              url: "https://generativelanguage.googleapis.com",
-              status: "inactive",
-            },
-            "malformed-row",
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => ProviderService.fetchProviders(),
-        /Provider record is required/,
-      );
-    },
-  );
-});
-
-test("console provider configs fail closed when app SDK returns unsupported provider families", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/ai/providers") {
-        return {
-          items: [
-            {
-              id: "provider-1",
-              providerFamily: "unknown-provider",
-              integrationType: "model_vendor_direct",
-              name: "Unknown",
-              description: "Unsupported provider",
-              url: "https://provider.example.test",
-              status: "inactive",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => ProviderService.fetchProviders(),
-        /Unsupported provider family: unknown-provider/,
-      );
-    },
-  );
-});
-
-test("console provider configs fail closed when app SDK omits required provider fields", async () => {
-  for (const [field, message] of [
-    ["name", /Provider name is required/],
-    ["description", /Provider description is required/],
-    ["url", /Provider url is required/],
-    ["status", /Provider status is required/],
-  ] as const) {
-    await withAppSdkFetch(
-      (url) => {
-        if (url === "/app/v3/api/ai/providers") {
-          const provider = {
-            id: "provider-1",
-            providerFamily: "gemini",
-            integrationType: "model_vendor_direct",
-            name: "Gemini",
-            description: "Google model provider",
-            url: "https://generativelanguage.googleapis.com",
-            status: "inactive",
-          } as Record<string, unknown>;
-          delete provider[field];
-          return { items: [provider] };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => ProviderService.fetchProviders(),
-          message,
-        );
-      },
-    );
-  }
-});
-
-test("console provider configs fail closed when app SDK returns unsupported provider status", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/ai/providers") {
-        return {
-          items: [
-            {
-              id: "provider-1",
-              providerFamily: "gemini",
-              integrationType: "model_vendor_direct",
-              name: "Gemini",
-              description: "Google model provider",
-              url: "https://generativelanguage.googleapis.com",
-              status: "maintenance",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => ProviderService.fetchProviders(),
-        /Unsupported provider status: maintenance/,
-      );
-    },
-  );
 });

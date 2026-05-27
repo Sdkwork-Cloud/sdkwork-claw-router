@@ -8,7 +8,7 @@ public class AppSkillConfigRequest {
     public Map<String, String> getConfig() {
         return this.config;
     }
-    
+
     public void setConfig(Map<String, String> config) {
         this.config = config;
     }

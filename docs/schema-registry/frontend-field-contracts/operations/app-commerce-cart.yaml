@@ -18,8 +18,8 @@ frontend_operations:
   - commerce_product_sku
   - commerce_price_list_item
   - commerce_inventory_stock
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
   query_parameters: []
   response_schema:
     name: CommerceStandardResourceResponse
@@ -68,9 +68,8 @@ frontend_operations:
   - commerce_product_sku
   - commerce_price_list_item
   - commerce_inventory_stock
-  - commerce_coupon
-  - commerce_coupon_redemption
-  request_id_header: true
+  - promotion_user_coupon
+  - promotion_discount_application
   idempotency_required: true
   write_tables:
   - commerce_cart
@@ -143,9 +142,8 @@ frontend_operations:
   - commerce_product_sku
   - commerce_price_list_item
   - commerce_inventory_stock
-  - commerce_coupon
-  - commerce_coupon_redemption
-  request_id_header: true
+  - promotion_user_coupon
+  - promotion_discount_application
   idempotency_required: true
   write_tables:
   - commerce_cart_item
@@ -170,9 +168,8 @@ frontend_operations:
   - commerce_product_sku
   - commerce_price_list_item
   - commerce_inventory_stock
-  - commerce_coupon
-  - commerce_coupon_redemption
-  request_id_header: true
+  - promotion_user_coupon
+  - promotion_discount_application
   idempotency_required: true
   write_tables:
   - commerce_cart_item

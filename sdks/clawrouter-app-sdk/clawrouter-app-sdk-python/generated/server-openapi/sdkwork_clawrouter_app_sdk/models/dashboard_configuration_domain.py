@@ -8,5 +8,7 @@ class DashboardConfigurationDomain:
     """Dashboard configuration domain schema exposed by Claw Router."""
     domain: str
     id: str
+    ip: str
     name: str
     remark: str
+    status: str

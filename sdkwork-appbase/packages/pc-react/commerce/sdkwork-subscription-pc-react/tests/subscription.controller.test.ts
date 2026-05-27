@@ -42,13 +42,13 @@ function createEmptyDashboard() {
       currentLevelValue: null,
       growthValue: null,
       isAuthenticated: false,
-      isVip: false,
+      isMember: false,
       pointBalance: null,
       remainingDays: null,
       status: "guest" as const,
       totalSpent: null,
       upgradeGrowthValue: null,
-      vipPoints: null,
+      points: null,
     },
   };
 }
@@ -129,7 +129,7 @@ describe("sdkwork-subscription-pc-react controller", () => {
         {
           description: "Best for professional creators.",
           durationDays: 30,
-          id: "vip-plan-2",
+          id: "membership-plan-2",
           includedPoints: 5000,
           name: "Pro Monthly",
           packageId: 2,
@@ -143,13 +143,13 @@ describe("sdkwork-subscription-pc-react controller", () => {
         currentLevelValue: 3,
         growthValue: 180,
         isAuthenticated: true,
-        isVip: true,
+        isMember: true,
         pointBalance: 2400,
         remainingDays: 88,
-        status: "vip" as const,
+        status: "active" as const,
         totalSpent: 399,
         upgradeGrowthValue: 500,
-        vipPoints: 3200,
+        points: 3200,
       },
     };
     const secondDashboard = {
@@ -176,7 +176,7 @@ describe("sdkwork-subscription-pc-react controller", () => {
       purchaseSubscription: vi.fn(),
       renewSubscription: vi.fn().mockResolvedValue({
         amountCny: 169,
-        orderId: "VIP-RENEW-CTRL-1",
+        orderId: "MEMBERSHIP-RENEW-CTRL-1",
         packageId: 2,
         status: "completed",
       }),
@@ -268,7 +268,7 @@ describe("sdkwork-subscription-pc-react controller", () => {
         {
           description: "Best for professional creators.",
           durationDays: 30,
-          id: "vip-plan-2",
+          id: "membership-plan-2",
           includedPoints: 5000,
           name: "Pro Monthly",
           packageId: 2,
@@ -282,13 +282,13 @@ describe("sdkwork-subscription-pc-react controller", () => {
         currentLevelValue: 3,
         growthValue: 180,
         isAuthenticated: true,
-        isVip: true,
+        isMember: true,
         pointBalance: 2400,
         remainingDays: 88,
-        status: "vip" as const,
+        status: "active" as const,
         totalSpent: 399,
         upgradeGrowthValue: 500,
-        vipPoints: 3200,
+        points: 3200,
       },
     };
 

@@ -22,7 +22,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getArtifactRef() {
         return this.artifactRef;
     }
-    
+
     public void setArtifactRef(String artifactRef) {
         this.artifactRef = artifactRef;
     }
@@ -30,7 +30,7 @@ public class AdminSkillArtifactCreateRequest {
     public Integer getArtifactSizeBytes() {
         return this.artifactSizeBytes;
     }
-    
+
     public void setArtifactSizeBytes(Integer artifactSizeBytes) {
         this.artifactSizeBytes = artifactSizeBytes;
     }
@@ -38,7 +38,7 @@ public class AdminSkillArtifactCreateRequest {
     public Integer getArtifactType() {
         return this.artifactType;
     }
-    
+
     public void setArtifactType(Integer artifactType) {
         this.artifactType = artifactType;
     }
@@ -46,7 +46,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getArtifactUrl() {
         return this.artifactUrl;
     }
-    
+
     public void setArtifactUrl(String artifactUrl) {
         this.artifactUrl = artifactUrl;
     }
@@ -54,7 +54,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getChecksumHash() {
         return this.checksumHash;
     }
-    
+
     public void setChecksumHash(String checksumHash) {
         this.checksumHash = checksumHash;
     }
@@ -62,7 +62,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getDeprecatedAt() {
         return this.deprecatedAt;
     }
-    
+
     public void setDeprecatedAt(String deprecatedAt) {
         this.deprecatedAt = deprecatedAt;
     }
@@ -70,7 +70,7 @@ public class AdminSkillArtifactCreateRequest {
     public List<String> getFrameworks() {
         return this.frameworks;
     }
-    
+
     public void setFrameworks(List<String> frameworks) {
         this.frameworks = frameworks;
     }
@@ -78,7 +78,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -86,7 +86,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getOsName() {
         return this.osName;
     }
-    
+
     public void setOsName(String osName) {
         this.osName = osName;
     }
@@ -94,7 +94,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getPlatformType() {
         return this.platformType;
     }
-    
+
     public void setPlatformType(String platformType) {
         this.platformType = platformType;
     }
@@ -102,7 +102,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -110,7 +110,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getReleaseNotes() {
         return this.releaseNotes;
     }
-    
+
     public void setReleaseNotes(String releaseNotes) {
         this.releaseNotes = releaseNotes;
     }
@@ -118,7 +118,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -126,7 +126,7 @@ public class AdminSkillArtifactCreateRequest {
     public Integer getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -134,7 +134,7 @@ public class AdminSkillArtifactCreateRequest {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

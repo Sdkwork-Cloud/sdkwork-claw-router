@@ -52,7 +52,7 @@ describe("sdkwork-entitlement-pc-react service", () => {
       featuredOfferCount: 0,
       isAuthenticated: false,
       subscriptionPlanCount: 0,
-      vipRemainingDays: null,
+      membershipRemainingDays: null,
     });
     expect(dashboard.topAction).toEqual({
       capability: "offer",
@@ -124,7 +124,7 @@ describe("sdkwork-entitlement-pc-react service", () => {
             claimableCoupons: 0,
             currentLevelName: "Pro",
             isAuthenticated: true,
-            vipRemainingDays: 18,
+            membershipRemainingDays: 18,
           },
         }),
       },
@@ -138,8 +138,8 @@ describe("sdkwork-entitlement-pc-react service", () => {
               level: 3,
               name: "Pro",
               remainingDays: 18,
-              status: "vip",
-              vipPoints: 3200,
+              status: "active",
+              points: 3200,
             },
             earnedThisMonth: 1200,
             isAuthenticated: true,
@@ -168,7 +168,7 @@ describe("sdkwork-entitlement-pc-react service", () => {
           plans: [
             {
               durationDays: 365,
-              id: "vip-plan-3",
+              id: "membership-plan-3",
               includedPoints: 60000,
               name: "Pro Annual",
               packageId: 3,
@@ -182,17 +182,17 @@ describe("sdkwork-entitlement-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 18,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
@@ -202,13 +202,13 @@ describe("sdkwork-entitlement-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 18,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
       },
@@ -237,7 +237,7 @@ describe("sdkwork-entitlement-pc-react service", () => {
       featuredOfferCount: 1,
       isAuthenticated: true,
       subscriptionPlanCount: 1,
-      vipRemainingDays: 18,
+      membershipRemainingDays: 18,
     });
     expect(dashboard.topAction).toEqual({
       capability: "subscription",
@@ -348,12 +348,12 @@ describe("sdkwork-entitlement-pc-react service", () => {
         getDashboard: vi.fn().mockResolvedValue({
           plans: [
             {
-              id: "vip-plan-3",
+              id: "membership-plan-3",
             },
           ],
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           summary: {
             currentLevelName: "Pro",

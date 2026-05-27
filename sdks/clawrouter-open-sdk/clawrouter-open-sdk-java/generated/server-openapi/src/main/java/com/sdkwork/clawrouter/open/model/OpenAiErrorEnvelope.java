@@ -7,7 +7,7 @@ public class OpenAiErrorEnvelope {
     public OpenAiError getError() {
         return this.error;
     }
-    
+
     public void setError(OpenAiError error) {
         this.error = error;
     }

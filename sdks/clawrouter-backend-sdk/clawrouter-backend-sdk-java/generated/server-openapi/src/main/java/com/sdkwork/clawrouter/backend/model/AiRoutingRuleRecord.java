@@ -30,7 +30,7 @@ public class AiRoutingRuleRecord {
     public Map<String, String> getCandidateChannels() {
         return this.candidateChannels;
     }
-    
+
     public void setCandidateChannels(Map<String, String> candidateChannels) {
         this.candidateChannels = candidateChannels;
     }
@@ -38,7 +38,7 @@ public class AiRoutingRuleRecord {
     public Map<String, String> getConstraints() {
         return this.constraints;
     }
-    
+
     public void setConstraints(Map<String, String> constraints) {
         this.constraints = constraints;
     }
@@ -46,7 +46,7 @@ public class AiRoutingRuleRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -54,7 +54,7 @@ public class AiRoutingRuleRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -62,7 +62,7 @@ public class AiRoutingRuleRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -70,7 +70,7 @@ public class AiRoutingRuleRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -78,7 +78,7 @@ public class AiRoutingRuleRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -86,7 +86,7 @@ public class AiRoutingRuleRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -94,7 +94,7 @@ public class AiRoutingRuleRecord {
     public Map<String, String> getFallbackChain() {
         return this.fallbackChain;
     }
-    
+
     public void setFallbackChain(Map<String, String> fallbackChain) {
         this.fallbackChain = fallbackChain;
     }
@@ -102,7 +102,7 @@ public class AiRoutingRuleRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -110,7 +110,7 @@ public class AiRoutingRuleRecord {
     public Map<String, String> getMatchExpression() {
         return this.matchExpression;
     }
-    
+
     public void setMatchExpression(Map<String, String> matchExpression) {
         this.matchExpression = matchExpression;
     }
@@ -118,7 +118,7 @@ public class AiRoutingRuleRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -126,7 +126,7 @@ public class AiRoutingRuleRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -134,7 +134,7 @@ public class AiRoutingRuleRecord {
     public Integer getPriority() {
         return this.priority;
     }
-    
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -142,7 +142,7 @@ public class AiRoutingRuleRecord {
     public String getProfileId() {
         return this.profileId;
     }
-    
+
     public void setProfileId(String profileId) {
         this.profileId = profileId;
     }
@@ -150,7 +150,7 @@ public class AiRoutingRuleRecord {
     public String getRateLimitPolicyId() {
         return this.rateLimitPolicyId;
     }
-    
+
     public void setRateLimitPolicyId(String rateLimitPolicyId) {
         this.rateLimitPolicyId = rateLimitPolicyId;
     }
@@ -158,7 +158,7 @@ public class AiRoutingRuleRecord {
     public String getRuleCode() {
         return this.ruleCode;
     }
-    
+
     public void setRuleCode(String ruleCode) {
         this.ruleCode = ruleCode;
     }
@@ -166,7 +166,7 @@ public class AiRoutingRuleRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -174,7 +174,7 @@ public class AiRoutingRuleRecord {
     public String getTargetModel() {
         return this.targetModel;
     }
-    
+
     public void setTargetModel(String targetModel) {
         this.targetModel = targetModel;
     }
@@ -182,7 +182,7 @@ public class AiRoutingRuleRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -190,7 +190,7 @@ public class AiRoutingRuleRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -198,7 +198,7 @@ public class AiRoutingRuleRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -206,7 +206,7 @@ public class AiRoutingRuleRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

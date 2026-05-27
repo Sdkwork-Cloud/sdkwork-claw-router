@@ -91,7 +91,7 @@ function createSdkworkPointsIntlValue(
         return copy.plan.free;
       }
 
-      return currentPlan.name || copy.plan.vip;
+      return currentPlan.name || copy.plan.active;
     },
     formatDurationDays(value) {
       if (value === null || value === undefined) {

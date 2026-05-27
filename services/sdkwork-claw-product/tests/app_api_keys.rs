@@ -1,7 +1,10 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
+use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_product::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
 use sdkwork_claw_product::domain::{
     ApiKeyGroup, DecimalValue, DomainResult, GatewayApiKey, QuotaPolicy,
@@ -83,6 +86,33 @@ async fn app_api_key_update_rebinds_key_to_available_group_for_owner() {
         "sk-claw-owner-secret",
         payload["data"]["item"]["copyableKey"]
     );
+}
+
+#[tokio::test]
+async fn app_api_key_update_marks_one_owner_key_as_runtime_default() {
+    let read_store = Arc::new(TestApiKeyReadStore::with_owner_key());
+    let command_store = Arc::new(TestApiKeyCommandStore::default());
+    let router = sdkwork_claw_product::api::app_api_key_router_with_read_store_and_command_store(
+        read_store,
+        command_store,
+        Arc::new(TestHasher),
+        Arc::new(TestSecretGenerator),
+    );
+
+    let response = router
+        .oneshot(signed_request(
+            "PATCH",
+            "/app/v3/api/iam/api_keys/701",
+            r#"{"defaultForRuntime":true}"#,
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("701", payload["data"]["item"]["id"]);
+    assert_eq!(true, payload["data"]["item"]["defaultForRuntime"]);
 }
 
 #[tokio::test]
@@ -177,11 +207,16 @@ fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+        .internal_trusted_subject(10, 20, 30)
+        .extension(TrustedRequestSubject {
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
+            operator_id: 30,
+            operator_type: 1,
+        })
         .header("Idempotency-Key", "idem-app-api-key-test")
-        .header("X-Request-Id", "request-app-api-key-test")
+        .header("X-Request-Id", "22222222-2222-4333-8444-555555555555")
         .body(Body::from(body.to_owned()))
         .unwrap()
 }
@@ -241,6 +276,7 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
                     created_at: "2026-05-17 10:00:00".to_owned(),
                     expire_at: None,
                     status_code: 1,
+                    default_for_runtime: false,
                 });
                 snapshot.api_key_groups.push(
                     ApiKeyGroup::new_scoped(
@@ -279,6 +315,7 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
 #[derive(Default)]
 struct TestApiKeyCommandStore {
     commands: Mutex<Vec<CreateGatewayApiKeyCommand>>,
+    update_commands: Mutex<Vec<UpdateGatewayApiKeyCommand>>,
 }
 
 impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
@@ -324,6 +361,7 @@ impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
                     created_at: command.created_at,
                     expire_at: command.expire_at,
                     status_code: 1,
+                    default_for_runtime: false,
                 },
                 access_policy: None,
                 quota_policy: Some(QuotaPolicy::new(
@@ -339,6 +377,7 @@ impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
         command: UpdateGatewayApiKeyCommand,
     ) -> ApiKeyCommandStoreFuture<'a, Option<UpdatedGatewayApiKey>> {
         Box::pin(async move {
+            self.update_commands.lock().unwrap().push(command.clone());
             Ok(Some(UpdatedGatewayApiKey {
                 api_key: GatewayApiKey {
                     id: command.api_key_id,
@@ -356,6 +395,7 @@ impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
                     created_at: "2026-05-17 10:00:00".to_owned(),
                     expire_at: None,
                     status_code: 1,
+                    default_for_runtime: command.default_for_runtime.unwrap_or(false),
                 },
                 access_policy: None,
                 quota_policy: Some(QuotaPolicy::new(

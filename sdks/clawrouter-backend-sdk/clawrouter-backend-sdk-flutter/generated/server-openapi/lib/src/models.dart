@@ -12,6 +12,68 @@ List<dynamic>? _sdkworkAsList(dynamic value) {
   return value is List ? value : null;
 }
 
+class AccessGroupsChannelBindingsListResult {
+  final String? code;
+  final AdminAccessGroupChannelBindingsResponse? data;
+  final String? msg;
+
+  AccessGroupsChannelBindingsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccessGroupsChannelBindingsListResult.fromJson(Map<String, dynamic> json) {
+    return AccessGroupsChannelBindingsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAccessGroupChannelBindingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccessGroupsChannelBindingsUpdateResult {
+  final String? code;
+  final AdminAccessGroupChannelBindingsResponse? data;
+  final String? msg;
+
+  AccessGroupsChannelBindingsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccessGroupsChannelBindingsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return AccessGroupsChannelBindingsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAccessGroupChannelBindingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class AccessGroupsCreateResult {
   final String? code;
   final AdminAccessGroupMutationResponse? data;
@@ -504,6 +566,258 @@ class AccountsUpdateResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
+    };
+  }
+}
+
+class AdjustmentsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  AdjustmentsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AdjustmentsListResult.fromJson(Map<String, dynamic> json) {
+    return AdjustmentsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AdminAccessGroupChannelBindingInput {
+  final List<String>? capabilities;
+  final String? channelId;
+  final List<String>? modelScope;
+  final int? priority;
+  final String? status;
+  final int? weight;
+
+  AdminAccessGroupChannelBindingInput({
+    this.capabilities,
+    this.channelId,
+    this.modelScope,
+    this.priority,
+    this.status,
+    this.weight
+  });
+
+  factory AdminAccessGroupChannelBindingInput.fromJson(Map<String, dynamic> json) {
+    return AdminAccessGroupChannelBindingInput(
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      channelId: json['channelId']?.toString(),
+      modelScope: (() {
+        final list = _sdkworkAsList(json['modelScope']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      status: json['status']?.toString(),
+      weight: json['weight'] is int ? json['weight'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((item) => item).toList(),
+      'channelId': channelId,
+      'modelScope': modelScope?.map((item) => item).toList(),
+      'priority': priority,
+      'status': status,
+      'weight': weight,
+    };
+  }
+}
+
+class AdminAccessGroupChannelBindingItem {
+  final List<String>? capabilities;
+  final String? channelCode;
+  final String? channelId;
+  final String? channelName;
+  final String? groupId;
+  final String? healthStatus;
+  final String? id;
+  final List<String>? modelScope;
+  final List<String>? models;
+  final int? priority;
+  final String? providerCode;
+  final String? providerName;
+  final String? status;
+  final int? weight;
+
+  AdminAccessGroupChannelBindingItem({
+    this.capabilities,
+    this.channelCode,
+    this.channelId,
+    this.channelName,
+    this.groupId,
+    this.healthStatus,
+    this.id,
+    this.modelScope,
+    this.models,
+    this.priority,
+    this.providerCode,
+    this.providerName,
+    this.status,
+    this.weight
+  });
+
+  factory AdminAccessGroupChannelBindingItem.fromJson(Map<String, dynamic> json) {
+    return AdminAccessGroupChannelBindingItem(
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      channelCode: json['channelCode']?.toString(),
+      channelId: json['channelId']?.toString(),
+      channelName: json['channelName']?.toString(),
+      groupId: json['groupId']?.toString(),
+      healthStatus: json['healthStatus']?.toString(),
+      id: json['id']?.toString(),
+      modelScope: (() {
+        final list = _sdkworkAsList(json['modelScope']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      models: (() {
+        final list = _sdkworkAsList(json['models']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      providerCode: json['providerCode']?.toString(),
+      providerName: json['providerName']?.toString(),
+      status: json['status']?.toString(),
+      weight: json['weight'] is int ? json['weight'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((item) => item).toList(),
+      'channelCode': channelCode,
+      'channelId': channelId,
+      'channelName': channelName,
+      'groupId': groupId,
+      'healthStatus': healthStatus,
+      'id': id,
+      'modelScope': modelScope?.map((item) => item).toList(),
+      'models': models?.map((item) => item).toList(),
+      'priority': priority,
+      'providerCode': providerCode,
+      'providerName': providerName,
+      'status': status,
+      'weight': weight,
+    };
+  }
+}
+
+class AdminAccessGroupChannelBindingsReplaceRequest {
+  final List<AdminAccessGroupChannelBindingInput>? items;
+
+  AdminAccessGroupChannelBindingsReplaceRequest({
+    this.items
+  });
+
+  factory AdminAccessGroupChannelBindingsReplaceRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAccessGroupChannelBindingsReplaceRequest(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAccessGroupChannelBindingInput.fromJson(map);
+      })())
+            .whereType<AdminAccessGroupChannelBindingInput>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminAccessGroupChannelBindingsResponse {
+  final List<AdminAccessGroupChannelBindingItem>? items;
+
+  AdminAccessGroupChannelBindingsResponse({
+    this.items
+  });
+
+  factory AdminAccessGroupChannelBindingsResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAccessGroupChannelBindingsResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAccessGroupChannelBindingItem.fromJson(map);
+      })())
+            .whereType<AdminAccessGroupChannelBindingItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -3189,14 +3503,23 @@ class AdminAppItemResponse {
 }
 
 class AdminAppListResponse {
+  final bool? hasNextPage;
   final List<AdminAppItemResponse>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
 
   AdminAppListResponse({
-    this.items
+    this.hasNextPage,
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
   });
 
   factory AdminAppListResponse.fromJson(Map<String, dynamic> json) {
     return AdminAppListResponse(
+      hasNextPage: json['hasNextPage'] is bool ? json['hasNextPage'] : null,
       items: (() {
         final list = _sdkworkAsList(json['items']);
         if (list == null) {
@@ -3209,13 +3532,20 @@ class AdminAppListResponse {
       })())
             .whereType<AdminAppItemResponse>()
             .toList();
-      })()
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
+      'hasNextPage': hasNextPage,
       'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
     };
   }
 }
@@ -3259,6 +3589,706 @@ class AdminAppPortalConfig {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'marketStatus': marketStatus,
+    };
+  }
+}
+
+class AdminAppTemplateCreateRequest {
+  final Map<String, dynamic>? appConfigSchema;
+  final List<Map<String, dynamic>>? capabilityManifest;
+  final String? categoryCode;
+  final String? categoryId;
+  final String? coverUrl;
+  final Map<String, dynamic>? defaultAppConfig;
+  final List<Map<String, dynamic>>? dependencyManifest;
+  final String? description;
+  final bool? featured;
+  final String? framework;
+  final String? gitRef;
+  final String? gitRepoUrl;
+  final String? gitSubPath;
+  final String? iconUrl;
+  final String? language;
+  final String? publishStatus;
+  final String? runtime;
+  final int? sortWeight;
+  final String? sourceAppId;
+  final String? templateCode;
+  final String? templateName;
+  final String? templateNo;
+  final String? templateType;
+  final Map<String, dynamic>? variableSchema;
+  final String? visibility;
+
+  AdminAppTemplateCreateRequest({
+    this.appConfigSchema,
+    this.capabilityManifest,
+    this.categoryCode,
+    this.categoryId,
+    this.coverUrl,
+    this.defaultAppConfig,
+    this.dependencyManifest,
+    this.description,
+    this.featured,
+    this.framework,
+    this.gitRef,
+    this.gitRepoUrl,
+    this.gitSubPath,
+    this.iconUrl,
+    this.language,
+    this.publishStatus,
+    this.runtime,
+    this.sortWeight,
+    this.sourceAppId,
+    this.templateCode,
+    this.templateName,
+    this.templateNo,
+    this.templateType,
+    this.variableSchema,
+    this.visibility
+  });
+
+  factory AdminAppTemplateCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAppTemplateCreateRequest(
+      appConfigSchema: (() {
+        final map = _sdkworkAsMap(json['appConfigSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      capabilityManifest: (() {
+        final list = _sdkworkAsList(json['capabilityManifest']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      categoryCode: json['categoryCode']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      coverUrl: json['coverUrl']?.toString(),
+      defaultAppConfig: (() {
+        final map = _sdkworkAsMap(json['defaultAppConfig']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      dependencyManifest: (() {
+        final list = _sdkworkAsList(json['dependencyManifest']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      description: json['description']?.toString(),
+      featured: json['featured'] is bool ? json['featured'] : null,
+      framework: json['framework']?.toString(),
+      gitRef: json['gitRef']?.toString(),
+      gitRepoUrl: json['gitRepoUrl']?.toString(),
+      gitSubPath: json['gitSubPath']?.toString(),
+      iconUrl: json['iconUrl']?.toString(),
+      language: json['language']?.toString(),
+      publishStatus: json['publishStatus']?.toString(),
+      runtime: json['runtime']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      sourceAppId: json['sourceAppId']?.toString(),
+      templateCode: json['templateCode']?.toString(),
+      templateName: json['templateName']?.toString(),
+      templateNo: json['templateNo']?.toString(),
+      templateType: json['templateType']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variableSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'appConfigSchema': appConfigSchema?.map((key, item) => MapEntry(key, item)),
+      'capabilityManifest': capabilityManifest?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'categoryCode': categoryCode,
+      'categoryId': categoryId,
+      'coverUrl': coverUrl,
+      'defaultAppConfig': defaultAppConfig?.map((key, item) => MapEntry(key, item)),
+      'dependencyManifest': dependencyManifest?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'description': description,
+      'featured': featured,
+      'framework': framework,
+      'gitRef': gitRef,
+      'gitRepoUrl': gitRepoUrl,
+      'gitSubPath': gitSubPath,
+      'iconUrl': iconUrl,
+      'language': language,
+      'publishStatus': publishStatus,
+      'runtime': runtime,
+      'sortWeight': sortWeight,
+      'sourceAppId': sourceAppId,
+      'templateCode': templateCode,
+      'templateName': templateName,
+      'templateNo': templateNo,
+      'templateType': templateType,
+      'variableSchema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminAppTemplateDeleteResponse {
+  final bool? deleted;
+
+  AdminAppTemplateDeleteResponse({
+    this.deleted
+  });
+
+  factory AdminAppTemplateDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppTemplateDeleteResponse(
+      deleted: json['deleted'] is bool ? json['deleted'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminAppTemplateItemResponse {
+  final Map<String, dynamic>? appConfigSchema;
+  final List<Map<String, dynamic>>? capabilityManifest;
+  final String? categoryCode;
+  final String? categoryId;
+  final String? coverUrl;
+  final String? createdAt;
+  final String? currentVersionId;
+  final Map<String, dynamic>? defaultAppConfig;
+  final List<Map<String, dynamic>>? dependencyManifest;
+  final String? description;
+  final bool? featured;
+  final String? framework;
+  final String? gitRef;
+  final String? gitRepoUrl;
+  final String? gitSubPath;
+  final String? iconUrl;
+  final String? id;
+  final String? language;
+  final String? publishStatus;
+  final String? runtime;
+  final int? sortWeight;
+  final String? sourceAppId;
+  final String? templateCode;
+  final String? templateName;
+  final String? templateNo;
+  final String? templateType;
+  final String? updatedAt;
+  final String? uuid;
+  final Map<String, dynamic>? variableSchema;
+  final String? visibility;
+
+  AdminAppTemplateItemResponse({
+    this.appConfigSchema,
+    this.capabilityManifest,
+    this.categoryCode,
+    this.categoryId,
+    this.coverUrl,
+    this.createdAt,
+    this.currentVersionId,
+    this.defaultAppConfig,
+    this.dependencyManifest,
+    this.description,
+    this.featured,
+    this.framework,
+    this.gitRef,
+    this.gitRepoUrl,
+    this.gitSubPath,
+    this.iconUrl,
+    this.id,
+    this.language,
+    this.publishStatus,
+    this.runtime,
+    this.sortWeight,
+    this.sourceAppId,
+    this.templateCode,
+    this.templateName,
+    this.templateNo,
+    this.templateType,
+    this.updatedAt,
+    this.uuid,
+    this.variableSchema,
+    this.visibility
+  });
+
+  factory AdminAppTemplateItemResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppTemplateItemResponse(
+      appConfigSchema: (() {
+        final map = _sdkworkAsMap(json['appConfigSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      capabilityManifest: (() {
+        final list = _sdkworkAsList(json['capabilityManifest']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      categoryCode: json['categoryCode']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      coverUrl: json['coverUrl']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      currentVersionId: json['currentVersionId']?.toString(),
+      defaultAppConfig: (() {
+        final map = _sdkworkAsMap(json['defaultAppConfig']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      dependencyManifest: (() {
+        final list = _sdkworkAsList(json['dependencyManifest']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      description: json['description']?.toString(),
+      featured: json['featured'] is bool ? json['featured'] : null,
+      framework: json['framework']?.toString(),
+      gitRef: json['gitRef']?.toString(),
+      gitRepoUrl: json['gitRepoUrl']?.toString(),
+      gitSubPath: json['gitSubPath']?.toString(),
+      iconUrl: json['iconUrl']?.toString(),
+      id: json['id']?.toString(),
+      language: json['language']?.toString(),
+      publishStatus: json['publishStatus']?.toString(),
+      runtime: json['runtime']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      sourceAppId: json['sourceAppId']?.toString(),
+      templateCode: json['templateCode']?.toString(),
+      templateName: json['templateName']?.toString(),
+      templateNo: json['templateNo']?.toString(),
+      templateType: json['templateType']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variableSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'appConfigSchema': appConfigSchema?.map((key, item) => MapEntry(key, item)),
+      'capabilityManifest': capabilityManifest?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'categoryCode': categoryCode,
+      'categoryId': categoryId,
+      'coverUrl': coverUrl,
+      'createdAt': createdAt,
+      'currentVersionId': currentVersionId,
+      'defaultAppConfig': defaultAppConfig?.map((key, item) => MapEntry(key, item)),
+      'dependencyManifest': dependencyManifest?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'description': description,
+      'featured': featured,
+      'framework': framework,
+      'gitRef': gitRef,
+      'gitRepoUrl': gitRepoUrl,
+      'gitSubPath': gitSubPath,
+      'iconUrl': iconUrl,
+      'id': id,
+      'language': language,
+      'publishStatus': publishStatus,
+      'runtime': runtime,
+      'sortWeight': sortWeight,
+      'sourceAppId': sourceAppId,
+      'templateCode': templateCode,
+      'templateName': templateName,
+      'templateNo': templateNo,
+      'templateType': templateType,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+      'variableSchema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminAppTemplateListResponse {
+  final bool? hasNextPage;
+  final List<AdminAppTemplateItemResponse>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  AdminAppTemplateListResponse({
+    this.hasNextPage,
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory AdminAppTemplateListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppTemplateListResponse(
+      hasNextPage: json['hasNextPage'] is bool ? json['hasNextPage'] : null,
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAppTemplateItemResponse.fromJson(map);
+      })())
+            .whereType<AdminAppTemplateItemResponse>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'hasNextPage': hasNextPage,
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class AdminAppTemplateMutationResponse {
+  final AdminAppTemplateItemResponse? item;
+
+  AdminAppTemplateMutationResponse({
+    this.item
+  });
+
+  factory AdminAppTemplateMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppTemplateMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminAppTemplateItemResponse.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminAppTemplateUpdateRequest {
+  final Map<String, dynamic>? appConfigSchema;
+  final List<Map<String, dynamic>>? capabilityManifest;
+  final String? categoryCode;
+  final String? categoryId;
+  final String? coverUrl;
+  final Map<String, dynamic>? defaultAppConfig;
+  final List<Map<String, dynamic>>? dependencyManifest;
+  final String? description;
+  final bool? featured;
+  final String? framework;
+  final String? gitRef;
+  final String? gitRepoUrl;
+  final String? gitSubPath;
+  final String? iconUrl;
+  final String? language;
+  final String? publishStatus;
+  final String? runtime;
+  final int? sortWeight;
+  final String? sourceAppId;
+  final String? templateName;
+  final String? templateType;
+  final Map<String, dynamic>? variableSchema;
+  final String? visibility;
+
+  AdminAppTemplateUpdateRequest({
+    this.appConfigSchema,
+    this.capabilityManifest,
+    this.categoryCode,
+    this.categoryId,
+    this.coverUrl,
+    this.defaultAppConfig,
+    this.dependencyManifest,
+    this.description,
+    this.featured,
+    this.framework,
+    this.gitRef,
+    this.gitRepoUrl,
+    this.gitSubPath,
+    this.iconUrl,
+    this.language,
+    this.publishStatus,
+    this.runtime,
+    this.sortWeight,
+    this.sourceAppId,
+    this.templateName,
+    this.templateType,
+    this.variableSchema,
+    this.visibility
+  });
+
+  factory AdminAppTemplateUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAppTemplateUpdateRequest(
+      appConfigSchema: (() {
+        final map = _sdkworkAsMap(json['appConfigSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      capabilityManifest: (() {
+        final list = _sdkworkAsList(json['capabilityManifest']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      categoryCode: json['categoryCode']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      coverUrl: json['coverUrl']?.toString(),
+      defaultAppConfig: (() {
+        final map = _sdkworkAsMap(json['defaultAppConfig']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      dependencyManifest: (() {
+        final list = _sdkworkAsList(json['dependencyManifest']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      description: json['description']?.toString(),
+      featured: json['featured'] is bool ? json['featured'] : null,
+      framework: json['framework']?.toString(),
+      gitRef: json['gitRef']?.toString(),
+      gitRepoUrl: json['gitRepoUrl']?.toString(),
+      gitSubPath: json['gitSubPath']?.toString(),
+      iconUrl: json['iconUrl']?.toString(),
+      language: json['language']?.toString(),
+      publishStatus: json['publishStatus']?.toString(),
+      runtime: json['runtime']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      sourceAppId: json['sourceAppId']?.toString(),
+      templateName: json['templateName']?.toString(),
+      templateType: json['templateType']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variableSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'appConfigSchema': appConfigSchema?.map((key, item) => MapEntry(key, item)),
+      'capabilityManifest': capabilityManifest?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'categoryCode': categoryCode,
+      'categoryId': categoryId,
+      'coverUrl': coverUrl,
+      'defaultAppConfig': defaultAppConfig?.map((key, item) => MapEntry(key, item)),
+      'dependencyManifest': dependencyManifest?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'description': description,
+      'featured': featured,
+      'framework': framework,
+      'gitRef': gitRef,
+      'gitRepoUrl': gitRepoUrl,
+      'gitSubPath': gitSubPath,
+      'iconUrl': iconUrl,
+      'language': language,
+      'publishStatus': publishStatus,
+      'runtime': runtime,
+      'sortWeight': sortWeight,
+      'sourceAppId': sourceAppId,
+      'templateName': templateName,
+      'templateType': templateType,
+      'variableSchema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'visibility': visibility,
     };
   }
 }
@@ -4800,6 +5830,942 @@ class AdminCountPair {
   }
 }
 
+class AdminCourseApplicationCollectionResponse {
+  final List<AdminCourseApplicationItem>? items;
+
+  AdminCourseApplicationCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseApplicationCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseApplicationCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseApplicationItem.fromJson(map);
+      })())
+            .whereType<AdminCourseApplicationItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseApplicationItem {
+  final String? id;
+  final String? reviewedAt;
+  final String? status;
+
+  AdminCourseApplicationItem({
+    this.id,
+    this.reviewedAt,
+    this.status
+  });
+
+  factory AdminCourseApplicationItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseApplicationItem(
+      id: json['id']?.toString(),
+      reviewedAt: json['reviewedAt']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'reviewedAt': reviewedAt,
+      'status': status,
+    };
+  }
+}
+
+class AdminCourseApplicationReviewRequest {
+  final String? reviewNote;
+  final String? status;
+
+  AdminCourseApplicationReviewRequest({
+    this.reviewNote,
+    this.status
+  });
+
+  factory AdminCourseApplicationReviewRequest.fromJson(Map<String, dynamic> json) {
+    return AdminCourseApplicationReviewRequest(
+      reviewNote: json['reviewNote']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'reviewNote': reviewNote,
+      'status': status,
+    };
+  }
+}
+
+class AdminCourseApplicationReviewResponse {
+  final AdminCourseApplicationItem? item;
+
+  AdminCourseApplicationReviewResponse({
+    this.item
+  });
+
+  factory AdminCourseApplicationReviewResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseApplicationReviewResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminCourseApplicationItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminCourseCollectionResponse {
+  final List<AdminCourseItem>? items;
+
+  AdminCourseCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseItem.fromJson(map);
+      })())
+            .whereType<AdminCourseItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseCommentCollectionResponse {
+  final List<AdminCourseCommentItem>? items;
+
+  AdminCourseCommentCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseCommentCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseCommentCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseCommentItem.fromJson(map);
+      })())
+            .whereType<AdminCourseCommentItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseCommentItem {
+  final String? author;
+  final String? content;
+  final String? courseId;
+  final String? createdAt;
+  final String? id;
+  final String? status;
+
+  AdminCourseCommentItem({
+    this.author,
+    this.content,
+    this.courseId,
+    this.createdAt,
+    this.id,
+    this.status
+  });
+
+  factory AdminCourseCommentItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseCommentItem(
+      author: json['author']?.toString(),
+      content: json['content']?.toString(),
+      courseId: json['courseId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      id: json['id']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'author': author,
+      'content': content,
+      'courseId': courseId,
+      'createdAt': createdAt,
+      'id': id,
+      'status': status,
+    };
+  }
+}
+
+class AdminCourseCommentModerationRequest {
+  final String? moderationNote;
+  final String? status;
+
+  AdminCourseCommentModerationRequest({
+    this.moderationNote,
+    this.status
+  });
+
+  factory AdminCourseCommentModerationRequest.fromJson(Map<String, dynamic> json) {
+    return AdminCourseCommentModerationRequest(
+      moderationNote: json['moderationNote']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'moderationNote': moderationNote,
+      'status': status,
+    };
+  }
+}
+
+class AdminCourseDashboard {
+  final int? draftCourses;
+  final String? id;
+  final int? publishedCourses;
+  final int? reviewQueue;
+  final int? totalComments;
+  final int? totalCourses;
+  final int? totalEngagement;
+  final int? totalLessons;
+  final int? totalStudents;
+
+  AdminCourseDashboard({
+    this.draftCourses,
+    this.id,
+    this.publishedCourses,
+    this.reviewQueue,
+    this.totalComments,
+    this.totalCourses,
+    this.totalEngagement,
+    this.totalLessons,
+    this.totalStudents
+  });
+
+  factory AdminCourseDashboard.fromJson(Map<String, dynamic> json) {
+    return AdminCourseDashboard(
+      draftCourses: json['draftCourses'] is int ? json['draftCourses'] : null,
+      id: json['id']?.toString(),
+      publishedCourses: json['publishedCourses'] is int ? json['publishedCourses'] : null,
+      reviewQueue: json['reviewQueue'] is int ? json['reviewQueue'] : null,
+      totalComments: json['totalComments'] is int ? json['totalComments'] : null,
+      totalCourses: json['totalCourses'] is int ? json['totalCourses'] : null,
+      totalEngagement: json['totalEngagement'] is int ? json['totalEngagement'] : null,
+      totalLessons: json['totalLessons'] is int ? json['totalLessons'] : null,
+      totalStudents: json['totalStudents'] is int ? json['totalStudents'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'draftCourses': draftCourses,
+      'id': id,
+      'publishedCourses': publishedCourses,
+      'reviewQueue': reviewQueue,
+      'totalComments': totalComments,
+      'totalCourses': totalCourses,
+      'totalEngagement': totalEngagement,
+      'totalLessons': totalLessons,
+      'totalStudents': totalStudents,
+    };
+  }
+}
+
+class AdminCourseDashboardResponse {
+  final AdminCourseDashboard? item;
+
+  AdminCourseDashboardResponse({
+    this.item
+  });
+
+  factory AdminCourseDashboardResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseDashboardResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminCourseDashboard.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminCourseDeleteResponse {
+  final bool? deleted;
+
+  AdminCourseDeleteResponse({
+    this.deleted
+  });
+
+  factory AdminCourseDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseDeleteResponse(
+      deleted: json['deleted'] is bool ? json['deleted'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminCourseEngagementCollectionResponse {
+  final List<AdminCourseEngagementItem>? items;
+
+  AdminCourseEngagementCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseEngagementCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseEngagementCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseEngagementItem.fromJson(map);
+      })())
+            .whereType<AdminCourseEngagementItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseEngagementItem {
+  final int? count;
+  final String? courseId;
+  final String? id;
+  final String? reactionType;
+  final String? reactionValue;
+  final String? status;
+
+  AdminCourseEngagementItem({
+    this.count,
+    this.courseId,
+    this.id,
+    this.reactionType,
+    this.reactionValue,
+    this.status
+  });
+
+  factory AdminCourseEngagementItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseEngagementItem(
+      count: json['count'] is int ? json['count'] : null,
+      courseId: json['courseId']?.toString(),
+      id: json['id']?.toString(),
+      reactionType: json['reactionType']?.toString(),
+      reactionValue: json['reactionValue']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'count': count,
+      'courseId': courseId,
+      'id': id,
+      'reactionType': reactionType,
+      'reactionValue': reactionValue,
+      'status': status,
+    };
+  }
+}
+
+class AdminCourseItem {
+  final String? courseCode;
+  final String? id;
+  final String? status;
+  final String? title;
+
+  AdminCourseItem({
+    this.courseCode,
+    this.id,
+    this.status,
+    this.title
+  });
+
+  factory AdminCourseItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseItem(
+      courseCode: json['courseCode']?.toString(),
+      id: json['id']?.toString(),
+      status: json['status']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'courseCode': courseCode,
+      'id': id,
+      'status': status,
+      'title': title,
+    };
+  }
+}
+
+class AdminCourseLessonCollectionResponse {
+  final List<AdminCourseLessonItem>? items;
+
+  AdminCourseLessonCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseLessonCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseLessonCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseLessonItem.fromJson(map);
+      })())
+            .whereType<AdminCourseLessonItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseLessonItem {
+  final String? courseId;
+  final String? id;
+  final String? sectionId;
+  final String? status;
+  final String? title;
+
+  AdminCourseLessonItem({
+    this.courseId,
+    this.id,
+    this.sectionId,
+    this.status,
+    this.title
+  });
+
+  factory AdminCourseLessonItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseLessonItem(
+      courseId: json['courseId']?.toString(),
+      id: json['id']?.toString(),
+      sectionId: json['sectionId']?.toString(),
+      status: json['status']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'courseId': courseId,
+      'id': id,
+      'sectionId': sectionId,
+      'status': status,
+      'title': title,
+    };
+  }
+}
+
+class AdminCourseLessonMutationRequest {
+  final String? description;
+  final int? durationSeconds;
+  final String? externalBvid;
+  final bool? freePreview;
+  final String? lessonNo;
+  final Map<String, dynamic>? metadata;
+  final String? sectionId;
+  final String? status;
+  final String? title;
+  final String? videoUrl;
+
+  AdminCourseLessonMutationRequest({
+    this.description,
+    this.durationSeconds,
+    this.externalBvid,
+    this.freePreview,
+    this.lessonNo,
+    this.metadata,
+    this.sectionId,
+    this.status,
+    this.title,
+    this.videoUrl
+  });
+
+  factory AdminCourseLessonMutationRequest.fromJson(Map<String, dynamic> json) {
+    return AdminCourseLessonMutationRequest(
+      description: json['description']?.toString(),
+      durationSeconds: json['durationSeconds'] is int ? json['durationSeconds'] : null,
+      externalBvid: json['externalBvid']?.toString(),
+      freePreview: json['freePreview'] is bool ? json['freePreview'] : null,
+      lessonNo: json['lessonNo']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      sectionId: json['sectionId']?.toString(),
+      status: json['status']?.toString(),
+      title: json['title']?.toString(),
+      videoUrl: json['videoUrl']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'description': description,
+      'durationSeconds': durationSeconds,
+      'externalBvid': externalBvid,
+      'freePreview': freePreview,
+      'lessonNo': lessonNo,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'sectionId': sectionId,
+      'status': status,
+      'title': title,
+      'videoUrl': videoUrl,
+    };
+  }
+}
+
+class AdminCourseLessonMutationResponse {
+  final AdminCourseLessonItem? item;
+
+  AdminCourseLessonMutationResponse({
+    this.item
+  });
+
+  factory AdminCourseLessonMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseLessonMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminCourseLessonItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminCourseMutationRequest {
+  final String? category;
+  final String? courseCode;
+  final String? description;
+  final Map<String, dynamic>? instructorSnapshot;
+  final String? level;
+  final Map<String, dynamic>? metadata;
+  final String? status;
+  final String? thumbnailUrl;
+  final String? title;
+
+  AdminCourseMutationRequest({
+    this.category,
+    this.courseCode,
+    this.description,
+    this.instructorSnapshot,
+    this.level,
+    this.metadata,
+    this.status,
+    this.thumbnailUrl,
+    this.title
+  });
+
+  factory AdminCourseMutationRequest.fromJson(Map<String, dynamic> json) {
+    return AdminCourseMutationRequest(
+      category: json['category']?.toString(),
+      courseCode: json['courseCode']?.toString(),
+      description: json['description']?.toString(),
+      instructorSnapshot: (() {
+        final map = _sdkworkAsMap(json['instructorSnapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      level: json['level']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      status: json['status']?.toString(),
+      thumbnailUrl: json['thumbnailUrl']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'category': category,
+      'courseCode': courseCode,
+      'description': description,
+      'instructorSnapshot': instructorSnapshot?.map((key, item) => MapEntry(key, item)),
+      'level': level,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'status': status,
+      'thumbnailUrl': thumbnailUrl,
+      'title': title,
+    };
+  }
+}
+
+class AdminCourseMutationResponse {
+  final AdminCourseItem? item;
+
+  AdminCourseMutationResponse({
+    this.item
+  });
+
+  factory AdminCourseMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminCourseItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminCourseRelationCollectionResponse {
+  final List<AdminCourseRelationItem>? items;
+
+  AdminCourseRelationCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseRelationCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseRelationCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseRelationItem.fromJson(map);
+      })())
+            .whereType<AdminCourseRelationItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseRelationItem {
+  final String? courseId;
+  final String? id;
+  final String? relatedCourseId;
+  final String? relationType;
+  final int? sortOrder;
+  final String? status;
+
+  AdminCourseRelationItem({
+    this.courseId,
+    this.id,
+    this.relatedCourseId,
+    this.relationType,
+    this.sortOrder,
+    this.status
+  });
+
+  factory AdminCourseRelationItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseRelationItem(
+      courseId: json['courseId']?.toString(),
+      id: json['id']?.toString(),
+      relatedCourseId: json['relatedCourseId']?.toString(),
+      relationType: json['relationType']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'courseId': courseId,
+      'id': id,
+      'relatedCourseId': relatedCourseId,
+      'relationType': relationType,
+      'sortOrder': sortOrder,
+      'status': status,
+    };
+  }
+}
+
+class AdminCourseRelationsReplaceRequest {
+  final List<Map<String, dynamic>>? items;
+
+  AdminCourseRelationsReplaceRequest({
+    this.items
+  });
+
+  factory AdminCourseRelationsReplaceRequest.fromJson(Map<String, dynamic> json) {
+    return AdminCourseRelationsReplaceRequest(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => _sdkworkAsMap(item))
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item).toList(),
+    };
+  }
+}
+
+class AdminCourseSectionCollectionResponse {
+  final List<AdminCourseSectionItem>? items;
+
+  AdminCourseSectionCollectionResponse({
+    this.items
+  });
+
+  factory AdminCourseSectionCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseSectionCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCourseSectionItem.fromJson(map);
+      })())
+            .whereType<AdminCourseSectionItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCourseSectionItem {
+  final String? courseId;
+  final String? id;
+  final String? status;
+  final String? title;
+
+  AdminCourseSectionItem({
+    this.courseId,
+    this.id,
+    this.status,
+    this.title
+  });
+
+  factory AdminCourseSectionItem.fromJson(Map<String, dynamic> json) {
+    return AdminCourseSectionItem(
+      courseId: json['courseId']?.toString(),
+      id: json['id']?.toString(),
+      status: json['status']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'courseId': courseId,
+      'id': id,
+      'status': status,
+      'title': title,
+    };
+  }
+}
+
+class AdminCourseSectionMutationRequest {
+  final String? description;
+  final Map<String, dynamic>? metadata;
+  final String? sectionNo;
+  final int? sortOrder;
+  final String? status;
+  final String? title;
+
+  AdminCourseSectionMutationRequest({
+    this.description,
+    this.metadata,
+    this.sectionNo,
+    this.sortOrder,
+    this.status,
+    this.title
+  });
+
+  factory AdminCourseSectionMutationRequest.fromJson(Map<String, dynamic> json) {
+    return AdminCourseSectionMutationRequest(
+      description: json['description']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      sectionNo: json['sectionNo']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'description': description,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'sectionNo': sectionNo,
+      'sortOrder': sortOrder,
+      'status': status,
+      'title': title,
+    };
+  }
+}
+
+class AdminCourseSectionMutationResponse {
+  final AdminCourseSectionItem? item;
+
+  AdminCourseSectionMutationResponse({
+    this.item
+  });
+
+  factory AdminCourseSectionMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCourseSectionMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminCourseSectionItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
 class AdminDashboardDataResponse {
   final List<AdminPieChartItem>? modelDistribution;
   final List<AdminPieChartItem>? multimodal;
@@ -5199,6 +7165,1315 @@ class AdminIpLimitsResponse {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminMcpBindingCreateRequest {
+  final List<String>? allowedTools;
+  final List<String>? deniedTools;
+  final bool? enabled;
+  final int? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? policyJson;
+  final int? priority;
+  final int? serverRevisionId;
+  final String? status;
+  final int? toolId;
+
+  AdminMcpBindingCreateRequest({
+    this.allowedTools,
+    this.deniedTools,
+    this.enabled,
+    this.ownerId,
+    this.ownerType,
+    this.policyJson,
+    this.priority,
+    this.serverRevisionId,
+    this.status,
+    this.toolId
+  });
+
+  factory AdminMcpBindingCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminMcpBindingCreateRequest(
+      allowedTools: (() {
+        final list = _sdkworkAsList(json['allowedTools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      deniedTools: (() {
+        final list = _sdkworkAsList(json['deniedTools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      ownerId: json['ownerId'] is int ? json['ownerId'] : null,
+      ownerType: json['ownerType']?.toString(),
+      policyJson: (() {
+        final map = _sdkworkAsMap(json['policyJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      serverRevisionId: json['serverRevisionId'] is int ? json['serverRevisionId'] : null,
+      status: json['status']?.toString(),
+      toolId: json['toolId'] is int ? json['toolId'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'allowedTools': allowedTools?.map((item) => item).toList(),
+      'deniedTools': deniedTools?.map((item) => item).toList(),
+      'enabled': enabled,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'policyJson': policyJson?.map((key, item) => MapEntry(key, item)),
+      'priority': priority,
+      'serverRevisionId': serverRevisionId,
+      'status': status,
+      'toolId': toolId,
+    };
+  }
+}
+
+class AdminMcpBindingItem {
+  final List<String>? allowedTools;
+  final String? createdAt;
+  final List<String>? deniedTools;
+  final bool? enabled;
+  final int? id;
+  final int? organizationId;
+  final int? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? policyJson;
+  final int? priority;
+  final int? serverId;
+  final int? serverRevisionId;
+  final Map<String, dynamic>? snapshotJson;
+  final String? status;
+  final int? tenantId;
+  final int? toolId;
+  final String? updatedAt;
+  final String? uuid;
+
+  AdminMcpBindingItem({
+    this.allowedTools,
+    this.createdAt,
+    this.deniedTools,
+    this.enabled,
+    this.id,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.policyJson,
+    this.priority,
+    this.serverId,
+    this.serverRevisionId,
+    this.snapshotJson,
+    this.status,
+    this.tenantId,
+    this.toolId,
+    this.updatedAt,
+    this.uuid
+  });
+
+  factory AdminMcpBindingItem.fromJson(Map<String, dynamic> json) {
+    return AdminMcpBindingItem(
+      allowedTools: (() {
+        final list = _sdkworkAsList(json['allowedTools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      createdAt: json['createdAt']?.toString(),
+      deniedTools: (() {
+        final list = _sdkworkAsList(json['deniedTools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      id: json['id'] is int ? json['id'] : null,
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      ownerId: json['ownerId'] is int ? json['ownerId'] : null,
+      ownerType: json['ownerType']?.toString(),
+      policyJson: (() {
+        final map = _sdkworkAsMap(json['policyJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      serverId: json['serverId'] is int ? json['serverId'] : null,
+      serverRevisionId: json['serverRevisionId'] is int ? json['serverRevisionId'] : null,
+      snapshotJson: (() {
+        final map = _sdkworkAsMap(json['snapshotJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      status: json['status']?.toString(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      toolId: json['toolId'] is int ? json['toolId'] : null,
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'allowedTools': allowedTools?.map((item) => item).toList(),
+      'createdAt': createdAt,
+      'deniedTools': deniedTools?.map((item) => item).toList(),
+      'enabled': enabled,
+      'id': id,
+      'organizationId': organizationId,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'policyJson': policyJson?.map((key, item) => MapEntry(key, item)),
+      'priority': priority,
+      'serverId': serverId,
+      'serverRevisionId': serverRevisionId,
+      'snapshotJson': snapshotJson?.map((key, item) => MapEntry(key, item)),
+      'status': status,
+      'tenantId': tenantId,
+      'toolId': toolId,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AdminMcpBindingListResponse {
+  final List<AdminMcpBindingItem>? items;
+
+  AdminMcpBindingListResponse({
+    this.items
+  });
+
+  factory AdminMcpBindingListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpBindingListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminMcpBindingItem.fromJson(map);
+      })())
+            .whereType<AdminMcpBindingItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminMcpBindingMutationResponse {
+  final AdminMcpBindingItem? item;
+
+  AdminMcpBindingMutationResponse({
+    this.item
+  });
+
+  factory AdminMcpBindingMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpBindingMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminMcpBindingItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminMcpBindingUpdateRequest {
+  final List<String>? allowedTools;
+  final List<String>? deniedTools;
+  final bool? enabled;
+  final int? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? policyJson;
+  final int? priority;
+  final int? serverRevisionId;
+  final String? status;
+  final int? toolId;
+
+  AdminMcpBindingUpdateRequest({
+    this.allowedTools,
+    this.deniedTools,
+    this.enabled,
+    this.ownerId,
+    this.ownerType,
+    this.policyJson,
+    this.priority,
+    this.serverRevisionId,
+    this.status,
+    this.toolId
+  });
+
+  factory AdminMcpBindingUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminMcpBindingUpdateRequest(
+      allowedTools: (() {
+        final list = _sdkworkAsList(json['allowedTools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      deniedTools: (() {
+        final list = _sdkworkAsList(json['deniedTools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      ownerId: json['ownerId'] is int ? json['ownerId'] : null,
+      ownerType: json['ownerType']?.toString(),
+      policyJson: (() {
+        final map = _sdkworkAsMap(json['policyJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      serverRevisionId: json['serverRevisionId'] is int ? json['serverRevisionId'] : null,
+      status: json['status']?.toString(),
+      toolId: json['toolId'] is int ? json['toolId'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'allowedTools': allowedTools?.map((item) => item).toList(),
+      'deniedTools': deniedTools?.map((item) => item).toList(),
+      'enabled': enabled,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'policyJson': policyJson?.map((key, item) => MapEntry(key, item)),
+      'priority': priority,
+      'serverRevisionId': serverRevisionId,
+      'status': status,
+      'toolId': toolId,
+    };
+  }
+}
+
+class AdminMcpDiscoveryResponse {
+  final String? checkedAt;
+  final int? discoveredCount;
+  final int? serverId;
+  final List<AdminMcpToolItem>? tools;
+
+  AdminMcpDiscoveryResponse({
+    this.checkedAt,
+    this.discoveredCount,
+    this.serverId,
+    this.tools
+  });
+
+  factory AdminMcpDiscoveryResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpDiscoveryResponse(
+      checkedAt: json['checkedAt']?.toString(),
+      discoveredCount: json['discoveredCount'] is int ? json['discoveredCount'] : null,
+      serverId: json['serverId'] is int ? json['serverId'] : null,
+      tools: (() {
+        final list = _sdkworkAsList(json['tools']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminMcpToolItem.fromJson(map);
+      })())
+            .whereType<AdminMcpToolItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkedAt': checkedAt,
+      'discoveredCount': discoveredCount,
+      'serverId': serverId,
+      'tools': tools?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminMcpHealthCheckResponse {
+  final String? checkedAt;
+  final String? errorMasked;
+  final String? healthStatus;
+  final bool? healthy;
+  final int? latencyMs;
+  final int? serverId;
+
+  AdminMcpHealthCheckResponse({
+    this.checkedAt,
+    this.errorMasked,
+    this.healthStatus,
+    this.healthy,
+    this.latencyMs,
+    this.serverId
+  });
+
+  factory AdminMcpHealthCheckResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpHealthCheckResponse(
+      checkedAt: json['checkedAt']?.toString(),
+      errorMasked: json['errorMasked']?.toString(),
+      healthStatus: json['healthStatus']?.toString(),
+      healthy: json['healthy'] is bool ? json['healthy'] : null,
+      latencyMs: json['latencyMs'] is int ? json['latencyMs'] : null,
+      serverId: json['serverId'] is int ? json['serverId'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkedAt': checkedAt,
+      'errorMasked': errorMasked,
+      'healthStatus': healthStatus,
+      'healthy': healthy,
+      'latencyMs': latencyMs,
+      'serverId': serverId,
+    };
+  }
+}
+
+class AdminMcpServerCreateRequest {
+  final String? categoryId;
+  final String? description;
+  final String? name;
+  final String? serverKey;
+  final List<String>? tags;
+  final String? transport;
+  final String? visibility;
+
+  AdminMcpServerCreateRequest({
+    this.categoryId,
+    this.description,
+    this.name,
+    this.serverKey,
+    this.tags,
+    this.transport,
+    this.visibility
+  });
+
+  factory AdminMcpServerCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerCreateRequest(
+      categoryId: json['categoryId']?.toString(),
+      description: json['description']?.toString(),
+      name: json['name']?.toString(),
+      serverKey: json['serverKey']?.toString(),
+      tags: (() {
+        final list = _sdkworkAsList(json['tags']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      transport: json['transport']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryId': categoryId,
+      'description': description,
+      'name': name,
+      'serverKey': serverKey,
+      'tags': tags?.map((item) => item).toList(),
+      'transport': transport,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminMcpServerItem {
+  final String? categoryCode;
+  final String? categoryId;
+  final String? createdAt;
+  final String? deprecatedAt;
+  final String? description;
+  final String? healthStatus;
+  final int? id;
+  final String? lastCheckedAt;
+  final String? lastErrorMasked;
+  final int? latestRevisionId;
+  final String? name;
+  final int? organizationId;
+  final int? ownerUserId;
+  final String? publishedAt;
+  final int? publishedRevisionId;
+  final String? serverKey;
+  final String? status;
+  final List<String>? tags;
+  final int? tenantId;
+  final String? transport;
+  final String? updatedAt;
+  final String? uuid;
+  final String? visibility;
+
+  AdminMcpServerItem({
+    this.categoryCode,
+    this.categoryId,
+    this.createdAt,
+    this.deprecatedAt,
+    this.description,
+    this.healthStatus,
+    this.id,
+    this.lastCheckedAt,
+    this.lastErrorMasked,
+    this.latestRevisionId,
+    this.name,
+    this.organizationId,
+    this.ownerUserId,
+    this.publishedAt,
+    this.publishedRevisionId,
+    this.serverKey,
+    this.status,
+    this.tags,
+    this.tenantId,
+    this.transport,
+    this.updatedAt,
+    this.uuid,
+    this.visibility
+  });
+
+  factory AdminMcpServerItem.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerItem(
+      categoryCode: json['categoryCode']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      deprecatedAt: json['deprecatedAt']?.toString(),
+      description: json['description']?.toString(),
+      healthStatus: json['healthStatus']?.toString(),
+      id: json['id'] is int ? json['id'] : null,
+      lastCheckedAt: json['lastCheckedAt']?.toString(),
+      lastErrorMasked: json['lastErrorMasked']?.toString(),
+      latestRevisionId: json['latestRevisionId'] is int ? json['latestRevisionId'] : null,
+      name: json['name']?.toString(),
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      ownerUserId: json['ownerUserId'] is int ? json['ownerUserId'] : null,
+      publishedAt: json['publishedAt']?.toString(),
+      publishedRevisionId: json['publishedRevisionId'] is int ? json['publishedRevisionId'] : null,
+      serverKey: json['serverKey']?.toString(),
+      status: json['status']?.toString(),
+      tags: (() {
+        final list = _sdkworkAsList(json['tags']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      transport: json['transport']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryCode': categoryCode,
+      'categoryId': categoryId,
+      'createdAt': createdAt,
+      'deprecatedAt': deprecatedAt,
+      'description': description,
+      'healthStatus': healthStatus,
+      'id': id,
+      'lastCheckedAt': lastCheckedAt,
+      'lastErrorMasked': lastErrorMasked,
+      'latestRevisionId': latestRevisionId,
+      'name': name,
+      'organizationId': organizationId,
+      'ownerUserId': ownerUserId,
+      'publishedAt': publishedAt,
+      'publishedRevisionId': publishedRevisionId,
+      'serverKey': serverKey,
+      'status': status,
+      'tags': tags?.map((item) => item).toList(),
+      'tenantId': tenantId,
+      'transport': transport,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminMcpServerListResponse {
+  final List<AdminMcpServerItem>? items;
+
+  AdminMcpServerListResponse({
+    this.items
+  });
+
+  factory AdminMcpServerListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminMcpServerItem.fromJson(map);
+      })())
+            .whereType<AdminMcpServerItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminMcpServerMutationResponse {
+  final AdminMcpServerItem? item;
+
+  AdminMcpServerMutationResponse({
+    this.item
+  });
+
+  factory AdminMcpServerMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminMcpServerItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminMcpServerRevisionCreateRequest {
+  final List<String>? argsJson;
+  final String? authType;
+  final String? command;
+  final String? endpointUrl;
+  final Map<String, dynamic>? envSchema;
+  final Map<String, dynamic>? retryPolicy;
+  final String? revisionNo;
+  final String? secretRef;
+  final int? timeoutMs;
+  final String? transport;
+
+  AdminMcpServerRevisionCreateRequest({
+    this.argsJson,
+    this.authType,
+    this.command,
+    this.endpointUrl,
+    this.envSchema,
+    this.retryPolicy,
+    this.revisionNo,
+    this.secretRef,
+    this.timeoutMs,
+    this.transport
+  });
+
+  factory AdminMcpServerRevisionCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerRevisionCreateRequest(
+      argsJson: (() {
+        final list = _sdkworkAsList(json['argsJson']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      authType: json['authType']?.toString(),
+      command: json['command']?.toString(),
+      endpointUrl: json['endpointUrl']?.toString(),
+      envSchema: (() {
+        final map = _sdkworkAsMap(json['envSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      retryPolicy: (() {
+        final map = _sdkworkAsMap(json['retryPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      revisionNo: json['revisionNo']?.toString(),
+      secretRef: json['secretRef']?.toString(),
+      timeoutMs: json['timeoutMs'] is int ? json['timeoutMs'] : null,
+      transport: json['transport']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'argsJson': argsJson?.map((item) => item).toList(),
+      'authType': authType,
+      'command': command,
+      'endpointUrl': endpointUrl,
+      'envSchema': envSchema?.map((key, item) => MapEntry(key, item)),
+      'retryPolicy': retryPolicy?.map((key, item) => MapEntry(key, item)),
+      'revisionNo': revisionNo,
+      'secretRef': secretRef,
+      'timeoutMs': timeoutMs,
+      'transport': transport,
+    };
+  }
+}
+
+class AdminMcpServerRevisionItem {
+  final List<String>? argsJson;
+  final String? authType;
+  final String? command;
+  final String? configHash;
+  final String? createdAt;
+  final int? createdBy;
+  final String? deprecatedAt;
+  final String? endpointUrl;
+  final Map<String, dynamic>? envSchema;
+  final int? id;
+  final String? lifecycleStatus;
+  final int? organizationId;
+  final String? publishedAt;
+  final Map<String, dynamic>? retryPolicy;
+  final String? revisionNo;
+  final String? secretRef;
+  final int? serverId;
+  final String? status;
+  final int? tenantId;
+  final int? timeoutMs;
+  final String? transport;
+  final String? updatedAt;
+  final String? uuid;
+
+  AdminMcpServerRevisionItem({
+    this.argsJson,
+    this.authType,
+    this.command,
+    this.configHash,
+    this.createdAt,
+    this.createdBy,
+    this.deprecatedAt,
+    this.endpointUrl,
+    this.envSchema,
+    this.id,
+    this.lifecycleStatus,
+    this.organizationId,
+    this.publishedAt,
+    this.retryPolicy,
+    this.revisionNo,
+    this.secretRef,
+    this.serverId,
+    this.status,
+    this.tenantId,
+    this.timeoutMs,
+    this.transport,
+    this.updatedAt,
+    this.uuid
+  });
+
+  factory AdminMcpServerRevisionItem.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerRevisionItem(
+      argsJson: (() {
+        final list = _sdkworkAsList(json['argsJson']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      authType: json['authType']?.toString(),
+      command: json['command']?.toString(),
+      configHash: json['configHash']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      createdBy: json['createdBy'] is int ? json['createdBy'] : null,
+      deprecatedAt: json['deprecatedAt']?.toString(),
+      endpointUrl: json['endpointUrl']?.toString(),
+      envSchema: (() {
+        final map = _sdkworkAsMap(json['envSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      id: json['id'] is int ? json['id'] : null,
+      lifecycleStatus: json['lifecycleStatus']?.toString(),
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      publishedAt: json['publishedAt']?.toString(),
+      retryPolicy: (() {
+        final map = _sdkworkAsMap(json['retryPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      revisionNo: json['revisionNo']?.toString(),
+      secretRef: json['secretRef']?.toString(),
+      serverId: json['serverId'] is int ? json['serverId'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      timeoutMs: json['timeoutMs'] is int ? json['timeoutMs'] : null,
+      transport: json['transport']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'argsJson': argsJson?.map((item) => item).toList(),
+      'authType': authType,
+      'command': command,
+      'configHash': configHash,
+      'createdAt': createdAt,
+      'createdBy': createdBy,
+      'deprecatedAt': deprecatedAt,
+      'endpointUrl': endpointUrl,
+      'envSchema': envSchema?.map((key, item) => MapEntry(key, item)),
+      'id': id,
+      'lifecycleStatus': lifecycleStatus,
+      'organizationId': organizationId,
+      'publishedAt': publishedAt,
+      'retryPolicy': retryPolicy?.map((key, item) => MapEntry(key, item)),
+      'revisionNo': revisionNo,
+      'secretRef': secretRef,
+      'serverId': serverId,
+      'status': status,
+      'tenantId': tenantId,
+      'timeoutMs': timeoutMs,
+      'transport': transport,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AdminMcpServerRevisionListResponse {
+  final List<AdminMcpServerRevisionItem>? items;
+
+  AdminMcpServerRevisionListResponse({
+    this.items
+  });
+
+  factory AdminMcpServerRevisionListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerRevisionListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminMcpServerRevisionItem.fromJson(map);
+      })())
+            .whereType<AdminMcpServerRevisionItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminMcpServerRevisionMutationResponse {
+  final AdminMcpServerRevisionItem? item;
+
+  AdminMcpServerRevisionMutationResponse({
+    this.item
+  });
+
+  factory AdminMcpServerRevisionMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerRevisionMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminMcpServerRevisionItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminMcpServerUpdateRequest {
+  final String? categoryId;
+  final String? description;
+  final String? name;
+  final String? serverKey;
+  final String? status;
+  final List<String>? tags;
+  final String? transport;
+  final String? visibility;
+
+  AdminMcpServerUpdateRequest({
+    this.categoryId,
+    this.description,
+    this.name,
+    this.serverKey,
+    this.status,
+    this.tags,
+    this.transport,
+    this.visibility
+  });
+
+  factory AdminMcpServerUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminMcpServerUpdateRequest(
+      categoryId: json['categoryId']?.toString(),
+      description: json['description']?.toString(),
+      name: json['name']?.toString(),
+      serverKey: json['serverKey']?.toString(),
+      status: json['status']?.toString(),
+      tags: (() {
+        final list = _sdkworkAsList(json['tags']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      transport: json['transport']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryId': categoryId,
+      'description': description,
+      'name': name,
+      'serverKey': serverKey,
+      'status': status,
+      'tags': tags?.map((item) => item).toList(),
+      'transport': transport,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminMcpToolItem {
+  final String? createdAt;
+  final String? description;
+  final String? discoveredAt;
+  final bool? enabled;
+  final int? id;
+  final Map<String, dynamic>? inputSchema;
+  final String? lastInvokedAt;
+  final String? name;
+  final int? organizationId;
+  final Map<String, dynamic>? outputSchema;
+  final Map<String, dynamic>? rateLimitPolicy;
+  final bool? requiresApproval;
+  final String? riskLevel;
+  final String? schemaHash;
+  final int? serverId;
+  final int? serverRevisionId;
+  final int? sortWeight;
+  final String? status;
+  final int? tenantId;
+  final String? toolKey;
+  final String? updatedAt;
+  final String? uuid;
+
+  AdminMcpToolItem({
+    this.createdAt,
+    this.description,
+    this.discoveredAt,
+    this.enabled,
+    this.id,
+    this.inputSchema,
+    this.lastInvokedAt,
+    this.name,
+    this.organizationId,
+    this.outputSchema,
+    this.rateLimitPolicy,
+    this.requiresApproval,
+    this.riskLevel,
+    this.schemaHash,
+    this.serverId,
+    this.serverRevisionId,
+    this.sortWeight,
+    this.status,
+    this.tenantId,
+    this.toolKey,
+    this.updatedAt,
+    this.uuid
+  });
+
+  factory AdminMcpToolItem.fromJson(Map<String, dynamic> json) {
+    return AdminMcpToolItem(
+      createdAt: json['createdAt']?.toString(),
+      description: json['description']?.toString(),
+      discoveredAt: json['discoveredAt']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      id: json['id'] is int ? json['id'] : null,
+      inputSchema: (() {
+        final map = _sdkworkAsMap(json['inputSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      lastInvokedAt: json['lastInvokedAt']?.toString(),
+      name: json['name']?.toString(),
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      outputSchema: (() {
+        final map = _sdkworkAsMap(json['outputSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      rateLimitPolicy: (() {
+        final map = _sdkworkAsMap(json['rateLimitPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      requiresApproval: json['requiresApproval'] is bool ? json['requiresApproval'] : null,
+      riskLevel: json['riskLevel']?.toString(),
+      schemaHash: json['schemaHash']?.toString(),
+      serverId: json['serverId'] is int ? json['serverId'] : null,
+      serverRevisionId: json['serverRevisionId'] is int ? json['serverRevisionId'] : null,
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      toolKey: json['toolKey']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'createdAt': createdAt,
+      'description': description,
+      'discoveredAt': discoveredAt,
+      'enabled': enabled,
+      'id': id,
+      'inputSchema': inputSchema?.map((key, item) => MapEntry(key, item)),
+      'lastInvokedAt': lastInvokedAt,
+      'name': name,
+      'organizationId': organizationId,
+      'outputSchema': outputSchema?.map((key, item) => MapEntry(key, item)),
+      'rateLimitPolicy': rateLimitPolicy?.map((key, item) => MapEntry(key, item)),
+      'requiresApproval': requiresApproval,
+      'riskLevel': riskLevel,
+      'schemaHash': schemaHash,
+      'serverId': serverId,
+      'serverRevisionId': serverRevisionId,
+      'sortWeight': sortWeight,
+      'status': status,
+      'tenantId': tenantId,
+      'toolKey': toolKey,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AdminMcpToolListResponse {
+  final List<AdminMcpToolItem>? items;
+
+  AdminMcpToolListResponse({
+    this.items
+  });
+
+  factory AdminMcpToolListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpToolListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminMcpToolItem.fromJson(map);
+      })())
+            .whereType<AdminMcpToolItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminMcpToolMutationResponse {
+  final AdminMcpToolItem? item;
+
+  AdminMcpToolMutationResponse({
+    this.item
+  });
+
+  factory AdminMcpToolMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminMcpToolMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminMcpToolItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminMcpToolUpdateRequest {
+  final String? description;
+  final bool? enabled;
+  final Map<String, dynamic>? inputSchema;
+  final String? name;
+  final Map<String, dynamic>? outputSchema;
+  final Map<String, dynamic>? rateLimitPolicy;
+  final bool? requiresApproval;
+  final String? riskLevel;
+  final int? sortWeight;
+  final String? status;
+
+  AdminMcpToolUpdateRequest({
+    this.description,
+    this.enabled,
+    this.inputSchema,
+    this.name,
+    this.outputSchema,
+    this.rateLimitPolicy,
+    this.requiresApproval,
+    this.riskLevel,
+    this.sortWeight,
+    this.status
+  });
+
+  factory AdminMcpToolUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminMcpToolUpdateRequest(
+      description: json['description']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      inputSchema: (() {
+        final map = _sdkworkAsMap(json['inputSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      name: json['name']?.toString(),
+      outputSchema: (() {
+        final map = _sdkworkAsMap(json['outputSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      rateLimitPolicy: (() {
+        final map = _sdkworkAsMap(json['rateLimitPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      requiresApproval: json['requiresApproval'] is bool ? json['requiresApproval'] : null,
+      riskLevel: json['riskLevel']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'description': description,
+      'enabled': enabled,
+      'inputSchema': inputSchema?.map((key, item) => MapEntry(key, item)),
+      'name': name,
+      'outputSchema': outputSchema?.map((key, item) => MapEntry(key, item)),
+      'rateLimitPolicy': rateLimitPolicy?.map((key, item) => MapEntry(key, item)),
+      'requiresApproval': requiresApproval,
+      'riskLevel': riskLevel,
+      'sortWeight': sortWeight,
+      'status': status,
     };
   }
 }
@@ -5832,6 +9107,886 @@ class AdminPieChartItem {
   }
 }
 
+class AdminPromptBindingCreateRequest {
+  final String? bindingRole;
+  final bool? enabled;
+  final int? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? policyJson;
+  final int? priority;
+  final int? promptVersionId;
+
+  AdminPromptBindingCreateRequest({
+    this.bindingRole,
+    this.enabled,
+    this.ownerId,
+    this.ownerType,
+    this.policyJson,
+    this.priority,
+    this.promptVersionId
+  });
+
+  factory AdminPromptBindingCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminPromptBindingCreateRequest(
+      bindingRole: json['bindingRole']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      ownerId: json['ownerId'] is int ? json['ownerId'] : null,
+      ownerType: json['ownerType']?.toString(),
+      policyJson: (() {
+        final map = _sdkworkAsMap(json['policyJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      promptVersionId: json['promptVersionId'] is int ? json['promptVersionId'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindingRole': bindingRole,
+      'enabled': enabled,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'policyJson': policyJson?.map((key, item) => MapEntry(key, item)),
+      'priority': priority,
+      'promptVersionId': promptVersionId,
+    };
+  }
+}
+
+class AdminPromptBindingItem {
+  final String? bindingRole;
+  final String? createdAt;
+  final bool? enabled;
+  final int? id;
+  final int? organizationId;
+  final int? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? policyJson;
+  final int? priority;
+  final int? promptId;
+  final int? promptVersionId;
+  final Map<String, dynamic>? snapshotJson;
+  final int? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+
+  AdminPromptBindingItem({
+    this.bindingRole,
+    this.createdAt,
+    this.enabled,
+    this.id,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.policyJson,
+    this.priority,
+    this.promptId,
+    this.promptVersionId,
+    this.snapshotJson,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid
+  });
+
+  factory AdminPromptBindingItem.fromJson(Map<String, dynamic> json) {
+    return AdminPromptBindingItem(
+      bindingRole: json['bindingRole']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      id: json['id'] is int ? json['id'] : null,
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      ownerId: json['ownerId'] is int ? json['ownerId'] : null,
+      ownerType: json['ownerType']?.toString(),
+      policyJson: (() {
+        final map = _sdkworkAsMap(json['policyJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      promptId: json['promptId'] is int ? json['promptId'] : null,
+      promptVersionId: json['promptVersionId'] is int ? json['promptVersionId'] : null,
+      snapshotJson: (() {
+        final map = _sdkworkAsMap(json['snapshotJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindingRole': bindingRole,
+      'createdAt': createdAt,
+      'enabled': enabled,
+      'id': id,
+      'organizationId': organizationId,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'policyJson': policyJson?.map((key, item) => MapEntry(key, item)),
+      'priority': priority,
+      'promptId': promptId,
+      'promptVersionId': promptVersionId,
+      'snapshotJson': snapshotJson?.map((key, item) => MapEntry(key, item)),
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AdminPromptBindingListResponse {
+  final List<AdminPromptBindingItem>? items;
+
+  AdminPromptBindingListResponse({
+    this.items
+  });
+
+  factory AdminPromptBindingListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptBindingListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminPromptBindingItem.fromJson(map);
+      })())
+            .whereType<AdminPromptBindingItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminPromptBindingMutationResponse {
+  final AdminPromptBindingItem? item;
+
+  AdminPromptBindingMutationResponse({
+    this.item
+  });
+
+  factory AdminPromptBindingMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptBindingMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminPromptBindingItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminPromptBindingUpdateRequest {
+  final String? bindingRole;
+  final bool? enabled;
+  final int? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? policyJson;
+  final int? priority;
+  final int? promptVersionId;
+
+  AdminPromptBindingUpdateRequest({
+    this.bindingRole,
+    this.enabled,
+    this.ownerId,
+    this.ownerType,
+    this.policyJson,
+    this.priority,
+    this.promptVersionId
+  });
+
+  factory AdminPromptBindingUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminPromptBindingUpdateRequest(
+      bindingRole: json['bindingRole']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      ownerId: json['ownerId'] is int ? json['ownerId'] : null,
+      ownerType: json['ownerType']?.toString(),
+      policyJson: (() {
+        final map = _sdkworkAsMap(json['policyJson']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      promptVersionId: json['promptVersionId'] is int ? json['promptVersionId'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindingRole': bindingRole,
+      'enabled': enabled,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'policyJson': policyJson?.map((key, item) => MapEntry(key, item)),
+      'priority': priority,
+      'promptVersionId': promptVersionId,
+    };
+  }
+}
+
+class AdminPromptCreateRequest {
+  final String? categoryId;
+  final String? description;
+  final String? name;
+  final String? promptKey;
+  final String? promptType;
+  final List<String>? tags;
+  final String? visibility;
+
+  AdminPromptCreateRequest({
+    this.categoryId,
+    this.description,
+    this.name,
+    this.promptKey,
+    this.promptType,
+    this.tags,
+    this.visibility
+  });
+
+  factory AdminPromptCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminPromptCreateRequest(
+      categoryId: json['categoryId']?.toString(),
+      description: json['description']?.toString(),
+      name: json['name']?.toString(),
+      promptKey: json['promptKey']?.toString(),
+      promptType: json['promptType']?.toString(),
+      tags: (() {
+        final list = _sdkworkAsList(json['tags']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryId': categoryId,
+      'description': description,
+      'name': name,
+      'promptKey': promptKey,
+      'promptType': promptType,
+      'tags': tags?.map((item) => item).toList(),
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminPromptItem {
+  final String? categoryCode;
+  final String? categoryId;
+  final String? createdAt;
+  final String? description;
+  final int? id;
+  final int? latestVersionId;
+  final String? name;
+  final int? organizationId;
+  final int? ownerUserId;
+  final String? promptKey;
+  final String? promptType;
+  final int? publishedVersionId;
+  final String? status;
+  final List<String>? tags;
+  final int? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? visibility;
+
+  AdminPromptItem({
+    this.categoryCode,
+    this.categoryId,
+    this.createdAt,
+    this.description,
+    this.id,
+    this.latestVersionId,
+    this.name,
+    this.organizationId,
+    this.ownerUserId,
+    this.promptKey,
+    this.promptType,
+    this.publishedVersionId,
+    this.status,
+    this.tags,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.visibility
+  });
+
+  factory AdminPromptItem.fromJson(Map<String, dynamic> json) {
+    return AdminPromptItem(
+      categoryCode: json['categoryCode']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      description: json['description']?.toString(),
+      id: json['id'] is int ? json['id'] : null,
+      latestVersionId: json['latestVersionId'] is int ? json['latestVersionId'] : null,
+      name: json['name']?.toString(),
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      ownerUserId: json['ownerUserId'] is int ? json['ownerUserId'] : null,
+      promptKey: json['promptKey']?.toString(),
+      promptType: json['promptType']?.toString(),
+      publishedVersionId: json['publishedVersionId'] is int ? json['publishedVersionId'] : null,
+      status: json['status']?.toString(),
+      tags: (() {
+        final list = _sdkworkAsList(json['tags']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryCode': categoryCode,
+      'categoryId': categoryId,
+      'createdAt': createdAt,
+      'description': description,
+      'id': id,
+      'latestVersionId': latestVersionId,
+      'name': name,
+      'organizationId': organizationId,
+      'ownerUserId': ownerUserId,
+      'promptKey': promptKey,
+      'promptType': promptType,
+      'publishedVersionId': publishedVersionId,
+      'status': status,
+      'tags': tags?.map((item) => item).toList(),
+      'tenantId': tenantId,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AdminPromptListResponse {
+  final List<AdminPromptItem>? items;
+
+  AdminPromptListResponse({
+    this.items
+  });
+
+  factory AdminPromptListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminPromptItem.fromJson(map);
+      })())
+            .whereType<AdminPromptItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminPromptMutationResponse {
+  final AdminPromptItem? item;
+
+  AdminPromptMutationResponse({
+    this.item
+  });
+
+  factory AdminPromptMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminPromptItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminPromptRenderRequest {
+  final Map<String, dynamic>? variables;
+
+  AdminPromptRenderRequest({
+    this.variables
+  });
+
+  factory AdminPromptRenderRequest.fromJson(Map<String, dynamic> json) {
+    return AdminPromptRenderRequest(
+      variables: (() {
+        final map = _sdkworkAsMap(json['variables']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'variables': variables?.map((key, item) => MapEntry(key, item)),
+    };
+  }
+}
+
+class AdminPromptRenderResponse {
+  final String? rendered;
+
+  AdminPromptRenderResponse({
+    this.rendered
+  });
+
+  factory AdminPromptRenderResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptRenderResponse(
+      rendered: json['rendered']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'rendered': rendered,
+    };
+  }
+}
+
+class AdminPromptVersionCreateRequest {
+  final String? content;
+  final dynamic examplesJson;
+  final Map<String, dynamic>? modelConstraints;
+  final Map<String, dynamic>? outputSchema;
+  final Map<String, dynamic>? safetyPolicy;
+  final String? title;
+  final Map<String, dynamic>? variableSchema;
+  final String? versionNo;
+
+  AdminPromptVersionCreateRequest({
+    this.content,
+    this.examplesJson,
+    this.modelConstraints,
+    this.outputSchema,
+    this.safetyPolicy,
+    this.title,
+    this.variableSchema,
+    this.versionNo
+  });
+
+  factory AdminPromptVersionCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminPromptVersionCreateRequest(
+      content: json['content']?.toString(),
+      examplesJson: (() {
+        final list = _sdkworkAsList(json['examplesJson']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      modelConstraints: (() {
+        final map = _sdkworkAsMap(json['modelConstraints']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      outputSchema: (() {
+        final map = _sdkworkAsMap(json['outputSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      safetyPolicy: (() {
+        final map = _sdkworkAsMap(json['safetyPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      title: json['title']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variableSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      versionNo: json['versionNo']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'content': content,
+      'examplesJson': examplesJson?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'modelConstraints': modelConstraints?.map((key, item) => MapEntry(key, item)),
+      'outputSchema': outputSchema?.map((key, item) => MapEntry(key, item)),
+      'safetyPolicy': safetyPolicy?.map((key, item) => MapEntry(key, item)),
+      'title': title,
+      'variableSchema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'versionNo': versionNo,
+    };
+  }
+}
+
+class AdminPromptVersionItem {
+  final String? checksumHash;
+  final String? content;
+  final String? createdAt;
+  final int? createdBy;
+  final List<Map<String, dynamic>>? examplesJson;
+  final int? id;
+  final String? lifecycleStatus;
+  final Map<String, dynamic>? modelConstraints;
+  final int? organizationId;
+  final Map<String, dynamic>? outputSchema;
+  final int? promptId;
+  final String? publishedAt;
+  final String? reviewComment;
+  final String? reviewStatus;
+  final Map<String, dynamic>? safetyPolicy;
+  final int? tenantId;
+  final String? title;
+  final String? updatedAt;
+  final String? uuid;
+  final Map<String, dynamic>? variableSchema;
+  final String? versionNo;
+
+  AdminPromptVersionItem({
+    this.checksumHash,
+    this.content,
+    this.createdAt,
+    this.createdBy,
+    this.examplesJson,
+    this.id,
+    this.lifecycleStatus,
+    this.modelConstraints,
+    this.organizationId,
+    this.outputSchema,
+    this.promptId,
+    this.publishedAt,
+    this.reviewComment,
+    this.reviewStatus,
+    this.safetyPolicy,
+    this.tenantId,
+    this.title,
+    this.updatedAt,
+    this.uuid,
+    this.variableSchema,
+    this.versionNo
+  });
+
+  factory AdminPromptVersionItem.fromJson(Map<String, dynamic> json) {
+    return AdminPromptVersionItem(
+      checksumHash: json['checksumHash']?.toString(),
+      content: json['content']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      createdBy: json['createdBy'] is int ? json['createdBy'] : null,
+      examplesJson: (() {
+        final list = _sdkworkAsList(json['examplesJson']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      id: json['id'] is int ? json['id'] : null,
+      lifecycleStatus: json['lifecycleStatus']?.toString(),
+      modelConstraints: (() {
+        final map = _sdkworkAsMap(json['modelConstraints']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organizationId'] is int ? json['organizationId'] : null,
+      outputSchema: (() {
+        final map = _sdkworkAsMap(json['outputSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      promptId: json['promptId'] is int ? json['promptId'] : null,
+      publishedAt: json['publishedAt']?.toString(),
+      reviewComment: json['reviewComment']?.toString(),
+      reviewStatus: json['reviewStatus']?.toString(),
+      safetyPolicy: (() {
+        final map = _sdkworkAsMap(json['safetyPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      tenantId: json['tenantId'] is int ? json['tenantId'] : null,
+      title: json['title']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      uuid: json['uuid']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variableSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      versionNo: json['versionNo']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checksumHash': checksumHash,
+      'content': content,
+      'createdAt': createdAt,
+      'createdBy': createdBy,
+      'examplesJson': examplesJson?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'id': id,
+      'lifecycleStatus': lifecycleStatus,
+      'modelConstraints': modelConstraints?.map((key, item) => MapEntry(key, item)),
+      'organizationId': organizationId,
+      'outputSchema': outputSchema?.map((key, item) => MapEntry(key, item)),
+      'promptId': promptId,
+      'publishedAt': publishedAt,
+      'reviewComment': reviewComment,
+      'reviewStatus': reviewStatus,
+      'safetyPolicy': safetyPolicy?.map((key, item) => MapEntry(key, item)),
+      'tenantId': tenantId,
+      'title': title,
+      'updatedAt': updatedAt,
+      'uuid': uuid,
+      'variableSchema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'versionNo': versionNo,
+    };
+  }
+}
+
+class AdminPromptVersionListResponse {
+  final List<AdminPromptVersionItem>? items;
+
+  AdminPromptVersionListResponse({
+    this.items
+  });
+
+  factory AdminPromptVersionListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptVersionListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminPromptVersionItem.fromJson(map);
+      })())
+            .whereType<AdminPromptVersionItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminPromptVersionMutationResponse {
+  final AdminPromptVersionItem? item;
+
+  AdminPromptVersionMutationResponse({
+    this.item
+  });
+
+  factory AdminPromptVersionMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminPromptVersionMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminPromptVersionItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
 class AdminProviderSecretCreateRequest {
   final String? authType;
   final String? name;
@@ -6342,6 +10497,217 @@ class AdminReferralStatsResponse {
         return map == null ? null : AdminReferralStatItem.fromJson(map);
       })())
             .whereType<AdminReferralStatItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminServiceNodeCreateRequest {
+  final String? domain;
+  final String? ip;
+  final String? name;
+  final String? remark;
+  final String? status;
+
+  AdminServiceNodeCreateRequest({
+    this.domain,
+    this.ip,
+    this.name,
+    this.remark,
+    this.status
+  });
+
+  factory AdminServiceNodeCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodeCreateRequest(
+      domain: json['domain']?.toString(),
+      ip: json['ip']?.toString(),
+      name: json['name']?.toString(),
+      remark: json['remark']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'domain': domain,
+      'ip': ip,
+      'name': name,
+      'remark': remark,
+      'status': status,
+    };
+  }
+}
+
+class AdminServiceNodeDeleteResponse {
+  final bool? deleted;
+
+  AdminServiceNodeDeleteResponse({
+    this.deleted
+  });
+
+  factory AdminServiceNodeDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodeDeleteResponse(
+      deleted: json['deleted'] is bool ? json['deleted'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminServiceNodeItem {
+  final String? domain;
+  final String? healthStatus;
+  final String? id;
+  final String? ip;
+  final String? name;
+  final String? remark;
+  final String? status;
+  final String? updatedAt;
+
+  AdminServiceNodeItem({
+    this.domain,
+    this.healthStatus,
+    this.id,
+    this.ip,
+    this.name,
+    this.remark,
+    this.status,
+    this.updatedAt
+  });
+
+  factory AdminServiceNodeItem.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodeItem(
+      domain: json['domain']?.toString(),
+      healthStatus: json['healthStatus']?.toString(),
+      id: json['id']?.toString(),
+      ip: json['ip']?.toString(),
+      name: json['name']?.toString(),
+      remark: json['remark']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'domain': domain,
+      'healthStatus': healthStatus,
+      'id': id,
+      'ip': ip,
+      'name': name,
+      'remark': remark,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class AdminServiceNodeMutationResponse {
+  final AdminServiceNodeItem? item;
+
+  AdminServiceNodeMutationResponse({
+    this.item
+  });
+
+  factory AdminServiceNodeMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodeMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminServiceNodeItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminServiceNodeStatusUpdateRequest {
+  final String? status;
+
+  AdminServiceNodeStatusUpdateRequest({
+    this.status
+  });
+
+  factory AdminServiceNodeStatusUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodeStatusUpdateRequest(
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'status': status,
+    };
+  }
+}
+
+class AdminServiceNodeUpdateRequest {
+  final String? domain;
+  final String? ip;
+  final String? name;
+  final String? remark;
+
+  AdminServiceNodeUpdateRequest({
+    this.domain,
+    this.ip,
+    this.name,
+    this.remark
+  });
+
+  factory AdminServiceNodeUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodeUpdateRequest(
+      domain: json['domain']?.toString(),
+      ip: json['ip']?.toString(),
+      name: json['name']?.toString(),
+      remark: json['remark']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'domain': domain,
+      'ip': ip,
+      'name': name,
+      'remark': remark,
+    };
+  }
+}
+
+class AdminServiceNodesResponse {
+  final List<AdminServiceNodeItem>? items;
+
+  AdminServiceNodesResponse({
+    this.items
+  });
+
+  factory AdminServiceNodesResponse.fromJson(Map<String, dynamic> json) {
+    return AdminServiceNodesResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminServiceNodeItem.fromJson(map);
+      })())
+            .whereType<AdminServiceNodeItem>()
             .toList();
       })()
     );
@@ -12181,6 +16547,466 @@ class AiGenerationSessionRecord {
   }
 }
 
+class AiMcpBindingRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? serverId;
+  final String? serverRevisionId;
+  final String? status;
+  final String? tenantId;
+  final String? toolId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  AiMcpBindingRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.serverId,
+    this.serverRevisionId,
+    this.status,
+    this.tenantId,
+    this.toolId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory AiMcpBindingRecord.fromJson(Map<String, dynamic> json) {
+    return AiMcpBindingRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      serverId: json['server_id']?.toString(),
+      serverRevisionId: json['server_revision_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      toolId: json['tool_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'server_id': serverId,
+      'server_revision_id': serverRevisionId,
+      'status': status,
+      'tenant_id': tenantId,
+      'tool_id': toolId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class AiMcpServerRecord {
+  final String? categoryCode;
+  final String? categoryId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? deprecatedAt;
+  final String? description;
+  final String? id;
+  final String? lastCheckedAt;
+  final String? lastErrorMasked;
+  final String? latestRevisionId;
+  final Map<String, dynamic>? metadata;
+  final String? name;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? publishedAt;
+  final String? publishedRevisionId;
+  final String? serverKey;
+  final String? status;
+  final String? tenantId;
+  final String? transport;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final String? visibility;
+
+  AiMcpServerRecord({
+    this.categoryCode,
+    this.categoryId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.deprecatedAt,
+    this.description,
+    this.id,
+    this.lastCheckedAt,
+    this.lastErrorMasked,
+    this.latestRevisionId,
+    this.metadata,
+    this.name,
+    this.organizationId,
+    this.ownerUserId,
+    this.publishedAt,
+    this.publishedRevisionId,
+    this.serverKey,
+    this.status,
+    this.tenantId,
+    this.transport,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.visibility
+  });
+
+  factory AiMcpServerRecord.fromJson(Map<String, dynamic> json) {
+    return AiMcpServerRecord(
+      categoryCode: json['category_code']?.toString(),
+      categoryId: json['category_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      deprecatedAt: json['deprecated_at']?.toString(),
+      description: json['description']?.toString(),
+      id: json['id']?.toString(),
+      lastCheckedAt: json['last_checked_at']?.toString(),
+      lastErrorMasked: json['last_error_masked']?.toString(),
+      latestRevisionId: json['latest_revision_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      publishedRevisionId: json['published_revision_id']?.toString(),
+      serverKey: json['server_key']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      transport: json['transport']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'category_code': categoryCode,
+      'category_id': categoryId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'deprecated_at': deprecatedAt,
+      'description': description,
+      'id': id,
+      'last_checked_at': lastCheckedAt,
+      'last_error_masked': lastErrorMasked,
+      'latest_revision_id': latestRevisionId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'name': name,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'published_at': publishedAt,
+      'published_revision_id': publishedRevisionId,
+      'server_key': serverKey,
+      'status': status,
+      'tenant_id': tenantId,
+      'transport': transport,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AiMcpServerRevisionRecord {
+  final String? command;
+  final String? configHash;
+  final String? createdAt;
+  final String? createdBy;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? deprecatedAt;
+  final String? endpointUrl;
+  final String? id;
+  final String? lifecycleStatus;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? publishedAt;
+  final String? revisionNo;
+  final String? secretRef;
+  final String? serverId;
+  final String? status;
+  final String? tenantId;
+  final String? transport;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  AiMcpServerRevisionRecord({
+    this.command,
+    this.configHash,
+    this.createdAt,
+    this.createdBy,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.deprecatedAt,
+    this.endpointUrl,
+    this.id,
+    this.lifecycleStatus,
+    this.metadata,
+    this.organizationId,
+    this.publishedAt,
+    this.revisionNo,
+    this.secretRef,
+    this.serverId,
+    this.status,
+    this.tenantId,
+    this.transport,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory AiMcpServerRevisionRecord.fromJson(Map<String, dynamic> json) {
+    return AiMcpServerRevisionRecord(
+      command: json['command']?.toString(),
+      configHash: json['config_hash']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      deprecatedAt: json['deprecated_at']?.toString(),
+      endpointUrl: json['endpoint_url']?.toString(),
+      id: json['id']?.toString(),
+      lifecycleStatus: json['lifecycle_status']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      revisionNo: json['revision_no']?.toString(),
+      secretRef: json['secret_ref']?.toString(),
+      serverId: json['server_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      transport: json['transport']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'command': command,
+      'config_hash': configHash,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'deprecated_at': deprecatedAt,
+      'endpoint_url': endpointUrl,
+      'id': id,
+      'lifecycle_status': lifecycleStatus,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'published_at': publishedAt,
+      'revision_no': revisionNo,
+      'secret_ref': secretRef,
+      'server_id': serverId,
+      'status': status,
+      'tenant_id': tenantId,
+      'transport': transport,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class AiMcpToolRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? description;
+  final String? discoveredAt;
+  final String? id;
+  final String? lastInvokedAt;
+  final Map<String, dynamic>? metadata;
+  final String? name;
+  final String? organizationId;
+  final String? schemaHash;
+  final String? serverId;
+  final String? serverRevisionId;
+  final String? status;
+  final String? tenantId;
+  final String? toolKey;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  AiMcpToolRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.description,
+    this.discoveredAt,
+    this.id,
+    this.lastInvokedAt,
+    this.metadata,
+    this.name,
+    this.organizationId,
+    this.schemaHash,
+    this.serverId,
+    this.serverRevisionId,
+    this.status,
+    this.tenantId,
+    this.toolKey,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory AiMcpToolRecord.fromJson(Map<String, dynamic> json) {
+    return AiMcpToolRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      description: json['description']?.toString(),
+      discoveredAt: json['discovered_at']?.toString(),
+      id: json['id']?.toString(),
+      lastInvokedAt: json['last_invoked_at']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      schemaHash: json['schema_hash']?.toString(),
+      serverId: json['server_id']?.toString(),
+      serverRevisionId: json['server_revision_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      toolKey: json['tool_key']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'description': description,
+      'discovered_at': discoveredAt,
+      'id': id,
+      'last_invoked_at': lastInvokedAt,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'name': name,
+      'organization_id': organizationId,
+      'schema_hash': schemaHash,
+      'server_id': serverId,
+      'server_revision_id': serverRevisionId,
+      'status': status,
+      'tenant_id': tenantId,
+      'tool_key': toolKey,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
 class AiMemoryEmbeddingRecord {
   final String? contentHash;
   final String? createdAt;
@@ -15791,6 +20617,349 @@ class AiPricingTierRecord {
   }
 }
 
+class AiPromptBindingRecord {
+  final String? bindingRole;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? promptId;
+  final String? promptVersionId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  AiPromptBindingRecord({
+    this.bindingRole,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.promptId,
+    this.promptVersionId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory AiPromptBindingRecord.fromJson(Map<String, dynamic> json) {
+    return AiPromptBindingRecord(
+      bindingRole: json['binding_role']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      promptId: json['prompt_id']?.toString(),
+      promptVersionId: json['prompt_version_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'binding_role': bindingRole,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'prompt_id': promptId,
+      'prompt_version_id': promptVersionId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class AiPromptRecord {
+  final String? categoryCode;
+  final String? categoryId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? deprecatedAt;
+  final String? description;
+  final String? id;
+  final String? latestVersionId;
+  final Map<String, dynamic>? metadata;
+  final String? name;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? promptKey;
+  final String? promptType;
+  final String? publishedAt;
+  final String? publishedVersionId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final String? visibility;
+
+  AiPromptRecord({
+    this.categoryCode,
+    this.categoryId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.deprecatedAt,
+    this.description,
+    this.id,
+    this.latestVersionId,
+    this.metadata,
+    this.name,
+    this.organizationId,
+    this.ownerUserId,
+    this.promptKey,
+    this.promptType,
+    this.publishedAt,
+    this.publishedVersionId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.visibility
+  });
+
+  factory AiPromptRecord.fromJson(Map<String, dynamic> json) {
+    return AiPromptRecord(
+      categoryCode: json['category_code']?.toString(),
+      categoryId: json['category_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      deprecatedAt: json['deprecated_at']?.toString(),
+      description: json['description']?.toString(),
+      id: json['id']?.toString(),
+      latestVersionId: json['latest_version_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      promptKey: json['prompt_key']?.toString(),
+      promptType: json['prompt_type']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      publishedVersionId: json['published_version_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'category_code': categoryCode,
+      'category_id': categoryId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'deprecated_at': deprecatedAt,
+      'description': description,
+      'id': id,
+      'latest_version_id': latestVersionId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'name': name,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'prompt_key': promptKey,
+      'prompt_type': promptType,
+      'published_at': publishedAt,
+      'published_version_id': publishedVersionId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AiPromptVersionRecord {
+  final String? checksumHash;
+  final String? content;
+  final String? createdAt;
+  final String? createdBy;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? deprecatedAt;
+  final String? id;
+  final String? lifecycleStatus;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? promptId;
+  final String? publishedAt;
+  final String? reviewComment;
+  final String? reviewStatus;
+  final String? status;
+  final String? tenantId;
+  final String? title;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final String? versionNo;
+
+  AiPromptVersionRecord({
+    this.checksumHash,
+    this.content,
+    this.createdAt,
+    this.createdBy,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.deprecatedAt,
+    this.id,
+    this.lifecycleStatus,
+    this.metadata,
+    this.organizationId,
+    this.promptId,
+    this.publishedAt,
+    this.reviewComment,
+    this.reviewStatus,
+    this.status,
+    this.tenantId,
+    this.title,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.versionNo
+  });
+
+  factory AiPromptVersionRecord.fromJson(Map<String, dynamic> json) {
+    return AiPromptVersionRecord(
+      checksumHash: json['checksum_hash']?.toString(),
+      content: json['content']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      deprecatedAt: json['deprecated_at']?.toString(),
+      id: json['id']?.toString(),
+      lifecycleStatus: json['lifecycle_status']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      promptId: json['prompt_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      reviewComment: json['review_comment']?.toString(),
+      reviewStatus: json['review_status']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      versionNo: json['version_no']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checksum_hash': checksumHash,
+      'content': content,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'deprecated_at': deprecatedAt,
+      'id': id,
+      'lifecycle_status': lifecycleStatus,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'prompt_id': promptId,
+      'published_at': publishedAt,
+      'review_comment': reviewComment,
+      'review_status': reviewStatus,
+      'status': status,
+      'tenant_id': tenantId,
+      'title': title,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'version_no': versionNo,
+    };
+  }
+}
+
 class AiQuotaPolicyRecord {
   final String? blockDurationSeconds;
   final String? burstLimit;
@@ -16117,12 +21286,14 @@ class AiRequestTraceRecord {
   final String? providerErrorCode;
   final String? providerId;
   final String? providerModel;
+  final String? providerNativeModel;
   final String? reasoningEffort;
   final String? requestBytes;
   final String? requestId;
   final String? requestPath;
   final String? requestPayloadHash;
   final String? requestedModel;
+  final String? requestedModelCatalogKey;
   final String? responseBytes;
   final String? responsePayloadHash;
   final String? retentionUntil;
@@ -16173,12 +21344,14 @@ class AiRequestTraceRecord {
     this.providerErrorCode,
     this.providerId,
     this.providerModel,
+    this.providerNativeModel,
     this.reasoningEffort,
     this.requestBytes,
     this.requestId,
     this.requestPath,
     this.requestPayloadHash,
     this.requestedModel,
+    this.requestedModelCatalogKey,
     this.responseBytes,
     this.responsePayloadHash,
     this.retentionUntil,
@@ -16244,12 +21417,14 @@ class AiRequestTraceRecord {
       providerErrorCode: json['provider_error_code']?.toString(),
       providerId: json['provider_id']?.toString(),
       providerModel: json['provider_model']?.toString(),
+      providerNativeModel: json['provider_native_model']?.toString(),
       reasoningEffort: json['reasoning_effort']?.toString(),
       requestBytes: json['request_bytes']?.toString(),
       requestId: json['request_id']?.toString(),
       requestPath: json['request_path']?.toString(),
       requestPayloadHash: json['request_payload_hash']?.toString(),
       requestedModel: json['requested_model']?.toString(),
+      requestedModelCatalogKey: json['requested_model_catalog_key']?.toString(),
       responseBytes: json['response_bytes']?.toString(),
       responsePayloadHash: json['response_payload_hash']?.toString(),
       retentionUntil: json['retention_until']?.toString(),
@@ -16303,12 +21478,14 @@ class AiRequestTraceRecord {
       'provider_error_code': providerErrorCode,
       'provider_id': providerId,
       'provider_model': providerModel,
+      'provider_native_model': providerNativeModel,
       'reasoning_effort': reasoningEffort,
       'request_bytes': requestBytes,
       'request_id': requestId,
       'request_path': requestPath,
       'request_payload_hash': requestPayloadHash,
       'requested_model': requestedModel,
+      'requested_model_catalog_key': requestedModelCatalogKey,
       'response_bytes': responseBytes,
       'response_payload_hash': responsePayloadHash,
       'retention_until': retentionUntil,
@@ -17689,11 +22866,13 @@ class AiUsageFactRecord {
   final String? promptTokens;
   final String? providerAccountId;
   final String? providerId;
+  final String? providerNativeModel;
   final String? rateMultiplier;
   final String? reasoningEffort;
   final String? referenceMultiplier;
   final String? requestCount;
   final String? requestId;
+  final String? requestedModelCatalogKey;
   final String? resultCount;
   final String? retentionUntil;
   final String? settlementId;
@@ -17761,11 +22940,13 @@ class AiUsageFactRecord {
     this.promptTokens,
     this.providerAccountId,
     this.providerId,
+    this.providerNativeModel,
     this.rateMultiplier,
     this.reasoningEffort,
     this.referenceMultiplier,
     this.requestCount,
     this.requestId,
+    this.requestedModelCatalogKey,
     this.resultCount,
     this.retentionUntil,
     this.settlementId,
@@ -17861,11 +23042,13 @@ class AiUsageFactRecord {
       promptTokens: json['prompt_tokens']?.toString(),
       providerAccountId: json['provider_account_id']?.toString(),
       providerId: json['provider_id']?.toString(),
+      providerNativeModel: json['provider_native_model']?.toString(),
       rateMultiplier: json['rate_multiplier']?.toString(),
       reasoningEffort: json['reasoning_effort']?.toString(),
       referenceMultiplier: json['reference_multiplier']?.toString(),
       requestCount: json['request_count']?.toString(),
       requestId: json['request_id']?.toString(),
+      requestedModelCatalogKey: json['requested_model_catalog_key']?.toString(),
       resultCount: json['result_count']?.toString(),
       retentionUntil: json['retention_until']?.toString(),
       settlementId: json['settlement_id']?.toString(),
@@ -17936,11 +23119,13 @@ class AiUsageFactRecord {
       'prompt_tokens': promptTokens,
       'provider_account_id': providerAccountId,
       'provider_id': providerId,
+      'provider_native_model': providerNativeModel,
       'rate_multiplier': rateMultiplier,
       'reasoning_effort': reasoningEffort,
       'reference_multiplier': referenceMultiplier,
       'request_count': requestCount,
       'request_id': requestId,
+      'requested_model_catalog_key': requestedModelCatalogKey,
       'result_count': resultCount,
       'retention_until': retentionUntil,
       'settlement_id': settlementId,
@@ -17956,6 +23141,352 @@ class AiUsageFactRecord {
       'user_id': userId,
       'uuid': uuid,
       'video_seconds': videoSeconds,
+    };
+  }
+}
+
+class AiUsageServiceProviderChainRecord {
+  final int? chainDepth;
+  final String? chainHash;
+  final Map<String, dynamic>? chainPathSnapshot;
+  final String? createdAt;
+  final String? id;
+  final String? leafProviderId;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? requestId;
+  final String? resolvedSubjectId;
+  final String? resolvedSubjectType;
+  final String? retentionUntil;
+  final String? rootProviderId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? usageFactId;
+  final String? userId;
+  final String? uuid;
+
+  AiUsageServiceProviderChainRecord({
+    this.chainDepth,
+    this.chainHash,
+    this.chainPathSnapshot,
+    this.createdAt,
+    this.id,
+    this.leafProviderId,
+    this.legalHold,
+    this.metadata,
+    this.occurredAt,
+    this.organizationId,
+    this.payloadHash,
+    this.requestId,
+    this.resolvedSubjectId,
+    this.resolvedSubjectType,
+    this.retentionUntil,
+    this.rootProviderId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.usageFactId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiUsageServiceProviderChainRecord.fromJson(Map<String, dynamic> json) {
+    return AiUsageServiceProviderChainRecord(
+      chainDepth: json['chain_depth'] is int ? json['chain_depth'] : null,
+      chainHash: json['chain_hash']?.toString(),
+      chainPathSnapshot: (() {
+        final map = _sdkworkAsMap(json['chain_path_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      id: json['id']?.toString(),
+      leafProviderId: json['leaf_provider_id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      resolvedSubjectId: json['resolved_subject_id']?.toString(),
+      resolvedSubjectType: json['resolved_subject_type']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      rootProviderId: json['root_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      usageFactId: json['usage_fact_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'chain_depth': chainDepth,
+      'chain_hash': chainHash,
+      'chain_path_snapshot': chainPathSnapshot?.map((key, item) => MapEntry(key, item)),
+      'created_at': createdAt,
+      'id': id,
+      'leaf_provider_id': leafProviderId,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'request_id': requestId,
+      'resolved_subject_id': resolvedSubjectId,
+      'resolved_subject_type': resolvedSubjectType,
+      'retention_until': retentionUntil,
+      'root_provider_id': rootProviderId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'usage_fact_id': usageFactId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiUsageServiceProviderEdgeRecord {
+  final String? amountRole;
+  final String? billableQuantity;
+  final String? billingMeterCode;
+  final String? buyerProviderId;
+  final Map<String, dynamic>? buyerSnapshot;
+  final String? chainId;
+  final String? chargeAmount;
+  final String? convertedChargeAmount;
+  final String? createdAt;
+  final String? currency;
+  final int? edgeDepth;
+  final String? edgeId;
+  final String? fxRateSnapshot;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? payloadHash;
+  final Map<String, dynamic>? priceSnapshot;
+  final String? pricingPlanId;
+  final String? pricingRuleId;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? sellerProviderId;
+  final Map<String, dynamic>? sellerSnapshot;
+  final String? settlementCurrency;
+  final String? settlementStatus;
+  final String? status;
+  final String? tenantId;
+  final String? tokenKind;
+  final String? traceId;
+  final String? unitPrice;
+  final String? unitSize;
+  final String? usageFactId;
+  final String? userId;
+  final String? uuid;
+
+  AiUsageServiceProviderEdgeRecord({
+    this.amountRole,
+    this.billableQuantity,
+    this.billingMeterCode,
+    this.buyerProviderId,
+    this.buyerSnapshot,
+    this.chainId,
+    this.chargeAmount,
+    this.convertedChargeAmount,
+    this.createdAt,
+    this.currency,
+    this.edgeDepth,
+    this.edgeId,
+    this.fxRateSnapshot,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.occurredAt,
+    this.organizationId,
+    this.payloadHash,
+    this.priceSnapshot,
+    this.pricingPlanId,
+    this.pricingRuleId,
+    this.requestId,
+    this.retentionUntil,
+    this.sellerProviderId,
+    this.sellerSnapshot,
+    this.settlementCurrency,
+    this.settlementStatus,
+    this.status,
+    this.tenantId,
+    this.tokenKind,
+    this.traceId,
+    this.unitPrice,
+    this.unitSize,
+    this.usageFactId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiUsageServiceProviderEdgeRecord.fromJson(Map<String, dynamic> json) {
+    return AiUsageServiceProviderEdgeRecord(
+      amountRole: json['amount_role']?.toString(),
+      billableQuantity: json['billable_quantity']?.toString(),
+      billingMeterCode: json['billing_meter_code']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      buyerSnapshot: (() {
+        final map = _sdkworkAsMap(json['buyer_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      chainId: json['chain_id']?.toString(),
+      chargeAmount: json['charge_amount']?.toString(),
+      convertedChargeAmount: json['converted_charge_amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      edgeDepth: json['edge_depth'] is int ? json['edge_depth'] : null,
+      edgeId: json['edge_id']?.toString(),
+      fxRateSnapshot: json['fx_rate_snapshot']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      priceSnapshot: (() {
+        final map = _sdkworkAsMap(json['price_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      pricingPlanId: json['pricing_plan_id']?.toString(),
+      pricingRuleId: json['pricing_rule_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      sellerSnapshot: (() {
+        final map = _sdkworkAsMap(json['seller_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      settlementCurrency: json['settlement_currency']?.toString(),
+      settlementStatus: json['settlement_status']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenKind: json['token_kind']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      unitPrice: json['unit_price']?.toString(),
+      unitSize: json['unit_size']?.toString(),
+      usageFactId: json['usage_fact_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount_role': amountRole,
+      'billable_quantity': billableQuantity,
+      'billing_meter_code': billingMeterCode,
+      'buyer_provider_id': buyerProviderId,
+      'buyer_snapshot': buyerSnapshot?.map((key, item) => MapEntry(key, item)),
+      'chain_id': chainId,
+      'charge_amount': chargeAmount,
+      'converted_charge_amount': convertedChargeAmount,
+      'created_at': createdAt,
+      'currency': currency,
+      'edge_depth': edgeDepth,
+      'edge_id': edgeId,
+      'fx_rate_snapshot': fxRateSnapshot,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'price_snapshot': priceSnapshot?.map((key, item) => MapEntry(key, item)),
+      'pricing_plan_id': pricingPlanId,
+      'pricing_rule_id': pricingRuleId,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'seller_provider_id': sellerProviderId,
+      'seller_snapshot': sellerSnapshot?.map((key, item) => MapEntry(key, item)),
+      'settlement_currency': settlementCurrency,
+      'settlement_status': settlementStatus,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_kind': tokenKind,
+      'trace_id': traceId,
+      'unit_price': unitPrice,
+      'unit_size': unitSize,
+      'usage_fact_id': usageFactId,
+      'user_id': userId,
+      'uuid': uuid,
     };
   }
 }
@@ -17987,6 +23518,264 @@ class AnalyticsAdminOverviewRetrieveResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
+    };
+  }
+}
+
+class AnalyticsServiceProviderDailyRecord {
+  final String? ancestorProviderId;
+  final String? createdAt;
+  final String? currency;
+  final String? expenseAmount;
+  final String? failureCount;
+  final String? id;
+  final String? incomeAmount;
+  final String? marginAmount;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? providerId;
+  final String? rebuildVersion;
+  final String? reportDate;
+  final String? requestCount;
+  final String? sourceId;
+  final String? sourceType;
+  final String? sourceVersion;
+  final String? status;
+  final String? successCount;
+  final String? tenantId;
+  final String? tokenCount;
+  final String? updatedAt;
+  final String? upstreamCostAmount;
+  final String? uuid;
+
+  AnalyticsServiceProviderDailyRecord({
+    this.ancestorProviderId,
+    this.createdAt,
+    this.currency,
+    this.expenseAmount,
+    this.failureCount,
+    this.id,
+    this.incomeAmount,
+    this.marginAmount,
+    this.metadata,
+    this.organizationId,
+    this.providerId,
+    this.rebuildVersion,
+    this.reportDate,
+    this.requestCount,
+    this.sourceId,
+    this.sourceType,
+    this.sourceVersion,
+    this.status,
+    this.successCount,
+    this.tenantId,
+    this.tokenCount,
+    this.updatedAt,
+    this.upstreamCostAmount,
+    this.uuid
+  });
+
+  factory AnalyticsServiceProviderDailyRecord.fromJson(Map<String, dynamic> json) {
+    return AnalyticsServiceProviderDailyRecord(
+      ancestorProviderId: json['ancestor_provider_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      expenseAmount: json['expense_amount']?.toString(),
+      failureCount: json['failure_count']?.toString(),
+      id: json['id']?.toString(),
+      incomeAmount: json['income_amount']?.toString(),
+      marginAmount: json['margin_amount']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      providerId: json['provider_id']?.toString(),
+      rebuildVersion: json['rebuild_version']?.toString(),
+      reportDate: json['report_date']?.toString(),
+      requestCount: json['request_count']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      sourceVersion: json['source_version']?.toString(),
+      status: json['status']?.toString(),
+      successCount: json['success_count']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenCount: json['token_count']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      upstreamCostAmount: json['upstream_cost_amount']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'ancestor_provider_id': ancestorProviderId,
+      'created_at': createdAt,
+      'currency': currency,
+      'expense_amount': expenseAmount,
+      'failure_count': failureCount,
+      'id': id,
+      'income_amount': incomeAmount,
+      'margin_amount': marginAmount,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'provider_id': providerId,
+      'rebuild_version': rebuildVersion,
+      'report_date': reportDate,
+      'request_count': requestCount,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'source_version': sourceVersion,
+      'status': status,
+      'success_count': successCount,
+      'tenant_id': tenantId,
+      'token_count': tokenCount,
+      'updated_at': updatedAt,
+      'upstream_cost_amount': upstreamCostAmount,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AnalyticsServiceProviderEdgeDailyRecord {
+  final String? billingMeterCode;
+  final String? buyerProviderId;
+  final String? catalogKey;
+  final String? createdAt;
+  final String? currency;
+  final String? edgeId;
+  final String? expenseAmount;
+  final String? id;
+  final String? incomeAmount;
+  final String? marginAmount;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? rebuildVersion;
+  final String? reportDate;
+  final String? requestCount;
+  final String? sellerProviderId;
+  final String? sourceId;
+  final String? sourceType;
+  final String? sourceVersion;
+  final String? status;
+  final String? tenantId;
+  final String? tokenCount;
+  final String? tokenKind;
+  final String? updatedAt;
+  final String? uuid;
+
+  AnalyticsServiceProviderEdgeDailyRecord({
+    this.billingMeterCode,
+    this.buyerProviderId,
+    this.catalogKey,
+    this.createdAt,
+    this.currency,
+    this.edgeId,
+    this.expenseAmount,
+    this.id,
+    this.incomeAmount,
+    this.marginAmount,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.rebuildVersion,
+    this.reportDate,
+    this.requestCount,
+    this.sellerProviderId,
+    this.sourceId,
+    this.sourceType,
+    this.sourceVersion,
+    this.status,
+    this.tenantId,
+    this.tokenCount,
+    this.tokenKind,
+    this.updatedAt,
+    this.uuid
+  });
+
+  factory AnalyticsServiceProviderEdgeDailyRecord.fromJson(Map<String, dynamic> json) {
+    return AnalyticsServiceProviderEdgeDailyRecord(
+      billingMeterCode: json['billing_meter_code']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      catalogKey: json['catalog_key']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      edgeId: json['edge_id']?.toString(),
+      expenseAmount: json['expense_amount']?.toString(),
+      id: json['id']?.toString(),
+      incomeAmount: json['income_amount']?.toString(),
+      marginAmount: json['margin_amount']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      rebuildVersion: json['rebuild_version']?.toString(),
+      reportDate: json['report_date']?.toString(),
+      requestCount: json['request_count']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      sourceVersion: json['source_version']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenCount: json['token_count']?.toString(),
+      tokenKind: json['token_kind']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'billing_meter_code': billingMeterCode,
+      'buyer_provider_id': buyerProviderId,
+      'catalog_key': catalogKey,
+      'created_at': createdAt,
+      'currency': currency,
+      'edge_id': edgeId,
+      'expense_amount': expenseAmount,
+      'id': id,
+      'income_amount': incomeAmount,
+      'margin_amount': marginAmount,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'rebuild_version': rebuildVersion,
+      'report_date': reportDate,
+      'request_count': requestCount,
+      'seller_provider_id': sellerProviderId,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'source_version': sourceVersion,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_count': tokenCount,
+      'token_kind': tokenKind,
+      'updated_at': updatedAt,
+      'uuid': uuid,
     };
   }
 }
@@ -18549,6 +24338,223 @@ class AppsRetrieveResult {
   }
 }
 
+class AppsTemplatesCreateResult {
+  final String? code;
+  final AdminAppTemplateMutationResponse? data;
+  final String? msg;
+
+  AppsTemplatesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesCreateResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsTemplatesDeleteResult {
+  final String? code;
+  final AdminAppTemplateDeleteResponse? data;
+  final String? msg;
+
+  AppsTemplatesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsTemplatesListResult {
+  final String? code;
+  final AdminAppTemplateListResponse? data;
+  final String? msg;
+
+  AppsTemplatesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesListResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsTemplatesPublishResult {
+  final String? code;
+  final AdminAppTemplateMutationResponse? data;
+  final String? msg;
+
+  AppsTemplatesPublishResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesPublishResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesPublishResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsTemplatesRetrieveResult {
+  final String? code;
+  final AdminAppTemplateMutationResponse? data;
+  final String? msg;
+
+  AppsTemplatesRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsTemplatesUnpublishResult {
+  final String? code;
+  final AdminAppTemplateMutationResponse? data;
+  final String? msg;
+
+  AppsTemplatesUnpublishResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesUnpublishResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesUnpublishResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsTemplatesUpdateResult {
+  final String? code;
+  final AdminAppTemplateMutationResponse? data;
+  final String? msg;
+
+  AppsTemplatesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsTemplatesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return AppsTemplatesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppTemplateMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class AppsUnpublishResult {
   final String? code;
   final AdminAppMutationResponse? data;
@@ -18642,6 +24648,37 @@ class AuditCommerceEventsListResult {
   }
 }
 
+class AuditEventsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  AuditEventsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AuditEventsListResult.fromJson(Map<String, dynamic> json) {
+    return AuditEventsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class AuthSettingsRetrieveResult {
   final String? code;
   final AdminAuthSettingsResponse? data;
@@ -18690,6 +24727,37 @@ class AuthSettingsUpdateResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAuthSettingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class BindingsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  BindingsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory BindingsListResult.fromJson(Map<String, dynamic> json) {
+    return BindingsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -19745,6 +25813,115 @@ class CommerceAccountRecord {
   }
 }
 
+class CommerceBillingHistoryRecord {
+  final String? assetType;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? direction;
+  final String? historyNo;
+  final String? historyType;
+  final Map<String, dynamic>? metadataJson;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? paymentMethod;
+  final String? referenceNo;
+  final String? relatedOrderId;
+  final String? relatedOrderNo;
+  final String? sourceId;
+  final String? sourceType;
+  final String? status;
+  final String? tenantId;
+  final String? title;
+  final String? updatedAt;
+
+  CommerceBillingHistoryRecord({
+    this.assetType,
+    this.createdAt,
+    this.currencyCode,
+    this.direction,
+    this.historyNo,
+    this.historyType,
+    this.metadataJson,
+    this.occurredAt,
+    this.organizationId,
+    this.ownerUserId,
+    this.paymentMethod,
+    this.referenceNo,
+    this.relatedOrderId,
+    this.relatedOrderNo,
+    this.sourceId,
+    this.sourceType,
+    this.status,
+    this.tenantId,
+    this.title,
+    this.updatedAt
+  });
+
+  factory CommerceBillingHistoryRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceBillingHistoryRecord(
+      assetType: json['asset_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      direction: json['direction']?.toString(),
+      historyNo: json['history_no']?.toString(),
+      historyType: json['history_type']?.toString(),
+      metadataJson: (() {
+        final map = _sdkworkAsMap(json['metadata_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      paymentMethod: json['payment_method']?.toString(),
+      referenceNo: json['reference_no']?.toString(),
+      relatedOrderId: json['related_order_id']?.toString(),
+      relatedOrderNo: json['related_order_no']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'asset_type': assetType,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'direction': direction,
+      'history_no': historyNo,
+      'history_type': historyType,
+      'metadata_json': metadataJson?.map((key, item) => MapEntry(key, item)),
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'payment_method': paymentMethod,
+      'reference_no': referenceNo,
+      'related_order_id': relatedOrderId,
+      'related_order_no': relatedOrderNo,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'status': status,
+      'tenant_id': tenantId,
+      'title': title,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
 class CommerceCartItemRecord {
   final String? cartId;
   final String? createdAt;
@@ -20064,294 +26241,6 @@ class CommerceCheckoutSessionRecord {
       'source_type': sourceType,
       'status': status,
       'tenant_id': tenantId,
-      'updated_at': updatedAt,
-    };
-  }
-}
-
-class CommerceCouponIssueBatchRecord {
-  final String? audienceFilter;
-  final String? batchNo;
-  final String? campaignCode;
-  final String? codePattern;
-  final String? codePrefix;
-  final String? couponTemplateId;
-  final String? createdAt;
-  final String? createdBy;
-  final String? generatedAt;
-  final String? generationStatus;
-  final String? organizationId;
-  final String? requestedQuantity;
-  final String? status;
-  final String? tenantId;
-  final String? title;
-  final String? updatedAt;
-
-  CommerceCouponIssueBatchRecord({
-    this.audienceFilter,
-    this.batchNo,
-    this.campaignCode,
-    this.codePattern,
-    this.codePrefix,
-    this.couponTemplateId,
-    this.createdAt,
-    this.createdBy,
-    this.generatedAt,
-    this.generationStatus,
-    this.organizationId,
-    this.requestedQuantity,
-    this.status,
-    this.tenantId,
-    this.title,
-    this.updatedAt
-  });
-
-  factory CommerceCouponIssueBatchRecord.fromJson(Map<String, dynamic> json) {
-    return CommerceCouponIssueBatchRecord(
-      audienceFilter: json['audience_filter']?.toString(),
-      batchNo: json['batch_no']?.toString(),
-      campaignCode: json['campaign_code']?.toString(),
-      codePattern: json['code_pattern']?.toString(),
-      codePrefix: json['code_prefix']?.toString(),
-      couponTemplateId: json['coupon_template_id']?.toString(),
-      createdAt: json['created_at']?.toString(),
-      createdBy: json['created_by']?.toString(),
-      generatedAt: json['generated_at']?.toString(),
-      generationStatus: json['generation_status']?.toString(),
-      organizationId: json['organization_id']?.toString(),
-      requestedQuantity: json['requested_quantity']?.toString(),
-      status: json['status']?.toString(),
-      tenantId: json['tenant_id']?.toString(),
-      title: json['title']?.toString(),
-      updatedAt: json['updated_at']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'audience_filter': audienceFilter,
-      'batch_no': batchNo,
-      'campaign_code': campaignCode,
-      'code_pattern': codePattern,
-      'code_prefix': codePrefix,
-      'coupon_template_id': couponTemplateId,
-      'created_at': createdAt,
-      'created_by': createdBy,
-      'generated_at': generatedAt,
-      'generation_status': generationStatus,
-      'organization_id': organizationId,
-      'requested_quantity': requestedQuantity,
-      'status': status,
-      'tenant_id': tenantId,
-      'title': title,
-      'updated_at': updatedAt,
-    };
-  }
-}
-
-class CommerceCouponRecord {
-  final String? claimedAt;
-  final String? couponCode;
-  final String? createdAt;
-  final String? disabledAt;
-  final String? expiresAt;
-  final String? idempotencyKey;
-  final String? issueBatchId;
-  final String? organizationId;
-  final String? ownerUserId;
-  final String? redeemedAt;
-  final String? requestNo;
-  final String? status;
-  final String? templateId;
-  final String? tenantId;
-  final String? updatedAt;
-
-  CommerceCouponRecord({
-    this.claimedAt,
-    this.couponCode,
-    this.createdAt,
-    this.disabledAt,
-    this.expiresAt,
-    this.idempotencyKey,
-    this.issueBatchId,
-    this.organizationId,
-    this.ownerUserId,
-    this.redeemedAt,
-    this.requestNo,
-    this.status,
-    this.templateId,
-    this.tenantId,
-    this.updatedAt
-  });
-
-  factory CommerceCouponRecord.fromJson(Map<String, dynamic> json) {
-    return CommerceCouponRecord(
-      claimedAt: json['claimed_at']?.toString(),
-      couponCode: json['coupon_code']?.toString(),
-      createdAt: json['created_at']?.toString(),
-      disabledAt: json['disabled_at']?.toString(),
-      expiresAt: json['expires_at']?.toString(),
-      idempotencyKey: json['idempotency_key']?.toString(),
-      issueBatchId: json['issue_batch_id']?.toString(),
-      organizationId: json['organization_id']?.toString(),
-      ownerUserId: json['owner_user_id']?.toString(),
-      redeemedAt: json['redeemed_at']?.toString(),
-      requestNo: json['request_no']?.toString(),
-      status: json['status']?.toString(),
-      templateId: json['template_id']?.toString(),
-      tenantId: json['tenant_id']?.toString(),
-      updatedAt: json['updated_at']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'claimed_at': claimedAt,
-      'coupon_code': couponCode,
-      'created_at': createdAt,
-      'disabled_at': disabledAt,
-      'expires_at': expiresAt,
-      'idempotency_key': idempotencyKey,
-      'issue_batch_id': issueBatchId,
-      'organization_id': organizationId,
-      'owner_user_id': ownerUserId,
-      'redeemed_at': redeemedAt,
-      'request_no': requestNo,
-      'status': status,
-      'template_id': templateId,
-      'tenant_id': tenantId,
-      'updated_at': updatedAt,
-    };
-  }
-}
-
-class CommerceCouponRedemptionRecord {
-  final String? couponId;
-  final String? createdAt;
-  final String? discountAmount;
-  final String? idempotencyKey;
-  final String? orderId;
-  final String? organizationId;
-  final String? ownerUserId;
-  final String? redeemedAt;
-  final String? requestNo;
-  final String? rolledBackAt;
-  final String? status;
-  final String? tenantId;
-  final String? updatedAt;
-
-  CommerceCouponRedemptionRecord({
-    this.couponId,
-    this.createdAt,
-    this.discountAmount,
-    this.idempotencyKey,
-    this.orderId,
-    this.organizationId,
-    this.ownerUserId,
-    this.redeemedAt,
-    this.requestNo,
-    this.rolledBackAt,
-    this.status,
-    this.tenantId,
-    this.updatedAt
-  });
-
-  factory CommerceCouponRedemptionRecord.fromJson(Map<String, dynamic> json) {
-    return CommerceCouponRedemptionRecord(
-      couponId: json['coupon_id']?.toString(),
-      createdAt: json['created_at']?.toString(),
-      discountAmount: json['discount_amount']?.toString(),
-      idempotencyKey: json['idempotency_key']?.toString(),
-      orderId: json['order_id']?.toString(),
-      organizationId: json['organization_id']?.toString(),
-      ownerUserId: json['owner_user_id']?.toString(),
-      redeemedAt: json['redeemed_at']?.toString(),
-      requestNo: json['request_no']?.toString(),
-      rolledBackAt: json['rolled_back_at']?.toString(),
-      status: json['status']?.toString(),
-      tenantId: json['tenant_id']?.toString(),
-      updatedAt: json['updated_at']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'coupon_id': couponId,
-      'created_at': createdAt,
-      'discount_amount': discountAmount,
-      'idempotency_key': idempotencyKey,
-      'order_id': orderId,
-      'organization_id': organizationId,
-      'owner_user_id': ownerUserId,
-      'redeemed_at': redeemedAt,
-      'request_no': requestNo,
-      'rolled_back_at': rolledBackAt,
-      'status': status,
-      'tenant_id': tenantId,
-      'updated_at': updatedAt,
-    };
-  }
-}
-
-class CommerceCouponTemplateRecord {
-  final String? createdAt;
-  final String? discountType;
-  final String? discountValue;
-  final String? expiresAt;
-  final String? organizationId;
-  final String? startsAt;
-  final String? status;
-  final String? templateNo;
-  final String? tenantId;
-  final String? title;
-  final String? totalQuantity;
-  final String? updatedAt;
-
-  CommerceCouponTemplateRecord({
-    this.createdAt,
-    this.discountType,
-    this.discountValue,
-    this.expiresAt,
-    this.organizationId,
-    this.startsAt,
-    this.status,
-    this.templateNo,
-    this.tenantId,
-    this.title,
-    this.totalQuantity,
-    this.updatedAt
-  });
-
-  factory CommerceCouponTemplateRecord.fromJson(Map<String, dynamic> json) {
-    return CommerceCouponTemplateRecord(
-      createdAt: json['created_at']?.toString(),
-      discountType: json['discount_type']?.toString(),
-      discountValue: json['discount_value']?.toString(),
-      expiresAt: json['expires_at']?.toString(),
-      organizationId: json['organization_id']?.toString(),
-      startsAt: json['starts_at']?.toString(),
-      status: json['status']?.toString(),
-      templateNo: json['template_no']?.toString(),
-      tenantId: json['tenant_id']?.toString(),
-      title: json['title']?.toString(),
-      totalQuantity: json['total_quantity']?.toString(),
-      updatedAt: json['updated_at']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'created_at': createdAt,
-      'discount_type': discountType,
-      'discount_value': discountValue,
-      'expires_at': expiresAt,
-      'organization_id': organizationId,
-      'starts_at': startsAt,
-      'status': status,
-      'template_no': templateNo,
-      'tenant_id': tenantId,
-      'title': title,
-      'total_quantity': totalQuantity,
       'updated_at': updatedAt,
     };
   }
@@ -26298,6 +32187,127 @@ class CommerceReportsRefundsListResult {
   }
 }
 
+class CommerceServiceProviderExposureSnapshotRecord {
+  final String? balanceAmount;
+  final String? calculatedAt;
+  final String? createdAt;
+  final String? creditLimitAmount;
+  final String? currency;
+  final String? exposureAmount;
+  final String? frozenAmount;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? overdueAmount;
+  final String? pendingSettlementAmount;
+  final String? rebuildVersion;
+  final String? riskStatus;
+  final String? serviceProviderId;
+  final String? sourceId;
+  final String? sourceType;
+  final String? sourceVersion;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? usedCreditAmount;
+  final String? uuid;
+
+  CommerceServiceProviderExposureSnapshotRecord({
+    this.balanceAmount,
+    this.calculatedAt,
+    this.createdAt,
+    this.creditLimitAmount,
+    this.currency,
+    this.exposureAmount,
+    this.frozenAmount,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.overdueAmount,
+    this.pendingSettlementAmount,
+    this.rebuildVersion,
+    this.riskStatus,
+    this.serviceProviderId,
+    this.sourceId,
+    this.sourceType,
+    this.sourceVersion,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.usedCreditAmount,
+    this.uuid
+  });
+
+  factory CommerceServiceProviderExposureSnapshotRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceServiceProviderExposureSnapshotRecord(
+      balanceAmount: json['balance_amount']?.toString(),
+      calculatedAt: json['calculated_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      creditLimitAmount: json['credit_limit_amount']?.toString(),
+      currency: json['currency']?.toString(),
+      exposureAmount: json['exposure_amount']?.toString(),
+      frozenAmount: json['frozen_amount']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      overdueAmount: json['overdue_amount']?.toString(),
+      pendingSettlementAmount: json['pending_settlement_amount']?.toString(),
+      rebuildVersion: json['rebuild_version']?.toString(),
+      riskStatus: json['risk_status']?.toString(),
+      serviceProviderId: json['service_provider_id']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      sourceVersion: json['source_version']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      usedCreditAmount: json['used_credit_amount']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'balance_amount': balanceAmount,
+      'calculated_at': calculatedAt,
+      'created_at': createdAt,
+      'credit_limit_amount': creditLimitAmount,
+      'currency': currency,
+      'exposure_amount': exposureAmount,
+      'frozen_amount': frozenAmount,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'overdue_amount': overdueAmount,
+      'pending_settlement_amount': pendingSettlementAmount,
+      'rebuild_version': rebuildVersion,
+      'risk_status': riskStatus,
+      'service_provider_id': serviceProviderId,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'source_version': sourceVersion,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'used_credit_amount': usedCreditAmount,
+      'uuid': uuid,
+    };
+  }
+}
+
 class CommerceSettlementExportRecord {
   final String? approvedBy;
   final String? auditLogId;
@@ -26784,6 +32794,817 @@ class CommerceUsagePricingPlanRecord {
       'uuid': uuid,
       'version': version,
       'vip_level_id': vipLevelId,
+    };
+  }
+}
+
+class CommerceUsageServiceProviderAdjustmentRecord {
+  final String? adjustmentNo;
+  final String? adjustmentType;
+  final String? amount;
+  final String? approvalStatus;
+  final String? approvedBy;
+  final String? buyerProviderId;
+  final String? createdAt;
+  final String? currency;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? reasonCode;
+  final String? reasonMessage;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? sellerProviderId;
+  final String? settledLedgerEntryId;
+  final String? statementId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? usageEdgeId;
+  final String? userId;
+  final String? uuid;
+
+  CommerceUsageServiceProviderAdjustmentRecord({
+    this.adjustmentNo,
+    this.adjustmentType,
+    this.amount,
+    this.approvalStatus,
+    this.approvedBy,
+    this.buyerProviderId,
+    this.createdAt,
+    this.currency,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.reasonCode,
+    this.reasonMessage,
+    this.requestId,
+    this.retentionUntil,
+    this.sellerProviderId,
+    this.settledLedgerEntryId,
+    this.statementId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.usageEdgeId,
+    this.userId,
+    this.uuid
+  });
+
+  factory CommerceUsageServiceProviderAdjustmentRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUsageServiceProviderAdjustmentRecord(
+      adjustmentNo: json['adjustment_no']?.toString(),
+      adjustmentType: json['adjustment_type']?.toString(),
+      amount: json['amount']?.toString(),
+      approvalStatus: json['approval_status']?.toString(),
+      approvedBy: json['approved_by']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      reasonCode: json['reason_code']?.toString(),
+      reasonMessage: json['reason_message']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      settledLedgerEntryId: json['settled_ledger_entry_id']?.toString(),
+      statementId: json['statement_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      usageEdgeId: json['usage_edge_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'adjustment_no': adjustmentNo,
+      'adjustment_type': adjustmentType,
+      'amount': amount,
+      'approval_status': approvalStatus,
+      'approved_by': approvedBy,
+      'buyer_provider_id': buyerProviderId,
+      'created_at': createdAt,
+      'currency': currency,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'reason_code': reasonCode,
+      'reason_message': reasonMessage,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'seller_provider_id': sellerProviderId,
+      'settled_ledger_entry_id': settledLedgerEntryId,
+      'statement_id': statementId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'usage_edge_id': usageEdgeId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class CommerceUsageServiceProviderReconciliationItemRecord {
+  final String? createdAt;
+  final String? differenceAmount;
+  final String? externalAmount;
+  final String? id;
+  final String? internalAmount;
+  final bool? legalHold;
+  final String? matchStatus;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? providerInvoiceItemId;
+  final String? reasonCode;
+  final String? requestId;
+  final String? resolutionStatus;
+  final String? retentionUntil;
+  final String? runId;
+  final String? statementItemId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? usageEdgeId;
+  final String? usageFactId;
+  final String? userId;
+  final String? uuid;
+
+  CommerceUsageServiceProviderReconciliationItemRecord({
+    this.createdAt,
+    this.differenceAmount,
+    this.externalAmount,
+    this.id,
+    this.internalAmount,
+    this.legalHold,
+    this.matchStatus,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.providerInvoiceItemId,
+    this.reasonCode,
+    this.requestId,
+    this.resolutionStatus,
+    this.retentionUntil,
+    this.runId,
+    this.statementItemId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.usageEdgeId,
+    this.usageFactId,
+    this.userId,
+    this.uuid
+  });
+
+  factory CommerceUsageServiceProviderReconciliationItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUsageServiceProviderReconciliationItemRecord(
+      createdAt: json['created_at']?.toString(),
+      differenceAmount: json['difference_amount']?.toString(),
+      externalAmount: json['external_amount']?.toString(),
+      id: json['id']?.toString(),
+      internalAmount: json['internal_amount']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      matchStatus: json['match_status']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerInvoiceItemId: json['provider_invoice_item_id']?.toString(),
+      reasonCode: json['reason_code']?.toString(),
+      requestId: json['request_id']?.toString(),
+      resolutionStatus: json['resolution_status']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runId: json['run_id']?.toString(),
+      statementItemId: json['statement_item_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      usageEdgeId: json['usage_edge_id']?.toString(),
+      usageFactId: json['usage_fact_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'difference_amount': differenceAmount,
+      'external_amount': externalAmount,
+      'id': id,
+      'internal_amount': internalAmount,
+      'legal_hold': legalHold,
+      'match_status': matchStatus,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider_invoice_item_id': providerInvoiceItemId,
+      'reason_code': reasonCode,
+      'request_id': requestId,
+      'resolution_status': resolutionStatus,
+      'retention_until': retentionUntil,
+      'run_id': runId,
+      'statement_item_id': statementItemId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'usage_edge_id': usageEdgeId,
+      'usage_fact_id': usageFactId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class CommerceUsageServiceProviderReconciliationRunRecord {
+  final String? createdAt;
+  final String? differenceAmount;
+  final String? id;
+  final bool? legalHold;
+  final String? matchedCount;
+  final Map<String, dynamic>? metadata;
+  final String? mismatchCount;
+  final String? missingExternalCount;
+  final String? missingInternalCount;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? periodEnd;
+  final String? periodStart;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? runNo;
+  final String? scopeId;
+  final String? scopeType;
+  final String? status;
+  final String? tenantId;
+  final String? totalExternalAmount;
+  final String? totalInternalAmount;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  CommerceUsageServiceProviderReconciliationRunRecord({
+    this.createdAt,
+    this.differenceAmount,
+    this.id,
+    this.legalHold,
+    this.matchedCount,
+    this.metadata,
+    this.mismatchCount,
+    this.missingExternalCount,
+    this.missingInternalCount,
+    this.organizationId,
+    this.payloadHash,
+    this.periodEnd,
+    this.periodStart,
+    this.requestId,
+    this.retentionUntil,
+    this.runNo,
+    this.scopeId,
+    this.scopeType,
+    this.status,
+    this.tenantId,
+    this.totalExternalAmount,
+    this.totalInternalAmount,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory CommerceUsageServiceProviderReconciliationRunRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUsageServiceProviderReconciliationRunRecord(
+      createdAt: json['created_at']?.toString(),
+      differenceAmount: json['difference_amount']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      matchedCount: json['matched_count']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      mismatchCount: json['mismatch_count']?.toString(),
+      missingExternalCount: json['missing_external_count']?.toString(),
+      missingInternalCount: json['missing_internal_count']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      periodEnd: json['period_end']?.toString(),
+      periodStart: json['period_start']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runNo: json['run_no']?.toString(),
+      scopeId: json['scope_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      totalExternalAmount: json['total_external_amount']?.toString(),
+      totalInternalAmount: json['total_internal_amount']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'difference_amount': differenceAmount,
+      'id': id,
+      'legal_hold': legalHold,
+      'matched_count': matchedCount,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'mismatch_count': mismatchCount,
+      'missing_external_count': missingExternalCount,
+      'missing_internal_count': missingInternalCount,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'period_end': periodEnd,
+      'period_start': periodStart,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'run_no': runNo,
+      'scope_id': scopeId,
+      'scope_type': scopeType,
+      'status': status,
+      'tenant_id': tenantId,
+      'total_external_amount': totalExternalAmount,
+      'total_internal_amount': totalInternalAmount,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class CommerceUsageServiceProviderSettlementRecord {
+  final String? amount;
+  final String? buyerAccountId;
+  final String? buyerLedgerEntryId;
+  final String? buyerProviderId;
+  final String? createdAt;
+  final String? currency;
+  final String? direction;
+  final String? failureCode;
+  final String? failureMessage;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? sellerAccountId;
+  final String? sellerLedgerEntryId;
+  final String? sellerProviderId;
+  final String? settledAt;
+  final String? settlementMode;
+  final String? settlementNo;
+  final String? settlementStatus;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? usageEdgeId;
+  final String? userId;
+  final String? uuid;
+
+  CommerceUsageServiceProviderSettlementRecord({
+    this.amount,
+    this.buyerAccountId,
+    this.buyerLedgerEntryId,
+    this.buyerProviderId,
+    this.createdAt,
+    this.currency,
+    this.direction,
+    this.failureCode,
+    this.failureMessage,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.requestId,
+    this.retentionUntil,
+    this.sellerAccountId,
+    this.sellerLedgerEntryId,
+    this.sellerProviderId,
+    this.settledAt,
+    this.settlementMode,
+    this.settlementNo,
+    this.settlementStatus,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.usageEdgeId,
+    this.userId,
+    this.uuid
+  });
+
+  factory CommerceUsageServiceProviderSettlementRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUsageServiceProviderSettlementRecord(
+      amount: json['amount']?.toString(),
+      buyerAccountId: json['buyer_account_id']?.toString(),
+      buyerLedgerEntryId: json['buyer_ledger_entry_id']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      direction: json['direction']?.toString(),
+      failureCode: json['failure_code']?.toString(),
+      failureMessage: json['failure_message']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      sellerAccountId: json['seller_account_id']?.toString(),
+      sellerLedgerEntryId: json['seller_ledger_entry_id']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      settledAt: json['settled_at']?.toString(),
+      settlementMode: json['settlement_mode']?.toString(),
+      settlementNo: json['settlement_no']?.toString(),
+      settlementStatus: json['settlement_status']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      usageEdgeId: json['usage_edge_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'buyer_account_id': buyerAccountId,
+      'buyer_ledger_entry_id': buyerLedgerEntryId,
+      'buyer_provider_id': buyerProviderId,
+      'created_at': createdAt,
+      'currency': currency,
+      'direction': direction,
+      'failure_code': failureCode,
+      'failure_message': failureMessage,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'seller_account_id': sellerAccountId,
+      'seller_ledger_entry_id': sellerLedgerEntryId,
+      'seller_provider_id': sellerProviderId,
+      'settled_at': settledAt,
+      'settlement_mode': settlementMode,
+      'settlement_no': settlementNo,
+      'settlement_status': settlementStatus,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'usage_edge_id': usageEdgeId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class CommerceUsageServiceProviderStatementItemRecord {
+  final String? amount;
+  final String? billingMeterCode;
+  final String? createdAt;
+  final String? currency;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? quantity;
+  final String? rebuildVersion;
+  final String? requestCount;
+  final String? sourceId;
+  final String? sourceType;
+  final Map<String, dynamic>? sourceUsageFactIds;
+  final String? sourceVersion;
+  final String? statementId;
+  final String? status;
+  final String? tenantId;
+  final String? tokenCount;
+  final String? tokenKind;
+  final String? updatedAt;
+  final String? usageEdgeId;
+  final String? uuid;
+
+  CommerceUsageServiceProviderStatementItemRecord({
+    this.amount,
+    this.billingMeterCode,
+    this.createdAt,
+    this.currency,
+    this.id,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.quantity,
+    this.rebuildVersion,
+    this.requestCount,
+    this.sourceId,
+    this.sourceType,
+    this.sourceUsageFactIds,
+    this.sourceVersion,
+    this.statementId,
+    this.status,
+    this.tenantId,
+    this.tokenCount,
+    this.tokenKind,
+    this.updatedAt,
+    this.usageEdgeId,
+    this.uuid
+  });
+
+  factory CommerceUsageServiceProviderStatementItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUsageServiceProviderStatementItemRecord(
+      amount: json['amount']?.toString(),
+      billingMeterCode: json['billing_meter_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      quantity: json['quantity']?.toString(),
+      rebuildVersion: json['rebuild_version']?.toString(),
+      requestCount: json['request_count']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      sourceUsageFactIds: (() {
+        final map = _sdkworkAsMap(json['source_usage_fact_ids']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      sourceVersion: json['source_version']?.toString(),
+      statementId: json['statement_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenCount: json['token_count']?.toString(),
+      tokenKind: json['token_kind']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      usageEdgeId: json['usage_edge_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'billing_meter_code': billingMeterCode,
+      'created_at': createdAt,
+      'currency': currency,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'quantity': quantity,
+      'rebuild_version': rebuildVersion,
+      'request_count': requestCount,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'source_usage_fact_ids': sourceUsageFactIds?.map((key, item) => MapEntry(key, item)),
+      'source_version': sourceVersion,
+      'statement_id': statementId,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_count': tokenCount,
+      'token_kind': tokenKind,
+      'updated_at': updatedAt,
+      'usage_edge_id': usageEdgeId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class CommerceUsageServiceProviderStatementRecord {
+  final String? buyerProviderId;
+  final String? createdAt;
+  final String? currency;
+  final String? dueAt;
+  final String? generatedAt;
+  final String? id;
+  final String? invoiceId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? paidAt;
+  final String? payableAmount;
+  final String? paymentStatus;
+  final String? period;
+  final String? periodEnd;
+  final String? periodStart;
+  final String? rebuildVersion;
+  final String? receivableAmount;
+  final String? sellerProviderId;
+  final String? sourceId;
+  final String? sourceType;
+  final String? sourceVersion;
+  final String? statementNo;
+  final String? statementStatus;
+  final String? status;
+  final String? tenantId;
+  final String? totalRequests;
+  final String? totalTokens;
+  final String? updatedAt;
+  final String? uuid;
+
+  CommerceUsageServiceProviderStatementRecord({
+    this.buyerProviderId,
+    this.createdAt,
+    this.currency,
+    this.dueAt,
+    this.generatedAt,
+    this.id,
+    this.invoiceId,
+    this.metadata,
+    this.organizationId,
+    this.paidAt,
+    this.payableAmount,
+    this.paymentStatus,
+    this.period,
+    this.periodEnd,
+    this.periodStart,
+    this.rebuildVersion,
+    this.receivableAmount,
+    this.sellerProviderId,
+    this.sourceId,
+    this.sourceType,
+    this.sourceVersion,
+    this.statementNo,
+    this.statementStatus,
+    this.status,
+    this.tenantId,
+    this.totalRequests,
+    this.totalTokens,
+    this.updatedAt,
+    this.uuid
+  });
+
+  factory CommerceUsageServiceProviderStatementRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUsageServiceProviderStatementRecord(
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      dueAt: json['due_at']?.toString(),
+      generatedAt: json['generated_at']?.toString(),
+      id: json['id']?.toString(),
+      invoiceId: json['invoice_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      paidAt: json['paid_at']?.toString(),
+      payableAmount: json['payable_amount']?.toString(),
+      paymentStatus: json['payment_status']?.toString(),
+      period: json['period']?.toString(),
+      periodEnd: json['period_end']?.toString(),
+      periodStart: json['period_start']?.toString(),
+      rebuildVersion: json['rebuild_version']?.toString(),
+      receivableAmount: json['receivable_amount']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      sourceVersion: json['source_version']?.toString(),
+      statementNo: json['statement_no']?.toString(),
+      statementStatus: json['statement_status']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      totalRequests: json['total_requests']?.toString(),
+      totalTokens: json['total_tokens']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'buyer_provider_id': buyerProviderId,
+      'created_at': createdAt,
+      'currency': currency,
+      'due_at': dueAt,
+      'generated_at': generatedAt,
+      'id': id,
+      'invoice_id': invoiceId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'paid_at': paidAt,
+      'payable_amount': payableAmount,
+      'payment_status': paymentStatus,
+      'period': period,
+      'period_end': periodEnd,
+      'period_start': periodStart,
+      'rebuild_version': rebuildVersion,
+      'receivable_amount': receivableAmount,
+      'seller_provider_id': sellerProviderId,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'source_version': sourceVersion,
+      'statement_no': statementNo,
+      'statement_status': statementStatus,
+      'status': status,
+      'tenant_id': tenantId,
+      'total_requests': totalRequests,
+      'total_tokens': totalTokens,
+      'updated_at': updatedAt,
+      'uuid': uuid,
     };
   }
 }
@@ -28973,23 +35794,23 @@ class ContentSdkReleaseRecord {
   }
 }
 
-class CouponsCampaignsListResult {
+class ContractsListResult {
   final String? code;
-  final CommerceStandardCollectionResponse? data;
+  final ServiceProviderCollectionResponse? data;
   final String? msg;
 
-  CouponsCampaignsListResult({
+  ContractsListResult({
     this.code,
     this.data,
     this.msg
   });
 
-  factory CouponsCampaignsListResult.fromJson(Map<String, dynamic> json) {
-    return CouponsCampaignsListResult(
+  factory ContractsListResult.fromJson(Map<String, dynamic> json) {
+    return ContractsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -29004,23 +35825,23 @@ class CouponsCampaignsListResult {
   }
 }
 
-class CouponsCodesListResult {
+class CourseApplicationsListResult {
   final String? code;
-  final CommerceStandardCollectionResponse? data;
+  final AdminCourseApplicationCollectionResponse? data;
   final String? msg;
 
-  CouponsCodesListResult({
+  CourseApplicationsListResult({
     this.code,
     this.data,
     this.msg
   });
 
-  factory CouponsCodesListResult.fromJson(Map<String, dynamic> json) {
-    return CouponsCodesListResult(
+  factory CourseApplicationsListResult.fromJson(Map<String, dynamic> json) {
+    return CourseApplicationsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+        return map == null ? null : AdminCourseApplicationCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -29035,23 +35856,23 @@ class CouponsCodesListResult {
   }
 }
 
-class CouponsRedemptionsListResult {
+class CourseApplicationsReviewResult {
   final String? code;
-  final CommerceStandardCollectionResponse? data;
+  final AdminCourseApplicationReviewResponse? data;
   final String? msg;
 
-  CouponsRedemptionsListResult({
+  CourseApplicationsReviewResult({
     this.code,
     this.data,
     this.msg
   });
 
-  factory CouponsRedemptionsListResult.fromJson(Map<String, dynamic> json) {
-    return CouponsRedemptionsListResult(
+  factory CourseApplicationsReviewResult.fromJson(Map<String, dynamic> json) {
+    return CourseApplicationsReviewResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+        return map == null ? null : AdminCourseApplicationReviewResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -29066,23 +35887,23 @@ class CouponsRedemptionsListResult {
   }
 }
 
-class CouponsTemplatesListResult {
+class CourseCommentsListResult {
   final String? code;
-  final CommerceStandardCollectionResponse? data;
+  final AdminCourseCommentCollectionResponse? data;
   final String? msg;
 
-  CouponsTemplatesListResult({
+  CourseCommentsListResult({
     this.code,
     this.data,
     this.msg
   });
 
-  factory CouponsTemplatesListResult.fromJson(Map<String, dynamic> json) {
-    return CouponsTemplatesListResult(
+  factory CourseCommentsListResult.fromJson(Map<String, dynamic> json) {
+    return CourseCommentsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+        return map == null ? null : AdminCourseCommentCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -29093,6 +35914,814 @@ class CouponsTemplatesListResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
+    };
+  }
+}
+
+class CourseCommentsModerateResult {
+  final String? code;
+  final AdminCourseCommentCollectionResponse? data;
+  final String? msg;
+
+  CourseCommentsModerateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CourseCommentsModerateResult.fromJson(Map<String, dynamic> json) {
+    return CourseCommentsModerateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseCommentCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CourseEngagementListResult {
+  final String? code;
+  final AdminCourseEngagementCollectionResponse? data;
+  final String? msg;
+
+  CourseEngagementListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CourseEngagementListResult.fromJson(Map<String, dynamic> json) {
+    return CourseEngagementListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseEngagementCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CourseLessonsDeleteResult {
+  final String? code;
+  final AdminCourseDeleteResponse? data;
+  final String? msg;
+
+  CourseLessonsDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CourseLessonsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CourseLessonsDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CourseLessonsUpdateResult {
+  final String? code;
+  final AdminCourseLessonMutationResponse? data;
+  final String? msg;
+
+  CourseLessonsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CourseLessonsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CourseLessonsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseLessonMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CourseSectionsDeleteResult {
+  final String? code;
+  final AdminCourseDeleteResponse? data;
+  final String? msg;
+
+  CourseSectionsDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CourseSectionsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CourseSectionsDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CourseSectionsUpdateResult {
+  final String? code;
+  final AdminCourseSectionMutationResponse? data;
+  final String? msg;
+
+  CourseSectionsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CourseSectionsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CourseSectionsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseSectionMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesCreateResult {
+  final String? code;
+  final AdminCourseMutationResponse? data;
+  final String? msg;
+
+  CoursesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesCreateResult.fromJson(Map<String, dynamic> json) {
+    return CoursesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesDashboardRetrieveResult {
+  final String? code;
+  final AdminCourseDashboardResponse? data;
+  final String? msg;
+
+  CoursesDashboardRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesDashboardRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return CoursesDashboardRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseDashboardResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesDeleteResult {
+  final String? code;
+  final AdminCourseDeleteResponse? data;
+  final String? msg;
+
+  CoursesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CoursesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesLessonsCreateResult {
+  final String? code;
+  final AdminCourseLessonMutationResponse? data;
+  final String? msg;
+
+  CoursesLessonsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesLessonsCreateResult.fromJson(Map<String, dynamic> json) {
+    return CoursesLessonsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseLessonMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesLessonsListResult {
+  final String? code;
+  final AdminCourseLessonCollectionResponse? data;
+  final String? msg;
+
+  CoursesLessonsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesLessonsListResult.fromJson(Map<String, dynamic> json) {
+    return CoursesLessonsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseLessonCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesListResult {
+  final String? code;
+  final AdminCourseCollectionResponse? data;
+  final String? msg;
+
+  CoursesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesListResult.fromJson(Map<String, dynamic> json) {
+    return CoursesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesRelationsListResult {
+  final String? code;
+  final AdminCourseRelationCollectionResponse? data;
+  final String? msg;
+
+  CoursesRelationsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesRelationsListResult.fromJson(Map<String, dynamic> json) {
+    return CoursesRelationsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseRelationCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesRelationsReplaceResult {
+  final String? code;
+  final AdminCourseRelationCollectionResponse? data;
+  final String? msg;
+
+  CoursesRelationsReplaceResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesRelationsReplaceResult.fromJson(Map<String, dynamic> json) {
+    return CoursesRelationsReplaceResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseRelationCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesSectionsCreateResult {
+  final String? code;
+  final AdminCourseSectionMutationResponse? data;
+  final String? msg;
+
+  CoursesSectionsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesSectionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return CoursesSectionsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseSectionMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesSectionsListResult {
+  final String? code;
+  final AdminCourseSectionCollectionResponse? data;
+  final String? msg;
+
+  CoursesSectionsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesSectionsListResult.fromJson(Map<String, dynamic> json) {
+    return CoursesSectionsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseSectionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CoursesUpdateResult {
+  final String? code;
+  final AdminCourseMutationResponse? data;
+  final String? msg;
+
+  CoursesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CoursesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CoursesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCourseMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CreateStorageBucketRequest {
+  final bool? blockPublicAccess;
+  final String? bucketName;
+  final String? bucketRegion;
+  final String? dataResidencyRegion;
+  final String? defaultEncryptionMode;
+  final String? defaultStorageClass;
+  final String? encryption;
+  final String? kmsKeyRef;
+  final bool? lifecycleEnabled;
+  final String? logicalScope;
+  final String? objectKeyPrefix;
+  final bool? objectLockEnabled;
+  final String? providerId;
+  final bool? publicAccessBlocked;
+  final String? storageClass;
+  final bool? versioningEnabled;
+
+  CreateStorageBucketRequest({
+    this.blockPublicAccess,
+    this.bucketName,
+    this.bucketRegion,
+    this.dataResidencyRegion,
+    this.defaultEncryptionMode,
+    this.defaultStorageClass,
+    this.encryption,
+    this.kmsKeyRef,
+    this.lifecycleEnabled,
+    this.logicalScope,
+    this.objectKeyPrefix,
+    this.objectLockEnabled,
+    this.providerId,
+    this.publicAccessBlocked,
+    this.storageClass,
+    this.versioningEnabled
+  });
+
+  factory CreateStorageBucketRequest.fromJson(Map<String, dynamic> json) {
+    return CreateStorageBucketRequest(
+      blockPublicAccess: json['blockPublicAccess'] is bool ? json['blockPublicAccess'] : null,
+      bucketName: json['bucketName']?.toString(),
+      bucketRegion: json['bucketRegion']?.toString(),
+      dataResidencyRegion: json['dataResidencyRegion']?.toString(),
+      defaultEncryptionMode: json['defaultEncryptionMode']?.toString(),
+      defaultStorageClass: json['defaultStorageClass']?.toString(),
+      encryption: json['encryption']?.toString(),
+      kmsKeyRef: json['kmsKeyRef']?.toString(),
+      lifecycleEnabled: json['lifecycleEnabled'] is bool ? json['lifecycleEnabled'] : null,
+      logicalScope: json['logicalScope']?.toString(),
+      objectKeyPrefix: json['objectKeyPrefix']?.toString(),
+      objectLockEnabled: json['objectLockEnabled'] is bool ? json['objectLockEnabled'] : null,
+      providerId: json['providerId']?.toString(),
+      publicAccessBlocked: json['publicAccessBlocked'] is bool ? json['publicAccessBlocked'] : null,
+      storageClass: json['storageClass']?.toString(),
+      versioningEnabled: json['versioningEnabled'] is bool ? json['versioningEnabled'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'blockPublicAccess': blockPublicAccess,
+      'bucketName': bucketName,
+      'bucketRegion': bucketRegion,
+      'dataResidencyRegion': dataResidencyRegion,
+      'defaultEncryptionMode': defaultEncryptionMode,
+      'defaultStorageClass': defaultStorageClass,
+      'encryption': encryption,
+      'kmsKeyRef': kmsKeyRef,
+      'lifecycleEnabled': lifecycleEnabled,
+      'logicalScope': logicalScope,
+      'objectKeyPrefix': objectKeyPrefix,
+      'objectLockEnabled': objectLockEnabled,
+      'providerId': providerId,
+      'publicAccessBlocked': publicAccessBlocked,
+      'storageClass': storageClass,
+      'versioningEnabled': versioningEnabled,
+    };
+  }
+}
+
+class CreateStorageGarbageCollectionJobRequest {
+  final Map<String, dynamic>? criteria;
+  final bool? dryRun;
+  final String? dryRunSample;
+  final String? jobType;
+  final String? retentionWindow;
+  final String? target;
+
+  CreateStorageGarbageCollectionJobRequest({
+    this.criteria,
+    this.dryRun,
+    this.dryRunSample,
+    this.jobType,
+    this.retentionWindow,
+    this.target
+  });
+
+  factory CreateStorageGarbageCollectionJobRequest.fromJson(Map<String, dynamic> json) {
+    return CreateStorageGarbageCollectionJobRequest(
+      criteria: (() {
+        final map = _sdkworkAsMap(json['criteria']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      dryRun: json['dryRun'] is bool ? json['dryRun'] : null,
+      dryRunSample: json['dryRunSample']?.toString(),
+      jobType: json['jobType']?.toString(),
+      retentionWindow: json['retentionWindow']?.toString(),
+      target: json['target']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'criteria': criteria?.map((key, item) => MapEntry(key, item)),
+      'dryRun': dryRun,
+      'dryRunSample': dryRunSample,
+      'jobType': jobType,
+      'retentionWindow': retentionWindow,
+      'target': target,
+    };
+  }
+}
+
+class CreateStorageProviderRequest {
+  final String? credentialRef;
+  final String? endpoint;
+  final String? endpointUrl;
+  final bool? lifecycle;
+  final bool? multipart;
+  final bool? objectLock;
+  final bool? pathStyleEnabled;
+  final String? providerCode;
+  final String? providerType;
+  final String? region;
+  final bool? supportsLifecycle;
+  final bool? supportsMultipart;
+  final bool? supportsObjectLock;
+
+  CreateStorageProviderRequest({
+    this.credentialRef,
+    this.endpoint,
+    this.endpointUrl,
+    this.lifecycle,
+    this.multipart,
+    this.objectLock,
+    this.pathStyleEnabled,
+    this.providerCode,
+    this.providerType,
+    this.region,
+    this.supportsLifecycle,
+    this.supportsMultipart,
+    this.supportsObjectLock
+  });
+
+  factory CreateStorageProviderRequest.fromJson(Map<String, dynamic> json) {
+    return CreateStorageProviderRequest(
+      credentialRef: json['credentialRef']?.toString(),
+      endpoint: json['endpoint']?.toString(),
+      endpointUrl: json['endpointUrl']?.toString(),
+      lifecycle: json['lifecycle'] is bool ? json['lifecycle'] : null,
+      multipart: json['multipart'] is bool ? json['multipart'] : null,
+      objectLock: json['objectLock'] is bool ? json['objectLock'] : null,
+      pathStyleEnabled: json['pathStyleEnabled'] is bool ? json['pathStyleEnabled'] : null,
+      providerCode: json['providerCode']?.toString(),
+      providerType: json['providerType']?.toString(),
+      region: json['region']?.toString(),
+      supportsLifecycle: json['supportsLifecycle'] is bool ? json['supportsLifecycle'] : null,
+      supportsMultipart: json['supportsMultipart'] is bool ? json['supportsMultipart'] : null,
+      supportsObjectLock: json['supportsObjectLock'] is bool ? json['supportsObjectLock'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'credentialRef': credentialRef,
+      'endpoint': endpoint,
+      'endpointUrl': endpointUrl,
+      'lifecycle': lifecycle,
+      'multipart': multipart,
+      'objectLock': objectLock,
+      'pathStyleEnabled': pathStyleEnabled,
+      'providerCode': providerCode,
+      'providerType': providerType,
+      'region': region,
+      'supportsLifecycle': supportsLifecycle,
+      'supportsMultipart': supportsMultipart,
+      'supportsObjectLock': supportsObjectLock,
+    };
+  }
+}
+
+class CreateStorageQuotaPolicyRequest {
+  final String? enforcement;
+  final String? quotaLimit;
+  final int? quotaLimitBytes;
+  final String? scopeId;
+  final String? scopeType;
+  final int? singleFileLimitBytes;
+
+  CreateStorageQuotaPolicyRequest({
+    this.enforcement,
+    this.quotaLimit,
+    this.quotaLimitBytes,
+    this.scopeId,
+    this.scopeType,
+    this.singleFileLimitBytes
+  });
+
+  factory CreateStorageQuotaPolicyRequest.fromJson(Map<String, dynamic> json) {
+    return CreateStorageQuotaPolicyRequest(
+      enforcement: json['enforcement']?.toString(),
+      quotaLimit: json['quotaLimit']?.toString(),
+      quotaLimitBytes: json['quotaLimitBytes'] is int ? json['quotaLimitBytes'] : null,
+      scopeId: json['scopeId']?.toString(),
+      scopeType: json['scopeType']?.toString(),
+      singleFileLimitBytes: json['singleFileLimitBytes'] is int ? json['singleFileLimitBytes'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'enforcement': enforcement,
+      'quotaLimit': quotaLimit,
+      'quotaLimitBytes': quotaLimitBytes,
+      'scopeId': scopeId,
+      'scopeType': scopeType,
+      'singleFileLimitBytes': singleFileLimitBytes,
+    };
+  }
+}
+
+class CreateStorageReconciliationRunRequest {
+  final String? bucketId;
+  final String? checkMode;
+  final bool? dryRun;
+  final String? providerId;
+  final String? reason;
+  final String? runType;
+
+  CreateStorageReconciliationRunRequest({
+    this.bucketId,
+    this.checkMode,
+    this.dryRun,
+    this.providerId,
+    this.reason,
+    this.runType
+  });
+
+  factory CreateStorageReconciliationRunRequest.fromJson(Map<String, dynamic> json) {
+    return CreateStorageReconciliationRunRequest(
+      bucketId: json['bucketId']?.toString(),
+      checkMode: json['checkMode']?.toString(),
+      dryRun: json['dryRun'] is bool ? json['dryRun'] : null,
+      providerId: json['providerId']?.toString(),
+      reason: json['reason']?.toString(),
+      runType: json['runType']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucketId': bucketId,
+      'checkMode': checkMode,
+      'dryRun': dryRun,
+      'providerId': providerId,
+      'reason': reason,
+      'runType': runType,
     };
   }
 }
@@ -29114,6 +36743,316 @@ class DashboardAdminOverviewRetrieveResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDashboardDataResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DashboardRetrieveResult {
+  final String? code;
+  final ServiceProviderDashboardResponse? data;
+  final String? msg;
+
+  DashboardRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DashboardRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return DashboardRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderDashboardResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DefinitionBindingsCreateResult {
+  final String? code;
+  final AdminPromptBindingMutationResponse? data;
+  final String? msg;
+
+  DefinitionBindingsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DefinitionBindingsCreateResult.fromJson(Map<String, dynamic> json) {
+    return DefinitionBindingsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptBindingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DefinitionBindingsListResult {
+  final String? code;
+  final AdminPromptBindingListResponse? data;
+  final String? msg;
+
+  DefinitionBindingsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DefinitionBindingsListResult.fromJson(Map<String, dynamic> json) {
+    return DefinitionBindingsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptBindingListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DefinitionBindingsUpdateResult {
+  final String? code;
+  final AdminPromptBindingMutationResponse? data;
+  final String? msg;
+
+  DefinitionBindingsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DefinitionBindingsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return DefinitionBindingsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptBindingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DefinitionsCreateResult {
+  final String? code;
+  final AdminPromptMutationResponse? data;
+  final String? msg;
+
+  DefinitionsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DefinitionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return DefinitionsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DefinitionsListResult {
+  final String? code;
+  final AdminPromptListResponse? data;
+  final String? msg;
+
+  DefinitionsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DefinitionsListResult.fromJson(Map<String, dynamic> json) {
+    return DefinitionsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DiagnosticsRouteSimulationCreateResult {
+  final String? code;
+  final MessagingRouteSimulationResponse? data;
+  final String? msg;
+
+  DiagnosticsRouteSimulationCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DiagnosticsRouteSimulationCreateResult.fromJson(Map<String, dynamic> json) {
+    return DiagnosticsRouteSimulationCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingRouteSimulationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DiagnosticsTestSendsCreateResult {
+  final String? code;
+  final MessagingTestSendResponse? data;
+  final String? msg;
+
+  DiagnosticsTestSendsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DiagnosticsTestSendsCreateResult.fromJson(Map<String, dynamic> json) {
+    return DiagnosticsTestSendsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingTestSendResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DownstreamsCreateResult {
+  final String? code;
+  final ServiceProviderDownstreamMutationResponse? data;
+  final String? msg;
+
+  DownstreamsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DownstreamsCreateResult.fromJson(Map<String, dynamic> json) {
+    return DownstreamsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderDownstreamMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class DownstreamsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  DownstreamsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory DownstreamsListResult.fromJson(Map<String, dynamic> json) {
+    return DownstreamsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -29276,6 +37215,141 @@ class FulfillmentsListResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
+    };
+  }
+}
+
+class IamApiKeyGroupChannelRecord {
+  final Map<String, dynamic>? capabilities;
+  final String? channelId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? groupId;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? modelScope;
+  final String? organizationId;
+  final int? priority;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final int? weight;
+
+  IamApiKeyGroupChannelRecord({
+    this.capabilities,
+    this.channelId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.groupId,
+    this.id,
+    this.metadata,
+    this.modelScope,
+    this.organizationId,
+    this.priority,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.weight
+  });
+
+  factory IamApiKeyGroupChannelRecord.fromJson(Map<String, dynamic> json) {
+    return IamApiKeyGroupChannelRecord(
+      capabilities: (() {
+        final map = _sdkworkAsMap(json['capabilities']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      channelId: json['channel_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      groupId: json['group_id']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      modelScope: (() {
+        final map = _sdkworkAsMap(json['model_scope']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      weight: json['weight'] is int ? json['weight'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((key, item) => MapEntry(key, item)),
+      'channel_id': channelId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'group_id': groupId,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model_scope': modelScope?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'priority': priority,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'weight': weight,
     };
   }
 }
@@ -31509,6 +39583,289 @@ class IamUserSecuritySettingRecord {
   }
 }
 
+class IamVerificationAttemptRecord {
+  final String? createdAt;
+  final String? deviceHash;
+  final String? failureReason;
+  final String? id;
+  final String? ipHash;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  IamVerificationAttemptRecord({
+    this.createdAt,
+    this.deviceHash,
+    this.failureReason,
+    this.id,
+    this.ipHash,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.requestId,
+    this.retentionUntil,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory IamVerificationAttemptRecord.fromJson(Map<String, dynamic> json) {
+    return IamVerificationAttemptRecord(
+      createdAt: json['created_at']?.toString(),
+      deviceHash: json['device_hash']?.toString(),
+      failureReason: json['failure_reason']?.toString(),
+      id: json['id']?.toString(),
+      ipHash: json['ip_hash']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'device_hash': deviceHash,
+      'failure_reason': failureReason,
+      'id': id,
+      'ip_hash': ipHash,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class IamVerificationChallengeRecord {
+  final String? consumedAt;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? deliveryRequestId;
+  final String? id;
+  final String? lockedUntil;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? saltRef;
+  final String? status;
+  final String? targetMasked;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? verifiedAt;
+  final String? version;
+
+  IamVerificationChallengeRecord({
+    this.consumedAt,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.deliveryRequestId,
+    this.id,
+    this.lockedUntil,
+    this.metadata,
+    this.organizationId,
+    this.saltRef,
+    this.status,
+    this.targetMasked,
+    this.tenantId,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.verifiedAt,
+    this.version
+  });
+
+  factory IamVerificationChallengeRecord.fromJson(Map<String, dynamic> json) {
+    return IamVerificationChallengeRecord(
+      consumedAt: json['consumed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      deliveryRequestId: json['delivery_request_id']?.toString(),
+      id: json['id']?.toString(),
+      lockedUntil: json['locked_until']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      saltRef: json['salt_ref']?.toString(),
+      status: json['status']?.toString(),
+      targetMasked: json['target_masked']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      verifiedAt: json['verified_at']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'consumed_at': consumedAt,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'delivery_request_id': deliveryRequestId,
+      'id': id,
+      'locked_until': lockedUntil,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'salt_ref': saltRef,
+      'status': status,
+      'target_masked': targetMasked,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'verified_at': verifiedAt,
+      'version': version,
+    };
+  }
+}
+
+class IamVerificationScenePolicyRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? defaultChannel;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? sceneName;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IamVerificationScenePolicyRecord({
+    this.createdAt,
+    this.dataScope,
+    this.defaultChannel,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.sceneName,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IamVerificationScenePolicyRecord.fromJson(Map<String, dynamic> json) {
+    return IamVerificationScenePolicyRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultChannel: json['default_channel']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      sceneName: json['scene_name']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'default_channel': defaultChannel,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'scene_name': sceneName,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
 class InstallationStatusResponse {
   final String? catalogSource;
   final String? catalogVersion;
@@ -32304,6 +40661,248 @@ class IntegrationProviderHealthSnapshotRecord {
   }
 }
 
+class IntegrationProviderInvoiceImportRecord {
+  final String? createdAt;
+  final String? currency;
+  final String? id;
+  final String? importNo;
+  final String? importStatus;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? periodEnd;
+  final String? periodStart;
+  final String? providerAccountId;
+  final String? providerCode;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? sourceFileRef;
+  final String? sourceHash;
+  final String? status;
+  final String? tenantId;
+  final String? totalAmount;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  IntegrationProviderInvoiceImportRecord({
+    this.createdAt,
+    this.currency,
+    this.id,
+    this.importNo,
+    this.importStatus,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.periodEnd,
+    this.periodStart,
+    this.providerAccountId,
+    this.providerCode,
+    this.requestId,
+    this.retentionUntil,
+    this.sourceFileRef,
+    this.sourceHash,
+    this.status,
+    this.tenantId,
+    this.totalAmount,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory IntegrationProviderInvoiceImportRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationProviderInvoiceImportRecord(
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      id: json['id']?.toString(),
+      importNo: json['import_no']?.toString(),
+      importStatus: json['import_status']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      periodEnd: json['period_end']?.toString(),
+      periodStart: json['period_start']?.toString(),
+      providerAccountId: json['provider_account_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      sourceFileRef: json['source_file_ref']?.toString(),
+      sourceHash: json['source_hash']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      totalAmount: json['total_amount']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'currency': currency,
+      'id': id,
+      'import_no': importNo,
+      'import_status': importStatus,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'period_end': periodEnd,
+      'period_start': periodStart,
+      'provider_account_id': providerAccountId,
+      'provider_code': providerCode,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'source_file_ref': sourceFileRef,
+      'source_hash': sourceHash,
+      'status': status,
+      'tenant_id': tenantId,
+      'total_amount': totalAmount,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class IntegrationProviderInvoiceItemRecord {
+  final String? amount;
+  final String? billingMeterCode;
+  final String? createdAt;
+  final String? currency;
+  final String? id;
+  final String? importId;
+  final bool? legalHold;
+  final String? matchStatus;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? providerRequestId;
+  final String? providerUsageId;
+  final String? quantity;
+  final String? rawPayloadHash;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  IntegrationProviderInvoiceItemRecord({
+    this.amount,
+    this.billingMeterCode,
+    this.createdAt,
+    this.currency,
+    this.id,
+    this.importId,
+    this.legalHold,
+    this.matchStatus,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.payloadHash,
+    this.providerRequestId,
+    this.providerUsageId,
+    this.quantity,
+    this.rawPayloadHash,
+    this.requestId,
+    this.retentionUntil,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory IntegrationProviderInvoiceItemRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationProviderInvoiceItemRecord(
+      amount: json['amount']?.toString(),
+      billingMeterCode: json['billing_meter_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      id: json['id']?.toString(),
+      importId: json['import_id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      matchStatus: json['match_status']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerRequestId: json['provider_request_id']?.toString(),
+      providerUsageId: json['provider_usage_id']?.toString(),
+      quantity: json['quantity']?.toString(),
+      rawPayloadHash: json['raw_payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'billing_meter_code': billingMeterCode,
+      'created_at': createdAt,
+      'currency': currency,
+      'id': id,
+      'import_id': importId,
+      'legal_hold': legalHold,
+      'match_status': matchStatus,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider_request_id': providerRequestId,
+      'provider_usage_id': providerUsageId,
+      'quantity': quantity,
+      'raw_payload_hash': rawPayloadHash,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
 class IntegrationProviderRecord {
   final String? authType;
   final String? baseUrl;
@@ -32567,6 +41166,1441 @@ class IntegrationProxyRecord {
       'secret_hash': secretHash,
       'secret_ref': secretRef,
       'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderAccountBindingRecord {
+  final String? accountRole;
+  final String? assetType;
+  final String? commerceAccountId;
+  final String? createdAt;
+  final String? currency;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? serviceProviderId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderAccountBindingRecord({
+    this.accountRole,
+    this.assetType,
+    this.commerceAccountId,
+    this.createdAt,
+    this.currency,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.serviceProviderId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderAccountBindingRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderAccountBindingRecord(
+      accountRole: json['account_role']?.toString(),
+      assetType: json['asset_type']?.toString(),
+      commerceAccountId: json['commerce_account_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      serviceProviderId: json['service_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_role': accountRole,
+      'asset_type': assetType,
+      'commerce_account_id': commerceAccountId,
+      'created_at': createdAt,
+      'currency': currency,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'service_provider_id': serviceProviderId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderClosureRecord {
+  final String? ancestorProviderId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final int? depth;
+  final String? descendantProviderId;
+  final String? directEdgeId;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? path;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderClosureRecord({
+    this.ancestorProviderId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.depth,
+    this.descendantProviderId,
+    this.directEdgeId,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.path,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderClosureRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderClosureRecord(
+      ancestorProviderId: json['ancestor_provider_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      depth: json['depth'] is int ? json['depth'] : null,
+      descendantProviderId: json['descendant_provider_id']?.toString(),
+      directEdgeId: json['direct_edge_id']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      path: json['path']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'ancestor_provider_id': ancestorProviderId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'depth': depth,
+      'descendant_provider_id': descendantProviderId,
+      'direct_edge_id': directEdgeId,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'path': path,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderContractRecord {
+  final String? buyerProviderId;
+  final String? contractFileRef;
+  final String? contractNo;
+  final String? contractType;
+  final String? createdAt;
+  final String? currentVersionId;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? edgeId;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? sellerProviderId;
+  final String? signedAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderContractRecord({
+    this.buyerProviderId,
+    this.contractFileRef,
+    this.contractNo,
+    this.contractType,
+    this.createdAt,
+    this.currentVersionId,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.edgeId,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.sellerProviderId,
+    this.signedAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderContractRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderContractRecord(
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      contractFileRef: json['contract_file_ref']?.toString(),
+      contractNo: json['contract_no']?.toString(),
+      contractType: json['contract_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currentVersionId: json['current_version_id']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      edgeId: json['edge_id']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      signedAt: json['signed_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'buyer_provider_id': buyerProviderId,
+      'contract_file_ref': contractFileRef,
+      'contract_no': contractNo,
+      'contract_type': contractType,
+      'created_at': createdAt,
+      'current_version_id': currentVersionId,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'edge_id': edgeId,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'seller_provider_id': sellerProviderId,
+      'signed_at': signedAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderContractVersionRecord {
+  final String? approvalStatus;
+  final String? approvedAt;
+  final String? approvedBy;
+  final String? contractId;
+  final Map<String, dynamic>? contractPayload;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? publishedAt;
+  final String? requestedBy;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final String? versionHash;
+  final int? versionNo;
+
+  IntegrationServiceProviderContractVersionRecord({
+    this.approvalStatus,
+    this.approvedAt,
+    this.approvedBy,
+    this.contractId,
+    this.contractPayload,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.publishedAt,
+    this.requestedBy,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.versionHash,
+    this.versionNo
+  });
+
+  factory IntegrationServiceProviderContractVersionRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderContractVersionRecord(
+      approvalStatus: json['approval_status']?.toString(),
+      approvedAt: json['approved_at']?.toString(),
+      approvedBy: json['approved_by']?.toString(),
+      contractId: json['contract_id']?.toString(),
+      contractPayload: (() {
+        final map = _sdkworkAsMap(json['contract_payload']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      requestedBy: json['requested_by']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      versionHash: json['version_hash']?.toString(),
+      versionNo: json['version_no'] is int ? json['version_no'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'approval_status': approvalStatus,
+      'approved_at': approvedAt,
+      'approved_by': approvedBy,
+      'contract_id': contractId,
+      'contract_payload': contractPayload?.map((key, item) => MapEntry(key, item)),
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'published_at': publishedAt,
+      'requested_by': requestedBy,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'version_hash': versionHash,
+      'version_no': versionNo,
+    };
+  }
+}
+
+class IntegrationServiceProviderEdgeRecord {
+  final String? buyerProviderId;
+  final String? contractNo;
+  final Map<String, dynamic>? contractSnapshot;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? edgeNo;
+  final String? edgeType;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? sellerProviderId;
+  final String? settlementMode;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderEdgeRecord({
+    this.buyerProviderId,
+    this.contractNo,
+    this.contractSnapshot,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.edgeNo,
+    this.edgeType,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.sellerProviderId,
+    this.settlementMode,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderEdgeRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderEdgeRecord(
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      contractNo: json['contract_no']?.toString(),
+      contractSnapshot: (() {
+        final map = _sdkworkAsMap(json['contract_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      edgeNo: json['edge_no']?.toString(),
+      edgeType: json['edge_type']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      settlementMode: json['settlement_mode']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'buyer_provider_id': buyerProviderId,
+      'contract_no': contractNo,
+      'contract_snapshot': contractSnapshot?.map((key, item) => MapEntry(key, item)),
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'edge_no': edgeNo,
+      'edge_type': edgeType,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'seller_provider_id': sellerProviderId,
+      'settlement_mode': settlementMode,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderFinanceProfileRecord {
+  final String? billingCycle;
+  final String? createdAt;
+  final String? creditLimitAmount;
+  final String? currency;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? invoiceTitleId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final int? paymentTermsDays;
+  final String? serviceProviderId;
+  final int? settlementDay;
+  final String? settlementMode;
+  final String? status;
+  final String? suspendThresholdAmount;
+  final String? taxProfileRef;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final String? warningThresholdAmount;
+
+  IntegrationServiceProviderFinanceProfileRecord({
+    this.billingCycle,
+    this.createdAt,
+    this.creditLimitAmount,
+    this.currency,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.invoiceTitleId,
+    this.metadata,
+    this.organizationId,
+    this.paymentTermsDays,
+    this.serviceProviderId,
+    this.settlementDay,
+    this.settlementMode,
+    this.status,
+    this.suspendThresholdAmount,
+    this.taxProfileRef,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.warningThresholdAmount
+  });
+
+  factory IntegrationServiceProviderFinanceProfileRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderFinanceProfileRecord(
+      billingCycle: json['billing_cycle']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      creditLimitAmount: json['credit_limit_amount']?.toString(),
+      currency: json['currency']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      invoiceTitleId: json['invoice_title_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      paymentTermsDays: json['payment_terms_days'] is int ? json['payment_terms_days'] : null,
+      serviceProviderId: json['service_provider_id']?.toString(),
+      settlementDay: json['settlement_day'] is int ? json['settlement_day'] : null,
+      settlementMode: json['settlement_mode']?.toString(),
+      status: json['status']?.toString(),
+      suspendThresholdAmount: json['suspend_threshold_amount']?.toString(),
+      taxProfileRef: json['tax_profile_ref']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      warningThresholdAmount: json['warning_threshold_amount']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'billing_cycle': billingCycle,
+      'created_at': createdAt,
+      'credit_limit_amount': creditLimitAmount,
+      'currency': currency,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'invoice_title_id': invoiceTitleId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payment_terms_days': paymentTermsDays,
+      'service_provider_id': serviceProviderId,
+      'settlement_day': settlementDay,
+      'settlement_mode': settlementMode,
+      'status': status,
+      'suspend_threshold_amount': suspendThresholdAmount,
+      'tax_profile_ref': taxProfileRef,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'warning_threshold_amount': warningThresholdAmount,
+    };
+  }
+}
+
+class IntegrationServiceProviderMemberRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final String? memberUserId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? permissionPolicyId;
+  final String? roleCode;
+  final String? serviceProviderId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderMemberRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.memberUserId,
+    this.metadata,
+    this.organizationId,
+    this.permissionPolicyId,
+    this.roleCode,
+    this.serviceProviderId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderMemberRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderMemberRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      memberUserId: json['member_user_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      permissionPolicyId: json['permission_policy_id']?.toString(),
+      roleCode: json['role_code']?.toString(),
+      serviceProviderId: json['service_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'member_user_id': memberUserId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'permission_policy_id': permissionPolicyId,
+      'role_code': roleCode,
+      'service_provider_id': serviceProviderId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderPriceChangeRequestRecord {
+  final String? afterHash;
+  final String? approvalStatus;
+  final String? approvedBy;
+  final String? beforeHash;
+  final String? buyerProviderId;
+  final String? changeNo;
+  final String? changeType;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final Map<String, dynamic>? draftPayload;
+  final String? effectiveFrom;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? publishedAt;
+  final String? requestedBy;
+  final String? sellerProviderId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderPriceChangeRequestRecord({
+    this.afterHash,
+    this.approvalStatus,
+    this.approvedBy,
+    this.beforeHash,
+    this.buyerProviderId,
+    this.changeNo,
+    this.changeType,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.draftPayload,
+    this.effectiveFrom,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.publishedAt,
+    this.requestedBy,
+    this.sellerProviderId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderPriceChangeRequestRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderPriceChangeRequestRecord(
+      afterHash: json['after_hash']?.toString(),
+      approvalStatus: json['approval_status']?.toString(),
+      approvedBy: json['approved_by']?.toString(),
+      beforeHash: json['before_hash']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      changeNo: json['change_no']?.toString(),
+      changeType: json['change_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      draftPayload: (() {
+        final map = _sdkworkAsMap(json['draft_payload']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      effectiveFrom: json['effective_from']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      requestedBy: json['requested_by']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'after_hash': afterHash,
+      'approval_status': approvalStatus,
+      'approved_by': approvedBy,
+      'before_hash': beforeHash,
+      'buyer_provider_id': buyerProviderId,
+      'change_no': changeNo,
+      'change_type': changeType,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'draft_payload': draftPayload?.map((key, item) => MapEntry(key, item)),
+      'effective_from': effectiveFrom,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'published_at': publishedAt,
+      'requested_by': requestedBy,
+      'seller_provider_id': sellerProviderId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderPricePlanRecord {
+  final String? baseAmountSource;
+  final String? buyerProviderId;
+  final String? createdAt;
+  final String? currency;
+  final String? dataScope;
+  final String? defaultMarkupAmount;
+  final String? defaultMultiplier;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? edgeId;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? fallbackMode;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? planCode;
+  final String? planName;
+  final String? pricingMode;
+  final String? sellerProviderId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderPricePlanRecord({
+    this.baseAmountSource,
+    this.buyerProviderId,
+    this.createdAt,
+    this.currency,
+    this.dataScope,
+    this.defaultMarkupAmount,
+    this.defaultMultiplier,
+    this.deletedAt,
+    this.deletedBy,
+    this.edgeId,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.fallbackMode,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.planCode,
+    this.planName,
+    this.pricingMode,
+    this.sellerProviderId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderPricePlanRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderPricePlanRecord(
+      baseAmountSource: json['base_amount_source']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultMarkupAmount: json['default_markup_amount']?.toString(),
+      defaultMultiplier: json['default_multiplier']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      edgeId: json['edge_id']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      fallbackMode: json['fallback_mode']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      planCode: json['plan_code']?.toString(),
+      planName: json['plan_name']?.toString(),
+      pricingMode: json['pricing_mode']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'base_amount_source': baseAmountSource,
+      'buyer_provider_id': buyerProviderId,
+      'created_at': createdAt,
+      'currency': currency,
+      'data_scope': dataScope,
+      'default_markup_amount': defaultMarkupAmount,
+      'default_multiplier': defaultMultiplier,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'edge_id': edgeId,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'fallback_mode': fallbackMode,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'plan_code': planCode,
+      'plan_name': planName,
+      'pricing_mode': pricingMode,
+      'seller_provider_id': sellerProviderId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderPriceRuleRecord {
+  final String? billingMeterCode;
+  final String? buyerProviderId;
+  final String? catalogKey;
+  final String? channelId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? edgeId;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? minimumCharge;
+  final String? model;
+  final String? organizationId;
+  final String? pricePlanId;
+  final int? priority;
+  final String? providerCode;
+  final String? roundingMode;
+  final String? sellerProviderId;
+  final String? status;
+  final String? tenantId;
+  final String? tokenKind;
+  final String? unitPrice;
+  final String? unitSize;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderPriceRuleRecord({
+    this.billingMeterCode,
+    this.buyerProviderId,
+    this.catalogKey,
+    this.channelId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.edgeId,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.metadata,
+    this.minimumCharge,
+    this.model,
+    this.organizationId,
+    this.pricePlanId,
+    this.priority,
+    this.providerCode,
+    this.roundingMode,
+    this.sellerProviderId,
+    this.status,
+    this.tenantId,
+    this.tokenKind,
+    this.unitPrice,
+    this.unitSize,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderPriceRuleRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderPriceRuleRecord(
+      billingMeterCode: json['billing_meter_code']?.toString(),
+      buyerProviderId: json['buyer_provider_id']?.toString(),
+      catalogKey: json['catalog_key']?.toString(),
+      channelId: json['channel_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      edgeId: json['edge_id']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      minimumCharge: json['minimum_charge']?.toString(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      pricePlanId: json['price_plan_id']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      providerCode: json['provider_code']?.toString(),
+      roundingMode: json['rounding_mode']?.toString(),
+      sellerProviderId: json['seller_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenKind: json['token_kind']?.toString(),
+      unitPrice: json['unit_price']?.toString(),
+      unitSize: json['unit_size']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'billing_meter_code': billingMeterCode,
+      'buyer_provider_id': buyerProviderId,
+      'catalog_key': catalogKey,
+      'channel_id': channelId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'edge_id': edgeId,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'minimum_charge': minimumCharge,
+      'model': model,
+      'organization_id': organizationId,
+      'price_plan_id': pricePlanId,
+      'priority': priority,
+      'provider_code': providerCode,
+      'rounding_mode': roundingMode,
+      'seller_provider_id': sellerProviderId,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_kind': tokenKind,
+      'unit_price': unitPrice,
+      'unit_size': unitSize,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderRecord {
+  final String? activatedAt;
+  final String? createdAt;
+  final String? dataScope;
+  final String? defaultCurrency;
+  final String? defaultTimezone;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? displayName;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerOrganizationId;
+  final String? ownerTenantId;
+  final String? ownerUserId;
+  final String? providerNo;
+  final String? providerType;
+  final String? riskLevel;
+  final String? status;
+  final String? suspendedAt;
+  final String? suspendedReasonCode;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderRecord({
+    this.activatedAt,
+    this.createdAt,
+    this.dataScope,
+    this.defaultCurrency,
+    this.defaultTimezone,
+    this.deletedAt,
+    this.deletedBy,
+    this.displayName,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.ownerOrganizationId,
+    this.ownerTenantId,
+    this.ownerUserId,
+    this.providerNo,
+    this.providerType,
+    this.riskLevel,
+    this.status,
+    this.suspendedAt,
+    this.suspendedReasonCode,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderRecord(
+      activatedAt: json['activated_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultCurrency: json['default_currency']?.toString(),
+      defaultTimezone: json['default_timezone']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      displayName: json['display_name']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerOrganizationId: json['owner_organization_id']?.toString(),
+      ownerTenantId: json['owner_tenant_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      providerNo: json['provider_no']?.toString(),
+      providerType: json['provider_type']?.toString(),
+      riskLevel: json['risk_level']?.toString(),
+      status: json['status']?.toString(),
+      suspendedAt: json['suspended_at']?.toString(),
+      suspendedReasonCode: json['suspended_reason_code']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'activated_at': activatedAt,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'default_currency': defaultCurrency,
+      'default_timezone': defaultTimezone,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'display_name': displayName,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_organization_id': ownerOrganizationId,
+      'owner_tenant_id': ownerTenantId,
+      'owner_user_id': ownerUserId,
+      'provider_no': providerNo,
+      'provider_type': providerType,
+      'risk_level': riskLevel,
+      'status': status,
+      'suspended_at': suspendedAt,
+      'suspended_reason_code': suspendedReasonCode,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class IntegrationServiceProviderSubjectBindingRecord {
+  final int? bindingPriority;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? serviceProviderId;
+  final String? status;
+  final String? subjectCode;
+  final String? subjectId;
+  final String? subjectType;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  IntegrationServiceProviderSubjectBindingRecord({
+    this.bindingPriority,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.serviceProviderId,
+    this.status,
+    this.subjectCode,
+    this.subjectId,
+    this.subjectType,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory IntegrationServiceProviderSubjectBindingRecord.fromJson(Map<String, dynamic> json) {
+    return IntegrationServiceProviderSubjectBindingRecord(
+      bindingPriority: json['binding_priority'] is int ? json['binding_priority'] : null,
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      serviceProviderId: json['service_provider_id']?.toString(),
+      status: json['status']?.toString(),
+      subjectCode: json['subject_code']?.toString(),
+      subjectId: json['subject_id']?.toString(),
+      subjectType: json['subject_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'binding_priority': bindingPriority,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'service_provider_id': serviceProviderId,
+      'status': status,
+      'subject_code': subjectCode,
+      'subject_id': subjectId,
+      'subject_type': subjectType,
       'tenant_id': tenantId,
       'updated_at': updatedAt,
       'uuid': uuid,
@@ -32999,6 +43033,37 @@ class MarketingReferralStatsListResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminReferralStatsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembersListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  MembersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembersListResult.fromJson(Map<String, dynamic> json) {
+    return MembersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -33474,6 +43539,1941 @@ class MembershipsPlansUpdateResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
+    };
+  }
+}
+
+class MessagingCollectionResponse {
+  final List<Map<String, dynamic>>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  MessagingCollectionResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory MessagingCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return MessagingCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class MessagingDeliveryEventRecord {
+  final String? createdAt;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? providerMessageId;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? sendAttemptId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  MessagingDeliveryEventRecord({
+    this.createdAt,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.providerMessageId,
+    this.requestId,
+    this.retentionUntil,
+    this.sendAttemptId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory MessagingDeliveryEventRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingDeliveryEventRecord(
+      createdAt: json['created_at']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerMessageId: json['provider_message_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      sendAttemptId: json['send_attempt_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider_message_id': providerMessageId,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'send_attempt_id': sendAttemptId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class MessagingMutationResponse {
+  final String? id;
+  final String? status;
+
+  MessagingMutationResponse({
+    this.id,
+    this.status
+  });
+
+  factory MessagingMutationResponse.fromJson(Map<String, dynamic> json) {
+    return MessagingMutationResponse(
+      id: json['id']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'status': status,
+    };
+  }
+}
+
+class MessagingProviderAccountCreateRequest {
+  final String? accountCode;
+  final String? accountName;
+  final String? baseUrl;
+  final Map<String, dynamic>? capabilitySchema;
+  final String? channel;
+  final Map<String, dynamic>? credential;
+  final String? deliveryPurpose;
+  final String? providerCode;
+
+  MessagingProviderAccountCreateRequest({
+    this.accountCode,
+    this.accountName,
+    this.baseUrl,
+    this.capabilitySchema,
+    this.channel,
+    this.credential,
+    this.deliveryPurpose,
+    this.providerCode
+  });
+
+  factory MessagingProviderAccountCreateRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingProviderAccountCreateRequest(
+      accountCode: json['accountCode']?.toString(),
+      accountName: json['accountName']?.toString(),
+      baseUrl: json['baseUrl']?.toString(),
+      capabilitySchema: (() {
+        final map = _sdkworkAsMap(json['capabilitySchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      channel: json['channel']?.toString(),
+      credential: _sdkworkAsMap(json['credential']),
+      deliveryPurpose: json['deliveryPurpose']?.toString(),
+      providerCode: json['providerCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accountCode': accountCode,
+      'accountName': accountName,
+      'baseUrl': baseUrl,
+      'capabilitySchema': capabilitySchema?.map((key, item) => MapEntry(key, item)),
+      'channel': channel,
+      'credential': credential,
+      'deliveryPurpose': deliveryPurpose,
+      'providerCode': providerCode,
+    };
+  }
+}
+
+class MessagingProviderCapabilityRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? lastVerifiedAt;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingProviderCapabilityRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.lastVerifiedAt,
+    this.metadata,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingProviderCapabilityRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingProviderCapabilityRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      lastVerifiedAt: json['last_verified_at']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'last_verified_at': lastVerifiedAt,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingRateLimitBucketRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? lastEventAt;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingRateLimitBucketRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.lastEventAt,
+    this.metadata,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingRateLimitBucketRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingRateLimitBucketRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      lastEventAt: json['last_event_at']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'last_event_at': lastEventAt,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingRouteRuleCreateRequest {
+  final String? channel;
+  final String? countryCode;
+  final String? deliveryPurpose;
+  final Map<String, dynamic>? failoverPolicy;
+  final String? locale;
+  final int? priority;
+  final String? ruleCode;
+  final String? sceneCode;
+  final List<Map<String, dynamic>>? targets;
+  final String? userSegment;
+
+  MessagingRouteRuleCreateRequest({
+    this.channel,
+    this.countryCode,
+    this.deliveryPurpose,
+    this.failoverPolicy,
+    this.locale,
+    this.priority,
+    this.ruleCode,
+    this.sceneCode,
+    this.targets,
+    this.userSegment
+  });
+
+  factory MessagingRouteRuleCreateRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingRouteRuleCreateRequest(
+      channel: json['channel']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      deliveryPurpose: json['deliveryPurpose']?.toString(),
+      failoverPolicy: (() {
+        final map = _sdkworkAsMap(json['failoverPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      locale: json['locale']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      ruleCode: json['ruleCode']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      targets: (() {
+        final list = _sdkworkAsList(json['targets']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => _sdkworkAsMap(item))
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      userSegment: json['userSegment']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'countryCode': countryCode,
+      'deliveryPurpose': deliveryPurpose,
+      'failoverPolicy': failoverPolicy?.map((key, item) => MapEntry(key, item)),
+      'locale': locale,
+      'priority': priority,
+      'ruleCode': ruleCode,
+      'sceneCode': sceneCode,
+      'targets': targets?.map((item) => item).toList(),
+      'userSegment': userSegment,
+    };
+  }
+}
+
+class MessagingRouteRuleRecord {
+  final String? appId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingRouteRuleRecord({
+    this.appId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingRouteRuleRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingRouteRuleRecord(
+      appId: json['app_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_id': appId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingRouteRuleTargetRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? senderIdentityId;
+  final String? status;
+  final String? templateBindingId;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingRouteRuleTargetRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.senderIdentityId,
+    this.status,
+    this.templateBindingId,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingRouteRuleTargetRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingRouteRuleTargetRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      senderIdentityId: json['sender_identity_id']?.toString(),
+      status: json['status']?.toString(),
+      templateBindingId: json['template_binding_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'sender_identity_id': senderIdentityId,
+      'status': status,
+      'template_binding_id': templateBindingId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingRouteSimulationRequest {
+  final String? channel;
+  final String? countryCode;
+  final String? deliveryPurpose;
+  final String? locale;
+  final String? sceneCode;
+  final String? userSegment;
+
+  MessagingRouteSimulationRequest({
+    this.channel,
+    this.countryCode,
+    this.deliveryPurpose,
+    this.locale,
+    this.sceneCode,
+    this.userSegment
+  });
+
+  factory MessagingRouteSimulationRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingRouteSimulationRequest(
+      channel: json['channel']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      deliveryPurpose: json['deliveryPurpose']?.toString(),
+      locale: json['locale']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      userSegment: json['userSegment']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'countryCode': countryCode,
+      'deliveryPurpose': deliveryPurpose,
+      'locale': locale,
+      'sceneCode': sceneCode,
+      'userSegment': userSegment,
+    };
+  }
+}
+
+class MessagingRouteSimulationResponse {
+  final bool? matched;
+  final String? routeRuleId;
+  final List<Map<String, dynamic>>? targets;
+
+  MessagingRouteSimulationResponse({
+    this.matched,
+    this.routeRuleId,
+    this.targets
+  });
+
+  factory MessagingRouteSimulationResponse.fromJson(Map<String, dynamic> json) {
+    return MessagingRouteSimulationResponse(
+      matched: json['matched'] is bool ? json['matched'] : null,
+      routeRuleId: json['routeRuleId']?.toString(),
+      targets: (() {
+        final list = _sdkworkAsList(json['targets']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'matched': matched,
+      'routeRuleId': routeRuleId,
+      'targets': targets?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+    };
+  }
+}
+
+class MessagingSendAttemptRecord {
+  final String? createdAt;
+  final String? failureCode;
+  final String? failureMessageMasked;
+  final int? httpStatus;
+  final String? id;
+  final int? latencyMs;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? providerMessageId;
+  final String? providerRequestId;
+  final String? providerStatus;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? retryAfterAt;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  MessagingSendAttemptRecord({
+    this.createdAt,
+    this.failureCode,
+    this.failureMessageMasked,
+    this.httpStatus,
+    this.id,
+    this.latencyMs,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.providerMessageId,
+    this.providerRequestId,
+    this.providerStatus,
+    this.requestId,
+    this.retentionUntil,
+    this.retryAfterAt,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory MessagingSendAttemptRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingSendAttemptRecord(
+      createdAt: json['created_at']?.toString(),
+      failureCode: json['failure_code']?.toString(),
+      failureMessageMasked: json['failure_message_masked']?.toString(),
+      httpStatus: json['http_status'] is int ? json['http_status'] : null,
+      id: json['id']?.toString(),
+      latencyMs: json['latency_ms'] is int ? json['latency_ms'] : null,
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerMessageId: json['provider_message_id']?.toString(),
+      providerRequestId: json['provider_request_id']?.toString(),
+      providerStatus: json['provider_status']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      retryAfterAt: json['retry_after_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'failure_code': failureCode,
+      'failure_message_masked': failureMessageMasked,
+      'http_status': httpStatus,
+      'id': id,
+      'latency_ms': latencyMs,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider_message_id': providerMessageId,
+      'provider_request_id': providerRequestId,
+      'provider_status': providerStatus,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'retry_after_at': retryAfterAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class MessagingSendRequestRecord {
+  final String? acceptedAt;
+  final String? appId;
+  final String? createdAt;
+  final String? deliveredAt;
+  final String? expiresAt;
+  final String? failedAt;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? requestId;
+  final String? resolvedProviderAccountId;
+  final String? resolvedRouteRuleId;
+  final String? resolvedSenderIdentityId;
+  final String? retentionUntil;
+  final String? scheduledAt;
+  final String? sentAt;
+  final String? status;
+  final String? targetMasked;
+  final String? templateVariantId;
+  final String? templateVersionId;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  MessagingSendRequestRecord({
+    this.acceptedAt,
+    this.appId,
+    this.createdAt,
+    this.deliveredAt,
+    this.expiresAt,
+    this.failedAt,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.requestId,
+    this.resolvedProviderAccountId,
+    this.resolvedRouteRuleId,
+    this.resolvedSenderIdentityId,
+    this.retentionUntil,
+    this.scheduledAt,
+    this.sentAt,
+    this.status,
+    this.targetMasked,
+    this.templateVariantId,
+    this.templateVersionId,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory MessagingSendRequestRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingSendRequestRecord(
+      acceptedAt: json['accepted_at']?.toString(),
+      appId: json['app_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      deliveredAt: json['delivered_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      failedAt: json['failed_at']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      resolvedProviderAccountId: json['resolved_provider_account_id']?.toString(),
+      resolvedRouteRuleId: json['resolved_route_rule_id']?.toString(),
+      resolvedSenderIdentityId: json['resolved_sender_identity_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      scheduledAt: json['scheduled_at']?.toString(),
+      sentAt: json['sent_at']?.toString(),
+      status: json['status']?.toString(),
+      targetMasked: json['target_masked']?.toString(),
+      templateVariantId: json['template_variant_id']?.toString(),
+      templateVersionId: json['template_version_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accepted_at': acceptedAt,
+      'app_id': appId,
+      'created_at': createdAt,
+      'delivered_at': deliveredAt,
+      'expires_at': expiresAt,
+      'failed_at': failedAt,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'request_id': requestId,
+      'resolved_provider_account_id': resolvedProviderAccountId,
+      'resolved_route_rule_id': resolvedRouteRuleId,
+      'resolved_sender_identity_id': resolvedSenderIdentityId,
+      'retention_until': retentionUntil,
+      'scheduled_at': scheduledAt,
+      'sent_at': sentAt,
+      'status': status,
+      'target_masked': targetMasked,
+      'template_variant_id': templateVariantId,
+      'template_version_id': templateVersionId,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class MessagingSenderIdentityCreateRequest {
+  final String? channel;
+  final String? countryCode;
+  final String? displayName;
+  final String? domainName;
+  final String? fromEmail;
+  final String? fromName;
+  final String? identityCode;
+  final String? providerAccountId;
+  final String? replyTo;
+  final String? senderId;
+  final String? signName;
+
+  MessagingSenderIdentityCreateRequest({
+    this.channel,
+    this.countryCode,
+    this.displayName,
+    this.domainName,
+    this.fromEmail,
+    this.fromName,
+    this.identityCode,
+    this.providerAccountId,
+    this.replyTo,
+    this.senderId,
+    this.signName
+  });
+
+  factory MessagingSenderIdentityCreateRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingSenderIdentityCreateRequest(
+      channel: json['channel']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      displayName: json['displayName']?.toString(),
+      domainName: json['domainName']?.toString(),
+      fromEmail: json['fromEmail']?.toString(),
+      fromName: json['fromName']?.toString(),
+      identityCode: json['identityCode']?.toString(),
+      providerAccountId: json['providerAccountId']?.toString(),
+      replyTo: json['replyTo']?.toString(),
+      senderId: json['senderId']?.toString(),
+      signName: json['signName']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'countryCode': countryCode,
+      'displayName': displayName,
+      'domainName': domainName,
+      'fromEmail': fromEmail,
+      'fromName': fromName,
+      'identityCode': identityCode,
+      'providerAccountId': providerAccountId,
+      'replyTo': replyTo,
+      'senderId': senderId,
+      'signName': signName,
+    };
+  }
+}
+
+class MessagingSenderIdentityRecord {
+  final String? countryCode;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? displayName;
+  final String? domainName;
+  final String? fromEmail;
+  final String? fromName;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? rejectionReason;
+  final String? replyTo;
+  final String? senderId;
+  final String? signName;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? verifiedAt;
+  final String? version;
+
+  MessagingSenderIdentityRecord({
+    this.countryCode,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.displayName,
+    this.domainName,
+    this.fromEmail,
+    this.fromName,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.rejectionReason,
+    this.replyTo,
+    this.senderId,
+    this.signName,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.verifiedAt,
+    this.version
+  });
+
+  factory MessagingSenderIdentityRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingSenderIdentityRecord(
+      countryCode: json['country_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      displayName: json['display_name']?.toString(),
+      domainName: json['domain_name']?.toString(),
+      fromEmail: json['from_email']?.toString(),
+      fromName: json['from_name']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      rejectionReason: json['rejection_reason']?.toString(),
+      replyTo: json['reply_to']?.toString(),
+      senderId: json['sender_id']?.toString(),
+      signName: json['sign_name']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      verifiedAt: json['verified_at']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'country_code': countryCode,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'display_name': displayName,
+      'domain_name': domainName,
+      'from_email': fromEmail,
+      'from_name': fromName,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'rejection_reason': rejectionReason,
+      'reply_to': replyTo,
+      'sender_id': senderId,
+      'sign_name': signName,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'verified_at': verifiedAt,
+      'version': version,
+    };
+  }
+}
+
+class MessagingSuppressionCreateRequest {
+  final String? channel;
+  final String? endsAt;
+  final String? note;
+  final String? reasonCode;
+  final String? scopeId;
+  final String? scopeType;
+  final String? source;
+  final String? startsAt;
+  final String? targetHash;
+  final String? targetMasked;
+
+  MessagingSuppressionCreateRequest({
+    this.channel,
+    this.endsAt,
+    this.note,
+    this.reasonCode,
+    this.scopeId,
+    this.scopeType,
+    this.source,
+    this.startsAt,
+    this.targetHash,
+    this.targetMasked
+  });
+
+  factory MessagingSuppressionCreateRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingSuppressionCreateRequest(
+      channel: json['channel']?.toString(),
+      endsAt: json['endsAt']?.toString(),
+      note: json['note']?.toString(),
+      reasonCode: json['reasonCode']?.toString(),
+      scopeId: json['scopeId']?.toString(),
+      scopeType: json['scopeType']?.toString(),
+      source: json['source']?.toString(),
+      startsAt: json['startsAt']?.toString(),
+      targetHash: json['targetHash']?.toString(),
+      targetMasked: json['targetMasked']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'endsAt': endsAt,
+      'note': note,
+      'reasonCode': reasonCode,
+      'scopeId': scopeId,
+      'scopeType': scopeType,
+      'source': source,
+      'startsAt': startsAt,
+      'targetHash': targetHash,
+      'targetMasked': targetMasked,
+    };
+  }
+}
+
+class MessagingSuppressionRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? endsAt;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? note;
+  final String? organizationId;
+  final String? status;
+  final String? targetMasked;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingSuppressionRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.endsAt,
+    this.id,
+    this.metadata,
+    this.note,
+    this.organizationId,
+    this.status,
+    this.targetMasked,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingSuppressionRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingSuppressionRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      endsAt: json['ends_at']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      note: json['note']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      targetMasked: json['target_masked']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'ends_at': endsAt,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'note': note,
+      'organization_id': organizationId,
+      'status': status,
+      'target_masked': targetMasked,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingTemplateBindingRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? lastSyncedAt;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? providerTemplateVersion;
+  final String? rejectionReason;
+  final String? status;
+  final String? syncPayloadHash;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingTemplateBindingRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.lastSyncedAt,
+    this.metadata,
+    this.organizationId,
+    this.providerTemplateVersion,
+    this.rejectionReason,
+    this.status,
+    this.syncPayloadHash,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingTemplateBindingRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateBindingRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      lastSyncedAt: json['last_synced_at']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      providerTemplateVersion: json['provider_template_version']?.toString(),
+      rejectionReason: json['rejection_reason']?.toString(),
+      status: json['status']?.toString(),
+      syncPayloadHash: json['sync_payload_hash']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'last_synced_at': lastSyncedAt,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'provider_template_version': providerTemplateVersion,
+      'rejection_reason': rejectionReason,
+      'status': status,
+      'sync_payload_hash': syncPayloadHash,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingTemplateCreateRequest {
+  final String? bodyTemplate;
+  final String? category;
+  final String? channel;
+  final String? contentFormat;
+  final String? deliveryPurpose;
+  final String? locale;
+  final String? sceneCode;
+  final String? subjectTemplate;
+  final String? templateCode;
+  final String? templateName;
+  final Map<String, dynamic>? variableSchema;
+
+  MessagingTemplateCreateRequest({
+    this.bodyTemplate,
+    this.category,
+    this.channel,
+    this.contentFormat,
+    this.deliveryPurpose,
+    this.locale,
+    this.sceneCode,
+    this.subjectTemplate,
+    this.templateCode,
+    this.templateName,
+    this.variableSchema
+  });
+
+  factory MessagingTemplateCreateRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateCreateRequest(
+      bodyTemplate: json['bodyTemplate']?.toString(),
+      category: json['category']?.toString(),
+      channel: json['channel']?.toString(),
+      contentFormat: json['contentFormat']?.toString(),
+      deliveryPurpose: json['deliveryPurpose']?.toString(),
+      locale: json['locale']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      subjectTemplate: json['subjectTemplate']?.toString(),
+      templateCode: json['templateCode']?.toString(),
+      templateName: json['templateName']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variableSchema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bodyTemplate': bodyTemplate,
+      'category': category,
+      'channel': channel,
+      'contentFormat': contentFormat,
+      'deliveryPurpose': deliveryPurpose,
+      'locale': locale,
+      'sceneCode': sceneCode,
+      'subjectTemplate': subjectTemplate,
+      'templateCode': templateCode,
+      'templateName': templateName,
+      'variableSchema': variableSchema?.map((key, item) => MapEntry(key, item)),
+    };
+  }
+}
+
+class MessagingTemplateRecord {
+  final String? createdAt;
+  final String? currentVersionId;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? description;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerAppId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingTemplateRecord({
+    this.createdAt,
+    this.currentVersionId,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.description,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.ownerAppId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingTemplateRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateRecord(
+      createdAt: json['created_at']?.toString(),
+      currentVersionId: json['current_version_id']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      description: json['description']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerAppId: json['owner_app_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'current_version_id': currentVersionId,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'description': description,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_app_id': ownerAppId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingTemplateSendRequest {
+  final String? channel;
+  final String? countryCode;
+  final String? deliveryPurpose;
+  final bool? dryRun;
+  final String? locale;
+  final String? sceneCode;
+  final String? targetHash;
+  final String? targetMasked;
+  final String? templateCode;
+  final String? userSegment;
+  final Map<String, dynamic>? variables;
+
+  MessagingTemplateSendRequest({
+    this.channel,
+    this.countryCode,
+    this.deliveryPurpose,
+    this.dryRun,
+    this.locale,
+    this.sceneCode,
+    this.targetHash,
+    this.targetMasked,
+    this.templateCode,
+    this.userSegment,
+    this.variables
+  });
+
+  factory MessagingTemplateSendRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateSendRequest(
+      channel: json['channel']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      deliveryPurpose: json['deliveryPurpose']?.toString(),
+      dryRun: json['dryRun'] is bool ? json['dryRun'] : null,
+      locale: json['locale']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      targetHash: json['targetHash']?.toString(),
+      targetMasked: json['targetMasked']?.toString(),
+      templateCode: json['templateCode']?.toString(),
+      userSegment: json['userSegment']?.toString(),
+      variables: (() {
+        final map = _sdkworkAsMap(json['variables']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'countryCode': countryCode,
+      'deliveryPurpose': deliveryPurpose,
+      'dryRun': dryRun,
+      'locale': locale,
+      'sceneCode': sceneCode,
+      'targetHash': targetHash,
+      'targetMasked': targetMasked,
+      'templateCode': templateCode,
+      'userSegment': userSegment,
+      'variables': variables?.map((key, item) => MapEntry(key, item)),
+    };
+  }
+}
+
+class MessagingTemplateSendResponse {
+  final String? deliveryStatus;
+  final String? providerCode;
+  final String? requestId;
+
+  MessagingTemplateSendResponse({
+    this.deliveryStatus,
+    this.providerCode,
+    this.requestId
+  });
+
+  factory MessagingTemplateSendResponse.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateSendResponse(
+      deliveryStatus: json['deliveryStatus']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deliveryStatus': deliveryStatus,
+      'providerCode': providerCode,
+      'requestId': requestId,
+    };
+  }
+}
+
+class MessagingTemplateVariantRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final int? lengthLimit;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingTemplateVariantRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.lengthLimit,
+    this.metadata,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingTemplateVariantRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateVariantRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      lengthLimit: json['length_limit'] is int ? json['length_limit'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'length_limit': lengthLimit,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingTemplateVersionRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? htmlTemplate;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? publishedAt;
+  final String? retiredAt;
+  final String? status;
+  final String? subjectTemplate;
+  final String? tenantId;
+  final String? textTemplate;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  MessagingTemplateVersionRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.htmlTemplate,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.publishedAt,
+    this.retiredAt,
+    this.status,
+    this.subjectTemplate,
+    this.tenantId,
+    this.textTemplate,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory MessagingTemplateVersionRecord.fromJson(Map<String, dynamic> json) {
+    return MessagingTemplateVersionRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      htmlTemplate: json['html_template']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      retiredAt: json['retired_at']?.toString(),
+      status: json['status']?.toString(),
+      subjectTemplate: json['subject_template']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      textTemplate: json['text_template']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'html_template': htmlTemplate,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'published_at': publishedAt,
+      'retired_at': retiredAt,
+      'status': status,
+      'subject_template': subjectTemplate,
+      'tenant_id': tenantId,
+      'text_template': textTemplate,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class MessagingTestSendRequest {
+  final String? channel;
+  final String? countryCode;
+  final String? deliveryPurpose;
+  final bool? dryRun;
+  final String? locale;
+  final String? sceneCode;
+  final String? targetHash;
+  final String? targetMasked;
+  final String? templateCode;
+  final String? userSegment;
+  final Map<String, dynamic>? variables;
+
+  MessagingTestSendRequest({
+    this.channel,
+    this.countryCode,
+    this.deliveryPurpose,
+    this.dryRun,
+    this.locale,
+    this.sceneCode,
+    this.targetHash,
+    this.targetMasked,
+    this.templateCode,
+    this.userSegment,
+    this.variables
+  });
+
+  factory MessagingTestSendRequest.fromJson(Map<String, dynamic> json) {
+    return MessagingTestSendRequest(
+      channel: json['channel']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      deliveryPurpose: json['deliveryPurpose']?.toString(),
+      dryRun: json['dryRun'] is bool ? json['dryRun'] : null,
+      locale: json['locale']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      targetHash: json['targetHash']?.toString(),
+      targetMasked: json['targetMasked']?.toString(),
+      templateCode: json['templateCode']?.toString(),
+      userSegment: json['userSegment']?.toString(),
+      variables: (() {
+        final map = _sdkworkAsMap(json['variables']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel': channel,
+      'countryCode': countryCode,
+      'deliveryPurpose': deliveryPurpose,
+      'dryRun': dryRun,
+      'locale': locale,
+      'sceneCode': sceneCode,
+      'targetHash': targetHash,
+      'targetMasked': targetMasked,
+      'templateCode': templateCode,
+      'userSegment': userSegment,
+      'variables': variables?.map((key, item) => MapEntry(key, item)),
+    };
+  }
+}
+
+class MessagingTestSendResponse {
+  final String? deliveryStatus;
+  final String? providerCode;
+  final String? requestId;
+
+  MessagingTestSendResponse({
+    this.deliveryStatus,
+    this.providerCode,
+    this.requestId
+  });
+
+  factory MessagingTestSendResponse.fromJson(Map<String, dynamic> json) {
+    return MessagingTestSendResponse(
+      deliveryStatus: json['deliveryStatus']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deliveryStatus': deliveryStatus,
+      'providerCode': providerCode,
+      'requestId': requestId,
     };
   }
 }
@@ -34667,49 +46667,497 @@ class NoData {
   }
 }
 
+class ObjectBlobRecord {
+  final String? bucketId;
+  final String? contentSha256;
+  final String? contentType;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? encryptionMode;
+  final String? id;
+  final String? kmsKeyRef;
+  final String? lastVerifiedAt;
+  final Map<String, dynamic>? metadata;
+  final String? objectKey;
+  final String? organizationId;
+  final String? originalFilename;
+  final String? ownerId;
+  final String? ownerType;
+  final String? providerId;
+  final String? retentionUntil;
+  final String? status;
+  final String? storageClass;
+  final String? storageEtag;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+  final String? versionId;
+
+  ObjectBlobRecord({
+    this.bucketId,
+    this.contentSha256,
+    this.contentType,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.encryptionMode,
+    this.id,
+    this.kmsKeyRef,
+    this.lastVerifiedAt,
+    this.metadata,
+    this.objectKey,
+    this.organizationId,
+    this.originalFilename,
+    this.ownerId,
+    this.ownerType,
+    this.providerId,
+    this.retentionUntil,
+    this.status,
+    this.storageClass,
+    this.storageEtag,
+    this.tenantId,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version,
+    this.versionId
+  });
+
+  factory ObjectBlobRecord.fromJson(Map<String, dynamic> json) {
+    return ObjectBlobRecord(
+      bucketId: json['bucket_id']?.toString(),
+      contentSha256: json['content_sha256']?.toString(),
+      contentType: json['content_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      encryptionMode: json['encryption_mode']?.toString(),
+      id: json['id']?.toString(),
+      kmsKeyRef: json['kms_key_ref']?.toString(),
+      lastVerifiedAt: json['last_verified_at']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      objectKey: json['object_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      originalFilename: json['original_filename']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      providerId: json['provider_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      status: json['status']?.toString(),
+      storageClass: json['storage_class']?.toString(),
+      storageEtag: json['storage_etag']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      versionId: json['version_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucket_id': bucketId,
+      'content_sha256': contentSha256,
+      'content_type': contentType,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'encryption_mode': encryptionMode,
+      'id': id,
+      'kms_key_ref': kmsKeyRef,
+      'last_verified_at': lastVerifiedAt,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'object_key': objectKey,
+      'organization_id': organizationId,
+      'original_filename': originalFilename,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'provider_id': providerId,
+      'retention_until': retentionUntil,
+      'status': status,
+      'storage_class': storageClass,
+      'storage_etag': storageEtag,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+      'version_id': versionId,
+    };
+  }
+}
+
+class ObjectBucketRecord {
+  final String? bucketName;
+  final String? bucketRegion;
+  final String? createdAt;
+  final String? dataResidencyRegion;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? idempotencyKey;
+  final String? kmsKeyRef;
+  final String? logicalScope;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? providerId;
+  final String? requestId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  ObjectBucketRecord({
+    this.bucketName,
+    this.bucketRegion,
+    this.createdAt,
+    this.dataResidencyRegion,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.idempotencyKey,
+    this.kmsKeyRef,
+    this.logicalScope,
+    this.metadata,
+    this.organizationId,
+    this.providerId,
+    this.requestId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory ObjectBucketRecord.fromJson(Map<String, dynamic> json) {
+    return ObjectBucketRecord(
+      bucketName: json['bucket_name']?.toString(),
+      bucketRegion: json['bucket_region']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataResidencyRegion: json['data_residency_region']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      kmsKeyRef: json['kms_key_ref']?.toString(),
+      logicalScope: json['logical_scope']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      providerId: json['provider_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucket_name': bucketName,
+      'bucket_region': bucketRegion,
+      'created_at': createdAt,
+      'data_residency_region': dataResidencyRegion,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'kms_key_ref': kmsKeyRef,
+      'logical_scope': logicalScope,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'provider_id': providerId,
+      'request_id': requestId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class ObjectProviderRecord {
+  final String? createdAt;
+  final String? credentialRef;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? endpointUrl;
+  final String? id;
+  final String? idempotencyKey;
+  final String? lastHealthCheckAt;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? providerCode;
+  final String? providerType;
+  final String? region;
+  final String? requestId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  ObjectProviderRecord({
+    this.createdAt,
+    this.credentialRef,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.endpointUrl,
+    this.id,
+    this.idempotencyKey,
+    this.lastHealthCheckAt,
+    this.metadata,
+    this.organizationId,
+    this.providerCode,
+    this.providerType,
+    this.region,
+    this.requestId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory ObjectProviderRecord.fromJson(Map<String, dynamic> json) {
+    return ObjectProviderRecord(
+      createdAt: json['created_at']?.toString(),
+      credentialRef: json['credential_ref']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      endpointUrl: json['endpoint_url']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      lastHealthCheckAt: json['last_health_check_at']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      providerType: json['provider_type']?.toString(),
+      region: json['region']?.toString(),
+      requestId: json['request_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'credential_ref': credentialRef,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'endpoint_url': endpointUrl,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'last_health_check_at': lastHealthCheckAt,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'provider_code': providerCode,
+      'provider_type': providerType,
+      'region': region,
+      'request_id': requestId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class ObjectTagRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? objectBlobId;
+  final String? organizationId;
+  final String? status;
+  final String? tagKey;
+  final String? tagValue;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  ObjectTagRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.objectBlobId,
+    this.organizationId,
+    this.status,
+    this.tagKey,
+    this.tagValue,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory ObjectTagRecord.fromJson(Map<String, dynamic> json) {
+    return ObjectTagRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      objectBlobId: json['object_blob_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tagKey: json['tag_key']?.toString(),
+      tagValue: json['tag_value']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'object_blob_id': objectBlobId,
+      'organization_id': organizationId,
+      'status': status,
+      'tag_key': tagKey,
+      'tag_value': tagValue,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
 class OpenPlatformAccountCreateRequest {
-  final String? aesKeyRef;
   final String? appId;
+  final String? appSecret;
+  final String? encodingAesKey;
   final String? key;
   final String? name;
   final String? provider;
-  final String? secretRef;
-  final String? tokenRef;
+  final String? token;
   final String? type;
 
   OpenPlatformAccountCreateRequest({
-    this.aesKeyRef,
     this.appId,
+    this.appSecret,
+    this.encodingAesKey,
     this.key,
     this.name,
     this.provider,
-    this.secretRef,
-    this.tokenRef,
+    this.token,
     this.type
   });
 
   factory OpenPlatformAccountCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenPlatformAccountCreateRequest(
-      aesKeyRef: json['aesKeyRef']?.toString(),
       appId: json['appId']?.toString(),
+      appSecret: json['appSecret']?.toString(),
+      encodingAesKey: json['encodingAesKey']?.toString(),
       key: json['key']?.toString(),
       name: json['name']?.toString(),
       provider: json['provider']?.toString(),
-      secretRef: json['secretRef']?.toString(),
-      tokenRef: json['tokenRef']?.toString(),
+      token: json['token']?.toString(),
       type: json['type']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'aesKeyRef': aesKeyRef,
       'appId': appId,
+      'appSecret': appSecret,
+      'encodingAesKey': encodingAesKey,
       'key': key,
       'name': name,
       'provider': provider,
-      'secretRef': secretRef,
-      'tokenRef': tokenRef,
+      'token': token,
       'type': type,
     };
   }
@@ -34960,49 +47408,49 @@ class OpenPlatformAccountResponse {
 }
 
 class OpenPlatformAccountUpdateRequest {
-  final String? aesKeyRef;
   final String? appId;
+  final String? appSecret;
   final String? defaultEntryId;
+  final String? encodingAesKey;
   final String? name;
   final bool? qrDefault;
-  final String? secretRef;
   final String? status;
-  final String? tokenRef;
+  final String? token;
 
   OpenPlatformAccountUpdateRequest({
-    this.aesKeyRef,
     this.appId,
+    this.appSecret,
     this.defaultEntryId,
+    this.encodingAesKey,
     this.name,
     this.qrDefault,
-    this.secretRef,
     this.status,
-    this.tokenRef
+    this.token
   });
 
   factory OpenPlatformAccountUpdateRequest.fromJson(Map<String, dynamic> json) {
     return OpenPlatformAccountUpdateRequest(
-      aesKeyRef: json['aesKeyRef']?.toString(),
       appId: json['appId']?.toString(),
+      appSecret: json['appSecret']?.toString(),
       defaultEntryId: json['defaultEntryId']?.toString(),
+      encodingAesKey: json['encodingAesKey']?.toString(),
       name: json['name']?.toString(),
       qrDefault: json['qrDefault'] is bool ? json['qrDefault'] : null,
-      secretRef: json['secretRef']?.toString(),
       status: json['status']?.toString(),
-      tokenRef: json['tokenRef']?.toString()
+      token: json['token']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'aesKeyRef': aesKeyRef,
       'appId': appId,
+      'appSecret': appSecret,
       'defaultEntryId': defaultEntryId,
+      'encodingAesKey': encodingAesKey,
       'name': name,
       'qrDefault': qrDefault,
-      'secretRef': secretRef,
       'status': status,
-      'tokenRef': tokenRef,
+      'token': token,
     };
   }
 }
@@ -37808,6 +50256,564 @@ class OrdersRetrieveResult {
   }
 }
 
+class OssBucketsCreateResult {
+  final String? code;
+  final StorageBucketMutationResponse? data;
+  final String? msg;
+
+  OssBucketsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssBucketsCreateResult.fromJson(Map<String, dynamic> json) {
+    return OssBucketsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageBucketMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssBucketsListResult {
+  final String? code;
+  final StorageBucketListResponse? data;
+  final String? msg;
+
+  OssBucketsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssBucketsListResult.fromJson(Map<String, dynamic> json) {
+    return OssBucketsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageBucketListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssBucketsUpdateResult {
+  final String? code;
+  final StorageBucketMutationResponse? data;
+  final String? msg;
+
+  OssBucketsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssBucketsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return OssBucketsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageBucketMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssDefaultBucketsListResult {
+  final String? code;
+  final StorageDefaultBucketListResponse? data;
+  final String? msg;
+
+  OssDefaultBucketsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssDefaultBucketsListResult.fromJson(Map<String, dynamic> json) {
+    return OssDefaultBucketsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageDefaultBucketListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssDefaultBucketsUpdateResult {
+  final String? code;
+  final StorageDefaultBucketMutationResponse? data;
+  final String? msg;
+
+  OssDefaultBucketsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssDefaultBucketsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return OssDefaultBucketsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageDefaultBucketMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssGcJobsCreateResult {
+  final String? code;
+  final StorageGarbageCollectionJobMutationResponse? data;
+  final String? msg;
+
+  OssGcJobsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssGcJobsCreateResult.fromJson(Map<String, dynamic> json) {
+    return OssGcJobsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageGarbageCollectionJobMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssGcJobsListResult {
+  final String? code;
+  final StorageGarbageCollectionJobListResponse? data;
+  final String? msg;
+
+  OssGcJobsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssGcJobsListResult.fromJson(Map<String, dynamic> json) {
+    return OssGcJobsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageGarbageCollectionJobListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssProvidersCreateResult {
+  final String? code;
+  final StorageProviderMutationResponse? data;
+  final String? msg;
+
+  OssProvidersCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssProvidersCreateResult.fromJson(Map<String, dynamic> json) {
+    return OssProvidersCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageProviderMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssProvidersHealthChecksCreateResult {
+  final String? code;
+  final StorageProviderHealthCheckResponse? data;
+  final String? msg;
+
+  OssProvidersHealthChecksCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssProvidersHealthChecksCreateResult.fromJson(Map<String, dynamic> json) {
+    return OssProvidersHealthChecksCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageProviderHealthCheckResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssProvidersListResult {
+  final String? code;
+  final StorageProviderListResponse? data;
+  final String? msg;
+
+  OssProvidersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssProvidersListResult.fromJson(Map<String, dynamic> json) {
+    return OssProvidersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageProviderListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssProvidersUpdateResult {
+  final String? code;
+  final StorageProviderMutationResponse? data;
+  final String? msg;
+
+  OssProvidersUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssProvidersUpdateResult.fromJson(Map<String, dynamic> json) {
+    return OssProvidersUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageProviderMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssQuotasCreateResult {
+  final String? code;
+  final StorageQuotaPolicyMutationResponse? data;
+  final String? msg;
+
+  OssQuotasCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssQuotasCreateResult.fromJson(Map<String, dynamic> json) {
+    return OssQuotasCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageQuotaPolicyMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssQuotasListResult {
+  final String? code;
+  final StorageQuotaPolicyListResponse? data;
+  final String? msg;
+
+  OssQuotasListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssQuotasListResult.fromJson(Map<String, dynamic> json) {
+    return OssQuotasListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageQuotaPolicyListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssReconciliationRunsCreateResult {
+  final String? code;
+  final StorageReconciliationRunMutationResponse? data;
+  final String? msg;
+
+  OssReconciliationRunsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssReconciliationRunsCreateResult.fromJson(Map<String, dynamic> json) {
+    return OssReconciliationRunsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageReconciliationRunMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssReconciliationRunsListResult {
+  final String? code;
+  final StorageReconciliationRunListResponse? data;
+  final String? msg;
+
+  OssReconciliationRunsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssReconciliationRunsListResult.fromJson(Map<String, dynamic> json) {
+    return OssReconciliationRunsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageReconciliationRunListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssUsageLedgerListResult {
+  final String? code;
+  final StorageUsageLedgerListResponse? data;
+  final String? msg;
+
+  OssUsageLedgerListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssUsageLedgerListResult.fromJson(Map<String, dynamic> json) {
+    return OssUsageLedgerListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageUsageLedgerListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssUsageListResult {
+  final String? code;
+  final StorageUsageCounterListResponse? data;
+  final String? msg;
+
+  OssUsageListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssUsageListResult.fromJson(Map<String, dynamic> json) {
+    return OssUsageListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageUsageCounterListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class OssUsageSnapshotsListResult {
+  final String? code;
+  final StorageUsageSnapshotListResponse? data;
+  final String? msg;
+
+  OssUsageSnapshotsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory OssUsageSnapshotsListResult.fromJson(Map<String, dynamic> json) {
+    return OssUsageSnapshotsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : StorageUsageSnapshotListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class PaymentsAttemptsListResult {
   final String? code;
   final CommercePaymentAttemptListResponse? data;
@@ -39008,6 +52014,130 @@ class PlusUserCardRecord {
   }
 }
 
+class PriceSimulationCreateResult {
+  final String? code;
+  final ServiceProviderPriceSimulationResponse? data;
+  final String? msg;
+
+  PriceSimulationCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PriceSimulationCreateResult.fromJson(Map<String, dynamic> json) {
+    return PriceSimulationCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderPriceSimulationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PricingRulesCreateResult {
+  final String? code;
+  final ServiceProviderPricingRuleMutationResponse? data;
+  final String? msg;
+
+  PricingRulesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PricingRulesCreateResult.fromJson(Map<String, dynamic> json) {
+    return PricingRulesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderPricingRuleMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PricingRulesListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  PricingRulesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PricingRulesListResult.fromJson(Map<String, dynamic> json) {
+    return PricingRulesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PricingRulesUpdateResult {
+  final String? code;
+  final ServiceProviderPricingRuleMutationResponse? data;
+  final String? msg;
+
+  PricingRulesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PricingRulesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return PricingRulesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderPricingRuleMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class ProblemDetail {
   final String? code;
   final String? detail;
@@ -39072,6 +52202,2390 @@ class ProblemDetail {
   }
 }
 
+class PromotionBudgetAccountRecord {
+  final String? budgetNo;
+  final String? budgetType;
+  final String? createdAt;
+  final String? createdBy;
+  final String? currencyCode;
+  final String? lockMode;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? overrunAmountMinor;
+  final String? plannedAmountMinor;
+  final String? status;
+  final String? stockId;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? updatedBy;
+
+  PromotionBudgetAccountRecord({
+    this.budgetNo,
+    this.budgetType,
+    this.createdAt,
+    this.createdBy,
+    this.currencyCode,
+    this.lockMode,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.overrunAmountMinor,
+    this.plannedAmountMinor,
+    this.status,
+    this.stockId,
+    this.tenantId,
+    this.updatedAt,
+    this.updatedBy
+  });
+
+  factory PromotionBudgetAccountRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionBudgetAccountRecord(
+      budgetNo: json['budget_no']?.toString(),
+      budgetType: json['budget_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      lockMode: json['lock_mode']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      overrunAmountMinor: json['overrun_amount_minor']?.toString(),
+      plannedAmountMinor: json['planned_amount_minor']?.toString(),
+      status: json['status']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'budget_no': budgetNo,
+      'budget_type': budgetType,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'currency_code': currencyCode,
+      'lock_mode': lockMode,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'overrun_amount_minor': overrunAmountMinor,
+      'planned_amount_minor': plannedAmountMinor,
+      'status': status,
+      'stock_id': stockId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+    };
+  }
+}
+
+class PromotionBudgetLedgerEntryRecord {
+  final String? applicationId;
+  final String? budgetAccountId;
+  final String? businessType;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? direction;
+  final String? idempotencyKey;
+  final String? ledgerNo;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? requestNo;
+  final String? sourceId;
+  final String? sourceType;
+  final String? tenantId;
+
+  PromotionBudgetLedgerEntryRecord({
+    this.applicationId,
+    this.budgetAccountId,
+    this.businessType,
+    this.createdAt,
+    this.currencyCode,
+    this.direction,
+    this.idempotencyKey,
+    this.ledgerNo,
+    this.occurredAt,
+    this.organizationId,
+    this.requestNo,
+    this.sourceId,
+    this.sourceType,
+    this.tenantId
+  });
+
+  factory PromotionBudgetLedgerEntryRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionBudgetLedgerEntryRecord(
+      applicationId: json['application_id']?.toString(),
+      budgetAccountId: json['budget_account_id']?.toString(),
+      businessType: json['business_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      direction: json['direction']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      ledgerNo: json['ledger_no']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'application_id': applicationId,
+      'budget_account_id': budgetAccountId,
+      'business_type': businessType,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'direction': direction,
+      'idempotency_key': idempotencyKey,
+      'ledger_no': ledgerNo,
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'request_no': requestNo,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class PromotionCodeRecord {
+  final String? activatedAt;
+  final String? activationStatus;
+  final bool? canResend;
+  final String? cancelUntil;
+  final String? canceledAt;
+  final String? channelCode;
+  final String? claimCodeHash;
+  final String? claimCodeSuffix;
+  final String? codeNo;
+  final String? codeType;
+  final String? createdAt;
+  final String? createdBy;
+  final String? currencyCode;
+  final String? expiresAt;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? promotionCodeHash;
+  final String? promotionCodeLast4;
+  final String? startsAt;
+  final String? status;
+  final String? stockId;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? updatedBy;
+
+  PromotionCodeRecord({
+    this.activatedAt,
+    this.activationStatus,
+    this.canResend,
+    this.cancelUntil,
+    this.canceledAt,
+    this.channelCode,
+    this.claimCodeHash,
+    this.claimCodeSuffix,
+    this.codeNo,
+    this.codeType,
+    this.createdAt,
+    this.createdBy,
+    this.currencyCode,
+    this.expiresAt,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.promotionCodeHash,
+    this.promotionCodeLast4,
+    this.startsAt,
+    this.status,
+    this.stockId,
+    this.tenantId,
+    this.updatedAt,
+    this.updatedBy
+  });
+
+  factory PromotionCodeRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionCodeRecord(
+      activatedAt: json['activated_at']?.toString(),
+      activationStatus: json['activation_status']?.toString(),
+      canResend: json['can_resend'] is bool ? json['can_resend'] : null,
+      cancelUntil: json['cancel_until']?.toString(),
+      canceledAt: json['canceled_at']?.toString(),
+      channelCode: json['channel_code']?.toString(),
+      claimCodeHash: json['claim_code_hash']?.toString(),
+      claimCodeSuffix: json['claim_code_suffix']?.toString(),
+      codeNo: json['code_no']?.toString(),
+      codeType: json['code_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      promotionCodeHash: json['promotion_code_hash']?.toString(),
+      promotionCodeLast4: json['promotion_code_last4']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'activated_at': activatedAt,
+      'activation_status': activationStatus,
+      'can_resend': canResend,
+      'cancel_until': cancelUntil,
+      'canceled_at': canceledAt,
+      'channel_code': channelCode,
+      'claim_code_hash': claimCodeHash,
+      'claim_code_suffix': claimCodeSuffix,
+      'code_no': codeNo,
+      'code_type': codeType,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'currency_code': currencyCode,
+      'expires_at': expiresAt,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'promotion_code_hash': promotionCodeHash,
+      'promotion_code_last4': promotionCodeLast4,
+      'starts_at': startsAt,
+      'status': status,
+      'stock_id': stockId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+    };
+  }
+}
+
+class PromotionCodeRedemptionRecord {
+  final String? codeId;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? failureCode;
+  final String? failureMessage;
+  final String? idempotencyKey;
+  final String? occurredAt;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? redemptionChannel;
+  final String? redemptionNo;
+  final String? redemptionScene;
+  final String? requestNo;
+  final String? resultStatus;
+  final String? stockId;
+  final String? subjectId;
+  final String? subjectType;
+  final String? submittedCodeHash;
+  final String? submittedCodeSuffix;
+  final String? tenantId;
+  final String? userCouponId;
+
+  PromotionCodeRedemptionRecord({
+    this.codeId,
+    this.createdAt,
+    this.currencyCode,
+    this.failureCode,
+    this.failureMessage,
+    this.idempotencyKey,
+    this.occurredAt,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.ownerUserId,
+    this.redemptionChannel,
+    this.redemptionNo,
+    this.redemptionScene,
+    this.requestNo,
+    this.resultStatus,
+    this.stockId,
+    this.subjectId,
+    this.subjectType,
+    this.submittedCodeHash,
+    this.submittedCodeSuffix,
+    this.tenantId,
+    this.userCouponId
+  });
+
+  factory PromotionCodeRedemptionRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionCodeRedemptionRecord(
+      codeId: json['code_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      failureCode: json['failure_code']?.toString(),
+      failureMessage: json['failure_message']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      redemptionChannel: json['redemption_channel']?.toString(),
+      redemptionNo: json['redemption_no']?.toString(),
+      redemptionScene: json['redemption_scene']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      resultStatus: json['result_status']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      subjectId: json['subject_id']?.toString(),
+      subjectType: json['subject_type']?.toString(),
+      submittedCodeHash: json['submitted_code_hash']?.toString(),
+      submittedCodeSuffix: json['submitted_code_suffix']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      userCouponId: json['user_coupon_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code_id': codeId,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'failure_code': failureCode,
+      'failure_message': failureMessage,
+      'idempotency_key': idempotencyKey,
+      'occurred_at': occurredAt,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'redemption_channel': redemptionChannel,
+      'redemption_no': redemptionNo,
+      'redemption_scene': redemptionScene,
+      'request_no': requestNo,
+      'result_status': resultStatus,
+      'stock_id': stockId,
+      'subject_id': subjectId,
+      'subject_type': subjectType,
+      'submitted_code_hash': submittedCodeHash,
+      'submitted_code_suffix': submittedCodeSuffix,
+      'tenant_id': tenantId,
+      'user_coupon_id': userCouponId,
+    };
+  }
+}
+
+class PromotionCollectionResponse {
+  final List<Map<String, dynamic>>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  PromotionCollectionResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory PromotionCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return PromotionCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => _sdkworkAsMap(item))
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class PromotionCouponLedgerEntryRecord {
+  final String? applicationId;
+  final String? businessType;
+  final String? createdAt;
+  final String? direction;
+  final String? idempotencyKey;
+  final String? ledgerNo;
+  final String? occurredAt;
+  final String? offerId;
+  final String? organizationId;
+  final String? requestNo;
+  final String? sourceId;
+  final String? sourceType;
+  final String? stockId;
+  final String? subjectId;
+  final String? subjectType;
+  final String? tenantId;
+  final String? userCouponId;
+
+  PromotionCouponLedgerEntryRecord({
+    this.applicationId,
+    this.businessType,
+    this.createdAt,
+    this.direction,
+    this.idempotencyKey,
+    this.ledgerNo,
+    this.occurredAt,
+    this.offerId,
+    this.organizationId,
+    this.requestNo,
+    this.sourceId,
+    this.sourceType,
+    this.stockId,
+    this.subjectId,
+    this.subjectType,
+    this.tenantId,
+    this.userCouponId
+  });
+
+  factory PromotionCouponLedgerEntryRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionCouponLedgerEntryRecord(
+      applicationId: json['application_id']?.toString(),
+      businessType: json['business_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      direction: json['direction']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      ledgerNo: json['ledger_no']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      subjectId: json['subject_id']?.toString(),
+      subjectType: json['subject_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      userCouponId: json['user_coupon_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'application_id': applicationId,
+      'business_type': businessType,
+      'created_at': createdAt,
+      'direction': direction,
+      'idempotency_key': idempotencyKey,
+      'ledger_no': ledgerNo,
+      'occurred_at': occurredAt,
+      'offer_id': offerId,
+      'organization_id': organizationId,
+      'request_no': requestNo,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'stock_id': stockId,
+      'subject_id': subjectId,
+      'subject_type': subjectType,
+      'tenant_id': tenantId,
+      'user_coupon_id': userCouponId,
+    };
+  }
+}
+
+class PromotionCouponStockRecord {
+  final String? activationStatus;
+  final String? budgetAccountId;
+  final int? budgetStopThresholdBps;
+  final int? budgetWarningThresholdBps;
+  final bool? canResend;
+  final String? cancelUntil;
+  final String? codeMode;
+  final String? codePrefix;
+  final String? createdAt;
+  final String? createdBy;
+  final String? currencyCode;
+  final String? expiresAt;
+  final String? issueChannel;
+  final int? maxClaimsPerNaturalPerson;
+  final int? maxClaimsPerSubject;
+  final String? name;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? overspendPolicy;
+  final String? perSubjectLimit;
+  final String? startsAt;
+  final String? status;
+  final String? stockCreatorMerchantId;
+  final String? stockNo;
+  final String? stockType;
+  final String? tenantId;
+  final String? title;
+  final String? totalQuantity;
+  final String? updatedAt;
+  final String? updatedBy;
+
+  PromotionCouponStockRecord({
+    this.activationStatus,
+    this.budgetAccountId,
+    this.budgetStopThresholdBps,
+    this.budgetWarningThresholdBps,
+    this.canResend,
+    this.cancelUntil,
+    this.codeMode,
+    this.codePrefix,
+    this.createdAt,
+    this.createdBy,
+    this.currencyCode,
+    this.expiresAt,
+    this.issueChannel,
+    this.maxClaimsPerNaturalPerson,
+    this.maxClaimsPerSubject,
+    this.name,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.overspendPolicy,
+    this.perSubjectLimit,
+    this.startsAt,
+    this.status,
+    this.stockCreatorMerchantId,
+    this.stockNo,
+    this.stockType,
+    this.tenantId,
+    this.title,
+    this.totalQuantity,
+    this.updatedAt,
+    this.updatedBy
+  });
+
+  factory PromotionCouponStockRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionCouponStockRecord(
+      activationStatus: json['activation_status']?.toString(),
+      budgetAccountId: json['budget_account_id']?.toString(),
+      budgetStopThresholdBps: json['budget_stop_threshold_bps'] is int ? json['budget_stop_threshold_bps'] : null,
+      budgetWarningThresholdBps: json['budget_warning_threshold_bps'] is int ? json['budget_warning_threshold_bps'] : null,
+      canResend: json['can_resend'] is bool ? json['can_resend'] : null,
+      cancelUntil: json['cancel_until']?.toString(),
+      codeMode: json['code_mode']?.toString(),
+      codePrefix: json['code_prefix']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      issueChannel: json['issue_channel']?.toString(),
+      maxClaimsPerNaturalPerson: json['max_claims_per_natural_person'] is int ? json['max_claims_per_natural_person'] : null,
+      maxClaimsPerSubject: json['max_claims_per_subject'] is int ? json['max_claims_per_subject'] : null,
+      name: json['name']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      overspendPolicy: json['overspend_policy']?.toString(),
+      perSubjectLimit: json['per_subject_limit']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      stockCreatorMerchantId: json['stock_creator_merchant_id']?.toString(),
+      stockNo: json['stock_no']?.toString(),
+      stockType: json['stock_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      totalQuantity: json['total_quantity']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'activation_status': activationStatus,
+      'budget_account_id': budgetAccountId,
+      'budget_stop_threshold_bps': budgetStopThresholdBps,
+      'budget_warning_threshold_bps': budgetWarningThresholdBps,
+      'can_resend': canResend,
+      'cancel_until': cancelUntil,
+      'code_mode': codeMode,
+      'code_prefix': codePrefix,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'currency_code': currencyCode,
+      'expires_at': expiresAt,
+      'issue_channel': issueChannel,
+      'max_claims_per_natural_person': maxClaimsPerNaturalPerson,
+      'max_claims_per_subject': maxClaimsPerSubject,
+      'name': name,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'overspend_policy': overspendPolicy,
+      'per_subject_limit': perSubjectLimit,
+      'starts_at': startsAt,
+      'status': status,
+      'stock_creator_merchant_id': stockCreatorMerchantId,
+      'stock_no': stockNo,
+      'stock_type': stockType,
+      'tenant_id': tenantId,
+      'title': title,
+      'total_quantity': totalQuantity,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+    };
+  }
+}
+
+class PromotionDiscountAllocationRecord {
+  final int? allocationRatioBps;
+  final String? applicationId;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? orderId;
+  final String? orderItemId;
+  final String? organizationId;
+  final String? skuId;
+  final String? tenantId;
+
+  PromotionDiscountAllocationRecord({
+    this.allocationRatioBps,
+    this.applicationId,
+    this.createdAt,
+    this.currencyCode,
+    this.orderId,
+    this.orderItemId,
+    this.organizationId,
+    this.skuId,
+    this.tenantId
+  });
+
+  factory PromotionDiscountAllocationRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionDiscountAllocationRecord(
+      allocationRatioBps: json['allocation_ratio_bps'] is int ? json['allocation_ratio_bps'] : null,
+      applicationId: json['application_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      orderId: json['order_id']?.toString(),
+      orderItemId: json['order_item_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'allocation_ratio_bps': allocationRatioBps,
+      'application_id': applicationId,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'order_id': orderId,
+      'order_item_id': orderItemId,
+      'organization_id': organizationId,
+      'sku_id': skuId,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class PromotionDiscountApplicationRecord {
+  final String? applicationNo;
+  final String? appliedAt;
+  final String? budgetAccountId;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? failureCode;
+  final String? failureMessage;
+  final String? idempotencyKey;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? orderId;
+  final String? orderNo;
+  final String? organizationId;
+  final String? paymentId;
+  final String? releasedAt;
+  final String? requestNo;
+  final String? reservationExpiresAt;
+  final String? reservedAt;
+  final String? rolledBackAt;
+  final Map<String, dynamic>? ruleSnapshotJson;
+  final String? settledAt;
+  final String? status;
+  final String? stockId;
+  final String? subjectId;
+  final String? subjectType;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userCouponId;
+
+  PromotionDiscountApplicationRecord({
+    this.applicationNo,
+    this.appliedAt,
+    this.budgetAccountId,
+    this.createdAt,
+    this.currencyCode,
+    this.failureCode,
+    this.failureMessage,
+    this.idempotencyKey,
+    this.offerId,
+    this.offerVersionId,
+    this.orderId,
+    this.orderNo,
+    this.organizationId,
+    this.paymentId,
+    this.releasedAt,
+    this.requestNo,
+    this.reservationExpiresAt,
+    this.reservedAt,
+    this.rolledBackAt,
+    this.ruleSnapshotJson,
+    this.settledAt,
+    this.status,
+    this.stockId,
+    this.subjectId,
+    this.subjectType,
+    this.tenantId,
+    this.updatedAt,
+    this.userCouponId
+  });
+
+  factory PromotionDiscountApplicationRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionDiscountApplicationRecord(
+      applicationNo: json['application_no']?.toString(),
+      appliedAt: json['applied_at']?.toString(),
+      budgetAccountId: json['budget_account_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      failureCode: json['failure_code']?.toString(),
+      failureMessage: json['failure_message']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      orderId: json['order_id']?.toString(),
+      orderNo: json['order_no']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      paymentId: json['payment_id']?.toString(),
+      releasedAt: json['released_at']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      reservationExpiresAt: json['reservation_expires_at']?.toString(),
+      reservedAt: json['reserved_at']?.toString(),
+      rolledBackAt: json['rolled_back_at']?.toString(),
+      ruleSnapshotJson: (() {
+        final map = _sdkworkAsMap(json['rule_snapshot_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      settledAt: json['settled_at']?.toString(),
+      status: json['status']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      subjectId: json['subject_id']?.toString(),
+      subjectType: json['subject_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userCouponId: json['user_coupon_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'application_no': applicationNo,
+      'applied_at': appliedAt,
+      'budget_account_id': budgetAccountId,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'failure_code': failureCode,
+      'failure_message': failureMessage,
+      'idempotency_key': idempotencyKey,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'order_id': orderId,
+      'order_no': orderNo,
+      'organization_id': organizationId,
+      'payment_id': paymentId,
+      'released_at': releasedAt,
+      'request_no': requestNo,
+      'reservation_expires_at': reservationExpiresAt,
+      'reserved_at': reservedAt,
+      'rolled_back_at': rolledBackAt,
+      'rule_snapshot_json': ruleSnapshotJson?.map((key, item) => MapEntry(key, item)),
+      'settled_at': settledAt,
+      'status': status,
+      'stock_id': stockId,
+      'subject_id': subjectId,
+      'subject_type': subjectType,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_coupon_id': userCouponId,
+    };
+  }
+}
+
+class PromotionEventOutboxRecord {
+  final String? aggregateId;
+  final String? aggregateType;
+  final String? createdAt;
+  final String? eventNo;
+  final String? eventType;
+  final int? eventVersion;
+  final String? nextRetryAt;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? payloadHash;
+  final Map<String, dynamic>? payloadJson;
+  final String? publishedAt;
+  final String? status;
+  final String? tenantId;
+
+  PromotionEventOutboxRecord({
+    this.aggregateId,
+    this.aggregateType,
+    this.createdAt,
+    this.eventNo,
+    this.eventType,
+    this.eventVersion,
+    this.nextRetryAt,
+    this.occurredAt,
+    this.organizationId,
+    this.payloadHash,
+    this.payloadJson,
+    this.publishedAt,
+    this.status,
+    this.tenantId
+  });
+
+  factory PromotionEventOutboxRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionEventOutboxRecord(
+      aggregateId: json['aggregate_id']?.toString(),
+      aggregateType: json['aggregate_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      eventNo: json['event_no']?.toString(),
+      eventType: json['event_type']?.toString(),
+      eventVersion: json['event_version'] is int ? json['event_version'] : null,
+      nextRetryAt: json['next_retry_at']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      payloadJson: (() {
+        final map = _sdkworkAsMap(json['payload_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      publishedAt: json['published_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aggregate_id': aggregateId,
+      'aggregate_type': aggregateType,
+      'created_at': createdAt,
+      'event_no': eventNo,
+      'event_type': eventType,
+      'event_version': eventVersion,
+      'next_retry_at': nextRetryAt,
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'payload_json': payloadJson?.map((key, item) => MapEntry(key, item)),
+      'published_at': publishedAt,
+      'status': status,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class PromotionExternalBindingRecord {
+  final String? bindingNo;
+  final String? claimCodeHash;
+  final String? claimCodeSuffix;
+  final String? codeId;
+  final String? createdAt;
+  final String? createdBy;
+  final String? externalCurrencyCode;
+  final String? externalMerchantId;
+  final String? externalObjectId;
+  final String? externalObjectType;
+  final String? lastErrorCode;
+  final String? lastErrorMessage;
+  final String? lastSyncAt;
+  final Map<String, dynamic>? metadataJson;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? platform;
+  final String? platformCardId;
+  final String? platformCouponId;
+  final String? platformStockId;
+  final String? platformTemplateId;
+  final String? stockId;
+  final String? syncStatus;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? updatedBy;
+  final String? userCouponId;
+
+  PromotionExternalBindingRecord({
+    this.bindingNo,
+    this.claimCodeHash,
+    this.claimCodeSuffix,
+    this.codeId,
+    this.createdAt,
+    this.createdBy,
+    this.externalCurrencyCode,
+    this.externalMerchantId,
+    this.externalObjectId,
+    this.externalObjectType,
+    this.lastErrorCode,
+    this.lastErrorMessage,
+    this.lastSyncAt,
+    this.metadataJson,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.platform,
+    this.platformCardId,
+    this.platformCouponId,
+    this.platformStockId,
+    this.platformTemplateId,
+    this.stockId,
+    this.syncStatus,
+    this.tenantId,
+    this.updatedAt,
+    this.updatedBy,
+    this.userCouponId
+  });
+
+  factory PromotionExternalBindingRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionExternalBindingRecord(
+      bindingNo: json['binding_no']?.toString(),
+      claimCodeHash: json['claim_code_hash']?.toString(),
+      claimCodeSuffix: json['claim_code_suffix']?.toString(),
+      codeId: json['code_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      externalCurrencyCode: json['external_currency_code']?.toString(),
+      externalMerchantId: json['external_merchant_id']?.toString(),
+      externalObjectId: json['external_object_id']?.toString(),
+      externalObjectType: json['external_object_type']?.toString(),
+      lastErrorCode: json['last_error_code']?.toString(),
+      lastErrorMessage: json['last_error_message']?.toString(),
+      lastSyncAt: json['last_sync_at']?.toString(),
+      metadataJson: (() {
+        final map = _sdkworkAsMap(json['metadata_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      platform: json['platform']?.toString(),
+      platformCardId: json['platform_card_id']?.toString(),
+      platformCouponId: json['platform_coupon_id']?.toString(),
+      platformStockId: json['platform_stock_id']?.toString(),
+      platformTemplateId: json['platform_template_id']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      syncStatus: json['sync_status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString(),
+      userCouponId: json['user_coupon_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'binding_no': bindingNo,
+      'claim_code_hash': claimCodeHash,
+      'claim_code_suffix': claimCodeSuffix,
+      'code_id': codeId,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'external_currency_code': externalCurrencyCode,
+      'external_merchant_id': externalMerchantId,
+      'external_object_id': externalObjectId,
+      'external_object_type': externalObjectType,
+      'last_error_code': lastErrorCode,
+      'last_error_message': lastErrorMessage,
+      'last_sync_at': lastSyncAt,
+      'metadata_json': metadataJson?.map((key, item) => MapEntry(key, item)),
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'platform': platform,
+      'platform_card_id': platformCardId,
+      'platform_coupon_id': platformCouponId,
+      'platform_stock_id': platformStockId,
+      'platform_template_id': platformTemplateId,
+      'stock_id': stockId,
+      'sync_status': syncStatus,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+      'user_coupon_id': userCouponId,
+    };
+  }
+}
+
+class PromotionExternalOperationRecord {
+  final String? aggregateId;
+  final String? aggregateType;
+  final String? bindingId;
+  final String? callbackAt;
+  final String? callbackId;
+  final String? callbackSigHash;
+  final String? cancelUntil;
+  final String? createdAt;
+  final String? errorCode;
+  final String? errorMessage;
+  final String? externalOperationId;
+  final String? externalRequestNo;
+  final String? externalStatus;
+  final String? idempotencyKey;
+  final String? nextRetryAt;
+  final String? occurredAt;
+  final String? operationNo;
+  final String? operationType;
+  final String? organizationId;
+  final String? platform;
+  final String? providerCode;
+  final String? providerRequestId;
+  final String? replayOpId;
+  final String? requestHash;
+  final String? responseHash;
+  final Map<String, dynamic>? sanitizedRequestJson;
+  final Map<String, dynamic>? sanitizedResponseJson;
+  final String? status;
+  final String? tenantId;
+
+  PromotionExternalOperationRecord({
+    this.aggregateId,
+    this.aggregateType,
+    this.bindingId,
+    this.callbackAt,
+    this.callbackId,
+    this.callbackSigHash,
+    this.cancelUntil,
+    this.createdAt,
+    this.errorCode,
+    this.errorMessage,
+    this.externalOperationId,
+    this.externalRequestNo,
+    this.externalStatus,
+    this.idempotencyKey,
+    this.nextRetryAt,
+    this.occurredAt,
+    this.operationNo,
+    this.operationType,
+    this.organizationId,
+    this.platform,
+    this.providerCode,
+    this.providerRequestId,
+    this.replayOpId,
+    this.requestHash,
+    this.responseHash,
+    this.sanitizedRequestJson,
+    this.sanitizedResponseJson,
+    this.status,
+    this.tenantId
+  });
+
+  factory PromotionExternalOperationRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionExternalOperationRecord(
+      aggregateId: json['aggregate_id']?.toString(),
+      aggregateType: json['aggregate_type']?.toString(),
+      bindingId: json['binding_id']?.toString(),
+      callbackAt: json['callback_at']?.toString(),
+      callbackId: json['callback_id']?.toString(),
+      callbackSigHash: json['callback_sig_hash']?.toString(),
+      cancelUntil: json['cancel_until']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      errorCode: json['error_code']?.toString(),
+      errorMessage: json['error_message']?.toString(),
+      externalOperationId: json['external_operation_id']?.toString(),
+      externalRequestNo: json['external_request_no']?.toString(),
+      externalStatus: json['external_status']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      nextRetryAt: json['next_retry_at']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      operationNo: json['operation_no']?.toString(),
+      operationType: json['operation_type']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      platform: json['platform']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      providerRequestId: json['provider_request_id']?.toString(),
+      replayOpId: json['replay_op_id']?.toString(),
+      requestHash: json['request_hash']?.toString(),
+      responseHash: json['response_hash']?.toString(),
+      sanitizedRequestJson: (() {
+        final map = _sdkworkAsMap(json['sanitized_request_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      sanitizedResponseJson: (() {
+        final map = _sdkworkAsMap(json['sanitized_response_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aggregate_id': aggregateId,
+      'aggregate_type': aggregateType,
+      'binding_id': bindingId,
+      'callback_at': callbackAt,
+      'callback_id': callbackId,
+      'callback_sig_hash': callbackSigHash,
+      'cancel_until': cancelUntil,
+      'created_at': createdAt,
+      'error_code': errorCode,
+      'error_message': errorMessage,
+      'external_operation_id': externalOperationId,
+      'external_request_no': externalRequestNo,
+      'external_status': externalStatus,
+      'idempotency_key': idempotencyKey,
+      'next_retry_at': nextRetryAt,
+      'occurred_at': occurredAt,
+      'operation_no': operationNo,
+      'operation_type': operationType,
+      'organization_id': organizationId,
+      'platform': platform,
+      'provider_code': providerCode,
+      'provider_request_id': providerRequestId,
+      'replay_op_id': replayOpId,
+      'request_hash': requestHash,
+      'response_hash': responseHash,
+      'sanitized_request_json': sanitizedRequestJson?.map((key, item) => MapEntry(key, item)),
+      'sanitized_response_json': sanitizedResponseJson?.map((key, item) => MapEntry(key, item)),
+      'status': status,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class PromotionOfferAudienceRuleRecord {
+  final String? createdAt;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? ruleOperator;
+  final String? ruleType;
+  final String? ruleValue;
+  final Map<String, dynamic>? ruleValueJson;
+  final String? tenantId;
+  final String? updatedAt;
+
+  PromotionOfferAudienceRuleRecord({
+    this.createdAt,
+    this.offerVersionId,
+    this.organizationId,
+    this.ruleOperator,
+    this.ruleType,
+    this.ruleValue,
+    this.ruleValueJson,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory PromotionOfferAudienceRuleRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionOfferAudienceRuleRecord(
+      createdAt: json['created_at']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ruleOperator: json['rule_operator']?.toString(),
+      ruleType: json['rule_type']?.toString(),
+      ruleValue: json['rule_value']?.toString(),
+      ruleValueJson: (() {
+        final map = _sdkworkAsMap(json['rule_value_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'rule_operator': ruleOperator,
+      'rule_type': ruleType,
+      'rule_value': ruleValue,
+      'rule_value_json': ruleValueJson?.map((key, item) => MapEntry(key, item)),
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class PromotionOfferPresentationRecord {
+  final String? brandName;
+  final String? coverAssetId;
+  final String? createdAt;
+  final String? createdBy;
+  final Map<String, dynamic>? customerActionJson;
+  final String? displayName;
+  final Map<String, dynamic>? fieldSchemaJson;
+  final String? locale;
+  final String? logoAssetId;
+  final String? merchantDisplayName;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final Map<String, dynamic>? paramSchemaJson;
+  final String? presentationNo;
+  final String? primaryColor;
+  final String? recognitionHash;
+  final String? recognitionType;
+  final String? secondaryColor;
+  final String? status;
+  final Map<String, dynamic>? styleSnapshotJson;
+  final String? surfaceType;
+  final String? tenantId;
+  final Map<String, dynamic>? termsJson;
+  final String? updatedAt;
+  final String? updatedBy;
+  final String? verifyMethod;
+
+  PromotionOfferPresentationRecord({
+    this.brandName,
+    this.coverAssetId,
+    this.createdAt,
+    this.createdBy,
+    this.customerActionJson,
+    this.displayName,
+    this.fieldSchemaJson,
+    this.locale,
+    this.logoAssetId,
+    this.merchantDisplayName,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.paramSchemaJson,
+    this.presentationNo,
+    this.primaryColor,
+    this.recognitionHash,
+    this.recognitionType,
+    this.secondaryColor,
+    this.status,
+    this.styleSnapshotJson,
+    this.surfaceType,
+    this.tenantId,
+    this.termsJson,
+    this.updatedAt,
+    this.updatedBy,
+    this.verifyMethod
+  });
+
+  factory PromotionOfferPresentationRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionOfferPresentationRecord(
+      brandName: json['brand_name']?.toString(),
+      coverAssetId: json['cover_asset_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      customerActionJson: (() {
+        final map = _sdkworkAsMap(json['customer_action_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      displayName: json['display_name']?.toString(),
+      fieldSchemaJson: (() {
+        final map = _sdkworkAsMap(json['field_schema_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      locale: json['locale']?.toString(),
+      logoAssetId: json['logo_asset_id']?.toString(),
+      merchantDisplayName: json['merchant_display_name']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      paramSchemaJson: (() {
+        final map = _sdkworkAsMap(json['param_schema_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      presentationNo: json['presentation_no']?.toString(),
+      primaryColor: json['primary_color']?.toString(),
+      recognitionHash: json['recognition_hash']?.toString(),
+      recognitionType: json['recognition_type']?.toString(),
+      secondaryColor: json['secondary_color']?.toString(),
+      status: json['status']?.toString(),
+      styleSnapshotJson: (() {
+        final map = _sdkworkAsMap(json['style_snapshot_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      surfaceType: json['surface_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      termsJson: (() {
+        final map = _sdkworkAsMap(json['terms_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString(),
+      verifyMethod: json['verify_method']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'brand_name': brandName,
+      'cover_asset_id': coverAssetId,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'customer_action_json': customerActionJson?.map((key, item) => MapEntry(key, item)),
+      'display_name': displayName,
+      'field_schema_json': fieldSchemaJson?.map((key, item) => MapEntry(key, item)),
+      'locale': locale,
+      'logo_asset_id': logoAssetId,
+      'merchant_display_name': merchantDisplayName,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'param_schema_json': paramSchemaJson?.map((key, item) => MapEntry(key, item)),
+      'presentation_no': presentationNo,
+      'primary_color': primaryColor,
+      'recognition_hash': recognitionHash,
+      'recognition_type': recognitionType,
+      'secondary_color': secondaryColor,
+      'status': status,
+      'style_snapshot_json': styleSnapshotJson?.map((key, item) => MapEntry(key, item)),
+      'surface_type': surfaceType,
+      'tenant_id': tenantId,
+      'terms_json': termsJson?.map((key, item) => MapEntry(key, item)),
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+      'verify_method': verifyMethod,
+    };
+  }
+}
+
+class PromotionOfferRecord {
+  final String? audienceScope;
+  final String? combinability;
+  final String? createdAt;
+  final String? createdBy;
+  final String? currentOfferVersionId;
+  final String? description;
+  final String? endsAt;
+  final String? name;
+  final String? offerCode;
+  final String? offerNo;
+  final String? offerType;
+  final String? organizationId;
+  final String? startsAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? updatedBy;
+
+  PromotionOfferRecord({
+    this.audienceScope,
+    this.combinability,
+    this.createdAt,
+    this.createdBy,
+    this.currentOfferVersionId,
+    this.description,
+    this.endsAt,
+    this.name,
+    this.offerCode,
+    this.offerNo,
+    this.offerType,
+    this.organizationId,
+    this.startsAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.updatedBy
+  });
+
+  factory PromotionOfferRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionOfferRecord(
+      audienceScope: json['audience_scope']?.toString(),
+      combinability: json['combinability']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      currentOfferVersionId: json['current_offer_version_id']?.toString(),
+      description: json['description']?.toString(),
+      endsAt: json['ends_at']?.toString(),
+      name: json['name']?.toString(),
+      offerCode: json['offer_code']?.toString(),
+      offerNo: json['offer_no']?.toString(),
+      offerType: json['offer_type']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'audience_scope': audienceScope,
+      'combinability': combinability,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'current_offer_version_id': currentOfferVersionId,
+      'description': description,
+      'ends_at': endsAt,
+      'name': name,
+      'offer_code': offerCode,
+      'offer_no': offerNo,
+      'offer_type': offerType,
+      'organization_id': organizationId,
+      'starts_at': startsAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+    };
+  }
+}
+
+class PromotionOfferScopeRecord {
+  final String? createdAt;
+  final String? matchMode;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? scopeType;
+  final String? targetCode;
+  final String? targetId;
+  final String? tenantId;
+  final String? updatedAt;
+
+  PromotionOfferScopeRecord({
+    this.createdAt,
+    this.matchMode,
+    this.offerVersionId,
+    this.organizationId,
+    this.scopeType,
+    this.targetCode,
+    this.targetId,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory PromotionOfferScopeRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionOfferScopeRecord(
+      createdAt: json['created_at']?.toString(),
+      matchMode: json['match_mode']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      targetCode: json['target_code']?.toString(),
+      targetId: json['target_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'match_mode': matchMode,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'scope_type': scopeType,
+      'target_code': targetCode,
+      'target_id': targetId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class PromotionOfferTimeWindowRecord {
+  final String? createdAt;
+  final String? endsAt;
+  final String? localEndTime;
+  final String? localStartTime;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? startsAt;
+  final String? tenantId;
+  final String? timezone;
+  final String? updatedAt;
+  final int? weekdayMask;
+  final String? windowType;
+
+  PromotionOfferTimeWindowRecord({
+    this.createdAt,
+    this.endsAt,
+    this.localEndTime,
+    this.localStartTime,
+    this.offerVersionId,
+    this.organizationId,
+    this.startsAt,
+    this.tenantId,
+    this.timezone,
+    this.updatedAt,
+    this.weekdayMask,
+    this.windowType
+  });
+
+  factory PromotionOfferTimeWindowRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionOfferTimeWindowRecord(
+      createdAt: json['created_at']?.toString(),
+      endsAt: json['ends_at']?.toString(),
+      localEndTime: json['local_end_time']?.toString(),
+      localStartTime: json['local_start_time']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      timezone: json['timezone']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      weekdayMask: json['weekday_mask'] is int ? json['weekday_mask'] : null,
+      windowType: json['window_type']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'ends_at': endsAt,
+      'local_end_time': localEndTime,
+      'local_start_time': localStartTime,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'starts_at': startsAt,
+      'tenant_id': tenantId,
+      'timezone': timezone,
+      'updated_at': updatedAt,
+      'weekday_mask': weekdayMask,
+      'window_type': windowType,
+    };
+  }
+}
+
+class PromotionOfferVersionRecord {
+  final String? benefitDefinitionId;
+  final String? benefitKind;
+  final String? benefitQuantity;
+  final String? breakagePolicy;
+  final String? createdAt;
+  final String? createdBy;
+  final String? currencyCode;
+  final String? discountAmountMinor;
+  final int? discountPercentBps;
+  final String? discountType;
+  final String? faceValueMinor;
+  final String? fixedPriceMinor;
+  final String? liabilityPolicy;
+  final String? lifecycleStatus;
+  final String? maximumDiscountAmountMinor;
+  final String? offerId;
+  final String? organizationId;
+  final String? publishedAt;
+  final String? returnPolicy;
+  final Map<String, dynamic>? ruleSnapshotJson;
+  final String? settlementPolicy;
+  final String? stackStrategy;
+  final String? taxTreatment;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? updatedBy;
+  final String? validityDurationSeconds;
+  final String? validityType;
+  final String? versionNo;
+
+  PromotionOfferVersionRecord({
+    this.benefitDefinitionId,
+    this.benefitKind,
+    this.benefitQuantity,
+    this.breakagePolicy,
+    this.createdAt,
+    this.createdBy,
+    this.currencyCode,
+    this.discountAmountMinor,
+    this.discountPercentBps,
+    this.discountType,
+    this.faceValueMinor,
+    this.fixedPriceMinor,
+    this.liabilityPolicy,
+    this.lifecycleStatus,
+    this.maximumDiscountAmountMinor,
+    this.offerId,
+    this.organizationId,
+    this.publishedAt,
+    this.returnPolicy,
+    this.ruleSnapshotJson,
+    this.settlementPolicy,
+    this.stackStrategy,
+    this.taxTreatment,
+    this.tenantId,
+    this.updatedAt,
+    this.updatedBy,
+    this.validityDurationSeconds,
+    this.validityType,
+    this.versionNo
+  });
+
+  factory PromotionOfferVersionRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionOfferVersionRecord(
+      benefitDefinitionId: json['benefit_definition_id']?.toString(),
+      benefitKind: json['benefit_kind']?.toString(),
+      benefitQuantity: json['benefit_quantity']?.toString(),
+      breakagePolicy: json['breakage_policy']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      discountAmountMinor: json['discount_amount_minor']?.toString(),
+      discountPercentBps: json['discount_percent_bps'] is int ? json['discount_percent_bps'] : null,
+      discountType: json['discount_type']?.toString(),
+      faceValueMinor: json['face_value_minor']?.toString(),
+      fixedPriceMinor: json['fixed_price_minor']?.toString(),
+      liabilityPolicy: json['liability_policy']?.toString(),
+      lifecycleStatus: json['lifecycle_status']?.toString(),
+      maximumDiscountAmountMinor: json['maximum_discount_amount_minor']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      returnPolicy: json['return_policy']?.toString(),
+      ruleSnapshotJson: (() {
+        final map = _sdkworkAsMap(json['rule_snapshot_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      settlementPolicy: json['settlement_policy']?.toString(),
+      stackStrategy: json['stack_strategy']?.toString(),
+      taxTreatment: json['tax_treatment']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString(),
+      validityDurationSeconds: json['validity_duration_seconds']?.toString(),
+      validityType: json['validity_type']?.toString(),
+      versionNo: json['version_no']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'benefit_definition_id': benefitDefinitionId,
+      'benefit_kind': benefitKind,
+      'benefit_quantity': benefitQuantity,
+      'breakage_policy': breakagePolicy,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'currency_code': currencyCode,
+      'discount_amount_minor': discountAmountMinor,
+      'discount_percent_bps': discountPercentBps,
+      'discount_type': discountType,
+      'face_value_minor': faceValueMinor,
+      'fixed_price_minor': fixedPriceMinor,
+      'liability_policy': liabilityPolicy,
+      'lifecycle_status': lifecycleStatus,
+      'maximum_discount_amount_minor': maximumDiscountAmountMinor,
+      'offer_id': offerId,
+      'organization_id': organizationId,
+      'published_at': publishedAt,
+      'return_policy': returnPolicy,
+      'rule_snapshot_json': ruleSnapshotJson?.map((key, item) => MapEntry(key, item)),
+      'settlement_policy': settlementPolicy,
+      'stack_strategy': stackStrategy,
+      'tax_treatment': taxTreatment,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+      'validity_duration_seconds': validityDurationSeconds,
+      'validity_type': validityType,
+      'version_no': versionNo,
+    };
+  }
+}
+
+class PromotionUserCouponRecord {
+  final String? activationStatus;
+  final String? budgetAccountId;
+  final bool? canResend;
+  final String? cancelUntil;
+  final String? claimCodeHash;
+  final String? claimCodeSuffix;
+  final String? claimSource;
+  final String? claimedAt;
+  final String? codeId;
+  final String? couponCodeHash;
+  final String? couponCodeSuffix;
+  final String? couponNo;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? disabledAt;
+  final int? discountPercentBps;
+  final String? expiresAt;
+  final String? idempotencyKey;
+  final String? lockExpiresAt;
+  final String? lockedAt;
+  final String? offerId;
+  final String? offerVersionId;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? recognitionHash;
+  final String? recognitionType;
+  final String? redeemedAt;
+  final String? requestNo;
+  final String? returnedAt;
+  final String? status;
+  final String? stockId;
+  final String? subjectId;
+  final String? subjectType;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? validFrom;
+  final String? verifyMethod;
+
+  PromotionUserCouponRecord({
+    this.activationStatus,
+    this.budgetAccountId,
+    this.canResend,
+    this.cancelUntil,
+    this.claimCodeHash,
+    this.claimCodeSuffix,
+    this.claimSource,
+    this.claimedAt,
+    this.codeId,
+    this.couponCodeHash,
+    this.couponCodeSuffix,
+    this.couponNo,
+    this.createdAt,
+    this.currencyCode,
+    this.disabledAt,
+    this.discountPercentBps,
+    this.expiresAt,
+    this.idempotencyKey,
+    this.lockExpiresAt,
+    this.lockedAt,
+    this.offerId,
+    this.offerVersionId,
+    this.organizationId,
+    this.ownerUserId,
+    this.recognitionHash,
+    this.recognitionType,
+    this.redeemedAt,
+    this.requestNo,
+    this.returnedAt,
+    this.status,
+    this.stockId,
+    this.subjectId,
+    this.subjectType,
+    this.tenantId,
+    this.updatedAt,
+    this.validFrom,
+    this.verifyMethod
+  });
+
+  factory PromotionUserCouponRecord.fromJson(Map<String, dynamic> json) {
+    return PromotionUserCouponRecord(
+      activationStatus: json['activation_status']?.toString(),
+      budgetAccountId: json['budget_account_id']?.toString(),
+      canResend: json['can_resend'] is bool ? json['can_resend'] : null,
+      cancelUntil: json['cancel_until']?.toString(),
+      claimCodeHash: json['claim_code_hash']?.toString(),
+      claimCodeSuffix: json['claim_code_suffix']?.toString(),
+      claimSource: json['claim_source']?.toString(),
+      claimedAt: json['claimed_at']?.toString(),
+      codeId: json['code_id']?.toString(),
+      couponCodeHash: json['coupon_code_hash']?.toString(),
+      couponCodeSuffix: json['coupon_code_suffix']?.toString(),
+      couponNo: json['coupon_no']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      disabledAt: json['disabled_at']?.toString(),
+      discountPercentBps: json['discount_percent_bps'] is int ? json['discount_percent_bps'] : null,
+      expiresAt: json['expires_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      lockExpiresAt: json['lock_expires_at']?.toString(),
+      lockedAt: json['locked_at']?.toString(),
+      offerId: json['offer_id']?.toString(),
+      offerVersionId: json['offer_version_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      recognitionHash: json['recognition_hash']?.toString(),
+      recognitionType: json['recognition_type']?.toString(),
+      redeemedAt: json['redeemed_at']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      returnedAt: json['returned_at']?.toString(),
+      status: json['status']?.toString(),
+      stockId: json['stock_id']?.toString(),
+      subjectId: json['subject_id']?.toString(),
+      subjectType: json['subject_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      validFrom: json['valid_from']?.toString(),
+      verifyMethod: json['verify_method']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'activation_status': activationStatus,
+      'budget_account_id': budgetAccountId,
+      'can_resend': canResend,
+      'cancel_until': cancelUntil,
+      'claim_code_hash': claimCodeHash,
+      'claim_code_suffix': claimCodeSuffix,
+      'claim_source': claimSource,
+      'claimed_at': claimedAt,
+      'code_id': codeId,
+      'coupon_code_hash': couponCodeHash,
+      'coupon_code_suffix': couponCodeSuffix,
+      'coupon_no': couponNo,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'disabled_at': disabledAt,
+      'discount_percent_bps': discountPercentBps,
+      'expires_at': expiresAt,
+      'idempotency_key': idempotencyKey,
+      'lock_expires_at': lockExpiresAt,
+      'locked_at': lockedAt,
+      'offer_id': offerId,
+      'offer_version_id': offerVersionId,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'recognition_hash': recognitionHash,
+      'recognition_type': recognitionType,
+      'redeemed_at': redeemedAt,
+      'request_no': requestNo,
+      'returned_at': returnedAt,
+      'status': status,
+      'stock_id': stockId,
+      'subject_id': subjectId,
+      'subject_type': subjectType,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'valid_from': validFrom,
+      'verify_method': verifyMethod,
+    };
+  }
+}
+
+class PromotionsBudgetLedgerEntriesListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsBudgetLedgerEntriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsBudgetLedgerEntriesListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsBudgetLedgerEntriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsCodesListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsCodesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsCodesListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsCodesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsCodesRedemptionsListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsCodesRedemptionsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsCodesRedemptionsListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsCodesRedemptionsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsCouponLedgerEntriesListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsCouponLedgerEntriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsCouponLedgerEntriesListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsCouponLedgerEntriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsCouponStocksListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsCouponStocksListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsCouponStocksListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsCouponStocksListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsDiscountAllocationsListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsDiscountAllocationsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsDiscountAllocationsListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsDiscountAllocationsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsDiscountApplicationsListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsDiscountApplicationsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsDiscountApplicationsListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsDiscountApplicationsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsEventsListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsEventsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsEventsListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsEventsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsExternalBindingsListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsExternalBindingsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsExternalBindingsListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsExternalBindingsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsOffersManagementListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsOffersManagementListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsOffersManagementListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsOffersManagementListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PromotionsUserCouponsManagementListResult {
+  final String? code;
+  final PromotionCollectionResponse? data;
+  final String? msg;
+
+  PromotionsUserCouponsManagementListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PromotionsUserCouponsManagementListResult.fromJson(Map<String, dynamic> json) {
+    return PromotionsUserCouponsManagementListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : PromotionCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ProviderAccountsCreateResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  ProviderAccountsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ProviderAccountsCreateResult.fromJson(Map<String, dynamic> json) {
+    return ProviderAccountsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ProviderAccountsListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  ProviderAccountsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ProviderAccountsListResult.fromJson(Map<String, dynamic> json) {
+    return ProviderAccountsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class ProviderCircuitBreakerPolicy {
   final int? failureThreshold;
 
@@ -39088,6 +54602,37 @@ class ProviderCircuitBreakerPolicy {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'failureThreshold': failureThreshold,
+    };
+  }
+}
+
+class ProviderRegistryListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  ProviderRegistryListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ProviderRegistryListResult.fromJson(Map<String, dynamic> json) {
+    return ProviderRegistryListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
     };
   }
 }
@@ -39253,6 +54798,37 @@ class ProviderSecretsUpdateResult {
   }
 }
 
+class ProviderWalletAccountsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  ProviderWalletAccountsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ProviderWalletAccountsListResult.fromJson(Map<String, dynamic> json) {
+    return ProviderWalletAccountsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class ProvidersListResult {
   final String? code;
   final OpenPlatformProviderListResponse? data;
@@ -39270,6 +54846,37 @@ class ProvidersListResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : OpenPlatformProviderListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class RateLimitBucketsListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  RateLimitBucketsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RateLimitBucketsListResult.fromJson(Map<String, dynamic> json) {
+    return RateLimitBucketsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -39625,6 +55232,37 @@ class RechargesPackagesUpdateResult {
   }
 }
 
+class ReconciliationRunsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  ReconciliationRunsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ReconciliationRunsListResult.fromJson(Map<String, dynamic> json) {
+    return ReconciliationRunsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class RecordsListResult {
   final String? code;
   final AdminRecordLogsResponse? data;
@@ -39714,6 +55352,1131 @@ class RefundsRetrieveResult {
       'code': code,
       'data': data?.toJson(),
       'msg': msg,
+    };
+  }
+}
+
+class RelationsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  RelationsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RelationsListResult.fromJson(Map<String, dynamic> json) {
+    return RelationsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class RevisionsPublishResult {
+  final String? code;
+  final AdminMcpServerRevisionMutationResponse? data;
+  final String? msg;
+
+  RevisionsPublishResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RevisionsPublishResult.fromJson(Map<String, dynamic> json) {
+    return RevisionsPublishResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerRevisionMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class RiskEventsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  RiskEventsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RiskEventsListResult.fromJson(Map<String, dynamic> json) {
+    return RiskEventsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class RouteRulesCreateResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  RouteRulesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RouteRulesCreateResult.fromJson(Map<String, dynamic> json) {
+    return RouteRulesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class RouteRulesListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  RouteRulesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RouteRulesListResult.fromJson(Map<String, dynamic> json) {
+    return RouteRulesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SendRequestsListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  SendRequestsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SendRequestsListResult.fromJson(Map<String, dynamic> json) {
+    return SendRequestsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SenderIdentitiesCreateResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  SenderIdentitiesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SenderIdentitiesCreateResult.fromJson(Map<String, dynamic> json) {
+    return SenderIdentitiesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SenderIdentitiesListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  SenderIdentitiesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SenderIdentitiesListResult.fromJson(Map<String, dynamic> json) {
+    return SenderIdentitiesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersBindingsCreateResult {
+  final String? code;
+  final AdminMcpBindingMutationResponse? data;
+  final String? msg;
+
+  ServersBindingsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersBindingsCreateResult.fromJson(Map<String, dynamic> json) {
+    return ServersBindingsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpBindingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersBindingsListResult {
+  final String? code;
+  final AdminMcpBindingListResponse? data;
+  final String? msg;
+
+  ServersBindingsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersBindingsListResult.fromJson(Map<String, dynamic> json) {
+    return ServersBindingsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpBindingListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersBindingsUpdateResult {
+  final String? code;
+  final AdminMcpBindingMutationResponse? data;
+  final String? msg;
+
+  ServersBindingsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersBindingsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return ServersBindingsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpBindingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersCreateResult {
+  final String? code;
+  final AdminMcpServerMutationResponse? data;
+  final String? msg;
+
+  ServersCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersCreateResult.fromJson(Map<String, dynamic> json) {
+    return ServersCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersHealthChecksCreateResult {
+  final String? code;
+  final AdminMcpHealthCheckResponse? data;
+  final String? msg;
+
+  ServersHealthChecksCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersHealthChecksCreateResult.fromJson(Map<String, dynamic> json) {
+    return ServersHealthChecksCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpHealthCheckResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersListResult {
+  final String? code;
+  final AdminMcpServerListResponse? data;
+  final String? msg;
+
+  ServersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersListResult.fromJson(Map<String, dynamic> json) {
+    return ServersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersRetrieveResult {
+  final String? code;
+  final AdminMcpServerMutationResponse? data;
+  final String? msg;
+
+  ServersRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return ServersRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersRevisionsCreateResult {
+  final String? code;
+  final AdminMcpServerRevisionMutationResponse? data;
+  final String? msg;
+
+  ServersRevisionsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersRevisionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return ServersRevisionsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerRevisionMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersRevisionsListResult {
+  final String? code;
+  final AdminMcpServerRevisionListResponse? data;
+  final String? msg;
+
+  ServersRevisionsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersRevisionsListResult.fromJson(Map<String, dynamic> json) {
+    return ServersRevisionsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerRevisionListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersToolsListResult {
+  final String? code;
+  final AdminMcpToolListResponse? data;
+  final String? msg;
+
+  ServersToolsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersToolsListResult.fromJson(Map<String, dynamic> json) {
+    return ServersToolsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpToolListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersToolsRefreshResult {
+  final String? code;
+  final AdminMcpDiscoveryResponse? data;
+  final String? msg;
+
+  ServersToolsRefreshResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersToolsRefreshResult.fromJson(Map<String, dynamic> json) {
+    return ServersToolsRefreshResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpDiscoveryResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServersUpdateResult {
+  final String? code;
+  final AdminMcpServerMutationResponse? data;
+  final String? msg;
+
+  ServersUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServersUpdateResult.fromJson(Map<String, dynamic> json) {
+    return ServersUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpServerMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServiceNodesCreateResult {
+  final String? code;
+  final AdminServiceNodeMutationResponse? data;
+  final String? msg;
+
+  ServiceNodesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServiceNodesCreateResult.fromJson(Map<String, dynamic> json) {
+    return ServiceNodesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminServiceNodeMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServiceNodesDeleteResult {
+  final String? code;
+  final AdminServiceNodeDeleteResponse? data;
+  final String? msg;
+
+  ServiceNodesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServiceNodesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return ServiceNodesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminServiceNodeDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServiceNodesListResult {
+  final String? code;
+  final AdminServiceNodesResponse? data;
+  final String? msg;
+
+  ServiceNodesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServiceNodesListResult.fromJson(Map<String, dynamic> json) {
+    return ServiceNodesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminServiceNodesResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServiceNodesStatusUpdateResult {
+  final String? code;
+  final AdminServiceNodeMutationResponse? data;
+  final String? msg;
+
+  ServiceNodesStatusUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServiceNodesStatusUpdateResult.fromJson(Map<String, dynamic> json) {
+    return ServiceNodesStatusUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminServiceNodeMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServiceNodesUpdateResult {
+  final String? code;
+  final AdminServiceNodeMutationResponse? data;
+  final String? msg;
+
+  ServiceNodesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ServiceNodesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return ServiceNodesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminServiceNodeMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ServiceProviderCollectionResponse {
+  final List<Map<String, dynamic>>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  ServiceProviderCollectionResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory ServiceProviderCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, nestedItem) {
+          final deserialized = nestedItem?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })())
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.map((key, nestedItem) => MapEntry(key, nestedItem))).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class ServiceProviderDashboardResponse {
+  final Map<String, dynamic>? item;
+
+  ServiceProviderDashboardResponse({
+    this.item
+  });
+
+  factory ServiceProviderDashboardResponse.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderDashboardResponse(
+      item: _sdkworkAsMap(json['item'])
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item,
+    };
+  }
+}
+
+class ServiceProviderDownstreamCreateRequest {
+  final String? defaultCurrency;
+  final String? defaultMultiplier;
+  final String? displayName;
+  final String? pricePlanCode;
+  final String? providerNo;
+  final String? providerType;
+  final String? sellerProviderId;
+  final String? settlementMode;
+
+  ServiceProviderDownstreamCreateRequest({
+    this.defaultCurrency,
+    this.defaultMultiplier,
+    this.displayName,
+    this.pricePlanCode,
+    this.providerNo,
+    this.providerType,
+    this.sellerProviderId,
+    this.settlementMode
+  });
+
+  factory ServiceProviderDownstreamCreateRequest.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderDownstreamCreateRequest(
+      defaultCurrency: json['defaultCurrency']?.toString(),
+      defaultMultiplier: json['defaultMultiplier']?.toString(),
+      displayName: json['displayName']?.toString(),
+      pricePlanCode: json['pricePlanCode']?.toString(),
+      providerNo: json['providerNo']?.toString(),
+      providerType: json['providerType']?.toString(),
+      sellerProviderId: json['sellerProviderId']?.toString(),
+      settlementMode: json['settlementMode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'defaultCurrency': defaultCurrency,
+      'defaultMultiplier': defaultMultiplier,
+      'displayName': displayName,
+      'pricePlanCode': pricePlanCode,
+      'providerNo': providerNo,
+      'providerType': providerType,
+      'sellerProviderId': sellerProviderId,
+      'settlementMode': settlementMode,
+    };
+  }
+}
+
+class ServiceProviderDownstreamMutationResponse {
+  final Map<String, dynamic>? item;
+
+  ServiceProviderDownstreamMutationResponse({
+    this.item
+  });
+
+  factory ServiceProviderDownstreamMutationResponse.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderDownstreamMutationResponse(
+      item: _sdkworkAsMap(json['item'])
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item,
+    };
+  }
+}
+
+class ServiceProviderPriceSimulationRequest {
+  final String? billingMeterCode;
+  final String? buyerProviderId;
+  final String? catalogKey;
+  final String? model;
+  final String? quantity;
+  final String? tokenKind;
+
+  ServiceProviderPriceSimulationRequest({
+    this.billingMeterCode,
+    this.buyerProviderId,
+    this.catalogKey,
+    this.model,
+    this.quantity,
+    this.tokenKind
+  });
+
+  factory ServiceProviderPriceSimulationRequest.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderPriceSimulationRequest(
+      billingMeterCode: json['billingMeterCode']?.toString(),
+      buyerProviderId: json['buyerProviderId']?.toString(),
+      catalogKey: json['catalogKey']?.toString(),
+      model: json['model']?.toString(),
+      quantity: json['quantity']?.toString(),
+      tokenKind: json['tokenKind']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'billingMeterCode': billingMeterCode,
+      'buyerProviderId': buyerProviderId,
+      'catalogKey': catalogKey,
+      'model': model,
+      'quantity': quantity,
+      'tokenKind': tokenKind,
+    };
+  }
+}
+
+class ServiceProviderPriceSimulationResponse {
+  final Map<String, dynamic>? item;
+
+  ServiceProviderPriceSimulationResponse({
+    this.item
+  });
+
+  factory ServiceProviderPriceSimulationResponse.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderPriceSimulationResponse(
+      item: _sdkworkAsMap(json['item'])
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item,
+    };
+  }
+}
+
+class ServiceProviderPricingRuleCreateRequest {
+  final String? billingMeterCode;
+  final String? buyerProviderId;
+  final String? catalogKey;
+  final String? currency;
+  final String? edgeId;
+  final String? minimumCharge;
+  final String? model;
+  final String? pricePlanId;
+  final int? priority;
+  final String? sellerProviderId;
+  final String? tokenKind;
+  final String? unitPrice;
+  final String? unitSize;
+
+  ServiceProviderPricingRuleCreateRequest({
+    this.billingMeterCode,
+    this.buyerProviderId,
+    this.catalogKey,
+    this.currency,
+    this.edgeId,
+    this.minimumCharge,
+    this.model,
+    this.pricePlanId,
+    this.priority,
+    this.sellerProviderId,
+    this.tokenKind,
+    this.unitPrice,
+    this.unitSize
+  });
+
+  factory ServiceProviderPricingRuleCreateRequest.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderPricingRuleCreateRequest(
+      billingMeterCode: json['billingMeterCode']?.toString(),
+      buyerProviderId: json['buyerProviderId']?.toString(),
+      catalogKey: json['catalogKey']?.toString(),
+      currency: json['currency']?.toString(),
+      edgeId: json['edgeId']?.toString(),
+      minimumCharge: json['minimumCharge']?.toString(),
+      model: json['model']?.toString(),
+      pricePlanId: json['pricePlanId']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      sellerProviderId: json['sellerProviderId']?.toString(),
+      tokenKind: json['tokenKind']?.toString(),
+      unitPrice: json['unitPrice']?.toString(),
+      unitSize: json['unitSize']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'billingMeterCode': billingMeterCode,
+      'buyerProviderId': buyerProviderId,
+      'catalogKey': catalogKey,
+      'currency': currency,
+      'edgeId': edgeId,
+      'minimumCharge': minimumCharge,
+      'model': model,
+      'pricePlanId': pricePlanId,
+      'priority': priority,
+      'sellerProviderId': sellerProviderId,
+      'tokenKind': tokenKind,
+      'unitPrice': unitPrice,
+      'unitSize': unitSize,
+    };
+  }
+}
+
+class ServiceProviderPricingRuleMutationResponse {
+  final Map<String, dynamic>? item;
+
+  ServiceProviderPricingRuleMutationResponse({
+    this.item
+  });
+
+  factory ServiceProviderPricingRuleMutationResponse.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderPricingRuleMutationResponse(
+      item: _sdkworkAsMap(json['item'])
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item,
+    };
+  }
+}
+
+class ServiceProviderPricingRuleUpdateRequest {
+  final String? minimumCharge;
+  final int? priority;
+  final String? status;
+  final String? unitPrice;
+  final String? unitSize;
+
+  ServiceProviderPricingRuleUpdateRequest({
+    this.minimumCharge,
+    this.priority,
+    this.status,
+    this.unitPrice,
+    this.unitSize
+  });
+
+  factory ServiceProviderPricingRuleUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return ServiceProviderPricingRuleUpdateRequest(
+      minimumCharge: json['minimumCharge']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      status: json['status']?.toString(),
+      unitPrice: json['unitPrice']?.toString(),
+      unitSize: json['unitSize']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'minimumCharge': minimumCharge,
+      'priority': priority,
+      'status': status,
+      'unitPrice': unitPrice,
+      'unitSize': unitSize,
+    };
+  }
+}
+
+class SetStorageDefaultBucketRequest {
+  final String? bucketId;
+  final String? reason;
+
+  SetStorageDefaultBucketRequest({
+    this.bucketId,
+    this.reason
+  });
+
+  factory SetStorageDefaultBucketRequest.fromJson(Map<String, dynamic> json) {
+    return SetStorageDefaultBucketRequest(
+      bucketId: json['bucketId']?.toString(),
+      reason: json['reason']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucketId': bucketId,
+      'reason': reason,
     };
   }
 }
@@ -40834,6 +57597,2769 @@ class SkillsUpdateResult {
   }
 }
 
+class StatementsListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  StatementsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory StatementsListResult.fromJson(Map<String, dynamic> json) {
+    return StatementsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class StorageBucketConfig {
+  final bool? blockPublicAccess;
+  final String? bucketName;
+  final String? bucketRegion;
+  final String? createdAt;
+  final String? defaultEncryptionMode;
+  final String? defaultStorageClass;
+  final String? encryption;
+  final String? id;
+  final String? kmsKeyRef;
+  final bool? lifecycleEnabled;
+  final String? logicalScope;
+  final String? objectKeyPrefix;
+  final bool? objectLockEnabled;
+  final String? providerCode;
+  final String? providerId;
+  final bool? publicAccessBlocked;
+  final String? status;
+  final String? storageClass;
+  final String? updatedAt;
+  final bool? versioningEnabled;
+
+  StorageBucketConfig({
+    this.blockPublicAccess,
+    this.bucketName,
+    this.bucketRegion,
+    this.createdAt,
+    this.defaultEncryptionMode,
+    this.defaultStorageClass,
+    this.encryption,
+    this.id,
+    this.kmsKeyRef,
+    this.lifecycleEnabled,
+    this.logicalScope,
+    this.objectKeyPrefix,
+    this.objectLockEnabled,
+    this.providerCode,
+    this.providerId,
+    this.publicAccessBlocked,
+    this.status,
+    this.storageClass,
+    this.updatedAt,
+    this.versioningEnabled
+  });
+
+  factory StorageBucketConfig.fromJson(Map<String, dynamic> json) {
+    return StorageBucketConfig(
+      blockPublicAccess: json['blockPublicAccess'] is bool ? json['blockPublicAccess'] : null,
+      bucketName: json['bucketName']?.toString(),
+      bucketRegion: json['bucketRegion']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      defaultEncryptionMode: json['defaultEncryptionMode']?.toString(),
+      defaultStorageClass: json['defaultStorageClass']?.toString(),
+      encryption: json['encryption']?.toString(),
+      id: json['id']?.toString(),
+      kmsKeyRef: json['kmsKeyRef']?.toString(),
+      lifecycleEnabled: json['lifecycleEnabled'] is bool ? json['lifecycleEnabled'] : null,
+      logicalScope: json['logicalScope']?.toString(),
+      objectKeyPrefix: json['objectKeyPrefix']?.toString(),
+      objectLockEnabled: json['objectLockEnabled'] is bool ? json['objectLockEnabled'] : null,
+      providerCode: json['providerCode']?.toString(),
+      providerId: json['providerId']?.toString(),
+      publicAccessBlocked: json['publicAccessBlocked'] is bool ? json['publicAccessBlocked'] : null,
+      status: json['status']?.toString(),
+      storageClass: json['storageClass']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      versioningEnabled: json['versioningEnabled'] is bool ? json['versioningEnabled'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'blockPublicAccess': blockPublicAccess,
+      'bucketName': bucketName,
+      'bucketRegion': bucketRegion,
+      'createdAt': createdAt,
+      'defaultEncryptionMode': defaultEncryptionMode,
+      'defaultStorageClass': defaultStorageClass,
+      'encryption': encryption,
+      'id': id,
+      'kmsKeyRef': kmsKeyRef,
+      'lifecycleEnabled': lifecycleEnabled,
+      'logicalScope': logicalScope,
+      'objectKeyPrefix': objectKeyPrefix,
+      'objectLockEnabled': objectLockEnabled,
+      'providerCode': providerCode,
+      'providerId': providerId,
+      'publicAccessBlocked': publicAccessBlocked,
+      'status': status,
+      'storageClass': storageClass,
+      'updatedAt': updatedAt,
+      'versioningEnabled': versioningEnabled,
+    };
+  }
+}
+
+class StorageBucketListResponse {
+  final List<StorageBucketConfig>? items;
+  final String? nextCursor;
+  final String? requestId;
+
+  StorageBucketListResponse({
+    this.items,
+    this.nextCursor,
+    this.requestId
+  });
+
+  factory StorageBucketListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageBucketListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageBucketConfig.fromJson(map);
+      })())
+            .whereType<StorageBucketConfig>()
+            .toList();
+      })(),
+      nextCursor: json['nextCursor']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'nextCursor': nextCursor,
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageBucketMutationResponse {
+  final StorageBucketConfig? bucket;
+  final String? requestId;
+
+  StorageBucketMutationResponse({
+    this.bucket,
+    this.requestId
+  });
+
+  factory StorageBucketMutationResponse.fromJson(Map<String, dynamic> json) {
+    return StorageBucketMutationResponse(
+      bucket: (() {
+        final map = _sdkworkAsMap(json['bucket']);
+        return map == null ? null : StorageBucketConfig.fromJson(map);
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucket': bucket?.toJson(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageDefaultBucketConfig {
+  final String? bucketId;
+  final String? bucketName;
+  final String? dataResidencyRegion;
+  final String? id;
+  final String? logicalScope;
+  final String? providerCode;
+  final String? providerId;
+  final String? providerType;
+  final String? reason;
+  final String? region;
+  final String? status;
+  final String? updatedAt;
+
+  StorageDefaultBucketConfig({
+    this.bucketId,
+    this.bucketName,
+    this.dataResidencyRegion,
+    this.id,
+    this.logicalScope,
+    this.providerCode,
+    this.providerId,
+    this.providerType,
+    this.reason,
+    this.region,
+    this.status,
+    this.updatedAt
+  });
+
+  factory StorageDefaultBucketConfig.fromJson(Map<String, dynamic> json) {
+    return StorageDefaultBucketConfig(
+      bucketId: json['bucketId']?.toString(),
+      bucketName: json['bucketName']?.toString(),
+      dataResidencyRegion: json['dataResidencyRegion']?.toString(),
+      id: json['id']?.toString(),
+      logicalScope: json['logicalScope']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      providerId: json['providerId']?.toString(),
+      providerType: json['providerType']?.toString(),
+      reason: json['reason']?.toString(),
+      region: json['region']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucketId': bucketId,
+      'bucketName': bucketName,
+      'dataResidencyRegion': dataResidencyRegion,
+      'id': id,
+      'logicalScope': logicalScope,
+      'providerCode': providerCode,
+      'providerId': providerId,
+      'providerType': providerType,
+      'reason': reason,
+      'region': region,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class StorageDefaultBucketListResponse {
+  final List<StorageDefaultBucketConfig>? items;
+  final String? requestId;
+
+  StorageDefaultBucketListResponse({
+    this.items,
+    this.requestId
+  });
+
+  factory StorageDefaultBucketListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageDefaultBucketListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageDefaultBucketConfig.fromJson(map);
+      })())
+            .whereType<StorageDefaultBucketConfig>()
+            .toList();
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageDefaultBucketMutationResponse {
+  final StorageDefaultBucketConfig? defaultBucket;
+  final String? requestId;
+
+  StorageDefaultBucketMutationResponse({
+    this.defaultBucket,
+    this.requestId
+  });
+
+  factory StorageDefaultBucketMutationResponse.fromJson(Map<String, dynamic> json) {
+    return StorageDefaultBucketMutationResponse(
+      defaultBucket: (() {
+        final map = _sdkworkAsMap(json['defaultBucket']);
+        return map == null ? null : StorageDefaultBucketConfig.fromJson(map);
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'defaultBucket': defaultBucket?.toJson(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageDefaultBucketPolicyRecord {
+  final String? bucketId;
+  final String? bucketLogicalScope;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? logicalScope;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? reason;
+  final String? requestId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? updatedBy;
+  final String? uuid;
+  final String? version;
+
+  StorageDefaultBucketPolicyRecord({
+    this.bucketId,
+    this.bucketLogicalScope,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.logicalScope,
+    this.metadata,
+    this.organizationId,
+    this.reason,
+    this.requestId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.updatedBy,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageDefaultBucketPolicyRecord.fromJson(Map<String, dynamic> json) {
+    return StorageDefaultBucketPolicyRecord(
+      bucketId: json['bucket_id']?.toString(),
+      bucketLogicalScope: json['bucket_logical_scope']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      logicalScope: json['logical_scope']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      reason: json['reason']?.toString(),
+      requestId: json['request_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      updatedBy: json['updated_by']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucket_id': bucketId,
+      'bucket_logical_scope': bucketLogicalScope,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'logical_scope': logicalScope,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'reason': reason,
+      'request_id': requestId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'updated_by': updatedBy,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StorageGarbageCollectionJob {
+  final String? candidateCount;
+  final String? createdAt;
+  final bool? dryRun;
+  final String? id;
+  final String? jobId;
+  final String? jobType;
+  final String? retention;
+  final String? status;
+  final String? target;
+
+  StorageGarbageCollectionJob({
+    this.candidateCount,
+    this.createdAt,
+    this.dryRun,
+    this.id,
+    this.jobId,
+    this.jobType,
+    this.retention,
+    this.status,
+    this.target
+  });
+
+  factory StorageGarbageCollectionJob.fromJson(Map<String, dynamic> json) {
+    return StorageGarbageCollectionJob(
+      candidateCount: json['candidateCount']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      dryRun: json['dryRun'] is bool ? json['dryRun'] : null,
+      id: json['id']?.toString(),
+      jobId: json['jobId']?.toString(),
+      jobType: json['jobType']?.toString(),
+      retention: json['retention']?.toString(),
+      status: json['status']?.toString(),
+      target: json['target']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'candidateCount': candidateCount,
+      'createdAt': createdAt,
+      'dryRun': dryRun,
+      'id': id,
+      'jobId': jobId,
+      'jobType': jobType,
+      'retention': retention,
+      'status': status,
+      'target': target,
+    };
+  }
+}
+
+class StorageGarbageCollectionJobListResponse {
+  final List<StorageGarbageCollectionJob>? items;
+  final String? nextCursor;
+  final String? requestId;
+
+  StorageGarbageCollectionJobListResponse({
+    this.items,
+    this.nextCursor,
+    this.requestId
+  });
+
+  factory StorageGarbageCollectionJobListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageGarbageCollectionJobListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageGarbageCollectionJob.fromJson(map);
+      })())
+            .whereType<StorageGarbageCollectionJob>()
+            .toList();
+      })(),
+      nextCursor: json['nextCursor']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'nextCursor': nextCursor,
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageGarbageCollectionJobMutationResponse {
+  final StorageGarbageCollectionJob? job;
+  final String? requestId;
+
+  StorageGarbageCollectionJobMutationResponse({
+    this.job,
+    this.requestId
+  });
+
+  factory StorageGarbageCollectionJobMutationResponse.fromJson(Map<String, dynamic> json) {
+    return StorageGarbageCollectionJobMutationResponse(
+      job: (() {
+        final map = _sdkworkAsMap(json['job']);
+        return map == null ? null : StorageGarbageCollectionJob.fromJson(map);
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'job': job?.toJson(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageGcJobRecord {
+  final String? completedAt;
+  final String? createdAt;
+  final String? cursorToken;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? idempotencyKey;
+  final String? jobType;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? requestId;
+  final String? requestedBy;
+  final String? startedAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  StorageGcJobRecord({
+    this.completedAt,
+    this.createdAt,
+    this.cursorToken,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.idempotencyKey,
+    this.jobType,
+    this.metadata,
+    this.organizationId,
+    this.requestId,
+    this.requestedBy,
+    this.startedAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageGcJobRecord.fromJson(Map<String, dynamic> json) {
+    return StorageGcJobRecord(
+      completedAt: json['completed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      cursorToken: json['cursor_token']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      jobType: json['job_type']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      requestedBy: json['requested_by']?.toString(),
+      startedAt: json['started_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'completed_at': completedAt,
+      'created_at': createdAt,
+      'cursor_token': cursorToken,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'job_type': jobType,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'request_id': requestId,
+      'requested_by': requestedBy,
+      'started_at': startedAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StorageProviderConfig {
+  final String? createdAt;
+  final String? credentialRef;
+  final String? endpoint;
+  final String? endpointUrl;
+  final String? health;
+  final String? healthStatus;
+  final String? id;
+  final String? lastHealthCheckAt;
+  final bool? lifecycle;
+  final bool? multipart;
+  final bool? objectLock;
+  final bool? pathStyleEnabled;
+  final String? providerCode;
+  final String? providerType;
+  final String? region;
+  final String? status;
+  final bool? supportsLifecycle;
+  final bool? supportsMultipart;
+  final bool? supportsObjectLock;
+  final String? updatedAt;
+
+  StorageProviderConfig({
+    this.createdAt,
+    this.credentialRef,
+    this.endpoint,
+    this.endpointUrl,
+    this.health,
+    this.healthStatus,
+    this.id,
+    this.lastHealthCheckAt,
+    this.lifecycle,
+    this.multipart,
+    this.objectLock,
+    this.pathStyleEnabled,
+    this.providerCode,
+    this.providerType,
+    this.region,
+    this.status,
+    this.supportsLifecycle,
+    this.supportsMultipart,
+    this.supportsObjectLock,
+    this.updatedAt
+  });
+
+  factory StorageProviderConfig.fromJson(Map<String, dynamic> json) {
+    return StorageProviderConfig(
+      createdAt: json['createdAt']?.toString(),
+      credentialRef: json['credentialRef']?.toString(),
+      endpoint: json['endpoint']?.toString(),
+      endpointUrl: json['endpointUrl']?.toString(),
+      health: json['health']?.toString(),
+      healthStatus: json['healthStatus']?.toString(),
+      id: json['id']?.toString(),
+      lastHealthCheckAt: json['lastHealthCheckAt']?.toString(),
+      lifecycle: json['lifecycle'] is bool ? json['lifecycle'] : null,
+      multipart: json['multipart'] is bool ? json['multipart'] : null,
+      objectLock: json['objectLock'] is bool ? json['objectLock'] : null,
+      pathStyleEnabled: json['pathStyleEnabled'] is bool ? json['pathStyleEnabled'] : null,
+      providerCode: json['providerCode']?.toString(),
+      providerType: json['providerType']?.toString(),
+      region: json['region']?.toString(),
+      status: json['status']?.toString(),
+      supportsLifecycle: json['supportsLifecycle'] is bool ? json['supportsLifecycle'] : null,
+      supportsMultipart: json['supportsMultipart'] is bool ? json['supportsMultipart'] : null,
+      supportsObjectLock: json['supportsObjectLock'] is bool ? json['supportsObjectLock'] : null,
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'createdAt': createdAt,
+      'credentialRef': credentialRef,
+      'endpoint': endpoint,
+      'endpointUrl': endpointUrl,
+      'health': health,
+      'healthStatus': healthStatus,
+      'id': id,
+      'lastHealthCheckAt': lastHealthCheckAt,
+      'lifecycle': lifecycle,
+      'multipart': multipart,
+      'objectLock': objectLock,
+      'pathStyleEnabled': pathStyleEnabled,
+      'providerCode': providerCode,
+      'providerType': providerType,
+      'region': region,
+      'status': status,
+      'supportsLifecycle': supportsLifecycle,
+      'supportsMultipart': supportsMultipart,
+      'supportsObjectLock': supportsObjectLock,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class StorageProviderHealthCheckResponse {
+  final String? checkedAt;
+  final bool? healthy;
+  final String? providerId;
+  final String? requestId;
+  final String? status;
+
+  StorageProviderHealthCheckResponse({
+    this.checkedAt,
+    this.healthy,
+    this.providerId,
+    this.requestId,
+    this.status
+  });
+
+  factory StorageProviderHealthCheckResponse.fromJson(Map<String, dynamic> json) {
+    return StorageProviderHealthCheckResponse(
+      checkedAt: json['checkedAt']?.toString(),
+      healthy: json['healthy'] is bool ? json['healthy'] : null,
+      providerId: json['providerId']?.toString(),
+      requestId: json['requestId']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkedAt': checkedAt,
+      'healthy': healthy,
+      'providerId': providerId,
+      'requestId': requestId,
+      'status': status,
+    };
+  }
+}
+
+class StorageProviderListResponse {
+  final List<StorageProviderConfig>? items;
+  final String? requestId;
+
+  StorageProviderListResponse({
+    this.items,
+    this.requestId
+  });
+
+  factory StorageProviderListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageProviderListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageProviderConfig.fromJson(map);
+      })())
+            .whereType<StorageProviderConfig>()
+            .toList();
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageProviderMutationResponse {
+  final StorageProviderConfig? provider;
+  final String? requestId;
+
+  StorageProviderMutationResponse({
+    this.provider,
+    this.requestId
+  });
+
+  factory StorageProviderMutationResponse.fromJson(Map<String, dynamic> json) {
+    return StorageProviderMutationResponse(
+      provider: (() {
+        final map = _sdkworkAsMap(json['provider']);
+        return map == null ? null : StorageProviderConfig.fromJson(map);
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'provider': provider?.toJson(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageQuotaPolicy {
+  final String? createdAt;
+  final String? enforcement;
+  final String? id;
+  final int? limit;
+  final int? quotaLimitBytes;
+  final String? scopeId;
+  final String? scopeType;
+  final int? singleFileLimitBytes;
+  final String? status;
+  final String? updatedAt;
+  final int? used;
+  final int? usedBytes;
+
+  StorageQuotaPolicy({
+    this.createdAt,
+    this.enforcement,
+    this.id,
+    this.limit,
+    this.quotaLimitBytes,
+    this.scopeId,
+    this.scopeType,
+    this.singleFileLimitBytes,
+    this.status,
+    this.updatedAt,
+    this.used,
+    this.usedBytes
+  });
+
+  factory StorageQuotaPolicy.fromJson(Map<String, dynamic> json) {
+    return StorageQuotaPolicy(
+      createdAt: json['createdAt']?.toString(),
+      enforcement: json['enforcement']?.toString(),
+      id: json['id']?.toString(),
+      limit: json['limit'] is int ? json['limit'] : null,
+      quotaLimitBytes: json['quotaLimitBytes'] is int ? json['quotaLimitBytes'] : null,
+      scopeId: json['scopeId']?.toString(),
+      scopeType: json['scopeType']?.toString(),
+      singleFileLimitBytes: json['singleFileLimitBytes'] is int ? json['singleFileLimitBytes'] : null,
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      used: json['used'] is int ? json['used'] : null,
+      usedBytes: json['usedBytes'] is int ? json['usedBytes'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'createdAt': createdAt,
+      'enforcement': enforcement,
+      'id': id,
+      'limit': limit,
+      'quotaLimitBytes': quotaLimitBytes,
+      'scopeId': scopeId,
+      'scopeType': scopeType,
+      'singleFileLimitBytes': singleFileLimitBytes,
+      'status': status,
+      'updatedAt': updatedAt,
+      'used': used,
+      'usedBytes': usedBytes,
+    };
+  }
+}
+
+class StorageQuotaPolicyListResponse {
+  final List<StorageQuotaPolicy>? items;
+  final String? requestId;
+
+  StorageQuotaPolicyListResponse({
+    this.items,
+    this.requestId
+  });
+
+  factory StorageQuotaPolicyListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageQuotaPolicyListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageQuotaPolicy.fromJson(map);
+      })())
+            .whereType<StorageQuotaPolicy>()
+            .toList();
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageQuotaPolicyMutationResponse {
+  final StorageQuotaPolicy? quotaPolicy;
+  final String? requestId;
+
+  StorageQuotaPolicyMutationResponse({
+    this.quotaPolicy,
+    this.requestId
+  });
+
+  factory StorageQuotaPolicyMutationResponse.fromJson(Map<String, dynamic> json) {
+    return StorageQuotaPolicyMutationResponse(
+      quotaPolicy: (() {
+        final map = _sdkworkAsMap(json['quotaPolicy']);
+        return map == null ? null : StorageQuotaPolicy.fromJson(map);
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'quotaPolicy': quotaPolicy?.toJson(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageQuotaPolicyRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? enforcement;
+  final String? id;
+  final String? idempotencyKey;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? quotaLimitBytes;
+  final String? requestId;
+  final String? scopeId;
+  final String? scopeType;
+  final String? singleFileLimitBytes;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  StorageQuotaPolicyRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.enforcement,
+    this.id,
+    this.idempotencyKey,
+    this.metadata,
+    this.organizationId,
+    this.quotaLimitBytes,
+    this.requestId,
+    this.scopeId,
+    this.scopeType,
+    this.singleFileLimitBytes,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageQuotaPolicyRecord.fromJson(Map<String, dynamic> json) {
+    return StorageQuotaPolicyRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      enforcement: json['enforcement']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      quotaLimitBytes: json['quota_limit_bytes']?.toString(),
+      requestId: json['request_id']?.toString(),
+      scopeId: json['scope_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      singleFileLimitBytes: json['single_file_limit_bytes']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'enforcement': enforcement,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'quota_limit_bytes': quotaLimitBytes,
+      'request_id': requestId,
+      'scope_id': scopeId,
+      'scope_type': scopeType,
+      'single_file_limit_bytes': singleFileLimitBytes,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StorageQuotaReservationRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? expiresAt;
+  final String? id;
+  final String? idempotencyKey;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? releasedAt;
+  final String? reservationNo;
+  final String? scopeId;
+  final String? scopeType;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uploadSessionId;
+  final String? uuid;
+  final String? version;
+
+  StorageQuotaReservationRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.expiresAt,
+    this.id,
+    this.idempotencyKey,
+    this.metadata,
+    this.organizationId,
+    this.releasedAt,
+    this.reservationNo,
+    this.scopeId,
+    this.scopeType,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uploadSessionId,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageQuotaReservationRecord.fromJson(Map<String, dynamic> json) {
+    return StorageQuotaReservationRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      releasedAt: json['released_at']?.toString(),
+      reservationNo: json['reservation_no']?.toString(),
+      scopeId: json['scope_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uploadSessionId: json['upload_session_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'expires_at': expiresAt,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'released_at': releasedAt,
+      'reservation_no': reservationNo,
+      'scope_id': scopeId,
+      'scope_type': scopeType,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'upload_session_id': uploadSessionId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StorageReconciliationItemRecord {
+  final String? actualHash;
+  final String? actualSizeBytes;
+  final String? bucketId;
+  final String? createdAt;
+  final String? expectedHash;
+  final String? expectedSizeBytes;
+  final String? id;
+  final String? issueType;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? objectBlobId;
+  final String? objectKey;
+  final String? organizationId;
+  final String? payloadHash;
+  final Map<String, dynamic>? repairPayload;
+  final String? repairStatus;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? runId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  StorageReconciliationItemRecord({
+    this.actualHash,
+    this.actualSizeBytes,
+    this.bucketId,
+    this.createdAt,
+    this.expectedHash,
+    this.expectedSizeBytes,
+    this.id,
+    this.issueType,
+    this.legalHold,
+    this.metadata,
+    this.objectBlobId,
+    this.objectKey,
+    this.organizationId,
+    this.payloadHash,
+    this.repairPayload,
+    this.repairStatus,
+    this.requestId,
+    this.retentionUntil,
+    this.runId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory StorageReconciliationItemRecord.fromJson(Map<String, dynamic> json) {
+    return StorageReconciliationItemRecord(
+      actualHash: json['actual_hash']?.toString(),
+      actualSizeBytes: json['actual_size_bytes']?.toString(),
+      bucketId: json['bucket_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      expectedHash: json['expected_hash']?.toString(),
+      expectedSizeBytes: json['expected_size_bytes']?.toString(),
+      id: json['id']?.toString(),
+      issueType: json['issue_type']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      objectBlobId: json['object_blob_id']?.toString(),
+      objectKey: json['object_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      repairPayload: (() {
+        final map = _sdkworkAsMap(json['repair_payload']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      repairStatus: json['repair_status']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runId: json['run_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'actual_hash': actualHash,
+      'actual_size_bytes': actualSizeBytes,
+      'bucket_id': bucketId,
+      'created_at': createdAt,
+      'expected_hash': expectedHash,
+      'expected_size_bytes': expectedSizeBytes,
+      'id': id,
+      'issue_type': issueType,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'object_blob_id': objectBlobId,
+      'object_key': objectKey,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'repair_payload': repairPayload?.map((key, item) => MapEntry(key, item)),
+      'repair_status': repairStatus,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'run_id': runId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class StorageReconciliationRun {
+  final String? bucketId;
+  final String? bucketName;
+  final bool? dryRun;
+  final String? finishedAt;
+  final String? id;
+  final int? issueCount;
+  final String? issues;
+  final String? providerCode;
+  final String? providerId;
+  final String? runId;
+  final String? runType;
+  final String? scope;
+  final String? startedAt;
+  final String? status;
+
+  StorageReconciliationRun({
+    this.bucketId,
+    this.bucketName,
+    this.dryRun,
+    this.finishedAt,
+    this.id,
+    this.issueCount,
+    this.issues,
+    this.providerCode,
+    this.providerId,
+    this.runId,
+    this.runType,
+    this.scope,
+    this.startedAt,
+    this.status
+  });
+
+  factory StorageReconciliationRun.fromJson(Map<String, dynamic> json) {
+    return StorageReconciliationRun(
+      bucketId: json['bucketId']?.toString(),
+      bucketName: json['bucketName']?.toString(),
+      dryRun: json['dryRun'] is bool ? json['dryRun'] : null,
+      finishedAt: json['finishedAt']?.toString(),
+      id: json['id']?.toString(),
+      issueCount: json['issueCount'] is int ? json['issueCount'] : null,
+      issues: json['issues']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      providerId: json['providerId']?.toString(),
+      runId: json['runId']?.toString(),
+      runType: json['runType']?.toString(),
+      scope: json['scope']?.toString(),
+      startedAt: json['startedAt']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucketId': bucketId,
+      'bucketName': bucketName,
+      'dryRun': dryRun,
+      'finishedAt': finishedAt,
+      'id': id,
+      'issueCount': issueCount,
+      'issues': issues,
+      'providerCode': providerCode,
+      'providerId': providerId,
+      'runId': runId,
+      'runType': runType,
+      'scope': scope,
+      'startedAt': startedAt,
+      'status': status,
+    };
+  }
+}
+
+class StorageReconciliationRunListResponse {
+  final List<StorageReconciliationRun>? items;
+  final String? nextCursor;
+  final String? requestId;
+
+  StorageReconciliationRunListResponse({
+    this.items,
+    this.nextCursor,
+    this.requestId
+  });
+
+  factory StorageReconciliationRunListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageReconciliationRunListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageReconciliationRun.fromJson(map);
+      })())
+            .whereType<StorageReconciliationRun>()
+            .toList();
+      })(),
+      nextCursor: json['nextCursor']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'nextCursor': nextCursor,
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageReconciliationRunMutationResponse {
+  final StorageReconciliationRun? reconciliationRun;
+  final String? requestId;
+
+  StorageReconciliationRunMutationResponse({
+    this.reconciliationRun,
+    this.requestId
+  });
+
+  factory StorageReconciliationRunMutationResponse.fromJson(Map<String, dynamic> json) {
+    return StorageReconciliationRunMutationResponse(
+      reconciliationRun: (() {
+        final map = _sdkworkAsMap(json['reconciliationRun']);
+        return map == null ? null : StorageReconciliationRun.fromJson(map);
+      })(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'reconciliationRun': reconciliationRun?.toJson(),
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageReconciliationRunRecord {
+  final String? bucketId;
+  final String? checkMode;
+  final String? completedAt;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? idempotencyKey;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? providerId;
+  final String? requestId;
+  final String? requestedBy;
+  final String? runType;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  StorageReconciliationRunRecord({
+    this.bucketId,
+    this.checkMode,
+    this.completedAt,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.idempotencyKey,
+    this.metadata,
+    this.organizationId,
+    this.providerId,
+    this.requestId,
+    this.requestedBy,
+    this.runType,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageReconciliationRunRecord.fromJson(Map<String, dynamic> json) {
+    return StorageReconciliationRunRecord(
+      bucketId: json['bucket_id']?.toString(),
+      checkMode: json['check_mode']?.toString(),
+      completedAt: json['completed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      providerId: json['provider_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      requestedBy: json['requested_by']?.toString(),
+      runType: json['run_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucket_id': bucketId,
+      'check_mode': checkMode,
+      'completed_at': completedAt,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'provider_id': providerId,
+      'request_id': requestId,
+      'requested_by': requestedBy,
+      'run_type': runType,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StorageUsageCounter {
+  final int? fileCount;
+  final String? files;
+  final String? id;
+  final String? reserved;
+  final int? reservedBytes;
+  final String? scope;
+  final String? scopeId;
+  final String? scopeType;
+  final String? snapshotAt;
+  final String? updatedAt;
+  final String? used;
+  final int? usedBytes;
+
+  StorageUsageCounter({
+    this.fileCount,
+    this.files,
+    this.id,
+    this.reserved,
+    this.reservedBytes,
+    this.scope,
+    this.scopeId,
+    this.scopeType,
+    this.snapshotAt,
+    this.updatedAt,
+    this.used,
+    this.usedBytes
+  });
+
+  factory StorageUsageCounter.fromJson(Map<String, dynamic> json) {
+    return StorageUsageCounter(
+      fileCount: json['fileCount'] is int ? json['fileCount'] : null,
+      files: json['files']?.toString(),
+      id: json['id']?.toString(),
+      reserved: json['reserved']?.toString(),
+      reservedBytes: json['reservedBytes'] is int ? json['reservedBytes'] : null,
+      scope: json['scope']?.toString(),
+      scopeId: json['scopeId']?.toString(),
+      scopeType: json['scopeType']?.toString(),
+      snapshotAt: json['snapshotAt']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      used: json['used']?.toString(),
+      usedBytes: json['usedBytes'] is int ? json['usedBytes'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'fileCount': fileCount,
+      'files': files,
+      'id': id,
+      'reserved': reserved,
+      'reservedBytes': reservedBytes,
+      'scope': scope,
+      'scopeId': scopeId,
+      'scopeType': scopeType,
+      'snapshotAt': snapshotAt,
+      'updatedAt': updatedAt,
+      'used': used,
+      'usedBytes': usedBytes,
+    };
+  }
+}
+
+class StorageUsageCounterListResponse {
+  final List<StorageUsageCounter>? items;
+  final String? nextCursor;
+  final String? requestId;
+
+  StorageUsageCounterListResponse({
+    this.items,
+    this.nextCursor,
+    this.requestId
+  });
+
+  factory StorageUsageCounterListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageUsageCounterListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageUsageCounter.fromJson(map);
+      })())
+            .whereType<StorageUsageCounter>()
+            .toList();
+      })(),
+      nextCursor: json['nextCursor']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'nextCursor': nextCursor,
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageUsageCounterRecord {
+  final String? appId;
+  final String? businessDomain;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? scopeId;
+  final String? scopeType;
+  final String? spaceId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+
+  StorageUsageCounterRecord({
+    this.appId,
+    this.businessDomain,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.scopeId,
+    this.scopeType,
+    this.spaceId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageUsageCounterRecord.fromJson(Map<String, dynamic> json) {
+    return StorageUsageCounterRecord(
+      appId: json['app_id']?.toString(),
+      businessDomain: json['business_domain']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      scopeId: json['scope_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      spaceId: json['space_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_id': appId,
+      'business_domain': businessDomain,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'scope_id': scopeId,
+      'scope_type': scopeType,
+      'space_id': spaceId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StorageUsageLedgerEntry {
+  final int? deltaBytes;
+  final String? id;
+  final String? occurredAt;
+  final String? scopeId;
+  final String? scopeType;
+
+  StorageUsageLedgerEntry({
+    this.deltaBytes,
+    this.id,
+    this.occurredAt,
+    this.scopeId,
+    this.scopeType
+  });
+
+  factory StorageUsageLedgerEntry.fromJson(Map<String, dynamic> json) {
+    return StorageUsageLedgerEntry(
+      deltaBytes: json['deltaBytes'] is int ? json['deltaBytes'] : null,
+      id: json['id']?.toString(),
+      occurredAt: json['occurredAt']?.toString(),
+      scopeId: json['scopeId']?.toString(),
+      scopeType: json['scopeType']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deltaBytes': deltaBytes,
+      'id': id,
+      'occurredAt': occurredAt,
+      'scopeId': scopeId,
+      'scopeType': scopeType,
+    };
+  }
+}
+
+class StorageUsageLedgerListResponse {
+  final List<StorageUsageLedgerEntry>? items;
+  final String? nextCursor;
+  final String? requestId;
+
+  StorageUsageLedgerListResponse({
+    this.items,
+    this.nextCursor,
+    this.requestId
+  });
+
+  factory StorageUsageLedgerListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageUsageLedgerListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageUsageLedgerEntry.fromJson(map);
+      })())
+            .whereType<StorageUsageLedgerEntry>()
+            .toList();
+      })(),
+      nextCursor: json['nextCursor']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'nextCursor': nextCursor,
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageUsageLedgerRecord {
+  final String? appId;
+  final String? businessDomain;
+  final String? createdAt;
+  final String? id;
+  final String? idempotencyKey;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? reason;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? scopeId;
+  final String? scopeType;
+  final String? spaceId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? usageEventType;
+  final String? userId;
+  final String? uuid;
+
+  StorageUsageLedgerRecord({
+    this.appId,
+    this.businessDomain,
+    this.createdAt,
+    this.id,
+    this.idempotencyKey,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.reason,
+    this.requestId,
+    this.retentionUntil,
+    this.scopeId,
+    this.scopeType,
+    this.spaceId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.usageEventType,
+    this.userId,
+    this.uuid
+  });
+
+  factory StorageUsageLedgerRecord.fromJson(Map<String, dynamic> json) {
+    return StorageUsageLedgerRecord(
+      appId: json['app_id']?.toString(),
+      businessDomain: json['business_domain']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      reason: json['reason']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      scopeId: json['scope_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      spaceId: json['space_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      usageEventType: json['usage_event_type']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_id': appId,
+      'business_domain': businessDomain,
+      'created_at': createdAt,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'reason': reason,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'scope_id': scopeId,
+      'scope_type': scopeType,
+      'space_id': spaceId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'usage_event_type': usageEventType,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class StorageUsageSnapshot {
+  final int? fileCount;
+  final String? id;
+  final int? reservedBytes;
+  final String? scope;
+  final String? scopeId;
+  final String? scopeType;
+  final String? snapshotAt;
+  final String? snapshotType;
+  final int? usedBytes;
+
+  StorageUsageSnapshot({
+    this.fileCount,
+    this.id,
+    this.reservedBytes,
+    this.scope,
+    this.scopeId,
+    this.scopeType,
+    this.snapshotAt,
+    this.snapshotType,
+    this.usedBytes
+  });
+
+  factory StorageUsageSnapshot.fromJson(Map<String, dynamic> json) {
+    return StorageUsageSnapshot(
+      fileCount: json['fileCount'] is int ? json['fileCount'] : null,
+      id: json['id']?.toString(),
+      reservedBytes: json['reservedBytes'] is int ? json['reservedBytes'] : null,
+      scope: json['scope']?.toString(),
+      scopeId: json['scopeId']?.toString(),
+      scopeType: json['scopeType']?.toString(),
+      snapshotAt: json['snapshotAt']?.toString(),
+      snapshotType: json['snapshotType']?.toString(),
+      usedBytes: json['usedBytes'] is int ? json['usedBytes'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'fileCount': fileCount,
+      'id': id,
+      'reservedBytes': reservedBytes,
+      'scope': scope,
+      'scopeId': scopeId,
+      'scopeType': scopeType,
+      'snapshotAt': snapshotAt,
+      'snapshotType': snapshotType,
+      'usedBytes': usedBytes,
+    };
+  }
+}
+
+class StorageUsageSnapshotListResponse {
+  final List<StorageUsageSnapshot>? items;
+  final String? nextCursor;
+  final String? requestId;
+
+  StorageUsageSnapshotListResponse({
+    this.items,
+    this.nextCursor,
+    this.requestId
+  });
+
+  factory StorageUsageSnapshotListResponse.fromJson(Map<String, dynamic> json) {
+    return StorageUsageSnapshotListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : StorageUsageSnapshot.fromJson(map);
+      })())
+            .whereType<StorageUsageSnapshot>()
+            .toList();
+      })(),
+      nextCursor: json['nextCursor']?.toString(),
+      requestId: json['requestId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'nextCursor': nextCursor,
+      'requestId': requestId,
+    };
+  }
+}
+
+class StorageUsageSnapshotRecord {
+  final String? appId;
+  final String? businessDomain;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? scopeId;
+  final String? scopeType;
+  final String? snapshotType;
+  final String? spaceId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+
+  StorageUsageSnapshotRecord({
+    this.appId,
+    this.businessDomain,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.scopeId,
+    this.scopeType,
+    this.snapshotType,
+    this.spaceId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version
+  });
+
+  factory StorageUsageSnapshotRecord.fromJson(Map<String, dynamic> json) {
+    return StorageUsageSnapshotRecord(
+      appId: json['app_id']?.toString(),
+      businessDomain: json['business_domain']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      scopeId: json['scope_id']?.toString(),
+      scopeType: json['scope_type']?.toString(),
+      snapshotType: json['snapshot_type']?.toString(),
+      spaceId: json['space_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_id': appId,
+      'business_domain': businessDomain,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'scope_id': scopeId,
+      'scope_type': scopeType,
+      'snapshot_type': snapshotType,
+      'space_id': spaceId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StudioAppTemplateRecord {
+  final Map<String, dynamic>? appConfigSchema;
+  final Map<String, dynamic>? capabilityManifest;
+  final String? categoryCode;
+  final String? categoryId;
+  final String? coverUrl;
+  final String? createdAt;
+  final String? currentVersionId;
+  final String? dataScope;
+  final Map<String, dynamic>? defaultAppConfig;
+  final String? deletedAt;
+  final String? deletedBy;
+  final Map<String, dynamic>? dependencyManifest;
+  final String? deprecatedAt;
+  final String? description;
+  final bool? featured;
+  final String? framework;
+  final String? gitRef;
+  final String? gitRepoUrl;
+  final String? gitSubPath;
+  final String? iconUrl;
+  final String? id;
+  final String? language;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? publishStatus;
+  final String? publishedAt;
+  final String? runtime;
+  final int? sortWeight;
+  final String? sourceAppId;
+  final String? status;
+  final String? templateCode;
+  final String? templateName;
+  final String? templateNo;
+  final String? templateType;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final Map<String, dynamic>? variableSchema;
+  final String? version;
+  final String? visibility;
+
+  StudioAppTemplateRecord({
+    this.appConfigSchema,
+    this.capabilityManifest,
+    this.categoryCode,
+    this.categoryId,
+    this.coverUrl,
+    this.createdAt,
+    this.currentVersionId,
+    this.dataScope,
+    this.defaultAppConfig,
+    this.deletedAt,
+    this.deletedBy,
+    this.dependencyManifest,
+    this.deprecatedAt,
+    this.description,
+    this.featured,
+    this.framework,
+    this.gitRef,
+    this.gitRepoUrl,
+    this.gitSubPath,
+    this.iconUrl,
+    this.id,
+    this.language,
+    this.metadata,
+    this.organizationId,
+    this.ownerUserId,
+    this.publishStatus,
+    this.publishedAt,
+    this.runtime,
+    this.sortWeight,
+    this.sourceAppId,
+    this.status,
+    this.templateCode,
+    this.templateName,
+    this.templateNo,
+    this.templateType,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.variableSchema,
+    this.version,
+    this.visibility
+  });
+
+  factory StudioAppTemplateRecord.fromJson(Map<String, dynamic> json) {
+    return StudioAppTemplateRecord(
+      appConfigSchema: (() {
+        final map = _sdkworkAsMap(json['app_config_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      capabilityManifest: (() {
+        final map = _sdkworkAsMap(json['capability_manifest']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      categoryCode: json['category_code']?.toString(),
+      categoryId: json['category_id']?.toString(),
+      coverUrl: json['cover_url']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currentVersionId: json['current_version_id']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultAppConfig: (() {
+        final map = _sdkworkAsMap(json['default_app_config']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      dependencyManifest: (() {
+        final map = _sdkworkAsMap(json['dependency_manifest']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      deprecatedAt: json['deprecated_at']?.toString(),
+      description: json['description']?.toString(),
+      featured: json['featured'] is bool ? json['featured'] : null,
+      framework: json['framework']?.toString(),
+      gitRef: json['git_ref']?.toString(),
+      gitRepoUrl: json['git_repo_url']?.toString(),
+      gitSubPath: json['git_sub_path']?.toString(),
+      iconUrl: json['icon_url']?.toString(),
+      id: json['id']?.toString(),
+      language: json['language']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      publishStatus: json['publish_status']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      runtime: json['runtime']?.toString(),
+      sortWeight: json['sort_weight'] is int ? json['sort_weight'] : null,
+      sourceAppId: json['source_app_id']?.toString(),
+      status: json['status']?.toString(),
+      templateCode: json['template_code']?.toString(),
+      templateName: json['template_name']?.toString(),
+      templateNo: json['template_no']?.toString(),
+      templateType: json['template_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variable_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      version: json['version']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_config_schema': appConfigSchema?.map((key, item) => MapEntry(key, item)),
+      'capability_manifest': capabilityManifest?.map((key, item) => MapEntry(key, item)),
+      'category_code': categoryCode,
+      'category_id': categoryId,
+      'cover_url': coverUrl,
+      'created_at': createdAt,
+      'current_version_id': currentVersionId,
+      'data_scope': dataScope,
+      'default_app_config': defaultAppConfig?.map((key, item) => MapEntry(key, item)),
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'dependency_manifest': dependencyManifest?.map((key, item) => MapEntry(key, item)),
+      'deprecated_at': deprecatedAt,
+      'description': description,
+      'featured': featured,
+      'framework': framework,
+      'git_ref': gitRef,
+      'git_repo_url': gitRepoUrl,
+      'git_sub_path': gitSubPath,
+      'icon_url': iconUrl,
+      'id': id,
+      'language': language,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'publish_status': publishStatus,
+      'published_at': publishedAt,
+      'runtime': runtime,
+      'sort_weight': sortWeight,
+      'source_app_id': sourceAppId,
+      'status': status,
+      'template_code': templateCode,
+      'template_name': templateName,
+      'template_no': templateNo,
+      'template_type': templateType,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'variable_schema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'version': version,
+      'visibility': visibility,
+    };
+  }
+}
+
+class StudioAppTemplateUsageRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? inputSnapshot;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final Map<String, dynamic>? outputSnapshot;
+  final String? requestId;
+  final String? status;
+  final String? targetAppId;
+  final String? templateId;
+  final String? templateVersionId;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? usageType;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+
+  StudioAppTemplateUsageRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.inputSnapshot,
+    this.metadata,
+    this.organizationId,
+    this.outputSnapshot,
+    this.requestId,
+    this.status,
+    this.targetAppId,
+    this.templateId,
+    this.templateVersionId,
+    this.tenantId,
+    this.updatedAt,
+    this.usageType,
+    this.userId,
+    this.uuid,
+    this.version
+  });
+
+  factory StudioAppTemplateUsageRecord.fromJson(Map<String, dynamic> json) {
+    return StudioAppTemplateUsageRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      inputSnapshot: (() {
+        final map = _sdkworkAsMap(json['input_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      outputSnapshot: (() {
+        final map = _sdkworkAsMap(json['output_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      requestId: json['request_id']?.toString(),
+      status: json['status']?.toString(),
+      targetAppId: json['target_app_id']?.toString(),
+      templateId: json['template_id']?.toString(),
+      templateVersionId: json['template_version_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      usageType: json['usage_type']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'input_snapshot': inputSnapshot?.map((key, item) => MapEntry(key, item)),
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'output_snapshot': outputSnapshot?.map((key, item) => MapEntry(key, item)),
+      'request_id': requestId,
+      'status': status,
+      'target_app_id': targetAppId,
+      'template_id': templateId,
+      'template_version_id': templateVersionId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'usage_type': usageType,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class StudioAppTemplateVersionRecord {
+  final Map<String, dynamic>? appConfigSchema;
+  final String? artifactId;
+  final Map<String, dynamic>? capabilityManifest;
+  final String? changelog;
+  final String? createdAt;
+  final String? dataScope;
+  final Map<String, dynamic>? defaultAppConfig;
+  final String? deletedAt;
+  final String? deletedBy;
+  final Map<String, dynamic>? dependencyManifest;
+  final String? deprecatedAt;
+  final Map<String, dynamic>? fileManifest;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? publishStatus;
+  final String? publishedAt;
+  final String? status;
+  final String? templateId;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final Map<String, dynamic>? variableSchema;
+  final String? version;
+  final String? versionNo;
+
+  StudioAppTemplateVersionRecord({
+    this.appConfigSchema,
+    this.artifactId,
+    this.capabilityManifest,
+    this.changelog,
+    this.createdAt,
+    this.dataScope,
+    this.defaultAppConfig,
+    this.deletedAt,
+    this.deletedBy,
+    this.dependencyManifest,
+    this.deprecatedAt,
+    this.fileManifest,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.publishStatus,
+    this.publishedAt,
+    this.status,
+    this.templateId,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.variableSchema,
+    this.version,
+    this.versionNo
+  });
+
+  factory StudioAppTemplateVersionRecord.fromJson(Map<String, dynamic> json) {
+    return StudioAppTemplateVersionRecord(
+      appConfigSchema: (() {
+        final map = _sdkworkAsMap(json['app_config_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      artifactId: json['artifact_id']?.toString(),
+      capabilityManifest: (() {
+        final map = _sdkworkAsMap(json['capability_manifest']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      changelog: json['changelog']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultAppConfig: (() {
+        final map = _sdkworkAsMap(json['default_app_config']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      dependencyManifest: (() {
+        final map = _sdkworkAsMap(json['dependency_manifest']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      deprecatedAt: json['deprecated_at']?.toString(),
+      fileManifest: (() {
+        final map = _sdkworkAsMap(json['file_manifest']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      publishStatus: json['publish_status']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      status: json['status']?.toString(),
+      templateId: json['template_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      variableSchema: (() {
+        final map = _sdkworkAsMap(json['variable_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      version: json['version']?.toString(),
+      versionNo: json['version_no']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_config_schema': appConfigSchema?.map((key, item) => MapEntry(key, item)),
+      'artifact_id': artifactId,
+      'capability_manifest': capabilityManifest?.map((key, item) => MapEntry(key, item)),
+      'changelog': changelog,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'default_app_config': defaultAppConfig?.map((key, item) => MapEntry(key, item)),
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'dependency_manifest': dependencyManifest?.map((key, item) => MapEntry(key, item)),
+      'deprecated_at': deprecatedAt,
+      'file_manifest': fileManifest?.map((key, item) => MapEntry(key, item)),
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'publish_status': publishStatus,
+      'published_at': publishedAt,
+      'status': status,
+      'template_id': templateId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'variable_schema': variableSchema?.map((key, item) => MapEntry(key, item)),
+      'version': version,
+      'version_no': versionNo,
+    };
+  }
+}
+
 class StudioCatalogActionRecord {
   final String? actionType;
   final String? clientIpHash;
@@ -41238,6 +60764,68 @@ class StudioCatalogAssetRecord {
   }
 }
 
+class SuppressionsCreateResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  SuppressionsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SuppressionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return SuppressionsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SuppressionsListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  SuppressionsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SuppressionsListResult.fromJson(Map<String, dynamic> json) {
+    return SuppressionsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class SystemInstallationStateRecord {
   final String? catalogVersion;
   final String? databaseEngine;
@@ -41363,6 +60951,746 @@ class SystemSchemaMigrationRecord {
   }
 }
 
+class TemplateSendsCreateResult {
+  final String? code;
+  final MessagingTemplateSendResponse? data;
+  final String? msg;
+
+  TemplateSendsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory TemplateSendsCreateResult.fromJson(Map<String, dynamic> json) {
+    return TemplateSendsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingTemplateSendResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class TemplatesCreateResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  TemplatesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory TemplatesCreateResult.fromJson(Map<String, dynamic> json) {
+    return TemplatesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class TemplatesListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  TemplatesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory TemplatesListResult.fromJson(Map<String, dynamic> json) {
+    return TemplatesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class TemplatesVersionsPublishResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  TemplatesVersionsPublishResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory TemplatesVersionsPublishResult.fromJson(Map<String, dynamic> json) {
+    return TemplatesVersionsPublishResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ToolsUpdateResult {
+  final String? code;
+  final AdminMcpToolMutationResponse? data;
+  final String? msg;
+
+  ToolsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ToolsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return ToolsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminMcpToolMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class UpdateStorageBucketRequest {
+  final String? reason;
+  final String? status;
+
+  UpdateStorageBucketRequest({
+    this.reason,
+    this.status
+  });
+
+  factory UpdateStorageBucketRequest.fromJson(Map<String, dynamic> json) {
+    return UpdateStorageBucketRequest(
+      reason: json['reason']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'reason': reason,
+      'status': status,
+    };
+  }
+}
+
+class UpdateStorageProviderRequest {
+  final String? reason;
+  final String? status;
+
+  UpdateStorageProviderRequest({
+    this.reason,
+    this.status
+  });
+
+  factory UpdateStorageProviderRequest.fromJson(Map<String, dynamic> json) {
+    return UpdateStorageProviderRequest(
+      reason: json['reason']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'reason': reason,
+      'status': status,
+    };
+  }
+}
+
+class UploadCompletionAttemptRecord {
+  final int? attemptNo;
+  final String? completionStatus;
+  final String? createdAt;
+  final String? errorCode;
+  final String? errorMessageMasked;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? objectBlobId;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? providerRequestId;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? uploadSessionId;
+  final String? userId;
+  final String? uuid;
+
+  UploadCompletionAttemptRecord({
+    this.attemptNo,
+    this.completionStatus,
+    this.createdAt,
+    this.errorCode,
+    this.errorMessageMasked,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.objectBlobId,
+    this.organizationId,
+    this.payloadHash,
+    this.providerRequestId,
+    this.requestId,
+    this.retentionUntil,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.uploadSessionId,
+    this.userId,
+    this.uuid
+  });
+
+  factory UploadCompletionAttemptRecord.fromJson(Map<String, dynamic> json) {
+    return UploadCompletionAttemptRecord(
+      attemptNo: json['attempt_no'] is int ? json['attempt_no'] : null,
+      completionStatus: json['completion_status']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      errorCode: json['error_code']?.toString(),
+      errorMessageMasked: json['error_message_masked']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      objectBlobId: json['object_blob_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerRequestId: json['provider_request_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      uploadSessionId: json['upload_session_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attempt_no': attemptNo,
+      'completion_status': completionStatus,
+      'created_at': createdAt,
+      'error_code': errorCode,
+      'error_message_masked': errorMessageMasked,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'object_blob_id': objectBlobId,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider_request_id': providerRequestId,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'upload_session_id': uploadSessionId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class UploadPartRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? partEtag;
+  final int? partNumber;
+  final String? partSha256;
+  final String? presignedUrlExpiresAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uploadSessionId;
+  final String? uploadedAt;
+  final String? uuid;
+  final String? version;
+
+  UploadPartRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.partEtag,
+    this.partNumber,
+    this.partSha256,
+    this.presignedUrlExpiresAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uploadSessionId,
+    this.uploadedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory UploadPartRecord.fromJson(Map<String, dynamic> json) {
+    return UploadPartRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      partEtag: json['part_etag']?.toString(),
+      partNumber: json['part_number'] is int ? json['part_number'] : null,
+      partSha256: json['part_sha256']?.toString(),
+      presignedUrlExpiresAt: json['presigned_url_expires_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uploadSessionId: json['upload_session_id']?.toString(),
+      uploadedAt: json['uploaded_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'part_etag': partEtag,
+      'part_number': partNumber,
+      'part_sha256': partSha256,
+      'presigned_url_expires_at': presignedUrlExpiresAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'upload_session_id': uploadSessionId,
+      'uploaded_at': uploadedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class UploadPresignGrantRecord {
+  final String? bucketId;
+  final Map<String, dynamic>? canonicalHeaders;
+  final String? consumedAt;
+  final String? createdAt;
+  final String? expiresAt;
+  final String? id;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? method;
+  final String? objectKey;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? providerId;
+  final String? requestId;
+  final String? retentionUntil;
+  final Map<String, dynamic>? signedHeaders;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? uploadPartId;
+  final String? uploadSessionId;
+  final String? userId;
+  final String? uuid;
+
+  UploadPresignGrantRecord({
+    this.bucketId,
+    this.canonicalHeaders,
+    this.consumedAt,
+    this.createdAt,
+    this.expiresAt,
+    this.id,
+    this.legalHold,
+    this.metadata,
+    this.method,
+    this.objectKey,
+    this.organizationId,
+    this.payloadHash,
+    this.providerId,
+    this.requestId,
+    this.retentionUntil,
+    this.signedHeaders,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.uploadPartId,
+    this.uploadSessionId,
+    this.userId,
+    this.uuid
+  });
+
+  factory UploadPresignGrantRecord.fromJson(Map<String, dynamic> json) {
+    return UploadPresignGrantRecord(
+      bucketId: json['bucket_id']?.toString(),
+      canonicalHeaders: (() {
+        final map = _sdkworkAsMap(json['canonical_headers']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      consumedAt: json['consumed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      method: json['method']?.toString(),
+      objectKey: json['object_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerId: json['provider_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      signedHeaders: (() {
+        final map = _sdkworkAsMap(json['signed_headers']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      uploadPartId: json['upload_part_id']?.toString(),
+      uploadSessionId: json['upload_session_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bucket_id': bucketId,
+      'canonical_headers': canonicalHeaders?.map((key, item) => MapEntry(key, item)),
+      'consumed_at': consumedAt,
+      'created_at': createdAt,
+      'expires_at': expiresAt,
+      'id': id,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'method': method,
+      'object_key': objectKey,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider_id': providerId,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'signed_headers': signedHeaders?.map((key, item) => MapEntry(key, item)),
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'upload_part_id': uploadPartId,
+      'upload_session_id': uploadSessionId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class UploadSessionRecord {
+  final String? abortedAt;
+  final String? bucketId;
+  final String? completedAt;
+  final String? contentType;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? expectedSha256;
+  final String? expiresAt;
+  final String? id;
+  final String? idempotencyKey;
+  final String? logicalScope;
+  final Map<String, dynamic>? metadata;
+  final String? objectKey;
+  final String? organizationId;
+  final String? originalFilename;
+  final String? ownerId;
+  final String? ownerType;
+  final String? providerId;
+  final String? requestId;
+  final String? s3UploadId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uploadMode;
+  final String? uploadSessionNo;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+
+  UploadSessionRecord({
+    this.abortedAt,
+    this.bucketId,
+    this.completedAt,
+    this.contentType,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.expectedSha256,
+    this.expiresAt,
+    this.id,
+    this.idempotencyKey,
+    this.logicalScope,
+    this.metadata,
+    this.objectKey,
+    this.organizationId,
+    this.originalFilename,
+    this.ownerId,
+    this.ownerType,
+    this.providerId,
+    this.requestId,
+    this.s3UploadId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uploadMode,
+    this.uploadSessionNo,
+    this.userId,
+    this.uuid,
+    this.version
+  });
+
+  factory UploadSessionRecord.fromJson(Map<String, dynamic> json) {
+    return UploadSessionRecord(
+      abortedAt: json['aborted_at']?.toString(),
+      bucketId: json['bucket_id']?.toString(),
+      completedAt: json['completed_at']?.toString(),
+      contentType: json['content_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      expectedSha256: json['expected_sha256']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      id: json['id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      logicalScope: json['logical_scope']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      objectKey: json['object_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      originalFilename: json['original_filename']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      providerId: json['provider_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      s3UploadId: json['s3_upload_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uploadMode: json['upload_mode']?.toString(),
+      uploadSessionNo: json['upload_session_no']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aborted_at': abortedAt,
+      'bucket_id': bucketId,
+      'completed_at': completedAt,
+      'content_type': contentType,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'expected_sha256': expectedSha256,
+      'expires_at': expiresAt,
+      'id': id,
+      'idempotency_key': idempotencyKey,
+      'logical_scope': logicalScope,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'object_key': objectKey,
+      'organization_id': organizationId,
+      'original_filename': originalFilename,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'provider_id': providerId,
+      'request_id': requestId,
+      's3_upload_id': s3UploadId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'upload_mode': uploadMode,
+      'upload_session_no': uploadSessionNo,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class UsageListResult {
+  final String? code;
+  final ServiceProviderCollectionResponse? data;
+  final String? msg;
+
+  UsageListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory UsageListResult.fromJson(Map<String, dynamic> json) {
+    return UsageListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : ServiceProviderCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class UsersCreateResult {
   final String? code;
   final AdminUserMutationResponse? data;
@@ -41442,6 +61770,266 @@ class UsersUpdateResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminUserMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class VerificationPoliciesListResult {
+  final String? code;
+  final MessagingCollectionResponse? data;
+  final String? msg;
+
+  VerificationPoliciesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory VerificationPoliciesListResult.fromJson(Map<String, dynamic> json) {
+    return VerificationPoliciesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class VerificationPoliciesUpdateResult {
+  final String? code;
+  final MessagingMutationResponse? data;
+  final String? msg;
+
+  VerificationPoliciesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory VerificationPoliciesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return VerificationPoliciesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class VerificationPolicyUpdateRequest {
+  final List<String>? allowedChannels;
+  final int? codeLength;
+  final String? defaultChannel;
+  final int? maxSendPerHour;
+  final int? maxVerifyAttempts;
+  final int? resendIntervalSeconds;
+  final Map<String, dynamic>? riskPolicy;
+  final String? templateCode;
+  final int? ttlSeconds;
+
+  VerificationPolicyUpdateRequest({
+    this.allowedChannels,
+    this.codeLength,
+    this.defaultChannel,
+    this.maxSendPerHour,
+    this.maxVerifyAttempts,
+    this.resendIntervalSeconds,
+    this.riskPolicy,
+    this.templateCode,
+    this.ttlSeconds
+  });
+
+  factory VerificationPolicyUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return VerificationPolicyUpdateRequest(
+      allowedChannels: (() {
+        final list = _sdkworkAsList(json['allowedChannels']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      codeLength: json['codeLength'] is int ? json['codeLength'] : null,
+      defaultChannel: json['defaultChannel']?.toString(),
+      maxSendPerHour: json['maxSendPerHour'] is int ? json['maxSendPerHour'] : null,
+      maxVerifyAttempts: json['maxVerifyAttempts'] is int ? json['maxVerifyAttempts'] : null,
+      resendIntervalSeconds: json['resendIntervalSeconds'] is int ? json['resendIntervalSeconds'] : null,
+      riskPolicy: (() {
+        final map = _sdkworkAsMap(json['riskPolicy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      templateCode: json['templateCode']?.toString(),
+      ttlSeconds: json['ttlSeconds'] is int ? json['ttlSeconds'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'allowedChannels': allowedChannels?.map((item) => item).toList(),
+      'codeLength': codeLength,
+      'defaultChannel': defaultChannel,
+      'maxSendPerHour': maxSendPerHour,
+      'maxVerifyAttempts': maxVerifyAttempts,
+      'resendIntervalSeconds': resendIntervalSeconds,
+      'riskPolicy': riskPolicy?.map((key, item) => MapEntry(key, item)),
+      'templateCode': templateCode,
+      'ttlSeconds': ttlSeconds,
+    };
+  }
+}
+
+class VersionRendersCreateResult {
+  final String? code;
+  final AdminPromptRenderResponse? data;
+  final String? msg;
+
+  VersionRendersCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory VersionRendersCreateResult.fromJson(Map<String, dynamic> json) {
+    return VersionRendersCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptRenderResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class VersionsCreateResult {
+  final String? code;
+  final AdminPromptVersionMutationResponse? data;
+  final String? msg;
+
+  VersionsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory VersionsCreateResult.fromJson(Map<String, dynamic> json) {
+    return VersionsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptVersionMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class VersionsListResult {
+  final String? code;
+  final AdminPromptVersionListResponse? data;
+  final String? msg;
+
+  VersionsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory VersionsListResult.fromJson(Map<String, dynamic> json) {
+    return VersionsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptVersionListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class VersionsPublishResult {
+  final String? code;
+  final AdminPromptVersionMutationResponse? data;
+  final String? msg;
+
+  VersionsPublishResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory VersionsPublishResult.fromJson(Map<String, dynamic> json) {
+    return VersionsPublishResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminPromptVersionMutationResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );

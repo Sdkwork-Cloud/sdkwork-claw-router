@@ -8,7 +8,7 @@ public class GoogleBatchEmbedContentsRequest {
     public List<GoogleEmbedContentRequest> getRequests() {
         return this.requests;
     }
-    
+
     public void setRequests(List<GoogleEmbedContentRequest> requests) {
         this.requests = requests;
     }

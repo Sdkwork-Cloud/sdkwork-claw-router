@@ -263,6 +263,102 @@ test("app catalog view model derives categories platform badges cards and empty 
   assert.equal(view.emptyStateVisible, false);
 });
 
+test("app service sends catalog filters to generated app SDK and preserves server pagination metadata", async () => {
+  await withAppSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/app/v3/api/platform/apps/store?page=2&page_size=20&q=studio&category=Content%20Creation&platform_types=Web&sort=rating_desc" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "prompt-studio",
+              name: "Prompt Studio",
+              developer: "SDKWork",
+              category: "Content Creation",
+              image: "https://cdn.example.test/prompt.png",
+              rating: 4.9,
+              description: "Build prompt workflows.",
+              downloads: "1200",
+              screenshots: [],
+              features: ["Prompts"],
+              releases: [
+                {
+                  id: "prompt-studio-web",
+                  platformType: "Web",
+                  os: "PC Web",
+                  version: "1.0.0",
+                  size: "N/A",
+                  releaseDate: "2026-05-20",
+                  downloadUrl: "https://apps.example.test/prompt-studio",
+                  whatsNew: "Initial release",
+                },
+              ],
+            },
+          ],
+          total: 21,
+          page: 2,
+          pageSize: 20,
+          hasNextPage: false,
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async (captured) => {
+      const result = await appService.getApps({
+        searchQuery: "studio",
+        categories: ["Content Creation"],
+        platformTypes: ["Web"],
+        sortBy: "Highest Rated",
+        page: 2,
+        pageSize: 20,
+      });
+
+      assert.deepEqual(result.items.map((app) => app.id), ["prompt-studio"]);
+      assert.equal(result.total, 21);
+      assert.equal(result.page, 2);
+      assert.equal(result.pageSize, 20);
+      assert.equal(result.hasNextPage, false);
+      assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
+        "GET /app/v3/api/platform/apps/store?page=2&page_size=20&q=studio&category=Content%20Creation&platform_types=Web&sort=rating_desc",
+      ]);
+    },
+  );
+});
+
+test("app service preserves multi-platform catalog filters in generated SDK query params", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/app/v3/api/platform/apps/store");
+      assert.equal(requestUrl.searchParams.get("platform_types"), "Desktop,Web");
+      assert.equal(requestUrl.searchParams.has("platform_type"), false);
+      return {
+        items: [
+          {
+            appId: "desktop-console",
+            name: "Desktop Console",
+            provider: "SDKWork Apps",
+            artifacts: [{ platformType: "Desktop", osName: "Windows", publishedAt: "2026-05-03" }],
+          },
+          {
+            appId: "web-console",
+            name: "Web Console",
+            provider: "SDKWork Apps",
+            artifacts: [{ platformType: "Web", osName: "PC Web", publishedAt: "2026-05-04" }],
+          },
+        ],
+      };
+    },
+    async () => {
+      const result = await appService.getApps({
+        platformTypes: ["Desktop", "Web"],
+      });
+
+      assert.deepEqual(result.items.map((app) => app.id), ["desktop-console", "web-console"]);
+    },
+  );
+});
+
 test("app detail view derives selected release and download availability deterministically", () => {
   const detail = deriveAppDetailView(runtimeApps, "app-1", "app-1-win");
 
@@ -302,6 +398,10 @@ test("app service normalizes catalog filters before generated app SDK call", asy
       assert.equal(requestUrl.searchParams.get("page"), "2");
       assert.equal(requestUrl.searchParams.get("page_size"), "25");
       assert.equal(requestUrl.searchParams.get("q"), "data lens");
+      assert.equal(requestUrl.searchParams.get("category"), "Data Analysis");
+      assert.equal(requestUrl.searchParams.get("platform_types"), "Web");
+      assert.equal(requestUrl.searchParams.has("platform_type"), false);
+      assert.equal(requestUrl.searchParams.get("sort"), "newest_desc");
       assert.equal(requestUrl.searchParams.has("search_query"), false);
       assert.equal(requestUrl.searchParams.get("status"), "ACTIVE");
       assert.equal(requestUrl.searchParams.get("start_time"), "2026-05-01T00:00:00Z");
@@ -347,7 +447,7 @@ test("app service normalizes catalog filters before generated app SDK call", asy
       } as any);
 
       assert.equal(captured.length, 1);
-      assert.deepEqual(result.map((app) => app.id), ["app-1"]);
+      assert.deepEqual(result.items.map((app) => app.id), ["app-1", "app-2"]);
     },
   );
 });

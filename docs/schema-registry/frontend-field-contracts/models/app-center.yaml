@@ -91,8 +91,50 @@ frontend_models:
   - status
   - marketStatus
   - appType
+  - categoryId
   - page
   - pageSize
+  data_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_asset
+  - studio_catalog_artifact
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  interface: AdminAppPage
+  fields:
+  - items
+  - items.id
+  - items.uuid
+  - items.userId
+  - items.name
+  - items.description
+  - items.version
+  - items.icon
+  - items.iconUrl
+  - items.resourceList
+  - items.projectId
+  - items.accessUrl
+  - items.config
+  - items.appKey
+  - items.status
+  - items.marketStatus
+  - items.appType
+  - items.platforms
+  - items.installPlatforms
+  - items.installSkill
+  - items.installConfig
+  - items.releaseNotes
+  - items.packageName
+  - items.bundleId
+  - items.storeUrl
+  - items.downloadUrl
+  - items.createdAt
+  - items.updatedAt
+  - total
+  - page
+  - pageSize
+  - hasNextPage
   data_sources:
   - plus_app
   - plus_category
@@ -158,6 +200,156 @@ frontend_models:
   - plus_category
   - studio_catalog_asset
   - studio_catalog_artifact
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  interface: AdminAppTemplate
+  fields:
+  - id
+  - uuid
+  - templateNo
+  - templateCode
+  - templateName
+  - description
+  - categoryId
+  - categoryCode
+  - templateType
+  - runtime
+  - framework
+  - language
+  - iconUrl
+  - coverUrl
+  - visibility
+  - publishStatus
+  - featured
+  - sortWeight
+  - sourceAppId
+  - gitRepoUrl
+  - gitRef
+  - gitSubPath
+  - currentVersionId
+  - appConfigSchema
+  - defaultAppConfig
+  - variableSchema
+  - dependencyManifest
+  - capabilityManifest
+  - createdAt
+  - updatedAt
+  data_sources:
+  - studio_app_template
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  interface: AdminAppTemplateCreateInput
+  fields:
+  - templateNo
+  - templateCode
+  - templateName
+  - description
+  - categoryId
+  - categoryCode
+  - templateType
+  - runtime
+  - framework
+  - language
+  - iconUrl
+  - coverUrl
+  - visibility
+  - publishStatus
+  - featured
+  - sortWeight
+  - sourceAppId
+  - gitRepoUrl
+  - gitRef
+  - gitSubPath
+  - appConfigSchema
+  - defaultAppConfig
+  - variableSchema
+  - dependencyManifest
+  - capabilityManifest
+  data_sources:
+  - studio_app_template
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  interface: AdminAppTemplateUpdateInput
+  fields:
+  - templateName
+  - description
+  - categoryId
+  - categoryCode
+  - templateType
+  - runtime
+  - framework
+  - language
+  - iconUrl
+  - coverUrl
+  - visibility
+  - publishStatus
+  - featured
+  - sortWeight
+  - sourceAppId
+  - gitRepoUrl
+  - gitRef
+  - gitSubPath
+  - appConfigSchema
+  - defaultAppConfig
+  - variableSchema
+  - dependencyManifest
+  - capabilityManifest
+  data_sources:
+  - studio_app_template
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  interface: AdminAppTemplateListInput
+  fields:
+  - searchQuery
+  - publishStatus
+  - templateType
+  - runtime
+  - categoryId
+  - page
+  - pageSize
+  data_sources:
+  - studio_app_template
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  interface: AdminAppTemplatePage
+  fields:
+  - items
+  - items.id
+  - items.uuid
+  - items.templateNo
+  - items.templateCode
+  - items.templateName
+  - items.description
+  - items.categoryId
+  - items.categoryCode
+  - items.templateType
+  - items.runtime
+  - items.framework
+  - items.language
+  - items.iconUrl
+  - items.coverUrl
+  - items.visibility
+  - items.publishStatus
+  - items.featured
+  - items.sortWeight
+  - items.sourceAppId
+  - items.gitRepoUrl
+  - items.gitRef
+  - items.gitSubPath
+  - items.currentVersionId
+  - items.appConfigSchema
+  - items.defaultAppConfig
+  - items.variableSchema
+  - items.dependencyManifest
+  - items.capabilityManifest
+  - items.createdAt
+  - items.updatedAt
+  - total
+  - page
+  - pageSize
+  - hasNextPage
+  data_sources:
+  - studio_app_template
 - route: /apps
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts
   interface: App
@@ -208,6 +400,20 @@ frontend_models:
   - platformTypes
   - categories
   - sortBy
+  - page
+  - pageSize
+  data_sources:
+  - plus_app
+  - studio_catalog_artifact
+- route: /apps
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  interface: AppCatalogPage
+  fields:
+  - items
+  - total
+  - page
+  - pageSize
+  - hasNextPage
   data_sources:
   - plus_app
   - studio_catalog_artifact

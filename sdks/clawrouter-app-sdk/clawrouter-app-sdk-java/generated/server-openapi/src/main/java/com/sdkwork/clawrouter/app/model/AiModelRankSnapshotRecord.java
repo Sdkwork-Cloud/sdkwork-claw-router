@@ -50,7 +50,7 @@ public class AiModelRankSnapshotRecord {
     public String getBaseVolume() {
         return this.baseVolume;
     }
-    
+
     public void setBaseVolume(String baseVolume) {
         this.baseVolume = baseVolume;
     }
@@ -58,7 +58,7 @@ public class AiModelRankSnapshotRecord {
     public String getCatalogKey() {
         return this.catalogKey;
     }
-    
+
     public void setCatalogKey(String catalogKey) {
         this.catalogKey = catalogKey;
     }
@@ -66,7 +66,7 @@ public class AiModelRankSnapshotRecord {
     public String getColorToken() {
         return this.colorToken;
     }
-    
+
     public void setColorToken(String colorToken) {
         this.colorToken = colorToken;
     }
@@ -74,7 +74,7 @@ public class AiModelRankSnapshotRecord {
     public String getContextSizeText() {
         return this.contextSizeText;
     }
-    
+
     public void setContextSizeText(String contextSizeText) {
         this.contextSizeText = contextSizeText;
     }
@@ -82,7 +82,7 @@ public class AiModelRankSnapshotRecord {
     public String getCostAmount() {
         return this.costAmount;
     }
-    
+
     public void setCostAmount(String costAmount) {
         this.costAmount = costAmount;
     }
@@ -90,7 +90,7 @@ public class AiModelRankSnapshotRecord {
     public Integer getCostIndicator() {
         return this.costIndicator;
     }
-    
+
     public void setCostIndicator(Integer costIndicator) {
         this.costIndicator = costIndicator;
     }
@@ -98,7 +98,7 @@ public class AiModelRankSnapshotRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -106,7 +106,7 @@ public class AiModelRankSnapshotRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -114,7 +114,7 @@ public class AiModelRankSnapshotRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -122,7 +122,7 @@ public class AiModelRankSnapshotRecord {
     public Boolean getIsNew() {
         return this.isNew;
     }
-    
+
     public void setIsNew(Boolean isNew) {
         this.isNew = isNew;
     }
@@ -130,7 +130,7 @@ public class AiModelRankSnapshotRecord {
     public Integer getLatencyP50Ms() {
         return this.latencyP50Ms;
     }
-    
+
     public void setLatencyP50Ms(Integer latencyP50Ms) {
         this.latencyP50Ms = latencyP50Ms;
     }
@@ -138,7 +138,7 @@ public class AiModelRankSnapshotRecord {
     public Integer getLatencyP95Ms() {
         return this.latencyP95Ms;
     }
-    
+
     public void setLatencyP95Ms(Integer latencyP95Ms) {
         this.latencyP95Ms = latencyP95Ms;
     }
@@ -146,7 +146,7 @@ public class AiModelRankSnapshotRecord {
     public String getLicenseType() {
         return this.licenseType;
     }
-    
+
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
     }
@@ -154,7 +154,7 @@ public class AiModelRankSnapshotRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -162,7 +162,7 @@ public class AiModelRankSnapshotRecord {
     public String getModality() {
         return this.modality;
     }
-    
+
     public void setModality(String modality) {
         this.modality = modality;
     }
@@ -170,7 +170,7 @@ public class AiModelRankSnapshotRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -178,7 +178,7 @@ public class AiModelRankSnapshotRecord {
     public String getModelId() {
         return this.modelId;
     }
-    
+
     public void setModelId(String modelId) {
         this.modelId = modelId;
     }
@@ -186,7 +186,7 @@ public class AiModelRankSnapshotRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -194,7 +194,7 @@ public class AiModelRankSnapshotRecord {
     public Integer getPreviousRankNo() {
         return this.previousRankNo;
     }
-    
+
     public void setPreviousRankNo(Integer previousRankNo) {
         this.previousRankNo = previousRankNo;
     }
@@ -202,7 +202,7 @@ public class AiModelRankSnapshotRecord {
     public String getPricingText() {
         return this.pricingText;
     }
-    
+
     public void setPricingText(String pricingText) {
         this.pricingText = pricingText;
     }
@@ -210,7 +210,7 @@ public class AiModelRankSnapshotRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -218,7 +218,7 @@ public class AiModelRankSnapshotRecord {
     public Integer getRankNo() {
         return this.rankNo;
     }
-    
+
     public void setRankNo(Integer rankNo) {
         this.rankNo = rankNo;
     }
@@ -226,7 +226,7 @@ public class AiModelRankSnapshotRecord {
     public Map<String, String> getRankPayload() {
         return this.rankPayload;
     }
-    
+
     public void setRankPayload(Map<String, String> rankPayload) {
         this.rankPayload = rankPayload;
     }
@@ -234,7 +234,7 @@ public class AiModelRankSnapshotRecord {
     public String getRankScope() {
         return this.rankScope;
     }
-    
+
     public void setRankScope(String rankScope) {
         this.rankScope = rankScope;
     }
@@ -242,7 +242,7 @@ public class AiModelRankSnapshotRecord {
     public String getRebuildVersion() {
         return this.rebuildVersion;
     }
-    
+
     public void setRebuildVersion(String rebuildVersion) {
         this.rebuildVersion = rebuildVersion;
     }
@@ -250,7 +250,7 @@ public class AiModelRankSnapshotRecord {
     public String getRegionCode() {
         return this.regionCode;
     }
-    
+
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
@@ -258,7 +258,7 @@ public class AiModelRankSnapshotRecord {
     public String getRequestCount() {
         return this.requestCount;
     }
-    
+
     public void setRequestCount(String requestCount) {
         this.requestCount = requestCount;
     }
@@ -266,7 +266,7 @@ public class AiModelRankSnapshotRecord {
     public String getSnapshotDate() {
         return this.snapshotDate;
     }
-    
+
     public void setSnapshotDate(String snapshotDate) {
         this.snapshotDate = snapshotDate;
     }
@@ -274,7 +274,7 @@ public class AiModelRankSnapshotRecord {
     public String getSnapshotPeriod() {
         return this.snapshotPeriod;
     }
-    
+
     public void setSnapshotPeriod(String snapshotPeriod) {
         this.snapshotPeriod = snapshotPeriod;
     }
@@ -282,7 +282,7 @@ public class AiModelRankSnapshotRecord {
     public String getSourceId() {
         return this.sourceId;
     }
-    
+
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
@@ -290,7 +290,7 @@ public class AiModelRankSnapshotRecord {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -298,7 +298,7 @@ public class AiModelRankSnapshotRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -306,7 +306,7 @@ public class AiModelRankSnapshotRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -314,7 +314,7 @@ public class AiModelRankSnapshotRecord {
     public Map<String, String> getStrengths() {
         return this.strengths;
     }
-    
+
     public void setStrengths(Map<String, String> strengths) {
         this.strengths = strengths;
     }
@@ -322,7 +322,7 @@ public class AiModelRankSnapshotRecord {
     public String getSuccessRate() {
         return this.successRate;
     }
-    
+
     public void setSuccessRate(String successRate) {
         this.successRate = successRate;
     }
@@ -330,7 +330,7 @@ public class AiModelRankSnapshotRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -338,7 +338,7 @@ public class AiModelRankSnapshotRecord {
     public String getTokenCount() {
         return this.tokenCount;
     }
-    
+
     public void setTokenCount(String tokenCount) {
         this.tokenCount = tokenCount;
     }
@@ -346,7 +346,7 @@ public class AiModelRankSnapshotRecord {
     public String getTrendScore() {
         return this.trendScore;
     }
-    
+
     public void setTrendScore(String trendScore) {
         this.trendScore = trendScore;
     }
@@ -354,7 +354,7 @@ public class AiModelRankSnapshotRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -362,7 +362,7 @@ public class AiModelRankSnapshotRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -370,7 +370,7 @@ public class AiModelRankSnapshotRecord {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -378,7 +378,7 @@ public class AiModelRankSnapshotRecord {
     public String getVendorNameSnapshot() {
         return this.vendorNameSnapshot;
     }
-    
+
     public void setVendorNameSnapshot(String vendorNameSnapshot) {
         this.vendorNameSnapshot = vendorNameSnapshot;
     }
@@ -386,7 +386,7 @@ public class AiModelRankSnapshotRecord {
     public String getWinRate() {
         return this.winRate;
     }
-    
+
     public void setWinRate(String winRate) {
         this.winRate = winRate;
     }

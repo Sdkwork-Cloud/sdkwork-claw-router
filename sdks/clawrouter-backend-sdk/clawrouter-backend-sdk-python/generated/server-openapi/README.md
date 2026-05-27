@@ -34,7 +34,7 @@ Choose exactly one mode for the same client instance.
 config = SdkConfig(base_url="http://localhost:18081")
 client = SdkworkBackendClient(config)
 client.set_api_key("your-api-key")
-# Sends: Sdkwork-Access-Token: <apiKey>
+# Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -46,7 +46,7 @@ client.set_auth_token("your-auth-token")
 client.set_access_token("your-access-token")
 # Sends:
 # Authorization: Bearer <authToken>
-# Sdkwork-Access-Token: <accessToken>
+# Access-Token: <accessToken>
 ```
 
 > Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
@@ -73,9 +73,14 @@ client.set_header('X-Custom-Header', 'value')
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.mcp` - mcp API
+- `client.messaging` - messaging API
 - `client.open_platform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.prompts` - prompts API
+- `client.service_providers` - service_providers API
+- `client.storage` - storage API
 
 ## Usage Examples
 
@@ -143,6 +148,39 @@ result = client.integration.channels.list()
 print(result)
 ```
 
+### mcp
+
+```python
+# List MCP servers
+params = {
+    'page': 1,
+    'page_size': 2,
+    'q': 'q',
+    'transport': 'transport',
+    'visibility': 'visibility',
+    'status': 'status',
+    'category_id': 'category_id',
+}
+result = client.mcp.servers.list(params)
+print(result)
+```
+
+### messaging
+
+```python
+# Messaging provider accounts list
+params = {
+    'page': 1,
+    'page_size': 2,
+    'q': 'q',
+    'status': 'status',
+    'channel': 'sms',
+    'provider_code': 'provider_code',
+}
+result = client.messaging.provider_accounts.list(params)
+print(result)
+```
+
 ### open_platform
 
 ```python
@@ -167,6 +205,48 @@ print(result)
 ```python
 # Retrieve IAM auth runtime settings
 result = client.system.auth.settings.retrieve()
+print(result)
+```
+
+### prompts
+
+```python
+# List admin prompts
+params = {
+    'page': 1,
+    'page_size': 2,
+    'q': 'q',
+    'prompt_type': 'prompt_type',
+    'visibility': 'visibility',
+    'status': 'status',
+    'category_id': 'category_id',
+}
+result = client.prompts.definitions.list(params)
+print(result)
+```
+
+### service_providers
+
+```python
+# Service Provider Adjustments List
+params = {
+    'page': 1,
+    'page_size': 2,
+    'status': 'status',
+    'provider_id': 'provider_id',
+    'seller_provider_id': 'seller_provider_id',
+    'buyer_provider_id': 'buyer_provider_id',
+    'edge_id': 'edge_id',
+}
+result = client.service_providers.adjustments.list(params)
+print(result)
+```
+
+### storage
+
+```python
+# List storage providers
+result = client.storage.oss.providers.list()
 print(result)
 ```
 

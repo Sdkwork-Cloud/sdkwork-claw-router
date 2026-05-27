@@ -26,8 +26,8 @@ export interface SdkworkOfferMessages {
   inventory: {
     accountLevel: string;
     couponInventory: string;
+    membershipTerm: string;
     noActiveTerm: string;
-    vipTerm: string;
   };
   manifest: {
     description: string;
@@ -131,8 +131,8 @@ const EN_US_MESSAGES: SdkworkOfferMessages = {
   inventory: {
     accountLevel: "Account level",
     couponInventory: "Coupon inventory",
+    membershipTerm: "Membership term",
     noActiveTerm: "No active term",
-    vipTerm: "VIP term",
   },
   manifest: {
     description: "Offer workspace for shared featured pricing, upgrade opportunities, coupon discovery, and recharge entry composition.",
@@ -202,7 +202,7 @@ const ZH_CN_MESSAGES: SdkworkOfferMessages = {
     accountLevel: "当前等级",
     couponInventory: "优惠券库存",
     noActiveTerm: "当前没有生效中的会员周期",
-    vipTerm: "VIP 周期",
+    membershipTerm: "\u4f1a\u5458\u5468\u671f",
   },
   manifest: {
     description: "用于统一展示精选定价、升级机会、优惠券发现和充值入口编排的方案工作区。",

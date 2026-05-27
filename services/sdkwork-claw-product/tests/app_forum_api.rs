@@ -1,3 +1,8 @@
+mod common;
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+use common::InternalTrustedSubjectHeaders;
+use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
 use std::sync::{Mutex, OnceLock};
@@ -10,21 +15,19 @@ use sdkwork_claw_product::api::{
 };
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteForumStore;
 use sdkwork_claw_product::ports::{
     CreateForumCommentCommand, CreateForumFeedCommand, ForumCommentCommandStore,
     ForumFeedCommandStore, ForumSubject,
 };
 use serde_json::Value;
-use sqlx::sqlite::{SqlitePool, SqlitePoolOptions};
+use sqlx::sqlite::SqlitePool;
 use tower::ServiceExt;
 
 #[tokio::test]
 async fn app_forum_public_read_routes_return_live_forum_data_without_auth() {
-    let (router, feed_id, comment_id, expected_stats) = router_with_public_forum_fixture().await;
+    let (router, feed_id, comment_id, expected_stats) =
+        router_with_seeded_public_forum_fixture().await;
 
     for uri in [
         "/app/v3/api/content/feeds/overview".to_owned(),
@@ -243,7 +246,8 @@ async fn app_forum_public_content_creation_uses_public_community_subject_without
 
 #[tokio::test]
 async fn app_forum_overview_route_reports_live_stats_and_public_community_links() {
-    let (router, _feed_id, _comment_id, expected_stats) = router_with_public_forum_fixture().await;
+    let (router, _feed_id, _comment_id, expected_stats) =
+        router_with_seeded_public_forum_fixture().await;
 
     let response = router
         .clone()
@@ -859,17 +863,7 @@ async fn app_forum_api_enforces_standard_request_validation_contract() {
 }
 
 async fn router_with_forum_fixture() -> (axum::Router, i64, i64) {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = Arc::new(SqliteForumStore::new(pool.clone()));
     let subject = signed_subject();
@@ -925,20 +919,32 @@ async fn router_with_public_forum_fixture() -> (axum::Router, i64, i64, Expected
     router_with_public_forum_fixture_and_links(Vec::new()).await
 }
 
+async fn router_with_seeded_public_forum_fixture(
+) -> (axum::Router, i64, i64, ExpectedForumOverviewStats) {
+    router_with_seeded_public_forum_fixture_and_links(Vec::new()).await
+}
+
 async fn router_with_public_forum_fixture_and_links(
     community_links: Vec<sdkwork_claw_product::ports::ForumCommunityLink>,
 ) -> (axum::Router, i64, i64, ExpectedForumOverviewStats) {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    public_forum_fixture(community_links, false).await
+}
+
+async fn router_with_seeded_public_forum_fixture_and_links(
+    community_links: Vec<sdkwork_claw_product::ports::ForumCommunityLink>,
+) -> (axum::Router, i64, i64, ExpectedForumOverviewStats) {
+    public_forum_fixture(community_links, true).await
+}
+
+async fn public_forum_fixture(
+    community_links: Vec<sdkwork_claw_product::ports::ForumCommunityLink>,
+    include_bundled_seed: bool,
+) -> (axum::Router, i64, i64, ExpectedForumOverviewStats) {
+    let pool = if include_bundled_seed {
+        repair_sqlite_pool().await
+    } else {
+        schema_sqlite_pool().await
+    };
 
     let store = Arc::new(SqliteForumStore::new(pool.clone()));
     let subject = public_subject();
@@ -980,10 +986,12 @@ async fn router_with_public_forum_fixture_and_links(
         .unwrap();
     let comment_id = comment.comment_id.parse::<i64>().unwrap();
     let expected_stats = expected_public_forum_overview_stats(&pool).await;
-    assert!(
-        expected_stats.total_comments >= 9,
-        "bundled forum tutorial comments plus fixture comments must be counted in forum overview comments"
-    );
+    if include_bundled_seed {
+        assert!(
+            expected_stats.total_comments >= 9,
+            "bundled forum tutorial comments plus fixture comments must be counted in forum overview comments"
+        );
+    }
     let router = app_forum_router_with_store_and_community_links(
         store.clone(),
         store.clone(),
@@ -1074,10 +1082,7 @@ fn assert_live_overview_stats(payload: &Value, expected: ExpectedForumOverviewSt
 }
 
 fn signed_request_builder() -> axum::http::request::Builder {
-    Request::builder()
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+    Request::builder().internal_trusted_subject(10, 20, 30)
 }
 
 fn signed_subject() -> ForumSubject {

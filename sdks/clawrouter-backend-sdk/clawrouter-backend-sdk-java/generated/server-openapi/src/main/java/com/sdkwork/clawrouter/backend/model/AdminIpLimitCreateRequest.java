@@ -12,7 +12,7 @@ public class AdminIpLimitCreateRequest {
     public String getBlockDuration() {
         return this.blockDuration;
     }
-    
+
     public void setBlockDuration(String blockDuration) {
         this.blockDuration = blockDuration;
     }
@@ -20,7 +20,7 @@ public class AdminIpLimitCreateRequest {
     public Integer getRpm() {
         return this.rpm;
     }
-    
+
     public void setRpm(Integer rpm) {
         this.rpm = rpm;
     }
@@ -28,7 +28,7 @@ public class AdminIpLimitCreateRequest {
     public Integer getRps() {
         return this.rps;
     }
-    
+
     public void setRps(Integer rps) {
         this.rps = rps;
     }
@@ -36,7 +36,7 @@ public class AdminIpLimitCreateRequest {
     public String getRuleName() {
         return this.ruleName;
     }
-    
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -44,7 +44,7 @@ public class AdminIpLimitCreateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -52,7 +52,7 @@ public class AdminIpLimitCreateRequest {
     public String getTargetIp() {
         return this.targetIp;
     }
-    
+
     public void setTargetIp(String targetIp) {
         this.targetIp = targetIp;
     }

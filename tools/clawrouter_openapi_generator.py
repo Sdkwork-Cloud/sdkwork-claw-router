@@ -57,7 +57,8 @@ class ClawRouterOpenApiGenerator:
         "qrAuth.sessions.retrieve",
         "qrAuth.sessions.scans.create",
         "registrations.create",
-        "runtimeSettings.retrieve",
+        "iam.runtime.retrieve",
+        "iam.verificationPolicy.retrieve",
         "sessions.create",
         "verificationCodes.create",
         "verificationCodes.verify",
@@ -134,7 +135,7 @@ class ClawRouterOpenApiGenerator:
                 "description": f"Generated from generated/api/api-contract-manifest.json for {boundary['sdk_client']}.",
             },
             "servers": [{"url": self.SERVERS[surface], "description": f"Local {surface} API server"}],
-            "security": [{"AuthToken": [], "SdkworkAccessToken": []}],
+            "security": [{"AuthToken": [], "AccessToken": []}],
             "tags": self._tags(operations),
             "x-sdk-client": boundary["sdk_client"],
             "x-sdk-family": boundary.get("sdk_family", surface),
@@ -187,8 +188,6 @@ class ClawRouterOpenApiGenerator:
         parameters = [self._path_parameter(param) for param in path_params]
         if bool(operation.get("idempotency_required")):
             parameters.extend(self._idempotency_parameters())
-        elif bool(operation.get("request_id_header")):
-            parameters.append(self._request_id_parameter())
         parameters.extend(self._operation_query_parameters(operation, method))
 
         spec: dict[str, Any] = {
@@ -324,17 +323,7 @@ class ClawRouterOpenApiGenerator:
                 "schema": {"type": "string", "maxLength": 128},
                 "description": "Required stable idempotency key for this write operation.",
             },
-            self._request_id_parameter(),
         ]
-
-    def _request_id_parameter(self) -> dict[str, Any]:
-        return {
-            "name": "X-Request-Id",
-            "in": "header",
-            "required": False,
-            "schema": {"type": "string", "maxLength": 128},
-            "description": "Optional caller-provided request identifier for audit correlation.",
-        }
 
     def _operation_query_parameters(self, operation: dict[str, Any], method: str) -> list[dict[str, Any]]:
         declared = operation.get("query_parameters")
@@ -493,8 +482,8 @@ class ClawRouterOpenApiGenerator:
         if operation_id in self.PUBLIC_IAM_OPERATION_IDS:
             return []
         if operation_id in self.REFRESH_TOKEN_OPERATION_IDS:
-            return [{"AuthToken": [], "SdkworkAccessToken": []}]
-        return [{"AuthToken": [], "SdkworkAccessToken": []}]
+            return [{"AuthToken": [], "AccessToken": []}]
+        return [{"AuthToken": [], "AccessToken": []}]
 
     def _components(
         self,
@@ -595,10 +584,10 @@ class ClawRouterOpenApiGenerator:
                     "scheme": "bearer",
                     "bearerFormat": "SDKWork auth token",
                 },
-                "SdkworkAccessToken": {
+                "AccessToken": {
                     "type": "apiKey",
                     "in": "header",
-                    "name": "Sdkwork-Access-Token",
+                    "name": "Access-Token",
                 },
             },
         }

@@ -1,5 +1,5 @@
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CurrentUserCouponListQuery {
+pub struct PromotionUserCouponListQuery {
     pub owner_user_id: String,
     pub organization_id: Option<String>,
     pub status: Option<String>,
@@ -7,9 +7,9 @@ pub struct CurrentUserCouponListQuery {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CouponDetailQuery {
-    pub coupon_id: String,
+pub struct PromotionUserCouponDetailQuery {
     pub tenant_id: String,
+    pub user_coupon_id: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -40,7 +40,7 @@ pub struct AppCommerceExchangeRuleQuery {
     pub target_asset_type: Option<String>,
 }
 
-impl CurrentUserCouponListQuery {
+impl PromotionUserCouponListQuery {
     pub fn new(
         tenant_id: &str,
         organization_id: Option<&str>,

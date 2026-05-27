@@ -11,6 +11,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use serde_json::{Map, Value};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -29,7 +30,6 @@ const MAX_POLICY_DEPTH: usize = 8;
 const MAX_POLICY_KEYS: usize = 256;
 const MAX_PAGE_SIZE: i64 = 100;
 const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AppAgentRegistryState {
@@ -234,7 +234,7 @@ fn build_create_command(
     let skill_policy = normalize_policy(request.skill_policy, "skillPolicy")?;
     let runtime_policy = normalize_policy(request.runtime_policy, "runtimePolicy")?;
     let idempotency_key = normalize_idempotency_key(headers)?;
-    let request_id = normalize_request_id(headers, state)?;
+    let request_id = generate_server_request_id().map_err(app_agent_request_id_error)?;
     let agent_uuid = generate_entity_uuid(state)?;
     let version_uuid = generate_entity_uuid(state)?;
     Ok(CreateAppAgentCommand {
@@ -264,16 +264,6 @@ fn normalize_idempotency_key(headers: &HeaderMap) -> Result<String, AppAgentRegi
     validate_request_token(value, "Idempotency-Key")
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AppAgentRegistryState,
-) -> Result<String, AppAgentRegistryBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        return validate_request_token(value, "X-Request-Id");
-    }
-    generate_entity_uuid(state)
-}
-
 fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
     headers
         .get(name)
@@ -293,6 +283,15 @@ fn validate_request_token(value: &str, field: &str) -> Result<String, AppAgentRe
         )));
     }
     Ok(value.to_owned())
+}
+
+fn app_agent_request_id_error(error: RequestIdError) -> AppAgentRegistryBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AppAgentRegistryBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AppAgentRegistryBuildError::System(DomainError::new(message))
+        }
+    }
 }
 
 fn required_subject(

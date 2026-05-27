@@ -206,9 +206,6 @@ export interface SdkworkAuthClient {
     registrations?: {
       create?: (payload: Record<string, unknown>) => Promise<unknown>;
     };
-    verificationPolicy?: {
-      retrieve?: () => Promise<unknown>;
-    };
     sessions?: {
       create?: (payload: Record<string, unknown>) => Promise<unknown>;
       current?: {
@@ -221,6 +218,13 @@ export interface SdkworkAuthClient {
     verificationCodes?: {
       create?: (payload: Record<string, unknown>) => Promise<unknown>;
       verify?: (payload: Record<string, unknown>) => Promise<unknown>;
+    };
+  };
+  system?: {
+    iam?: {
+      verificationPolicy?: {
+        retrieve?: () => Promise<unknown>;
+      };
     };
   };
   iam?: {
@@ -819,9 +823,9 @@ function resolveQrImageUrl(
   qrCode: SdkworkRemoteQrCode | SdkworkRemotePlatformQrAuthSession | undefined | null,
 ): string | undefined {
   return normalizeOptionalQrImageUrl(qrCode?.qrUrl)
-    || normalizeOptionalString(qrCode?.qrCodeUrl)
-    || normalizeOptionalString(qrCode?.qrImageUrl)
-    || normalizeOptionalString(qrCode?.imageUrl);
+    || normalizeOptionalQrImageUrl(qrCode?.qrCodeUrl)
+    || normalizeOptionalQrImageUrl(qrCode?.qrImageUrl)
+    || normalizeOptionalQrImageUrl(qrCode?.imageUrl);
 }
 
 function normalizeOptionalQrImageUrl(value: unknown): string | undefined {
@@ -1014,7 +1018,7 @@ export function createSdkworkAuthService(
 
   async function getVerificationPolicy(): Promise<SdkworkAuthResolvedVerificationPolicy> {
     const client = getClient();
-    const retrieveVerificationPolicy = client.auth.verificationPolicy?.retrieve;
+    const retrieveVerificationPolicy = client.system?.iam?.verificationPolicy?.retrieve;
     if (!retrieveVerificationPolicy) {
       return { ...DEFAULT_SDKWORK_AUTH_VERIFICATION_POLICY };
     }

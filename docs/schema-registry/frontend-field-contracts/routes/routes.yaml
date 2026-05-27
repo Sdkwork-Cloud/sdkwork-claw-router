@@ -1,4 +1,4 @@
-fragment: routes/routes
+﻿fragment: routes/routes
 routes:
 - route: /
   required_tables:
@@ -18,9 +18,16 @@ routes:
   - commerce_membership
   - commerce_membership_entitlement
   - commerce_account
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_coupon_ledger_entry
+  - promotion_external_operation
   - ops_audit_log
 - route: /models
   required_tables:
@@ -30,6 +37,8 @@ routes:
   - ai_model_capability
   - ai_model_pricing
   - ai_billing_meter
+  - iam_gateway_api_key_group
+  - iam_api_key_group_channel
   required_columns:
     ai_model_vendor:
     - vendor_code
@@ -220,6 +229,13 @@ routes:
   - iam_user_identity
   - iam_credential
   - iam_session
+  - iam_verification_scene_policy
+  - iam_verification_challenge
+  - iam_verification_attempt
+  - messaging_template
+  - messaging_route_rule
+  - messaging_send_request
+  - messaging_rate_limit_bucket
   - iam_security_event
   - iam_audit_event
   - ops_config_snapshot
@@ -574,6 +590,12 @@ routes:
   - ai_runtime_invocation_event
   - ai_runtime_usage_link
   - ai_runtime_artifact
+- route: /c/:conversationId
+  required_tables:
+  - ai_model
+  - ai_chat_conversation
+  - ai_chat_turn
+  - ai_runtime_invocation
 - route: /forum
   required_tables:
   - plus_feeds
@@ -792,6 +814,7 @@ routes:
   - ai_model_rank_snapshot
   - content_announcement
   - ops_metric_snapshot
+  - ops_gateway_instance
   required_columns:
     ai_usage_fact:
     - model
@@ -811,15 +834,24 @@ routes:
     - content
     - announcement_type
     - published_at
+    ops_gateway_instance:
+    - instance_code
+    - host_name
+    - ip_address_masked
+    - node_name
+    - health_status
+    - metadata
 - route: /console/usage
   required_tables:
   - ai_request_trace
   - ai_usage_fact
   - ai_routing_decision_log
   - ai_billing_meter
+  - iam_gateway_api_key_group
   required_columns:
     ai_request_trace:
     - request_id
+    - api_key_group_id
     - api_key_name_snapshot
     - api_key_group_snapshot
     - requested_model
@@ -834,11 +866,14 @@ routes:
     - completion_tokens
     - cached_tokens
     - total_tokens
+    - customer_charge_amount
     - cost_amount
     - rate_multiplier
     - base_input_unit_price
     - base_output_unit_price
     - cache_read_unit_price
+    iam_gateway_api_key_group:
+    - name
 - route: /console/gateway
   required_tables:
   - ai_request_trace
@@ -857,21 +892,6 @@ routes:
     - node_name
     - health_status
     - last_heartbeat_at
-- route: /console/routing
-  required_tables:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
-  - iam_gateway_api_key
-  - ai_request_trace
-  - ai_usage_fact
-  - ai_routing_policy
-  - ai_routing_profile
-  - ai_routing_rule
-  - ai_routing_decision_log
-  - ops_config_snapshot
-  - ops_audit_log
 - route: /console/api-keys
   required_tables:
   - iam_gateway_api_key
@@ -1000,71 +1020,6 @@ routes:
     - delivery_status
     - read_at
     - delivered_at
-- route: /console/agents
-  required_tables:
-  - ai_agent
-  - ai_agent_version
-  - ai_agent_tool_binding
-  - ai_agent_mcp_server
-  - ai_agent_memory
-  - ai_agent_run
-  - ai_agent_run_step
-  - ai_agent_session
-  - ai_chat_conversation
-  - ai_memory_space
-  - ai_memory_space_binding
-  - ai_runtime_invocation
-  required_columns:
-    ai_agent:
-    - uuid
-    - tenant_id
-    - organization_id
-    - owner_user_id
-    - agent_code
-    - name
-    - visibility
-    - status
-    ai_agent_version:
-    - uuid
-    - tenant_id
-    - organization_id
-    - agent_id
-    - version_no
-    - release_status
-    - status
-    ai_agent_tool_binding:
-    - uuid
-    - tenant_id
-    - organization_id
-    - agent_id
-    - binding_key
-    - binding_type
-    - status
-    ai_agent_mcp_server:
-    - uuid
-    - tenant_id
-    - organization_id
-    - server_code
-    - name
-    - transport_type
-    - status
-    ai_agent_memory:
-    - uuid
-    - tenant_id
-    - organization_id
-    - owner_user_id
-    - agent_id
-    - memory_scope
-    - memory_type
-    - status
-- route: /console/providers
-  required_tables:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
-  - integration_proxy
-  - ops_config_snapshot
 - route: /admin/dashboard
   required_tables:
   - ai_usage_fact
@@ -1165,6 +1120,201 @@ routes:
     - memory_scope
     - memory_type
     - status
+- route: /admin/prompts
+  required_tables:
+  - ai_prompt
+  - ai_prompt_version
+  - ai_prompt_binding
+  - plus_category
+  - ops_audit_log
+  required_columns:
+    ai_prompt:
+    - uuid
+    - tenant_id
+    - organization_id
+    - prompt_key
+    - name
+    - description
+    - category_id
+    - category_code
+    - prompt_type
+    - visibility
+    - owner_user_id
+    - latest_version_id
+    - published_version_id
+    - status
+    - tags
+    - created_at
+    - updated_at
+    ai_prompt_version:
+    - uuid
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - version_no
+    - title
+    - content
+    - variable_schema
+    - output_schema
+    - model_constraints
+    - safety_policy
+    - examples_json
+    - checksum_hash
+    - lifecycle_status
+    - review_status
+    - review_comment
+    - created_by
+    - published_at
+    - status
+    - created_at
+    - updated_at
+    ai_prompt_binding:
+    - uuid
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - prompt_version_id
+    - owner_type
+    - owner_id
+    - binding_role
+    - priority
+    - enabled
+    - policy_json
+    - snapshot_json
+    - status
+    - created_at
+    - updated_at
+    plus_category:
+    - name
+    - code
+    - type
+    - icon
+    - sort_weight
+    - parent_id
+    - path
+    - visible
+    - status
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - target_type
+    - target_id
+    - request_id
+- route: /admin/mcp
+  required_tables:
+  - ai_mcp_server
+  - ai_mcp_server_revision
+  - ai_mcp_tool
+  - ai_mcp_binding
+  - plus_category
+  - ops_audit_log
+  required_columns:
+    ai_mcp_server:
+    - uuid
+    - tenant_id
+    - organization_id
+    - server_key
+    - name
+    - description
+    - category_id
+    - category_code
+    - transport
+    - visibility
+    - owner_user_id
+    - latest_revision_id
+    - published_revision_id
+    - health_status
+    - last_checked_at
+    - last_error_masked
+    - status
+    - tags
+    - published_at
+    - deprecated_at
+    - created_at
+    - updated_at
+    ai_mcp_server_revision:
+    - uuid
+    - tenant_id
+    - organization_id
+    - server_id
+    - revision_no
+    - transport
+    - endpoint_url
+    - command
+    - args_json
+    - env_schema
+    - auth_type
+    - secret_ref
+    - timeout_ms
+    - retry_policy
+    - config_hash
+    - lifecycle_status
+    - status
+    - created_by
+    - published_at
+    - deprecated_at
+    - created_at
+    - updated_at
+    ai_mcp_tool:
+    - uuid
+    - tenant_id
+    - organization_id
+    - server_id
+    - server_revision_id
+    - tool_key
+    - name
+    - description
+    - input_schema
+    - output_schema
+    - risk_level
+    - requires_approval
+    - enabled
+    - status
+    - rate_limit_policy
+    - schema_hash
+    - discovered_at
+    - last_invoked_at
+    - sort_weight
+    - created_at
+    - updated_at
+    ai_mcp_binding:
+    - uuid
+    - tenant_id
+    - organization_id
+    - server_id
+    - server_revision_id
+    - tool_id
+    - owner_type
+    - owner_id
+    - allowed_tools
+    - denied_tools
+    - policy_json
+    - priority
+    - enabled
+    - status
+    - snapshot_json
+    - created_at
+    - updated_at
+    plus_category:
+    - name
+    - code
+    - type
+    - icon
+    - sort_weight
+    - parent_id
+    - path
+    - visible
+    - status
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - target_type
+    - target_id
+    - request_id
 - route: /admin/settings
   required_tables:
   - ops_config_snapshot
@@ -1199,7 +1349,13 @@ routes:
   - ai_pricing_rule
   - ai_pricing_tier
   - ai_billing_meter
+  - iam_api_key_group_channel
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
   - ops_audit_log
+  - ops_config_snapshot
 - route: /admin/model
   required_tables:
   - ai_model_vendor
@@ -1219,6 +1375,7 @@ routes:
   required_tables:
   - plus_app
   - plus_category
+  - studio_app_template
   - studio_catalog_action
   - studio_catalog_asset
   - studio_catalog_artifact
@@ -1258,6 +1415,37 @@ routes:
     - path
     - visible
     - status
+    studio_app_template:
+    - uuid
+    - template_no
+    - template_code
+    - template_name
+    - description
+    - category_id
+    - category_code
+    - template_type
+    - runtime
+    - framework
+    - language
+    - icon_url
+    - cover_url
+    - visibility
+    - publish_status
+    - featured
+    - sort_weight
+    - source_app_id
+    - git_repo_url
+    - git_ref
+    - git_sub_path
+    - current_version_id
+    - app_config_schema
+    - default_app_config
+    - variable_schema
+    - dependency_manifest
+    - capability_manifest
+    - status
+    - created_at
+    - updated_at
     studio_catalog_action:
     - target_type
     - target_id
@@ -1278,6 +1466,51 @@ routes:
     - os_name
     - artifact_url
     - release_notes
+- route: /admin/courses
+  required_tables: &adminCourseRequiredTables
+  - content_course
+  - content_course_section
+  - content_course_lesson
+  - content_course_relation
+  - content_course_application
+  - content_forum_comment
+  - content_reaction
+  - ops_audit_log
+- route: /admin/courses/dashboard
+  required_tables:
+  - content_course
+  - content_course_lesson
+  - content_course_application
+  - content_forum_comment
+  - content_reaction
+- route: /admin/courses/catalog
+  required_tables:
+  - content_course
+- route: /admin/courses/sections
+  required_tables:
+  - content_course
+  - content_course_section
+- route: /admin/courses/lessons
+  required_tables:
+  - content_course
+  - content_course_lesson
+- route: /admin/courses/relations
+  required_tables:
+  - content_course
+  - content_course_relation
+- route: /admin/courses/applications
+  required_tables:
+  - content_course
+  - content_course_application
+- route: /admin/courses/comments
+  required_tables:
+  - content_course
+  - content_forum_comment
+- route: /admin/courses/engagement
+  required_tables:
+  - content_course
+  - content_course_relation
+  - content_reaction
 - route: /admin/open-platform
   required_tables:
   - open_platform_provider
@@ -1473,28 +1706,30 @@ routes:
   - content_announcement
   - ops_audit_log
 - route: /admin/marketing
-  required_tables:
-  - iam_user
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_coupon_issue_batch
-  - commerce_coupon_redemption
+  required_tables: &promotionAdminRequiredTables
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_budget_account
+  - promotion_budget_ledger_entry
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_coupon_ledger_entry
+  - promotion_external_binding
+  - promotion_external_operation
+  - promotion_event_outbox
   - commerce_order
-  - commerce_payment_intent
-  - commerce_payment_method
-  - commerce_recharge_package
-  - commerce_exchange_rule
-  - plus_invitation_code
-  - plus_invitation_relation
-  - ops_referral_stat_snapshot
-  - commerce_payment_attempt
-  - commerce_product_spu
-  - commerce_product_sku
-  - ops_audit_log
+  - commerce_order_item
   required_columns:
-    commerce_coupon_issue_batch:
-    - coupon_template_id
-    - batch_no
+    promotion_coupon_stock:
+    - offer_id
     - title
     - code_prefix
     - requested_quantity
@@ -1503,6 +1738,9 @@ routes:
     - claimed_quantity
     - redeemed_quantity
     - disabled_quantity
+    - returned_quantity
+    - max_claims_per_subject
+    - max_claims_per_natural_person
     ops_referral_stat_snapshot:
     - inviter_user_id
     - inviter_email_snapshot
@@ -1524,6 +1762,19 @@ routes:
   - ops_alert_event
   - ops_metric_snapshot
   - integration_provider_health_snapshot
+- route: /admin/service-nodes
+  required_tables:
+  - ops_gateway_instance
+  required_columns:
+    ops_gateway_instance:
+    - instance_code
+    - node_name
+    - ip_address_masked
+    - status
+    - health_status
+    - metadata
+    - deleted_at
+    - updated_at
 - route: /admin/ratelimit
   required_tables:
   - iam_gateway_api_key
@@ -1558,6 +1809,56 @@ routes:
     - requests_per_second
     - requests_per_minute
     - block_duration_seconds
+- route: /admin/storage
+  required_tables: &storageAdminRequiredTables
+  - object_provider
+  - object_bucket
+  - object_blob
+  - upload_session
+  - storage_default_bucket_policy
+  - storage_quota_policy
+  - storage_usage_counter
+  - storage_usage_ledger
+  - storage_usage_snapshot
+  - storage_reconciliation_run
+  - storage_reconciliation_item
+  - storage_gc_job
+  - ops_audit_log
+- route: /admin/storage/providers
+  required_tables: *storageAdminRequiredTables
+- route: /admin/storage/buckets
+  required_tables: *storageAdminRequiredTables
+- route: /admin/storage/default-buckets
+  required_tables: *storageAdminRequiredTables
+- route: /admin/storage/quotas
+  required_tables: *storageAdminRequiredTables
+- route: /admin/storage/usage
+  required_tables: *storageAdminRequiredTables
+- route: /admin/storage/reconciliation
+  required_tables: *storageAdminRequiredTables
+- route: /admin/storage/garbage-collection
+  required_tables: *storageAdminRequiredTables
+- route: /admin/drive
+  required_tables: &driveAdminRequiredTables
+  - drive_space
+  - drive_node
+  - drive_acl_entry
+  - drive_change_log
+  - file_node
+  - file_version
+  - file_binding
+  - file_audit_log
+  - ops_audit_log
+- route: /admin/drive/spaces
+  required_tables: *driveAdminRequiredTables
+- route: /admin/drive/nodes
+  required_tables: *driveAdminRequiredTables
+- route: /admin/drive/permissions
+  required_tables: *driveAdminRequiredTables
+- route: /admin/drive/share-links
+  required_tables: *driveAdminRequiredTables
+- route: /admin/drive/audit
+  required_tables: *driveAdminRequiredTables
 - route: /console/account
   required_tables:
   - iam_user
@@ -1573,11 +1874,22 @@ routes:
   - commerce_payment_attempt
 - route: /console/wallet
   required_tables:
+  - commerce_billing_history
   - commerce_account
   - commerce_account_ledger_entry
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_budget_account
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_external_operation
+  - promotion_event_outbox
   - commerce_order
   - commerce_payment_attempt
   - commerce_account_hold
@@ -1586,6 +1898,7 @@ routes:
   - commerce_order_item
 - route: /console/recharge
   required_tables:
+  - commerce_billing_history
   - commerce_recharge_package
   - commerce_payment_method
   - commerce_order
@@ -1619,8 +1932,23 @@ routes:
   - commerce_product_sku
   - commerce_price_list_item
   - commerce_inventory_stock
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_budget_account
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_external_operation
+  - promotion_event_outbox
   - ops_audit_log
   - commerce_user_address
   - commerce_checkout_session
@@ -1758,10 +2086,14 @@ routes:
   - commerce_order_item
 - route: /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_coupon_ledger_entry
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2178,28 +2510,170 @@ routes:
   - ops_audit_log
 - route: /admin/service-providers
   required_tables:
-  - open_platform_provider
-  - open_platform_account
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
   - ops_audit_log
-- route: /admin/service-providers/accounts
+- route: /admin/service-providers/dashboard
   required_tables:
-  - open_platform_provider
-  - open_platform_account
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
+  - ai_usage_service_provider_edge
+  - commerce_service_provider_exposure_snapshot
+  - analytics_service_provider_daily
   - ops_audit_log
-- route: /admin/wallet/recharge-packages
+- route: /admin/service-providers/providers
   required_tables:
+  - integration_service_provider
+  - analytics_service_provider_daily
+  - ops_audit_log
+- route: /admin/service-providers/relations
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
+  - ops_audit_log
+- route: /admin/service-providers/downstreams
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
+  - integration_service_provider_price_plan
+  - analytics_service_provider_edge_daily
+  - ops_audit_log
+- route: /admin/service-providers/members
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_member
+  - ops_audit_log
+- route: /admin/service-providers/bindings
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_subject_binding
+  - iam_gateway_api_key
+  - iam_gateway_api_key_group
+  - ops_audit_log
+- route: /admin/service-providers/contracts
+  required_tables:
+  - integration_service_provider_edge
+  - integration_service_provider_contract
+  - integration_service_provider_contract_version
+  - integration_service_provider_finance_profile
+  - ops_audit_log
+- route: /admin/service-providers/pricing
+  required_tables:
+  - integration_service_provider_edge
+  - integration_service_provider_price_plan
+  - integration_service_provider_price_rule
+  - integration_service_provider_price_change_request
+  - ai_model_pricing
+  - ops_audit_log
+- route: /admin/service-providers/usage
+  required_tables:
+  - ai_usage_fact
+  - ai_usage_service_provider_chain
+  - ai_usage_service_provider_edge
+  - ops_audit_log
+- route: /admin/service-providers/wallet
+  required_tables:
+  - integration_service_provider_account_binding
   - commerce_account
   - commerce_account_ledger_entry
-  - commerce_account_hold
-  - commerce_recharge_package
-  - commerce_order
-  - commerce_payment_intent
-  - commerce_payment_attempt
-  - commerce_exchange_rule
+  - commerce_service_provider_exposure_snapshot
   - ops_audit_log
-  - commerce_product_spu
-  - commerce_product_sku
-  - commerce_order_item
+- route: /admin/service-providers/statements
+  required_tables:
+  - commerce_usage_service_provider_settlement
+  - commerce_usage_service_provider_statement
+  - commerce_usage_service_provider_statement_item
+  - ops_audit_log
+- route: /admin/service-providers/reconciliation
+  required_tables:
+  - integration_provider_invoice_import
+  - integration_provider_invoice_item
+  - commerce_usage_service_provider_reconciliation_run
+  - commerce_usage_service_provider_reconciliation_item
+  - ops_audit_log
+- route: /admin/service-providers/adjustments
+  required_tables:
+  - commerce_usage_service_provider_adjustment
+  - commerce_account_ledger_entry
+  - ops_audit_log
+- route: /admin/service-providers/risk
+  required_tables:
+  - commerce_service_provider_exposure_snapshot
+  - ops_audit_log
+- route: /admin/service-providers/audit
+  required_tables:
+  - ops_audit_log
+- route: /admin/messaging
+  required_tables:
+  - messaging_provider_capability
+  - messaging_template
+  - messaging_route_rule
+  - messaging_send_request
+  - messaging_suppression
+  - messaging_rate_limit_bucket
+- route: /admin/messaging/providers
+  required_tables:
+  - integration_provider
+  - integration_provider_account
+  - messaging_provider_capability
+  - ops_audit_log
+- route: /admin/messaging/sender-identities
+  required_tables:
+  - integration_provider_account
+  - messaging_sender_identity
+  - ops_audit_log
+- route: /admin/messaging/templates
+  required_tables:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_template_binding
+  - ops_audit_log
+- route: /admin/messaging/route-rules
+  required_tables:
+  - messaging_template
+  - integration_provider_account
+  - messaging_sender_identity
+  - messaging_template_binding
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - ops_audit_log
+- route: /admin/messaging/send-requests
+  required_tables:
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+- route: /admin/messaging/diagnostics
+  required_tables:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - messaging_sender_identity
+  - messaging_template_binding
+  - messaging_suppression
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  - messaging_rate_limit_bucket
+  - ops_audit_log
+- route: /admin/messaging/suppressions
+  required_tables:
+  - messaging_suppression
+  - ops_audit_log
+- route: /admin/messaging/rate-limits
+  required_tables:
+  - messaging_rate_limit_bucket
+- route: /admin/messaging/verification-policies
+  required_tables:
+  - iam_verification_scene_policy
+  - messaging_template
+  - ops_audit_log
 - route: /admin/wallet/recharge-orders
   required_tables:
   - commerce_account
@@ -2258,10 +2732,6 @@ routes:
   - commerce_order_item
 - route: /admin/finance/invoice-titles
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2277,10 +2747,6 @@ routes:
   - commerce_usage_settlement
 - route: /admin/finance/invoices
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2294,164 +2760,30 @@ routes:
   - commerce_order_item
   - commerce_usage_statement
   - commerce_usage_settlement
-- route: /admin/finance/coupon-templates
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/finance/coupon-campaigns
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/finance/coupon-codes
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/finance/coupon-redemptions
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/marketing/coupon-templates
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/marketing/coupon-campaigns
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/marketing/coupon-codes
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-- route: /admin/marketing/coupon-redemptions
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
+- route: /admin/marketing/offers
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/promotion-coupon-stocks
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/promotion-codes
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/promotion-code-redemptions
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/user-coupons
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/discount-applications
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/discount-allocations
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/promotion-coupon-ledger
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/budget-ledger
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/external-bindings
+  required_tables: *promotionAdminRequiredTables
+- route: /admin/marketing/events
+  required_tables: *promotionAdminRequiredTables
 - route: /admin/finance/payment-reconciliation
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2467,10 +2799,6 @@ routes:
   - commerce_usage_settlement
 - route: /admin/finance/order-revenue
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2486,10 +2814,6 @@ routes:
   - commerce_usage_settlement
 - route: /admin/finance/refunds-report
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2505,10 +2829,6 @@ routes:
   - commerce_usage_settlement
 - route: /admin/finance/audit-events
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2524,20 +2844,24 @@ routes:
   - commerce_usage_settlement
 - route: /admin/marketing/referrals
   required_tables:
-  - iam_user
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_coupon_issue_batch
-  - commerce_coupon_redemption
-  - commerce_order
-  - commerce_payment_intent
-  - commerce_payment_method
-  - commerce_recharge_package
-  - commerce_exchange_rule
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_budget_account
+  - promotion_budget_ledger_entry
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_coupon_ledger_entry
+  - promotion_external_binding
+  - promotion_external_operation
+  - promotion_event_outbox
   - plus_invitation_code
   - plus_invitation_relation
   - ops_referral_stat_snapshot
-  - commerce_payment_attempt
-  - commerce_product_spu
-  - commerce_product_sku
-  - ops_audit_log

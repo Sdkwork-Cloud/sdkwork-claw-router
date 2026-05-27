@@ -1,45 +1,178 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
-  LayoutDashboard, Activity, Key, CreditCard,
-  Settings, LogOut, ChevronLeft, ChevronRight, Bell, Box, Network, Bot, Crown, Receipt, Wallet
+  Activity,
+  Bell,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  CreditCard,
+  Crown,
+  Key,
+  LayoutDashboard,
+  LogOut,
+  Receipt,
+  Settings,
+  Wallet,
+  type LucideIcon,
 } from 'lucide-react';
 
 import { Navbar } from 'sdkwork-claw-router-commons';
 import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
 import { useTranslation } from 'react-i18next';
-type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
-const mainNavigation = [
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1hgvoqd", "仪表盘"), path: '/console/dashboard', icon: LayoutDashboard },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1wrh7eu", "令牌管理"), path: '/console/api-keys', icon: Key },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.p2qyw6", "调用统计"), path: '/console/usage', icon: Activity },
-  { name: (t: TranslationFunction) => t("console.account.nav.account", "账户详情"), path: '/console/account', icon: CreditCard },
-  { name: (t: TranslationFunction) => t("console.wallet.nav.wallet", "充值兑换"), path: '/console/wallet', icon: Wallet },
-  { name: (t: TranslationFunction) => t("console.memberships.nav.memberships", "会员"), path: '/console/memberships', icon: Crown },
-  { name: (t: TranslationFunction) => t("console.settlements.nav.settlements", "账单与报表"), path: '/console/settlements', icon: Receipt },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.3n18hg", "消息中心"), path: '/console/notifications', icon: Bell },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.d29cz6", "工具配置"), path: '/console/providers', icon: Box },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1x2j5b5", "本地路由"), path: '/console/routing', icon: Network },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.agents", "Agent 管理"), path: '/console/agents', icon: Bot },
+const CONSOLE_SIDEBAR_GROUPS_DEFAULT_OPEN = true;
+
+type ConsoleMenuItem = {
+  path: string;
+  labelKey: string;
+  fallbackLabel: string;
+  icon: LucideIcon;
+};
+
+type ConsoleMenuGroup = {
+  groupKey: string;
+  fallbackLabel: string;
+  items: ConsoleMenuItem[];
+};
+
+function itemBlock(item: ConsoleMenuItem): ConsoleMenuItem {
+  return item;
+}
+
+function groupBlock(groupKey: string, fallbackLabel: string, items: ConsoleMenuItem[]): ConsoleMenuGroup {
+  return { groupKey, fallbackLabel, items };
+}
+
+const consoleSidebarItems = [
+  itemBlock({ path: '/console/dashboard', labelKey: 'console.menu.dashboard', fallbackLabel: 'Dashboard', icon: LayoutDashboard }),
 ];
+
+const consoleSidebarGroups = [
+  groupBlock('console.menu.group.observability', 'Usage & Observability', [
+    itemBlock({ path: '/console/usage', labelKey: 'console.menu.usage', fallbackLabel: 'Call statistics', icon: Activity }),
+  ]),
+  groupBlock('console.menu.group.integration', 'Access & Routing', [
+    itemBlock({ path: '/console/api-keys', labelKey: 'console.menu.apiKeys', fallbackLabel: 'Token management', icon: Key }),
+  ]),
+  groupBlock('console.menu.group.accountBusiness', 'Account & Commerce', [
+    itemBlock({ path: '/console/account', labelKey: 'console.menu.account', fallbackLabel: 'Account details', icon: CreditCard }),
+    itemBlock({ path: '/console/wallet', labelKey: 'console.menu.wallet', fallbackLabel: 'Recharge exchange', icon: Wallet }),
+    itemBlock({ path: '/console/memberships', labelKey: 'console.menu.memberships', fallbackLabel: 'Memberships', icon: Crown }),
+    itemBlock({ path: '/console/settlements', labelKey: 'console.menu.settlements', fallbackLabel: 'Bills and Reports', icon: Receipt }),
+  ]),
+  groupBlock('console.menu.group.notificationsSettings', 'Notifications & Settings', [
+    itemBlock({ path: '/console/notifications', labelKey: 'console.menu.notifications', fallbackLabel: 'Message Center', icon: Bell }),
+    itemBlock({ path: '/console/settings', labelKey: 'console.menu.settings', fallbackLabel: 'Configuration center', icon: Settings }),
+  ]),
+];
+
+export type ConsoleThemePreference = 'system' | 'light' | 'dark';
+export type ConsoleThemeColorPreference = 'lobster' | 'blue' | 'emerald' | 'violet' | 'amber';
 
 export interface ConsoleContextProps {
   isDark: boolean;
   toggleTheme: () => void;
-  setTheme: (theme: 'light' | 'dark') => void;
+  theme: ConsoleThemePreference;
+  setTheme: (theme: ConsoleThemePreference) => void;
+  themeColor: ConsoleThemeColorPreference;
+  setThemeColor: (themeColor: ConsoleThemeColorPreference) => void;
 }
 
 interface ConsoleLayoutProps {
   isDark: boolean;
   toggleTheme: () => void;
-  setTheme: (theme: 'light' | 'dark') => void;
+  theme: ConsoleThemePreference;
+  setTheme: (theme: ConsoleThemePreference) => void;
+  themeColor: ConsoleThemeColorPreference;
+  setThemeColor: (themeColor: ConsoleThemeColorPreference) => void;
 }
 
-export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutProps) {
+function isConsoleSidebarItemActive(pathname: string, item: ConsoleMenuItem): boolean {
+  return pathname === item.path || pathname.startsWith(`${item.path}/`);
+}
+
+function ConsoleSidebarItem({
+  item,
+  sidebarOpen,
+}: {
+  item: ConsoleMenuItem;
+  sidebarOpen: boolean;
+}) {
   const { t } = useTranslation();
   const location = useLocation();
+  const isActive = isConsoleSidebarItemActive(location.pathname, item);
+  const Icon = item.icon;
+  const itemName = t(item.labelKey, item.fallbackLabel);
+
+  return (
+    <Link
+      key={item.path}
+      to={item.path}
+      className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
+        isActive
+          ? 'bg-lobster-50 dark:bg-lobster-500/10 text-lobster-600 dark:text-lobster-300 font-medium'
+          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-slate-200'
+      }`}
+      title={!sidebarOpen ? itemName : undefined}
+    >
+      <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-lobster-600 dark:text-white' : ''}`} />
+      <div className="overflow-hidden whitespace-nowrap">
+        {sidebarOpen && <span>{itemName}</span>}
+      </div>
+    </Link>
+  );
+}
+
+function ConsoleSidebarGroup({
+  group,
+  sidebarOpen,
+  defaultOpen,
+}: {
+  group: ConsoleMenuGroup;
+  sidebarOpen: boolean;
+  defaultOpen: boolean;
+}) {
+  const { t } = useTranslation();
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const hasActiveChild = group.items.some((item) => isConsoleSidebarItemActive(location.pathname, item));
+  const shouldRenderItems = !sidebarOpen || isOpen;
+
+  return (
+    <div className="mb-1">
+      {sidebarOpen && (
+        <button
+          onClick={() => setIsOpen((current) => !current)}
+          className={`flex w-full items-center justify-between px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors ${
+            hasActiveChild
+              ? 'text-lobster-500 dark:text-lobster-400'
+              : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
+          }`}
+          type="button"
+        >
+          <span>{t(group.groupKey, group.fallbackLabel)}</span>
+          {isOpen ? (
+            <ChevronDown className="h-3.5 w-3.5" />
+          ) : (
+            <ChevronRight className="h-3.5 w-3.5" />
+          )}
+        </button>
+      )}
+      {shouldRenderItems && (
+        <div className="flex flex-col gap-0.5">
+          {group.items.map((item) => (
+            <ConsoleSidebarItem key={item.path} item={item} sidebarOpen={sidebarOpen} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function ConsoleLayout({ isDark, toggleTheme, theme, setTheme, themeColor, setThemeColor }: ConsoleLayoutProps) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarWidth, setSidebarWidth] = useState(256);
@@ -89,7 +222,7 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#121212] flex flex-col selection:bg-lobster-500/30">
+    <div className="sdkwork-console-shell min-h-screen bg-slate-50 dark:bg-[#121212] flex flex-col selection:bg-lobster-500/30">
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
       <div className="flex-1 flex pt-[72px]">
@@ -120,50 +253,30 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
 
           {/* Main Nav */}
           <nav className="flex-1 overflow-y-auto pt-6 pb-6 px-3 flex flex-col gap-1 custom-scrollbar">
-            {mainNavigation.map((item) => {
-              const isActive = location.pathname.startsWith(item.path);
-              const Icon = item.icon;
-              const itemName = item.name(t);
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
-                    isActive
-                    ? 'bg-blue-50 dark:bg-white/10 text-lobster-600 dark:text-white font-medium'
-                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-slate-200'
-                  }`}
-                  title={!sidebarOpen ? itemName : undefined}
-                >
-                  <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-lobster-600 dark:text-white' : ''}`} />
-                  <div className="overflow-hidden whitespace-nowrap">
-                    {sidebarOpen && <span>{itemName}</span>}
-                  </div>
-                </Link>
-              )
-            })}
+            {consoleSidebarItems.map((item) => (
+              <ConsoleSidebarItem key={item.path} item={item} sidebarOpen={sidebarOpen} />
+            ))}
+            <div className={sidebarOpen ? 'my-2 h-px bg-slate-200 dark:bg-white/10' : 'my-2'} />
+            {consoleSidebarGroups.map((group) => (
+              <ConsoleSidebarGroup
+                key={group.groupKey}
+                group={group}
+                sidebarOpen={sidebarOpen}
+                defaultOpen={CONSOLE_SIDEBAR_GROUPS_DEFAULT_OPEN}
+              />
+            ))}
           </nav>
 
-          {/* Settings & Logout Nav */}
+          {/* Logout Nav */}
           <div className="p-3 border-t border-slate-200 dark:border-white/10 flex flex-col gap-1 overflow-hidden">
-             <Link
-                to="/console/settings"
-                className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5"
-                title={!sidebarOpen ? t("console.core.consolelayout.text.1uk3ysa", "配置中心") : undefined}
-              >
-                <Settings className="w-5 h-5 shrink-0" />
-                <div className="overflow-hidden whitespace-nowrap">
-                  {sidebarOpen && <span>{t("console.core.consolelayout.text.1uk3ysa", "配置中心")}</span>}
-                </div>
-             </Link>
              <button
                 onClick={handleLogout}
                 className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10"
-                title={!sidebarOpen ? t("console.core.consolelayout.text.12hokt7", "退出登录") : undefined}
+                title={!sidebarOpen ? t("console.core.consolelayout.text.12hokt7", "Log out") : undefined}
               >
                 <LogOut className="w-5 h-5 shrink-0" />
                 <div className="overflow-hidden whitespace-nowrap">
-                  {sidebarOpen && <span>{t("console.core.consolelayout.text.12hokt7", "退出登录")}</span>}
+                  {sidebarOpen && <span>{t("console.core.consolelayout.text.12hokt7", "Log out")}</span>}
                 </div>
              </button>
           </div>
@@ -172,7 +285,7 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
         {/* Main Content Pane */}
         <div className="flex-1 flex flex-col min-w-0 max-h-[calc(100vh-72px)] overflow-y-auto custom-scrollbar bg-slate-50 dark:bg-[#121212]">
           <main className="flex-1">
-            <Outlet context={{ isDark, toggleTheme, setTheme }} />
+            <Outlet context={{ isDark, toggleTheme, theme, setTheme, themeColor, setThemeColor }} />
           </main>
         </div>
 

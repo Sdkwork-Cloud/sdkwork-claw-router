@@ -11,7 +11,7 @@ public class OpenAiRealtimeTranscriptionSession {
     public OpenAiRealtimeClientSecretValue getClientSecret() {
         return this.clientSecret;
     }
-    
+
     public void setClientSecret(OpenAiRealtimeClientSecretValue clientSecret) {
         this.clientSecret = clientSecret;
     }
@@ -19,7 +19,7 @@ public class OpenAiRealtimeTranscriptionSession {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -27,7 +27,7 @@ public class OpenAiRealtimeTranscriptionSession {
     public String getInputAudioFormat() {
         return this.inputAudioFormat;
     }
-    
+
     public void setInputAudioFormat(String inputAudioFormat) {
         this.inputAudioFormat = inputAudioFormat;
     }
@@ -35,7 +35,7 @@ public class OpenAiRealtimeTranscriptionSession {
     public String getInputAudioTranscription() {
         return this.inputAudioTranscription;
     }
-    
+
     public void setInputAudioTranscription(String inputAudioTranscription) {
         this.inputAudioTranscription = inputAudioTranscription;
     }
@@ -43,7 +43,7 @@ public class OpenAiRealtimeTranscriptionSession {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

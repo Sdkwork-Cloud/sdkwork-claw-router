@@ -8,7 +8,7 @@ public class RankingVendorOptionsResponse {
     public List<RankingVendorOption> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<RankingVendorOption> items) {
         this.items = items;
     }

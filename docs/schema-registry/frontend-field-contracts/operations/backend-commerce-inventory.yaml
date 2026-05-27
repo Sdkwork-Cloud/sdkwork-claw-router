@@ -131,7 +131,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Update inventory stock
   description: Updates one stock record using optimistic version control and writes inventory ledger evidence.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_inventory_stock

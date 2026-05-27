@@ -16,6 +16,36 @@ fn computes_order_payable_amount_from_items_and_discount() {
 }
 
 #[test]
+fn rejects_order_amount_overflow_instead_of_panicking_or_zeroing() {
+    let item = OrderItemDraft::new(
+        "sku-huge",
+        "Huge plan",
+        1,
+        CommerceMoney::new("92233720368547758.08").unwrap(),
+    )
+    .unwrap();
+
+    assert!(
+        OrderAmountBreakdown::from_items(vec![item], CommerceMoney::new("0").unwrap()).is_err()
+    );
+}
+
+#[test]
+fn rejects_order_line_total_overflow() {
+    let item = OrderItemDraft::new(
+        "sku-many",
+        "Many seats",
+        u32::MAX,
+        CommerceMoney::new("21474836.49").unwrap(),
+    )
+    .unwrap();
+
+    assert!(
+        OrderAmountBreakdown::from_items(vec![item], CommerceMoney::new("0").unwrap()).is_err()
+    );
+}
+
+#[test]
 fn validates_order_status_lifecycle() {
     assert_eq!(
         OrderTransition::new(OrderStatus::PendingPayment, OrderStatus::Paid).validate(),

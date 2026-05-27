@@ -7,12 +7,13 @@ use hyper_rustls::HttpsConnector;
 use hyper_util::client::legacy::connect::HttpConnector;
 use hyper_util::client::legacy::Client;
 use hyper_util::rt::TokioExecutor;
-use serde_json::{Map, Value};
+use serde_json::Value;
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 
 use crate::domain::{
-    DomainError, DomainResult, ProviderAuthProfile, ProviderAuthType, ProviderRetryPolicy,
+    provider_native_model_id, DomainError, DomainResult, ProviderAuthProfile, ProviderAuthType,
+    ProviderRetryPolicy,
 };
 use crate::ports::{
     ChatCompletionRelay, ChatCompletionRelayFuture, ChatCompletionRelayRequest,
@@ -671,8 +672,17 @@ impl ProviderHealthProbe for SecretRefOpenAiCompatibleProviderHealthProbe {
                 }
             };
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
+            let provider_model = provider_native_model_id(&request.provider_model);
+            if provider_model.is_empty() {
+                return Ok(ProviderHealthProbeOutcome::failure(
+                    elapsed_millis(started_at),
+                    None,
+                    "provider_health_probe_config_invalid",
+                    "provider health probe model is required",
+                ));
+            }
             let body = serde_json::json!({
-                "model": request.provider_model,
+                "model": provider_model,
                 "messages": [{"role": "user", "content": "ping"}],
                 "max_tokens": 1,
                 "stream": false
@@ -892,12 +902,16 @@ async fn send_chat_completion_with_runtime(
     endpoint: &UpstreamProviderEndpoint,
     request: ChatCompletionRelayRequest,
 ) -> DomainResult<ChatCompletionRelayResponse> {
+    let body = upstream_model_request_body(
+        request.request_body,
+        &request.provider_model,
+        "chat completion",
+    )?;
     let (status_code, body) = send_openai_json_with_runtime(
         runtime,
         endpoint,
         endpoint.chat_completions_uri()?,
-        request.provider_model,
-        request.request_body,
+        body,
         "chat completion",
         request.provider_retry_policy,
     )
@@ -911,10 +925,20 @@ async fn send_chat_completion_stream_with_runtime(
     endpoint: &UpstreamProviderEndpoint,
     request: ChatCompletionRelayRequest,
 ) -> DomainResult<ChatCompletionStreamRelayResponse> {
-    let body = upstream_chat_stream_request_body(request.request_body, request.provider_model)?;
+    let body =
+        upstream_model_request_body(request.request_body, &request.provider_model, "chat stream")?;
+    let upstream_uri = endpoint.chat_completions_uri()?;
+    tracing::info!(
+        provider_code = %request.provider_code,
+        provider_channel_id = request.provider_channel_id,
+        upstream_base_url = %endpoint.base_url,
+        upstream_path = %upstream_uri.path(),
+        model = body.get("model").and_then(|value| value.as_str()).unwrap_or(""),
+        "forwarding OpenAI-compatible chat stream request to upstream provider"
+    );
     let builder = Request::builder()
         .method(Method::POST)
-        .uri(endpoint.authenticated_uri(endpoint.chat_completions_uri()?)?)
+        .uri(endpoint.authenticated_uri(upstream_uri)?)
         .header(CONTENT_TYPE, "application/json");
     let http_request = endpoint
         .apply_auth_headers(builder)?
@@ -932,6 +956,13 @@ async fn send_chat_completion_stream_with_runtime(
         .get(CONTENT_TYPE)
         .and_then(|value| value.to_str().ok())
         .map(str::to_owned);
+    tracing::info!(
+        provider_code = %request.provider_code,
+        provider_channel_id = request.provider_channel_id,
+        status_code,
+        content_type = content_type.as_deref().unwrap_or(""),
+        "upstream OpenAI-compatible chat stream response received"
+    );
     Ok(ChatCompletionStreamRelayResponse::new(
         status_code,
         content_type,
@@ -944,12 +975,13 @@ async fn send_response_with_runtime(
     endpoint: &UpstreamProviderEndpoint,
     request: ResponsesRelayRequest,
 ) -> DomainResult<ResponsesRelayResponse> {
+    let body =
+        upstream_model_request_body(request.request_body, &request.provider_model, "responses")?;
     let (status_code, body) = send_openai_json_with_runtime(
         runtime,
         endpoint,
         endpoint.responses_uri()?,
-        request.provider_model,
-        request.request_body,
+        body,
         "responses",
         request.provider_retry_policy,
     )
@@ -963,12 +995,13 @@ async fn send_embedding_with_runtime(
     endpoint: &UpstreamProviderEndpoint,
     request: EmbeddingsRelayRequest,
 ) -> DomainResult<EmbeddingsRelayResponse> {
+    let body =
+        upstream_model_request_body(request.request_body, &request.provider_model, "embeddings")?;
     let (status_code, body) = send_openai_json_with_runtime(
         runtime,
         endpoint,
         endpoint.embeddings_uri()?,
-        request.provider_model,
-        request.request_body,
+        body,
         "embeddings",
         request.provider_retry_policy,
     )
@@ -981,16 +1014,29 @@ async fn send_openai_json_with_runtime(
     runtime: &ProviderRelayRuntime,
     endpoint: &UpstreamProviderEndpoint,
     uri: Uri,
-    provider_model: String,
     request_body: Value,
     request_label: &str,
     retry_policy: Option<ProviderRetryPolicy>,
 ) -> DomainResult<(u16, Value)> {
-    let body = upstream_request_body(request_body, provider_model, request_label)?;
+    let body = upstream_request_body(request_body, request_label)?;
     let body_bytes = Bytes::from(body.to_string());
     let retry_policy = retry_policy.unwrap_or_else(|| runtime.default_retry_policy.clone());
+    let request_model = body
+        .get("model")
+        .and_then(|value| value.as_str())
+        .unwrap_or("")
+        .to_owned();
 
     for attempt in 1..=retry_policy.max_attempts {
+        tracing::info!(
+            request_label,
+            attempt,
+            max_attempts = retry_policy.max_attempts,
+            upstream_base_url = %endpoint.base_url,
+            upstream_path = %uri.path(),
+            model = %request_model,
+            "forwarding OpenAI-compatible JSON request to upstream provider"
+        );
         let builder = Request::builder()
             .method(Method::POST)
             .uri(endpoint.authenticated_uri(uri.clone())?)
@@ -1014,6 +1060,14 @@ async fn send_openai_json_with_runtime(
         let body = serde_json::from_slice(&bytes).map_err(|error| {
             DomainError::new(format!("upstream provider returned invalid JSON: {error}"))
         })?;
+        tracing::info!(
+            request_label,
+            attempt,
+            status_code,
+            upstream_path = %uri.path(),
+            model = %request_model,
+            "upstream OpenAI-compatible JSON response received"
+        );
 
         if attempt < retry_policy.max_attempts && retry_policy.is_retryable_status(status_code) {
             if retry_policy.backoff_ms > 0 {
@@ -1104,40 +1158,32 @@ fn masked_health_probe_error(message: impl AsRef<str>) -> String {
     masked
 }
 
-fn upstream_request_body(
-    mut body: Value,
-    provider_model: String,
+fn upstream_request_body(body: Value, request_label: &str) -> DomainResult<Value> {
+    body.as_object().ok_or_else(|| {
+        DomainError::new(format!(
+            "{request_label} request body must be a JSON object"
+        ))
+    })?;
+    Ok(body)
+}
+
+fn upstream_model_request_body(
+    mut request_body: Value,
+    provider_model: &str,
     request_label: &str,
 ) -> DomainResult<Value> {
-    let object = body.as_object_mut().ok_or_else(|| {
+    let provider_model = provider_model.trim();
+    if provider_model.is_empty() {
+        return Err(DomainError::new(format!(
+            "{request_label} provider model is required"
+        )));
+    }
+    let provider_model = provider_native_model_id(provider_model);
+    let object = request_body.as_object_mut().ok_or_else(|| {
         DomainError::new(format!(
             "{request_label} request body must be a JSON object"
         ))
     })?;
     object.insert("model".to_owned(), Value::String(provider_model));
-    Ok(body)
-}
-
-fn upstream_chat_stream_request_body(
-    request_body: Value,
-    provider_model: String,
-) -> DomainResult<Value> {
-    let mut body = upstream_request_body(request_body, provider_model, "chat stream")?;
-    let object = body
-        .as_object_mut()
-        .ok_or_else(|| DomainError::new("chat stream request body must be a JSON object"))?;
-    object.insert("stream".to_owned(), Value::Bool(true));
-
-    let stream_options = object
-        .entry("stream_options".to_owned())
-        .or_insert_with(|| Value::Object(Map::new()));
-    if !stream_options.is_object() {
-        *stream_options = Value::Object(Map::new());
-    }
-    stream_options
-        .as_object_mut()
-        .expect("stream_options is normalized to an object")
-        .insert("include_usage".to_owned(), Value::Bool(true));
-
-    Ok(body)
+    Ok(request_body)
 }

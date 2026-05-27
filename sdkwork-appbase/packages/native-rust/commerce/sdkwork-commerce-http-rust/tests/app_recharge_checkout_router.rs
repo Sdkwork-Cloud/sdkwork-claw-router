@@ -2,6 +2,8 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use http_body_util::BodyExt;
 use sdkwork_commerce_http::app_recharge_checkout_router_with_sqlite_pool;
+use sdkwork_commerce_membership_sqlx::upsert_sqlite_commerce_experience_seed;
+use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
 use sqlx::SqlitePool;
 use tower::ServiceExt;
 
@@ -61,13 +63,43 @@ fn subject_request(method: &str, uri: &str, body: Body) -> Request<Body> {
         .method(method)
         .uri(uri)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "tenant-1")
-        .header("x-sdkwork-organization-id", "org-1")
-        .header("x-sdkwork-user-id", "user-1")
+        .extension(standard_context())
         .header("Idempotency-Key", "recharge-idem-1")
         .header("Sdkwork-Request-No", "recharge-request-1")
         .body(body)
         .expect("request")
+}
+
+fn subject_request_with_request_id_header_only(
+    method: &str,
+    uri: &str,
+    idempotency_key: &str,
+    body: Body,
+) -> Request<Body> {
+    Request::builder()
+        .method(method)
+        .uri(uri)
+        .header("content-type", "application/json")
+        .extension(standard_context())
+        .header("Idempotency-Key", idempotency_key)
+        .header("X-Request-Id", "123e4567-e89b-12d3-a456-426614174000")
+        .body(body)
+        .expect("request")
+}
+
+fn standard_context() -> IamAppContext {
+    IamAppContext::new(
+        "tenant-1",
+        Some("org-1"),
+        "user-1",
+        "session-1",
+        "app-1",
+        Environment::Test,
+        DeploymentMode::Local,
+        AuthLevel::Password,
+        vec!["tenant:tenant-1".to_owned()],
+        vec!["commerce:write".to_owned()],
+    )
 }
 
 async fn response_json(response: axum::response::Response) -> serde_json::Value {
@@ -102,6 +134,103 @@ async fn app_recharge_router_lists_packages_from_sqlite_store() {
     assert_eq!("20.00", payload["data"][1]["rmb"]);
     assert_eq!(50, payload["data"][1]["bonus"]);
     assert_eq!(250, payload["data"][1]["points"]);
+}
+
+#[tokio::test]
+async fn app_recharge_router_lists_default_seed_packages_for_current_tenant() {
+    let pool = migrated_pool().await;
+    upsert_sqlite_commerce_experience_seed(&pool)
+        .await
+        .expect("commerce experience seed");
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let response = app
+        .oneshot(subject_request(
+            "GET",
+            "/app/v3/api/recharges/packages",
+            Body::empty(),
+        ))
+        .await
+        .expect("packages response");
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(4, payload["data"].as_array().unwrap().len());
+    assert_eq!("seed-recharge-package-990", payload["data"][0]["id"]);
+    assert_eq!("9.90", payload["data"][0]["rmb"]);
+    assert_eq!(50, payload["data"][0]["bonus"]);
+    assert_eq!(149, payload["data"][0]["points"]);
+    assert_eq!("seed-recharge-package-1990", payload["data"][1]["id"]);
+    assert_eq!("19.90", payload["data"][1]["rmb"]);
+    assert_eq!(150, payload["data"][1]["bonus"]);
+    assert_eq!(349, payload["data"][1]["points"]);
+    assert_eq!("seed-recharge-package-4990", payload["data"][2]["id"]);
+    assert_eq!("49.90", payload["data"][2]["rmb"]);
+    assert_eq!(600, payload["data"][2]["bonus"]);
+    assert_eq!(1099, payload["data"][2]["points"]);
+    assert_eq!("seed-recharge-package-9990", payload["data"][3]["id"]);
+    assert_eq!("99.90", payload["data"][3]["rmb"]);
+    assert_eq!(1500, payload["data"][3]["bonus"]);
+    assert_eq!(2499, payload["data"][3]["points"]);
+}
+
+#[tokio::test]
+async fn app_recharge_router_creates_current_tenant_order_from_default_seed_package() {
+    let pool = migrated_pool().await;
+    upsert_sqlite_commerce_experience_seed(&pool)
+        .await
+        .expect("commerce experience seed");
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_method
+        SET status = 'active'
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND method_key = 'alipay'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .expect("activate seeded payment method");
+    let inspect_pool = pool.clone();
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let response = app
+        .oneshot(subject_request(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            Body::from(
+                r#"{"clientRequestNo":"seed-recharge-1","metadata":{"amount":"9.90","paymentMethod":"alipay","packageId":"seed-recharge-package-990","source":"console-recharge"}}"#,
+            ),
+        ))
+        .await
+        .expect("recharge response");
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(true, payload["data"]["success"]);
+    assert_eq!("9.90", payload["data"]["amount"]);
+    assert_eq!(149, payload["data"]["points"]);
+    assert_eq!("alipay", payload["data"]["paymentMethod"]);
+    assert_eq!("pending", payload["data"]["status"]);
+
+    let order_no = payload["data"]["orderNo"].as_str().expect("orderNo");
+    let row: (String, String, String) = sqlx::query_as(
+        r#"
+        SELECT tenant_id, organization_id, owner_user_id
+        FROM commerce_order
+        WHERE order_no = ?
+        "#,
+    )
+    .bind(order_no)
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("created order row");
+    assert_eq!("tenant-1", row.0);
+    assert_eq!("org-1", row.1);
+    assert_eq!("user-1", row.2);
 }
 
 #[tokio::test]
@@ -155,7 +284,71 @@ async fn app_recharge_router_creates_recharge_order_and_checkout_reads_status() 
 }
 
 #[tokio::test]
-async fn app_recharge_router_requires_subject_headers() {
+async fn app_recharge_router_does_not_use_frontend_request_id_as_business_request_no() {
+    let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
+    let inspect_pool = pool.clone();
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let response = app
+        .oneshot(subject_request_with_request_id_header_only(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-header-only",
+            Body::from(r#"{"amount":"10.00","method":"wechat"}"#),
+        ))
+        .await
+        .expect("recharge response");
+
+    assert_eq!(response.status(), StatusCode::OK);
+    let order_no: String = sqlx::query_scalar(
+        r#"
+        SELECT order_no
+        FROM commerce_order
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND idempotency_key = 'recharge-idem-header-only'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("order number");
+    let frontend_request_id_order_no =
+        expected_recharge_order_no("123e4567-e89b-12d3-a456-426614174000");
+    let server_owned_order_no =
+        expected_recharge_order_no("points-recharge-user-1-10.00-wechat-recharge-idem-header-only");
+    assert_ne!(frontend_request_id_order_no, order_no);
+    assert_eq!(server_owned_order_no, order_no);
+}
+
+#[tokio::test]
+async fn app_recharge_router_accepts_standard_command_metadata_payload() {
+    let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let response = app
+        .oneshot(subject_request(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-1","metadata":{"amount":"10.00","paymentMethod":"wechat","packageId":"pack-owner-10","source":"console-recharge"}}"#,
+            ),
+        ))
+        .await
+        .expect("recharge response");
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(true, payload["data"]["success"]);
+    assert_eq!("10.00", payload["data"]["amount"]);
+    assert_eq!(125, payload["data"]["points"]);
+    assert_eq!("wechat", payload["data"]["paymentMethod"]);
+}
+
+#[tokio::test]
+async fn app_recharge_router_requires_authenticated_runtime_context() {
     let pool = migrated_pool().await;
     let app = app_recharge_checkout_router_with_sqlite_pool(pool);
 
@@ -172,4 +365,18 @@ async fn app_recharge_router_requires_subject_headers() {
     assert_eq!(StatusCode::UNAUTHORIZED, response.status());
     let payload = response_json(response).await;
     assert_eq!("4010", payload["code"]);
+}
+
+fn expected_recharge_order_no(request_no: &str) -> String {
+    let seed = format!("tenant-1|org-1|user-1|10.00|wechat|{request_no}|recharge-idem-header-only");
+    format!("RC{}", stable_hex_token(&seed))
+}
+
+fn stable_hex_token(value: &str) -> String {
+    let mut hash = 0xcbf29ce484222325u64;
+    for byte in value.bytes() {
+        hash ^= u64::from(byte);
+        hash = hash.wrapping_mul(0x100000001b3);
+    }
+    format!("{hash:016x}")
 }

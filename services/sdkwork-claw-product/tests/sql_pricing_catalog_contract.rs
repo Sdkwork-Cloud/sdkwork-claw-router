@@ -2,8 +2,9 @@ use sdkwork_claw_product::application::{
     ListModelCatalogQuery, ModelCatalogQueryService, PriceAvailability,
 };
 use sdkwork_claw_product::domain::{
-    BillingMeter, DecimalValue, ModelVendor, PriceSide, ProviderAuthType, ProviderRetryPolicy,
-    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicyScope,
+    provider_native_model_id, BillingMeter, DecimalValue, ModelVendor, PriceSide, ProviderAuthType,
+    ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingFallbackMode,
+    RoutingPolicyScope,
 };
 use sdkwork_claw_product::infrastructure::sql::catalog::{
     PricingCatalogRows, RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshot,
@@ -94,6 +95,20 @@ fn sql_queries_use_schema_registry_tables_and_never_forbidden_synonyms() {
 }
 
 #[test]
+fn provider_native_model_id_strips_only_catalog_vendor_region_scope() {
+    assert_eq!("gpt-5.5", provider_native_model_id("openai/global/gpt-5.5"));
+    assert_eq!(
+        "anthropic/claude-3-opus",
+        provider_native_model_id("openrouter/global/anthropic/claude-3-opus")
+    );
+    assert_eq!(
+        "anthropic/claude-3-opus",
+        provider_native_model_id("anthropic/claude-3-opus"),
+        "provider-native slash model ids must not be stripped as catalog keys"
+    );
+}
+
+#[test]
 fn sql_queries_project_stable_codes_instead_of_enum_ordinals() {
     let price_sql = PricingCatalogSql::list_model_prices();
     assert!(price_sql.contains("price_side_code"));
@@ -152,6 +167,11 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "API key snapshot query must load iam_gateway_api_key.key_hash for credential authentication"
     );
     assert!(
+        PricingCatalogSql::load_api_key_groups().contains("NULLIF(BTRIM(pricing_plan_code), '')")
+            && PricingCatalogSql::load_api_key_groups().contains("'standard'"),
+        "API key group snapshot query must default empty pricing_plan_code before runtime billing subject validation"
+    );
+    assert!(
         PricingCatalogSql::load_api_keys().contains("key_display_masked"),
         "API key snapshot query must load only masked key material for console listing"
     );
@@ -164,8 +184,8 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must project resolved provider base_url"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("JOIN integration_provider p"),
-        "provider route snapshot query must require an active provider for callable account-pool routing"
+        PricingCatalogSql::load_provider_routes().contains("LEFT JOIN integration_provider p"),
+        "provider route snapshot query must allow channel-owned base_url routes when provider registry metadata is absent"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("JOIN integration_provider_account a"),
@@ -186,6 +206,10 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     assert!(
         PricingCatalogSql::load_provider_routes().contains("NULLIF(a.secret_ref, '')"),
         "provider route snapshot query must filter routes without provider account secret_ref"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("p.id IS NULL OR p.status = 1"),
+        "provider route snapshot query must still exclude disabled provider metadata when it exists"
     );
     assert!(
         PricingCatalogSql::load_provider_routes()
@@ -212,8 +236,8 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_account_pool_routes()
-            .contains("JOIN integration_provider p"),
-        "account pool snapshot query must require an active provider for callable forwarding"
+            .contains("LEFT JOIN integration_provider p"),
+        "account pool snapshot query must allow channel-owned base_url routes when provider registry metadata is absent"
     );
     assert!(
         PricingCatalogSql::load_provider_account_pool_routes()
@@ -238,6 +262,11 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_account_pool_routes()
+            .contains("p.id IS NULL OR p.status = 1"),
+        "account pool snapshot query must still exclude disabled provider metadata when it exists"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes()
             .contains("NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '')"),
         "account pool snapshot query must filter channels without resolved base_url"
     );
@@ -247,6 +276,11 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
             && PricingCatalogSql::load_provider_account_pool_routes()
                 .contains("$1 * INTERVAL '1 second'"),
         "account pool snapshot query must filter circuit-broken channels until the recovery probe window opens"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes().contains("modelScope")
+            && PricingCatalogSql::load_provider_account_pool_routes().contains("capabilities"),
+        "account pool snapshot query must include group binding model and capability scopes"
     );
     assert!(
         PricingCatalogSql::load_routing_policies().contains("default_profile_id"),
@@ -333,6 +367,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
             r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
                 .to_owned(),
         ),
+        group_bindings_json: r#"[{"groupId":10,"priority":7,"weight":80,"modelScope":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}]"#.to_owned(),
     }
     .try_into_domain()
     .unwrap();
@@ -359,6 +394,18 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         Some("x-api-key"),
         account_pool_route.auth_profile.name.as_deref()
     );
+    assert_eq!(1, account_pool_route.group_bindings.len());
+    assert_eq!(10, account_pool_route.group_bindings[0].group_id);
+    assert_eq!(7, account_pool_route.group_bindings[0].priority);
+    assert_eq!(80, account_pool_route.group_bindings[0].weight);
+    assert_eq!(
+        vec!["openai/global/gpt-4o-mini".to_owned()],
+        account_pool_route.group_bindings[0].model_scope
+    );
+    assert_eq!(
+        vec!["llm".to_owned()],
+        account_pool_route.group_bindings[0].capabilities
+    );
 
     let api_key = GatewayApiKeyRow {
         id: 100,
@@ -376,6 +423,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         created_at: "2026-04-10 20:55:41".to_owned(),
         expire_at: Some("2027-01-01 00:00:00".to_owned()),
         status_code: 1,
+        default_for_runtime: false,
     }
     .into_domain();
     assert_eq!(10, api_key.group_id);
@@ -573,6 +621,54 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
     assert!(error
         .to_string()
         .contains("integration_channel.retry_policy"));
+}
+
+#[test]
+fn model_provider_route_row_normalizes_catalog_key_provider_model_to_native_model() {
+    let route = ModelProviderRouteRow {
+        catalog_key: "openai/global/gpt-5.5".to_owned(),
+        model: "gpt-5.5".to_owned(),
+        provider_code: "openai".to_owned(),
+        channel_id: 3001,
+        provider_model: "openai/global/gpt-5.5".to_owned(),
+        base_url: Some("http://provider-proxy.internal/openai".to_owned()),
+        secret_ref: Some("vault://providers/openai/account/main".to_owned()),
+        auth_type: Some("bearer".to_owned()),
+        auth_config_json: Some("{}".to_owned()),
+        timeout_ms: None,
+        retry_policy_json: None,
+    }
+    .try_into_domain()
+    .unwrap();
+
+    assert_eq!(
+        "gpt-5.5", route.provider_model,
+        "default channel model mappings must send provider-native model ids upstream"
+    );
+}
+
+#[test]
+fn model_provider_route_row_normalizes_slash_catalog_provider_model_to_native_model() {
+    let route = ModelProviderRouteRow {
+        catalog_key: "openrouter/global/anthropic/claude-3-opus".to_owned(),
+        model: "anthropic/claude-3-opus".to_owned(),
+        provider_code: "openrouter".to_owned(),
+        channel_id: 3001,
+        provider_model: "openrouter/global/anthropic/claude-3-opus".to_owned(),
+        base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
+        secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+        auth_type: Some("bearer".to_owned()),
+        auth_config_json: Some("{}".to_owned()),
+        timeout_ms: None,
+        retry_policy_json: None,
+    }
+    .try_into_domain()
+    .unwrap();
+
+    assert_eq!(
+        "anthropic/claude-3-opus", route.provider_model,
+        "catalog keys with slash-containing provider-native ids must drop only vendor and region before relay"
+    );
 }
 
 #[test]
@@ -818,6 +914,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                     r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
                         .to_owned(),
                 ),
+                group_bindings_json: "[]".to_owned(),
             },
             ProviderAccountPoolRouteRow {
                 provider_code: "azure_openai".to_owned(),
@@ -828,6 +925,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                 auth_config_json: Some("{}".to_owned()),
                 timeout_ms: None,
                 retry_policy_json: None,
+                group_bindings_json: "[]".to_owned(),
             },
         ],
         routing_policies: vec![RoutingPolicyRow {
@@ -887,6 +985,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             created_at: "2026-04-10 20:55:41".to_owned(),
             expire_at: Some("2027-01-01 00:00:00".to_owned()),
             status_code: 1,
+            default_for_runtime: false,
         }],
         access_policies: vec![GatewayAccessPolicyRow {
             id: 700,

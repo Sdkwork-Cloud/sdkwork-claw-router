@@ -44,7 +44,7 @@ Choose exactly one mode for the same client instance.
 cfg := sdkhttp.NewDefaultConfig("http://localhost:18082")
 client := github.com/sdkwork/clawrouter-app-sdk.NewSdkworkAppClientWithConfig(cfg)
 client.SetApiKey("your-api-key")
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -56,7 +56,7 @@ client.SetAuthToken("your-auth-token")
 client.SetAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
@@ -73,26 +73,39 @@ client.SetHeader("X-Custom-Header", "value")
 
 ## API Modules
 
+- `client.Commerce` - commerce API
 - `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Auth` - auth API
-- `client.Billing` - billing API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Memory` - memory API
 - `client.Notification` - notification API
+- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
-- `client.Runtime` - runtime API
 - `client.System` - system API
+- `client.Runtime` - runtime API
+- `client.SdkReference` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```go
+// Accounts Current Summary Retrieve
+result, err := client.Commerce.AccountsCurrentSummaryRetrieve()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
 
 ### agents
 
 ```go
-// List user agents
+// List Playground agent definitions
 params := map[string]interface{}{
     "page": 1,
     "page_size": 2,
@@ -121,17 +134,6 @@ fmt.Println(result)
 ```go
 // Retrieve current IAM session
 result, err := client.Auth.SessionsCurrentRetrieve()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### billing
-
-```go
-// Retrieve account points
-result, err := client.Billing.AccountPointsRetrieve()
 if err != nil {
     panic(err)
 }
@@ -218,11 +220,36 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### open_platform
+
+```go
+// Create open platform QR auth session
+body := sdktypes.OpenPlatformQrAuthSessionCreateRequest{
+    Purpose: "login",
+}
+result, err := client.OpenPlatform.QrAuthSessionsCreate(body)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### platform
 
 ```go
 // Get categories
 result, err := client.Platform.AppsStoreCategoriesList()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### system
+
+```go
+// Retrieve public IAM verification policy
+result, err := client.System.IamVerificationPolicyRetrieve()
 if err != nil {
     panic(err)
 }
@@ -249,15 +276,31 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### system
+### sdk_reference
 
 ```go
-// Retrieve public site runtime branding settings
-params := map[string]interface{}{
-    "tenant_code": "tenant_code",
-    "organization_code": "organization_code",
+// Generate SDK archive
+body := sdktypes.SdkReferenceArchiveGenerateRequest{
+    Config: map[string]interface{}{
+    "apiPrefix": "apiPrefix",
+    "apiSpecPath": "apiSpecPath",
+    "author": "author",
+    "baseUrl": "baseUrl",
+    "description": "description",
+    "language": "language",
+    "license": "license",
+    "name": "name",
+    "outputPath": "outputPath",
+    "packageName": "packageName",
+    "sdkType": "app",
+    "version": "version",
+},
+    Language: "language",
+    Spec: map[string]sdktypes.JsonValue{
+    "value": "value",
+},
 }
-result, err := client.System.SiteRuntimeRetrieve(params)
+result, err := client.SdkReference.ArchivesCreate(body)
 if err != nil {
     panic(err)
 }

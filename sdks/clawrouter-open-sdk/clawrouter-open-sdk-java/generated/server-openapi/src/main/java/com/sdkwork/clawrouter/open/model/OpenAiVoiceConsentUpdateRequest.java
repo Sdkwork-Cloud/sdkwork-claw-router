@@ -9,7 +9,7 @@ public class OpenAiVoiceConsentUpdateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -17,7 +17,7 @@ public class OpenAiVoiceConsentUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

@@ -55,30 +55,6 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// Create QR login code
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.LoginQrCodesCreateResult?> LoginQrCodesCreateAsync()
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.LoginQrCodesCreateResult>(ApiPaths.AppPath("/auth/qr_login_codes"), null);
-        }
-
-        /// <summary>
-        /// Confirm QR login code
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.LoginQrCodesConfirmResult?> LoginQrCodesConfirmAsync(Sdkwork.ClawRouter.App.Models.IamLoginQrCodeConfirmRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.LoginQrCodesConfirmResult>(ApiPaths.AppPath("/auth/qr_login_codes/confirm"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// Retrieve QR login status
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.LoginQrCodesRetrieveResult?> LoginQrCodesRetrieveAsync(string qrKey)
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.LoginQrCodesRetrieveResult>(ApiPaths.AppPath($"/auth/qr_login_codes/{SerializePathParameter(qrKey, new PathParameterSpec("qrKey", "simple", false))}"));
-        }
-
-        /// <summary>
         /// Create IAM registration
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.RegistrationsCreateResult?> RegistrationsCreateAsync(Sdkwork.ClawRouter.App.Models.IamRegistrationCreateRequest body, string? xRequestId = null)
@@ -91,19 +67,6 @@ namespace Sdkwork.ClawRouter.App.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.RegistrationsCreateResult>(ApiPaths.AppPath("/auth/registrations"), body, null, requestHeaders, "application/json");
-        }
-
-        /// <summary>
-        /// Retrieve public IAM auth runtime settings
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.RuntimeSettingsRetrieveResult?> RuntimeSettingsRetrieveAsync(string? tenantCode = null, string? organizationCode = null)
-        {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-                new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null),
-            });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RuntimeSettingsRetrieveResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/auth/runtime_settings"), queryString));
         }
 
         /// <summary>
@@ -169,113 +132,6 @@ namespace Sdkwork.ClawRouter.App.Api
             return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.VerificationCodesVerifyResult>(ApiPaths.AppPath("/auth/verification_codes/verify"), body, null, null, "application/json");
         }
 
-        /// <summary>
-        /// Retrieve public IAM verification policy
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.VerificationPolicyRetrieveResult?> VerificationPolicyRetrieveAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.VerificationPolicyRetrieveResult>(ApiPaths.AppPath("/auth/verification_policy"));
-        }
-
-        private sealed record PathParameterSpec(string Name, string Style, bool Explode);
-
-        private static string SerializePathParameter(object? value, PathParameterSpec spec)
-        {
-            if (value is null)
-            {
-                return string.Empty;
-            }
-            var style = string.IsNullOrWhiteSpace(spec.Style) ? "simple" : spec.Style;
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                return SerializePathObject(spec.Name, dictionary, style, spec.Explode);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                return SerializePathArray(spec.Name, enumerable, style, spec.Explode);
-            }
-            return PathPrimitivePrefix(spec.Name, style) + Uri.EscapeDataString(value.ToString() ?? string.Empty);
-        }
-
-        private static string SerializePathArray(string name, System.Collections.IEnumerable values, string style, bool explode)
-        {
-            var serialized = new List<string>();
-            foreach (var item in values)
-            {
-                if (item is not null)
-                {
-                    serialized.Add(Uri.EscapeDataString(item.ToString() ?? string.Empty));
-                }
-            }
-            if (serialized.Count == 0)
-            {
-                return PathPrefix(name, style);
-            }
-            if (style == "matrix")
-            {
-                if (explode)
-                {
-                    var parts = new List<string>();
-                    foreach (var item in serialized)
-                    {
-                        parts.Add(";" + name + "=" + item);
-                    }
-                    return string.Join(string.Empty, parts);
-                }
-                return ";" + name + "=" + string.Join(",", serialized);
-            }
-            var separator = explode ? "." : ",";
-            return PathPrefix(name, style) + string.Join(separator, serialized);
-        }
-
-        private static string SerializePathObject(string name, System.Collections.IDictionary values, string style, bool explode)
-        {
-            var entries = new List<string>();
-            var exploded = new List<string>();
-            foreach (System.Collections.DictionaryEntry item in values)
-            {
-                if (item.Value is null)
-                {
-                    continue;
-                }
-                var escapedKey = Uri.EscapeDataString(item.Key.ToString() ?? string.Empty);
-                var escapedValue = Uri.EscapeDataString(item.Value.ToString() ?? string.Empty);
-                if (explode)
-                {
-                    exploded.Add(style == "matrix" ? ";" + escapedKey + "=" + escapedValue : escapedKey + "=" + escapedValue);
-                }
-                else
-                {
-                    entries.Add(escapedKey);
-                    entries.Add(escapedValue);
-                }
-            }
-            if (style == "matrix")
-            {
-                return explode ? string.Join(string.Empty, exploded) : ";" + name + "=" + string.Join(",", entries);
-            }
-            if (explode)
-            {
-                var separator = style == "label" ? "." : ",";
-                return PathPrefix(name, style) + string.Join(separator, exploded);
-            }
-            return PathPrefix(name, style) + string.Join(",", entries);
-        }
-
-        private static string PathPrefix(string name, string style)
-        {
-            return style switch
-            {
-                "label" => ".",
-                "matrix" => ";" + name,
-                _ => string.Empty,
-            };
-        }
-
-        private static string PathPrimitivePrefix(string name, string style)
-        {
-            return style == "matrix" ? ";" + name + "=" : PathPrefix(name, style);
-        }
 
         private sealed record QueryParameterSpec(
             string Name,

@@ -1,5 +1,7 @@
 /** Update api key request schema exposed by Claw Router. */
 export interface UpdateApiKeyRequest {
+  /** Marks this API key as the default backend runtime API key for Playground and app runtime calls. */
+  defaultForRuntime?: boolean;
   /** Expiration timestamp in YYYY-MM-DDTHH:mm format, or never. */
   expires?: string;
   /** API key group code to bind to this key. */

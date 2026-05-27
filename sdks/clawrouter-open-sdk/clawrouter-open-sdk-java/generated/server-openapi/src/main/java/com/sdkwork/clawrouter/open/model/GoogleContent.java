@@ -9,7 +9,7 @@ public class GoogleContent {
     public List<GooglePart> getParts() {
         return this.parts;
     }
-    
+
     public void setParts(List<GooglePart> parts) {
         this.parts = parts;
     }
@@ -17,7 +17,7 @@ public class GoogleContent {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

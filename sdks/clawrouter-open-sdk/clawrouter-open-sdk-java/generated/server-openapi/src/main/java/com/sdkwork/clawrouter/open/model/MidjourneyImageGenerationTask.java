@@ -17,7 +17,7 @@ public class MidjourneyImageGenerationTask {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -25,7 +25,7 @@ public class MidjourneyImageGenerationTask {
     public ProviderTaskError getError() {
         return this.error;
     }
-    
+
     public void setError(ProviderTaskError error) {
         this.error = error;
     }
@@ -33,7 +33,7 @@ public class MidjourneyImageGenerationTask {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -41,7 +41,7 @@ public class MidjourneyImageGenerationTask {
     public List<ProviderGeneratedMedia> getImages() {
         return this.images;
     }
-    
+
     public void setImages(List<ProviderGeneratedMedia> images) {
         this.images = images;
     }
@@ -49,7 +49,7 @@ public class MidjourneyImageGenerationTask {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -57,7 +57,7 @@ public class MidjourneyImageGenerationTask {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -65,7 +65,7 @@ public class MidjourneyImageGenerationTask {
     public String getState() {
         return this.state;
     }
-    
+
     public void setState(String state) {
         this.state = state;
     }
@@ -73,7 +73,7 @@ public class MidjourneyImageGenerationTask {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -81,7 +81,7 @@ public class MidjourneyImageGenerationTask {
     public String getTaskId() {
         return this.taskId;
     }
-    
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -89,7 +89,7 @@ public class MidjourneyImageGenerationTask {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }

@@ -11,7 +11,7 @@ public class OpenAiImageReferenceObject {
     public String getB64Json() {
         return this.b64Json;
     }
-    
+
     public void setB64Json(String b64Json) {
         this.b64Json = b64Json;
     }
@@ -19,7 +19,7 @@ public class OpenAiImageReferenceObject {
     public String getDetail() {
         return this.detail;
     }
-    
+
     public void setDetail(String detail) {
         this.detail = detail;
     }
@@ -27,7 +27,7 @@ public class OpenAiImageReferenceObject {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -35,7 +35,7 @@ public class OpenAiImageReferenceObject {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -43,7 +43,7 @@ public class OpenAiImageReferenceObject {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

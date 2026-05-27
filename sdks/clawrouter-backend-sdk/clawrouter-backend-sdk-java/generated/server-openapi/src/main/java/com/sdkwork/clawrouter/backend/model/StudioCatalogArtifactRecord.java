@@ -34,7 +34,7 @@ public class StudioCatalogArtifactRecord {
     public String getArtifactRef() {
         return this.artifactRef;
     }
-    
+
     public void setArtifactRef(String artifactRef) {
         this.artifactRef = artifactRef;
     }
@@ -42,7 +42,7 @@ public class StudioCatalogArtifactRecord {
     public String getArtifactSizeBytes() {
         return this.artifactSizeBytes;
     }
-    
+
     public void setArtifactSizeBytes(String artifactSizeBytes) {
         this.artifactSizeBytes = artifactSizeBytes;
     }
@@ -50,7 +50,7 @@ public class StudioCatalogArtifactRecord {
     public String getArtifactType() {
         return this.artifactType;
     }
-    
+
     public void setArtifactType(String artifactType) {
         this.artifactType = artifactType;
     }
@@ -58,7 +58,7 @@ public class StudioCatalogArtifactRecord {
     public String getArtifactUrl() {
         return this.artifactUrl;
     }
-    
+
     public void setArtifactUrl(String artifactUrl) {
         this.artifactUrl = artifactUrl;
     }
@@ -66,7 +66,7 @@ public class StudioCatalogArtifactRecord {
     public String getChecksumHash() {
         return this.checksumHash;
     }
-    
+
     public void setChecksumHash(String checksumHash) {
         this.checksumHash = checksumHash;
     }
@@ -74,7 +74,7 @@ public class StudioCatalogArtifactRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -82,7 +82,7 @@ public class StudioCatalogArtifactRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -90,7 +90,7 @@ public class StudioCatalogArtifactRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -98,7 +98,7 @@ public class StudioCatalogArtifactRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -106,7 +106,7 @@ public class StudioCatalogArtifactRecord {
     public String getDeprecatedAt() {
         return this.deprecatedAt;
     }
-    
+
     public void setDeprecatedAt(String deprecatedAt) {
         this.deprecatedAt = deprecatedAt;
     }
@@ -114,7 +114,7 @@ public class StudioCatalogArtifactRecord {
     public Map<String, String> getFrameworks() {
         return this.frameworks;
     }
-    
+
     public void setFrameworks(Map<String, String> frameworks) {
         this.frameworks = frameworks;
     }
@@ -122,7 +122,7 @@ public class StudioCatalogArtifactRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -130,7 +130,7 @@ public class StudioCatalogArtifactRecord {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -138,7 +138,7 @@ public class StudioCatalogArtifactRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -146,7 +146,7 @@ public class StudioCatalogArtifactRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -154,7 +154,7 @@ public class StudioCatalogArtifactRecord {
     public String getOsName() {
         return this.osName;
     }
-    
+
     public void setOsName(String osName) {
         this.osName = osName;
     }
@@ -162,7 +162,7 @@ public class StudioCatalogArtifactRecord {
     public String getPlatformType() {
         return this.platformType;
     }
-    
+
     public void setPlatformType(String platformType) {
         this.platformType = platformType;
     }
@@ -170,7 +170,7 @@ public class StudioCatalogArtifactRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -178,7 +178,7 @@ public class StudioCatalogArtifactRecord {
     public String getReleaseNotes() {
         return this.releaseNotes;
     }
-    
+
     public void setReleaseNotes(String releaseNotes) {
         this.releaseNotes = releaseNotes;
     }
@@ -186,7 +186,7 @@ public class StudioCatalogArtifactRecord {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -194,7 +194,7 @@ public class StudioCatalogArtifactRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -202,7 +202,7 @@ public class StudioCatalogArtifactRecord {
     public String getTargetId() {
         return this.targetId;
     }
-    
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -210,7 +210,7 @@ public class StudioCatalogArtifactRecord {
     public String getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(String targetType) {
         this.targetType = targetType;
     }
@@ -218,7 +218,7 @@ public class StudioCatalogArtifactRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -226,7 +226,7 @@ public class StudioCatalogArtifactRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -234,7 +234,7 @@ public class StudioCatalogArtifactRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -242,7 +242,7 @@ public class StudioCatalogArtifactRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -1,3 +1,5 @@
+﻿mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -5,16 +7,17 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminCouponBatchItem, AdminCouponItem, AdminExchangeRuleItem, AdminMarketingCommandFuture,
-    AdminMarketingStore, AdminPaymentAttemptItem, AdminPromoCodeItem, AdminRechargePackageItem,
-    AdminRechargeRecordItem, AdminRedemptionRecordItem, AdminReferralStatItem,
-    CreateAdminCouponCommand, CreateAdminRechargePackageCommand, DeleteAdminCouponCommand,
-    DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
-    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminExchangeRulesQuery,
-    ListAdminPaymentAttemptsQuery, ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery,
-    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
-    LoadAdminRechargeRecordQuery, UpdateAdminCouponCommand, UpdateAdminExchangeRuleCommand,
-    UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
+    AdminExchangeRuleItem, AdminMarketingCommandFuture, AdminMarketingStore,
+    AdminPaymentAttemptItem, AdminRechargePackageItem, AdminRechargeRecordItem,
+    AdminReferralStatItem, CreateAdminRechargePackageCommand, CreatePromotionOfferCommand,
+    DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
+    GeneratePromotionCouponStockCommand, ListAdminExchangeRulesQuery,
+    ListAdminPaymentAttemptsQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
+    ListAdminReferralStatsQuery, ListPromotionCodeRedemptionsQuery, ListPromotionCodesQuery,
+    ListPromotionCouponStocksQuery, ListPromotionOffersQuery, LoadAdminRechargeRecordQuery,
+    PromotionCodeItem, PromotionCodeRedemptionItem, PromotionCouponStockItem, PromotionOfferItem,
+    UpdateAdminExchangeRuleCommand, UpdateAdminRechargePackageCommand,
+    UpdatePromotionCodeStatusCommand, UpdatePromotionOfferCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -26,46 +29,65 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
         Arc::new(TestUuidGenerator),
     );
 
-    let coupons = request_json(
+    let offers = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupons", ""),
+        signed_request("GET", "/backend/v3/api/promotions/offers", ""),
     )
     .await;
-    assert_eq!("2000", coupons["code"]);
-    assert_eq!("Welcome credit", coupons["data"]["items"][0]["name"]);
-    assert_eq!("amount", coupons["data"]["items"][0]["type"]);
-    assert_eq!("$5.00", coupons["data"]["items"][0]["value"]);
+    assert_eq!("2000", offers["code"]);
+    assert_eq!("Welcome credit", offers["data"]["items"][0]["name"]);
+    assert_eq!("coupon", offers["data"]["items"][0]["offer_type"]);
+    assert_eq!("offer-1", offers["data"]["items"][0]["offer_no"]);
 
-    let batches = request_json(
+    let stocks = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupon_batches", ""),
+        signed_request("GET", "/backend/v3/api/promotions/coupon_stocks", ""),
     )
     .await;
-    assert_eq!("Welcome batch", batches["data"]["items"][0]["name"]);
-    assert_eq!("1", batches["data"]["items"][0]["couponId"]);
-    assert_eq!(2, batches["data"]["items"][0]["count"]);
-    assert_eq!("WELCOME", batches["data"]["items"][0]["prefix"]);
+    assert_eq!("Welcome stock", stocks["data"]["items"][0]["name"]);
+    assert_eq!("1", stocks["data"]["items"][0]["offer_id"]);
+    assert_eq!(2, stocks["data"]["items"][0]["total_quantity"]);
+    assert!(!stocks["data"]["items"][0]
+        .as_object()
+        .unwrap()
+        .contains_key("batch_no"));
 
-    let promo_codes = request_json(
+    let promotion_codes = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupon_codes", ""),
+        signed_request("GET", "/backend/v3/api/promotions/codes", ""),
     )
     .await;
-    assert_eq!("WELCOME-0001", promo_codes["data"]["items"][0]["code"]);
-    assert_eq!("available", promo_codes["data"]["items"][0]["status"]);
+    assert_eq!(
+        "0001",
+        promotion_codes["data"]["items"][0]["promotion_code_last4"]
+    );
+    assert_eq!("available", promotion_codes["data"]["items"][0]["status"]);
     assert_eq!(
         "owner@example.com",
-        promo_codes["data"]["items"][1]["usedBy"]
+        promotion_codes["data"]["items"][1]["owner_user_id"]
+    );
+    assert_eq!(
+        false,
+        promotion_codes["data"]["items"][0]
+            .as_object()
+            .unwrap()
+            .contains_key("code")
     );
 
     let redemptions = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/users/coupons", ""),
+        signed_request("GET", "/backend/v3/api/promotions/codes/redemptions", ""),
     )
     .await;
-    assert_eq!("30", redemptions["data"]["items"][0]["userId"]);
-    assert_eq!("owner@example.com", redemptions["data"]["items"][0]["user"]);
-    assert_eq!("$5.00", redemptions["data"]["items"][0]["amount"]);
+    assert_eq!("30", redemptions["data"]["items"][0]["owner_user_id"]);
+    assert_eq!(
+        "0002",
+        redemptions["data"]["items"][0]["submitted_code_suffix"]
+    );
+    assert_eq!(
+        "succeeded",
+        redemptions["data"]["items"][0]["result_status"]
+    );
 
     let recharges = request_json(
         router.clone(),
@@ -132,6 +154,71 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 }
 
 #[tokio::test]
+async fn admin_marketing_promotion_routes_expose_standard_card_lifecycle_models() {
+    let router = sdkwork_claw_product::api::admin_marketing_router_with_store(
+        Arc::new(TestAdminMarketingStore::default()),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let offers = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/promotions/offers", ""),
+    )
+    .await;
+    let offer = &offers["data"]["items"][0];
+    assert_eq!("offer-1", offer["offer_no"]);
+    assert_eq!("1", offer["offer_code"]);
+    assert_eq!("Welcome credit", offer["name"]);
+    assert_eq!("coupon", offer["offer_type"]);
+    assert_eq!("all", offer["audience_scope"]);
+    assert_eq!("exclusive", offer["combinability"]);
+    assert_eq!("active", offer["status"]);
+
+    let stocks = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/promotions/coupon_stocks", ""),
+    )
+    .await;
+    let stock = &stocks["data"]["items"][0];
+    assert_eq!("stock-11", stock["stock_no"]);
+    assert!(!stock.as_object().unwrap().contains_key("batch_no"));
+    assert_eq!("preloaded", stock["code_mode"]);
+    assert_eq!("admin", stock["issue_channel"]);
+    assert_eq!("USD", stock["currency_code"]);
+    assert_eq!("active", stock["activation_status"]);
+    assert_eq!(true, stock["can_resend"]);
+
+    let codes = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/promotions/codes", ""),
+    )
+    .await;
+    let code = &codes["data"]["items"][0];
+    assert_eq!("code-501", code["code_no"]);
+    assert_eq!("0001", code["promotion_code_last4"]);
+    assert!(!code.as_object().unwrap().contains_key("code_batch_no"));
+    assert_eq!("11", code["stock_id"]);
+    assert_eq!("single_use", code["code_type"]);
+    assert_eq!("USD", code["currency_code"]);
+    assert_eq!("available", code["status"]);
+    assert_eq!(false, code.as_object().unwrap().contains_key("code"));
+
+    let redemptions = request_json(
+        router,
+        signed_request("GET", "/backend/v3/api/promotions/codes/redemptions", ""),
+    )
+    .await;
+    let redemption = &redemptions["data"]["items"][0];
+    assert_eq!("redemption-502", redemption["redemption_no"]);
+    assert_eq!("0002", redemption["submitted_code_suffix"]);
+    assert_eq!("30", redemption["owner_user_id"]);
+    assert_eq!("USD", redemption["currency_code"]);
+    assert_eq!("succeeded", redemption["result_status"]);
+    assert_eq!("admin", redemption["redemption_channel"]);
+    assert_eq!("2026-04-29 09:30:00", redemption["occurred_at"]);
+}
+
+#[tokio::test]
 async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
     let store = Arc::new(TestAdminMarketingStore::default());
     let router = sdkwork_claw_product::api::admin_marketing_router_with_store(
@@ -139,55 +226,106 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         Arc::new(TestUuidGenerator),
     );
 
-    let create_coupon = request_json(
+    let create_promotion_offer = request_json(
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/coupons",
-            r#"{"name":"Launch credit","type":"amount","value":"$8.50"}"#,
+            "/backend/v3/api/promotions/offers",
+            r#"{"name":"Launch credit","discount_type":"amount","value":"$8.50"}"#,
         ),
     )
     .await;
-    assert_eq!("Launch credit", create_coupon["data"]["item"]["name"]);
-    assert_eq!("$8.50", create_coupon["data"]["item"]["value"]);
-    assert_eq!("active", create_coupon["data"]["item"]["status"]);
+    assert_eq!(
+        "offer-99",
+        create_promotion_offer["data"]["item"]["offer_no"]
+    );
+    assert_eq!("99", create_promotion_offer["data"]["item"]["offer_code"]);
+    assert_eq!(
+        "Launch credit",
+        create_promotion_offer["data"]["item"]["name"]
+    );
+    assert_eq!(
+        "coupon",
+        create_promotion_offer["data"]["item"]["offer_type"]
+    );
+    assert_eq!("active", create_promotion_offer["data"]["item"]["status"]);
 
-    let update_coupon = request_json(
+    let update_promotion_offer = request_json(
         router.clone(),
         signed_request(
-            "PUT",
-            "/backend/v3/api/billing/coupons/99",
-            r#"{"name":"Launch credit updated","type":"discount","value":"15%","status":"inactive"}"#,
+            "PATCH",
+            "/backend/v3/api/promotions/offers/99",
+            r#"{"name":"Launch credit updated","discount_type":"discount","value":"15%","status":"inactive"}"#,
         ),
     )
     .await;
-    assert_eq!("99", update_coupon["data"]["item"]["id"]);
+    assert_eq!(
+        "offer-99",
+        update_promotion_offer["data"]["item"]["offer_no"]
+    );
     assert_eq!(
         "Launch credit updated",
-        update_coupon["data"]["item"]["name"]
+        update_promotion_offer["data"]["item"]["name"]
     );
-    assert_eq!("discount", update_coupon["data"]["item"]["type"]);
-    assert_eq!("15.00%", update_coupon["data"]["item"]["value"]);
-    assert_eq!("inactive", update_coupon["data"]["item"]["status"]);
+    assert_eq!(
+        "coupon",
+        update_promotion_offer["data"]["item"]["offer_type"]
+    );
+    assert_eq!("inactive", update_promotion_offer["data"]["item"]["status"]);
 
-    let generate_batch = request_json(
+    let generate_promotion_coupon_stock = request_json(
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/coupon_batches",
-            r#"{"couponId":"99","name":"Launch batch","count":3,"prefix":"LAUNCH"}"#,
+            "/backend/v3/api/promotions/coupon_stocks",
+            r#"{"offer_id":"99","name":"Launch stock","total_quantity":3,"code_prefix":"LAUNCH"}"#,
         ),
     )
     .await;
-    assert_eq!("Launch batch", generate_batch["data"]["batch"]["name"]);
-    assert_eq!(3, generate_batch["data"]["codes"].as_array().unwrap().len());
-    assert_eq!("LAUNCH-0001", generate_batch["data"]["codes"][0]["code"]);
+    assert_eq!(
+        "stock-12",
+        generate_promotion_coupon_stock["data"]["item"]["stock_no"]
+    );
+    assert_eq!(
+        "99",
+        generate_promotion_coupon_stock["data"]["item"]["offer_id"]
+    );
+    assert_eq!(
+        "Launch stock",
+        generate_promotion_coupon_stock["data"]["item"]["name"]
+    );
+    assert!(!generate_promotion_coupon_stock["data"]["item"]
+        .as_object()
+        .unwrap()
+        .contains_key("batch_no"));
+    assert_eq!(
+        3,
+        generate_promotion_coupon_stock["data"]["codes"]
+            .as_array()
+            .unwrap()
+            .len()
+    );
+    assert_eq!(
+        "0001",
+        generate_promotion_coupon_stock["data"]["codes"][0]["promotion_code_last4"]
+    );
+    assert!(!generate_promotion_coupon_stock["data"]["codes"][0]
+        .as_object()
+        .unwrap()
+        .contains_key("code_batch_no"));
+    assert_eq!(
+        false,
+        generate_promotion_coupon_stock["data"]["codes"][0]
+            .as_object()
+            .unwrap()
+            .contains_key("code")
+    );
 
     let update_status = request_json(
         router.clone(),
         signed_request(
             "PATCH",
-            "/backend/v3/api/billing/coupon_codes/501/status",
+            "/backend/v3/api/promotions/codes/501/status",
             r#"{"status":"voided"}"#,
         ),
     )
@@ -263,27 +401,54 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
     .await;
     assert_eq!(true, delete_package["data"]["deleted"]);
 
-    let delete_coupon = request_json(
+    let delete_promotion_offer = request_json(
         router,
-        signed_request("DELETE", "/backend/v3/api/billing/coupons/99", ""),
+        signed_request("DELETE", "/backend/v3/api/promotions/offers/99", ""),
     )
     .await;
-    assert_eq!(true, delete_coupon["data"]["deleted"]);
+    assert_eq!(true, delete_promotion_offer["data"]["deleted"]);
 
     assert_eq!(
         vec![
-            "create_coupon",
-            "update_coupon",
-            "generate_batch",
-            "update_promo_code_status",
+            "create_promotion_offer",
+            "update_promotion_offer",
+            "generate_promotion_coupon_stock",
+            "update_promotion_code_status",
             "create_recharge_package",
             "update_recharge_package",
             "update_exchange_rule",
             "delete_recharge_package",
-            "delete_coupon"
+            "delete_promotion_offer"
         ],
         *store.commands.lock().unwrap()
     );
+}
+
+#[tokio::test]
+async fn admin_marketing_legacy_billing_coupon_routes_are_retired() {
+    let router = sdkwork_claw_product::api::admin_marketing_router_with_store(
+        Arc::new(TestAdminMarketingStore::default()),
+        Arc::new(TestUuidGenerator),
+    );
+
+    for (method, path) in [
+        ("GET", "/backend/v3/api/billing/coupons"),
+        ("POST", "/backend/v3/api/billing/coupons"),
+        ("PUT", "/backend/v3/api/billing/coupons/99"),
+        ("DELETE", "/backend/v3/api/billing/coupons/99"),
+        ("GET", "/backend/v3/api/billing/coupon_batches"),
+        ("POST", "/backend/v3/api/billing/coupon_batches"),
+        ("GET", "/backend/v3/api/billing/coupon_codes"),
+        ("PATCH", "/backend/v3/api/billing/coupon_codes/501/status"),
+        ("GET", "/backend/v3/api/billing/users/coupons"),
+    ] {
+        let response = router
+            .clone()
+            .oneshot(signed_request(method, path, "{}"))
+            .await
+            .unwrap();
+        assert_eq!(StatusCode::NOT_FOUND, response.status(), "{method} {path}");
+    }
 }
 
 #[tokio::test]
@@ -310,7 +475,7 @@ async fn admin_marketing_route_rejects_missing_trusted_subject() {
 }
 
 #[tokio::test]
-async fn admin_marketing_route_rejects_invalid_batch_count_without_calling_store() {
+async fn admin_marketing_route_rejects_invalid_stock_quantity_without_calling_store() {
     let store = Arc::new(TestAdminMarketingStore::default());
     let router = sdkwork_claw_product::api::admin_marketing_router_with_store(
         store.clone(),
@@ -320,8 +485,8 @@ async fn admin_marketing_route_rejects_invalid_batch_count_without_calling_store
     let response = router
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/billing/coupon_batches",
-            r#"{"couponId":"1","name":"Invalid","count":0,"prefix":"BAD"}"#,
+            "/backend/v3/api/promotions/coupon_stocks",
+            r#"{"offer_id":"1","name":"Invalid","total_quantity":0,"code_prefix":"BAD"}"#,
         ))
         .await
         .unwrap();
@@ -332,7 +497,7 @@ async fn admin_marketing_route_rejects_invalid_batch_count_without_calling_store
     assert!(payload["msg"]
         .as_str()
         .unwrap()
-        .contains("count must be between"));
+        .contains("total_quantity must be between"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -368,9 +533,7 @@ fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+        .internal_trusted_subject(10, 20, 30)
         .header("X-Request-Id", "request-admin-marketing-test")
         .body(Body::from(body.to_owned()))
         .unwrap()
@@ -395,139 +558,142 @@ struct TestAdminMarketingStore {
 }
 
 impl AdminMarketingStore for TestAdminMarketingStore {
-    fn list_coupons<'a>(
+    fn list_promotion_offers<'a>(
         &'a self,
-        query: ListAdminCouponsQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminCouponItem>> {
+        query: ListPromotionOffersQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionOfferItem>> {
         Box::pin(async move {
             assert_eq!(10, query.subject.tenant_id);
-            Ok(vec![AdminCouponItem {
+            Ok(vec![PromotionOfferItem {
                 id: "1".to_owned(),
                 name: "Welcome credit".to_owned(),
-                coupon_type: "amount".to_owned(),
+                discount_type: "amount".to_owned(),
                 value: "$5.00".to_owned(),
                 status: "active".to_owned(),
             }])
         })
     }
 
-    fn create_coupon<'a>(
+    fn create_promotion_offer<'a>(
         &'a self,
-        command: CreateAdminCouponCommand,
-    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
+        command: CreatePromotionOfferCommand,
+    ) -> AdminMarketingCommandFuture<'a, PromotionOfferItem> {
         Box::pin(async move {
-            self.commands.lock().unwrap().push("create_coupon");
+            self.commands.lock().unwrap().push("create_promotion_offer");
             assert_eq!(20, command.subject.organization_id);
             assert_eq!(850, command.amount_cents);
-            Ok(AdminCouponItem {
+            Ok(PromotionOfferItem {
                 id: "99".to_owned(),
                 name: command.name,
-                coupon_type: command.coupon_type,
+                discount_type: command.discount_type,
                 value: command.value,
                 status: "active".to_owned(),
             })
         })
     }
 
-    fn delete_coupon<'a>(
+    fn delete_promotion_offer<'a>(
         &'a self,
-        command: DeleteAdminCouponCommand,
+        command: DeletePromotionOfferCommand,
     ) -> AdminMarketingCommandFuture<'a, bool> {
         Box::pin(async move {
-            self.commands.lock().unwrap().push("delete_coupon");
-            assert_eq!("99", command.coupon_id);
+            self.commands.lock().unwrap().push("delete_promotion_offer");
+            assert_eq!("99", command.offer_id);
             Ok(true)
         })
     }
 
-    fn update_coupon<'a>(
+    fn update_promotion_offer<'a>(
         &'a self,
-        command: UpdateAdminCouponCommand,
-    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
+        command: UpdatePromotionOfferCommand,
+    ) -> AdminMarketingCommandFuture<'a, PromotionOfferItem> {
         Box::pin(async move {
-            self.commands.lock().unwrap().push("update_coupon");
-            assert_eq!("99", command.coupon_id);
+            self.commands.lock().unwrap().push("update_promotion_offer");
+            assert_eq!("99", command.offer_id);
             assert_eq!("Launch credit updated", command.name);
-            assert_eq!("discount", command.coupon_type);
+            assert_eq!("discount", command.discount_type);
             assert_eq!("15.00%", command.value);
             assert_eq!(0, command.amount_cents);
             assert_eq!(Some("15.0000".to_owned()), command.discount_value);
             assert_eq!("inactive", command.status);
-            Ok(AdminCouponItem {
-                id: command.coupon_id.to_string(),
+            Ok(PromotionOfferItem {
+                id: command.offer_id.to_string(),
                 name: command.name,
-                coupon_type: command.coupon_type,
+                discount_type: command.discount_type,
                 value: command.value,
                 status: command.status,
             })
         })
     }
 
-    fn list_batches<'a>(
+    fn list_promotion_coupon_stocks<'a>(
         &'a self,
-        query: ListAdminCouponBatchesQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminCouponBatchItem>> {
+        query: ListPromotionCouponStocksQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCouponStockItem>> {
         Box::pin(async move {
             assert_eq!(30, query.subject.operator_id);
-            Ok(vec![AdminCouponBatchItem {
+            Ok(vec![PromotionCouponStockItem {
                 id: "11".to_owned(),
-                coupon_id: "1".to_owned(),
-                name: "Welcome batch".to_owned(),
-                count: 2,
-                prefix: "WELCOME".to_owned(),
+                offer_id: "1".to_owned(),
+                name: "Welcome stock".to_owned(),
+                total_quantity: 2,
+                code_prefix: "WELCOME".to_owned(),
                 created_at: "2026-04-29 09:00:00".to_owned(),
             }])
         })
     }
 
-    fn generate_batch<'a>(
+    fn generate_promotion_coupon_stock<'a>(
         &'a self,
-        command: GenerateAdminCouponBatchCommand,
-    ) -> AdminMarketingCommandFuture<'a, (AdminCouponBatchItem, Vec<AdminPromoCodeItem>)> {
+        command: GeneratePromotionCouponStockCommand,
+    ) -> AdminMarketingCommandFuture<'a, (PromotionCouponStockItem, Vec<PromotionCodeItem>)> {
         Box::pin(async move {
-            self.commands.lock().unwrap().push("generate_batch");
-            assert_eq!("99", command.coupon_id);
-            assert_eq!(3, command.count);
-            let batch = AdminCouponBatchItem {
+            self.commands
+                .lock()
+                .unwrap()
+                .push("generate_promotion_coupon_stock");
+            assert_eq!("99", command.offer_id);
+            assert_eq!(3, command.total_quantity);
+            let stock = PromotionCouponStockItem {
                 id: "12".to_owned(),
-                coupon_id: command.coupon_id.to_string(),
+                offer_id: command.offer_id.to_string(),
                 name: command.name,
-                count: command.count,
-                prefix: command.prefix.clone(),
+                total_quantity: command.total_quantity,
+                code_prefix: command.code_prefix.clone(),
                 created_at: command.requested_at,
             };
-            let codes = (1..=command.count)
-                .map(|sequence| AdminPromoCodeItem {
+            let codes = (1..=command.total_quantity)
+                .map(|sequence| PromotionCodeItem {
                     id: format!("{}", 500 + sequence),
-                    batch_id: "12".to_owned(),
-                    code: format!("{}-{sequence:04}", command.prefix),
+                    stock_id: "12".to_owned(),
+                    promotion_code: format!("{}-{sequence:04}", command.code_prefix),
                     status: "available".to_owned(),
                     used_by: None,
                     used_at: None,
                 })
                 .collect();
-            Ok((batch, codes))
+            Ok((stock, codes))
         })
     }
 
-    fn list_promo_codes<'a>(
+    fn list_promotion_codes<'a>(
         &'a self,
-        _query: ListAdminPromoCodesQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminPromoCodeItem>> {
+        _query: ListPromotionCodesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCodeItem>> {
         Box::pin(async move {
             Ok(vec![
-                AdminPromoCodeItem {
+                PromotionCodeItem {
                     id: "501".to_owned(),
-                    batch_id: "11".to_owned(),
-                    code: "WELCOME-0001".to_owned(),
+                    stock_id: "11".to_owned(),
+                    promotion_code: "WELCOME-0001".to_owned(),
                     status: "available".to_owned(),
                     used_by: None,
                     used_at: None,
                 },
-                AdminPromoCodeItem {
+                PromotionCodeItem {
                     id: "502".to_owned(),
-                    batch_id: "11".to_owned(),
-                    code: "WELCOME-0002".to_owned(),
+                    stock_id: "11".to_owned(),
+                    promotion_code: "WELCOME-0002".to_owned(),
                     status: "used".to_owned(),
                     used_by: Some("owner@example.com".to_owned()),
                     used_at: Some("2026-04-29 09:30:00".to_owned()),
@@ -536,33 +702,33 @@ impl AdminMarketingStore for TestAdminMarketingStore {
         })
     }
 
-    fn update_promo_code_status<'a>(
+    fn update_promotion_code_status<'a>(
         &'a self,
-        command: UpdateAdminPromoCodeStatusCommand,
+        command: UpdatePromotionCodeStatusCommand,
     ) -> AdminMarketingCommandFuture<'a, bool> {
         Box::pin(async move {
             self.commands
                 .lock()
                 .unwrap()
-                .push("update_promo_code_status");
-            assert_eq!("501", command.promo_code_id);
+                .push("update_promotion_code_status");
+            assert_eq!("501", command.code_id);
             assert_eq!("voided", command.status);
             Ok(true)
         })
     }
 
-    fn list_redemption_records<'a>(
+    fn list_promotion_code_redemptions<'a>(
         &'a self,
-        _query: ListAdminRedemptionRecordsQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminRedemptionRecordItem>> {
+        _query: ListPromotionCodeRedemptionsQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCodeRedemptionItem>> {
         Box::pin(async move {
-            Ok(vec![AdminRedemptionRecordItem {
+            Ok(vec![PromotionCodeRedemptionItem {
                 id: "502".to_owned(),
-                user_id: "30".to_owned(),
+                owner_user_id: "30".to_owned(),
                 user: "owner@example.com".to_owned(),
-                code: "WELCOME-0002".to_owned(),
+                submitted_code: "WELCOME-0002".to_owned(),
                 amount: "$5.00".to_owned(),
-                time: "2026-04-29 09:30:00".to_owned(),
+                occurred_at: "2026-04-29 09:30:00".to_owned(),
             }])
         })
     }

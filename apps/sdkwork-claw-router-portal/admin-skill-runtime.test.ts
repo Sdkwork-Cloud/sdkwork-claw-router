@@ -470,7 +470,7 @@ test("admin skill page uses tabbed management sections and page-scoped i18n keys
     "utf8",
   );
   const i18nSource = await fs.readFile(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/skill.ts", import.meta.url),
     "utf8",
   );
 
@@ -527,7 +527,7 @@ test("admin skill page uses bottom pagination for skill and package lists", asyn
     "utf8",
   );
   const i18nSource = await fs.readFile(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/skill.ts", import.meta.url),
     "utf8",
   );
 
@@ -763,8 +763,8 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
         checksumHash: "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
         status: 1,
       });
-      for (const request of captured.filter((item) => item.method === "POST" || item.method === "PUT" || item.method === "DELETE")) {
-        assert.match(request.headers["x-request-id"], /^admin-skill-/);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
       }
     },
   );
@@ -997,7 +997,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       });
       const deleteCategoryRequest = captured.find((request) => request.method === "DELETE" && request.url === "/backend/v3/api/ecosystem/skills/categories/1901");
       assert.ok(deleteCategoryRequest);
-      assert.match(deleteCategoryRequest.headers["x-request-id"], /^admin-skill-category-delete-/);
+      assert.equal(deleteCategoryRequest.headers["x-request-id"], undefined);
       assert.equal(captured[3].body, "");
       assert.equal(captured[4].body, "");
       const createAssetRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/ecosystem/skills/8101/assets");
@@ -1031,10 +1031,8 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       const approveRequest = captured.find((request) => request.url === "/backend/v3/api/ecosystem/skills/8101/review/approve");
       assert.ok(approveRequest);
       assert.deepEqual(JSON.parse(approveRequest.body), { reviewComment: "Approved" });
-      for (const request of captured.filter((item) => item.method === "POST" || item.method === "PUT")) {
-        if (!request.url.endsWith("/list")) {
-          assert.match(request.headers["x-request-id"], /^admin-skill-/);
-        }
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
       }
     },
   );

@@ -6,10 +6,12 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::routing::post;
 use axum::{Json, Router};
 use sdkwork_claw_product::domain::ProviderAuthProfile;
-use sdkwork_claw_product::infrastructure::provider::SecretRefOpenAiCompatibleChatCompletionRelay;
+use sdkwork_claw_product::infrastructure::provider::{
+    SecretRefOpenAiCompatibleChatCompletionRelay, SecretRefOpenAiCompatibleProviderHealthProbe,
+};
 use sdkwork_claw_product::ports::{
     ChatCompletionRelay, ChatCompletionRelayRequest, ChatCompletionRelayResponse,
-    ProviderSecretResolver,
+    ProviderHealthProbe, ProviderHealthProbeRequest, ProviderSecretResolver,
 };
 use serde_json::json;
 
@@ -56,6 +58,11 @@ async fn secret_ref_relay_resolves_endpoint_and_secret_from_request_context() {
         )]),
     }));
 
+    let request_body = json!({
+        "model": "gpt-4o-mini",
+        "messages": [{"role": "user", "content": "ping"}],
+        "stream": false
+    });
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
@@ -74,11 +81,7 @@ async fn secret_ref_relay_resolves_endpoint_and_secret_from_request_context() {
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "gpt-4o-mini",
-                "messages": [{"role": "user", "content": "ping"}],
-                "stream": false
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -108,7 +111,41 @@ async fn secret_ref_relay_resolves_endpoint_and_secret_from_request_context() {
         Some("Bearer sk-provider-from-secret-ref".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("gpt-4o-mini");
+    assert_eq!(expected_body, captured[0].body);
+}
+
+#[tokio::test]
+async fn secret_ref_health_probe_sends_provider_native_model_to_upstream() {
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route("/v1/chat/completions", post(capture_chat_completion))
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+
+    let probe = SecretRefOpenAiCompatibleProviderHealthProbe::new(Arc::new(MapSecretResolver {
+        secrets: HashMap::new(),
+    }));
+    let outcome = probe
+        .probe_provider_health(ProviderHealthProbeRequest {
+            provider_base_url: format!("http://{addr}"),
+            provider_secret_ref: "vault://providers/openrouter/account/main".to_owned(),
+            provider_secret_value: Some("sk-provider-from-secret-ref".to_owned()),
+            provider_model: "openai/global/gpt-4o-mini".to_owned(),
+            provider_timeout_ms: None,
+        })
+        .await
+        .unwrap();
+
+    assert!(outcome.success, "{outcome:?}");
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
 }
 
 #[tokio::test]

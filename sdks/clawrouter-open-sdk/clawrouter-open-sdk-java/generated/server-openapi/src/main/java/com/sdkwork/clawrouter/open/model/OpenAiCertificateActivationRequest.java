@@ -8,7 +8,7 @@ public class OpenAiCertificateActivationRequest {
     public List<String> getCertificateIds() {
         return this.certificateIds;
     }
-    
+
     public void setCertificateIds(List<String> certificateIds) {
         this.certificateIds = certificateIds;
     }

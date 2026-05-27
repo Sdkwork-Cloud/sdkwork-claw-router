@@ -1,0 +1,169 @@
+fragment: operations/app-commerce-billing
+frontend_operations:
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: appBillingHistoryList
+  operation_id: billing.history.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/billing/history
+  sdk_domain: commerce
+  summary: Billing History List
+  description: Unified app billing history read model for console recharge and redemption records.
+  read_sources:
+  - commerce_billing_history
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: type
+    schema:
+      type: string
+      enum:
+      - redeem
+      - recharge
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: BillingHistoryCollectionResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - historyNo
+          - type
+          - direction
+          - assetType
+          - amount
+          - pointsDelta
+          - status
+          - title
+          - sourceType
+          - sourceId
+          - occurredAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            historyNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            type:
+              type: string
+              enum:
+              - redeem
+              - recharge
+            direction:
+              type: string
+              enum:
+              - credit
+              - debit
+            assetType:
+              type: string
+              minLength: 1
+              maxLength: 64
+            amount:
+              type: string
+              maxLength: 64
+            currencyCode:
+              type: string
+              nullable: true
+              maxLength: 16
+            pointsDelta:
+              type: integer
+              format: int64
+            status:
+              type: string
+              minLength: 1
+              maxLength: 64
+            title:
+              type: string
+              minLength: 1
+              maxLength: 128
+            referenceNo:
+              type: string
+              nullable: true
+              maxLength: 128
+            sourceType:
+              type: string
+              minLength: 1
+              maxLength: 64
+            sourceId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            relatedOrderNo:
+              type: string
+              nullable: true
+              maxLength: 128
+            paymentMethod:
+              type: string
+              nullable: true
+              maxLength: 64
+            occurredAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: fetchBillingHistory
+  operation_id: console.billingHistory.fetch
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/billing/history
+  read_sources:
+  - commerce_billing_history
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false
+- route: /console/wallet
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  operation: fetchRechargeHistory
+  operation_id: console.rechargeHistory.list
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/billing/history
+  read_sources:
+  - commerce_billing_history
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false
+- route: /console/wallet
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  operation: fetchRedeemHistory
+  operation_id: console.redeemHistory.list
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/billing/history
+  read_sources:
+  - commerce_billing_history
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false

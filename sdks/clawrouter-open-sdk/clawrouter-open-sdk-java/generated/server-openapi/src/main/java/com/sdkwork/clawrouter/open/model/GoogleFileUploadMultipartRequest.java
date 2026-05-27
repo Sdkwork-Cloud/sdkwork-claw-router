@@ -8,7 +8,7 @@ public class GoogleFileUploadMultipartRequest {
     public String getFile() {
         return this.file;
     }
-    
+
     public void setFile(String file) {
         this.file = file;
     }
@@ -16,7 +16,7 @@ public class GoogleFileUploadMultipartRequest {
     public String getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }

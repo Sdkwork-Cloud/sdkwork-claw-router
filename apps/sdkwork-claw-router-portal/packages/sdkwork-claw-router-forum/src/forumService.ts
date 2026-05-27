@@ -7,7 +7,6 @@ import type {
 } from '@sdkwork/clawrouter-app-sdk';
 import { toDataURL } from 'qrcode';
 import {
-  createRequestParams,
   ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
@@ -269,7 +268,6 @@ export const forumService = {
   async createForumFeed(input: ForumFeedInput): Promise<ForumPost> {
     const result = await getClawRouterAppSdkClient().content.feeds.create(
       normalizeCreateFeedRequest(input),
-      createRequestParams('forum-feed-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to create forum feed');
     const post = normalizeForumPost(readRequiredApiItem(result, 'Created forum feed response is missing data'));
@@ -285,33 +283,31 @@ export const forumService = {
   },
 
   async likeForumFeed(feedId: string): Promise<ForumPost> {
-    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.likes.create(id, createRequestParams('forum-feed-like')), 'Failed to like forum feed');
+    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.likes.create(id), 'Failed to like forum feed');
   },
 
   async unlikeForumFeed(feedId: string): Promise<ForumPost> {
-    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.likes.current.delete(id, createRequestParams('forum-feed-unlike')), 'Failed to unlike forum feed');
+    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.likes.current.delete(id), 'Failed to unlike forum feed');
   },
 
   async collectForumFeed(feedId: string, input: ForumCollectInput = {}): Promise<ForumPost> {
     const folderId = optionalPositiveInteger(input.folderId, 'folderId');
     return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.collections.create(id, {
       folderId,
-      ...createRequestParams('forum-feed-collect'),
     }), 'Failed to collect forum feed');
   },
 
   async uncollectForumFeed(feedId: string): Promise<ForumPost> {
-    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.collections.current.delete(id, createRequestParams('forum-feed-uncollect')), 'Failed to uncollect forum feed');
+    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.collections.current.delete(id), 'Failed to uncollect forum feed');
   },
 
   async shareForumFeed(feedId: string): Promise<ForumPost> {
-    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.shares.create(id, createRequestParams('forum-feed-share')), 'Failed to share forum feed');
+    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.shares.create(id), 'Failed to share forum feed');
   },
 
   async createForumComment(input: ForumCommentInput): Promise<ForumComment> {
     const result = await getClawRouterAppSdkClient().content.comments.create(
       normalizeCreateCommentRequest(input),
-      createRequestParams('forum-comment-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to create forum comment');
     const comment = normalizeForumComment(readRequiredApiItem(result, 'Created forum comment response is missing data'));
@@ -327,7 +323,6 @@ export const forumService = {
       (id) => getClawRouterAppSdkClient().content.comments.replies.create(
         id,
         normalizeReplyCommentRequest(input),
-        createRequestParams('forum-comment-reply'),
       ),
       'Failed to reply forum comment',
     );
@@ -345,7 +340,7 @@ export const forumService = {
   async likeForumComment(commentId: string): Promise<ForumComment> {
     return mutateComment(
       commentId,
-      (id) => getClawRouterAppSdkClient().content.comments.likes.create(id, createRequestParams('forum-comment-like')),
+      (id) => getClawRouterAppSdkClient().content.comments.likes.create(id),
       'Failed to like forum comment',
     );
   },
@@ -361,7 +356,7 @@ export const forumService = {
   async pinForumComment(commentId: string): Promise<ForumComment> {
     return mutateComment(
       commentId,
-      (id) => getClawRouterAppSdkClient().content.comments.pins.create(id, createRequestParams('forum-comment-pin')),
+      (id) => getClawRouterAppSdkClient().content.comments.pins.create(id),
       'Failed to pin forum comment',
     );
   },

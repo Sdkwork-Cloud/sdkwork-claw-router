@@ -27,7 +27,7 @@ public class OpenAiBatch {
     public Integer getCancelledAt() {
         return this.cancelledAt;
     }
-    
+
     public void setCancelledAt(Integer cancelledAt) {
         this.cancelledAt = cancelledAt;
     }
@@ -35,7 +35,7 @@ public class OpenAiBatch {
     public Integer getCancellingAt() {
         return this.cancellingAt;
     }
-    
+
     public void setCancellingAt(Integer cancellingAt) {
         this.cancellingAt = cancellingAt;
     }
@@ -43,7 +43,7 @@ public class OpenAiBatch {
     public Integer getCompletedAt() {
         return this.completedAt;
     }
-    
+
     public void setCompletedAt(Integer completedAt) {
         this.completedAt = completedAt;
     }
@@ -51,7 +51,7 @@ public class OpenAiBatch {
     public String getCompletionWindow() {
         return this.completionWindow;
     }
-    
+
     public void setCompletionWindow(String completionWindow) {
         this.completionWindow = completionWindow;
     }
@@ -59,7 +59,7 @@ public class OpenAiBatch {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -67,7 +67,7 @@ public class OpenAiBatch {
     public String getEndpoint() {
         return this.endpoint;
     }
-    
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -75,7 +75,7 @@ public class OpenAiBatch {
     public String getErrorFileId() {
         return this.errorFileId;
     }
-    
+
     public void setErrorFileId(String errorFileId) {
         this.errorFileId = errorFileId;
     }
@@ -83,7 +83,7 @@ public class OpenAiBatch {
     public String getErrors() {
         return this.errors;
     }
-    
+
     public void setErrors(String errors) {
         this.errors = errors;
     }
@@ -91,7 +91,7 @@ public class OpenAiBatch {
     public Integer getExpiredAt() {
         return this.expiredAt;
     }
-    
+
     public void setExpiredAt(Integer expiredAt) {
         this.expiredAt = expiredAt;
     }
@@ -99,7 +99,7 @@ public class OpenAiBatch {
     public Integer getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(Integer expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -107,7 +107,7 @@ public class OpenAiBatch {
     public Integer getFailedAt() {
         return this.failedAt;
     }
-    
+
     public void setFailedAt(Integer failedAt) {
         this.failedAt = failedAt;
     }
@@ -115,7 +115,7 @@ public class OpenAiBatch {
     public Integer getFinalizingAt() {
         return this.finalizingAt;
     }
-    
+
     public void setFinalizingAt(Integer finalizingAt) {
         this.finalizingAt = finalizingAt;
     }
@@ -123,7 +123,7 @@ public class OpenAiBatch {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -131,7 +131,7 @@ public class OpenAiBatch {
     public Integer getInProgressAt() {
         return this.inProgressAt;
     }
-    
+
     public void setInProgressAt(Integer inProgressAt) {
         this.inProgressAt = inProgressAt;
     }
@@ -139,7 +139,7 @@ public class OpenAiBatch {
     public String getInputFileId() {
         return this.inputFileId;
     }
-    
+
     public void setInputFileId(String inputFileId) {
         this.inputFileId = inputFileId;
     }
@@ -147,7 +147,7 @@ public class OpenAiBatch {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -155,7 +155,7 @@ public class OpenAiBatch {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -163,7 +163,7 @@ public class OpenAiBatch {
     public String getOutputFileId() {
         return this.outputFileId;
     }
-    
+
     public void setOutputFileId(String outputFileId) {
         this.outputFileId = outputFileId;
     }
@@ -171,7 +171,7 @@ public class OpenAiBatch {
     public OpenAiBatchRequestCounts getRequestCounts() {
         return this.requestCounts;
     }
-    
+
     public void setRequestCounts(OpenAiBatchRequestCounts requestCounts) {
         this.requestCounts = requestCounts;
     }
@@ -179,7 +179,7 @@ public class OpenAiBatch {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

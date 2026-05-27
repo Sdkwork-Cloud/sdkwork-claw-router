@@ -9,11 +9,11 @@ import {
   type SdkworkWalletTransaction,
 } from "@sdkwork/wallet-pc-react";
 import {
-  createSdkworkVipService,
-  type SdkworkVipDashboardData,
-  type SdkworkVipPlan,
-  type SdkworkVipService,
-} from "@sdkwork/vip-pc-react";
+  createSdkworkMembershipService,
+  type SdkworkMembershipDashboardData,
+  type SdkworkMembershipPlan,
+  type SdkworkMembershipService,
+} from "@sdkwork/membership-pc-react";
 
 export type SdkworkPointsTransactionFilter = "all" | "earned" | "spent";
 export type SdkworkPointsTransactionDirection = Exclude<SdkworkPointsTransactionFilter, "all">;
@@ -57,8 +57,8 @@ export interface SdkworkPointsCurrentPlan {
   level: number | null;
   name: string;
   remainingDays: number | null;
-  status: "free" | "guest" | "vip";
-  vipPoints: number | null;
+  status: "active" | "free" | "guest";
+  points: number | null;
 }
 
 export interface SdkworkPointsSummary {
@@ -115,7 +115,7 @@ export interface CreateSdkworkPointsServiceOptions {
   locale?: string | null;
   now?: () => string;
   rechargePresets?: number[];
-  vipService?: Pick<SdkworkVipService, "getDashboard" | "purchaseMembership">;
+  membershipService?: Pick<SdkworkMembershipService, "getDashboard" | "purchaseMembership">;
   walletService?: Pick<SdkworkWalletService, "getOverview" | "rechargePoints">;
 }
 
@@ -131,7 +131,7 @@ const DEFAULT_RECHARGE_PRESETS = [500, 1000, 2000, 5000, 10000] as const;
 
 function createCurrentPlan(
   overview: Awaited<ReturnType<SdkworkWalletService["getOverview"]>>,
-  vipDashboard: SdkworkVipDashboardData,
+  membershipDashboard: SdkworkMembershipDashboardData,
 ): SdkworkPointsCurrentPlan {
   if (!overview.isAuthenticated) {
     return {
@@ -139,26 +139,26 @@ function createCurrentPlan(
       name: "Guest",
       remainingDays: null,
       status: "guest",
-      vipPoints: null,
+      points: null,
     };
   }
 
-  if (!vipDashboard.summary.isVip) {
+  if (!membershipDashboard.summary.isMember) {
     return {
-      level: vipDashboard.summary.currentLevelValue,
+      level: membershipDashboard.summary.currentLevelValue,
       name: "Free",
-      remainingDays: vipDashboard.summary.remainingDays,
+      remainingDays: membershipDashboard.summary.remainingDays,
       status: "free",
-      vipPoints: vipDashboard.summary.vipPoints,
+      points: membershipDashboard.summary.points,
     };
   }
 
   return {
-    level: vipDashboard.summary.currentLevelValue,
-    name: vipDashboard.summary.currentLevelName || "VIP",
-    remainingDays: vipDashboard.summary.remainingDays,
-    status: "vip",
-    vipPoints: vipDashboard.summary.vipPoints,
+    level: membershipDashboard.summary.currentLevelValue,
+    name: membershipDashboard.summary.currentLevelName || "Member",
+    remainingDays: membershipDashboard.summary.remainingDays,
+    status: "active",
+    points: membershipDashboard.summary.points,
   };
 }
 
@@ -217,7 +217,7 @@ function sortRechargeOffers(
   );
 }
 
-function mapPlan(plan: SdkworkVipPlan): SdkworkPointsPlan {
+function mapPlan(plan: SdkworkMembershipPlan): SdkworkPointsPlan {
   return {
     description: plan.description,
     durationDays: plan.durationDays,
@@ -294,7 +294,7 @@ export function createEmptySdkworkPointsDashboard(): SdkworkPointsDashboardData 
         name: "Guest",
         remainingDays: null,
         status: "guest",
-        vipPoints: null,
+        points: null,
       },
       earnedThisMonth: 0,
       isAuthenticated: false,
@@ -324,7 +324,7 @@ export function createSdkworkPointsService(
   const walletService = options.walletService ?? createSdkworkWalletService({
     commerceService: options.commerceService,
   });
-  const vipService = options.vipService ?? createSdkworkVipService({
+  const membershipService = options.membershipService ?? createSdkworkMembershipService({
     commerceService: options.commerceService,
     locale: options.locale,
   });
@@ -333,9 +333,9 @@ export function createSdkworkPointsService(
 
   return {
     async getDashboard() {
-      const [overview, vipDashboard] = await Promise.all([
+      const [overview, membershipDashboard] = await Promise.all([
         walletService.getOverview(),
-        vipService.getDashboard(),
+        membershipService.getDashboard(),
       ]);
       if (!overview.isAuthenticated) {
         return createEmptySdkworkPointsDashboard();
@@ -347,11 +347,11 @@ export function createSdkworkPointsService(
       const monthlyTotals = computeMonthlyTotals(transactions, now());
 
       return {
-        plans: sortPlans(vipDashboard.plans.map(mapPlan)),
+        plans: sortPlans(membershipDashboard.plans.map(mapPlan)),
         rechargeOffers: sortRechargeOffers(overview.rechargePackages.map(mapRechargeOffer)),
         summary: {
           balancePoints: overview.account.availablePoints,
-          currentPlan: createCurrentPlan(overview, vipDashboard),
+          currentPlan: createCurrentPlan(overview, membershipDashboard),
           earnedThisMonth: monthlyTotals.earnedThisMonth,
           isAuthenticated: true,
           pointsToCashRate: overview.pointsToCashRate,
@@ -387,7 +387,7 @@ export function createSdkworkPointsService(
     },
 
     async upgradePlan(input) {
-      const result = await vipService.purchaseMembership(input);
+      const result = await membershipService.purchaseMembership(input);
 
       return {
         amountCny: result.amountCny,

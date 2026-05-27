@@ -516,7 +516,6 @@ x_response_entities:
     required:
     - agentId
     - agentVersionId
-    - requestId
     properties:
       agentId:
         type: string
@@ -525,10 +524,6 @@ x_response_entities:
       agentVersionId:
         type: string
         pattern: ^[1-9][0-9]*$
-        maxLength: 128
-      requestId:
-        type: string
-        minLength: 1
         maxLength: 128
       traceId:
         type: string

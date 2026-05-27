@@ -9,9 +9,14 @@ import com.sdkwork.clawrouter.backend.api.ContentApi;
 import com.sdkwork.clawrouter.backend.api.EcosystemApi;
 import com.sdkwork.clawrouter.backend.api.IamApi;
 import com.sdkwork.clawrouter.backend.api.IntegrationApi;
+import com.sdkwork.clawrouter.backend.api.McpApi;
+import com.sdkwork.clawrouter.backend.api.MessagingApi;
 import com.sdkwork.clawrouter.backend.api.OpenPlatformApi;
 import com.sdkwork.clawrouter.backend.api.PlatformApi;
 import com.sdkwork.clawrouter.backend.api.SystemApi;
+import com.sdkwork.clawrouter.backend.api.PromptsApi;
+import com.sdkwork.clawrouter.backend.api.ServiceProvidersApi;
+import com.sdkwork.clawrouter.backend.api.StorageApi;
 
 public class SdkworkBackendClient {
     private final HttpClient httpClient;
@@ -22,9 +27,14 @@ public class SdkworkBackendClient {
     private EcosystemApi ecosystem;
     private IamApi iam;
     private IntegrationApi integration;
+    private McpApi mcp;
+    private MessagingApi messaging;
     private OpenPlatformApi openPlatform;
     private PlatformApi platform;
     private SystemApi system;
+    private PromptsApi prompts;
+    private ServiceProvidersApi serviceProviders;
+    private StorageApi storage;
 
     public SdkworkBackendClient(String baseUrl) {
         this.httpClient = new HttpClient(baseUrl);
@@ -35,9 +45,14 @@ public class SdkworkBackendClient {
         this.ecosystem = new EcosystemApi(httpClient);
         this.iam = new IamApi(httpClient);
         this.integration = new IntegrationApi(httpClient);
+        this.mcp = new McpApi(httpClient);
+        this.messaging = new MessagingApi(httpClient);
         this.openPlatform = new OpenPlatformApi(httpClient);
         this.platform = new PlatformApi(httpClient);
         this.system = new SystemApi(httpClient);
+        this.prompts = new PromptsApi(httpClient);
+        this.serviceProviders = new ServiceProvidersApi(httpClient);
+        this.storage = new StorageApi(httpClient);
     }
 
     public SdkworkBackendClient(Types.SdkConfig config) {
@@ -49,9 +64,14 @@ public class SdkworkBackendClient {
         this.ecosystem = new EcosystemApi(httpClient);
         this.iam = new IamApi(httpClient);
         this.integration = new IntegrationApi(httpClient);
+        this.mcp = new McpApi(httpClient);
+        this.messaging = new MessagingApi(httpClient);
         this.openPlatform = new OpenPlatformApi(httpClient);
         this.platform = new PlatformApi(httpClient);
         this.system = new SystemApi(httpClient);
+        this.prompts = new PromptsApi(httpClient);
+        this.serviceProviders = new ServiceProvidersApi(httpClient);
+        this.storage = new StorageApi(httpClient);
     }
 
     public AgentsApi getAgents() {
@@ -82,6 +102,14 @@ public class SdkworkBackendClient {
         return this.integration;
     }
 
+    public McpApi getMcp() {
+        return this.mcp;
+    }
+
+    public MessagingApi getMessaging() {
+        return this.messaging;
+    }
+
     public OpenPlatformApi getOpenPlatform() {
         return this.openPlatform;
     }
@@ -92,6 +120,18 @@ public class SdkworkBackendClient {
 
     public SystemApi getSystem() {
         return this.system;
+    }
+
+    public PromptsApi getPrompts() {
+        return this.prompts;
+    }
+
+    public ServiceProvidersApi getServiceProviders() {
+        return this.serviceProviders;
+    }
+
+    public StorageApi getStorage() {
+        return this.storage;
     }
 
     public SdkworkBackendClient setApiKey(String apiKey) {

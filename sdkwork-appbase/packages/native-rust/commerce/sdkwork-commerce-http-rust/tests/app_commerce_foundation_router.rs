@@ -2,6 +2,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use http_body_util::BodyExt;
 use sdkwork_commerce_http::app_commerce_foundation_router_with_sqlite_pool;
+use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
 use sqlx::SqlitePool;
 use tower::ServiceExt;
 
@@ -20,11 +21,24 @@ fn subject_request(uri: &str) -> Request<Body> {
     Request::builder()
         .method("GET")
         .uri(uri)
-        .header("x-sdkwork-tenant-id", "tenant-1")
-        .header("x-sdkwork-organization-id", "org-1")
-        .header("x-sdkwork-user-id", "user-1")
+        .extension(standard_context())
         .body(Body::empty())
         .expect("request")
+}
+
+fn standard_context() -> IamAppContext {
+    IamAppContext::new(
+        "tenant-1",
+        Some("org-1"),
+        "user-1",
+        "session-1",
+        "app-1",
+        Environment::Test,
+        DeploymentMode::Local,
+        AuthLevel::Password,
+        vec!["tenant:tenant-1".to_owned()],
+        vec!["commerce:read".to_owned()],
+    )
 }
 
 async fn response_json(response: axum::response::Response) -> serde_json::Value {
@@ -66,6 +80,9 @@ async fn app_commerce_foundation_router_does_not_register_retired_app_routes() {
         ("GET", "/app/v3/api/payments/attempts"),
         ("POST", "/app/v3/api/wallet/points/exchanges"),
         ("GET", "/app/v3/api/wallet/points/exchanges/exchange-1"),
+        ("GET", "/app/v3/api/coupons"),
+        ("POST", "/app/v3/api/coupons/claims"),
+        ("POST", "/app/v3/api/coupons/redemptions"),
         ("GET", "/app/v3/api/coupons/catalog"),
         ("GET", "/app/v3/api/coupons/catalog/coupon-1"),
         ("GET", "/app/v3/api/coupons/user_coupons/user-coupon-1"),
@@ -83,9 +100,7 @@ async fn app_commerce_foundation_router_does_not_register_retired_app_routes() {
                 Request::builder()
                     .method(method)
                     .uri(path)
-                    .header("x-sdkwork-tenant-id", "tenant-1")
-                    .header("x-sdkwork-organization-id", "org-1")
-                    .header("x-sdkwork-user-id", "user-1")
+                    .extension(standard_context())
                     .body(Body::empty())
                     .expect("request"),
             )

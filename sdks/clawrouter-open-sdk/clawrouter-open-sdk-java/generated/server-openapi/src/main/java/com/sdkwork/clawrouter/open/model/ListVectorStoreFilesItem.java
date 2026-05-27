@@ -18,7 +18,7 @@ public class ListVectorStoreFilesItem {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -26,7 +26,7 @@ public class ListVectorStoreFilesItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -34,7 +34,7 @@ public class ListVectorStoreFilesItem {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -42,7 +42,7 @@ public class ListVectorStoreFilesItem {
     public List<String> getFileIds() {
         return this.fileIds;
     }
-    
+
     public void setFileIds(List<String> fileIds) {
         this.fileIds = fileIds;
     }
@@ -50,7 +50,7 @@ public class ListVectorStoreFilesItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -58,7 +58,7 @@ public class ListVectorStoreFilesItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -66,7 +66,7 @@ public class ListVectorStoreFilesItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -74,7 +74,7 @@ public class ListVectorStoreFilesItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -82,7 +82,7 @@ public class ListVectorStoreFilesItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -90,7 +90,7 @@ public class ListVectorStoreFilesItem {
     public Integer getUsageBytes() {
         return this.usageBytes;
     }
-    
+
     public void setUsageBytes(Integer usageBytes) {
         this.usageBytes = usageBytes;
     }

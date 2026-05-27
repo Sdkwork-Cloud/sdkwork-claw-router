@@ -10,7 +10,7 @@ public class OpenAiVectorStoreFileCreateRequest {
     public Map<String, String> getAttributes() {
         return this.attributes;
     }
-    
+
     public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }
@@ -18,7 +18,7 @@ public class OpenAiVectorStoreFileCreateRequest {
     public String getChunkingStrategy() {
         return this.chunkingStrategy;
     }
-    
+
     public void setChunkingStrategy(String chunkingStrategy) {
         this.chunkingStrategy = chunkingStrategy;
     }
@@ -26,7 +26,7 @@ public class OpenAiVectorStoreFileCreateRequest {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }

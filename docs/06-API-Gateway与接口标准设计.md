@@ -129,7 +129,7 @@ Backend API 典型分组：
 | 模型管理 | `/backend/v3/api/model/**` |
 | Provider/Channel | `/backend/v3/api/channel/**`、`/backend/v3/api/channel/account/**` |
 | 公告 | `/backend/v3/api/announcement/**` |
-| 营销 | `/backend/v3/api/marketing/**`、`/backend/v3/api/coupon/**` |
+| 营销 | `/backend/v3/api/promotions/**` |
 | 财务 | `/backend/v3/api/finance/**`、`/backend/v3/api/order/**`、`/backend/v3/api/payment/**` |
 | 使用记录 | `/backend/v3/api/record/**`、`/backend/v3/api/usage/**` |
 | 限流风控 | `/backend/v3/api/rate-limit/**`、`/backend/v3/api/security/**` |

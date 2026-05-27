@@ -16,9 +16,14 @@ namespace Sdkwork.ClawRouter.Backend
         public EcosystemApi Ecosystem { get; }
         public IamApi Iam { get; }
         public IntegrationApi Integration { get; }
+        public McpApi Mcp { get; }
+        public MessagingApi Messaging { get; }
         public OpenPlatformApi OpenPlatform { get; }
         public PlatformApi Platform { get; }
         public SystemApi System { get; }
+        public PromptsApi Prompts { get; }
+        public ServiceProvidersApi ServiceProviders { get; }
+        public StorageApi Storage { get; }
 
         public SdkworkBackendClient(string baseUrl)
         {
@@ -30,9 +35,14 @@ namespace Sdkwork.ClawRouter.Backend
             Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Integration = new IntegrationApi(_httpClient);
+            Mcp = new McpApi(_httpClient);
+            Messaging = new MessagingApi(_httpClient);
             OpenPlatform = new OpenPlatformApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
             System = new SystemApi(_httpClient);
+            Prompts = new PromptsApi(_httpClient);
+            ServiceProviders = new ServiceProvidersApi(_httpClient);
+            Storage = new StorageApi(_httpClient);
         }
 
         public SdkworkBackendClient(SdkConfig config)
@@ -45,9 +55,14 @@ namespace Sdkwork.ClawRouter.Backend
             Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Integration = new IntegrationApi(_httpClient);
+            Mcp = new McpApi(_httpClient);
+            Messaging = new MessagingApi(_httpClient);
             OpenPlatform = new OpenPlatformApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
             System = new SystemApi(_httpClient);
+            Prompts = new PromptsApi(_httpClient);
+            ServiceProviders = new ServiceProvidersApi(_httpClient);
+            Storage = new StorageApi(_httpClient);
         }
 
         public SdkworkBackendClient SetApiKey(string apiKey)

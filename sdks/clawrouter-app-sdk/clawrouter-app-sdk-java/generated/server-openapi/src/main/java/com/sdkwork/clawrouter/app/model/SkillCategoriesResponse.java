@@ -8,7 +8,7 @@ public class SkillCategoriesResponse {
     public List<String> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<String> items) {
         this.items = items;
     }

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class SkillApi {
     private final HttpClient client;
-    
+
     public SkillApi(HttpClient client) {
         this.client = client;
     }

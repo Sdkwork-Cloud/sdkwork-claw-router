@@ -31,11 +31,11 @@ describe("SDKWork IAM runtime", () => {
     expect(runtime.service).toBeDefined();
   });
 
-  it("persists dual tokens and exposes standard request headers", async () => {
+  it("persists dual tokens and exposes standard auth headers without client request ids", async () => {
     const runtime = createIamRuntime({
       clients: {
         app: createStandardAppClient({
-          accessToken: "Sdkwork-Access-Token",
+          accessToken: "Access-Token",
           authLevel: "password",
           authToken: "auth-token",
           dataScope: ["tenant:t1"],
@@ -54,7 +54,6 @@ describe("SDKWork IAM runtime", () => {
         environment: "test",
       },
       localeProvider: () => "zh-CN",
-      requestIdProvider: () => "req-iam-001",
       tokenStore: createMemoryIamTokenStore(),
     });
 
@@ -64,15 +63,14 @@ describe("SDKWork IAM runtime", () => {
     });
 
     expect(await runtime.tokenStore.get()).toEqual({
-      accessToken: "Sdkwork-Access-Token",
+      accessToken: "Access-Token",
       authToken: "auth-token",
       refreshToken: "refresh-token",
     });
     expect(await runtime.getAuthHeaders()).toEqual({
       "Accept-Language": "zh-CN",
       Authorization: "Bearer auth-token",
-      "Sdkwork-Access-Token": "Sdkwork-Access-Token",
-      "X-Request-Id": "req-iam-001",
+      "Access-Token": "Access-Token",
     });
   });
 
@@ -80,7 +78,7 @@ describe("SDKWork IAM runtime", () => {
     const runtime = createIamRuntime({
       clients: {
         app: createStandardAppClient({
-          accessToken: "Sdkwork-Access-Token",
+          accessToken: "Access-Token",
           authLevel: "mfa",
           authToken: "auth-token",
           dataScope: ["tenant:t1", "organization:o1"],
@@ -121,7 +119,7 @@ describe("SDKWork IAM runtime", () => {
     const runtime = createIamRuntime({
       clients: {
         app: createStandardAppClient({
-          accessToken: "Sdkwork-Access-Token",
+          accessToken: "Access-Token",
           authToken: "auth-token",
           dataScope: ["tenant:t1"],
           permissionScope: ["iam.users.read"],
@@ -211,7 +209,7 @@ interface StandardSessionOptions {
 
 function createStandardAppClient(session: StandardSessionOptions = {}) {
   const sessionData = {
-    accessToken: session.accessToken ?? "Sdkwork-Access-Token",
+    accessToken: session.accessToken ?? "Access-Token",
     authToken: session.authToken ?? "auth-token",
     context: {
       appId: "sdkwork-router",
@@ -246,16 +244,6 @@ function createStandardAppClient(session: StandardSessionOptions = {}) {
       registrations: {
         create: vi.fn().mockResolvedValue({ data: sessionData }),
       },
-      verificationPolicy: {
-        retrieve: vi.fn().mockResolvedValue({
-          data: {
-            emailCodeLoginEnabled: true,
-            emailRegistrationVerificationRequired: true,
-            phoneCodeLoginEnabled: false,
-            phoneRegistrationVerificationRequired: false,
-          },
-        }),
-      },
       sessions: {
         create: vi.fn().mockResolvedValue({ data: sessionData }),
         current: {
@@ -268,6 +256,16 @@ function createStandardAppClient(session: StandardSessionOptions = {}) {
       verificationCodes: {
         create: vi.fn(),
         verify: vi.fn(),
+      },
+    },
+    system: {
+      iam: {
+        runtime: {
+          retrieve: vi.fn(),
+        },
+        verificationPolicy: {
+          retrieve: vi.fn(),
+        },
       },
     },
     iam: {

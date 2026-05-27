@@ -26,7 +26,7 @@ public class IamSessionRecord {
     public String getAccessTokenHash() {
         return this.accessTokenHash;
     }
-    
+
     public void setAccessTokenHash(String accessTokenHash) {
         this.accessTokenHash = accessTokenHash;
     }
@@ -34,7 +34,7 @@ public class IamSessionRecord {
     public String getAppId() {
         return this.appId;
     }
-    
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -42,7 +42,7 @@ public class IamSessionRecord {
     public String getAuthLevel() {
         return this.authLevel;
     }
-    
+
     public void setAuthLevel(String authLevel) {
         this.authLevel = authLevel;
     }
@@ -50,7 +50,7 @@ public class IamSessionRecord {
     public String getAuthTokenHash() {
         return this.authTokenHash;
     }
-    
+
     public void setAuthTokenHash(String authTokenHash) {
         this.authTokenHash = authTokenHash;
     }
@@ -58,7 +58,7 @@ public class IamSessionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -66,7 +66,7 @@ public class IamSessionRecord {
     public Map<String, String> getDataScopeJson() {
         return this.dataScopeJson;
     }
-    
+
     public void setDataScopeJson(Map<String, String> dataScopeJson) {
         this.dataScopeJson = dataScopeJson;
     }
@@ -74,7 +74,7 @@ public class IamSessionRecord {
     public String getDeploymentMode() {
         return this.deploymentMode;
     }
-    
+
     public void setDeploymentMode(String deploymentMode) {
         this.deploymentMode = deploymentMode;
     }
@@ -82,7 +82,7 @@ public class IamSessionRecord {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -90,7 +90,7 @@ public class IamSessionRecord {
     public String getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -98,7 +98,7 @@ public class IamSessionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -106,7 +106,7 @@ public class IamSessionRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -114,7 +114,7 @@ public class IamSessionRecord {
     public Map<String, String> getPermissionScopeJson() {
         return this.permissionScopeJson;
     }
-    
+
     public void setPermissionScopeJson(Map<String, String> permissionScopeJson) {
         this.permissionScopeJson = permissionScopeJson;
     }
@@ -122,7 +122,7 @@ public class IamSessionRecord {
     public String getRefreshTokenHash() {
         return this.refreshTokenHash;
     }
-    
+
     public void setRefreshTokenHash(String refreshTokenHash) {
         this.refreshTokenHash = refreshTokenHash;
     }
@@ -130,7 +130,7 @@ public class IamSessionRecord {
     public String getRevokedAt() {
         return this.revokedAt;
     }
-    
+
     public void setRevokedAt(String revokedAt) {
         this.revokedAt = revokedAt;
     }
@@ -138,7 +138,7 @@ public class IamSessionRecord {
     public String getShardingKey() {
         return this.shardingKey;
     }
-    
+
     public void setShardingKey(String shardingKey) {
         this.shardingKey = shardingKey;
     }
@@ -146,7 +146,7 @@ public class IamSessionRecord {
     public String getShardingStrategy() {
         return this.shardingStrategy;
     }
-    
+
     public void setShardingStrategy(String shardingStrategy) {
         this.shardingStrategy = shardingStrategy;
     }
@@ -154,7 +154,7 @@ public class IamSessionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -162,7 +162,7 @@ public class IamSessionRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -170,7 +170,7 @@ public class IamSessionRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

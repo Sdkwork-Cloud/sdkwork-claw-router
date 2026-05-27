@@ -8,7 +8,7 @@ public class AdminAiModelsResponse {
     public List<AdminAiModelItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminAiModelItem> items) {
         this.items = items;
     }

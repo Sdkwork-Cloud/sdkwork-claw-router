@@ -36,7 +36,7 @@ public class AiBillingMeterRecord {
     public String getAggregationMode() {
         return this.aggregationMode;
     }
-    
+
     public void setAggregationMode(String aggregationMode) {
         this.aggregationMode = aggregationMode;
     }
@@ -44,7 +44,7 @@ public class AiBillingMeterRecord {
     public Boolean getAllowNegativeQuantity() {
         return this.allowNegativeQuantity;
     }
-    
+
     public void setAllowNegativeQuantity(Boolean allowNegativeQuantity) {
         this.allowNegativeQuantity = allowNegativeQuantity;
     }
@@ -52,7 +52,7 @@ public class AiBillingMeterRecord {
     public String getBillingMode() {
         return this.billingMode;
     }
-    
+
     public void setBillingMode(String billingMode) {
         this.billingMode = billingMode;
     }
@@ -60,7 +60,7 @@ public class AiBillingMeterRecord {
     public String getCanonicalPriceItemType() {
         return this.canonicalPriceItemType;
     }
-    
+
     public void setCanonicalPriceItemType(String canonicalPriceItemType) {
         this.canonicalPriceItemType = canonicalPriceItemType;
     }
@@ -68,7 +68,7 @@ public class AiBillingMeterRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -76,7 +76,7 @@ public class AiBillingMeterRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -84,7 +84,7 @@ public class AiBillingMeterRecord {
     public String getDefaultUnit() {
         return this.defaultUnit;
     }
-    
+
     public void setDefaultUnit(String defaultUnit) {
         this.defaultUnit = defaultUnit;
     }
@@ -92,7 +92,7 @@ public class AiBillingMeterRecord {
     public String getDefaultUnitSize() {
         return this.defaultUnitSize;
     }
-    
+
     public void setDefaultUnitSize(String defaultUnitSize) {
         this.defaultUnitSize = defaultUnitSize;
     }
@@ -100,7 +100,7 @@ public class AiBillingMeterRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -108,7 +108,7 @@ public class AiBillingMeterRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -116,7 +116,7 @@ public class AiBillingMeterRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -124,7 +124,7 @@ public class AiBillingMeterRecord {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -132,7 +132,7 @@ public class AiBillingMeterRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -140,7 +140,7 @@ public class AiBillingMeterRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -148,7 +148,7 @@ public class AiBillingMeterRecord {
     public String getMeterCode() {
         return this.meterCode;
     }
-    
+
     public void setMeterCode(String meterCode) {
         this.meterCode = meterCode;
     }
@@ -156,7 +156,7 @@ public class AiBillingMeterRecord {
     public String getModality() {
         return this.modality;
     }
-    
+
     public void setModality(String modality) {
         this.modality = modality;
     }
@@ -164,7 +164,7 @@ public class AiBillingMeterRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -172,7 +172,7 @@ public class AiBillingMeterRecord {
     public Integer getQuantityPrecision() {
         return this.quantityPrecision;
     }
-    
+
     public void setQuantityPrecision(Integer quantityPrecision) {
         this.quantityPrecision = quantityPrecision;
     }
@@ -180,7 +180,7 @@ public class AiBillingMeterRecord {
     public String getQuantitySource() {
         return this.quantitySource;
     }
-    
+
     public void setQuantitySource(String quantitySource) {
         this.quantitySource = quantitySource;
     }
@@ -188,7 +188,7 @@ public class AiBillingMeterRecord {
     public String getResultSelector() {
         return this.resultSelector;
     }
-    
+
     public void setResultSelector(String resultSelector) {
         this.resultSelector = resultSelector;
     }
@@ -196,7 +196,7 @@ public class AiBillingMeterRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -204,7 +204,7 @@ public class AiBillingMeterRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -212,7 +212,7 @@ public class AiBillingMeterRecord {
     public Boolean getSupportsExpression() {
         return this.supportsExpression;
     }
-    
+
     public void setSupportsExpression(Boolean supportsExpression) {
         this.supportsExpression = supportsExpression;
     }
@@ -220,7 +220,7 @@ public class AiBillingMeterRecord {
     public Boolean getSupportsTier() {
         return this.supportsTier;
     }
-    
+
     public void setSupportsTier(Boolean supportsTier) {
         this.supportsTier = supportsTier;
     }
@@ -228,7 +228,7 @@ public class AiBillingMeterRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -236,7 +236,7 @@ public class AiBillingMeterRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -244,7 +244,7 @@ public class AiBillingMeterRecord {
     public String getUsageType() {
         return this.usageType;
     }
-    
+
     public void setUsageType(String usageType) {
         this.usageType = usageType;
     }
@@ -252,7 +252,7 @@ public class AiBillingMeterRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -260,7 +260,7 @@ public class AiBillingMeterRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

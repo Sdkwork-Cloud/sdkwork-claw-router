@@ -3,12 +3,12 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
-    from .commerce_wallet_overview_response import CommerceWalletOverviewResponse
+    from .commerce_standard_resource_response import CommerceStandardResourceResponse
 
 
 @dataclass
 class WalletOverviewRetrieveResult:
     """Wallet overview retrieve result schema exposed by Claw Router."""
     code: str
-    data: Optional[CommerceWalletOverviewResponse] = None
+    data: Optional[CommerceStandardResourceResponse] = None
     msg: Optional[str] = None

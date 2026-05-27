@@ -144,7 +144,6 @@ function clawrouterPortalLocalPackageResolver(configDir: string): Plugin {
   return {
     name: 'clawrouter-portal-local-package-resolver',
     enforce: 'pre',
-    apply: 'serve',
     resolveId(source) {
       if (!shouldResolvePortalLocalPackage(source)) {
         return null;
@@ -376,7 +375,7 @@ export default defineConfig(({mode}) => {
   const appbaseRoot = path.resolve(configDir, '../../../sdkwork-appbase');
   const appApiSdkRoot = path.resolve(configDir, '../../../../spring-ai-plus-app-api/sdkwork-sdk-app/sdkwork-app-sdk-typescript');
   const sdkworkCoreRoot = path.resolve(configDir, '../../../sdkwork-core');
-  const sdkworkUiRoot = path.resolve(configDir, '../../../../../sdkwork-ui');
+  const sdkworkUiRoot = path.resolve(configDir, '../../../sdkwork-ui');
   loadEnv(mode, configDir, '');
   return {
     plugins: [
@@ -418,6 +417,10 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/core-pc-react', replacement: path.resolve(sdkworkCoreRoot, 'sdkwork-core-pc-react/src/index.ts') },
         { find: '@sdkwork/distribution-pc-react/downloads', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/downloads/index.ts') },
         { find: '@sdkwork/distribution-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/index.ts') },
+        { find: '@sdkwork/file-contracts', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-contracts/src/index.ts') },
+        { find: '@sdkwork/file-platform-pc-react', replacement: path.resolve(workspaceRoot, 'packages/pc-react/file/sdkwork-file-platform-pc-react/src/index.ts') },
+        { find: '@sdkwork/file-sdk-ports', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-sdk-ports/src/index.ts') },
+        { find: '@sdkwork/file-service', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-service/src/index.ts') },
         { find: '@sdkwork/generation-pc-react/react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/react.ts') },
         { find: '@sdkwork/generation-pc-react/generation-service', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-service.ts') },
         { find: '@sdkwork/generation-pc-react/generation-history', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts') },
@@ -541,6 +544,47 @@ export default defineConfig(({mode}) => {
               || normalizedId.startsWith(`${normalizedClawRouterSdkRoot}/`)
             ) {
               return 'vendor-sdkwork-sdk';
+            }
+            if (
+              normalizedId.includes('/node_modules/framer-motion/')
+              || normalizedId.includes('/node_modules/motion/')
+              || normalizedId.includes('/node_modules/motion-dom/')
+              || normalizedId.includes('/node_modules/motion-utils/')
+            ) {
+              return 'vendor-motion';
+            }
+            if (
+              normalizedId.includes('/node_modules/recharts/')
+              || normalizedId.includes('/node_modules/victory-vendor/')
+              || normalizedId.includes('/node_modules/d3-')
+              || normalizedId.includes('/node_modules/internmap/')
+            ) {
+              return 'vendor-charts';
+            }
+            if (
+              normalizedId.includes('/node_modules/i18next/')
+              || normalizedId.includes('/node_modules/i18next-browser-languagedetector/')
+              || normalizedId.includes('/node_modules/react-i18next/')
+              || normalizedId.includes('/node_modules/html-parse-stringify/')
+              || normalizedId.includes('/node_modules/void-elements/')
+            ) {
+              return 'vendor-i18n';
+            }
+            if (normalizedId.includes('/node_modules/react-hook-form/')) {
+              return 'vendor-form';
+            }
+            if (normalizedId.includes('/node_modules/qrcode/')) {
+              return 'vendor-qrcode';
+            }
+            if (
+              normalizedId.includes('/node_modules/@monaco-editor/')
+              || normalizedId.includes('/node_modules/monaco-editor/')
+              || normalizedId.includes('/node_modules/@uiw/react-md-editor/')
+              || normalizedId.includes('/node_modules/html-to-image/')
+              || normalizedId.includes('/node_modules/html2canvas/')
+              || normalizedId.includes('/node_modules/rehype-sanitize/')
+            ) {
+              return 'vendor-rich-tools';
             }
             if (!id.includes('node_modules')) {
               return undefined;

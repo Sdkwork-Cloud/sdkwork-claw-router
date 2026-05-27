@@ -1,5 +1,5 @@
-import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+﻿import assert from "node:assert/strict";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 
 import {
@@ -18,13 +18,174 @@ import {
   isProtectedPortalPath,
   resolveProtectedPortalAccess,
 } from "./src/auth/protectedPortalRoutes.ts";
+import {
+  clearStoredAppSessionToken,
+  loadStoredAppSessionToken,
+  storeAppSessionFromResult,
+} from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import {
+  createClawRouterAppSdkClient,
+  handleClawRouterSdkSessionAuthError,
+  isClawRouterSdkSessionAuthError,
+  resetClawRouterSdkSessionAuthRedirectState,
+} from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
+import {
+  createSdkworkIamRuntimeAuthService,
+} from "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
+import {
+  createIamRuntime,
+  createMemoryIamTokenStore,
+} from "../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime/src/index.ts";
 
 function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
 }
 
+function readPortalSourceFiles(relativeDirectory: string): Array<{ relativePath: string; source: string }> {
+  const root = new URL(relativeDirectory, import.meta.url);
+  const files: Array<{ relativePath: string; source: string }> = [];
+
+  function walk(directory: URL, prefix: string): void {
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+      if (entry.name === "dist" || entry.name === "node_modules" || entry.name === ".turbo") {
+        continue;
+      }
+
+      const relativePath = `${prefix}${entry.name}`;
+      const entryUrl = new URL(entry.isDirectory() ? `${entry.name}/` : entry.name, directory);
+
+      if (entry.isDirectory()) {
+        walk(entryUrl, `${relativePath}/`);
+        continue;
+      }
+
+      if (/\.(?:js|jsx|mjs|ts|tsx)$/.test(entry.name)) {
+        files.push({ relativePath: `${relativeDirectory}${relativePath}`, source: readFileSync(entryUrl, "utf8") });
+      }
+    }
+  }
+
+  walk(root, "");
+  return files;
+}
+
+function readI18nResourceFiles(): Array<{ relativePath: string; source: string }> {
+  const resourcesRoot = new URL("./packages/sdkwork-claw-router-i18n/src/resources/", import.meta.url);
+  if (!existsSync(resourcesRoot)) {
+    return [];
+  }
+
+  return readPortalSourceFiles("./packages/sdkwork-claw-router-i18n/src/resources/");
+}
+
+function readI18nResourceSource(): string {
+  return [
+    readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts"),
+    ...readI18nResourceFiles().map((file) => file.source),
+  ].join("\n");
+}
+
 function findOrderedMatches(source: string, pattern: RegExp): string[] {
   return [...source.matchAll(pattern)].map((match) => match[1]);
+}
+
+function findObjectBlockAt(source: string, start: number): string {
+  assert.notEqual(start, -1, "object block must be present");
+
+  const openBrace = source.indexOf("{", start);
+  assert.notEqual(openBrace, -1, "object block must open with a brace");
+
+  let depth = 0;
+  let quote: string | undefined;
+  let escaped = false;
+
+  for (let index = openBrace; index < source.length; index += 1) {
+    const char = source[index];
+
+    if (quote) {
+      if (escaped) {
+        escaped = false;
+      } else if (char === "\\") {
+        escaped = true;
+      } else if (char === quote) {
+        quote = undefined;
+      }
+      continue;
+    }
+
+    if (char === "\"" || char === "'" || char === "`") {
+      quote = char;
+      continue;
+    }
+
+    if (char === "{") {
+      depth += 1;
+      continue;
+    }
+
+    if (char === "}") {
+      depth -= 1;
+      if (depth === 0) {
+        return source.slice(openBrace, index + 1);
+      }
+    }
+  }
+
+  assert.fail("object block must close");
+}
+
+function findObjectBlock(source: string, marker: string): string {
+  const markerIndex = source.indexOf(marker);
+  assert.notEqual(markerIndex, -1, `${marker} must be present`);
+  return findObjectBlockAt(source, markerIndex);
+}
+
+function findI18nLocaleKeys(source: string, locale: string): Set<string> {
+  const keys = new Set<string>();
+  const localePattern = new RegExp(`\\b${locale}:\\s*\\{`, "g");
+
+  for (const match of source.matchAll(localePattern)) {
+    const localeSource = findObjectBlockAt(source, match.index ?? 0);
+    for (const key of findOrderedMatches(localeSource, /"([^"]+)"\s*:/g)) {
+      if (key.includes(".")) {
+        keys.add(key);
+      }
+    }
+  }
+
+  return keys;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function readAdminRegistrySource(): string {
+  return readPortalFile("./src/adminModuleRegistry.ts");
+}
+
+function findAdminModuleDefinitionSource(source: string, moduleId: string): string {
+  const match = source.match(
+    new RegExp(`moduleBlock\\(\\{\\s*id:\\s*'${escapeRegExp(moduleId)}'[\\s\\S]*?\\n\\s*\\}\\),`),
+  );
+  assert.ok(match, `${moduleId} admin module definition must remain present`);
+  return match[0];
+}
+
+function findAdminModuleMenuSource(source: string, moduleId: string): string {
+  const match = source.match(
+    new RegExp(`\\{\\s*moduleId:\\s*'${escapeRegExp(moduleId)}'[\\s\\S]*?\\n\\s*\\},(?=\\n\\s*\\{\\s*moduleId:|\\n\\s*\\];)`),
+  );
+  assert.ok(match, `${moduleId} admin menu module must remain present`);
+  return match[0];
+}
+
+function findAdminMenuGroupSource(source: string, groupKey: string): string {
+  const match = source.match(
+    new RegExp(`groupBlock\\('${escapeRegExp(groupKey)}',\\s*\\[[\\s\\S]*?\\n\\s*\\]\\),`),
+  );
+  assert.ok(match, `${groupKey} admin menu group must remain present`);
+  return match[0];
 }
 
 function authRuntimeSettingsFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
@@ -45,6 +206,41 @@ function authRuntimeSettingsFixture(overrides: Record<string, unknown> = {}): Re
       phoneRegistrationVerificationRequired: true,
     },
     ...overrides,
+  };
+}
+
+function installPortalAuthRedirectWindow({
+  hash,
+  pathname,
+  replace,
+  search,
+}: {
+  hash: string;
+  pathname: string;
+  replace: (to: string) => void;
+  search: string;
+}): () => void {
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    value: {
+      addEventListener: () => {},
+      dispatchEvent: () => true,
+      location: {
+        hash,
+        pathname,
+        replace,
+        search,
+      },
+      removeEventListener: () => {},
+    },
+  });
+  return () => {
+    if (descriptor) {
+      Object.defineProperty(globalThis, "window", descriptor);
+      return;
+    }
+    delete (globalThis as typeof globalThis & { window?: unknown }).window;
   };
 }
 
@@ -129,14 +325,16 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(configSource, /oauthProviders:\s*\[[^\]]*'tiktok'/);
   assert.doesNotMatch(configSource, /oauthProviders:\s*\[[^\]]*'google'/);
   assert.doesNotMatch(configSource, /oauthProviders:\s*\[[^\]]*'github'/);
-  assert.match(configSource, /qrLoginEnabled:\s*false/);
+  assert.match(configSource, /qrLoginEnabled:\s*true/);
   assert.match(configSource, /registerMethods:\s*\['email', 'phone'\]/);
   assert.match(configSource, /recoveryMethods:\s*\['email', 'phone'\]/);
   assert.match(configSource, /fetchClawRouterAuthRuntimeSettings/);
   assert.doesNotMatch(configSource, /fetchClawRouterAuthSettings/);
   assert.match(settingsServiceSource, /getClawRouterAppSdkClient/);
-  assert.match(settingsServiceSource, /\.auth\.runtimeSettings\.retrieve\(\)/);
-  assert.match(settingsServiceSource, /\.auth\.verificationPolicy\.retrieve\(\)/);
+  assert.match(settingsServiceSource, /\.system\.iam\.runtime\.retrieve\(\)/);
+  assert.match(settingsServiceSource, /\.system\.iam\.verificationPolicy\.retrieve\(\)/);
+  assert.doesNotMatch(settingsServiceSource, /\.auth\.runtimeSettings/);
+  assert.doesNotMatch(settingsServiceSource, /\.auth\.verificationPolicy/);
   assert.match(settingsServiceSource, /getClawRouterBackendSdkClient/);
   assert.match(settingsServiceSource, /\.system\.auth\.settings\.retrieve\(\)/);
   assert.match(settingsServiceSource, /\.system\.auth\.settings\.update\(input/);
@@ -153,7 +351,6 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(routeSource, /appearance=/);
   assert.doesNotMatch(routeSource, /surfaceAppearance/);
   assert.doesNotMatch(configSource, /leftRailMode:\s*'qr-only'/);
-  assert.doesNotMatch(configSource, /qrLoginEnabled:\s*true/);
 });
 
 test("auth runtime config applies backend IAM settings without tenant or organization being required", () => {
@@ -174,6 +371,7 @@ test("auth runtime config applies backend IAM settings without tenant or organiz
     phoneCodeLoginEnabled: false,
     phoneRegistrationVerificationRequired: true,
   });
+  assert.equal(DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.qrLoginEnabled, true);
   assert.equal(DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.verificationPolicy?.emailRegistrationVerificationRequired, false);
 });
 
@@ -260,6 +458,7 @@ test("claw router app auth is declared through appbase IAM standard contract and
   const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/sdk.ts");
   const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
   const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/iam.ts");
+  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/system.ts");
   const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/open-platform.ts");
   const appSdkQrSessionCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/open-platform-qr-auth-session-create-request.ts");
   const appSdkQrScanCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/open-platform-qr-auth-scan-create-request.ts");
@@ -270,7 +469,7 @@ test("claw router app auth is declared through appbase IAM standard contract and
   const backendSdkSystemSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/system.ts");
   const backendSdkIndexSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/sdk.ts");
   const backendSdkAuthSettingsUpdateSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/admin-auth-settings-update-request.ts");
-  const appSdkRuntimeSettingsResultSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/runtime-settings-retrieve-result.ts");
+  const appSdkRuntimeSettingsResultSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/iam-runtime-retrieve-result.ts");
   const appSdkTypesSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/index.ts");
   const backendSdkTypesSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/index.ts");
 
@@ -291,8 +490,8 @@ test("claw router app auth is declared through appbase IAM standard contract and
     "oauthAuthorizationUrls.retrieve",
     "oauthSessions.create",
     "registrations.create",
-    "runtimeSettings.retrieve",
-    "verificationPolicy.retrieve",
+    "iam.runtime.retrieve",
+    "iam.verificationPolicy.retrieve",
     "users.current.retrieve",
   ]) {
     assert.match(contractSource, new RegExp(`operation_id:\\s*${operationId.replaceAll(".", "\\.")}`));
@@ -307,10 +506,12 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(contractSource, /operation_id:\s*auth\.settings\.retrieve/);
   assert.match(contractSource, /operation_id:\s*auth\.settings\.update/);
   assert.match(contractSource, /api_path:\s*\/backend\/v3\/api\/system\/auth\/settings/);
-  assert.match(contractSource, /operation_id:\s*runtimeSettings\.retrieve/);
-  assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/runtime_settings/);
-  assert.match(contractSource, /operation_id:\s*verificationPolicy\.retrieve/);
-  assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/verification_policy/);
+  assert.match(contractSource, /operation_id:\s*iam\.runtime\.retrieve/);
+  assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/system\/iam\/runtime/);
+  assert.match(contractSource, /operation_id:\s*iam\.verificationPolicy\.retrieve/);
+  assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/system\/iam\/verification_policy/);
+  assert.doesNotMatch(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/runtime_settings/);
+  assert.doesNotMatch(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/verification_policy/);
   assert.match(contractSource, /emailRegistrationVerificationRequired:\s*\r?\n\s*type:\s*boolean/);
   assert.match(contractSource, /phoneRegistrationVerificationRequired:\s*\r?\n\s*type:\s*boolean/);
   assert.match(contractSource, /qrLoginType/);
@@ -351,8 +552,10 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/oauth_authorization_urls"]?.get?.operationId, "oauthAuthorizationUrls.retrieve");
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/oauth_sessions"]?.post?.operationId, "oauthSessions.create");
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/registrations"]?.post?.operationId, "registrations.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/runtime_settings"]?.get?.operationId, "runtimeSettings.retrieve");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/verification_policy"]?.get?.operationId, "verificationPolicy.retrieve");
+  assert.equal(appOpenApi.paths?.["/app/v3/api/system/iam/runtime"]?.get?.operationId, "iam.runtime.retrieve");
+  assert.equal(appOpenApi.paths?.["/app/v3/api/system/iam/verification_policy"]?.get?.operationId, "iam.verificationPolicy.retrieve");
+  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/runtime_settings"], undefined);
+  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/verification_policy"], undefined);
   assert.equal(appOpenApi.paths?.["/app/v3/api/iam/users/current"]?.get?.operationId, "users.current.retrieve");
   assert.ok(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse, "app runtime settings must use public auth schema");
   assert.ok(appOpenApi.components?.schemas?.AuthVerificationPolicy, "app runtime settings must use public verification policy schema");
@@ -374,7 +577,7 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.equal(registrationCreateRequired.has("tenantCode"), false);
   assert.equal(registrationCreateRequired.has("organizationCode"), false);
   assert.ok(appOpenApi.components?.securitySchemes?.AuthToken, "app OpenAPI must declare AuthToken bearer security");
-  assert.ok(appOpenApi.components?.securitySchemes?.SdkworkAccessToken, "app OpenAPI must declare Access-Token security");
+  assert.ok(appOpenApi.components?.securitySchemes?.AccessToken, "app OpenAPI must declare Access-Token security");
   assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\/login/);
   assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\/session"/);
   assert.doesNotMatch(backendOpenApiSource, /\/backend\/v3\/api\/auth\//);
@@ -410,8 +613,11 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(appSdkAuthSource, /public readonly oauthAuthorizationUrls: AuthOauthAuthorizationUrlsApi/);
   assert.match(appSdkAuthSource, /public readonly oauthSessions: AuthOauthSessionsApi/);
   assert.match(appSdkAuthSource, /public readonly registrations: AuthRegistrationsApi/);
-  assert.match(appSdkAuthSource, /public readonly runtimeSettings: AuthRuntimeSettingsApi/);
-  assert.match(appSdkAuthSource, /public readonly verificationPolicy: AuthVerificationPolicyApi/);
+  assert.doesNotMatch(appSdkAuthSource, /public readonly runtimeSettings: AuthRuntimeSettingsApi/);
+  assert.doesNotMatch(appSdkAuthSource, /public readonly verificationPolicy: AuthVerificationPolicyApi/);
+  assert.match(appSdkSystemSource, /public readonly iam: SystemIamApi/);
+  assert.match(appSdkSystemSource, /public readonly runtime: SystemIamRuntimeApi/);
+  assert.match(appSdkSystemSource, /public readonly verificationPolicy: SystemIamVerificationPolicyApi/);
   assert.match(appSdkQrSessionCreateRequestSource, /purpose: 'login' \| 'register'/);
   assert.match(appSdkQrScanCreateRequestSource, /scanSource: 'app' \| 'browser' \| 'mini_app' \| 'official_account' \| 'webhook'/);
   assert.match(appSdkQrScanCreateRequestSource, /externalUserId\?: string/);
@@ -429,8 +635,8 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(appSdkAuthSource, /async delete\(\): Promise<SessionsCurrentDeleteResult>/);
   assert.match(appSdkAuthSource, /async refresh\(body: IamSessionRefreshRequest\): Promise<SessionsRefreshResult>/);
   assert.match(appSdkAuthSource, /async verify\(body: IamVerificationCodeVerifyRequest\): Promise<VerificationCodesVerifyResult>/);
-  assert.match(appSdkAuthSource, /async retrieve\(params\?: AuthRuntimeSettingsRetrieveParams\): Promise<RuntimeSettingsRetrieveResult>/);
-  assert.match(appSdkAuthSource, /async retrieve\(\): Promise<VerificationPolicyRetrieveResult>/);
+  assert.match(appSdkSystemSource, /async retrieve\(params\?: SystemIamRuntimeRetrieveParams\): Promise<IamRuntimeRetrieveResult>/);
+  assert.match(appSdkSystemSource, /async retrieve\(\): Promise<IamVerificationPolicyRetrieveResult>/);
   assert.match(appSdkRuntimeSettingsResultSource, /AuthRuntimeSettingsResponse/);
   assert.doesNotMatch(appSdkRuntimeSettingsResultSource, /AdminAuthSettingsResponse/);
   assert.doesNotMatch(appSdkAuthSource, /AuthSessionsRefreshApi/);
@@ -480,15 +686,15 @@ test("appbase QR auth runtime keeps browser scan callback on the canonical callb
 
 test("portal exposes backend-backed admin auth settings configuration", () => {
   const appSource = readPortalFile("./src/App.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminRegistrySource = readAdminRegistrySource();
   const settingsPageSource = readPortalFile("./src/auth/ClawRouterAuthSettingsPage.tsx");
   const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
   const routeClassificationSource = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
 
   assert.match(appSource, /lazyRoute\(\(\) => import\('\.\/auth\/ClawRouterAuthSettingsPage'\), 'ClawRouterAuthSettingsPage'\)/);
   assert.match(appSource, /<Route path="settings" element=\{<ClawRouterAuthSettingsPage \/>} \/>/);
-  assert.match(adminLayoutSource, /path:\s*'\/admin\/settings'/);
-  assert.match(adminLayoutSource, /ShieldCheck/);
+  assert.match(adminRegistrySource, /path:\s*'\/admin\/settings'/);
+  assert.match(adminRegistrySource, /ShieldCheck/);
   assert.match(settingsPageSource, /fetchClawRouterAuthSettings/);
   assert.match(settingsPageSource, /updateClawRouterAuthSettings/);
   assert.match(settingsPageSource, /emailRegistrationVerificationRequired/);
@@ -510,11 +716,10 @@ test("portal exposes backend-backed admin auth settings configuration", () => {
 
 test("admin auth settings page localizes visible copy and uses the available content width", () => {
   const settingsPageSource = readPortalFile("./src/auth/ClawRouterAuthSettingsPage.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readI18nResourceSource();
 
   for (const key of [
     "admin.authSettings.title",
-    "admin.authSettings.description",
     "admin.authSettings.sections.runtime",
     "admin.authSettings.sections.oauthQr",
     "admin.authSettings.sections.verificationPolicy",
@@ -545,6 +750,8 @@ test("admin auth settings page localizes visible copy and uses the available con
     assert.match(i18nSource, new RegExp(`"${key.replaceAll(".", "\\.")}"`), `${key} must be present in i18n resources`);
   }
 
+  assert.doesNotMatch(settingsPageSource, /admin\.authSettings\.description/);
+
   for (const hardcodedText of [
     "Auth settings",
     "Runtime options",
@@ -565,9 +772,21 @@ test("admin auth settings page localizes visible copy and uses the available con
   }
 
   assert.doesNotMatch(settingsPageSource, /max-w-6xl/);
-  assert.match(settingsPageSource, /className="w-full min-w-0 space-y-6"/);
-  assert.match(settingsPageSource, /xl:grid-cols-\[minmax\(0,1fr\)_minmax\(0,1fr\)\]/);
-  assert.match(settingsPageSource, /min-\[1800px\]:grid-cols-\[minmax\(0,1fr\)_minmax\(0,1fr\)_minmax\(380px,0\.72fr\)\]/);
+  for (const expected of [
+    "h-[calc(100vh-112px)]",
+    "max-h-[calc(100vh-112px)]",
+    "md:h-[calc(100vh-128px)]",
+    "md:max-h-[calc(100vh-128px)]",
+    "data-admin-auth-settings-body",
+    "data-admin-auth-settings-main",
+    "data-admin-auth-settings-right",
+    "xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.72fr)]",
+    "xl:overflow-hidden",
+    "xl:overflow-y-auto",
+    "custom-scrollbar",
+  ]) {
+    assert.ok(settingsPageSource.includes(expected), `missing adaptive admin auth settings marker: ${expected}`);
+  }
 });
 
 test("admin auth settings form preserves compact WeChat QR settings and validates mini program URLs", () => {
@@ -681,6 +900,7 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
   const sdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/sdk.ts");
   const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
   const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/iam.ts");
+  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/system.ts");
   const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/open-platform.ts");
   const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
   const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
@@ -703,6 +923,7 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
 
   for (const sdkSurfaceFragment of [
     "public readonly auth: AuthApi",
+    "public readonly system: SystemApi",
     "public readonly iam: IamApi",
     "public readonly openPlatform: OpenPlatformApi",
     "public readonly qrAuth: OpenPlatformQrAuthApi",
@@ -715,13 +936,15 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
     "public readonly passwordResets: AuthPasswordResetsApi",
     "public readonly registrations: AuthRegistrationsApi",
     "public readonly sessions: AuthSessionsApi",
-    "public readonly verificationPolicy: AuthVerificationPolicyApi",
+    "public readonly iam: SystemIamApi",
+    "public readonly runtime: SystemIamRuntimeApi",
+    "public readonly verificationPolicy: SystemIamVerificationPolicyApi",
     "public readonly verificationCodes: AuthVerificationCodesApi",
     "public readonly current: AuthSessionsCurrentApi",
     "public readonly users: IamUsersApi",
     "public readonly current: IamUsersCurrentApi",
   ]) {
-    assert.match(`${sdkSource}\n${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkOpenPlatformSource}`, new RegExp(sdkSurfaceFragment));
+    assert.match(`${sdkSource}\n${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}\n${appSdkOpenPlatformSource}`, new RegExp(sdkSurfaceFragment));
   }
 
   for (const methodSignature of [
@@ -733,18 +956,19 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
     /async create\(body: IamOauthSessionCreateRequest\): Promise<OauthSessionsCreateResult>/,
     /async create\(body: IamPasswordResetRequestCreateRequest\): Promise<PasswordResetRequestsCreateResult>/,
     /async create\(body: IamPasswordResetCreateRequest\): Promise<PasswordResetsCreateResult>/,
-    /async create\(body: IamRegistrationCreateRequest, params\?: AuthRegistrationsCreateParams\): Promise<RegistrationsCreateResult>/,
-    /async create\(body: IamSessionCreateRequest, params\?: AuthSessionsCreateParams\): Promise<SessionsCreateResult>/,
+    /async create\(body: IamRegistrationCreateRequest\): Promise<RegistrationsCreateResult>/,
+    /async create\(body: IamSessionCreateRequest\): Promise<SessionsCreateResult>/,
     /async delete\(\): Promise<SessionsCurrentDeleteResult>/,
     /async retrieve\(\): Promise<SessionsCurrentRetrieveResult>/,
     /async update\(body: IamCurrentSessionUpdateRequest\): Promise<SessionsCurrentUpdateResult>/,
     /async refresh\(body: IamSessionRefreshRequest\): Promise<SessionsRefreshResult>/,
     /async create\(body: IamVerificationCodeCreateRequest\): Promise<VerificationCodesCreateResult>/,
     /async verify\(body: IamVerificationCodeVerifyRequest\): Promise<VerificationCodesVerifyResult>/,
-    /async retrieve\(\): Promise<VerificationPolicyRetrieveResult>/,
+    /async retrieve\(params\?: SystemIamRuntimeRetrieveParams\): Promise<IamRuntimeRetrieveResult>/,
+    /async retrieve\(\): Promise<IamVerificationPolicyRetrieveResult>/,
     /async retrieve\(\): Promise<UsersCurrentRetrieveResult>/,
   ]) {
-    assert.match(`${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkOpenPlatformSource}`, methodSignature);
+    assert.match(`${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}\n${appSdkOpenPlatformSource}`, methodSignature);
   }
   assert.doesNotMatch(appSdkAuthSource, /loginQrCodes/);
   assert.doesNotMatch(appSdkAuthSource, /loginQrCodeCallbacks/);
@@ -807,7 +1031,6 @@ test("portal auth guard classifies every console and admin path as login protect
   for (const path of [
     "/console",
     "/console/dashboard",
-    "/console/routing",
     "/console/api-keys",
     "/console/checkout",
     "/admin",
@@ -884,6 +1107,353 @@ test("portal auth guard redirects anonymous protected routes to login with a saf
   );
 });
 
+test("appbase IAM runtime auth service persists sessions before portal redirects to protected pages", async () => {
+  let storedSession: { accessToken?: string; authToken?: string; refreshToken?: string } = {};
+  const persistedSessions: Array<{ accessToken?: string; authToken?: string; refreshToken?: string }> = [];
+  const runtime = {
+    service: {
+      auth: {
+        oauthAuthorizationUrls: {
+          retrieve: async () => ({ url: "https://auth.example.test/oauth" }),
+        },
+        oauthSessions: {
+          create: async () => ({
+            accessToken: "oauth-access",
+            authToken: "oauth-auth",
+            refreshToken: "oauth-refresh",
+          }),
+        },
+        passwordResetRequests: {
+          create: async () => ({}),
+        },
+        passwordResets: {
+          create: async () => ({}),
+        },
+        registrations: {
+          create: async () => ({
+            accessToken: "register-access",
+            authToken: "register-auth",
+            refreshToken: "register-refresh",
+          }),
+        },
+        sessions: {
+          create: async (body: Record<string, unknown>) => ({
+            accessToken: `${String(body.grantType)}-access`,
+            authToken: `${String(body.grantType)}-auth`,
+            refreshToken: `${String(body.grantType)}-refresh`,
+          }),
+          current: {
+            delete: async () => undefined,
+            retrieve: async () => ({
+              accessToken: "current-access",
+              authToken: "current-auth",
+            }),
+            update: async () => ({
+              accessToken: "updated-access",
+              authToken: "updated-auth",
+              refreshToken: "updated-refresh",
+            }),
+          },
+          refresh: async () => ({
+            accessToken: "refreshed-access",
+            authToken: "refreshed-auth",
+            refreshToken: "refreshed-refresh",
+          }),
+        },
+        verificationCodes: {
+          create: async () => ({}),
+          verify: async () => ({ verified: true }),
+        },
+      },
+      iam: {
+        users: {
+          current: {
+            retrieve: async () => ({ userId: "user-1", username: "Ada" }),
+          },
+        },
+      },
+    },
+    tokenStore: {
+      get: () => storedSession,
+      set: (session: { accessToken?: string; authToken?: string; refreshToken?: string }) => {
+        storedSession = { ...session };
+        persistedSessions.push({ ...session });
+      },
+    },
+  };
+  const service = createSdkworkIamRuntimeAuthService({
+    getRuntime: () => runtime,
+  });
+
+  for (const [name, run] of [
+    ["password login", () => service.signIn({ username: "ada@example.test", password: "secret" })],
+    ["email code login", () => service.signInWithEmailCode({ email: "ada@example.test", code: "123456" })],
+    ["phone code login", () => service.signInWithPhoneCode({ phone: "+15555550123", code: "123456" })],
+    ["session bridge login", () => service.signInWithSessionBridge({ email: "ada@example.test", name: "Ada" })],
+    ["registration", () => service.register({ username: "ada", email: "ada@example.test", password: "secret" })],
+    ["OAuth login", () => service.signInWithOAuth({ code: "oauth-code", deviceType: "desktop", provider: "github" })],
+    ["refresh", () => service.refreshSession()],
+    ["current session update", () => service.updateCurrentSession()],
+  ] as const) {
+    const beforeCount = persistedSessions.length;
+    const session = await run();
+    assert.equal(
+      persistedSessions.length,
+      beforeCount + 1,
+      `${name} must persist returned tokens before redirect`,
+    );
+    assert.deepEqual(
+      persistedSessions[persistedSessions.length - 1],
+      {
+        accessToken: session.accessToken,
+        authToken: session.authToken,
+        refreshToken: session.refreshToken,
+      },
+      `${name} persisted token store payload must match returned session`,
+    );
+  }
+});
+
+test("appbase IAM runtime exposes generated open platform QR auth SDK methods to the login page", async () => {
+  const createQrSessionCalls: unknown[] = [];
+  const appClient = {
+    auth: {
+      oauthAuthorizationUrls: {
+        retrieve: async () => ({ data: { url: "https://auth.example.test/oauth" } }),
+      },
+      oauthSessions: {
+        create: async () => ({ data: { accessToken: "oauth-access", authToken: "oauth-auth" } }),
+      },
+      passwordResetRequests: {
+        create: async () => ({ data: {} }),
+      },
+      passwordResets: {
+        create: async () => ({ data: {} }),
+      },
+      registrations: {
+        create: async () => ({ data: { accessToken: "register-access", authToken: "register-auth" } }),
+      },
+      sessions: {
+        create: async () => ({ data: { accessToken: "password-access", authToken: "password-auth" } }),
+        current: {
+          delete: async () => ({ data: undefined }),
+          retrieve: async () => ({ data: { accessToken: "current-access", authToken: "current-auth" } }),
+          update: async () => ({ data: { accessToken: "updated-access", authToken: "updated-auth" } }),
+        },
+        refresh: async () => ({ data: { accessToken: "refresh-access", authToken: "refresh-auth" } }),
+      },
+      verificationCodes: {
+        create: async () => ({ data: {} }),
+        verify: async () => ({ data: { verified: true } }),
+      },
+    },
+    iam: {
+      users: {
+        current: {
+          retrieve: async () => ({ data: { displayName: "Ada", id: "user-1" } }),
+        },
+      },
+    },
+    openPlatform: {
+      qrAuth: {
+        sessions: {
+          create: async (payload?: Record<string, unknown>) => {
+            createQrSessionCalls.push(payload);
+            return {
+              data: {
+                expiresAt: "2026-05-24T12:00:00.000Z",
+                qrContent: {
+                  content: "https://qr.example.test/session/qr-session-1",
+                  mode: "url",
+                },
+                sessionKey: "qr-session-1",
+              },
+            };
+          },
+          retrieve: async () => ({ data: { sessionKey: "qr-session-1", status: "pending" } }),
+          passwords: {
+            create: async () => ({ data: { status: "confirmed" } }),
+          },
+          scans: {
+            create: async () => ({ data: { status: "scanned" } }),
+          },
+        },
+      },
+    },
+    system: {
+      iam: {
+        runtime: {
+          retrieve: async () => ({ data: authRuntimeSettingsFixture() }),
+        },
+        verificationPolicy: {
+          retrieve: async () => ({
+            data: authRuntimeSettingsFixture().verificationPolicy,
+          }),
+        },
+      },
+    },
+  };
+  const runtime = createIamRuntime({
+    clients: {
+      app: appClient,
+    },
+    config: {
+      appId: "sdkwork-claw-router",
+      deploymentMode: "saas",
+      environment: "test",
+    },
+    tokenStore: createMemoryIamTokenStore(),
+  });
+  const authService = createSdkworkIamRuntimeAuthService({
+    getRuntime: () => runtime,
+  });
+
+  const qrCode = await authService.generateLoginQrCode({ purpose: "login" });
+
+  assert.deepEqual(createQrSessionCalls, [{ purpose: "login" }]);
+  assert.equal(qrCode.sessionKey, "qr-session-1");
+  assert.equal(qrCode.qrContent, "https://qr.example.test/session/qr-session-1");
+});
+
+test("generated SDK auth errors clear the app session and redirect protected pages to login", () => {
+  const redirects: string[] = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "#risk",
+    pathname: "/admin/service-providers/dashboard",
+    replace: (to) => redirects.push(to),
+    search: "?provider_id=2",
+  });
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+    storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      },
+    });
+
+    assert.equal(isClawRouterSdkSessionAuthError({
+      code: "4010",
+      msg: "app session token has expired",
+    }), true);
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "4010",
+      msg: "app session token has expired",
+    }), true);
+
+    assert.equal(loadStoredAppSessionToken(), null);
+    assert.deepEqual(redirects, [
+      "/auth/login?redirect=%2Fadmin%2Fservice-providers%2Fdashboard%3Fprovider_id%3D2%23risk",
+    ]);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
+test("generated SDK unauthorized errors redirect once and skip auth pages", () => {
+  const redirects: string[] = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "",
+    pathname: "/console/wallet",
+    replace: (to) => redirects.push(to),
+    search: "",
+  });
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+
+    assert.equal(isClawRouterSdkSessionAuthError({
+      code: "UNAUTHORIZED",
+      httpStatus: 401,
+      message: "Authentication failed",
+    }), true);
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "UNAUTHORIZED",
+      httpStatus: 401,
+      message: "Authentication failed",
+    }), true);
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "UNAUTHORIZED",
+      httpStatus: 401,
+      message: "Authentication failed",
+    }), true);
+    assert.deepEqual(redirects, ["/auth/login?redirect=%2Fconsole%2Fwallet"]);
+
+    restoreWindow();
+    const restoreAuthWindow = installPortalAuthRedirectWindow({
+      hash: "",
+      pathname: "/auth/login",
+      replace: (to) => redirects.push(to),
+      search: "?redirect=%2Fconsole%2Fwallet",
+    });
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "401",
+      msg: "not logged in",
+    }), true);
+    assert.deepEqual(redirects, ["/auth/login?redirect=%2Fconsole%2Fwallet"]);
+    restoreAuthWindow();
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
+test("generated SDK request boundary redirects when API responses report an expired app session", async () => {
+  const redirects: string[] = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "",
+    pathname: "/console/api-keys",
+    replace: (to) => redirects.push(to),
+    search: "?tab=usage",
+  });
+  const previousFetch = globalThis.fetch;
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+    storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      },
+    });
+    globalThis.fetch = async () => new Response(
+      JSON.stringify({
+        code: "4010",
+        data: null,
+        msg: "app session token has expired",
+      }),
+      {
+        headers: { "content-type": "application/json" },
+        status: 200,
+      },
+    );
+
+    const client = createClawRouterAppSdkClient({
+      appBaseUrl: "https://example.test/app/v3/api",
+    });
+
+    await assert.rejects(
+      () => client.http.get("/auth-required"),
+      /app session token has expired/,
+    );
+    assert.equal(loadStoredAppSessionToken(), null);
+    assert.deepEqual(redirects, ["/auth/login?redirect=%2Fconsole%2Fapi-keys%3Ftab%3Dusage"]);
+  } finally {
+    globalThis.fetch = previousFetch;
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
 test("portal wires console and admin routes through the protected session guard", () => {
   const appSource = readPortalFile("./src/App.tsx");
   const guardSource = readPortalFile("./src/auth/protectedPortalRoutes.ts");
@@ -932,17 +1502,18 @@ test("console and admin logout revoke the current IAM session through the app SD
 
 test("admin sidebar labels are resolved through i18n keys", () => {
   const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
 
   assert.match(adminLayoutSource, /useTranslation/);
-  assert.match(adminLayoutSource, /groupKey:\s*'admin\.menu\.home\.modelManagement'/);
-  assert.match(adminLayoutSource, /groupKey:\s*'admin\.menu\.home\.accountPoolManagement'/);
-  assert.match(adminLayoutSource, /groupKey:\s*'admin\.menu\.home\.agentSkills'/);
-  assert.match(adminLayoutSource, /groupKey:\s*'admin\.menu\.home\.dataManagement'/);
-  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.appStore'/);
-  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.agentSkills'/);
-  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.analytics'/);
-  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.authSettings'/);
+  assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.modelManagement'/);
+  assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.accountPoolManagement'/);
+  assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.agentSkills'/);
+  assert.match(adminRegistrySource, /groupBlock\('admin\.menu\.home\.dataManagement'/);
+  assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.appStore'/);
+  assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.agentSkills'/);
+  assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.analytics'/);
+  assert.match(adminRegistrySource, /labelKey:\s*'admin\.menu\.authSettings'/);
   assert.match(adminLayoutSource, /t\(group\.groupKey\)/);
   assert.match(adminLayoutSource, /t\(item\.labelKey\)/);
   assert.match(adminLayoutSource, /t\('admin\.menu\.logout'\)/);
@@ -950,6 +1521,7 @@ test("admin sidebar labels are resolved through i18n keys", () => {
   for (const hardcodedText of ["App Store", "Agent Skills", "Auth Settings", "Admin Backend"]) {
     assert.doesNotMatch(adminLayoutSource, new RegExp(`label:\\s*['"\`]${hardcodedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}['"\`]`));
     assert.doesNotMatch(adminLayoutSource, new RegExp(`>\\s*${hardcodedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*<`));
+    assert.doesNotMatch(adminRegistrySource, new RegExp(`label:\\s*['"\`]${hardcodedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}['"\`]`));
   }
 
   for (const key of [
@@ -967,167 +1539,242 @@ test("admin sidebar labels are resolved through i18n keys", () => {
   }
 });
 
+test("claw router i18n resources are split by business domain", () => {
+  const indexSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const resourceFiles = readI18nResourceFiles()
+    .filter((file) => !file.relativePath.endsWith("/types.ts") && !file.relativePath.endsWith("/merge.ts"));
+  const resourceIndex = resourceFiles.find((file) => file.relativePath === "./packages/sdkwork-claw-router-i18n/src/resources/index.ts");
+  const businessResourceFiles = resourceFiles.filter((file) => file.relativePath !== "./packages/sdkwork-claw-router-i18n/src/resources/index.ts");
+
+  assert.ok(resourceIndex, "i18n package must expose a resources/index.ts aggregator");
+  assert.match(indexSource, /from '\.\/resources'/);
+  assert.doesNotMatch(indexSource, /const resources\s*=\s*\{/);
+  assert.ok(indexSource.split(/\r?\n/).length <= 100, "i18n entrypoint must stay below 100 lines");
+  assert.ok((resourceIndex?.source ?? "").split(/\r?\n/).length <= 160, "i18n resources aggregator must stay below 160 lines");
+  assert.ok(businessResourceFiles.length >= 30, "i18n resources must be split into focused business files");
+
+  for (const file of businessResourceFiles) {
+    const lineCount = file.source.split(/\r?\n/).length;
+    assert.ok(lineCount <= 700, `${file.relativePath} must stay below 700 lines, got ${lineCount}`);
+    assert.match(file.source, /\ben:\s*\{/, `${file.relativePath} must define English messages`);
+    assert.match(file.source, /\bzh:\s*\{/, `${file.relativePath} must define Chinese messages`);
+  }
+});
+
+test("admin module registry labels have English and Chinese translations", () => {
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
+  const enKeys = findI18nLocaleKeys(i18nSource, "en");
+  const zhKeys = findI18nLocaleKeys(i18nSource, "zh");
+  const registryKeys = new Set([
+    ...findOrderedMatches(adminRegistrySource, /nameKey:\s*'([^']+)'/g),
+    ...findOrderedMatches(adminRegistrySource, /groupBlock\('([^']+)'/g),
+    ...findOrderedMatches(adminRegistrySource, /labelKey:\s*'([^']+)'/g),
+  ]);
+
+  assert.ok(registryKeys.has("admin.header.messagingCenter"), "messaging center module must be covered");
+  assert.ok(registryKeys.has("admin.menu.messaging.providers"), "messaging center menu must be covered");
+
+  for (const key of [...registryKeys].sort()) {
+    assert.ok(enKeys.has(key), `${key} must be present in English i18n resources`);
+    assert.ok(zhKeys.has(key), `${key} must be present in Chinese i18n resources`);
+  }
+});
+
+test("direct admin translation lookups without fallbacks have English and Chinese translations", () => {
+  const i18nSource = readI18nResourceSource();
+  const enKeys = findI18nLocaleKeys(i18nSource, "en");
+  const zhKeys = findI18nLocaleKeys(i18nSource, "zh");
+  const sourceFiles = [
+    ...readPortalSourceFiles("./src/"),
+    ...readPortalSourceFiles("./packages/"),
+  ].filter((file) => file.relativePath !== "./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const missingLookups: string[] = [];
+
+  for (const file of sourceFiles) {
+    for (const key of findOrderedMatches(file.source, /\bt\(\s*['"](admin\.[A-Za-z0-9_.-]+)['"]\s*\)/g)) {
+      if (!enKeys.has(key) || !zhKeys.has(key)) {
+        missingLookups.push(`${key} in ${file.relativePath}`);
+      }
+    }
+  }
+
+  assert.deepEqual(missingLookups.sort(), []);
+});
+
 test("admin auth and site settings belong to the operations module", () => {
-  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
+  const homeLayoutModule = findAdminModuleMenuSource(adminRegistrySource, "home");
+  const operationsLayoutModule = findAdminModuleMenuSource(adminRegistrySource, "operations");
+  const homeHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "home");
+  const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
 
-  const homeLayoutModule = adminLayoutSource.match(
-    /moduleId:\s*'home'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'appCenter')/,
-  );
-  assert.ok(homeLayoutModule, "home layout module must remain present");
-  assert.match(homeLayoutModule[0], /path:\s*'\/admin\/announcement'/);
-  assert.doesNotMatch(homeLayoutModule[0], /path:\s*'\/admin\/settings'/);
-  assert.doesNotMatch(homeLayoutModule[0], /path:\s*'\/admin\/site'/);
+  assert.match(homeLayoutModule, /path:\s*'\/admin\/announcement'/);
+  assert.doesNotMatch(homeLayoutModule, /path:\s*'\/admin\/settings'/);
+  assert.doesNotMatch(homeLayoutModule, /path:\s*'\/admin\/site'/);
 
-  const operationsLayoutModule = adminLayoutSource.match(
-    /moduleId:\s*'operations'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'serviceProviderCenter')/,
-  );
-  assert.ok(operationsLayoutModule, "operations layout module must remain present");
-  assert.match(operationsLayoutModule[0], /groupKey:\s*'admin\.menu\.ops\.system'/);
-  assert.match(operationsLayoutModule[0], /path:\s*'\/admin\/settings',\s*labelKey:\s*'admin\.menu\.authSettings'/);
-  assert.match(operationsLayoutModule[0], /path:\s*'\/admin\/site',\s*labelKey:\s*'admin\.menu\.siteSettings'/);
+  assert.match(operationsLayoutModule, /groupBlock\('admin\.menu\.ops\.system'/);
+  assert.match(operationsLayoutModule, /path:\s*'\/admin\/settings',\s*labelKey:\s*'admin\.menu\.authSettings'/);
+  assert.match(operationsLayoutModule, /path:\s*'\/admin\/site',\s*labelKey:\s*'admin\.menu\.siteSettings'/);
 
-  const homeHeaderModule = adminHeaderSource.match(
-    /id:\s*'home',[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/,
-  );
-  assert.ok(homeHeaderModule, "home header module must remain present");
-  assert.doesNotMatch(homeHeaderModule[1], /'\/admin\/settings'/);
-  assert.doesNotMatch(homeHeaderModule[1], /'\/admin\/site'/);
-
-  const operationsHeaderModule = adminHeaderSource.match(
-    /id:\s*'operations',[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/,
-  );
-  assert.ok(operationsHeaderModule, "operations header module must remain present");
-  assert.match(operationsHeaderModule[1], /'\/admin\/settings'/);
-  assert.match(operationsHeaderModule[1], /'\/admin\/site'/);
+  assert.doesNotMatch(homeHeaderModule, /'\/admin\/settings'/);
+  assert.doesNotMatch(homeHeaderModule, /'\/admin\/site'/);
+  assert.match(operationsHeaderModule, /'\/admin\/settings'/);
+  assert.match(operationsHeaderModule, /'\/admin\/site'/);
   assert.match(i18nSource, /"admin\.menu\.ops\.system":\s*"System Settings"/);
 });
 
 test("admin dashboard is a top-level sidebar item", () => {
   const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminRegistrySource = readAdminRegistrySource();
 
   assert.match(
-    adminLayoutSource,
-    /moduleId:\s*'home',\s*items:\s*\[\s*\{\s*path:\s*'\/admin\/dashboard',\s*labelKey:\s*'admin\.menu\.dashboard'/s,
+    adminRegistrySource,
+    /moduleId:\s*'home',\s*items:\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/dashboard',\s*labelKey:\s*'admin\.menu\.dashboard'/s,
   );
   assert.match(adminLayoutSource, /currentModuleMenu\.items\?\.map\(\(item\) => \(/);
-  assert.doesNotMatch(adminLayoutSource, /groupKey:\s*'admin\.menu\.home\.overview'/);
+  assert.doesNotMatch(adminRegistrySource, /groupBlock\('admin\.menu\.home\.overview'/);
 });
 
-test("admin model platform item is grouped under model management", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+test("admin model vendor item is grouped under model management", () => {
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
 
   assert.match(
-    adminLayoutSource,
-    /groupKey:\s*'admin\.menu\.home\.modelManagement',\s*items:\s*\[\s*\{\s*path:\s*'\/admin\/model',\s*labelKey:\s*'admin\.menu\.models'/s,
+    adminRegistrySource,
+    /groupBlock\('admin\.menu\.home\.modelManagement',\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/model',\s*labelKey:\s*'admin\.menu\.models'/s,
   );
 
-  const agentsAndSkillsGroup = adminLayoutSource.match(
-    /groupKey:\s*'admin\.menu\.home\.agentSkills',\s*items:\s*\[([\s\S]*?)\]\s*,\s*\}/,
-  );
-  assert.ok(agentsAndSkillsGroup, "agents and skills group must remain present");
-  assert.doesNotMatch(agentsAndSkillsGroup[1], /path:\s*'\/admin\/model'/);
+  const agentsAndSkillsGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.agentSkills");
+  assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/model'/);
   assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"Model Management"/);
   assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"模型管理"/);
+  assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"Model Vendors"/);
+  assert.match(i18nSource, /"admin\.menu\.models":\s*"Model Vendors"/);
+  assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"模型厂商管理"/);
+  assert.match(i18nSource, /"admin\.menu\.models":\s*"模型厂商管理"/);
+  assert.doesNotMatch(i18nSource, /模型平台管理/);
 });
 
 test("admin group and channel provider accounts are grouped under account pool management", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
 
   assert.match(
-    adminLayoutSource,
-    /groupKey:\s*'admin\.menu\.home\.modelManagement'[\s\S]*groupKey:\s*'admin\.menu\.home\.accountPoolManagement'[\s\S]*groupKey:\s*'admin\.menu\.home\.agentSkills'/,
+    adminRegistrySource,
+    /groupBlock\('admin\.menu\.home\.modelManagement'[\s\S]*groupBlock\('admin\.menu\.home\.accountPoolManagement'[\s\S]*groupBlock\('admin\.menu\.home\.agentSkills'/,
   );
   assert.match(
-    adminLayoutSource,
-    /groupKey:\s*'admin\.menu\.home\.accountPoolManagement',\s*items:\s*\[\s*\{\s*path:\s*'\/admin\/group',\s*labelKey:\s*'admin\.menu\.groups'[\s\S]*\{\s*path:\s*'\/admin\/channel',\s*labelKey:\s*'admin\.menu\.channels'/s,
+    adminRegistrySource,
+    /groupBlock\('admin\.menu\.home\.accountPoolManagement',\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/group',\s*labelKey:\s*'admin\.menu\.groups'[\s\S]*itemBlock\(\{\s*path:\s*'\/admin\/channel',\s*labelKey:\s*'admin\.menu\.channels'/s,
   );
 
-  const userManagementGroup = adminLayoutSource.match(
-    /groupKey:\s*'admin\.menu\.home\.userManagement',\s*items:\s*\[([\s\S]*?)\]\s*,\s*\}/,
-  );
-  assert.ok(userManagementGroup, "user management group must remain present");
-  assert.doesNotMatch(userManagementGroup[1], /path:\s*'\/admin\/group'/);
+  const userManagementGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.userManagement");
+  assert.doesNotMatch(userManagementGroup, /path:\s*'\/admin\/group'/);
 
-  const agentsAndSkillsGroup = adminLayoutSource.match(
-    /groupKey:\s*'admin\.menu\.home\.agentSkills',\s*items:\s*\[([\s\S]*?)\]\s*,\s*\}/,
-  );
-  assert.ok(agentsAndSkillsGroup, "agents and skills group must remain present");
-  assert.doesNotMatch(agentsAndSkillsGroup[1], /path:\s*'\/admin\/group'/);
-  assert.doesNotMatch(agentsAndSkillsGroup[1], /path:\s*'\/admin\/channel'/);
+  const agentsAndSkillsGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.agentSkills");
+  assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/group'/);
+  assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/channel'/);
   assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"Account Pool Management"/);
   assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"号池管理"/);
 });
 
-test("admin app center module owns app store and split open platform modules", () => {
-  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+test("admin channel accounts expose API key copy without showing secret references", () => {
+  const channelSource = readPortalFile("./packages/sdkwork-claw-router-admin-channel/src/index.tsx");
+  const i18nSource = readI18nResourceSource();
 
-  assert.match(adminHeaderSource, /export type AdminModuleId = 'home' \| 'appCenter' \| 'productCenter' \| 'transactionCenter' \| 'memberCenter' \| 'marketingCenter' \| 'financeCenter' \| 'operations' \| 'serviceProviderCenter'/);
+  assert.match(channelSource, /Copy,/);
+  assert.match(channelSource, /const handleCopyApiKey = useCallback/);
+  assert.match(channelSource, /navigator\.clipboard\.writeText\(apiKey\)/);
+  assert.match(channelSource, /t\('admin\.channel\.table\.apiKey'\)/);
+  assert.match(channelSource, /<ApiKeyCell channel=\{channel\} onCopyApiKey=\{handleCopyApiKey\} \/>/);
+  assert.match(channelSource, /<BusinessStateTableRow colSpan=\{9\}/);
+  assert.match(channelSource, /copyLabel=\{t\('common\.actions\.copyApiKey'\)\}/);
+  assert.match(channelSource, /onCopy=\{\(\) => onCopyApiKey\(channel\)\}/);
+  assert.doesNotMatch(channelSource, /label=\{t\('admin\.channel\.fields\.secretReference'\)\}/);
+  assert.doesNotMatch(channelSource, /value=\{secretRef \|\| t\('admin\.channel\.credentials\.noReferenceValue'\)\}/);
+  assert.doesNotMatch(channelSource, /apiKeyVisible\s*\?\s*channel\.apiKey/);
+  assert.ok(findI18nLocaleKeys(i18nSource, "en").has("admin.channel.table.apiKey"));
+  assert.ok(findI18nLocaleKeys(i18nSource, "zh").has("admin.channel.table.apiKey"));
+});
+
+test("admin channel table keeps channel and provider content on one line", () => {
+  const channelSource = readPortalFile("./packages/sdkwork-claw-router-admin-channel/src/index.tsx");
+
+  assert.match(channelSource, /<td className="px-6 py-4 align-top max-w-\[14rem\]">/);
+  assert.match(channelSource, /className="flex min-w-0 items-center gap-2 whitespace-nowrap"/);
+  assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.name\}<\/span>/);
+  assert.match(channelSource, /<CapabilityBadges capabilities=\{channel\.capabilities\} \/>/);
+  assert.doesNotMatch(channelSource, /<CapabilityBadges capabilities=\{channel\.capabilities\} \/>\s*<\/td>/);
+  assert.doesNotMatch(channelSource, /className="flex flex-wrap gap-1 mt-2"/);
+  assert.match(channelSource, /<td className="px-6 py-4 align-top max-w-\[12rem\]">/);
+  assert.doesNotMatch(channelSource, /<div className="flex flex-col gap-1\.5">/);
+  assert.match(channelSource, /<div className="flex min-w-0 items-center gap-2 whitespace-nowrap">/);
+  assert.match(channelSource, /text-sm flex min-w-0 items-center gap-1\.5 whitespace-nowrap/);
+  assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.vendor\}<\/span>/);
+  assert.match(channelSource, /text-xs text-slate-500 min-w-0 whitespace-nowrap/);
+  assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.protocol\}<\/span>/);
+  assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.accessType\}<\/span>/);
+});
+
+test("admin app center module owns app store and split open platform modules", () => {
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
+  const appCenterHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "appCenter");
+  const homeHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "home");
+  const appCenterMenu = findAdminModuleMenuSource(adminRegistrySource, "appCenter");
+  const homeMenu = findAdminModuleMenuSource(adminRegistrySource, "home");
+
+  for (const moduleId of ["home", "appCenter", "courseCenter", "productCenter", "transactionCenter", "memberCenter", "marketingCenter", "financeCenter", "storageCenter", "driveCenter", "operations", "serviceProviderCenter"]) {
+    assert.match(adminRegistrySource, new RegExp(`\\| '${moduleId}'`), `${moduleId} must be part of AdminModuleId`);
+  }
   assert.match(
-    adminHeaderSource,
+    appCenterHeaderModule,
     /id:\s*'appCenter',\s*nameKey:\s*'admin\.header\.appCenter'[\s\S]*defaultPath:\s*'\/admin\/app'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/app'[^\]]*'\/admin\/open-platform'[^\]]*\]/,
   );
-
-  const homeHeaderModule = adminHeaderSource.match(
-    /id:\s*'home',[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/,
-  );
-  assert.ok(homeHeaderModule, "home header module must remain present");
-  assert.doesNotMatch(homeHeaderModule[1], /'\/admin\/app'/);
-  assert.doesNotMatch(homeHeaderModule[1], /'\/admin\/open-platform'/);
+  assert.doesNotMatch(homeHeaderModule, /'\/admin\/app'/);
+  assert.doesNotMatch(homeHeaderModule, /'\/admin\/open-platform'/);
 
   assert.match(
-    adminLayoutSource,
-    /moduleId:\s*'appCenter',\s*items:\s*\[\s*\{\s*path:\s*'\/admin\/app',\s*labelKey:\s*'admin\.menu\.appStore'/,
+    appCenterMenu,
+    /moduleId:\s*'appCenter',\s*items:\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/app',\s*labelKey:\s*'admin\.menu\.appStore'/,
   );
-  assert.doesNotMatch(adminLayoutSource, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
-  assert.match(adminLayoutSource, /groupKey:\s*'admin\.menu\.openPlatformOfficialAccounts'/);
-  assert.match(adminLayoutSource, /groupKey:\s*'admin\.menu\.openPlatformMiniPrograms'/);
-
-  const homeLayoutModule = adminLayoutSource.match(
-    /moduleId:\s*'home',[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'appCenter')/,
-  );
-  assert.ok(homeLayoutModule, "home layout module must precede app center module");
-  assert.doesNotMatch(homeLayoutModule[0], /path:\s*'\/admin\/app'/);
-  assert.doesNotMatch(homeLayoutModule[0], /path:\s*'\/admin\/open-platform'/);
+  assert.doesNotMatch(appCenterMenu, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
+  assert.match(appCenterMenu, /groupBlock\('admin\.menu\.openPlatformOfficialAccounts'/);
+  assert.match(appCenterMenu, /groupBlock\('admin\.menu\.openPlatformMiniPrograms'/);
+  assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/app'/);
+  assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/open-platform'/);
   assert.match(i18nSource, /"admin\.header\.appCenter":\s*"App Center"/);
   assert.match(i18nSource, /"admin\.header\.appCenter":\s*"应用中心"/);
 });
 
 test("admin commerce module is split into product transaction member marketing and finance centers", () => {
-  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
+  const transactionHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "transactionCenter");
 
-  assert.doesNotMatch(adminHeaderSource, /id:\s*'commerce'/);
-  assert.doesNotMatch(adminLayoutSource, /moduleId:\s*'commerce'/);
+  assert.doesNotMatch(adminRegistrySource, /id:\s*'commerce'/);
+  assert.doesNotMatch(adminRegistrySource, /moduleId:\s*'commerce'/);
   assert.match(
-    adminHeaderSource,
+    adminRegistrySource,
     /id:\s*'productCenter',\s*nameKey:\s*'admin\.header\.productCenter'[\s\S]*defaultPath:\s*'\/admin\/catalog\/products'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/catalog'[^\]]*'\/admin\/inventory'[^\]]*\]/,
   );
   assert.match(
-    adminHeaderSource,
+    adminRegistrySource,
     /id:\s*'transactionCenter',\s*nameKey:\s*'admin\.header\.transactionCenter'[\s\S]*defaultPath:\s*'\/admin\/orders\/orders'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/orders'[^\]]*'\/admin\/payments'[^\]]*\]/,
   );
-  const transactionHeaderModule = adminHeaderSource.match(
-    /id:\s*'transactionCenter'[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/,
-  );
-  assert.ok(transactionHeaderModule, "transaction center header module must remain present");
-  assert.doesNotMatch(transactionHeaderModule[1], /'\/admin\/memberships'/);
+  assert.doesNotMatch(transactionHeaderModule, /'\/admin\/memberships'/);
   assert.match(
-    adminHeaderSource,
+    adminRegistrySource,
     /id:\s*'memberCenter',\s*nameKey:\s*'admin\.header\.memberCenter'[\s\S]*defaultPath:\s*'\/admin\/memberships\/packages'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/memberships'[^\]]*\]/,
   );
   assert.match(
-    adminHeaderSource,
-    /id:\s*'marketingCenter',\s*nameKey:\s*'admin\.header\.marketingCenter'[\s\S]*defaultPath:\s*'\/admin\/marketing\/referrals'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/marketing'[^\]]*\]/,
+    adminRegistrySource,
+    /id:\s*'marketingCenter',\s*nameKey:\s*'admin\.header\.marketingCenter'[\s\S]*defaultPath:\s*'\/admin\/marketing\/offers'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/marketing'[^\]]*\]/,
   );
   assert.match(
-    adminHeaderSource,
+    adminRegistrySource,
     /id:\s*'financeCenter',\s*nameKey:\s*'admin\.header\.financeCenter'[\s\S]*defaultPath:\s*'\/admin\/finance\/order-revenue'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/finance'[^\]]*'\/admin\/wallet'[^\]]*\]/,
   );
 
@@ -1154,66 +1801,61 @@ test("admin commerce module is split into product transaction member marketing a
 });
 
 test("admin commerce second-level sections are promoted into the left sidebar", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
 
-  const productCenterModule = adminLayoutSource.match(
-    /moduleId:\s*'productCenter'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'transactionCenter')/,
-  );
-  assert.ok(productCenterModule, "product center sidebar module must be present");
-  assert.match(productCenterModule[0], /groupKey:\s*'admin\.menu\.productCenter\.catalog'/);
-  assert.match(productCenterModule[0], /path:\s*'\/admin\/catalog\/products',\s*labelKey:\s*'admin\.menu\.catalogProducts'/);
-  assert.match(productCenterModule[0], /path:\s*'\/admin\/catalog\/skus',\s*labelKey:\s*'admin\.menu\.catalogSkus'/);
-  assert.match(productCenterModule[0], /groupKey:\s*'admin\.menu\.productCenter\.inventory'/);
-  assert.match(productCenterModule[0], /path:\s*'\/admin\/inventory\/stocks',\s*labelKey:\s*'admin\.menu\.inventoryStocks'/);
-  assert.match(productCenterModule[0], /path:\s*'\/admin\/inventory\/reservations',\s*labelKey:\s*'admin\.menu\.inventoryReservations'/);
-  assert.match(productCenterModule[0], /path:\s*'\/admin\/inventory\/ledger',\s*labelKey:\s*'admin\.menu\.inventoryLedger'/);
+  const productCenterModule = findAdminModuleMenuSource(adminRegistrySource, "productCenter");
+  assert.match(productCenterModule, /groupBlock\('admin\.menu\.productCenter\.catalog'/);
+  assert.match(productCenterModule, /path:\s*'\/admin\/catalog\/products',\s*labelKey:\s*'admin\.menu\.catalogProducts'/);
+  assert.match(productCenterModule, /path:\s*'\/admin\/catalog\/skus',\s*labelKey:\s*'admin\.menu\.catalogSkus'/);
+  assert.match(productCenterModule, /groupBlock\('admin\.menu\.productCenter\.inventory'/);
+  assert.match(productCenterModule, /path:\s*'\/admin\/inventory\/stocks',\s*labelKey:\s*'admin\.menu\.inventoryStocks'/);
+  assert.match(productCenterModule, /path:\s*'\/admin\/inventory\/reservations',\s*labelKey:\s*'admin\.menu\.inventoryReservations'/);
+  assert.match(productCenterModule, /path:\s*'\/admin\/inventory\/ledger',\s*labelKey:\s*'admin\.menu\.inventoryLedger'/);
 
-  const transactionCenterModule = adminLayoutSource.match(
-    /moduleId:\s*'transactionCenter'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'memberCenter')/,
-  );
-  assert.ok(transactionCenterModule, "transaction center sidebar module must be present");
-  assert.match(transactionCenterModule[0], /path:\s*'\/admin\/orders\/orders',\s*labelKey:\s*'admin\.menu\.orderList'/);
-  assert.match(transactionCenterModule[0], /path:\s*'\/admin\/orders\/refunds',\s*labelKey:\s*'admin\.menu\.orderRefunds'/);
-  assert.match(transactionCenterModule[0], /path:\s*'\/admin\/payments\/provider-accounts',\s*labelKey:\s*'admin\.menu\.paymentProviderAccounts'/);
-  assert.doesNotMatch(transactionCenterModule[0], /path:\s*'\/admin\/memberships\//);
+  const transactionCenterModule = findAdminModuleMenuSource(adminRegistrySource, "transactionCenter");
+  assert.match(transactionCenterModule, /path:\s*'\/admin\/orders\/orders',\s*labelKey:\s*'admin\.menu\.orderList'/);
+  assert.match(transactionCenterModule, /path:\s*'\/admin\/orders\/refunds',\s*labelKey:\s*'admin\.menu\.orderRefunds'/);
+  assert.match(transactionCenterModule, /path:\s*'\/admin\/payments\/provider-accounts',\s*labelKey:\s*'admin\.menu\.paymentProviderAccounts'/);
+  assert.doesNotMatch(transactionCenterModule, /path:\s*'\/admin\/memberships\//);
 
-  const memberCenterModule = adminLayoutSource.match(
-    /moduleId:\s*'memberCenter'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'marketingCenter')/,
-  );
-  assert.ok(memberCenterModule, "member center sidebar module must be present");
-  assert.match(memberCenterModule[0], /groupKey:\s*'admin\.menu\.memberCenter\.memberships'/);
-  assert.match(memberCenterModule[0], /path:\s*'\/admin\/memberships\/packages',\s*labelKey:\s*'admin\.menu\.membershipPackages'/);
-  assert.match(memberCenterModule[0], /path:\s*'\/admin\/memberships\/plans',\s*labelKey:\s*'admin\.menu\.membershipPlans'/);
-  assert.match(memberCenterModule[0], /path:\s*'\/admin\/memberships\/members',\s*labelKey:\s*'admin\.menu\.membershipMembers'/);
-  assert.match(memberCenterModule[0], /path:\s*'\/admin\/memberships\/entitlements',\s*labelKey:\s*'admin\.menu\.membershipEntitlements'/);
-  assert.match(memberCenterModule[0], /path:\s*'\/admin\/memberships\/recharge-packages',\s*labelKey:\s*'admin\.menu\.membershipRechargePackages'/);
+  const memberCenterModule = findAdminModuleMenuSource(adminRegistrySource, "memberCenter");
+  assert.match(memberCenterModule, /groupBlock\('admin\.menu\.memberCenter\.memberships'/);
+  assert.match(memberCenterModule, /path:\s*'\/admin\/memberships\/packages',\s*labelKey:\s*'admin\.menu\.membershipPackages'/);
+  assert.match(memberCenterModule, /path:\s*'\/admin\/memberships\/plans',\s*labelKey:\s*'admin\.menu\.membershipPlans'/);
+  assert.match(memberCenterModule, /path:\s*'\/admin\/memberships\/members',\s*labelKey:\s*'admin\.menu\.membershipMembers'/);
+  assert.match(memberCenterModule, /path:\s*'\/admin\/memberships\/entitlements',\s*labelKey:\s*'admin\.menu\.membershipEntitlements'/);
+  assert.match(memberCenterModule, /path:\s*'\/admin\/memberships\/recharge-packages',\s*labelKey:\s*'admin\.menu\.membershipRechargePackages'/);
   assert.match(
-    memberCenterModule[0],
+    memberCenterModule,
     /path:\s*'\/admin\/memberships\/packages'[\s\S]*path:\s*'\/admin\/memberships\/plans'[\s\S]*path:\s*'\/admin\/memberships\/members'/,
   );
 
-  const marketingCenterModule = adminLayoutSource.match(
-    /moduleId:\s*'marketingCenter'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'financeCenter')/,
-  );
-  assert.ok(marketingCenterModule, "marketing center sidebar module must be present");
-  assert.match(marketingCenterModule[0], /groupKey:\s*'admin\.menu\.marketingCenter\.coupons'/);
-  assert.match(marketingCenterModule[0], /path:\s*'\/admin\/marketing\/coupon-templates',\s*labelKey:\s*'admin\.menu\.financeCouponTemplates'/);
-  assert.match(marketingCenterModule[0], /path:\s*'\/admin\/marketing\/coupon-campaigns',\s*labelKey:\s*'admin\.menu\.financeCouponCampaigns'/);
-  assert.match(marketingCenterModule[0], /path:\s*'\/admin\/marketing\/coupon-codes',\s*labelKey:\s*'admin\.menu\.financeCouponCodes'/);
-  assert.match(marketingCenterModule[0], /path:\s*'\/admin\/marketing\/coupon-redemptions',\s*labelKey:\s*'admin\.menu\.financeCouponRedemptions'/);
-  assert.match(marketingCenterModule[0], /path:\s*'\/admin\/marketing\/referrals',\s*labelKey:\s*'admin\.menu\.marketingReferrals'/);
+  const marketingCenterModule = findAdminModuleMenuSource(adminRegistrySource, "marketingCenter");
+  assert.match(marketingCenterModule, /groupBlock\('admin\.menu\.marketingCenter\.offers'/);
+  assert.match(marketingCenterModule, /groupBlock\('admin\.menu\.marketingCenter\.lifecycle'/);
+  assert.match(marketingCenterModule, /groupBlock\('admin\.menu\.marketingCenter\.ledger'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/offers',\s*labelKey:\s*'admin\.menu\.marketingPromotionOffers'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/promotion-coupon-stocks',\s*labelKey:\s*'admin\.menu\.marketingPromotionCouponStocks'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/promotion-codes',\s*labelKey:\s*'admin\.menu\.marketingPromotionCodes'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/promotion-code-redemptions',\s*labelKey:\s*'admin\.menu\.marketingPromotionCodeRedemptions'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/user-coupons',\s*labelKey:\s*'admin\.menu\.marketingUserCoupons'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/discount-applications',\s*labelKey:\s*'admin\.menu\.marketingDiscountApplications'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/discount-allocations',\s*labelKey:\s*'admin\.menu\.marketingDiscountAllocations'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/promotion-coupon-ledger',\s*labelKey:\s*'admin\.menu\.marketingPromotionCouponLedger'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/budget-ledger',\s*labelKey:\s*'admin\.menu\.marketingBudgetLedger'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/external-bindings',\s*labelKey:\s*'admin\.menu\.marketingExternalBindings'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/events',\s*labelKey:\s*'admin\.menu\.marketingEvents'/);
+  assert.match(marketingCenterModule, /path:\s*'\/admin\/marketing\/referrals',\s*labelKey:\s*'admin\.menu\.marketingReferrals'/);
+  assert.doesNotMatch(marketingCenterModule, /coupon-templates|coupon-campaigns|coupon-redemptions|financeCoupon/);
 
-  const financeCenterModule = adminLayoutSource.match(
-    /moduleId:\s*'financeCenter'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'operations')/,
-  );
-  assert.ok(financeCenterModule, "finance center sidebar module must be present");
-  assert.match(financeCenterModule[0], /path:\s*'\/admin\/wallet\/wallet-accounts',\s*labelKey:\s*'admin\.menu\.walletAccounts'/);
-  assert.match(financeCenterModule[0], /path:\s*'\/admin\/wallet\/wallet-ledger',\s*labelKey:\s*'admin\.menu\.walletLedger'/);
-  assert.match(financeCenterModule[0], /path:\s*'\/admin\/finance\/order-revenue',\s*labelKey:\s*'admin\.menu\.financeOrderRevenue'/);
-  assert.match(financeCenterModule[0], /path:\s*'\/admin\/finance\/invoices',\s*labelKey:\s*'admin\.menu\.financeInvoices'/);
-  assert.doesNotMatch(financeCenterModule[0], /financeCouponTemplates/);
-  assert.doesNotMatch(financeCenterModule[0], /financeCenter\.coupons/);
+  const financeCenterModule = findAdminModuleMenuSource(adminRegistrySource, "financeCenter");
+  assert.match(financeCenterModule, /path:\s*'\/admin\/wallet\/wallet-accounts',\s*labelKey:\s*'admin\.menu\.walletAccounts'/);
+  assert.match(financeCenterModule, /path:\s*'\/admin\/wallet\/wallet-ledger',\s*labelKey:\s*'admin\.menu\.walletLedger'/);
+  assert.match(financeCenterModule, /path:\s*'\/admin\/finance\/order-revenue',\s*labelKey:\s*'admin\.menu\.financeOrderRevenue'/);
+  assert.match(financeCenterModule, /path:\s*'\/admin\/finance\/invoices',\s*labelKey:\s*'admin\.menu\.financeInvoices'/);
+  assert.doesNotMatch(financeCenterModule, /financeCouponTemplates/);
+  assert.doesNotMatch(financeCenterModule, /financeCenter\.coupons/);
 
   for (const key of [
     "admin.menu.productCenter.catalog",
@@ -1222,7 +1864,20 @@ test("admin commerce second-level sections are promoted into the left sidebar", 
     "admin.menu.transactionCenter.payments",
     "admin.menu.memberCenter.memberships",
     "admin.menu.marketingCenter.growth",
-    "admin.menu.marketingCenter.coupons",
+    "admin.menu.marketingCenter.offers",
+    "admin.menu.marketingCenter.lifecycle",
+    "admin.menu.marketingCenter.ledger",
+    "admin.menu.marketingPromotionOffers",
+    "admin.menu.marketingPromotionCouponStocks",
+    "admin.menu.marketingPromotionCodes",
+    "admin.menu.marketingPromotionCodeRedemptions",
+    "admin.menu.marketingUserCoupons",
+    "admin.menu.marketingDiscountApplications",
+    "admin.menu.marketingDiscountAllocations",
+    "admin.menu.marketingPromotionCouponLedger",
+    "admin.menu.marketingBudgetLedger",
+    "admin.menu.marketingExternalBindings",
+    "admin.menu.marketingEvents",
     "admin.menu.financeCenter.wallet",
     "admin.menu.financeCenter.reports",
     "admin.menu.inventoryStocks",
@@ -1255,33 +1910,29 @@ test("admin commerce section routes mount section-specific pages", () => {
   assert.match(appSource, /<Route path="memberships\/recharge-packages" element=\{<MembershipsAdmin sectionId="rechargePackages" \/>} \/>/);
   assert.match(appSource, /<Route path="wallet\/wallet-ledger" element=\{<WalletAdmin sectionId="walletLedger" \/>} \/>/);
   assert.match(appSource, /<Route path="finance\/order-revenue" element=\{<FinanceAdmin sectionId="orderRevenueReport" \/>} \/>/);
-  assert.match(appSource, /<Route path="marketing\/referrals" element=\{<MarketingAdmin \/>} \/>/);
-  assert.match(appSource, /<Route path="marketing\/coupon-templates" element=\{<FinanceAdmin sectionId="couponTemplates" surface="marketing" \/>} \/>/);
-  assert.match(appSource, /<Route path="marketing\/coupon-campaigns" element=\{<FinanceAdmin sectionId="couponCampaigns" surface="marketing" \/>} \/>/);
-  assert.match(appSource, /<Route path="marketing\/coupon-codes" element=\{<FinanceAdmin sectionId="couponCodes" surface="marketing" \/>} \/>/);
-  assert.match(appSource, /<Route path="marketing\/coupon-redemptions" element=\{<FinanceAdmin sectionId="couponRedemptions" surface="marketing" \/>} \/>/);
-  assert.match(appSource, /<Route path="finance\/coupon-templates" element=\{<Navigate to="\/admin\/marketing\/coupon-templates" replace \/>} \/>/);
-  assert.match(appSource, /<Route path="finance\/coupon-campaigns" element=\{<Navigate to="\/admin\/marketing\/coupon-campaigns" replace \/>} \/>/);
-  assert.match(appSource, /<Route path="finance\/coupon-codes" element=\{<Navigate to="\/admin\/marketing\/coupon-codes" replace \/>} \/>/);
-  assert.match(appSource, /<Route path="finance\/coupon-redemptions" element=\{<Navigate to="\/admin\/marketing\/coupon-redemptions" replace \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/offers" element=\{<MarketingAdmin sectionId="promotionOffers" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/promotion-coupon-stocks" element=\{<MarketingAdmin sectionId="promotionCouponStocks" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/promotion-codes" element=\{<MarketingAdmin sectionId="promotionCodes" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/promotion-code-redemptions" element=\{<MarketingAdmin sectionId="promotionCodeRedemptions" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/user-coupons" element=\{<MarketingAdmin sectionId="userCoupons" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/discount-applications" element=\{<MarketingAdmin sectionId="discountApplications" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/discount-allocations" element=\{<MarketingAdmin sectionId="discountAllocations" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/promotion-coupon-ledger" element=\{<MarketingAdmin sectionId="promotionCouponLedger" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/budget-ledger" element=\{<MarketingAdmin sectionId="budgetLedger" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/external-bindings" element=\{<MarketingAdmin sectionId="externalBindings" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/events" element=\{<MarketingAdmin sectionId="promotionEvents" \/>} \/>/);
+  assert.match(appSource, /<Route path="marketing\/referrals" element=\{<MarketingAdmin sectionId="referrals" \/>} \/>/);
+  assert.doesNotMatch(appSource, /marketing\/coupon-templates|marketing\/coupon-campaigns|marketing\/coupon-redemptions|finance\/coupon-/);
 });
 
-test("admin marketing coupon routes use marketing surface copy", () => {
+test("admin finance no longer owns legacy coupon marketing surface", () => {
   const financeSource = readPortalFile("./packages/sdkwork-claw-router-admin-finance/src/index.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readI18nResourceSource();
 
-  assert.match(financeSource, /surface\?: 'finance' \| 'marketing'/);
-  assert.match(financeSource, /const isMarketingSurface = surface === 'marketing'/);
-  assert.match(financeSource, /DEFAULT_MARKETING_COUPON_SECTION_ID/);
-  assert.match(
-    financeSource,
-    /surface === 'marketing'[\s\S]*sectionId === 'couponTemplates'[\s\S]*sectionId === 'couponCampaigns'[\s\S]*sectionId === 'couponCodes'[\s\S]*sectionId === 'couponRedemptions'[\s\S]*return DEFAULT_MARKETING_COUPON_SECTION_ID/,
-  );
-  assert.match(financeSource, /admin\.commerce\.marketing\.coupons\.title/);
-  assert.match(financeSource, /admin\.commerce\.marketing\.coupons\.desc/);
-  assert.match(financeSource, /admin\.commerce\.marketing\.coupons\.empty/);
-  assert.match(financeSource, /admin\.commerce\.marketing\.coupons\.error/);
-  assert.match(financeSource, /admin\.commerce\.marketing\.coupons\.loading/);
+  assert.doesNotMatch(financeSource, /surface\?: 'finance' \| 'marketing'/);
+  assert.doesNotMatch(financeSource, /DEFAULT_MARKETING_COUPON_SECTION_ID/);
+  assert.doesNotMatch(financeSource, /couponTemplates|couponCampaigns|couponCodes|couponRedemptions/);
+  assert.doesNotMatch(financeSource, /admin\.commerce\.marketing\.coupons/);
   assert.doesNotMatch(financeSource, /description=\{t\('admin\.commerce\.finance\.desc', 'Invoices, coupons/);
 
   for (const key of [
@@ -1290,21 +1941,31 @@ test("admin marketing coupon routes use marketing surface copy", () => {
     "admin.commerce.marketing.coupons.empty",
     "admin.commerce.marketing.coupons.error",
     "admin.commerce.marketing.coupons.loading",
+    "admin.commerce.finance.couponTemplates.title",
+    "admin.commerce.finance.couponCampaigns.title",
+    "admin.commerce.finance.couponCodes.title",
+    "admin.commerce.finance.couponRedemptions.title",
+    "admin.menu.financeCouponTemplates",
+    "admin.menu.financeCouponCampaigns",
+    "admin.menu.financeCouponCodes",
+    "admin.menu.financeCouponRedemptions",
   ]) {
-    assert.match(i18nSource, new RegExp(`"${key.replaceAll(".", "\\.")}"`), `${key} must be present in i18n resources`);
+    assert.doesNotMatch(i18nSource, new RegExp(`"${key.replaceAll(".", "\\.")}"`), `${key} must be removed from i18n resources`);
   }
 });
 
 test("admin service provider center is an independent package backed by backend SDK", () => {
   const packageJson = JSON.parse(readPortalFile("./package.json")) as { dependencies: Record<string, string> };
   const tsconfigSource = readPortalFile("./tsconfig.typecheck.json");
-  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const adminRegistrySource = readAdminRegistrySource();
   const appSource = readPortalFile("./src/App.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readI18nResourceSource();
   const serviceProviderPackageJson = JSON.parse(readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/package.json")) as { name: string; dependencies: Record<string, string> };
   const serviceProviderSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/index.tsx");
   const serviceProviderServiceSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts");
+  const serviceProviderHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "serviceProviderCenter");
+  const appCenterHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "appCenter");
+  const serviceProviderMenu = findAdminModuleMenuSource(adminRegistrySource, "serviceProviderCenter");
 
   assert.equal(packageJson.dependencies["sdkwork-claw-router-admin-service-provider"], "workspace:*");
   assert.equal(serviceProviderPackageJson.name, "sdkwork-claw-router-admin-service-provider");
@@ -1313,39 +1974,104 @@ test("admin service provider center is an independent package backed by backend 
   assert.match(tsconfigSource, /"sdkwork-claw-router-admin-service-provider":\s*\[\s*"\.\/packages\/sdkwork-claw-router-admin-service-provider\/src\/index\.tsx"\s*\]/);
 
   assert.match(
-    adminHeaderSource,
-    /id:\s*'serviceProviderCenter',\s*nameKey:\s*'admin\.header\.serviceProviderCenter'[\s\S]*defaultPath:\s*'\/admin\/service-providers\/accounts'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/service-providers'[^\]]*\]/,
+    serviceProviderHeaderModule,
+    /id:\s*'serviceProviderCenter',\s*nameKey:\s*'admin\.header\.serviceProviderCenter'[\s\S]*defaultPath:\s*'\/admin\/service-providers\/dashboard'[\s\S]*pathPrefixes:\s*\[[^\]]*'\/admin\/service-providers'[^\]]*\]/,
   );
-  assert.deepEqual(findOrderedMatches(adminHeaderSource, /id:\s*'([^']+)'/g).slice(-1), ["serviceProviderCenter"]);
-  const appCenterHeaderModule = adminHeaderSource.match(/id:\s*'appCenter'[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/);
-  assert.ok(appCenterHeaderModule, "app center header module must remain present");
-  assert.doesNotMatch(appCenterHeaderModule[1], /'\/admin\/service-providers'/);
+  assert.deepEqual(findOrderedMatches(adminRegistrySource, /id:\s*'([^']+)'/g).slice(-1), ["serviceProviderCenter"]);
+  assert.doesNotMatch(appCenterHeaderModule, /'\/admin\/service-providers'/);
+  assert.deepEqual(findOrderedMatches(adminRegistrySource, /moduleId:\s*'([^']+)'/g).slice(-1), ["serviceProviderCenter"]);
+  for (const groupKey of [
+    "admin.menu.serviceProviderCenter.operations",
+    "admin.menu.serviceProviderCenter.governance",
+    "admin.menu.serviceProviderCenter.finance",
+    "admin.menu.serviceProviderCenter.control",
+  ]) {
+    assert.match(serviceProviderMenu, new RegExp(`groupBlock\\('${groupKey.replaceAll(".", "\\.")}'`));
+  }
+  for (const [path, labelKey] of [
+    ["/admin/service-providers/dashboard", "admin.menu.serviceProvider.dashboard"],
+    ["/admin/service-providers/providers", "admin.menu.serviceProvider.providers"],
+    ["/admin/service-providers/relations", "admin.menu.serviceProvider.relations"],
+    ["/admin/service-providers/downstreams", "admin.menu.serviceProvider.downstreams"],
+    ["/admin/service-providers/members", "admin.menu.serviceProvider.members"],
+    ["/admin/service-providers/bindings", "admin.menu.serviceProvider.bindings"],
+    ["/admin/service-providers/contracts", "admin.menu.serviceProvider.contracts"],
+    ["/admin/service-providers/pricing", "admin.menu.serviceProvider.pricing"],
+    ["/admin/service-providers/usage", "admin.menu.serviceProvider.usage"],
+    ["/admin/service-providers/wallet", "admin.menu.serviceProvider.wallet"],
+    ["/admin/service-providers/statements", "admin.menu.serviceProvider.statements"],
+    ["/admin/service-providers/reconciliation", "admin.menu.serviceProvider.reconciliation"],
+    ["/admin/service-providers/adjustments", "admin.menu.serviceProvider.adjustments"],
+    ["/admin/service-providers/risk", "admin.menu.serviceProvider.risk"],
+    ["/admin/service-providers/audit", "admin.menu.serviceProvider.audit"],
+  ]) {
+    assert.match(
+      serviceProviderMenu,
+      new RegExp(`path:\\s*'${path.replaceAll("/", "\\/")}',\\s*labelKey:\\s*'${labelKey.replaceAll(".", "\\.")}'`),
+    );
+  }
 
-  const serviceProviderMenu = adminLayoutSource.match(
-    /moduleId:\s*'serviceProviderCenter'[\s\S]*?\n\s*\}\s*,?\n\s*\];/,
-  );
-  assert.ok(serviceProviderMenu, "service provider center sidebar module must be present");
-  assert.deepEqual(findOrderedMatches(adminLayoutSource, /moduleId:\s*'([^']+)'/g).slice(-1), ["serviceProviderCenter"]);
-  assert.match(serviceProviderMenu[0], /groupKey:\s*'admin\.menu\.serviceProviderCenter\.accounts'/);
-  assert.match(serviceProviderMenu[0], /path:\s*'\/admin\/service-providers\/accounts',\s*labelKey:\s*'admin\.menu\.serviceProviderAccounts'/);
-
-  assert.match(appSource, /const ServiceProviderAdmin = lazyRoute\(\(\) => import\('sdkwork-claw-router-admin-service-provider'\), 'ServiceProviderAdmin'\);/);
-  assert.match(appSource, /<Route path="service-providers" element=\{<Navigate to="\/admin\/service-providers\/accounts" replace \/>} \/>/);
-  assert.match(appSource, /<Route path="service-providers\/accounts" element=\{<ServiceProviderAdmin \/>} \/>/);
+  assert.match(appSource, /const ServiceProviderAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-claw-router-admin-service-provider'\), 'ServiceProviderAdmin'\);/);
+  assert.match(appSource, /<Route path="service-providers" element=\{<Navigate to="\/admin\/service-providers\/dashboard" replace \/>} \/>/);
+  for (const sectionId of [
+    "dashboard",
+    "providers",
+    "relations",
+    "downstreams",
+    "members",
+    "bindings",
+    "contracts",
+    "pricing",
+    "usage",
+    "wallet",
+    "statements",
+    "reconciliation",
+    "adjustments",
+    "risk",
+    "audit",
+  ]) {
+    assert.match(
+      appSource,
+      new RegExp(`<Route path="service-providers\\/${sectionId}" element=\\{<ServiceProviderAdmin sectionId="${sectionId}" \\/>\\} \\/>`),
+    );
+  }
 
   assert.match(i18nSource, /"admin\.header\.serviceProviderCenter":\s*"Service Provider Center"/);
-  assert.match(i18nSource, /"admin\.header\.serviceProviderCenter":\s*"服务商中心"/);
-  assert.match(i18nSource, /"admin\.menu\.serviceProviderAccounts":\s*"Service Provider Accounts"/);
-  assert.match(i18nSource, /"admin\.menu\.serviceProviderAccounts":\s*"服务商账户"/);
+  assert.match(i18nSource, /"admin\.menu\.serviceProviderCenter\.operations":\s*"Operations"/);
+  assert.match(i18nSource, /"admin\.menu\.serviceProviderCenter\.governance":\s*"Governance"/);
+  assert.match(i18nSource, /"admin\.menu\.serviceProviderCenter\.finance":\s*"Finance"/);
+  assert.match(i18nSource, /"admin\.menu\.serviceProviderCenter\.control":\s*"Control"/);
+  assert.match(i18nSource, /"admin\.menu\.serviceProvider\.dashboard":\s*"Operating Dashboard"/);
+  assert.match(i18nSource, /"admin\.menu\.serviceProvider\.providers":\s*"Provider Registry"/);
 
   assert.match(serviceProviderSource, /export function ServiceProviderAdmin/);
-  assert.match(serviceProviderSource, /ServiceProviderAccountService\.fetchAccounts/);
-  assert.match(serviceProviderSource, /ServiceProviderAccountService\.createAccount/);
-  assert.match(serviceProviderSource, /provider\.account/);
-  assert.match(serviceProviderSource, /服务商/);
-  assert.match(serviceProviderServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.providers\.list/);
-  assert.match(serviceProviderServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.list/);
-  assert.match(serviceProviderServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.create/);
+  assert.match(serviceProviderSource, /const DEFAULT_SECTION_ID: ServiceProviderAdminSectionId = 'dashboard'/);
+  assert.match(serviceProviderSource, /<AdminResourceCenter<ServiceProviderAdminSectionId, ServiceProviderAdminGroup>/);
+  for (const serviceCall of [
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.dashboard\.retrieve\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.providerRegistry\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.relations\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.downstreams\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.downstreams\.create\(input,/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.members\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.bindings\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.contracts\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.pricingRules\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.pricingRules\.create\(input,/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.pricingRules\.update\(ruleId, input,/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.priceSimulation\.create\(input,/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.usage\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.providerWalletAccounts\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.statements\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.reconciliationRuns\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.adjustments\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.riskEvents\.list\(params\)/,
+    /getClawRouterBackendSdkClient\(\)\.serviceProviders\.auditEvents\.list\(params\)/,
+  ]) {
+    assert.match(serviceProviderServiceSource, serviceCall);
+  }
+  assert.doesNotMatch(serviceProviderServiceSource, /ServiceProviderAccountService/);
+  assert.doesNotMatch(serviceProviderServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform/);
   assert.doesNotMatch(serviceProviderServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(serviceProviderServiceSource, /\baxios\b/);
   assert.doesNotMatch(serviceProviderServiceSource, /\/backend\/v3\/api/);
@@ -1354,10 +2080,10 @@ test("admin service provider center is an independent package backed by backend 
 test("admin app center splits WeChat official account and mini program into independent packages", () => {
   const packageJson = JSON.parse(readPortalFile("./package.json")) as { dependencies: Record<string, string> };
   const tsconfigSource = readPortalFile("./tsconfig.typecheck.json");
-  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
+  const adminRegistrySource = readAdminRegistrySource();
   const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
   const appSource = readPortalFile("./src/App.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readI18nResourceSource();
   const officialPackageJson = JSON.parse(readPortalFile("./packages/sdkwork-claw-router-admin-wechat-official-account/package.json")) as { name: string; dependencies: Record<string, string> };
   const miniPackageJson = JSON.parse(readPortalFile("./packages/sdkwork-claw-router-admin-wechat-mini-program/package.json")) as { name: string; dependencies: Record<string, string> };
   const officialSource = readPortalFile("./packages/sdkwork-claw-router-admin-wechat-official-account/src/index.tsx");
@@ -1382,21 +2108,19 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(tsconfigSource, /"sdkwork-claw-router-admin-wechat-official-account":\s*\[\s*"\.\/packages\/sdkwork-claw-router-admin-wechat-official-account\/src\/index\.tsx"\s*\]/);
   assert.match(tsconfigSource, /"sdkwork-claw-router-admin-wechat-mini-program":\s*\[\s*"\.\/packages\/sdkwork-claw-router-admin-wechat-mini-program\/src\/index\.tsx"\s*\]/);
 
-  const appCenterHeaderModule = adminHeaderSource.match(/id:\s*'appCenter'[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/);
-  assert.ok(appCenterHeaderModule, "app center header module must remain present");
-  assert.match(appCenterHeaderModule[1], /'\/admin\/open-platform'/);
-  const appCenterMenu = adminLayoutSource.match(/moduleId:\s*'appCenter'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'productCenter')/);
-  assert.ok(appCenterMenu, "app center sidebar module must remain present");
-  assert.doesNotMatch(appCenterMenu[0], /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
-  assert.match(appCenterMenu[0], /groupKey:\s*'admin\.menu\.openPlatformOfficialAccounts'/);
-  assert.match(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/official-accounts\/accounts',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccountAccounts'/);
-  assert.match(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/official-accounts\/menus',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccountMenus'/);
-  assert.match(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/official-accounts\/messages',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccountMessages'/);
-  assert.doesNotMatch(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/official-accounts',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccounts'/);
-  assert.match(appCenterMenu[0], /groupKey:\s*'admin\.menu\.openPlatformMiniPrograms'/);
-  assert.match(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/mini-programs\/accounts',\s*labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
-  assert.match(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/mini-programs\/urls',\s*labelKey:\s*'admin\.menu\.openPlatformMiniProgramUrls'/);
-  assert.doesNotMatch(appCenterMenu[0], /path:\s*'\/admin\/open-platform\/mini-programs',\s*labelKey:\s*'admin\.menu\.openPlatformMiniPrograms'/);
+  const appCenterHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "appCenter");
+  assert.match(appCenterHeaderModule, /'\/admin\/open-platform'/);
+  const appCenterMenu = findAdminModuleMenuSource(adminRegistrySource, "appCenter");
+  assert.doesNotMatch(appCenterMenu, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
+  assert.match(appCenterMenu, /groupBlock\('admin\.menu\.openPlatformOfficialAccounts'/);
+  assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/official-accounts\/accounts',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccountAccounts'/);
+  assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/official-accounts\/menus',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccountMenus'/);
+  assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/official-accounts\/messages',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccountMessages'/);
+  assert.doesNotMatch(appCenterMenu, /path:\s*'\/admin\/open-platform\/official-accounts',\s*labelKey:\s*'admin\.menu\.openPlatformOfficialAccounts'/);
+  assert.match(appCenterMenu, /groupBlock\('admin\.menu\.openPlatformMiniPrograms'/);
+  assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/mini-programs\/accounts',\s*labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
+  assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/mini-programs\/urls',\s*labelKey:\s*'admin\.menu\.openPlatformMiniProgramUrls'/);
+  assert.doesNotMatch(appCenterMenu, /path:\s*'\/admin\/open-platform\/mini-programs',\s*labelKey:\s*'admin\.menu\.openPlatformMiniPrograms'/);
   assert.doesNotMatch(adminLayoutSource, /function isSidebarItemExact\(item: AdminMenuItem\): boolean/);
   assert.doesNotMatch(adminLayoutSource, /item\.path === '\/admin\/open-platform'/);
   assert.match(adminLayoutSource, /function isSidebarItemActive\(pathname: string, item: AdminMenuItem\): boolean/);
@@ -1451,32 +2175,41 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.doesNotMatch(officialSource, /to=\{OFFICIAL_SECTION_ROUTES\[item\]\}/);
   assert.match(officialSource, /const OPEN_PLATFORM_KEY_PATTERN = \/\^\[a-z0-9\]\[a-z0-9\._:-\]\*\$\/;/);
   assert.match(officialSource, /function isValidOpenPlatformKey\(value: string\): boolean/);
-  assert.match(officialSource, /!isValidOpenPlatformKey\(key\)[\s\S]*admin\.openPlatform\.wechatOfficial\.validation\.keyInvalid/);
   assert.match(officialSource, /!isValidOpenPlatformKey\(key\)[\s\S]*admin\.openPlatform\.wechatOfficial\.validation\.menuKeyInvalid/);
-  assert.match(officialSource, /function normalizeCredentialRefInput\(value: string\): string/);
-  assert.match(officialSource, /function validateAccountCredentialRefs\(draft: AccountDraft/);
-  assert.match(officialSource, /const credentialRefs = validateAccountCredentialRefs\(accountDraft\);/);
-  assert.match(officialSource, /tokenRef:\s*credentialRefs\.tokenRef/);
-  assert.match(officialSource, /secretRef:\s*credentialRefs\.secretRef/);
-  assert.match(officialSource, /aesKeyRef:\s*credentialRefs\.aesKeyRef/);
-  assert.match(officialSource, /normalizeCredentialRefInput\(draft\.tokenRef\)/);
-  assert.match(officialSource, /normalizeCredentialRefInput\(draft\.secretRef\)/);
-  assert.match(officialSource, /normalizeCredentialRefInput\(draft\.aesKeyRef\)/);
-  assert.match(officialSource, /const CREDENTIAL_REF_MAX_LENGTH = 256;/);
-  assert.match(officialSource, /trimmed\.startsWith\('vault:\/\/'\) \|\| trimmed\.startsWith\('secret:\/\/'\)/);
-  assert.match(officialSource, /return `secret:\/\/\$\{trimmed\}`;/);
-  assert.match(officialSource, /value\.length > CREDENTIAL_REF_MAX_LENGTH/);
-  assert.match(officialSource, /locator\.replace\(\/\^\\\/\+\|\\\/\+\$\/g, ''\)\.length > 0/);
-  assert.match(officialSource, /function isCredentialRefValidationErrorMessage\(message: string\): boolean/);
-  assert.match(officialSource, /isCredentialRefValidationErrorMessage\(message\)[\s\S]*admin\.openPlatform\.wechatOfficial\.validation\.credentialRefInvalid/);
+  assert.doesNotMatch(officialSource, /account\.key|selectedAccount\.key/);
+  assert.doesNotMatch(officialAccountDialogSource, /draft\.key|form\.key|Account key/);
+  assert.match(officialSource, /const appSecret = accountDraft\.appSecret\.trim\(\);/);
+  assert.match(officialSource, /const token = accountDraft\.token\.trim\(\);/);
+  assert.match(officialSource, /const encodingAesKey = accountDraft\.encodingAesKey\.trim\(\);/);
+  assert.match(officialSource, /WechatOfficialAccountService\.createAccount\(\{\s*name,\s*appId,\s*appSecret,\s*token,\s*encodingAesKey,/);
+  assert.match(officialSource, /appSecret:\s*optionalSecretPatch\(appSecret\)/);
+  assert.match(officialSource, /token:\s*optionalSecretPatch\(token\)/);
+  assert.match(officialSource, /encodingAesKey:\s*optionalSecretPatch\(encodingAesKey\)/);
+  assert.match(officialSource, /const credentialCompleteCount = accounts\.filter\(\(account\) => account\.appId && account\.hasAppSecret && account\.hasToken\)\.length;/);
+  assert.match(officialSource, /CredentialStatusPills/);
+  assert.doesNotMatch(officialSource, /function normalizeCredentialRefInput\(value: string\): string/);
+  assert.doesNotMatch(officialSource, /function validateAccountCredentialRefs\(draft: AccountDraft/);
+  assert.doesNotMatch(officialSource, /const CREDENTIAL_REF_MAX_LENGTH = 256;/);
+  assert.doesNotMatch(officialSource, /isCredentialRefValidationErrorMessage/);
   assert.match(officialSource, /if \(!accountId\) \{\s*setEntries\(\[\]\);\s*setEntriesError\(null\);\s*setEntriesLoading\(false\);\s*return;\s*\}/);
+  assert.match(officialAccountDialogSource, /<div className="space-y-4">/);
+  assert.doesNotMatch(officialAccountDialogSource, /md:grid-cols-2/);
   assert.doesNotMatch(officialAccountDialogSource, /<TextInput label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.appId'[\s\S]*?value=\{draft\.appId\} \/>\s*<SelectInput label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.status'/);
   assert.match(officialAccountDialogSource, /\{isEdit \? \(\s*<SelectInput label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.status'/);
-  assert.match(officialAccountDialogSource, /placeholder=\{t\('admin\.openPlatform\.wechatOfficial\.form\.tokenRefPlaceholder'/);
-  assert.match(officialAccountDialogSource, /hint=\{t\('admin\.openPlatform\.wechatOfficial\.form\.credentialRefHint'/);
-  assert.match(officialAccountDialogSource, /placeholder=\{t\('admin\.openPlatform\.wechatOfficial\.form\.secretRefPlaceholder'/);
-  assert.match(officialAccountDialogSource, /placeholder=\{t\('admin\.openPlatform\.wechatOfficial\.form\.aesKeyRefPlaceholder'/);
+  assert.match(officialAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.appId', 'AppID'\)\}/);
+  assert.match(officialAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.appSecret', 'AppSecret'\)\}/);
+  assert.match(officialAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.token', 'Token'\)\}/);
+  assert.match(officialAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatOfficial\.form\.encodingAesKey', 'EncodingAESKey'\)\}/);
+  assert.match(officialAccountDialogSource, /configuredSecretPlaceholder/);
+  assert.match(officialAccountDialogSource, /type="password"/);
+  assert.doesNotMatch(officialAccountDialogSource, /tokenRef|secretRef|aesKeyRef|credentialRef|vault:\/\/|secret:\/\//);
   assert.match(officialServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.list\(\{\s*provider:\s*'wechat',\s*type_:\s*'official_account'/);
+  assert.match(officialServiceSource, /appSecret:\s*optionalString\(input\.appSecret\)/);
+  assert.match(officialServiceSource, /token:\s*optionalString\(input\.token\)/);
+  assert.match(officialServiceSource, /encodingAesKey:\s*optionalString\(input\.encodingAesKey\)/);
+  assert.match(officialServiceSource, /appSecret:\s*optionalPatchString\(input\.appSecret\)/);
+  assert.match(officialServiceSource, /token:\s*optionalPatchString\(input\.token\)/);
+  assert.match(officialServiceSource, /encodingAesKey:\s*optionalPatchString\(input\.encodingAesKey\)/);
   assert.match(officialServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.create/);
   assert.match(officialServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.update/);
   assert.match(officialServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.entries\.list/);
@@ -1494,36 +2227,44 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(miniSource, /小程序/);
   assert.match(miniSource, /const OPEN_PLATFORM_KEY_PATTERN = \/\^\[a-z0-9\]\[a-z0-9\._:-\]\*\$\/;/);
   assert.match(miniSource, /function isValidOpenPlatformKey\(value: string\): boolean/);
-  assert.match(miniSource, /!isValidOpenPlatformKey\(key\)[\s\S]*admin\.openPlatform\.wechatMini\.validation\.keyInvalid/);
   assert.match(miniSource, /!isValidOpenPlatformKey\(key\)[\s\S]*admin\.openPlatform\.wechatMini\.validation\.entryKeyInvalid/);
-  assert.match(miniSource, /function normalizeCredentialRefInput\(value: string\): string/);
-  assert.match(miniSource, /function validateAccountCredentialRefs\(draft: AccountDraft/);
-  assert.match(miniSource, /const credentialRefs = validateAccountCredentialRefs\(accountDraft\);/);
-  assert.match(miniSource, /tokenRef:\s*credentialRefs\.tokenRef/);
-  assert.match(miniSource, /secretRef:\s*credentialRefs\.secretRef/);
-  assert.match(miniSource, /aesKeyRef:\s*credentialRefs\.aesKeyRef/);
-  assert.match(miniSource, /normalizeCredentialRefInput\(draft\.tokenRef\)/);
-  assert.match(miniSource, /normalizeCredentialRefInput\(draft\.secretRef\)/);
-  assert.match(miniSource, /normalizeCredentialRefInput\(draft\.aesKeyRef\)/);
-  assert.match(miniSource, /const CREDENTIAL_REF_MAX_LENGTH = 256;/);
-  assert.match(miniSource, /trimmed\.startsWith\('vault:\/\/'\) \|\| trimmed\.startsWith\('secret:\/\/'\)/);
-  assert.match(miniSource, /return `secret:\/\/\$\{trimmed\}`;/);
-  assert.match(miniSource, /value\.length > CREDENTIAL_REF_MAX_LENGTH/);
-  assert.match(miniSource, /locator\.replace\(\/\^\\\/\+\|\\\/\+\$\/g, ''\)\.length > 0/);
-  assert.match(miniSource, /function isCredentialRefValidationErrorMessage\(message: string\): boolean/);
-  assert.match(miniSource, /isCredentialRefValidationErrorMessage\(message\)[\s\S]*admin\.openPlatform\.wechatMini\.validation\.credentialRefInvalid/);
-  assert.match(miniSource, /const credentialCompleteCount = accounts\.filter\(\(account\) => account\.appId && account\.secretRef && account\.tokenRef\)\.length;/);
+  assert.doesNotMatch(miniSource, /account\.key|selectedAccount\.key/);
+  assert.doesNotMatch(miniAccountDialogSource, /draft\.key|form\.key|Account key/);
+  assert.match(miniSource, /const appSecret = accountDraft\.appSecret\.trim\(\);/);
+  assert.match(miniSource, /const token = accountDraft\.token\.trim\(\);/);
+  assert.match(miniSource, /const encodingAesKey = accountDraft\.encodingAesKey\.trim\(\);/);
+  assert.match(miniSource, /WechatMiniProgramService\.createAccount\(\{\s*name,\s*appId,\s*appSecret,\s*token,\s*encodingAesKey,/);
+  assert.match(miniSource, /appSecret:\s*optionalSecretPatch\(appSecret\)/);
+  assert.match(miniSource, /token:\s*optionalSecretPatch\(token\)/);
+  assert.match(miniSource, /encodingAesKey:\s*optionalSecretPatch\(encodingAesKey\)/);
+  assert.match(miniSource, /const credentialCompleteCount = accounts\.filter\(\(account\) => account\.appId && account\.hasAppSecret && account\.hasToken\)\.length;/);
+  assert.match(miniSource, /CredentialStatusPills/);
+  assert.doesNotMatch(miniSource, /function normalizeCredentialRefInput\(value: string\): string/);
+  assert.doesNotMatch(miniSource, /function validateAccountCredentialRefs\(draft: AccountDraft/);
+  assert.doesNotMatch(miniSource, /const CREDENTIAL_REF_MAX_LENGTH = 256;/);
+  assert.doesNotMatch(miniSource, /isCredentialRefValidationErrorMessage/);
   assert.match(miniSource, /admin\.openPlatform\.wechatMini\.summary\.credentials/);
   assert.doesNotMatch(miniSource, /const configuredUrlCount = entries\.length;/);
   assert.doesNotMatch(miniSource, /admin\.openPlatform\.wechatMini\.summary\.urls'[^}]*configuredUrlCount/);
   assert.match(miniSource, /if \(!accountId\) \{\s*setEntries\(\[\]\);\s*setEntriesError\(null\);\s*setEntriesLoading\(false\);\s*return;\s*\}/);
+  assert.match(miniAccountDialogSource, /<div className="space-y-4">/);
+  assert.doesNotMatch(miniAccountDialogSource, /md:grid-cols-2/);
   assert.doesNotMatch(miniAccountDialogSource, /<TextInput label=\{t\('admin\.openPlatform\.wechatMini\.form\.appId'[\s\S]*?value=\{draft\.appId\} \/>\s*<SelectInput label=\{t\('admin\.openPlatform\.wechatMini\.form\.status'/);
   assert.match(miniAccountDialogSource, /\{isEdit \? \(\s*<SelectInput label=\{t\('admin\.openPlatform\.wechatMini\.form\.status'/);
-  assert.match(miniAccountDialogSource, /placeholder=\{t\('admin\.openPlatform\.wechatMini\.form\.tokenRefPlaceholder'/);
-  assert.match(miniAccountDialogSource, /hint=\{t\('admin\.openPlatform\.wechatMini\.form\.credentialRefHint'/);
-  assert.match(miniAccountDialogSource, /placeholder=\{t\('admin\.openPlatform\.wechatMini\.form\.secretRefPlaceholder'/);
-  assert.match(miniAccountDialogSource, /placeholder=\{t\('admin\.openPlatform\.wechatMini\.form\.aesKeyRefPlaceholder'/);
+  assert.match(miniAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatMini\.form\.appId', 'AppID'\)\}/);
+  assert.match(miniAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatMini\.form\.appSecret', 'AppSecret'\)\}/);
+  assert.match(miniAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatMini\.form\.token', 'Token'\)\}/);
+  assert.match(miniAccountDialogSource, /label=\{t\('admin\.openPlatform\.wechatMini\.form\.encodingAesKey', 'EncodingAESKey'\)\}/);
+  assert.match(miniAccountDialogSource, /configuredSecretPlaceholder/);
+  assert.match(miniAccountDialogSource, /type="password"/);
+  assert.doesNotMatch(miniAccountDialogSource, /tokenRef|secretRef|aesKeyRef|credentialRef|vault:\/\/|secret:\/\//);
   assert.match(miniServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.list\(\{\s*provider:\s*'wechat',\s*type_:\s*'mini_app'/);
+  assert.match(miniServiceSource, /appSecret:\s*optionalString\(input\.appSecret\)/);
+  assert.match(miniServiceSource, /token:\s*optionalString\(input\.token\)/);
+  assert.match(miniServiceSource, /encodingAesKey:\s*optionalString\(input\.encodingAesKey\)/);
+  assert.match(miniServiceSource, /appSecret:\s*optionalPatchString\(input\.appSecret\)/);
+  assert.match(miniServiceSource, /token:\s*optionalPatchString\(input\.token\)/);
+  assert.match(miniServiceSource, /encodingAesKey:\s*optionalPatchString\(input\.encodingAesKey\)/);
   assert.match(miniServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.create/);
   assert.match(miniServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.update/);
   assert.match(miniServiceSource, /getClawRouterBackendSdkClient\(\)\.openPlatform\.accounts\.entries\.list/);
@@ -1533,14 +2274,20 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.doesNotMatch(miniServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(miniServiceSource, /\baxios\b/);
   assert.doesNotMatch(miniServiceSource, /\/backend\/v3\/api/);
-  assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.keyInvalid"/);
+  assert.doesNotMatch(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.keyInvalid"/);
   assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.menuKeyInvalid"/);
-  assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.credentialRefInvalid"/);
-  assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.form\.credentialRefHint"/);
-  assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.keyInvalid"/);
+  assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.appIdRequired"/);
+  assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.appSecretRequired"/);
+  assert.match(i18nSource, /"admin\.openPlatform\.wechatOfficial\.form\.configuredSecretPlaceholder"/);
+  assert.doesNotMatch(i18nSource, /"admin\.openPlatform\.wechatOfficial\.validation\.credentialRefInvalid"/);
+  assert.doesNotMatch(i18nSource, /"admin\.openPlatform\.wechatOfficial\.form\.credentialRefHint"/);
+  assert.doesNotMatch(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.keyInvalid"/);
   assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.entryKeyInvalid"/);
-  assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.credentialRefInvalid"/);
-  assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.form\.credentialRefHint"/);
+  assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.appIdRequired"/);
+  assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.appSecretRequired"/);
+  assert.match(i18nSource, /"admin\.openPlatform\.wechatMini\.form\.configuredSecretPlaceholder"/);
+  assert.doesNotMatch(i18nSource, /"admin\.openPlatform\.wechatMini\.validation\.credentialRefInvalid"/);
+  assert.doesNotMatch(i18nSource, /"admin\.openPlatform\.wechatMini\.form\.credentialRefHint"/);
 });
 
 test("admin commerce pages no longer render nested second-level sidebars", () => {
@@ -1565,45 +2312,61 @@ test("admin commerce pages no longer render nested second-level sidebars", () =>
 
   assert.match(membershipsSource, /sectionId\?: string/);
   assert.match(membershipsSource, /resolveMembershipSectionId/);
-  assert.match(membershipsSource, /type AdminTab = 'packages' \| 'plans' \| 'members' \| 'entitlements' \| 'rechargePackages'/);
+  assert.match(membershipsSource, /export type MembershipsAdminSectionId =[\s\S]*\| 'packageGroups'[\s\S]*\| 'rechargePackages'/);
   assert.match(membershipsSource, /sectionId === 'plans'/);
-  assert.match(membershipsSource, /<PlansTab \/>/);
-  assert.match(membershipsSource, /function PlansTab\(\)/);
+  assert.match(membershipsSource, /import \{ MembershipPlansPage \} from '\.\/pages\/MembershipPlansPage'/);
+  assert.match(membershipsSource, /<MembershipPlansPage \/>/);
+  assert.match(membershipsSource, /const activeSection = resolveMembershipSectionId\(sectionId\);/);
+  assert.match(membershipsSource, /activeSection === 'packages'/);
+  assert.match(membershipsSource, /activeSection === 'packageGroups'/);
   assert.doesNotMatch(membershipsSource, /setActiveTab/);
   assert.doesNotMatch(marketingSource, /<aside className=/);
 });
 
 test("admin membership member level and entitlement sections do not depend on package catalog loading", () => {
   const membershipsSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/index.tsx");
+  const packagesPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx");
+  const plansPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPlansPage.tsx");
+  const membersPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipMembersPage.tsx");
+  const entitlementsPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipEntitlementsPage.tsx");
 
-  assert.match(membershipsSource, /const isPackageTab = activeTab === 'packages';/);
-  assert.match(membershipsSource, /const loadPackageCatalog = useCallback\(async \(\) => \{/);
-  assert.match(
-    membershipsSource,
-    /useEffect\(\(\) => \{\s*if \(!isPackageTab\) \{\s*return;\s*\}\s*void loadPackageCatalog\(\);\s*\}, \[isPackageTab, loadPackageCatalog\]\);/,
-  );
-  assert.match(membershipsSource, /if \(isPackageTab && isPackagesLoading\) \{/);
-  assert.match(membershipsSource, /if \(isPackageTab && packageLoadError\) \{/);
-  assert.match(membershipsSource, /fetchMembershipAdminPlans\(\)/);
+  assert.match(membershipsSource, /<MembershipPackagesPage \/>/);
+  assert.match(membershipsSource, /<MembershipPlansPage \/>/);
+  assert.match(membershipsSource, /<MembersTab \/>/);
+  assert.match(membershipsSource, /<EntitlementsTab loadEntitlements=\{fetchMembershipAdminEntitlements\} \/>/);
+  assert.doesNotMatch(membershipsSource, /fetchMembershipAdminPackageCatalog/);
   assert.doesNotMatch(membershipsSource, /useEffect\(\(\) => \{\s*void loadData\(\);\s*\}, \[\]\);/);
+  assert.match(packagesPageSource, /const loadCatalog = useCallback\(async \(\) => \{/);
+  assert.match(
+    packagesPageSource,
+    /useEffect\(\(\) => \{\s*void loadCatalog\(\);\s*\}, \[loadCatalog\]\);/,
+  );
+  assert.match(packagesPageSource, /fetchMembershipAdminPackageCatalog/);
+  assert.match(plansPageSource, /fetchMembershipAdminPlans\(\)/);
+  assert.match(membersPageSource, /fetchMembershipAdminMembers\(\)/);
+  assert.match(entitlementsPageSource, /loadEntitlements = fetchMembershipAdminEntitlements/);
 });
 
 test("admin membership level management uses backend SDK memberships plans", () => {
-  const membershipsSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/index.tsx");
+  const plansPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPlansPage.tsx");
   const membershipsServiceSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readI18nResourceSource();
 
-  assert.match(membershipsSource, /function PlansTab\(\)/);
-  assert.match(membershipsSource, /fetchMembershipAdminPlans/);
-  assert.match(membershipsSource, /createMembershipAdminPlan/);
-  assert.match(membershipsSource, /admin\.commerce\.memberships\.plans\.add/);
-  assert.match(membershipsSource, /admin\.commerce\.memberships\.plans\.form\.code/);
-  assert.match(membershipsSource, /admin\.commerce\.memberships\.plans\.form\.rank/);
-  assert.match(membershipsSource, /admin\.col\.level/);
+  assert.match(plansPageSource, /export function MembershipPlansPage\(\)/);
+  assert.match(plansPageSource, /fetchMembershipAdminPlans/);
+  assert.match(plansPageSource, /createMembershipAdminPlan/);
+  assert.match(plansPageSource, /updateMembershipAdminPlan/);
+  assert.match(plansPageSource, /deleteMembershipAdminPlan/);
+  assert.match(plansPageSource, /<MembershipPlanDrawerForm/);
+  assert.match(plansPageSource, /Level/);
   assert.match(membershipsServiceSource, /backendMembershipsPlansList/);
   assert.match(membershipsServiceSource, /backendMembershipsPlansCreate/);
+  assert.match(membershipsServiceSource, /backendMembershipsPlansUpdate/);
+  assert.match(membershipsServiceSource, /backendMembershipsPlansDelete/);
   assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.list/);
   assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.create/);
+  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.update/);
+  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.plans\.delete/);
   assert.doesNotMatch(membershipsServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(membershipsServiceSource, /\baxios\b/);
   assert.doesNotMatch(membershipsServiceSource, /\/backend\/v3\/api/);
@@ -1623,59 +2386,45 @@ test("admin membership level management uses backend SDK memberships plans", () 
 });
 
 test("admin home product platform group is renamed to agents and skills", () => {
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
 
   assert.match(
-    adminLayoutSource,
-    /groupKey:\s*'admin\.menu\.home\.agentSkills',\s*items:\s*\[\s*\{\s*path:\s*'\/admin\/agents',\s*labelKey:\s*'admin\.menu\.agents'[\s\S]*\{\s*path:\s*'\/admin\/skill',\s*labelKey:\s*'admin\.menu\.agentSkills'/,
+    adminRegistrySource,
+    /groupBlock\('admin\.menu\.home\.agentSkills',\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/agents',\s*labelKey:\s*'admin\.menu\.agents'[\s\S]*itemBlock\(\{\s*path:\s*'\/admin\/skill',\s*labelKey:\s*'admin\.menu\.agentSkills'/,
   );
-  assert.doesNotMatch(adminLayoutSource, /groupKey:\s*'admin\.menu\.home\.productPlatform'/);
+  assert.doesNotMatch(adminRegistrySource, /groupBlock\('admin\.menu\.home\.productPlatform'/);
 
-  const agentsAndSkillsGroup = adminLayoutSource.match(
-    /groupKey:\s*'admin\.menu\.home\.agentSkills',\s*items:\s*\[([\s\S]*?)\]\s*,\s*\}/,
-  );
-  assert.ok(agentsAndSkillsGroup, "agents and skills group must remain present");
-  assert.doesNotMatch(agentsAndSkillsGroup[1], /path:\s*'\/admin\/app'/);
-  assert.doesNotMatch(agentsAndSkillsGroup[1], /path:\s*'\/admin\/open-platform'/);
+  const agentsAndSkillsGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.agentSkills");
+  assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/app'/);
+  assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/open-platform'/);
   assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"Agents & Skills"/);
   assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"智能体和技能"/);
 });
 
 test("admin usage records and analytics are grouped under home data management", () => {
-  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
-  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const adminRegistrySource = readAdminRegistrySource();
+  const i18nSource = readI18nResourceSource();
+  const homeMenu = findAdminModuleMenuSource(adminRegistrySource, "home");
+  const operationsMenu = findAdminModuleMenuSource(adminRegistrySource, "operations");
+  const homeHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "home");
+  const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
 
   assert.match(
-    adminLayoutSource,
-    /groupKey:\s*'admin\.menu\.home\.agentSkills'[\s\S]*groupKey:\s*'admin\.menu\.home\.dataManagement'[\s\S]*groupKey:\s*'admin\.menu\.home\.system'/,
+    homeMenu,
+    /groupBlock\('admin\.menu\.home\.agentSkills'[\s\S]*groupBlock\('admin\.menu\.home\.dataManagement'[\s\S]*groupBlock\('admin\.menu\.home\.system'/,
   );
   assert.match(
-    adminLayoutSource,
-    /groupKey:\s*'admin\.menu\.home\.dataManagement',\s*items:\s*\[\s*\{\s*path:\s*'\/admin\/record',\s*labelKey:\s*'admin\.menu\.records'[\s\S]*\{\s*path:\s*'\/admin\/analytics',\s*labelKey:\s*'admin\.menu\.analytics'/,
+    homeMenu,
+    /groupBlock\('admin\.menu\.home\.dataManagement',\s*\[\s*itemBlock\(\{\s*path:\s*'\/admin\/record',\s*labelKey:\s*'admin\.menu\.records'[\s\S]*itemBlock\(\{\s*path:\s*'\/admin\/analytics',\s*labelKey:\s*'admin\.menu\.analytics'/,
   );
 
-  const operationsModule = adminLayoutSource.match(
-    /moduleId:\s*'operations'[\s\S]*?(?=\n\s*\{\s*moduleId:\s*'serviceProviderCenter')/,
-  );
-  assert.ok(operationsModule, "operations layout module must remain present");
-  assert.doesNotMatch(operationsModule[0], /path:\s*'\/admin\/record'/);
-  assert.doesNotMatch(operationsModule[0], /path:\s*'\/admin\/analytics'/);
-
-  const homeHeaderModule = adminHeaderSource.match(
-    /id:\s*'home',[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/,
-  );
-  assert.ok(homeHeaderModule, "home header module must remain present");
-  assert.match(homeHeaderModule[1], /'\/admin\/record'/);
-  assert.match(homeHeaderModule[1], /'\/admin\/analytics'/);
-
-  const operationsHeaderModule = adminHeaderSource.match(
-    /id:\s*'operations',[\s\S]*?pathPrefixes:\s*\[([^\]]*)\]/,
-  );
-  assert.ok(operationsHeaderModule, "operations header module must remain present");
-  assert.doesNotMatch(operationsHeaderModule[1], /'\/admin\/record'/);
-  assert.doesNotMatch(operationsHeaderModule[1], /'\/admin\/analytics'/);
+  assert.doesNotMatch(operationsMenu, /path:\s*'\/admin\/record'/);
+  assert.doesNotMatch(operationsMenu, /path:\s*'\/admin\/analytics'/);
+  assert.match(homeHeaderModule, /'\/admin\/record'/);
+  assert.match(homeHeaderModule, /'\/admin\/analytics'/);
+  assert.doesNotMatch(operationsHeaderModule, /'\/admin\/record'/);
+  assert.doesNotMatch(operationsHeaderModule, /'\/admin\/analytics'/);
   assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"Data Management"/);
   assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"数据管理"/);
 });

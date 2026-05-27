@@ -10,7 +10,7 @@ public class GoogleEmbedContentRequest {
     public GoogleContent getContent() {
         return this.content;
     }
-    
+
     public void setContent(GoogleContent content) {
         this.content = content;
     }
@@ -18,7 +18,7 @@ public class GoogleEmbedContentRequest {
     public Integer getOutputDimensionality() {
         return this.outputDimensionality;
     }
-    
+
     public void setOutputDimensionality(Integer outputDimensionality) {
         this.outputDimensionality = outputDimensionality;
     }
@@ -26,7 +26,7 @@ public class GoogleEmbedContentRequest {
     public String getTaskType() {
         return this.taskType;
     }
-    
+
     public void setTaskType(String taskType) {
         this.taskType = taskType;
     }
@@ -34,7 +34,7 @@ public class GoogleEmbedContentRequest {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::{Arc, Mutex};
@@ -22,9 +24,7 @@ async fn app_settlements_dashboard_billing_route_matches_app_sdk_contract() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/billing/settlements/dashboard?year=2026")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )

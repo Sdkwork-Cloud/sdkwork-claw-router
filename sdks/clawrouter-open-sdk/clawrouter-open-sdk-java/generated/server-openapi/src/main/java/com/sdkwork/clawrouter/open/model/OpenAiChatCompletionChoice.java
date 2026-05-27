@@ -10,7 +10,7 @@ public class OpenAiChatCompletionChoice {
     public String getFinishReason() {
         return this.finishReason;
     }
-    
+
     public void setFinishReason(String finishReason) {
         this.finishReason = finishReason;
     }
@@ -18,7 +18,7 @@ public class OpenAiChatCompletionChoice {
     public Integer getIndex() {
         return this.index;
     }
-    
+
     public void setIndex(Integer index) {
         this.index = index;
     }
@@ -26,7 +26,7 @@ public class OpenAiChatCompletionChoice {
     public OpenAiChoiceLogprobs getLogprobs() {
         return this.logprobs;
     }
-    
+
     public void setLogprobs(OpenAiChoiceLogprobs logprobs) {
         this.logprobs = logprobs;
     }
@@ -34,7 +34,7 @@ public class OpenAiChatCompletionChoice {
     public OpenAiChatMessage getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(OpenAiChatMessage message) {
         this.message = message;
     }

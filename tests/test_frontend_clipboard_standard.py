@@ -76,8 +76,6 @@ class FrontendClipboardStandardTest(unittest.TestCase):
             FRONTEND_ROOT / "sdkwork-claw-router-admin-user" / "src" / "index.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-console-account" / "src" / "AccountView.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-console-api-keys" / "src" / "ApiKeysView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "ApiKeysTab.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "RequestDataTab.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-models" / "src" / "pages" / "ModelDetails.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-api-reference" / "src" / "components" / "ApiEndpointView.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-api-reference" / "src" / "components" / "ApiPlayground.tsx",
@@ -106,12 +104,7 @@ class FrontendClipboardStandardTest(unittest.TestCase):
         )
 
     def test_copy_icon_is_reserved_for_shared_copy_button(self) -> None:
-        guarded_files = [
-            FRONTEND_ROOT / "sdkwork-claw-router-console-providers" / "src" / "ProvidersView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "ChannelsTab.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "ApiKeysTab.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "RequestDataTab.tsx",
-        ]
+        guarded_files: list[Path] = []
         lucide_copy_import_pattern = re.compile(
             r"import\s*\{[^}]*\bCopy\b[^}]*\}\s*from\s*['\"]lucide-react['\"]",
             re.DOTALL,

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class VideosVolcengineApi {
     private final HttpClient client;
-    
+
     public VideosVolcengineApi(HttpClient client) {
         this.client = client;
     }

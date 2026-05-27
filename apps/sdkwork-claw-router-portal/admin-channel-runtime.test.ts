@@ -11,6 +11,8 @@ import {
 } from "./packages/sdkwork-claw-router-admin-channel/src/channelService.ts";
 import {
   createChannelInputFromForm,
+  createChannelCopyDraft,
+  createChannelEditDraft,
   createChannelStatusUpdateInput,
   createChannelUpdateInputFromForm,
   createProviderSecretInputFromForm,
@@ -316,6 +318,67 @@ test("admin channel update input does not reuse returned channel view model", ()
   }
 });
 
+test("admin channel copy-create draft reuses routing settings but clears secret material", () => {
+  const sourceChannel = {
+    id: "channel-1",
+    name: "OpenAI Primary",
+    vendor: "OpenAI",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    secretRef: "vault://providers/openai/main",
+    apiKey: "sk-live-openai",
+    createdAt: "2026-05-05T08:00:00Z",
+    expiresAt: "2026-06-30T08:00:00Z",
+    models: ["openai/global/gpt-4o"],
+    capabilities: ["llm", "image"],
+    isMultimodal: true,
+    circuitBreakerPolicy: { failureThreshold: 2 },
+    weight: 100,
+    status: "error" as const,
+    balance: "$20.00",
+    errors: 2,
+  };
+
+  const editDraft = createChannelEditDraft(sourceChannel);
+  const copyDraft = createChannelCopyDraft(sourceChannel);
+
+  assert.deepEqual(editDraft, {
+    name: "OpenAI Primary",
+    vendor: "OpenAI",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: "",
+    expiresAt: "2026-06-30T08:00:00Z",
+    capabilities: ["llm", "image"],
+    models: ["openai/global/gpt-4o"],
+    circuitBreakerEnabled: true,
+    circuitBreakerFailureThreshold: 2,
+    weight: 100,
+    status: "error",
+  });
+  assert.deepEqual(copyDraft, {
+    name: "OpenAI Primary",
+    vendor: "OpenAI",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: "",
+    expiresAt: "2026-06-30T08:00:00Z",
+    capabilities: ["llm", "image"],
+    models: ["openai/global/gpt-4o"],
+    circuitBreakerEnabled: true,
+    circuitBreakerFailureThreshold: 2,
+    weight: 100,
+    status: "disabled",
+  });
+  assert.notEqual(copyDraft.models, sourceChannel.models);
+  assert.notEqual(copyDraft.capabilities, sourceChannel.capabilities);
+  assert.equal("id" in copyDraft, false);
+  assert.equal("secretRef" in copyDraft, false);
+});
+
 test("admin channel status update input is a minimal command", () => {
   assert.deepEqual(createChannelStatusUpdateInput("disabled"), { status: "disabled" });
   assert.deepEqual(createChannelStatusUpdateInput("active"), { status: "active" });
@@ -353,7 +416,10 @@ test("admin channel credential details can reveal returned plaintext api key", (
 
   assert.match(source, /const \[apiKeyVisible, setApiKeyVisible\] = useState\(false\)/);
   assert.match(source, /label=\{t\('admin\.channel\.fields\.apiKey'\)\}/);
-  assert.match(source, /value=\{apiKeyVisible \? channel\.apiKey : maskApiKeyForDisplay\(channel\.apiKey\)\}/);
+  assert.match(source, /const apiKeyDisplayValue = apiKeyVisible[\s\S]*resolveVisibleApiKey\(channel\)[\s\S]*maskApiKeyForDisplay\(channel\.apiKey\)/);
+  assert.match(source, /function resolveVisibleApiKey\(channel: ChannelItem\): string/);
+  assert.match(source, /value=\{apiKeyDisplayValue\}/);
+  assert.doesNotMatch(source, /value=\{apiKeyVisible \? channel\.apiKey : maskApiKeyForDisplay\(channel\.apiKey\)\}/);
   assert.match(source, /onToggleVisibility=\{\(\) => setApiKeyVisible\(\(current\) => !current\)\}/);
   assert.match(source, /admin\.channel\.credentials\.apiKeyUnavailable/);
 });
@@ -364,7 +430,7 @@ test("admin channel account lifetime fields are shown with never-expires default
     "utf8",
   );
   const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
     "utf8",
   );
 
@@ -375,7 +441,7 @@ test("admin channel account lifetime fields are shown with never-expires default
   assert.match(source, /admin\.channel\.table\.createdAt/);
   assert.match(source, /admin\.channel\.table\.expiresAt/);
   assert.match(source, /admin\.channel\.expiration\.never/);
-  assert.match(source, /<BusinessStateTableRow colSpan=\{8\}/);
+  assert.match(source, /<BusinessStateTableRow colSpan=\{9\}/);
   assert.match(source, /label=\{t\('admin\.channel\.fields\.createdAt'\)\} value=\{displayChannelTime\(channel\.createdAt/);
   assert.match(source, /label=\{t\('admin\.channel\.fields\.expiresAt'\)\}[\s\S]+admin\.channel\.expiration\.never/);
 
@@ -408,6 +474,34 @@ test("admin channel list keeps model cells compact and shows actions by default"
   assert.match(source, /className="flex items-center justify-end gap-1"/);
 });
 
+test("admin channel row actions expose copy-create without copying credentials", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /type ModalMode = 'create' \| 'copy' \| 'edit'/);
+  assert.match(source, /const openCopyCreateModal = \(channel: ChannelItem\) =>/);
+  assert.match(source, /setChannelFormDraft\(createChannelCopyDraft\(channel\)\)/);
+  assert.match(source, /mode === 'copy'\s+\? t\('admin\.channel\.modals\.copyChannelTitle'\)/);
+  assert.match(source, /title=\{t\('admin\.channel\.actions\.copyCreateChannel'\)\}/);
+  assert.match(source, /onClick=\{\(\) => openCopyCreateModal\(channel\)\}/);
+  assert.match(source, /<Copy className="w-4 h-4" \/>/);
+  assert.doesNotMatch(source, /defaultValue=\{initialValues\?\.apiKey/);
+
+  for (const key of [
+    "admin.channel.actions.copyCreateChannel",
+    "admin.channel.modals.copyChannelTitle",
+  ]) {
+    const occurrences = i18nSource.match(new RegExp(`"${key.replaceAll(".", "\\.")}"`, "g"))?.length ?? 0;
+    assert.equal(occurrences, 2, `expected ${key} to exist in English and Chinese resources`);
+  }
+});
+
 test("admin channel modal does not expose unsupported per-channel model mapping controls", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
@@ -434,7 +528,7 @@ test("admin channel visible account copy is routed through i18n resources", () =
     "utf8",
   );
   const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
     "utf8",
   );
 
@@ -1041,9 +1135,58 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         status: "disabled",
         expiresAt: null,
       });
-      assert.equal(captured[1].headers["x-request-id"]?.startsWith("admin-channel-create-"), true);
-      assert.equal(captured[2].headers["x-request-id"]?.startsWith("admin-channel-update-"), true);
-      assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-channel-test-"), true);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
+    },
+  );
+});
+
+test("admin channel service prefixes slash-containing native models instead of rejecting them", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "POST") {
+        return {
+          item: {
+            id: "channel-openrouter",
+            name: "OpenRouter",
+            vendor: "OpenRouter",
+            protocol: "OpenAI",
+            accessType: "api-key",
+            baseUrl: "https://openrouter.ai/api/v1",
+            secretRef: "vault://providers/openrouter/main",
+            apiKey: "sk-openrouter",
+            createdAt: "2026-05-06T08:00:00Z",
+            models: ["openrouter/global/anthropic/claude-3-opus"],
+            capabilities: ["llm"],
+            isMultimodal: false,
+            weight: 20,
+            status: "active",
+            balance: "N/A",
+            errors: 0,
+          },
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async (captured) => {
+      await ChannelService.addChannel({
+        name: "OpenRouter",
+        vendor: "OpenRouter",
+        protocol: "OpenAI",
+        accessType: "api-key",
+        baseUrl: "https://openrouter.ai/api/v1",
+        apiKey: "sk-openrouter",
+        models: ["anthropic/claude-3-opus", "openrouter/global/google/gemini-1.5-pro"],
+        capabilities: ["llm"],
+        weight: 20,
+        status: "active",
+      });
+
+      assert.deepEqual(JSON.parse(captured[0].body).models, [
+        "openrouter/global/anthropic/claude-3-opus",
+        "openrouter/global/google/gemini-1.5-pro",
+      ]);
     },
   );
 });
@@ -1152,8 +1295,9 @@ test("admin provider secret service calls generated backend SDK paths and normal
         secretRef: "vault://providers/anthropic/updated",
         status: "disabled",
       });
-      assert.equal(captured[1].headers["x-request-id"]?.startsWith("admin-provider-secret-create-"), true);
-      assert.equal(captured[2].headers["x-request-id"]?.startsWith("admin-provider-secret-update-"), true);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
     },
   );
 });

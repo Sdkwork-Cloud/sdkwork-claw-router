@@ -16,7 +16,7 @@ replaced by this standard.
 ## Goal
 
 Build a complete commercial transaction foundation inside `sdkwork-appbase`.
-The foundation must support physical goods, virtual goods, VIP and membership
+The foundation must support physical goods, virtual goods, membership
 purchases, points recharge, wallet recharge, subscriptions, service purchases,
 coupons, invoices, refunds, shipment, digital delivery, wallet ledger, provider
 payment configuration, webhook verification, reconciliation, and admin
@@ -222,7 +222,7 @@ ledger commands.
 
 ### Memberships
 
-Membership owns VIP plans, packages, memberships, entitlement grants, renewals,
+Membership owns membership plans, packages, memberships, entitlement grants, renewals,
 upgrades, downgrade policy, grace periods, and entitlement usage. Membership
 purchases still go through order and payment.
 
@@ -768,38 +768,42 @@ registry records. The following is the logical contract.
 
 ### Membership Tables
 
-`commerce_membership_plan`
+`membership_plan`
 
-- VIP or membership plan.
+- membership plan.
 - Key columns: `plan_no`, `name`, `level_code`, `status`, `sort_order`.
 
-`commerce_membership_package`
+`membership_package`
 
 - Purchasable membership package, linked to SKU.
 - Key columns: `package_no`, `plan_id`, `sku_id`, `duration_days`,
   `recurrence_cycle`, `price_amount`, `currency_code`, `status`.
 
-`commerce_membership`
+`membership_subscription`
 
 - User membership.
 - Key columns: `membership_no`, `owner_user_id`, `plan_id`,
   `source_order_id`, `source_payment_intent_id`, `status`, `starts_at`,
   `expires_at`, `grace_until`, `auto_renew`.
 
-`commerce_membership_entitlement`
+`entitlement_grant`
 
 - Entitlement granted to membership.
 
-`commerce_membership_entitlement_usage`
+`entitlement_ledger_entry`
 
 - Entitlement usage ledger.
 
-### Coupon And Invoice Tables
+### Promotion And Invoice Tables
 
-`commerce_coupon_template`, `commerce_coupon_campaign`,
-`commerce_coupon_code`, `commerce_coupon_claim`,
-`commerce_coupon_redemption`, and `commerce_coupon_redemption_event` own coupon
-lifecycle.
+`promotion_offer`, `promotion_offer_version`,
+`promotion_offer_scope`, `promotion_offer_audience_rule`,
+`promotion_offer_time_window`, `promotion_budget_account`,
+`promotion_budget_ledger_entry`, `promotion_coupon_stock`, `promotion_code`,
+`promotion_user_coupon`, `promotion_discount_application`,
+`promotion_discount_allocation`, `promotion_coupon_ledger_entry`,
+`promotion_external_binding`, and `promotion_event_outbox` own the card-coupon
+promotion lifecycle.
 
 `commerce_invoice_title`, `commerce_invoice`, `commerce_invoice_item`,
 `commerce_invoice_event`, and `commerce_invoice_provider_attempt` own invoice
@@ -924,12 +928,17 @@ GET  /app/v3/api/wallet/ledger_entries/{ledgerEntryId}
 POST /app/v3/api/wallet/exchanges
 ```
 
-Coupons:
+Promotions:
 
 ```text
-GET  /app/v3/api/coupons
-POST /app/v3/api/coupons/claims
-POST /app/v3/api/coupons/redemptions
+GET  /app/v3/api/promotions/offers
+GET  /app/v3/api/promotions/offers/{offerId}
+GET  /app/v3/api/promotions/user_coupons/wallet
+GET  /app/v3/api/promotions/user_coupons/wallet/{userCouponId}
+POST /app/v3/api/promotions/user_coupon_claims
+POST /app/v3/api/promotions/codes/redemptions
+POST /app/v3/api/promotions/discount_applications
+POST /app/v3/api/promotions/discount_applications/reversals
 ```
 
 Invoices:
@@ -1034,13 +1043,22 @@ Wallet:
 /backend/v3/api/wallet/exchange_rules
 ```
 
-Coupons:
+Promotions:
 
 ```text
-/backend/v3/api/coupons/templates
-/backend/v3/api/coupons/campaigns
-/backend/v3/api/coupons/codes
-/backend/v3/api/coupons/redemptions
+/backend/v3/api/promotions/offers
+/backend/v3/api/promotions/offers/{offerId}
+/backend/v3/api/promotions/offers/{offerId}/versions
+/backend/v3/api/promotions/offers/{offerId}/versions/{versionId}/publish
+/backend/v3/api/promotions/coupon_stocks
+/backend/v3/api/promotions/codes
+/backend/v3/api/promotions/user_coupons
+/backend/v3/api/promotions/discount_applications
+/backend/v3/api/promotions/discount_allocations
+/backend/v3/api/promotions/coupon_ledger_entries
+/backend/v3/api/promotions/budget_ledger_entries
+/backend/v3/api/promotions/external_bindings
+/backend/v3/api/promotions/events
 ```
 
 Invoices:
@@ -1093,7 +1111,7 @@ Operation ids do not include surface prefixes:
 - `memberships.purchases.create`
 - `recharges.orders.create`
 - `wallet.ledgerEntries.list`
-- `coupons.redemptions.create`
+- `promotions.codes.redemptions.create`
 - `invoices.submissions.create`
 
 ## SDK Shape
@@ -1433,7 +1451,7 @@ Add or update gates that fail if:
 - Every webhook is verified, stored, deduplicated, replayable, and traceable.
 - Every wallet balance mutation writes `commerce_account_ledger_entry`.
 - Every physical order can split into fulfillment orders and shipments.
-- Every virtual, VIP, points, and wallet order has explicit fulfillment evidence.
+- Every virtual, membership, points, and wallet order has explicit fulfillment evidence.
 - OpenAPI and generated SDKs pass `API_SPEC.md` governance.
 
 ## Open Decisions

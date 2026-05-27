@@ -8,7 +8,7 @@ public class AdminModelVendorsResponse {
     public List<AdminModelVendorItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminModelVendorItem> items) {
         this.items = items;
     }

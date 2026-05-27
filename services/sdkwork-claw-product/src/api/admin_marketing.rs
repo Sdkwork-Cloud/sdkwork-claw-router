@@ -5,32 +5,34 @@ use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::{get, patch, put};
+use axum::routing::{get, patch};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::ports::{
-    AdminCouponBatchItem, AdminMarketingStore, AdminMarketingSubject, AdminPromoCodeItem,
-    AdminRechargePackageStatus, CreateAdminCouponCommand, CreateAdminRechargePackageCommand,
-    DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
-    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminExchangeRulesQuery,
-    ListAdminPaymentAttemptsQuery, ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery,
-    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
-    LoadAdminRechargeRecordQuery, UpdateAdminCouponCommand, UpdateAdminExchangeRuleCommand,
-    UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
+    AdminMarketingStore, AdminMarketingSubject, AdminRechargePackageStatus,
+    CreateAdminRechargePackageCommand, CreatePromotionOfferCommand,
+    DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
+    GeneratePromotionCouponStockCommand, ListAdminExchangeRulesQuery,
+    ListAdminPaymentAttemptsQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
+    ListAdminReferralStatsQuery, ListPromotionCodeRedemptionsQuery, ListPromotionCodesQuery,
+    ListPromotionCouponStocksQuery, ListPromotionOffersQuery, LoadAdminRechargeRecordQuery,
+    PromotionCodeItem, PromotionCodeRedemptionItem, PromotionCouponStockItem, PromotionOfferItem,
+    UpdateAdminExchangeRuleCommand, UpdateAdminRechargePackageCommand,
+    UpdatePromotionCodeStatusCommand, UpdatePromotionOfferCommand,
 };
 
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const MAX_NAME_LEN: usize = 128;
+const MAX_ORDER_NO_LEN: usize = 128;
 const MAX_PREFIX_LEN: usize = 32;
 const MAX_ASSET_TYPE_LEN: usize = 32;
-const MAX_REQUEST_ID_LEN: usize = 128;
-const MAX_BATCH_COUNT: i64 = 10_000;
+const MAX_COUPON_STOCK_QUANTITY: i64 = 10_000;
 const POINTS_ASSET_TYPE: &str = "POINTS";
 const CASH_ASSET_TYPE: &str = "CASH";
 
@@ -65,34 +67,97 @@ struct AdminMarketingUpdateResponse {
 }
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct AdminCouponBatchGenerateResponse {
-    batch: AdminCouponBatchItem,
-    codes: Vec<AdminPromoCodeItem>,
+#[serde(rename_all = "snake_case")]
+struct PromotionCouponStockGenerateResponse {
+    item: PromotionCouponStockListItem,
+    codes: Vec<PromotionCodeListItem>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "snake_case")]
+struct PromotionOfferListItem {
+    id: String,
+    offer_no: String,
+    offer_code: String,
+    name: String,
+    offer_type: String,
+    audience_scope: String,
+    combinability: String,
+    status: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "snake_case")]
+struct PromotionCouponStockListItem {
+    id: String,
+    stock_no: String,
+    name: String,
+    offer_id: String,
+    code_mode: String,
+    issue_channel: String,
+    currency_code: String,
+    total_quantity: i64,
+    available_quantity: i64,
+    claimed_quantity: i64,
+    redeemed_quantity: i64,
+    activation_status: String,
+    can_resend: bool,
+    status: String,
+    created_at: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "snake_case")]
+struct PromotionCodeListItem {
+    id: String,
+    code_no: String,
+    stock_id: String,
+    promotion_code_last4: String,
+    code_type: String,
+    currency_code: String,
+    claimed_quantity: i64,
+    activation_status: String,
+    can_resend: bool,
+    status: String,
+    owner_user_id: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "snake_case")]
+struct PromotionCodeRedemptionListItem {
+    id: String,
+    redemption_no: String,
+    submitted_code_suffix: String,
+    stock_id: String,
+    owner_user_id: String,
+    currency_code: String,
+    result_status: String,
+    failure_code: Option<String>,
+    redemption_channel: String,
+    occurred_at: String,
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct CreateCouponRequest {
+#[serde(rename_all = "snake_case")]
+struct CreatePromotionOfferRequest {
     name: Option<String>,
-    #[serde(rename = "type")]
-    coupon_type: Option<String>,
+    discount_type: Option<String>,
     value: Option<Value>,
     status: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct GenerateBatchRequest {
-    coupon_id: Option<Value>,
+#[serde(rename_all = "snake_case")]
+struct GeneratePromotionCouponStockRequest {
+    offer_id: Option<Value>,
     name: Option<String>,
-    count: Option<i64>,
-    prefix: Option<String>,
+    total_quantity: Option<i64>,
+    code_prefix: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct UpdatePromoCodeStatusRequest {
+struct UpdatePromotionCodeStatusRequest {
     status: Option<String>,
 }
 
@@ -131,7 +196,7 @@ struct ExchangeRuleMutationRequest {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-struct NormalizedCouponValue {
+struct NormalizedDiscountValue {
     value: String,
     amount_cents: i64,
     discount_value: Option<String>,
@@ -162,28 +227,28 @@ pub fn admin_marketing_router_with_store(
 ) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/billing/coupons",
-            get(fetch_coupons).post(create_coupon),
+            "/backend/v3/api/promotions/offers",
+            get(fetch_promotion_offers).post(create_promotion_offer),
         )
         .route(
-            "/backend/v3/api/billing/coupons/{coupon_id}",
-            put(update_coupon).delete(delete_coupon),
+            "/backend/v3/api/promotions/offers/{offer_id}",
+            patch(update_promotion_offer).delete(delete_promotion_offer),
         )
         .route(
-            "/backend/v3/api/billing/coupon_batches",
-            get(fetch_batches).post(generate_batch),
+            "/backend/v3/api/promotions/coupon_stocks",
+            get(fetch_promotion_coupon_stocks).post(generate_promotion_coupon_stock),
         )
         .route(
-            "/backend/v3/api/billing/coupon_codes",
-            get(fetch_promo_codes),
+            "/backend/v3/api/promotions/codes",
+            get(fetch_promotion_codes),
         )
         .route(
-            "/backend/v3/api/billing/coupon_codes/{code_id}/status",
-            patch(update_promo_code_status),
+            "/backend/v3/api/promotions/codes/{code_id}/status",
+            patch(update_promotion_code_status),
         )
         .route(
-            "/backend/v3/api/billing/users/coupons",
-            get(fetch_redemption_records),
+            "/backend/v3/api/promotions/codes/redemptions",
+            get(fetch_promotion_code_redemptions),
         )
         .route(
             "/backend/v3/api/billing/recharges/records",
@@ -223,127 +288,193 @@ pub fn admin_marketing_router_with_store(
         })
 }
 
-async fn fetch_coupons(State(state): State<AdminMarketingState>, headers: HeaderMap) -> Response {
+async fn fetch_promotion_offers(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
     match state
         .store
-        .list_coupons(ListAdminCouponsQuery { subject })
+        .list_promotion_offers(ListPromotionOffersQuery { subject })
         .await
     {
-        Ok(items) => list_response(items),
-        Err(error) => marketing_system_response("coupon read model is unavailable", error),
+        Ok(items) => list_response(items.into_iter().map(promotion_offer_item).collect()),
+        Err(error) => marketing_system_response("promotion offer read model is unavailable", error),
     }
 }
 
-async fn create_coupon(
+async fn fetch_promotion_coupon_stocks(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
-    body: Bytes,
 ) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<CreateCouponRequest>(&body, "coupon") {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
-    };
-    let command = match build_create_coupon_command(state.clone(), &headers, subject, request) {
-        Ok(command) => command,
-        Err(error) => return command_build_error_response(error),
-    };
-
-    match state.store.create_coupon(command).await {
-        Ok(item) => {
-            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
+    match state
+        .store
+        .list_promotion_coupon_stocks(ListPromotionCouponStocksQuery { subject })
+        .await
+    {
+        Ok(items) => list_response(items.into_iter().map(promotion_coupon_stock_item).collect()),
+        Err(error) => {
+            marketing_system_response("promotion coupon stock read model is unavailable", error)
         }
-        Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => marketing_system_response("coupon command store is unavailable", error),
     }
 }
 
-async fn delete_coupon(
+async fn fetch_promotion_codes(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
-    Path(coupon_id): Path<String>,
 ) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let coupon_id = match normalize_path_id(&coupon_id, "coupon id") {
-        Ok(coupon_id) => coupon_id,
-        Err(message) => return bad_request(message),
-    };
-    let command = match build_delete_coupon_command(state.clone(), &headers, subject, coupon_id) {
-        Ok(command) => command,
-        Err(error) => return command_build_error_response(error),
-    };
-
-    match state.store.delete_coupon(command).await {
-        Ok(true) => Json(PlusApiResult::success(AdminMarketingDeleteResponse {
-            deleted: true,
-        }))
-        .into_response(),
-        Ok(false) => not_found_response("coupon was not found"),
-        Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => marketing_system_response("coupon command store is unavailable", error),
+    match state
+        .store
+        .list_promotion_codes(ListPromotionCodesQuery { subject })
+        .await
+    {
+        Ok(items) => list_response(items.into_iter().map(promotion_code_item).collect()),
+        Err(error) => marketing_system_response("promotion code read model is unavailable", error),
     }
 }
 
-async fn update_coupon(
+async fn fetch_promotion_code_redemptions(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
-    Path(coupon_id): Path<String>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    match state
+        .store
+        .list_promotion_code_redemptions(ListPromotionCodeRedemptionsQuery { subject })
+        .await
+    {
+        Ok(items) => list_response(
+            items
+                .into_iter()
+                .map(promotion_code_redemption_item)
+                .collect(),
+        ),
+        Err(error) => {
+            marketing_system_response("promotion code redemption read model is unavailable", error)
+        }
+    }
+}
+
+async fn create_promotion_offer(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
     body: Bytes,
 ) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let coupon_id = match normalize_path_id(&coupon_id, "coupon id") {
-        Ok(coupon_id) => coupon_id,
-        Err(message) => return bad_request(message),
-    };
-    let request = match parse_json_body::<CreateCouponRequest>(&body, "coupon") {
+    let request = match parse_json_body::<CreatePromotionOfferRequest>(&body, "promotion offer") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
     let command =
-        match build_update_coupon_command(state.clone(), &headers, subject, coupon_id, request) {
+        match build_create_promotion_offer_command(state.clone(), &headers, subject, request) {
             Ok(command) => command,
             Err(error) => return command_build_error_response(error),
         };
 
-    match state.store.update_coupon(command).await {
-        Ok(item) => {
-            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
-        }
-        Err(error) if error.is_not_found() => not_found_response("coupon was not found"),
+    match state.store.create_promotion_offer(command).await {
+        Ok(item) => Json(PlusApiResult::success(AdminMarketingItemEnvelope {
+            item: promotion_offer_item(item),
+        }))
+        .into_response(),
         Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => marketing_system_response("coupon command store is unavailable", error),
+        Err(error) => {
+            marketing_system_response("promotion offer command store is unavailable", error)
+        }
     }
 }
 
-async fn fetch_batches(State(state): State<AdminMarketingState>, headers: HeaderMap) -> Response {
+async fn delete_promotion_offer(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    Path(offer_id): Path<String>,
+) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    match state
-        .store
-        .list_batches(ListAdminCouponBatchesQuery { subject })
-        .await
-    {
-        Ok(items) => list_response(items),
-        Err(error) => marketing_system_response("coupon batch read model is unavailable", error),
+    let offer_id = match normalize_path_id(&offer_id, "promotion offer id") {
+        Ok(offer_id) => offer_id,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_delete_promotion_offer_command(state.clone(), &headers, subject, offer_id) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+
+    match state.store.delete_promotion_offer(command).await {
+        Ok(true) => Json(PlusApiResult::success(AdminMarketingDeleteResponse {
+            deleted: true,
+        }))
+        .into_response(),
+        Ok(false) => not_found_response("promotion offer was not found"),
+        Err(error) if error.is_not_found() => not_found_response("promotion offer was not found"),
+        Err(error) => {
+            marketing_system_response("promotion offer command store is unavailable", error)
+        }
     }
 }
 
-async fn generate_batch(
+async fn update_promotion_offer(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    Path(offer_id): Path<String>,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let offer_id = match normalize_path_id(&offer_id, "promotion offer id") {
+        Ok(offer_id) => offer_id,
+        Err(message) => return bad_request(message),
+    };
+    let request = match parse_json_body::<CreatePromotionOfferRequest>(&body, "promotion offer") {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_update_promotion_offer_command(
+        state.clone(),
+        &headers,
+        subject,
+        offer_id,
+        request,
+    ) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.store.update_promotion_offer(command).await {
+        Ok(item) => Json(PlusApiResult::success(AdminMarketingItemEnvelope {
+            item: promotion_offer_item(item),
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response("promotion offer was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            marketing_system_response("promotion offer command store is unavailable", error)
+        }
+    }
+}
+
+async fn generate_promotion_coupon_stock(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
     body: Bytes,
@@ -352,46 +483,40 @@ async fn generate_batch(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<GenerateBatchRequest>(&body, "coupon batch") {
+    let request = match parse_json_body::<GeneratePromotionCouponStockRequest>(
+        &body,
+        "promotion coupon stock",
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match build_generate_batch_command(state.clone(), &headers, subject, request) {
+    let command = match build_generate_promotion_coupon_stock_command(
+        state.clone(),
+        &headers,
+        subject,
+        request,
+    ) {
         Ok(command) => command,
         Err(error) => return command_build_error_response(error),
     };
 
-    match state.store.generate_batch(command).await {
-        Ok((batch, codes)) => Json(PlusApiResult::success(AdminCouponBatchGenerateResponse {
-            batch,
-            codes,
-        }))
+    match state.store.generate_promotion_coupon_stock(command).await {
+        Ok((item, codes)) => Json(PlusApiResult::success(
+            PromotionCouponStockGenerateResponse {
+                item: promotion_coupon_stock_item(item),
+                codes: codes.into_iter().map(promotion_code_item).collect(),
+            },
+        ))
         .into_response(),
-        Err(error) if error.is_not_found() => not_found_response("coupon was not found"),
+        Err(error) if error.is_not_found() => not_found_response("promotion offer was not found"),
         Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => marketing_system_response("coupon batch command store is unavailable", error),
+        Err(error) => {
+            marketing_system_response("promotion coupon stock command store is unavailable", error)
+        }
     }
 }
 
-async fn fetch_promo_codes(
-    State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    match state
-        .store
-        .list_promo_codes(ListAdminPromoCodesQuery { subject })
-        .await
-    {
-        Ok(items) => list_response(items),
-        Err(error) => marketing_system_response("promo code read model is unavailable", error),
-    }
-}
-
-async fn update_promo_code_status(
+async fn update_promotion_code_status(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
     Path(code_id): Path<String>,
@@ -401,52 +526,37 @@ async fn update_promo_code_status(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let promo_code_id = match normalize_path_id(&code_id, "promo code id") {
-        Ok(promo_code_id) => promo_code_id,
+    let code_id = match normalize_path_id(&code_id, "promotion code id") {
+        Ok(code_id) => code_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_json_body::<UpdatePromoCodeStatusRequest>(&body, "promo code status")
+    let request = match parse_json_body::<UpdatePromotionCodeStatusRequest>(&body, "promotion code")
     {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match build_update_promo_code_status_command(
+    let command = match build_update_promotion_code_status_command(
         state.clone(),
         &headers,
         subject,
-        promo_code_id,
+        code_id,
         request,
     ) {
         Ok(command) => command,
         Err(error) => return command_build_error_response(error),
     };
 
-    match state.store.update_promo_code_status(command).await {
+    match state.store.update_promotion_code_status(command).await {
         Ok(true) => Json(PlusApiResult::success(AdminMarketingUpdateResponse {
             updated: true,
         }))
         .into_response(),
-        Ok(false) => not_found_response("promo code was not found"),
+        Ok(false) => not_found_response("promotion code was not found"),
+        Err(error) if error.is_not_found() => not_found_response("promotion code was not found"),
         Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => marketing_system_response("promo code command store is unavailable", error),
-    }
-}
-
-async fn fetch_redemption_records(
-    State(state): State<AdminMarketingState>,
-    headers: HeaderMap,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    match state
-        .store
-        .list_redemption_records(ListAdminRedemptionRecordsQuery { subject })
-        .await
-    {
-        Ok(items) => list_response(items),
-        Err(error) => marketing_system_response("redemption read model is unavailable", error),
+        Err(error) => {
+            marketing_system_response("promotion code command store is unavailable", error)
+        }
     }
 }
 
@@ -735,6 +845,87 @@ where
     Json(PlusApiResult::success(AdminMarketingListResponse { items })).into_response()
 }
 
+fn promotion_offer_item(item: PromotionOfferItem) -> PromotionOfferListItem {
+    PromotionOfferListItem {
+        offer_no: format!("offer-{}", item.id),
+        offer_code: item.id.clone(),
+        offer_type: "coupon".to_owned(),
+        audience_scope: "all".to_owned(),
+        combinability: "exclusive".to_owned(),
+        id: item.id,
+        name: item.name,
+        status: item.status,
+    }
+}
+
+fn promotion_coupon_stock_item(item: PromotionCouponStockItem) -> PromotionCouponStockListItem {
+    PromotionCouponStockListItem {
+        stock_no: format!("stock-{}", item.id),
+        offer_id: item.offer_id.clone(),
+        code_mode: "preloaded".to_owned(),
+        issue_channel: "admin".to_owned(),
+        currency_code: "USD".to_owned(),
+        total_quantity: item.total_quantity,
+        available_quantity: item.total_quantity,
+        claimed_quantity: 0,
+        redeemed_quantity: 0,
+        activation_status: "active".to_owned(),
+        can_resend: true,
+        status: "active".to_owned(),
+        id: item.id,
+        name: item.name,
+        created_at: item.created_at,
+    }
+}
+
+fn promotion_code_item(item: PromotionCodeItem) -> PromotionCodeListItem {
+    PromotionCodeListItem {
+        code_no: format!("code-{}", item.id),
+        stock_id: item.stock_id,
+        promotion_code_last4: safe_suffix(&item.promotion_code, 4),
+        code_type: "single_use".to_owned(),
+        currency_code: "USD".to_owned(),
+        claimed_quantity: i64::from(item.used_by.is_some()),
+        activation_status: promotion_code_activation_status(&item.status),
+        can_resend: item.used_by.is_none(),
+        status: item.status,
+        owner_user_id: item.used_by,
+        id: item.id,
+    }
+}
+
+fn promotion_code_redemption_item(
+    item: PromotionCodeRedemptionItem,
+) -> PromotionCodeRedemptionListItem {
+    PromotionCodeRedemptionListItem {
+        redemption_no: format!("redemption-{}", item.id),
+        submitted_code_suffix: safe_suffix(&item.submitted_code, 4),
+        stock_id: String::new(),
+        owner_user_id: item.owner_user_id,
+        currency_code: "USD".to_owned(),
+        result_status: "succeeded".to_owned(),
+        failure_code: None,
+        redemption_channel: "admin".to_owned(),
+        occurred_at: item.occurred_at,
+        id: item.id,
+    }
+}
+
+fn promotion_code_activation_status(status: &str) -> String {
+    match status {
+        "voided" | "disabled" => "disabled",
+        "used" | "redeemed" => "redeemed",
+        _ => "active",
+    }
+    .to_owned()
+}
+
+fn safe_suffix(value: &str, max_chars: usize) -> String {
+    let mut chars = value.chars().rev().take(max_chars).collect::<Vec<_>>();
+    chars.reverse();
+    chars.into_iter().collect()
+}
+
 fn resolve_subject(headers: &HeaderMap) -> Result<AdminMarketingSubject, Response> {
     TrustedRequestSubject::from_headers(headers)
         .map(|subject| AdminMarketingSubject {
@@ -763,115 +954,123 @@ where
         .map_err(|error| format!("invalid {entity_name} request body: {error}"))
 }
 
-fn build_create_coupon_command(
+fn build_create_promotion_offer_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    request: CreateCouponRequest,
-) -> Result<CreateAdminCouponCommand, AdminMarketingCommandBuildError> {
-    let name = normalize_required_text(request.name.as_deref(), "coupon name", MAX_NAME_LEN)?;
-    let coupon_type = normalize_coupon_type(request.coupon_type.as_deref())?;
-    let value = normalize_coupon_value(request.value.as_ref(), &coupon_type)?;
-    let status = normalize_coupon_status(request.status.as_deref())?;
-    Ok(CreateAdminCouponCommand {
+    request: CreatePromotionOfferRequest,
+) -> Result<CreatePromotionOfferCommand, AdminMarketingCommandBuildError> {
+    let name = normalize_required_text(
+        request.name.as_deref(),
+        "promotion offer name",
+        MAX_NAME_LEN,
+    )?;
+    let discount_type = normalize_discount_type(request.discount_type.as_deref())?;
+    let value = normalize_discount_value(request.value.as_ref(), &discount_type)?;
+    let status = normalize_offer_status(request.status.as_deref())?;
+    Ok(CreatePromotionOfferCommand {
         subject,
-        coupon_uuid: generate_entity_uuid(&state)?,
+        offer_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
         name,
-        coupon_type,
+        discount_type,
         value: value.value,
         amount_cents: value.amount_cents,
         discount_value: value.discount_value,
         status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
-fn build_delete_coupon_command(
+fn build_delete_promotion_offer_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    coupon_id: String,
-) -> Result<DeleteAdminCouponCommand, AdminMarketingCommandBuildError> {
-    Ok(DeleteAdminCouponCommand {
+    offer_id: String,
+) -> Result<DeletePromotionOfferCommand, AdminMarketingCommandBuildError> {
+    Ok(DeletePromotionOfferCommand {
         subject,
-        coupon_id,
+        offer_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
-fn build_update_coupon_command(
+fn build_update_promotion_offer_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    coupon_id: String,
-    request: CreateCouponRequest,
-) -> Result<UpdateAdminCouponCommand, AdminMarketingCommandBuildError> {
-    let name = normalize_required_text(request.name.as_deref(), "coupon name", MAX_NAME_LEN)?;
-    let coupon_type = normalize_coupon_type(request.coupon_type.as_deref())?;
-    let value = normalize_coupon_value(request.value.as_ref(), &coupon_type)?;
-    let status = normalize_coupon_status(request.status.as_deref())?;
-    Ok(UpdateAdminCouponCommand {
+    offer_id: String,
+    request: CreatePromotionOfferRequest,
+) -> Result<UpdatePromotionOfferCommand, AdminMarketingCommandBuildError> {
+    let name = normalize_required_text(
+        request.name.as_deref(),
+        "promotion offer name",
+        MAX_NAME_LEN,
+    )?;
+    let discount_type = normalize_discount_type(request.discount_type.as_deref())?;
+    let value = normalize_discount_value(request.value.as_ref(), &discount_type)?;
+    let status = normalize_offer_status(request.status.as_deref())?;
+    Ok(UpdatePromotionOfferCommand {
         subject,
-        coupon_id,
+        offer_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
         name,
-        coupon_type,
+        discount_type,
         value: value.value,
         amount_cents: value.amount_cents,
         discount_value: value.discount_value,
         status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
-fn build_generate_batch_command(
+fn build_generate_promotion_coupon_stock_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    request: GenerateBatchRequest,
-) -> Result<GenerateAdminCouponBatchCommand, AdminMarketingCommandBuildError> {
-    let coupon_id = normalize_id_value(request.coupon_id.as_ref(), "couponId")?;
-    let name = normalize_required_text(request.name.as_deref(), "batch name", MAX_NAME_LEN)?;
-    let count = normalize_batch_count(request.count)?;
-    let prefix = normalize_code_prefix(request.prefix.as_deref())?;
-    Ok(GenerateAdminCouponBatchCommand {
+    request: GeneratePromotionCouponStockRequest,
+) -> Result<GeneratePromotionCouponStockCommand, AdminMarketingCommandBuildError> {
+    let offer_id = normalize_id_value(request.offer_id.as_ref(), "offer_id")?;
+    let name = normalize_required_text(request.name.as_deref(), "coupon stock name", MAX_NAME_LEN)?;
+    let total_quantity = normalize_stock_quantity(request.total_quantity)?;
+    let code_prefix = normalize_code_prefix(request.code_prefix.as_deref())?;
+    Ok(GeneratePromotionCouponStockCommand {
         subject,
-        batch_uuid: generate_entity_uuid(&state)?,
+        stock_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        coupon_id,
+        offer_id,
         name,
-        count,
-        prefix,
-        request_id: normalize_request_id(headers, &state)?,
+        total_quantity,
+        code_prefix,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
-fn build_update_promo_code_status_command(
+fn build_update_promotion_code_status_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    promo_code_id: String,
-    request: UpdatePromoCodeStatusRequest,
-) -> Result<UpdateAdminPromoCodeStatusCommand, AdminMarketingCommandBuildError> {
-    Ok(UpdateAdminPromoCodeStatusCommand {
+    code_id: String,
+    request: UpdatePromotionCodeStatusRequest,
+) -> Result<UpdatePromotionCodeStatusCommand, AdminMarketingCommandBuildError> {
+    Ok(UpdatePromotionCodeStatusCommand {
         subject,
-        promo_code_id,
-        status: normalize_promo_code_status(request.status.as_deref())?,
+        code_id,
+        status: normalize_promotion_code_status(request.status.as_deref())?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_recharge_package_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
     request: RechargePackageMutationRequest,
 ) -> Result<CreateAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
@@ -885,14 +1084,14 @@ fn build_create_recharge_package_command(
         rmb: mutation.rmb,
         bonus: mutation.bonus,
         status: mutation.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_recharge_package_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
     package_id: String,
     request: RechargePackageMutationRequest,
@@ -907,14 +1106,14 @@ fn build_update_recharge_package_command(
         rmb: mutation.rmb,
         bonus: mutation.bonus,
         status: mutation.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_recharge_package_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
     package_id: String,
 ) -> Result<DeleteAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
@@ -922,14 +1121,14 @@ fn build_delete_recharge_package_command(
         subject,
         package_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_exchange_rule_command(
     state: AdminMarketingState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminMarketingSubject,
     request: ExchangeRuleMutationRequest,
 ) -> Result<UpdateAdminExchangeRuleCommand, AdminMarketingCommandBuildError> {
@@ -940,7 +1139,7 @@ fn build_update_exchange_rule_command(
         source_asset_type: mutation.source_asset_type,
         target_asset_type: mutation.target_asset_type,
         rate: mutation.rate,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -964,7 +1163,7 @@ fn normalize_required_text(
     Ok(value.to_owned())
 }
 
-fn normalize_coupon_type(value: Option<&str>) -> Result<String, AdminMarketingCommandBuildError> {
+fn normalize_discount_type(value: Option<&str>) -> Result<String, AdminMarketingCommandBuildError> {
     match value
         .unwrap_or("amount")
         .trim()
@@ -974,12 +1173,12 @@ fn normalize_coupon_type(value: Option<&str>) -> Result<String, AdminMarketingCo
         "amount" | "fixed" | "cash" => Ok("amount".to_owned()),
         "discount" | "percent" | "percentage" => Ok("discount".to_owned()),
         _ => Err(AdminMarketingCommandBuildError::BadRequest(
-            "coupon type must be amount or discount".to_owned(),
+            "discount_type must be amount or discount".to_owned(),
         )),
     }
 }
 
-fn normalize_coupon_status(value: Option<&str>) -> Result<String, AdminMarketingCommandBuildError> {
+fn normalize_offer_status(value: Option<&str>) -> Result<String, AdminMarketingCommandBuildError> {
     match value
         .unwrap_or("active")
         .trim()
@@ -989,42 +1188,40 @@ fn normalize_coupon_status(value: Option<&str>) -> Result<String, AdminMarketing
         "active" | "enabled" | "normal" => Ok("active".to_owned()),
         "inactive" | "disabled" => Ok("inactive".to_owned()),
         _ => Err(AdminMarketingCommandBuildError::BadRequest(
-            "coupon status must be active or inactive".to_owned(),
+            "offer status must be active or inactive".to_owned(),
         )),
     }
 }
 
-fn normalize_coupon_value(
+fn normalize_discount_value(
     value: Option<&Value>,
-    coupon_type: &str,
-) -> Result<NormalizedCouponValue, AdminMarketingCommandBuildError> {
+    discount_type: &str,
+) -> Result<NormalizedDiscountValue, AdminMarketingCommandBuildError> {
     let raw = match value {
         Some(Value::String(value)) => value.trim().to_owned(),
         Some(Value::Number(value)) => value.to_string(),
         Some(_) => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
-                "coupon value must be a number or string".to_owned(),
+                "discount value must be a number or string".to_owned(),
             ));
         }
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
-                "coupon value is required".to_owned(),
+                "discount value is required".to_owned(),
             ));
         }
     };
-    if coupon_type == "discount" {
+    if discount_type == "discount" {
         let normalized = raw.trim().trim_end_matches('%').replace(',', "");
         let numeric = normalized.parse::<f64>().map_err(|_| {
-            AdminMarketingCommandBuildError::BadRequest(
-                "coupon discount value must be numeric".to_owned(),
-            )
+            AdminMarketingCommandBuildError::BadRequest("discount value must be numeric".to_owned())
         })?;
         if !numeric.is_finite() || numeric <= 0.0 || numeric > 100.0 {
             return Err(AdminMarketingCommandBuildError::BadRequest(
-                "coupon discount value must be greater than 0 and at most 100".to_owned(),
+                "discount value must be greater than 0 and at most 100".to_owned(),
             ));
         }
-        return Ok(NormalizedCouponValue {
+        return Ok(NormalizedDiscountValue {
             value: format!("{numeric:.2}%"),
             amount_cents: 0,
             discount_value: Some(format!("{numeric:.4}")),
@@ -1032,7 +1229,7 @@ fn normalize_coupon_value(
     }
 
     let amount_cents = decimal_money_to_cents(&raw)?;
-    Ok(NormalizedCouponValue {
+    Ok(NormalizedDiscountValue {
         value: cents_to_money_string(amount_cents),
         amount_cents,
         discount_value: None,
@@ -1122,7 +1319,7 @@ fn normalize_optional_recharge_package_status(
 }
 
 fn decimal_money_to_cents(value: &str) -> Result<i64, AdminMarketingCommandBuildError> {
-    decimal_money_to_cents_with_field(value, "coupon value")
+    decimal_money_to_cents_with_field(value, "discount value")
 }
 
 fn decimal_money_to_cents_with_field(
@@ -1192,26 +1389,26 @@ fn normalize_id_value(
     normalize_required_text(Some(&id), field_name, 128)
 }
 
-fn normalize_batch_count(value: Option<i64>) -> Result<i64, AdminMarketingCommandBuildError> {
-    let count = value.unwrap_or(0);
-    if !(1..=MAX_BATCH_COUNT).contains(&count) {
+fn normalize_stock_quantity(value: Option<i64>) -> Result<i64, AdminMarketingCommandBuildError> {
+    let total_quantity = value.unwrap_or(0);
+    if !(1..=MAX_COUPON_STOCK_QUANTITY).contains(&total_quantity) {
         return Err(AdminMarketingCommandBuildError::BadRequest(format!(
-            "count must be between 1 and {MAX_BATCH_COUNT}"
+            "total_quantity must be between 1 and {MAX_COUPON_STOCK_QUANTITY}"
         )));
     }
-    Ok(count)
+    Ok(total_quantity)
 }
 
 fn normalize_code_prefix(value: Option<&str>) -> Result<String, AdminMarketingCommandBuildError> {
     let prefix = value.unwrap_or("").trim().to_ascii_uppercase();
     if prefix.is_empty() {
         return Err(AdminMarketingCommandBuildError::BadRequest(
-            "prefix is required".to_owned(),
+            "code_prefix is required".to_owned(),
         ));
     }
     if prefix.len() > MAX_PREFIX_LEN {
         return Err(AdminMarketingCommandBuildError::BadRequest(format!(
-            "prefix must be at most {MAX_PREFIX_LEN} characters"
+            "code_prefix must be at most {MAX_PREFIX_LEN} characters"
         )));
     }
     if !prefix
@@ -1219,13 +1416,13 @@ fn normalize_code_prefix(value: Option<&str>) -> Result<String, AdminMarketingCo
         .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'_'))
     {
         return Err(AdminMarketingCommandBuildError::BadRequest(
-            "prefix may only contain letters, numbers, -, and _".to_owned(),
+            "code_prefix may only contain letters, numbers, -, and _".to_owned(),
         ));
     }
     Ok(prefix)
 }
 
-fn normalize_promo_code_status(
+fn normalize_promotion_code_status(
     value: Option<&str>,
 ) -> Result<String, AdminMarketingCommandBuildError> {
     match value.unwrap_or("").trim().to_ascii_lowercase().as_str() {
@@ -1412,9 +1609,9 @@ fn normalize_order_no(value: &str) -> Result<String, String> {
     if value.is_empty() {
         return Err("order no is required".to_owned());
     }
-    if value.chars().count() > MAX_REQUEST_ID_LEN {
+    if value.chars().count() > MAX_ORDER_NO_LEN {
         return Err(format!(
-            "order no must be at most {MAX_REQUEST_ID_LEN} characters"
+            "order no must be at most {MAX_ORDER_NO_LEN} characters"
         ));
     }
     if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
@@ -1432,29 +1629,13 @@ fn generate_entity_uuid(
         .map_err(AdminMarketingCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminMarketingState,
-) -> Result<String, AdminMarketingCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(AdminMarketingCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> AdminMarketingCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AdminMarketingCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AdminMarketingCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn bad_request(message: impl Into<String>) -> Response {

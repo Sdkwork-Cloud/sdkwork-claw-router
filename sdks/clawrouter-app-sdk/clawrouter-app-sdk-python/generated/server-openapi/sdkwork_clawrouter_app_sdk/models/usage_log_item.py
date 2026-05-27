@@ -11,7 +11,11 @@ class UsageLogItem:
     cache_read_price: str
     cache_read_tokens: int
     cost: str
+    error_code: str
+    error_message: str
+    error_type: str
     group: str
+    http_status: int
     id: str
     input_tokens: int
     ip: str
@@ -20,8 +24,11 @@ class UsageLogItem:
     multiplier: str
     output_tokens: int
     path: str
+    provider_native_model: str
     reasoning_effort: str
     request_id: str
+    requested_model_catalog_key: str
+    status: str
     time: str
     token_name: str
     total_time: str

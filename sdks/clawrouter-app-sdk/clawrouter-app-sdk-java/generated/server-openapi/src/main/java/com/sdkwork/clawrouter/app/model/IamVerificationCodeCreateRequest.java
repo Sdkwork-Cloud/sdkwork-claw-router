@@ -9,7 +9,7 @@ public class IamVerificationCodeCreateRequest {
     public String getScene() {
         return this.scene;
     }
-    
+
     public void setScene(String scene) {
         this.scene = scene;
     }
@@ -17,7 +17,7 @@ public class IamVerificationCodeCreateRequest {
     public String getTarget() {
         return this.target;
     }
-    
+
     public void setTarget(String target) {
         this.target = target;
     }
@@ -25,7 +25,7 @@ public class IamVerificationCodeCreateRequest {
     public String getVerifyType() {
         return this.verifyType;
     }
-    
+
     public void setVerifyType(String verifyType) {
         this.verifyType = verifyType;
     }

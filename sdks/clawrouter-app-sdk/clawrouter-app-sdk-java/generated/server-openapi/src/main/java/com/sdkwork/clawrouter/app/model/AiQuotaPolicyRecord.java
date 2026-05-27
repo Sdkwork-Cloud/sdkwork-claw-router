@@ -42,7 +42,7 @@ public class AiQuotaPolicyRecord {
     public String getBlockDurationSeconds() {
         return this.blockDurationSeconds;
     }
-    
+
     public void setBlockDurationSeconds(String blockDurationSeconds) {
         this.blockDurationSeconds = blockDurationSeconds;
     }
@@ -50,7 +50,7 @@ public class AiQuotaPolicyRecord {
     public String getBurstLimit() {
         return this.burstLimit;
     }
-    
+
     public void setBurstLimit(String burstLimit) {
         this.burstLimit = burstLimit;
     }
@@ -58,7 +58,7 @@ public class AiQuotaPolicyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -66,7 +66,7 @@ public class AiQuotaPolicyRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -74,7 +74,7 @@ public class AiQuotaPolicyRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -82,7 +82,7 @@ public class AiQuotaPolicyRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -90,7 +90,7 @@ public class AiQuotaPolicyRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -98,7 +98,7 @@ public class AiQuotaPolicyRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -106,7 +106,7 @@ public class AiQuotaPolicyRecord {
     public String getExhaustedAt() {
         return this.exhaustedAt;
     }
-    
+
     public void setExhaustedAt(String exhaustedAt) {
         this.exhaustedAt = exhaustedAt;
     }
@@ -114,7 +114,7 @@ public class AiQuotaPolicyRecord {
     public String getGroupId() {
         return this.groupId;
     }
-    
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -122,7 +122,7 @@ public class AiQuotaPolicyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -130,7 +130,7 @@ public class AiQuotaPolicyRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -138,7 +138,7 @@ public class AiQuotaPolicyRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -146,7 +146,7 @@ public class AiQuotaPolicyRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -154,7 +154,7 @@ public class AiQuotaPolicyRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -162,7 +162,7 @@ public class AiQuotaPolicyRecord {
     public String getPolicyCode() {
         return this.policyCode;
     }
-    
+
     public void setPolicyCode(String policyCode) {
         this.policyCode = policyCode;
     }
@@ -170,7 +170,7 @@ public class AiQuotaPolicyRecord {
     public String getQuotaLimit() {
         return this.quotaLimit;
     }
-    
+
     public void setQuotaLimit(String quotaLimit) {
         this.quotaLimit = quotaLimit;
     }
@@ -178,7 +178,7 @@ public class AiQuotaPolicyRecord {
     public String getQuotaPeriod() {
         return this.quotaPeriod;
     }
-    
+
     public void setQuotaPeriod(String quotaPeriod) {
         this.quotaPeriod = quotaPeriod;
     }
@@ -186,7 +186,7 @@ public class AiQuotaPolicyRecord {
     public String getQuotaUnit() {
         return this.quotaUnit;
     }
-    
+
     public void setQuotaUnit(String quotaUnit) {
         this.quotaUnit = quotaUnit;
     }
@@ -194,7 +194,7 @@ public class AiQuotaPolicyRecord {
     public String getRequestsPerDay() {
         return this.requestsPerDay;
     }
-    
+
     public void setRequestsPerDay(String requestsPerDay) {
         this.requestsPerDay = requestsPerDay;
     }
@@ -202,7 +202,7 @@ public class AiQuotaPolicyRecord {
     public String getRequestsPerMinute() {
         return this.requestsPerMinute;
     }
-    
+
     public void setRequestsPerMinute(String requestsPerMinute) {
         this.requestsPerMinute = requestsPerMinute;
     }
@@ -210,7 +210,7 @@ public class AiQuotaPolicyRecord {
     public String getRequestsPerSecond() {
         return this.requestsPerSecond;
     }
-    
+
     public void setRequestsPerSecond(String requestsPerSecond) {
         this.requestsPerSecond = requestsPerSecond;
     }
@@ -218,7 +218,7 @@ public class AiQuotaPolicyRecord {
     public String getResetMode() {
         return this.resetMode;
     }
-    
+
     public void setResetMode(String resetMode) {
         this.resetMode = resetMode;
     }
@@ -226,7 +226,7 @@ public class AiQuotaPolicyRecord {
     public String getScopeId() {
         return this.scopeId;
     }
-    
+
     public void setScopeId(String scopeId) {
         this.scopeId = scopeId;
     }
@@ -234,7 +234,7 @@ public class AiQuotaPolicyRecord {
     public String getScopeType() {
         return this.scopeType;
     }
-    
+
     public void setScopeType(String scopeType) {
         this.scopeType = scopeType;
     }
@@ -242,7 +242,7 @@ public class AiQuotaPolicyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -250,7 +250,7 @@ public class AiQuotaPolicyRecord {
     public String getSubjectId() {
         return this.subjectId;
     }
-    
+
     public void setSubjectId(String subjectId) {
         this.subjectId = subjectId;
     }
@@ -258,7 +258,7 @@ public class AiQuotaPolicyRecord {
     public String getSubjectRefHash() {
         return this.subjectRefHash;
     }
-    
+
     public void setSubjectRefHash(String subjectRefHash) {
         this.subjectRefHash = subjectRefHash;
     }
@@ -266,7 +266,7 @@ public class AiQuotaPolicyRecord {
     public String getSubjectRefMasked() {
         return this.subjectRefMasked;
     }
-    
+
     public void setSubjectRefMasked(String subjectRefMasked) {
         this.subjectRefMasked = subjectRefMasked;
     }
@@ -274,7 +274,7 @@ public class AiQuotaPolicyRecord {
     public String getSubjectType() {
         return this.subjectType;
     }
-    
+
     public void setSubjectType(String subjectType) {
         this.subjectType = subjectType;
     }
@@ -282,7 +282,7 @@ public class AiQuotaPolicyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -290,7 +290,7 @@ public class AiQuotaPolicyRecord {
     public String getTokensPerMinute() {
         return this.tokensPerMinute;
     }
-    
+
     public void setTokensPerMinute(String tokensPerMinute) {
         this.tokensPerMinute = tokensPerMinute;
     }
@@ -298,7 +298,7 @@ public class AiQuotaPolicyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -306,7 +306,7 @@ public class AiQuotaPolicyRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -314,7 +314,7 @@ public class AiQuotaPolicyRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

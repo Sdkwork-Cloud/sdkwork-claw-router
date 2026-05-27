@@ -131,11 +131,11 @@ SELECT
     c.retry_policy AS retry_policy_json
 FROM integration_channel_model m
 JOIN integration_channel c ON c.id = m.channel_id
-JOIN integration_provider p ON p.provider_code = c.provider_code
+LEFT JOIN integration_provider p ON p.provider_code = c.provider_code
 JOIN integration_provider_account a ON a.id = c.account_id
 WHERE m.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND p.deleted_at IS NULL
+  AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND a.deleted_at IS NULL
   AND m.status = 1
   AND c.status = 1
@@ -146,7 +146,7 @@ WHERE m.deleted_at IS NULL
           '+' || CAST(? AS TEXT) || ' seconds'
       ) <= CURRENT_TIMESTAMP
   )
-  AND p.status = 1
+  AND (p.id IS NULL OR p.status = 1)
   AND a.status = 1
   AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
   AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
@@ -165,12 +165,40 @@ SELECT
     CAST(a.auth_type AS TEXT) AS auth_type,
     CAST(a.auth_config AS TEXT) AS auth_config_json,
     c.timeout_ms,
-    c.retry_policy AS retry_policy_json
+    c.retry_policy AS retry_policy_json,
+    COALESCE((
+        SELECT json_group_array(
+            json_object(
+                'groupId', binding.group_id,
+                'priority', binding.priority,
+                'weight', binding.weight,
+                'modelScope', json(binding.model_scope),
+                'capabilities', json(binding.capabilities)
+            )
+        )
+        FROM (
+            SELECT
+                b.group_id AS group_id,
+                COALESCE(b.priority, 100) AS priority,
+                COALESCE(b.weight, 100) AS weight,
+                COALESCE(b.model_scope, '[]') AS model_scope,
+                COALESCE(b.capabilities, '[]') AS capabilities
+            FROM iam_api_key_group_channel b
+            WHERE b.deleted_at IS NULL
+              AND b.status = 1
+              AND b.tenant_id = c.tenant_id
+              AND b.organization_id = c.organization_id
+              AND b.channel_id = c.id
+              AND (b.effective_from IS NULL OR datetime(b.effective_from) <= CURRENT_TIMESTAMP)
+              AND (b.effective_to IS NULL OR datetime(b.effective_to) > CURRENT_TIMESTAMP)
+            ORDER BY COALESCE(b.priority, 100) ASC, COALESCE(b.weight, 100) DESC, b.group_id ASC, b.id ASC
+        ) binding
+    ), '[]') AS group_bindings_json
 FROM integration_channel c
-JOIN integration_provider p ON p.provider_code = c.provider_code
+LEFT JOIN integration_provider p ON p.provider_code = c.provider_code
 JOIN integration_provider_account a ON a.id = c.account_id
 WHERE c.deleted_at IS NULL
-  AND p.deleted_at IS NULL
+  AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND a.deleted_at IS NULL
   AND c.status = 1
   AND (
@@ -180,7 +208,7 @@ WHERE c.deleted_at IS NULL
           '+' || CAST(? AS TEXT) || ' seconds'
       ) <= CURRENT_TIMESTAMP
   )
-  AND p.status = 1
+  AND (p.id IS NULL OR p.status = 1)
   AND a.status = 1
   AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
   AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
@@ -260,7 +288,7 @@ SELECT
     COALESCE(organization_id, 0) AS organization_id,
     COALESCE(NULLIF(name, ''), code) AS name,
     code,
-    pricing_plan_code,
+    COALESCE(NULLIF(TRIM(pricing_plan_code), ''), 'standard') AS pricing_plan_code,
     CAST(rate_multiplier AS TEXT) AS rate_multiplier,
     CAST(official_price_multiplier AS TEXT) AS official_price_multiplier
 FROM iam_gateway_api_key_group
@@ -285,7 +313,8 @@ SELECT
     quota_policy_id,
     CAST(created_at AS TEXT) AS created_at,
     CAST(expire_at AS TEXT) AS expire_at,
-    status AS status_code
+    status AS status_code,
+    COALESCE(json_extract(COALESCE(metadata, '{}'), '$.runtime.defaultForRuntime'), false) AS default_for_runtime
 FROM iam_gateway_api_key
 WHERE deleted_at IS NULL
   AND status = 1

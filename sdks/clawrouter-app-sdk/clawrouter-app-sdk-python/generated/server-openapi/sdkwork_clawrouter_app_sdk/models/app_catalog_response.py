@@ -9,4 +9,8 @@ if TYPE_CHECKING:
 @dataclass
 class AppCatalogResponse:
     """App catalog response schema exposed by Claw Router."""
+    has_next_page: bool
     items: List[AppCatalogItem]
+    page: int
+    page_size: int
+    total: int

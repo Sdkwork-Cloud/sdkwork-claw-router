@@ -17,7 +17,7 @@ public class IamAppContext {
     public String getAppId() {
         return this.appId;
     }
-    
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -25,7 +25,7 @@ public class IamAppContext {
     public String getAuthLevel() {
         return this.authLevel;
     }
-    
+
     public void setAuthLevel(String authLevel) {
         this.authLevel = authLevel;
     }
@@ -33,7 +33,7 @@ public class IamAppContext {
     public List<String> getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(List<String> dataScope) {
         this.dataScope = dataScope;
     }
@@ -41,7 +41,7 @@ public class IamAppContext {
     public String getDeploymentMode() {
         return this.deploymentMode;
     }
-    
+
     public void setDeploymentMode(String deploymentMode) {
         this.deploymentMode = deploymentMode;
     }
@@ -49,7 +49,7 @@ public class IamAppContext {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -57,7 +57,7 @@ public class IamAppContext {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -65,7 +65,7 @@ public class IamAppContext {
     public List<String> getPermissionScope() {
         return this.permissionScope;
     }
-    
+
     public void setPermissionScope(List<String> permissionScope) {
         this.permissionScope = permissionScope;
     }
@@ -73,7 +73,7 @@ public class IamAppContext {
     public String getSessionId() {
         return this.sessionId;
     }
-    
+
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
     }
@@ -81,7 +81,7 @@ public class IamAppContext {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -89,7 +89,7 @@ public class IamAppContext {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

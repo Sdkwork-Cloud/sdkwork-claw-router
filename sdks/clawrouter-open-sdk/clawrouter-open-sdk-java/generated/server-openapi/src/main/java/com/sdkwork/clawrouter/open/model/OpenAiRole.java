@@ -13,7 +13,7 @@ public class OpenAiRole {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -21,7 +21,7 @@ public class OpenAiRole {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -29,7 +29,7 @@ public class OpenAiRole {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -37,7 +37,7 @@ public class OpenAiRole {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -45,7 +45,7 @@ public class OpenAiRole {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -53,7 +53,7 @@ public class OpenAiRole {
     public List<String> getPermissions() {
         return this.permissions;
     }
-    
+
     public void setPermissions(List<String> permissions) {
         this.permissions = permissions;
     }

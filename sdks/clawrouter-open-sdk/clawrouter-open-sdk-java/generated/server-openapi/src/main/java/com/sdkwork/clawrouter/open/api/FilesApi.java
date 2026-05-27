@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class FilesApi {
     private final HttpClient client;
-    
+
     public FilesApi(HttpClient client) {
         this.client = client;
     }

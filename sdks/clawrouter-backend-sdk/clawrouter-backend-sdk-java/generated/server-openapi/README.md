@@ -50,7 +50,7 @@ Choose exactly one mode for the same client instance.
 Types.SdkConfig config = new Types.SdkConfig("http://localhost:18081");
 SdkworkBackendClient client = new SdkworkBackendClient(config);
 client.setApiKey("your-api-key");
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -62,7 +62,7 @@ client.setAuthToken("your-auth-token");
 client.setAccessToken("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -86,9 +86,14 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getIntegration()` - integration API
+- `client.getMcp()` - mcp API
+- `client.getMessaging()` - messaging API
 - `client.getOpenPlatform()` - open_platform API
 - `client.getPlatform()` - platform API
 - `client.getSystem()` - system API
+- `client.getPrompts()` - prompts API
+- `client.getServiceProviders()` - service_providers API
+- `client.getStorage()` - storage API
 
 ## Usage Examples
 
@@ -155,6 +160,37 @@ ChannelsListResult result = client.getIntegration().channelsList();
 System.out.println(result);
 ```
 
+### mcp
+
+```java
+// List MCP servers
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+params.put("q", "q");
+params.put("transport", "transport");
+params.put("visibility", "visibility");
+params.put("status", "status");
+params.put("category_id", "1");
+ServersListResult result = client.getMcp().serversList(params);
+System.out.println(result);
+```
+
+### messaging
+
+```java
+// Messaging provider accounts list
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+params.put("q", "q");
+params.put("status", "status");
+params.put("channel", "sms");
+params.put("provider_code", "ok");
+ProviderAccountsListResult result = client.getMessaging().providerAccountsList(params);
+System.out.println(result);
+```
+
 ### open_platform
 
 ```java
@@ -178,6 +214,46 @@ System.out.println(result);
 ```java
 // Retrieve IAM auth runtime settings
 AuthSettingsRetrieveResult result = client.getSystem().authSettingsRetrieve();
+System.out.println(result);
+```
+
+### prompts
+
+```java
+// List admin prompts
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+params.put("q", "q");
+params.put("prompt_type", "prompt-type");
+params.put("visibility", "visibility");
+params.put("status", "status");
+params.put("category_id", "1");
+DefinitionsListResult result = client.getPrompts().definitionsList(params);
+System.out.println(result);
+```
+
+### service_providers
+
+```java
+// Service Provider Adjustments List
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+params.put("status", "status");
+params.put("provider_id", "1");
+params.put("seller_provider_id", "1");
+params.put("buyer_provider_id", "1");
+params.put("edge_id", "1");
+AdjustmentsListResult result = client.getServiceProviders().adjustmentsList(params);
+System.out.println(result);
+```
+
+### storage
+
+```java
+// List storage providers
+OssProvidersListResult result = client.getStorage().ossProvidersList();
 System.out.println(result);
 ```
 

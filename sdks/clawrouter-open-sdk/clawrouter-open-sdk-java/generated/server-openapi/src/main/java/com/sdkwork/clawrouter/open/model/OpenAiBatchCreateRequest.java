@@ -11,7 +11,7 @@ public class OpenAiBatchCreateRequest {
     public String getCompletionWindow() {
         return this.completionWindow;
     }
-    
+
     public void setCompletionWindow(String completionWindow) {
         this.completionWindow = completionWindow;
     }
@@ -19,7 +19,7 @@ public class OpenAiBatchCreateRequest {
     public String getEndpoint() {
         return this.endpoint;
     }
-    
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -27,7 +27,7 @@ public class OpenAiBatchCreateRequest {
     public String getInputFileId() {
         return this.inputFileId;
     }
-    
+
     public void setInputFileId(String inputFileId) {
         this.inputFileId = inputFileId;
     }
@@ -35,7 +35,7 @@ public class OpenAiBatchCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }

@@ -68,9 +68,6 @@ export interface SdkworkIamService {
     registrations: {
       create(body: IamCreateRegistrationInput): Promise<IamSession>;
     };
-    verificationPolicy: {
-      retrieve(): Promise<unknown>;
-    };
     sessions: {
       create(body: IamCreateSessionInput): Promise<IamSession>;
       current: {
@@ -83,6 +80,30 @@ export interface SdkworkIamService {
     verificationCodes: {
       create(body: Record<string, unknown>): Promise<unknown>;
       verify(body: Record<string, unknown>): Promise<unknown>;
+    };
+  };
+  openPlatform: {
+    qrAuth: {
+      sessions: {
+        create(body: Record<string, unknown>): Promise<unknown>;
+        retrieve(sessionKey: string): Promise<unknown>;
+        scans: {
+          create(sessionKey: string, body?: Record<string, unknown>): Promise<unknown>;
+        };
+        passwords: {
+          create(sessionKey: string, body: Record<string, unknown>): Promise<unknown>;
+        };
+      };
+    };
+  };
+  system: {
+    iam: {
+      runtime: {
+        retrieve(params?: Record<string, unknown>): Promise<unknown>;
+      };
+      verificationPolicy: {
+        retrieve(): Promise<unknown>;
+      };
     };
   };
   iam: {
@@ -201,6 +222,8 @@ interface RemoteUser {
 
 export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): SdkworkIamService {
   const appSessions = input.appClient.auth?.sessions;
+  const appSystem = input.appClient.system;
+  const appOpenPlatform = input.appClient.openPlatform;
   const backendIam = input.backendClient?.iam;
   const appIam = input.appClient.iam;
 
@@ -234,9 +257,6 @@ export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): Sd
           input,
         ),
       },
-      verificationPolicy: {
-        retrieve: () => callRaw(input.appClient.auth?.verificationPolicy, "retrieve", "appClient.auth.verificationPolicy.retrieve"),
-      },
       sessions: {
         create: async (body) => handleSession(await callResourceMethod(appSessions, "create", "appClient.auth.sessions.create", body), input),
         current: {
@@ -253,9 +273,33 @@ export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): Sd
         create: (body) => callRaw(input.appClient.auth?.verificationCodes, "create", "appClient.auth.verificationCodes.create", body),
         verify: (body) => callRaw(input.appClient.auth?.verificationCodes, "verify", "appClient.auth.verificationCodes.verify", body),
       },
+    },
+    openPlatform: {
+      qrAuth: {
+        sessions: {
+          create: (body) => callRaw(appOpenPlatform?.qrAuth?.sessions, "create", "appClient.openPlatform.qrAuth.sessions.create", body),
+          retrieve: (sessionKey) => callRaw(appOpenPlatform?.qrAuth?.sessions, "retrieve", "appClient.openPlatform.qrAuth.sessions.retrieve", sessionKey),
+          scans: {
+            create: (sessionKey, body) => callRaw(appOpenPlatform?.qrAuth?.sessions?.scans, "create", "appClient.openPlatform.qrAuth.sessions.scans.create", sessionKey, body),
+          },
+          passwords: {
+            create: (sessionKey, body) => callRaw(appOpenPlatform?.qrAuth?.sessions?.passwords, "create", "appClient.openPlatform.qrAuth.sessions.passwords.create", sessionKey, body),
+          },
+        },
       },
+    },
+    system: {
       iam: {
-        apiKeys: {
+        runtime: {
+          retrieve: (params) => callRaw(appSystem?.iam?.runtime, "retrieve", "appClient.system.iam.runtime.retrieve", params),
+        },
+        verificationPolicy: {
+          retrieve: () => callRaw(appSystem?.iam?.verificationPolicy, "retrieve", "appClient.system.iam.verificationPolicy.retrieve"),
+        },
+      },
+    },
+    iam: {
+      apiKeys: {
         list: (params) => callBackendIam(backendIam, (iam) => iam.apiKeys, "list", "iam.apiKeys.list", params),
         revoke: (apiKeyId) => callBackendIam(backendIam, (iam) => iam.apiKeys, "revoke", "iam.apiKeys.revoke", apiKeyId),
       },

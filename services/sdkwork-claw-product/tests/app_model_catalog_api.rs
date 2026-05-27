@@ -5,6 +5,7 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    ProviderAccountPoolRoute,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use tower::ServiceExt;
@@ -109,6 +110,16 @@ fn catalog() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.000000").unwrap(),
         DecimalValue::parse("1.100000").unwrap(),
     ));
+    catalog.add_api_key_group(
+        ApiKeyGroup::new(
+            11,
+            "premium-lab",
+            "standard",
+            DecimalValue::parse("1.000000").unwrap(),
+            DecimalValue::parse("1.100000").unwrap(),
+        )
+        .with_name("Premium Lab"),
+    );
     catalog.add_api_key(GatewayApiKey::new(
         100,
         10,
@@ -512,12 +523,28 @@ async fn app_model_catalog_route_keeps_unpriced_models_explicitly_unavailable() 
 
 #[tokio::test]
 async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side() {
-    let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog()));
+    let mut catalog = catalog();
+    catalog.add_api_key_group(
+        ApiKeyGroup::new(
+            12,
+            "empty-admin-group",
+            "standard",
+            DecimalValue::parse("1.000000").unwrap(),
+            DecimalValue::parse("1.100000").unwrap(),
+        )
+        .with_name("Empty Admin Group"),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3001)
+            .with_scoped_group_binding(10, 10, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"])
+            .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
+    );
+    let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog));
     let response = router
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/ai/models?vendor_codes=openai,anthropic&modalities=text&capabilities=tools&categories=Recommended,Proprietary&groups=enterprise&q=gpt&limit=10")
+                .uri("/app/v3/api/ai/models?vendor_codes=openai,anthropic&modalities=text&capabilities=tools&categories=Recommended,Proprietary&groups=premium-lab&q=gpt&limit=10")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -534,10 +561,21 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
     assert_eq!(1, items.len());
     let item = &items[0];
     assert_eq!("openai/global/gpt-4o-mini", item["catalogKey"]);
-    assert_eq!(serde_json::json!(["default", "enterprise"]), item["groups"]);
+    assert_eq!(
+        serde_json::json!(["premium-lab", "standard-group"]),
+        item["groups"]
+    );
     assert_eq!(
         serde_json::json!(["Recommended", "Proprietary"]),
         item["categories"]
+    );
+    assert_eq!(
+        serde_json::json!([
+            { "key": "premium-lab", "label": "Premium Lab", "modelCount": 1 },
+            { "key": "standard-group", "label": "standard-group", "modelCount": 1 },
+            { "key": "empty-admin-group", "label": "Empty Admin Group", "modelCount": 0 }
+        ]),
+        payload["data"]["groups"]
     );
 }
 

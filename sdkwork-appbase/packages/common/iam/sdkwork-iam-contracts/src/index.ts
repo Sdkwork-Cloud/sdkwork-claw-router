@@ -41,7 +41,7 @@ export interface IamOperationContract {
   path: string;
   queryParameters?: readonly string[];
   security: "dualToken" | "public" | "refreshToken";
-  tag: "auth" | "iam";
+  tag: "auth" | "iam" | "system";
 }
 
 export interface IamDomainModelContract {
@@ -58,7 +58,7 @@ export interface IamCapabilityContract {
   models: readonly IamDomainModelName[];
   name: IamCapabilityName;
   operations: readonly string[];
-  sdkNamespaces: readonly ("auth" | "iam")[];
+  sdkNamespaces: readonly ("auth" | "iam" | "system")[];
 }
 
 export const SDKWORK_IAM_STANDARD = {
@@ -69,11 +69,11 @@ export const SDKWORK_IAM_STANDARD = {
   },
   databasePrefix: "iam",
   domain: "iam",
-  sdkNamespaces: ["auth", "iam"],
+  sdkNamespaces: ["auth", "iam", "system"],
 } as const;
 
 export const SDKWORK_IAM_HEADERS = {
-  accessToken: "Sdkwork-Access-Token",
+  accessToken: "Access-Token",
   authToken: {
     header: "Authorization",
     scheme: "Bearer",
@@ -315,9 +315,6 @@ export const SDKWORK_IAM_API_ROUTES = {
     registrations: {
       create: operation("POST", `${app}/auth/registrations`, "auth", "registrations.create", "public"),
     },
-    verificationPolicy: {
-      retrieve: operation("GET", `${app}/auth/verification_policy`, "auth", "verificationPolicy.retrieve", "public"),
-    },
     sessions: {
       create: operation("POST", `${app}/auth/sessions`, "auth", "sessions.create", "public"),
       current: {
@@ -330,6 +327,16 @@ export const SDKWORK_IAM_API_ROUTES = {
     verificationCodes: {
       create: operation("POST", `${app}/auth/verification_codes`, "auth", "verificationCodes.create", "public"),
       verify: operation("POST", `${app}/auth/verification_codes/verify`, "auth", "verificationCodes.verify", "public"),
+    },
+  },
+  system: {
+    iam: {
+      runtime: {
+        retrieve: operation("GET", `${app}/system/iam/runtime`, "system", "iam.runtime.retrieve", "public"),
+      },
+      verificationPolicy: {
+        retrieve: operation("GET", `${app}/system/iam/verification_policy`, "system", "iam.verificationPolicy.retrieve", "public"),
+      },
     },
   },
   iam: {
@@ -460,13 +467,14 @@ export const SDKWORK_IAM_CAPABILITIES = [
   ),
   capability(
     "accountIdentity",
-    ["auth", "iam"],
+    ["auth", "iam", "system"],
     ["user", "userIdentity", "credential"],
     [
+      "iam.runtime.retrieve",
+      "iam.verificationPolicy.retrieve",
       "passwordResetRequests.create",
       "passwordResets.create",
       "registrations.create",
-      "verificationPolicy.retrieve",
       "verificationCodes.create",
       "verificationCodes.verify",
       "users.current.retrieve",
@@ -591,7 +599,7 @@ function model(
 
 function capability(
   name: IamCapabilityName,
-  sdkNamespaces: readonly ("auth" | "iam")[],
+  sdkNamespaces: readonly ("auth" | "iam" | "system")[],
   models: readonly IamDomainModelName[],
   operations: readonly string[],
 ): IamCapabilityContract {

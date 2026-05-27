@@ -29,7 +29,7 @@ public class StudioCatalogActionRecord {
     public String getActionType() {
         return this.actionType;
     }
-    
+
     public void setActionType(String actionType) {
         this.actionType = actionType;
     }
@@ -37,7 +37,7 @@ public class StudioCatalogActionRecord {
     public String getClientIpHash() {
         return this.clientIpHash;
     }
-    
+
     public void setClientIpHash(String clientIpHash) {
         this.clientIpHash = clientIpHash;
     }
@@ -45,7 +45,7 @@ public class StudioCatalogActionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -53,7 +53,7 @@ public class StudioCatalogActionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -61,7 +61,7 @@ public class StudioCatalogActionRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -69,7 +69,7 @@ public class StudioCatalogActionRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -77,7 +77,7 @@ public class StudioCatalogActionRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -85,7 +85,7 @@ public class StudioCatalogActionRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -93,7 +93,7 @@ public class StudioCatalogActionRecord {
     public String getRatingScore() {
         return this.ratingScore;
     }
-    
+
     public void setRatingScore(String ratingScore) {
         this.ratingScore = ratingScore;
     }
@@ -101,7 +101,7 @@ public class StudioCatalogActionRecord {
     public String getReleaseId() {
         return this.releaseId;
     }
-    
+
     public void setReleaseId(String releaseId) {
         this.releaseId = releaseId;
     }
@@ -109,7 +109,7 @@ public class StudioCatalogActionRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -117,7 +117,7 @@ public class StudioCatalogActionRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -125,7 +125,7 @@ public class StudioCatalogActionRecord {
     public String getReviewBody() {
         return this.reviewBody;
     }
-    
+
     public void setReviewBody(String reviewBody) {
         this.reviewBody = reviewBody;
     }
@@ -133,7 +133,7 @@ public class StudioCatalogActionRecord {
     public String getReviewTitle() {
         return this.reviewTitle;
     }
-    
+
     public void setReviewTitle(String reviewTitle) {
         this.reviewTitle = reviewTitle;
     }
@@ -141,7 +141,7 @@ public class StudioCatalogActionRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -149,7 +149,7 @@ public class StudioCatalogActionRecord {
     public String getTargetId() {
         return this.targetId;
     }
-    
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -157,7 +157,7 @@ public class StudioCatalogActionRecord {
     public String getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(String targetType) {
         this.targetType = targetType;
     }
@@ -165,7 +165,7 @@ public class StudioCatalogActionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -173,7 +173,7 @@ public class StudioCatalogActionRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -181,7 +181,7 @@ public class StudioCatalogActionRecord {
     public String getUserAgentHash() {
         return this.userAgentHash;
     }
-    
+
     public void setUserAgentHash(String userAgentHash) {
         this.userAgentHash = userAgentHash;
     }
@@ -189,7 +189,7 @@ public class StudioCatalogActionRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -197,7 +197,7 @@ public class StudioCatalogActionRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

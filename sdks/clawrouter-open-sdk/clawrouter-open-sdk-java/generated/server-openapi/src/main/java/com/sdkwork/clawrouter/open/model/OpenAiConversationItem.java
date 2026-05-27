@@ -16,7 +16,7 @@ public class OpenAiConversationItem {
     public List<OpenAiConversationContentPart> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<OpenAiConversationContentPart> content) {
         this.content = content;
     }
@@ -24,7 +24,7 @@ public class OpenAiConversationItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -32,7 +32,7 @@ public class OpenAiConversationItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -40,7 +40,7 @@ public class OpenAiConversationItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -48,7 +48,7 @@ public class OpenAiConversationItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -56,7 +56,7 @@ public class OpenAiConversationItem {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -64,7 +64,7 @@ public class OpenAiConversationItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -72,7 +72,7 @@ public class OpenAiConversationItem {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

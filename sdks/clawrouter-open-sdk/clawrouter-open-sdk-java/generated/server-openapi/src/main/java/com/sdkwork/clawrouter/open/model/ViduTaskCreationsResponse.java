@@ -12,7 +12,7 @@ public class ViduTaskCreationsResponse {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -20,7 +20,7 @@ public class ViduTaskCreationsResponse {
     public List<ViduCreation> getCreations() {
         return this.creations;
     }
-    
+
     public void setCreations(List<ViduCreation> creations) {
         this.creations = creations;
     }
@@ -28,7 +28,7 @@ public class ViduTaskCreationsResponse {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -36,7 +36,7 @@ public class ViduTaskCreationsResponse {
     public String getState() {
         return this.state;
     }
-    
+
     public void setState(String state) {
         this.state = state;
     }
@@ -44,7 +44,7 @@ public class ViduTaskCreationsResponse {
     public String getTaskId() {
         return this.taskId;
     }
-    
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }

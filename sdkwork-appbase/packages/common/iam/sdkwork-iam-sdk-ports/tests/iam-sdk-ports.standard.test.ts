@@ -54,9 +54,6 @@ describe("SDKWork IAM SDK port contracts", () => {
         registrations: {
           create: vi.fn(),
         },
-        verificationPolicy: {
-          retrieve: vi.fn(),
-        },
         sessions: {
           create: vi.fn(),
           current: {
@@ -69,6 +66,30 @@ describe("SDKWork IAM SDK port contracts", () => {
         verificationCodes: {
           create: vi.fn(),
           verify: vi.fn(),
+        },
+      },
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn(),
+            retrieve: vi.fn(),
+            passwords: {
+              create: vi.fn(),
+            },
+            scans: {
+              create: vi.fn(),
+            },
+          },
+        },
+      },
+      system: {
+        iam: {
+          runtime: {
+            retrieve: vi.fn(),
+          },
+          verificationPolicy: {
+            retrieve: vi.fn(),
+          },
         },
       },
       iam: {
@@ -86,9 +107,15 @@ describe("SDKWork IAM SDK port contracts", () => {
     expect(getIamSdkSurface(appClient)).not.toContain("auth.loginQrCodes.confirm");
     expect(getIamSdkSurface(appClient)).not.toContain("auth.loginQrCodes.create");
     expect(getIamSdkSurface(appClient)).not.toContain("auth.loginQrCodes.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("openPlatform.qrAuth.sessions.create");
+    expect(getIamSdkSurface(appClient)).toContain("openPlatform.qrAuth.sessions.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("openPlatform.qrAuth.sessions.scans.create");
+    expect(getIamSdkSurface(appClient)).toContain("openPlatform.qrAuth.sessions.passwords.create");
     expect(getIamSdkSurface(appClient)).toContain("auth.registrations.create");
     expect(getIamSdkSurface(appClient)).toContain("auth.sessions.current.retrieve");
-    expect(getIamSdkSurface(appClient)).toContain("auth.verificationPolicy.retrieve");
+    expect(getIamSdkSurface(appClient)).not.toContain("auth.verificationPolicy.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("system.iam.runtime.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("system.iam.verificationPolicy.retrieve");
     expect(getIamSdkSurface(appClient)).toContain("auth.verificationCodes.create");
     expect(getIamSdkSurface(appClient)).toContain("auth.passwordResetRequests.create");
     expect(getIamSdkSurface(appClient)).toContain("auth.oauthAuthorizationUrls.retrieve");
@@ -133,13 +160,18 @@ describe("SDKWork IAM SDK port contracts", () => {
         passwordResetRequests: new OperationResource(),
         passwordResets: new OperationResource(),
         registrations: new OperationResource(),
-        verificationPolicy: new OperationResource(),
         sessions: {
           create: new OperationResource().create,
           current: new OperationResource(),
           refresh: new OperationResource().refresh,
         },
         verificationCodes: new OperationResource(),
+      },
+      system: {
+        iam: {
+          runtime: new OperationResource(),
+          verificationPolicy: new OperationResource(),
+        },
       },
       iam: {
         users: {
@@ -150,7 +182,8 @@ describe("SDKWork IAM SDK port contracts", () => {
 
     expect(() => assertIamAppSdkClient(appClient)).not.toThrow();
     expect(getIamSdkSurface(appClient)).toContain("auth.sessions.current.retrieve");
-    expect(getIamSdkSurface(appClient)).toContain("auth.verificationPolicy.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("system.iam.runtime.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("system.iam.verificationPolicy.retrieve");
     expect(getIamSdkSurface(appClient)).toContain("iam.users.current.retrieve");
   });
 
@@ -180,9 +213,6 @@ describe("SDKWork IAM SDK port contracts", () => {
         registrations: {
           create: vi.fn(),
         },
-        verificationPolicy: {
-          retrieve: vi.fn(),
-        },
         sessions: {
           create: vi.fn(),
           current: {
@@ -195,6 +225,16 @@ describe("SDKWork IAM SDK port contracts", () => {
         verificationCodes: {
           create: vi.fn(),
           verify: vi.fn(),
+        },
+      },
+      system: {
+        iam: {
+          runtime: {
+            retrieve: vi.fn(),
+          },
+          verificationPolicy: {
+            retrieve: vi.fn(),
+          },
         },
       },
       iam: {
@@ -217,6 +257,69 @@ describe("SDKWork IAM SDK port contracts", () => {
     };
 
     expect(() => assertIamAppSdkClient(legacyAppClient)).toThrow(/auth\.sessions\.create/);
+  });
+
+  it("rejects partial open platform QR login resources before runtime integration", () => {
+    const partialQrAppClient = {
+      auth: {
+        oauthAuthorizationUrls: {
+          retrieve: vi.fn(),
+        },
+        oauthSessions: {
+          create: vi.fn(),
+        },
+        passwordResetRequests: {
+          create: vi.fn(),
+        },
+        passwordResets: {
+          create: vi.fn(),
+        },
+        registrations: {
+          create: vi.fn(),
+        },
+        sessions: {
+          create: vi.fn(),
+          current: {
+            delete: vi.fn(),
+            retrieve: vi.fn(),
+            update: vi.fn(),
+          },
+          refresh: vi.fn(),
+        },
+        verificationCodes: {
+          create: vi.fn(),
+          verify: vi.fn(),
+        },
+      },
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn(),
+          },
+        },
+      },
+      system: {
+        iam: {
+          runtime: {
+            retrieve: vi.fn(),
+          },
+          verificationPolicy: {
+            retrieve: vi.fn(),
+          },
+        },
+      },
+      iam: {
+        users: {
+          current: {
+            retrieve: vi.fn(),
+          },
+        },
+      },
+    };
+
+    expect(() => assertIamAppSdkClient(partialQrAppClient)).toThrow(
+      /openPlatform\.qrAuth\.sessions\.passwords\.create/,
+    );
   });
 
   it("rejects incomplete generated app SDK clients before application integration", () => {

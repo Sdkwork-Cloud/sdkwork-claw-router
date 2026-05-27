@@ -12,3 +12,25 @@ frontend_models:
   - commerce_recharge_package
   - commerce_product_spu
   - commerce_product_sku
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  interface: BillingHistoryItem
+  fields:
+  - id
+  - historyNo
+  - type
+  - direction
+  - assetType
+  - amount
+  - currencyCode
+  - pointsDelta
+  - status
+  - title
+  - referenceNo
+  - sourceType
+  - sourceId
+  - relatedOrderNo
+  - paymentMethod
+  - occurredAt
+  data_sources:
+  - commerce_billing_history

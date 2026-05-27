@@ -17,6 +17,7 @@ pub struct GatewayApiKey {
     pub created_at: String,
     pub expire_at: Option<String>,
     pub status_code: i32,
+    pub default_for_runtime: bool,
 }
 
 impl GatewayApiKey {
@@ -38,6 +39,7 @@ impl GatewayApiKey {
             created_at: String::new(),
             expire_at: None,
             status_code: 1,
+            default_for_runtime: false,
         }
     }
 
@@ -68,6 +70,11 @@ impl GatewayApiKey {
 
     pub fn with_copyable_key(mut self, copyable_key: impl Into<String>) -> Self {
         self.copyable_key = Some(copyable_key.into());
+        self
+    }
+
+    pub fn with_default_for_runtime(mut self, default_for_runtime: bool) -> Self {
+        self.default_for_runtime = default_for_runtime;
         self
     }
 

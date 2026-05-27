@@ -9,7 +9,7 @@ public class OpenAiOrganizationUserUpdateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -17,7 +17,7 @@ public class OpenAiOrganizationUserUpdateRequest {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

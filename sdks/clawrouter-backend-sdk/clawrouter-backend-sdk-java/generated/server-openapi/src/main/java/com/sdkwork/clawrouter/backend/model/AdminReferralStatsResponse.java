@@ -8,7 +8,7 @@ public class AdminReferralStatsResponse {
     public List<AdminReferralStatItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminReferralStatItem> items) {
         this.items = items;
     }

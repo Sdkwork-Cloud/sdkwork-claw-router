@@ -19,8 +19,8 @@ describe("sdkwork-coupon-pc-react service", () => {
   it("maps coupon catalog, owned coupons, and statistics into a reusable coupon dashboard", async () => {
     const service = createSdkworkCouponService({
       commerceService: createCommerceServiceMock({
-        coupons: {
-          catalog: {
+        promotions: {
+          offers: {
             list: vi.fn().mockResolvedValue({
               code: "2000",
               data: {
@@ -48,10 +48,8 @@ describe("sdkwork-coupon-pc-react service", () => {
               },
             }),
           },
-        },
-        users: {
-          current: {
-            coupons: {
+          userCoupons: {
+            wallet: {
               list: vi.fn((params?: Record<string, unknown>) =>
                 Promise.resolve({
                   code: "2000",
@@ -174,8 +172,8 @@ describe("sdkwork-coupon-pc-react service", () => {
 
   it("routes coupon mutations and detail lookups through the commerce service boundary", async () => {
     const commerceService = createCommerceServiceMock({
-      coupons: {
-        catalog: {
+      promotions: {
+        offers: {
           retrieve: vi.fn().mockResolvedValue({
             code: "2000",
             data: {
@@ -188,20 +186,35 @@ describe("sdkwork-coupon-pc-react service", () => {
             },
           }),
         },
-        claims: {
-          create: vi.fn().mockResolvedValue({
-            code: "2000",
-            data: {
-              couponId: "200",
-              couponName: "Pro Monthly 80",
-              pointCost: 800,
-              status: "UNUSED",
-              userCouponId: "UC-200",
-            },
-          }),
+        userCoupons: {
+          claims: {
+            create: vi.fn().mockResolvedValue({
+              code: "2000",
+              data: {
+                couponId: "200",
+                couponName: "Pro Monthly 80",
+                pointCost: 800,
+                status: "UNUSED",
+                userCouponId: "UC-200",
+              },
+            }),
+          },
+          wallet: {
+            retrieve: vi.fn().mockResolvedValue({
+              code: "2000",
+              data: {
+                amount: 80,
+                couponId: "200",
+                couponName: "Pro Monthly 80",
+                status: "UNUSED",
+                userCouponId: "UC-200",
+              },
+            }),
+          },
         },
-        redeem: {
-          create: vi.fn().mockResolvedValue({
+        codes: {
+          redemptions: {
+            create: vi.fn().mockResolvedValue({
             code: "2000",
             data: {
               couponCode: "SPRING80",
@@ -211,8 +224,9 @@ describe("sdkwork-coupon-pc-react service", () => {
               userCouponId: "UC-200",
             },
           }),
+          },
         },
-        usage: {
+        discountApplications: {
           create: vi.fn().mockResolvedValue({
             code: "2000",
             data: {
@@ -223,24 +237,10 @@ describe("sdkwork-coupon-pc-react service", () => {
               userCouponId: "UC-200",
             },
           }),
-          rollback: vi.fn().mockResolvedValue({
-            code: "2000",
-            data: {
-              couponId: "200",
-              couponName: "Pro Monthly 80",
-              status: "UNUSED",
-              userCouponId: "UC-200",
-            },
-          }),
-        },
-      },
-      users: {
-        current: {
-          coupons: {
-            retrieve: vi.fn().mockResolvedValue({
+          reversals: {
+            create: vi.fn().mockResolvedValue({
               code: "2000",
               data: {
-                amount: 80,
                 couponId: "200",
                 couponName: "Pro Monthly 80",
                 status: "UNUSED",
@@ -290,22 +290,22 @@ describe("sdkwork-coupon-pc-react service", () => {
       userCouponId: "UC-200",
     });
 
-    expect(commerceService.coupons.redeem.create).toHaveBeenCalledWith({
+    expect(commerceService.promotions.codes.redemptions.create).toHaveBeenCalledWith({
       channel: undefined,
-      redeemCode: "SPRING80",
+      code: "SPRING80",
     });
-    expect(commerceService.coupons.claims.create).toHaveBeenCalledWith(
+    expect(commerceService.promotions.userCoupons.claims.create).toHaveBeenCalledWith(
       expect.objectContaining({
-        couponId: "200",
+        offerId: "200",
         requestNo: expect.any(String),
         sourceType: "points_exchange",
       }),
     );
-    expect(commerceService.coupons.usage.create).toHaveBeenCalledWith({
+    expect(commerceService.promotions.discountApplications.create).toHaveBeenCalledWith({
       orderId: "ORDER-9",
       userCouponId: "UC-200",
     });
-    expect(commerceService.coupons.usage.rollback).toHaveBeenCalledWith({
+    expect(commerceService.promotions.discountApplications.reversals.create).toHaveBeenCalledWith({
       reason: "duplicate",
       userCouponId: "UC-200",
     });

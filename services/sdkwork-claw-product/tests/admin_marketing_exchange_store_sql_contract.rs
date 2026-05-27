@@ -89,41 +89,79 @@ fn admin_marketing_recharge_catalog_uses_appbase_catalog_tables() {
 }
 
 #[test]
-fn admin_marketing_coupon_promo_uses_appbase_coupon_tables() {
+fn admin_marketing_promotion_coupon_uses_appbase_coupon_tables() {
     for source in [SQLITE_ADMIN_MARKETING_STORE, POSTGRES_ADMIN_MARKETING_STORE] {
         let coupon_sections = source_section(
             source,
-            "async fn list_coupons",
+            "async fn list_promotion_offers",
             "async fn list_recharge_records",
         );
 
-        assert!(coupon_sections.contains("commerce_coupon_template"));
-        assert!(coupon_sections.contains("commerce_coupon"));
-        assert!(coupon_sections.contains("commerce_coupon_issue_batch"));
-        assert!(coupon_sections.contains("CommerceCouponStatus"));
+        assert!(coupon_sections.contains("promotion_offer"));
+        assert!(coupon_sections.contains("promotion_offer_version"));
+        assert!(coupon_sections.contains("promotion_coupon_stock"));
+        assert!(coupon_sections.contains("promotion_code"));
+        assert!(coupon_sections.contains("promotion_user_coupon"));
+        assert!(coupon_sections.contains("PromotionCouponStatus"));
+        assert!(
+            coupon_sections.contains("current_offer_version_id"),
+            "promotion offer path must use promotion_offer.current_offer_version_id instead of inferring current version from version_no ordering"
+        );
+        assert!(
+            !coupon_sections.contains("current_version_id"),
+            "promotion offer path must not use the ambiguous current_version_id column name"
+        );
+        assert!(
+            coupon_sections.contains("INSERT INTO promotion_offer_version"),
+            "promotion offer update path must publish immutable offer versions instead of mutating an existing version"
+        );
+        assert!(
+            coupon_sections.contains("offer_version_id, promotion_code"),
+            "promotion code inventory must record the offer version snapshot used by its stock"
+        );
+        assert!(
+            !coupon_sections.contains("version_no = 'v1'"),
+            "promotion offer updates must not target v1 in place"
+        );
+        assert!(
+            !coupon_sections.contains("version_no DESC"),
+            "promotion offer path must not sort textual version numbers to infer the current version"
+        );
+        assert!(
+            !coupon_sections.contains("commerce_coupon_template"),
+            "promotion offer definition path must use promotion_offer and promotion_offer_version"
+        );
+        assert!(
+            !coupon_sections.contains("commerce_coupon_issue_batch"),
+            "promotion coupon stock path must use promotion_coupon_stock"
+        );
+        assert!(
+            !coupon_sections.contains("commerce_coupon"),
+            "promotion code path must use promotion_code and promotion_user_coupon"
+        );
         assert!(
             !coupon_sections.contains("plus_coupon"),
-            "admin coupon path must not keep the legacy plus coupon table"
+            "promotion offer path must not keep the legacy plus coupon table"
         );
         assert!(
             !coupon_sections.contains("plus_coupon_template"),
-            "admin coupon path must not keep the legacy plus coupon template table"
+            "promotion offer path must not keep the legacy plus coupon template table"
         );
         assert!(
             !coupon_sections.contains("plus_user_coupon"),
-            "admin promo code path must not keep the legacy plus user coupon table"
+            "promotion code path must not keep the legacy plus user coupon table"
         );
         assert!(
             !coupon_sections.contains("ops_coupon_issue_batch"),
-            "admin coupon batch path must not keep the legacy ops coupon issue batch table"
+            "promotion coupon stock path must not keep the legacy ops coupon issue batch table"
         );
         assert!(
             !coupon_sections.contains("COUPON_STATUS_"),
-            "admin coupon path must use appbase string coupon statuses directly"
+            "promotion offer path must use appbase string coupon statuses directly"
         );
         assert!(
             !coupon_sections.contains("PROMO_STATUS_"),
-            "admin promo code path must use appbase string coupon statuses directly"
+            "promotion code path must use appbase string coupon statuses directly"
         );
     }
 }

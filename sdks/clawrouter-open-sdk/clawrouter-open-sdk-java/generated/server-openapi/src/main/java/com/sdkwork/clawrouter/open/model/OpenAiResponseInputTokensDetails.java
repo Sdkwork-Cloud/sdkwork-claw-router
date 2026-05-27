@@ -7,7 +7,7 @@ public class OpenAiResponseInputTokensDetails {
     public Integer getCachedTokens() {
         return this.cachedTokens;
     }
-    
+
     public void setCachedTokens(Integer cachedTokens) {
         this.cachedTokens = cachedTokens;
     }

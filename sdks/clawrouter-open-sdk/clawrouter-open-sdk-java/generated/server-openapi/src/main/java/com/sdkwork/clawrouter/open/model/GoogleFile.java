@@ -17,7 +17,7 @@ public class GoogleFile {
     public String getCreateTime() {
         return this.createTime;
     }
-    
+
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
@@ -25,7 +25,7 @@ public class GoogleFile {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -33,7 +33,7 @@ public class GoogleFile {
     public ProviderTaskError getError() {
         return this.error;
     }
-    
+
     public void setError(ProviderTaskError error) {
         this.error = error;
     }
@@ -41,7 +41,7 @@ public class GoogleFile {
     public String getExpirationTime() {
         return this.expirationTime;
     }
-    
+
     public void setExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
     }
@@ -49,7 +49,7 @@ public class GoogleFile {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -57,7 +57,7 @@ public class GoogleFile {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -65,7 +65,7 @@ public class GoogleFile {
     public String getSha256Hash() {
         return this.sha256Hash;
     }
-    
+
     public void setSha256Hash(String sha256Hash) {
         this.sha256Hash = sha256Hash;
     }
@@ -73,7 +73,7 @@ public class GoogleFile {
     public String getSizeBytes() {
         return this.sizeBytes;
     }
-    
+
     public void setSizeBytes(String sizeBytes) {
         this.sizeBytes = sizeBytes;
     }
@@ -81,7 +81,7 @@ public class GoogleFile {
     public String getState() {
         return this.state;
     }
-    
+
     public void setState(String state) {
         this.state = state;
     }
@@ -89,7 +89,7 @@ public class GoogleFile {
     public String getUpdateTime() {
         return this.updateTime;
     }
-    
+
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
@@ -97,7 +97,7 @@ public class GoogleFile {
     public String getUri() {
         return this.uri;
     }
-    
+
     public void setUri(String uri) {
         this.uri = uri;
     }

@@ -50,7 +50,7 @@ Choose exactly one mode for the same client instance.
 Types.SdkConfig config = new Types.SdkConfig("http://localhost:18082");
 SdkworkAppClient client = new SdkworkAppClient(config);
 client.setApiKey("your-api-key");
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -62,7 +62,7 @@ client.setAuthToken("your-auth-token");
 client.setAccessToken("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -79,26 +79,36 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.getCommerce()` - commerce API
 - `client.getAgents()` - agents API
 - `client.getAi()` - ai API
 - `client.getAuth()` - auth API
-- `client.getBilling()` - billing API
 - `client.getChat()` - chat API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getMemory()` - memory API
 - `client.getNotification()` - notification API
+- `client.getOpenPlatform()` - open_platform API
 - `client.getPlatform()` - platform API
-- `client.getRuntime()` - runtime API
 - `client.getSystem()` - system API
+- `client.getRuntime()` - runtime API
+- `client.getSdkReference()` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```java
+// Accounts Current Summary Retrieve
+AccountsCurrentSummaryRetrieveResult result = client.getCommerce().accountsCurrentSummaryRetrieve();
+System.out.println(result);
+```
 
 ### agents
 
 ```java
-// List user agents
+// List Playground agent definitions
 Map<String, Object> params = new LinkedHashMap<>();
 params.put("page", 1);
 params.put("page_size", 2);
@@ -120,14 +130,6 @@ System.out.println(result);
 ```java
 // Retrieve current IAM session
 SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
-System.out.println(result);
-```
-
-### billing
-
-```java
-// Retrieve account points
-AccountPointsRetrieveResult result = client.getBilling().accountPointsRetrieve();
 System.out.println(result);
 ```
 
@@ -190,11 +192,29 @@ NotificationsListResult result = client.getNotification().notificationsList(para
 System.out.println(result);
 ```
 
+### open_platform
+
+```java
+// Create open platform QR auth session
+OpenPlatformQrAuthSessionCreateRequest body = new OpenPlatformQrAuthSessionCreateRequest();
+body.setPurpose("login");
+QrAuthSessionsCreateResult result = client.getOpenPlatform().qrAuthSessionsCreate(body);
+System.out.println(result);
+```
+
 ### platform
 
 ```java
 // Get categories
 AppsStoreCategoriesListResult result = client.getPlatform().appsStoreCategoriesList();
+System.out.println(result);
+```
+
+### system
+
+```java
+// Retrieve public IAM verification policy
+IamVerificationPolicyRetrieveResult result = client.getSystem().iamVerificationPolicyRetrieve();
 System.out.println(result);
 ```
 
@@ -214,14 +234,15 @@ InvocationsListResult result = client.getRuntime().invocationsList(params);
 System.out.println(result);
 ```
 
-### system
+### sdk_reference
 
 ```java
-// Retrieve public site runtime branding settings
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("tenant_code", "ok");
-params.put("organization_code", "ok");
-SiteRuntimeRetrieveResult result = client.getSystem().siteRuntimeRetrieve(params);
+// Generate SDK archive
+SdkReferenceArchiveGenerateRequest body = new SdkReferenceArchiveGenerateRequest();
+body.setConfig(new LinkedHashMap<>());
+body.setLanguage("language");
+body.setSpec(new LinkedHashMap<>());
+ArchivesCreateResult result = client.getSdkReference().archivesCreate(body);
 System.out.println(result);
 ```
 

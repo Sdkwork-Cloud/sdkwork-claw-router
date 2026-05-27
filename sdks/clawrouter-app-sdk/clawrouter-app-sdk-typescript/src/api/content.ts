@@ -145,10 +145,6 @@ export class ContentUsersApi {
 
 }
 
-export interface ContentFeedsSharesCreateParams {
-  xRequestId?: string;
-}
-
 export class ContentFeedsSharesApi {
   private client: HttpClient;
 
@@ -158,19 +154,9 @@ export class ContentFeedsSharesApi {
 
 
 /** Share forum feed */
-  async create(id: string, params?: ContentFeedsSharesCreateParams): Promise<FeedsSharesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<FeedsSharesCreateResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/shares`), undefined, undefined, requestHeaders);
+  async create(id: string): Promise<FeedsSharesCreateResult> {
+    return this.client.post<FeedsSharesCreateResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/shares`));
   }
-}
-
-export interface ContentFeedsLikesCurrentDeleteParams {
-  xRequestId?: string;
 }
 
 export class ContentFeedsLikesCurrentApi {
@@ -182,19 +168,9 @@ export class ContentFeedsLikesCurrentApi {
 
 
 /** Unlike forum feed */
-  async delete(id: string, params?: ContentFeedsLikesCurrentDeleteParams): Promise<FeedsLikesCurrentDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<FeedsLikesCurrentDeleteResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/likes/current`), undefined, requestHeaders);
+  async delete(id: string): Promise<FeedsLikesCurrentDeleteResult> {
+    return this.client.delete<FeedsLikesCurrentDeleteResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/likes/current`));
   }
-}
-
-export interface ContentFeedsLikesCreateParams {
-  xRequestId?: string;
 }
 
 export class ContentFeedsLikesApi {
@@ -208,19 +184,9 @@ export class ContentFeedsLikesApi {
 
 
 /** Like forum feed */
-  async create(id: string, params?: ContentFeedsLikesCreateParams): Promise<FeedsLikesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<FeedsLikesCreateResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/likes`), undefined, undefined, requestHeaders);
+  async create(id: string): Promise<FeedsLikesCreateResult> {
+    return this.client.post<FeedsLikesCreateResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/likes`));
   }
-}
-
-export interface ContentFeedsCollectionsCurrentDeleteParams {
-  xRequestId?: string;
 }
 
 export class ContentFeedsCollectionsCurrentApi {
@@ -232,14 +198,8 @@ export class ContentFeedsCollectionsCurrentApi {
 
 
 /** Uncollect forum feed */
-  async delete(id: string, params?: ContentFeedsCollectionsCurrentDeleteParams): Promise<FeedsCollectionsCurrentDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<FeedsCollectionsCurrentDeleteResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/collections/current`), undefined, requestHeaders);
+  async delete(id: string): Promise<FeedsCollectionsCurrentDeleteResult> {
+    return this.client.delete<FeedsCollectionsCurrentDeleteResult>(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/collections/current`));
   }
 
 /** Check forum feed collected */
@@ -250,7 +210,6 @@ export class ContentFeedsCollectionsCurrentApi {
 
 export interface ContentFeedsCollectionsCreateParams {
   folderId?: number;
-  xRequestId?: string;
 }
 
 export class ContentFeedsCollectionsApi {
@@ -268,13 +227,7 @@ export class ContentFeedsCollectionsApi {
     const query = buildQueryString([
       { name: 'folder_id', value: params?.folderId, style: 'form', explode: true, allowReserved: false },
     ]);
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<FeedsCollectionsCreateResult>(appendQueryString(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/collections`), query), undefined, undefined, requestHeaders);
+    return this.client.post<FeedsCollectionsCreateResult>(appendQueryString(appApiPath(`/content/feeds/${serializePathParameter(id, { name: 'id', style: 'simple', explode: false })}/collections`), query));
   }
 }
 
@@ -429,10 +382,6 @@ export interface ContentFeedsListParams {
   pageSize?: number;
 }
 
-export interface ContentFeedsCreateParams {
-  xRequestId?: string;
-}
-
 export class ContentFeedsApi {
   private client: HttpClient;
   public readonly category: ContentFeedsCategoryApi;
@@ -475,14 +424,8 @@ export class ContentFeedsApi {
   }
 
 /** Create forum feed */
-  async create(body: ForumCreateFeedRequest, params?: ContentFeedsCreateParams): Promise<FeedsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<FeedsCreateResult>(appApiPath(`/content/feeds`), body, undefined, requestHeaders, 'application/json');
+  async create(body: ForumCreateFeedRequest): Promise<FeedsCreateResult> {
+    return this.client.post<FeedsCreateResult>(appApiPath(`/content/feeds`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete forum feed */
@@ -499,10 +442,6 @@ export class ContentFeedsApi {
 export interface ContentCommentsRepliesListParams {
   page?: number;
   pageSize?: number;
-}
-
-export interface ContentCommentsRepliesCreateParams {
-  xRequestId?: string;
 }
 
 export class ContentCommentsRepliesApi {
@@ -523,14 +462,8 @@ export class ContentCommentsRepliesApi {
   }
 
 /** Reply forum comment */
-  async create(commentId: string, body: ForumReplyCommentRequest, params?: ContentCommentsRepliesCreateParams): Promise<CommentsReplyCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CommentsReplyCreateResult>(appApiPath(`/content/comments/${serializePathParameter(commentId, { name: 'commentId', style: 'simple', explode: false })}/reply`), body, undefined, requestHeaders, 'application/json');
+  async create(commentId: string, body: ForumReplyCommentRequest): Promise<CommentsReplyCreateResult> {
+    return this.client.post<CommentsReplyCreateResult>(appApiPath(`/content/comments/${serializePathParameter(commentId, { name: 'commentId', style: 'simple', explode: false })}/reply`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -548,10 +481,6 @@ export class ContentCommentsPinsCurrentApi {
   }
 }
 
-export interface ContentCommentsPinsCreateParams {
-  xRequestId?: string;
-}
-
 export class ContentCommentsPinsApi {
   private client: HttpClient;
   public readonly current: ContentCommentsPinsCurrentApi;
@@ -563,14 +492,8 @@ export class ContentCommentsPinsApi {
 
 
 /** Pin forum comment */
-  async create(commentId: string, params?: ContentCommentsPinsCreateParams): Promise<CommentsPinsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CommentsPinsCreateResult>(appApiPath(`/content/comments/${serializePathParameter(commentId, { name: 'commentId', style: 'simple', explode: false })}/pins`), undefined, undefined, requestHeaders);
+  async create(commentId: string): Promise<CommentsPinsCreateResult> {
+    return this.client.post<CommentsPinsCreateResult>(appApiPath(`/content/comments/${serializePathParameter(commentId, { name: 'commentId', style: 'simple', explode: false })}/pins`));
   }
 }
 
@@ -588,10 +511,6 @@ export class ContentCommentsLikesCurrentApi {
   }
 }
 
-export interface ContentCommentsLikesCreateParams {
-  xRequestId?: string;
-}
-
 export class ContentCommentsLikesApi {
   private client: HttpClient;
   public readonly current: ContentCommentsLikesCurrentApi;
@@ -603,14 +522,8 @@ export class ContentCommentsLikesApi {
 
 
 /** Like forum comment */
-  async create(commentId: string, params?: ContentCommentsLikesCreateParams): Promise<CommentsLikesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CommentsLikesCreateResult>(appApiPath(`/content/comments/${serializePathParameter(commentId, { name: 'commentId', style: 'simple', explode: false })}/likes`), undefined, undefined, requestHeaders);
+  async create(commentId: string): Promise<CommentsLikesCreateResult> {
+    return this.client.post<CommentsLikesCreateResult>(appApiPath(`/content/comments/${serializePathParameter(commentId, { name: 'commentId', style: 'simple', explode: false })}/likes`));
   }
 }
 
@@ -644,10 +557,6 @@ export interface ContentCommentsListParams {
   pageSize?: number;
 }
 
-export interface ContentCommentsCreateParams {
-  xRequestId?: string;
-}
-
 export class ContentCommentsApi {
   private client: HttpClient;
   public readonly statistics: ContentCommentsStatisticsApi;
@@ -676,14 +585,8 @@ export class ContentCommentsApi {
   }
 
 /** Create forum comment */
-  async create(body: ForumCreateCommentRequest, params?: ContentCommentsCreateParams): Promise<CommentsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CommentsCreateResult>(appApiPath(`/content/comments`), body, undefined, requestHeaders, 'application/json');
+  async create(body: ForumCreateCommentRequest): Promise<CommentsCreateResult> {
+    return this.client.post<CommentsCreateResult>(appApiPath(`/content/comments`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete forum comment */
@@ -950,79 +853,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

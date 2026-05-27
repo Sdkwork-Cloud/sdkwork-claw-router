@@ -1,5 +1,4 @@
 ﻿import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -98,7 +97,6 @@ export class RateLimitService {
   static async addIpLimit(rule: IpLimitCreateInput): Promise<IpLimitRule> {
     const result = await getClawRouterBackendSdkClient().system.rateLimits.ip.create(
       toCreateIpLimitRequest(rule),
-      requestParams('admin-ip-limit-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add IP limit');
     return normalizeIpLimit(readRequiredApiItem(result, 'Created IP limit response is missing data'));
@@ -114,7 +112,6 @@ export class RateLimitService {
   static async addTokenLimit(rule: TokenLimitCreateInput): Promise<TokenLimitRule> {
     const result = await getClawRouterBackendSdkClient().system.rateLimits.apiKeys.create(
       toCreateTokenLimitRequest(rule),
-      requestParams('admin-token-limit-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add token limit');
     return normalizeTokenLimit(readRequiredApiItem(result, 'Created token limit response is missing data'));
@@ -130,7 +127,6 @@ export class RateLimitService {
   static async addModelLimit(rule: ModelLimitCreateInput): Promise<ModelLimitRule> {
     const result = await getClawRouterBackendSdkClient().system.rateLimits.models.create(
       toCreateModelLimitRequest(rule),
-      requestParams('admin-model-limit-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add model limit');
     return normalizeModelLimit(readRequiredApiItem(result, 'Created model limit response is missing data'));
@@ -146,7 +142,6 @@ export class RateLimitService {
   static async addFirewall(rule: FirewallCreateInput): Promise<FirewallRule> {
     const result = await getClawRouterBackendSdkClient().system.firewalls.rules.create(
       toCreateFirewallRequest(rule),
-      requestParams('admin-firewall-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add firewall rule');
     return normalizeFirewall(readRequiredApiItem(result, 'Created firewall rule response is missing data'));
@@ -211,10 +206,6 @@ function positiveInteger(value: number, fieldName: string): number {
     throw new Error(`${fieldName} must be a positive integer`);
   }
   return value;
-}
-
-function requestParams(scope: string): { xRequestId: string } {
-  return { xRequestId: createRequestToken(scope) };
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {

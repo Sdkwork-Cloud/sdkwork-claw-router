@@ -7,7 +7,7 @@ public class AdminFirewallMutationResponse {
     public AdminFirewallItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminFirewallItem item) {
         this.item = item;
     }

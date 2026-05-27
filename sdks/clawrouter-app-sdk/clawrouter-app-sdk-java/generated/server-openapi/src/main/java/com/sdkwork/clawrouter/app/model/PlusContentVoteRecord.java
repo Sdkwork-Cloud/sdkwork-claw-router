@@ -10,7 +10,7 @@ public class PlusContentVoteRecord {
     public String getClientIp() {
         return this.clientIp;
     }
-    
+
     public void setClientIp(String clientIp) {
         this.clientIp = clientIp;
     }
@@ -18,7 +18,7 @@ public class PlusContentVoteRecord {
     public String getDeviceInfo() {
         return this.deviceInfo;
     }
-    
+
     public void setDeviceInfo(String deviceInfo) {
         this.deviceInfo = deviceInfo;
     }
@@ -26,7 +26,7 @@ public class PlusContentVoteRecord {
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -34,7 +34,7 @@ public class PlusContentVoteRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

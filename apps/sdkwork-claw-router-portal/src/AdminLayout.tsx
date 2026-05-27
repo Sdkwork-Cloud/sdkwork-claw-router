@@ -1,289 +1,14 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import {
-  Activity,
-  BarChart3,
-  Bot,
-  Boxes,
   ChevronDown,
   ChevronRight,
-  ClipboardList,
-  CreditCard,
-  Crown,
-  Database,
-  FileText,
-  HardDrive,
-  Handshake,
-  LayoutDashboard,
-  Link2,
   LogOut,
-  Megaphone,
-  MessageCircle,
-  Network,
-  Package,
-  PackageCheck,
-  Settings,
-  ShieldAlert,
-  ShieldCheck,
-  Smartphone,
-  Store,
-  TrendingUp,
-  UserCog,
-  Users,
-  type LucideIcon,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { AdminHeader, getActiveModuleFromPath, type AdminModuleId } from './AdminHeader';
+import { getAdminModuleMenu, type AdminMenuGroup, type AdminMenuItem } from './adminModuleRegistry';
 import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
-
-type AdminMenuItem = {
-  path: string;
-  labelKey: string;
-  icon: LucideIcon;
-  iconColor?: string;
-};
-
-type AdminMenuGroup = {
-  groupKey: string;
-  items: AdminMenuItem[];
-};
-
-type AdminModuleMenu = {
-  moduleId: AdminModuleId;
-  items?: AdminMenuItem[];
-  groups: AdminMenuGroup[];
-};
-
-const MODULE_MENUS: AdminModuleMenu[] = [
-  {
-    moduleId: 'home',
-    items: [
-      { path: '/admin/dashboard', labelKey: 'admin.menu.dashboard', icon: LayoutDashboard },
-    ],
-    groups: [
-      {
-        groupKey: 'admin.menu.home.userManagement',
-        items: [
-          { path: '/admin/user', labelKey: 'admin.menu.users', icon: Users },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.home.modelManagement',
-        items: [
-          { path: '/admin/model', labelKey: 'admin.menu.models', icon: Database },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.home.accountPoolManagement',
-        items: [
-          { path: '/admin/group', labelKey: 'admin.menu.groups', icon: UserCog },
-          { path: '/admin/channel', labelKey: 'admin.menu.channels', icon: Network },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.home.agentSkills',
-        items: [
-          { path: '/admin/agents', labelKey: 'admin.menu.agents', icon: Bot },
-          { path: '/admin/skill', labelKey: 'admin.menu.agentSkills', icon: Store },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.home.dataManagement',
-        items: [
-          { path: '/admin/record', labelKey: 'admin.menu.records', icon: Activity },
-          { path: '/admin/analytics', labelKey: 'admin.menu.analytics', icon: BarChart3 },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.home.system',
-        items: [
-          { path: '/admin/announcement', labelKey: 'admin.menu.announcements', icon: Megaphone },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'appCenter',
-    items: [
-      { path: '/admin/app', labelKey: 'admin.menu.appStore', icon: Package },
-    ],
-    groups: [
-      {
-        groupKey: 'admin.menu.openPlatformOfficialAccounts',
-        items: [
-          { path: '/admin/open-platform/official-accounts/accounts', labelKey: 'admin.menu.openPlatformOfficialAccountAccounts', icon: MessageCircle, iconColor: 'text-emerald-500' },
-          { path: '/admin/open-platform/official-accounts/menus', labelKey: 'admin.menu.openPlatformOfficialAccountMenus', icon: ClipboardList, iconColor: 'text-teal-500' },
-          { path: '/admin/open-platform/official-accounts/messages', labelKey: 'admin.menu.openPlatformOfficialAccountMessages', icon: Megaphone, iconColor: 'text-amber-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.openPlatformMiniPrograms',
-        items: [
-          { path: '/admin/open-platform/mini-programs/accounts', labelKey: 'admin.menu.openPlatformMiniProgramAccounts', icon: Smartphone, iconColor: 'text-cyan-500' },
-          { path: '/admin/open-platform/mini-programs/urls', labelKey: 'admin.menu.openPlatformMiniProgramUrls', icon: Link2, iconColor: 'text-sky-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'productCenter',
-    groups: [
-      {
-        groupKey: 'admin.menu.productCenter.catalog',
-        items: [
-          { path: '/admin/catalog/products', labelKey: 'admin.menu.catalogProducts', icon: PackageCheck, iconColor: 'text-blue-500' },
-          { path: '/admin/catalog/categories', labelKey: 'admin.menu.catalogCategories', icon: Package, iconColor: 'text-sky-500' },
-          { path: '/admin/catalog/skus', labelKey: 'admin.menu.catalogSkus', icon: PackageCheck, iconColor: 'text-indigo-500' },
-          { path: '/admin/catalog/attributes', labelKey: 'admin.menu.catalogAttributes', icon: Settings, iconColor: 'text-violet-500' },
-          { path: '/admin/catalog/prices', labelKey: 'admin.menu.catalogPrices', icon: CreditCard, iconColor: 'text-amber-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.productCenter.inventory',
-        items: [
-          { path: '/admin/inventory/stocks', labelKey: 'admin.menu.inventoryStocks', icon: Boxes, iconColor: 'text-emerald-500' },
-          { path: '/admin/inventory/reservations', labelKey: 'admin.menu.inventoryReservations', icon: ShieldCheck, iconColor: 'text-cyan-500' },
-          { path: '/admin/inventory/ledger', labelKey: 'admin.menu.inventoryLedger', icon: FileText, iconColor: 'text-slate-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'transactionCenter',
-    groups: [
-      {
-        groupKey: 'admin.menu.transactionCenter.orders',
-        items: [
-          { path: '/admin/orders/orders', labelKey: 'admin.menu.orderList', icon: ClipboardList, iconColor: 'text-indigo-500' },
-          { path: '/admin/orders/refunds', labelKey: 'admin.menu.orderRefunds', icon: FileText, iconColor: 'text-red-500' },
-          { path: '/admin/orders/fulfillments', labelKey: 'admin.menu.orderFulfillments', icon: PackageCheck, iconColor: 'text-emerald-500' },
-          { path: '/admin/orders/shipments', labelKey: 'admin.menu.orderShipments', icon: Package, iconColor: 'text-sky-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.transactionCenter.payments',
-        items: [
-          { path: '/admin/payments/provider-accounts', labelKey: 'admin.menu.paymentProviderAccounts', icon: CreditCard, iconColor: 'text-sky-500' },
-          { path: '/admin/payments/providers', labelKey: 'admin.menu.paymentProviders', icon: CreditCard, iconColor: 'text-blue-500' },
-          { path: '/admin/payments/methods', labelKey: 'admin.menu.paymentMethods', icon: CreditCard, iconColor: 'text-cyan-500' },
-          { path: '/admin/payments/channels', labelKey: 'admin.menu.paymentChannels', icon: Network, iconColor: 'text-indigo-500' },
-          { path: '/admin/payments/route-rules', labelKey: 'admin.menu.paymentRouteRules', icon: ShieldCheck, iconColor: 'text-amber-500' },
-          { path: '/admin/payments/intents', labelKey: 'admin.menu.paymentIntents', icon: ClipboardList, iconColor: 'text-violet-500' },
-          { path: '/admin/payments/attempts', labelKey: 'admin.menu.paymentAttempts', icon: Activity, iconColor: 'text-orange-500' },
-          { path: '/admin/payments/webhook-events', labelKey: 'admin.menu.paymentWebhookEvents', icon: Megaphone, iconColor: 'text-pink-500' },
-          { path: '/admin/payments/reconciliation-runs', labelKey: 'admin.menu.paymentReconciliationRuns', icon: BarChart3, iconColor: 'text-emerald-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'memberCenter',
-    groups: [
-      {
-        groupKey: 'admin.menu.memberCenter.memberships',
-        items: [
-          { path: '/admin/memberships/packages', labelKey: 'admin.menu.membershipPackages', icon: Package, iconColor: 'text-amber-500' },
-          { path: '/admin/memberships/plans', labelKey: 'admin.menu.membershipPlans', icon: Crown, iconColor: 'text-violet-500' },
-          { path: '/admin/memberships/members', labelKey: 'admin.menu.membershipMembers', icon: Users, iconColor: 'text-blue-500' },
-          { path: '/admin/memberships/entitlements', labelKey: 'admin.menu.membershipEntitlements', icon: ShieldCheck, iconColor: 'text-emerald-500' },
-          { path: '/admin/memberships/recharge-packages', labelKey: 'admin.menu.membershipRechargePackages', icon: Package, iconColor: 'text-sky-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'marketingCenter',
-    groups: [
-      {
-        groupKey: 'admin.menu.marketingCenter.growth',
-        items: [
-          { path: '/admin/marketing/referrals', labelKey: 'admin.menu.marketingReferrals', icon: TrendingUp, iconColor: 'text-pink-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.marketingCenter.coupons',
-        items: [
-          { path: '/admin/marketing/coupon-templates', labelKey: 'admin.menu.financeCouponTemplates', icon: TrendingUp, iconColor: 'text-pink-500' },
-          { path: '/admin/marketing/coupon-campaigns', labelKey: 'admin.menu.financeCouponCampaigns', icon: Megaphone, iconColor: 'text-orange-500' },
-          { path: '/admin/marketing/coupon-codes', labelKey: 'admin.menu.financeCouponCodes', icon: CreditCard, iconColor: 'text-lobster-500' },
-          { path: '/admin/marketing/coupon-redemptions', labelKey: 'admin.menu.financeCouponRedemptions', icon: ClipboardList, iconColor: 'text-emerald-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'financeCenter',
-    groups: [
-      {
-        groupKey: 'admin.menu.financeCenter.wallet',
-        items: [
-          { path: '/admin/wallet/wallet-accounts', labelKey: 'admin.menu.walletAccounts', icon: CreditCard, iconColor: 'text-emerald-500' },
-          { path: '/admin/wallet/wallet-ledger', labelKey: 'admin.menu.walletLedger', icon: FileText, iconColor: 'text-teal-500' },
-          { path: '/admin/wallet/recharge-packages', labelKey: 'admin.menu.walletRechargePackages', icon: Package, iconColor: 'text-blue-500' },
-          { path: '/admin/wallet/recharge-orders', labelKey: 'admin.menu.walletRechargeOrders', icon: ClipboardList, iconColor: 'text-indigo-500' },
-          { path: '/admin/wallet/exchange-rules', labelKey: 'admin.menu.walletExchangeRules', icon: Settings, iconColor: 'text-amber-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.financeCenter.invoices',
-        items: [
-          { path: '/admin/finance/invoice-titles', labelKey: 'admin.menu.financeInvoiceTitles', icon: FileText, iconColor: 'text-slate-500' },
-          { path: '/admin/finance/invoices', labelKey: 'admin.menu.financeInvoices', icon: FileText, iconColor: 'text-violet-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.financeCenter.reports',
-        items: [
-          { path: '/admin/finance/order-revenue', labelKey: 'admin.menu.financeOrderRevenue', icon: BarChart3, iconColor: 'text-blue-500' },
-          { path: '/admin/finance/payment-reconciliation', labelKey: 'admin.menu.financePaymentReconciliation', icon: CreditCard, iconColor: 'text-cyan-500' },
-          { path: '/admin/finance/refunds-report', labelKey: 'admin.menu.financeRefundsReport', icon: FileText, iconColor: 'text-red-500' },
-          { path: '/admin/finance/audit-events', labelKey: 'admin.menu.financeAuditEvents', icon: ShieldCheck, iconColor: 'text-slate-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'operations',
-    groups: [
-      {
-        groupKey: 'admin.menu.ops.monitoring',
-        items: [
-          { path: '/admin/monitor', labelKey: 'admin.menu.monitor', icon: Activity },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.ops.security',
-        items: [
-          { path: '/admin/ratelimit', labelKey: 'admin.menu.rateLimit', icon: ShieldAlert, iconColor: 'text-red-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.ops.infrastructure',
-        items: [
-          { path: '/admin/cache', labelKey: 'admin.menu.cache', icon: HardDrive, iconColor: 'text-emerald-500' },
-        ],
-      },
-      {
-        groupKey: 'admin.menu.ops.system',
-        items: [
-          { path: '/admin/settings', labelKey: 'admin.menu.authSettings', icon: ShieldCheck, iconColor: 'text-blue-500' },
-          { path: '/admin/site', labelKey: 'admin.menu.siteSettings', icon: Settings, iconColor: 'text-indigo-500' },
-        ],
-      },
-    ],
-  },
-  {
-    moduleId: 'serviceProviderCenter',
-    groups: [
-      {
-        groupKey: 'admin.menu.serviceProviderCenter.accounts',
-        items: [
-          { path: '/admin/service-providers/accounts', labelKey: 'admin.menu.serviceProviderAccounts', icon: Handshake, iconColor: 'text-cyan-500' },
-        ],
-      },
-    ],
-  },
-];
 
 const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true;
 
@@ -380,7 +105,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
   );
 
   const currentModuleMenu = useMemo(
-    () => MODULE_MENUS.find((m) => m.moduleId === activeModule) ?? MODULE_MENUS[0],
+    () => getAdminModuleMenu(activeModule),
     [activeModule],
   );
 
@@ -414,6 +139,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
                 void revokeAppSession();
                 navigate('/', { replace: true });
               }}
+              type="button"
             >
               <LogOut className="w-4 h-4" />
               {t('admin.menu.logout')}
@@ -422,7 +148,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
         </div>
 
         <div className="flex-1 flex flex-col bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative">
-          <div className="flex flex-1 flex-col p-6 md:p-8">
+          <div className="flex min-h-0 flex-1 flex-col p-[5px]">
             <Outlet />
           </div>
         </div>

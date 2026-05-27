@@ -202,6 +202,10 @@ pub struct AiUsageFactRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_id: Option<String>,
 
+    /// Provider native model field on ai usage fact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_native_model: Option<String>,
+
     /// Rate multiplier field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub rate_multiplier: Option<String>,
@@ -221,6 +225,10 @@ pub struct AiUsageFactRecord {
     /// Request id field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub request_id: Option<String>,
+
+    /// Requested model catalog key field on ai usage fact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub requested_model_catalog_key: Option<String>,
 
     /// Result count field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

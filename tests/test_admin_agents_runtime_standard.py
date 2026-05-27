@@ -37,7 +37,7 @@ PORTAL_PACKAGE_ROOT = (
 class AdminAgentsRuntimeStandardTest(unittest.TestCase):
     def test_admin_agents_route_nav_and_service_use_backend_sdk(self) -> None:
         app = (ROOT / "apps/sdkwork-claw-router-portal/src/App.tsx").read_text(encoding="utf-8")
-        layout = (ROOT / "apps/sdkwork-claw-router-portal/src/AdminLayout.tsx").read_text(
+        registry = (ROOT / "apps/sdkwork-claw-router-portal/src/adminModuleRegistry.ts").read_text(
             encoding="utf-8"
         )
         service = (PORTAL_PACKAGE_ROOT / "src" / "agentService.ts").read_text(encoding="utf-8")
@@ -47,11 +47,11 @@ class AdminAgentsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("sdkwork-claw-router-admin-agents", app)
         self.assertIn("const AgentsAdmin", app)
         self.assertIn('<Route path="agents" element={<AgentsAdmin />} />', app)
-        self.assertIn("'/admin/agents'", layout)
-        self.assertIn("admin.layout.links.agents", layout)
-        self.assertIn("getClawRouterBackendSdkClient().agents.agentDefinitions", service)
-        self.assertIn("backendAgentsSdk().list", service)
-        self.assertIn("backendAgentsSdk().retrieve", service)
+        self.assertIn("'/admin/agents'", registry)
+        self.assertIn("admin.menu.agents", registry)
+        self.assertIn("return getClawRouterBackendSdkClient().agents;", service)
+        self.assertIn("backendAgentsSdk().agentDefinitions.list", service)
+        self.assertIn("backendAgentsSdk().agentDefinitions.retrieve", service)
         self.assertNotIn("getClawRouterAppSdkClient", service)
         self.assertNotIn("fetch(", service)
         self.assertNotIn("axios", service)

@@ -1,3 +1,6 @@
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
 use std::fs;
 use std::path::PathBuf;
 use std::sync::Arc;
@@ -6,32 +9,19 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Body;
 use axum::http::{header, Request, StatusCode};
+use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::api::{
     app_course_router_with_store, app_course_router_with_store_and_upload_root,
     app_course_router_with_store_upload_root_and_upload_limits, configured_course_upload_limits,
     configured_course_upload_root, CourseUploadLimits,
 };
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteCourseStore;
 use serde_json::Value;
-use sqlx::sqlite::SqlitePoolOptions;
 use tower::ServiceExt;
 
 #[tokio::test]
 async fn app_course_public_read_routes_return_seeded_live_courses_without_auth() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = repair_sqlite_pool().await;
 
     let store = Arc::new(SqliteCourseStore::new(pool));
     let router = app_course_router_with_store(store.clone(), store);
@@ -109,17 +99,7 @@ async fn app_course_public_read_routes_return_seeded_live_courses_without_auth()
 
 #[tokio::test]
 async fn app_course_application_route_persists_course_upload_requests() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = Arc::new(SqliteCourseStore::new(pool));
     let router = app_course_router_with_store(store.clone(), store);
@@ -162,17 +142,7 @@ async fn app_course_application_route_persists_course_upload_requests() {
 
 #[tokio::test]
 async fn course_application_video_upload_stores_and_serves_local_tutorial_video() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let upload_root = unique_upload_root("course-upload-success");
     let store = Arc::new(SqliteCourseStore::new(pool));
@@ -252,17 +222,7 @@ async fn course_application_video_upload_stores_and_serves_local_tutorial_video(
 
 #[tokio::test]
 async fn course_application_video_upload_rejects_non_video_files() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let upload_root = unique_upload_root("course-upload-reject");
     let store = Arc::new(SqliteCourseStore::new(pool));
@@ -291,17 +251,7 @@ async fn course_application_video_upload_rejects_non_video_files() {
 
 #[tokio::test]
 async fn course_application_video_upload_uses_configured_size_limit() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let upload_root = unique_upload_root("course-upload-size-limit");
     let store = Arc::new(SqliteCourseStore::new(pool));

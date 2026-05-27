@@ -109,11 +109,18 @@ fn command_operation_ids() -> Vec<(&'static str, &'static str)> {
             "commerce_checkout_sessions_orders_create",
             "checkout.sessions.orders.create",
         ),
-        ("commerce_coupons_list", "coupons.list"),
-        ("commerce_coupons_claims_create", "coupons.claims.create"),
         (
-            "commerce_coupons_redemptions_create",
-            "coupons.redemptions.create",
+            "commerce_promotions_user_coupons_list",
+            "promotions.userCoupons.list",
+        ),
+        ("commerce_promotions_offers_list", "promotions.offers.list"),
+        (
+            "commerce_promotions_user_coupon_claims_create",
+            "promotions.userCoupons.claims.create",
+        ),
+        (
+            "commerce_promotions_codes_redemptions_create",
+            "promotions.codes.redemptions.create",
         ),
         ("commerce_orders_list", "orders.list"),
         ("commerce_orders_retrieve", "orders.retrieve"),

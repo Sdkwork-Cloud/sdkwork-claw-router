@@ -12,7 +12,7 @@ public class AdminReferralStatItem {
     public String getBonusAwarded() {
         return this.bonusAwarded;
     }
-    
+
     public void setBonusAwarded(String bonusAwarded) {
         this.bonusAwarded = bonusAwarded;
     }
@@ -20,7 +20,7 @@ public class AdminReferralStatItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -28,7 +28,7 @@ public class AdminReferralStatItem {
     public String getInviter() {
         return this.inviter;
     }
-    
+
     public void setInviter(String inviter) {
         this.inviter = inviter;
     }
@@ -36,7 +36,7 @@ public class AdminReferralStatItem {
     public String getLink() {
         return this.link;
     }
-    
+
     public void setLink(String link) {
         this.link = link;
     }
@@ -44,7 +44,7 @@ public class AdminReferralStatItem {
     public Integer getTotalInvited() {
         return this.totalInvited;
     }
-    
+
     public void setTotalInvited(Integer totalInvited) {
         this.totalInvited = totalInvited;
     }
@@ -52,7 +52,7 @@ public class AdminReferralStatItem {
     public String getTotalRevenue() {
         return this.totalRevenue;
     }
-    
+
     public void setTotalRevenue(String totalRevenue) {
         this.totalRevenue = totalRevenue;
     }

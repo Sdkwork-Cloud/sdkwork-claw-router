@@ -52,48 +52,46 @@ export function UserView() {
 
   if (loading) {
     return (
-      <BusinessStatePanel
-        kind="loading"
-        title={t('console.user.states.loading', '正在加载用户资料...')}
-        className="m-4 lg:m-6 min-h-[400px]"
-      />
+      <div className="min-h-[calc(100vh-72px)] w-full max-w-6xl mx-auto bg-slate-50 p-[5px] animate-in fade-in duration-500 dark:bg-[#121212]">
+        <BusinessStatePanel
+          kind="loading"
+          title={t('console.user.states.loading', '正在加载用户资料...')}
+          className="min-h-[400px]"
+        />
+      </div>
     );
   }
 
   if (loadError) {
     return (
-      <BusinessStatePanel
-        kind="error"
-        title={t('console.user.states.loadErrorTitle', '用户资料加载失败')}
-        description={loadError}
-        onRetry={() => void loadUserProfile()}
-        className="m-4 lg:m-6 min-h-[400px]"
-      />
+      <div className="min-h-[calc(100vh-72px)] w-full max-w-6xl mx-auto bg-slate-50 p-[5px] animate-in fade-in duration-500 dark:bg-[#121212]">
+        <BusinessStatePanel
+          kind="error"
+          title={t('console.user.states.loadErrorTitle', '用户资料加载失败')}
+          description={loadError}
+          onRetry={() => void loadUserProfile()}
+          className="min-h-[400px]"
+        />
+      </div>
     );
   }
 
   if (!profile) {
     return (
-      <BusinessStatePanel
-        kind="empty"
-        title={t('console.user.states.emptyTitle', '未找到账户资料')}
-        description={t('console.user.states.emptyDescription', '当前会话暂时没有可展示的用户资料。')}
-        onRetry={() => void loadUserProfile()}
-        className="m-4 lg:m-6 min-h-[400px]"
-      />
+      <div className="min-h-[calc(100vh-72px)] w-full max-w-6xl mx-auto bg-slate-50 p-[5px] animate-in fade-in duration-500 dark:bg-[#121212]">
+        <BusinessStatePanel
+          kind="empty"
+          title={t('console.user.states.emptyTitle', '未找到账户资料')}
+          description={t('console.user.states.emptyDescription', '当前会话暂时没有可展示的用户资料。')}
+          onRetry={() => void loadUserProfile()}
+          className="min-h-[400px]"
+        />
+      </div>
     );
   }
 
   return (
-    <div className="p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 max-w-6xl">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/5">
-        <div>
-           <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
-             {t("console.user.userview.text.jgg9i5", "个人设置")}</h1>
-           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t("console.user.userview.text.1f3lo6i", "查看您的基本信息、安全状态与偏好设置。")}</p>
-        </div>
-      </div>
-
+    <div className="min-h-[calc(100vh-72px)] w-full max-w-6xl mx-auto space-y-6 bg-slate-50 p-[5px] animate-in fade-in duration-500 dark:bg-[#121212]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-1 space-y-6">
            <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm flex flex-col items-center text-center">

@@ -63,7 +63,7 @@ export function mapStandardUserCenterSnapshot(
       userId: normalizeOptionalText(snapshot.membership?.userId),
       validFrom: normalizeOptionalText(snapshot.membership?.validFrom),
       validTo: normalizeOptionalText(snapshot.membership?.validTo),
-      vipLevelId: normalizeOptionalText(snapshot.membership?.vipLevelId),
+      membershipLevelId: normalizeOptionalText(snapshot.membership?.membershipLevelId),
     },
     organization: {
       departmentIds: collectOrganizationTargetIds(

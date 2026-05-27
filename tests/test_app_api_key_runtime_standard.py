@@ -96,17 +96,21 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("idempotency_required: true", contract)
         self.assertIn('"name": "Idempotency-Key"', openapi)
         self.assertIn('"required": true', openapi)
-        self.assertIn('"name": "X-Request-Id"', openapi)
+        self.assertNotIn('"name": "X-Request-Id"', openapi)
         self.assertIn("CreateApiKeyRequest", sdk)
         self.assertIn("ApiKeysCreateResult", sdk)
         self.assertIn("create(body: CreateApiKeyRequest, params: IamApiKeysCreateParams)", sdk)
         self.assertIn("post<ApiKeysCreateResult>", sdk)
+        self.assertNotIn("xRequestId", sdk)
         self.assertIn("createRequestToken", frontend)
-        self.assertIn("from 'sdkwork-claw-router-commons/runtime'", frontend)
+        self.assertIn("from 'sdkwork-claw-router-commons/request-id'", frontend)
+        self.assertIn("from 'sdkwork-claw-router-commons/sdk-clients'", frontend)
+        self.assertIn("from 'sdkwork-claw-router-commons/api-result'", frontend)
         self.assertNotIn("function createRequestToken", frontend)
         self.assertIn("const idempotencyKey = createRequestToken('create-api-key');", frontend)
-        self.assertIn("const requestId = createRequestToken('request');", frontend)
-        self.assertIn("{ idempotencyKey, xRequestId: requestId }", frontend)
+        self.assertNotIn("createRequestToken('request')", frontend)
+        self.assertIn("{ idempotencyKey }", frontend)
+        self.assertNotIn("xRequestId", frontend)
         self.assertNotIn("x-sdkwork-tenant-id", frontend.lower())
         self.assertNotIn("x-sdkwork-organization-id", frontend.lower())
         self.assertNotIn("x-sdkwork-user-id", frontend.lower())
@@ -148,7 +152,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         fetch_body = frontend.split("static async fetchKeys", 1)[1].split("static async createKey", 1)[0]
 
-        self.assertIn("ensurePlusApiSuccess(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
+        self.assertIn("ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
         self.assertIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
         self.assertIn("getClawRouterAppSdkClient().iam.apiKeyGroups.list()", fetch_body)
         self.assertIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadGroupsFallback')", fetch_body)
@@ -193,15 +197,19 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
-        i18n = (
+        i18n_resources_dir = (
             ROOT
             / "apps"
             / "sdkwork-claw-router-portal"
             / "packages"
             / "sdkwork-claw-router-i18n"
             / "src"
-            / "index.ts"
-        ).read_text(encoding="utf-8")
+            / "resources"
+        )
+        i18n = "".join(
+            path.read_text(encoding="utf-8")
+            for path in sorted(i18n_resources_dir.rglob("*.ts"))
+        )
         combined = view + drawer + usage_drawer + service
 
         for marker in [
@@ -411,10 +419,27 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("copyableKey:", contract)
-        self.assertIn(
-            "fields: [id, name, maskedKey, copyableKey, group, rate, quota, usedQuota, modalities, ipLimit, created, expires, status]",
-            contract,
-        )
+        console_api_key_model = contract.split(
+            "source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts\n  interface: ApiKey",
+            1,
+        )[1].split("- route:", 1)[0]
+        for field in [
+            "id",
+            "name",
+            "maskedKey",
+            "copyableKey",
+            "group",
+            "rate",
+            "quota",
+            "usedQuota",
+            "modalities",
+            "ipLimit",
+            "created",
+            "expires",
+            "status",
+            "defaultForRuntime",
+        ]:
+            self.assertIn(f"- {field}", console_api_key_model)
         self.assertNotIn("fields: [id, name, keyVal, fullKey", contract)
         self.assertIn(
             "description: Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.",
@@ -444,6 +469,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("maskedKey: string", service)
         self.assertIn("copyableKey: string | null", service)
+        self.assertIn("defaultForRuntime: SdkAppApiKeyItem['defaultForRuntime'];", service)
+        self.assertIn("defaultForRuntime?: boolean", service)
         self.assertIn("displayName: string;", service)
         self.assertIn("displayName: readApiKeyDisplayName(id, name)", service)
         self.assertIn("function readApiKeyDisplayName(id: string, name: string): string", service)
@@ -458,6 +485,14 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             "copyableKey: readNullableString(value, 'copyableKey')",
             service,
         )
+        self.assertIn(
+            "defaultForRuntime: readBoolean(value, 'defaultForRuntime')",
+            service,
+        )
+        self.assertIn(
+            "request.defaultForRuntime = Boolean(input.defaultForRuntime);",
+            service,
+        )
         self.assertNotIn("API key copyable value is required", service)
         self.assertNotIn("keyVal: string", service)
         self.assertNotIn("fullKey: string", service)
@@ -470,6 +505,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("{key.name}</span>", view)
         self.assertIn("text={key.copyableKey ?? ''}", view)
         self.assertIn("disabled={!key.copyableKey}", view)
+        self.assertIn("handleSetDefaultRuntimeKey", view)
+        self.assertIn("ApiKeyService.updateKey(key.id, { defaultForRuntime: true })", view)
+        self.assertIn("console.apiKeys.runtimeDefault", view)
         self.assertIn("console.apiKeys.copyKey", view)
         self.assertNotIn("visibleKeys", view)
         self.assertNotIn("toggleVisibility", view)
@@ -502,13 +540,18 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("idempotency_key: string(128)", schema)
-        self.assertIn("required_columns: [tenant_id, organization_id, user_id, idempotency_key]", schema)
+        api_key_table = schema.split("- table: iam_gateway_api_key", 1)[1].split("- table:", 1)[0]
+        required_columns = api_key_table.split("required_columns:", 1)[1].split("indexes:", 1)[0]
+        for column in ["tenant_id", "organization_id", "user_id", "idempotency_key"]:
+            self.assertIn(f"- {column}", required_columns)
         self.assertIn("idempotency_key VARCHAR(128) NOT NULL", postgres_schema)
         self.assertIn("tenant_id BIGINT NOT NULL", postgres_schema)
         self.assertIn("organization_id BIGINT NOT NULL", postgres_schema)
         self.assertIn("user_id BIGINT NOT NULL", postgres_schema)
         self.assertIn("uk_iam_gateway_api_key_idempotency", schema)
-        self.assertIn("columns: [tenant_id, idempotency_key]", schema)
+        idempotency_index = api_key_table.split("name: uk_iam_gateway_api_key_idempotency", 1)[1]
+        self.assertIn("- tenant_id", idempotency_index)
+        self.assertIn("- idempotency_key", idempotency_index)
         self.assertIn(
             "uk_iam_gateway_api_key_idempotency ON iam_gateway_api_key (tenant_id, idempotency_key)",
             postgres_schema,
@@ -516,7 +559,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("HeaderMap", api_key_route)
         self.assertIn("TrustedRequestSubject", api_key_route)
         self.assertIn("normalize_idempotency_key", api_key_route)
-        self.assertIn("normalize_request_id", api_key_route)
+        self.assertIn("generate_server_request_id", api_key_route)
+        self.assertNotIn("normalize_request_id", api_key_route)
+        self.assertNotIn("REQUEST_ID_HEADER", api_key_route)
 
         for relative_path in [
             "services/sdkwork-claw-product/src/ports/api_key_command_store.rs",
@@ -550,10 +595,11 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("from_fn_with_state", service_source)
         self.assertIn("trusted_request_subject_boundary", http_auth_source)
         self.assertIn("sign_trusted_request_subject", http_auth_source)
-        self.assertIn("inject_verified_trusted_request_subject", http_auth_source)
+        self.assertIn("attach_trusted_request_subject", http_auth_source)
         self.assertIn("signed_subject_headers", route_test_source)
         self.assertIn("app_api_key_create_rejects_direct_trusted_subject_headers", route_test_source)
         self.assertNotIn('header("x-sdkwork-tenant-id", "10")', route_test_source)
+        self.assertNotIn("x-sdkwork-tenant-id header is required", route_test_source)
 
     def test_app_api_key_creation_accepts_app_session_boundary_not_frontend_tenant_claims(self) -> None:
         config_lib = ROOT / "crates" / "sdkwork-claw-config" / "src" / "lib.rs"
@@ -587,10 +633,33 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("app_request_subject_boundary", service_source)
         self.assertIn("session_authorization_header", route_test_source)
         self.assertIn("app_api_key_create_accepts_app_session_token_subject", route_test_source)
+        self.assertIn("app session bearer token is required", route_test_source)
+        self.assertIn('assert!(!body_text.contains(INTERNAL_TENANT_HEADER));', route_test_source)
+        self.assertIn("verify_dual_app_session_headers(headers", http_auth_source)
+        self.assertNotIn(
+            "if !has_dual_app_session_token_headers(headers) {\n        return Ok(());\n    }",
+            http_auth_source,
+        )
         self.assertNotIn("tenantId?:", sdk_clients)
         self.assertNotIn("organizationId?:", sdk_clients)
         self.assertNotIn("tenantId: options.tenantId", sdk_clients)
         self.assertNotIn("organizationId: options.organizationId", sdk_clients)
+
+    def test_product_direct_handler_tests_use_internal_subject_helper(self) -> None:
+        product_tests = ROOT / "services" / "sdkwork-claw-product" / "tests"
+        common = (product_tests / "common" / "mod.rs").read_text(encoding="utf-8")
+
+        self.assertIn("InternalTrustedSubjectHeaders", common)
+        self.assertIn('concat!("x-sdkwork-", "tenant-id")', common)
+
+        for path in product_tests.rglob("*.rs"):
+            source = path.read_text(encoding="utf-8")
+            with self.subTest(path=path.relative_to(ROOT)):
+                if path.name == "mod.rs" and path.parent.name == "common":
+                    continue
+                self.assertNotIn("x-sdkwork-tenant-id", source)
+                self.assertNotIn("x-sdkwork-organization-id", source)
+                self.assertNotIn("x-sdkwork-user-id", source)
 
 
 if __name__ == "__main__":

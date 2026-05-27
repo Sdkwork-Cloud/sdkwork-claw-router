@@ -74,9 +74,10 @@ def serialize_path_primitive(value: Any) -> str:
 
 
 
+
 class ImagesMidjourneyApi:
     """images_midjourney API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

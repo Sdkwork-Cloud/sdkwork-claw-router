@@ -74,9 +74,10 @@ def serialize_path_primitive(value: Any) -> str:
 
 
 
+
 class ImagesNanoBananaApi:
     """images_nano_banana API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

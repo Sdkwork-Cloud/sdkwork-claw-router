@@ -51,6 +51,18 @@ pub struct WalletOperationQuery {
     pub tenant_id: String,
 }
 
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct BillingHistoryListQuery {
+    pub cursor: Option<String>,
+    pub history_type: Option<String>,
+    pub organization_id: Option<String>,
+    pub owner_user_id: String,
+    pub page: Option<i64>,
+    pub page_size: Option<i64>,
+    pub status: Option<String>,
+    pub tenant_id: String,
+}
+
 impl AccountSummaryQuery {
     pub fn new(
         tenant_id: &str,
@@ -174,6 +186,54 @@ impl WalletOperationQuery {
             request_no: required_text("request_no", request_no)?,
             tenant_id: required_text("tenant_id", tenant_id)?,
         })
+    }
+}
+
+impl BillingHistoryListQuery {
+    #[allow(clippy::too_many_arguments)]
+    pub fn new(
+        tenant_id: &str,
+        organization_id: Option<&str>,
+        owner_user_id: &str,
+        history_type: Option<&str>,
+        status: Option<&str>,
+        page: Option<i64>,
+        page_size: Option<i64>,
+        cursor: Option<&str>,
+    ) -> Result<Self, CommerceServiceError> {
+        if let Some(page) = page {
+            if page < 1 {
+                return Err(CommerceServiceError::validation(
+                    "page must be greater than or equal to 1",
+                ));
+            }
+        }
+        if let Some(page_size) = page_size {
+            if !(1..=200).contains(&page_size) {
+                return Err(CommerceServiceError::validation(
+                    "page_size must be between 1 and 200",
+                ));
+            }
+        }
+        Ok(Self {
+            cursor: optional_text(cursor),
+            history_type: optional_text(history_type),
+            organization_id: optional_text(organization_id),
+            owner_user_id: required_text("owner_user_id", owner_user_id)?,
+            page,
+            page_size,
+            status: optional_text(status),
+            tenant_id: required_text("tenant_id", tenant_id)?,
+        })
+    }
+
+    pub fn limit(&self) -> i64 {
+        self.page_size.unwrap_or(50).clamp(1, 200)
+    }
+
+    pub fn offset(&self) -> i64 {
+        let page = self.page.unwrap_or(1).max(1);
+        (page - 1) * self.limit()
     }
 }
 

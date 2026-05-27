@@ -10,7 +10,7 @@ public class OpenAiUploadCreateRequest {
     public Integer getBytes() {
         return this.bytes;
     }
-    
+
     public void setBytes(Integer bytes) {
         this.bytes = bytes;
     }
@@ -18,7 +18,7 @@ public class OpenAiUploadCreateRequest {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -26,7 +26,7 @@ public class OpenAiUploadCreateRequest {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -34,7 +34,7 @@ public class OpenAiUploadCreateRequest {
     public String getPurpose() {
         return this.purpose;
     }
-    
+
     public void setPurpose(String purpose) {
         this.purpose = purpose;
     }

@@ -1,19 +1,70 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult } from '../types';
+import type { AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppTemplateCreateRequest, AdminAppTemplateUpdateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsTemplatesCreateResult, AppsTemplatesDeleteResult, AppsTemplatesListResult, AppsTemplatesPublishResult, AppsTemplatesRetrieveResult, AppsTemplatesUnpublishResult, AppsTemplatesUpdateResult, AppsUnpublishResult, AppsUpdateResult } from '../types';
 
 
-export interface PlatformAppsCategoriesCreateParams {
-  xRequestId?: string;
+export interface PlatformAppsTemplatesListParams {
+  q?: string;
+  publishStatus?: 'DRAFT' | 'PUBLISHED' | 'OFFLINE';
+  templateType?: string;
+  runtime?: string;
+  categoryId?: number;
+  page?: number;
+  pageSize?: number;
 }
 
-export interface PlatformAppsCategoriesDeleteParams {
-  xRequestId?: string;
-}
+export class PlatformAppsTemplatesApi {
+  private client: HttpClient;
 
-export interface PlatformAppsCategoriesUpdateParams {
-  xRequestId?: string;
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List app templates */
+  async list(params?: PlatformAppsTemplatesListParams): Promise<AppsTemplatesListResult> {
+    const query = buildQueryString([
+      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
+      { name: 'publish_status', value: params?.publishStatus, style: 'form', explode: true, allowReserved: false },
+      { name: 'template_type', value: params?.templateType, style: 'form', explode: true, allowReserved: false },
+      { name: 'runtime', value: params?.runtime, style: 'form', explode: true, allowReserved: false },
+      { name: 'category_id', value: params?.categoryId, style: 'form', explode: true, allowReserved: false },
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<AppsTemplatesListResult>(appendQueryString(backendApiPath(`/platform/apps/templates`), query));
+  }
+
+/** Create app template */
+  async create(body: AdminAppTemplateCreateRequest): Promise<AppsTemplatesCreateResult> {
+    return this.client.post<AppsTemplatesCreateResult>(backendApiPath(`/platform/apps/templates`), body, undefined, undefined, 'application/json');
+  }
+
+/** Delete app template */
+  async delete(templateId: string): Promise<AppsTemplatesDeleteResult> {
+    return this.client.delete<AppsTemplatesDeleteResult>(backendApiPath(`/platform/apps/templates/${serializePathParameter(templateId, { name: 'templateId', style: 'simple', explode: false })}`));
+  }
+
+/** List app template */
+  async retrieve(templateId: string): Promise<AppsTemplatesRetrieveResult> {
+    return this.client.get<AppsTemplatesRetrieveResult>(backendApiPath(`/platform/apps/templates/${serializePathParameter(templateId, { name: 'templateId', style: 'simple', explode: false })}`));
+  }
+
+/** Update app template */
+  async update(templateId: string, body: AdminAppTemplateUpdateRequest): Promise<AppsTemplatesUpdateResult> {
+    return this.client.put<AppsTemplatesUpdateResult>(backendApiPath(`/platform/apps/templates/${serializePathParameter(templateId, { name: 'templateId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+  }
+
+/** Publish app template */
+  async publish(templateId: string): Promise<AppsTemplatesPublishResult> {
+    return this.client.post<AppsTemplatesPublishResult>(backendApiPath(`/platform/apps/templates/${serializePathParameter(templateId, { name: 'templateId', style: 'simple', explode: false })}/publish`));
+  }
+
+/** Offline app template */
+  async unpublish(templateId: string): Promise<AppsTemplatesUnpublishResult> {
+    return this.client.post<AppsTemplatesUnpublishResult>(backendApiPath(`/platform/apps/templates/${serializePathParameter(templateId, { name: 'templateId', style: 'simple', explode: false })}/unpublish`));
+  }
 }
 
 export class PlatformAppsCategoriesApi {
@@ -30,36 +81,18 @@ export class PlatformAppsCategoriesApi {
   }
 
 /** Create app category */
-  async create(body: AdminAppCategoryCreateRequest, params?: PlatformAppsCategoriesCreateParams): Promise<AppsCategoriesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AppsCategoriesCreateResult>(backendApiPath(`/platform/apps/categories`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminAppCategoryCreateRequest): Promise<AppsCategoriesCreateResult> {
+    return this.client.post<AppsCategoriesCreateResult>(backendApiPath(`/platform/apps/categories`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete app category */
-  async delete(categoryId: string, params?: PlatformAppsCategoriesDeleteParams): Promise<AppsCategoriesDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<AppsCategoriesDeleteResult>(backendApiPath(`/platform/apps/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(categoryId: string): Promise<AppsCategoriesDeleteResult> {
+    return this.client.delete<AppsCategoriesDeleteResult>(backendApiPath(`/platform/apps/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`));
   }
 
 /** Update app category */
-  async update(categoryId: string, body: AdminAppCategoryUpdateRequest, params?: PlatformAppsCategoriesUpdateParams): Promise<AppsCategoriesUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<AppsCategoriesUpdateResult>(backendApiPath(`/platform/apps/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(categoryId: string, body: AdminAppCategoryUpdateRequest): Promise<AppsCategoriesUpdateResult> {
+    return this.client.put<AppsCategoriesUpdateResult>(backendApiPath(`/platform/apps/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -68,50 +101,20 @@ export interface PlatformAppsListParams {
   status?: 'ACTIVE' | 'INACTIVE';
   marketStatus?: 'DRAFT' | 'PUBLISHED' | 'OFFLINE';
   appType?: string;
+  categoryId?: number;
   page?: number;
   pageSize?: number;
-  xRequestId?: string;
-}
-
-export interface PlatformAppsCreateParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsDeleteParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsRetrieveParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsUpdateParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsDisableParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsEnableParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsPublishParams {
-  xRequestId?: string;
-}
-
-export interface PlatformAppsUnpublishParams {
-  xRequestId?: string;
 }
 
 export class PlatformAppsApi {
   private client: HttpClient;
   public readonly categories: PlatformAppsCategoriesApi;
+  public readonly templates: PlatformAppsTemplatesApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.categories = new PlatformAppsCategoriesApi(client);
+    this.templates = new PlatformAppsTemplatesApi(client);
   }
 
 
@@ -122,104 +125,51 @@ export class PlatformAppsApi {
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
       { name: 'market_status', value: params?.marketStatus, style: 'form', explode: true, allowReserved: false },
       { name: 'app_type', value: params?.appType, style: 'form', explode: true, allowReserved: false },
+      { name: 'category_id', value: params?.categoryId, style: 'form', explode: true, allowReserved: false },
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
     ]);
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.get<AppsListResult>(appendQueryString(backendApiPath(`/platform/apps`), query), undefined, requestHeaders);
+    return this.client.get<AppsListResult>(appendQueryString(backendApiPath(`/platform/apps`), query));
   }
 
 /** Create app */
-  async create(body: AdminAppCreateRequest, params?: PlatformAppsCreateParams): Promise<AppsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AppsCreateResult>(backendApiPath(`/platform/apps`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminAppCreateRequest): Promise<AppsCreateResult> {
+    return this.client.post<AppsCreateResult>(backendApiPath(`/platform/apps`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete app */
-  async delete(appId: string, params?: PlatformAppsDeleteParams): Promise<AppsDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<AppsDeleteResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(appId: string): Promise<AppsDeleteResult> {
+    return this.client.delete<AppsDeleteResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}`));
   }
 
 /** List app */
-  async retrieve(appId: string, params?: PlatformAppsRetrieveParams): Promise<AppsRetrieveResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.get<AppsRetrieveResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async retrieve(appId: string): Promise<AppsRetrieveResult> {
+    return this.client.get<AppsRetrieveResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}`));
   }
 
 /** Update app */
-  async update(appId: string, body: AdminAppUpdateRequest, params?: PlatformAppsUpdateParams): Promise<AppsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<AppsUpdateResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(appId: string, body: AdminAppUpdateRequest): Promise<AppsUpdateResult> {
+    return this.client.put<AppsUpdateResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 
 /** Disable app */
-  async disable(appId: string, params?: PlatformAppsDisableParams): Promise<AppsDisableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AppsDisableResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/disable`), undefined, undefined, requestHeaders);
+  async disable(appId: string): Promise<AppsDisableResult> {
+    return this.client.post<AppsDisableResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/disable`));
   }
 
 /** Enable app */
-  async enable(appId: string, params?: PlatformAppsEnableParams): Promise<AppsEnableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AppsEnableResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/enable`), undefined, undefined, requestHeaders);
+  async enable(appId: string): Promise<AppsEnableResult> {
+    return this.client.post<AppsEnableResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/enable`));
   }
 
 /** Publish app */
-  async publish(appId: string, params?: PlatformAppsPublishParams): Promise<AppsPublishResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AppsPublishResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/publish`), undefined, undefined, requestHeaders);
+  async publish(appId: string): Promise<AppsPublishResult> {
+    return this.client.post<AppsPublishResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/publish`));
   }
 
 /** Offline app */
-  async unpublish(appId: string, params?: PlatformAppsUnpublishParams): Promise<AppsUnpublishResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AppsUnpublishResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/unpublish`), undefined, undefined, requestHeaders);
+  async unpublish(appId: string): Promise<AppsUnpublishResult> {
+    return this.client.post<AppsUnpublishResult>(backendApiPath(`/platform/apps/${serializePathParameter(appId, { name: 'appId', style: 'simple', explode: false })}/unpublish`));
   }
 }
 
@@ -468,79 +418,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

@@ -99,7 +99,6 @@ frontend_operations:
   read_sources:
   - commerce_membership_plan
   - commerce_membership_entitlement
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership_plan
@@ -220,7 +219,6 @@ frontend_operations:
   read_sources:
   - commerce_membership_plan
   - commerce_membership_entitlement
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership_plan
@@ -243,7 +241,6 @@ frontend_operations:
   - commerce_membership_plan
   - commerce_membership_package
   - commerce_membership
-  request_id_header: true
   write_tables:
   - commerce_membership_plan
   - ops_audit_log
@@ -382,7 +379,6 @@ frontend_operations:
   - commerce_membership_package_group
   - commerce_product_spu
   - commerce_product_sku
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership_package
@@ -454,7 +450,6 @@ frontend_operations:
   - commerce_membership_package_group
   - commerce_product_spu
   - commerce_product_sku
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership_package
@@ -478,7 +473,6 @@ frontend_operations:
   - commerce_membership_package
   - commerce_order_item
   - commerce_product_sku
-  request_id_header: true
   write_tables:
   - commerce_membership_package
   - ops_audit_log
@@ -530,7 +524,6 @@ frontend_operations:
   - commerce_membership_package_group
   - commerce_membership_package
   - commerce_membership_plan
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership_package_group
@@ -592,7 +585,6 @@ frontend_operations:
   - commerce_membership_package_group
   - commerce_membership_package
   - commerce_membership_plan
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership_package_group
@@ -613,7 +605,6 @@ frontend_operations:
   read_sources:
   - commerce_membership_package_group
   - commerce_membership_package
-  request_id_header: true
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
@@ -683,7 +674,6 @@ frontend_operations:
   read_sources:
   - commerce_membership
   - commerce_membership_plan
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_membership
@@ -751,3 +741,237 @@ frontend_operations:
       type: string
       maxLength: 32
   response_schema: *id003
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: fetchMembershipAdminPackageGroups
+  operation_scope: app_shell
+  operation_id: memberships.admin.packageGroups.fetch
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/memberships/package_groups
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Fetch membership admin package groups
+  description: Admin shell aggregate over package group and package list APIs for package counts.
+  read_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: createMembershipAdminPackageGroup
+  operation_scope: app_shell
+  operation_id: memberships.admin.packageGroups.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/memberships/package_groups
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Create membership admin package group
+  description: Admin shell wrapper over the standard membership package group create API.
+  read_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+  - commerce_membership_plan
+  write_tables:
+  - commerce_membership_package_group
+  - ops_audit_log
+  request_schema: *id006
+  response_schema: *id002
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: updateMembershipAdminPackageGroup
+  operation_scope: app_shell
+  operation_id: memberships.admin.packageGroups.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Update membership admin package group
+  description: Admin shell wrapper over the standard membership package group update API.
+  read_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+  - commerce_membership_plan
+  write_tables:
+  - commerce_membership_package_group
+  - ops_audit_log
+  request_schema: *id006
+  response_schema: *id002
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: deleteMembershipAdminPackageGroup
+  operation_scope: app_shell
+  operation_id: memberships.admin.packageGroups.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Delete membership admin package group
+  description: Admin shell wrapper over the standard membership package group delete API.
+  read_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+  write_tables:
+  - commerce_membership_package_group
+  - ops_audit_log
+  response_schema: *id005
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: fetchMembershipAdminPackages
+  operation_scope: app_shell
+  operation_id: memberships.admin.packages.fetch
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/memberships/packages
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Fetch membership admin packages
+  description: Admin shell wrapper over the standard membership packages list API.
+  read_sources:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_product_sku
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: createMembershipAdminPackage
+  operation_scope: app_shell
+  operation_id: memberships.admin.packages.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/memberships/packages
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Create membership admin package
+  description: Admin shell wrapper over the standard membership package create API.
+  read_sources:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_product_spu
+  - commerce_product_sku
+  write_tables:
+  - commerce_membership_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  request_schema: *id004
+  response_schema: *id002
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: updateMembershipAdminPackage
+  operation_scope: app_shell
+  operation_id: memberships.admin.packages.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/memberships/packages/{packageId}
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Update membership admin package
+  description: Admin shell wrapper over the standard membership package update API.
+  read_sources:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_product_spu
+  - commerce_product_sku
+  write_tables:
+  - commerce_membership_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  request_schema: *id004
+  response_schema: *id002
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: deleteMembershipAdminPackage
+  operation_scope: app_shell
+  operation_id: memberships.admin.packages.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/memberships/packages/{packageId}
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Delete membership admin package
+  description: Admin shell wrapper over the standard membership package delete API.
+  read_sources:
+  - commerce_membership_package
+  - commerce_order_item
+  - commerce_product_sku
+  write_tables:
+  - commerce_membership_package
+  - ops_audit_log
+  response_schema: *id005
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: updateMembershipAdminPlan
+  operation_scope: app_shell
+  operation_id: memberships.admin.plans.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/memberships/plans/{planId}
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Update membership admin plan
+  description: Admin shell wrapper over the standard membership plan update API.
+  read_sources:
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+  write_tables:
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: deleteMembershipAdminPlan
+  operation_scope: app_shell
+  operation_id: memberships.admin.plans.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/memberships/plans/{planId}
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Delete membership admin plan
+  description: Admin shell wrapper over the standard membership plan delete API.
+  read_sources:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership
+  write_tables:
+  - commerce_membership_plan
+  - ops_audit_log
+  response_schema: *id005
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  operation: updateMembershipAdminMemberStatus
+  operation_scope: app_shell
+  operation_id: memberships.admin.members.status.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/memberships/members/{membershipId}/status
+  openapi_exposed: false
+  sdk_domain: commerce
+  summary: Update membership admin member status
+  description: Admin shell wrapper over the standard membership member status update API.
+  read_sources:
+  - commerce_membership
+  - commerce_membership_plan
+  write_tables:
+  - commerce_membership
+  - ops_audit_log
+  response_schema: *id002

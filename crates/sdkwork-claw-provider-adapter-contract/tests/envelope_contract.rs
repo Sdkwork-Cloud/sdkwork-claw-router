@@ -1,6 +1,7 @@
 use sdkwork_claw_provider_adapter_contract::{
     AdapterInvocationMetadata, AdapterInvocationRequest, AdapterInvocationResponse,
     AdapterInvocationShape, AdapterProviderContext, AdapterSecret, AdapterSubject,
+    AdapterUsageLine,
 };
 use serde_json::json;
 
@@ -69,4 +70,54 @@ fn adapter_invocation_response_serializes_standard_task_response() {
     assert_eq!(serialized["provider"]["taskId"], "native-task-1");
     assert_eq!(serialized["usage"]["billingUnits"], 1);
     assert_eq!(serialized["body"]["status"], "queued");
+}
+
+#[test]
+fn adapter_invocation_response_serializes_standard_usage_lines() {
+    let response = AdapterInvocationResponse::json_task(
+        200,
+        serde_json::json!({"id": "task-1", "status": "succeeded"}),
+    )
+    .with_usage_line(
+        AdapterUsageLine::new("video_result", "1")
+            .with_result_count(1)
+            .with_provider_native_model("vidu-q1")
+            .with_requested_model_catalog_key("vidu/global/vidu-q1"),
+    )
+    .with_usage_line(
+        AdapterUsageLine::new("video_output_second", "8")
+            .with_video_seconds("8")
+            .with_provider_native_model("vidu-q1")
+            .with_requested_model_catalog_key("vidu/global/vidu-q1"),
+    );
+
+    let serialized = serde_json::to_value(response).unwrap();
+
+    assert!(serialized["usage"]["billingUnits"].is_null());
+    assert_eq!(
+        serialized["usage"]["usageLines"][0]["meterCode"],
+        "video_result"
+    );
+    assert_eq!(
+        serialized["usage"]["usageLines"][0]["billableQuantity"],
+        "1"
+    );
+    assert_eq!(serialized["usage"]["usageLines"][0]["resultCount"], 1);
+    assert_eq!(
+        serialized["usage"]["usageLines"][0]["providerNativeModel"],
+        "vidu-q1"
+    );
+    assert_eq!(
+        serialized["usage"]["usageLines"][0]["requestedModelCatalogKey"],
+        "vidu/global/vidu-q1"
+    );
+    assert_eq!(
+        serialized["usage"]["usageLines"][1]["meterCode"],
+        "video_output_second"
+    );
+    assert_eq!(
+        serialized["usage"]["usageLines"][1]["billableQuantity"],
+        "8"
+    );
+    assert_eq!(serialized["usage"]["usageLines"][1]["videoSeconds"], "8");
 }

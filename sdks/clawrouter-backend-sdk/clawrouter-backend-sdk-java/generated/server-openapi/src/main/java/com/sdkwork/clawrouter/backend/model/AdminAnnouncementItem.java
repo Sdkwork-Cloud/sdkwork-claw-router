@@ -13,7 +13,7 @@ public class AdminAnnouncementItem {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -21,7 +21,7 @@ public class AdminAnnouncementItem {
     public String getDate() {
         return this.date;
     }
-    
+
     public void setDate(String date) {
         this.date = date;
     }
@@ -29,7 +29,7 @@ public class AdminAnnouncementItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -37,7 +37,7 @@ public class AdminAnnouncementItem {
     public Boolean getShowAsPopup() {
         return this.showAsPopup;
     }
-    
+
     public void setShowAsPopup(Boolean showAsPopup) {
         this.showAsPopup = showAsPopup;
     }
@@ -45,7 +45,7 @@ public class AdminAnnouncementItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -53,7 +53,7 @@ public class AdminAnnouncementItem {
     public String getTarget() {
         return this.target;
     }
-    
+
     public void setTarget(String target) {
         this.target = target;
     }
@@ -61,7 +61,7 @@ public class AdminAnnouncementItem {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

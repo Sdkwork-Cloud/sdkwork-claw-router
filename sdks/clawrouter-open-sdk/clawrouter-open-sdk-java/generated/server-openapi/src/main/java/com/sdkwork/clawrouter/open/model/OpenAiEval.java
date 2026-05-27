@@ -15,7 +15,7 @@ public class OpenAiEval {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -23,7 +23,7 @@ public class OpenAiEval {
     public String getDataSourceConfig() {
         return this.dataSourceConfig;
     }
-    
+
     public void setDataSourceConfig(String dataSourceConfig) {
         this.dataSourceConfig = dataSourceConfig;
     }
@@ -31,7 +31,7 @@ public class OpenAiEval {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -39,7 +39,7 @@ public class OpenAiEval {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -47,7 +47,7 @@ public class OpenAiEval {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -55,7 +55,7 @@ public class OpenAiEval {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -63,7 +63,7 @@ public class OpenAiEval {
     public List<String> getTestingCriteria() {
         return this.testingCriteria;
     }
-    
+
     public void setTestingCriteria(List<String> testingCriteria) {
         this.testingCriteria = testingCriteria;
     }

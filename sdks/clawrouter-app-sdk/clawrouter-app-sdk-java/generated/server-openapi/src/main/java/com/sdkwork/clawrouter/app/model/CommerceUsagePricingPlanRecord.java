@@ -30,7 +30,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -38,7 +38,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -46,7 +46,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -54,7 +54,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -62,7 +62,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -70,7 +70,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -78,7 +78,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -86,7 +86,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getIncludedQuota() {
         return this.includedQuota;
     }
-    
+
     public void setIncludedQuota(String includedQuota) {
         this.includedQuota = includedQuota;
     }
@@ -94,7 +94,7 @@ public class CommerceUsagePricingPlanRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -102,7 +102,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -110,7 +110,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getOveragePricingId() {
         return this.overagePricingId;
     }
-    
+
     public void setOveragePricingId(String overagePricingId) {
         this.overagePricingId = overagePricingId;
     }
@@ -118,7 +118,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getPlanCode() {
         return this.planCode;
     }
-    
+
     public void setPlanCode(String planCode) {
         this.planCode = planCode;
     }
@@ -126,7 +126,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getPlanName() {
         return this.planName;
     }
-    
+
     public void setPlanName(String planName) {
         this.planName = planName;
     }
@@ -134,7 +134,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getPricingMode() {
         return this.pricingMode;
     }
-    
+
     public void setPricingMode(String pricingMode) {
         this.pricingMode = pricingMode;
     }
@@ -142,7 +142,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getProductId() {
         return this.productId;
     }
-    
+
     public void setProductId(String productId) {
         this.productId = productId;
     }
@@ -150,7 +150,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getRateMultiplier() {
         return this.rateMultiplier;
     }
-    
+
     public void setRateMultiplier(String rateMultiplier) {
         this.rateMultiplier = rateMultiplier;
     }
@@ -158,7 +158,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getSkuId() {
         return this.skuId;
     }
-    
+
     public void setSkuId(String skuId) {
         this.skuId = skuId;
     }
@@ -166,7 +166,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -174,7 +174,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -182,7 +182,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -190,7 +190,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -198,7 +198,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -206,7 +206,7 @@ public class CommerceUsagePricingPlanRecord {
     public String getVipLevelId() {
         return this.vipLevelId;
     }
-    
+
     public void setVipLevelId(String vipLevelId) {
         this.vipLevelId = vipLevelId;
     }

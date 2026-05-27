@@ -10,7 +10,7 @@ public class OpenAiImageEditMultipartRequest {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -18,7 +18,7 @@ public class OpenAiImageEditMultipartRequest {
     public String getMask() {
         return this.mask;
     }
-    
+
     public void setMask(String mask) {
         this.mask = mask;
     }
@@ -26,7 +26,7 @@ public class OpenAiImageEditMultipartRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -34,7 +34,7 @@ public class OpenAiImageEditMultipartRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }

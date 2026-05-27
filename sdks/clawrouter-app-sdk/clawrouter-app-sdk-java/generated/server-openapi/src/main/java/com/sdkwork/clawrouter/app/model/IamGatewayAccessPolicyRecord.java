@@ -38,7 +38,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getAllowedCapabilities() {
         return this.allowedCapabilities;
     }
-    
+
     public void setAllowedCapabilities(Map<String, String> allowedCapabilities) {
         this.allowedCapabilities = allowedCapabilities;
     }
@@ -46,7 +46,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getAllowedModels() {
         return this.allowedModels;
     }
-    
+
     public void setAllowedModels(Map<String, String> allowedModels) {
         this.allowedModels = allowedModels;
     }
@@ -54,7 +54,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -62,7 +62,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getDataRetentionMode() {
         return this.dataRetentionMode;
     }
-    
+
     public void setDataRetentionMode(String dataRetentionMode) {
         this.dataRetentionMode = dataRetentionMode;
     }
@@ -70,7 +70,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -78,7 +78,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -86,7 +86,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -94,7 +94,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getDeniedCapabilities() {
         return this.deniedCapabilities;
     }
-    
+
     public void setDeniedCapabilities(Map<String, String> deniedCapabilities) {
         this.deniedCapabilities = deniedCapabilities;
     }
@@ -102,7 +102,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getDeniedModels() {
         return this.deniedModels;
     }
-    
+
     public void setDeniedModels(Map<String, String> deniedModels) {
         this.deniedModels = deniedModels;
     }
@@ -110,7 +110,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -118,7 +118,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -126,7 +126,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -134,7 +134,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getIpAllowlist() {
         return this.ipAllowlist;
     }
-    
+
     public void setIpAllowlist(Map<String, String> ipAllowlist) {
         this.ipAllowlist = ipAllowlist;
     }
@@ -142,7 +142,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getIpDenylist() {
         return this.ipDenylist;
     }
-    
+
     public void setIpDenylist(Map<String, String> ipDenylist) {
         this.ipDenylist = ipDenylist;
     }
@@ -150,7 +150,7 @@ public class IamGatewayAccessPolicyRecord {
     public Integer getIpRuleCount() {
         return this.ipRuleCount;
     }
-    
+
     public void setIpRuleCount(Integer ipRuleCount) {
         this.ipRuleCount = ipRuleCount;
     }
@@ -158,7 +158,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getMaxContextTokens() {
         return this.maxContextTokens;
     }
-    
+
     public void setMaxContextTokens(String maxContextTokens) {
         this.maxContextTokens = maxContextTokens;
     }
@@ -166,7 +166,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -174,7 +174,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -182,7 +182,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getNetworkPolicyMode() {
         return this.networkPolicyMode;
     }
-    
+
     public void setNetworkPolicyMode(String networkPolicyMode) {
         this.networkPolicyMode = networkPolicyMode;
     }
@@ -190,7 +190,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -198,7 +198,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getPolicyType() {
         return this.policyType;
     }
-    
+
     public void setPolicyType(String policyType) {
         this.policyType = policyType;
     }
@@ -206,7 +206,7 @@ public class IamGatewayAccessPolicyRecord {
     public Map<String, String> getRegionAllowlist() {
         return this.regionAllowlist;
     }
-    
+
     public void setRegionAllowlist(Map<String, String> regionAllowlist) {
         this.regionAllowlist = regionAllowlist;
     }
@@ -214,7 +214,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -222,7 +222,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getSubjectId() {
         return this.subjectId;
     }
-    
+
     public void setSubjectId(String subjectId) {
         this.subjectId = subjectId;
     }
@@ -230,7 +230,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getSubjectRefHash() {
         return this.subjectRefHash;
     }
-    
+
     public void setSubjectRefHash(String subjectRefHash) {
         this.subjectRefHash = subjectRefHash;
     }
@@ -238,7 +238,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getSubjectRefMasked() {
         return this.subjectRefMasked;
     }
-    
+
     public void setSubjectRefMasked(String subjectRefMasked) {
         this.subjectRefMasked = subjectRefMasked;
     }
@@ -246,7 +246,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getSubjectType() {
         return this.subjectType;
     }
-    
+
     public void setSubjectType(String subjectType) {
         this.subjectType = subjectType;
     }
@@ -254,7 +254,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -262,7 +262,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -270,7 +270,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -278,7 +278,7 @@ public class IamGatewayAccessPolicyRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

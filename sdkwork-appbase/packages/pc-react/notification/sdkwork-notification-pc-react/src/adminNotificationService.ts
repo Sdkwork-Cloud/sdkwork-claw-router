@@ -97,24 +97,18 @@ export interface SdkworkAdminNotificationGeneratedClient {
   notification: {
     createNotification(
       body: SdkworkAdminNotificationCreateRequest,
-      params?: SdkworkAdminNotificationMutationParams,
     ): Promise<unknown>;
     deleteNotifications(notificationId: string): Promise<unknown>;
     listNotifications(params?: SdkworkAdminNotificationListOptions): Promise<unknown>;
     updateNotifications(
       notificationId: string,
       body: SdkworkAdminNotificationUpdateRequest,
-      params?: SdkworkAdminNotificationMutationParams,
     ): Promise<unknown>;
   };
 }
 
 export type SdkworkAdminNotificationCreateRequest = Record<string, unknown>;
 export type SdkworkAdminNotificationUpdateRequest = Record<string, unknown>;
-
-export interface SdkworkAdminNotificationMutationParams {
-  xRequestId?: string;
-}
 
 export interface SdkworkAdminNotificationService {
   addNotification(input: SdkworkAdminNotificationCreateInput): Promise<SdkworkAdminNotification>;
@@ -128,7 +122,6 @@ export interface SdkworkAdminNotificationService {
 
 export interface CreateSdkworkAdminNotificationServiceOptions {
   client: SdkworkAdminNotificationGeneratedClient;
-  createRequestId?: (prefix: string) => string;
 }
 
 type ApiRecord = Record<string, unknown>;
@@ -144,7 +137,6 @@ const NOTIFICATION_ENUMS = {
 
 export function createSdkworkAdminNotificationService({
   client,
-  createRequestId = defaultCreateRequestId,
 }: CreateSdkworkAdminNotificationServiceOptions): SdkworkAdminNotificationService {
   return {
     async fetchNotifications(options = {}) {
@@ -155,7 +147,6 @@ export function createSdkworkAdminNotificationService({
     async addNotification(input) {
       const result = await client.notification.createNotification(
         toCreateNotificationRequest(input),
-        { xRequestId: createRequestId("admin-notification-create") },
       );
       ensureSdkworkAdminNotificationSuccess(result, "Failed to add notification");
       return readNotificationItemFromMutation(result, "Created notification response is missing data");
@@ -164,7 +155,6 @@ export function createSdkworkAdminNotificationService({
       const result = await client.notification.updateNotifications(
         requiredSafePathSegment(notificationId, "notificationId"),
         toUpdateNotificationRequest(input),
-        { xRequestId: createRequestId("admin-notification-update") },
       );
       ensureSdkworkAdminNotificationSuccess(result, "Failed to update notification");
       return readNotificationItemFromMutation(result, "Updated notification response is missing data");
@@ -659,18 +649,4 @@ function hasOwn<T extends object, K extends PropertyKey>(value: T, key: K): valu
 
 function isEnumValue<T extends readonly string[]>(values: T, value: unknown): value is T[number] {
   return typeof value === "string" && values.includes(value);
-}
-
-function defaultCreateRequestId(prefix: string): string {
-  const normalizedPrefix = prefix.trim() || "admin-notification";
-  const crypto = globalThis.crypto;
-  if (crypto?.randomUUID) {
-    return `${normalizedPrefix}-${crypto.randomUUID()}`;
-  }
-  if (crypto?.getRandomValues) {
-    const bytes = new Uint8Array(16);
-    crypto.getRandomValues(bytes);
-    return `${normalizedPrefix}-${Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("")}`;
-  }
-  throw new Error("Secure random source is unavailable for notification request token generation");
 }

@@ -13,9 +13,10 @@ def _append_query_string(path: str, raw_query_string: str) -> str:
 
 
 
+
 class ChatAnthropicApi:
     """chat_anthropic API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

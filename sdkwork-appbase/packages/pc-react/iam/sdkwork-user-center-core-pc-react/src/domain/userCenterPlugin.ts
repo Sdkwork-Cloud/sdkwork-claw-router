@@ -8,7 +8,7 @@ import type {
 import { createUserCenterBridgeConfig } from "./userCenterBridge.ts";
 import { createUserCenterDeploymentProfiles } from "./userCenterDeployment.ts";
 
-const USER_CENTER_PLUGIN_CAPABILITIES = ["auth", "user", "vip"] as const satisfies readonly UserCenterPluginCapabilityName[];
+const USER_CENTER_PLUGIN_CAPABILITIES = ["auth", "user", "membership"] as const satisfies readonly UserCenterPluginCapabilityName[];
 
 function toUniquePackages(packageNames: readonly string[]): string[] {
   return Array.from(
@@ -98,19 +98,19 @@ export function createUserCenterPluginDefinition(
     };
   }
 
-  if (capabilities.includes("vip")) {
-    manifests.vip = {
+  if (capabilities.includes("membership")) {
+    manifests.membership = {
       ...createManifestBase({
         description:
-          "VIP workspace for membership levels, benefit comparison, and premium upgrade routing.",
+          "Membership workspace for plan levels, entitlement comparison, and upgrade routing.",
         host,
-        id: `${bridgeConfig.namespace}-vip`,
+        id: `${bridgeConfig.namespace}-membership`,
         packageNames,
         theme,
-        title: `${title} VIP`,
+        title: `${title} Membership`,
       }),
-      capability: "vip",
-      routePath: bridgeConfig.routes.vipRoutePath,
+      capability: "membership",
+      routePath: bridgeConfig.routes.membershipRoutePath,
     };
   }
 

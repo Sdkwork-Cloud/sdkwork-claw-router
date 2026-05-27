@@ -15,7 +15,7 @@ public class ProviderGeneratedMedia {
     public Double getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Double duration) {
         this.duration = duration;
     }
@@ -23,7 +23,7 @@ public class ProviderGeneratedMedia {
     public Integer getHeight() {
         return this.height;
     }
-    
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -31,7 +31,7 @@ public class ProviderGeneratedMedia {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -39,7 +39,7 @@ public class ProviderGeneratedMedia {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -47,7 +47,7 @@ public class ProviderGeneratedMedia {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -55,7 +55,7 @@ public class ProviderGeneratedMedia {
     public String getUri() {
         return this.uri;
     }
-    
+
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -63,7 +63,7 @@ public class ProviderGeneratedMedia {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -71,7 +71,7 @@ public class ProviderGeneratedMedia {
     public Integer getWidth() {
         return this.width;
     }
-    
+
     public void setWidth(Integer width) {
         this.width = width;
     }

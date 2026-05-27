@@ -16,7 +16,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public String getHyperparameters() {
         return this.hyperparameters;
     }
-    
+
     public void setHyperparameters(String hyperparameters) {
         this.hyperparameters = hyperparameters;
     }
@@ -24,7 +24,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public List<String> getIntegrations() {
         return this.integrations;
     }
-    
+
     public void setIntegrations(List<String> integrations) {
         this.integrations = integrations;
     }
@@ -32,7 +32,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -40,7 +40,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -48,7 +48,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public Integer getSeed() {
         return this.seed;
     }
-    
+
     public void setSeed(Integer seed) {
         this.seed = seed;
     }
@@ -56,7 +56,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public String getSuffix() {
         return this.suffix;
     }
-    
+
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
@@ -64,7 +64,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public String getTrainingFile() {
         return this.trainingFile;
     }
-    
+
     public void setTrainingFile(String trainingFile) {
         this.trainingFile = trainingFile;
     }
@@ -72,7 +72,7 @@ public class OpenAiFineTuningJobCreateRequest {
     public String getValidationFile() {
         return this.validationFile;
     }
-    
+
     public void setValidationFile(String validationFile) {
         this.validationFile = validationFile;
     }

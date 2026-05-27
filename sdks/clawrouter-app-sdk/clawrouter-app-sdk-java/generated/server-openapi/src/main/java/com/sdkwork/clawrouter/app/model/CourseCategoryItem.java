@@ -14,7 +14,7 @@ public class CourseCategoryItem {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -22,7 +22,7 @@ public class CourseCategoryItem {
     public Integer getCourseCount() {
         return this.courseCount;
     }
-    
+
     public void setCourseCount(Integer courseCount) {
         this.courseCount = courseCount;
     }
@@ -30,7 +30,7 @@ public class CourseCategoryItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -38,7 +38,7 @@ public class CourseCategoryItem {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -46,7 +46,7 @@ public class CourseCategoryItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -54,7 +54,7 @@ public class CourseCategoryItem {
     public String getLabel() {
         return this.label;
     }
-    
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -62,7 +62,7 @@ public class CourseCategoryItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -70,7 +70,7 @@ public class CourseCategoryItem {
     public Integer getSortWeight() {
         return this.sortWeight;
     }
-    
+
     public void setSortWeight(Integer sortWeight) {
         this.sortWeight = sortWeight;
     }

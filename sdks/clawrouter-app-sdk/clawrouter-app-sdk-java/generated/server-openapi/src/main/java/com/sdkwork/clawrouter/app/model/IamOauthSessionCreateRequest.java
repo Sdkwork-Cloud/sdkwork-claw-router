@@ -11,7 +11,7 @@ public class IamOauthSessionCreateRequest {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -19,7 +19,7 @@ public class IamOauthSessionCreateRequest {
     public String getDeviceId() {
         return this.deviceId;
     }
-    
+
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
@@ -27,7 +27,7 @@ public class IamOauthSessionCreateRequest {
     public String getDeviceType() {
         return this.deviceType;
     }
-    
+
     public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
     }
@@ -35,7 +35,7 @@ public class IamOauthSessionCreateRequest {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -43,7 +43,7 @@ public class IamOauthSessionCreateRequest {
     public String getState() {
         return this.state;
     }
-    
+
     public void setState(String state) {
         this.state = state;
     }

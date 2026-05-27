@@ -10,6 +10,7 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -18,7 +19,6 @@ use crate::ports::{
     SiteSettingsSubject, UpdateSiteSettingsCommand,
 };
 
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MAX_SHORT_TEXT_LEN: usize = 255;
 const MAX_LONG_TEXT_LEN: usize = 4096;
 const MAX_URL_LEN: usize = 2048;
@@ -26,7 +26,6 @@ const MAX_COLOR_LEN: usize = 32;
 const MAX_CUSTOM_CSS_LEN: usize = 20000;
 const MAX_TENANT_CODE_LENGTH: usize = 64;
 const MAX_ORGANIZATION_CODE_LENGTH: usize = 64;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminSiteSettingsState {
@@ -402,7 +401,7 @@ fn is_hex_color(value: &str) -> bool {
 
 fn build_update_command(
     state: AdminSiteSettingsState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: SiteSettingsSubject,
     settings: SiteSettings,
 ) -> Result<UpdateSiteSettingsCommand, SiteSettingsCommandBuildError> {
@@ -411,7 +410,7 @@ fn build_update_command(
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         settings,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -425,29 +424,13 @@ fn generate_entity_uuid(
         .map_err(SiteSettingsCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminSiteSettingsState,
-) -> Result<String, SiteSettingsCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(SiteSettingsCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> SiteSettingsCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => SiteSettingsCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            SiteSettingsCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn optional_string(value: String) -> Option<String> {

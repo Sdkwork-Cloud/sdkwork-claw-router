@@ -105,7 +105,7 @@ export interface SdkworkOfferInventory {
   currentLevelName: string;
   expiringSoonCoupons: number;
   isAuthenticated: boolean;
-  vipRemainingDays: number | null;
+  membershipRemainingDays: number | null;
 }
 
 export interface SdkworkOfferDashboardData {
@@ -213,7 +213,7 @@ export function createEmptySdkworkOfferDashboard(
       currentLevelName: copy.service.guestLabel,
       expiringSoonCoupons: 0,
       isAuthenticated: false,
-      vipRemainingDays: null,
+      membershipRemainingDays: null,
     },
   };
 }
@@ -229,7 +229,7 @@ export function createOfferWorkspaceManifest({
     "@sdkwork/coupon-pc-react",
     "@sdkwork/points-pc-react",
     "@sdkwork/subscription-pc-react",
-    "@sdkwork/vip-pc-react",
+    "@sdkwork/membership-pc-react",
     "@sdkwork/wallet-pc-react",
   ],
   routePath = "/offers",

@@ -10,6 +10,18 @@ const adminAgentsSourcePath = new URL(
   "./packages/sdkwork-claw-router-admin-agents/src/index.tsx",
   import.meta.url,
 );
+const adminCoreNavigationI18nSourcePath = new URL(
+  "./packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts",
+  import.meta.url,
+);
+const adminAgentsI18nSourcePath = new URL(
+  "./packages/sdkwork-claw-router-i18n/src/resources/admin/agents.ts",
+  import.meta.url,
+);
+const adminSkillI18nSourcePath = new URL(
+  "./packages/sdkwork-claw-router-i18n/src/resources/admin/skill.ts",
+  import.meta.url,
+);
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -178,12 +190,77 @@ test("admin agent management uses category navigation and drawer-based details",
   });
 });
 
+test("admin agent and skill Chinese labels use product terminology", async () => {
+  const coreNavigationSource = await readFile(adminCoreNavigationI18nSourcePath, "utf8");
+  const agentsI18nSource = await readFile(adminAgentsI18nSourcePath, "utf8");
+  const skillI18nSource = await readFile(adminSkillI18nSourcePath, "utf8");
+
+  for (const expected of [
+    '"admin.layout.links.agents": "智能体管理"',
+    '"admin.menu.agents": "智能体管理"',
+    '"admin.layout.links.agentSkills": "技能管理"',
+    '"admin.menu.agentSkills": "技能管理"',
+    '"admin.agents.title": "智能体管理"',
+  ]) {
+    assert.ok(
+      `${coreNavigationSource}\n${agentsI18nSource}`.includes(expected),
+      `missing Chinese terminology marker: ${expected}`,
+    );
+  }
+
+  for (const expected of [
+    '"admin.skill.title": "技能管理"',
+    '"admin.skill.sections.skills.title": "技能管理"',
+    '"admin.skill.tabs.skills": "技能管理"',
+    '"admin.skill.tabs.label": "技能管理分区"',
+  ]) {
+    assert.ok(skillI18nSource.includes(expected), `missing Chinese skill terminology marker: ${expected}`);
+  }
+
+  for (const stale of [
+    '"admin.layout.links.agents": "Agent 管理"',
+    '"admin.menu.agents": "Agent 管理"',
+    '"admin.layout.links.agentSkills": "Agent 技能"',
+    '"admin.menu.agentSkills": "Agent 技能"',
+    '"admin.agents.title": "Agent 管理"',
+    '"admin.skill.title": "Agent 技能"',
+    '"admin.skill.sections.skills.title": "Agent 技能"',
+    '"admin.skill.tabs.skills": "Agent 技能"',
+  ]) {
+    assert.equal(
+      `${coreNavigationSource}\n${agentsI18nSource}\n${skillI18nSource}`.includes(stale),
+      false,
+      `stale Chinese terminology remains: ${stale}`,
+    );
+  }
+});
+
+test("admin agent management removes redundant top refresh toolbar and metric cards", async () => {
+  const source = await readFile(adminAgentsSourcePath, "utf8");
+
+  for (const stale of [
+    "function MetricCard",
+    "const totals = useMemo",
+    "admin.agents.metrics.total",
+    "admin.agents.metrics.active",
+    "admin.agents.metrics.memory",
+    "admin.agents.metrics.extensions",
+    "onClick={() => { void loadAgents(); }}",
+    "t('common.actions.refresh')",
+  ]) {
+    assert.equal(source.includes(stale), false, `redundant agent header/card marker remains: ${stale}`);
+  }
+
+  assert.match(
+    source,
+    /<div className="flex h-full w-full min-w-0 flex-col gap-4 overflow-hidden">\s*<div data-admin-agent-layout/,
+    "agent page should start directly with the category/table layout",
+  );
+});
+
 test("admin agent management uses bottom pagination controls", async () => {
   const source = await readFile(adminAgentsSourcePath, "utf8");
-  const i18nSource = await readFile(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = await readFile(adminAgentsI18nSourcePath, "utf8");
 
   for (const expected of [
     "data-admin-agent-pagination",

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{CommerceWalletAccountItem};
+use crate::models::{CommerceStandardCollectionResponse};
 
 /// Wallet accounts list result schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -10,7 +10,7 @@ pub struct WalletAccountsListResult {
 
     /// Data field on wallet accounts list result.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub data: Option<Vec<CommerceWalletAccountItem>>,
+    pub data: Option<CommerceStandardCollectionResponse>,
 
     /// Human-readable response message.
     #[serde(default, skip_serializing_if = "Option::is_none")]

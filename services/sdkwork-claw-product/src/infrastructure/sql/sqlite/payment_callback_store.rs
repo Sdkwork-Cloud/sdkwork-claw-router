@@ -245,6 +245,14 @@ async fn process_payment_status(
                     "payment callback amount does not match payment amount",
                 ));
             }
+            if payment_status_is_succeeded(&payment.status) {
+                return fulfill_recharge_once(tx, &payment, command).await;
+            }
+            if !payment_status_is_pending(&payment.status) {
+                return Err(DomainError::conflict(
+                    "payment callback cannot transition terminal payment to success",
+                ));
+            }
             mark_payment_success(tx, &payment, command).await?;
             fulfill_recharge_once(tx, &payment, command).await
         }
@@ -367,37 +375,47 @@ async fn mark_payment_success(
     payment: &PaymentFact,
     _command: &PaymentCallbackCommand,
 ) -> Result<(), DomainError> {
-    sqlx::query(
+    let payment_update = sqlx::query(
         r#"
         UPDATE commerce_payment_attempt
         SET status = ?,
             paid_at = CURRENT_TIMESTAMP,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-          AND status <> ?
+          AND status = ?
         "#,
     )
     .bind(CommercePaymentStatus::Succeeded.as_str())
     .bind(&payment.id)
-    .bind(CommercePaymentStatus::Succeeded.as_str())
+    .bind(CommercePaymentStatus::Pending.as_str())
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to mark callback payment success", error))?;
-    sqlx::query(
+    if payment_update.rows_affected() != 1 {
+        return Err(DomainError::conflict(
+            "payment callback payment is no longer pending",
+        ));
+    }
+    let intent_update = sqlx::query(
         r#"
         UPDATE commerce_payment_intent
         SET status = ?,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-          AND status <> ?
+          AND status = ?
         "#,
     )
     .bind(CommercePaymentStatus::Succeeded.as_str())
     .bind(&payment.payment_intent_id)
-    .bind(CommercePaymentStatus::Succeeded.as_str())
+    .bind(CommercePaymentStatus::Pending.as_str())
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to mark callback payment intent success", error))?;
+    if intent_update.rows_affected() != 1 {
+        return Err(DomainError::conflict(
+            "payment callback payment intent is no longer pending",
+        ));
+    }
     sqlx::query(
         r#"
         UPDATE commerce_order
@@ -505,8 +523,8 @@ async fn fulfill_recharge_once(
         });
     }
 
-    let balance_after = account.available_points + credited_points;
-    update_account_points(tx, &account.id, balance_after).await?;
+    checked_add_points(account.available_points, credited_points)?;
+    let balance_after = update_account_points(tx, &account.id, credited_points).await?;
     insert_account_history(
         tx,
         command,
@@ -654,23 +672,49 @@ async fn existing_account_history_count(
 async fn update_account_points(
     tx: &mut Transaction<'_, Sqlite>,
     account_id: &str,
-    balance_after: i64,
-) -> Result<(), DomainError> {
-    sqlx::query(
+    credited_points: i64,
+) -> Result<i64, DomainError> {
+    let max_balance_before = i64::MAX
+        .checked_sub(credited_points)
+        .ok_or_else(|| DomainError::conflict("payment callback account points overflow"))?;
+    let result = sqlx::query(
         r#"
         UPDATE commerce_account
-        SET available_amount = ?,
+        SET available_amount = CAST((CAST(TRIM(COALESCE(available_amount, '0')) AS INTEGER) + ?) AS TEXT),
             version = version + 1,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
+          AND TRIM(COALESCE(available_amount, '0')) <> ''
+          AND TRIM(COALESCE(available_amount, '0')) NOT GLOB '*[^0-9]*'
+          AND CAST(TRIM(COALESCE(available_amount, '0')) AS INTEGER) <= ?
         "#,
     )
-    .bind(balance_after.to_string())
+    .bind(credited_points)
     .bind(account_id)
+    .bind(max_balance_before)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update callback account points", error))?;
-    Ok(())
+    if result.rows_affected() != 1 {
+        return Err(DomainError::conflict(
+            "payment callback account points update was not applied atomically",
+        ));
+    }
+
+    let balance_after = sqlx::query_scalar::<_, String>(
+        r#"
+        SELECT CAST(COALESCE(available_amount, '0') AS TEXT)
+        FROM commerce_account
+        WHERE id = ?
+        LIMIT 1
+        "#,
+    )
+    .bind(account_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to read callback account points after update", error))?;
+    parse_integer_text(&balance_after)
+        .ok_or_else(|| DomainError::new("invalid callback account points after update"))
 }
 
 async fn insert_account_history(
@@ -723,6 +767,12 @@ fn payment_status_is_succeeded(value: &str) -> bool {
         .eq_ignore_ascii_case(CommercePaymentStatus::Succeeded.as_str())
 }
 
+fn payment_status_is_pending(value: &str) -> bool {
+    value
+        .trim()
+        .eq_ignore_ascii_case(CommercePaymentStatus::Pending.as_str())
+}
+
 fn callback_points(payment: &PaymentFact) -> Result<i64, DomainError> {
     let payload = payment
         .callback_payload
@@ -750,6 +800,12 @@ fn callback_points(payment: &PaymentFact) -> Result<i64, DomainError> {
         ));
     }
     Ok(points)
+}
+
+fn checked_add_points(current_points: i64, credited_points: i64) -> Result<i64, DomainError> {
+    current_points
+        .checked_add(credited_points)
+        .ok_or_else(|| DomainError::conflict("payment callback account points overflow"))
 }
 
 fn money_matches(expected: &str, actual: &str) -> bool {
@@ -790,12 +846,19 @@ fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<
     row.try_get::<Option<i64>, _>(column)
         .ok()
         .flatten()
-        .or_else(|| {
-            string_cell(row, column)
-                .parse::<f64>()
-                .ok()
-                .map(|value| value as i64)
-        })
+        .or_else(|| parse_integer_text(&string_cell(row, column)))
+}
+
+fn parse_integer_text(value: &str) -> Option<i64> {
+    let value = value.trim();
+    if value.is_empty() {
+        return None;
+    }
+    let digits = value.strip_prefix('-').unwrap_or(value);
+    if digits.is_empty() || !digits.chars().all(|character| character.is_ascii_digit()) {
+        return None;
+    }
+    value.parse::<i64>().ok()
 }
 
 fn missing_status_error(source: &str) -> DomainError {

@@ -8,7 +8,7 @@ public class OpenAiProjectServiceAccountCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -16,7 +16,7 @@ public class OpenAiProjectServiceAccountCreateRequest {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

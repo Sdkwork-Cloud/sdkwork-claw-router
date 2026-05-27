@@ -11,7 +11,7 @@ public class OpenAiError {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -19,7 +19,7 @@ public class OpenAiError {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -27,7 +27,7 @@ public class OpenAiError {
     public String getParam() {
         return this.param;
     }
-    
+
     public void setParam(String param) {
         this.param = param;
     }
@@ -35,7 +35,7 @@ public class OpenAiError {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -43,7 +43,7 @@ public class OpenAiError {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

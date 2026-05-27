@@ -30,8 +30,8 @@ class ClawRouterPayloadSdkAudit:
     METHOD_VERB_PARTS = {"get", "fetch", "list", "create", "update", "patch", "delete", "enable", "disable", "publish", "offline", "head", "options", "trace"}
     REMOVABLE_TAG_SUFFIXES = {"management", "controller", "module", "service", "api"}
     RESERVED_GROUP_SEGMENTS_AFTER_PREFIX = {"management", "manage", "admin", "internal"}
-    ENTITY_RESPONSE_PROPERTIES = frozenset({"item", "key", "batch", "codes", "vendors", "models"})
-    STABLE_ID_FIELDS = ("id", "vendorId", "couponId", "batchId")
+    ENTITY_RESPONSE_PROPERTIES = frozenset({"item", "key", "codes", "vendors", "models"})
+    STABLE_ID_FIELDS = ("id", "vendorId")
     SEARCH_TEXT_ALIASES = frozenset({"keyword", "search", "search_query", "searchQuery"})
 
     def __init__(

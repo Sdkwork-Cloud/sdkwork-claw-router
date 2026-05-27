@@ -1,11 +1,11 @@
 use tonic::Code;
 
-pub const SDKWORK_AUTHORIZATION_METADATA: &str = "authorization";
-pub const SDKWORK_ACCESS_TOKEN_METADATA: &str = "sdkwork-access-token";
-pub const SDKWORK_REQUEST_ID_METADATA: &str = "x-request-id";
-pub const SDKWORK_TRACEPARENT_METADATA: &str = "traceparent";
-pub const SDKWORK_IDEMPOTENCY_KEY_METADATA: &str = "idempotency-key";
-pub const SDKWORK_REQUEST_HASH_METADATA: &str = "x-request-hash";
+pub const RPC_AUTHORIZATION_METADATA: &str = "authorization";
+pub const RPC_ACCESS_TOKEN_METADATA: &str = "access-token";
+pub const RPC_REQUEST_ID_METADATA: &str = "x-request-id";
+pub const RPC_TRACEPARENT_METADATA: &str = "traceparent";
+pub const RPC_IDEMPOTENCY_KEY_METADATA: &str = "idempotency-key";
+pub const RPC_REQUEST_HASH_METADATA: &str = "x-request-hash";
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum SdkworkRpcErrorKind {

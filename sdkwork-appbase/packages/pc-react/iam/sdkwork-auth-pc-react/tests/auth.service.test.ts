@@ -74,14 +74,6 @@ describe("sdkwork-auth-pc-react service", () => {
               },
             }),
           },
-          verificationPolicy: {
-            retrieve: vi.fn().mockResolvedValue({
-              emailCodeLoginEnabled: true,
-              emailRegisterVerificationRequired: true,
-              phoneCodeLoginEnabled: false,
-              phoneRegisterVerificationRequired: false,
-            }),
-          },
           sessions: {
             create: vi.fn().mockResolvedValue({
               accessToken: "session-access-token",
@@ -142,6 +134,18 @@ describe("sdkwork-auth-pc-react service", () => {
                 email: "profile@sdkwork.ai",
                 id: "profile-user-1",
                 username: "profile",
+              }),
+            },
+          },
+        },
+        system: {
+          iam: {
+            verificationPolicy: {
+              retrieve: vi.fn().mockResolvedValue({
+                emailCodeLoginEnabled: true,
+                emailRegisterVerificationRequired: true,
+                phoneCodeLoginEnabled: false,
+                phoneRegisterVerificationRequired: false,
               }),
             },
           },
@@ -331,7 +335,7 @@ describe("sdkwork-auth-pc-react service", () => {
       username: "registered",
       verificationCode: "123456",
     });
-    expect(runtime.service.auth.verificationPolicy.retrieve).toHaveBeenCalledOnce();
+    expect(runtime.service.system.iam.verificationPolicy.retrieve).toHaveBeenCalledOnce();
     expect(runtime.service.auth.verificationCodes.create).toHaveBeenCalledWith({
       scene: "REGISTER",
       target: "registered@sdkwork.ai",
@@ -712,6 +716,72 @@ describe("sdkwork-auth-pc-react service", () => {
     });
   });
 
+  it("does not treat IAM runtime non-image QR URL aliases as rendered image assets", async () => {
+    const controller = createSdkworkIamRuntimeAuthController({
+      getRuntime: () => ({
+        service: {
+          auth: {
+            oauthAuthorizationUrls: {
+              retrieve: vi.fn(),
+            },
+            oauthSessions: {
+              create: vi.fn(),
+            },
+            passwordResetRequests: {
+              create: vi.fn(),
+            },
+            passwordResets: {
+              create: vi.fn(),
+            },
+            registrations: {
+              create: vi.fn(),
+            },
+            sessions: {
+              create: vi.fn(),
+              current: {
+                delete: vi.fn(),
+                retrieve: vi.fn(),
+              },
+            },
+            verificationCodes: {
+              create: vi.fn(),
+              verify: vi.fn(),
+            },
+          },
+          openPlatform: {
+            qrAuth: {
+              sessions: {
+                create: vi.fn().mockResolvedValue({
+                  qrCodeUrl: " https://mp.weixin.qq.com/sdkwork-login?session_key=qr-runtime-alias-1 ",
+                  qrContent: {
+                    content: "https://console.example.test/auth/qr/qr-runtime-alias-1?session_key=qr-runtime-alias-1&purpose=login",
+                    mode: "fallback_url",
+                  },
+                  sessionKey: "qr-runtime-alias-1",
+                }),
+                retrieve: vi.fn(),
+              },
+            },
+          },
+          iam: {
+            users: {
+              current: {
+                retrieve: vi.fn(),
+              },
+            },
+          },
+        },
+      }),
+    });
+
+    await expect(controller.generateLoginQrCode()).resolves.toMatchObject({
+      qrContent: "https://console.example.test/auth/qr/qr-runtime-alias-1?session_key=qr-runtime-alias-1&purpose=login",
+      sessionKey: "qr-runtime-alias-1",
+      qrUrl: undefined,
+      type: "fallback_url",
+    });
+  });
+
   it("maps login responses and persists runtime session tokens through standard resource SDK methods", async () => {
     const persistSession = vi.fn();
     const client = {
@@ -922,7 +992,7 @@ describe("sdkwork-auth-pc-react service", () => {
     expect(legacyLogin).not.toHaveBeenCalled();
   });
 
-  it("retrieves and normalizes backend verification policy through the resource SDK", async () => {
+  it("retrieves and normalizes public IAM verification policy through the system IAM resource SDK", async () => {
     const retrieve = vi.fn().mockResolvedValue({
       data: {
         emailCodeLoginEnabled: true,
@@ -934,8 +1004,12 @@ describe("sdkwork-auth-pc-react service", () => {
     const service = createSdkworkAuthService({
       getClient: () => ({
         auth: {
-          verificationPolicy: {
-            retrieve,
+        },
+        system: {
+          iam: {
+            verificationPolicy: {
+              retrieve,
+            },
           },
         },
       } as unknown as SdkworkAuthClient),
@@ -1762,6 +1836,37 @@ describe("sdkwork-auth-pc-react service", () => {
       qrContent: "https://wxaurl.cn/sdkwork-login?session_key=qr-resource-content-1",
       sessionKey: "qr-resource-content-1",
       qrUrl: undefined,
+    });
+  });
+
+  it("does not treat non-image QR URL aliases as rendered image assets", async () => {
+    const service = createSdkworkAuthService({
+      getClient: () => ({
+        auth: {},
+        openPlatform: {
+          qrAuth: {
+            sessions: {
+              create: vi.fn().mockResolvedValue({
+                data: {
+                  qrCodeUrl: " https://mp.weixin.qq.com/sdkwork-login?session_key=qr-resource-alias-1 ",
+                  qrContent: {
+                    content: "https://console.example.test/auth/qr/qr-resource-alias-1?session_key=qr-resource-alias-1&purpose=login",
+                    mode: "fallback_url",
+                  },
+                  sessionKey: "qr-resource-alias-1",
+                },
+              }),
+            },
+          },
+        },
+      } as unknown as SdkworkAuthClient),
+    });
+
+    await expect(service.generateLoginQrCode()).resolves.toMatchObject({
+      qrContent: "https://console.example.test/auth/qr/qr-resource-alias-1?session_key=qr-resource-alias-1&purpose=login",
+      sessionKey: "qr-resource-alias-1",
+      qrUrl: undefined,
+      type: "fallback_url",
     });
   });
 

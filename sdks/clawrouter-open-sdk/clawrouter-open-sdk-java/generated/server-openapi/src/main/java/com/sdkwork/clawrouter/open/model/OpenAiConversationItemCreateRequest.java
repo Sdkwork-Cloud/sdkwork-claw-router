@@ -12,7 +12,7 @@ public class OpenAiConversationItemCreateRequest {
     public List<OpenAiConversationContentPart> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<OpenAiConversationContentPart> content) {
         this.content = content;
     }
@@ -20,7 +20,7 @@ public class OpenAiConversationItemCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -28,7 +28,7 @@ public class OpenAiConversationItemCreateRequest {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -36,7 +36,7 @@ public class OpenAiConversationItemCreateRequest {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

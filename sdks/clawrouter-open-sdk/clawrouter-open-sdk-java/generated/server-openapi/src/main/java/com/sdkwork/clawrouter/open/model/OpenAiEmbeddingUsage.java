@@ -8,7 +8,7 @@ public class OpenAiEmbeddingUsage {
     public Integer getPromptTokens() {
         return this.promptTokens;
     }
-    
+
     public void setPromptTokens(Integer promptTokens) {
         this.promptTokens = promptTokens;
     }
@@ -16,7 +16,7 @@ public class OpenAiEmbeddingUsage {
     public Integer getTotalTokens() {
         return this.totalTokens;
     }
-    
+
     public void setTotalTokens(Integer totalTokens) {
         this.totalTokens = totalTokens;
     }

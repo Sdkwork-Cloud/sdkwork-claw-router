@@ -1,0 +1,29 @@
+package com.sdkwork.clawrouter.backend
+
+data class PromotionCodeRecord(
+    val activatedAt: String? = null,
+    val activationStatus: String? = null,
+    val canResend: Boolean? = null,
+    val cancelUntil: String? = null,
+    val canceledAt: String? = null,
+    val channelCode: String? = null,
+    val claimCodeHash: String? = null,
+    val claimCodeSuffix: String? = null,
+    val codeNo: String? = null,
+    val codeType: String? = null,
+    val createdAt: String? = null,
+    val createdBy: String? = null,
+    val currencyCode: String? = null,
+    val expiresAt: String? = null,
+    val offerId: String? = null,
+    val offerVersionId: String? = null,
+    val organizationId: String? = null,
+    val promotionCodeHash: String? = null,
+    val promotionCodeLast4: String? = null,
+    val startsAt: String? = null,
+    val status: String? = null,
+    val stockId: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val updatedBy: String? = null
+)

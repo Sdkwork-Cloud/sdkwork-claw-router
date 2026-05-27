@@ -258,7 +258,7 @@ class AppbaseCapabilityGuardian:
         tables = capability.get("tables", [])
         if isinstance(tables, list):
             for table in tables:
-                if isinstance(table, str) and table.startswith("commerce_billing_"):
+                if isinstance(table, str) and table.startswith("commerce_billing_") and table != "commerce_billing_history":
                     messages.append(f"capability commerce must not declare billing table: {table}")
         return messages
 

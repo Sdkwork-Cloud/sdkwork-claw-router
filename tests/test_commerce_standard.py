@@ -113,16 +113,19 @@ CANONICAL_COMMERCE_TRANSACTION_API_OPERATIONS: tuple[tuple[str, str, str, str], 
     ("app", "GET", "/app/v3/api/recharges/packages", "recharges.packages.list"),
     ("app", "POST", "/app/v3/api/recharges/orders", "recharges.orders.create"),
     ("app", "GET", "/app/v3/api/recharges/orders/{orderId}", "recharges.orders.retrieve"),
+    ("app", "GET", "/app/v3/api/billing/history", "billing.history.list"),
     ("app", "GET", "/app/v3/api/wallet/overview", "wallet.overview.retrieve"),
     ("app", "GET", "/app/v3/api/wallet/accounts", "wallet.accounts.list"),
-    ("app", "GET", "/app/v3/api/wallet/ledger_entries", "wallet.ledgerEntries.list"),
-    ("app", "GET", "/app/v3/api/wallet/ledger_entries/{ledgerEntryId}", "wallet.ledgerEntries.retrieve"),
     ("app", "GET", "/app/v3/api/wallet/tokens", "wallet.tokens.retrieve"),
     ("app", "GET", "/app/v3/api/wallet/exchange_rate", "wallet.exchangeRate.retrieve"),
     ("app", "GET", "/app/v3/api/wallet/points/exchanges/rules", "wallet.points.exchangeRules.list"),
-    ("app", "GET", "/app/v3/api/coupons", "coupons.list"),
-    ("app", "POST", "/app/v3/api/coupons/claims", "coupons.claims.create"),
-    ("app", "POST", "/app/v3/api/coupons/redemptions", "coupons.redemptions.create"),
+    ("app", "GET", "/app/v3/api/promotions/user_coupons", "promotions.userCoupons.wallet.list"),
+    ("app", "POST", "/app/v3/api/promotions/user_coupon_claims", "promotions.userCoupons.claims.create"),
+    ("app", "POST", "/app/v3/api/promotions/codes/redemptions", "promotions.codes.redemptions.create"),
+    ("app", "POST", "/app/v3/api/promotions/discount_applications", "promotions.discountApplications.create"),
+    ("app", "POST", "/app/v3/api/promotions/discount_applications/{applicationId}/settlements", "promotions.discountApplications.settle"),
+    ("app", "POST", "/app/v3/api/promotions/discount_applications/{applicationId}/releases", "promotions.discountApplications.release"),
+    ("app", "POST", "/app/v3/api/promotions/discount_applications/reversals", "promotions.discountApplications.reversals.create"),
     ("app", "GET", "/app/v3/api/invoices", "invoices.list"),
     ("app", "GET", "/app/v3/api/invoices/{invoiceId}", "invoices.retrieve"),
     ("app", "POST", "/app/v3/api/invoices", "invoices.create"),
@@ -165,10 +168,17 @@ CANONICAL_COMMERCE_TRANSACTION_API_OPERATIONS: tuple[tuple[str, str, str, str], 
     ("backend", "GET", "/backend/v3/api/wallet/ledger_entries", "wallet.ledgerEntries.list"),
     ("backend", "POST", "/backend/v3/api/wallet/adjustments", "wallet.adjustments.create"),
     ("backend", "GET", "/backend/v3/api/wallet/exchange_rules", "wallet.exchangeRules.list"),
-    ("backend", "GET", "/backend/v3/api/coupons/templates", "coupons.templates.list"),
-    ("backend", "GET", "/backend/v3/api/coupons/campaigns", "coupons.campaigns.list"),
-    ("backend", "GET", "/backend/v3/api/coupons/codes", "coupons.codes.list"),
-    ("backend", "GET", "/backend/v3/api/coupons/redemptions", "coupons.redemptions.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/offers", "promotions.offers.management.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/coupon_stocks", "promotions.couponStocks.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/codes", "promotions.codes.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/discount_applications", "promotions.discountApplications.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/codes/redemptions", "promotions.codes.redemptions.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/user_coupons", "promotions.userCoupons.management.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/discount_allocations", "promotions.discountAllocations.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/coupon_ledger_entries", "promotions.couponLedgerEntries.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/budget_ledger_entries", "promotions.budgetLedgerEntries.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/external_bindings", "promotions.externalBindings.list"),
+    ("backend", "GET", "/backend/v3/api/promotions/events", "promotions.events.list"),
     ("backend", "GET", "/backend/v3/api/invoices/titles", "invoices.titles.list"),
     ("backend", "GET", "/backend/v3/api/invoices", "invoices.list"),
     ("backend", "GET", "/backend/v3/api/invoices/{invoiceId}", "invoices.retrieve"),
@@ -198,7 +208,7 @@ RETIRED_COMMERCE_OPERATION_ID_PATTERNS = tuple(
         r"^users\.(?:balanceAdjustments|coupons|current\.coupons)\.",
         r"^vip\.",
         r"^wallet\.(?:ledger|operations|topups|transactions|withdrawals)\.",
-        r"^coupons\.(?:catalog|redeem|usage|usageReversals)\.",
+        r"^coupons\.",
     ]
 )
 
@@ -300,9 +310,9 @@ class CommerceStandardTest(unittest.TestCase):
         route_classification = ROUTE_CLASSIFICATION_PATH.read_text(encoding="utf-8")
         for source in [field_contracts, route_classification]:
             self.assertNotIn("/console/billing", source)
-            self.assertNotIn("/app/v3/api/billing", source)
             self.assertNotIn("/backend/v3/api/billing", source)
-            self.assertNotIn("commerce_billing_", source)
+            self.assertNotRegex(source, r"/app/v3/api/billing(?!/history\b)(?:/|$)")
+            self.assertNotRegex(source, r"commerce_billing_(?!history\b)[A-Za-z0-9_]*")
 
         retired_exact_path_patterns = [
             r"api_path:\s*/app/v3/api/payments/checkout(?:/|\s*$)",
@@ -326,18 +336,20 @@ class CommerceStandardTest(unittest.TestCase):
             "/app/v3/api/memberships/points/balance",
             "/app/v3/api/memberships/privileges/usage",
             "/app/v3/api/recharges/packages",
+            "/app/v3/api/billing/history",
             "/app/v3/api/wallet/overview",
             "/app/v3/api/wallet/accounts",
             "/app/v3/api/wallet/tokens",
             "/app/v3/api/wallet/exchange_rate",
             "/app/v3/api/wallet/points/exchanges/rules",
-            "/app/v3/api/coupons",
+            "/app/v3/api/promotions/user_coupon_claims",
+            "/app/v3/api/promotions/codes/redemptions",
             "/backend/v3/api/catalog/products",
             "/backend/v3/api/inventory/stocks",
             "/backend/v3/api/payments/provider_accounts",
             "/backend/v3/api/payments/route_rules",
             "/backend/v3/api/wallet/ledger_entries",
-            "/backend/v3/api/coupons/templates",
+            "/backend/v3/api/promotions/offers",
             "/backend/v3/api/memberships/plans",
             "/backend/v3/api/memberships/package_groups",
             "/backend/v3/api/commerce_reports/payment_reconciliation",
@@ -347,8 +359,11 @@ class CommerceStandardTest(unittest.TestCase):
     def test_no_retired_direct_commerce_paths_or_operation_ids(self) -> None:
         violations: list[str] = []
         retired_path_patterns = (
-            re.compile(r"^/(?:app|backend)/v3/api/billing(?:/|$)"),
+            re.compile(r"^/app/v3/api/billing(?!/history(?:/|$))(?:/|$)"),
+            re.compile(r"^/backend/v3/api/billing(?:/|$)"),
             re.compile(r"^/app/v3/api/payments/checkout(?:/|$)"),
+            re.compile(r"^/app/v3/api/coupons(?:/|$)"),
+            re.compile(r"^/backend/v3/api/coupons(?:/|$)"),
             re.compile(r"^/app/v3/api/router/settlements/dashboard$"),
             re.compile(r"^/backend/v3/api/wallet/ledger(?:/|$)"),
             re.compile(r"^/backend/v3/api/commerce/reports(?:/|$)"),
@@ -382,8 +397,9 @@ class CommerceStandardTest(unittest.TestCase):
             "/app/v3/api/shipments",
             "/app/v3/api/memberships",
             "/app/v3/api/recharges",
+            "/app/v3/api/billing",
             "/app/v3/api/wallet",
-            "/app/v3/api/coupons",
+            "/app/v3/api/promotions",
             "/app/v3/api/invoices",
             "/backend/v3/api/catalog/",
             "/backend/v3/api/inventory/",
@@ -395,7 +411,7 @@ class CommerceStandardTest(unittest.TestCase):
             "/backend/v3/api/memberships",
             "/backend/v3/api/recharges",
             "/backend/v3/api/wallet",
-            "/backend/v3/api/coupons",
+            "/backend/v3/api/promotions",
             "/backend/v3/api/invoices",
             "/backend/v3/api/commerce_reports",
             "/backend/v3/api/audit/commerce_events",
@@ -711,6 +727,350 @@ class CommerceStandardTest(unittest.TestCase):
             },
         )
 
+    def test_promotion_coupon_currency_is_first_class_across_lifecycle(self) -> None:
+        registry = yaml.safe_load(TABLE_REGISTRY_PATH.read_text(encoding="utf-8"))
+        tables = {
+            table.get("table"): table
+            for table in registry.get("tables", [])
+            if isinstance(table, dict) and isinstance(table.get("table"), str)
+        }
+
+        expected_currency_columns = {
+            "promotion_offer_version": "currency_code",
+            "promotion_budget_account": "currency_code",
+            "promotion_budget_ledger_entry": "currency_code",
+            "promotion_coupon_stock": "currency_code",
+            "promotion_user_coupon": "currency_code",
+            "promotion_discount_application": "currency_code",
+            "promotion_discount_allocation": "currency_code",
+            "promotion_external_binding": "external_currency_code",
+        }
+        missing = [
+            f"{table}.{column}"
+            for table, column in expected_currency_columns.items()
+            if column not in tables.get(table, {}).get("columns", {})
+        ]
+        self.assertEqual([], missing)
+
+        offer_version_columns = tables["promotion_offer_version"]["columns"]
+        self.assertIn("discount_amount_minor", offer_version_columns)
+        self.assertIn("fixed_price_minor", offer_version_columns)
+        self.assertIn("maximum_discount_amount_minor", offer_version_columns)
+        self.assertIn("minimum_order_amount_minor", offer_version_columns)
+
+        user_coupon_columns = tables["promotion_user_coupon"]["columns"]
+        for snapshot_column in [
+            "face_value_minor",
+            "maximum_discount_amount_minor",
+            "minimum_order_amount_minor",
+            "discount_percent_bps",
+            "currency_code",
+        ]:
+            self.assertIn(snapshot_column, user_coupon_columns)
+
+        for table in [
+            "promotion_discount_application",
+            "promotion_discount_allocation",
+        ]:
+            self.assertIn("currency_code", tables[table].get("not_null_columns", []))
+
+    def test_promotion_coupon_industry_platform_capabilities_are_first_class(self) -> None:
+        registry = yaml.safe_load(TABLE_REGISTRY_PATH.read_text(encoding="utf-8"))
+        tables = {
+            table.get("table"): table
+            for table in registry.get("tables", [])
+            if isinstance(table, dict) and isinstance(table.get("table"), str)
+        }
+
+        for table in [
+            "promotion_offer_presentation",
+            "promotion_code_redemption",
+            "promotion_external_operation",
+        ]:
+            self.assertIn(table, tables)
+
+        presentation_columns = tables["promotion_offer_presentation"]["columns"]
+        for column in [
+            "offer_version_id",
+            "display_name",
+            "merchant_display_name",
+            "brand_name",
+            "logo_asset_id",
+            "cover_asset_id",
+            "primary_color",
+            "terms_json",
+            "customer_action_json",
+            "style_snapshot_json",
+        ]:
+            self.assertIn(column, presentation_columns)
+
+        offer_version_columns = tables["promotion_offer_version"]["columns"]
+        for column in [
+            "validity_type",
+            "validity_duration_seconds",
+            "return_policy",
+            "settlement_policy",
+            "customer_visible",
+        ]:
+            self.assertIn(column, offer_version_columns)
+
+        stock_columns = tables["promotion_coupon_stock"]["columns"]
+        for column in [
+            "issue_channel",
+            "stock_creator_merchant_id",
+            "budget_warning_threshold_bps",
+            "budget_stop_threshold_bps",
+            "overspend_policy",
+        ]:
+            self.assertIn(column, stock_columns)
+
+        code_columns = tables["promotion_code"]["columns"]
+        self.assertIn("currency_code", code_columns)
+        self.assertIn("currency_code", tables["promotion_code"].get("not_null_columns", []))
+
+        redemption_columns = tables["promotion_code_redemption"]["columns"]
+        for column in [
+            "redemption_no",
+            "submitted_code_hash",
+            "submitted_code_suffix",
+            "code_id",
+            "stock_id",
+            "user_coupon_id",
+            "subject_type",
+            "subject_id",
+            "currency_code",
+            "result_status",
+            "failure_code",
+            "redemption_channel",
+            "request_no",
+            "idempotency_key",
+        ]:
+            self.assertIn(column, redemption_columns)
+        self.assertNotIn("plain_code", redemption_columns)
+        self.assertNotIn("submitted_code", redemption_columns)
+
+        external_operation_columns = tables["promotion_external_operation"]["columns"]
+        for column in [
+            "operation_no",
+            "binding_id",
+            "platform",
+            "operation_type",
+            "external_request_no",
+            "external_operation_id",
+            "external_status",
+            "request_hash",
+            "response_hash",
+            "sanitized_request_json",
+            "sanitized_response_json",
+            "retry_count",
+            "next_retry_at",
+            "idempotency_key",
+        ]:
+            self.assertIn(column, external_operation_columns)
+
+        operations = {
+            operation.get("operation_id"): operation
+            for operation in load_frontend_operations()
+            if operation.get("operation_id")
+        }
+        self.assertIn(
+            "promotion_code_redemption",
+            operations["promotions.codes.redemptions.create"].get("write_tables", []),
+        )
+        self.assertIn(
+            "promotion_code_redemption",
+            operations["promotions.codes.redemptions.list"].get("read_sources", []),
+        )
+        self.assertIn(
+            "promotion_external_operation",
+            operations["promotions.externalBindings.list"].get("read_sources", []),
+        )
+
+    def test_promotion_coupon_external_platform_interface_details_are_first_class(self) -> None:
+        registry = yaml.safe_load(TABLE_REGISTRY_PATH.read_text(encoding="utf-8"))
+        tables = {
+            table.get("table"): table
+            for table in registry.get("tables", [])
+            if isinstance(table, dict) and isinstance(table.get("table"), str)
+        }
+
+        offer_version_columns = tables["promotion_offer_version"]["columns"]
+        for column in [
+            "benefit_kind",
+            "face_value_minor",
+            "liability_policy",
+            "breakage_policy",
+            "tax_treatment",
+        ]:
+            self.assertIn(column, offer_version_columns)
+        self.assertNotIn("stored_value_amount_minor", offer_version_columns)
+        self.assertNotIn("issuer_liability_policy", offer_version_columns)
+
+        presentation_columns = tables["promotion_offer_presentation"]["columns"]
+        for column in [
+            "param_schema_json",
+            "field_schema_json",
+            "verify_method",
+            "recognition_type",
+            "recognition_hash",
+        ]:
+            self.assertIn(column, presentation_columns)
+        for retired_column in [
+            "template_param_schema_json",
+            "dynamic_field_schema_json",
+            "verification_method",
+            "recognition_payload_hash",
+        ]:
+            self.assertNotIn(retired_column, presentation_columns)
+
+        budget_columns = tables["promotion_budget_account"]["columns"]
+        for column in [
+            "planned_amount_minor",
+            "overrun_amount_minor",
+            "lock_mode",
+        ]:
+            self.assertIn(column, budget_columns)
+        for retired_column in [
+            "estimated_spend_amount_minor",
+            "actual_spend_amount_minor",
+            "overspend_amount_minor",
+            "budget_lock_mode",
+        ]:
+            self.assertNotIn(retired_column, budget_columns)
+
+        stock_columns = tables["promotion_coupon_stock"]["columns"]
+        for column in [
+            "code_mode",
+            "activation_status",
+            "cancel_until",
+            "can_resend",
+        ]:
+            self.assertIn(column, stock_columns)
+        self.assertNotIn("code_batch_no", stock_columns)
+        self.assertNotIn("batch_no", stock_columns)
+        self.assertNotIn("preloaded_code_batch_no", stock_columns)
+        self.assertNotIn("cancelable_until", stock_columns)
+        self.assertNotIn("resend_eligible", stock_columns)
+
+        code_columns = tables["promotion_code"]["columns"]
+        for column in [
+            "claim_code_hash",
+            "claim_code_suffix",
+            "activation_status",
+            "activated_at",
+            "canceled_at",
+            "cancel_until",
+            "can_resend",
+        ]:
+            self.assertIn(column, code_columns)
+        self.assertNotIn("code_batch_no", code_columns)
+        self.assertNotIn("external_claim_code", code_columns)
+        self.assertNotIn("external_claim_code_hash", code_columns)
+        self.assertNotIn("preloaded_code_batch_no", code_columns)
+        self.assertNotIn("cancelable_until", code_columns)
+        self.assertNotIn("resend_eligible", code_columns)
+
+        user_coupon_columns = tables["promotion_user_coupon"]["columns"]
+        for column in [
+            "verify_method",
+            "recognition_type",
+            "recognition_hash",
+            "claim_code_hash",
+            "claim_code_suffix",
+            "activation_status",
+            "cancel_until",
+            "can_resend",
+        ]:
+            self.assertIn(column, user_coupon_columns)
+        self.assertNotIn("external_claim_code", user_coupon_columns)
+        self.assertNotIn("recognition_payload_hash", user_coupon_columns)
+        self.assertNotIn("verification_method", user_coupon_columns)
+        self.assertNotIn("cancelable_until", user_coupon_columns)
+        self.assertNotIn("resend_eligible", user_coupon_columns)
+
+        external_binding_columns = tables["promotion_external_binding"]["columns"]
+        for column in [
+            "platform_template_id",
+            "platform_stock_id",
+            "platform_card_id",
+            "platform_coupon_id",
+            "claim_code_hash",
+            "claim_code_suffix",
+        ]:
+            self.assertIn(column, external_binding_columns)
+        self.assertNotIn("external_claim_code", external_binding_columns)
+        self.assertNotIn("external_template_id", external_binding_columns)
+        self.assertNotIn("external_stock_id", external_binding_columns)
+        self.assertNotIn("external_card_id", external_binding_columns)
+        self.assertNotIn("external_coupon_id", external_binding_columns)
+
+        external_operation_columns = tables["promotion_external_operation"]["columns"]
+        for column in [
+            "provider_request_id",
+            "provider_code",
+            "callback_id",
+            "callback_sig_hash",
+            "callback_at",
+            "cancel_until",
+            "replay_op_id",
+        ]:
+            self.assertIn(column, external_operation_columns)
+        self.assertNotIn("raw_request_json", external_operation_columns)
+        self.assertNotIn("raw_response_json", external_operation_columns)
+        self.assertNotIn("claim_code", external_operation_columns)
+        for retired_column in [
+            "provider_response_code",
+            "callback_event_id",
+            "callback_signature_hash",
+            "callback_received_at",
+            "cancelable_until",
+            "replay_of_operation_id",
+        ]:
+            self.assertNotIn(retired_column, external_operation_columns)
+
+        for column in [
+            "face_value_minor",
+            "liability_policy",
+            "param_schema_json",
+            "field_schema_json",
+            "recognition_hash",
+            "planned_amount_minor",
+            "overrun_amount_minor",
+            "claim_code_hash",
+            "platform_template_id",
+            "callback_sig_hash",
+        ]:
+            self.assertLessEqual(len(column), 24)
+
+        for openapi_path in [APP_OPENAPI_PATH, BACKEND_OPENAPI_PATH]:
+            schemas = json.loads(openapi_path.read_text(encoding="utf-8"))["components"]["schemas"]
+            self.assertIn(
+                "face_value_minor",
+                schemas["PromotionOfferVersionRecord"]["properties"],
+            )
+            self.assertIn(
+                "planned_amount_minor",
+                schemas["PromotionBudgetAccountRecord"]["properties"],
+            )
+            self.assertIn(
+                "can_resend",
+                schemas["PromotionCouponStockRecord"]["properties"],
+            )
+
+        for types_dir in [APP_SDK_TYPES_PATH, BACKEND_SDK_TYPES_PATH]:
+            self.assertIn(
+                "face_value_minor",
+                (types_dir / "promotion-offer-version-record.ts").read_text(encoding="utf-8"),
+            )
+            self.assertIn(
+                "planned_amount_minor",
+                (types_dir / "promotion-budget-account-record.ts").read_text(encoding="utf-8"),
+            )
+            self.assertIn(
+                "can_resend",
+                (types_dir / "promotion-coupon-stock-record.ts").read_text(encoding="utf-8"),
+            )
+
     def test_commerce_api_contracts_are_first_class(self) -> None:
         operations = {
             (
@@ -747,6 +1107,10 @@ class CommerceStandardTest(unittest.TestCase):
             ("sdkwork-claw-router-console-memberships", "/console/memberships"),
             ("sdkwork-claw-router-console-settlements", "/console/settlements"),
         ]
+        hidden_console_routes = {
+            "/console/recharge",
+            "/console/checkout",
+        }
         admin_packages = [
             ("sdkwork-claw-router-admin-catalog", "/admin/catalog"),
             ("sdkwork-claw-router-admin-inventory", "/admin/inventory"),
@@ -765,8 +1129,10 @@ class CommerceStandardTest(unittest.TestCase):
             self.assertIn(f"import('{package_name}')", app)
             self.assertIn(route_path, app)
 
-        for route_path in [route for _, route in console_packages]:
+        for route_path in [route for _, route in console_packages if route not in hidden_console_routes]:
             self.assertIn(route_path, console_layout)
+        for route_path in hidden_console_routes:
+            self.assertNotIn(route_path, console_layout)
         for route_path in [route for _, route in admin_packages]:
             self.assertIn(route_path, admin_layout)
 
@@ -809,8 +1175,7 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertIn("getClawRouterAppSdkClient().commerce.memberships.packages.list", service)
         self.assertIn("getClawRouterAppSdkClient().commerce.memberships.purchases.create", service)
         self.assertIn("packageId: requiredPositiveIntegerId(packageId, 'packageId')", service)
-        self.assertNotIn("paymentMethod: 'wechat'", service)
-        self.assertNotIn('paymentMethod: "wechat"', service)
+        self.assertIn("paymentMethod: 'wechat'", service)
         self.assertNotIn("createRequestToken('membership-purchase')", service)
         self.assertNotIn("metadata:", service)
         self.assertNotIn('"/vip"', view)
@@ -868,14 +1233,14 @@ class CommerceStandardTest(unittest.TestCase):
             ],
             "sdkwork-claw-router-console-wallet/src/WalletView.tsx": [
                 "WalletView",
-                "fetchRedeemHistory",
-                "fetchRechargeHistory",
+                "RechargeRecordsTabs",
+                "recordsRefreshSeed",
             ],
             "sdkwork-claw-router-console-recharge/src/RechargeView.tsx": [
                 "RechargeView",
                 "RechargePackage",
-                "WeChat Pay",
-                "Stripe",
+                "RechargeRecordsTabs",
+                "RechargeService.fetchBillingHistory",
                 "/console/checkout",
             ],
             "sdkwork-claw-router-console-checkout/src/CheckoutView.tsx": [
@@ -895,11 +1260,15 @@ class CommerceStandardTest(unittest.TestCase):
             content = (PORTAL_PATH / "packages" / relative_path).read_text(encoding="utf-8")
             for token in required_tokens:
                 self.assertIn(token, content, f"{relative_path} should preserve migrated UI token {token!r}")
-            self.assertIn("sdkwork-claw-router-commons", content)
             self.assertNotIn("/console/billing", content)
             self.assertNotIn("/console/commerce", content)
             self.assertNotIn("./commerceService", content)
             self.assertNotIn("./billingService", content)
+            if relative_path == "sdkwork-claw-router-console-wallet/src/WalletView.tsx":
+                self.assertNotIn("RedeemHistoryTable", content)
+                self.assertNotIn("BusinessStateTableRow", content)
+                self.assertNotIn("fetchRedeemHistory", content)
+                self.assertNotIn("fetchRechargeHistory", content)
 
     def test_admin_business_packages_are_split_by_transaction_capability(self) -> None:
         package_requirements = {
@@ -957,13 +1326,16 @@ class CommerceStandardTest(unittest.TestCase):
                 "backendMembershipsPackagesList",
                 "backendMembershipsMembersList",
                 "backendMembershipsEntitlementsList",
+                "backendMembershipsRechargePackagesList",
+                "backendMembershipsRechargePackagesCreate",
+                "backendMembershipsRechargePackagesUpdate",
+                "backendMembershipsRechargePackagesDelete",
                 ],
             ),
             "sdkwork-claw-router-admin-wallet": (
                 "walletService.ts",
                 "WalletAdmin",
                 [
-                "backendRechargesPackagesList",
                 "backendRechargesOrdersList",
                 "backendWalletAccountsList",
                 "backendWalletLedgerEntriesList",
@@ -976,10 +1348,6 @@ class CommerceStandardTest(unittest.TestCase):
                 [
                 "backendInvoicesTitlesList",
                 "backendInvoicesList",
-                "backendCouponsTemplatesList",
-                "backendCouponsCampaignsList",
-                "backendCouponsCodesList",
-                "backendCouponsRedemptionsList",
                 "backendCommerceReportsPaymentReconciliationRetrieve",
                 "backendCommerceReportsOrderRevenueList",
                 "backendCommerceReportsRefundsList",
@@ -1000,6 +1368,14 @@ class CommerceStandardTest(unittest.TestCase):
             self.assertNotIn("billing.finance", service_content)
             self.assertNotIn("sdkwork-claw-router-admin-commerce", view_content)
             self.assertNotIn("sdkwork-claw-router-admin-commerce", service_content)
+            if package_name == "sdkwork-claw-router-admin-wallet":
+                self.assertNotIn("backendRechargesPackagesList", service_content)
+                self.assertNotIn("recharges.packages.list", service_content)
+                self.assertNotIn("rechargePackages", view_content)
+
+        route_classification = ROUTE_CLASSIFICATION_PATH.read_text(encoding="utf-8")
+        self.assertIn("/admin/memberships/recharge-packages", route_classification)
+        self.assertNotIn("/admin/wallet/recharge-packages", route_classification)
 
         admin_marketing_service = (
             PORTAL_PATH
@@ -1123,15 +1499,15 @@ class CommerceStandardTest(unittest.TestCase):
             "backendMembershipsPackagesList",
             "backendMembershipsMembersList",
             "backendMembershipsEntitlementsList",
-            "backendRechargesPackagesList",
+            "backendMembershipsRechargePackagesList",
             "backendRechargesOrdersList",
             "backendWalletAccountsList",
             "backendWalletLedgerEntriesList",
             "backendWalletExchangeRulesList",
-            "backendCouponsTemplatesList",
-            "backendCouponsCampaignsList",
-            "backendCouponsCodesList",
-            "backendCouponsRedemptionsList",
+            "backendPromotionOffersList",
+            "backendPromotionCouponStocksList",
+            "backendPromotionCodesList",
+            "backendPromotionCodeRedemptionsList",
             "backendInvoicesTitlesList",
             "backendInvoicesList",
             "backendCommerceReportsPaymentReconciliationRetrieve",

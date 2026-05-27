@@ -24,6 +24,23 @@ async fn sqlite_gateway_traces_rejects_gateway_instance_without_deployment_mode(
     );
 }
 
+#[tokio::test]
+async fn sqlite_gateway_traces_tolerates_missing_trace_latency() {
+    let pool = sqlite_pool().await;
+    create_gateway_trace_tables(&pool).await;
+    insert_trace_with_latency(&pool, None).await;
+
+    let store = SqliteAppGatewayTracesReadStore::new(pool);
+    let traces = store
+        .load_gateway_traces(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, traces.len());
+    assert_eq!("trace-gateway-1", traces[0].id);
+    assert_eq!("0ms", traces[0].duration);
+}
+
 async fn sqlite_pool() -> SqlitePool {
     SqlitePoolOptions::new()
         .max_connections(1)
@@ -82,6 +99,10 @@ async fn create_gateway_trace_tables(pool: &SqlitePool) {
 }
 
 async fn insert_trace(pool: &SqlitePool) {
+    insert_trace_with_latency(pool, Some(128)).await;
+}
+
+async fn insert_trace_with_latency(pool: &SqlitePool, latency_ms: Option<i64>) {
     sqlx::query(
         r#"
         INSERT INTO ai_request_trace (
@@ -92,10 +113,11 @@ async fn insert_trace(pool: &SqlitePool) {
         VALUES (
             1, 10, 20, 30, 'req-gateway-trace-1', 'trace-gateway-1', 1,
             '2026-05-05T10:00:00Z', '2026-05-05T10:00:00Z', '203.0.113.10',
-            '/v1/chat/completions', '/v1/chat/completions', 'POST', 200, 128, ''
+            '/v1/chat/completions', '/v1/chat/completions', 'POST', 200, ?, ''
         )
         "#,
     )
+    .bind(latency_ms)
     .execute(pool)
     .await
     .unwrap();

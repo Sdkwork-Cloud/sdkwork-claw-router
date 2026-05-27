@@ -10,23 +10,31 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::ports::{
-    AdminAccessGroupItem, AdminAccessGroupStore, AdminAccessGroupSubject,
-    CreateAdminAccessGroupCommand, DeleteAdminAccessGroupCommand, ListAdminAccessGroupsQuery,
+    AdminAccessGroupChannelBindingInput, AdminAccessGroupChannelBindingItem, AdminAccessGroupItem,
+    AdminAccessGroupStore, AdminAccessGroupSubject, CreateAdminAccessGroupCommand,
+    DeleteAdminAccessGroupCommand, ListAdminAccessGroupChannelBindingsQuery,
+    ListAdminAccessGroupsQuery, ReplaceAdminAccessGroupChannelBindingsCommand,
     UpdateAdminAccessGroupCommand,
 };
 
 const MAX_NAME_LEN: usize = 128;
 const MAX_PLATFORM_LEN: usize = 64;
 const MAX_BILLING_TYPE_LEN: usize = 64;
-const MAX_REQUEST_ID_LEN: usize = 128;
+const MAX_CHANNEL_BINDINGS_PER_GROUP: usize = 200;
+const MAX_CHANNEL_BINDING_SCOPE_ITEMS: usize = 200;
+const MAX_CHANNEL_BINDING_SCOPE_ITEM_LEN: usize = 128;
+const MIN_CHANNEL_BINDING_PRIORITY: i64 = 0;
+const MAX_CHANNEL_BINDING_PRIORITY: i64 = 1_000_000;
+const MIN_CHANNEL_BINDING_WEIGHT: i64 = 0;
+const MAX_CHANNEL_BINDING_WEIGHT: i64 = 1_000_000;
 const MIN_RATE_MULTIPLIER: f64 = 0.01;
 const MAX_RATE_MULTIPLIER: f64 = 100.0;
 const MAX_CAPACITY_TOTAL: f64 = 1_000_000_000.0;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminAccessGroupState {
@@ -58,6 +66,23 @@ struct AdminAccessGroupUpdateRequest {
     group_type: Option<String>,
     capacity: Option<GroupCapacityRequest>,
     status: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAccessGroupChannelBindingReplaceRequest {
+    items: Option<Vec<AdminAccessGroupChannelBindingRequestItem>>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAccessGroupChannelBindingRequestItem {
+    channel_id: Option<String>,
+    priority: Option<i64>,
+    weight: Option<i64>,
+    status: Option<String>,
+    model_scope: Option<Vec<String>>,
+    capabilities: Option<Vec<String>>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -113,6 +138,12 @@ struct AdminAccessGroupDeleteResponse {
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
+struct AdminAccessGroupChannelBindingListResponse {
+    items: Vec<AdminAccessGroupChannelBindingItemResponse>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
 struct AdminAccessGroupItemResponse {
     id: String,
     name: String,
@@ -125,6 +156,25 @@ struct AdminAccessGroupItemResponse {
     capacity: AmountPairResponse,
     usage: UsagePairResponse,
     status: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAccessGroupChannelBindingItemResponse {
+    id: String,
+    group_id: String,
+    channel_id: String,
+    channel_name: String,
+    provider_code: String,
+    provider_name: String,
+    channel_code: String,
+    models: Vec<String>,
+    capabilities: Vec<String>,
+    model_scope: Vec<String>,
+    priority: i64,
+    weight: i64,
+    status: String,
+    health_status: String,
 }
 
 #[derive(Debug, Serialize)]
@@ -162,6 +212,10 @@ pub fn admin_access_group_router_with_store(
             patch(update_access_group).delete(delete_access_group),
         )
         .route(
+            "/backend/v3/api/router/access_groups/{group_id}/channel_bindings",
+            get(fetch_access_group_channel_bindings).put(replace_access_group_channel_bindings),
+        )
+        .route(
             "/backend/v3/api/iam/access_groups",
             get(fetch_access_groups).post(create_access_group),
         )
@@ -169,10 +223,104 @@ pub fn admin_access_group_router_with_store(
             "/backend/v3/api/iam/access_groups/{group_id}",
             patch(update_access_group).delete(delete_access_group),
         )
+        .route(
+            "/backend/v3/api/iam/access_groups/{group_id}/channel_bindings",
+            get(fetch_access_group_channel_bindings).put(replace_access_group_channel_bindings),
+        )
         .with_state(AdminAccessGroupState {
             store,
             entity_uuid_generator,
         })
+}
+
+async fn fetch_access_group_channel_bindings(
+    State(state): State<AdminAccessGroupState>,
+    headers: HeaderMap,
+    Path(group_id): Path<String>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let group_id = match parse_positive_id(&group_id, "access group id") {
+        Ok(group_id) => group_id,
+        Err(message) => return bad_request(message),
+    };
+
+    match state
+        .store
+        .list_channel_bindings(ListAdminAccessGroupChannelBindingsQuery { subject, group_id })
+        .await
+    {
+        Ok(items) => Json(PlusApiResult::success(
+            AdminAccessGroupChannelBindingListResponse {
+                items: items
+                    .into_iter()
+                    .map(to_channel_binding_item_response)
+                    .collect(),
+            },
+        ))
+        .into_response(),
+        Err(error) => access_group_system_response(
+            "access group channel binding read model is unavailable",
+            error,
+        ),
+    }
+}
+
+async fn replace_access_group_channel_bindings(
+    State(state): State<AdminAccessGroupState>,
+    headers: HeaderMap,
+    Path(group_id): Path<String>,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let group_id = match parse_positive_id(&group_id, "access group id") {
+        Ok(group_id) => group_id,
+        Err(message) => return bad_request(message),
+    };
+    let request = match parse_json_body::<AdminAccessGroupChannelBindingReplaceRequest>(
+        &body,
+        "access group channel binding",
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let items = match normalize_channel_binding_replace_request(request) {
+        Ok(items) => items,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_replace_channel_bindings_command(
+        state.clone(),
+        &headers,
+        subject,
+        group_id,
+        items,
+    ) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.store.replace_channel_bindings(command).await {
+        Ok(items) => Json(PlusApiResult::success(
+            AdminAccessGroupChannelBindingListResponse {
+                items: items
+                    .into_iter()
+                    .map(to_channel_binding_item_response)
+                    .collect(),
+            },
+        ))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response("access group was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => access_group_system_response(
+            "access group channel binding command store is unavailable",
+            error,
+        ),
+    }
 }
 
 async fn fetch_access_groups(
@@ -409,6 +557,52 @@ fn normalize_update_request(
     })
 }
 
+fn normalize_channel_binding_replace_request(
+    request: AdminAccessGroupChannelBindingReplaceRequest,
+) -> Result<Vec<AdminAccessGroupChannelBindingInput>, String> {
+    let items = request.items.unwrap_or_default();
+    if items.len() > MAX_CHANNEL_BINDINGS_PER_GROUP {
+        return Err(format!(
+            "access group channel bindings must include at most {MAX_CHANNEL_BINDINGS_PER_GROUP} items"
+        ));
+    }
+    let mut seen = std::collections::BTreeSet::new();
+    let mut normalized = Vec::with_capacity(items.len());
+    for item in items {
+        let channel_id = parse_positive_id(item.channel_id.as_deref().unwrap_or(""), "channel id")?;
+        if !seen.insert(channel_id) {
+            return Err(format!(
+                "access group channel bindings contains duplicate channel id: {channel_id}"
+            ));
+        }
+        normalized.push(AdminAccessGroupChannelBindingInput {
+            channel_id,
+            priority: normalize_integer_range(
+                item.priority.unwrap_or(100),
+                "access group channel binding priority",
+                MIN_CHANNEL_BINDING_PRIORITY,
+                MAX_CHANNEL_BINDING_PRIORITY,
+            )?,
+            weight: normalize_integer_range(
+                item.weight.unwrap_or(100),
+                "access group channel binding weight",
+                MIN_CHANNEL_BINDING_WEIGHT,
+                MAX_CHANNEL_BINDING_WEIGHT,
+            )?,
+            status: normalize_binding_status(item.status.as_deref())?,
+            model_scope: normalize_scope_items(
+                item.model_scope.unwrap_or_default(),
+                "access group channel binding modelScope",
+            )?,
+            capabilities: normalize_scope_items(
+                item.capabilities.unwrap_or_default(),
+                "access group channel binding capabilities",
+            )?,
+        });
+    }
+    Ok(normalized)
+}
+
 fn normalize_required_text(
     value: Option<&str>,
     field_name: &str,
@@ -504,6 +698,52 @@ fn normalize_capacity_total(value: f64) -> Result<f64, String> {
     Ok(value.round())
 }
 
+fn normalize_integer_range(
+    value: i64,
+    field_name: &str,
+    min: i64,
+    max: i64,
+) -> Result<i64, String> {
+    if value < min || value > max {
+        return Err(format!("{field_name} must be between {min} and {max}"));
+    }
+    Ok(value)
+}
+
+fn normalize_binding_status(value: Option<&str>) -> Result<String, String> {
+    let value = value.unwrap_or("active").trim().to_ascii_lowercase();
+    match value.as_str() {
+        "active" | "normal" => Ok("active".to_owned()),
+        "disabled" | "inactive" => Ok("disabled".to_owned()),
+        _ => Err("access group channel binding status must be active or disabled".to_owned()),
+    }
+}
+
+fn normalize_scope_items(values: Vec<String>, field_name: &str) -> Result<Vec<String>, String> {
+    if values.len() > MAX_CHANNEL_BINDING_SCOPE_ITEMS {
+        return Err(format!(
+            "{field_name} must include at most {MAX_CHANNEL_BINDING_SCOPE_ITEMS} items"
+        ));
+    }
+    let mut seen = std::collections::BTreeSet::new();
+    let mut normalized = Vec::new();
+    for value in values {
+        let value = value.trim();
+        if value.is_empty() {
+            continue;
+        }
+        if value.chars().count() > MAX_CHANNEL_BINDING_SCOPE_ITEM_LEN {
+            return Err(format!(
+                "{field_name} items must be at most {MAX_CHANNEL_BINDING_SCOPE_ITEM_LEN} characters"
+            ));
+        }
+        if seen.insert(value.to_owned()) {
+            normalized.push(value.to_owned());
+        }
+    }
+    Ok(normalized)
+}
+
 fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
     let id = value
         .trim()
@@ -517,7 +757,7 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
 
 fn build_create_command(
     state: AdminAccessGroupState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAccessGroupSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminAccessGroupCommand, AccessGroupCommandBuildError> {
@@ -536,14 +776,14 @@ fn build_create_command(
         group_type: request.group_type,
         capacity_total: request.capacity_total,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_command(
     state: AdminAccessGroupState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAccessGroupSubject,
     group_id: i64,
     request: NormalizedUpdateRequest,
@@ -561,14 +801,14 @@ fn build_update_command(
         group_type: request.group_type,
         capacity_total: request.capacity_total,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_command(
     state: AdminAccessGroupState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAccessGroupSubject,
     group_id: i64,
 ) -> Result<DeleteAdminAccessGroupCommand, AccessGroupCommandBuildError> {
@@ -577,7 +817,30 @@ fn build_delete_command(
         group_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_replace_channel_bindings_command(
+    state: AdminAccessGroupState,
+    _headers: &HeaderMap,
+    subject: AdminAccessGroupSubject,
+    group_id: i64,
+    items: Vec<AdminAccessGroupChannelBindingInput>,
+) -> Result<ReplaceAdminAccessGroupChannelBindingsCommand, AccessGroupCommandBuildError> {
+    let mut binding_uuids = Vec::with_capacity(items.len());
+    for _ in &items {
+        binding_uuids.push(generate_entity_uuid(&state)?);
+    }
+    Ok(ReplaceAdminAccessGroupChannelBindingsCommand {
+        subject,
+        group_id,
+        binding_uuids,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        config_snapshot_uuid: generate_entity_uuid(&state)?,
+        items,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -591,29 +854,13 @@ fn generate_entity_uuid(
         .map_err(AccessGroupCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminAccessGroupState,
-) -> Result<String, AccessGroupCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(AccessGroupCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> AccessGroupCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AccessGroupCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AccessGroupCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_item_response(item: AdminAccessGroupItem) -> AdminAccessGroupItemResponse {
@@ -637,6 +884,27 @@ fn to_item_response(item: AdminAccessGroupItem) -> AdminAccessGroupItemResponse 
             total: item.usage_total,
         },
         status: item.status,
+    }
+}
+
+fn to_channel_binding_item_response(
+    item: AdminAccessGroupChannelBindingItem,
+) -> AdminAccessGroupChannelBindingItemResponse {
+    AdminAccessGroupChannelBindingItemResponse {
+        id: item.id.to_string(),
+        group_id: item.group_id.to_string(),
+        channel_id: item.channel_id.to_string(),
+        channel_name: item.channel_name,
+        provider_code: item.provider_code,
+        provider_name: item.provider_name,
+        channel_code: item.channel_code,
+        models: item.models,
+        capabilities: item.capabilities,
+        model_scope: item.model_scope,
+        priority: item.priority,
+        weight: item.weight,
+        status: item.status,
+        health_status: item.health_status,
     }
 }
 

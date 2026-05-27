@@ -3,10 +3,11 @@ import { resolveApiRequestUrl } from 'sdkwork-claw-router-commons/runtime';
 
 type AuthType = 'current_user' | 'api_key';
 type RequestTab = 'params' | 'headers' | 'auth' | 'body';
+const ACCESS_TOKEN_HEADER = 'Access-Token';
 
 export const FORBIDDEN_HEADER_NAMES = new Set([
   'accept-encoding',
-  'access-token',
+  ACCESS_TOKEN_HEADER.toLowerCase(),
   'authorization',
   'connection',
   'content-length',
@@ -19,7 +20,6 @@ export const FORBIDDEN_HEADER_NAMES = new Set([
   'sec-fetch-dest',
   'sec-fetch-mode',
   'sec-fetch-site',
-  'sdkwork-access-token',
   'user-agent',
   'x-forwarded-for',
   'x-forwarded-host',
@@ -260,6 +260,16 @@ function normalizeHeaderName(name: string): string {
   return name.trim().toLowerCase();
 }
 
+function isManagedHeaderName(name: string): boolean {
+  const normalized = normalizeHeaderName(name);
+  const compact = normalized.replace(/[^a-z0-9]/g, '');
+  return (
+    FORBIDDEN_HEADER_NAMES.has(normalized)
+    || compact.endsWith('accesstoken')
+    || compact.endsWith('requestid')
+  );
+}
+
 function validateHeaderParams(headerParams: ParamRow[]): PlaygroundRequestValidationFailure | null {
   const errors: Record<string, boolean> = {};
 
@@ -267,7 +277,7 @@ function validateHeaderParams(headerParams: ParamRow[]): PlaygroundRequestValida
     if (!param.enabled || !param.key.trim()) {
       continue;
     }
-    if (FORBIDDEN_HEADER_NAMES.has(normalizeHeaderName(param.key))) {
+    if (isManagedHeaderName(param.key)) {
       errors[param.id] = true;
     }
   }
@@ -297,6 +307,24 @@ function validateResolvedUrl(input: BuildPlaygroundRequestInput): PlaygroundRequ
   );
 }
 
+function isOpenGatewayEndpoint(endpoint: PlaygroundEndpoint): boolean {
+  const path = endpoint.path.trim();
+  return path === '/v1' || path.startsWith('/v1/');
+}
+
+function validateAuthBoundary(input: BuildPlaygroundRequestInput): PlaygroundRequestValidationFailure | null {
+  if (input.authType !== 'current_user' || !isOpenGatewayEndpoint(input.endpoint)) {
+    return null;
+  }
+
+  return validationFailure(
+    'auth',
+    { authType: true },
+    'Gateway API Key Required',
+    'Open gateway endpoints under /v1 require an API key. Current logged-in user session tokens are only valid for app and backend API endpoints.',
+  );
+}
+
 function buildHeaders(input: BuildPlaygroundRequestInput): Record<string, string> {
   const headers: Record<string, string> = {};
   const requestContentType = getRequestContentType(input.endpoint);
@@ -311,7 +339,7 @@ function buildHeaders(input: BuildPlaygroundRequestInput): Record<string, string
       headers.Authorization = `Bearer ${input.authToken.trim()}`;
     }
     if (input.accessToken?.trim()) {
-      headers['Sdkwork-Access-Token'] = input.accessToken.trim();
+      headers[ACCESS_TOKEN_HEADER] = input.accessToken.trim();
     }
   }
 
@@ -344,6 +372,11 @@ export function buildPlaygroundRequest(input: BuildPlaygroundRequestInput): Play
   const bodyFailure = validateJsonBody(input);
   if (bodyFailure) {
     return bodyFailure;
+  }
+
+  const authFailure = validateAuthBoundary(input);
+  if (authFailure) {
+    return authFailure;
   }
 
   const method = input.endpoint.method.toUpperCase();

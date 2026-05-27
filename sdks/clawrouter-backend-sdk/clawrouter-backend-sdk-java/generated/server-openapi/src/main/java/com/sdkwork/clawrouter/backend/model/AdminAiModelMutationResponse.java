@@ -7,7 +7,7 @@ public class AdminAiModelMutationResponse {
     public AdminAiModelItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminAiModelItem item) {
         this.item = item;
     }

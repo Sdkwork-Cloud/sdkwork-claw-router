@@ -36,7 +36,7 @@ public class AiGenerationJobRecord {
     public String getChannelId() {
         return this.channelId;
     }
-    
+
     public void setChannelId(String channelId) {
         this.channelId = channelId;
     }
@@ -44,7 +44,7 @@ public class AiGenerationJobRecord {
     public String getCompletedAt() {
         return this.completedAt;
     }
-    
+
     public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
     }
@@ -52,7 +52,7 @@ public class AiGenerationJobRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -60,7 +60,7 @@ public class AiGenerationJobRecord {
     public String getFailureCode() {
         return this.failureCode;
     }
-    
+
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
     }
@@ -68,7 +68,7 @@ public class AiGenerationJobRecord {
     public String getFailureMessageMasked() {
         return this.failureMessageMasked;
     }
-    
+
     public void setFailureMessageMasked(String failureMessageMasked) {
         this.failureMessageMasked = failureMessageMasked;
     }
@@ -76,7 +76,7 @@ public class AiGenerationJobRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -84,7 +84,7 @@ public class AiGenerationJobRecord {
     public Map<String, String> getInputAssetIds() {
         return this.inputAssetIds;
     }
-    
+
     public void setInputAssetIds(Map<String, String> inputAssetIds) {
         this.inputAssetIds = inputAssetIds;
     }
@@ -92,7 +92,7 @@ public class AiGenerationJobRecord {
     public String getJobType() {
         return this.jobType;
     }
-    
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -100,7 +100,7 @@ public class AiGenerationJobRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -108,7 +108,7 @@ public class AiGenerationJobRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -116,7 +116,7 @@ public class AiGenerationJobRecord {
     public String getModality() {
         return this.modality;
     }
-    
+
     public void setModality(String modality) {
         this.modality = modality;
     }
@@ -124,7 +124,7 @@ public class AiGenerationJobRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -132,7 +132,7 @@ public class AiGenerationJobRecord {
     public String getNegativePrompt() {
         return this.negativePrompt;
     }
-    
+
     public void setNegativePrompt(String negativePrompt) {
         this.negativePrompt = negativePrompt;
     }
@@ -140,7 +140,7 @@ public class AiGenerationJobRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -148,7 +148,7 @@ public class AiGenerationJobRecord {
     public Map<String, String> getParameterSnapshot() {
         return this.parameterSnapshot;
     }
-    
+
     public void setParameterSnapshot(Map<String, String> parameterSnapshot) {
         this.parameterSnapshot = parameterSnapshot;
     }
@@ -156,7 +156,7 @@ public class AiGenerationJobRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -164,7 +164,7 @@ public class AiGenerationJobRecord {
     public Integer getProgressPercent() {
         return this.progressPercent;
     }
-    
+
     public void setProgressPercent(Integer progressPercent) {
         this.progressPercent = progressPercent;
     }
@@ -172,7 +172,7 @@ public class AiGenerationJobRecord {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -180,7 +180,7 @@ public class AiGenerationJobRecord {
     public String getProviderId() {
         return this.providerId;
     }
-    
+
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
@@ -188,7 +188,7 @@ public class AiGenerationJobRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -196,7 +196,7 @@ public class AiGenerationJobRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -204,7 +204,7 @@ public class AiGenerationJobRecord {
     public String getSessionId() {
         return this.sessionId;
     }
-    
+
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
     }
@@ -212,7 +212,7 @@ public class AiGenerationJobRecord {
     public String getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
@@ -220,7 +220,7 @@ public class AiGenerationJobRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -228,7 +228,7 @@ public class AiGenerationJobRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -236,7 +236,7 @@ public class AiGenerationJobRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -244,7 +244,7 @@ public class AiGenerationJobRecord {
     public String getUsageFactId() {
         return this.usageFactId;
     }
-    
+
     public void setUsageFactId(String usageFactId) {
         this.usageFactId = usageFactId;
     }
@@ -252,7 +252,7 @@ public class AiGenerationJobRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -260,7 +260,7 @@ public class AiGenerationJobRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

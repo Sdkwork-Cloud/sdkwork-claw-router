@@ -8,7 +8,7 @@ public class AdminMonitorPerformanceResponse {
     public List<AdminMonitorPerformanceItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminMonitorPerformanceItem> items) {
         this.items = items;
     }

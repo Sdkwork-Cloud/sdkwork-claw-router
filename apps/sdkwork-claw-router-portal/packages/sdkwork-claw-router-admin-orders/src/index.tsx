@@ -105,15 +105,12 @@ export function OrdersAdmin({ sectionId }: OrdersAdminProps = {}) {
   return (
     <AdminResourceCenter
       activeSectionId={activeSectionId}
-      description={t('admin.commerce.orders.desc', 'Unified order, refund, fulfillment, and shipment operations.')}
       emptyTitle={t('admin.commerce.orders.empty', 'No order records')}
       errorTitle={t('admin.commerce.orders.error', 'Order data could not be loaded')}
-      icon={<ClipboardList className="h-5 w-5 text-indigo-500" />}
       loadingTitle={t('admin.commerce.orders.loading', 'Loading order records...')}
       sections={sections}
       showSectionNavigation={false}
       tableViewportDataAttribute="admin-orders-table-viewport"
-      title={t('admin.commerce.orders.title', 'Orders')}
     />
   );
 }

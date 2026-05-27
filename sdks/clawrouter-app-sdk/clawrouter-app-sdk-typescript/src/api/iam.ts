@@ -52,11 +52,6 @@ export class IamUsersApi {
 
 export interface IamApiKeysCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export interface IamApiKeysUpdateParams {
-  xRequestId?: string;
 }
 
 export class IamApiKeysApi {
@@ -77,7 +72,6 @@ export class IamApiKeysApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -90,14 +84,8 @@ export class IamApiKeysApi {
   }
 
 /** Update key */
-  async update(apiKeyId: string, body: UpdateApiKeyRequest, params?: IamApiKeysUpdateParams): Promise<ApiKeysUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<ApiKeysUpdateResult>(appApiPath(`/iam/api_keys/${serializePathParameter(apiKeyId, { name: 'apiKeyId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(apiKeyId: string, body: UpdateApiKeyRequest): Promise<ApiKeysUpdateResult> {
+    return this.client.patch<ApiKeysUpdateResult>(appApiPath(`/iam/api_keys/${serializePathParameter(apiKeyId, { name: 'apiKeyId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 

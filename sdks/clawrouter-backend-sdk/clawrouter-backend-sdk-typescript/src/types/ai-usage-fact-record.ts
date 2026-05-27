@@ -102,6 +102,8 @@ export interface AiUsageFactRecord {
   provider_account_id?: string;
   /** Provider id field on ai usage fact record. */
   provider_id?: string;
+  /** Provider native model field on ai usage fact record. */
+  provider_native_model?: string;
   /** Rate multiplier field on ai usage fact record. */
   rate_multiplier?: string;
   /** Reasoning effort field on ai usage fact record. */
@@ -112,6 +114,8 @@ export interface AiUsageFactRecord {
   request_count?: string;
   /** Request id field on ai usage fact record. */
   request_id?: string;
+  /** Requested model catalog key field on ai usage fact record. */
+  requested_model_catalog_key?: string;
   /** Result count field on ai usage fact record. */
   result_count?: string;
   /** Retention until field on ai usage fact record. */

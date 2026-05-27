@@ -7,7 +7,7 @@ public class OpenAiStreamOptions {
     public Boolean getIncludeUsage() {
         return this.includeUsage;
     }
-    
+
     public void setIncludeUsage(Boolean includeUsage) {
         this.includeUsage = includeUsage;
     }

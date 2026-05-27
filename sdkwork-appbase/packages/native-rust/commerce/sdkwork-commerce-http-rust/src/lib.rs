@@ -1,16 +1,30 @@
 pub mod account_router;
+pub mod billing_router;
 pub mod foundation_router;
+pub mod invoice_router;
 pub mod promotion_router;
 pub mod recharge_router;
+mod request_identity;
+mod subject;
+
+pub(crate) use request_identity::with_request_identity;
 
 pub use account_router::{
     app_account_wallet_router_with_postgres_pool, app_account_wallet_router_with_sqlite_pool,
     app_account_wallet_router_with_store, AppbaseAccountWalletStore, AppbaseWalletFuture,
 };
+pub use billing_router::{
+    app_billing_history_router_with_postgres_pool, app_billing_history_router_with_sqlite_pool,
+    app_billing_history_router_with_store, AppbaseBillingHistoryFuture, AppbaseBillingHistoryStore,
+};
 pub use foundation_router::{
     app_commerce_foundation_router, app_commerce_foundation_router_with_postgres_pool,
     app_commerce_foundation_router_with_sqlite_pool, app_commerce_foundation_router_with_store,
     AppbaseCommerceFoundationStore,
+};
+pub use invoice_router::{
+    app_invoice_router_with_postgres_pool, app_invoice_router_with_sqlite_pool,
+    app_invoice_router_with_store, AppbaseInvoiceFuture, AppbaseInvoiceStore,
 };
 pub use promotion_router::{
     app_promotion_router_with_postgres_pool, app_promotion_router_with_sqlite_pool,
@@ -249,21 +263,27 @@ pub fn app_routes() -> Vec<CommerceHttpRoute> {
         ),
         CommerceHttpRoute::new(
             HttpMethod::Get,
-            "/app/v3/api/coupons",
+            "/app/v3/api/promotions/user_coupons",
             "commerce",
-            "coupons.list",
+            "promotions.userCoupons.list",
+        ),
+        CommerceHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/promotions/offers",
+            "commerce",
+            "promotions.offers.list",
         ),
         CommerceHttpRoute::new(
             HttpMethod::Post,
-            "/app/v3/api/coupons/claims",
+            "/app/v3/api/promotions/user_coupon_claims",
             "commerce",
-            "coupons.claims.create",
+            "promotions.userCoupons.claims.create",
         ),
         CommerceHttpRoute::new(
             HttpMethod::Post,
-            "/app/v3/api/coupons/redemptions",
+            "/app/v3/api/promotions/codes/redemptions",
             "commerce",
-            "coupons.redemptions.create",
+            "promotions.codes.redemptions.create",
         ),
         CommerceHttpRoute::new(
             HttpMethod::Get,
@@ -441,9 +461,9 @@ pub fn app_routes() -> Vec<CommerceHttpRoute> {
         ),
         CommerceHttpRoute::new(
             HttpMethod::Get,
-            "/app/v3/api/recharges/orders",
+            "/app/v3/api/billing/history",
             "commerce",
-            "recharges.orders.list",
+            "billing.history.list",
         ),
         CommerceHttpRoute::new(
             HttpMethod::Post,
@@ -1226,39 +1246,63 @@ pub fn backend_routes() -> Vec<CommerceHttpRoute> {
         ),
         route(
             HttpMethod::Get,
-            "/backend/v3/api/coupons/templates",
-            "coupons",
-            "coupons.templates.management.list",
+            "/backend/v3/api/promotions/offers",
+            "promotions",
+            "promotions.offers.management.list",
         ),
         route(
             HttpMethod::Post,
-            "/backend/v3/api/coupons/templates",
-            "coupons",
-            "coupons.templates.create",
+            "/backend/v3/api/promotions/offers",
+            "promotions",
+            "promotions.offers.create",
         ),
         route(
             HttpMethod::Patch,
-            "/backend/v3/api/coupons/templates/{couponTemplateId}",
-            "coupons",
-            "coupons.templates.update",
+            "/backend/v3/api/promotions/offers/{offerId}",
+            "promotions",
+            "promotions.offers.update",
         ),
         route(
             HttpMethod::Get,
-            "/backend/v3/api/coupons/codes",
-            "coupons",
-            "coupons.codes.list",
+            "/backend/v3/api/promotions/coupon_stocks",
+            "promotions",
+            "promotions.couponStocks.list",
         ),
         route(
             HttpMethod::Post,
-            "/backend/v3/api/coupons/codes",
-            "coupons",
-            "coupons.codes.create",
+            "/backend/v3/api/promotions/coupon_stocks",
+            "promotions",
+            "promotions.couponStocks.create",
         ),
         route(
             HttpMethod::Get,
-            "/backend/v3/api/coupons/redemptions",
-            "coupons",
-            "coupons.redemptions.list",
+            "/backend/v3/api/promotions/codes",
+            "promotions",
+            "promotions.codes.list",
+        ),
+        route(
+            HttpMethod::Post,
+            "/backend/v3/api/promotions/codes",
+            "promotions",
+            "promotions.codes.create",
+        ),
+        route(
+            HttpMethod::Get,
+            "/backend/v3/api/promotions/user_coupons",
+            "promotions",
+            "promotions.userCoupons.management.list",
+        ),
+        route(
+            HttpMethod::Get,
+            "/backend/v3/api/promotions/discount_applications",
+            "promotions",
+            "promotions.discountApplications.list",
+        ),
+        route(
+            HttpMethod::Get,
+            "/backend/v3/api/promotions/discount_allocations",
+            "promotions",
+            "promotions.discountAllocations.list",
         ),
         route(
             HttpMethod::Get,
@@ -1410,7 +1454,7 @@ pub fn commerce_tauri_runtime_input_binding() -> CommerceRuntimeInputBinding {
 }
 
 pub fn required_dual_token_headers() -> [&'static str; 2] {
-    ["Authorization", "Sdkwork-Access-Token"]
+    ["Authorization", "Access-Token"]
 }
 
 pub const COMMERCE_RUNTIME_OPERATION_ENVELOPE_NAME: &str = "CommerceRuntimeOperationEnvelope";

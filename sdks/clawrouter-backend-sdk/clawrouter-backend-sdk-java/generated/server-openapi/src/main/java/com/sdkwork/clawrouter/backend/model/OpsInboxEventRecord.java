@@ -29,7 +29,7 @@ public class OpsInboxEventRecord {
     public String getConsumerName() {
         return this.consumerName;
     }
-    
+
     public void setConsumerName(String consumerName) {
         this.consumerName = consumerName;
     }
@@ -37,7 +37,7 @@ public class OpsInboxEventRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -45,7 +45,7 @@ public class OpsInboxEventRecord {
     public String getEventType() {
         return this.eventType;
     }
-    
+
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
@@ -53,7 +53,7 @@ public class OpsInboxEventRecord {
     public Integer getEventVersion() {
         return this.eventVersion;
     }
-    
+
     public void setEventVersion(Integer eventVersion) {
         this.eventVersion = eventVersion;
     }
@@ -61,7 +61,7 @@ public class OpsInboxEventRecord {
     public String getFailureReason() {
         return this.failureReason;
     }
-    
+
     public void setFailureReason(String failureReason) {
         this.failureReason = failureReason;
     }
@@ -69,7 +69,7 @@ public class OpsInboxEventRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -77,7 +77,7 @@ public class OpsInboxEventRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -85,7 +85,7 @@ public class OpsInboxEventRecord {
     public String getMessageId() {
         return this.messageId;
     }
-    
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -93,7 +93,7 @@ public class OpsInboxEventRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -101,7 +101,7 @@ public class OpsInboxEventRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -109,7 +109,7 @@ public class OpsInboxEventRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -117,7 +117,7 @@ public class OpsInboxEventRecord {
     public String getProcessStatus() {
         return this.processStatus;
     }
-    
+
     public void setProcessStatus(String processStatus) {
         this.processStatus = processStatus;
     }
@@ -125,7 +125,7 @@ public class OpsInboxEventRecord {
     public String getProcessedAt() {
         return this.processedAt;
     }
-    
+
     public void setProcessedAt(String processedAt) {
         this.processedAt = processedAt;
     }
@@ -133,7 +133,7 @@ public class OpsInboxEventRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -141,7 +141,7 @@ public class OpsInboxEventRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -149,7 +149,7 @@ public class OpsInboxEventRecord {
     public Integer getRetryCount() {
         return this.retryCount;
     }
-    
+
     public void setRetryCount(Integer retryCount) {
         this.retryCount = retryCount;
     }
@@ -157,7 +157,7 @@ public class OpsInboxEventRecord {
     public String getSourceSystem() {
         return this.sourceSystem;
     }
-    
+
     public void setSourceSystem(String sourceSystem) {
         this.sourceSystem = sourceSystem;
     }
@@ -165,7 +165,7 @@ public class OpsInboxEventRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -173,7 +173,7 @@ public class OpsInboxEventRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -181,7 +181,7 @@ public class OpsInboxEventRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -189,7 +189,7 @@ public class OpsInboxEventRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -197,7 +197,7 @@ public class OpsInboxEventRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

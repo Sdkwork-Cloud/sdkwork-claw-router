@@ -56,34 +56,6 @@ class AuthApi {
     })();
   }
 
-  /// Create QR login code
-  Future<LoginQrCodesCreateResult?> loginQrCodesCreate() async {
-    final response = await _client.post(ApiPaths.appPath('/auth/qr_login_codes'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : LoginQrCodesCreateResult.fromJson(map);
-    })();
-  }
-
-  /// Confirm QR login code
-  Future<LoginQrCodesConfirmResult?> loginQrCodesConfirm(IamLoginQrCodeConfirmRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/auth/qr_login_codes/confirm'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : LoginQrCodesConfirmResult.fromJson(map);
-    })();
-  }
-
-  /// Retrieve QR login status
-  Future<LoginQrCodesRetrieveResult?> loginQrCodesRetrieve(String qrKey) async {
-    final response = await _client.get(ApiPaths.appPath('/auth/qr_login_codes/${serializePathParameter(qrKey, const PathParameterSpec('qrKey', 'simple', false))}'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : LoginQrCodesRetrieveResult.fromJson(map);
-    })();
-  }
-
   /// Create IAM registration
   Future<RegistrationsCreateResult?> registrationsCreate(IamRegistrationCreateRequest body, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
@@ -97,19 +69,6 @@ class AuthApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RegistrationsCreateResult.fromJson(map);
-    })();
-  }
-
-  /// Retrieve public IAM auth runtime settings
-  Future<RuntimeSettingsRetrieveResult?> runtimeSettingsRetrieve([String? tenantCode, String? organizationCode]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('tenant_code', tenantCode, 'form', true, false, null),
-      QueryParameterSpec('organization_code', organizationCode, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/auth/runtime_settings'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : RuntimeSettingsRetrieveResult.fromJson(map);
     })();
   }
 
@@ -186,88 +145,9 @@ class AuthApi {
       return map == null ? null : VerificationCodesVerifyResult.fromJson(map);
     })();
   }
-
-  /// Retrieve public IAM verification policy
-  Future<VerificationPolicyRetrieveResult?> verificationPolicyRetrieve() async {
-    final response = await _client.get(ApiPaths.appPath('/auth/verification_policy'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : VerificationPolicyRetrieveResult.fromJson(map);
-    })();
-  }
 }
 
-class PathParameterSpec {
-  final String name;
-  final String style;
-  final bool explode;
 
-  const PathParameterSpec(this.name, this.style, this.explode);
-}
-
-String serializePathParameter(dynamic value, PathParameterSpec spec) {
-  if (value == null) return '';
-  final style = spec.style.trim().isEmpty ? 'simple' : spec.style;
-  if (value is Iterable) {
-    return serializePathArray(spec.name, value, style, spec.explode);
-  }
-  if (value is Map) {
-    return serializePathObject(spec.name, value, style, spec.explode);
-  }
-  return pathPrimitivePrefix(spec.name, style) + Uri.encodeComponent(value.toString());
-}
-
-String serializePathArray(String name, Iterable values, String style, bool explode) {
-  final serialized = values.where((item) => item != null).map((item) => Uri.encodeComponent(item.toString())).toList();
-  if (serialized.isEmpty) return pathPrefix(name, style);
-  if (style == 'matrix') {
-    if (explode) {
-      return serialized.map((item) => ';$name=$item').join();
-    }
-    return ';$name=${serialized.join(',')}';
-  }
-  final separator = explode ? '.' : ',';
-  return pathPrefix(name, style) + serialized.join(separator);
-}
-
-String serializePathObject(String name, Map values, String style, bool explode) {
-  final entries = <String>[];
-  final exploded = <String>[];
-  values.forEach((key, value) {
-    if (value == null) return;
-    final escapedKey = Uri.encodeComponent(key.toString());
-    final escapedValue = Uri.encodeComponent(value.toString());
-    if (explode) {
-      if (style == 'matrix') {
-        exploded.add(';$escapedKey=$escapedValue');
-      } else {
-        exploded.add('$escapedKey=$escapedValue');
-      }
-    } else {
-      entries.add(escapedKey);
-      entries.add(escapedValue);
-    }
-  });
-  if (style == 'matrix') {
-    if (explode) return exploded.join();
-    return ';$name=${entries.join(',')}';
-  }
-  if (explode) {
-    final separator = style == 'label' ? '.' : ',';
-    return pathPrefix(name, style) + exploded.join(separator);
-  }
-  return pathPrefix(name, style) + entries.join(',');
-}
-
-String pathPrefix(String name, String style) {
-  if (style == 'label') return '.';
-  if (style == 'matrix') return ';$name';
-  return '';
-}
-
-String pathPrimitivePrefix(String name, String style) {
-  return style == 'matrix' ? ';$name=' : pathPrefix(name, style);
-}
 class QueryParameterSpec {
   final String name;
   final dynamic value;

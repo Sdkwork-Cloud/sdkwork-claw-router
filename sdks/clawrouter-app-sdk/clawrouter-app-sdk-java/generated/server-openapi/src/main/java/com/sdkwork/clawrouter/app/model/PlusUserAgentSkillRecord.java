@@ -9,7 +9,7 @@ public class PlusUserAgentSkillRecord {
     public String getInstalledAt() {
         return this.installedAt;
     }
-    
+
     public void setInstalledAt(String installedAt) {
         this.installedAt = installedAt;
     }
@@ -17,7 +17,7 @@ public class PlusUserAgentSkillRecord {
     public String getLastEnabledAt() {
         return this.lastEnabledAt;
     }
-    
+
     public void setLastEnabledAt(String lastEnabledAt) {
         this.lastEnabledAt = lastEnabledAt;
     }
@@ -25,7 +25,7 @@ public class PlusUserAgentSkillRecord {
     public String getLastUsedAt() {
         return this.lastUsedAt;
     }
-    
+
     public void setLastUsedAt(String lastUsedAt) {
         this.lastUsedAt = lastUsedAt;
     }

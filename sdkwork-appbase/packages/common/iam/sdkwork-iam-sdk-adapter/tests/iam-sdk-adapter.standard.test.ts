@@ -5,8 +5,8 @@ import { assertIamAppSdkClient, assertIamBackendSdkClient } from "@sdkwork/iam-s
 import { createIamAppSdkAdapter, createIamBackendSdkAdapter, createIamSdkAdapters } from "../src/index";
 
 describe("SDKWork IAM generated SDK adapters", () => {
-  it("adapts the current generated app SDK auth surface into standard IAM ports", async () => {
-    const legacyAppClient = {
+  it("adapts the current generated app SDK auth and system IAM surfaces into standard IAM ports", async () => {
+    const generatedAppClient = {
       auth: {
         createSendSmsCode: vi.fn().mockResolvedValue({ data: true }),
         getOauthUrl: vi.fn().mockResolvedValue({ data: { url: "https://auth.example" } }),
@@ -17,19 +17,28 @@ describe("SDKWork IAM generated SDK adapters", () => {
         register: vi.fn().mockResolvedValue({ data: { accessToken: "registered-access", authToken: "registered-auth" } }),
         requestPasswordResetChallenge: vi.fn().mockResolvedValue({ data: true }),
         resetPassword: vi.fn().mockResolvedValue({ data: true }),
-        runtimeSettings: {
-          retrieve: vi.fn().mockResolvedValue({
-            data: {
-              verificationPolicy: {
+        verifySmsCode: vi.fn().mockResolvedValue({ data: { verified: true } }),
+      },
+      system: {
+        iam: {
+          runtime: {
+            retrieve: vi.fn().mockResolvedValue({
+              data: {
+                loginMethods: ["password", "emailCode"],
+              },
+            }),
+          },
+          verificationPolicy: {
+            retrieve: vi.fn().mockResolvedValue({
+              data: {
                 emailCodeLoginEnabled: true,
                 emailRegistrationVerificationRequired: true,
                 phoneCodeLoginEnabled: false,
                 phoneRegistrationVerificationRequired: false,
               },
-            },
-          }),
+            }),
+          },
         },
-        verifySmsCode: vi.fn().mockResolvedValue({ data: { verified: true } }),
       },
       user: {
         getUserProfile: vi.fn().mockResolvedValue({ data: { displayName: "Alice", id: "u1" } }),
@@ -37,20 +46,22 @@ describe("SDKWork IAM generated SDK adapters", () => {
       },
     };
 
-    const appClient = createIamAppSdkAdapter(legacyAppClient);
+    const appClient = createIamAppSdkAdapter(generatedAppClient);
 
     expect(() => assertIamAppSdkClient(appClient)).not.toThrow();
     await appClient.auth?.sessions?.create?.({ password: "secret", username: "alice" });
     await appClient.auth?.registrations?.create?.({ password: "secret", username: "alice", verificationCode: "123456" });
-    await appClient.auth?.verificationPolicy?.retrieve?.();
+    await appClient.system?.iam?.runtime?.retrieve?.({ tenantCode: "default" });
+    await appClient.system?.iam?.verificationPolicy?.retrieve?.();
     await appClient.auth?.verificationCodes?.create?.({ target: "a@example.com" });
     await appClient.iam?.users?.current?.retrieve?.();
 
-    expect(legacyAppClient.auth.login).toHaveBeenCalledWith({ password: "secret", username: "alice" });
-    expect(legacyAppClient.auth.register).toHaveBeenCalledWith({ password: "secret", username: "alice", verificationCode: "123456" });
-    expect(legacyAppClient.auth.runtimeSettings.retrieve).toHaveBeenCalledTimes(1);
-    expect(legacyAppClient.auth.createSendSmsCode).toHaveBeenCalledWith({ target: "a@example.com" });
-    expect(legacyAppClient.user.getUserProfile).toHaveBeenCalled();
+    expect(generatedAppClient.auth.login).toHaveBeenCalledWith({ password: "secret", username: "alice" });
+    expect(generatedAppClient.auth.register).toHaveBeenCalledWith({ password: "secret", username: "alice", verificationCode: "123456" });
+    expect(generatedAppClient.system.iam.runtime.retrieve).toHaveBeenCalledWith({ tenantCode: "default" });
+    expect(generatedAppClient.system.iam.verificationPolicy.retrieve).toHaveBeenCalledTimes(1);
+    expect(generatedAppClient.auth.createSendSmsCode).toHaveBeenCalledWith({ target: "a@example.com" });
+    expect(generatedAppClient.user.getUserProfile).toHaveBeenCalled();
   });
 
   it("adapts the current generated backend SDK management surface into standard IAM ports", async () => {

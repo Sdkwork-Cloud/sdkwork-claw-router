@@ -18,7 +18,7 @@ public class AdminDashboardRecentUsageItem {
     public String getBillingMode() {
         return this.billingMode;
     }
-    
+
     public void setBillingMode(String billingMode) {
         this.billingMode = billingMode;
     }
@@ -26,7 +26,7 @@ public class AdminDashboardRecentUsageItem {
     public String getCost() {
         return this.cost;
     }
-    
+
     public void setCost(String cost) {
         this.cost = cost;
     }
@@ -34,7 +34,7 @@ public class AdminDashboardRecentUsageItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -42,7 +42,7 @@ public class AdminDashboardRecentUsageItem {
     public Boolean getIsApiUser() {
         return this.isApiUser;
     }
-    
+
     public void setIsApiUser(Boolean isApiUser) {
         this.isApiUser = isApiUser;
     }
@@ -50,7 +50,7 @@ public class AdminDashboardRecentUsageItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -58,7 +58,7 @@ public class AdminDashboardRecentUsageItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -66,7 +66,7 @@ public class AdminDashboardRecentUsageItem {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -74,7 +74,7 @@ public class AdminDashboardRecentUsageItem {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -82,7 +82,7 @@ public class AdminDashboardRecentUsageItem {
     public Double getUsageCount() {
         return this.usageCount;
     }
-    
+
     public void setUsageCount(Double usageCount) {
         this.usageCount = usageCount;
     }
@@ -90,7 +90,7 @@ public class AdminDashboardRecentUsageItem {
     public Double getUsageIn() {
         return this.usageIn;
     }
-    
+
     public void setUsageIn(Double usageIn) {
         this.usageIn = usageIn;
     }
@@ -98,7 +98,7 @@ public class AdminDashboardRecentUsageItem {
     public Double getUsageOut() {
         return this.usageOut;
     }
-    
+
     public void setUsageOut(Double usageOut) {
         this.usageOut = usageOut;
     }
@@ -106,7 +106,7 @@ public class AdminDashboardRecentUsageItem {
     public String getUser() {
         return this.user;
     }
-    
+
     public void setUser(String user) {
         this.user = user;
     }

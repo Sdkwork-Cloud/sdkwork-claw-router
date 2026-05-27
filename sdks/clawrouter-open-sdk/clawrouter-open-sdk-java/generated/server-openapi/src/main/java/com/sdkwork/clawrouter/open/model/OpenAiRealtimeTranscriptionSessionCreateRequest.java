@@ -12,7 +12,7 @@ public class OpenAiRealtimeTranscriptionSessionCreateRequest {
     public String getInputAudioFormat() {
         return this.inputAudioFormat;
     }
-    
+
     public void setInputAudioFormat(String inputAudioFormat) {
         this.inputAudioFormat = inputAudioFormat;
     }
@@ -20,7 +20,7 @@ public class OpenAiRealtimeTranscriptionSessionCreateRequest {
     public String getInputAudioTranscription() {
         return this.inputAudioTranscription;
     }
-    
+
     public void setInputAudioTranscription(String inputAudioTranscription) {
         this.inputAudioTranscription = inputAudioTranscription;
     }
@@ -28,7 +28,7 @@ public class OpenAiRealtimeTranscriptionSessionCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -36,7 +36,7 @@ public class OpenAiRealtimeTranscriptionSessionCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -44,7 +44,7 @@ public class OpenAiRealtimeTranscriptionSessionCreateRequest {
     public String getTurnDetection() {
         return this.turnDetection;
     }
-    
+
     public void setTurnDetection(String turnDetection) {
         this.turnDetection = turnDetection;
     }

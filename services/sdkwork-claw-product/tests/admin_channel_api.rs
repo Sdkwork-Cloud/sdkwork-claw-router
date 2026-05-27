@@ -1,3 +1,6 @@
+mod common;
+use common::missing_internal_tenant_header_message;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -27,9 +30,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
                 ))
@@ -82,9 +83,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .method("PUT")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"id":"1","status":"disabled","weight":15,"models":["openai/global/gpt-4o-mini"],"capabilities":["llm","image"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3},"expiresAt":null}"#,
                 ))
@@ -123,9 +122,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .method("POST")
                 .uri("/backend/v3/api/channel/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -158,10 +155,8 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .method("POST")
                 .uri("/backend/v3/api/channel/1/test")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
-                .header("X-Request-Id", "admin-channel-test-1")
+                .internal_trusted_subject(10, 20, 30)
+                .header("X-Request-Id", "00000000-0000-4000-8000-000000000201")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -187,9 +182,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/channel/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -206,9 +199,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .method("POST")
                 .uri("/backend/v3/api/channel/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -235,9 +226,7 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channel_ac
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
                 ))
@@ -287,7 +276,7 @@ async fn admin_channel_route_rejects_missing_trusted_subject_for_store_backed_ro
     assert!(payload["msg"]
         .as_str()
         .unwrap()
-        .contains("x-sdkwork-tenant-id header is required"));
+        .contains(missing_internal_tenant_header_message()));
 }
 
 #[tokio::test]
@@ -304,9 +293,7 @@ async fn admin_channel_route_rejects_invalid_payload_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
@@ -339,9 +326,7 @@ async fn admin_channel_route_rejects_plaintext_auth_key_without_calling_store() 
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","authKey":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
@@ -374,9 +359,7 @@ async fn admin_channel_route_rejects_invalid_base_url_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
@@ -410,9 +393,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
@@ -435,9 +416,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
@@ -470,9 +449,7 @@ async fn admin_channel_route_rejects_invalid_retry_policy_without_calling_store(
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
                 ))
@@ -505,9 +482,7 @@ async fn admin_channel_route_rejects_invalid_circuit_breaker_policy_without_call
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
                 ))
@@ -541,9 +516,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"timeoutMs":null}"#,
                 ))
@@ -567,9 +540,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"retryPolicy":null}"#,
                 ))
@@ -592,9 +563,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .method("POST")
                 .uri("/backend/v3/api/channel")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
                 ))

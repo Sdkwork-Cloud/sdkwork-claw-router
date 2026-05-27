@@ -13,7 +13,7 @@ use sdkwork_claw_product::ports::{
 async fn configured_verification_code_sender_selects_active_config_and_dispatches_to_provider_driver(
 ) {
     let config_store = Arc::new(TestConfigStore::with_config(VerificationDeliveryConfig {
-        channel_id: 2002,
+        route_rule_id: 4002,
         account_id: 9002,
         tenant_id: 10,
         organization_id: 20,
@@ -24,6 +24,7 @@ async fn configured_verification_code_sender_selects_active_config_and_dispatche
         secret_ref: "vault://providers/sendgrid/account/primary".to_owned(),
         base_url: Some("https://api.sendgrid.test".to_owned()),
         template_code: Some("LOGIN_TEMPLATE".to_owned()),
+        sender_identity_id: Some(8002),
         sender: Some("noreply@example.com".to_owned()),
         priority: 10,
         weight: 20,
@@ -70,7 +71,7 @@ async fn configured_verification_code_sender_selects_active_config_and_dispatche
 #[tokio::test]
 async fn configured_verification_code_sender_fails_closed_when_provider_driver_is_not_registered() {
     let config_store = Arc::new(TestConfigStore::with_config(VerificationDeliveryConfig {
-        channel_id: 2004,
+        route_rule_id: 4004,
         account_id: 9004,
         tenant_id: 10,
         organization_id: 20,
@@ -81,6 +82,7 @@ async fn configured_verification_code_sender_fails_closed_when_provider_driver_i
         secret_ref: "vault://providers/aliyun-sms/account/default".to_owned(),
         base_url: None,
         template_code: Some("SMS_REGISTER".to_owned()),
+        sender_identity_id: Some(8004),
         sender: Some("SDKWORK".to_owned()),
         priority: 10,
         weight: 10,
@@ -105,6 +107,52 @@ async fn configured_verification_code_sender_fails_closed_when_provider_driver_i
         ),
         "unexpected error: {error}"
     );
+}
+
+#[tokio::test]
+async fn configured_verification_code_sender_uses_default_provider_sender_for_configured_provider()
+{
+    let config_store = Arc::new(TestConfigStore::with_config(VerificationDeliveryConfig {
+        route_rule_id: 4005,
+        account_id: 9005,
+        tenant_id: 10,
+        organization_id: 20,
+        provider_code: "ses".to_owned(),
+        channel: "email".to_owned(),
+        scene: "register".to_owned(),
+        account_code: "email-default".to_owned(),
+        secret_ref: "vault://providers/ses/account/default".to_owned(),
+        base_url: None,
+        template_code: Some("REGISTER_EMAIL".to_owned()),
+        sender_identity_id: Some(8005),
+        sender: Some("noreply@example.com".to_owned()),
+        priority: 10,
+        weight: 50,
+    }));
+    let default_sender = Arc::new(CapturingProviderSender::default());
+    let sender = ConfiguredVerificationCodeSender::new(config_store)
+        .with_subject(10, 20)
+        .with_default_provider_sender(default_sender.clone());
+
+    let receipt = sender
+        .send_verification_code(VerificationCodeDeliveryRequest {
+            code_id: "code-3".to_owned(),
+            target: "new-user@example.com".to_owned(),
+            scene: "REGISTER".to_owned(),
+            channel: "EMAIL".to_owned(),
+            code: "876543".to_owned(),
+            expires_at: "2026-05-14T12:05:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!("ses", receipt.provider_code);
+    assert_eq!("email", receipt.channel);
+    assert_eq!("provider-message-code-3", receipt.message_id);
+    let requests = default_sender.requests();
+    assert_eq!(1, requests.len());
+    assert_eq!("ses", requests[0].config.provider_code);
+    assert_eq!("new-user@example.com", requests[0].delivery.target);
 }
 
 #[derive(Debug)]

@@ -28,7 +28,7 @@ public class IntegrationProxyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -36,7 +36,7 @@ public class IntegrationProxyRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -44,7 +44,7 @@ public class IntegrationProxyRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -52,7 +52,7 @@ public class IntegrationProxyRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -60,7 +60,7 @@ public class IntegrationProxyRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -68,7 +68,7 @@ public class IntegrationProxyRecord {
     public String getEndpoint() {
         return this.endpoint;
     }
-    
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -76,7 +76,7 @@ public class IntegrationProxyRecord {
     public String getHealthStatus() {
         return this.healthStatus;
     }
-    
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -84,7 +84,7 @@ public class IntegrationProxyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -92,7 +92,7 @@ public class IntegrationProxyRecord {
     public String getLastCheckedAt() {
         return this.lastCheckedAt;
     }
-    
+
     public void setLastCheckedAt(String lastCheckedAt) {
         this.lastCheckedAt = lastCheckedAt;
     }
@@ -100,7 +100,7 @@ public class IntegrationProxyRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -108,7 +108,7 @@ public class IntegrationProxyRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -116,7 +116,7 @@ public class IntegrationProxyRecord {
     public String getProxyCode() {
         return this.proxyCode;
     }
-    
+
     public void setProxyCode(String proxyCode) {
         this.proxyCode = proxyCode;
     }
@@ -124,7 +124,7 @@ public class IntegrationProxyRecord {
     public String getProxyType() {
         return this.proxyType;
     }
-    
+
     public void setProxyType(String proxyType) {
         this.proxyType = proxyType;
     }
@@ -132,7 +132,7 @@ public class IntegrationProxyRecord {
     public String getRegion() {
         return this.region;
     }
-    
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -140,7 +140,7 @@ public class IntegrationProxyRecord {
     public String getSecretHash() {
         return this.secretHash;
     }
-    
+
     public void setSecretHash(String secretHash) {
         this.secretHash = secretHash;
     }
@@ -148,7 +148,7 @@ public class IntegrationProxyRecord {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -156,7 +156,7 @@ public class IntegrationProxyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -164,7 +164,7 @@ public class IntegrationProxyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -172,7 +172,7 @@ public class IntegrationProxyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -180,7 +180,7 @@ public class IntegrationProxyRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -188,7 +188,7 @@ public class IntegrationProxyRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

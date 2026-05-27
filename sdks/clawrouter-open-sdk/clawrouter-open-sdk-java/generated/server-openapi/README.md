@@ -62,7 +62,7 @@ client.setAuthToken("your-auth-token");
 client.setAccessToken("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.

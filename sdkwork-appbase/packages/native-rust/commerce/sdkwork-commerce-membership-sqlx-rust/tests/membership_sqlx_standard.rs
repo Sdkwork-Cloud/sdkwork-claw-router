@@ -2,12 +2,15 @@ use axum::body::Body;
 use axum::http::{Method, Request, StatusCode};
 use sdkwork_commerce_membership_sqlx::{
     admin_membership_router_with_sqlite_pool, app_membership_router_with_sqlite_pool,
-    upsert_sqlite_commerce_experience_seed, AppMembershipSubject, SqliteCommerceMembershipStore,
+    repair_sqlite_commerce_experience_seed, upsert_sqlite_commerce_experience_seed,
+    upsert_sqlite_payment_center_seed, AppMembershipSubject, SqliteCommerceMembershipStore,
     SubmitMembershipPurchaseCommand,
 };
 use sdkwork_commerce_storage_sqlx::commerce_initial_migration_sql;
+use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
 use serde_json::Value;
-use sqlx::{Executor, SqlitePool};
+use sqlx::{Executor, Row, SqlitePool};
+use std::collections::BTreeSet;
 use tower::ServiceExt;
 
 #[test]
@@ -42,11 +45,16 @@ fn appbase_membership_sqlx_exposes_standard_store_names_without_legacy_membershi
         "ParsedVip",
         "StoredVip",
         "VipPaymentMethod",
-        "vip_",
-        "vip-",
-        "VIP",
         "vip_membership",
         "seed-product-vip-membership",
+        concat!("\"basic\"", " =>"),
+        concat!("\"advanced\"", " =>"),
+        concat!("\"premium\"", " =>"),
+        concat!("\"ultimate\"", " =>"),
+        concat!("| \"basic\""),
+        concat!("| \"advanced\""),
+        concat!("| \"premium\""),
+        concat!("| \"ultimate\""),
         concat!("level", "_id"),
         concat!("AS group", "_id"),
         concat!("\"group", "_id\""),
@@ -126,14 +134,14 @@ async fn sqlite_seed_initializes_membership_catalog_for_app_display() {
         .load_package_groups(None, false)
         .await
         .expect("load package groups");
-    assert_eq!(4, groups.len());
+    assert_eq!(2, groups.len());
     assert_eq!(
-        vec![1, 2, 3, 4],
+        vec![1, 2],
         groups.iter().map(|group| group.id).collect::<Vec<_>>()
     );
-    assert_eq!(4, groups[0].packages.len());
+    assert_eq!(3, groups[0].packages.len());
     assert_eq!(
-        vec![301, 302, 303, 304],
+        vec![301, 302, 303],
         groups[0]
             .packages
             .iter()
@@ -145,10 +153,10 @@ async fn sqlite_seed_initializes_membership_catalog_for_app_display() {
         .load_packages(None, None)
         .await
         .expect("load packages");
-    assert_eq!(16, packages.len());
+    assert_eq!(6, packages.len());
     let monthly_pro = packages
         .iter()
-        .find(|package| package.id == 303)
+        .find(|package| package.id == 301)
         .expect("monthly pro package exists");
     assert_eq!("69.90", monthly_pro.price);
     assert_eq!(30, monthly_pro.duration_days);
@@ -163,6 +171,329 @@ async fn sqlite_seed_initializes_membership_catalog_for_app_display() {
         sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_complete(&pool)
             .await
             .expect("seed complete check")
+    );
+}
+
+#[tokio::test]
+async fn sqlite_seed_integrity_report_is_complete_for_standard_seed() {
+    let pool = seeded_pool().await;
+
+    let report =
+        sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_integrity_report(&pool)
+            .await
+            .expect("seed integrity report");
+
+    assert!(report.complete);
+    assert_eq!(Vec::<String>::new(), integrity_issue_codes(&report));
+}
+
+#[tokio::test]
+async fn sqlite_seed_installs_active_payment_center_defaults_and_preserves_admin_edits() {
+    let pool = SqlitePool::connect("sqlite::memory:").await.unwrap();
+    install_schema(&pool).await;
+    upsert_sqlite_payment_center_seed(&pool)
+        .await
+        .expect("seed payment center");
+
+    let method_keys = sqlx::query(
+        r#"
+        SELECT method_key
+        FROM commerce_payment_method
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND status = 'active'
+        ORDER BY method_key
+        "#,
+    )
+    .fetch_all(&pool)
+    .await
+    .expect("load payment methods")
+    .into_iter()
+    .map(|row| row.get::<String, _>("method_key"))
+    .collect::<BTreeSet<_>>();
+    assert_eq!(
+        sdkwork_commerce_bootstrap::commerce_payment_method_seeds()
+            .into_iter()
+            .map(|method| method.method_key.to_owned())
+            .collect::<BTreeSet<_>>(),
+        method_keys
+    );
+
+    let active_provider_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM commerce_payment_provider WHERE tenant_id = '0' AND organization_id = '0' AND status = 'active'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("count payment providers");
+    assert_eq!(
+        sdkwork_commerce_bootstrap::commerce_payment_provider_seeds().len() as i64,
+        active_provider_count
+    );
+
+    let active_account_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM commerce_payment_provider_account WHERE tenant_id = '0' AND organization_id = '0' AND status = 'active'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("count payment provider accounts");
+    assert_eq!(
+        sdkwork_commerce_bootstrap::commerce_payment_provider_account_seeds().len() as i64,
+        active_account_count
+    );
+
+    let active_channel_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM commerce_payment_channel WHERE tenant_id = '0' AND organization_id = '0' AND status = 'active'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("count payment channels");
+    assert_eq!(
+        sdkwork_commerce_bootstrap::commerce_payment_channel_seeds().len() as i64,
+        active_channel_count
+    );
+
+    let active_route_rule_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM commerce_payment_route_rule WHERE tenant_id = '0' AND organization_id = '0' AND status = 'active'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("count payment route rules");
+    assert_eq!(
+        sdkwork_commerce_bootstrap::commerce_payment_route_rule_seeds().len() as i64,
+        active_route_rule_count
+    );
+
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_provider_account
+        SET merchant_id = 'real-stripe-account',
+            secret_ref = 'secret://real/stripe',
+            webhook_secret_ref = 'secret://real/stripe/webhook',
+            environment = 'production',
+            status = 'inactive'
+        WHERE account_no = 'seed-stripe-sandbox'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .expect("edit provider account");
+    sqlx::query("UPDATE commerce_payment_method SET status = 'inactive' WHERE method_key = 'card'")
+        .execute(&pool)
+        .await
+        .expect("deactivate card method");
+    sqlx::query(
+        "UPDATE commerce_payment_channel SET status = 'inactive' WHERE channel_no = 'seed-card-checkout'",
+    )
+    .execute(&pool)
+    .await
+    .expect("deactivate card channel");
+    sqlx::query(
+        "UPDATE commerce_payment_route_rule SET status = 'inactive' WHERE rule_no = 'route-seed-card-checkout'",
+    )
+    .execute(&pool)
+    .await
+    .expect("deactivate card route rule");
+
+    upsert_sqlite_payment_center_seed(&pool)
+        .await
+        .expect("repair payment center seed");
+
+    let account = sqlx::query(
+        r#"
+        SELECT merchant_id, secret_ref, webhook_secret_ref, environment, status
+        FROM commerce_payment_provider_account
+        WHERE account_no = 'seed-stripe-sandbox'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("load edited provider account");
+    assert_eq!(
+        "real-stripe-account",
+        account.get::<String, _>("merchant_id")
+    );
+    assert_eq!(
+        "secret://real/stripe",
+        account.get::<String, _>("secret_ref")
+    );
+    assert_eq!(
+        "secret://real/stripe/webhook",
+        account.get::<String, _>("webhook_secret_ref")
+    );
+    assert_eq!("production", account.get::<String, _>("environment"));
+    assert_eq!("inactive", account.get::<String, _>("status"));
+
+    let card_method_status: String =
+        sqlx::query_scalar("SELECT status FROM commerce_payment_method WHERE method_key = 'card'")
+            .fetch_one(&pool)
+            .await
+            .expect("load card method status");
+    assert_eq!("inactive", card_method_status);
+    let card_channel_status: String = sqlx::query_scalar(
+        "SELECT status FROM commerce_payment_channel WHERE channel_no = 'seed-card-checkout'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("load card channel status");
+    assert_eq!("inactive", card_channel_status);
+    let card_rule_status: String = sqlx::query_scalar(
+        "SELECT status FROM commerce_payment_route_rule WHERE rule_no = 'route-seed-card-checkout'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("load card route rule status");
+    assert_eq!("inactive", card_rule_status);
+}
+
+#[tokio::test]
+async fn sqlite_seed_integrity_report_keeps_payment_center_complete_after_admin_disables_seed_rows()
+{
+    let pool = seeded_pool().await;
+
+    for statement in [
+        "UPDATE commerce_payment_method SET status = 'disabled' WHERE method_key = 'card'",
+        "UPDATE commerce_payment_provider SET status = 'disabled' WHERE provider_code = 'stripe'",
+        "UPDATE commerce_payment_provider_account SET status = 'disabled' WHERE account_no = 'seed-stripe-sandbox'",
+        "UPDATE commerce_payment_channel SET status = 'disabled' WHERE channel_no = 'seed-card-checkout'",
+        "UPDATE commerce_payment_route_rule SET status = 'disabled' WHERE rule_no = 'route-seed-card-checkout'",
+    ] {
+        sqlx::query(statement)
+            .execute(&pool)
+            .await
+            .unwrap_or_else(|error| panic!("failed to disable payment seed with {statement}: {error}"));
+    }
+
+    let report =
+        sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_integrity_report(&pool)
+            .await
+            .expect("seed integrity report");
+
+    assert!(report.complete);
+    assert_eq!(Vec::<String>::new(), integrity_issue_codes(&report));
+}
+
+#[tokio::test]
+async fn sqlite_seed_integrity_report_detects_broken_membership_links() {
+    for (statement, expected_code) in [
+        (
+            "UPDATE membership_plan SET status = 'disabled' WHERE plan_no = 'pro'",
+            "missing_membership_plan",
+        ),
+        (
+            "UPDATE membership_package SET plan_id = 'missing-plan' WHERE package_no = 'membership-month-pro'",
+            "orphan_membership_package_plan",
+        ),
+        (
+            "UPDATE membership_package SET package_group_id = 'missing-group' WHERE package_no = 'membership-month-pro'",
+            "orphan_membership_package_group",
+        ),
+        (
+            "UPDATE membership_package SET sku_id = 'missing-sku' WHERE package_no = 'membership-month-pro'",
+            "orphan_membership_package_sku",
+        ),
+        (
+            "UPDATE commerce_product_sku SET spu_id = 'seed-product-points-recharge' WHERE id = 'seed-sku-membership-month-pro'",
+            "invalid_membership_sku_product",
+        ),
+        (
+            "UPDATE commerce_recharge_package SET sku_id = 'missing-recharge-sku' WHERE package_no = 'points-990'",
+            "orphan_recharge_package_sku",
+        ),
+        (
+            "UPDATE commerce_product_sku SET spu_id = 'seed-product-membership' WHERE id = 'seed-sku-points-recharge-990'",
+            "invalid_recharge_sku_product",
+        ),
+    ] {
+        let pool = seeded_pool().await;
+        sqlx::query(statement)
+            .execute(&pool)
+            .await
+            .unwrap_or_else(|error| panic!("failed to mutate seed with {statement}: {error}"));
+
+        let report =
+            sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_integrity_report(
+                &pool,
+            )
+            .await
+            .expect("seed integrity report");
+
+        assert!(!report.complete, "{expected_code} should make report incomplete");
+        assert!(
+            integrity_issue_codes(&report)
+                .iter()
+                .any(|code| code == expected_code),
+            "{expected_code} missing from {:?}",
+            integrity_issue_codes(&report)
+        );
+    }
+}
+
+#[tokio::test]
+async fn sqlite_seed_repair_restores_only_incomplete_seed_slices() {
+    let pool = seeded_pool().await;
+
+    sqlx::query(
+        "UPDATE commerce_payment_provider SET display_name = 'Production Stripe' WHERE provider_code = 'stripe'",
+    )
+    .execute(&pool)
+    .await
+    .expect("customize provider display name");
+    sqlx::query("DELETE FROM membership_package WHERE id = '302'")
+        .execute(&pool)
+        .await
+        .expect("delete one membership package");
+    sqlx::query(
+        "DELETE FROM commerce_payment_channel WHERE id = 'seed-payment-channel-card-checkout'",
+    )
+    .execute(&pool)
+    .await
+    .expect("delete one payment channel");
+
+    let incomplete_report =
+        sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_integrity_report(&pool)
+            .await
+            .expect("seed integrity report");
+    assert!(!incomplete_report.complete);
+    assert!(integrity_issue_codes(&incomplete_report)
+        .iter()
+        .any(|code| code == "missing_membership_package"));
+    assert!(integrity_issue_codes(&incomplete_report)
+        .iter()
+        .any(|code| code == "missing_payment_channel"));
+
+    repair_sqlite_commerce_experience_seed(&pool)
+        .await
+        .expect("repair incomplete seed slices");
+
+    assert!(
+        sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_complete(&pool)
+            .await
+            .expect("seed complete check")
+    );
+
+    let restored_package_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM membership_package WHERE id = '302'")
+            .fetch_one(&pool)
+            .await
+            .expect("count restored membership package");
+    assert_eq!(1, restored_package_count);
+    let restored_channel_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM commerce_payment_channel WHERE id = 'seed-payment-channel-card-checkout'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("count restored payment channel");
+    assert_eq!(1, restored_channel_count);
+
+    let provider_display_name: String = sqlx::query_scalar(
+        "SELECT display_name FROM commerce_payment_provider WHERE provider_code = 'stripe'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("load provider display name");
+    assert_eq!(
+        "Production Stripe", provider_display_name,
+        "repair must not replay unrelated payment provider seed slices"
     );
 }
 
@@ -204,8 +535,107 @@ async fn sqlite_membership_router_serves_packages_and_groups_without_404() {
 }
 
 #[tokio::test]
+async fn sqlite_membership_app_router_generates_response_request_id() {
+    let pool = seeded_pool().await;
+    let router = app_membership_router_with_sqlite_pool(pool);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/app/v3/api/memberships/plans")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let request_id = response_request_id(&response);
+    assert!(
+        is_canonical_uuid(&request_id),
+        "membership app response returned non-canonical request id {request_id}"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_membership_app_router_rejects_malformed_upstream_request_id() {
+    let pool = seeded_pool().await;
+    let router = app_membership_router_with_sqlite_pool(pool);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/app/v3/api/memberships/plans")
+                .header("X-Request-Id", "frontend-request-id")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let request_id = response_request_id(&response);
+    assert!(
+        is_canonical_uuid(&request_id),
+        "membership app bad request returned non-canonical request id {request_id}"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_membership_router_echoes_trusted_response_request_id() {
+    let pool = seeded_pool().await;
+    let router = admin_membership_router_with_sqlite_pool(pool);
+    let trusted_request_id = "123e4567-e89b-12d3-a456-426614174000";
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/backend/v3/api/memberships/plans")
+                .extension(standard_context())
+                .header("X-Request-Id", trusted_request_id)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(trusted_request_id, response_request_id(&response));
+}
+
+#[tokio::test]
+async fn sqlite_admin_membership_router_rejects_malformed_upstream_request_id() {
+    let pool = seeded_pool().await;
+    let router = admin_membership_router_with_sqlite_pool(pool);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/backend/v3/api/memberships/plans")
+                .extension(standard_context())
+                .header("X-Request-Id", "frontend-request-id")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let request_id = response_request_id(&response);
+    assert!(
+        is_canonical_uuid(&request_id),
+        "membership admin bad request returned non-canonical request id {request_id}"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
     let pool = seeded_pool().await;
+    activate_payment_method_for_purchase(&pool, "wechat_pay").await;
     let store = SqliteCommerceMembershipStore::new(pool.clone());
 
     let outcome = store
@@ -215,13 +645,13 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
                 organization_id: 20,
                 user_id: 30,
             },
-            package_id: 303,
+            package_id: 301,
             payment_method: "wechat".to_owned(),
-            order_uuid: "order-membership-303".to_owned(),
-            order_item_uuid: "order-item-membership-303".to_owned(),
-            payment_uuid: "payment-membership-303".to_owned(),
-            attempt_uuid: "payment-attempt-membership-303".to_owned(),
-            membership_uuid: "membership-303".to_owned(),
+            order_uuid: "order-membership-301".to_owned(),
+            order_item_uuid: "order-item-membership-301".to_owned(),
+            payment_uuid: "payment-membership-301".to_owned(),
+            attempt_uuid: "payment-attempt-membership-301".to_owned(),
+            membership_uuid: "membership-301".to_owned(),
             order_no: "MEMBERSHIP20260519001".to_owned(),
             out_trade_no: "MEMBERSHIPTRADE20260519001".to_owned(),
             requested_at: "2026-05-19 00:00:00".to_owned(),
@@ -234,22 +664,22 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
     assert_eq!("MEMBERSHIP20260519001", outcome.order_id);
     assert_eq!(true, outcome.success);
     assert_eq!("MEMBERSHIP20260519001", outcome.request_no);
-    assert_eq!("payment-membership-303", outcome.payment_id);
+    assert_eq!("payment-membership-301", outcome.payment_id);
     assert_eq!(
-        "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-membership-303&orderId=MEMBERSHIP20260519001",
+        "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-membership-301&orderId=MEMBERSHIP20260519001",
         outcome.qr_code_payload
     );
     assert_eq!(None, outcome.qr_code_image_url);
-    assert_eq!(303, outcome.package_id);
+    assert_eq!(301, outcome.package_id);
     assert_eq!("69.90", outcome.amount);
     assert_eq!(30, outcome.duration_days);
-    assert_eq!(2, outcome.target_plan_rank);
+    assert_eq!(1, outcome.target_plan_rank);
 
-    let membership: (String, String, String, String, String, String) = sqlx::query_as(
+    let membership: (String, String, String, String, String, String, String) = sqlx::query_as(
         r#"
-        SELECT tenant_id, organization_id, owner_user_id, plan_id, status, expires_at
-        FROM commerce_membership
-        WHERE id = 'membership-303'
+        SELECT tenant_id, organization_id, owner_user_id, plan_id, package_id, status, expires_at
+        FROM membership_subscription
+        WHERE id = 'membership-301'
         "#,
     )
     .fetch_one(&pool)
@@ -259,18 +689,19 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
     assert_eq!("20", membership.1);
     assert_eq!("30", membership.2);
     assert_eq!("seed-membership-plan-pro", membership.3);
-    assert_eq!("pending_activation", membership.4);
-    assert_eq!("2026-06-18 00:00:00", membership.5);
+    assert_eq!("301", membership.4);
+    assert_eq!("pending_activation", membership.5);
+    assert_eq!("2026-06-18 00:00:00", membership.6);
 
     let order_status: String =
-        sqlx::query_scalar("SELECT status FROM commerce_order WHERE id = 'order-membership-303'")
+        sqlx::query_scalar("SELECT status FROM commerce_order WHERE id = 'order-membership-301'")
             .fetch_one(&pool)
             .await
             .expect("order row");
     assert_eq!("pending_payment", order_status);
 
     let payment_status: String = sqlx::query_scalar(
-        "SELECT status FROM commerce_payment_intent WHERE id = 'payment-membership-303'",
+        "SELECT status FROM commerce_payment_intent WHERE id = 'payment-membership-301'",
     )
     .fetch_one(&pool)
     .await
@@ -278,7 +709,7 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
     assert_eq!("pending", payment_status);
 
     let entitlement_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_membership_entitlement WHERE membership_id = 'membership-303'",
+        "SELECT COUNT(1) FROM entitlement_grant WHERE source_type = 'membership_subscription' AND source_id = 'membership-301'",
     )
     .fetch_one(&pool)
     .await
@@ -305,16 +736,16 @@ async fn sqlite_speed_up_consumes_priority_entitlement_once() {
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
 
-    let used_quantity: i64 = sqlx::query_scalar(
-        "SELECT used_quantity FROM commerce_membership_entitlement WHERE id = 'membership-entitlement-speed-up'",
+    let used_quantity: String = sqlx::query_scalar(
+        "SELECT total_used FROM entitlement_account WHERE id = 'membership-entitlement-speed-up'",
     )
     .fetch_one(&pool)
     .await
     .expect("speed up entitlement usage");
-    assert_eq!(1, used_quantity);
+    assert_eq!("1", used_quantity);
 
     let usage_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_membership_entitlement_usage WHERE entitlement_id = 'membership-entitlement-speed-up'",
+        "SELECT COUNT(1) FROM entitlement_ledger_entry WHERE account_id = 'membership-entitlement-speed-up'",
     )
     .fetch_one(&pool)
     .await
@@ -366,9 +797,9 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
     )
     .await;
     assert_eq!("2000", plans["code"]);
-    assert_eq!("seed-membership-plan-pro", plans["data"]["items"][2]["id"]);
-    assert_eq!("pro", plans["data"]["items"][2]["code"]);
-    assert_eq!(2, plans["data"]["items"][2]["rank"]);
+    assert_eq!("seed-membership-plan-pro", plans["data"]["items"][1]["id"]);
+    assert_eq!("pro", plans["data"]["items"][1]["code"]);
+    assert_eq!(1, plans["data"]["items"][1]["rank"]);
 
     let create_plan = request_json(
         router.clone(),
@@ -554,13 +985,12 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
         .as_str()
         .unwrap()
         .to_owned();
-    let package_group_id_after_create: String = sqlx::query_scalar(
-        "SELECT package_group_id FROM commerce_membership_package WHERE id = ?1",
-    )
-    .bind(&package_id)
-    .fetch_one(&pool)
-    .await
-    .expect("created package group id");
+    let package_group_id_after_create: String =
+        sqlx::query_scalar("SELECT package_group_id FROM membership_package WHERE id = ?1")
+            .bind(&package_id)
+            .fetch_one(&pool)
+            .await
+            .expect("created package group id");
     assert_eq!(
         "seed-membership-package-group-year",
         package_group_id_after_create
@@ -571,7 +1001,7 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
         signed_request(
             "PUT",
             &format!("/backend/v3/api/memberships/packages/{package_id}"),
-            r#"{"code":"membership-month-pro-plus","packageGroupId":"seed-membership-package-group-week","planId":"seed-membership-plan-pro","name":"Pro Plus Monthly Updated","priceAmount":"99.90","currencyCode":"CNY","durationDays":60,"status":"inactive"}"#,
+            r#"{"code":"membership-month-pro-plus","packageGroupId":"seed-membership-package-group-month","planId":"seed-membership-plan-pro","name":"Pro Plus Monthly Updated","priceAmount":"99.90","currencyCode":"CNY","durationDays":60,"status":"inactive"}"#,
         ),
     )
     .await;
@@ -581,18 +1011,17 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
     );
     assert_eq!("inactive", update_package["data"]["item"]["status"]);
     assert_eq!(
-        "seed-membership-package-group-week",
+        "seed-membership-package-group-month",
         update_package["data"]["item"]["packageGroupId"]
     );
-    let package_group_id_after_update: String = sqlx::query_scalar(
-        "SELECT package_group_id FROM commerce_membership_package WHERE id = ?1",
-    )
-    .bind(&package_id)
-    .fetch_one(&pool)
-    .await
-    .expect("updated package group id");
+    let package_group_id_after_update: String =
+        sqlx::query_scalar("SELECT package_group_id FROM membership_package WHERE id = ?1")
+            .bind(&package_id)
+            .fetch_one(&pool)
+            .await
+            .expect("updated package group id");
     assert_eq!(
-        "seed-membership-package-group-week",
+        "seed-membership-package-group-month",
         package_group_id_after_update
     );
 
@@ -614,7 +1043,7 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
         .as_array()
         .unwrap()
         .iter()
-        .any(|item| item["packageGroupId"] == "seed-membership-package-group-week"));
+        .any(|item| item["packageGroupId"] == "seed-membership-package-group-month"));
 
     let package_groups = request_json(
         router.clone(),
@@ -631,9 +1060,9 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
         .unwrap()
         .iter()
         .any(|item| {
-            item["id"] == "seed-membership-package-group-week"
-                && item["code"] == "membership-week"
-                && item["durationDays"] == 7
+            item["id"] == "seed-membership-package-group-month"
+                && item["code"] == "membership-month"
+                && item["durationDays"] == 30
         }));
 
     let memberships = request_json(
@@ -670,7 +1099,7 @@ async fn sqlite_admin_membership_router_manages_standard_membership_catalog() {
         "membership-entitlement-admin",
         entitlements["data"]["items"][0]["id"]
     );
-    assert_eq!("frontier_models", entitlements["data"]["items"][0]["code"]);
+    assert_eq!("ai_quota", entitlements["data"]["items"][0]["code"]);
     assert_eq!("10", entitlements["data"]["items"][0]["quota"]);
 
     let delete_package = request_json(
@@ -719,13 +1148,38 @@ async fn seeded_pool() -> SqlitePool {
     pool
 }
 
+async fn activate_payment_method_for_purchase(pool: &SqlitePool, method_key: &str) {
+    sqlx::query("UPDATE commerce_payment_method SET status = 'active' WHERE method_key = ?1")
+        .bind(method_key)
+        .execute(pool)
+        .await
+        .expect("activate payment method");
+    sqlx::query(
+        "UPDATE commerce_payment_provider_account SET status = 'active' WHERE provider_code = ?1",
+    )
+    .bind(method_key)
+    .execute(pool)
+    .await
+    .expect("activate payment provider account");
+    sqlx::query("UPDATE commerce_payment_channel SET status = 'active' WHERE method_id IN (SELECT id FROM commerce_payment_method WHERE method_key = ?1)")
+        .bind(method_key)
+        .execute(pool)
+        .await
+        .expect("activate payment channels");
+    sqlx::query("UPDATE commerce_payment_route_rule SET status = 'active' WHERE channel_id IN (SELECT id FROM commerce_payment_channel WHERE method_id IN (SELECT id FROM commerce_payment_method WHERE method_key = ?1))")
+        .bind(method_key)
+        .execute(pool)
+        .await
+        .expect("activate payment route rules");
+}
+
 async fn seed_membership_for_admin(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership
-            (id, tenant_id, organization_id, membership_no, owner_user_id, plan_id, source_order_id, source_payment_intent_id, status, starts_at, expires_at, grace_until, request_no, idempotency_key, created_at, updated_at)
+        INSERT INTO membership_subscription
+            (id, tenant_id, organization_id, subscription_no, subject_type, subject_id, owner_user_id, plan_id, plan_version_id, package_id, current_period_id, source_order_id, source_payment_intent_id, status, starts_at, expires_at, grace_until, cancel_at_period_end, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ('membership-admin', '10', '20', 'membership-admin', '30', 'seed-membership-plan-pro', 'membership-order-admin', 'membership-payment-admin', 'active', '2026-05-01 00:00:00', '2026-06-01 00:00:00', NULL, 'membership-admin', 'membership-admin', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
+            ('membership-admin', '10', '20', 'membership-admin', 'user', '30', '30', 'seed-membership-plan-pro', 'seed-membership-plan-version-pro-v1', '301', 'membership-admin-period-1', 'membership-order-admin', 'membership-payment-admin', 'active', '2026-05-01 00:00:00', '2026-06-01 00:00:00', NULL, 0, 'membership-admin', 'membership-admin', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
         "#,
     )
     .execute(pool)
@@ -733,24 +1187,35 @@ async fn seed_membership_for_admin(pool: &SqlitePool) {
     .expect("insert admin membership fixture");
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership_entitlement
-            (id, tenant_id, organization_id, membership_id, entitlement_code, plan_id, name, quota_amount, granted_quantity, used_quantity, expires_at, status, created_at, updated_at)
+        INSERT INTO entitlement_grant
+            (id, tenant_id, organization_id, grant_no, benefit_id, subject_type, subject_id, source_type, source_id, grant_policy, granted_quantity, status, starts_at, expires_at, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ('membership-entitlement-admin', '10', '20', 'membership-admin', 'frontier_models', 'seed-membership-plan-pro', 'Frontier models', '10', 10, 0, '2026-06-01 00:00:00', 'active', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
+            ('membership-entitlement-admin-grant', '10', '20', 'membership-entitlement-admin-grant', 'seed-benefit-ai-quota', 'user', '30', 'membership_subscription', 'membership-admin', 'membership_plan', '10', 'active', '2026-05-01 00:00:00', '2026-06-01 00:00:00', 'membership-entitlement-admin', 'membership-entitlement-admin', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
         "#,
     )
     .execute(pool)
     .await
-    .expect("insert admin entitlement fixture");
+    .expect("insert admin entitlement grant fixture");
+    sqlx::query(
+        r#"
+        INSERT INTO entitlement_account
+            (id, tenant_id, organization_id, account_no, benefit_id, subject_type, subject_id, total_granted, total_used, balance, status, expires_at, version, created_at, updated_at)
+        VALUES
+            ('membership-entitlement-admin', '10', '20', 'membership-entitlement-admin', 'seed-benefit-ai-quota', 'user', '30', '10', '0', '10', 'active', '2026-06-01 00:00:00', 0, '2026-05-01 00:00:00', '2026-05-01 00:00:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .expect("insert admin entitlement account fixture");
 }
 
 async fn seed_speed_up_membership(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership
-            (id, tenant_id, organization_id, membership_no, owner_user_id, plan_id, source_order_id, source_payment_intent_id, status, starts_at, expires_at, grace_until, request_no, idempotency_key, created_at, updated_at)
+        INSERT INTO membership_subscription
+            (id, tenant_id, organization_id, subscription_no, subject_type, subject_id, owner_user_id, plan_id, plan_version_id, package_id, current_period_id, source_order_id, source_payment_intent_id, status, starts_at, expires_at, grace_until, cancel_at_period_end, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ('membership-speed-up', '10', '20', 'membership-speed-up', '30', 'seed-membership-plan-pro', 'membership-order-speed-up', 'membership-payment-speed-up', 'active', '2026-05-01 00:00:00', '2026-06-01 00:00:00', NULL, 'membership-speed-up', 'membership-speed-up', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
+            ('membership-speed-up', '10', '20', 'membership-speed-up', 'user', '30', '30', 'seed-membership-plan-pro', 'seed-membership-plan-version-pro-v1', '301', 'membership-speed-up-period-1', 'membership-order-speed-up', 'membership-payment-speed-up', 'active', '2026-05-01 00:00:00', '2026-06-01 00:00:00', NULL, 0, 'membership-speed-up', 'membership-speed-up', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
         "#,
     )
     .execute(pool)
@@ -758,15 +1223,26 @@ async fn seed_speed_up_membership(pool: &SqlitePool) {
     .expect("insert speed up membership fixture");
     sqlx::query(
         r#"
-        INSERT INTO commerce_membership_entitlement
-            (id, tenant_id, organization_id, membership_id, entitlement_code, plan_id, name, quota_amount, granted_quantity, used_quantity, expires_at, status, created_at, updated_at)
+        INSERT INTO entitlement_grant
+            (id, tenant_id, organization_id, grant_no, benefit_id, subject_type, subject_id, source_type, source_id, grant_policy, granted_quantity, status, starts_at, expires_at, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ('membership-entitlement-speed-up', '10', '20', 'membership-speed-up', 'high_priority', 'seed-membership-plan-pro', 'High priority', '1', 1, 0, '2026-06-01 00:00:00', 'active', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
+            ('membership-entitlement-speed-up-grant', '10', '20', 'membership-entitlement-speed-up-grant', 'seed-benefit-priority-speed-up', 'user', '30', 'membership_subscription', 'membership-speed-up', 'membership_plan', '1', 'active', '2026-05-01 00:00:00', '2026-06-01 00:00:00', 'membership-entitlement-speed-up', 'membership-entitlement-speed-up', '2026-05-01 00:00:00', '2026-05-01 00:00:00')
         "#,
     )
     .execute(pool)
     .await
-    .expect("insert speed up entitlement fixture");
+    .expect("insert speed up entitlement grant fixture");
+    sqlx::query(
+        r#"
+        INSERT INTO entitlement_account
+            (id, tenant_id, organization_id, account_no, benefit_id, subject_type, subject_id, total_granted, total_used, balance, status, expires_at, version, created_at, updated_at)
+        VALUES
+            ('membership-entitlement-speed-up', '10', '20', 'membership-entitlement-speed-up', 'seed-benefit-priority-speed-up', 'user', '30', '1', '0', '1', 'active', '2026-06-01 00:00:00', 0, '2026-05-01 00:00:00', '2026-05-01 00:00:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .expect("insert speed up entitlement account fixture");
 }
 
 async fn seed_points_history(pool: &SqlitePool) {
@@ -810,18 +1286,50 @@ fn signed_request(method: &str, uri: &str, body: &str) -> Request<Body> {
         .method(method)
         .uri(uri)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
-        .header("X-Request-Id", "request-appbase-admin-membership-test")
+        .extension(standard_context())
+        .header("X-Request-Id", "123e4567-e89b-12d3-a456-426614174000")
         .body(Body::from(body.to_owned()))
         .unwrap()
+}
+
+fn standard_context() -> IamAppContext {
+    IamAppContext::new(
+        "10",
+        Some("20"),
+        "30",
+        "session-30",
+        "app-1",
+        Environment::Test,
+        DeploymentMode::Local,
+        AuthLevel::Password,
+        vec!["tenant:10".to_owned()],
+        vec!["commerce:membership".to_owned()],
+    )
 }
 
 async fn request_json(router: axum::Router, request: Request<Body>) -> Value {
     let response = router.oneshot(request).await.unwrap();
     assert_eq!(StatusCode::OK, response.status());
     json_payload(response).await
+}
+
+fn response_request_id(response: &axum::response::Response) -> String {
+    response
+        .headers()
+        .get("X-Request-Id")
+        .expect("response request id header")
+        .to_str()
+        .expect("request id header text")
+        .to_owned()
+}
+
+fn is_canonical_uuid(value: &str) -> bool {
+    let bytes = value.as_bytes();
+    bytes.len() == 36
+        && bytes.iter().enumerate().all(|(index, byte)| match index {
+            8 | 13 | 18 | 23 => *byte == b'-',
+            _ => matches!(*byte, b'0'..=b'9' | b'a'..=b'f'),
+        })
 }
 
 async fn json_payload(response: axum::response::Response) -> Value {
@@ -852,5 +1360,15 @@ fn sqlite_schema_statements() -> Vec<String> {
                 .replace("BOOLEAN", "INTEGER")
                 .replace("VARCHAR", "TEXT")
         })
+        .collect()
+}
+
+fn integrity_issue_codes(
+    report: &sdkwork_commerce_membership_sqlx::CommerceExperienceSeedIntegrityReport,
+) -> Vec<String> {
+    report
+        .issues
+        .iter()
+        .map(|issue| issue.code.clone())
         .collect()
 }

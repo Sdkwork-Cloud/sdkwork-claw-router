@@ -562,6 +562,8 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
         )"#,
         r#"CREATE TABLE integration_channel (
             id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
             provider_code TEXT NOT NULL,
             base_url TEXT,
             timeout_ms INTEGER,
@@ -780,6 +782,21 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             deleted_at TEXT,
             updated_at TEXT
         )"#,
+        r#"CREATE TABLE iam_api_key_group_channel (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            group_id INTEGER NOT NULL,
+            channel_id INTEGER NOT NULL,
+            priority INTEGER,
+            weight INTEGER,
+            model_scope TEXT,
+            capabilities TEXT,
+            effective_from TEXT,
+            effective_to TEXT,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
+        )"#,
         r#"CREATE TABLE iam_gateway_api_key (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
@@ -854,6 +871,11 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             request_path TEXT,
             http_method TEXT,
             http_status INTEGER,
+            provider_error_code TEXT,
+            error_type TEXT,
+            error_message_masked TEXT,
+            latency_ms INTEGER,
+            ttft_ms INTEGER,
             started_at TEXT,
             ended_at TEXT,
             streaming INTEGER,
@@ -892,6 +914,7 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             unit_price_snapshot TEXT,
             base_input_unit_price TEXT,
             base_output_unit_price TEXT,
+            cache_read_unit_price TEXT,
             upstream_cost_amount TEXT,
             customer_charge_amount TEXT,
             cost_amount TEXT,
@@ -1621,17 +1644,17 @@ async fn seed_catalog(pool: &SqlitePool) -> anyhow::Result<()> {
         "INSERT INTO ai_model_family (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, region_code, family_code, display_name, status, sort_order) VALUES (1, 'family-openai-global-gpt-4o', 10, 20, 1, 'openai', 'global', 'gpt-4o', 'GPT-4o', 1, 1)",
         r#"INSERT INTO ai_model
             (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, family_id, family_code, capability, capabilities, modalities, supports_streaming, supports_tools, supports_json_schema, api_format, shelf_state, routing_state, status, rank_score)
-            VALUES (1, 'model-openai-global-gpt-4o-mini', 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 1, 'openai', 'OpenAI', 1, 'gpt-4o', 1, '["chat","responses"]', '["chat"]', 1, 1, 1, 'openai_responses', 1, 1, 1, '100.0')"#,
+            VALUES (1, 'model-openai-global-gpt-4o-mini', 10, 20, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 1, 'openai', 'OpenAI', 1, 'gpt-4o', 1, '["chat","responses"]', '["chat"]', 1, 1, 1, 'openai_responses', 1, 1, 1, '100.0')"#,
         r#"INSERT INTO ai_model
             (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, family_id, family_code, capability, capabilities, modalities, input_modalities, output_modalities, supports_streaming, supports_tools, supports_json_schema, api_format, shelf_state, routing_state, status, rank_score)
-            VALUES (2, 'model-openai-global-text-embedding-3-small', 10, 20, 'openai/text-embedding-3-small', 'text-embedding-3-small', 'Text Embedding 3 Small', 1, 'openai', 'OpenAI', 1, 'gpt-4o', 1, '["embedding"]', '["embedding"]', '["embedding"]', '["embedding"]', 0, 0, 0, 'openai-compatible', 1, 1, 1, '50.0')"#,
-        "INSERT INTO ai_model_capability (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, status, sort_order) VALUES (1, 'cap-openai-global-gpt-4o-mini-chat', 10, 20, 1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 1, 'chat', 1, '[\"text\"]', '[\"text\"]', 1, 1, 1)",
-        "INSERT INTO ai_model_capability (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, status, sort_order) VALUES (2, 'cap-openai-global-text-embedding-3-small', 10, 20, 2, 'openai/text-embedding-3-small', 'text-embedding-3-small', 'openai', 1, 'embedding', 1, '[\"embedding\"]', '[\"embedding\"]', 1, 1, 2)",
+            VALUES (2, 'model-openai-global-text-embedding-3-small', 10, 20, 'openai/global/text-embedding-3-small', 'text-embedding-3-small', 'Text Embedding 3 Small', 1, 'openai', 'OpenAI', 1, 'gpt-4o', 1, '["embedding"]', '["embedding"]', '["embedding"]', '["embedding"]', 0, 0, 0, 'openai-compatible', 1, 1, 1, '50.0')"#,
+        "INSERT INTO ai_model_capability (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, status, sort_order) VALUES (1, 'cap-openai-global-gpt-4o-mini-chat', 10, 20, 1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'openai', 1, 'chat', 1, '[\"text\"]', '[\"text\"]', 1, 1, 1)",
+        "INSERT INTO ai_model_capability (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, status, sort_order) VALUES (2, 'cap-openai-global-text-embedding-3-small', 10, 20, 2, 'openai/global/text-embedding-3-small', 'text-embedding-3-small', 'openai', 1, 'embedding', 1, '[\"embedding\"]', '[\"embedding\"]', 1, 1, 2)",
         "INSERT INTO integration_provider (id, provider_code, integration_type, upstream_vendor_code, upstream_provider_code, base_url, status) VALUES (2, 'openrouter', 3, 'openai', 'openrouter', 'http://provider-proxy.internal/openrouter-template', 1)",
         "INSERT INTO integration_provider_account (id, provider_code, secret_ref, status) VALUES (9002, 'openrouter', 'vault://providers/openrouter/account/main', 1)",
         "INSERT INTO integration_channel (id, provider_code, base_url, account_id, status, priority, weight) VALUES (3001, 'openrouter', 'http://provider-proxy.internal/openrouter', 9002, 1, 10, 100)",
-        "INSERT INTO integration_channel_model (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code, channel_id, provider_model, status) VALUES (1, 'channel-model-openai-global-gpt-4o-mini', 10, 20, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'openai', 3001, 'openai/global/gpt-4o-mini', 1)",
-        "INSERT INTO integration_channel_model (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code, channel_id, provider_model, status) VALUES (2, 'channel-model-openai-global-text-embedding-3-small', 10, 20, 'openai/global/text-embedding-3-small', 'text-embedding-3-small', 'openai', 3001, 'openai/global/text-embedding-3-small', 1)",
+        "INSERT INTO integration_channel_model (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code, channel_id, provider_model, status) VALUES (1, 'channel-model-openai-global-gpt-4o-mini', 10, 20, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'openai', 3001, 'gpt-4o-mini', 1)",
+        "INSERT INTO integration_channel_model (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code, channel_id, provider_model, status) VALUES (2, 'channel-model-openai-global-text-embedding-3-small', 10, 20, 'openai/global/text-embedding-3-small', 'text-embedding-3-small', 'openai', 3001, 'text-embedding-3-small', 1)",
         r#"INSERT INTO ai_routing_profile
             (id, uuid, tenant_id, organization_id, policy_id, profile_version, profile_name, release_status, traffic_percent, config_hash, status)
             VALUES (9101, 'routing-profile-standard-group', 10, 20, 9001, 1, 'Standard Group Profile', 2, '100.000000', 'standard-group-profile-hash', 1)"#,
@@ -1644,6 +1667,7 @@ async fn seed_catalog(pool: &SqlitePool) -> anyhow::Result<()> {
         "INSERT INTO ai_pricing_plan (id, uuid, tenant_id, organization_id, plan_code, plan_name, plan_scope, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'pricing-plan-standard', 10, 20, 'standard', 'Standard', 1, 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO ai_pricing_plan_binding (id, uuid, tenant_id, organization_id, pricing_plan_id, pricing_plan_code, subject_type, subject_id, subject_code, multiplier_override, status, priority) VALUES (1, 'pricing-plan-binding-standard-group', 10, 20, 1, 'standard', 1, 10, 'standard-group', '1.000000', 1, 1)",
         "INSERT INTO iam_gateway_api_key_group (id, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 'standard-group', 'standard', '1.000000', '1.100000', 1)",
+        "INSERT INTO iam_api_key_group_channel (id, tenant_id, organization_id, group_id, channel_id, priority, weight, model_scope, capabilities, status) VALUES (600, 10, 20, 10, 3001, 1, 100, '[]', '[]', 1)",
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-live', 'hash:placeholder', 'seed-api-key-100', 1)",
         "INSERT INTO ai_model_pricing (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'price-openai-global-gpt-4o-mini-input-reference', 10, 20, 1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
         "INSERT INTO ai_model_pricing (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (2, 'price-openai-global-gpt-4o-mini-input-upstream', 10, 20, 1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 2, 'llm_input_token', '0.110000', 'USD', 'openrouter', 3001, 1, 1)",
@@ -1683,7 +1707,7 @@ async fn seed_billing_meters(pool: &SqlitePool) -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use sdkwork_claw_http::{
-        inject_verified_trusted_request_subject, verify_app_session_authorization_header,
+        verified_signed_trusted_request_subject, verify_app_session_authorization_header,
     };
     use sqlx::Row;
 
@@ -1741,7 +1765,7 @@ mod tests {
             r#"
             SELECT m.model, cm.provider_model
             FROM ai_model m
-            JOIN integration_channel_model cm ON cm.catalog_key = m.catalog_key
+            JOIN integration_channel_model cm ON cm.model = m.model
             WHERE m.catalog_key = 'openai/global/text-embedding-3-small'
             "#,
         )
@@ -1751,7 +1775,7 @@ mod tests {
 
         assert_eq!("text-embedding-3-small", row.get::<String, _>("model"));
         assert_eq!(
-            "openai/global/text-embedding-3-small",
+            "text-embedding-3-small",
             row.get::<String, _>("provider_model")
         );
     }
@@ -1871,17 +1895,19 @@ mod tests {
             HeaderValue::from_str(signature.as_str()).unwrap(),
         );
 
-        inject_verified_trusted_request_subject(
+        let verified_subject = verified_signed_trusted_request_subject(
             &mut headers,
             "GET",
             "/backend/v3/api/ai/models",
             &super::trusted_subject_config().unwrap(),
             issued_at + 1,
         )
+        .unwrap()
         .unwrap();
 
-        assert_eq!("10", headers["x-sdkwork-tenant-id"]);
-        assert_eq!("20", headers["x-sdkwork-organization-id"]);
-        assert_eq!("30", headers["x-sdkwork-user-id"]);
+        assert_eq!(subject, verified_subject);
+        assert!(headers.get("x-sdkwork-tenant-id").is_none());
+        assert!(headers.get("x-sdkwork-organization-id").is_none());
+        assert!(headers.get("x-sdkwork-user-id").is_none());
     }
 }

@@ -634,23 +634,26 @@ impl SqliteCommerceAccountStore {
         }
 
         let mut account = load_or_create_account_for_append(&mut tx, &command, &now).await?;
-        let current_balance = parse_money_minor(&account.available_amount)?;
-        let amount = parse_money_minor(command.amount.as_str())?;
+        let current_balance =
+            parse_stored_ledger_amount(&command.asset_type, &account.available_amount)?;
+        let amount = parse_command_ledger_amount(&command.asset_type, command.amount.as_str())?;
         let next_balance = match command.direction {
-            CommerceLedgerDirection::Credit => current_balance + amount,
+            CommerceLedgerDirection::Credit => checked_ledger_add(current_balance, amount)?,
             CommerceLedgerDirection::Debit => {
                 if current_balance < amount {
                     return Err(CommerceServiceError::invalid_state(
                         "insufficient account balance",
                     ));
                 }
-                current_balance - amount
+                current_balance.checked_sub(amount).ok_or_else(|| {
+                    CommerceServiceError::storage("commerce account balance subtraction overflow")
+                })?
             }
         };
-        let next_balance_text = format_money_minor(next_balance);
-        let next_version = account.version + 1;
+        let next_balance_text = format_ledger_amount(&command.asset_type, next_balance);
+        let next_version = checked_account_version_increment(account.version)?;
 
-        sqlx::query(
+        let account_update = sqlx::query(
             r#"
             UPDATE commerce_account
             SET available_amount = ?,
@@ -659,6 +662,7 @@ impl SqliteCommerceAccountStore {
                 status = 'active',
                 updated_at = ?
             WHERE id = ?
+              AND version = ?
             "#,
         )
         .bind(&next_balance_text)
@@ -666,9 +670,15 @@ impl SqliteCommerceAccountStore {
         .bind(next_version)
         .bind(&now)
         .bind(&account.id)
+        .bind(account.version)
         .execute(&mut *tx)
         .await
         .map_err(|error| store_error("failed to update commerce account balance", error))?;
+        if account_update.rows_affected() != 1 {
+            return Err(CommerceServiceError::conflict(
+                "commerce account balance update was not applied atomically",
+            ));
+        }
 
         account.available_amount = next_balance_text.clone();
         account.status = ACTIVE_STATUS.to_string();
@@ -1049,9 +1059,12 @@ fn parse_money_minor(value: &str) -> Result<i128, CommerceServiceError> {
         )));
     }
 
-    let integer_minor = integer.parse::<i128>().map_err(|_| {
+    let integer_value = integer.parse::<i128>().map_err(|_| {
         CommerceServiceError::storage(format!("invalid commerce money amount: {value}"))
-    })? * 100;
+    })?;
+    let integer_minor = integer_value.checked_mul(100).ok_or_else(|| {
+        CommerceServiceError::storage(format!("commerce money amount is too large: {value}"))
+    })?;
     let fraction_minor = match fraction {
         Some(fraction) => {
             if fraction.is_empty()
@@ -1074,7 +1087,9 @@ fn parse_money_minor(value: &str) -> Result<i128, CommerceServiceError> {
         None => 0,
     };
 
-    Ok(integer_minor + fraction_minor)
+    integer_minor.checked_add(fraction_minor).ok_or_else(|| {
+        CommerceServiceError::storage(format!("commerce money amount is too large: {value}"))
+    })
 }
 
 fn parse_points_amount(value: &str) -> Result<i128, CommerceServiceError> {
@@ -1095,6 +1110,52 @@ fn parse_points_amount(value: &str) -> Result<i128, CommerceServiceError> {
     normalized.parse::<i128>().map_err(|_| {
         CommerceServiceError::storage(format!("invalid commerce points amount: {value}"))
     })
+}
+
+fn parse_stored_ledger_amount(
+    asset_type: &CommerceAccountAssetType,
+    value: &str,
+) -> Result<i128, CommerceServiceError> {
+    match asset_type {
+        CommerceAccountAssetType::Cash => parse_money_minor(value),
+        CommerceAccountAssetType::Points | CommerceAccountAssetType::Token => {
+            parse_points_amount(value)
+        }
+    }
+}
+
+fn parse_command_ledger_amount(
+    asset_type: &CommerceAccountAssetType,
+    value: &str,
+) -> Result<i128, CommerceServiceError> {
+    match asset_type {
+        CommerceAccountAssetType::Cash => parse_money_minor(value),
+        CommerceAccountAssetType::Points | CommerceAccountAssetType::Token => {
+            parse_points_amount(value).map_err(|_| {
+                CommerceServiceError::validation(
+                    "points and token ledger amounts must be non-negative integers",
+                )
+            })
+        }
+    }
+}
+
+fn format_ledger_amount(asset_type: &CommerceAccountAssetType, value: i128) -> String {
+    match asset_type {
+        CommerceAccountAssetType::Cash => format_money_minor(value),
+        CommerceAccountAssetType::Points | CommerceAccountAssetType::Token => value.to_string(),
+    }
+}
+
+fn checked_ledger_add(left: i128, right: i128) -> Result<i128, CommerceServiceError> {
+    left.checked_add(right)
+        .ok_or_else(|| CommerceServiceError::storage("commerce account balance addition overflow"))
+}
+
+fn checked_account_version_increment(version: i64) -> Result<i64, CommerceServiceError> {
+    version
+        .checked_add(1)
+        .ok_or_else(|| CommerceServiceError::storage("commerce account version overflow"))
 }
 
 fn format_money_minor(value: i128) -> String {
@@ -1228,12 +1289,19 @@ fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<
         .flatten()
         .or_else(|| row.try_get::<i64, _>(column).ok())
         .or_else(|| row.try_get::<i32, _>(column).ok().map(i64::from))
-        .or_else(|| {
-            string_cell(row, column)
-                .parse::<f64>()
-                .ok()
-                .map(|value| value as i64)
-        })
+        .or_else(|| parse_integer_text(&string_cell(row, column)))
+}
+
+fn parse_integer_text(value: &str) -> Option<i64> {
+    let value = value.trim();
+    if value.is_empty() {
+        return None;
+    }
+    let digits = value.strip_prefix('-').unwrap_or(value);
+    if digits.is_empty() || !digits.chars().all(|character| character.is_ascii_digit()) {
+        return None;
+    }
+    value.parse::<i64>().ok()
 }
 
 fn decimal_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> f64 {
@@ -1364,6 +1432,33 @@ mod tests {
         .expect("command")
     }
 
+    #[test]
+    fn sqlite_account_balance_update_is_version_guarded() {
+        let source = include_str!("sqlite_account.rs");
+        let update_section = source
+            .split("UPDATE commerce_account")
+            .nth(1)
+            .expect("commerce account update section");
+
+        assert!(update_section.contains("AND version = ?"));
+        assert!(source.contains("account_update.rows_affected() != 1"));
+    }
+
+    #[test]
+    fn sqlite_account_integer_cells_never_parse_through_f64() {
+        let source = include_str!("sqlite_account.rs");
+        let forbidden = ["parse", "::<", "f64"].join("");
+        let integer_section = source
+            .split("fn optional_integer_cell")
+            .nth(1)
+            .expect("integer helper section")
+            .split("fn decimal_cell")
+            .next()
+            .expect("integer helper boundary");
+
+        assert!(!integer_section.contains(&forbidden));
+    }
+
     #[tokio::test]
     async fn sqlite_wallet_lists_accounts_after_ledger_credit() {
         let pool = migrated_pool().await;
@@ -1474,6 +1569,108 @@ mod tests {
             .expect_err("insufficient balance must fail");
 
         assert_eq!(error.code(), "invalid-state");
+    }
+
+    #[tokio::test]
+    async fn sqlite_ledger_append_rejects_balance_overflow_without_ledger() {
+        let pool = migrated_pool().await;
+        let store = super::SqliteCommerceAccountStore::new(pool.clone());
+        let max_balance = i128::MAX.to_string();
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_account
+                (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code,
+                 available_amount, frozen_amount, version, status, created_at, updated_at)
+            VALUES
+                ('account-1', 'tenant-1', 'org-1', 'user-1', 'points', 'POINT',
+                 ?, '0', 0, 'active', '2026-05-26 00:00:00', '2026-05-26 00:00:00')
+            "#,
+        )
+        .bind(&max_balance)
+        .execute(&pool)
+        .await
+        .expect("seed overflow account");
+
+        let command = AppendLedgerEntryCommand::new(
+            "tenant-1",
+            Some("org-1"),
+            "account-1",
+            "user-1",
+            CommerceAccountAssetType::Points,
+            Some("POINT"),
+            CommerceLedgerDirection::Credit,
+            CommerceMoney::new("1").expect("money"),
+            "recharge",
+            "txn-overflow",
+            "request-overflow",
+            "idem-overflow",
+        )
+        .expect("command");
+
+        let error = store
+            .append_ledger_entry(
+                command,
+                CommerceRequestHash::new("hash-overflow").expect("request hash"),
+            )
+            .await
+            .expect_err("overflowing credit must fail");
+
+        assert_eq!(error.code(), "storage");
+        let ledger_count: i64 = sqlx::query_scalar(
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE tenant_id = 'tenant-1'",
+        )
+        .fetch_one(&pool)
+        .await
+        .expect("ledger count");
+        let stored_balance: String = sqlx::query_scalar(
+            "SELECT available_amount FROM commerce_account WHERE id = 'account-1'",
+        )
+        .fetch_one(&pool)
+        .await
+        .expect("stored balance");
+
+        assert_eq!(0, ledger_count);
+        assert_eq!(max_balance, stored_balance);
+    }
+
+    #[tokio::test]
+    async fn sqlite_ledger_append_rejects_fractional_points_amount_without_ledger() {
+        let pool = migrated_pool().await;
+        let store = super::SqliteCommerceAccountStore::new(pool.clone());
+        let command = AppendLedgerEntryCommand::new(
+            "tenant-1",
+            Some("org-1"),
+            "account-1",
+            "user-1",
+            CommerceAccountAssetType::Points,
+            Some("POINT"),
+            CommerceLedgerDirection::Credit,
+            CommerceMoney::new("1.5").expect("money"),
+            "recharge",
+            "txn-fractional-points",
+            "request-fractional-points",
+            "idem-fractional-points",
+        )
+        .expect("command");
+
+        let error = store
+            .append_ledger_entry(
+                command,
+                CommerceRequestHash::new("hash-fractional-points").expect("request hash"),
+            )
+            .await
+            .expect_err("fractional points must fail");
+
+        assert_eq!("validation", error.code());
+        let ledger_count: i64 = sqlx::query_scalar(
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE tenant_id = 'tenant-1'",
+        )
+        .fetch_one(&pool)
+        .await
+        .expect("ledger count");
+
+        assert_eq!(0, ledger_count);
     }
 
     #[tokio::test]

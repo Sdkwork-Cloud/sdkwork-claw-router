@@ -83,15 +83,12 @@ export function InventoryAdmin({ sectionId }: InventoryAdminProps = {}) {
   return (
     <AdminResourceCenter
       activeSectionId={activeSectionId}
-      description={t('admin.commerce.inventory.desc', 'Stock, reservations, and immutable inventory ledger.')}
       emptyTitle={t('admin.commerce.inventory.empty', 'No inventory records')}
       errorTitle={t('admin.commerce.inventory.error', 'Inventory data could not be loaded')}
-      icon={<Warehouse className="h-5 w-5 text-emerald-500" />}
       loadingTitle={t('admin.commerce.inventory.loading', 'Loading inventory records...')}
       sections={sections}
       showSectionNavigation={false}
       tableViewportDataAttribute="admin-inventory-table-viewport"
-      title={t('admin.commerce.inventory.title', 'Inventory')}
     />
   );
 }

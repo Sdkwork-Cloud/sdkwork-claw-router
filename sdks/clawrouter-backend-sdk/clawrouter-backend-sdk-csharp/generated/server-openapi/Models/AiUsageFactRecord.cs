@@ -56,11 +56,13 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PromptTokens { get; set; }
         public string? ProviderAccountId { get; set; }
         public string? ProviderId { get; set; }
+        public string? ProviderNativeModel { get; set; }
         public string? RateMultiplier { get; set; }
         public string? ReasoningEffort { get; set; }
         public string? ReferenceMultiplier { get; set; }
         public string? RequestCount { get; set; }
         public string? RequestId { get; set; }
+        public string? RequestedModelCatalogKey { get; set; }
         public string? ResultCount { get; set; }
         public string? RetentionUntil { get; set; }
         public string? SettlementId { get; set; }

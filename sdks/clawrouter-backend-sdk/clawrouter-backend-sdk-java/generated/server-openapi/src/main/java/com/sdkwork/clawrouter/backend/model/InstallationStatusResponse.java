@@ -15,7 +15,7 @@ public class InstallationStatusResponse {
     public String getCatalogSource() {
         return this.catalogSource;
     }
-    
+
     public void setCatalogSource(String catalogSource) {
         this.catalogSource = catalogSource;
     }
@@ -23,7 +23,7 @@ public class InstallationStatusResponse {
     public String getCatalogVersion() {
         return this.catalogVersion;
     }
-    
+
     public void setCatalogVersion(String catalogVersion) {
         this.catalogVersion = catalogVersion;
     }
@@ -31,7 +31,7 @@ public class InstallationStatusResponse {
     public Boolean getChanged() {
         return this.changed;
     }
-    
+
     public void setChanged(Boolean changed) {
         this.changed = changed;
     }
@@ -39,7 +39,7 @@ public class InstallationStatusResponse {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -47,7 +47,7 @@ public class InstallationStatusResponse {
     public Boolean getExternalCatalog() {
         return this.externalCatalog;
     }
-    
+
     public void setExternalCatalog(Boolean externalCatalog) {
         this.externalCatalog = externalCatalog;
     }
@@ -55,7 +55,7 @@ public class InstallationStatusResponse {
     public String getLastCatalogRefreshStatus() {
         return this.lastCatalogRefreshStatus;
     }
-    
+
     public void setLastCatalogRefreshStatus(String lastCatalogRefreshStatus) {
         this.lastCatalogRefreshStatus = lastCatalogRefreshStatus;
     }
@@ -63,7 +63,7 @@ public class InstallationStatusResponse {
     public String getSchemaVersion() {
         return this.schemaVersion;
     }
-    
+
     public void setSchemaVersion(String schemaVersion) {
         this.schemaVersion = schemaVersion;
     }
@@ -71,7 +71,7 @@ public class InstallationStatusResponse {
     public String getSeedProfile() {
         return this.seedProfile;
     }
-    
+
     public void setSeedProfile(String seedProfile) {
         this.seedProfile = seedProfile;
     }
@@ -79,7 +79,7 @@ public class InstallationStatusResponse {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

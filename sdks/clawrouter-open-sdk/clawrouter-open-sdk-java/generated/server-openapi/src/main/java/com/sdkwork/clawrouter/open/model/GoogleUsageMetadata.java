@@ -11,7 +11,7 @@ public class GoogleUsageMetadata {
     public Integer getCachedContentTokenCount() {
         return this.cachedContentTokenCount;
     }
-    
+
     public void setCachedContentTokenCount(Integer cachedContentTokenCount) {
         this.cachedContentTokenCount = cachedContentTokenCount;
     }
@@ -19,7 +19,7 @@ public class GoogleUsageMetadata {
     public Integer getCandidatesTokenCount() {
         return this.candidatesTokenCount;
     }
-    
+
     public void setCandidatesTokenCount(Integer candidatesTokenCount) {
         this.candidatesTokenCount = candidatesTokenCount;
     }
@@ -27,7 +27,7 @@ public class GoogleUsageMetadata {
     public Integer getPromptTokenCount() {
         return this.promptTokenCount;
     }
-    
+
     public void setPromptTokenCount(Integer promptTokenCount) {
         this.promptTokenCount = promptTokenCount;
     }
@@ -35,7 +35,7 @@ public class GoogleUsageMetadata {
     public Integer getThoughtsTokenCount() {
         return this.thoughtsTokenCount;
     }
-    
+
     public void setThoughtsTokenCount(Integer thoughtsTokenCount) {
         this.thoughtsTokenCount = thoughtsTokenCount;
     }
@@ -43,7 +43,7 @@ public class GoogleUsageMetadata {
     public Integer getTotalTokenCount() {
         return this.totalTokenCount;
     }
-    
+
     public void setTotalTokenCount(Integer totalTokenCount) {
         this.totalTokenCount = totalTokenCount;
     }

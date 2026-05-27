@@ -7,9 +7,14 @@ import 'src/api/content.dart';
 import 'src/api/ecosystem.dart';
 import 'src/api/iam.dart';
 import 'src/api/integration.dart';
+import 'src/api/mcp.dart';
+import 'src/api/messaging.dart';
 import 'src/api/open_platform.dart';
 import 'src/api/platform.dart';
 import 'src/api/system.dart';
+import 'src/api/prompts.dart';
+import 'src/api/service_providers.dart';
+import 'src/api/storage.dart';
 
 class SdkworkBackendClient {
   final HttpClient _httpClient;
@@ -21,9 +26,14 @@ class SdkworkBackendClient {
   late final EcosystemApi ecosystem;
   late final IamApi iam;
   late final IntegrationApi integration;
+  late final McpApi mcp;
+  late final MessagingApi messaging;
   late final OpenPlatformApi openPlatform;
   late final PlatformApi platform;
   late final SystemApi system;
+  late final PromptsApi prompts;
+  late final ServiceProvidersApi serviceProviders;
+  late final StorageApi storage;
 
   SdkworkBackendClient({
     required SdkConfig config,
@@ -35,9 +45,14 @@ class SdkworkBackendClient {
     ecosystem = EcosystemApi(_httpClient);
     iam = IamApi(_httpClient);
     integration = IntegrationApi(_httpClient);
+    mcp = McpApi(_httpClient);
+    messaging = MessagingApi(_httpClient);
     openPlatform = OpenPlatformApi(_httpClient);
     platform = PlatformApi(_httpClient);
     system = SystemApi(_httpClient);
+    prompts = PromptsApi(_httpClient);
+    serviceProviders = ServiceProvidersApi(_httpClient);
+    storage = StorageApi(_httpClient);
   }
 
   factory SdkworkBackendClient.withBaseUrl({
@@ -45,7 +60,7 @@ class SdkworkBackendClient {
     String? apiKey,
     String? authToken,
     String? accessToken,
-    String apiKeyHeader = 'Sdkwork-Access-Token',
+    String apiKeyHeader = 'Access-Token',
     bool apiKeyAsBearer = false,
     Map<String, String>? headers,
     int timeout = 30000,

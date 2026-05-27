@@ -165,6 +165,99 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("platform", operation["sdk_domain"])
             self.assertEqual("accounts.list", operation["operation_id"])
 
+    def test_messaging_paths_compile_to_messaging_sdk_namespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/messaging/templates
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+                    operation: listMessagingTemplates
+                    operation_id: templates.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/messaging/templates
+                    read_sources: [messaging_template, messaging_template_version, messaging_template_variant]
+                    query_parameters: []
+                    response_schema:
+                      name: MessagingTemplateCollectionResponse
+                      required: [items]
+                      properties:
+                        items:
+                          type: array
+                          items:
+                            type: object
+                  - route: /admin/messaging/diagnostics
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+                    operation: simulateMessagingRoute
+                    operation_id: diagnostics.routeSimulation.create
+                    kind: action
+                    api_surface: backend
+                    api_method: POST
+                    api_path: /backend/v3/api/messaging/diagnostics/route_simulation
+                    read_sources: [messaging_route_rule, messaging_route_rule_target]
+                    request_schema:
+                      name: MessagingRouteSimulationRequest
+                      required: [sceneCode, channel]
+                      properties:
+                        sceneCode: { type: string }
+                        channel: { type: string }
+                    response_schema:
+                      name: MessagingRouteSimulationResponse
+                      required: [matched]
+                      properties:
+                        matched: { type: boolean }
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operations = {operation["operation_id"]: operation for operation in manifest["operations"]}
+
+            self.assertEqual("messaging", operations["templates.list"]["tag"])
+            self.assertEqual("messaging", operations["templates.list"]["sdk_domain"])
+            self.assertEqual("messaging", operations["diagnostics.routeSimulation.create"]["tag"])
+            self.assertEqual("messaging", operations["diagnostics.routeSimulation.create"]["sdk_domain"])
+
+    def test_storage_paths_compile_to_oss_sdk_namespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/storage
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+                    operation: fetchStorageProviders
+                    operation_id: oss.providers.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/storage/providers
+                    sdk_domain: oss
+                    read_sources: [object_provider]
+                    query_parameters: []
+                    response_schema:
+                      name: StorageProviderListResponse
+                      required: [items]
+                      properties:
+                        items:
+                          type: array
+                          items:
+                            type: object
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operation = manifest["operations"][0]
+
+            self.assertEqual("/backend/v3/api/storage/providers", operation["api_path"])
+            self.assertEqual("storage", operation["tag"])
+            self.assertEqual("oss", operation["sdk_domain"])
+            self.assertEqual("oss.providers.list", operation["operation_id"])
+
     def test_commerce_catalog_and_inventory_paths_generate_commerce_domain(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -302,18 +395,18 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       name: CheckoutStatusResponse
                       properties:
                         orderNo: { type: string }
-                  - route: /admin/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
-                    operation: fetchCoupons
-                    operation_id: coupons.list
+                  - route: /admin/payments
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+                    operation: fetchPaymentAttempts
+                    operation_id: payments.attempts.list
                     kind: read
                     api_surface: backend
                     api_method: GET
-                    api_path: /backend/v3/api/billing/coupons
-                    read_sources: [commerce_coupon_template, commerce_coupon]
+                    api_path: /backend/v3/api/billing/payments/attempts
+                    read_sources: [commerce_payment_attempt]
                     query_parameters: []
                     response_schema:
-                      name: CouponsResponse
+                      name: PaymentAttemptsResponse
                       properties:
                         items:
                           type: array
@@ -324,11 +417,11 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             operations = {operation["operation_id"]: operation for operation in manifest["operations"]}
 
             self.assertEqual("/app/v3/api/billing/payments/checkout/{orderNo}", operations["payments.checkout.retrieve"]["api_path"])
-            self.assertEqual("billing", operations["payments.checkout.retrieve"]["tag"])
+            self.assertEqual("commerce", operations["payments.checkout.retrieve"]["tag"])
             self.assertEqual("commerce", operations["payments.checkout.retrieve"]["sdk_domain"])
-            self.assertEqual("/backend/v3/api/billing/coupons", operations["coupons.list"]["api_path"])
-            self.assertEqual("billing", operations["coupons.list"]["tag"])
-            self.assertEqual("commerce", operations["coupons.list"]["sdk_domain"])
+            self.assertEqual("/backend/v3/api/billing/payments/attempts", operations["payments.attempts.list"]["api_path"])
+            self.assertEqual("commerce", operations["payments.attempts.list"]["tag"])
+            self.assertEqual("commerce", operations["payments.attempts.list"]["sdk_domain"])
             self.assertNotIn("/commerce/billing/", str(manifest))
 
     def test_preserves_multipart_file_targets_in_operation_manifest(self) -> None:
@@ -858,38 +951,36 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/commerceService.ts
-                    operation: fetchRedeemHistory
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/promotionService.ts
+                    operation: appPromotionUserCouponsList
                     kind: read
                     api_surface: app
                     api_method: GET
-                    api_path: /app/v3/api/billing/users/current/coupons
-                    operation_id: users.current.coupons.list
-                    read_sources: [commerce_coupon, commerce_coupon_template]
+                    api_path: /app/v3/api/promotions/user_coupons
+                    operation_id: promotions.userCoupons.wallet.list
+                    read_sources: [promotion_user_coupon, promotion_coupon_stock]
                     response_schema:
-                      name: CommerceCouponWalletListResponse
+                      name: PromotionUserCouponWalletListResponse
                       type: array
                       items:
                         type: object
                         additionalProperties: false
-                        name: CommerceCouponWalletItem
-                        required: [id, code, amount, date, status]
+                        name: PromotionCouponWalletItem
+                        required: [couponNo, currencyCode, status]
                         properties:
-                          id: { type: integer, format: int64 }
-                          code: { type: string }
-                          amount: { type: string, pattern: '^\\d+(?:\\.\\d{2})$' }
-                          date: { type: string }
-                          status: { type: string, enum: [success, pending, failed] }
+                          couponNo: { type: string }
+                          currencyCode: { type: string, minLength: 3, maxLength: 3 }
+                          status: { type: string, enum: [available, locked, redeemed, expired, disabled, returned] }
                 """,
             )
 
             manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
             operation = manifest["operations"][0]
 
-            self.assertEqual("CommerceCouponWalletListResponse", operation["response_schema"]["name"])
+            self.assertEqual("PromotionUserCouponWalletListResponse", operation["response_schema"]["name"])
             self.assertEqual("array", operation["response_schema"]["schema"]["type"])
             self.assertEqual(
-                "CommerceCouponWalletItem",
+                "PromotionCouponWalletItem",
                 operation["response_schema"]["schema"]["items"]["name"],
             )
             self.assertNotIn("properties", operation["response_schema"]["schema"])

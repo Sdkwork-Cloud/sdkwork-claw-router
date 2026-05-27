@@ -8,7 +8,7 @@ public class GoogleContentEmbedding {
     public List<Double> getValues() {
         return this.values;
     }
-    
+
     public void setValues(List<Double> values) {
         this.values = values;
     }

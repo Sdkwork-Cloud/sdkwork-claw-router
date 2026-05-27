@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Bot, Image as ImageIcon, Video, Music, Headphones, FileAudio } from 'lucide-react';
 import { getSdkworkGenerationPreviewKind } from '@sdkwork/generation-pc-react/react';
 import { VideoMessageItem, MusicMessageItem, ImagesMessageItem, AudioMessageItem } from './MessageItems';
+import { ChatMarkdownMessage } from './chat/ChatMarkdownMessage';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../playgroundTypes';
 
 export function ChatHistoryItem({ item, setPreviewItem, isCompact = false }: { item: PlaygroundHistoryItem, setPreviewItem: PlaygroundPreviewSetter, isCompact?: boolean }) {
@@ -37,8 +38,8 @@ export function ChatHistoryItem({ item, setPreviewItem, isCompact = false }: { i
       </p>
 
       {item.outputText && (
-        <div className="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-[13px] leading-relaxed text-slate-200">
-          {item.outputText}
+        <div className="min-w-0 max-w-full rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-[13px] leading-relaxed text-slate-200">
+          <ChatMarkdownMessage content={item.outputText} tone="assistant" streaming={item.status === 'processing' || item.status === 'running'} />
         </div>
       )}
 

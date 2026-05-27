@@ -1,5 +1,4 @@
 import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -55,7 +54,6 @@ export class AnnouncementService {
     const result = await announcementBackendClient().content.announcements.update(
       requiredSafePathSegment(id, 'announcementId'),
       toUpdateAnnouncementRequest(updates),
-      requestParams('admin-announcement-update'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to update announcement');
     return normalizeAnnouncement(readRequiredApiItem(result, 'Updated announcement response is missing data'));
@@ -64,7 +62,6 @@ export class AnnouncementService {
   static async addAnnouncement(ann: AnnouncementCreateInput): Promise<Announcement> {
     const result = await announcementBackendClient().content.announcements.create(
       toCreateAnnouncementRequest(ann),
-      requestParams('admin-announcement-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add announcement');
     return normalizeAnnouncement(readRequiredApiItem(result, 'Created announcement response is missing data'));
@@ -138,10 +135,6 @@ function announcementStatus(value: string): AdminAnnouncementCreateRequest['stat
     return normalized;
   }
   throw new Error('status must be one of published, draft');
-}
-
-function requestParams(scope: string): { xRequestId: string } {
-  return { xRequestId: createRequestToken(scope) };
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {

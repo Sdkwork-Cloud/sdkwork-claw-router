@@ -1,10 +1,13 @@
-use axum::http::{HeaderMap, HeaderValue, Uri};
+use axum::body::Body;
+use axum::http::{HeaderMap, HeaderValue, Request, Uri};
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_http::{
-    inject_verified_app_request_subject, inject_verified_trusted_request_subject,
-    sign_app_session_token, sign_trusted_request_subject, verify_app_session_token,
-    ApiKeyCredentialSource, ApiKeyIdentity, AppSubjectBoundaryConfig, TrustedRequestSubject,
+    optional_app_request_subject, sign_app_session_token, sign_trusted_request_subject,
+    verified_app_request_subject, verified_signed_trusted_request_subject,
+    verify_app_session_token, ApiKeyCredentialSource, ApiKeyIdentity, AppSubjectBoundaryConfig,
+    TrustedRequestSubject,
 };
+use sdkwork_iam_core::IamAppContext;
 
 #[test]
 fn api_key_identity_prefers_authorization_bearer_without_leaking_debug() {
@@ -74,7 +77,48 @@ fn api_key_identity_rejects_invalid_context_without_echoing_input() {
 }
 
 #[test]
-fn trusted_request_subject_requires_tenant_organization_and_user_context() {
+fn trusted_request_subject_is_read_from_request_extensions() {
+    let subject = TrustedRequestSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        operator_id: 30,
+        operator_type: 1,
+    };
+    let mut request = Request::new(Body::empty());
+    request.extensions_mut().insert(subject);
+
+    assert_eq!(
+        Some(subject),
+        TrustedRequestSubject::from_extensions(request.extensions())
+    );
+}
+
+#[test]
+fn attach_trusted_request_subject_exposes_appbase_iam_context() {
+    let subject = TrustedRequestSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        operator_id: 30,
+        operator_type: 1,
+    };
+    let mut request = Request::new(Body::empty());
+
+    sdkwork_claw_http::attach_trusted_request_subject(&mut request, subject);
+
+    let context = request
+        .extensions()
+        .get::<IamAppContext>()
+        .expect("appbase iam context");
+    assert_eq!("10", context.tenant_id);
+    assert_eq!(Some("20"), context.organization_id.as_deref());
+    assert_eq!("30", context.user_id);
+    assert_eq!("sdkwork-claw-router", context.app_id);
+}
+
+#[test]
+fn trusted_request_subject_is_read_from_internal_headers() {
     let mut headers = HeaderMap::new();
     headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("10"));
     headers.insert("x-sdkwork-organization-id", HeaderValue::from_static("20"));
@@ -82,41 +126,30 @@ fn trusted_request_subject_requires_tenant_organization_and_user_context() {
 
     let subject = TrustedRequestSubject::from_headers(&headers).unwrap();
 
-    assert_eq!(10, subject.tenant_id);
-    assert_eq!(20, subject.organization_id);
-    assert_eq!(30, subject.user_id);
-    assert_eq!(30, subject.operator_id);
-    assert_eq!(1, subject.operator_type);
+    assert_eq!(
+        TrustedRequestSubject {
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
+            operator_id: 30,
+            operator_type: 1,
+        },
+        subject
+    );
 }
 
 #[test]
-fn trusted_request_subject_rejects_missing_or_invalid_context_without_echoing_input() {
-    let headers = HeaderMap::new();
-    let missing = TrustedRequestSubject::from_headers(&headers).unwrap_err();
-    assert_eq!(
-        "x-sdkwork-tenant-id header is required",
-        missing.to_string()
-    );
-
-    let mut invalid_headers = HeaderMap::new();
-    invalid_headers.insert(
-        "x-sdkwork-tenant-id",
-        HeaderValue::from_static("tenant-secret"),
-    );
-    invalid_headers.insert("x-sdkwork-organization-id", HeaderValue::from_static("20"));
-    invalid_headers.insert("x-sdkwork-user-id", HeaderValue::from_static("30"));
-
-    let invalid = TrustedRequestSubject::from_headers(&invalid_headers).unwrap_err();
+fn trusted_request_subject_extension_is_absent_without_verified_boundary() {
+    let request = Request::new(Body::empty());
 
     assert_eq!(
-        "x-sdkwork-tenant-id header must be a positive integer",
-        invalid.to_string()
+        None,
+        TrustedRequestSubject::from_extensions(request.extensions())
     );
-    assert!(!format!("{invalid:?}").contains("tenant-secret"));
 }
 
 #[test]
-fn trusted_request_subject_boundary_strips_direct_headers_and_injects_signed_subject() {
+fn trusted_request_subject_boundary_strips_direct_headers_and_returns_signed_subject() {
     let config =
         TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
     let subject = TrustedRequestSubject {
@@ -154,17 +187,20 @@ fn trusted_request_subject_boundary_strips_direct_headers_and_injects_signed_sub
         HeaderValue::from_str(&signature).unwrap(),
     );
 
-    inject_verified_trusted_request_subject(
+    let parsed = verified_signed_trusted_request_subject(
         &mut headers,
         "POST",
         "/app/v3/api/router/api_keys",
         &config,
         timestamp,
     )
+    .unwrap()
     .unwrap();
-    let parsed = TrustedRequestSubject::from_headers(&headers).unwrap();
 
     assert_eq!(subject, parsed);
+    assert!(headers.get("x-sdkwork-tenant-id").is_none());
+    assert!(headers.get("x-sdkwork-organization-id").is_none());
+    assert!(headers.get("x-sdkwork-user-id").is_none());
     assert!(headers.get("x-sdkwork-subject-signature").is_none());
 }
 
@@ -191,7 +227,7 @@ fn trusted_request_subject_boundary_rejects_bad_signature_without_echoing_input(
         HeaderValue::from_static("secret-signature"),
     );
 
-    let error = inject_verified_trusted_request_subject(
+    let error = verified_signed_trusted_request_subject(
         &mut headers,
         "POST",
         "/app/v3/api/router/api_keys",
@@ -224,7 +260,7 @@ fn app_session_token_verifies_subject_without_leaking_token_material() {
 }
 
 #[test]
-fn app_request_subject_boundary_injects_session_subject_after_stripping_direct_headers() {
+fn app_request_subject_boundary_returns_session_subject_after_stripping_direct_headers() {
     let trusted_subject_config =
         TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
     let app_session_config =
@@ -249,11 +285,11 @@ fn app_request_subject_boundary_injects_session_subject_after_stripping_direct_h
         HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
     );
     headers.insert(
-        "sdkwork-access-token",
+        "Access-Token",
         HeaderValue::from_str(&access_token).unwrap(),
     );
 
-    inject_verified_app_request_subject(
+    let parsed = verified_app_request_subject(
         &mut headers,
         "POST",
         "/app/v3/api/router/api_keys",
@@ -261,15 +297,17 @@ fn app_request_subject_boundary_injects_session_subject_after_stripping_direct_h
         1_800_000_001,
     )
     .unwrap();
-    let parsed = TrustedRequestSubject::from_headers(&headers).unwrap();
 
     assert_eq!(subject, parsed);
+    assert!(headers.get("x-sdkwork-tenant-id").is_none());
+    assert!(headers.get("x-sdkwork-organization-id").is_none());
+    assert!(headers.get("x-sdkwork-user-id").is_none());
     assert!(headers.get("authorization").is_none());
-    assert!(headers.get("sdkwork-access-token").is_none());
+    assert!(headers.get("Access-Token").is_none());
 }
 
 #[test]
-fn app_request_subject_boundary_skips_session_verification_when_only_authorization_present() {
+fn app_request_subject_boundary_rejects_incomplete_session_token_headers() {
     let trusted_subject_config =
         TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
     let app_session_config =
@@ -291,16 +329,84 @@ fn app_request_subject_boundary_skips_session_verification_when_only_authorizati
         HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
     );
 
-    let result = inject_verified_app_request_subject(
+    let error = verified_app_request_subject(
         &mut headers,
         "POST",
         "/app/v3/api/router/api_keys",
         &boundary_config,
         1_800_000_001,
+    )
+    .unwrap_err();
+
+    assert_eq!("Access-Token header is required", error);
+    assert!(headers.get("authorization").is_none());
+    assert!(headers.get("Access-Token").is_none());
+}
+
+#[test]
+fn app_request_subject_boundary_rejects_direct_subject_headers_without_tokens() {
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
+    let app_session_config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let boundary_config =
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
+    let mut headers = HeaderMap::new();
+    headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("999"));
+    headers.insert("x-sdkwork-organization-id", HeaderValue::from_static("999"));
+    headers.insert("x-sdkwork-user-id", HeaderValue::from_static("999"));
+
+    let error = verified_app_request_subject(
+        &mut headers,
+        "POST",
+        "/app/v3/api/router/api_keys",
+        &boundary_config,
+        1_800_000_001,
+    )
+    .unwrap_err();
+
+    assert_eq!("app session bearer token is required", error);
+    assert!(headers.get("x-sdkwork-tenant-id").is_none());
+    assert!(headers.get("x-sdkwork-organization-id").is_none());
+    assert!(headers.get("x-sdkwork-user-id").is_none());
+}
+
+#[test]
+fn optional_app_request_subject_boundary_strips_incomplete_session_token_headers() {
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
+    let app_session_config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let boundary_config =
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
+    let subject = TrustedRequestSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        operator_id: 30,
+        operator_type: 1,
+    };
+    let auth_token =
+        sign_app_session_token(&app_session_config, subject, 1_800_000_000, 1_800_000_300);
+    let mut headers = HeaderMap::new();
+    headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("999"));
+    headers.insert(
+        "authorization",
+        HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
     );
 
-    assert!(result.is_ok());
-    assert!(headers.get("authorization").is_some());
+    let subject = optional_app_request_subject(
+        &mut headers,
+        "GET",
+        "/app/v3/api/platform/apps/store",
+        &boundary_config,
+        1_800_000_001,
+    );
+
+    assert_eq!(None, subject);
+    assert!(headers.get("x-sdkwork-tenant-id").is_none());
+    assert!(headers.get("authorization").is_none());
+    assert!(headers.get("Access-Token").is_none());
 }
 
 #[test]
@@ -343,11 +449,11 @@ fn app_request_subject_boundary_rejects_mismatched_auth_and_access_subjects() {
         HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
     );
     headers.insert(
-        "sdkwork-access-token",
+        "Access-Token",
         HeaderValue::from_str(&access_token).unwrap(),
     );
 
-    let error = inject_verified_app_request_subject(
+    let error = verified_app_request_subject(
         &mut headers,
         "POST",
         "/app/v3/api/router/api_keys",
@@ -361,7 +467,7 @@ fn app_request_subject_boundary_rejects_mismatched_auth_and_access_subjects() {
         error
     );
     assert!(headers.get("authorization").is_none());
-    assert!(headers.get("sdkwork-access-token").is_none());
+    assert!(headers.get("Access-Token").is_none());
 }
 
 #[test]

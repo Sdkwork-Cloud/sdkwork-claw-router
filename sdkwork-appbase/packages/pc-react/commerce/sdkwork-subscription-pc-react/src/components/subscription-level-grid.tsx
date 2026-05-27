@@ -1,4 +1,4 @@
-import type { SdkworkVipLevel } from "@sdkwork/vip-pc-react";
+import type { SdkworkMembershipLevel } from "@sdkwork/membership-pc-react";
 import {
   createSdkworkSubscriptionPanelStyle,
   createSdkworkSubscriptionToneStyle,
@@ -6,7 +6,7 @@ import {
 import { useSdkworkSubscriptionIntl } from "../subscription-intl";
 
 export interface SdkworkSubscriptionLevelGridProps {
-  levels: SdkworkVipLevel[];
+  levels: SdkworkMembershipLevel[];
 }
 
 export function SdkworkSubscriptionLevelGrid({

@@ -16,7 +16,7 @@ public class ProviderTaskResult {
     public List<ProviderGeneratedMedia> getAudios() {
         return this.audios;
     }
-    
+
     public void setAudios(List<ProviderGeneratedMedia> audios) {
         this.audios = audios;
     }
@@ -24,7 +24,7 @@ public class ProviderTaskResult {
     public List<VolcengineContentPart> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<VolcengineContentPart> content) {
         this.content = content;
     }
@@ -32,7 +32,7 @@ public class ProviderTaskResult {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -40,7 +40,7 @@ public class ProviderTaskResult {
     public List<ProviderGeneratedMedia> getImages() {
         return this.images;
     }
-    
+
     public void setImages(List<ProviderGeneratedMedia> images) {
         this.images = images;
     }
@@ -48,7 +48,7 @@ public class ProviderTaskResult {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -56,7 +56,7 @@ public class ProviderTaskResult {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -64,7 +64,7 @@ public class ProviderTaskResult {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -72,7 +72,7 @@ public class ProviderTaskResult {
     public List<ProviderGeneratedMedia> getVideos() {
         return this.videos;
     }
-    
+
     public void setVideos(List<ProviderGeneratedMedia> videos) {
         this.videos = videos;
     }

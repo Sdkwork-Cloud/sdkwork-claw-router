@@ -295,6 +295,107 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             self.assertIn("export * from './session';", files["src/api/index.ts"])
             self.assertNotIn("export { ContentApi, createContentApi }", files["src/api/index.ts"])
 
+    def test_sdkwork_v3_uses_sdk_domain_as_top_level_resource_surface(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            output = temp_root / "sdk"
+            spec_path = self.write_openapi(temp_root)
+            spec = json.loads(spec_path.read_text(encoding="utf-8"))
+            spec["paths"] = {
+                "/backend/v3/api/storage/providers": {
+                    "get": {
+                        "operationId": "oss.providers.list",
+                        "tags": ["storage"],
+                        "x-sdk-domain": "oss",
+                        "x-sdkwork-domain": "oss",
+                        "x-sdkwork-resource": "oss.providers",
+                        "responses": {
+                            "200": {
+                                "description": "OK",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/OssProvidersListResult"}
+                                    }
+                                },
+                            }
+                        },
+                        "security": [{"AuthToken": [], "AccessToken": []}],
+                    }
+                }
+            }
+            spec["components"]["securitySchemes"] = {
+                "AuthToken": {"type": "http", "scheme": "bearer"},
+                "AccessToken": {"type": "apiKey", "in": "header", "name": "Access-Token"},
+            }
+            spec["components"]["schemas"] = {
+                "StorageProviderListResponse": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["items"],
+                    "properties": {"items": {"type": "array", "items": {"type": "object"}}},
+                },
+                "OssProvidersListResult": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["code"],
+                    "properties": {
+                        "code": {"type": "string"},
+                        "message": {"type": "string"},
+                        "data": {"$ref": "#/components/schemas/StorageProviderListResponse"},
+                    },
+                },
+            }
+            spec_path.write_text(json.dumps(spec, indent=2) + "\n", encoding="utf-8")
+
+            completed = subprocess.run(
+                [
+                    "node",
+                    "tools/clawrouter_strict_sdk_generate.mjs",
+                    "generate",
+                    "-i",
+                    str(spec_path),
+                    "-o",
+                    str(output),
+                    "-n",
+                    "clawrouter-backend-sdk",
+                    "-t",
+                    "backend",
+                    "-l",
+                    "typescript",
+                    "--base-url",
+                    "http://localhost:18081",
+                    "--api-prefix",
+                    "/backend/v3/api",
+                    "--package-name",
+                    "@sdkwork/clawrouter-backend-sdk",
+                    "--fixed-sdk-version",
+                    "0.1.0",
+                    "--no-sync-published-version",
+                    "--standard-profile",
+                    "sdkwork-v3",
+                    "--dry-run",
+                    "--json",
+                ],
+                cwd=ROOT,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            payload = json.loads(completed.stdout)
+            files = {file["path"]: file["content"] for file in payload["files"]}
+
+            self.assertIn("src/api/oss.ts", files)
+            self.assertIn("import { OssApi, createOssApi } from './api/oss';", files["src/sdk.ts"])
+            self.assertIn("public readonly oss: OssApi;", files["src/sdk.ts"])
+            self.assertIn("this.oss = createOssApi(this.httpClient);", files["src/sdk.ts"])
+            self.assertIn("public readonly providers: OssProvidersApi;", files["src/api/oss.ts"])
+            self.assertIn("async list(", files["src/api/oss.ts"])
+            self.assertNotIn("objectStorage", files["src/api/oss.ts"])
+            self.assertNotIn("public readonly oss: StorageApi;", files["src/sdk.ts"])
+            self.assertNotIn("public readonly oss: OssOssApi;", files["src/api/oss.ts"])
+
     def test_apply_generation_runs_project_runtime_standardizer(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             temp_root = Path(tmp)

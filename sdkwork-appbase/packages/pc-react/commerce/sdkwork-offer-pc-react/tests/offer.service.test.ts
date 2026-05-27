@@ -86,8 +86,8 @@ describe("sdkwork-offer-pc-react service", () => {
               level: 3,
               name: "Pro",
               remainingDays: 18,
-              status: "vip",
-              vipPoints: 3200,
+              status: "active",
+              points: 3200,
             },
             earnedThisMonth: 1200,
             isAuthenticated: true,
@@ -99,14 +99,14 @@ describe("sdkwork-offer-pc-react service", () => {
           transactions: [],
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
           plans: [
             {
               durationDays: 365,
-              id: "vip-plan-3",
+              id: "membership-plan-3",
               includedPoints: 60000,
               name: "Pro Annual",
               originalPriceCny: 999,
@@ -117,7 +117,7 @@ describe("sdkwork-offer-pc-react service", () => {
             },
             {
               durationDays: 30,
-              id: "vip-plan-2",
+              id: "membership-plan-2",
               includedPoints: 5000,
               name: "Pro Monthly",
               originalPriceCny: 239,
@@ -132,13 +132,13 @@ describe("sdkwork-offer-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 18,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
       },
@@ -173,7 +173,7 @@ describe("sdkwork-offer-pc-react service", () => {
       claimableCoupons: 1,
       currentLevelName: "Pro",
       isAuthenticated: true,
-      vipRemainingDays: 18,
+      membershipRemainingDays: 18,
     });
     expect(dashboard.digest).toEqual({
       couponOffers: 2,
@@ -261,7 +261,7 @@ describe("sdkwork-offer-pc-react service", () => {
         claimableCoupons: 0,
         currentLevelName: "Guest",
         isAuthenticated: false,
-        vipRemainingDays: null,
+        membershipRemainingDays: null,
       },
     });
   });
@@ -363,14 +363,14 @@ describe("sdkwork-offer-pc-react service", () => {
           transactions: [],
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
           plans: [
             {
               durationDays: 365,
-              id: "vip-plan-3",
+              id: "membership-plan-3",
               includedPoints: 60000,
               name: "Pro Annual",
               originalPriceCny: 999,
@@ -385,13 +385,13 @@ describe("sdkwork-offer-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 18,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
       },

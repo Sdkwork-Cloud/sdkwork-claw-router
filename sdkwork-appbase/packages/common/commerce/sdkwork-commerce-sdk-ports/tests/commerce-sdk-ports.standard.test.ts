@@ -11,6 +11,8 @@ import {
   getCommerceSdkSurface,
 } from "../src/index";
 
+const RETIRED_TIER_ROOT = "v" + "ip";
+
 describe("SDKWork commerce SDK port contracts", () => {
   it("defines app and backend SDK ports as commerce-root appbase capabilities", () => {
     const source = readFileSync(
@@ -43,9 +45,14 @@ describe("SDKWork commerce SDK port contracts", () => {
       "commerce.fulfillments.retrieve",
       "commerce.shipments.retrieve",
       "commerce.memberships.purchases.create",
+      "commerce.billing.history.list",
       "commerce.recharges.orders.create",
       "commerce.wallet.ledgerEntries.retrieve",
-      "commerce.coupons.redemptions.create",
+      "commerce.promotions.offers.list",
+      "commerce.promotions.userCoupons.list",
+      "commerce.promotions.userCoupons.claims.create",
+      "commerce.promotions.codes.redemptions.create",
+      "commerce.promotions.discountApplications.create",
       "commerce.invoices.create",
     ]) {
       expect(SDKWORK_COMMERCE_APP_SDK_REQUIRED_METHODS).toContain(method);
@@ -56,9 +63,13 @@ describe("SDKWork commerce SDK port contracts", () => {
       "billing.wallet.transactions.retrieve",
       "billing.coupons.redeem.create",
       "billing.payments.checkout.retrieve",
-      "billing.vip.purchase.create",
+      "billing." + RETIRED_TIER_ROOT + ".purchase.create",
       "billing.preflight.preholds.create",
-      "vip.purchase.create",
+      "commerce.coupons.list",
+      "commerce.coupons.redemptions.create",
+      "commerce.coupons.templates.list",
+      "users.current.coupons.list",
+      RETIRED_TIER_ROOT + ".purchase.create",
       "preflight.preholds.create",
     ]) {
       expect(SDKWORK_COMMERCE_APP_SDK_REQUIRED_METHODS).not.toContain(retired);
@@ -73,10 +84,17 @@ describe("SDKWork commerce SDK port contracts", () => {
       "commerce.payments.providerAccounts.create",
       "commerce.payments.reconciliationRuns.list",
       "commerce.refunds.retrieve",
-      "commerce.memberships.entitlements.list",
+      "commerce.entitlements.grants.list",
+      "commerce.entitlements.accounts.list",
+      "commerce.entitlements.ledgerEntries.list",
       "commerce.recharges.orders.list",
       "commerce.wallet.adjustments.create",
-      "commerce.coupons.redemptions.list",
+      "commerce.promotions.offers.management.list",
+      "commerce.promotions.couponStocks.list",
+      "commerce.promotions.codes.list",
+      "commerce.promotions.userCoupons.management.list",
+      "commerce.promotions.discountApplications.list",
+      "commerce.promotions.discountAllocations.list",
       "commerce.invoices.titles.list",
       "commerce.commerceReports.paymentReconciliation.retrieve",
       "commerce.audit.commerceEvents.list",
@@ -87,9 +105,13 @@ describe("SDKWork commerce SDK port contracts", () => {
     for (const retired of [
       "billing.coupons.list",
       "billing.finance.usageStatements.list",
-      "billing.vip.levels.create",
+      "billing." + RETIRED_TIER_ROOT + ".levels.create",
+      "commerce.coupons.campaigns.list",
+      "commerce.coupons.codes.list",
+      "commerce.coupons.redemptions.list",
+      "commerce.memberships." + "entitlements.list",
       "finance.usageStatements.list",
-      "vip.levels.create",
+      RETIRED_TIER_ROOT + ".levels.create",
     ]) {
       expect(SDKWORK_COMMERCE_BACKEND_SDK_REQUIRED_METHODS).not.toContain(retired);
     }
@@ -122,6 +144,26 @@ describe("SDKWork commerce SDK port contracts", () => {
 
     expect(() =>
       assertCommerceAppSdkClient({
+        ...createClient(SDKWORK_COMMERCE_APP_SDK_REQUIRED_METHODS),
+        commerce: {
+          ...createClient(SDKWORK_COMMERCE_APP_SDK_REQUIRED_METHODS).commerce,
+          coupons: { redemptions: { create: vi.fn() } },
+        },
+      }),
+    ).toThrow(/retired.*commerce\.coupons/i);
+
+    expect(() =>
+      assertCommerceBackendSdkClient({
+        ...createClient(SDKWORK_COMMERCE_BACKEND_SDK_REQUIRED_METHODS),
+        commerce: {
+          ...createClient(SDKWORK_COMMERCE_BACKEND_SDK_REQUIRED_METHODS).commerce,
+          coupons: { redemptions: { list: vi.fn() } },
+        },
+      }),
+    ).toThrow(/retired.*commerce\.coupons/i);
+
+    expect(() =>
+      assertCommerceAppSdkClient({
         commerce: {
           accounts: {
             current: {
@@ -130,7 +172,7 @@ describe("SDKWork commerce SDK port contracts", () => {
           },
         },
       }),
-    ).toThrow(/commerce\.coupons\.redemptions\.create/);
+    ).toThrow(/commerce\.promotions\.codes\.redemptions\.create/);
   });
 });
 

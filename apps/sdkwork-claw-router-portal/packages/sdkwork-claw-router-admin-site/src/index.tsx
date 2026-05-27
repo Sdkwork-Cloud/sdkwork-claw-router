@@ -90,18 +90,8 @@ export function ClawRouterSiteSettingsPage() {
   }
 
   return (
-    <div className="flex min-h-0 w-full min-w-0 flex-col gap-6">
-      <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 dark:border-white/10 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
-            <Settings2 className="h-6 w-6 text-blue-500" />
-            {t('admin.siteSettings.title')}
-          </h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            {t('admin.siteSettings.description')}
-          </p>
-        </div>
-        <div className="flex gap-3">
+    <div className="flex min-h-0 w-full min-w-0 flex-col gap-3">
+      <div className="flex justify-end gap-3 border-b border-slate-200 pb-3 dark:border-white/10">
           <button
             className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
             onClick={() => void loadSettings()}
@@ -119,7 +109,6 @@ export function ClawRouterSiteSettingsPage() {
             {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
             {t('common.actions.save')}
           </button>
-        </div>
       </div>
 
       {saveError ? (

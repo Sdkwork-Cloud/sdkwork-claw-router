@@ -118,11 +118,11 @@ SELECT
     c.retry_policy::text AS retry_policy_json
 FROM integration_channel_model m
 JOIN integration_channel c ON c.id = m.channel_id
-JOIN integration_provider p ON p.provider_code = c.provider_code
+LEFT JOIN integration_provider p ON p.provider_code = c.provider_code
 JOIN integration_provider_account a ON a.id = c.account_id
 WHERE m.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND p.deleted_at IS NULL
+  AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND a.deleted_at IS NULL
   AND m.status = 1
   AND c.status = 1
@@ -130,7 +130,7 @@ WHERE m.deleted_at IS NULL
       COALESCE(c.health_status, 1) = 1
       OR COALESCE(c.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP
   )
-  AND p.status = 1
+  AND (p.id IS NULL OR p.status = 1)
   AND a.status = 1
   AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
   AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
@@ -151,19 +151,39 @@ SELECT
     a.auth_type::text AS auth_type,
     a.auth_config::text AS auth_config_json,
     c.timeout_ms,
-    c.retry_policy::text AS retry_policy_json
+    c.retry_policy::text AS retry_policy_json,
+    COALESCE((
+        SELECT jsonb_agg(
+            jsonb_build_object(
+                'groupId', b.group_id,
+                'priority', COALESCE(b.priority, 100),
+                'weight', COALESCE(b.weight, 100),
+                'modelScope', COALESCE(b.model_scope, '[]'::jsonb),
+                'capabilities', COALESCE(b.capabilities, '[]'::jsonb)
+            )
+            ORDER BY COALESCE(b.priority, 100) ASC, COALESCE(b.weight, 100) DESC, b.group_id ASC, b.id ASC
+        )
+        FROM iam_api_key_group_channel b
+        WHERE b.deleted_at IS NULL
+          AND b.status = 1
+          AND b.tenant_id = c.tenant_id
+          AND b.organization_id = c.organization_id
+          AND b.channel_id = c.id
+          AND (b.effective_from IS NULL OR b.effective_from <= CURRENT_TIMESTAMP)
+          AND (b.effective_to IS NULL OR b.effective_to > CURRENT_TIMESTAMP)
+    ), '[]'::jsonb)::text AS group_bindings_json
 FROM integration_channel c
-JOIN integration_provider p ON p.provider_code = c.provider_code
+LEFT JOIN integration_provider p ON p.provider_code = c.provider_code
 JOIN integration_provider_account a ON a.id = c.account_id
 WHERE c.deleted_at IS NULL
-  AND p.deleted_at IS NULL
+  AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND a.deleted_at IS NULL
   AND c.status = 1
   AND (
       COALESCE(c.health_status, 1) = 1
       OR COALESCE(c.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP
   )
-  AND p.status = 1
+  AND (p.id IS NULL OR p.status = 1)
   AND a.status = 1
   AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
   AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
@@ -251,7 +271,7 @@ SELECT
     COALESCE(organization_id, 0) AS organization_id,
     COALESCE(NULLIF(name, ''), code) AS name,
     code,
-    pricing_plan_code,
+    COALESCE(NULLIF(BTRIM(pricing_plan_code), ''), 'standard') AS pricing_plan_code,
     rate_multiplier::text AS rate_multiplier,
     official_price_multiplier::text AS official_price_multiplier
 FROM iam_gateway_api_key_group
@@ -278,7 +298,8 @@ SELECT
     quota_policy_id,
     created_at::text AS created_at,
     expire_at::text AS expire_at,
-    status AS status_code
+    status AS status_code,
+    COALESCE((metadata #>> '{runtime,defaultForRuntime}')::boolean, false) AS default_for_runtime
 FROM iam_gateway_api_key
 WHERE deleted_at IS NULL
   AND status = 1

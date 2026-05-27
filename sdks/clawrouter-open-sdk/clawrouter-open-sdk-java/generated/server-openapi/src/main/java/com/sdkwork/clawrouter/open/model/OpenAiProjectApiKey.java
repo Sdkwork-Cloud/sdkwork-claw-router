@@ -13,7 +13,7 @@ public class OpenAiProjectApiKey {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -21,7 +21,7 @@ public class OpenAiProjectApiKey {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -29,7 +29,7 @@ public class OpenAiProjectApiKey {
     public Integer getLastUsedAt() {
         return this.lastUsedAt;
     }
-    
+
     public void setLastUsedAt(Integer lastUsedAt) {
         this.lastUsedAt = lastUsedAt;
     }
@@ -37,7 +37,7 @@ public class OpenAiProjectApiKey {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -45,7 +45,7 @@ public class OpenAiProjectApiKey {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -53,7 +53,7 @@ public class OpenAiProjectApiKey {
     public String getOwner() {
         return this.owner;
     }
-    
+
     public void setOwner(String owner) {
         this.owner = owner;
     }
@@ -61,7 +61,7 @@ public class OpenAiProjectApiKey {
     public String getRedactedValue() {
         return this.redactedValue;
     }
-    
+
     public void setRedactedValue(String redactedValue) {
         this.redactedValue = redactedValue;
     }

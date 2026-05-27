@@ -12,7 +12,7 @@ public class AdminTokenLimitCreateRequest {
     public Integer getBurst() {
         return this.burst;
     }
-    
+
     public void setBurst(Integer burst) {
         this.burst = burst;
     }
@@ -20,7 +20,7 @@ public class AdminTokenLimitCreateRequest {
     public String getKeyPrefix() {
         return this.keyPrefix;
     }
-    
+
     public void setKeyPrefix(String keyPrefix) {
         this.keyPrefix = keyPrefix;
     }
@@ -28,7 +28,7 @@ public class AdminTokenLimitCreateRequest {
     public Integer getRpd() {
         return this.rpd;
     }
-    
+
     public void setRpd(Integer rpd) {
         this.rpd = rpd;
     }
@@ -36,7 +36,7 @@ public class AdminTokenLimitCreateRequest {
     public Integer getRps() {
         return this.rps;
     }
-    
+
     public void setRps(Integer rps) {
         this.rps = rps;
     }
@@ -44,7 +44,7 @@ public class AdminTokenLimitCreateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -52,7 +52,7 @@ public class AdminTokenLimitCreateRequest {
     public String getUser() {
         return this.user;
     }
-    
+
     public void setUser(String user) {
         this.user = user;
     }

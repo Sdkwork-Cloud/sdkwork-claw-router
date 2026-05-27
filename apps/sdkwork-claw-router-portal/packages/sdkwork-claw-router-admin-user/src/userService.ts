@@ -1,6 +1,5 @@
 import {
   createRequestParams,
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -91,7 +90,6 @@ export class UserService {
   static async addUser(user: UserCreateInput): Promise<UserListItem> {
     const result = await getClawRouterBackendSdkClient().iam.users.create(
       toCreateUserRequest(user),
-      createRequestParams('admin-user-create'),
     );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.addUserFallback');
     return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.addUserMissingData'));
@@ -100,17 +98,15 @@ export class UserService {
   static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem> {
     const result = await getClawRouterBackendSdkClient().iam.users.update(
       toUpdateUserRequest(id, updates),
-      createRequestParams('admin-user-update'),
     );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.updateUserFallback');
     return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData'));
   }
 
   static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }> {
-    const tokens = idempotencyTokens('admin-api-key-create');
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.create(
       toCreateApiKeyRequest(input),
-      { idempotencyKey: tokens.idempotencyKey, xRequestId: tokens.requestId },
+      createRequestParams('admin-api-key-create'),
     );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.createApiKeyFallback');
     const data = readApiRecord(result);
@@ -208,13 +204,6 @@ function positiveId(value: number, fieldName: string): number {
 
 function pruneUndefined<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
-}
-
-function idempotencyTokens(scope: string): { idempotencyKey: string; requestId: string } {
-  return {
-    idempotencyKey: createRequestToken(scope),
-    requestId: createRequestToken(`${scope}-request`),
-  };
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {

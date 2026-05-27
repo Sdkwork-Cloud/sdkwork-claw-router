@@ -3,6 +3,22 @@ use sdkwork_claw_product::ports::{UsageSettlementCommand, UsageSettlementStore};
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
 
+const SQLITE_USAGE_SETTLEMENT_STORE: &str =
+    include_str!("../src/infrastructure/sql/sqlite/usage_settlement_store.rs");
+
+#[test]
+fn sqlite_usage_settlement_upsert_never_reopens_successful_bridge() {
+    assert!(
+        SQLITE_USAGE_SETTLEMENT_STORE
+            .contains("WHERE commerce_usage_settlement.settlement_status <> ?"),
+        "SQLite usage settlement upsert must not overwrite successful settlement bridge rows"
+    );
+    assert!(
+        SQLITE_USAGE_SETTLEMENT_STORE.contains(".bind(USAGE_SETTLEMENT_SUCCESS)"),
+        "SQLite usage settlement upsert must bind the success status guard"
+    );
+}
+
 #[tokio::test]
 async fn sqlite_usage_settlement_debits_appbase_points_once_and_links_usage_to_ledger() {
     let pool = test_pool().await;
@@ -169,7 +185,7 @@ async fn sqlite_usage_settlement_skips_usage_without_explicit_settlement_status(
 async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_retry() {
     let pool = test_pool().await;
     seed_points_account(&pool, "account-701", 1000).await;
-    seed_usage_fact(&pool, 502, "req-usage-502", "100.010000", 99, Some(0)).await;
+    seed_usage_fact(&pool, 502, "req-usage-502", "100.060000", 99, Some(0)).await;
     let store = SqliteUsageSettlementStore::new(pool.clone());
 
     let failed = store
@@ -295,6 +311,205 @@ async fn sqlite_usage_settlement_zero_tenant_command_settles_global_pending_usag
         scalar_i64(
             &pool,
             "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+}
+
+#[tokio::test]
+async fn sqlite_usage_settlement_keeps_micro_amount_pending_until_billable_point_exists() {
+    let pool = test_pool().await;
+    seed_points_account(&pool, "account-701", 1000).await;
+    seed_usage_fact(&pool, 505, "req-usage-505", "0.000000990000", 1, Some(0)).await;
+    let store = SqliteUsageSettlementStore::new(pool.clone());
+
+    let outcome = store
+        .settle_pending_usage(settlement_command())
+        .await
+        .unwrap();
+
+    assert_eq!(0, outcome.settled_count);
+    assert_eq!(0, outcome.failed_count);
+    assert_eq!(0, outcome.debited_points);
+    assert_eq!(
+        1000,
+        scalar_i64(
+            &pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_usage_settlement").await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_account_ledger_entry").await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(
+            &pool,
+            "SELECT settlement_status FROM ai_usage_fact WHERE id = 505"
+        )
+        .await
+    );
+}
+
+#[tokio::test]
+async fn sqlite_usage_settlement_keeps_sub_point_aggregate_pending() {
+    let pool = test_pool().await;
+    seed_points_account(&pool, "account-701", 1000).await;
+    seed_usage_fact(&pool, 506, "req-usage-506", "0.040000000000", 4, Some(0)).await;
+    seed_usage_fact(&pool, 507, "req-usage-507", "0.040000000000", 4, Some(0)).await;
+    let store = SqliteUsageSettlementStore::new(pool.clone());
+
+    let outcome = store
+        .settle_pending_usage(settlement_command())
+        .await
+        .unwrap();
+
+    assert_eq!(0, outcome.settled_count);
+    assert_eq!(0, outcome.failed_count);
+    assert_eq!(0, outcome.debited_points);
+    assert_eq!(
+        1000,
+        scalar_i64(
+            &pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_usage_settlement").await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE business_type = 'usage'"
+        )
+        .await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM ai_usage_fact WHERE id IN (506, 507) AND settlement_status = 2"
+        )
+        .await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(
+            &pool,
+            "SELECT COALESCE(SUM(points), 0) FROM commerce_usage_settlement WHERE usage_fact_id IN (506, 507)"
+        )
+        .await
+    );
+}
+
+#[tokio::test]
+async fn sqlite_usage_settlement_aggregates_to_minimum_billable_point_before_debiting() {
+    let pool = test_pool().await;
+    seed_points_account(&pool, "account-701", 1000).await;
+    seed_usage_fact(&pool, 510, "req-usage-510", "0.040000000000", 4, Some(0)).await;
+    seed_usage_fact(&pool, 511, "req-usage-511", "0.060000000000", 6, Some(0)).await;
+    let store = SqliteUsageSettlementStore::new(pool.clone());
+
+    let outcome = store
+        .settle_pending_usage(settlement_command())
+        .await
+        .unwrap();
+
+    assert_eq!(2, outcome.settled_count);
+    assert_eq!(0, outcome.failed_count);
+    assert_eq!(1, outcome.debited_points);
+    assert_eq!(
+        999,
+        scalar_i64(
+            &pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+    assert_eq!(
+        2,
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_usage_settlement").await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE business_type = 'usage'"
+        )
+        .await
+    );
+    assert_eq!(
+        2,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM ai_usage_fact WHERE id IN (510, 511) AND settlement_status = 2"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COALESCE(SUM(points), 0) FROM commerce_usage_settlement WHERE usage_fact_id IN (510, 511)"
+        )
+        .await
+    );
+}
+
+#[tokio::test]
+async fn sqlite_usage_settlement_marks_invalid_amount_failed_without_blocking_valid_usage() {
+    let pool = test_pool().await;
+    seed_points_account(&pool, "account-701", 1000).await;
+    seed_usage_fact(&pool, 508, "req-usage-508", "invalid-amount", 4, Some(0)).await;
+    seed_usage_fact(&pool, 509, "req-usage-509", "0.990000", 4, Some(0)).await;
+    let store = SqliteUsageSettlementStore::new(pool.clone());
+
+    let outcome = store
+        .settle_pending_usage(settlement_command())
+        .await
+        .expect("invalid usage amount should be isolated to that usage fact");
+
+    assert_eq!(1, outcome.settled_count);
+    assert_eq!(1, outcome.failed_count);
+    assert_eq!(10, outcome.debited_points);
+    assert_eq!(
+        990,
+        scalar_i64(
+            &pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+    assert_eq!(
+        3,
+        scalar_i64(
+            &pool,
+            "SELECT settlement_status FROM ai_usage_fact WHERE id = 508"
+        )
+        .await
+    );
+    assert_eq!(
+        "INVALID_USAGE_AMOUNT",
+        scalar_string(
+            &pool,
+            "SELECT failure_code FROM commerce_usage_settlement WHERE usage_fact_id = 508"
+        )
+        .await
+    );
+    assert_eq!(
+        2,
+        scalar_i64(
+            &pool,
+            "SELECT settlement_status FROM ai_usage_fact WHERE id = 509"
         )
         .await
     );

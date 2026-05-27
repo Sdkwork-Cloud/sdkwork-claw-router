@@ -62,6 +62,7 @@ struct RuntimeDatabaseConfig {
 
 impl DatabaseConfig {
     pub const DEFAULT_MAX_CONNECTIONS: u32 = 16;
+    pub const DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS: u32 = 8;
     pub const ENV_CONFIG_FILE: &'static str = "SDKWORK_CLAW_CONFIG_FILE";
     pub const SERVER_DEFAULT_POSTGRES_URL: &'static str =
         "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require";
@@ -355,7 +356,7 @@ impl DatabaseConfig {
                     "sqlite://{}",
                     portable_path(&location.sqlite_database_path())
                 ),
-                1,
+                Self::DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS,
             ),
         }
     }

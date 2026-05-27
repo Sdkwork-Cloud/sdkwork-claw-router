@@ -16,6 +16,7 @@ import {
   readString,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { GeneratedSdkToolConfig } from './sdkReferenceRuntime';
+import { normalizeSdkReferenceLanguage } from './sdkReferenceRuntime';
 
 export interface GenerateSdkReferenceInput {
   spec: OpenApiDocument;
@@ -26,10 +27,14 @@ export interface GenerateSdkReferenceInput {
 export async function generateSdkReferenceDocumentation(
   input: GenerateSdkReferenceInput,
 ): Promise<SdkReferenceDocumentationResponse> {
+  const language = normalizeSdkReferenceLanguage(input.language);
   const result = await getClawRouterAppSdkClient().sdkReference.documentation.create({
     spec: normalizeJsonObject(input.spec, 'spec'),
-    language: input.language,
-    config: normalizeJsonObject(input.config, 'config'),
+    language,
+    config: normalizeJsonObject({
+      ...input.config,
+      language,
+    }, 'config'),
   });
   ensureSdkworkApiSuccess(result, 'SDK reference documentation could not be generated');
   const data = readApiData(result);
@@ -40,7 +45,7 @@ export async function generateSdkReferenceDocumentation(
     readme: readString(data, 'readme'),
     methodDefinition: readNullableString(data, 'methodDefinition'),
     usageExample: readNullableString(data, 'usageExample'),
-    language: readString(data, 'language', input.language),
+    language: readString(data, 'language', language),
     generated: readBoolean(data, 'generated', false),
   };
 }
@@ -48,10 +53,14 @@ export async function generateSdkReferenceDocumentation(
 export async function generateSdkReferenceArchive(
   input: GenerateSdkReferenceInput,
 ): Promise<SdkReferenceArchiveResponse> {
+  const language = normalizeSdkReferenceLanguage(input.language);
   const result = await getClawRouterAppSdkClient().sdkReference.archives.create({
     spec: normalizeJsonObject(input.spec, 'spec'),
-    language: input.language,
-    config: normalizeJsonObject(input.config, 'config'),
+    language,
+    config: normalizeJsonObject({
+      ...input.config,
+      language,
+    }, 'config'),
   });
   ensureSdkworkApiSuccess(result, 'SDK archive could not be generated');
   const data = readApiData(result);
@@ -62,6 +71,6 @@ export async function generateSdkReferenceArchive(
     fileName: readString(data, 'fileName'),
     contentType: readString(data, 'contentType', 'application/zip'),
     contentBase64: readString(data, 'contentBase64'),
-    language: readString(data, 'language', input.language),
+    language: readString(data, 'language', language),
   };
 }

@@ -47,22 +47,36 @@ class ClawRouterOpenApiContractAudit:
         "deactivate",
         "delete",
         "disable",
+        "discover",
         "enable",
+        "healthCheck",
         "list",
         "publish",
         "refresh",
         "reject",
         "renew",
+        "replace",
+        "render",
         "restore",
         "retrieve",
+        "review",
+        "release",
         "revoke",
+        "settle",
         "submit",
         "unpublish",
         "update",
         "upgrade",
         "verify",
+        "moderate",
     }
+    TOP_LEVEL_VERTICAL_SDK_DOMAINS = {"mcp", "prompts"}
     FORBIDDEN_RPC_PATH_SEGMENTS = {"check_collected", "detail", "list", "mine", "search"}
+    BACKEND_COURSE_RESOURCE_SEGMENTS = {
+        "course-applications",
+        "course-lessons",
+        "course-sections",
+    }
 
     def __init__(self, root: Path, openapi_dir: Path | None = None) -> None:
         self.root = Path(root).resolve()
@@ -120,20 +134,32 @@ class ClawRouterOpenApiContractAudit:
         auth_token = security_schemes.get("AuthToken") if isinstance(security_schemes, dict) else None
         if not isinstance(auth_token, dict) or auth_token.get("type") != "http" or auth_token.get("scheme") != "bearer":
             messages.append(f"{surface} OpenAPI components.securitySchemes.AuthToken must be an http bearer scheme")
-        access_token = security_schemes.get("SdkworkAccessToken") if isinstance(security_schemes, dict) else None
+        access_token = security_schemes.get("AccessToken") if isinstance(security_schemes, dict) else None
         if (
             not isinstance(access_token, dict)
             or access_token.get("type") != "apiKey"
             or access_token.get("in") != "header"
-            or access_token.get("name") != "Sdkwork-Access-Token"
+            or access_token.get("name") != "Access-Token"
         ):
             messages.append(
-                f"{surface} OpenAPI components.securitySchemes.SdkworkAccessToken must be an apiKey header named Sdkwork-Access-Token"
+                f"{surface} OpenAPI components.securitySchemes.AccessToken must be an apiKey header named Access-Token"
             )
-        if isinstance(access_token, dict) and access_token.get("name") == "Access-Token":
-            messages.append(f"{surface} OpenAPI must not declare legacy Access-Token security scheme headers")
-        if spec.get("security") != [{"AuthToken": [], "SdkworkAccessToken": []}]:
-            messages.append(f"{surface} OpenAPI security must require AuthToken and SdkworkAccessToken")
+        if isinstance(security_schemes, dict):
+            non_standard_access_schemes = [
+                name
+                for name in security_schemes
+                if (
+                    isinstance(name, str)
+                    and name.lower().startswith("sdkwork")
+                    and "accesstoken" in name.lower()
+                )
+            ]
+            if non_standard_access_schemes:
+                messages.append(
+                    f"{surface} OpenAPI must not declare branded access token security scheme names"
+                )
+        if spec.get("security") != [{"AuthToken": [], "AccessToken": []}]:
+            messages.append(f"{surface} OpenAPI security must require AuthToken and AccessToken")
         return messages
 
     def _audit_forbidden_components(self, surface: str, schemas: dict[str, Any]) -> list[str]:
@@ -231,6 +257,8 @@ class ClawRouterOpenApiContractAudit:
                     messages.append(f"{surface} path {path} parameter {parameter_name} must be lowerCamelCase")
                 continue
             if not re.match(r"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$", raw_segment):
+                if self._is_allowed_backend_course_resource_segment(surface, path, raw_segment):
+                    continue
                 messages.append(f"{surface} path {path} static segment {raw_segment} must be lowercase lower_snake_case")
             if raw_segment in self.FORBIDDEN_RPC_PATH_SEGMENTS:
                 messages.append(
@@ -238,6 +266,13 @@ class ClawRouterOpenApiContractAudit:
                 )
 
         return messages
+
+    def _is_allowed_backend_course_resource_segment(self, surface: str, path: str, segment: str) -> bool:
+        return (
+            surface == "backend"
+            and path.startswith("/backend/v3/api/content/")
+            and segment in self.BACKEND_COURSE_RESOURCE_SEGMENTS
+        )
 
     def _audit_operation_standard(self, label: str, operation: dict[str, Any]) -> list[str]:
         messages: list[str] = []
@@ -249,7 +284,11 @@ class ClawRouterOpenApiContractAudit:
             messages.append(f"{label} must declare exactly one tag")
         elif not re.match(r"^[a-z][A-Za-z0-9]*$", tags[0]):
             messages.append(f"{label} tag {tags[0]} must be lowerCamelCase")
-        elif operation_id.startswith(f"{tags[0]}."):
+        elif operation_id.startswith(f"{tags[0]}.") and not self._allows_top_level_vertical_sdk_domain(
+            operation_id=operation_id,
+            tag=tags[0],
+            operation=operation,
+        ):
             messages.append(f"{label} operationId {operation_id} must not repeat tag {tags[0]}")
         if "." in operation_id:
             action = operation_id.rsplit(".", 1)[-1]
@@ -265,6 +304,21 @@ class ClawRouterOpenApiContractAudit:
             if not self._non_empty_string(operation.get(field)):
                 messages.append(f"{label} must declare {field}")
         return messages
+
+    def _allows_top_level_vertical_sdk_domain(
+        self,
+        *,
+        operation_id: str,
+        tag: str,
+        operation: dict[str, Any],
+    ) -> bool:
+        if tag not in self.TOP_LEVEL_VERTICAL_SDK_DOMAINS:
+            return False
+        domain = operation.get("x-sdkwork-domain")
+        resource = operation.get("x-sdkwork-resource")
+        if domain != tag or not isinstance(resource, str):
+            return False
+        return resource == tag or resource.startswith(f"{tag}.") or operation_id == f"{tag}.list"
 
     def _audit_query_parameters(self, label: str, operation: dict[str, Any]) -> list[str]:
         messages: list[str] = []

@@ -306,7 +306,6 @@ frontend_operations:
   - plus_feeds
   write_tables:
   - plus_feeds
-  request_id_header: true
   request_schema:
     name: ForumCreateFeedRequest
     type: object
@@ -374,7 +373,6 @@ frontend_operations:
   write_tables:
   - plus_content_vote
   - plus_feeds
-  request_id_header: true
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -391,7 +389,6 @@ frontend_operations:
   write_tables:
   - plus_content_vote
   - plus_feeds
-  request_id_header: true
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -408,7 +405,6 @@ frontend_operations:
   write_tables:
   - plus_favorite
   - plus_feeds
-  request_id_header: true
   request_body_required: false
   query_parameters:
   - name: folder_id
@@ -431,7 +427,6 @@ frontend_operations:
   write_tables:
   - plus_favorite
   - plus_feeds
-  request_id_header: true
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -446,7 +441,6 @@ frontend_operations:
   - plus_feeds
   write_tables:
   - plus_feeds
-  request_id_header: true
   request_body_required: false
   response_schema: *id001
 - route: /forum

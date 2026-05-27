@@ -595,7 +595,7 @@ async fn authorized_request(
                 .method(method)
                 .uri(uri)
                 .header("authorization", authorization)
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .header("content-type", "application/json")
                 .body(Body::from(body))
                 .unwrap(),

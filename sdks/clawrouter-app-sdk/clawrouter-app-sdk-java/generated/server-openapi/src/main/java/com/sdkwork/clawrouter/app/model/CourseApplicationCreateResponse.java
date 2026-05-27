@@ -18,7 +18,7 @@ public class CourseApplicationCreateResponse {
     public Integer getApplicationId() {
         return this.applicationId;
     }
-    
+
     public void setApplicationId(Integer applicationId) {
         this.applicationId = applicationId;
     }
@@ -26,7 +26,7 @@ public class CourseApplicationCreateResponse {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -34,7 +34,7 @@ public class CourseApplicationCreateResponse {
     public String getContactEmail() {
         return this.contactEmail;
     }
-    
+
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
@@ -42,7 +42,7 @@ public class CourseApplicationCreateResponse {
     public String getContactName() {
         return this.contactName;
     }
-    
+
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
@@ -50,7 +50,7 @@ public class CourseApplicationCreateResponse {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -58,7 +58,7 @@ public class CourseApplicationCreateResponse {
     public String getExternalBvid() {
         return this.externalBvid;
     }
-    
+
     public void setExternalBvid(String externalBvid) {
         this.externalBvid = externalBvid;
     }
@@ -66,7 +66,7 @@ public class CourseApplicationCreateResponse {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -74,7 +74,7 @@ public class CourseApplicationCreateResponse {
     public String getSourceProvider() {
         return this.sourceProvider;
     }
-    
+
     public void setSourceProvider(String sourceProvider) {
         this.sourceProvider = sourceProvider;
     }
@@ -82,7 +82,7 @@ public class CourseApplicationCreateResponse {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -90,7 +90,7 @@ public class CourseApplicationCreateResponse {
     public String getSubmittedAt() {
         return this.submittedAt;
     }
-    
+
     public void setSubmittedAt(String submittedAt) {
         this.submittedAt = submittedAt;
     }
@@ -98,7 +98,7 @@ public class CourseApplicationCreateResponse {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -106,7 +106,7 @@ public class CourseApplicationCreateResponse {
     public String getVideoUrl() {
         return this.videoUrl;
     }
-    
+
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
     }

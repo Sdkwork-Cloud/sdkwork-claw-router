@@ -31,7 +31,7 @@ describe("sdkwork-offer-pc-react page", () => {
           claimableCoupons: 0,
           currentLevelName: "Guest",
           isAuthenticated: false,
-          vipRemainingDays: null,
+          membershipRemainingDays: null,
         },
       }),
       getDashboard: vi.fn().mockResolvedValue({
@@ -98,7 +98,7 @@ describe("sdkwork-offer-pc-react page", () => {
           claimableCoupons: 1,
           currentLevelName: "Pro",
           isAuthenticated: true,
-          vipRemainingDays: 18,
+          membershipRemainingDays: 18,
         },
       }),
     };
@@ -163,7 +163,7 @@ describe("sdkwork-offer-pc-react page", () => {
           claimableCoupons: 0,
           currentLevelName: "Guest",
           isAuthenticated: false,
-          vipRemainingDays: null,
+          membershipRemainingDays: null,
         },
       }),
       getDashboard: vi.fn().mockResolvedValue({
@@ -214,7 +214,7 @@ describe("sdkwork-offer-pc-react page", () => {
           claimableCoupons: 1,
           currentLevelName: "Pro",
           isAuthenticated: true,
-          vipRemainingDays: 18,
+          membershipRemainingDays: 18,
         },
       }),
     };

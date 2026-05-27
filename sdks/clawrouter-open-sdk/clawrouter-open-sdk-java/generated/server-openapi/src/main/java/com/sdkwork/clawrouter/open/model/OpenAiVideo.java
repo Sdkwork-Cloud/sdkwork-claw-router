@@ -19,7 +19,7 @@ public class OpenAiVideo {
     public Integer getCompletedAt() {
         return this.completedAt;
     }
-    
+
     public void setCompletedAt(Integer completedAt) {
         this.completedAt = completedAt;
     }
@@ -27,7 +27,7 @@ public class OpenAiVideo {
     public String getContentUrl() {
         return this.contentUrl;
     }
-    
+
     public void setContentUrl(String contentUrl) {
         this.contentUrl = contentUrl;
     }
@@ -35,7 +35,7 @@ public class OpenAiVideo {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -43,7 +43,7 @@ public class OpenAiVideo {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,7 +51,7 @@ public class OpenAiVideo {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -59,7 +59,7 @@ public class OpenAiVideo {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -67,7 +67,7 @@ public class OpenAiVideo {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -75,7 +75,7 @@ public class OpenAiVideo {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -83,7 +83,7 @@ public class OpenAiVideo {
     public Integer getSeconds() {
         return this.seconds;
     }
-    
+
     public void setSeconds(Integer seconds) {
         this.seconds = seconds;
     }
@@ -91,7 +91,7 @@ public class OpenAiVideo {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -99,7 +99,7 @@ public class OpenAiVideo {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -107,7 +107,7 @@ public class OpenAiVideo {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

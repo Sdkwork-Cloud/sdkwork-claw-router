@@ -34,7 +34,7 @@ Choose exactly one mode for the same client instance.
 config = SdkConfig(base_url="http://localhost:18082")
 client = SdkworkAppClient(config)
 client.set_api_key("your-api-key")
-# Sends: Sdkwork-Access-Token: <apiKey>
+# Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -46,7 +46,7 @@ client.set_auth_token("your-auth-token")
 client.set_access_token("your-access-token")
 # Sends:
 # Authorization: Bearer <authToken>
-# Sdkwork-Access-Token: <accessToken>
+# Access-Token: <accessToken>
 ```
 
 > Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
@@ -66,26 +66,36 @@ client.set_header('X-Custom-Header', 'value')
 
 ## API Modules
 
+- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
-- `client.billing` - billing API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
+- `client.open_platform` - open_platform API
 - `client.platform` - platform API
-- `client.runtime` - runtime API
 - `client.system` - system API
+- `client.runtime` - runtime API
+- `client.sdk_reference` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```python
+# Accounts Current Summary Retrieve
+result = client.commerce.accounts.current.summary.retrieve()
+print(result)
+```
 
 ### agents
 
 ```python
-# List user agents
+# List Playground agent definitions
 params = {
     'page': 1,
     'page_size': 2,
@@ -108,14 +118,6 @@ print(result)
 ```python
 # Retrieve current IAM session
 result = client.auth.sessions.current.retrieve()
-print(result)
-```
-
-### billing
-
-```python
-# Retrieve account points
-result = client.billing.account.points.retrieve()
 print(result)
 ```
 
@@ -181,11 +183,30 @@ result = client.notification.list_notifications(params)
 print(result)
 ```
 
+### open_platform
+
+```python
+# Create open platform QR auth session
+body = {
+    'purpose': 'login',
+}
+result = client.open_platform.qr_auth.sessions.create(body)
+print(result)
+```
+
 ### platform
 
 ```python
 # Get categories
 result = client.platform.apps.store.categories.list()
+print(result)
+```
+
+### system
+
+```python
+# Retrieve public IAM verification policy
+result = client.system.iam.verification_policy.retrieve()
 print(result)
 ```
 
@@ -206,15 +227,31 @@ result = client.runtime.invocations.list(params)
 print(result)
 ```
 
-### system
+### sdk_reference
 
 ```python
-# Retrieve public site runtime branding settings
-params = {
-    'tenant_code': 'tenant_code',
-    'organization_code': 'organization_code',
+# Generate SDK archive
+body = {
+    'config': {
+        'apiPrefix': 'apiPrefix',
+        'apiSpecPath': 'apiSpecPath',
+        'author': 'author',
+        'baseUrl': 'baseUrl',
+        'description': 'description',
+        'language': 'language',
+        'license': 'license',
+        'name': 'name',
+        'outputPath': 'outputPath',
+        'packageName': 'packageName',
+        'sdkType': 'app',
+        'version': 'version',
+    },
+    'language': 'language',
+    'spec': {
+        'value': 'value',
+    },
 }
-result = client.system.site.runtime.retrieve(params)
+result = client.sdk_reference.archives.create(body)
 print(result)
 ```
 

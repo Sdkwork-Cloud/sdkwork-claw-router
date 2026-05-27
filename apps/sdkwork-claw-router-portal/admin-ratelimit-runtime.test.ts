@@ -390,10 +390,9 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
         rpm: 1200,
         blockDuration: "30m",
       });
-      assert.equal(captured[1].headers["x-request-id"]?.startsWith("admin-ip-limit-create-"), true);
-      assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-token-limit-create-"), true);
-      assert.equal(captured[5].headers["x-request-id"]?.startsWith("admin-model-limit-create-"), true);
-      assert.equal(captured[7].headers["x-request-id"]?.startsWith("admin-firewall-create-"), true);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
     },
   );
 });

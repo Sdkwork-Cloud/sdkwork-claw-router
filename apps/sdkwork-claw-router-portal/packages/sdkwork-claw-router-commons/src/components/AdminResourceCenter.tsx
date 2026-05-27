@@ -9,6 +9,7 @@ export type AdminResourceColumn = {
   key: string;
   label: string;
   align?: 'right';
+  format?: (value: unknown, record: AdminResourceRecord) => string;
 };
 
 export type AdminResourceSection<TSectionId extends string = string, TGroup extends string = string> = {
@@ -21,10 +22,12 @@ export type AdminResourceSection<TSectionId extends string = string, TGroup exte
   searchFields: string[];
   group: TGroup;
   action?: AdminResourceAction;
+  actions?: AdminResourceAction[];
 };
 
 export type AdminResourceAction = {
   label: string;
+  icon?: React.ReactNode;
   onClick: () => void;
 };
 
@@ -35,9 +38,6 @@ type AdminResourceState = {
 };
 
 export interface AdminResourceCenterProps<TSectionId extends string = string, TGroup extends string = string> {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
   sections: AdminResourceSection<TSectionId, TGroup>[];
   activeSectionId?: TSectionId;
   initialSectionId?: TSectionId;
@@ -46,7 +46,10 @@ export interface AdminResourceCenterProps<TSectionId extends string = string, TG
   loadingTitle?: string;
   emptyTitle?: string;
   emptyDescription?: string;
+  searchPlaceholder?: string;
+  reloadLabel?: string;
   tableViewportDataAttribute?: string;
+  refreshKey?: unknown;
 }
 
 const INITIAL_STATE: AdminResourceState = {
@@ -57,17 +60,17 @@ const INITIAL_STATE: AdminResourceState = {
 
 export function AdminResourceCenter<TSectionId extends string = string, TGroup extends string = string>({
   activeSectionId,
-  description,
   emptyDescription = 'Adjust the search query or reload the current section.',
   emptyTitle = 'No records',
   errorTitle = 'Data could not be loaded',
-  icon,
   initialSectionId,
   loadingTitle = 'Loading records...',
+  reloadLabel = 'Reload',
+  refreshKey,
+  searchPlaceholder = 'Search records',
   sections,
   showSectionNavigation = true,
   tableViewportDataAttribute,
-  title,
 }: AdminResourceCenterProps<TSectionId, TGroup>) {
   const [uncontrolledActiveTab, setUncontrolledActiveTab] = useState<TSectionId>(
     activeSectionId ?? initialSectionId ?? sections[0].id,
@@ -80,6 +83,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
   const activeSection = sections.find((section) => section.id === requestedActiveTab) ?? sections[0];
   const activeTab = activeSection.id;
   const activeState = stateByTab[activeTab] ?? INITIAL_STATE;
+  const activeActions = activeSection.actions ?? (activeSection.action ? [activeSection.action] : []);
 
   const loadSection = useCallback(async (section: AdminResourceSection<TSectionId, TGroup>, isActive: () => boolean = () => true) => {
     setStateByTab((current) => ({
@@ -115,7 +119,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
     return () => {
       active = false;
     };
-  }, [activeSection, loadSection]);
+  }, [activeSection, loadSection, refreshKey]);
 
   useEffect(() => {
     setSearch('');
@@ -142,14 +146,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
     <div className="flex h-full min-h-0 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
       {showSectionNavigation && (
         <aside className="flex w-64 shrink-0 flex-col border-r border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#121212]">
-          <div className="border-b border-slate-200 p-5 dark:border-white/10">
-            <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
-              {icon}
-              {title}
-            </h2>
-            <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">{description}</p>
-          </div>
-          <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
+          <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-3 py-4 custom-scrollbar">
             {groupedSections.map((group) => (
               <div className="space-y-1" key={group.name}>
                 <div className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase text-slate-400 dark:text-slate-500">
@@ -180,38 +177,36 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
       )}
 
       <main className="flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1a1a1a]">
-        <div className="flex shrink-0 flex-col gap-4 border-b border-slate-200 p-5 dark:border-white/10 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{activeSection.title}</h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{activeSection.description}</p>
-          </div>
+        <div className="flex shrink-0 flex-col gap-3 border-b border-slate-200 p-3 dark:border-white/10 md:flex-row md:items-center md:justify-end">
           <div className="flex w-full gap-3 md:w-auto">
             <div className="relative min-w-0 flex-1 md:w-72">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
               <input
                 className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
                 onChange={(event) => setSearch(event.target.value)}
-                placeholder="Search current records"
+                placeholder={searchPlaceholder}
                 type="text"
                 value={search}
               />
             </div>
-            {activeSection.action && (
+            {activeActions.map((action, index) => (
               <button
                 className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 disabled:opacity-60"
-                onClick={activeSection.action.onClick}
+                key={`${action.label}-${index}`}
+                onClick={action.onClick}
                 type="button"
               >
-                {activeSection.action.label}
+                {action.icon}
+                {action.label}
               </button>
-            )}
+            ))}
             <button
               className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
               onClick={() => void loadSection(activeSection)}
               type="button"
             >
               <RefreshCw className="h-4 w-4" />
-              Reload
+              {reloadLabel}
             </button>
           </div>
         </div>
@@ -225,7 +220,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
             title={errorTitle}
           />
         ) : (
-          <AdminTableShell className="m-5 mt-4 rounded-xl" viewportProps={viewportProps}>
+          <AdminTableShell className="m-5 mt-4 rounded-xl" viewportClassName="custom-scrollbar" viewportProps={viewportProps}>
             <table className="w-full min-w-[760px] text-left text-sm text-slate-600 dark:text-slate-400">
               <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
                 <tr>
@@ -251,15 +246,18 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
                   />
                 ) : visibleRecords.map((record, index) => (
                   <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5" key={adminResourceRecordKey(record, index)}>
-                    {activeSection.columns.map((column) => (
-                      <td
-                        className={`max-w-[280px] truncate px-6 py-4 ${column.align === 'right' ? 'text-right tabular-nums' : ''}`}
-                        key={column.key}
-                        title={formatAdminResourceCell(record[column.key])}
-                      >
-                        {formatAdminResourceCell(record[column.key])}
-                      </td>
-                    ))}
+                    {activeSection.columns.map((column) => {
+                      const cellValue = formatAdminResourceColumnCell(column, record);
+                      return (
+                        <td
+                          className={`max-w-[280px] truncate px-6 py-4 ${column.align === 'right' ? 'text-right tabular-nums' : ''}`}
+                          key={column.key}
+                          title={cellValue}
+                        >
+                          {cellValue}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
@@ -326,6 +324,13 @@ export function isAdminResourceRecord(value: unknown): value is AdminResourceRec
 function adminResourceRecordKey(record: AdminResourceRecord, index: number): string {
   const id = record.id ?? record.uuid ?? record.skuId ?? record.orderId;
   return typeof id === 'string' && id ? id : String(index);
+}
+
+function formatAdminResourceColumnCell(column: AdminResourceColumn, record: AdminResourceRecord): string {
+  if (column.format) {
+    return column.format(record[column.key], record);
+  }
+  return formatAdminResourceCell(record[column.key]);
 }
 
 function formatAdminResourceCell(value: unknown): string {

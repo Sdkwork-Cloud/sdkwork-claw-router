@@ -7,7 +7,7 @@ public class AdminChannelMutationResponse {
     public AdminChannelItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminChannelItem item) {
         this.item = item;
     }

@@ -243,7 +243,6 @@ frontend_operations:
   sdk_domain: system
   summary: Update IAM auth runtime settings
   description: Updates configurable login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime.
-  request_id_header: true
   read_sources:
   - ops_config_snapshot
   write_tables:
@@ -442,7 +441,6 @@ frontend_operations:
   sdk_domain: system
   summary: Update site branding and deployment personalization settings
   description: Updates tenant-scoped runtime site identity, theme, SEO, support, and legal link settings used by the portal shell.
-  request_id_header: true
   read_sources:
   - ops_config_snapshot
   write_tables:
@@ -1779,3 +1777,224 @@ frontend_operations:
         format: int64
         minimum: 1
         maximum: 200
+- route: /admin/service-nodes
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  operation: fetchNodes
+  operation_id: serviceNodes.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/service_nodes
+  sdk_domain: system
+  summary: List service nodes
+  description: Lists distributed relay service nodes configured on ops_gateway_instance, including access domain, masked IP, operator remark, config status, health status, and update time.
+  read_sources:
+  - ops_gateway_instance
+  query_parameters:
+  - name: q
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      enum:
+      - enabled
+      - disabled
+  response_schema:
+    name: AdminServiceNodesResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 500
+        items: &adminServiceNodeItem
+          name: AdminServiceNodeItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - name
+          - domain
+          - ip
+          - remark
+          - status
+          - healthStatus
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            domain:
+              type: string
+              maxLength: 255
+            ip:
+              type: string
+              minLength: 1
+              maxLength: 64
+            remark:
+              type: string
+              maxLength: 512
+            status:
+              type: string
+              enum:
+              - enabled
+              - disabled
+            healthStatus:
+              type: string
+              enum:
+              - online
+              - warning
+              - offline
+              - unknown
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /admin/service-nodes
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  operation: createNode
+  operation_id: serviceNodes.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/system/service_nodes
+  sdk_domain: system
+  summary: Create service node
+  description: Creates a distributed relay service-node configuration by writing ops_gateway_instance and storing domain and remark in metadata.
+  read_sources:
+  - ops_gateway_instance
+  write_tables:
+  - ops_gateway_instance
+  request_schema:
+    name: AdminServiceNodeCreateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - name
+    - domain
+    - ip
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      domain:
+        type: string
+        minLength: 1
+        maxLength: 255
+      ip:
+        type: string
+        minLength: 1
+        maxLength: 64
+      remark:
+        type: string
+        maxLength: 512
+      status:
+        type: string
+        enum:
+        - enabled
+        - disabled
+  response_schema: &adminServiceNodeMutationResponse
+    name: AdminServiceNodeMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *adminServiceNodeItem
+- route: /admin/service-nodes
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  operation: updateNode
+  operation_id: serviceNodes.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/system/service_nodes/{nodeId}
+  sdk_domain: system
+  summary: Update service node
+  description: Updates service-node name, domain, masked IP, and remark while preserving runtime heartbeat data.
+  read_sources:
+  - ops_gateway_instance
+  write_tables:
+  - ops_gateway_instance
+  request_schema:
+    name: AdminServiceNodeUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      domain:
+        type: string
+        minLength: 1
+        maxLength: 255
+      ip:
+        type: string
+        minLength: 1
+        maxLength: 64
+      remark:
+        type: string
+        maxLength: 512
+  response_schema: *adminServiceNodeMutationResponse
+- route: /admin/service-nodes
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  operation: updateNodeStatus
+  operation_id: serviceNodes.status.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/system/service_nodes/{nodeId}/status
+  sdk_domain: system
+  summary: Update service node status
+  description: Enables or disables a distributed relay service node without deleting its historical heartbeat and runtime records.
+  read_sources:
+  - ops_gateway_instance
+  write_tables:
+  - ops_gateway_instance
+  request_schema:
+    name: AdminServiceNodeStatusUpdateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - status
+    properties:
+      status:
+        type: string
+        enum:
+        - enabled
+        - disabled
+  response_schema: *adminServiceNodeMutationResponse
+- route: /admin/service-nodes
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  operation: deleteNode
+  operation_id: serviceNodes.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/system/service_nodes/{nodeId}
+  sdk_domain: system
+  summary: Delete service node
+  description: Soft-deletes a distributed relay service-node configuration while keeping historical operations and heartbeat data intact.
+  read_sources:
+  - ops_gateway_instance
+  write_tables:
+  - ops_gateway_instance
+  response_schema:
+    name: AdminServiceNodeDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean

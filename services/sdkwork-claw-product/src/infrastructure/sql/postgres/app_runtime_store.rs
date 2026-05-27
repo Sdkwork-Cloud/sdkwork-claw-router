@@ -285,6 +285,122 @@ impl AppRuntimeStore for PostgresAppRuntimeStore {
         })
     }
 
+    fn list_events_after<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+        after_event_no: i64,
+        limit: i64,
+    ) -> AppRuntimeFuture<'a, AppRuntimeEventList> {
+        Box::pin(async move {
+            let invocation = load_invocation_row_by_uuid(&self.pool, subject, &invocation_id)
+                .await?
+                .ok_or_else(|| DomainError::not_found("runtime invocation was not found"))?;
+            let rows = sqlx::query(
+                r#"
+                SELECT
+                    e.*,
+                    i.uuid AS invocation_uuid,
+                    CAST(e.created_at AS TEXT) AS created_at_text
+                FROM ai_runtime_invocation_event e
+                INNER JOIN ai_runtime_invocation i
+                  ON i.id = e.invocation_id
+                 AND i.tenant_id = e.tenant_id
+                 AND i.organization_id = e.organization_id
+                WHERE e.tenant_id = $1
+                  AND e.organization_id = $2
+                  AND e.invocation_id = $3
+                  AND e.user_id = $4
+                  AND e.event_no > $5
+                ORDER BY e.event_no ASC, e.id ASC
+                LIMIT $6
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(integer_cell(&invocation, "id"))
+            .bind(subject.user_id)
+            .bind(after_event_no.max(0))
+            .bind(limit.max(1))
+            .fetch_all(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            rows.into_iter()
+                .map(row_to_event)
+                .collect::<DomainResult<Vec<_>>>()
+                .map(|items| AppRuntimeEventList { items })
+        })
+    }
+
+    fn has_terminal_event<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+    ) -> AppRuntimeFuture<'a, bool> {
+        Box::pin(async move {
+            let exists = sqlx::query_scalar::<_, bool>(
+                r#"
+                SELECT EXISTS(
+                    SELECT 1
+                    FROM ai_runtime_invocation_event e
+                    INNER JOIN ai_runtime_invocation i
+                      ON i.id = e.invocation_id
+                     AND i.tenant_id = e.tenant_id
+                     AND i.organization_id = e.organization_id
+                    WHERE e.tenant_id = $1
+                      AND e.organization_id = $2
+                      AND e.user_id = $3
+                      AND i.uuid = $4
+                      AND e.event_type IN ('runtime.completed', 'runtime.failed', 'runtime.cancelled')
+                    LIMIT 1
+                )
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(&invocation_id)
+            .fetch_one(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            Ok(exists)
+        })
+    }
+
+    fn get_terminal_event<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+    ) -> AppRuntimeFuture<'a, Option<AppRuntimeEventItem>> {
+        Box::pin(async move {
+            let row = sqlx::query(
+                r#"
+                SELECT e.*, i.uuid AS invocation_uuid, CAST(e.created_at AS TEXT) AS created_at_text
+                FROM ai_runtime_invocation_event e
+                INNER JOIN ai_runtime_invocation i
+                  ON i.id = e.invocation_id
+                 AND i.tenant_id = e.tenant_id
+                 AND i.organization_id = e.organization_id
+                WHERE e.tenant_id = $1
+                  AND e.organization_id = $2
+                  AND e.user_id = $3
+                  AND i.uuid = $4
+                  AND e.event_type IN ('runtime.completed', 'runtime.failed', 'runtime.cancelled')
+                ORDER BY e.event_no ASC, e.id ASC
+                LIMIT 1
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(&invocation_id)
+            .fetch_optional(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            row.map(row_to_event).transpose()
+        })
+    }
+
     fn create_event<'a>(
         &'a self,
         command: CreateAppRuntimeEventCommand,
@@ -349,11 +465,25 @@ async fn create_event(
     let mut tx = pool.begin().await.map_err(|error| {
         DomainError::new(format!("failed to begin runtime transaction: {error}"))
     })?;
-    let invocation =
-        load_invocation_row_by_uuid_in_tx(&mut tx, command.subject, &command.invocation_id)
-            .await?
-            .ok_or_else(|| DomainError::not_found("runtime invocation was not found"))?;
+    let invocation = load_invocation_row_by_uuid_for_update_in_tx(
+        &mut tx,
+        command.subject,
+        &command.invocation_id,
+    )
+    .await?
+    .ok_or_else(|| DomainError::not_found("runtime invocation was not found"))?;
     let invocation_pk = integer_cell(&invocation, "id");
+    if is_runtime_terminal_event_type(&command.event_type) {
+        if let Some(row) =
+            load_terminal_event_row_in_tx(&mut tx, command.subject, invocation_pk).await?
+        {
+            let item = row_to_event(row)?;
+            tx.commit().await.map_err(|error| {
+                DomainError::new(format!("failed to commit runtime transaction: {error}"))
+            })?;
+            return Ok(item);
+        }
+    }
     let event_no = next_event_no(&mut tx, command.subject, invocation_pk).await?;
     sqlx::query(
         r#"
@@ -563,6 +693,44 @@ async fn next_event_no(
     Ok(integer_cell(&row, "next_value"))
 }
 
+async fn load_terminal_event_row_in_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AppRuntimeSubject,
+    invocation_pk: i64,
+) -> DomainResult<Option<sqlx::postgres::PgRow>> {
+    sqlx::query(
+        r#"
+        SELECT e.*, i.uuid AS invocation_uuid, CAST(e.created_at AS TEXT) AS created_at_text
+        FROM ai_runtime_invocation_event e
+        INNER JOIN ai_runtime_invocation i
+          ON i.id = e.invocation_id
+         AND i.tenant_id = e.tenant_id
+         AND i.organization_id = e.organization_id
+        WHERE e.tenant_id = $1
+          AND e.organization_id = $2
+          AND e.user_id = $3
+          AND e.invocation_id = $4
+          AND e.event_type IN ('runtime.completed', 'runtime.failed', 'runtime.cancelled')
+        ORDER BY e.event_no ASC, e.id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(invocation_pk)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(sql_error)
+}
+
+fn is_runtime_terminal_event_type(event_type: &str) -> bool {
+    matches!(
+        event_type,
+        "runtime.completed" | "runtime.failed" | "runtime.cancelled"
+    )
+}
+
 async fn load_invocation_row_by_uuid(
     pool: &PgPool,
     subject: AppRuntimeSubject,
@@ -579,12 +747,12 @@ async fn load_invocation_row_by_uuid(
         .map_err(sql_error)
 }
 
-async fn load_invocation_row_by_uuid_in_tx(
+async fn load_invocation_row_by_uuid_for_update_in_tx(
     tx: &mut Transaction<'_, Postgres>,
     subject: AppRuntimeSubject,
     invocation_id: &str,
 ) -> DomainResult<Option<sqlx::postgres::PgRow>> {
-    let sql = invocation_select_sql("AND uuid = $4 LIMIT 1");
+    let sql = invocation_select_sql("AND uuid = $4 LIMIT 1 FOR UPDATE");
     sqlx::query(&sql)
         .bind(subject.tenant_id)
         .bind(subject.organization_id)
@@ -980,7 +1148,7 @@ fn row_to_event(row: sqlx::postgres::PgRow) -> DomainResult<AppRuntimeEventItem>
         event_type: string_cell(&row, "event_type"),
         event_source: string_cell(&row, "event_source"),
         payload_json: json_cell(&row, "payload_json")?,
-        text_delta: optional_string_cell(&row, "text_delta"),
+        text_delta: optional_text_cell(&row, "text_delta"),
         created_at: optional_string_cell(&row, "created_at_text")
             .unwrap_or_else(|| string_cell(&row, "created_at")),
     })
@@ -1038,6 +1206,14 @@ fn optional_string_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<Str
         .flatten()
         .or_else(|| row.try_get::<String, _>(column).ok())
         .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty())
+}
+
+fn optional_text_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<String> {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| row.try_get::<String, _>(column).ok())
         .filter(|value| !value.is_empty())
 }
 

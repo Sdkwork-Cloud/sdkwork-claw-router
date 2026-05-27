@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
+from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsCouponStocksListResult, PromotionsDiscountAllocationsListResult, PromotionsDiscountApplicationsListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, PromotionsOffersManagementListResult, PromotionsUserCouponsManagementListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -242,6 +242,7 @@ class SystemApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.promotions = SystemPromotionsApi(client)
         self.analytics = SystemAnalyticsApi(client)
         self.auth = SystemAuthApi(client)
         self.cache = SystemCacheApi(client)
@@ -252,8 +253,209 @@ class SystemApi:
         self.monitor = SystemMonitorApi(client)
         self.rate_limits = SystemRateLimitsApi(client)
         self.records = SystemRecordsApi(client)
+        self.service_nodes = SystemServiceNodesApi(client)
         self.site = SystemSiteApi(client)
 
+
+class SystemPromotionsApi:
+    """system system.promotions API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.budget_ledger_entries = SystemPromotionsBudgetLedgerEntriesApi(client)
+        self.codes = SystemPromotionsCodesApi(client)
+        self.coupon_ledger_entries = SystemPromotionsCouponLedgerEntriesApi(client)
+        self.coupon_stocks = SystemPromotionsCouponStocksApi(client)
+        self.discount_allocations = SystemPromotionsDiscountAllocationsApi(client)
+        self.discount_applications = SystemPromotionsDiscountApplicationsApi(client)
+        self.events = SystemPromotionsEventsApi(client)
+        self.external_bindings = SystemPromotionsExternalBindingsApi(client)
+        self.offers = SystemPromotionsOffersApi(client)
+        self.user_coupons = SystemPromotionsUserCouponsApi(client)
+
+
+class SystemPromotionsBudgetLedgerEntriesApi:
+    """system system.promotions.budget_ledger_entries API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, budget_account_id: Optional[str] = None) -> PromotionsBudgetLedgerEntriesListResult:
+        """Promotion Budget Ledger Entries List"""
+        query = build_query_string([
+            {'name': 'budget_account_id', 'value': budget_account_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/budget_ledger_entries", query))
+
+class SystemPromotionsCodesApi:
+    """system system.promotions.codes API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.redemptions = SystemPromotionsCodesRedemptionsApi(client)
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> PromotionsCodesListResult:
+        """Promotion Coupon Codes List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/codes", query))
+
+class SystemPromotionsCodesRedemptionsApi:
+    """system system.promotions.codes.redemptions API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, code_status: Optional[str] = None) -> PromotionsCodesRedemptionsListResult:
+        """Promotion Coupon Code Redemptions List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'code_status', 'value': code_status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/codes/redemptions", query))
+
+class SystemPromotionsCouponLedgerEntriesApi:
+    """system system.promotions.coupon_ledger_entries API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, stock_id: Optional[str] = None) -> PromotionsCouponLedgerEntriesListResult:
+        """Promotion Coupon Ledger Entries List"""
+        query = build_query_string([
+            {'name': 'stock_id', 'value': stock_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/coupon_ledger_entries", query))
+
+class SystemPromotionsCouponStocksApi:
+    """system system.promotions.coupon_stocks API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> PromotionsCouponStocksListResult:
+        """Promotion Coupon Stocks List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/coupon_stocks", query))
+
+class SystemPromotionsDiscountAllocationsApi:
+    """system system.promotions.discount_allocations API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, application_id: Optional[str] = None) -> PromotionsDiscountAllocationsListResult:
+        """Promotion Discount Allocations List"""
+        query = build_query_string([
+            {'name': 'application_id', 'value': application_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/discount_allocations", query))
+
+class SystemPromotionsDiscountApplicationsApi:
+    """system system.promotions.discount_applications API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> PromotionsDiscountApplicationsListResult:
+        """Promotion Discount Applications List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/discount_applications", query))
+
+class SystemPromotionsEventsApi:
+    """system system.promotions.events API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, status: Optional[str] = None) -> PromotionsEventsListResult:
+        """Promotion Events List"""
+        query = build_query_string([
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/events", query))
+
+class SystemPromotionsExternalBindingsApi:
+    """system system.promotions.external_bindings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, platform: Optional[str] = None) -> PromotionsExternalBindingsListResult:
+        """Promotion External Bindings List"""
+        query = build_query_string([
+            {'name': 'platform', 'value': platform, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/external_bindings", query))
+
+class SystemPromotionsOffersApi:
+    """system system.promotions.offers API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.management = SystemPromotionsOffersManagementApi(client)
+
+
+class SystemPromotionsOffersManagementApi:
+    """system system.promotions.offers.management API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> PromotionsOffersManagementListResult:
+        """Promotion Offers List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/offers", query))
+
+class SystemPromotionsUserCouponsApi:
+    """system system.promotions.user_coupons API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.management = SystemPromotionsUserCouponsManagementApi(client)
+
+
+class SystemPromotionsUserCouponsManagementApi:
+    """system system.promotions.user_coupons.management API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> PromotionsUserCouponsManagementListResult:
+        """Promotion User Coupons Management List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/user_coupons", query))
 
 class SystemAnalyticsApi:
     """system system.analytics API client."""
@@ -647,6 +849,45 @@ class SystemRecordsApi:
             {'name': 'model', 'value': model, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/system/records", query))
+
+class SystemServiceNodesApi:
+    """system system.service_nodes API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.status = SystemServiceNodesStatusApi(client)
+
+
+    def list(self, q: Optional[str] = None, status: Optional[str] = None) -> ServiceNodesListResult:
+        """List service nodes"""
+        query = build_query_string([
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/system/service_nodes", query))
+
+    def create(self, body: AdminServiceNodeCreateRequest) -> ServiceNodesCreateResult:
+        """Create service node"""
+        return self._client.post(f"/backend/v3/api/system/service_nodes", json=body)
+
+    def delete(self, node_id: str) -> ServiceNodesDeleteResult:
+        """Delete service node"""
+        return self._client.delete(f"/backend/v3/api/system/service_nodes/{serialize_path_parameter(node_id, {'name': 'nodeId', 'style': 'simple', 'explode': False})}")
+
+    def update(self, node_id: str, body: AdminServiceNodeUpdateRequest) -> ServiceNodesUpdateResult:
+        """Update service node"""
+        return self._client.put(f"/backend/v3/api/system/service_nodes/{serialize_path_parameter(node_id, {'name': 'nodeId', 'style': 'simple', 'explode': False})}", json=body)
+
+class SystemServiceNodesStatusApi:
+    """system system.service_nodes.status API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def update(self, node_id: str, body: AdminServiceNodeStatusUpdateRequest) -> ServiceNodesStatusUpdateResult:
+        """Update service node status"""
+        return self._client.put(f"/backend/v3/api/system/service_nodes/{serialize_path_parameter(node_id, {'name': 'nodeId', 'style': 'simple', 'explode': False})}/status", json=body)
 
 class SystemSiteApi:
     """system system.site API client."""

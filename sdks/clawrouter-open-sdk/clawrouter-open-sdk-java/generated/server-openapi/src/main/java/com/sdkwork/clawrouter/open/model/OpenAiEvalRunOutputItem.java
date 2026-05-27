@@ -17,7 +17,7 @@ public class OpenAiEvalRunOutputItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -25,7 +25,7 @@ public class OpenAiEvalRunOutputItem {
     public String getEvalId() {
         return this.evalId;
     }
-    
+
     public void setEvalId(String evalId) {
         this.evalId = evalId;
     }
@@ -33,7 +33,7 @@ public class OpenAiEvalRunOutputItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -41,7 +41,7 @@ public class OpenAiEvalRunOutputItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -49,7 +49,7 @@ public class OpenAiEvalRunOutputItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -57,7 +57,7 @@ public class OpenAiEvalRunOutputItem {
     public List<String> getResults() {
         return this.results;
     }
-    
+
     public void setResults(List<String> results) {
         this.results = results;
     }
@@ -65,7 +65,7 @@ public class OpenAiEvalRunOutputItem {
     public String getRunId() {
         return this.runId;
     }
-    
+
     public void setRunId(String runId) {
         this.runId = runId;
     }
@@ -73,7 +73,7 @@ public class OpenAiEvalRunOutputItem {
     public String getSample() {
         return this.sample;
     }
-    
+
     public void setSample(String sample) {
         this.sample = sample;
     }
@@ -81,7 +81,7 @@ public class OpenAiEvalRunOutputItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

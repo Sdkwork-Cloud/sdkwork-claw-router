@@ -29,7 +29,7 @@ public class OpsMetricSnapshotRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -37,7 +37,7 @@ public class OpsMetricSnapshotRecord {
     public String getDimensionKey() {
         return this.dimensionKey;
     }
-    
+
     public void setDimensionKey(String dimensionKey) {
         this.dimensionKey = dimensionKey;
     }
@@ -45,7 +45,7 @@ public class OpsMetricSnapshotRecord {
     public String getDimensionValue() {
         return this.dimensionValue;
     }
-    
+
     public void setDimensionValue(String dimensionValue) {
         this.dimensionValue = dimensionValue;
     }
@@ -53,7 +53,7 @@ public class OpsMetricSnapshotRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -61,7 +61,7 @@ public class OpsMetricSnapshotRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -69,7 +69,7 @@ public class OpsMetricSnapshotRecord {
     public String getMetricName() {
         return this.metricName;
     }
-    
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -77,7 +77,7 @@ public class OpsMetricSnapshotRecord {
     public String getMetricPeriod() {
         return this.metricPeriod;
     }
-    
+
     public void setMetricPeriod(String metricPeriod) {
         this.metricPeriod = metricPeriod;
     }
@@ -85,7 +85,7 @@ public class OpsMetricSnapshotRecord {
     public String getMetricScope() {
         return this.metricScope;
     }
-    
+
     public void setMetricScope(String metricScope) {
         this.metricScope = metricScope;
     }
@@ -93,7 +93,7 @@ public class OpsMetricSnapshotRecord {
     public String getMetricUnit() {
         return this.metricUnit;
     }
-    
+
     public void setMetricUnit(String metricUnit) {
         this.metricUnit = metricUnit;
     }
@@ -101,7 +101,7 @@ public class OpsMetricSnapshotRecord {
     public String getMetricValue() {
         return this.metricValue;
     }
-    
+
     public void setMetricValue(String metricValue) {
         this.metricValue = metricValue;
     }
@@ -109,7 +109,7 @@ public class OpsMetricSnapshotRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -117,7 +117,7 @@ public class OpsMetricSnapshotRecord {
     public Map<String, String> getPayload() {
         return this.payload;
     }
-    
+
     public void setPayload(Map<String, String> payload) {
         this.payload = payload;
     }
@@ -125,7 +125,7 @@ public class OpsMetricSnapshotRecord {
     public String getPeriodEnd() {
         return this.periodEnd;
     }
-    
+
     public void setPeriodEnd(String periodEnd) {
         this.periodEnd = periodEnd;
     }
@@ -133,7 +133,7 @@ public class OpsMetricSnapshotRecord {
     public String getPeriodStart() {
         return this.periodStart;
     }
-    
+
     public void setPeriodStart(String periodStart) {
         this.periodStart = periodStart;
     }
@@ -141,7 +141,7 @@ public class OpsMetricSnapshotRecord {
     public String getRebuildVersion() {
         return this.rebuildVersion;
     }
-    
+
     public void setRebuildVersion(String rebuildVersion) {
         this.rebuildVersion = rebuildVersion;
     }
@@ -149,7 +149,7 @@ public class OpsMetricSnapshotRecord {
     public String getSourceId() {
         return this.sourceId;
     }
-    
+
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
@@ -157,7 +157,7 @@ public class OpsMetricSnapshotRecord {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -165,7 +165,7 @@ public class OpsMetricSnapshotRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -173,7 +173,7 @@ public class OpsMetricSnapshotRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -181,7 +181,7 @@ public class OpsMetricSnapshotRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -189,7 +189,7 @@ public class OpsMetricSnapshotRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -197,7 +197,7 @@ public class OpsMetricSnapshotRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? CopyableKey { get; set; }
         public string? Created { get; set; }
+        public bool? DefaultForRuntime { get; set; }
         public string? Expires { get; set; }
         public string? Group { get; set; }
         public string? GroupName { get; set; }

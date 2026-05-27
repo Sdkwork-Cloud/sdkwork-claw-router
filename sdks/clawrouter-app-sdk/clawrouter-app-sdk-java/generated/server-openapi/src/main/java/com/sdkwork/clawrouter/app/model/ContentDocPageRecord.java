@@ -30,7 +30,7 @@ public class ContentDocPageRecord {
     public String getContentHash() {
         return this.contentHash;
     }
-    
+
     public void setContentHash(String contentHash) {
         this.contentHash = contentHash;
     }
@@ -38,7 +38,7 @@ public class ContentDocPageRecord {
     public String getContentSource() {
         return this.contentSource;
     }
-    
+
     public void setContentSource(String contentSource) {
         this.contentSource = contentSource;
     }
@@ -46,7 +46,7 @@ public class ContentDocPageRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -54,7 +54,7 @@ public class ContentDocPageRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -62,7 +62,7 @@ public class ContentDocPageRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -70,7 +70,7 @@ public class ContentDocPageRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -78,7 +78,7 @@ public class ContentDocPageRecord {
     public String getDocCode() {
         return this.docCode;
     }
-    
+
     public void setDocCode(String docCode) {
         this.docCode = docCode;
     }
@@ -86,7 +86,7 @@ public class ContentDocPageRecord {
     public String getDocType() {
         return this.docType;
     }
-    
+
     public void setDocType(String docType) {
         this.docType = docType;
     }
@@ -94,7 +94,7 @@ public class ContentDocPageRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -102,7 +102,7 @@ public class ContentDocPageRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -110,7 +110,7 @@ public class ContentDocPageRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -118,7 +118,7 @@ public class ContentDocPageRecord {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -126,7 +126,7 @@ public class ContentDocPageRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -134,7 +134,7 @@ public class ContentDocPageRecord {
     public String getSlug() {
         return this.slug;
     }
-    
+
     public void setSlug(String slug) {
         this.slug = slug;
     }
@@ -142,7 +142,7 @@ public class ContentDocPageRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -150,7 +150,7 @@ public class ContentDocPageRecord {
     public String getSourceRef() {
         return this.sourceRef;
     }
-    
+
     public void setSourceRef(String sourceRef) {
         this.sourceRef = sourceRef;
     }
@@ -158,7 +158,7 @@ public class ContentDocPageRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -166,7 +166,7 @@ public class ContentDocPageRecord {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -174,7 +174,7 @@ public class ContentDocPageRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -182,7 +182,7 @@ public class ContentDocPageRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -190,7 +190,7 @@ public class ContentDocPageRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -198,7 +198,7 @@ public class ContentDocPageRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -206,7 +206,7 @@ public class ContentDocPageRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

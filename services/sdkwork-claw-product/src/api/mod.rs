@@ -12,15 +12,22 @@ mod admin_finance;
 mod admin_firewall_rule;
 mod admin_ip_rate_limit;
 mod admin_marketing;
+mod admin_mcp;
+mod admin_messaging;
 mod admin_model_catalog;
 mod admin_model_command;
 mod admin_model_rate_limit;
 mod admin_monitor;
 mod admin_open_platform;
+mod admin_prompts;
 mod admin_provider_secret;
 mod admin_record;
+mod admin_service_node;
+mod admin_service_provider;
 mod admin_skill;
+mod admin_storage;
 mod admin_system;
+mod admin_transaction_center;
 mod admin_user;
 mod app_agent_runs;
 mod app_agent_sessions;
@@ -59,8 +66,10 @@ mod openai_models;
 mod openai_responses;
 mod openai_runtime;
 mod openai_usage;
+mod request_id;
 mod response;
 mod site_settings;
+mod subject;
 
 pub use admin_access_group::admin_access_group_router_with_store;
 pub use admin_agents::admin_agent_router_with_store;
@@ -77,17 +86,24 @@ pub use admin_finance::admin_finance_router_with_store;
 pub use admin_firewall_rule::admin_firewall_rule_router_with_store;
 pub use admin_ip_rate_limit::admin_ip_rate_limit_router_with_store;
 pub use admin_marketing::admin_marketing_router_with_store;
+pub use admin_mcp::admin_mcp_router_with_store;
+pub use admin_messaging::admin_messaging_router_with_store;
 pub use admin_model_catalog::admin_model_catalog_router;
 pub use admin_model_catalog::admin_model_catalog_router_with_api_key_hasher;
 pub use admin_model_command::admin_model_management_router_with_store;
 pub use admin_model_rate_limit::admin_model_rate_limit_router_with_store;
 pub use admin_monitor::admin_monitor_router_with_read_store;
 pub use admin_open_platform::admin_open_platform_router_with_store;
+pub use admin_prompts::admin_prompt_router_with_store;
 pub use admin_provider_secret::admin_provider_secret_router_with_store;
 pub use admin_record::admin_record_router_with_store;
+pub use admin_service_node::admin_service_node_router_with_store;
+pub use admin_service_provider::admin_service_provider_router_with_store;
 pub use admin_skill::admin_skill_router_with_store;
 pub use admin_skill::admin_skill_router_with_store_and_json_body_limit;
+pub use admin_storage::admin_storage_router_with_store;
 pub use admin_system::admin_system_router_with_installer;
+pub use admin_transaction_center::admin_transaction_center_router_with_store;
 pub use admin_user::admin_user_router_with_store;
 pub use app_agent_runs::app_agent_run_router;
 pub use app_agent_runs::app_agent_run_router_with_store;
@@ -103,6 +119,7 @@ pub use app_auth::{
     app_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_auth_router_with_store_auth_settings_store_cache_and_verification_sender,
     app_auth_router_with_store_auth_settings_store_open_platform_store_cache_and_verification_sender,
+    app_public_auth_router_with_store_auth_settings_store_cache_and_verification_sender,
     app_sessions_router_with_store, app_sessions_router_with_store_and_verification_sender,
 };
 pub use app_chat::app_chat_router;
@@ -146,6 +163,12 @@ pub use app_routing_strategy::app_routing_strategy_router_with_store;
 pub use app_runtime::app_runtime_router;
 pub use app_runtime::app_runtime_router_with_store;
 pub use app_runtime::app_runtime_router_with_store_and_chat_stream_relay;
+pub use app_runtime::app_runtime_router_with_store_and_chat_stream_relay_and_runtime_stream_bus;
+pub use app_runtime::app_runtime_router_with_store_and_gateway_client;
+pub use app_runtime::app_runtime_router_with_store_and_gateway_client_and_runtime_stream_bus;
+pub use app_runtime::app_runtime_router_with_store_and_gateway_client_chat_stream_relay;
+pub use app_runtime::app_runtime_router_with_store_and_gateway_client_chat_stream_relay_and_runtime_stream_bus;
+pub use app_runtime::app_runtime_router_with_store_and_runtime_stream_bus;
 pub use app_sdk_reference::{
     app_sdk_reference_router, app_sdk_reference_router_with_json_body_limit,
 };
@@ -207,6 +230,7 @@ pub use openai_responses::openai_responses_router_with_relay_plugins_and_failure
 pub use openai_responses::openai_responses_router_with_relay_usage_recorder_plugins_and_failure_strategy;
 pub use openai_responses::openai_responses_router_with_relay_usage_recorder_plugins_and_runtime_config;
 pub use openai_runtime::{OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig};
+pub use openai_usage::OpenAiUsageRecorder;
 pub use site_settings::admin_site_settings_router_with_store;
 pub use site_settings::app_site_settings_router;
 pub use site_settings::app_site_settings_router_with_store;

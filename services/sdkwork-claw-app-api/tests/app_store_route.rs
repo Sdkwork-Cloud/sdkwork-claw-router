@@ -215,7 +215,7 @@ fn app_session_request(
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
-        .header("Sdkwork-Access-Token", access_token)
+        .header("Access-Token", access_token)
         .body(body)
         .unwrap()
 }

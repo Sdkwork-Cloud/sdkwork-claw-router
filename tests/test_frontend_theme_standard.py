@@ -133,7 +133,6 @@ class FrontendThemeStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-claw-router-rankings" / "src" / "Rankings.tsx",
             PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "pages" / "Playground.tsx",
             PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "SettlementsView.tsx",
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-providers" / "src" / "ProvidersView.tsx",
         ]
         css_source = (PORTAL_ROOT / "src" / "index.css").read_text(encoding="utf-8")
 

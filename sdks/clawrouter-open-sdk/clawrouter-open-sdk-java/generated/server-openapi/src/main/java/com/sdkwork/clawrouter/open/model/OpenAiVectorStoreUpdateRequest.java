@@ -10,7 +10,7 @@ public class OpenAiVectorStoreUpdateRequest {
     public String getExpiresAfter() {
         return this.expiresAfter;
     }
-    
+
     public void setExpiresAfter(String expiresAfter) {
         this.expiresAfter = expiresAfter;
     }
@@ -18,7 +18,7 @@ public class OpenAiVectorStoreUpdateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -26,7 +26,7 @@ public class OpenAiVectorStoreUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

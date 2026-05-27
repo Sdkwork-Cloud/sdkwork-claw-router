@@ -358,7 +358,7 @@ async fn database_config_router_serves_backend_auth_settings() {
     assert_eq!(json!(["password"]), default_payload["data"]["loginMethods"]);
     assert_eq!(false, default_payload["data"]["oauthLoginEnabled"]);
     assert_eq!(json!([]), default_payload["data"]["oauthProviders"]);
-    assert_eq!(false, default_payload["data"]["qrLoginEnabled"]);
+    assert_eq!(true, default_payload["data"]["qrLoginEnabled"]);
     assert_eq!(
         false,
         default_payload["data"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
@@ -865,7 +865,7 @@ async fn database_config_router_admin_channel_test_runs_real_provider_probe_and_
         Some("Bearer sk-admin-provider-health-probe-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
     assert_eq!("ping", captured[0].body["messages"][0]["content"]);
     drop(captured);
 
@@ -2099,47 +2099,59 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     .await
     .unwrap();
 
-    let coupons_payload = request_json(
+    let offers_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupons", Body::empty()),
+        signed_request("GET", "/backend/v3/api/promotions/offers", Body::empty()),
     )
     .await;
-    assert_eq!("2000", coupons_payload["code"]);
-    assert_eq!(
-        "Welcome credit",
-        coupons_payload["data"]["items"][0]["name"]
-    );
-    assert_eq!("$5.00", coupons_payload["data"]["items"][0]["value"]);
+    assert_eq!("2000", offers_payload["code"]);
+    assert_eq!("Welcome credit", offers_payload["data"]["items"][0]["name"]);
+    assert_eq!("coupon", offers_payload["data"]["items"][0]["offer_type"]);
+    assert!(offers_payload["data"]["items"][0]["offer_no"]
+        .as_str()
+        .unwrap()
+        .starts_with("offer-"));
 
-    let batches_payload = request_json(
+    let stocks_payload = request_json(
         router.clone(),
         signed_request(
             "GET",
-            "/backend/v3/api/billing/coupon_batches",
+            "/backend/v3/api/promotions/coupon_stocks",
             Body::empty(),
         ),
     )
     .await;
-    assert_eq!("Welcome batch", batches_payload["data"]["items"][0]["name"]);
-    assert_eq!(2, batches_payload["data"]["items"][0]["count"]);
+    assert_eq!("Welcome stock", stocks_payload["data"]["items"][0]["name"]);
+    assert_eq!(2, stocks_payload["data"]["items"][0]["total_quantity"]);
 
     let promo_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupon_codes", Body::empty()),
+        signed_request("GET", "/backend/v3/api/promotions/codes", Body::empty()),
     )
     .await;
-    assert_eq!("WELCOME-0002", promo_payload["data"]["items"][0]["code"]);
+    assert_eq!(
+        "0002",
+        promo_payload["data"]["items"][0]["promotion_code_last4"]
+    );
+    assert_eq!(
+        "stock-welcome-001",
+        promo_payload["data"]["items"][0]["stock_id"]
+    );
+    assert!(!promo_payload["data"]["items"][0]
+        .as_object()
+        .unwrap()
+        .contains_key("code_batch_no"));
     assert_eq!("used", promo_payload["data"]["items"][0]["status"]);
     assert_eq!(
         "owner@example.com",
-        promo_payload["data"]["items"][0]["usedBy"]
+        promo_payload["data"]["items"][0]["owner_user_id"]
     );
 
     let invalid_reopen_response = router
         .clone()
         .oneshot(signed_request(
             "PATCH",
-            "/backend/v3/api/billing/coupon_codes/502/status",
+            "/backend/v3/api/promotions/codes/502/status",
             Body::from(r#"{"status":"available"}"#),
         ))
         .await
@@ -2155,11 +2167,11 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     assert!(invalid_reopen_payload["msg"]
         .as_str()
         .unwrap()
-        .contains("used promo code cannot be reopened"));
+        .contains("used promotion code cannot be reopened"));
 
     let promo_after_invalid_update = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupon_codes", Body::empty()),
+        signed_request("GET", "/backend/v3/api/promotions/codes", Body::empty()),
     )
     .await;
     assert_eq!(
@@ -2168,23 +2180,26 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     );
     assert_eq!(
         "owner@example.com",
-        promo_after_invalid_update["data"]["items"][0]["usedBy"]
+        promo_after_invalid_update["data"]["items"][0]["owner_user_id"]
     );
 
     let redemptions_payload = request_json(
         router.clone(),
         signed_request(
             "GET",
-            "/backend/v3/api/billing/users/coupons",
+            "/backend/v3/api/promotions/codes/redemptions",
             Body::empty(),
         ),
     )
     .await;
     assert_eq!(
-        "WELCOME-0002",
-        redemptions_payload["data"]["items"][0]["code"]
+        "0002",
+        redemptions_payload["data"]["items"][0]["submitted_code_suffix"]
     );
-    assert_eq!("$5.00", redemptions_payload["data"]["items"][0]["amount"]);
+    assert_eq!(
+        "succeeded",
+        redemptions_payload["data"]["items"][0]["result_status"]
+    );
 
     let recharges_payload = request_json(
         router.clone(),
@@ -2319,69 +2334,78 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     assert_eq!("Owner", referrals_payload["data"]["items"][0]["inviter"]);
     assert_eq!(3, referrals_payload["data"]["items"][0]["total_invited"]);
 
-    let create_coupon_payload = request_json(
+    let create_offer_payload = request_json(
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/coupons",
-            Body::from(r#"{"name":"Launch credit","type":"amount","value":"$8.50"}"#),
+            "/backend/v3/api/promotions/offers",
+            Body::from(r#"{"name":"Launch credit","discount_type":"amount","value":"$8.50"}"#),
         ),
     )
     .await;
     assert_eq!(
-        "Launch credit",
-        create_coupon_payload["data"]["item"]["name"]
+        "offer-",
+        &create_offer_payload["data"]["item"]["offer_no"]
+            .as_str()
+            .unwrap()[..6]
     );
-    assert_eq!("$8.50", create_coupon_payload["data"]["item"]["value"]);
+    assert_eq!(
+        "Launch credit",
+        create_offer_payload["data"]["item"]["name"]
+    );
+    assert_eq!("coupon", create_offer_payload["data"]["item"]["offer_type"]);
 
-    let new_coupon_id = create_coupon_payload["data"]["item"]["id"]
+    let new_offer_id = create_offer_payload["data"]["item"]["id"]
         .as_str()
         .unwrap()
         .to_owned();
 
-    let update_coupon_payload = request_json(
+    let update_offer_payload = request_json(
         router.clone(),
         signed_request(
-            "PUT",
-            format!("/backend/v3/api/billing/coupons/{new_coupon_id}").as_str(),
+            "PATCH",
+            format!("/backend/v3/api/promotions/offers/{new_offer_id}").as_str(),
             Body::from(
-                r#"{"name":"Launch discount","type":"discount","value":"15%","status":"inactive"}"#,
+                r#"{"name":"Launch discount","discount_type":"discount","value":"15%","status":"inactive"}"#,
             ),
         ),
     )
     .await;
     assert_eq!(
-        new_coupon_id,
-        update_coupon_payload["data"]["item"]["id"]
-            .as_str()
-            .unwrap()
+        new_offer_id,
+        update_offer_payload["data"]["item"]["id"].as_str().unwrap()
     );
     assert_eq!(
         "Launch discount",
-        update_coupon_payload["data"]["item"]["name"]
+        update_offer_payload["data"]["item"]["name"]
     );
-    assert_eq!("discount", update_coupon_payload["data"]["item"]["type"]);
-    assert_eq!("15.00%", update_coupon_payload["data"]["item"]["value"]);
-    assert_eq!("inactive", update_coupon_payload["data"]["item"]["status"]);
+    assert_eq!("coupon", update_offer_payload["data"]["item"]["offer_type"]);
+    assert_eq!("inactive", update_offer_payload["data"]["item"]["status"]);
 
     let generate_payload = request_json(
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/coupon_batches",
+            "/backend/v3/api/promotions/coupon_stocks",
             Body::from(format!(
-                r#"{{"couponId":"{new_coupon_id}","name":"Launch batch","count":2,"prefix":"LAUNCH"}}"#
+                r#"{{"offer_id":"{new_offer_id}","name":"Launch stock","total_quantity":2,"code_prefix":"LAUNCH"}}"#
             )),
         ),
     )
     .await;
-    assert_eq!("Launch batch", generate_payload["data"]["batch"]["name"]);
+    assert_eq!("Launch stock", generate_payload["data"]["item"]["name"]);
     assert_eq!(
         2,
         generate_payload["data"]["codes"].as_array().unwrap().len()
     );
-    assert_eq!("LAUNCH-0001", generate_payload["data"]["codes"][0]["code"]);
-    assert_eq!("LAUNCH-0002", generate_payload["data"]["codes"][1]["code"]);
+    assert_eq!(
+        "0001",
+        generate_payload["data"]["codes"][0]["promotion_code_last4"]
+    );
+    assert_eq!(
+        "0002",
+        generate_payload["data"]["codes"][1]["promotion_code_last4"]
+    );
 
     let create_recharge_package_payload = request_json(
         router.clone(),
@@ -2440,33 +2464,33 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/coupon_batches",
+            "/backend/v3/api/promotions/coupon_stocks",
             Body::from(format!(
-                r#"{{"couponId":"{new_coupon_id}","name":"Launch batch two","count":2,"prefix":"LAUNCH"}}"#
+                r#"{{"offer_id":"{new_offer_id}","name":"Launch stock two","total_quantity":2,"code_prefix":"LAUNCH"}}"#
             )),
         ),
     )
     .await;
     assert_eq!(
-        "Launch batch two",
-        second_generate_payload["data"]["batch"]["name"]
+        "Launch stock two",
+        second_generate_payload["data"]["item"]["name"]
     );
     assert_eq!(
-        "LAUNCH-0003",
-        second_generate_payload["data"]["codes"][0]["code"]
+        "0003",
+        second_generate_payload["data"]["codes"][0]["promotion_code_last4"]
     );
     assert_eq!(
-        "LAUNCH-0004",
-        second_generate_payload["data"]["codes"][1]["code"]
+        "0004",
+        second_generate_payload["data"]["codes"][1]["promotion_code_last4"]
     );
 
     let promo_after_generation_payload = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/coupon_codes", Body::empty()),
+        signed_request("GET", "/backend/v3/api/promotions/codes", Body::empty()),
     )
     .await;
-    let first_batch_id = generate_payload["data"]["batch"]["id"].as_str().unwrap();
-    let second_batch_id = second_generate_payload["data"]["batch"]["id"]
+    let first_stock_id = generate_payload["data"]["item"]["id"].as_str().unwrap();
+    let second_stock_id = second_generate_payload["data"]["item"]["id"]
         .as_str()
         .unwrap();
     let promo_after_generation_items = promo_after_generation_payload["data"]["items"]
@@ -2476,41 +2500,43 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         .as_array()
         .unwrap()
         .iter()
-        .filter_map(|item| item["code"].as_str())
-        .filter(|code| code.starts_with("LAUNCH-"))
+        .filter(|item| {
+            let stock_id = item["stock_id"].as_str();
+            stock_id == Some(first_stock_id) || stock_id == Some(second_stock_id)
+        })
+        .filter_map(|item| item["promotion_code_last4"].as_str())
         .collect();
     let unique_launch_codes: std::collections::BTreeSet<&str> =
         generated_launch_codes.iter().copied().collect();
     assert_eq!(generated_launch_codes.len(), unique_launch_codes.len());
-    assert_eq!(
-        vec!["LAUNCH-0004", "LAUNCH-0003", "LAUNCH-0002", "LAUNCH-0001"],
-        generated_launch_codes
-    );
-    for (code, expected_batch_id) in [
-        ("LAUNCH-0001", first_batch_id),
-        ("LAUNCH-0002", first_batch_id),
-        ("LAUNCH-0003", second_batch_id),
-        ("LAUNCH-0004", second_batch_id),
+    assert_eq!(vec!["0004", "0003", "0002", "0001"], generated_launch_codes);
+    for (code_suffix, expected_stock_id) in [
+        ("0001", first_stock_id),
+        ("0002", first_stock_id),
+        ("0003", second_stock_id),
+        ("0004", second_stock_id),
     ] {
         let item = promo_after_generation_items
             .iter()
-            .find(|item| item["code"] == code)
+            .find(|item| item["promotion_code_last4"] == code_suffix)
             .unwrap();
-        assert_eq!(expected_batch_id, item["batchId"]);
+        assert_eq!(expected_stock_id, item["stock_id"]);
     }
 
     let other_subject = trusted_request_subject(11, 21, 31);
-    let other_coupon_payload = request_json(
+    let other_offer_payload = request_json(
         router.clone(),
         signed_request_for_subject(
             "POST",
-            "/backend/v3/api/billing/coupons",
-            Body::from(r#"{"name":"Regional launch credit","type":"amount","value":"$9.00"}"#),
+            "/backend/v3/api/promotions/offers",
+            Body::from(
+                r#"{"name":"Regional launch credit","discount_type":"amount","value":"$9.00"}"#,
+            ),
             other_subject,
         ),
     )
     .await;
-    let other_coupon_id = other_coupon_payload["data"]["item"]["id"]
+    let other_offer_id = other_offer_payload["data"]["item"]["id"]
         .as_str()
         .unwrap()
         .to_owned();
@@ -2518,21 +2544,21 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request_for_subject(
             "POST",
-            "/backend/v3/api/billing/coupon_batches",
+            "/backend/v3/api/promotions/coupon_stocks",
             Body::from(format!(
-                r#"{{"couponId":"{other_coupon_id}","name":"Regional launch batch","count":2,"prefix":"LAUNCH"}}"#
+                r#"{{"offer_id":"{other_offer_id}","name":"Regional launch stock","total_quantity":2,"code_prefix":"LAUNCH"}}"#
             )),
             other_subject,
         ),
     )
     .await;
     assert_eq!(
-        "LAUNCH-0005",
-        other_generate_payload["data"]["codes"][0]["code"]
+        "0005",
+        other_generate_payload["data"]["codes"][0]["promotion_code_last4"]
     );
     assert_eq!(
-        "LAUNCH-0006",
-        other_generate_payload["data"]["codes"][1]["code"]
+        "0006",
+        other_generate_payload["data"]["codes"][1]["promotion_code_last4"]
     );
 
     let new_promo_id = generate_payload["data"]["codes"][0]["id"]
@@ -2543,7 +2569,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "PATCH",
-            format!("/backend/v3/api/billing/coupon_codes/{new_promo_id}/status").as_str(),
+            format!("/backend/v3/api/promotions/codes/{new_promo_id}/status").as_str(),
             Body::from(r#"{"status":"voided"}"#),
         ),
     )
@@ -2554,7 +2580,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router,
         signed_request(
             "DELETE",
-            format!("/backend/v3/api/billing/coupons/{new_coupon_id}").as_str(),
+            format!("/backend/v3/api/promotions/offers/{new_offer_id}").as_str(),
             Body::empty(),
         ),
     )
@@ -2709,6 +2735,45 @@ async fn database_config_router_serves_signed_subject_admin_record() {
 }
 
 #[tokio::test]
+async fn database_config_router_serves_admin_record_when_trace_latency_is_missing() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    seed_admin_users(&pool).await;
+    seed_admin_record(&pool).await;
+    seed_admin_record_missing_latency(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let payload = request_json(
+        router,
+        signed_request(
+            "GET",
+            "/backend/v3/api/system/records?page=1&page_size=20",
+            Body::empty(),
+        ),
+    )
+    .await;
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(2, payload["data"]["total"]);
+    assert_eq!(
+        "req-admin-record-missing-latency",
+        payload["data"]["logs"][0]["requestId"]
+    );
+    assert_eq!("0ms", payload["data"]["logs"][0]["totalTime"]);
+}
+
+#[tokio::test]
 async fn optional_database_config_keeps_manifest_fallback_when_catalog_is_not_configured() {
     let router = sdkwork_claw_admin_api::router_with_optional_database_config(None)
         .await
@@ -2822,7 +2887,7 @@ fn app_session_request_for_subject(
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
-        .header("Sdkwork-Access-Token", access_token)
+        .header("Access-Token", access_token)
         .body(body)
         .unwrap()
 }
@@ -2882,7 +2947,7 @@ fn app_session_request_builder(method: &str, path: &str) -> axum::http::request:
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
-        .header("Sdkwork-Access-Token", access_token)
+        .header("Access-Token", access_token)
 }
 
 async fn request_json(router: axum::Router, request: Request<Body>) -> serde_json::Value {
@@ -3267,60 +3332,102 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT NOT NULL,
             UNIQUE (tenant_id, transaction_no)
         )"#,
-        r#"CREATE TABLE commerce_coupon_template (
+        r#"CREATE TABLE promotion_offer (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            template_no TEXT NOT NULL,
-            title TEXT NOT NULL,
+            offer_no TEXT NOT NULL,
+            offer_code TEXT NOT NULL,
+            name TEXT NOT NULL,
+            offer_type TEXT NOT NULL,
+            audience_scope TEXT NOT NULL,
+            combinability TEXT NOT NULL,
+            priority INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            current_offer_version_id TEXT NOT NULL,
+            starts_at TEXT,
+            ends_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, offer_no),
+            UNIQUE (tenant_id, organization_id, offer_code)
+        )"#,
+        r#"CREATE TABLE promotion_offer_version (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            offer_id TEXT NOT NULL,
+            version_no TEXT NOT NULL,
+            lifecycle_status TEXT NOT NULL,
             discount_type TEXT NOT NULL,
             discount_value TEXT NOT NULL,
             minimum_amount TEXT NOT NULL DEFAULT '0',
+            maximum_discount_amount TEXT,
+            currency_code TEXT,
+            rule_json TEXT NOT NULL,
+            stack_rule_json TEXT,
+            published_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, offer_id, version_no)
+        )"#,
+        r#"CREATE TABLE promotion_coupon_stock (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            stock_no TEXT NOT NULL,
+            name TEXT NOT NULL,
+            offer_id TEXT NOT NULL,
+            offer_version_id TEXT NOT NULL,
+            stock_type TEXT NOT NULL,
             total_quantity INTEGER,
+            available_quantity INTEGER NOT NULL DEFAULT 0,
             claimed_quantity INTEGER NOT NULL DEFAULT 0,
             redeemed_quantity INTEGER NOT NULL DEFAULT 0,
+            locked_quantity INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
             starts_at TEXT,
             expires_at TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, template_no)
+            UNIQUE (tenant_id, stock_no)
         )"#,
-        r#"CREATE TABLE commerce_coupon_issue_batch (
+        r#"CREATE TABLE promotion_code (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            coupon_template_id TEXT NOT NULL,
-            batch_no TEXT NOT NULL,
-            campaign_code TEXT,
-            title TEXT NOT NULL,
-            code_prefix TEXT NOT NULL,
-            code_pattern TEXT NOT NULL,
-            requested_quantity INTEGER NOT NULL,
-            generated_quantity INTEGER NOT NULL DEFAULT 0,
-            available_quantity INTEGER NOT NULL DEFAULT 0,
+            code_no TEXT NOT NULL,
+            stock_id TEXT NOT NULL,
+            offer_id TEXT NOT NULL,
+            offer_version_id TEXT NOT NULL,
+            promotion_code TEXT NOT NULL,
+            code_type TEXT NOT NULL,
+            max_claims INTEGER NOT NULL DEFAULT 1,
             claimed_quantity INTEGER NOT NULL DEFAULT 0,
-            redeemed_quantity INTEGER NOT NULL DEFAULT 0,
-            disabled_quantity INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
-            generation_status TEXT NOT NULL,
-            audience_filter TEXT,
-            generated_at TEXT,
-            created_by TEXT,
+            starts_at TEXT,
+            expires_at TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, batch_no)
+            UNIQUE (tenant_id, code_no),
+            UNIQUE (tenant_id, promotion_code)
         )"#,
-        r#"CREATE TABLE commerce_coupon (
+        r#"CREATE TABLE promotion_user_coupon (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            template_id TEXT NOT NULL,
-            issue_batch_id TEXT,
+            coupon_no TEXT NOT NULL,
+            stock_id TEXT NOT NULL,
+            code_id TEXT,
+            offer_id TEXT NOT NULL,
+            offer_version_id TEXT NOT NULL,
+            subject_type TEXT NOT NULL,
+            subject_id TEXT NOT NULL,
             owner_user_id TEXT,
             coupon_code TEXT NOT NULL,
             status TEXT NOT NULL,
             claimed_at TEXT,
+            valid_from TEXT,
             expires_at TEXT,
             redeemed_at TEXT,
             disabled_at TEXT,
@@ -3328,24 +3435,8 @@ async fn create_schema(pool: &SqlitePool) {
             idempotency_key TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, coupon_no),
             UNIQUE (tenant_id, coupon_code)
-        )"#,
-        r#"CREATE TABLE commerce_coupon_redemption (
-            id TEXT PRIMARY KEY,
-            tenant_id TEXT NOT NULL,
-            organization_id TEXT,
-            coupon_id TEXT NOT NULL,
-            order_id TEXT NOT NULL,
-            owner_user_id TEXT NOT NULL,
-            discount_amount TEXT NOT NULL,
-            status TEXT NOT NULL,
-            request_no TEXT NOT NULL,
-            idempotency_key TEXT NOT NULL,
-            redeemed_at TEXT NOT NULL,
-            rolled_back_at TEXT,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, coupon_id, order_id)
         )"#,
         r#"CREATE TABLE commerce_product (
             id TEXT PRIMARY KEY,
@@ -4236,18 +4327,24 @@ async fn seed_admin_users(pool: &SqlitePool) {
 
 async fn seed_admin_marketing(pool: &SqlitePool) {
     for statement in [
-        r#"INSERT INTO commerce_coupon_template
-            (id, tenant_id, organization_id, template_no, title, discount_type, discount_value, minimum_amount, total_quantity, claimed_quantity, redeemed_quantity, status, starts_at, expires_at, created_at, updated_at)
-            VALUES ('coupon-template-1', '10', '20', 'welcome-template', 'Welcome credit', 'fixed_amount', '5.00', '0', 100, 2, 1, 'active', '2026-04-01 08:00:00', '2099-01-01 00:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
-        r#"INSERT INTO commerce_coupon_issue_batch
-            (id, tenant_id, organization_id, coupon_template_id, batch_no, campaign_code, title, code_prefix, code_pattern, requested_quantity, generated_quantity, available_quantity, claimed_quantity, redeemed_quantity, disabled_quantity, status, generation_status, audience_filter, generated_at, created_by, created_at, updated_at)
-            VALUES ('batch-11', '10', '20', 'coupon-template-1', 'WELCOME-batch', 'WELCOME-batch', 'Welcome batch', 'WELCOME', 'WELCOME-{sequence:04}', 2, 2, 1, 0, 1, 0, 'active', 'completed', '{}', '2026-04-29 09:00:00', '30', '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
-        r#"INSERT INTO commerce_coupon
-            (id, tenant_id, organization_id, template_id, issue_batch_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('501', '10', '20', 'coupon-template-1', 'batch-11', NULL, 'WELCOME-0001', 'active', NULL, NULL, NULL, NULL, 'WELCOME-501', 'WELCOME-501', '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
-        r#"INSERT INTO commerce_coupon
-            (id, tenant_id, organization_id, template_id, issue_batch_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('502', '10', '20', 'coupon-template-1', 'batch-11', '30', 'WELCOME-0002', 'redeemed', '2026-04-29 09:00:00', NULL, '2026-04-29 09:30:00', NULL, 'WELCOME-502', 'WELCOME-502', '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
+        r#"INSERT INTO promotion_offer
+            (id, tenant_id, organization_id, offer_no, offer_code, name, offer_type, audience_scope, combinability, priority, status, current_offer_version_id, starts_at, ends_at, created_at, updated_at)
+            VALUES ('coupon-template-1', '10', '20', 'offer-coupon-template-1', 'welcome-template', 'Welcome credit', 'coupon', 'all', 'exclusive', 0, 'active', 'coupon-template-1-version-v1', '2026-04-01 08:00:00', '2099-01-01 00:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO promotion_offer_version
+            (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status, discount_type, discount_value, minimum_amount, maximum_discount_amount, currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
+            VALUES ('coupon-template-1-version-v1', '10', '20', 'coupon-template-1', 'v1', 'published', 'fixed_amount', '5.00', '0', NULL, 'USD', '{}', NULL, '2026-04-01 08:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO promotion_coupon_stock
+            (id, tenant_id, organization_id, stock_no, name, offer_id, offer_version_id, stock_type, total_quantity, available_quantity, claimed_quantity, redeemed_quantity, locked_quantity, status, starts_at, expires_at, created_at, updated_at)
+            VALUES ('stock-welcome-001', '10', '20', 'stock-WELCOME-001', 'Welcome stock', 'coupon-template-1', 'coupon-template-1-version-v1', 'code_claim', 2, 1, 0, 1, 0, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+        r#"INSERT INTO promotion_code
+            (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code, code_type, max_claims, claimed_quantity, status, starts_at, expires_at, created_at, updated_at)
+            VALUES ('501', '10', '20', 'code-WELCOME-001-0001', 'stock-welcome-001', 'coupon-template-1', 'coupon-template-1-version-v1', 'WELCOME-0001', 'single_use', 1, 0, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+        r#"INSERT INTO promotion_code
+            (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code, code_type, max_claims, claimed_quantity, status, starts_at, expires_at, created_at, updated_at)
+            VALUES ('502', '10', '20', 'code-WELCOME-001-0002', 'stock-welcome-001', 'coupon-template-1', 'coupon-template-1-version-v1', 'WELCOME-0002', 'single_use', 1, 1, 'active', '2026-04-29 09:00:00', NULL, '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
+        r#"INSERT INTO promotion_user_coupon
+            (id, tenant_id, organization_id, coupon_no, stock_id, code_id, offer_id, offer_version_id, subject_type, subject_id, owner_user_id, coupon_code, status, claimed_at, valid_from, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('user-coupon-502', '10', '20', 'WELCOME-0002-user-coupon', 'stock-welcome-001', '502', 'coupon-template-1', 'coupon-template-1-version-v1', 'user', '30', '30', 'WELCOME-0002', 'redeemed', '2026-04-29 09:00:00', '2026-04-29 09:00:00', NULL, '2026-04-29 09:30:00', NULL, 'WELCOME-502', 'WELCOME-502', '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
         r#"INSERT INTO commerce_payment_method
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)
             VALUES ('payment-method-7', '10', '20', '7', 'provider-7', 'provider-7', 'active', 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
@@ -4313,6 +4410,19 @@ async fn seed_admin_record(pool: &SqlitePool) {
         r#"INSERT INTO ai_usage_fact
             (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, owner_name_snapshot, api_key_name_snapshot, api_key_group_snapshot, model, modality, request_count, prompt_tokens, completion_tokens, cached_tokens, total_tokens, customer_charge_amount, cost_amount, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
             VALUES (200, 'usage-200', 10, 20, 30, 'req-admin-record-1', 1, '2026-04-29 09:30:01', 'owner@example.com', 'Production', 'standard-group', 'gpt-4o-mini', 1, 1, 1200, 300, 128, 1628, '0.012300', '0.010000', '1.200000', '0.150000', '0.600000', '0.030000', '2026-04-29 09:30:01')"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_admin_record_missing_latency(pool: &SqlitePool) {
+    for statement in [
+        r#"INSERT INTO ai_routing_decision_log
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, requested_model, resolved_model)
+            VALUES (101, 'decision-101', 10, 20, 30, 'req-admin-record-missing-latency', 1, '2026-04-29 09:31:00', 'gpt-4o-mini', 'gpt-4o-mini')"#,
+        r#"INSERT INTO ai_request_trace
+            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, api_key_group_snapshot, owner_name_snapshot, requested_model, provider_model, endpoint, request_path, http_status, provider_error_code, error_type, started_at, latency_ms, ttft_ms, streaming, prompt_tokens, completion_tokens, cached_tokens, reasoning_effort, client_ip_masked)
+            VALUES (101, 'trace-101', 10, 20, 30, 'req-admin-record-missing-latency', 'trace-admin-record-missing-latency', 1, '2026-04-29 09:30:59', 'Production', 'standard-group', 'owner@example.com', 'gpt-4o-mini', 'openai/global/gpt-4o-mini', '/v1/chat/completions', '/v1/chat/completions', 503, 'upstream_http_503', NULL, '2026-04-29 09:31:00', NULL, NULL, 0, 0, 0, 0, '-', '203.0.113.***')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

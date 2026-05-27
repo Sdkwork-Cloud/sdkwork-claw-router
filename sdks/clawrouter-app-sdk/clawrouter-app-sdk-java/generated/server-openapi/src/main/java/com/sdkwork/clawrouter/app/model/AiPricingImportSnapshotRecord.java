@@ -37,7 +37,7 @@ public class AiPricingImportSnapshotRecord {
     public String getAcceptedCount() {
         return this.acceptedCount;
     }
-    
+
     public void setAcceptedCount(String acceptedCount) {
         this.acceptedCount = acceptedCount;
     }
@@ -45,7 +45,7 @@ public class AiPricingImportSnapshotRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -53,7 +53,7 @@ public class AiPricingImportSnapshotRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -61,7 +61,7 @@ public class AiPricingImportSnapshotRecord {
     public String getDataFormat() {
         return this.dataFormat;
     }
-    
+
     public void setDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
     }
@@ -69,7 +69,7 @@ public class AiPricingImportSnapshotRecord {
     public String getErrorMessageMasked() {
         return this.errorMessageMasked;
     }
-    
+
     public void setErrorMessageMasked(String errorMessageMasked) {
         this.errorMessageMasked = errorMessageMasked;
     }
@@ -77,7 +77,7 @@ public class AiPricingImportSnapshotRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -85,7 +85,7 @@ public class AiPricingImportSnapshotRecord {
     public String getImportSource() {
         return this.importSource;
     }
-    
+
     public void setImportSource(String importSource) {
         this.importSource = importSource;
     }
@@ -93,7 +93,7 @@ public class AiPricingImportSnapshotRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -101,7 +101,7 @@ public class AiPricingImportSnapshotRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -109,7 +109,7 @@ public class AiPricingImportSnapshotRecord {
     public String getNormalizedPayloadHash() {
         return this.normalizedPayloadHash;
     }
-    
+
     public void setNormalizedPayloadHash(String normalizedPayloadHash) {
         this.normalizedPayloadHash = normalizedPayloadHash;
     }
@@ -117,7 +117,7 @@ public class AiPricingImportSnapshotRecord {
     public String getObservedAt() {
         return this.observedAt;
     }
-    
+
     public void setObservedAt(String observedAt) {
         this.observedAt = observedAt;
     }
@@ -125,7 +125,7 @@ public class AiPricingImportSnapshotRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -133,7 +133,7 @@ public class AiPricingImportSnapshotRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -141,7 +141,7 @@ public class AiPricingImportSnapshotRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -149,7 +149,7 @@ public class AiPricingImportSnapshotRecord {
     public String getRawPayloadRef() {
         return this.rawPayloadRef;
     }
-    
+
     public void setRawPayloadRef(String rawPayloadRef) {
         this.rawPayloadRef = rawPayloadRef;
     }
@@ -157,7 +157,7 @@ public class AiPricingImportSnapshotRecord {
     public String getRejectedCount() {
         return this.rejectedCount;
     }
-    
+
     public void setRejectedCount(String rejectedCount) {
         this.rejectedCount = rejectedCount;
     }
@@ -165,7 +165,7 @@ public class AiPricingImportSnapshotRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -173,7 +173,7 @@ public class AiPricingImportSnapshotRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -181,7 +181,7 @@ public class AiPricingImportSnapshotRecord {
     public String getRowCount() {
         return this.rowCount;
     }
-    
+
     public void setRowCount(String rowCount) {
         this.rowCount = rowCount;
     }
@@ -189,7 +189,7 @@ public class AiPricingImportSnapshotRecord {
     public String getSchemaVersion() {
         return this.schemaVersion;
     }
-    
+
     public void setSchemaVersion(String schemaVersion) {
         this.schemaVersion = schemaVersion;
     }
@@ -197,7 +197,7 @@ public class AiPricingImportSnapshotRecord {
     public String getSourceHash() {
         return this.sourceHash;
     }
-    
+
     public void setSourceHash(String sourceHash) {
         this.sourceHash = sourceHash;
     }
@@ -205,7 +205,7 @@ public class AiPricingImportSnapshotRecord {
     public String getSourceName() {
         return this.sourceName;
     }
-    
+
     public void setSourceName(String sourceName) {
         this.sourceName = sourceName;
     }
@@ -213,7 +213,7 @@ public class AiPricingImportSnapshotRecord {
     public String getSourceUrl() {
         return this.sourceUrl;
     }
-    
+
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
@@ -221,7 +221,7 @@ public class AiPricingImportSnapshotRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -229,7 +229,7 @@ public class AiPricingImportSnapshotRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -237,7 +237,7 @@ public class AiPricingImportSnapshotRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -245,7 +245,7 @@ public class AiPricingImportSnapshotRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -253,7 +253,7 @@ public class AiPricingImportSnapshotRecord {
     public String getUpstreamCommit() {
         return this.upstreamCommit;
     }
-    
+
     public void setUpstreamCommit(String upstreamCommit) {
         this.upstreamCommit = upstreamCommit;
     }
@@ -261,7 +261,7 @@ public class AiPricingImportSnapshotRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -269,7 +269,7 @@ public class AiPricingImportSnapshotRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

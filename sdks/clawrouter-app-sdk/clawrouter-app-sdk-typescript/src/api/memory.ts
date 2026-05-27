@@ -11,7 +11,6 @@ export interface MemorySpacesListParams {
 
 export interface MemorySpacesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class MemorySpacesApi {
@@ -36,7 +35,6 @@ export class MemorySpacesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -56,7 +54,6 @@ export interface MemoryEntriesListParams {
 
 export interface MemoryEntriesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class MemoryEntriesApi {
@@ -86,7 +83,6 @@ export class MemoryEntriesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );

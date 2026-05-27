@@ -12,11 +12,15 @@ class PlatformApi {
   PlatformApi(this._client);
 
   /// Get apps
-  Future<AppsStoreListResult?> appsStoreList([int? page, int? pageSize, String? q, String? status, String? startTime, String? endTime]) async {
+  Future<AppsStoreListResult?> appsStoreList([int? page, int? pageSize, String? q, String? category, String? platformType, List<String>? platformTypes, String? sort, String? status, String? startTime, String? endTime]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
       QueryParameterSpec('q', q, 'form', true, false, null),
+      QueryParameterSpec('category', category, 'form', true, false, null),
+      QueryParameterSpec('platform_type', platformType, 'form', true, false, null),
+      QueryParameterSpec('platform_types', platformTypes, 'form', false, false, null),
+      QueryParameterSpec('sort', sort, 'form', true, false, null),
       QueryParameterSpec('status', status, 'form', true, false, null),
       QueryParameterSpec('start_time', startTime, 'form', true, false, null),
       QueryParameterSpec('end_time', endTime, 'form', true, false, null)

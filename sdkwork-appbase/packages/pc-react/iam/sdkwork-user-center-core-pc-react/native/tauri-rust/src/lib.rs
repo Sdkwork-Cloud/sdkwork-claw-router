@@ -8,14 +8,14 @@ mod user_center_validation;
 
 pub use user_center_authority::{
     ensure_sqlite_user_center_bootstrap_user, ensure_sqlite_user_center_schema,
-    UpdateUserCenterProfileRequest, UpdateUserCenterVipMembershipRequest,
+    UpdateUserCenterMembershipRequest, UpdateUserCenterProfileRequest,
     UserCenterEmailCodeLoginRequest, UserCenterLoginQrCodePayload, UserCenterLoginQrConfirmRequest,
-    UserCenterLoginQrStatusPayload, UserCenterLoginRequest, UserCenterMetadataPayload,
-    UserCenterOAuthAuthorizationRequest, UserCenterOAuthLoginRequest, UserCenterOAuthUrlPayload,
-    UserCenterPasswordResetChallengeRequest, UserCenterPasswordResetRequest,
-    UserCenterPhoneCodeLoginRequest, UserCenterProfilePayload, UserCenterRegisterRequest,
-    UserCenterSendVerifyCodeRequest, UserCenterSessionExchangeRequest, UserCenterSessionPayload,
-    UserCenterState, UserCenterVipMembershipPayload,
+    UserCenterLoginQrStatusPayload, UserCenterLoginRequest, UserCenterMembershipPayload,
+    UserCenterMetadataPayload, UserCenterOAuthAuthorizationRequest, UserCenterOAuthLoginRequest,
+    UserCenterOAuthUrlPayload, UserCenterPasswordResetChallengeRequest,
+    UserCenterPasswordResetRequest, UserCenterPhoneCodeLoginRequest, UserCenterProfilePayload,
+    UserCenterRegisterRequest, UserCenterSendVerifyCodeRequest, UserCenterSessionExchangeRequest,
+    UserCenterSessionPayload, UserCenterState,
 };
 
 pub const USER_CENTER_DEFAULT_LOCAL_API_BASE_PATH: &str = "/app/v3/api";
@@ -37,14 +37,14 @@ pub const USER_CENTER_AUTH_PASSWORD_RESET_REQUEST_PATH: &str =
 pub const USER_CENTER_AUTH_PASSWORD_RESET_PATH: &str = "/app/v3/api/auth/password_resets";
 pub const USER_CENTER_USER_PROFILE_PATH: &str = "/app/v3/api/iam/users/current";
 pub const USER_CENTER_USER_SETTINGS_PATH: &str = "/app/v3/api/iam/users/current";
-pub const USER_CENTER_VIP_INFO_PATH: &str = "/app/v3/api/memberships/current";
+pub const USER_CENTER_MEMBERSHIP_PATH: &str = "/app/v3/api/memberships/current";
 pub const USER_CENTER_ACCOUNT_SUMMARY_PATH: &str = "/app/v3/api/accounts/current/summary";
 pub const USER_CENTER_TENANT_ROOT_PATH: &str = "/app/v3/api/iam/tenants/current";
 pub const USER_CENTER_HEALTH_PATH: &str = "/app/v3/api/health";
 pub const USER_CENTER_TABLE_PREFIX: &str = "iam_";
 pub const USER_CENTER_AUTHORIZATION_HEADER_NAME: &str = "Authorization";
 pub const USER_CENTER_AUTHORIZATION_SCHEME: &str = "Bearer";
-pub const USER_CENTER_ACCESS_TOKEN_HEADER_NAME: &str = "Sdkwork-Access-Token";
+pub const USER_CENTER_ACCESS_TOKEN_HEADER_NAME: &str = "Access-Token";
 pub const USER_CENTER_REFRESH_TOKEN_HEADER_NAME: &str = "Refresh-Token";
 pub const USER_CENTER_SESSION_HEADER_NAME: &str = "x-sdkwork-user-center-session-id";
 pub const USER_CENTER_STANDARD_HANDSHAKE_MODE: &str = "provider-shared-secret";
@@ -229,8 +229,8 @@ pub struct UserCenterProviderConfig {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct UserCenterRoutes {
     pub auth_base_path: String,
+    pub membership_route_path: String,
     pub user_route_path: String,
-    pub vip_route_path: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -284,7 +284,6 @@ pub struct UserCenterLocalApiRoutes {
     pub tenant_root: String,
     pub user_profile: String,
     pub user_settings: String,
-    pub vip_info: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -625,8 +624,8 @@ fn default_entity_bindings(table_prefix: &str) -> Vec<UserCenterStorageEntityBin
         },
         UserCenterStorageEntityBinding {
             primary_key_column_name: "id".to_string(),
-            standard_entity_name: "IamVipMembership".to_string(),
-            table_name: format!("{table_prefix}vip_membership"),
+            standard_entity_name: "IamMembership".to_string(),
+            table_name: format!("{table_prefix}membership"),
         },
         UserCenterStorageEntityBinding {
             primary_key_column_name: "id".to_string(),
@@ -646,7 +645,7 @@ pub fn create_user_center_storage_plan(namespace: &str) -> UserCenterStoragePlan
     let storage_scope = format!("{normalized_namespace}.user-center");
 
     UserCenterStoragePlan {
-        access_token_key: format!("{storage_scope}.Sdkwork-Access-Token"),
+        access_token_key: format!("{storage_scope}.Access-Token"),
         auth_token_key: format!("{storage_scope}.auth-token"),
         membership_key: format!("{storage_scope}.membership.v1"),
         preferences_key: format!("{storage_scope}.preferences.v1"),
@@ -668,7 +667,7 @@ pub fn create_user_center_local_api_routes(base_path: Option<&str>) -> UserCente
     let iam_base_path = format!("{normalized_base_path}/iam");
     let user_profile_path = format!("{iam_base_path}/users/current");
     let user_settings_path = user_profile_path.clone();
-    let vip_info_path = format!("{normalized_base_path}/memberships/current");
+    let membership_path = format!("{normalized_base_path}/memberships/current");
     let account_summary_path = format!("{normalized_base_path}/accounts/current/summary");
     let tenant_root_path = format!("{iam_base_path}/tenants/current");
     let auth_config_path = format!("{auth_base_path}/config");
@@ -717,7 +716,7 @@ pub fn create_user_center_local_api_routes(base_path: Option<&str>) -> UserCente
         auth_verify_check: auth_verify_check_path,
         auth_verify_send: auth_verify_send_path,
         health: format!("{normalized_base_path}/health"),
-        membership: vip_info_path.clone(),
+        membership: membership_path,
         preferences: user_settings_path.clone(),
         profile: user_profile_path.clone(),
         session_bootstrap: auth_session_exchange_path,
@@ -728,15 +727,14 @@ pub fn create_user_center_local_api_routes(base_path: Option<&str>) -> UserCente
         tenant_root: tenant_root_path,
         user_profile: user_profile_path,
         user_settings: user_settings_path,
-        vip_info: vip_info_path,
     }
 }
 
 pub fn create_default_user_center_routes() -> UserCenterRoutes {
     UserCenterRoutes {
         auth_base_path: "/auth".to_string(),
+        membership_route_path: "/memberships".to_string(),
         user_route_path: "/user".to_string(),
-        vip_route_path: "/vip".to_string(),
     }
 }
 
@@ -790,7 +788,7 @@ pub fn create_user_center_auth_profile(
     let auth_mode = if mode == "app-api-hub" {
         "upstream-app-api-token-bridge".to_string()
     } else {
-        "auth-Sdkwork-Access-Token".to_string()
+        "dual-token".to_string()
     };
     let resolver_kind = if auth_mode == "upstream-app-api-token-bridge" {
         "upstream-secret-bridge".to_string()
@@ -840,7 +838,7 @@ pub fn create_user_center_auth_profile(
             tenant_claim_key: USER_CENTER_DEFAULT_TENANT_CLAIM_KEY.to_string(),
         },
         token_headers: create_user_center_standard_token_headers(storage_plan),
-        validation_strategy: "auth-Sdkwork-Access-Token".to_string(),
+        validation_strategy: "dual-token".to_string(),
     }
 }
 

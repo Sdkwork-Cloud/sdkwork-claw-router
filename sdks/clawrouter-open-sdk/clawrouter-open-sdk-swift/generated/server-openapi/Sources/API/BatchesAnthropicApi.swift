@@ -2,7 +2,7 @@ import Foundation
 
 public class BatchesAnthropicApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }

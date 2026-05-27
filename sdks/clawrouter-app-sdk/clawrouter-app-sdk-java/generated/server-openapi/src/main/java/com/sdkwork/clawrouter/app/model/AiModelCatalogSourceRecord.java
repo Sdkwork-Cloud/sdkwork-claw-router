@@ -37,7 +37,7 @@ public class AiModelCatalogSourceRecord {
     public String getCatalogVersion() {
         return this.catalogVersion;
     }
-    
+
     public void setCatalogVersion(String catalogVersion) {
         this.catalogVersion = catalogVersion;
     }
@@ -45,7 +45,7 @@ public class AiModelCatalogSourceRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -53,7 +53,7 @@ public class AiModelCatalogSourceRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -61,7 +61,7 @@ public class AiModelCatalogSourceRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -69,7 +69,7 @@ public class AiModelCatalogSourceRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -77,7 +77,7 @@ public class AiModelCatalogSourceRecord {
     public String getErrorMessageMasked() {
         return this.errorMessageMasked;
     }
-    
+
     public void setErrorMessageMasked(String errorMessageMasked) {
         this.errorMessageMasked = errorMessageMasked;
     }
@@ -85,7 +85,7 @@ public class AiModelCatalogSourceRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -93,7 +93,7 @@ public class AiModelCatalogSourceRecord {
     public String getLastObservedAt() {
         return this.lastObservedAt;
     }
-    
+
     public void setLastObservedAt(String lastObservedAt) {
         this.lastObservedAt = lastObservedAt;
     }
@@ -101,7 +101,7 @@ public class AiModelCatalogSourceRecord {
     public String getLastSuccessAt() {
         return this.lastSuccessAt;
     }
-    
+
     public void setLastSuccessAt(String lastSuccessAt) {
         this.lastSuccessAt = lastSuccessAt;
     }
@@ -109,7 +109,7 @@ public class AiModelCatalogSourceRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -117,7 +117,7 @@ public class AiModelCatalogSourceRecord {
     public String getNormalizedPayloadHash() {
         return this.normalizedPayloadHash;
     }
-    
+
     public void setNormalizedPayloadHash(String normalizedPayloadHash) {
         this.normalizedPayloadHash = normalizedPayloadHash;
     }
@@ -125,7 +125,7 @@ public class AiModelCatalogSourceRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -133,7 +133,7 @@ public class AiModelCatalogSourceRecord {
     public String getParserKind() {
         return this.parserKind;
     }
-    
+
     public void setParserKind(String parserKind) {
         this.parserKind = parserKind;
     }
@@ -141,7 +141,7 @@ public class AiModelCatalogSourceRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -149,7 +149,7 @@ public class AiModelCatalogSourceRecord {
     public String getRawPayloadRef() {
         return this.rawPayloadRef;
     }
-    
+
     public void setRawPayloadRef(String rawPayloadRef) {
         this.rawPayloadRef = rawPayloadRef;
     }
@@ -157,7 +157,7 @@ public class AiModelCatalogSourceRecord {
     public String getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
-    
+
     public void setRefreshIntervalSeconds(String refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
@@ -165,7 +165,7 @@ public class AiModelCatalogSourceRecord {
     public String getRegionCode() {
         return this.regionCode;
     }
-    
+
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
@@ -173,7 +173,7 @@ public class AiModelCatalogSourceRecord {
     public String getSchemaVersion() {
         return this.schemaVersion;
     }
-    
+
     public void setSchemaVersion(String schemaVersion) {
         this.schemaVersion = schemaVersion;
     }
@@ -181,7 +181,7 @@ public class AiModelCatalogSourceRecord {
     public String getSourceCode() {
         return this.sourceCode;
     }
-    
+
     public void setSourceCode(String sourceCode) {
         this.sourceCode = sourceCode;
     }
@@ -189,7 +189,7 @@ public class AiModelCatalogSourceRecord {
     public String getSourceHash() {
         return this.sourceHash;
     }
-    
+
     public void setSourceHash(String sourceHash) {
         this.sourceHash = sourceHash;
     }
@@ -197,7 +197,7 @@ public class AiModelCatalogSourceRecord {
     public String getSourceKind() {
         return this.sourceKind;
     }
-    
+
     public void setSourceKind(String sourceKind) {
         this.sourceKind = sourceKind;
     }
@@ -205,7 +205,7 @@ public class AiModelCatalogSourceRecord {
     public String getSourceName() {
         return this.sourceName;
     }
-    
+
     public void setSourceName(String sourceName) {
         this.sourceName = sourceName;
     }
@@ -213,7 +213,7 @@ public class AiModelCatalogSourceRecord {
     public String getSourceUrl() {
         return this.sourceUrl;
     }
-    
+
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
@@ -221,7 +221,7 @@ public class AiModelCatalogSourceRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -229,7 +229,7 @@ public class AiModelCatalogSourceRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -237,7 +237,7 @@ public class AiModelCatalogSourceRecord {
     public String getTrustLevel() {
         return this.trustLevel;
     }
-    
+
     public void setTrustLevel(String trustLevel) {
         this.trustLevel = trustLevel;
     }
@@ -245,7 +245,7 @@ public class AiModelCatalogSourceRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -253,7 +253,7 @@ public class AiModelCatalogSourceRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -261,7 +261,7 @@ public class AiModelCatalogSourceRecord {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -269,7 +269,7 @@ public class AiModelCatalogSourceRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

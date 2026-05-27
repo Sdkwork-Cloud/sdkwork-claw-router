@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ModerationsApi {
     private final HttpClient client;
-    
+
     public ModerationsApi(HttpClient client) {
         this.client = client;
     }

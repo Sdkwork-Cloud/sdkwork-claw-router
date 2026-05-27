@@ -11,7 +11,7 @@ public class AnthropicContentSource {
     public String getData() {
         return this.data;
     }
-    
+
     public void setData(String data) {
         this.data = data;
     }
@@ -19,7 +19,7 @@ public class AnthropicContentSource {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -27,7 +27,7 @@ public class AnthropicContentSource {
     public String getMediaType() {
         return this.mediaType;
     }
-    
+
     public void setMediaType(String mediaType) {
         this.mediaType = mediaType;
     }
@@ -35,7 +35,7 @@ public class AnthropicContentSource {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -43,7 +43,7 @@ public class AnthropicContentSource {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

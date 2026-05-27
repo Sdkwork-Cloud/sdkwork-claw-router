@@ -62,9 +62,9 @@ export interface SdkworkPointsMessages {
     WECHAT: string;
   };
   plan: {
+    active: string;
     free: string;
     guest: string;
-    vip: string;
   };
   quickPanel: {
     availablePointsLabel: string;
@@ -205,9 +205,9 @@ const EN_US_MESSAGES: SdkworkPointsMessages = {
     WECHAT: "WeChat Pay",
   },
   plan: {
+    active: "Member",
     free: "Free",
     guest: "Guest",
-    vip: "VIP",
   },
   quickPanel: {
     availablePointsLabel: "Available points",
@@ -315,7 +315,7 @@ const ZH_CN_MESSAGES: SdkworkPointsMessages = {
   plan: {
     free: "免费版",
     guest: "游客",
-    vip: "会员",
+    active: "\u4f1a\u5458",
   },
   quickPanel: {
     availablePointsLabel: "可用积分",
@@ -432,5 +432,5 @@ export function getCurrentPlanTitle(
     return copy.plan.free;
   }
 
-  return currentPlan.name || copy.plan.vip;
+  return currentPlan.name || copy.plan.active;
 }

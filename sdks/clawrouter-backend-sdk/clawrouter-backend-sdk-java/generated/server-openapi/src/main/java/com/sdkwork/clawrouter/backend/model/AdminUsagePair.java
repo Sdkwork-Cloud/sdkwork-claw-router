@@ -8,7 +8,7 @@ public class AdminUsagePair {
     public Double getToday() {
         return this.today;
     }
-    
+
     public void setToday(Double today) {
         this.today = today;
     }
@@ -16,7 +16,7 @@ public class AdminUsagePair {
     public Double getTotal() {
         return this.total;
     }
-    
+
     public void setTotal(Double total) {
         this.total = total;
     }

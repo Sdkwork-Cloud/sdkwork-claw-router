@@ -23,7 +23,7 @@ public class OpenAiFineTuningJob {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -31,7 +31,7 @@ public class OpenAiFineTuningJob {
     public String getError() {
         return this.error;
     }
-    
+
     public void setError(String error) {
         this.error = error;
     }
@@ -39,7 +39,7 @@ public class OpenAiFineTuningJob {
     public String getFineTunedModel() {
         return this.fineTunedModel;
     }
-    
+
     public void setFineTunedModel(String fineTunedModel) {
         this.fineTunedModel = fineTunedModel;
     }
@@ -47,7 +47,7 @@ public class OpenAiFineTuningJob {
     public Integer getFinishedAt() {
         return this.finishedAt;
     }
-    
+
     public void setFinishedAt(Integer finishedAt) {
         this.finishedAt = finishedAt;
     }
@@ -55,7 +55,7 @@ public class OpenAiFineTuningJob {
     public String getHyperparameters() {
         return this.hyperparameters;
     }
-    
+
     public void setHyperparameters(String hyperparameters) {
         this.hyperparameters = hyperparameters;
     }
@@ -63,7 +63,7 @@ public class OpenAiFineTuningJob {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,7 +71,7 @@ public class OpenAiFineTuningJob {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -79,7 +79,7 @@ public class OpenAiFineTuningJob {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -87,7 +87,7 @@ public class OpenAiFineTuningJob {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -95,7 +95,7 @@ public class OpenAiFineTuningJob {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -103,7 +103,7 @@ public class OpenAiFineTuningJob {
     public List<String> getResultFiles() {
         return this.resultFiles;
     }
-    
+
     public void setResultFiles(List<String> resultFiles) {
         this.resultFiles = resultFiles;
     }
@@ -111,7 +111,7 @@ public class OpenAiFineTuningJob {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -119,7 +119,7 @@ public class OpenAiFineTuningJob {
     public Integer getTrainedTokens() {
         return this.trainedTokens;
     }
-    
+
     public void setTrainedTokens(Integer trainedTokens) {
         this.trainedTokens = trainedTokens;
     }
@@ -127,7 +127,7 @@ public class OpenAiFineTuningJob {
     public String getTrainingFile() {
         return this.trainingFile;
     }
-    
+
     public void setTrainingFile(String trainingFile) {
         this.trainingFile = trainingFile;
     }
@@ -135,7 +135,7 @@ public class OpenAiFineTuningJob {
     public String getValidationFile() {
         return this.validationFile;
     }
-    
+
     public void setValidationFile(String validationFile) {
         this.validationFile = validationFile;
     }

@@ -29,7 +29,7 @@ public class AiGenerationSessionRecord {
     public String getActiveModality() {
         return this.activeModality;
     }
-    
+
     public void setActiveModality(String activeModality) {
         this.activeModality = activeModality;
     }
@@ -37,7 +37,7 @@ public class AiGenerationSessionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -45,7 +45,7 @@ public class AiGenerationSessionRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -53,7 +53,7 @@ public class AiGenerationSessionRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -61,7 +61,7 @@ public class AiGenerationSessionRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -69,7 +69,7 @@ public class AiGenerationSessionRecord {
     public Map<String, String> getFilterConfig() {
         return this.filterConfig;
     }
-    
+
     public void setFilterConfig(Map<String, String> filterConfig) {
         this.filterConfig = filterConfig;
     }
@@ -77,7 +77,7 @@ public class AiGenerationSessionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -85,7 +85,7 @@ public class AiGenerationSessionRecord {
     public String getLastOpenedAt() {
         return this.lastOpenedAt;
     }
-    
+
     public void setLastOpenedAt(String lastOpenedAt) {
         this.lastOpenedAt = lastOpenedAt;
     }
@@ -93,7 +93,7 @@ public class AiGenerationSessionRecord {
     public String getLastPrompt() {
         return this.lastPrompt;
     }
-    
+
     public void setLastPrompt(String lastPrompt) {
         this.lastPrompt = lastPrompt;
     }
@@ -101,7 +101,7 @@ public class AiGenerationSessionRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -109,7 +109,7 @@ public class AiGenerationSessionRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -117,7 +117,7 @@ public class AiGenerationSessionRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -125,7 +125,7 @@ public class AiGenerationSessionRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -133,7 +133,7 @@ public class AiGenerationSessionRecord {
     public Map<String, String> getSelectedModels() {
         return this.selectedModels;
     }
-    
+
     public void setSelectedModels(Map<String, String> selectedModels) {
         this.selectedModels = selectedModels;
     }
@@ -141,7 +141,7 @@ public class AiGenerationSessionRecord {
     public String getSessionCode() {
         return this.sessionCode;
     }
-    
+
     public void setSessionCode(String sessionCode) {
         this.sessionCode = sessionCode;
     }
@@ -149,7 +149,7 @@ public class AiGenerationSessionRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -157,7 +157,7 @@ public class AiGenerationSessionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -165,7 +165,7 @@ public class AiGenerationSessionRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -173,7 +173,7 @@ public class AiGenerationSessionRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -181,7 +181,7 @@ public class AiGenerationSessionRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -189,7 +189,7 @@ public class AiGenerationSessionRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -197,7 +197,7 @@ public class AiGenerationSessionRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

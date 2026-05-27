@@ -11,7 +11,7 @@ public class GoogleTool {
     public GoogleCodeExecutionTool getCodeExecution() {
         return this.codeExecution;
     }
-    
+
     public void setCodeExecution(GoogleCodeExecutionTool codeExecution) {
         this.codeExecution = codeExecution;
     }
@@ -19,7 +19,7 @@ public class GoogleTool {
     public List<GoogleFunctionDeclaration> getFunctionDeclarations() {
         return this.functionDeclarations;
     }
-    
+
     public void setFunctionDeclarations(List<GoogleFunctionDeclaration> functionDeclarations) {
         this.functionDeclarations = functionDeclarations;
     }
@@ -27,7 +27,7 @@ public class GoogleTool {
     public GoogleSearchTool getGoogleSearch() {
         return this.googleSearch;
     }
-    
+
     public void setGoogleSearch(GoogleSearchTool googleSearch) {
         this.googleSearch = googleSearch;
     }
@@ -35,7 +35,7 @@ public class GoogleTool {
     public GoogleUrlContextTool getUrlContext() {
         return this.urlContext;
     }
-    
+
     public void setUrlContext(GoogleUrlContextTool urlContext) {
         this.urlContext = urlContext;
     }

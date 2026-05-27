@@ -147,7 +147,7 @@ async fn gateway_env_startup_can_skip_installer_when_workspace_already_ensured_d
 }
 
 #[tokio::test]
-async fn gateway_env_startup_initializes_zero_config_server_sqlite() {
+async fn gateway_env_startup_rejects_zero_config_server_placeholder_postgres() {
     let _guard = env_guard().lock().unwrap();
     let saved_database_url = std::env::var("SDKWORK_CLAW_DATABASE_URL").ok();
     let saved_deployment_mode = std::env::var("SDKWORK_CLAW_DEPLOYMENT_MODE").ok();
@@ -162,21 +162,22 @@ async fn gateway_env_startup_initializes_zero_config_server_sqlite() {
         "0123456789abcdef0123456789abcdef",
     );
 
-    let router = sdkwork_claw_gateway::runtime::router_from_env()
-        .await
-        .expect("gateway startup should initialize local SQLite by default");
+    let router_result = sdkwork_claw_gateway::runtime::router_from_env().await;
 
     restore_env_var("SDKWORK_CLAW_DATABASE_URL", saved_database_url);
     restore_env_var("SDKWORK_CLAW_DEPLOYMENT_MODE", saved_deployment_mode);
     restore_env_var("SDKWORK_CLAW_CONFIG_FILE", saved_config_file);
     restore_env_var("SDKWORK_CLAW_API_KEY_PEPPER", saved_api_key_pepper);
 
-    drop(router);
+    let error = router_result
+        .expect_err("gateway server startup must reject placeholder PostgreSQL config")
+        .to_string();
+    assert!(error.contains("PostgreSQL configuration is incomplete"));
+    assert!(error.contains("Server/service deployments use external PostgreSQL by default"));
     assert!(config_path.exists());
     let generated_config = std::fs::read_to_string(config_path).unwrap();
-    assert!(generated_config.contains("engine = \"sqlite\""));
+    assert!(generated_config.contains("engine = \"postgresql\""));
     assert!(generated_config.contains("deployment_mode = \"server\""));
-    assert!(generated_config.contains("sdkwork-claw-router.sqlite"));
 }
 
 fn unique_sqlite_url() -> String {

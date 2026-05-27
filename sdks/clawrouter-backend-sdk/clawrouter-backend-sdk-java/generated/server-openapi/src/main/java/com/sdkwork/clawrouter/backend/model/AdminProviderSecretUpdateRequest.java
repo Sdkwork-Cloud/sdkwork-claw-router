@@ -12,7 +12,7 @@ public class AdminProviderSecretUpdateRequest {
     public String getAuthType() {
         return this.authType;
     }
-    
+
     public void setAuthType(String authType) {
         this.authType = authType;
     }
@@ -20,7 +20,7 @@ public class AdminProviderSecretUpdateRequest {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -28,7 +28,7 @@ public class AdminProviderSecretUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -36,7 +36,7 @@ public class AdminProviderSecretUpdateRequest {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -44,7 +44,7 @@ public class AdminProviderSecretUpdateRequest {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -52,7 +52,7 @@ public class AdminProviderSecretUpdateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

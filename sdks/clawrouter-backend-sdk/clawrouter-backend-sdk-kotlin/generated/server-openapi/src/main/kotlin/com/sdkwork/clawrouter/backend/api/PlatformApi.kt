@@ -9,12 +9,13 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class PlatformApi(private val client: HttpClient) {
 
     /** List apps */
-    suspend fun appsList(q: String? = null, status: String? = null, marketStatus: String? = null, appType: String? = null, page: Int? = null, pageSize: Int? = null, xRequestId: String? = null): AppsListResult? {
+    suspend fun appsList(q: String? = null, status: String? = null, marketStatus: String? = null, appType: String? = null, categoryId: Int? = null, page: Int? = null, pageSize: Int? = null, xRequestId: String? = null): AppsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("status", status, "form", true, false, null),
             QueryParameterSpec("market_status", marketStatus, "form", true, false, null),
             QueryParameterSpec("app_type", appType, "form", true, false, null),
+            QueryParameterSpec("category_id", categoryId, "form", true, false, null),
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ))
@@ -80,6 +81,99 @@ class PlatformApi(private val client: HttpClient) {
         )
         val raw = client.put(ApiPaths.backendPath("/platform/apps/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<AppsCategoriesUpdateResult>() {})
+    }
+
+    /** List app templates */
+    suspend fun appsTemplatesList(q: String? = null, publishStatus: String? = null, templateType: String? = null, runtime: String? = null, categoryId: Int? = null, page: Int? = null, pageSize: Int? = null, xRequestId: String? = null): AppsTemplatesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("q", q, "form", true, false, null),
+            QueryParameterSpec("publish_status", publishStatus, "form", true, false, null),
+            QueryParameterSpec("template_type", templateType, "form", true, false, null),
+            QueryParameterSpec("runtime", runtime, "form", true, false, null),
+            QueryParameterSpec("category_id", categoryId, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ))
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps/templates"), query), null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesListResult>() {})
+    }
+
+    /** Create app template */
+    suspend fun appsTemplatesCreate(body: AdminAppTemplateCreateRequest, xRequestId: String? = null): AppsTemplatesCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/platform/apps/templates"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesCreateResult>() {})
+    }
+
+    /** Delete app template */
+    suspend fun appsTemplatesDelete(templateId: String, xRequestId: String? = null): AppsTemplatesDeleteResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.delete(ApiPaths.backendPath("/platform/apps/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}"), null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesDeleteResult>() {})
+    }
+
+    /** List app template */
+    suspend fun appsTemplatesRetrieve(templateId: String, xRequestId: String? = null): AppsTemplatesRetrieveResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.get(ApiPaths.backendPath("/platform/apps/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}"), null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesRetrieveResult>() {})
+    }
+
+    /** Update app template */
+    suspend fun appsTemplatesUpdate(templateId: String, body: AdminAppTemplateUpdateRequest, xRequestId: String? = null): AppsTemplatesUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/platform/apps/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesUpdateResult>() {})
+    }
+
+    /** Publish app template */
+    suspend fun appsTemplatesPublish(templateId: String, xRequestId: String? = null): AppsTemplatesPublishResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/platform/apps/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}/publish"), null, null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesPublishResult>() {})
+    }
+
+    /** Offline app template */
+    suspend fun appsTemplatesUnpublish(templateId: String, xRequestId: String? = null): AppsTemplatesUnpublishResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/platform/apps/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}/unpublish"), null, null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<AppsTemplatesUnpublishResult>() {})
     }
 
     /** Delete app */

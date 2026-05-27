@@ -14,7 +14,7 @@ public class OpenAiVideoCharacter {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -22,7 +22,7 @@ public class OpenAiVideoCharacter {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -30,7 +30,7 @@ public class OpenAiVideoCharacter {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -38,7 +38,7 @@ public class OpenAiVideoCharacter {
     public String getImageUrl() {
         return this.imageUrl;
     }
-    
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -46,7 +46,7 @@ public class OpenAiVideoCharacter {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -54,7 +54,7 @@ public class OpenAiVideoCharacter {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,7 +62,7 @@ public class OpenAiVideoCharacter {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

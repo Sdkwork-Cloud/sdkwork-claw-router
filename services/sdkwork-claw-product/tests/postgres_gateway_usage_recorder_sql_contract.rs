@@ -29,6 +29,19 @@ fn gateway_usage_recorder_upserts_trace_and_usage_fact_by_business_unique_keys()
 }
 
 #[test]
+fn gateway_usage_recorder_usage_uuid_is_scoped_by_usage_type() {
+    for expected in [
+        "command.request_id.hash(&mut hasher)",
+        "command.usage_type.hash(&mut hasher)",
+    ] {
+        assert!(
+            POSTGRES_GATEWAY_USAGE_RECORDER.contains(expected),
+            "Postgres usage fact uuid must include `{expected}`"
+        );
+    }
+}
+
+#[test]
 fn gateway_usage_recorder_preserves_non_pending_usage_facts_on_duplicate_request_id() {
     for expected in [
         "WHERE NOT EXISTS ( SELECT 1 FROM ai_usage_fact settled_usage",
@@ -60,12 +73,27 @@ fn gateway_usage_recorder_scopes_rows_and_projects_meter_amounts() {
     for expected in [
         "tenant_id, organization_id, user_id, request_id, trace_id",
         "api_key_id, api_key_name_snapshot, api_key_group_id, api_key_group_snapshot",
-        "requested_model, provider_model",
-        "prompt_tokens, cached_tokens, completion_tokens, total_tokens",
-        "base_input_unit_price, base_output_unit_price",
-        "customer_charge_amount, cost_amount",
+        "requested_model, requested_model_catalog_key, provider_model, provider_native_model",
+        "catalog_key, requested_model_catalog_key, model, provider_native_model",
+        "billable_quantity, prompt_tokens, cached_tokens, completion_tokens, total_tokens",
+        "request_count, result_count, item_count, character_count, image_count",
+        "audio_seconds, video_seconds",
+        "base_input_unit_price, base_output_unit_price, cache_read_unit_price",
+        "rate_multiplier, reference_multiplier, official_reference_amount",
+        "upstream_cost_amount, customer_charge_amount, cost_amount",
+        "pricing_snapshot",
         "pricing_plan_code",
+        ".bind(&command.requested_model_catalog_key)",
+        ".bind(&command.provider_native_model)",
+        ".bind(&command.rate_multiplier)",
+        ".bind(&command.reference_multiplier)",
+        ".bind(&command.official_reference_amount)",
+        ".bind(&command.pricing_snapshot)",
         ".bind(&command.billing_meter_code)",
+        ".bind(&command.billable_quantity)",
+        ".bind(command.request_count)",
+        ".bind(command.result_count)",
+        ".bind(command.video_seconds.as_deref())",
     ] {
         assert_sql_contains(POSTGRES_GATEWAY_USAGE_RECORDER, expected);
     }

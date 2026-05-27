@@ -8,7 +8,7 @@ public class AdminSkillAssetListResponse {
     public List<AdminSkillAssetItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminSkillAssetItem> items) {
         this.items = items;
     }

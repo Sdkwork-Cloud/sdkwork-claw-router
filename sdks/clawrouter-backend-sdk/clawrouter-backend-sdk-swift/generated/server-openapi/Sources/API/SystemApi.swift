@@ -7,6 +7,106 @@ public class SystemApi {
         self.client = client
     }
 
+    /// Promotion Budget Ledger Entries List
+    public func promotionsBudgetLedgerEntriesList(budgetAccountId: String? = nil) async throws -> PromotionsBudgetLedgerEntriesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "budget_account_id", value: budgetAccountId, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/budget_ledger_entries"), query), responseType: PromotionsBudgetLedgerEntriesListResult.self)
+    }
+
+    /// Promotion Coupon Codes List
+    public func promotionsCodesList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> PromotionsCodesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes"), query), responseType: PromotionsCodesListResult.self)
+    }
+
+    /// Promotion Coupon Code Redemptions List
+    public func promotionsCodesRedemptionsList(page: Int? = nil, pageSize: Int? = nil, codeStatus: String? = nil) async throws -> PromotionsCodesRedemptionsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "code_status", value: codeStatus, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes/redemptions"), query), responseType: PromotionsCodesRedemptionsListResult.self)
+    }
+
+    /// Promotion Coupon Ledger Entries List
+    public func promotionsCouponLedgerEntriesList(stockId: String? = nil) async throws -> PromotionsCouponLedgerEntriesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "stock_id", value: stockId, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_ledger_entries"), query), responseType: PromotionsCouponLedgerEntriesListResult.self)
+    }
+
+    /// Promotion Coupon Stocks List
+    public func promotionsCouponStocksList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> PromotionsCouponStocksListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_stocks"), query), responseType: PromotionsCouponStocksListResult.self)
+    }
+
+    /// Promotion Discount Allocations List
+    public func promotionsDiscountAllocationsList(applicationId: String? = nil) async throws -> PromotionsDiscountAllocationsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "application_id", value: applicationId, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_allocations"), query), responseType: PromotionsDiscountAllocationsListResult.self)
+    }
+
+    /// Promotion Discount Applications List
+    public func promotionsDiscountApplicationsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> PromotionsDiscountApplicationsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_applications"), query), responseType: PromotionsDiscountApplicationsListResult.self)
+    }
+
+    /// Promotion Events List
+    public func promotionsEventsList(status: String? = nil) async throws -> PromotionsEventsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/events"), query), responseType: PromotionsEventsListResult.self)
+    }
+
+    /// Promotion External Bindings List
+    public func promotionsExternalBindingsList(platform: String? = nil) async throws -> PromotionsExternalBindingsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "platform", value: platform, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/external_bindings"), query), responseType: PromotionsExternalBindingsListResult.self)
+    }
+
+    /// Promotion Offers List
+    public func promotionsOffersManagementList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> PromotionsOffersManagementListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/offers"), query), responseType: PromotionsOffersManagementListResult.self)
+    }
+
+    /// Promotion User Coupons Management List
+    public func promotionsUserCouponsManagementList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> PromotionsUserCouponsManagementListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/user_coupons"), query), responseType: PromotionsUserCouponsManagementListResult.self)
+    }
+
     /// List overview
     public func analyticsAdminOverviewRetrieve(timeRange: String? = nil, startTime: String? = nil, endTime: String? = nil, limit: Int? = nil) async throws -> AnalyticsAdminOverviewRetrieveResult? {
         let query = buildQueryString([
@@ -187,6 +287,35 @@ public class SystemApi {
             QueryParameterSpec(name: "model", value: model, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query), responseType: RecordsListResult.self)
+    }
+
+    /// List service nodes
+    public func serviceNodesList(q: String? = nil, status: String? = nil) async throws -> ServiceNodesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/service_nodes"), query), responseType: ServiceNodesListResult.self)
+    }
+
+    /// Create service node
+    public func serviceNodesCreate(body: AdminServiceNodeCreateRequest) async throws -> ServiceNodesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/service_nodes"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ServiceNodesCreateResult.self)
+    }
+
+    /// Delete service node
+    public func serviceNodesDelete(nodeId: String) async throws -> ServiceNodesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/system/service_nodes/\(serializePathParameter(nodeId, PathParameterSpec(name: "nodeId", style: "simple", explode: false)))"), responseType: ServiceNodesDeleteResult.self)
+    }
+
+    /// Update service node
+    public func serviceNodesUpdate(nodeId: String, body: AdminServiceNodeUpdateRequest) async throws -> ServiceNodesUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/system/service_nodes/\(serializePathParameter(nodeId, PathParameterSpec(name: "nodeId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ServiceNodesUpdateResult.self)
+    }
+
+    /// Update service node status
+    public func serviceNodesStatusUpdate(nodeId: String, body: AdminServiceNodeStatusUpdateRequest) async throws -> ServiceNodesStatusUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/system/service_nodes/\(serializePathParameter(nodeId, PathParameterSpec(name: "nodeId", style: "simple", explode: false)))/status"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ServiceNodesStatusUpdateResult.self)
     }
 
     /// Retrieve site branding and deployment personalization settings

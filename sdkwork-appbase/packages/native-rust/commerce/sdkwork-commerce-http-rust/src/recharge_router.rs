@@ -3,7 +3,7 @@ use std::pin::Pin;
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use axum::extract::{Path, State};
+use axum::extract::{Extension, Path, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
@@ -14,15 +14,15 @@ use sdkwork_commerce_payment::{
     CreatePointsRechargeOrderOutcome, RechargePackageItem, RechargePackageListQuery,
 };
 use sdkwork_commerce_storage_sqlx::{PostgresCommerceRechargeStore, SqliteCommerceRechargeStore};
+use sdkwork_iam_core::IamAppContext;
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, SqlitePool};
 
-const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
-const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
-const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
+use crate::subject::{app_runtime_subject_from_extension, AppRuntimeSubject};
+use crate::with_request_identity;
+
 const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
 const REQUEST_NO_HEADER: &str = "Sdkwork-Request-No";
-const X_REQUEST_ID_HEADER: &str = "X-Request-Id";
 const MAX_PAYMENT_METHOD_LEN: usize = 50;
 const MAX_CHECKOUT_ORDER_NO_LEN: usize = 128;
 const MAX_RECHARGE_CENTS: i64 = 1_000_000;
@@ -53,18 +53,38 @@ struct AppRechargeCheckoutState {
     store: Arc<dyn AppbaseRechargeCheckoutStore>,
 }
 
-#[derive(Debug, Clone)]
-struct AppRechargeSubject {
-    tenant_id: String,
-    organization_id: Option<String>,
-    user_id: String,
-}
-
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct SubmitRechargeRequest {
     amount: Option<serde_json::Value>,
     method: Option<String>,
+    metadata: Option<serde_json::Value>,
+}
+
+impl SubmitRechargeRequest {
+    fn amount_value(&self) -> Option<&serde_json::Value> {
+        self.amount
+            .as_ref()
+            .or_else(|| self.metadata_value("amount"))
+    }
+
+    fn payment_method(&self) -> Option<&str> {
+        self.method
+            .as_deref()
+            .or_else(|| self.metadata_text("paymentMethod"))
+            .or_else(|| self.metadata_text("method"))
+    }
+
+    fn metadata_text(&self, key: &str) -> Option<&str> {
+        self.metadata_value(key).and_then(serde_json::Value::as_str)
+    }
+
+    fn metadata_value(&self, key: &str) -> Option<&serde_json::Value> {
+        self.metadata
+            .as_ref()
+            .and_then(serde_json::Value::as_object)
+            .and_then(|metadata| metadata.get(key))
+    }
 }
 
 #[derive(Debug, Serialize)]
@@ -192,26 +212,28 @@ pub fn app_recharge_checkout_router_with_postgres_pool(pool: PgPool) -> Router {
 pub fn app_recharge_checkout_router_with_store(
     store: Arc<dyn AppbaseRechargeCheckoutStore>,
 ) -> Router {
-    Router::new()
-        .route(
-            "/app/v3/api/recharges/packages",
-            get(fetch_recharge_packages),
-        )
-        .route("/app/v3/api/recharges/orders", post(submit_recharge))
-        .route(
-            "/app/v3/api/recharges/orders/{orderId}",
-            get(fetch_checkout_status),
-        )
-        .with_state(AppRechargeCheckoutState { store })
+    with_request_identity(
+        Router::new()
+            .route(
+                "/app/v3/api/recharges/packages",
+                get(fetch_recharge_packages),
+            )
+            .route("/app/v3/api/recharges/orders", post(submit_recharge))
+            .route(
+                "/app/v3/api/recharges/orders/{orderId}",
+                get(fetch_checkout_status),
+            )
+            .with_state(AppRechargeCheckoutState { store }),
+    )
 }
 
 async fn fetch_recharge_packages(
     State(state): State<AppRechargeCheckoutState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match app_recharge_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let query = match RechargePackageListQuery::new(
         &subject.tenant_id,
@@ -236,18 +258,19 @@ async fn fetch_recharge_packages(
 
 async fn submit_recharge(
     State(state): State<AppRechargeCheckoutState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Json(request): Json<SubmitRechargeRequest>,
 ) -> Response {
-    let subject = match app_recharge_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
-    let amount = match validate_recharge_amount(request.amount.as_ref()) {
+    let amount = match validate_recharge_amount(request.amount_value()) {
         Ok(amount) => amount,
         Err(message) => return validation_response(message),
     };
-    let method = match validate_payment_method(request.method.as_deref()) {
+    let method = match validate_payment_method(request.payment_method()) {
         Ok(method) => method,
         Err(message) => return validation_response(message),
     };
@@ -255,11 +278,9 @@ async fn submit_recharge(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let request_no = optional_text_header(&headers, REQUEST_NO_HEADER)
-        .or_else(|| optional_text_header(&headers, X_REQUEST_ID_HEADER))
-        .unwrap_or_else(|| {
-            fallback_request_no(&subject, amount.as_str(), &method, &idempotency_key)
-        });
+    let request_no = optional_text_header(&headers, REQUEST_NO_HEADER).unwrap_or_else(|| {
+        fallback_request_no(&subject, amount.as_str(), &method, &idempotency_key)
+    });
     let command = match build_create_recharge_command(
         &subject,
         amount,
@@ -281,12 +302,12 @@ async fn submit_recharge(
 
 async fn fetch_checkout_status(
     State(state): State<AppRechargeCheckoutState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Path(order_no): Path<String>,
 ) -> Response {
-    let subject = match app_recharge_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let order_no = match validate_checkout_order_no(order_no) {
         Ok(order_no) => order_no,
@@ -316,14 +337,6 @@ async fn fetch_checkout_status(
             .into_response(),
         Err(error) => commerce_error_response(error),
     }
-}
-
-fn app_recharge_subject_from_headers(headers: &HeaderMap) -> Result<AppRechargeSubject, Response> {
-    Ok(AppRechargeSubject {
-        tenant_id: required_text_header(headers, X_SDKWORK_TENANT_ID)?,
-        organization_id: optional_text_header(headers, X_SDKWORK_ORGANIZATION_ID),
-        user_id: required_text_header(headers, X_SDKWORK_USER_ID)?,
-    })
 }
 
 fn required_text_header(headers: &HeaderMap, name: &'static str) -> Result<String, Response> {
@@ -400,7 +413,7 @@ fn validate_checkout_order_no(order_no: String) -> Result<String, String> {
 }
 
 fn build_create_recharge_command(
-    subject: &AppRechargeSubject,
+    subject: &AppRuntimeSubject,
     amount: CommerceMoney,
     method: &str,
     request_no: &str,
@@ -519,7 +532,7 @@ fn validation_response(message: impl Into<String>) -> Response {
 }
 
 fn fallback_request_no(
-    subject: &AppRechargeSubject,
+    subject: &AppRuntimeSubject,
     amount: &str,
     method: &str,
     idempotency_key: &str,

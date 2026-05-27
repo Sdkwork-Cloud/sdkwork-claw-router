@@ -16,7 +16,7 @@ public class OpenAiContainerFile {
     public Integer getBytes() {
         return this.bytes;
     }
-    
+
     public void setBytes(Integer bytes) {
         this.bytes = bytes;
     }
@@ -24,7 +24,7 @@ public class OpenAiContainerFile {
     public String getContainerId() {
         return this.containerId;
     }
-    
+
     public void setContainerId(String containerId) {
         this.containerId = containerId;
     }
@@ -32,7 +32,7 @@ public class OpenAiContainerFile {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -40,7 +40,7 @@ public class OpenAiContainerFile {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -48,7 +48,7 @@ public class OpenAiContainerFile {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -56,7 +56,7 @@ public class OpenAiContainerFile {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -64,7 +64,7 @@ public class OpenAiContainerFile {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -72,7 +72,7 @@ public class OpenAiContainerFile {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -80,7 +80,7 @@ public class OpenAiContainerFile {
     public String getPurpose() {
         return this.purpose;
     }
-    
+
     public void setPurpose(String purpose) {
         this.purpose = purpose;
     }

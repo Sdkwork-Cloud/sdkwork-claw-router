@@ -14,7 +14,7 @@ public class OpenAiVideoExtendRequest {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -22,7 +22,7 @@ public class OpenAiVideoExtendRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -30,7 +30,7 @@ public class OpenAiVideoExtendRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -38,7 +38,7 @@ public class OpenAiVideoExtendRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -46,7 +46,7 @@ public class OpenAiVideoExtendRequest {
     public Integer getSeconds() {
         return this.seconds;
     }
-    
+
     public void setSeconds(Integer seconds) {
         this.seconds = seconds;
     }
@@ -54,7 +54,7 @@ public class OpenAiVideoExtendRequest {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -62,7 +62,7 @@ public class OpenAiVideoExtendRequest {
     public String getVideo() {
         return this.video;
     }
-    
+
     public void setVideo(String video) {
         this.video = video;
     }

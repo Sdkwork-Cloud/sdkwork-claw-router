@@ -12,7 +12,7 @@ public class DashboardChartPoint {
     public Double getAudioWhisper() {
         return this.audioWhisper;
     }
-    
+
     public void setAudioWhisper(Double audioWhisper) {
         this.audioWhisper = audioWhisper;
     }
@@ -20,7 +20,7 @@ public class DashboardChartPoint {
     public Double getImageMidjourneyDallE() {
         return this.imageMidjourneyDallE;
     }
-    
+
     public void setImageMidjourneyDallE(Double imageMidjourneyDallE) {
         this.imageMidjourneyDallE = imageMidjourneyDallE;
     }
@@ -28,7 +28,7 @@ public class DashboardChartPoint {
     public Double getLlmText() {
         return this.llmText;
     }
-    
+
     public void setLlmText(Double llmText) {
         this.llmText = llmText;
     }
@@ -36,7 +36,7 @@ public class DashboardChartPoint {
     public Double getMusicSuno() {
         return this.musicSuno;
     }
-    
+
     public void setMusicSuno(Double musicSuno) {
         this.musicSuno = musicSuno;
     }
@@ -44,7 +44,7 @@ public class DashboardChartPoint {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -52,7 +52,7 @@ public class DashboardChartPoint {
     public Double getVideoRunwaySora() {
         return this.videoRunwaySora;
     }
-    
+
     public void setVideoRunwaySora(Double videoRunwaySora) {
         this.videoRunwaySora = videoRunwaySora;
     }

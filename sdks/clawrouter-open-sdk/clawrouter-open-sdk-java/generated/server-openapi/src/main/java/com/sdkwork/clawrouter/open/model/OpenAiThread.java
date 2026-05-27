@@ -12,7 +12,7 @@ public class OpenAiThread {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -20,7 +20,7 @@ public class OpenAiThread {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -28,7 +28,7 @@ public class OpenAiThread {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -36,7 +36,7 @@ public class OpenAiThread {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -44,7 +44,7 @@ public class OpenAiThread {
     public String getToolResources() {
         return this.toolResources;
     }
-    
+
     public void setToolResources(String toolResources) {
         this.toolResources = toolResources;
     }

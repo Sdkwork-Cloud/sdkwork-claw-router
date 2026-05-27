@@ -16,7 +16,7 @@ public class GoogleSchema {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -24,7 +24,7 @@ public class GoogleSchema {
     public List<String> getEnum_() {
         return this.enum_;
     }
-    
+
     public void setEnum_(List<String> enum_) {
         this.enum_ = enum_;
     }
@@ -32,7 +32,7 @@ public class GoogleSchema {
     public String getFormat() {
         return this.format;
     }
-    
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -40,7 +40,7 @@ public class GoogleSchema {
     public Object getItems() {
         return this.items;
     }
-    
+
     public void setItems(Object items) {
         this.items = items;
     }
@@ -48,7 +48,7 @@ public class GoogleSchema {
     public Boolean getNullable() {
         return this.nullable;
     }
-    
+
     public void setNullable(Boolean nullable) {
         this.nullable = nullable;
     }
@@ -56,7 +56,7 @@ public class GoogleSchema {
     public Map<String, Object> getProperties() {
         return this.properties;
     }
-    
+
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
     }
@@ -64,7 +64,7 @@ public class GoogleSchema {
     public List<String> getRequired() {
         return this.required;
     }
-    
+
     public void setRequired(List<String> required) {
         this.required = required;
     }
@@ -72,7 +72,7 @@ public class GoogleSchema {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

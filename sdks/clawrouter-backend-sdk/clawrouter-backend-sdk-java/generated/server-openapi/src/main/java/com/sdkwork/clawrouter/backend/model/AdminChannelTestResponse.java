@@ -11,7 +11,7 @@ public class AdminChannelTestResponse {
     public String getChannelId() {
         return this.channelId;
     }
-    
+
     public void setChannelId(String channelId) {
         this.channelId = channelId;
     }
@@ -19,7 +19,7 @@ public class AdminChannelTestResponse {
     public AdminChannelItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminChannelItem item) {
         this.item = item;
     }
@@ -27,7 +27,7 @@ public class AdminChannelTestResponse {
     public String getLatency() {
         return this.latency;
     }
-    
+
     public void setLatency(String latency) {
         this.latency = latency;
     }
@@ -35,7 +35,7 @@ public class AdminChannelTestResponse {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -43,7 +43,7 @@ public class AdminChannelTestResponse {
     public Boolean getSuccess() {
         return this.success;
     }
-    
+
     public void setSuccess(Boolean success) {
         this.success = success;
     }

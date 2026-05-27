@@ -41,7 +41,7 @@ public class AdminSkillCreateRequest {
     public Boolean getBuiltin() {
         return this.builtin;
     }
-    
+
     public void setBuiltin(Boolean builtin) {
         this.builtin = builtin;
     }
@@ -49,7 +49,7 @@ public class AdminSkillCreateRequest {
     public List<String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
     }
@@ -57,7 +57,7 @@ public class AdminSkillCreateRequest {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -65,7 +65,7 @@ public class AdminSkillCreateRequest {
     public Map<String, String> getConfigSchema() {
         return this.configSchema;
     }
-    
+
     public void setConfigSchema(Map<String, String> configSchema) {
         this.configSchema = configSchema;
     }
@@ -73,7 +73,7 @@ public class AdminSkillCreateRequest {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -81,7 +81,7 @@ public class AdminSkillCreateRequest {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -89,7 +89,7 @@ public class AdminSkillCreateRequest {
     public Map<String, String> getDefaultConfig() {
         return this.defaultConfig;
     }
-    
+
     public void setDefaultConfig(Map<String, String> defaultConfig) {
         this.defaultConfig = defaultConfig;
     }
@@ -97,7 +97,7 @@ public class AdminSkillCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -105,7 +105,7 @@ public class AdminSkillCreateRequest {
     public String getDocumentationUrl() {
         return this.documentationUrl;
     }
-    
+
     public void setDocumentationUrl(String documentationUrl) {
         this.documentationUrl = documentationUrl;
     }
@@ -113,7 +113,7 @@ public class AdminSkillCreateRequest {
     public Boolean getEnabled() {
         return this.enabled;
     }
-    
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -121,7 +121,7 @@ public class AdminSkillCreateRequest {
     public String getEntrypoint() {
         return this.entrypoint;
     }
-    
+
     public void setEntrypoint(String entrypoint) {
         this.entrypoint = entrypoint;
     }
@@ -129,7 +129,7 @@ public class AdminSkillCreateRequest {
     public Boolean getFeatured() {
         return this.featured;
     }
-    
+
     public void setFeatured(Boolean featured) {
         this.featured = featured;
     }
@@ -137,7 +137,7 @@ public class AdminSkillCreateRequest {
     public String getHomepageUrl() {
         return this.homepageUrl;
     }
-    
+
     public void setHomepageUrl(String homepageUrl) {
         this.homepageUrl = homepageUrl;
     }
@@ -145,7 +145,7 @@ public class AdminSkillCreateRequest {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -153,7 +153,7 @@ public class AdminSkillCreateRequest {
     public Boolean getIsBuiltin() {
         return this.isBuiltin;
     }
-    
+
     public void setIsBuiltin(Boolean isBuiltin) {
         this.isBuiltin = isBuiltin;
     }
@@ -161,7 +161,7 @@ public class AdminSkillCreateRequest {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -169,7 +169,7 @@ public class AdminSkillCreateRequest {
     public String getManifestUrl() {
         return this.manifestUrl;
     }
-    
+
     public void setManifestUrl(String manifestUrl) {
         this.manifestUrl = manifestUrl;
     }
@@ -177,7 +177,7 @@ public class AdminSkillCreateRequest {
     public String getMarketStatus() {
         return this.marketStatus;
     }
-    
+
     public void setMarketStatus(String marketStatus) {
         this.marketStatus = marketStatus;
     }
@@ -185,7 +185,7 @@ public class AdminSkillCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -193,7 +193,7 @@ public class AdminSkillCreateRequest {
     public String getPackageId() {
         return this.packageId;
     }
-    
+
     public void setPackageId(String packageId) {
         this.packageId = packageId;
     }
@@ -201,7 +201,7 @@ public class AdminSkillCreateRequest {
     public String getPrice() {
         return this.price;
     }
-    
+
     public void setPrice(String price) {
         this.price = price;
     }
@@ -209,7 +209,7 @@ public class AdminSkillCreateRequest {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -217,7 +217,7 @@ public class AdminSkillCreateRequest {
     public Integer getRecommendWeight() {
         return this.recommendWeight;
     }
-    
+
     public void setRecommendWeight(Integer recommendWeight) {
         this.recommendWeight = recommendWeight;
     }
@@ -225,7 +225,7 @@ public class AdminSkillCreateRequest {
     public String getRepositoryUrl() {
         return this.repositoryUrl;
     }
-    
+
     public void setRepositoryUrl(String repositoryUrl) {
         this.repositoryUrl = repositoryUrl;
     }
@@ -233,7 +233,7 @@ public class AdminSkillCreateRequest {
     public String getReviewStatus() {
         return this.reviewStatus;
     }
-    
+
     public void setReviewStatus(String reviewStatus) {
         this.reviewStatus = reviewStatus;
     }
@@ -241,7 +241,7 @@ public class AdminSkillCreateRequest {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -249,7 +249,7 @@ public class AdminSkillCreateRequest {
     public String getSkillKey() {
         return this.skillKey;
     }
-    
+
     public void setSkillKey(String skillKey) {
         this.skillKey = skillKey;
     }
@@ -257,7 +257,7 @@ public class AdminSkillCreateRequest {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -265,7 +265,7 @@ public class AdminSkillCreateRequest {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -273,7 +273,7 @@ public class AdminSkillCreateRequest {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -281,7 +281,7 @@ public class AdminSkillCreateRequest {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -289,7 +289,7 @@ public class AdminSkillCreateRequest {
     public String getVersionName() {
         return this.versionName;
     }
-    
+
     public void setVersionName(String versionName) {
         this.versionName = versionName;
     }
@@ -297,7 +297,7 @@ public class AdminSkillCreateRequest {
     public String getVisibility() {
         return this.visibility;
     }
-    
+
     public void setVisibility(String visibility) {
         this.visibility = visibility;
     }

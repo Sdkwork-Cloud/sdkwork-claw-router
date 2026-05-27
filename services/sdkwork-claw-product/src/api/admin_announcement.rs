@@ -10,6 +10,7 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -21,8 +22,6 @@ use crate::ports::{
 
 const MAX_TITLE_LEN: usize = 200;
 const MAX_CONTENT_LEN: usize = 20_000;
-const MAX_REQUEST_ID_LEN: usize = 128;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminAnnouncementState {
@@ -383,7 +382,7 @@ fn parse_announcement_id(value: &str) -> Result<i64, String> {
 
 fn build_create_command(
     state: AdminAnnouncementState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAnnouncementSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminAnnouncementCommand, AnnouncementCommandBuildError> {
@@ -396,14 +395,14 @@ fn build_create_command(
         target: request.target,
         status: request.status,
         show_as_popup: request.show_as_popup,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_command(
     state: AdminAnnouncementState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAnnouncementSubject,
     announcement_id: i64,
     request: NormalizedUpdateRequest,
@@ -417,14 +416,14 @@ fn build_update_command(
         target: request.target,
         status: request.status,
         show_as_popup: request.show_as_popup,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_command(
     state: AdminAnnouncementState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAnnouncementSubject,
     announcement_id: i64,
 ) -> Result<DeleteAdminAnnouncementCommand, AnnouncementCommandBuildError> {
@@ -432,7 +431,7 @@ fn build_delete_command(
         subject,
         announcement_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -446,29 +445,13 @@ fn generate_entity_uuid(
         .map_err(AnnouncementCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminAnnouncementState,
-) -> Result<String, AnnouncementCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(AnnouncementCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> AnnouncementCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AnnouncementCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AnnouncementCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_item_response(item: AdminAnnouncementItem) -> AdminAnnouncementItemResponse {

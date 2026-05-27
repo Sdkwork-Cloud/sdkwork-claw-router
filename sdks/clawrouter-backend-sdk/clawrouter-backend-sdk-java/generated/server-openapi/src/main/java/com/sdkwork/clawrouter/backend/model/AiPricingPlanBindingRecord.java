@@ -32,7 +32,7 @@ public class AiPricingPlanBindingRecord {
     public String getBindingSource() {
         return this.bindingSource;
     }
-    
+
     public void setBindingSource(String bindingSource) {
         this.bindingSource = bindingSource;
     }
@@ -40,7 +40,7 @@ public class AiPricingPlanBindingRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -48,7 +48,7 @@ public class AiPricingPlanBindingRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -56,7 +56,7 @@ public class AiPricingPlanBindingRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -64,7 +64,7 @@ public class AiPricingPlanBindingRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -72,7 +72,7 @@ public class AiPricingPlanBindingRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -80,7 +80,7 @@ public class AiPricingPlanBindingRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -88,7 +88,7 @@ public class AiPricingPlanBindingRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -96,7 +96,7 @@ public class AiPricingPlanBindingRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -104,7 +104,7 @@ public class AiPricingPlanBindingRecord {
     public String getMultiplierOverride() {
         return this.multiplierOverride;
     }
-    
+
     public void setMultiplierOverride(String multiplierOverride) {
         this.multiplierOverride = multiplierOverride;
     }
@@ -112,7 +112,7 @@ public class AiPricingPlanBindingRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -120,7 +120,7 @@ public class AiPricingPlanBindingRecord {
     public String getPricingPlanCode() {
         return this.pricingPlanCode;
     }
-    
+
     public void setPricingPlanCode(String pricingPlanCode) {
         this.pricingPlanCode = pricingPlanCode;
     }
@@ -128,7 +128,7 @@ public class AiPricingPlanBindingRecord {
     public String getPricingPlanId() {
         return this.pricingPlanId;
     }
-    
+
     public void setPricingPlanId(String pricingPlanId) {
         this.pricingPlanId = pricingPlanId;
     }
@@ -136,7 +136,7 @@ public class AiPricingPlanBindingRecord {
     public Integer getPriority() {
         return this.priority;
     }
-    
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -144,7 +144,7 @@ public class AiPricingPlanBindingRecord {
     public String getQuotaPolicyId() {
         return this.quotaPolicyId;
     }
-    
+
     public void setQuotaPolicyId(String quotaPolicyId) {
         this.quotaPolicyId = quotaPolicyId;
     }
@@ -152,7 +152,7 @@ public class AiPricingPlanBindingRecord {
     public String getRpmOverride() {
         return this.rpmOverride;
     }
-    
+
     public void setRpmOverride(String rpmOverride) {
         this.rpmOverride = rpmOverride;
     }
@@ -160,7 +160,7 @@ public class AiPricingPlanBindingRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -168,7 +168,7 @@ public class AiPricingPlanBindingRecord {
     public String getSubjectCode() {
         return this.subjectCode;
     }
-    
+
     public void setSubjectCode(String subjectCode) {
         this.subjectCode = subjectCode;
     }
@@ -176,7 +176,7 @@ public class AiPricingPlanBindingRecord {
     public String getSubjectId() {
         return this.subjectId;
     }
-    
+
     public void setSubjectId(String subjectId) {
         this.subjectId = subjectId;
     }
@@ -184,7 +184,7 @@ public class AiPricingPlanBindingRecord {
     public String getSubjectType() {
         return this.subjectType;
     }
-    
+
     public void setSubjectType(String subjectType) {
         this.subjectType = subjectType;
     }
@@ -192,7 +192,7 @@ public class AiPricingPlanBindingRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -200,7 +200,7 @@ public class AiPricingPlanBindingRecord {
     public String getTpmOverride() {
         return this.tpmOverride;
     }
-    
+
     public void setTpmOverride(String tpmOverride) {
         this.tpmOverride = tpmOverride;
     }
@@ -208,7 +208,7 @@ public class AiPricingPlanBindingRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -216,7 +216,7 @@ public class AiPricingPlanBindingRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -224,7 +224,7 @@ public class AiPricingPlanBindingRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -9,7 +9,7 @@ public class AppApiKeyListResponse {
     public List<AppApiKeyGroup> getGroups() {
         return this.groups;
     }
-    
+
     public void setGroups(List<AppApiKeyGroup> groups) {
         this.groups = groups;
     }
@@ -17,7 +17,7 @@ public class AppApiKeyListResponse {
     public List<AppApiKeyItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AppApiKeyItem> items) {
         this.items = items;
     }

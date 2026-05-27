@@ -12,7 +12,7 @@ public class OpenAiProjectUser {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -20,7 +20,7 @@ public class OpenAiProjectUser {
     public String getEmail() {
         return this.email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -28,7 +28,7 @@ public class OpenAiProjectUser {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -36,7 +36,7 @@ public class OpenAiProjectUser {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,7 +44,7 @@ public class OpenAiProjectUser {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -52,7 +52,7 @@ public class OpenAiProjectUser {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

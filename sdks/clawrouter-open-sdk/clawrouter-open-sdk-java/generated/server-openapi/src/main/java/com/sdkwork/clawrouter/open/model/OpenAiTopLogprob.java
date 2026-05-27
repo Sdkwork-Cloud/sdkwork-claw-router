@@ -10,7 +10,7 @@ public class OpenAiTopLogprob {
     public List<Integer> getBytes() {
         return this.bytes;
     }
-    
+
     public void setBytes(List<Integer> bytes) {
         this.bytes = bytes;
     }
@@ -18,7 +18,7 @@ public class OpenAiTopLogprob {
     public Double getLogprob() {
         return this.logprob;
     }
-    
+
     public void setLogprob(Double logprob) {
         this.logprob = logprob;
     }
@@ -26,7 +26,7 @@ public class OpenAiTopLogprob {
     public String getToken() {
         return this.token;
     }
-    
+
     public void setToken(String token) {
         this.token = token;
     }

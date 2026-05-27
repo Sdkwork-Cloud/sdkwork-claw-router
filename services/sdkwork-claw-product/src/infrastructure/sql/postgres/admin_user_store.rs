@@ -177,16 +177,15 @@ impl AdminUserStore for PostgresAdminUserStore {
             let account = ensure_cash_account(&mut tx, &command).await?;
             let balance_before = DecimalValue::parse(&account.available_amount)?;
             let balance_after = if command.adjustment_type == "refund" {
-                let next = balance_before.subtract(command.amount);
+                let next = balance_before.checked_subtract(command.amount)?;
                 if next < DecimalValue::ZERO {
                     return Err(DomainError::conflict("refund amount exceeds user balance"));
                 }
                 next
             } else {
-                balance_before + command.amount
+                balance_before.checked_add(command.amount)?
             };
-            update_account_balance(&mut tx, &account.id, balance_after, &command.requested_at)
-                .await?;
+            update_account_balance(&mut tx, &account, balance_after, &command.requested_at).await?;
             insert_account_history(
                 &mut tx,
                 &command,
@@ -666,7 +665,9 @@ async fn load_cash_account(
 ) -> DomainResult<Option<CashAccountRow>> {
     let row = sqlx::query(
         r#"
-        SELECT id, COALESCE(available_amount, '0')::text AS available_amount
+        SELECT id,
+               COALESCE(available_amount, '0')::text AS available_amount,
+               COALESCE(version, 0) AS version
         FROM commerce_account
         WHERE tenant_id = CAST($1 AS TEXT)
           AND organization_id = CAST($2 AS TEXT)
@@ -691,6 +692,7 @@ async fn load_cash_account(
         Ok(CashAccountRow {
             id: row.try_get("id").map_err(row_error)?,
             available_amount: row.try_get("available_amount").map_err(row_error)?,
+            version: integer_cell(&row, "version"),
         })
     })
     .transpose()
@@ -698,25 +700,32 @@ async fn load_cash_account(
 
 async fn update_account_balance(
     tx: &mut Transaction<'_, Postgres>,
-    account_id: &str,
+    account: &CashAccountRow,
     balance_after: DecimalValue,
     requested_at: &str,
 ) -> DomainResult<()> {
-    sqlx::query(
+    let result = sqlx::query(
         r#"
         UPDATE commerce_account
         SET available_amount = $1,
             updated_at = $2,
             version = COALESCE(version, 0) + 1
         WHERE id = $3
+          AND version = $4
         "#,
     )
     .bind(balance_after.to_fixed_string(4))
     .bind(requested_at)
-    .bind(account_id)
+    .bind(&account.id)
+    .bind(account.version)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update user balance", error))?;
+    if result.rows_affected() != 1 {
+        return Err(DomainError::conflict(
+            "admin user balance update was not applied atomically",
+        ));
+    }
     Ok(())
 }
 
@@ -1170,6 +1179,7 @@ fn api_key_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminUserApiKeyI
 struct CashAccountRow {
     id: String,
     available_amount: String,
+    version: i64,
 }
 
 fn account_id(uuid: &str) -> String {

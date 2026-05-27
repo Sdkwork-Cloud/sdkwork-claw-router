@@ -7,7 +7,7 @@ public class AdminSkillArtifactMutationResponse {
     public AdminSkillArtifactItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminSkillArtifactItem item) {
         this.item = item;
     }

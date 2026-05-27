@@ -2,7 +2,7 @@
 
 ## Goal
 
-Fix point recharge behavior across console recharge, VIP credit purchase, appbase recharge order creation, and admin membership recharge package management.
+Fix point recharge behavior across console recharge, membership credit purchase, appbase recharge order creation, and admin membership recharge package management.
 
 The system must:
 
@@ -190,16 +190,16 @@ Changes:
 - Package order submits `{ amount, method, packageId }`.
 - Custom order submits `{ amount, method }`.
 
-### VIP Credit Purchase
+### membership Credit Purchase
 
-`apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/VipView.tsx`
+`apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-membership/src/MembershipView.tsx`
 
 Changes:
 
 - Continue loading packages from `RechargeService.fetchPackages()`.
 - Continue using backend package `points`.
 - Ensure package order passes `packageId` and top-level request fields through `RechargeService.submitRecharge()`.
-- Do not add custom amount to the VIP modal unless requested separately; the current VIP flow is package-based.
+- Do not add custom amount to the membership modal unless requested separately; the current membership flow is package-based.
 
 ### Admin Membership Center
 
@@ -263,7 +263,7 @@ Frontend TypeScript/runtime tests:
 - `RechargeService.submitRecharge()` sends top-level `amount`, `method`, and optional `packageId`.
 - Console custom amount calculates display points from settings rate.
 - Empty backend package list renders empty state instead of default options.
-- VIP credit purchase passes selected package id.
+- membership credit purchase passes selected package id.
 - Admin recharge packages page loads and saves ratio settings through backend SDK boundary.
 
 Contract/SDK verification:
@@ -278,7 +278,7 @@ Contract/SDK verification:
 - `/console/recharge` never displays frontend hardcoded recharge packages.
 - `/console/recharge` custom amount points are based on backend ratio settings.
 - `/console/recharge` package orders pass `packageId`.
-- `/vip` credit purchase package orders pass `packageId`.
+- `/memberships` credit purchase package orders pass `packageId`.
 - Backend order creation honors package identity, not just amount.
 - Backend rejects package amount mismatch.
 - Admin membership center can update `1 CNY = N points`.

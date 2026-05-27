@@ -8,7 +8,7 @@ public class GoogleBatchEmbedContentsResponse {
     public List<GoogleContentEmbedding> getEmbeddings() {
         return this.embeddings;
     }
-    
+
     public void setEmbeddings(List<GoogleContentEmbedding> embeddings) {
         this.embeddings = embeddings;
     }

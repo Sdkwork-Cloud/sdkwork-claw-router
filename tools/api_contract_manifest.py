@@ -114,16 +114,22 @@ class ApiContractManifestGenerator:
         "commerce_reports": "commerce",
         "content": "content",
         "communication": "communication",
+        "messaging": "messaging",
         "notification": "notification",
         "ai": "intelligence",
         "chat": "chat",
         "memory": "memory",
+        "mcp": "mcp",
+        "prompts": "prompts",
         "runtime": "runtime",
         "agents": "agents",
         "sdkReference": "sdkReference",
         "system": "system",
+        "oss": "oss",
+        "storage": "storage",
         "platform": "platform",
         "openPlatform": "platform",
+        "serviceProviders": "integration",
         "integration": "integration",
         "ecosystem": "ecosystem",
     }
@@ -156,6 +162,8 @@ class ApiContractManifestGenerator:
         "orders": "commerce",
         "payment": "commerce",
         "payments": "commerce",
+        "promotion": "promotion",
+        "promotions": "promotion",
         "recharge": "commerce",
         "recharges": "commerce",
         "refund": "commerce",
@@ -175,6 +183,9 @@ class ApiContractManifestGenerator:
         "ai": "intelligence",
         "chat": "chat",
         "memory": "memory",
+        "mcp": "mcp",
+        "prompt": "prompts",
+        "prompts": "prompts",
         "runtime": "runtime",
         "agent": "agents",
         "agents": "agents",
@@ -191,12 +202,28 @@ class ApiContractManifestGenerator:
         "openPlatform": "platform",
         "openplatform": "platform",
         "open_platform": "platform",
+        "serviceProvider": "integration",
+        "serviceProviders": "integration",
+        "serviceprovider": "integration",
+        "serviceproviders": "integration",
+        "service_provider": "integration",
+        "service_providers": "integration",
         "skill": "ecosystem",
         "skills": "ecosystem",
         "ecosystem": "ecosystem",
         "system": "system",
+        "oss": "oss",
+        "objectStorage": "oss",
+        "objectstorage": "oss",
+        "object_storage": "oss",
+        "s3": "oss",
+        "storage": "storage",
         "notification": "notification",
         "notifications": "notification",
+        "message_delivery": "messaging",
+        "messaging": "messaging",
+        "sms": "messaging",
+        "email": "messaging",
         "ops": "system",
     }
     TOP_LEVEL_TAGS = set(STANDARD_TAG_DOMAINS)
@@ -246,9 +273,14 @@ class ApiContractManifestGenerator:
         "agent": "agents",
         "channel": "channels",
         "comment": "comments",
+        "course-applications": "course-applications",
+        "course-lessons": "course-lessons",
+        "course-sections": "course-sections",
+        "course_applications": "course-applications",
+        "course_lessons": "course-lessons",
+        "course_sections": "course-sections",
         "coupon": "coupons",
-        "coupon-batches": "coupon_batches",
-        "coupon-codes": "coupon_codes",
+        "promotion-codes": "promotion_codes",
         "feed": "feeds",
         "firewall": "firewalls",
         "model": "models",
@@ -263,10 +295,27 @@ class ApiContractManifestGenerator:
         "user": "users",
     }
     TABLE_TAG_RULES = (
+        ("integration_service_provider_", "serviceProviders"),
+        ("integration_service_provider", "serviceProviders"),
+        ("ai_usage_service_provider_", "serviceProviders"),
+        ("commerce_usage_service_provider_", "serviceProviders"),
+        ("commerce_service_provider_", "serviceProviders"),
+        ("analytics_service_provider_", "serviceProviders"),
         ("iam_", "iam"),
+        ("ai_mcp_", "mcp"),
+        ("ai_mcp", "mcp"),
+        ("ai_prompt_", "prompts"),
+        ("ai_prompt", "prompts"),
         ("ai_", "ai"),
+        ("promotion_", "system"),
         ("commerce_", "commerce"),
         ("content_", "content"),
+        ("messaging_", "messaging"),
+        ("object_", "storage"),
+        ("storage_", "storage"),
+        ("upload_", "storage"),
+        ("drive_", "storage"),
+        ("file_", "storage"),
         ("agent_skill", "ecosystem"),
         ("open_platform_", "openPlatform"),
         ("open_platform", "openPlatform"),
@@ -656,6 +705,8 @@ class ApiContractManifestGenerator:
         segments = self._relative_path_segments(api_surface, api_path)
         if not segments:
             return api_path
+        if self._is_standard_promotion_resource_path(segments):
+            return api_path
         if api_surface == "app" and self._is_standard_appbase_resource_path(segments):
             return api_path
         tag = self._tag_from_segments(segments, read_sources, write_tables)
@@ -671,6 +722,9 @@ class ApiContractManifestGenerator:
         else:
             relative_segments = [self._path_segment_from_tag(tag), *canonical_segments]
         return prefix + "/" + "/".join(relative_segments)
+
+    def _is_standard_promotion_resource_path(self, segments: list[str]) -> bool:
+        return bool(segments) and self._normalize_static_segment(segments[0]) == "promotions"
 
     def _is_standard_appbase_resource_path(self, segments: list[str]) -> bool:
         return bool(segments) and self._normalize_static_segment(segments[0]) in {
@@ -697,7 +751,7 @@ class ApiContractManifestGenerator:
         if not segments:
             return "system"
         tag = self._tag_from_segments(segments, read_sources, write_tables)
-        if tag != "billing" and self.STANDARD_TAG_DOMAINS.get(tag) == "commerce":
+        if self.STANDARD_TAG_DOMAINS.get(tag) == "commerce":
             return "commerce"
         return tag if tag in self.TOP_LEVEL_TAGS else self._tag_from_tables(read_sources, write_tables) or "system"
 
@@ -774,10 +828,12 @@ class ApiContractManifestGenerator:
             router_segments = static_segments[1:]
             router_tag = self._tag_from_router_segments(router_segments, read_sources, write_tables)
             return router_tag or self._tag_from_tables(read_sources, write_tables) or "ai"
-        if first in {"auth", "iam", "profile", "system"}:
+        if first in {"auth", "iam", "profile", "system", "storage"}:
             return first
         if first in {"open_platform", "openplatform"}:
             return "openPlatform"
+        if first in {"service_provider", "service_providers", "serviceprovider", "serviceproviders"}:
+            return "serviceProviders"
         if first in {"app", "apps", "platform"}:
             return "platform"
         if first in {"skill", "skills", "ecosystem"}:
@@ -809,6 +865,8 @@ class ApiContractManifestGenerator:
             return self._tag_from_tables(read_sources, write_tables) or "commerce"
         if first in {"course", "courses", "feed", "feeds", "comment", "comments", "announcement", "announcements", "content"}:
             return "content"
+        if first in {"messaging", "message_delivery", "sms", "email"}:
+            return "messaging"
         if first in {"notification", "notifications"}:
             return "notification"
         if first in {"message", "messages", "communication"}:
@@ -819,7 +877,7 @@ class ApiContractManifestGenerator:
             return "agents"
         if first in {"sdk_reference", "sdk-reference", "sdkreference"}:
             return "sdkReference"
-        if first in {"chat", "memory", "runtime"}:
+        if first in {"chat", "mcp", "memory", "prompts", "runtime"}:
             return first
         if first in {"ai", "model", "models", "model_vendors", "model_rankings", "routing", "playground"}:
             return "ai"
@@ -927,6 +985,8 @@ class ApiContractManifestGenerator:
             return "sdk_reference"
         if tag == "openPlatform":
             return "open_platform"
+        if tag == "serviceProviders":
+            return "service_providers"
         return tag
 
     def _operation_resource_segments(

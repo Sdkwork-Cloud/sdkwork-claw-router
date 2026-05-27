@@ -22,7 +22,7 @@ describe("sdkwork-subscription-pc-react headless contract", () => {
       packageNames: [
         "@sdkwork/subscription-pc-react",
         "@sdkwork/coupon-pc-react",
-        "@sdkwork/vip-pc-react",
+        "@sdkwork/membership-pc-react",
         "@sdkwork/wallet-pc-react",
       ],
       routePath: "/subscription",
@@ -57,7 +57,7 @@ describe("sdkwork-subscription-pc-react headless contract", () => {
         paymentMethodId: "alipay-pay",
         plan: {
           durationDays: 30,
-          id: "vip-plan-2",
+          id: "membership-plan-2",
           includedPoints: 5000,
           name: "Pro Monthly",
           packageId: 2,

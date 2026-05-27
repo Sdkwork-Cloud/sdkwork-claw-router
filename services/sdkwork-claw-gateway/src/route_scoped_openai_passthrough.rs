@@ -9,27 +9,44 @@ use crate::provider_passthrough_transport::{
     build_provider_passthrough_client, forward_provider_passthrough_to_target, PassthroughClient,
     ProviderPassthroughTarget,
 };
+use axum::body::{to_bytes, Body};
 use axum::extract::{Request, State};
 use axum::http::request::Parts as RequestParts;
-use axum::http::{HeaderMap, StatusCode, Uri};
+use axum::http::{HeaderMap, Method, StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, MethodRouter};
 use axum::{Json, Router};
 use http_body_util::BodyExt;
 #[cfg(test)]
 use sdkwork_claw_config::ProviderPassthroughAuth;
+use sdkwork_claw_product::api::{
+    OpenAiInvocationContext, OpenAiInvocationEndpoint, OpenAiInvocationRelayOutcome,
+    OpenAiProviderRoute, OpenAiUsageRecorder,
+};
 use sdkwork_claw_product::application::{
-    ApiKeySecretHasher, AuthenticatedApiKeyContext, ProviderRouteSelectionError,
-    ProviderRouteSelectionErrorKind, ProviderRouteSelector, SelectProviderAccountPoolRouteQuery,
-    SelectProviderRouteQuery,
+    ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ProviderRouteSelectionError,
+    ProviderRouteSelectionErrorKind, ProviderRouteSelector, ResolveModelPriceQuery,
+    SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery, SelectedProviderRoute,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ModelProviderRoute, ProviderAccountPoolRoute, ProviderAuthProfile,
-    RoutingCapability,
+    provider_native_model_id, AiModel, BillingMeter, DecimalValue, DomainError, DomainResult,
+    ProviderAccountPoolRoute, ProviderAuthProfile, RoutingCapability,
 };
-use sdkwork_claw_product::ports::{PricingCatalog, ProviderSecretResolver};
-use serde_json::json;
+use sdkwork_claw_product::ports::{
+    GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
+    ProviderSecretResolver,
+};
+use serde_json::{json, Value};
 use std::sync::Arc;
+use std::time::{Instant, SystemTime, UNIX_EPOCH};
+
+type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
+
+const MAX_ROUTE_SCOPED_USAGE_RESPONSE_BODY_BYTES: usize = 16 * 1024 * 1024;
+const ROUTE_SCOPED_USAGE_TYPE_BASE: i64 = 20_000;
+const TOKEN_BILLING_UNIT_SIZE_DECIMAL: &str = "1000000";
+const USAGE_AMOUNT_DECIMAL_DIGITS: u32 = 12;
+const MODALITY_IMAGE: i64 = 2;
 
 #[derive(Clone)]
 struct RouteScopedOpenAiPassthroughRuntime {
@@ -41,6 +58,7 @@ struct RouteScopedOpenAiPassthroughState<C> {
     runtime: RouteScopedOpenAiPassthroughRuntime,
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    usage_recorder: Option<UsageRecorder>,
 }
 
 impl<C> Clone for RouteScopedOpenAiPassthroughState<C> {
@@ -49,6 +67,7 @@ impl<C> Clone for RouteScopedOpenAiPassthroughState<C> {
             runtime: self.runtime.clone(),
             catalog: Arc::clone(&self.catalog),
             api_key_hasher: Arc::clone(&self.api_key_hasher),
+            usage_recorder: self.usage_recorder.clone(),
         }
     }
 }
@@ -57,6 +76,7 @@ pub(crate) fn router<C>(
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     secret_resolver: Arc<dyn ProviderSecretResolver + Send + Sync>,
+    usage_recorder: Option<UsageRecorder>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -65,6 +85,7 @@ where
         runtime: RouteScopedOpenAiPassthroughRuntime::new(secret_resolver),
         catalog,
         api_key_hasher,
+        usage_recorder,
     };
     router_with_state(state)
 }
@@ -103,7 +124,12 @@ where
     };
     match state
         .runtime
-        .forward_openai(state.catalog.as_ref(), context, request)
+        .forward_openai(
+            Arc::clone(&state.catalog),
+            state.usage_recorder.clone(),
+            context,
+            request,
+        )
         .await
     {
         Ok(response) => response,
@@ -135,6 +161,18 @@ struct RouteScopedOpenAiPassthroughIntent {
     capability: RoutingCapability,
     billing_meter: BillingMeter,
     routes_model_when_present: bool,
+}
+
+#[derive(Debug, Clone)]
+struct RouteScopedMeteredUsageContext {
+    api_key_context: AuthenticatedApiKeyContext,
+    request_id: Option<String>,
+    trace_id: Option<String>,
+    requested_model: String,
+    request_body: Value,
+    request_path: String,
+    http_method: String,
+    billing_meter: BillingMeter,
 }
 
 #[derive(Debug)]
@@ -207,6 +245,15 @@ impl RouteScopedOpenAiPassthroughError {
         }
     }
 
+    fn usage_record_failed(message: impl ToString) -> Self {
+        Self {
+            status: StatusCode::BAD_GATEWAY,
+            code: "provider_usage_record_failed",
+            error_type: "server_error",
+            message: message.to_string(),
+        }
+    }
+
     fn into_response(self) -> Response {
         (
             self.status,
@@ -247,7 +294,8 @@ impl RouteScopedOpenAiPassthroughRuntime {
 
     async fn forward_openai<C>(
         &self,
-        catalog: &C,
+        catalog: Arc<C>,
+        usage_recorder: Option<UsageRecorder>,
         context: AuthenticatedApiKeyContext,
         request: Request,
     ) -> Result<Response, RouteScopedOpenAiPassthroughError>
@@ -265,7 +313,16 @@ impl RouteScopedOpenAiPassthroughRuntime {
             })?
             .to_bytes();
         let intent = route_scoped_openai_passthrough_intent(&parts, &body)?;
-        let route = select_route_scoped_openai_passthrough_target(catalog, context, &intent)?;
+        let route = select_route_scoped_openai_passthrough_target(
+            catalog.as_ref(),
+            context.clone(),
+            &intent,
+        )?;
+        let token_usage_context =
+            build_route_scoped_openai_usage_context(&parts, &body, &context, &intent)?;
+        let metered_usage_context =
+            build_route_scoped_metered_usage_context(&parts, &body, &context, &intent)?;
+        let usage_route = route.usage_route.clone();
         let base_url = route.base_url.ok_or_else(|| {
             RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
                 "provider route is not available for configured account pool: selected channel {} has no base URL",
@@ -312,10 +369,422 @@ impl RouteScopedOpenAiPassthroughRuntime {
             .map_err(RouteScopedOpenAiPassthroughError::invalid_request)?,
             None => body,
         };
-        forward_provider_passthrough_to_target(&self.client, parts, body, &target, upstream_uri)
-            .await
-            .map_err(RouteScopedOpenAiPassthroughError::relay_failed)
+        let started_at = Instant::now();
+        let response = forward_provider_passthrough_to_target(
+            &self.client,
+            parts,
+            body,
+            &target,
+            upstream_uri,
+        )
+        .await
+        .map_err(RouteScopedOpenAiPassthroughError::relay_failed)?;
+        let latency_ms = i64::try_from(started_at.elapsed().as_millis()).unwrap_or(i64::MAX);
+        record_route_scoped_openai_usage_if_needed(
+            catalog,
+            usage_recorder,
+            token_usage_context,
+            metered_usage_context,
+            usage_route,
+            response,
+            latency_ms,
+        )
+        .await
     }
+}
+
+fn build_route_scoped_openai_usage_context(
+    parts: &RequestParts,
+    body: &[u8],
+    context: &AuthenticatedApiKeyContext,
+    intent: &RouteScopedOpenAiPassthroughIntent,
+) -> Result<Option<OpenAiInvocationContext>, RouteScopedOpenAiPassthroughError> {
+    let Some(endpoint) = route_scoped_openai_usage_endpoint(&parts.method, parts.uri.path()) else {
+        return Ok(None);
+    };
+    let request_body = serde_json::from_slice::<Value>(body).map_err(|error| {
+        RouteScopedOpenAiPassthroughError::invalid_request(format!(
+            "invalid request body for route-scoped OpenAI usage recording: {error}"
+        ))
+    })?;
+    let stream = request_body
+        .get("stream")
+        .and_then(Value::as_bool)
+        .unwrap_or(false);
+    if stream {
+        return Ok(None);
+    }
+    let requested_model = intent.requested_model.clone().ok_or_else(|| {
+        RouteScopedOpenAiPassthroughError::invalid_request(
+            "model is required for route-scoped OpenAI usage recording",
+        )
+    })?;
+    Ok(Some(OpenAiInvocationContext::new(
+        endpoint,
+        context.clone(),
+        requested_model,
+        stream,
+        request_body,
+        &parts.headers,
+        &parts.uri,
+    )))
+}
+
+fn route_scoped_openai_usage_endpoint(
+    method: &Method,
+    path: &str,
+) -> Option<OpenAiInvocationEndpoint> {
+    if method == Method::POST && path == "/v1/completions" {
+        return Some(OpenAiInvocationEndpoint::ChatCompletions);
+    }
+    None
+}
+
+fn build_route_scoped_metered_usage_context(
+    parts: &RequestParts,
+    body: &[u8],
+    api_key_context: &AuthenticatedApiKeyContext,
+    intent: &RouteScopedOpenAiPassthroughIntent,
+) -> Result<Option<RouteScopedMeteredUsageContext>, RouteScopedOpenAiPassthroughError> {
+    let Some(billing_meter) = route_scoped_metered_usage_meter(&parts.method, parts.uri.path())
+    else {
+        return Ok(None);
+    };
+    let request_body = serde_json::from_slice::<Value>(body).map_err(|error| {
+        RouteScopedOpenAiPassthroughError::invalid_request(format!(
+            "invalid request body for route-scoped metered usage recording: {error}"
+        ))
+    })?;
+    let requested_model = intent.requested_model.clone().ok_or_else(|| {
+        RouteScopedOpenAiPassthroughError::invalid_request(
+            "model is required for route-scoped metered usage recording",
+        )
+    })?;
+    Ok(Some(RouteScopedMeteredUsageContext {
+        api_key_context: api_key_context.clone(),
+        request_id: header_value(&parts.headers, "x-request-id"),
+        trace_id: header_value(&parts.headers, "x-trace-id"),
+        requested_model,
+        request_body,
+        request_path: parts.uri.path().to_owned(),
+        http_method: parts.method.to_string(),
+        billing_meter,
+    }))
+}
+
+fn route_scoped_metered_usage_meter(method: &Method, path: &str) -> Option<BillingMeter> {
+    if method == Method::POST && path == "/v1/images/generations" {
+        return Some(BillingMeter::ImageResult);
+    }
+    None
+}
+
+async fn record_route_scoped_openai_usage_if_needed<C>(
+    catalog: Arc<C>,
+    usage_recorder: Option<UsageRecorder>,
+    usage_context: Option<OpenAiInvocationContext>,
+    metered_usage_context: Option<RouteScopedMeteredUsageContext>,
+    usage_route: Option<OpenAiProviderRoute>,
+    response: Response,
+    latency_ms: i64,
+) -> Result<Response, RouteScopedOpenAiPassthroughError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let Some(usage_recorder) = usage_recorder else {
+        return Ok(response);
+    };
+    if usage_context.is_none() && metered_usage_context.is_none() {
+        return Ok(response);
+    }
+    let status_code = response.status().as_u16();
+    if !(200..=299).contains(&status_code) {
+        return Ok(response);
+    }
+    let usage_route = usage_route.ok_or_else(|| {
+        RouteScopedOpenAiPassthroughError::usage_record_failed(
+            "route-scoped OpenAI usage recording requires a selected model provider route",
+        )
+    })?;
+    let (parts, body) = response.into_parts();
+    let body = to_bytes(body, MAX_ROUTE_SCOPED_USAGE_RESPONSE_BODY_BYTES)
+        .await
+        .map_err(|error| {
+            RouteScopedOpenAiPassthroughError::usage_record_failed(format!(
+                "failed to read route-scoped OpenAI response body for usage recording: {error}"
+            ))
+        })?;
+    let response_body = serde_json::from_slice::<Value>(&body).map_err(|error| {
+        RouteScopedOpenAiPassthroughError::usage_record_failed(format!(
+            "route-scoped OpenAI response body is not valid JSON for usage recording: {error}"
+        ))
+    })?;
+    if let Some(usage_context) = usage_context {
+        let outcome = OpenAiInvocationRelayOutcome::json(status_code, response_body.clone())
+            .with_latency_ms(latency_ms);
+        OpenAiUsageRecorder::new(Arc::clone(&catalog), Arc::clone(&usage_recorder))
+            .record_after_relay(&usage_context, &usage_route, &outcome)
+            .await
+            .map_err(|error| {
+                RouteScopedOpenAiPassthroughError::usage_record_failed(error.message)
+            })?;
+    }
+    if let Some(metered_usage_context) = metered_usage_context {
+        let command = route_scoped_metered_usage_command(
+            catalog.as_ref(),
+            &metered_usage_context,
+            &usage_route,
+            &response_body,
+            status_code,
+            latency_ms,
+        )
+        .map_err(|error| {
+            RouteScopedOpenAiPassthroughError::usage_record_failed(error.to_string())
+        })?;
+        usage_recorder
+            .record_gateway_usage(command)
+            .await
+            .map_err(|error| {
+                RouteScopedOpenAiPassthroughError::usage_record_failed(error.to_string())
+            })?;
+    }
+    Ok(Response::from_parts(parts, Body::from(body)))
+}
+
+fn route_scoped_metered_usage_command<C>(
+    catalog: &C,
+    context: &RouteScopedMeteredUsageContext,
+    route: &OpenAiProviderRoute,
+    response_body: &Value,
+    status_code: u16,
+    latency_ms: i64,
+) -> DomainResult<GatewayUsageRecordCommand>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let quantity = route_scoped_metered_usage_quantity(context, response_body)?;
+    let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
+        api_key_id: context.api_key_context.api_key_id,
+        model: route.catalog_key.clone(),
+        billing_meter: context.billing_meter.clone(),
+        provider_code: Some(route.provider_code.clone()),
+        channel_id: Some(route.channel_id),
+    })?;
+    let official_reference_amount = route_scoped_meter_amount(
+        price.official_reference.unit_price.unit_price,
+        quantity.billable_quantity.as_str(),
+        &context.billing_meter,
+    )?;
+    let upstream_cost_amount = match price.upstream_cost.as_ref() {
+        Some(upstream) => route_scoped_meter_amount(
+            upstream.unit_price.unit_price,
+            quantity.billable_quantity.as_str(),
+            &context.billing_meter,
+        )?,
+        None => DecimalValue::ZERO,
+    };
+    let customer_charge_amount = route_scoped_meter_amount(
+        price.customer_charge.unit_price,
+        quantity.billable_quantity.as_str(),
+        &context.billing_meter,
+    )?;
+    let provider_native_model = provider_native_model_id(&route.provider_model);
+    let pricing_snapshot = route_scoped_metered_pricing_snapshot(
+        context,
+        route,
+        &provider_native_model,
+        &price,
+        quantity.billable_quantity.as_str(),
+    );
+
+    Ok(GatewayUsageRecordCommand {
+        request_id: context
+            .request_id
+            .clone()
+            .unwrap_or_else(|| generated_route_scoped_request_id(route.channel_id)),
+        trace_id: context.trace_id.clone(),
+        tenant_id: context.api_key_context.tenant_id,
+        organization_id: context.api_key_context.organization_id,
+        user_id: context.api_key_context.user_id,
+        api_key_id: context.api_key_context.api_key_id,
+        api_key_name_snapshot: context.api_key_context.api_key_name_snapshot.clone(),
+        api_key_group_id: context.api_key_context.group_id,
+        api_key_group_snapshot: context.api_key_context.group_code.clone(),
+        catalog_key: route.catalog_key.clone(),
+        requested_model: context.requested_model.clone(),
+        requested_model_catalog_key: route.catalog_key.clone(),
+        provider_code: route.provider_code.clone(),
+        channel_id: route.channel_id,
+        provider_model: provider_native_model.clone(),
+        provider_native_model,
+        request_path: context.request_path.clone(),
+        http_method: context.http_method.clone(),
+        http_status: status_code,
+        streaming: false,
+        modality: route_scoped_modality_for_meter(&context.billing_meter),
+        usage_type: route_scoped_usage_type_for_meter(&context.billing_meter),
+        billing_meter_code: context.billing_meter.code().to_owned(),
+        billable_quantity: quantity.billable_quantity,
+        prompt_tokens: 0,
+        completion_tokens: 0,
+        cached_tokens: 0,
+        total_tokens: 0,
+        request_count: quantity.request_count,
+        result_count: quantity.result_count,
+        item_count: quantity.item_count,
+        character_count: quantity.character_count,
+        image_count: quantity.image_count,
+        audio_seconds: quantity.audio_seconds,
+        video_seconds: quantity.video_seconds,
+        latency_ms: Some(latency_ms.max(0)),
+        ttft_ms: None,
+        provider_error_code: None,
+        error_type: None,
+        error_message_masked: None,
+        base_input_unit_price: price.customer_charge_before_rate.to_fixed_string(6),
+        base_output_unit_price: "0.000000".to_owned(),
+        cache_read_unit_price: "0.000000".to_owned(),
+        rate_multiplier: price.rate_multiplier.to_fixed_string(6),
+        reference_multiplier: price.reference_multiplier.to_fixed_string(6),
+        official_reference_amount: official_reference_amount
+            .to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
+        customer_charge_amount: customer_charge_amount.to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
+        upstream_cost_amount: upstream_cost_amount.to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
+        currency: price.customer_charge.currency,
+        pricing_plan_code: price.pricing_plan_code,
+        pricing_snapshot,
+    })
+}
+
+fn route_scoped_metered_usage_quantity(
+    context: &RouteScopedMeteredUsageContext,
+    response_body: &Value,
+) -> DomainResult<GatewayUsageQuantity> {
+    match &context.billing_meter {
+        BillingMeter::ImageResult => {
+            let count = response_body
+                .get("data")
+                .and_then(Value::as_array)
+                .map(|items| items.len() as i64)
+                .or_else(|| {
+                    context
+                        .request_body
+                        .get("n")
+                        .and_then(Value::as_i64)
+                        .filter(|value| *value > 0)
+                })
+                .unwrap_or(1);
+            GatewayUsageQuantity::for_meter(BillingMeter::ImageResult, count.to_string())
+        }
+        _ => Err(DomainError::new(format!(
+            "route-scoped OpenAI metered usage does not support meter {}",
+            context.billing_meter.code()
+        ))),
+    }
+}
+
+fn route_scoped_meter_amount(
+    unit_price: DecimalValue,
+    billable_quantity: &str,
+    billing_meter: &BillingMeter,
+) -> DomainResult<DecimalValue> {
+    let amount = unit_price.checked_multiply(DecimalValue::parse(billable_quantity)?)?;
+    if route_scoped_meter_uses_million_token_unit(billing_meter) {
+        amount.checked_divide(DecimalValue::parse(TOKEN_BILLING_UNIT_SIZE_DECIMAL)?)
+    } else {
+        Ok(amount)
+    }
+}
+
+fn route_scoped_meter_uses_million_token_unit(billing_meter: &BillingMeter) -> bool {
+    matches!(
+        billing_meter,
+        BillingMeter::LlmInputToken
+            | BillingMeter::LlmOutputToken
+            | BillingMeter::LlmReasoningToken
+            | BillingMeter::LlmCacheWriteToken
+            | BillingMeter::LlmCacheReadToken
+            | BillingMeter::EmbeddingInputToken
+            | BillingMeter::AudioInputToken
+            | BillingMeter::AudioOutputToken
+            | BillingMeter::ImageInputToken
+            | BillingMeter::ImageOutputToken
+            | BillingMeter::VideoInputToken
+            | BillingMeter::VideoOutputToken
+    )
+}
+
+fn route_scoped_modality_for_meter(billing_meter: &BillingMeter) -> i64 {
+    match billing_meter {
+        BillingMeter::ImageInputToken
+        | BillingMeter::ImageOutputToken
+        | BillingMeter::ImageResult
+        | BillingMeter::ImagePixel
+        | BillingMeter::ImageMegapixel => MODALITY_IMAGE,
+        _ => 1,
+    }
+}
+
+fn route_scoped_usage_type_for_meter(billing_meter: &BillingMeter) -> i64 {
+    ROUTE_SCOPED_USAGE_TYPE_BASE
+        + match billing_meter {
+            BillingMeter::ImageResult => 11,
+            _ => 99,
+        }
+}
+
+fn route_scoped_metered_pricing_snapshot(
+    context: &RouteScopedMeteredUsageContext,
+    route: &OpenAiProviderRoute,
+    provider_native_model: &str,
+    price: &sdkwork_claw_product::application::ResolvedModelPrice,
+    billable_quantity: &str,
+) -> String {
+    json!({
+        "source": "route_scoped_openai_passthrough",
+        "meter": {
+            "code": context.billing_meter.code(),
+            "billableQuantity": billable_quantity
+        },
+        "model": {
+            "catalogKey": route.catalog_key.as_str(),
+            "requestedCatalogKey": route.catalog_key.as_str(),
+            "model": context.requested_model.as_str(),
+            "providerNativeModel": provider_native_model
+        },
+        "provider": {
+            "code": route.provider_code.as_str(),
+            "channelId": route.channel_id
+        },
+        "pricingPlan": {
+            "code": price.pricing_plan_code.as_str()
+        },
+        "group": {
+            "code": price.group_code.as_str()
+        },
+        "multipliers": {
+            "rate": price.rate_multiplier.to_fixed_string(6),
+            "reference": price.reference_multiplier.to_fixed_string(6)
+        }
+    })
+    .to_string()
+}
+
+fn generated_route_scoped_request_id(channel_id: i64) -> String {
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_nanos())
+        .unwrap_or_default();
+    format!("route-scoped-usage-{channel_id}-{nanos}")
+}
+
+fn header_value(headers: &HeaderMap, name: &str) -> Option<String> {
+    headers
+        .get(name)
+        .and_then(|value| value.to_str().ok())
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
 }
 
 fn build_route_scoped_openai_passthrough_uri(
@@ -407,6 +876,7 @@ struct RouteScopedOpenAiPassthroughTarget {
     base_url: Option<String>,
     secret_ref: Option<String>,
     auth_profile: ProviderAuthProfile,
+    usage_route: Option<OpenAiProviderRoute>,
 }
 
 fn select_route_scoped_openai_passthrough_target<C>(
@@ -431,7 +901,7 @@ where
                     capability: intent.capability,
                     billing_meter: intent.billing_meter.clone(),
                 })?;
-            Ok(model_route_to_passthrough_target(selection.route))
+            Ok(model_route_to_passthrough_target(selection))
         }
         _ => {
             let selection = ProviderRouteSelector::new(catalog).select_account_pool(
@@ -447,8 +917,22 @@ where
 }
 
 fn model_route_to_passthrough_target(
-    route: ModelProviderRoute,
+    selection: SelectedProviderRoute,
 ) -> RouteScopedOpenAiPassthroughTarget {
+    let route = selection.route;
+    let usage_route = OpenAiProviderRoute {
+        catalog_key: route.catalog_key.clone(),
+        policy_id: selection.policy_id,
+        rule_id: selection.rule_id,
+        provider_code: route.provider_code.clone(),
+        channel_id: route.channel_id,
+        provider_model: route.provider_model.clone(),
+        provider_base_url: route.base_url.clone(),
+        provider_secret_ref: route.secret_ref.clone(),
+        provider_auth_profile: route.auth_profile.clone(),
+        provider_timeout_ms: route.timeout_ms,
+        provider_retry_policy: route.retry_policy.clone(),
+    };
     RouteScopedOpenAiPassthroughTarget {
         provider_code: route.provider_code,
         channel_id: route.channel_id,
@@ -456,6 +940,7 @@ fn model_route_to_passthrough_target(
         base_url: route.base_url,
         secret_ref: route.secret_ref,
         auth_profile: route.auth_profile,
+        usage_route: Some(usage_route),
     }
 }
 
@@ -469,6 +954,7 @@ fn account_pool_route_to_passthrough_target(
         base_url: route.base_url,
         secret_ref: route.secret_ref,
         auth_profile: route.auth_profile,
+        usage_route: None,
     }
 }
 
@@ -479,10 +965,9 @@ fn find_catalog_model_for_passthrough<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    if model.contains('/') {
-        return catalog
-            .find_model(model)
-            .ok_or_else(|| RouteScopedOpenAiPassthroughError::model_not_found(model));
+    let model = model.trim();
+    if let Some(catalog_model) = catalog.find_model(model) {
+        return Ok(catalog_model);
     }
 
     let matches = catalog
@@ -502,6 +987,30 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
+
+    #[test]
+    fn passthrough_catalog_lookup_accepts_native_slash_model_ids() {
+        let mut catalog = InMemoryPricingCatalog::default();
+        catalog.add_model(
+            AiModel::new(
+                "anthropic/claude-3-opus",
+                "Claude 3 Opus via OpenRouter",
+                "openrouter",
+                vec!["chat"],
+            )
+            .with_catalog_key("openrouter/global/anthropic/claude-3-opus"),
+        );
+
+        let model = find_catalog_model_for_passthrough(&catalog, "anthropic/claude-3-opus")
+            .expect("native slash model should resolve through AiModel.model");
+
+        assert_eq!(
+            "openrouter/global/anthropic/claude-3-opus",
+            model.catalog_key
+        );
+        assert_eq!("anthropic/claude-3-opus", model.model);
+    }
 
     #[test]
     fn route_scoped_uri_preserves_query_model_when_selected_model_came_from_body() {

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ModelsApi {
     private final HttpClient client;
-    
+
     public ModelsApi(HttpClient client) {
         this.client = client;
     }

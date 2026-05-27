@@ -1,23 +1,24 @@
-use sdkwork_commerce_core::{CommerceCouponStatus, CommercePaymentStatus, CommerceRechargeStatus};
+use sdkwork_commerce_core::{CommercePaymentStatus, CommerceRechargeStatus, PromotionCouponStatus};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
-    AdminCouponBatchItem, AdminCouponItem, AdminExchangeRuleItem, AdminMarketingCommandFuture,
-    AdminMarketingStore, AdminPaymentAttemptItem, AdminPromoCodeItem, AdminRechargePackageItem,
-    AdminRechargePackageStatus, AdminRechargeRecordItem, AdminRedemptionRecordItem,
-    AdminReferralStatItem, CreateAdminCouponCommand, CreateAdminRechargePackageCommand,
-    DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
-    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminExchangeRulesQuery,
-    ListAdminPaymentAttemptsQuery, ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery,
-    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
-    LoadAdminRechargeRecordQuery, UpdateAdminCouponCommand, UpdateAdminExchangeRuleCommand,
-    UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
+    AdminExchangeRuleItem, AdminMarketingCommandFuture, AdminMarketingStore,
+    AdminPaymentAttemptItem, AdminRechargePackageItem, AdminRechargePackageStatus,
+    AdminRechargeRecordItem, AdminReferralStatItem, CreateAdminRechargePackageCommand,
+    CreatePromotionOfferCommand, DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
+    GeneratePromotionCouponStockCommand, ListAdminExchangeRulesQuery,
+    ListAdminPaymentAttemptsQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
+    ListAdminReferralStatsQuery, ListPromotionCodeRedemptionsQuery, ListPromotionCodesQuery,
+    ListPromotionCouponStocksQuery, ListPromotionOffersQuery, LoadAdminRechargeRecordQuery,
+    PromotionCodeItem, PromotionCodeRedemptionItem, PromotionCouponStockItem, PromotionOfferItem,
+    UpdateAdminExchangeRuleCommand, UpdateAdminRechargePackageCommand,
+    UpdatePromotionCodeStatusCommand, UpdatePromotionOfferCommand,
 };
 
-const TARGET_TYPE_COUPON: i32 = 71;
-const TARGET_TYPE_COUPON_BATCH: i32 = 72;
-const TARGET_TYPE_PROMO_CODE: i32 = 73;
+const TARGET_TYPE_PROMOTION_OFFER: i32 = 71;
+const TARGET_TYPE_PROMOTION_COUPON_STOCK: i32 = 72;
+const TARGET_TYPE_PROMOTION_CODE: i32 = 73;
 const TARGET_TYPE_RECHARGE_PACKAGE: i32 = 74;
 const TARGET_TYPE_EXCHANGE_RULE: i32 = 75;
 const POINTS_ASSET_TYPE: &str = "POINTS";
@@ -28,7 +29,7 @@ const EXCHANGE_RULE_STATUS_ACTIVE: &str = "active";
 const POINTS_TO_CASH_RULE_NO: &str = "POINTS_TO_CASH";
 
 #[derive(Debug, Clone)]
-struct PromoCodeStatusFact {
+struct PromotionCodeStatusFact {
     status: String,
     user_id: Option<String>,
     used_at: Option<String>,
@@ -46,23 +47,22 @@ impl PostgresAdminMarketingStore {
 }
 
 impl AdminMarketingStore for PostgresAdminMarketingStore {
-    fn list_coupons<'a>(
+    fn list_promotion_offers<'a>(
         &'a self,
-        query: ListAdminCouponsQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminCouponItem>> {
-        Box::pin(async move { list_coupons(&self.pool, query).await })
+        query: ListPromotionOffersQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionOfferItem>> {
+        Box::pin(async move { list_promotion_offers(&self.pool, query).await })
     }
 
-    fn create_coupon<'a>(
+    fn create_promotion_offer<'a>(
         &'a self,
-        command: CreateAdminCouponCommand,
-    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
+        command: CreatePromotionOfferCommand,
+    ) -> AdminMarketingCommandFuture<'a, PromotionOfferItem> {
         Box::pin(async move {
-            let mut tx =
-                self.pool.begin().await.map_err(|error| {
-                    store_error("failed to begin admin coupon transaction", error)
-                })?;
-            let coupon_id = upsert_coupon_template(&mut tx, &command).await?;
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin promotion offer transaction", error)
+            })?;
+            let offer_id = create_promotion_offer(&mut tx, &command).await?;
             insert_audit_log_for_target_uuid(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -71,43 +71,43 @@ impl AdminMarketingStore for PostgresAdminMarketingStore {
                 command.subject.organization_id,
                 command.subject.operator_id,
                 command.subject.operator_type,
-                "create_coupon",
-                TARGET_TYPE_COUPON,
-                &coupon_id,
+                "create_promotion_offer",
+                TARGET_TYPE_PROMOTION_OFFER,
+                &offer_id,
                 serde_json::json!({
-                    "action": "create_coupon",
-                    "couponId": &coupon_id,
+                    "action": "create_promotion_offer",
+                    "offer_id": &offer_id,
                     "name": &command.name,
-                    "type": &command.coupon_type,
+                    "discount_type": &command.discount_type,
                     "value": &command.value,
                     "status": &command.status
                 }),
             )
             .await?;
-            let item = load_coupon_by_id(
+            let item = load_promotion_offer_by_id(
                 &mut tx,
-                &coupon_id,
+                &offer_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
             .await?
-            .ok_or_else(|| DomainError::new("created coupon could not be reloaded"))?;
-            tx.commit()
-                .await
-                .map_err(|error| store_error("failed to commit admin coupon transaction", error))?;
+            .ok_or_else(|| DomainError::new("created promotion offer could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit promotion offer transaction", error)
+            })?;
             Ok(item)
         })
     }
 
-    fn delete_coupon<'a>(
+    fn delete_promotion_offer<'a>(
         &'a self,
-        command: DeleteAdminCouponCommand,
+        command: DeletePromotionOfferCommand,
     ) -> AdminMarketingCommandFuture<'a, bool> {
         Box::pin(async move {
             let mut tx = self.pool.begin().await.map_err(|error| {
-                store_error("failed to begin admin coupon delete transaction", error)
+                store_error("failed to begin promotion offer delete transaction", error)
             })?;
-            let deleted = soft_delete_coupon(&mut tx, &command).await?;
+            let deleted = soft_delete_promotion_offer(&mut tx, &command).await?;
             if deleted {
                 insert_audit_log_for_target_uuid(
                     &mut tx,
@@ -117,35 +117,35 @@ impl AdminMarketingStore for PostgresAdminMarketingStore {
                     command.subject.organization_id,
                     command.subject.operator_id,
                     command.subject.operator_type,
-                    "delete_coupon",
-                    TARGET_TYPE_COUPON,
-                    &command.coupon_id,
+                    "delete_promotion_offer",
+                    TARGET_TYPE_PROMOTION_OFFER,
+                    &command.offer_id,
                     serde_json::json!({
-                        "action": "delete_coupon",
-                        "couponId": &command.coupon_id,
+                        "action": "delete_promotion_offer",
+                        "offer_id": &command.offer_id,
                         "deleted": true
                     }),
                 )
                 .await?;
             }
             tx.commit().await.map_err(|error| {
-                store_error("failed to commit admin coupon delete transaction", error)
+                store_error("failed to commit promotion offer delete transaction", error)
             })?;
             Ok(deleted)
         })
     }
 
-    fn update_coupon<'a>(
+    fn update_promotion_offer<'a>(
         &'a self,
-        command: UpdateAdminCouponCommand,
-    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
+        command: UpdatePromotionOfferCommand,
+    ) -> AdminMarketingCommandFuture<'a, PromotionOfferItem> {
         Box::pin(async move {
             let mut tx = self.pool.begin().await.map_err(|error| {
-                store_error("failed to begin admin coupon update transaction", error)
+                store_error("failed to begin promotion offer update transaction", error)
             })?;
-            let updated = update_coupon_row(&mut tx, &command).await?;
+            let updated = update_promotion_offer_row(&mut tx, &command).await?;
             if !updated {
-                return Err(DomainError::not_found("coupon was not found"));
+                return Err(DomainError::not_found("promotion offer was not found"));
             }
             insert_audit_log_for_target_uuid(
                 &mut tx,
@@ -155,62 +155,65 @@ impl AdminMarketingStore for PostgresAdminMarketingStore {
                 command.subject.organization_id,
                 command.subject.operator_id,
                 command.subject.operator_type,
-                "update_coupon",
-                TARGET_TYPE_COUPON,
-                &command.coupon_id,
+                "update_promotion_offer",
+                TARGET_TYPE_PROMOTION_OFFER,
+                &command.offer_id,
                 serde_json::json!({
-                    "action": "update_coupon",
-                    "couponId": &command.coupon_id,
+                    "action": "update_promotion_offer",
+                    "offer_id": &command.offer_id,
                     "name": &command.name,
-                    "type": &command.coupon_type,
+                    "discount_type": &command.discount_type,
                     "value": &command.value,
                     "status": &command.status
                 }),
             )
             .await?;
-            let item = load_coupon_by_id(
+            let item = load_promotion_offer_by_id(
                 &mut tx,
-                &command.coupon_id,
+                &command.offer_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
             .await?
-            .ok_or_else(|| DomainError::new("updated coupon could not be reloaded"))?;
+            .ok_or_else(|| DomainError::new("updated promotion offer could not be reloaded"))?;
             tx.commit().await.map_err(|error| {
-                store_error("failed to commit admin coupon update transaction", error)
+                store_error("failed to commit promotion offer update transaction", error)
             })?;
             Ok(item)
         })
     }
 
-    fn list_batches<'a>(
+    fn list_promotion_coupon_stocks<'a>(
         &'a self,
-        query: ListAdminCouponBatchesQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminCouponBatchItem>> {
-        Box::pin(async move { list_batches(&self.pool, query).await })
+        query: ListPromotionCouponStocksQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCouponStockItem>> {
+        Box::pin(async move { list_promotion_coupon_stocks(&self.pool, query).await })
     }
 
-    fn generate_batch<'a>(
+    fn generate_promotion_coupon_stock<'a>(
         &'a self,
-        command: GenerateAdminCouponBatchCommand,
-    ) -> AdminMarketingCommandFuture<'a, (AdminCouponBatchItem, Vec<AdminPromoCodeItem>)> {
+        command: GeneratePromotionCouponStockCommand,
+    ) -> AdminMarketingCommandFuture<'a, (PromotionCouponStockItem, Vec<PromotionCodeItem>)> {
         Box::pin(async move {
             let mut tx = self.pool.begin().await.map_err(|error| {
-                store_error("failed to begin coupon batch generation transaction", error)
+                store_error(
+                    "failed to begin promotion coupon stock generation transaction",
+                    error,
+                )
             })?;
-            if !coupon_exists(
+            if !promotion_offer_exists(
                 &mut tx,
-                &command.coupon_id,
+                &command.offer_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
             .await?
             {
-                return Err(DomainError::not_found("coupon was not found"));
+                return Err(DomainError::not_found("promotion offer was not found"));
             }
-            let batch_id = insert_coupon_batch(&mut tx, &command).await?;
-            let codes = insert_promo_codes(&mut tx, &command, &batch_id).await?;
-            update_coupon_received_count(&mut tx, &command).await?;
+            let stock_id = insert_promotion_coupon_stock(&mut tx, &command).await?;
+            let codes = insert_promotion_codes(&mut tx, &command, &stock_id).await?;
+            update_promotion_offer_received_count(&mut tx, &command).await?;
             insert_audit_log_for_target_uuid(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -219,55 +222,57 @@ impl AdminMarketingStore for PostgresAdminMarketingStore {
                 command.subject.organization_id,
                 command.subject.operator_id,
                 command.subject.operator_type,
-                "generate_coupon_batch",
-                TARGET_TYPE_COUPON_BATCH,
-                &batch_id,
+                "generate_promotion_coupon_stock",
+                TARGET_TYPE_PROMOTION_COUPON_STOCK,
+                &stock_id,
                 serde_json::json!({
-                    "action": "generate_coupon_batch",
-                    "batchId": &batch_id,
-                    "couponId": &command.coupon_id,
-                    "count": command.count,
-                    "prefix": &command.prefix
+                    "action": "generate_promotion_coupon_stock",
+                    "stock_id": &stock_id,
+                    "offer_id": &command.offer_id,
+                    "total_quantity": command.total_quantity,
+                    "code_prefix": &command.code_prefix
                 }),
             )
             .await?;
-            let batch = load_batch_by_id(
+            let stock = load_promotion_coupon_stock_by_id(
                 &mut tx,
-                &batch_id,
+                &stock_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
             .await?
-            .ok_or_else(|| DomainError::new("created coupon batch could not be reloaded"))?;
+            .ok_or_else(|| {
+                DomainError::new("created promotion coupon stock could not be reloaded")
+            })?;
             tx.commit().await.map_err(|error| {
                 store_error(
-                    "failed to commit coupon batch generation transaction",
+                    "failed to commit promotion coupon stock generation transaction",
                     error,
                 )
             })?;
-            Ok((batch, codes))
+            Ok((stock, codes))
         })
     }
 
-    fn list_promo_codes<'a>(
+    fn list_promotion_codes<'a>(
         &'a self,
-        query: ListAdminPromoCodesQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminPromoCodeItem>> {
-        Box::pin(async move { list_promo_codes(&self.pool, query).await })
+        query: ListPromotionCodesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCodeItem>> {
+        Box::pin(async move { list_promotion_codes(&self.pool, query).await })
     }
 
-    fn update_promo_code_status<'a>(
+    fn update_promotion_code_status<'a>(
         &'a self,
-        command: UpdateAdminPromoCodeStatusCommand,
+        command: UpdatePromotionCodeStatusCommand,
     ) -> AdminMarketingCommandFuture<'a, bool> {
         Box::pin(async move {
             let mut tx = self.pool.begin().await.map_err(|error| {
-                store_error("failed to begin promo code status transaction", error)
+                store_error("failed to begin promotion code status transaction", error)
             })?;
-            let updated = update_promo_code_status(&mut tx, &command).await?;
+            let updated = update_promotion_code_status(&mut tx, &command).await?;
             if updated {
-                if let Some(batch_id) = find_batch_for_promo_code(&mut tx, &command).await? {
-                    refresh_batch_counters(&mut tx, &batch_id).await?;
+                if let Some(stock_id) = find_stock_for_promotion_code(&mut tx, &command).await? {
+                    refresh_stock_counters(&mut tx, &stock_id).await?;
                 }
                 insert_audit_log_for_target_uuid(
                     &mut tx,
@@ -277,29 +282,29 @@ impl AdminMarketingStore for PostgresAdminMarketingStore {
                     command.subject.organization_id,
                     command.subject.operator_id,
                     command.subject.operator_type,
-                    "update_promo_code_status",
-                    TARGET_TYPE_PROMO_CODE,
-                    &command.promo_code_id,
+                    "update_promotion_code_status",
+                    TARGET_TYPE_PROMOTION_CODE,
+                    &command.code_id,
                     serde_json::json!({
-                        "action": "update_promo_code_status",
-                        "promoCodeId": &command.promo_code_id,
+                        "action": "update_promotion_code_status",
+                        "code_id": &command.code_id,
                         "status": &command.status
                     }),
                 )
                 .await?;
             }
             tx.commit().await.map_err(|error| {
-                store_error("failed to commit promo code status transaction", error)
+                store_error("failed to commit promotion code status transaction", error)
             })?;
             Ok(updated)
         })
     }
 
-    fn list_redemption_records<'a>(
+    fn list_promotion_code_redemptions<'a>(
         &'a self,
-        query: ListAdminRedemptionRecordsQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminRedemptionRecordItem>> {
-        Box::pin(async move { list_redemption_records(&self.pool, query).await })
+        query: ListPromotionCodeRedemptionsQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCodeRedemptionItem>> {
+        Box::pin(async move { list_promotion_code_redemptions(&self.pool, query).await })
     }
 
     fn list_recharge_records<'a>(
@@ -544,24 +549,31 @@ impl AdminMarketingStore for PostgresAdminMarketingStore {
     }
 }
 
-async fn list_coupons(
+async fn list_promotion_offers(
     pool: &PgPool,
-    query: ListAdminCouponsQuery,
-) -> DomainResult<Vec<AdminCouponItem>> {
+    query: ListPromotionOffersQuery,
+) -> DomainResult<Vec<PromotionOfferItem>> {
     let rows = sqlx::query(
         r#"
         SELECT
-            id::text AS id,
-            COALESCE(title, '') AS name,
-            COALESCE(discount_type, '') AS type_code,
-            COALESCE(discount_value, '0')::text AS amount,
-            COALESCE(discount_value, '0')::text AS discount,
-            status AS status
-        FROM commerce_coupon_template
-        WHERE tenant_id = $1::text
-          AND organization_id = $2::text
-          AND status <> 'disabled'
-        ORDER BY updated_at DESC, id DESC
+            o.id::text AS id,
+            COALESCE(o.name, '') AS name,
+            COALESCE(v.discount_type, '') AS type_code,
+            COALESCE(v.discount_value, '0')::text AS amount,
+            COALESCE(v.discount_value, '0')::text AS discount,
+            o.status AS status
+        FROM promotion_offer o
+        LEFT JOIN promotion_offer_version v
+          ON v.tenant_id = o.tenant_id
+         AND v.organization_id = o.organization_id
+         AND v.offer_id = o.id
+         AND v.id = o.current_offer_version_id
+         AND v.lifecycle_status = 'published'
+        WHERE o.tenant_id = $1::text
+          AND o.organization_id = $2::text
+          AND o.offer_type = 'coupon'
+          AND o.status <> 'disabled'
+        ORDER BY o.updated_at DESC, o.id DESC
         LIMIT 500
         "#,
     )
@@ -569,79 +581,116 @@ async fn list_coupons(
     .bind(query.subject.organization_id)
     .fetch_all(pool)
     .await
-    .map_err(|error| store_error("failed to list admin coupons", error))?;
+    .map_err(|error| store_error("failed to list promotion offers", error))?;
 
-    rows.iter().map(coupon_from_row).collect()
+    rows.iter().map(promotion_offer_from_row).collect()
 }
 
-async fn upsert_coupon_template(
+async fn create_promotion_offer(
     tx: &mut Transaction<'_, Postgres>,
-    command: &CreateAdminCouponCommand,
+    command: &CreatePromotionOfferCommand,
 ) -> DomainResult<String> {
+    let version_number = 1;
+    let version_no = promotion_offer_version_no(version_number);
+    let version_id = promotion_offer_version_id(&command.offer_uuid, version_number);
     sqlx::query(
         r#"
-        INSERT INTO commerce_coupon_template
-            (id, tenant_id, organization_id, template_no, title, discount_type, discount_value, minimum_amount, total_quantity, claimed_quantity, redeemed_quantity, status, starts_at, expires_at, created_at, updated_at)
+        INSERT INTO promotion_offer
+            (id, tenant_id, organization_id, offer_no, offer_code, name, offer_type,
+             audience_scope, combinability, priority, status, current_offer_version_id, starts_at, ends_at,
+             created_at, updated_at)
         VALUES
-            ($1, $2::text, $3::text, $4, $5, $6, $7, '0', NULL, 0, 0, $8, NULL, NULL, $9, $10)
+            ($1, $2::text, $3::text, $4, $5, $6, 'coupon',
+             'all', 'exclusive', 0, $7, $8, NULL, NULL, $9, $10)
         "#,
     )
-    .bind(&command.coupon_uuid)
+    .bind(&command.offer_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(coupon_template_no(&command.coupon_uuid))
+    .bind(promotion_offer_no(&command.offer_uuid))
+    .bind(promotion_offer_code(&command.offer_uuid))
     .bind(&command.name)
-    .bind(coupon_discount_type(&command.coupon_type))
-    .bind(coupon_discount_value(command))
-    .bind(coupon_status_value(&command.status))
+    .bind(promotion_offer_status_value(&command.status))
+    .bind(&version_id)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create coupon template", error))?;
-    Ok(command.coupon_uuid.clone())
+    .map_err(|error| store_error("failed to create promotion offer", error))?;
+    sqlx::query(
+        r#"
+        INSERT INTO promotion_offer_version
+            (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status,
+             discount_type, discount_value, minimum_amount, maximum_discount_amount,
+             currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
+        VALUES
+            ($1, $2::text, $3::text, $4, $5, 'published',
+             $6, $7, '0', NULL, 'CNY', '{}', NULL, $8, $9, $10)
+        "#,
+    )
+    .bind(&version_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.offer_uuid)
+    .bind(&version_no)
+    .bind(discount_type_code(&command.discount_type))
+    .bind(promotion_offer_discount_value(command))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to publish promotion offer version", error))?;
+    Ok(command.offer_uuid.clone())
 }
 
-async fn load_coupon_by_id(
+async fn load_promotion_offer_by_id(
     tx: &mut Transaction<'_, Postgres>,
-    coupon_id: &str,
+    offer_id: &str,
     tenant_id: i64,
     organization_id: i64,
-) -> DomainResult<Option<AdminCouponItem>> {
+) -> DomainResult<Option<PromotionOfferItem>> {
     let row = sqlx::query(
         r#"
         SELECT
-            id::text AS id,
-            COALESCE(title, '') AS name,
-            COALESCE(discount_type, '') AS type_code,
-            COALESCE(discount_value, '0')::text AS amount,
-            COALESCE(discount_value, '0')::text AS discount,
-            status AS status
-        FROM commerce_coupon_template
-        WHERE id = $1
-          AND tenant_id = $2::text
-          AND organization_id = $3::text
-          AND status <> 'disabled'
+            o.id::text AS id,
+            COALESCE(o.name, '') AS name,
+            COALESCE(v.discount_type, '') AS type_code,
+            COALESCE(v.discount_value, '0')::text AS amount,
+            COALESCE(v.discount_value, '0')::text AS discount,
+            o.status AS status
+        FROM promotion_offer o
+        LEFT JOIN promotion_offer_version v
+          ON v.tenant_id = o.tenant_id
+         AND v.organization_id = o.organization_id
+         AND v.offer_id = o.id
+         AND v.id = o.current_offer_version_id
+         AND v.lifecycle_status = 'published'
+        WHERE o.id = $1
+          AND o.tenant_id = $2::text
+          AND o.organization_id = $3::text
+          AND o.offer_type = 'coupon'
+          AND o.status <> 'disabled'
         LIMIT 1
         "#,
     )
-    .bind(coupon_id)
+    .bind(offer_id)
     .bind(tenant_id)
     .bind(organization_id)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load coupon", error))?;
 
-    row.as_ref().map(coupon_from_row).transpose()
+    row.as_ref().map(promotion_offer_from_row).transpose()
 }
 
-async fn soft_delete_coupon(
+async fn soft_delete_promotion_offer(
     tx: &mut Transaction<'_, Postgres>,
-    command: &DeleteAdminCouponCommand,
+    command: &DeletePromotionOfferCommand,
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE commerce_coupon_template
+        UPDATE promotion_offer
         SET status = $1,
             updated_at = $2
         WHERE id = $3
@@ -650,173 +699,314 @@ async fn soft_delete_coupon(
           AND status <> 'disabled'
         "#,
     )
-    .bind(CommerceCouponStatus::Disabled.as_str())
+    .bind(PromotionCouponStatus::Disabled.as_str())
     .bind(&command.requested_at)
-    .bind(&command.coupon_id)
+    .bind(&command.offer_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete coupon", error))?;
+    if result.rows_affected() > 0 {
+        sqlx::query(
+            r#"
+            UPDATE promotion_coupon_stock
+            SET status = $1,
+                updated_at = $2
+            WHERE offer_id = $3
+              AND tenant_id = $4::text
+              AND organization_id = $5::text
+            "#,
+        )
+        .bind(PromotionCouponStatus::Disabled.as_str())
+        .bind(&command.requested_at)
+        .bind(&command.offer_id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to disable coupon stocks", error))?;
+        sqlx::query(
+            r#"
+            UPDATE promotion_code
+            SET status = $1,
+                updated_at = $2
+            WHERE offer_id = $3
+              AND tenant_id = $4::text
+              AND organization_id = $5::text
+            "#,
+        )
+        .bind(PromotionCouponStatus::Disabled.as_str())
+        .bind(&command.requested_at)
+        .bind(&command.offer_id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to disable coupon codes", error))?;
+    }
     Ok(result.rows_affected() > 0)
 }
 
-async fn update_coupon_row(
+async fn update_promotion_offer_row(
     tx: &mut Transaction<'_, Postgres>,
-    command: &UpdateAdminCouponCommand,
+    command: &UpdatePromotionOfferCommand,
 ) -> DomainResult<bool> {
+    let next_version_number = next_offer_version_number(
+        tx,
+        &command.offer_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?;
+    let next_version_no = promotion_offer_version_no(next_version_number);
+    let next_version_id = promotion_offer_version_id(&command.offer_id, next_version_number);
     let result = sqlx::query(
         r#"
-        UPDATE commerce_coupon_template
-        SET title = $1,
-            discount_type = $2,
-            discount_value = $3,
-            status = $4,
-            updated_at = $5
-        WHERE id = $6
-          AND tenant_id = $7::text
-          AND organization_id = $8::text
+        UPDATE promotion_offer
+        SET name = $1,
+            status = $2,
+            current_offer_version_id = $3,
+            updated_at = $4
+        WHERE id = $5
+          AND tenant_id = $6::text
+          AND organization_id = $7::text
           AND status <> 'disabled'
         "#,
     )
     .bind(&command.name)
-    .bind(coupon_discount_type(&command.coupon_type))
-    .bind(coupon_discount_value(command))
-    .bind(coupon_status_value(&command.status))
+    .bind(promotion_offer_status_value(&command.status))
+    .bind(&next_version_id)
     .bind(&command.requested_at)
-    .bind(&command.coupon_id)
+    .bind(&command.offer_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update coupon", error))?;
+    if result.rows_affected() == 0 {
+        return Ok(false);
+    }
+    sqlx::query(
+        r#"
+        INSERT INTO promotion_offer_version
+            (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status,
+             discount_type, discount_value, minimum_amount, maximum_discount_amount,
+             currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
+        VALUES
+            ($1, $2::text, $3::text, $4, $5, 'published',
+             $6, $7, '0', NULL, 'CNY', '{}', NULL, $8, $9, $10)
+        "#,
+    )
+    .bind(&next_version_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.offer_id)
+    .bind(&next_version_no)
+    .bind(discount_type_code(&command.discount_type))
+    .bind(promotion_offer_discount_value(command))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to publish coupon version", error))?;
     Ok(result.rows_affected() > 0)
 }
 
-async fn list_batches(
+async fn next_offer_version_number(
+    tx: &mut Transaction<'_, Postgres>,
+    offer_id: &str,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<i64> {
+    let version_numbers: Vec<String> = sqlx::query_scalar(
+        r#"
+        SELECT version_no
+        FROM promotion_offer_version
+        WHERE offer_id = $1
+          AND tenant_id = $2::text
+          AND organization_id = $3::text
+        "#,
+    )
+    .bind(offer_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_all(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load promotion offer versions", error))?;
+    let current_max = version_numbers
+        .iter()
+        .filter_map(|version_no| promotion_offer_version_number(version_no))
+        .max()
+        .unwrap_or(0);
+    current_max
+        .checked_add(1)
+        .ok_or_else(|| DomainError::conflict("promotion offer version sequence exhausted"))
+}
+
+async fn list_promotion_coupon_stocks(
     pool: &PgPool,
-    query: ListAdminCouponBatchesQuery,
-) -> DomainResult<Vec<AdminCouponBatchItem>> {
-    let rows = sqlx::query(BATCH_LIST_SQL)
+    query: ListPromotionCouponStocksQuery,
+) -> DomainResult<Vec<PromotionCouponStockItem>> {
+    let rows = sqlx::query(COUPON_STOCK_LIST_SQL)
         .bind(query.subject.tenant_id)
         .bind(query.subject.organization_id)
         .fetch_all(pool)
         .await
-        .map_err(|error| store_error("failed to list coupon batches", error))?;
+        .map_err(|error| store_error("failed to list promotion coupon stocks", error))?;
 
-    rows.iter().map(batch_from_row).collect()
+    rows.iter().map(promotion_coupon_stock_from_row).collect()
 }
 
-async fn coupon_exists(
+async fn promotion_offer_exists(
     tx: &mut Transaction<'_, Postgres>,
-    coupon_id: &str,
+    offer_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<bool> {
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(*)
-        FROM commerce_coupon_template
+        FROM promotion_offer
         WHERE id = $1
           AND tenant_id = $2::text
           AND organization_id = $3::text
+          AND offer_type = 'coupon'
           AND status <> 'disabled'
         "#,
     )
-    .bind(coupon_id)
+    .bind(offer_id)
     .bind(tenant_id)
     .bind(organization_id)
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to check coupon existence", error))?;
+    .map_err(|error| store_error("failed to check promotion offer existence", error))?;
     Ok(count > 0)
 }
 
-async fn insert_coupon_batch(
+async fn insert_promotion_coupon_stock(
     tx: &mut Transaction<'_, Postgres>,
-    command: &GenerateAdminCouponBatchCommand,
+    command: &GeneratePromotionCouponStockCommand,
 ) -> DomainResult<String> {
-    let batch_no = batch_no(&command.prefix, &command.batch_uuid);
+    let stock_no = promotion_coupon_stock_no(&command.code_prefix, &command.stock_uuid);
+    let offer_version_id = load_published_offer_version_id(tx, command).await?;
     sqlx::query(
         r#"
-        INSERT INTO commerce_coupon_issue_batch
-            (id, tenant_id, organization_id, coupon_template_id, batch_no, campaign_code, title, code_prefix, code_pattern, requested_quantity, generated_quantity, available_quantity, claimed_quantity, redeemed_quantity, disabled_quantity, status, generation_status, audience_filter, generated_at, created_by, created_at, updated_at)
+        INSERT INTO promotion_coupon_stock
+            (id, tenant_id, organization_id, stock_no, name, offer_id, offer_version_id,
+             stock_type, total_quantity, available_quantity, claimed_quantity, redeemed_quantity,
+             locked_quantity, status, starts_at, expires_at, created_at, updated_at)
         VALUES
-            ($1, $2::text, $3::text, $4, $5, $6, $7, $8, $9, $10, $11, $12, 0, 0, 0, 'active', 'completed', '{}', $13, $14::text, $15, $16)
+            ($1, $2::text, $3::text, $4, $5, $6, $7, 'code_claim',
+             $8, $9, 0, 0, 0, 'active', $10, NULL, $11, $12)
         "#,
     )
-    .bind(&command.batch_uuid)
+    .bind(&command.stock_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(&command.coupon_id)
-    .bind(&batch_no)
-    .bind(&batch_no)
+    .bind(&stock_no)
     .bind(&command.name)
-    .bind(&command.prefix)
-    .bind(format!("{}-{{sequence:04}}", command.prefix))
-    .bind(command.count)
-    .bind(command.count)
-    .bind(command.count)
+    .bind(&command.offer_id)
+    .bind(&offer_version_id)
+    .bind(command.total_quantity)
+    .bind(command.total_quantity)
     .bind(&command.requested_at)
-    .bind(command.subject.operator_id)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create coupon issue batch", error))?;
-    Ok(command.batch_uuid.clone())
+    .map_err(|error| store_error("failed to create promotion coupon stock", error))?;
+    Ok(command.stock_uuid.clone())
 }
 
-async fn insert_promo_codes(
+async fn load_published_offer_version_id(
     tx: &mut Transaction<'_, Postgres>,
-    command: &GenerateAdminCouponBatchCommand,
-    batch_id: &str,
-) -> DomainResult<Vec<AdminPromoCodeItem>> {
-    let mut codes = Vec::with_capacity(command.count as usize);
-    let mut sequence = next_promo_code_sequence(tx, command).await?;
-    for _ in 0..command.count {
+    command: &GeneratePromotionCouponStockCommand,
+) -> DomainResult<String> {
+    sqlx::query_scalar(
+        r#"
+        SELECT v.id
+        FROM promotion_offer o
+        JOIN promotion_offer_version v
+          ON v.tenant_id = o.tenant_id
+         AND v.organization_id = o.organization_id
+         AND v.offer_id = o.id
+         AND v.id = o.current_offer_version_id
+         AND v.lifecycle_status = 'published'
+        WHERE o.id = $1
+          AND o.tenant_id = $2::text
+          AND o.organization_id = $3::text
+          AND o.offer_type = 'coupon'
+          AND o.status <> 'disabled'
+        LIMIT 1
+        "#,
+    )
+    .bind(&command.offer_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load promotion offer version", error))?
+    .ok_or_else(|| DomainError::conflict("promotion offer has no published version"))
+}
+
+async fn insert_promotion_codes(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &GeneratePromotionCouponStockCommand,
+    stock_id: &str,
+) -> DomainResult<Vec<PromotionCodeItem>> {
+    let offer_version_id = load_stock_offer_version_id(
+        tx,
+        stock_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?;
+    let mut codes = Vec::with_capacity(command.total_quantity as usize);
+    let mut sequence = next_promotion_code_sequence(tx, command).await?;
+    for _ in 0..command.total_quantity {
         loop {
-            let (current_sequence, code) = next_available_promo_code(tx, command, sequence).await?;
-            let uuid = format!("{}-code-{current_sequence}", command.batch_uuid);
+            let (current_sequence, code) =
+                next_available_promotion_code(tx, command, sequence).await?;
+            let uuid = format!("{}-code-{current_sequence}", command.stock_uuid);
             let result = sqlx::query(
                 r#"
-                INSERT INTO commerce_coupon
-                    (id, tenant_id, organization_id, template_id, issue_batch_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
+                INSERT INTO promotion_code
+                    (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code,
+                     code_type, max_claims, claimed_quantity, status, starts_at, expires_at,
+                     created_at, updated_at)
                 VALUES
-                    ($1, $2::text, $3::text, $4, $5, NULL, $6, $7, NULL, NULL, NULL, NULL, $8, $9, $10, $11)
-                ON CONFLICT(tenant_id, coupon_code) DO NOTHING
+                    ($1, $2::text, $3::text, $4, $5, $6, $7, $8,
+                     'single_use', 1, 0, $9, $10, NULL, $11, $12)
+                ON CONFLICT(tenant_id, promotion_code) DO NOTHING
                 "#,
             )
             .bind(&uuid)
             .bind(command.subject.tenant_id)
             .bind(command.subject.organization_id)
-            .bind(&command.coupon_id)
-            .bind(batch_id)
+            .bind(promotion_code_no(&command.code_prefix, &command.stock_uuid, current_sequence))
+            .bind(stock_id)
+            .bind(&command.offer_id)
+            .bind(&offer_version_id)
             .bind(&code)
-            .bind(CommerceCouponStatus::Active.as_str())
-            .bind(format!(
-                "{}-{current_sequence}",
-                batch_no(&command.prefix, &command.batch_uuid)
-            ))
-            .bind(format!(
-                "{}-{current_sequence}",
-                batch_no(&command.prefix, &command.batch_uuid)
-            ))
+            .bind(PromotionCouponStatus::Active.as_str())
+            .bind(&command.requested_at)
             .bind(&command.requested_at)
             .bind(&command.requested_at)
             .execute(&mut **tx)
             .await
-            .map_err(|error| store_error("failed to create promo code", error))?;
+            .map_err(|error| store_error("failed to create promotion code", error))?;
             sequence = current_sequence
                 .checked_add(1)
-                .ok_or_else(|| DomainError::conflict("promo code sequence exhausted"))?;
+                .ok_or_else(|| DomainError::conflict("promotion code sequence exhausted"))?;
             if result.rows_affected() == 0 {
                 continue;
             }
-            codes.push(AdminPromoCodeItem {
+            codes.push(PromotionCodeItem {
                 id: uuid,
-                batch_id: batch_id.to_owned(),
-                code,
+                stock_id: stock_id.to_owned(),
+                promotion_code: code,
                 status: "available".to_owned(),
                 used_by: None,
                 used_at: None,
@@ -827,128 +1017,149 @@ async fn insert_promo_codes(
     Ok(codes)
 }
 
-async fn next_promo_code_sequence(
+async fn load_stock_offer_version_id(
     tx: &mut Transaction<'_, Postgres>,
-    command: &GenerateAdminCouponBatchCommand,
+    stock_id: &str,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<String> {
+    sqlx::query_scalar(
+        r#"
+        SELECT offer_version_id
+        FROM promotion_coupon_stock
+        WHERE id = $1
+          AND tenant_id = $2::text
+          AND organization_id = $3::text
+        LIMIT 1
+        "#,
+    )
+    .bind(stock_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load coupon stock offer version", error))?
+    .ok_or_else(|| DomainError::conflict("coupon stock has no promotion offer version"))
+}
+
+async fn next_promotion_code_sequence(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &GeneratePromotionCouponStockCommand,
 ) -> DomainResult<i64> {
-    let code_pattern = format!("{}-%", escape_like_pattern(&command.prefix));
+    let code_pattern = format!("{}-%", escape_like_pattern(&command.code_prefix));
     let existing_codes: Vec<String> = sqlx::query_scalar(
         r#"
-        SELECT coupon_code
-        FROM commerce_coupon
-        WHERE coupon_code LIKE $1 ESCAPE '!'
+        SELECT promotion_code
+        FROM promotion_code
+        WHERE promotion_code LIKE $1 ESCAPE '!'
         "#,
     )
     .bind(code_pattern)
     .fetch_all(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load existing promo codes", error))?;
+    .map_err(|error| store_error("failed to load existing promotion codes", error))?;
 
     let max_sequence = existing_codes
         .iter()
-        .filter_map(|code| promo_code_sequence(&command.prefix, code))
+        .filter_map(|code| promotion_code_sequence(&command.code_prefix, code))
         .max()
         .unwrap_or(0);
     max_sequence
         .checked_add(1)
-        .ok_or_else(|| DomainError::conflict("promo code sequence exhausted"))
+        .ok_or_else(|| DomainError::conflict("promotion code sequence exhausted"))
 }
 
-async fn next_available_promo_code(
+async fn next_available_promotion_code(
     tx: &mut Transaction<'_, Postgres>,
-    command: &GenerateAdminCouponBatchCommand,
+    command: &GeneratePromotionCouponStockCommand,
     mut sequence: i64,
 ) -> DomainResult<(i64, String)> {
     loop {
-        let code = format_promo_code(&command.prefix, sequence);
-        if !promo_code_exists(tx, &code).await? {
+        let code = format_promotion_code(&command.code_prefix, sequence);
+        if !promotion_code_exists(tx, &code).await? {
             return Ok((sequence, code));
         }
         sequence = sequence
             .checked_add(1)
-            .ok_or_else(|| DomainError::conflict("promo code sequence exhausted"))?;
+            .ok_or_else(|| DomainError::conflict("promotion code sequence exhausted"))?;
     }
 }
 
-async fn promo_code_exists(tx: &mut Transaction<'_, Postgres>, code: &str) -> DomainResult<bool> {
+async fn promotion_code_exists(
+    tx: &mut Transaction<'_, Postgres>,
+    promotion_code: &str,
+) -> DomainResult<bool> {
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(*)
-        FROM commerce_coupon
-        WHERE coupon_code = $1
+        FROM promotion_code
+        WHERE promotion_code = $1
         "#,
     )
-    .bind(code)
+    .bind(promotion_code)
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to check promo code uniqueness", error))?;
+    .map_err(|error| store_error("failed to check promotion code uniqueness", error))?;
     Ok(count > 0)
 }
 
-async fn update_coupon_received_count(
+async fn update_promotion_offer_received_count(
     tx: &mut Transaction<'_, Postgres>,
-    command: &GenerateAdminCouponBatchCommand,
+    command: &GeneratePromotionCouponStockCommand,
 ) -> DomainResult<()> {
-    sqlx::query(
-        r#"
-        UPDATE commerce_coupon_template
-        SET claimed_quantity = COALESCE(claimed_quantity, 0) + $1,
-            updated_at = $2
-        WHERE id = $3
-          AND tenant_id = $4::text
-          AND organization_id = $5::text
-        "#,
-    )
-    .bind(command.count)
-    .bind(&command.requested_at)
-    .bind(&command.coupon_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to update coupon received count", error))?;
+    let _ = (tx, command);
     Ok(())
 }
 
-async fn load_batch_by_id(
+async fn load_promotion_coupon_stock_by_id(
     tx: &mut Transaction<'_, Postgres>,
-    batch_id: &str,
+    stock_id: &str,
     tenant_id: i64,
     organization_id: i64,
-) -> DomainResult<Option<AdminCouponBatchItem>> {
-    let row = sqlx::query(BATCH_BY_ID_SQL)
-        .bind(batch_id)
+) -> DomainResult<Option<PromotionCouponStockItem>> {
+    let row = sqlx::query(COUPON_STOCK_BY_ID_SQL)
+        .bind(stock_id)
         .bind(tenant_id)
         .bind(organization_id)
         .fetch_optional(&mut **tx)
         .await
-        .map_err(|error| store_error("failed to load coupon batch", error))?;
+        .map_err(|error| store_error("failed to load promotion coupon stock", error))?;
 
-    row.as_ref().map(batch_from_row).transpose()
+    row.as_ref()
+        .map(promotion_coupon_stock_from_row)
+        .transpose()
 }
 
-async fn list_promo_codes(
+async fn list_promotion_codes(
     pool: &PgPool,
-    query: ListAdminPromoCodesQuery,
-) -> DomainResult<Vec<AdminPromoCodeItem>> {
+    query: ListPromotionCodesQuery,
+) -> DomainResult<Vec<PromotionCodeItem>> {
     let rows = sqlx::query(
         r#"
         SELECT
-            uc.id::text AS id,
-            COALESCE(uc.issue_batch_id, '') AS batch_id,
-            COALESCE(uc.coupon_code, '') AS code,
-            uc.status AS status,
-            uc.owner_user_id AS user_id,
-            uc.redeemed_at::text AS used_at,
+            pc.id::text AS id,
+            COALESCE(pc.stock_id, '') AS stock_id,
+            COALESCE(pc.promotion_code, '') AS promotion_code,
+            CASE
+                WHEN pc.status = 'disabled' THEN pc.status
+                WHEN puc.status = 'redeemed' OR puc.redeemed_at IS NOT NULL THEN 'redeemed'
+                ELSE pc.status
+            END AS status,
+            puc.owner_user_id AS user_id,
+            puc.redeemed_at::text AS used_at,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS used_by
-        FROM commerce_coupon uc
+        FROM promotion_code pc
+        LEFT JOIN promotion_user_coupon puc
+          ON puc.tenant_id = pc.tenant_id
+         AND puc.organization_id = pc.organization_id
+         AND puc.code_id = pc.id
         LEFT JOIN iam_user u
-          ON u.id = uc.owner_user_id
-         AND u.tenant_id = uc.tenant_id
-        WHERE uc.tenant_id = $1::text
-          AND uc.organization_id = $2::text
-          AND uc.issue_batch_id IS NOT NULL
-        ORDER BY uc.created_at DESC, uc.coupon_code DESC, uc.id DESC
+          ON u.id = puc.owner_user_id
+         AND u.tenant_id = pc.tenant_id
+        WHERE pc.tenant_id = $1::text
+          AND pc.organization_id = $2::text
+          AND pc.stock_id IS NOT NULL
+        ORDER BY pc.created_at DESC, pc.promotion_code DESC, pc.id DESC
         LIMIT 1000
         "#,
     )
@@ -956,79 +1167,101 @@ async fn list_promo_codes(
     .bind(query.subject.organization_id)
     .fetch_all(pool)
     .await
-    .map_err(|error| store_error("failed to list promo codes", error))?;
+    .map_err(|error| store_error("failed to list promotion codes", error))?;
 
-    rows.iter().map(promo_code_from_row).collect()
+    rows.iter().map(promotion_code_from_row).collect()
 }
 
-async fn update_promo_code_status(
+async fn update_promotion_code_status(
     tx: &mut Transaction<'_, Postgres>,
-    command: &UpdateAdminPromoCodeStatusCommand,
+    command: &UpdatePromotionCodeStatusCommand,
 ) -> DomainResult<bool> {
-    let status = promo_status_value(&command.status);
-    let Some(fact) = load_promo_code_status_fact(tx, command).await? else {
+    let status = promotion_code_status_value(&command.status);
+    let Some(fact) = load_promotion_code_status_fact(tx, command).await? else {
         return Ok(false);
     };
-    ensure_promo_status_transition(&fact, &status)?;
-    let result = sqlx::query(
-        r#"
-        UPDATE commerce_coupon
-        SET status = $1,
-            redeemed_at = CASE
-                WHEN $1 = 'redeemed' THEN COALESCE(redeemed_at, $2)
-                WHEN $1 = 'active' THEN NULL
-                ELSE redeemed_at
-            END,
-            disabled_at = CASE
-                WHEN $1 = 'disabled' THEN COALESCE(disabled_at, $2)
-                WHEN $1 = 'active' THEN NULL
-                ELSE disabled_at
-            END,
-            updated_at = $2
-        WHERE id = $3
-          AND tenant_id = $4::text
-          AND organization_id = $5::text
-          AND status <> 'disabled'
-        "#,
-    )
-    .bind(&status)
-    .bind(&command.requested_at)
-    .bind(&command.promo_code_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to update promo code status", error))?;
+    ensure_promotion_code_status_transition(&fact, &status)?;
+    let result = if status == PromotionCouponStatus::Redeemed.as_str() {
+        sqlx::query(
+            r#"
+            UPDATE promotion_user_coupon
+            SET status = $1,
+                redeemed_at = COALESCE(redeemed_at, $2),
+                updated_at = $3
+            WHERE code_id = $4
+              AND tenant_id = $5::text
+              AND organization_id = $6::text
+              AND status <> 'disabled'
+            "#,
+        )
+        .bind(&status)
+        .bind(&command.requested_at)
+        .bind(&command.requested_at)
+        .bind(&command.code_id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to mark user coupon redeemed", error))?
+    } else {
+        sqlx::query(
+            r#"
+            UPDATE promotion_code
+            SET status = $1,
+                updated_at = $2
+            WHERE id = $3
+              AND tenant_id = $4::text
+              AND organization_id = $5::text
+              AND status <> 'disabled'
+            "#,
+        )
+        .bind(&status)
+        .bind(&command.requested_at)
+        .bind(&command.code_id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to update promotion code status", error))?
+    };
     Ok(result.rows_affected() > 0)
 }
 
-async fn load_promo_code_status_fact(
+async fn load_promotion_code_status_fact(
     tx: &mut Transaction<'_, Postgres>,
-    command: &UpdateAdminPromoCodeStatusCommand,
-) -> DomainResult<Option<PromoCodeStatusFact>> {
+    command: &UpdatePromotionCodeStatusCommand,
+) -> DomainResult<Option<PromotionCodeStatusFact>> {
     let row = sqlx::query(
         r#"
         SELECT
-            status AS status,
-            owner_user_id AS user_id,
-            redeemed_at::text AS used_at
-        FROM commerce_coupon
-        WHERE id = $1
-          AND tenant_id = $2::text
-          AND organization_id = $3::text
-          AND status <> 'disabled'
+            CASE
+                WHEN pc.status = 'disabled' THEN pc.status
+                WHEN puc.status = 'redeemed' OR puc.redeemed_at IS NOT NULL THEN 'redeemed'
+                ELSE pc.status
+            END AS status,
+            puc.owner_user_id AS user_id,
+            puc.redeemed_at::text AS used_at
+        FROM promotion_code pc
+        LEFT JOIN promotion_user_coupon puc
+          ON puc.tenant_id = pc.tenant_id
+         AND puc.organization_id = pc.organization_id
+         AND puc.code_id = pc.id
+        WHERE pc.id = $1
+          AND pc.tenant_id = $2::text
+          AND pc.organization_id = $3::text
+          AND pc.status <> 'disabled'
         LIMIT 1
         "#,
     )
-    .bind(&command.promo_code_id)
+    .bind(&command.code_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load promo code status", error))?;
+    .map_err(|error| store_error("failed to load promotion code status", error))?;
 
     row.map(|row| {
-        Ok(PromoCodeStatusFact {
+        Ok(PromotionCodeStatusFact {
             status: string_cell(&row, "status"),
             user_id: optional_string_cell(&row, "user_id").filter(|value| !value.is_empty()),
             used_at: optional_string_cell(&row, "used_at").filter(|value| !value.is_empty()),
@@ -1037,99 +1270,93 @@ async fn load_promo_code_status_fact(
     .transpose()
 }
 
-async fn find_batch_for_promo_code(
+async fn find_stock_for_promotion_code(
     tx: &mut Transaction<'_, Postgres>,
-    command: &UpdateAdminPromoCodeStatusCommand,
+    command: &UpdatePromotionCodeStatusCommand,
 ) -> DomainResult<Option<String>> {
     sqlx::query_scalar(
         r#"
-        SELECT issue_batch_id
-        FROM commerce_coupon
+        SELECT stock_id
+        FROM promotion_code
         WHERE id = $1
           AND tenant_id = $2::text
           AND organization_id = $3::text
         LIMIT 1
         "#,
     )
-    .bind(&command.promo_code_id)
+    .bind(&command.code_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to find promo code batch", error))
+    .map_err(|error| store_error("failed to find promotion code stock", error))
 }
 
-async fn refresh_batch_counters(
+async fn refresh_stock_counters(
     tx: &mut Transaction<'_, Postgres>,
-    batch_id: &str,
+    stock_id: &str,
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE commerce_coupon_issue_batch
+        UPDATE promotion_coupon_stock
         SET available_quantity = (
                 SELECT COUNT(*)
-                FROM commerce_coupon c
-                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
-                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
-                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
+                FROM promotion_code c
+                LEFT JOIN promotion_user_coupon uc
+                  ON uc.tenant_id = c.tenant_id
+                 AND uc.organization_id = c.organization_id
+                 AND uc.code_id = c.id
+                WHERE c.tenant_id = promotion_coupon_stock.tenant_id
+                  AND c.organization_id = promotion_coupon_stock.organization_id
+                  AND c.stock_id = promotion_coupon_stock.id
                   AND c.status = 'active'
-                  AND c.owner_user_id IS NULL
-                  AND c.redeemed_at IS NULL
+                  AND uc.id IS NULL
             ),
             claimed_quantity = (
                 SELECT COUNT(*)
-                FROM commerce_coupon c
-                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
-                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
-                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
-                  AND c.status = 'active'
-                  AND c.owner_user_id IS NOT NULL
-                  AND c.redeemed_at IS NULL
+                FROM promotion_user_coupon uc
+                WHERE uc.tenant_id = promotion_coupon_stock.tenant_id
+                  AND uc.organization_id = promotion_coupon_stock.organization_id
+                  AND uc.stock_id = promotion_coupon_stock.id
+                  AND uc.status <> 'redeemed'
+                  AND uc.redeemed_at IS NULL
             ),
             redeemed_quantity = (
                 SELECT COUNT(*)
-                FROM commerce_coupon c
-                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
-                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
-                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
-                  AND (c.status = 'redeemed' OR c.redeemed_at IS NOT NULL)
-            ),
-            disabled_quantity = (
-                SELECT COUNT(*)
-                FROM commerce_coupon c
-                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
-                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
-                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
-                  AND c.status = 'disabled'
+                FROM promotion_user_coupon uc
+                WHERE uc.tenant_id = promotion_coupon_stock.tenant_id
+                  AND uc.organization_id = promotion_coupon_stock.organization_id
+                  AND uc.stock_id = promotion_coupon_stock.id
+                  AND (uc.status = 'redeemed' OR uc.redeemed_at IS NOT NULL)
             ),
             updated_at = CURRENT_TIMESTAMP
         WHERE id = $1
         "#,
     )
-    .bind(batch_id)
+    .bind(stock_id)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to refresh coupon batch counters", error))?;
+    .map_err(|error| store_error("failed to refresh promotion coupon stock counters", error))?;
     Ok(())
 }
 
-async fn list_redemption_records(
+async fn list_promotion_code_redemptions(
     pool: &PgPool,
-    query: ListAdminRedemptionRecordsQuery,
-) -> DomainResult<Vec<AdminRedemptionRecordItem>> {
+    query: ListPromotionCodeRedemptionsQuery,
+) -> DomainResult<Vec<PromotionCodeRedemptionItem>> {
     let rows = sqlx::query(
         r#"
         SELECT
             c.id::text AS id,
-            c.owner_user_id::text AS user_id,
+            c.owner_user_id::text AS owner_user_id,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS user_name,
-            COALESCE(c.coupon_code, '') AS code,
-            COALESCE(t.discount_value, '0')::text AS amount,
-            COALESCE(c.redeemed_at, c.updated_at, c.claimed_at, c.created_at)::text AS time
-        FROM commerce_coupon c
-        JOIN commerce_coupon_template t
-          ON t.id = c.template_id
-         AND t.tenant_id = c.tenant_id
+            COALESCE(c.coupon_code, '') AS submitted_code,
+            COALESCE(v.discount_value, '0')::text AS amount,
+            COALESCE(c.redeemed_at, c.updated_at, c.claimed_at, c.created_at)::text AS occurred_at
+        FROM promotion_user_coupon c
+        JOIN promotion_offer_version v
+          ON v.id = c.offer_version_id
+         AND v.tenant_id = c.tenant_id
         LEFT JOIN iam_user u
           ON u.id = c.owner_user_id
          AND u.tenant_id = c.tenant_id
@@ -1145,17 +1372,17 @@ async fn list_redemption_records(
     .bind(query.subject.organization_id)
     .fetch_all(pool)
     .await
-    .map_err(|error| store_error("failed to list redemption records", error))?;
+    .map_err(|error| store_error("failed to list promotion code redemptions", error))?;
 
     rows.iter()
         .map(|row| {
-            Ok(AdminRedemptionRecordItem {
+            Ok(PromotionCodeRedemptionItem {
                 id: string_cell(row, "id"),
-                user_id: string_cell(row, "user_id"),
+                owner_user_id: string_cell(row, "owner_user_id"),
                 user: string_cell(row, "user_name"),
-                code: string_cell(row, "code"),
+                submitted_code: string_cell(row, "submitted_code"),
                 amount: decimal_money_string(&string_cell(row, "amount")),
-                time: string_cell(row, "time"),
+                occurred_at: string_cell(row, "occurred_at"),
             })
         })
         .collect()
@@ -2097,15 +2324,15 @@ async fn insert_audit_log_for_target_uuid(
     Ok(())
 }
 
-const BATCH_LIST_SQL: &str = r#"
+const COUPON_STOCK_LIST_SQL: &str = r#"
 SELECT
     id::text AS id,
-    coupon_template_id::text AS coupon_id,
-    COALESCE(title, '') AS name,
-    COALESCE(generated_quantity, requested_quantity, 0) AS count,
-    COALESCE(code_prefix, '') AS prefix,
+    offer_id::text AS offer_id,
+    COALESCE(name, '') AS name,
+    COALESCE(total_quantity, 0) AS total_quantity,
+    COALESCE(SUBSTRING(stock_no FROM 7 FOR POSITION('-' IN SUBSTRING(stock_no FROM 7)) - 1), '') AS code_prefix,
     created_at::text AS created_at
-FROM commerce_coupon_issue_batch
+FROM promotion_coupon_stock
 WHERE tenant_id = $1::text
   AND organization_id = $2::text
   AND status = 'active'
@@ -2113,15 +2340,15 @@ ORDER BY created_at DESC, id DESC
 LIMIT 500
 "#;
 
-const BATCH_BY_ID_SQL: &str = r#"
+const COUPON_STOCK_BY_ID_SQL: &str = r#"
 SELECT
     id::text AS id,
-    coupon_template_id::text AS coupon_id,
-    COALESCE(title, '') AS name,
-    COALESCE(generated_quantity, requested_quantity, 0) AS count,
-    COALESCE(code_prefix, '') AS prefix,
+    offer_id::text AS offer_id,
+    COALESCE(name, '') AS name,
+    COALESCE(total_quantity, 0) AS total_quantity,
+    COALESCE(SUBSTRING(stock_no FROM 7 FOR POSITION('-' IN SUBSTRING(stock_no FROM 7)) - 1), '') AS code_prefix,
     created_at::text AS created_at
-FROM commerce_coupon_issue_batch
+FROM promotion_coupon_stock
 WHERE id = $1
   AND tenant_id = $2::text
   AND organization_id = $3::text
@@ -2129,49 +2356,51 @@ WHERE id = $1
 LIMIT 1
 "#;
 
-fn coupon_from_row(row: &sqlx::postgres::PgRow) -> DomainResult<AdminCouponItem> {
+fn promotion_offer_from_row(row: &sqlx::postgres::PgRow) -> DomainResult<PromotionOfferItem> {
     let amount = string_cell(row, "amount");
     let discount = string_cell(row, "discount");
-    let coupon_type = coupon_type_label(&string_cell(row, "type_code"))?.to_owned();
-    let value = if coupon_type == "discount" {
+    let discount_type = discount_type_label(&string_cell(row, "type_code"))?.to_owned();
+    let value = if discount_type == "discount" {
         discount_value_string(&discount)
     } else {
         decimal_money_string(&amount)
     };
-    let status = coupon_status_label(&string_cell(row, "status"))?.to_owned();
-    Ok(AdminCouponItem {
+    let status = promotion_offer_status_label(&string_cell(row, "status"))?.to_owned();
+    Ok(PromotionOfferItem {
         id: string_cell(row, "id"),
         name: string_cell(row, "name"),
-        coupon_type,
+        discount_type,
         value,
         status,
     })
 }
 
-fn batch_from_row(row: &sqlx::postgres::PgRow) -> DomainResult<AdminCouponBatchItem> {
-    Ok(AdminCouponBatchItem {
+fn promotion_coupon_stock_from_row(
+    row: &sqlx::postgres::PgRow,
+) -> DomainResult<PromotionCouponStockItem> {
+    Ok(PromotionCouponStockItem {
         id: string_cell(row, "id"),
-        coupon_id: string_cell(row, "coupon_id"),
+        offer_id: string_cell(row, "offer_id"),
         name: string_cell(row, "name"),
-        count: integer_cell(row, "count"),
-        prefix: string_cell(row, "prefix"),
+        total_quantity: integer_cell(row, "total_quantity"),
+        code_prefix: string_cell(row, "code_prefix"),
         created_at: string_cell(row, "created_at"),
     })
 }
 
-fn promo_code_from_row(row: &sqlx::postgres::PgRow) -> DomainResult<AdminPromoCodeItem> {
+fn promotion_code_from_row(row: &sqlx::postgres::PgRow) -> DomainResult<PromotionCodeItem> {
     let user_id = optional_string_cell(row, "user_id");
     let used_at = optional_string_cell(row, "used_at").filter(|value| !value.is_empty());
-    let status = promo_status_label(
+    let status = promotion_code_status_label(
         &string_cell(row, "status"),
         user_id.as_deref(),
         used_at.as_deref(),
     )?
     .to_owned();
-    Ok(AdminPromoCodeItem {
+    Ok(PromotionCodeItem {
         id: string_cell(row, "id"),
-        batch_id: string_cell(row, "batch_id"),
-        code: string_cell(row, "code"),
+        stock_id: string_cell(row, "stock_id"),
+        promotion_code: string_cell(row, "promotion_code"),
         status,
         used_by: optional_string_cell(row, "used_by").filter(|value| !value.is_empty()),
         used_at,
@@ -2193,27 +2422,57 @@ fn recharge_record_from_row(row: &sqlx::postgres::PgRow) -> DomainResult<AdminRe
     })
 }
 
-fn coupon_template_no(coupon_uuid: &str) -> String {
-    format!("tpl-{coupon_uuid}")
+fn promotion_offer_no(offer_uuid: &str) -> String {
+    format!("offer-{offer_uuid}")
 }
 
-fn coupon_discount_type(value: &str) -> &'static str {
+fn promotion_offer_code(offer_uuid: &str) -> String {
+    offer_uuid.to_owned()
+}
+
+fn promotion_offer_version_no(version_number: i64) -> String {
+    format!("v{version_number}")
+}
+
+fn promotion_offer_version_id(offer_uuid: &str, version_number: i64) -> String {
+    format!(
+        "{offer_uuid}-version-{}",
+        promotion_offer_version_no(version_number)
+    )
+}
+
+fn promotion_offer_version_number(version_no: &str) -> Option<i64> {
+    version_no
+        .strip_prefix('v')
+        .and_then(|value| value.parse::<i64>().ok())
+        .filter(|value| *value > 0)
+}
+
+fn promotion_coupon_stock_no(code_prefix: &str, stock_uuid: &str) -> String {
+    format!("stock-{code_prefix}-{stock_uuid}")
+}
+
+fn promotion_code_no(code_prefix: &str, stock_uuid: &str, sequence: i64) -> String {
+    format!("code-{code_prefix}-{stock_uuid}-{sequence:04}")
+}
+
+fn discount_type_code(value: &str) -> &'static str {
     if value == "discount" {
-        "percentage"
+        "percent_off"
     } else {
         "fixed_amount"
     }
 }
 
-trait AdminCouponDiscountValue {
-    fn coupon_type(&self) -> &str;
+trait PromotionOfferDiscountValue {
+    fn discount_type(&self) -> &str;
     fn amount_cents(&self) -> i64;
     fn discount_value(&self) -> Option<&str>;
 }
 
-impl AdminCouponDiscountValue for CreateAdminCouponCommand {
-    fn coupon_type(&self) -> &str {
-        &self.coupon_type
+impl PromotionOfferDiscountValue for CreatePromotionOfferCommand {
+    fn discount_type(&self) -> &str {
+        &self.discount_type
     }
 
     fn amount_cents(&self) -> i64 {
@@ -2225,9 +2484,9 @@ impl AdminCouponDiscountValue for CreateAdminCouponCommand {
     }
 }
 
-impl AdminCouponDiscountValue for UpdateAdminCouponCommand {
-    fn coupon_type(&self) -> &str {
-        &self.coupon_type
+impl PromotionOfferDiscountValue for UpdatePromotionOfferCommand {
+    fn discount_type(&self) -> &str {
+        &self.discount_type
     }
 
     fn amount_cents(&self) -> i64 {
@@ -2239,8 +2498,8 @@ impl AdminCouponDiscountValue for UpdateAdminCouponCommand {
     }
 }
 
-fn coupon_discount_value(command: &impl AdminCouponDiscountValue) -> String {
-    if command.coupon_type() == "discount" {
+fn promotion_offer_discount_value(command: &impl PromotionOfferDiscountValue) -> String {
+    if command.discount_type() == "discount" {
         command.discount_value().unwrap_or("0").to_owned()
     } else {
         let cents = command.amount_cents();
@@ -2248,47 +2507,47 @@ fn coupon_discount_value(command: &impl AdminCouponDiscountValue) -> String {
     }
 }
 
-fn coupon_type_label(value: &str) -> DomainResult<&'static str> {
+fn discount_type_label(value: &str) -> DomainResult<&'static str> {
     match value.trim().to_ascii_lowercase().as_str() {
-        "fixed_amount" | "amount" | "fixed" | "cash" => Ok("amount"),
-        "percentage" | "percent" | "discount" => Ok("discount"),
+        "fixed_amount" => Ok("amount"),
+        "percent_off" => Ok("discount"),
         value => Err(DomainError::new(format!(
-            "unsupported admin coupon type: {value}"
+            "unsupported promotion offer discount type: {value}"
         ))),
     }
 }
 
-fn coupon_status_value(value: &str) -> &'static str {
+fn promotion_offer_status_value(value: &str) -> &'static str {
     if value == "inactive" {
-        CommerceCouponStatus::Draft.as_str()
+        PromotionCouponStatus::Draft.as_str()
     } else {
-        CommerceCouponStatus::Active.as_str()
+        PromotionCouponStatus::Active.as_str()
     }
 }
 
-fn coupon_status_label(value: &str) -> DomainResult<&'static str> {
+fn promotion_offer_status_label(value: &str) -> DomainResult<&'static str> {
     match value.trim().to_ascii_lowercase().as_str() {
-        status if status == CommerceCouponStatus::Active.as_str() => Ok("active"),
-        status if status == CommerceCouponStatus::Draft.as_str() => Ok("inactive"),
-        status if status == CommerceCouponStatus::Disabled.as_str() => Ok("inactive"),
-        status if status == CommerceCouponStatus::Expired.as_str() => Ok("inactive"),
-        status if status == CommerceCouponStatus::Redeemed.as_str() => Ok("inactive"),
+        status if status == PromotionCouponStatus::Active.as_str() => Ok("active"),
+        status if status == PromotionCouponStatus::Draft.as_str() => Ok("inactive"),
+        status if status == PromotionCouponStatus::Disabled.as_str() => Ok("inactive"),
+        status if status == PromotionCouponStatus::Expired.as_str() => Ok("inactive"),
+        status if status == PromotionCouponStatus::Redeemed.as_str() => Ok("inactive"),
         value => Err(DomainError::new(format!(
-            "unsupported admin coupon status: {value}"
+            "unsupported promotion offer status: {value}"
         ))),
     }
 }
 
-fn promo_status_value(value: &str) -> &'static str {
+fn promotion_code_status_value(value: &str) -> &'static str {
     match value {
-        "used" => CommerceCouponStatus::Redeemed.as_str(),
-        "voided" => CommerceCouponStatus::Disabled.as_str(),
-        _ => CommerceCouponStatus::Active.as_str(),
+        "used" => PromotionCouponStatus::Redeemed.as_str(),
+        "voided" => PromotionCouponStatus::Disabled.as_str(),
+        _ => PromotionCouponStatus::Active.as_str(),
     }
 }
 
-fn ensure_promo_status_transition(
-    fact: &PromoCodeStatusFact,
+fn ensure_promotion_code_status_transition(
+    fact: &PromotionCodeStatusFact,
     target_status: &str,
 ) -> DomainResult<()> {
     let has_user = fact.user_id.is_some();
@@ -2297,51 +2556,53 @@ fn ensure_promo_status_transition(
         .as_deref()
         .map(|value| !value.is_empty())
         .unwrap_or(false);
-    let is_used = fact.status == CommerceCouponStatus::Redeemed.as_str() || has_used_at;
+    let is_used = fact.status == PromotionCouponStatus::Redeemed.as_str() || has_used_at;
 
     if is_used {
-        if target_status == CommerceCouponStatus::Redeemed.as_str() {
+        if target_status == PromotionCouponStatus::Redeemed.as_str() {
             return Ok(());
         }
-        return Err(DomainError::conflict("used promo code cannot be reopened"));
-    }
-
-    if target_status == CommerceCouponStatus::Active.as_str() && has_user {
         return Err(DomainError::conflict(
-            "claimed promo code cannot be reopened",
+            "used promotion code cannot be reopened",
         ));
     }
 
-    if target_status == CommerceCouponStatus::Redeemed.as_str() && !has_user {
+    if target_status == PromotionCouponStatus::Active.as_str() && has_user {
         return Err(DomainError::conflict(
-            "promo code must be claimed before it can be marked used",
+            "claimed promotion code cannot be reopened",
+        ));
+    }
+
+    if target_status == PromotionCouponStatus::Redeemed.as_str() && !has_user {
+        return Err(DomainError::conflict(
+            "promotion code must be claimed before it can be marked used",
         ));
     }
 
     Ok(())
 }
 
-fn promo_status_label(
+fn promotion_code_status_label(
     status: &str,
     user_id: Option<&str>,
     used_at: Option<&str>,
 ) -> DomainResult<&'static str> {
     match status.trim().to_ascii_lowercase().as_str() {
-        status if status == CommerceCouponStatus::Disabled.as_str() => Ok("voided"),
-        status if status == CommerceCouponStatus::Redeemed.as_str() => Ok("used"),
-        status if status == CommerceCouponStatus::Active.as_str() && used_at.is_some() => {
+        status if status == PromotionCouponStatus::Disabled.as_str() => Ok("voided"),
+        status if status == PromotionCouponStatus::Redeemed.as_str() => Ok("used"),
+        status if status == PromotionCouponStatus::Active.as_str() && used_at.is_some() => {
             Ok("used")
         }
         status
-            if status == CommerceCouponStatus::Active.as_str()
+            if status == PromotionCouponStatus::Active.as_str()
                 && user_id.map(|value| !value.is_empty()).unwrap_or(false) =>
         {
             Ok("claimed")
         }
-        status if status == CommerceCouponStatus::Active.as_str() => Ok("available"),
-        status if status == CommerceCouponStatus::Draft.as_str() => Ok("available"),
+        status if status == PromotionCouponStatus::Active.as_str() => Ok("available"),
+        status if status == PromotionCouponStatus::Draft.as_str() => Ok("available"),
         value => Err(DomainError::new(format!(
-            "unsupported admin promo code status: {value}"
+            "unsupported promotion code status: {value}"
         ))),
     }
 }
@@ -2595,17 +2856,14 @@ fn recharge_sku_specs(rmb: &str) -> String {
     format!(r#"{{"amount":"{rmb}"}}"#)
 }
 
-fn batch_no(prefix: &str, batch_uuid: &str) -> String {
-    let suffix: String = batch_uuid.chars().take(24).collect();
-    format!("{prefix}-{suffix}")
+fn format_promotion_code(code_prefix: &str, sequence: i64) -> String {
+    format!("{code_prefix}-{sequence:04}")
 }
 
-fn format_promo_code(prefix: &str, sequence: i64) -> String {
-    format!("{prefix}-{sequence:04}")
-}
-
-fn promo_code_sequence(prefix: &str, code: &str) -> Option<i64> {
-    let suffix = code.strip_prefix(prefix)?.strip_prefix('-')?;
+fn promotion_code_sequence(code_prefix: &str, promotion_code: &str) -> Option<i64> {
+    let suffix = promotion_code
+        .strip_prefix(code_prefix)?
+        .strip_prefix('-')?;
     if suffix.is_empty() || !suffix.bytes().all(|byte| byte.is_ascii_digit()) {
         return None;
     }
@@ -2701,59 +2959,61 @@ mod tests {
     use super::*;
 
     #[test]
-    fn coupon_status_label_rejects_unknown_database_status() {
+    fn promotion_offer_status_label_rejects_unknown_database_status() {
         assert_eq!(
             "active",
-            coupon_status_label(CommerceCouponStatus::Active.as_str()).unwrap()
+            promotion_offer_status_label(PromotionCouponStatus::Active.as_str()).unwrap()
         );
         assert_eq!(
             "inactive",
-            coupon_status_label(CommerceCouponStatus::Draft.as_str()).unwrap()
+            promotion_offer_status_label(PromotionCouponStatus::Draft.as_str()).unwrap()
         );
         assert_eq!(
             "inactive",
-            coupon_status_label(CommerceCouponStatus::Disabled.as_str()).unwrap()
+            promotion_offer_status_label(PromotionCouponStatus::Disabled.as_str()).unwrap()
         );
 
-        let unsupported =
-            coupon_status_label("legacy-status").expect_err("unknown coupon status must fail");
+        let unsupported = promotion_offer_status_label("legacy-status")
+            .expect_err("unknown promotion offer status must fail");
         assert!(
             unsupported
                 .to_string()
-                .contains("unsupported admin coupon status: legacy-status"),
+                .contains("unsupported promotion offer status: legacy-status"),
             "{unsupported}"
         );
     }
 
     #[test]
-    fn coupon_type_label_rejects_unknown_database_type_without_deriving_from_discount() {
-        assert_eq!("amount", coupon_type_label("fixed_amount").unwrap());
-        assert_eq!("discount", coupon_type_label("percentage").unwrap());
+    fn discount_type_label_rejects_unknown_database_type_without_deriving_from_discount() {
+        assert_eq!("amount", discount_type_label("fixed_amount").unwrap());
+        assert_eq!("discount", discount_type_label("percent_off").unwrap());
 
-        let unsupported =
-            coupon_type_label("legacy-type").expect_err("unknown coupon type must fail");
+        let unsupported = discount_type_label("legacy-type")
+            .expect_err("unknown promotion offer discount type must fail");
         assert!(
             unsupported
                 .to_string()
-                .contains("unsupported admin coupon type: legacy-type"),
+                .contains("unsupported promotion offer discount type: legacy-type"),
             "{unsupported}"
         );
     }
 
     #[test]
-    fn promo_status_label_rejects_unknown_database_status_without_deriving_valid_state() {
+    fn promotion_code_status_label_rejects_unknown_database_status_without_deriving_valid_state() {
         assert_eq!(
             "available",
-            promo_status_label(CommerceCouponStatus::Active.as_str(), None, None).unwrap()
+            promotion_code_status_label(PromotionCouponStatus::Active.as_str(), None, None)
+                .unwrap()
         );
         assert_eq!(
             "claimed",
-            promo_status_label(CommerceCouponStatus::Active.as_str(), Some("30"), None).unwrap()
+            promotion_code_status_label(PromotionCouponStatus::Active.as_str(), Some("30"), None)
+                .unwrap()
         );
         assert_eq!(
             "used",
-            promo_status_label(
-                CommerceCouponStatus::Active.as_str(),
+            promotion_code_status_label(
+                PromotionCouponStatus::Active.as_str(),
                 Some("30"),
                 Some("2026-05-01")
             )
@@ -2761,20 +3021,20 @@ mod tests {
         );
         assert_eq!(
             "voided",
-            promo_status_label(
-                CommerceCouponStatus::Disabled.as_str(),
+            promotion_code_status_label(
+                PromotionCouponStatus::Disabled.as_str(),
                 Some("30"),
                 Some("2026-05-01")
             )
             .unwrap()
         );
 
-        let positive = promo_status_label("legacy-status", Some("30"), Some("2026-05-01"))
-            .expect_err("unknown promo status must fail even with used metadata");
+        let positive = promotion_code_status_label("legacy-status", Some("30"), Some("2026-05-01"))
+            .expect_err("unknown promotion code status must fail even with used metadata");
         assert!(
             positive
                 .to_string()
-                .contains("unsupported admin promo code status: legacy-status"),
+                .contains("unsupported promotion code status: legacy-status"),
             "{positive}"
         );
     }

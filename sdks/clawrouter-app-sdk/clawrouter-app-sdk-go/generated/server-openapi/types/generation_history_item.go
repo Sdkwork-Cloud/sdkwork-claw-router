@@ -10,6 +10,7 @@ type GenerationHistoryItem struct {
 	Images []string `json:"images"`
 	ModelCatalogKey string `json:"modelCatalogKey"`
 	ModelInfo string `json:"modelInfo"`
+	OutputText string `json:"outputText"`
 	Prompt string `json:"prompt"`
 	Status string `json:"status"`
 	Type string `json:"type"`

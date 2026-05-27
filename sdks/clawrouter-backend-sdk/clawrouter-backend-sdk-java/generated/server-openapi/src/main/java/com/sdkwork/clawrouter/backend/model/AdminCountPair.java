@@ -8,7 +8,7 @@ public class AdminCountPair {
     public Double getAvailable() {
         return this.available;
     }
-    
+
     public void setAvailable(Double available) {
         this.available = available;
     }
@@ -16,7 +16,7 @@ public class AdminCountPair {
     public Double getTotal() {
         return this.total;
     }
-    
+
     public void setTotal(Double total) {
         this.total = total;
     }

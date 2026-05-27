@@ -2,22 +2,14 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class OpenPlatformAccountUpdateRequest {
-    private String aesKeyRef;
     private String appId;
+    private String appSecret;
     private String defaultEntryId;
+    private String encodingAesKey;
     private String name;
     private Boolean qrDefault;
-    private String secretRef;
     private String status;
-    private String tokenRef;
-
-    public String getAesKeyRef() {
-        return this.aesKeyRef;
-    }
-
-    public void setAesKeyRef(String aesKeyRef) {
-        this.aesKeyRef = aesKeyRef;
-    }
+    private String token;
 
     public String getAppId() {
         return this.appId;
@@ -27,12 +19,28 @@ public class OpenPlatformAccountUpdateRequest {
         this.appId = appId;
     }
 
+    public String getAppSecret() {
+        return this.appSecret;
+    }
+
+    public void setAppSecret(String appSecret) {
+        this.appSecret = appSecret;
+    }
+
     public String getDefaultEntryId() {
         return this.defaultEntryId;
     }
 
     public void setDefaultEntryId(String defaultEntryId) {
         this.defaultEntryId = defaultEntryId;
+    }
+
+    public String getEncodingAesKey() {
+        return this.encodingAesKey;
+    }
+
+    public void setEncodingAesKey(String encodingAesKey) {
+        this.encodingAesKey = encodingAesKey;
     }
 
     public String getName() {
@@ -51,14 +59,6 @@ public class OpenPlatformAccountUpdateRequest {
         this.qrDefault = qrDefault;
     }
 
-    public String getSecretRef() {
-        return this.secretRef;
-    }
-
-    public void setSecretRef(String secretRef) {
-        this.secretRef = secretRef;
-    }
-
     public String getStatus() {
         return this.status;
     }
@@ -67,11 +67,11 @@ public class OpenPlatformAccountUpdateRequest {
         this.status = status;
     }
 
-    public String getTokenRef() {
-        return this.tokenRef;
+    public String getToken() {
+        return this.token;
     }
 
-    public void setTokenRef(String tokenRef) {
-        this.tokenRef = tokenRef;
+    public void setToken(String token) {
+        this.token = token;
     }
 }

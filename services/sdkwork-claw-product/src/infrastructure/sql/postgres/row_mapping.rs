@@ -99,6 +99,7 @@ pub async fn load_provider_account_pool_routes(
             auth_config_json: row.try_get("auth_config_json")?,
             timeout_ms: row.try_get("timeout_ms")?,
             retry_policy_json: row.try_get("retry_policy_json")?,
+            group_bindings_json: row.try_get("group_bindings_json")?,
         })
     });
     sqlx::query(mapper.sql)
@@ -212,6 +213,7 @@ pub async fn load_api_keys(
             created_at: row.try_get("created_at")?,
             expire_at: row.try_get("expire_at")?,
             status_code: row.try_get("status_code")?,
+            default_for_runtime: row.try_get("default_for_runtime")?,
         })
     })
     .fetch(pool)

@@ -55,6 +55,11 @@ async fn secret_ref_responses_relay_resolves_endpoint_and_secret_from_request_co
         )]),
     }));
 
+    let request_body = json!({
+        "model": "gpt-4.1-mini",
+        "input": "ping",
+        "stream": false
+    });
     let response = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
@@ -73,11 +78,7 @@ async fn secret_ref_responses_relay_resolves_endpoint_and_secret_from_request_co
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "gpt-4.1-mini",
-                "input": "ping",
-                "stream": false
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -107,7 +108,9 @@ async fn secret_ref_responses_relay_resolves_endpoint_and_secret_from_request_co
         Some("Bearer sk-provider-from-secret-ref".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4.1-mini", captured[0].body["model"]);
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("gpt-4.1-mini");
+    assert_eq!(expected_body, captured[0].body);
 }
 
 #[tokio::test]

@@ -62,6 +62,9 @@ impl GatewayApiKeyCommandStore for SqliteGatewayApiKeyCommandStore {
             ensure_idempotency_key_available(&mut tx, &command).await?;
             let access_policy = insert_access_policy(&mut tx, &command).await?;
             let quota_policy = insert_quota_policy(&mut tx, &command).await?;
+            if command.default_for_runtime {
+                clear_runtime_default_api_keys_for_create(&mut tx, &command).await?;
+            }
             let api_key = insert_api_key(
                 &mut tx,
                 &command,
@@ -446,7 +449,34 @@ async fn insert_api_key(
         created_at: command.created_at.clone(),
         expire_at: command.expire_at.clone(),
         status_code: 1,
+        default_for_runtime: command.default_for_runtime,
     })
+}
+
+async fn clear_runtime_default_api_keys_for_create(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &CreateGatewayApiKeyCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE iam_gateway_api_key
+        SET metadata = json_set(COALESCE(metadata, '{}'), '$.runtime.defaultForRuntime', json('false')),
+            updated_at = ?
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND user_id = ?
+          AND deleted_at IS NULL
+          AND revoked_at IS NULL
+        "#,
+    )
+    .bind(&command.created_at)
+    .bind(command.tenant_id)
+    .bind(command.organization_id)
+    .bind(command.user_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to clear runtime default api keys", error))?;
+    Ok(())
 }
 
 async fn insert_audit_log(
@@ -525,6 +555,13 @@ async fn update_api_key(
     if let Some(expire_at) = &command.expire_at {
         api_key.expire_at = expire_at.clone();
     }
+    if let Some(default_for_runtime) = command.default_for_runtime {
+        if default_for_runtime {
+            clear_runtime_default_api_keys(tx, command).await?;
+        }
+        set_runtime_default_api_key(tx, command, default_for_runtime).await?;
+        api_key.default_for_runtime = default_for_runtime;
+    }
 
     sqlx::query(
         r#"
@@ -590,7 +627,8 @@ async fn load_owned_api_key(
             quota_policy_id,
             COALESCE(created_at, '') AS created_at,
             expire_at,
-            status AS status_code
+            status AS status_code,
+            COALESCE(json_extract(COALESCE(metadata, '{}'), '$.runtime.defaultForRuntime'), false) AS default_for_runtime
         FROM iam_gateway_api_key
         WHERE id = ?
           AND tenant_id = ?
@@ -611,6 +649,64 @@ async fn load_owned_api_key(
 
     row.map(|row| gateway_api_key_from_row(row, api_key_secret_codec))
         .transpose()
+}
+
+async fn clear_runtime_default_api_keys(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateGatewayApiKeyCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE iam_gateway_api_key
+        SET metadata = json_set(COALESCE(metadata, '{}'), '$.runtime.defaultForRuntime', json('false')),
+            updated_at = ?
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND user_id = ?
+          AND id <> ?
+          AND deleted_at IS NULL
+          AND revoked_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.tenant_id)
+    .bind(command.organization_id)
+    .bind(command.user_id)
+    .bind(command.api_key_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to clear runtime default api keys", error))?;
+    Ok(())
+}
+
+async fn set_runtime_default_api_key(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateGatewayApiKeyCommand,
+    default_for_runtime: bool,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE iam_gateway_api_key
+        SET metadata = json_set(COALESCE(metadata, '{}'), '$.runtime.defaultForRuntime', json(?)),
+            updated_at = ?
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND user_id = ?
+          AND deleted_at IS NULL
+          AND revoked_at IS NULL
+        "#,
+    )
+    .bind(if default_for_runtime { "true" } else { "false" })
+    .bind(&command.requested_at)
+    .bind(command.api_key_id)
+    .bind(command.tenant_id)
+    .bind(command.organization_id)
+    .bind(command.user_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to set runtime default api key", error))?;
+    Ok(())
 }
 
 fn gateway_api_key_from_row(
@@ -647,6 +743,9 @@ fn gateway_api_key_from_row(
             .try_get::<Option<String>, _>("expire_at")
             .map_err(row_error)?,
         status_code: row.try_get::<i32, _>("status_code").map_err(row_error)?,
+        default_for_runtime: row
+            .try_get::<bool, _>("default_for_runtime")
+            .map_err(row_error)?,
     })
 }
 
@@ -971,7 +1070,10 @@ fn api_key_metadata_json(
     let copyable_key_ciphertext = api_key_secret_codec.encode_secret(&command.copyable_key)?;
     serde_json::to_string(&serde_json::json!({
         "copyableKeyCiphertext": copyable_key_ciphertext,
-        "copyableKeyStorage": "encrypted-managed-console-read-model"
+        "copyableKeyStorage": "encrypted-managed-console-read-model",
+        "runtime": {
+            "defaultForRuntime": command.default_for_runtime
+        }
     }))
     .map_err(|error| DomainError::new(error.to_string()))
 }

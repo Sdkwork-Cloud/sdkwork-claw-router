@@ -9,7 +9,7 @@ public class AdminUserCreateRequest {
     public String getBalance() {
         return this.balance;
     }
-    
+
     public void setBalance(String balance) {
         this.balance = balance;
     }
@@ -17,7 +17,7 @@ public class AdminUserCreateRequest {
     public String getEmail() {
         return this.email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -25,7 +25,7 @@ public class AdminUserCreateRequest {
     public String getUsername() {
         return this.username;
     }
-    
+
     public void setUsername(String username) {
         this.username = username;
     }

@@ -1,10 +1,9 @@
 package com.sdkwork.clawrouter.app.model;
 
-import java.util.List;
 
 public class WalletAccountsListResult {
     private String code;
-    private List<CommerceWalletAccountItem> data;
+    private CommerceStandardCollectionResponse data;
     private String msg;
 
     public String getCode() {
@@ -15,11 +14,11 @@ public class WalletAccountsListResult {
         this.code = code;
     }
 
-    public List<CommerceWalletAccountItem> getData() {
+    public CommerceStandardCollectionResponse getData() {
         return this.data;
     }
 
-    public void setData(List<CommerceWalletAccountItem> data) {
+    public void setData(CommerceStandardCollectionResponse data) {
         this.data = data;
     }
 

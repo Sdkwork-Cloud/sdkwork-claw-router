@@ -20,7 +20,7 @@ public class AdminRateLimitItem {
     public String getBlockDuration() {
         return this.blockDuration;
     }
-    
+
     public void setBlockDuration(String blockDuration) {
         this.blockDuration = blockDuration;
     }
@@ -28,7 +28,7 @@ public class AdminRateLimitItem {
     public Integer getBurst() {
         return this.burst;
     }
-    
+
     public void setBurst(Integer burst) {
         this.burst = burst;
     }
@@ -36,7 +36,7 @@ public class AdminRateLimitItem {
     public String getGroup() {
         return this.group;
     }
-    
+
     public void setGroup(String group) {
         this.group = group;
     }
@@ -44,7 +44,7 @@ public class AdminRateLimitItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -52,7 +52,7 @@ public class AdminRateLimitItem {
     public String getKeyPrefix() {
         return this.keyPrefix;
     }
-    
+
     public void setKeyPrefix(String keyPrefix) {
         this.keyPrefix = keyPrefix;
     }
@@ -60,7 +60,7 @@ public class AdminRateLimitItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -68,7 +68,7 @@ public class AdminRateLimitItem {
     public Integer getRpd() {
         return this.rpd;
     }
-    
+
     public void setRpd(Integer rpd) {
         this.rpd = rpd;
     }
@@ -76,7 +76,7 @@ public class AdminRateLimitItem {
     public Integer getRpm() {
         return this.rpm;
     }
-    
+
     public void setRpm(Integer rpm) {
         this.rpm = rpm;
     }
@@ -84,7 +84,7 @@ public class AdminRateLimitItem {
     public Integer getRps() {
         return this.rps;
     }
-    
+
     public void setRps(Integer rps) {
         this.rps = rps;
     }
@@ -92,7 +92,7 @@ public class AdminRateLimitItem {
     public String getRuleName() {
         return this.ruleName;
     }
-    
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -100,7 +100,7 @@ public class AdminRateLimitItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -108,7 +108,7 @@ public class AdminRateLimitItem {
     public String getTargetIp() {
         return this.targetIp;
     }
-    
+
     public void setTargetIp(String targetIp) {
         this.targetIp = targetIp;
     }
@@ -116,7 +116,7 @@ public class AdminRateLimitItem {
     public Integer getTpm() {
         return this.tpm;
     }
-    
+
     public void setTpm(Integer tpm) {
         this.tpm = tpm;
     }
@@ -124,7 +124,7 @@ public class AdminRateLimitItem {
     public String getUser() {
         return this.user;
     }
-    
+
     public void setUser(String user) {
         this.user = user;
     }

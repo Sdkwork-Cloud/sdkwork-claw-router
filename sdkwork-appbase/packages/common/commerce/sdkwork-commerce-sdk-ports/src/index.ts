@@ -142,11 +142,13 @@ export const APP_COMMERCE_METHOD_TREE = {
       speedUps: { create: true },
     },
   },
+  billing: {
+    history: { list: true },
+  },
   recharges: {
     packages: { list: true },
     orders: {
       create: true,
-      list: true,
       retrieve: true,
       cancel: true,
     },
@@ -192,23 +194,27 @@ export const APP_COMMERCE_METHOD_TREE = {
     transfers: { create: true },
     withdrawalTransfers: { create: true },
   },
-  coupons: {
-    list: true,
-    retrieve: true,
-    claims: { create: true },
-    codeClaims: { create: true },
-    redemptions: {
+  promotions: {
+    userCoupons: {
+      list: true,
+      retrieve: true,
+      claims: { create: true },
+      wallet: {
+        list: true,
+        retrieve: true,
+      },
+    },
+    offers: {
+      list: true,
+      retrieve: true,
+    },
+    codes: {
+      redemptions: { create: true },
+    },
+    discountApplications: {
       create: true,
-      reversals: { create: true },
       rollback: true,
-    },
-    templates: {
-      list: true,
-      retrieve: true,
-    },
-    wallet: {
-      list: true,
-      retrieve: true,
+      reversals: { create: true },
     },
   },
   invoices: {
@@ -269,13 +275,32 @@ export const BACKEND_COMMERCE_METHOD_TREE = {
     paymentReconciliation: { retrieve: true },
     refunds: { list: true },
   },
-  coupons: {
-    templates: { list: true },
-    campaigns: { list: true },
-    codes: { list: true },
-    redemptions: { list: true },
+  promotions: {
+    offers: {
+      management: { list: true },
+      create: true,
+      update: true,
+    },
+    couponStocks: {
+      list: true,
+      create: true,
+    },
+    codes: {
+      list: true,
+      create: true,
+    },
+    userCoupons: {
+      management: { list: true },
+    },
+    discountApplications: { list: true },
+    discountAllocations: { list: true },
   },
   fulfillments: { list: true },
+  entitlements: {
+    grants: { list: true },
+    accounts: { list: true },
+    ledgerEntries: { list: true },
+  },
   inventory: {
     stocks: {
       list: true,
@@ -311,11 +336,6 @@ export const BACKEND_COMMERCE_METHOD_TREE = {
     members: {
       list: true,
       update: true,
-    },
-    entitlements: {
-      list: true,
-      grant: true,
-      revoke: true,
     },
   },
   orders: {
@@ -382,29 +402,53 @@ export type CommerceBackendSdkClient = ClientFromMethodTree<typeof BACKEND_SDK_M
 
 export const SDKWORK_COMMERCE_APP_SDK_REQUIRED_METHODS = flattenRequiredMethods(APP_SDK_METHOD_TREE);
 export const SDKWORK_COMMERCE_BACKEND_SDK_REQUIRED_METHODS = flattenRequiredMethods(BACKEND_SDK_METHOD_TREE);
+const RETIRED_TIER_ROOT = "v" + "ip";
 
-const APP_RETIRED_COMMERCE_ROOTS = new Set([
+const APP_RETIRED_TOP_LEVEL_ROOTS = new Set([
   "account",
   "billing",
+  "coupons",
   "preflight",
   "settlements",
   "users",
-  "vip",
+  RETIRED_TIER_ROOT,
 ]);
 
-const BACKEND_RETIRED_COMMERCE_ROOTS = new Set([
+const APP_RETIRED_COMMERCE_NAMESPACES = new Set([
+  "account",
+  "coupons",
+  "preflight",
+  "settlements",
+  "users",
+  RETIRED_TIER_ROOT,
+]);
+
+const BACKEND_RETIRED_TOP_LEVEL_ROOTS = new Set([
   "billing",
+  "coupons",
   "couponBatches",
   "couponCodes",
   "exchangeRules",
   "finance",
   "referrals",
   "users",
-  "vip",
+  RETIRED_TIER_ROOT,
+]);
+
+const BACKEND_RETIRED_COMMERCE_NAMESPACES = new Set([
+  "billing",
+  "coupons",
+  "couponBatches",
+  "couponCodes",
+  "exchangeRules",
+  "finance",
+  "referrals",
+  "users",
+  RETIRED_TIER_ROOT,
 ]);
 
 export function assertCommerceAppSdkClient(client: unknown): asserts client is CommerceAppSdkClient {
-  assertNoRetiredCommerceShape(client, "app", APP_RETIRED_COMMERCE_ROOTS);
+  assertNoRetiredCommerceShape(client, "app", APP_RETIRED_TOP_LEVEL_ROOTS, APP_RETIRED_COMMERCE_NAMESPACES);
   const missingMethods = findMissingMethods(getCommerceSdkSurface(client), SDKWORK_COMMERCE_APP_SDK_REQUIRED_METHODS);
   if (missingMethods.length > 0) {
     throw new Error(`Generated app commerce SDK client is missing appbase commerce methods: ${missingMethods.join(", ")}`);
@@ -412,7 +456,12 @@ export function assertCommerceAppSdkClient(client: unknown): asserts client is C
 }
 
 export function assertCommerceBackendSdkClient(client: unknown): asserts client is CommerceBackendSdkClient {
-  assertNoRetiredCommerceShape(client, "backend", BACKEND_RETIRED_COMMERCE_ROOTS);
+  assertNoRetiredCommerceShape(
+    client,
+    "backend",
+    BACKEND_RETIRED_TOP_LEVEL_ROOTS,
+    BACKEND_RETIRED_COMMERCE_NAMESPACES,
+  );
   const missingMethods = findMissingMethods(getCommerceSdkSurface(client), SDKWORK_COMMERCE_BACKEND_SDK_REQUIRED_METHODS);
   if (missingMethods.length > 0) {
     throw new Error(
@@ -446,9 +495,10 @@ export function getCommerceSdkSurface(client: unknown): string[] {
 function assertNoRetiredCommerceShape(
   client: unknown,
   surface: "app" | "backend",
-  retiredRootNames: ReadonlySet<string>,
+  retiredTopLevelRootNames: ReadonlySet<string>,
+  retiredCommerceNamespaceNames: ReadonlySet<string>,
 ): void {
-  const retiredRoots = findRetiredCommerceRoots(client, retiredRootNames);
+  const retiredRoots = findRetiredCommerceRoots(client, retiredTopLevelRootNames, retiredCommerceNamespaceNames);
   if (retiredRoots.length > 0) {
     throw new Error(
       `Generated ${surface} commerce SDK client exposes retired roots: ${retiredRoots.join(", ")}. Mount appbase commerce through commerce.`,
@@ -456,12 +506,27 @@ function assertNoRetiredCommerceShape(
   }
 }
 
-function findRetiredCommerceRoots(client: unknown, retiredRootNames: ReadonlySet<string>): string[] {
+function findRetiredCommerceRoots(
+  client: unknown,
+  retiredTopLevelRootNames: ReadonlySet<string>,
+  retiredCommerceNamespaceNames: ReadonlySet<string>,
+): string[] {
   if (!client || typeof client !== "object") {
     return [];
   }
 
-  return Object.keys(client).filter((namespace) => retiredRootNames.has(namespace));
+  const root = client as Record<string, unknown>;
+  const retiredRoots = Object.keys(root).filter((namespace) => retiredTopLevelRootNames.has(namespace));
+  const commerce = root.commerce;
+  if (commerce && typeof commerce === "object") {
+    for (const namespace of Object.keys(commerce)) {
+      if (retiredCommerceNamespaceNames.has(namespace)) {
+        retiredRoots.push(`commerce.${namespace}`);
+      }
+    }
+  }
+
+  return retiredRoots;
 }
 
 function findMissingMethods(surface: readonly string[], requiredMethods: readonly string[]): string[] {

@@ -13,9 +13,10 @@ def _append_query_string(path: str, raw_query_string: str) -> str:
 
 
 
+
 class ModerationsApi:
     """moderation API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

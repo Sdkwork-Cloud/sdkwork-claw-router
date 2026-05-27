@@ -10,7 +10,7 @@ public class SunoMusicGenerationResponse {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -18,7 +18,7 @@ public class SunoMusicGenerationResponse {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -26,7 +26,7 @@ public class SunoMusicGenerationResponse {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -34,7 +34,7 @@ public class SunoMusicGenerationResponse {
     public String getTaskId() {
         return this.taskId;
     }
-    
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }

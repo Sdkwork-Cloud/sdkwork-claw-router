@@ -1,0 +1,273 @@
+[
+  {
+    "id": 8101,
+    "uuid": "skill-prompt-optimizer",
+    "userId": 0,
+    "skillKey": "prompt-optimizer",
+    "name": "Prompt Optimizer",
+    "summary": "Analyze, rewrite, and harden prompts for reliable agent execution.",
+    "description": "Prompt Optimizer reviews instructions for ambiguity, missing constraints, unsafe assumptions, and weak output contracts, then produces a tightened prompt ready for agent workflows.",
+    "icon": "https://cdn.sdkwork.example/skills/prompt-optimizer/icon.png",
+    "coverImage": "https://cdn.sdkwork.example/skills/prompt-optimizer/cover.png",
+    "categoryId": 1901,
+    "packageId": 7101,
+    "provider": "SDKWork",
+    "version": "1.0.0",
+    "versionName": "1.0.0",
+    "runtime": "builtin",
+    "entrypoint": "sdkwork.skills.prompt_optimizer",
+    "manifestUrl": "data/skills/manifests/prompt-optimizer.json",
+    "repositoryUrl": "https://github.com/sdkwork/agent-skills",
+    "homepageUrl": "https://sdkwork.example/skills/prompt-optimizer",
+    "documentationUrl": "https://sdkwork.example/docs/skills/prompt-optimizer",
+    "licenseName": "SDKWork Commercial",
+    "sourceType": "OFFICIAL",
+    "marketStatus": "PUBLISHED",
+    "visibility": "PUBLIC",
+    "reviewStatus": "APPROVED",
+    "reviewComment": "Official bundled skill.",
+    "reviewedBy": 0,
+    "reviewedAt": "2026-05-08T00:00:00Z",
+    "builtin": true,
+    "isBuiltin": true,
+    "enabled": true,
+    "featured": true,
+    "recommendWeight": 100,
+    "price": "0",
+    "currency": "CNY",
+    "installCount": 24000,
+    "ratingAvg": "4.9",
+    "ratingCount": 680,
+    "tags": [
+      "agent",
+      "prompt",
+      "quality",
+      "official",
+      "sdkwork"
+    ],
+    "capabilities": [
+      "prompt.analysis",
+      "prompt.rewrite",
+      "instruction.hardening"
+    ],
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "targetModel": {
+          "type": "string"
+        },
+        "strictness": {
+          "type": "string",
+          "enum": [
+            "balanced",
+            "strict",
+            "maximum"
+          ]
+        }
+      }
+    },
+    "defaultConfig": {
+      "strictness": "balanced",
+      "portal": {
+        "developer": "Prompt Copilot",
+        "features": [
+          "Ambiguity detection",
+          "Constraint strengthening",
+          "Output contract shaping"
+        ],
+        "frameworks": [
+          "OpenAI-compatible",
+          "Spring AI",
+          "Rust service"
+        ],
+        "sizeText": "24 KB",
+        "clawhubImage": "https://cdn.sdkwork.example/skills/prompt-optimizer/clawhub.png",
+        "screenshots": [
+          "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-1.png",
+          "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-2.png"
+        ]
+      }
+    },
+    "latestPublishedAt": "2026-05-08T00:00:00Z"
+  },
+  {
+    "id": 8102,
+    "uuid": "skill-rag-context-builder",
+    "userId": 0,
+    "skillKey": "rag-context-builder",
+    "name": "RAG Context Builder",
+    "summary": "Prepare grounded retrieval context and citations for agent answers.",
+    "description": "RAG Context Builder converts scattered source material into structured context packs with citations, confidence notes, and follow-up questions for retrieval-augmented generation.",
+    "icon": "https://cdn.sdkwork.example/skills/rag-context-builder/icon.png",
+    "coverImage": "https://cdn.sdkwork.example/skills/rag-context-builder/cover.png",
+    "categoryId": 1901,
+    "packageId": 7101,
+    "provider": "SDKWork",
+    "version": "1.0.0",
+    "versionName": "1.0.0",
+    "runtime": "builtin",
+    "entrypoint": "sdkwork.skills.rag_context_builder",
+    "manifestUrl": "data/skills/manifests/rag-context-builder.json",
+    "repositoryUrl": "https://github.com/sdkwork/agent-skills",
+    "homepageUrl": "https://sdkwork.example/skills/rag-context-builder",
+    "documentationUrl": "https://sdkwork.example/docs/skills/rag-context-builder",
+    "licenseName": "SDKWork Commercial",
+    "sourceType": "OFFICIAL",
+    "marketStatus": "PUBLISHED",
+    "visibility": "PUBLIC",
+    "reviewStatus": "APPROVED",
+    "reviewComment": "Official bundled skill.",
+    "reviewedBy": 0,
+    "reviewedAt": "2026-05-08T00:00:00Z",
+    "builtin": true,
+    "isBuiltin": true,
+    "enabled": true,
+    "featured": true,
+    "recommendWeight": 90,
+    "price": "0",
+    "currency": "CNY",
+    "installCount": 18600,
+    "ratingAvg": "4.8",
+    "ratingCount": 512,
+    "tags": [
+      "agent",
+      "rag",
+      "retrieval",
+      "citation",
+      "official",
+      "sdkwork"
+    ],
+    "capabilities": [
+      "retrieval.context",
+      "citation.pack",
+      "source.synthesis"
+    ],
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "citationStyle": {
+          "type": "string",
+          "enum": [
+            "inline",
+            "footnote"
+          ]
+        },
+        "maxSources": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      }
+    },
+    "defaultConfig": {
+      "citationStyle": "inline",
+      "maxSources": 12,
+      "portal": {
+        "developer": "Retrieval Studio",
+        "features": [
+          "Source clustering",
+          "Citation packs",
+          "Confidence notes"
+        ],
+        "frameworks": [
+          "OpenAI-compatible",
+          "Vector search",
+          "Spring AI"
+        ],
+        "sizeText": "32 KB",
+        "clawhubImage": "https://cdn.sdkwork.example/skills/rag-context-builder/clawhub.png",
+        "screenshots": [
+          "https://cdn.sdkwork.example/skills/rag-context-builder/screenshot-1.png"
+        ]
+      }
+    },
+    "latestPublishedAt": "2026-05-08T00:00:00Z"
+  },
+  {
+    "id": 8103,
+    "uuid": "skill-workflow-planner",
+    "userId": 0,
+    "skillKey": "workflow-planner",
+    "name": "Workflow Planner",
+    "summary": "Convert product goals into agent-ready implementation plans.",
+    "description": "Workflow Planner decomposes broad goals into scoped phases, dependencies, verification gates, and API/service/frontend handoff tasks for production delivery.",
+    "icon": "https://cdn.sdkwork.example/skills/workflow-planner/icon.png",
+    "coverImage": "https://cdn.sdkwork.example/skills/workflow-planner/cover.png",
+    "categoryId": 1901,
+    "packageId": 7101,
+    "provider": "SDKWork",
+    "version": "1.0.0",
+    "versionName": "1.0.0",
+    "runtime": "builtin",
+    "entrypoint": "sdkwork.skills.workflow_planner",
+    "manifestUrl": "data/skills/manifests/workflow-planner.json",
+    "repositoryUrl": "https://github.com/sdkwork/agent-skills",
+    "homepageUrl": "https://sdkwork.example/skills/workflow-planner",
+    "documentationUrl": "https://sdkwork.example/docs/skills/workflow-planner",
+    "licenseName": "SDKWork Commercial",
+    "sourceType": "OFFICIAL",
+    "marketStatus": "PUBLISHED",
+    "visibility": "PUBLIC",
+    "reviewStatus": "APPROVED",
+    "reviewComment": "Official bundled skill.",
+    "reviewedBy": 0,
+    "reviewedAt": "2026-05-08T00:00:00Z",
+    "builtin": true,
+    "isBuiltin": true,
+    "enabled": true,
+    "featured": true,
+    "recommendWeight": 80,
+    "price": "0",
+    "currency": "CNY",
+    "installCount": 15300,
+    "ratingAvg": "4.7",
+    "ratingCount": 430,
+    "tags": [
+      "agent",
+      "workflow",
+      "planning",
+      "official",
+      "sdkwork"
+    ],
+    "capabilities": [
+      "workflow.plan",
+      "task.decomposition",
+      "verification.gates"
+    ],
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "planningDepth": {
+          "type": "string",
+          "enum": [
+            "lean",
+            "standard",
+            "deep"
+          ]
+        }
+      }
+    },
+    "defaultConfig": {
+      "planningDepth": "standard",
+      "portal": {
+        "developer": "Workflow Studio",
+        "features": [
+          "Phase planning",
+          "Dependency mapping",
+          "Verification gates"
+        ],
+        "frameworks": [
+          "Rust service",
+          "OpenAPI",
+          "React portal"
+        ],
+        "sizeText": "28 KB",
+        "clawhubImage": "https://cdn.sdkwork.example/skills/workflow-planner/clawhub.png",
+        "screenshots": [
+          "https://cdn.sdkwork.example/skills/workflow-planner/screenshot-1.png"
+        ]
+      }
+    },
+    "latestPublishedAt": "2026-05-08T00:00:00Z"
+  }
+]

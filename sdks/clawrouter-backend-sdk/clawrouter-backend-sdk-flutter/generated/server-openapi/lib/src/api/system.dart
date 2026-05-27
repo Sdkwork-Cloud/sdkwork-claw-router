@@ -11,6 +11,150 @@ class SystemApi {
 
   SystemApi(this._client);
 
+  /// Promotion Budget Ledger Entries List
+  Future<PromotionsBudgetLedgerEntriesListResult?> promotionsBudgetLedgerEntriesList([String? budgetAccountId]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('budget_account_id', budgetAccountId, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/budget_ledger_entries'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsBudgetLedgerEntriesListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Coupon Codes List
+  Future<PromotionsCodesListResult?> promotionsCodesList([int? page, int? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/codes'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCodesListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Coupon Code Redemptions List
+  Future<PromotionsCodesRedemptionsListResult?> promotionsCodesRedemptionsList([int? page, int? pageSize, String? codeStatus]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('code_status', codeStatus, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/codes/redemptions'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCodesRedemptionsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Coupon Ledger Entries List
+  Future<PromotionsCouponLedgerEntriesListResult?> promotionsCouponLedgerEntriesList([String? stockId]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('stock_id', stockId, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/coupon_ledger_entries'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCouponLedgerEntriesListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Coupon Stocks List
+  Future<PromotionsCouponStocksListResult?> promotionsCouponStocksList([int? page, int? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/coupon_stocks'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCouponStocksListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Discount Allocations List
+  Future<PromotionsDiscountAllocationsListResult?> promotionsDiscountAllocationsList([String? applicationId]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('application_id', applicationId, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/discount_allocations'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsDiscountAllocationsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Discount Applications List
+  Future<PromotionsDiscountApplicationsListResult?> promotionsDiscountApplicationsList([int? page, int? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/discount_applications'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsDiscountApplicationsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Events List
+  Future<PromotionsEventsListResult?> promotionsEventsList([String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/events'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsEventsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion External Bindings List
+  Future<PromotionsExternalBindingsListResult?> promotionsExternalBindingsList([String? platform]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('platform', platform, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/external_bindings'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsExternalBindingsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Offers List
+  Future<PromotionsOffersManagementListResult?> promotionsOffersManagementList([int? page, int? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/offers'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsOffersManagementListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion User Coupons Management List
+  Future<PromotionsUserCouponsManagementListResult?> promotionsUserCouponsManagementList([int? page, int? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/user_coupons'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsUserCouponsManagementListResult.fromJson(map);
+    })();
+  }
+
   /// List overview
   Future<AnalyticsAdminOverviewRetrieveResult?> analyticsAdminOverviewRetrieve([String? timeRange, String? startTime, String? endTime, int? limit]) async {
     final query = buildQueryString([
@@ -303,6 +447,58 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RecordsListResult.fromJson(map);
+    })();
+  }
+
+  /// List service nodes
+  Future<ServiceNodesListResult?> serviceNodesList([String? q, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('q', q, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/system/service_nodes'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ServiceNodesListResult.fromJson(map);
+    })();
+  }
+
+  /// Create service node
+  Future<ServiceNodesCreateResult?> serviceNodesCreate(AdminServiceNodeCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/system/service_nodes'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ServiceNodesCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete service node
+  Future<ServiceNodesDeleteResult?> serviceNodesDelete(String nodeId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/system/service_nodes/${serializePathParameter(nodeId, const PathParameterSpec('nodeId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ServiceNodesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update service node
+  Future<ServiceNodesUpdateResult?> serviceNodesUpdate(String nodeId, AdminServiceNodeUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/system/service_nodes/${serializePathParameter(nodeId, const PathParameterSpec('nodeId', 'simple', false))}'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ServiceNodesUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// Update service node status
+  Future<ServiceNodesStatusUpdateResult?> serviceNodesStatusUpdate(String nodeId, AdminServiceNodeStatusUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/system/service_nodes/${serializePathParameter(nodeId, const PathParameterSpec('nodeId', 'simple', false))}/status'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ServiceNodesStatusUpdateResult.fromJson(map);
     })();
   }
 

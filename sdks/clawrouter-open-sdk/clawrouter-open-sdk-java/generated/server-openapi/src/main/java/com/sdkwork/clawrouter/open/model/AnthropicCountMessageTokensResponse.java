@@ -7,7 +7,7 @@ public class AnthropicCountMessageTokensResponse {
     public Integer getInputTokens() {
         return this.inputTokens;
     }
-    
+
     public void setInputTokens(Integer inputTokens) {
         this.inputTokens = inputTokens;
     }

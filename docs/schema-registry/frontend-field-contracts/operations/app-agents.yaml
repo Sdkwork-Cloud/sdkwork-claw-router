@@ -8,7 +8,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents
-  openapi_exposed: false
   sdk_domain: agents
   summary: List Playground agent definitions
   description: Lists app user agent definitions used by the Playground generation runtime adapter.
@@ -188,7 +187,6 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/agents
-  openapi_exposed: false
   sdk_domain: agents
   summary: Create Playground agent definition
   description: Creates or materializes the private Playground generation agent using the standard app AgentDefinition resource.
@@ -245,7 +243,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents/{agentId}
-  openapi_exposed: false
   sdk_domain: agents
   summary: Retrieve Playground agent definition
   description: Returns one user-owned agent definition by numeric id, uuid, or normalized code.
@@ -267,7 +264,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents/{agentId}/sessions
-  openapi_exposed: false
   sdk_domain: agents
   summary: List Playground agent sessions
   description: Lists resumable agent sessions for the Playground generation agent.
@@ -431,7 +427,6 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/agents/{agentId}/sessions
-  openapi_exposed: false
   sdk_domain: agents
   summary: Create Playground agent session
   description: Creates a resumable AgentSession for one Playground generation run.
@@ -518,7 +513,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents/sessions/{sessionId}
-  openapi_exposed: false
   sdk_domain: agents
   summary: Retrieve Playground agent session
   description: Returns one AgentSession by stable session id.
@@ -541,7 +535,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents/sessions/{sessionId}/runs
-  openapi_exposed: false
   sdk_domain: agents
   summary: List Playground agent runs
   description: Lists AgentRun executions for a Playground AgentSession.
@@ -695,10 +688,9 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/agents/sessions/{sessionId}/runs
-  openapi_exposed: false
   sdk_domain: agents
   summary: Create Playground agent run
-  description: Creates one AgentRun under a Playground AgentSession and captures selected runtime, model, request id, and input snapshot.
+  description: Creates one AgentRun under a Playground AgentSession and captures selected runtime, model, and input snapshot. The server generates the run request id.
   read_sources:
   - ai_agent_session
   - ai_memory_space
@@ -715,7 +707,6 @@ frontend_operations:
     required:
     - agentId
     - agentVersionId
-    - requestId
     properties:
       agentId:
         type: string
@@ -724,10 +715,6 @@ frontend_operations:
       agentVersionId:
         type: string
         pattern: ^[1-9][0-9]*$
-        maxLength: 128
-      requestId:
-        type: string
-        minLength: 1
         maxLength: 128
       traceId:
         type: string
@@ -769,7 +756,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents/runs/{runId}
-  openapi_exposed: false
   sdk_domain: agents
   summary: Retrieve Playground agent run
   description: Returns one AgentRun by stable run id with session, runtime, status, and normalized usage counters.
@@ -788,7 +774,6 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/agents/runs/{runId}/complete
-  openapi_exposed: false
   sdk_domain: agents
   summary: Complete Playground agent run
   description: Finalizes one Playground AgentRun with terminal status, output snapshot, usage JSON, and terminal timestamps.
@@ -850,7 +835,6 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/agents/runs/{runId}/steps
-  openapi_exposed: false
   sdk_domain: agents
   summary: List Playground agent run steps
   description: Lists ordered AgentRunStep records for one Playground AgentRun.
@@ -985,7 +969,6 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/agents/runs/{runId}/steps
-  openapi_exposed: false
   sdk_domain: agents
   summary: Create Playground agent run step
   description: Appends one ordered AgentRunStep linked to the Playground runtime invocation.
@@ -1060,7 +1043,6 @@ frontend_operations:
   api_surface: app
   api_method: POST
   api_path: /app/v3/api/agents/runs/{runId}/steps/{stepId}/complete
-  openapi_exposed: false
   sdk_domain: agents
   summary: Complete Playground agent run step
   description: Finalizes one Playground AgentRunStep with terminal status, output snapshot, usage JSON, and terminal timestamps.
@@ -1097,333 +1079,6 @@ frontend_operations:
         type: object
         additionalProperties: true
   response_schema: *id008
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
-  operation: listAgents
-  operation_id: agentDefinitions.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents
-  sdk_domain: agents
-  summary: List user agents
-  description: Returns agent definitions owned by the current app user, including the active default version and derived capability summary.
-  read_sources:
-  - ai_agent
-  - ai_agent_version
-  - ai_agent_tool_binding
-  - ai_agent_mcp_server
-  - ai_agent_memory
-  query_parameters:
-  - name: page
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-  - name: page_size
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-      maximum: 100
-  - name: q
-    schema:
-      type: string
-      maxLength: 128
-  response_schema:
-    name: AgentListResponse
-    required:
-    - items
-    properties:
-      items:
-        type: array
-        maxItems: 100
-        items: *id002
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
-  operation: createAgent
-  operation_id: agentDefinitions.create
-  kind: create
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/agents
-  sdk_domain: agents
-  summary: Create user agent
-  description: Creates a private user-owned agent with a default draft version and policy documents for model, tools, memory, MCP, skills, and runtime execution.
-  read_sources:
-  - ai_agent
-  - ai_agent_version
-  write_tables:
-  - ai_agent
-  - ai_agent_version
-  idempotency_required: true
-  request_schema: *id009
-  response_schema: *id010
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
-  operation: retrieveAgent
-  operation_id: agentDefinitions.retrieve
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents/{agentId}
-  sdk_domain: agents
-  summary: Retrieve user agent
-  description: Returns one user-owned agent by numeric id, uuid, or normalized code, including its active default version.
-  read_sources:
-  - ai_agent
-  - ai_agent_version
-  - ai_agent_tool_binding
-  - ai_agent_mcp_server
-  - ai_agent_memory
-  query_parameters: []
-  response_schema: *id002
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: listAgentSessions
-  operation_id: agentSessions.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents/{agentId}/sessions
-  sdk_domain: agents
-  summary: List agent sessions
-  description: Lists resumable agent sessions for one agent, including chat conversation and memory space linkage.
-  read_sources:
-  - ai_agent
-  - ai_agent_version
-  - ai_agent_session
-  - ai_chat_conversation
-  - ai_memory_space
-  - ai_memory_space_binding
-  path_params:
-  - agentId
-  query_parameters:
-  - name: page
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-  - name: page_size
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-      maximum: 100
-  response_schema: *id011
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: createAgentSession
-  operation_id: agentSessions.create
-  kind: create
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/agents/{agentId}/sessions
-  sdk_domain: agents
-  summary: Create agent session
-  description: Creates a resumable agent session that can be associated with a product chat conversation and a shared memory space.
-  read_sources:
-  - ai_agent
-  - ai_agent_version
-  - ai_chat_conversation
-  - ai_memory_space
-  write_tables:
-  - ai_agent_session
-  - ai_memory_space_binding
-  path_params:
-  - agentId
-  idempotency_required: true
-  request_schema: *id012
-  response_schema: *id013
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: retrieveAgentSession
-  operation_id: agentSessions.retrieve
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents/sessions/{sessionId}
-  sdk_domain: agents
-  summary: Retrieve agent session
-  description: Returns one agent session by stable session id, including runtime, conversation, and memory linkage metadata.
-  read_sources:
-  - ai_agent
-  - ai_agent_version
-  - ai_agent_session
-  - ai_chat_conversation
-  - ai_memory_space
-  - ai_memory_space_binding
-  path_params:
-  - sessionId
-  query_parameters: []
-  response_schema: *id003
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: listAgentRuns
-  operation_id: agentRuns.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents/sessions/{sessionId}/runs
-  sdk_domain: agents
-  summary: List agent session runs
-  description: Lists first-class AgentRun executions for a resumable AgentSession, scoped by tenant, organization, and user.
-  read_sources:
-  - ai_agent_session
-  - ai_agent_run
-  path_params:
-  - sessionId
-  query_parameters:
-  - name: page
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-  - name: page_size
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-      maximum: 100
-  response_schema: *id014
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: createAgentRun
-  operation_id: agentRuns.create
-  kind: create
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/agents/sessions/{sessionId}/runs
-  sdk_domain: agents
-  summary: Create agent run
-  description: Creates one AgentRun under an AgentSession and captures selected runtime, model, memory space, request id, and input snapshot.
-  read_sources:
-  - ai_agent_session
-  - ai_memory_space
-  write_tables:
-  - ai_agent_run
-  - ai_agent_session
-  path_params:
-  - sessionId
-  idempotency_required: true
-  request_schema: *id015
-  response_schema: *id005
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: retrieveAgentRun
-  operation_id: agentRuns.retrieve
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents/runs/{runId}
-  sdk_domain: agents
-  summary: Retrieve agent run
-  description: Returns one AgentRun by stable run id, including session, memory, runtime, status, and normalized usage counters.
-  read_sources:
-  - ai_agent_run
-  - ai_agent_session
-  path_params:
-  - runId
-  query_parameters: []
-  response_schema: *id004
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: listAgentRunSteps
-  operation_id: agentRunSteps.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/agents/runs/{runId}/steps
-  sdk_domain: agents
-  summary: List agent run steps
-  description: Lists ordered AgentRunStep records for one AgentRun, including model, tool, memory, runtime invocation, and usage linkage.
-  read_sources:
-  - ai_agent_run
-  - ai_agent_run_step
-  - ai_runtime_invocation
-  path_params:
-  - runId
-  query_parameters:
-  - name: page
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-  - name: page_size
-    schema:
-      type: integer
-      format: int64
-      minimum: 1
-      maximum: 100
-  response_schema: *id016
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: createAgentRunStep
-  operation_id: agentRunSteps.create
-  kind: create
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/agents/runs/{runId}/steps
-  sdk_domain: agents
-  summary: Create agent run step
-  description: Appends one ordered AgentRunStep for model, tool, memory, runtime, system, or custom work and links provider/tool telemetry through RuntimeInvocation.
-  read_sources:
-  - ai_agent_run
-  - ai_runtime_invocation
-  write_tables:
-  - ai_agent_run_step
-  - ai_agent_run
-  - ai_agent_session
-  path_params:
-  - runId
-  idempotency_required: true
-  request_schema: *id017
-  response_schema: *id008
-- route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: completeAgentRunStep
-  operation_id: agentRunSteps.submit
-  kind: action
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/agents/runs/{runId}/steps/{stepId}/complete
-  sdk_domain: agents
-  summary: Complete agent run step
-  description: Finalizes one AgentRunStep with terminal status, output snapshot, normalized usage JSON, and terminal timestamps.
-  read_sources:
-  - ai_agent_run
-  - ai_agent_run_step
-  - ai_runtime_invocation
-  write_tables:
-  - ai_agent_run_step
-  - ai_runtime_usage_link
-  path_params:
-  - runId
-  - stepId
-  idempotency_required: true
-  request_schema: *id018
-  response_schema: *id008
-- route: /console/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentRuntimeApiOperations.ts
-  operation: completeAgentRun
-  operation_id: agentRuns.submit
-  kind: action
-  api_surface: app
-  api_method: POST
-  api_path: /app/v3/api/agents/runs/{runId}/complete
-  sdk_domain: agents
-  summary: Complete agent run
-  description: Finalizes one AgentRun with terminal status, output snapshot, normalized usage JSON, and terminal timestamps.
-  read_sources:
-  - ai_agent_run
-  - ai_agent_run_step
-  write_tables:
-  - ai_agent_run
-  path_params:
-  - runId
-  idempotency_required: true
-  request_schema: *id019
-  response_schema: *id005
 - route: /playground
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundGenerationService.ts
   operation: runPlaygroundGeneration

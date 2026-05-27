@@ -55,6 +55,11 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
         )]),
     }));
 
+    let request_body = json!({
+        "model": "text-embedding-3-small",
+        "input": ["ping"],
+        "encoding_format": "float"
+    });
     let response = relay
         .create_embedding(EmbeddingsRelayRequest {
             api_key_id: 101,
@@ -73,11 +78,7 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "text-embedding-3-small",
-                "input": ["ping"],
-                "encoding_format": "float"
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -103,10 +104,9 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
         Some("Bearer sk-provider-from-secret-ref".to_owned()),
         captured[0].authorization
     );
-    assert_eq!(
-        "openai/global/text-embedding-3-small",
-        captured[0].body["model"]
-    );
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("text-embedding-3-small");
+    assert_eq!(expected_body, captured[0].body);
 }
 
 #[tokio::test]

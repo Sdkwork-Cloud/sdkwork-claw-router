@@ -1,30 +1,20 @@
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
 use std::sync::Arc;
 
+use installed_sqlite_common::schema_sqlite_pool;
 use sdkwork_claw_product::application::ApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminChannelStore;
 use sdkwork_claw_product::ports::{
     AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand, ListAdminChannelsQuery,
 };
 use serde_json::Value;
-use sqlx::sqlite::SqlitePoolOptions;
 
 #[tokio::test]
 async fn sqlite_admin_channel_store_encrypts_provider_account_api_key_material() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
     let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
     let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec.clone());
 
@@ -135,17 +125,7 @@ async fn sqlite_admin_channel_store_encrypts_provider_account_api_key_material()
 
 #[tokio::test]
 async fn sqlite_admin_channel_store_allows_duplicate_secret_hash_for_distinct_channels() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
     let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
     let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec);
 

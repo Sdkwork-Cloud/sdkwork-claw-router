@@ -756,6 +756,13 @@ name = "sdkwork_commerce_core"
 version = "0.1.0"
 
 [[package]]
+name = "sdkwork_commerce_invoice"
+version = "0.1.0"
+dependencies = [
+ "sdkwork_commerce_core",
+]
+
+[[package]]
 name = "sdkwork_commerce_payment"
 version = "0.1.0"
 dependencies = [
@@ -775,6 +782,7 @@ version = "0.1.0"
 dependencies = [
  "sdkwork_commerce_account",
  "sdkwork_commerce_core",
+ "sdkwork_commerce_invoice",
  "sdkwork_commerce_payment",
  "sdkwork_commerce_promotion",
  "serde_json",

@@ -26,7 +26,7 @@ public class OpenAiRun {
     public String getAssistantId() {
         return this.assistantId;
     }
-    
+
     public void setAssistantId(String assistantId) {
         this.assistantId = assistantId;
     }
@@ -34,7 +34,7 @@ public class OpenAiRun {
     public Integer getCancelledAt() {
         return this.cancelledAt;
     }
-    
+
     public void setCancelledAt(Integer cancelledAt) {
         this.cancelledAt = cancelledAt;
     }
@@ -42,7 +42,7 @@ public class OpenAiRun {
     public Integer getCompletedAt() {
         return this.completedAt;
     }
-    
+
     public void setCompletedAt(Integer completedAt) {
         this.completedAt = completedAt;
     }
@@ -50,7 +50,7 @@ public class OpenAiRun {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -58,7 +58,7 @@ public class OpenAiRun {
     public Integer getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(Integer expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -66,7 +66,7 @@ public class OpenAiRun {
     public Integer getFailedAt() {
         return this.failedAt;
     }
-    
+
     public void setFailedAt(Integer failedAt) {
         this.failedAt = failedAt;
     }
@@ -74,7 +74,7 @@ public class OpenAiRun {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -82,7 +82,7 @@ public class OpenAiRun {
     public String getInstructions() {
         return this.instructions;
     }
-    
+
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -90,7 +90,7 @@ public class OpenAiRun {
     public String getLastError() {
         return this.lastError;
     }
-    
+
     public void setLastError(String lastError) {
         this.lastError = lastError;
     }
@@ -98,7 +98,7 @@ public class OpenAiRun {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -106,7 +106,7 @@ public class OpenAiRun {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -114,7 +114,7 @@ public class OpenAiRun {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -122,7 +122,7 @@ public class OpenAiRun {
     public String getRequiredAction() {
         return this.requiredAction;
     }
-    
+
     public void setRequiredAction(String requiredAction) {
         this.requiredAction = requiredAction;
     }
@@ -130,7 +130,7 @@ public class OpenAiRun {
     public Integer getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(Integer startedAt) {
         this.startedAt = startedAt;
     }
@@ -138,7 +138,7 @@ public class OpenAiRun {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -146,7 +146,7 @@ public class OpenAiRun {
     public String getThreadId() {
         return this.threadId;
     }
-    
+
     public void setThreadId(String threadId) {
         this.threadId = threadId;
     }
@@ -154,7 +154,7 @@ public class OpenAiRun {
     public List<String> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<String> tools) {
         this.tools = tools;
     }
@@ -162,7 +162,7 @@ public class OpenAiRun {
     public OpenAiTokenUsage getUsage() {
         return this.usage;
     }
-    
+
     public void setUsage(OpenAiTokenUsage usage) {
         this.usage = usage;
     }

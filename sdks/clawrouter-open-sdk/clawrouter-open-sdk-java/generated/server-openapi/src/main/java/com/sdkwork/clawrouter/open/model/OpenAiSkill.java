@@ -18,7 +18,7 @@ public class OpenAiSkill {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -26,7 +26,7 @@ public class OpenAiSkill {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -34,7 +34,7 @@ public class OpenAiSkill {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -42,7 +42,7 @@ public class OpenAiSkill {
     public String getLatestVersion() {
         return this.latestVersion;
     }
-    
+
     public void setLatestVersion(String latestVersion) {
         this.latestVersion = latestVersion;
     }
@@ -50,7 +50,7 @@ public class OpenAiSkill {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -58,7 +58,7 @@ public class OpenAiSkill {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -66,7 +66,7 @@ public class OpenAiSkill {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -74,7 +74,7 @@ public class OpenAiSkill {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -82,7 +82,7 @@ public class OpenAiSkill {
     public Integer getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(Integer updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -90,7 +90,7 @@ public class OpenAiSkill {
     public List<OpenAiSkillVersion> getVersions() {
         return this.versions;
     }
-    
+
     public void setVersions(List<OpenAiSkillVersion> versions) {
         this.versions = versions;
     }

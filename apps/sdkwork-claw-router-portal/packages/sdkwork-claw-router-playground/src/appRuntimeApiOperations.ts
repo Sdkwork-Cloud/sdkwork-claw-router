@@ -13,7 +13,6 @@ type JsonObject = Record<string, JsonValue>;
 interface MutationOptions {
   idempotencyPrefix?: string;
   idempotencyKey?: string;
-  xRequestId?: string;
 }
 
 interface PageParams {
@@ -54,7 +53,6 @@ export interface AgentRunCreateBody {
   memorySpaceId?: string;
   metadata?: JsonObject;
   model?: string;
-  requestId: string;
   runtime?: string;
   sourceSurface?: string;
   traceId?: string;
@@ -149,7 +147,6 @@ export interface RuntimeInvocationCreateBody {
   metadata?: JsonObject;
   model?: string;
   provider?: string;
-  requestId?: string;
   requestJson?: JsonObject;
   runtime: string;
   status?: 'pending' | 'running' | 'streaming' | 'completed' | 'failed' | 'cancelled';
@@ -204,10 +201,9 @@ function appClient(client?: ClawRouterAppSdkClient): ClawRouterAppSdkClient {
   return client ?? getClawRouterAppSdkClient();
 }
 
-function mutationParams(prefix: string, options: MutationOptions = {}): { idempotencyKey: string; xRequestId?: string } {
+function mutationParams(prefix: string, options: MutationOptions = {}): { idempotencyKey: string } {
   return {
     idempotencyKey: options.idempotencyKey ?? createRequestToken(options.idempotencyPrefix ?? prefix),
-    xRequestId: options.xRequestId,
   };
 }
 
@@ -522,10 +518,11 @@ export async function listRuntimeEvents(
 
 export async function streamRuntimeEvents(
   invocationId: string,
+  afterEventNo = 0,
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<AsyncIterable<RuntimeStreamEvent>> {
   const client = appClient(sdkClient);
-  return streamRuntimeInvocationEvents(client, invocationId);
+  return streamRuntimeInvocationEvents(client, invocationId, afterEventNo);
 }
 
 export async function createRuntimeEvent(

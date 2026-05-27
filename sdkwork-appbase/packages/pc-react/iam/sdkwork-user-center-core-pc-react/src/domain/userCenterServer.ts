@@ -88,11 +88,11 @@ function createLocalAuthorityColumns(
         { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
         { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
       ];
-    case "IamVipMembership":
+    case "IamMembership":
       return [
         { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
         { dataType: "varchar(64)", indexed: true, name: "user_id", nullable: true, role: "user-id" },
-        { dataType: "varchar(64)", indexed: true, name: "vip_level_id", nullable: true, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "membership_level_id", nullable: true, role: "relation" },
         { dataType: "bigint", name: "point_balance", nullable: false, role: "amount" },
         { dataType: "bigint", name: "total_recharged_points", nullable: false, role: "amount" },
         { dataType: "varchar(32)", indexed: true, name: "status", nullable: true, role: "status" },
@@ -162,9 +162,9 @@ function createServerRepositories(): UserCenterServerRepositoryContract[] {
       purpose: "Persists canonical IAM account balance records.",
     },
     {
-      entityNames: ["IamVipMembership"],
-      id: "vip-repository",
-      purpose: "Persists canonical IAM membership and VIP lifecycle records.",
+      entityNames: ["IamMembership"],
+      id: "membership-repository",
+      purpose: "Persists canonical IAM membership lifecycle records.",
     },
     {
       entityNames: ["IamOrganizationMember"],
@@ -216,9 +216,9 @@ function createServerServices(): UserCenterServerServiceContract[] {
       purpose: "Owns user settings persistence for local authority and upstream mirrors.",
     },
     {
-      id: "vip-service",
-      operationIds: ["vip.info.get", "vip.info.update"],
-      purpose: "Owns membership balance, VIP status, and upgrade projection behavior.",
+      id: "membership-service",
+      operationIds: ["membership.current.get", "membership.current.update"],
+      purpose: "Owns membership balance, status, and upgrade projection behavior.",
     },
     {
       id: "tenant-service",

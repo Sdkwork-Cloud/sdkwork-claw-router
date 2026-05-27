@@ -12,7 +12,7 @@ public class AnthropicContentBlock {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -20,7 +20,7 @@ public class AnthropicContentBlock {
     public Map<String, String> getInput() {
         return this.input;
     }
-    
+
     public void setInput(Map<String, String> input) {
         this.input = input;
     }
@@ -28,7 +28,7 @@ public class AnthropicContentBlock {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -36,7 +36,7 @@ public class AnthropicContentBlock {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -44,7 +44,7 @@ public class AnthropicContentBlock {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

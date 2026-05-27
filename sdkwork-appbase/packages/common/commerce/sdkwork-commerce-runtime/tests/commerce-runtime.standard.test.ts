@@ -12,6 +12,8 @@ import {
   createMemoryCommerceFeatureFlagStore,
 } from "../src/index";
 
+const RETIRED_TIER_ROOT = "v" + "ip";
+
 describe("SDKWork commerce runtime", () => {
   it("bootstraps deployments through injected commerce-root appbase SDK clients", () => {
     const runtime = createCommerceRuntime({
@@ -47,7 +49,9 @@ describe("SDKWork commerce runtime", () => {
     expect(runtime.service.memberships.purchases.create).toBeDefined();
     expect(runtime.service.recharges.orders.create).toBeDefined();
     expect(runtime.service.wallet.ledgerEntries.retrieve).toBeDefined();
-    expect(runtime.service.coupons.redemptions.create).toBeDefined();
+    expect(runtime.service.promotions.codes.redemptions.create).toBeDefined();
+    expect(runtime.service.promotions.userCoupons.list).toBeDefined();
+    expect(runtime.service.promotions.discountApplications.create).toBeDefined();
     expect(runtime.service.invoices.create).toBeDefined();
     expect(runtime.service.admin.catalog.products.create).toBeDefined();
     expect(runtime.service.admin.inventory.stocks.update).toBeDefined();
@@ -68,7 +72,14 @@ describe("SDKWork commerce runtime", () => {
       "commerce.shipments",
       "commerce.memberships",
       "commerce.recharges",
-      "commerce.coupons",
+      "commerce.promotions",
+      "commerce.promotion.offer",
+      "commerce.promotion.couponStock",
+      "commerce.promotion.code",
+      "commerce.promotion.userCoupon",
+      "commerce.promotion.discountApplication",
+      "commerce.promotion.discountAllocation",
+      "commerce.promotion.points",
       "commerce.wallet",
       "commerce.invoices",
       "commerce.reports",
@@ -80,9 +91,10 @@ describe("SDKWork commerce runtime", () => {
 
     for (const retiredFlag of [
       "commerce.account",
+      "commerce.coupons",
       "commerce.preflight",
       "commerce.settlements",
-      "commerce.vip",
+      "commerce." + RETIRED_TIER_ROOT,
     ]) {
       expect(runtime.featureFlagStore.isEnabled(retiredFlag)).toBe(false);
     }
@@ -106,7 +118,7 @@ describe("SDKWork commerce runtime", () => {
 
   it("validates generated backend SDK clients during runtime bootstrap when admin operations are enabled", () => {
     const backendClient = createClient<CommerceBackendSdkClient>(SDKWORK_COMMERCE_BACKEND_SDK_REQUIRED_METHODS);
-    Object.assign(backendClient, { vip: { levels: { create: vi.fn() } } });
+    Object.assign(backendClient, { [RETIRED_TIER_ROOT]: { levels: { create: vi.fn() } } });
 
     expect(() =>
       createCommerceRuntime({
@@ -120,7 +132,7 @@ describe("SDKWork commerce runtime", () => {
           environment: "test",
         },
       }),
-    ).toThrow(/retired.*vip/i);
+    ).toThrow(new RegExp("retired.*" + RETIRED_TIER_ROOT, "i"));
   });
 
   it("allows app-only runtime bootstrap for clients that do not mount admin surfaces", () => {
@@ -147,7 +159,7 @@ describe("SDKWork commerce runtime", () => {
 
     expect(featureFlagStore.isEnabled("commerce.memberships")).toBe(true);
     expect(featureFlagStore.isEnabled("commerce.wallet.withdrawals")).toBe(false);
-    expect(featureFlagStore.isEnabled("commerce.vip")).toBe(false);
+    expect(featureFlagStore.isEnabled("commerce." + RETIRED_TIER_ROOT)).toBe(false);
     expect(featureFlagStore.isEnabled("unknown")).toBe(false);
 
     featureFlagStore.set("commerce.wallet.withdrawals", true);

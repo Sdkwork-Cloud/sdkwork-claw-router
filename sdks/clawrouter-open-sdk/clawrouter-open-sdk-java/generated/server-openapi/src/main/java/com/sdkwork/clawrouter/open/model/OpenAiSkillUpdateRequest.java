@@ -10,7 +10,7 @@ public class OpenAiSkillUpdateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -18,7 +18,7 @@ public class OpenAiSkillUpdateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -26,7 +26,7 @@ public class OpenAiSkillUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

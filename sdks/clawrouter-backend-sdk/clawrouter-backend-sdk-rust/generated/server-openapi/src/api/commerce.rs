@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, CouponsCampaignsListResult, CouponsCodesListResult, CouponsRedemptionsListResult, CouponsTemplatesListResult, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
+use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
 
 #[derive(Clone)]
 pub struct CommerceApi {
@@ -233,50 +233,6 @@ impl CommerceApi {
             QueryParameterSpec::new("status", status, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&"/commerce_reports/refunds".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Coupons Campaigns List
-    pub async fn coupons_campaigns_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<CouponsCampaignsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/coupons/campaigns".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Coupons Codes List
-    pub async fn coupons_codes_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<CouponsCodesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/coupons/codes".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Coupons Redemptions List
-    pub async fn coupons_redemptions_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<CouponsRedemptionsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/coupons/redemptions".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Coupons Templates List
-    pub async fn coupons_templates_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<CouponsTemplatesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/coupons/templates".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 

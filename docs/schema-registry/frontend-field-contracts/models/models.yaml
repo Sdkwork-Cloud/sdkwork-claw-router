@@ -92,6 +92,32 @@ frontend_models:
   - ai_model_capability
   - ai_model_pricing
 - route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  interface: ModelCatalogGroup
+  fields:
+  - key
+  - label
+  - modelCount
+  data_sources:
+  - iam_gateway_api_key_group
+- route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  interface: ModelCatalogResult
+  fields:
+  - models
+  - groups
+  - groups.key
+  - groups.label
+  - groups.modelCount
+  data_sources:
+  - ai_model_vendor
+  - ai_model_vendor_region
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - iam_gateway_api_key_group
+  - iam_api_key_group_channel
+- route: /models
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/runtimeModelCatalog.ts
   interface: RuntimeModelCatalogItem
   fields:

@@ -13,7 +13,7 @@ public class OpenAiRoleAssignment {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -21,7 +21,7 @@ public class OpenAiRoleAssignment {
     public String getGroupId() {
         return this.groupId;
     }
-    
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -29,7 +29,7 @@ public class OpenAiRoleAssignment {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -37,7 +37,7 @@ public class OpenAiRoleAssignment {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -45,7 +45,7 @@ public class OpenAiRoleAssignment {
     public String getProjectId() {
         return this.projectId;
     }
-    
+
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
@@ -53,7 +53,7 @@ public class OpenAiRoleAssignment {
     public String getRoleId() {
         return this.roleId;
     }
-    
+
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
@@ -61,7 +61,7 @@ public class OpenAiRoleAssignment {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

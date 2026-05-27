@@ -37,7 +37,7 @@ public class AiPricingPlanRecord {
     public String getBasePriceSide() {
         return this.basePriceSide;
     }
-    
+
     public void setBasePriceSide(String basePriceSide) {
         this.basePriceSide = basePriceSide;
     }
@@ -45,7 +45,7 @@ public class AiPricingPlanRecord {
     public String getBasePricingScope() {
         return this.basePricingScope;
     }
-    
+
     public void setBasePricingScope(String basePricingScope) {
         this.basePricingScope = basePricingScope;
     }
@@ -53,7 +53,7 @@ public class AiPricingPlanRecord {
     public String getBillingMode() {
         return this.billingMode;
     }
-    
+
     public void setBillingMode(String billingMode) {
         this.billingMode = billingMode;
     }
@@ -61,7 +61,7 @@ public class AiPricingPlanRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -69,7 +69,7 @@ public class AiPricingPlanRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -77,7 +77,7 @@ public class AiPricingPlanRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -85,7 +85,7 @@ public class AiPricingPlanRecord {
     public String getDefaultMarkupAmount() {
         return this.defaultMarkupAmount;
     }
-    
+
     public void setDefaultMarkupAmount(String defaultMarkupAmount) {
         this.defaultMarkupAmount = defaultMarkupAmount;
     }
@@ -93,7 +93,7 @@ public class AiPricingPlanRecord {
     public String getDefaultMultiplier() {
         return this.defaultMultiplier;
     }
-    
+
     public void setDefaultMultiplier(String defaultMultiplier) {
         this.defaultMultiplier = defaultMultiplier;
     }
@@ -101,7 +101,7 @@ public class AiPricingPlanRecord {
     public String getDefaultReferencePriceId() {
         return this.defaultReferencePriceId;
     }
-    
+
     public void setDefaultReferencePriceId(String defaultReferencePriceId) {
         this.defaultReferencePriceId = defaultReferencePriceId;
     }
@@ -109,7 +109,7 @@ public class AiPricingPlanRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -117,7 +117,7 @@ public class AiPricingPlanRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -125,7 +125,7 @@ public class AiPricingPlanRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -133,7 +133,7 @@ public class AiPricingPlanRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -141,7 +141,7 @@ public class AiPricingPlanRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -149,7 +149,7 @@ public class AiPricingPlanRecord {
     public String getFallbackMode() {
         return this.fallbackMode;
     }
-    
+
     public void setFallbackMode(String fallbackMode) {
         this.fallbackMode = fallbackMode;
     }
@@ -157,7 +157,7 @@ public class AiPricingPlanRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -165,7 +165,7 @@ public class AiPricingPlanRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -173,7 +173,7 @@ public class AiPricingPlanRecord {
     public String getMinChargeAmount() {
         return this.minChargeAmount;
     }
-    
+
     public void setMinChargeAmount(String minChargeAmount) {
         this.minChargeAmount = minChargeAmount;
     }
@@ -181,7 +181,7 @@ public class AiPricingPlanRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -189,7 +189,7 @@ public class AiPricingPlanRecord {
     public String getPlanCode() {
         return this.planCode;
     }
-    
+
     public void setPlanCode(String planCode) {
         this.planCode = planCode;
     }
@@ -197,7 +197,7 @@ public class AiPricingPlanRecord {
     public String getPlanName() {
         return this.planName;
     }
-    
+
     public void setPlanName(String planName) {
         this.planName = planName;
     }
@@ -205,7 +205,7 @@ public class AiPricingPlanRecord {
     public String getPlanScope() {
         return this.planScope;
     }
-    
+
     public void setPlanScope(String planScope) {
         this.planScope = planScope;
     }
@@ -213,7 +213,7 @@ public class AiPricingPlanRecord {
     public String getPriceVersion() {
         return this.priceVersion;
     }
-    
+
     public void setPriceVersion(String priceVersion) {
         this.priceVersion = priceVersion;
     }
@@ -221,7 +221,7 @@ public class AiPricingPlanRecord {
     public Integer getPriority() {
         return this.priority;
     }
-    
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -229,7 +229,7 @@ public class AiPricingPlanRecord {
     public String getRoundingMode() {
         return this.roundingMode;
     }
-    
+
     public void setRoundingMode(String roundingMode) {
         this.roundingMode = roundingMode;
     }
@@ -237,7 +237,7 @@ public class AiPricingPlanRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -245,7 +245,7 @@ public class AiPricingPlanRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -253,7 +253,7 @@ public class AiPricingPlanRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -261,7 +261,7 @@ public class AiPricingPlanRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -269,7 +269,7 @@ public class AiPricingPlanRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

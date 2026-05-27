@@ -294,7 +294,6 @@ frontend_operations:
   - studio_catalog_artifact
   write_tables:
   - plus_user_agent_skill
-  request_id_header: true
   request_schema: &id005
     name: AppSkillConfigRequest
     type: object
@@ -333,7 +332,6 @@ frontend_operations:
   - studio_catalog_artifact
   write_tables:
   - plus_user_agent_skill
-  request_id_header: true
   request_body_required: false
   response_schema:
     name: AppInstalledSkillResponse
@@ -357,7 +355,6 @@ frontend_operations:
   - studio_catalog_artifact
   write_tables:
   - plus_user_agent_skill
-  request_id_header: true
   request_schema: *id005
   response_schema:
     name: AppInstalledSkillResponse

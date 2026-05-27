@@ -5,6 +5,7 @@ import java.util.List;
 public class AppApiKeyItem {
     private String copyableKey;
     private String created;
+    private Boolean defaultForRuntime;
     private String expires;
     private String group;
     private String groupName;
@@ -32,6 +33,14 @@ public class AppApiKeyItem {
 
     public void setCreated(String created) {
         this.created = created;
+    }
+
+    public Boolean getDefaultForRuntime() {
+        return this.defaultForRuntime;
+    }
+
+    public void setDefaultForRuntime(Boolean defaultForRuntime) {
+        this.defaultForRuntime = defaultForRuntime;
     }
 
     public String getExpires() {

@@ -256,7 +256,7 @@ class AgentsAgentDefinitionsApi:
 
 
     def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None) -> AgentDefinitionsListResult:
-        """List user agents"""
+        """List Playground agent definitions"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -265,7 +265,7 @@ class AgentsAgentDefinitionsApi:
         return self._client.get(_append_query_string(f"/app/v3/api/agents", query))
 
     def create(self, body: AgentCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentDefinitionsCreateResult:
-        """Create user agent"""
+        """Create Playground agent definition"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
@@ -276,7 +276,7 @@ class AgentsAgentDefinitionsApi:
         return self._client.post(f"/app/v3/api/agents", json=body, headers=request_headers)
 
     def retrieve(self, agent_id: str) -> AgentDefinitionsRetrieveResult:
-        """Retrieve user agent"""
+        """Retrieve Playground agent definition"""
         return self._client.get(f"/app/v3/api/agents/{serialize_path_parameter(agent_id, {'name': 'agentId', 'style': 'simple', 'explode': False})}")
 
 class AgentsAgentRunsApi:
@@ -287,11 +287,11 @@ class AgentsAgentRunsApi:
 
 
     def retrieve(self, run_id: str) -> AgentRunsRetrieveResult:
-        """Retrieve agent run"""
+        """Retrieve Playground agent run"""
         return self._client.get(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}")
 
     def submit(self, run_id: str, body: AgentRunCompleteRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunsSubmitResult:
-        """Complete agent run"""
+        """Complete Playground agent run"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
@@ -302,7 +302,7 @@ class AgentsAgentRunsApi:
         return self._client.post(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/complete", json=body, headers=request_headers)
 
     def list(self, session_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentRunsListResult:
-        """List agent session runs"""
+        """List Playground agent runs"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -310,7 +310,7 @@ class AgentsAgentRunsApi:
         return self._client.get(_append_query_string(f"/app/v3/api/agents/sessions/{serialize_path_parameter(session_id, {'name': 'sessionId', 'style': 'simple', 'explode': False})}/runs", query))
 
     def create(self, session_id: str, body: AgentRunCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunsCreateResult:
-        """Create agent run"""
+        """Create Playground agent run"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
@@ -328,7 +328,7 @@ class AgentsAgentRunStepsApi:
 
 
     def list(self, run_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentRunStepsListResult:
-        """List agent run steps"""
+        """List Playground agent run steps"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -336,7 +336,7 @@ class AgentsAgentRunStepsApi:
         return self._client.get(_append_query_string(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/steps", query))
 
     def create(self, run_id: str, body: AgentRunStepCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunStepsCreateResult:
-        """Create agent run step"""
+        """Create Playground agent run step"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
@@ -347,7 +347,7 @@ class AgentsAgentRunStepsApi:
         return self._client.post(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/steps", json=body, headers=request_headers)
 
     def submit(self, run_id: str, step_id: str, body: AgentRunStepCompleteRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunStepsSubmitResult:
-        """Complete agent run step"""
+        """Complete Playground agent run step"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
@@ -365,11 +365,11 @@ class AgentsAgentSessionsApi:
 
 
     def retrieve(self, session_id: str) -> AgentSessionsRetrieveResult:
-        """Retrieve agent session"""
+        """Retrieve Playground agent session"""
         return self._client.get(f"/app/v3/api/agents/sessions/{serialize_path_parameter(session_id, {'name': 'sessionId', 'style': 'simple', 'explode': False})}")
 
     def list(self, agent_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentSessionsListResult:
-        """List agent sessions"""
+        """List Playground agent sessions"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -377,7 +377,7 @@ class AgentsAgentSessionsApi:
         return self._client.get(_append_query_string(f"/app/v3/api/agents/{serialize_path_parameter(agent_id, {'name': 'agentId', 'style': 'simple', 'explode': False})}/sessions", query))
 
     def create(self, agent_id: str, body: AgentSessionCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentSessionsCreateResult:
-        """Create agent session"""
+        """Create Playground agent session"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},

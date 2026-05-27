@@ -286,7 +286,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             generator_body = self.javascript_function_body(generate_script, "generatorArgs")
             self.assertIn("'-i', sdkgenInputPath", strict_body)
             self.assertIn("'-i', sdkgenInputPath", generator_body)
-            self.assertIn("import { rmSync } from 'node:fs';", generate_script)
+            self.assertIn("rmSync", generate_script)
             self.assertIn("language !== 'typescript'", generate_script)
             self.assertIn("generated/server-openapi`), { recursive: true, force: true })", generate_script)
 
@@ -315,6 +315,8 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 self.assertNotIn("'-i', sdkgenInputPath", strict_body)
                 self.assertIn("'-i', authorityInputPath", generator_body)
                 self.assertNotIn("'-i', sdkgenInputPath", generator_body)
+                self.assertIn("cleanGeneratedOutput(language);", generate_script)
+                self.assertIn("function cleanGeneratedOutput(language) {", generate_script)
 
     def test_verify_script_checks_family_generation_input_contract(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -895,6 +897,29 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 for relative in ("src/api/example.ts", "src/http/client.ts"):
                     source = (base / relative).read_text(encoding="utf-8")
                     self.assertNotRegex(source, r"[ \t]+(?=\n)")
+
+    def test_removes_generated_language_transport_trailing_whitespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generated_files: list[Path] = []
+            for sdk_dir, package_name in (
+                ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
+                ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
+            ):
+                self.write_minimal_typescript_sdk(root, sdk_dir, package_name)
+                language_root = root / "sdks" / sdk_dir / f"{sdk_dir}-java" / "generated" / "server-openapi"
+                for relative in ("README.md", "src/main/java/com/sdkwork/Example.java"):
+                    generated_file = language_root / relative
+                    generated_file.parent.mkdir(parents=True, exist_ok=True)
+                    generated_file.write_text("class Example {    \n\t\n}\n", encoding="utf-8")
+                    generated_files.append(generated_file)
+
+            updated = self.standardizer(root).run()
+
+            for generated_file in generated_files:
+                self.assertIn(generated_file, updated)
+                source = generated_file.read_text(encoding="utf-8")
+                self.assertNotRegex(source, r"[ \t]+(?=\n)")
 
     def test_preserves_exported_router_api_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

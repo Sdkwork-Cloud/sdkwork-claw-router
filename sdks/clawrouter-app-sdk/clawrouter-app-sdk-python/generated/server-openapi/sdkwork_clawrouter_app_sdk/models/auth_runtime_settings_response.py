@@ -14,6 +14,7 @@ class AuthRuntimeSettingsResponse:
     oauth_login_enabled: bool
     oauth_providers: List[str]
     qr_login_enabled: bool
+    qr_login_type: str
     recovery_methods: List[str]
     register_methods: List[str]
     verification_policy: AuthVerificationPolicy

@@ -10,7 +10,7 @@ public class ProviderRetryPolicy {
     public Integer getBackoffMs() {
         return this.backoffMs;
     }
-    
+
     public void setBackoffMs(Integer backoffMs) {
         this.backoffMs = backoffMs;
     }
@@ -18,7 +18,7 @@ public class ProviderRetryPolicy {
     public Integer getMaxAttempts() {
         return this.maxAttempts;
     }
-    
+
     public void setMaxAttempts(Integer maxAttempts) {
         this.maxAttempts = maxAttempts;
     }
@@ -26,7 +26,7 @@ public class ProviderRetryPolicy {
     public List<Integer> getRetryableStatusCodes() {
         return this.retryableStatusCodes;
     }
-    
+
     public void setRetryableStatusCodes(List<Integer> retryableStatusCodes) {
         this.retryableStatusCodes = retryableStatusCodes;
     }

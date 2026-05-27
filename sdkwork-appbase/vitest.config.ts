@@ -105,6 +105,7 @@ function loadTsconfigAliases() {
 }
 
 export default defineConfig({
+  root: workspaceRoot,
   plugins: [react()],
   resolve: {
     alias: [
@@ -158,6 +159,11 @@ export default defineConfig({
     ],
     environment: "jsdom",
     include: ["packages/**/*.test.ts", "packages/**/*.test.tsx", "sdks/**/*.test.ts"],
-    setupFiles: ["./vitest.setup.ts"],
+    setupFiles: [path.join(workspaceRoot, "vitest.setup.ts")],
+  },
+  server: {
+    fs: {
+      allow: [workspaceRoot],
+    },
   },
 });

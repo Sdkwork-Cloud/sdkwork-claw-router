@@ -1,5 +1,5 @@
 import { StatusNotice } from "@sdkwork/ui-pc-react";
-import type { SdkworkVipPlan } from "@sdkwork/vip-pc-react";
+import type { SdkworkMembershipPlan } from "@sdkwork/membership-pc-react";
 import {
   createSdkworkSubscriptionPanelStyle,
   createSdkworkSubscriptionToneStyle,
@@ -7,7 +7,7 @@ import {
 import { useSdkworkSubscriptionIntl } from "../subscription-intl";
 
 export interface SdkworkSubscriptionSelectedPlanCardProps {
-  selectedPlan: SdkworkVipPlan | null;
+  selectedPlan: SdkworkMembershipPlan | null;
 }
 
 export function SdkworkSubscriptionSelectedPlanCard({

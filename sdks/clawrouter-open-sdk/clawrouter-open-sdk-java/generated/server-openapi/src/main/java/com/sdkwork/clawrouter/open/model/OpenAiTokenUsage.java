@@ -11,7 +11,7 @@ public class OpenAiTokenUsage {
     public Integer getCompletionTokens() {
         return this.completionTokens;
     }
-    
+
     public void setCompletionTokens(Integer completionTokens) {
         this.completionTokens = completionTokens;
     }
@@ -19,7 +19,7 @@ public class OpenAiTokenUsage {
     public OpenAiCompletionTokensDetails getCompletionTokensDetails() {
         return this.completionTokensDetails;
     }
-    
+
     public void setCompletionTokensDetails(OpenAiCompletionTokensDetails completionTokensDetails) {
         this.completionTokensDetails = completionTokensDetails;
     }
@@ -27,7 +27,7 @@ public class OpenAiTokenUsage {
     public Integer getPromptTokens() {
         return this.promptTokens;
     }
-    
+
     public void setPromptTokens(Integer promptTokens) {
         this.promptTokens = promptTokens;
     }
@@ -35,7 +35,7 @@ public class OpenAiTokenUsage {
     public OpenAiPromptTokensDetails getPromptTokensDetails() {
         return this.promptTokensDetails;
     }
-    
+
     public void setPromptTokensDetails(OpenAiPromptTokensDetails promptTokensDetails) {
         this.promptTokensDetails = promptTokensDetails;
     }
@@ -43,7 +43,7 @@ public class OpenAiTokenUsage {
     public Integer getTotalTokens() {
         return this.totalTokens;
     }
-    
+
     public void setTotalTokens(Integer totalTokens) {
         this.totalTokens = totalTokens;
     }

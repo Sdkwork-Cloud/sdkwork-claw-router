@@ -12,6 +12,13 @@ test("admin membership entitlements are owned by the standard memberships busine
   const packageJson = readPortalFile("./package.json");
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/index.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts");
+  const packagesPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx");
+  const packageGroupsPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackageGroupsPage.tsx");
+  const plansPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPlansPage.tsx");
+  const membersPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipMembersPage.tsx");
+  const entitlementsPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipEntitlementsPage.tsx");
+  const rechargePackagesPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipRechargePackagesPage.tsx");
+  const drawerSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipDrawer.tsx");
   const routeClassification = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
   const backendOpenapi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
   const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
@@ -41,6 +48,74 @@ test("admin membership entitlements are owned by the standard memberships busine
   assert.match(backendOpenapi, /"\/backend\/v3\/api\/memberships\/entitlements"/);
   assert.match(backendCommerceSdk, /class CommerceMembershipsEntitlementsApi/);
   assert.match(backendCommerceSdk, /backendApiPath\(`\/memberships\/entitlements`\)/);
+
+  for (const pageName of [
+    "MembershipPackagesPage",
+    "MembershipPackageGroupsPage",
+    "MembershipPlansPage",
+    "MembershipMembersPage",
+    "MembershipEntitlementsPage",
+    "MembershipRechargePackagesPage",
+  ]) {
+    assert.match(viewSource, new RegExp(escapeRegExp(pageName)), `${pageName} must be dispatched from MembershipsAdmin`);
+  }
+
+  for (const retiredInlineTab of [
+    "function PlansTab",
+    "function MembersTab",
+    "function EntitlementsTab",
+    "function RechargePackagesTab",
+  ]) {
+    assert.doesNotMatch(viewSource, new RegExp(escapeRegExp(retiredInlineTab)), `${retiredInlineTab} must move into independent page components`);
+  }
+
+  for (const serviceFunction of [
+    "fetchMembershipAdminPackageGroups",
+    "createMembershipAdminPackageGroup",
+    "updateMembershipAdminPackageGroup",
+    "deleteMembershipAdminPackageGroup",
+    "fetchMembershipAdminPackages",
+    "createMembershipAdminPackage",
+    "updateMembershipAdminPackage",
+    "deleteMembershipAdminPackage",
+    "updateMembershipAdminPlan",
+    "deleteMembershipAdminPlan",
+    "updateMembershipAdminMemberStatus",
+  ]) {
+    assert.match(serviceSource, new RegExp(escapeRegExp(serviceFunction)), `${serviceFunction} must be exposed by membershipsService`);
+  }
+
+  for (const sdkCall of [
+    "getClawRouterBackendSdkClient().commerce.memberships.packageGroups.create",
+    "getClawRouterBackendSdkClient().commerce.memberships.packageGroups.update",
+    "getClawRouterBackendSdkClient().commerce.memberships.packageGroups.delete",
+    "getClawRouterBackendSdkClient().commerce.memberships.packages.create",
+    "getClawRouterBackendSdkClient().commerce.memberships.packages.update",
+    "getClawRouterBackendSdkClient().commerce.memberships.packages.delete",
+    "getClawRouterBackendSdkClient().commerce.memberships.plans.update",
+    "getClawRouterBackendSdkClient().commerce.memberships.plans.delete",
+    "getClawRouterBackendSdkClient().commerce.memberships.members.status.update",
+  ]) {
+    assert.match(serviceSource, new RegExp(escapeRegExp(sdkCall)), `${sdkCall} must be used instead of handwritten HTTP`);
+  }
+
+  for (const pageSource of [
+    packagesPageSource,
+    packageGroupsPageSource,
+    plansPageSource,
+    membersPageSource,
+    rechargePackagesPageSource,
+  ]) {
+    assert.match(pageSource, /MembershipDrawer/, "CRUD and status pages must use drawer-based mutation flows");
+  }
+
+  assert.match(packagesPageSource, /MembershipPackageDrawerForm/);
+  assert.match(packageGroupsPageSource, /MembershipPackageGroupDrawerForm/);
+  assert.match(plansPageSource, /MembershipPlanDrawerForm/);
+  assert.match(membersPageSource, /MembershipMemberStatusDrawerForm/);
+  assert.match(rechargePackagesPageSource, /MembershipRechargePackageDrawerForm/);
+  assert.match(drawerSource, /fixed inset-y-0 right-0/);
+  assert.doesNotMatch(entitlementsPageSource, /createMembershipAdminEntitlement|updateMembershipAdminEntitlement|deleteMembershipAdminEntitlement/);
 
   for (const retiredToken of [
     "sdkwork-claw-router-admin-vip",

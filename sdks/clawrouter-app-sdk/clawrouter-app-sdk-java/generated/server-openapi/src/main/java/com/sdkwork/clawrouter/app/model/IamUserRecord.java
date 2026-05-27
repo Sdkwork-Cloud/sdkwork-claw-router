@@ -16,7 +16,7 @@ public class IamUserRecord {
     public String getAvatarUrl() {
         return this.avatarUrl;
     }
-    
+
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
     }
@@ -24,7 +24,7 @@ public class IamUserRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -32,7 +32,7 @@ public class IamUserRecord {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -40,7 +40,7 @@ public class IamUserRecord {
     public String getEmail() {
         return this.email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -48,7 +48,7 @@ public class IamUserRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -56,7 +56,7 @@ public class IamUserRecord {
     public String getPhone() {
         return this.phone;
     }
-    
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -64,7 +64,7 @@ public class IamUserRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -72,7 +72,7 @@ public class IamUserRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -80,7 +80,7 @@ public class IamUserRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -88,7 +88,7 @@ public class IamUserRecord {
     public String getUsername() {
         return this.username;
     }
-    
+
     public void setUsername(String username) {
         this.username = username;
     }

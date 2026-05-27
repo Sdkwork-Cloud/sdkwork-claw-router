@@ -74,6 +74,15 @@ importers:
       '@sdkwork/distribution-pc-react':
         specifier: workspace:*
         version: link:../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react
+      '@sdkwork/file-platform-pc-react':
+        specifier: workspace:*
+        version: link:../../packages/pc-react/file/sdkwork-file-platform-pc-react
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../../packages/common/file/sdkwork-file-sdk-ports
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../packages/common/file/sdkwork-file-service
       '@sdkwork/generation-pc-react':
         specifier: workspace:*
         version: link:../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react
@@ -260,9 +269,15 @@ importers:
       sdkwork-claw-router-admin-channel:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-channel
+      sdkwork-claw-router-admin-courses:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-courses
       sdkwork-claw-router-admin-dashboard:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-dashboard
+      sdkwork-claw-router-admin-file-platform:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-file-platform
       sdkwork-claw-router-admin-finance:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-finance
@@ -275,6 +290,9 @@ importers:
       sdkwork-claw-router-admin-marketing:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-marketing
+      sdkwork-claw-router-admin-messaging:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-messaging
       sdkwork-claw-router-admin-memberships:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-memberships
@@ -332,9 +350,6 @@ importers:
       sdkwork-claw-router-console-account:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-console-account
-      sdkwork-claw-router-console-agents:
-        specifier: workspace:*
-        version: link:packages/sdkwork-claw-router-console-agents
       sdkwork-claw-router-console-api-keys:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-console-api-keys
@@ -356,15 +371,9 @@ importers:
       sdkwork-claw-router-console-messages:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-console-messages
-      sdkwork-claw-router-console-providers:
-        specifier: workspace:*
-        version: link:packages/sdkwork-claw-router-console-providers
       sdkwork-claw-router-console-recharge:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-console-recharge
-      sdkwork-claw-router-console-routing:
-        specifier: workspace:*
-        version: link:packages/sdkwork-claw-router-console-routing
       sdkwork-claw-router-console-settings:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-console-settings
@@ -1024,6 +1033,179 @@ importers:
         specifier: ^4.1.2
         version: 4.1.5(@types/node@25.6.2)(jsdom@29.1.1)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
 
+  ../../packages/common/file/sdkwork-file-api-contracts:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-contracts
+
+  ../../packages/common/file/sdkwork-file-contracts: {}
+
+  ../../packages/common/file/sdkwork-file-schema:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-contracts
+
+  ../../packages/common/file/sdkwork-file-sdk-adapter:
+    dependencies:
+      '@sdkwork/file-api-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-api-contracts
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-contracts
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-file-sdk-ports
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../sdkwork-file-service
+
+  ../../packages/common/file/sdkwork-file-sdk-generation:
+    dependencies:
+      '@sdkwork/file-api-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-api-contracts
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-contracts
+
+  ../../packages/common/file/sdkwork-file-sdk-ports:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-contracts
+
+  ../../packages/common/file/sdkwork-file-service:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-file-contracts
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-file-sdk-ports
+
+  ../../packages/common/file/sdkwork-file-upload-client:
+    dependencies:
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-file-sdk-ports
+
+  ../../packages/pc-react/file/sdkwork-drive-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-service
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-file-attachments-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-service
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-file-picker-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-service
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-file-platform-pc-react:
+    dependencies:
+      '@sdkwork/drive-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-drive-pc-react
+      '@sdkwork/file-attachments-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-file-attachments-pc-react
+      '@sdkwork/file-picker-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-file-picker-pc-react
+      '@sdkwork/file-preview-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-file-preview-pc-react
+      '@sdkwork/file-upload-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-file-upload-pc-react
+      '@sdkwork/storage-admin-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-storage-admin-pc-react
+      '@sdkwork/storage-usage-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-storage-usage-pc-react
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-file-preview-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-service
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-file-upload-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-service
+      '@sdkwork/file-upload-client':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-upload-client
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-storage-admin-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-sdk-ports
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
+  ../../packages/pc-react/file/sdkwork-storage-usage-pc-react:
+    dependencies:
+      '@sdkwork/file-contracts':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-contracts
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../common/file/sdkwork-file-service
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+
   ../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript:
     dependencies:
       '@sdkwork/sdk-common':
@@ -1112,8 +1294,29 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
 
+  packages/sdkwork-claw-router-admin-courses:
+    dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
   packages/sdkwork-claw-router-admin-dashboard:
     dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
+  packages/sdkwork-claw-router-admin-file-platform:
+    dependencies:
+      '@sdkwork/file-platform-pc-react':
+        specifier: workspace:*
+        version: link:../../../../packages/pc-react/file/sdkwork-file-platform-pc-react
+      '@sdkwork/file-sdk-ports':
+        specifier: workspace:*
+        version: link:../../../../packages/common/file/sdkwork-file-sdk-ports
+      '@sdkwork/file-service':
+        specifier: workspace:*
+        version: link:../../../../packages/common/file/sdkwork-file-service
       sdkwork-claw-router-commons:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
@@ -1137,6 +1340,12 @@ importers:
         version: link:../sdkwork-claw-router-commons
 
   packages/sdkwork-claw-router-admin-marketing:
+    dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
+  packages/sdkwork-claw-router-admin-messaging:
     dependencies:
       sdkwork-claw-router-commons:
         specifier: workspace:*
@@ -1301,12 +1510,6 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
 
-  packages/sdkwork-claw-router-console-agents:
-    dependencies:
-      sdkwork-claw-router-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-claw-router-commons
-
   packages/sdkwork-claw-router-console-api-keys:
     dependencies:
       sdkwork-claw-router-commons:
@@ -1345,20 +1548,8 @@ importers:
       sdkwork-claw-router-commons:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
-      sdkwork-claw-router-console-account:
-        specifier: workspace:*
-        version: link:../sdkwork-claw-router-console-account
-      sdkwork-claw-router-console-wallet:
-        specifier: workspace:*
-        version: link:../sdkwork-claw-router-console-wallet
 
   packages/sdkwork-claw-router-console-messages:
-    dependencies:
-      sdkwork-claw-router-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-claw-router-commons
-
-  packages/sdkwork-claw-router-console-providers:
     dependencies:
       sdkwork-claw-router-commons:
         specifier: workspace:*
@@ -1372,12 +1563,6 @@ importers:
       sdkwork-claw-router-console-account:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-console-account
-
-  packages/sdkwork-claw-router-console-routing:
-    dependencies:
-      sdkwork-claw-router-commons:
-        specifier: workspace:*
-        version: link:../sdkwork-claw-router-commons
 
   packages/sdkwork-claw-router-console-settings:
     dependencies:
@@ -1496,6 +1681,15 @@ importers:
       '@sdkwork/generation-pc-react':
         specifier: workspace:*
         version: link:../../../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react
+      react-markdown:
+        specifier: 10.1.0
+        version: 10.1.0(@types/react@19.2.14)(react@19.2.4)
+      rehype-sanitize:
+        specifier: 6.0.0
+        version: 6.0.0
+      remark-gfm:
+        specifier: 4.0.1
+        version: 4.0.1
       sdkwork-claw-router-commons:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
@@ -1572,6 +1766,9 @@ importers:
       sdkwork-claw-router-console-recharge:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-console-recharge
+      sdkwork-claw-router-console-user:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-console-user
 
 packages:
 

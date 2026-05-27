@@ -5,6 +5,7 @@ data class ProblemDetail(
     val detail: String? = null,
     val errors: List<FieldError>? = null,
     val instance: String? = null,
+    val requestId: String? = null,
     val status: Int? = null,
     val title: String? = null,
     val traceId: String? = null,

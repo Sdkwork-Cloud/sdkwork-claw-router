@@ -96,6 +96,8 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             "function generatorArgs() {\n"
             f"  return ['-i', {strict_input_path}];\n"
             "}\n"
+            "function runLanguage(language) { cleanGeneratedOutput(language); }\n"
+            "function cleanGeneratedOutput(language) {}\n"
             "console.log('--language');\n"
             "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
             encoding="utf-8",
@@ -462,6 +464,42 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "clawrouter-app-sdk .sdkwork-assembly.json must not declare legacy derivedSpec; use derivedSpecs",
+                result.messages,
+            )
+
+    def test_reports_sdk_family_generator_without_generated_transport_cleanup(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            script_path = root / "sdks" / "clawrouter-app-sdk" / "bin" / "generate-sdk.mjs"
+            script_path.write_text(
+                script_path.read_text(encoding="utf-8")
+                .replace("function runLanguage(language) { cleanGeneratedOutput(language); }\n", "")
+                .replace("function cleanGeneratedOutput(language) {}\n", ""),
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs must clean non-TypeScript generated transport output after generation",
                 result.messages,
             )
 

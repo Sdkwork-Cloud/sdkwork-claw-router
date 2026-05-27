@@ -8,7 +8,7 @@ public class AnthropicThinkingConfig {
     public Integer getBudgetTokens() {
         return this.budgetTokens;
     }
-    
+
     public void setBudgetTokens(Integer budgetTokens) {
         this.budgetTokens = budgetTokens;
     }
@@ -16,7 +16,7 @@ public class AnthropicThinkingConfig {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

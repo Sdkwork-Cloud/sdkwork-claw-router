@@ -1,4 +1,5 @@
 import { Check, RectangleHorizontal, RectangleVertical, Square } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
   DEFAULT_SDKWORK_GENERATION_VIDEO_MODE_CONFIG,
   type SdkworkGenerationVideoModeConfig,
@@ -7,10 +8,10 @@ import { GenerationModePopupBase, type ConfigSection } from './GenerationModePop
 
 export type VideoGenerationConfig = SdkworkGenerationVideoModeConfig;
 
-const VIDEO_SECTIONS = [
+const VIDEO_SECTION_DEFINITIONS = [
   {
     id: 'resolution',
-    label: '生成模式',
+    labelKey: 'playground.videoSettings.resolution',
     type: 'select' as const,
     valueKey: 'resolution',
     options: [
@@ -21,7 +22,7 @@ const VIDEO_SECTIONS = [
   },
   {
     id: 'duration',
-    label: '生成时长',
+    labelKey: 'playground.videoSettings.duration',
     type: 'slider' as const,
     valueKey: 'duration',
     min: 3,
@@ -31,7 +32,7 @@ const VIDEO_SECTIONS = [
   },
   {
     id: 'aspectRatio',
-    label: '视频比例',
+    labelKey: 'playground.videoSettings.aspectRatio',
     type: 'select' as const,
     valueKey: 'aspectRatio',
     options: [
@@ -42,7 +43,7 @@ const VIDEO_SECTIONS = [
   },
   {
     id: 'count',
-    label: '生成数量',
+    labelKey: 'playground.videoSettings.count',
     type: 'select' as const,
     valueKey: 'count',
     options: [
@@ -52,7 +53,7 @@ const VIDEO_SECTIONS = [
       { value: 4, label: '4', isVip: true },
     ],
   },
-] satisfies ConfigSection<VideoGenerationConfig>[];
+] as const;
 
 interface VideoGenerationModePopupProps {
   config: VideoGenerationConfig;
@@ -69,8 +70,13 @@ export function VideoGenerationModePopup({
   onChangeConfig,
   onGenerate,
 }: VideoGenerationModePopupProps) {
+  const { t } = useTranslation();
+  const sections = VIDEO_SECTION_DEFINITIONS.map((section) => ({
+    ...section,
+    label: t(section.labelKey),
+  })) satisfies ConfigSection<VideoGenerationConfig>[];
   const getSummary = (current: VideoGenerationConfig) =>
-    `${current.resolution} · ${current.duration}s · ${current.aspectRatio} · ${current.count}`;
+    `${current.resolution} / ${current.duration}s / ${current.aspectRatio} / ${current.count}`;
 
   return (
     <GenerationModePopupBase
@@ -80,8 +86,8 @@ export function VideoGenerationModePopup({
       isGenerating={isGenerating}
       onChangeConfig={onChangeConfig}
       onGenerate={onGenerate}
-      sections={VIDEO_SECTIONS}
-      title="视频生成设置"
+      sections={sections}
+      title={t('playground.videoSettings.title')}
       renderExtraControls={() => (
         <button
           type="button"
@@ -93,7 +99,7 @@ export function VideoGenerationModePopup({
           }`}
         >
           <Check className={`h-3.5 w-3.5 transition-opacity ${config.syncAudioVideo ? 'text-green-400 opacity-100' : 'opacity-0'}`} />
-          音画同步
+          {t('playground.videoSettings.syncAudioVideo')}
         </button>
       )}
     />

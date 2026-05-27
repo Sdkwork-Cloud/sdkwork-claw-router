@@ -34,7 +34,7 @@ public class StudioCatalogAssetRecord {
     public String getAltText() {
         return this.altText;
     }
-    
+
     public void setAltText(String altText) {
         this.altText = altText;
     }
@@ -42,7 +42,7 @@ public class StudioCatalogAssetRecord {
     public String getArtifactId() {
         return this.artifactId;
     }
-    
+
     public void setArtifactId(String artifactId) {
         this.artifactId = artifactId;
     }
@@ -50,7 +50,7 @@ public class StudioCatalogAssetRecord {
     public String getAssetType() {
         return this.assetType;
     }
-    
+
     public void setAssetType(String assetType) {
         this.assetType = assetType;
     }
@@ -58,7 +58,7 @@ public class StudioCatalogAssetRecord {
     public String getAssetUrl() {
         return this.assetUrl;
     }
-    
+
     public void setAssetUrl(String assetUrl) {
         this.assetUrl = assetUrl;
     }
@@ -66,7 +66,7 @@ public class StudioCatalogAssetRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -74,7 +74,7 @@ public class StudioCatalogAssetRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -82,7 +82,7 @@ public class StudioCatalogAssetRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -90,7 +90,7 @@ public class StudioCatalogAssetRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -98,7 +98,7 @@ public class StudioCatalogAssetRecord {
     public String getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -106,7 +106,7 @@ public class StudioCatalogAssetRecord {
     public String getFileSize() {
         return this.fileSize;
     }
-    
+
     public void setFileSize(String fileSize) {
         this.fileSize = fileSize;
     }
@@ -114,7 +114,7 @@ public class StudioCatalogAssetRecord {
     public Integer getHeight() {
         return this.height;
     }
-    
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -122,7 +122,7 @@ public class StudioCatalogAssetRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -130,7 +130,7 @@ public class StudioCatalogAssetRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -138,7 +138,7 @@ public class StudioCatalogAssetRecord {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -146,7 +146,7 @@ public class StudioCatalogAssetRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -154,7 +154,7 @@ public class StudioCatalogAssetRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -162,7 +162,7 @@ public class StudioCatalogAssetRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -170,7 +170,7 @@ public class StudioCatalogAssetRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -178,7 +178,7 @@ public class StudioCatalogAssetRecord {
     public String getTargetId() {
         return this.targetId;
     }
-    
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -186,7 +186,7 @@ public class StudioCatalogAssetRecord {
     public String getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(String targetType) {
         this.targetType = targetType;
     }
@@ -194,7 +194,7 @@ public class StudioCatalogAssetRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -202,7 +202,7 @@ public class StudioCatalogAssetRecord {
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
-    
+
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
@@ -210,7 +210,7 @@ public class StudioCatalogAssetRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -218,7 +218,7 @@ public class StudioCatalogAssetRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -226,7 +226,7 @@ public class StudioCatalogAssetRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -234,7 +234,7 @@ public class StudioCatalogAssetRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -242,7 +242,7 @@ public class StudioCatalogAssetRecord {
     public Integer getWidth() {
         return this.width;
     }
-    
+
     public void setWidth(Integer width) {
         this.width = width;
     }

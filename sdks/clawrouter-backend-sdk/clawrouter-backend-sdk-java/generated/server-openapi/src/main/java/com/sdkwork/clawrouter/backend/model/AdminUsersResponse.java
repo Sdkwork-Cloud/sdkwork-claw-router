@@ -8,7 +8,7 @@ public class AdminUsersResponse {
     public List<AdminUserItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminUserItem> items) {
         this.items = items;
     }

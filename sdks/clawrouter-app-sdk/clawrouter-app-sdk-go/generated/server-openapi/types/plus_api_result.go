@@ -4,5 +4,6 @@ package types
 type PlusApiResult struct {
 	Code string `json:"code"`
 	Data NoData `json:"data"`
+	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

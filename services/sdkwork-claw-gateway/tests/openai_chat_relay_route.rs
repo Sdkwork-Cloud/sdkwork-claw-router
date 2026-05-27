@@ -7,8 +7,8 @@ use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, DomainResult, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    ProviderAccountPoolRoute, ProviderRetryPolicy, RouteCandidate, RoutingCapability,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -46,6 +46,15 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         .with_timeout_ms(30_000)
         .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
     );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter"),
+                Some("vault://providers/openrouter/account/main"),
+            )
+            .with_timeout_ms(30_000)
+            .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
+    );
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
@@ -74,6 +83,23 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
             Money::usd("0.110000").unwrap(),
+        )
+        .for_provider("openrouter", 3001),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-4o-mini",
+        "gpt-4o-mini",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmOutputToken,
+        Money::usd("0.600000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmOutputToken,
+            Money::usd("0.440000").unwrap(),
         )
         .for_provider("openrouter", 3001),
     );
@@ -161,7 +187,8 @@ impl ChatCompletionRelay for GatewayRecordingRelay {
                             "message": {"role": "assistant", "content": "gateway-pong"},
                             "finish_reason": "stop"
                         }
-                    ]
+                    ],
+                    "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2}
                 }),
             ))
         })
@@ -196,7 +223,7 @@ impl ChatCompletionStreamRelay for GatewayRecordingStreamRelay {
                 200,
                 Some("text/event-stream".to_owned()),
                 axum::body::Body::from(
-                    "data: {\"id\":\"chatcmpl-gateway-stream\",\"choices\":[{\"delta\":{\"content\":\"gateway-pong\"}}]}\n\ndata: [DONE]\n\n",
+                    "data: {\"id\":\"chatcmpl-gateway-stream\",\"choices\":[{\"delta\":{\"content\":\"gateway-pong\"}}]}\n\ndata: {\"id\":\"chatcmpl-gateway-stream\",\"choices\":[],\"usage\":{\"prompt_tokens\":1,\"completion_tokens\":1,\"total_tokens\":2}}\n\ndata: [DONE]\n\n",
                 ),
             ))
         })
@@ -232,10 +259,16 @@ async fn gateway_can_mount_non_stream_chat_completion_relay() {
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
+    assert_eq!(
+        StatusCode::OK,
+        status,
+        "unexpected response body: {}",
+        String::from_utf8_lossy(&body)
+    );
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("chatcmpl-gateway", payload["id"]);
@@ -271,17 +304,22 @@ async fn gateway_can_mount_streaming_chat_completion_relay() {
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
-    assert_eq!(
-        Some("text/event-stream"),
-        response
-            .headers()
-            .get("content-type")
-            .and_then(|value| value.to_str().ok())
-    );
+    let status = response.status();
+    let content_type = response
+        .headers()
+        .get("content-type")
+        .and_then(|value| value.to_str().ok())
+        .map(ToOwned::to_owned);
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
+    assert_eq!(
+        StatusCode::OK,
+        status,
+        "unexpected response body: {}",
+        String::from_utf8_lossy(&body)
+    );
+    assert_eq!(Some("text/event-stream"), content_type.as_deref());
     let body = String::from_utf8(body.to_vec()).unwrap();
 
     assert!(body.contains("chatcmpl-gateway-stream"));

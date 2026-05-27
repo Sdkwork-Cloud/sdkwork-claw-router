@@ -9,9 +9,14 @@ import com.sdkwork.clawrouter.backend.api.ContentApi
 import com.sdkwork.clawrouter.backend.api.EcosystemApi
 import com.sdkwork.clawrouter.backend.api.IamApi
 import com.sdkwork.clawrouter.backend.api.IntegrationApi
+import com.sdkwork.clawrouter.backend.api.McpApi
+import com.sdkwork.clawrouter.backend.api.MessagingApi
 import com.sdkwork.clawrouter.backend.api.OpenPlatformApi
 import com.sdkwork.clawrouter.backend.api.PlatformApi
 import com.sdkwork.clawrouter.backend.api.SystemApi
+import com.sdkwork.clawrouter.backend.api.PromptsApi
+import com.sdkwork.clawrouter.backend.api.ServiceProvidersApi
+import com.sdkwork.clawrouter.backend.api.StorageApi
 
 class SdkworkBackendClient {
     private val httpClient: HttpClient
@@ -23,9 +28,14 @@ class SdkworkBackendClient {
     lateinit var ecosystem: EcosystemApi
     lateinit var iam: IamApi
     lateinit var integration: IntegrationApi
+    lateinit var mcp: McpApi
+    lateinit var messaging: MessagingApi
     lateinit var openPlatform: OpenPlatformApi
     lateinit var platform: PlatformApi
     lateinit var system: SystemApi
+    lateinit var prompts: PromptsApi
+    lateinit var serviceProviders: ServiceProvidersApi
+    lateinit var storage: StorageApi
 
     constructor(baseUrl: String) {
         this.httpClient = HttpClient(baseUrl)
@@ -36,9 +46,14 @@ class SdkworkBackendClient {
         ecosystem = EcosystemApi(httpClient)
         iam = IamApi(httpClient)
         integration = IntegrationApi(httpClient)
+        mcp = McpApi(httpClient)
+        messaging = MessagingApi(httpClient)
         openPlatform = OpenPlatformApi(httpClient)
         platform = PlatformApi(httpClient)
         system = SystemApi(httpClient)
+        prompts = PromptsApi(httpClient)
+        serviceProviders = ServiceProvidersApi(httpClient)
+        storage = StorageApi(httpClient)
     }
 
     constructor(config: SdkConfig) {
@@ -50,9 +65,14 @@ class SdkworkBackendClient {
         ecosystem = EcosystemApi(httpClient)
         iam = IamApi(httpClient)
         integration = IntegrationApi(httpClient)
+        mcp = McpApi(httpClient)
+        messaging = MessagingApi(httpClient)
         openPlatform = OpenPlatformApi(httpClient)
         platform = PlatformApi(httpClient)
         system = SystemApi(httpClient)
+        prompts = PromptsApi(httpClient)
+        serviceProviders = ServiceProvidersApi(httpClient)
+        storage = StorageApi(httpClient)
     }
 
     fun setApiKey(apiKey: String): SdkworkBackendClient {

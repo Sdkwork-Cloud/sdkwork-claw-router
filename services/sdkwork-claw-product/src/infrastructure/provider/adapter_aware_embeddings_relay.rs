@@ -8,8 +8,9 @@ use sdkwork_claw_provider_adapter_registry::{
 
 use super::adapter_aware_openai_relay::{
     adapter_http_error, build_openai_adapter_invocation, OpenAiAdapterEndpoint,
-    OpenAiAdapterInvocationParts,
+    OpenAiAdapterInvocationParts, ProviderSecretResolverRef,
 };
+use crate::domain::DomainResult;
 use crate::ports::{
     EmbeddingsRelay, EmbeddingsRelayFuture, EmbeddingsRelayRequest, EmbeddingsRelayResponse,
 };
@@ -27,6 +28,7 @@ pub struct AdapterAwareEmbeddingsRelay {
     direct_relay: Arc<dyn EmbeddingsRelay + Send + Sync>,
     adapter_registry: Arc<ProviderAdapterRegistry>,
     adapter_client: ProviderAdapterHttpClient,
+    provider_secret_resolver: Option<ProviderSecretResolverRef>,
 }
 
 impl AdapterAwareEmbeddingsRelay {
@@ -39,7 +41,13 @@ impl AdapterAwareEmbeddingsRelay {
             direct_relay,
             adapter_registry,
             adapter_client,
+            provider_secret_resolver: None,
         }
+    }
+
+    pub fn with_secret_resolver(mut self, resolver: ProviderSecretResolverRef) -> Self {
+        self.provider_secret_resolver = Some(resolver);
+        self
     }
 }
 
@@ -62,7 +70,10 @@ impl EmbeddingsRelay for AdapterAwareEmbeddingsRelay {
                     self.direct_relay.create_embedding(request).await
                 }
                 ProviderInvocationMode::InternalHttpAdapter(route) => {
-                    let invocation = embeddings_adapter_invocation(request);
+                    let invocation = embeddings_adapter_invocation(
+                        request,
+                        self.provider_secret_resolver.as_ref(),
+                    )?;
                     let response = self
                         .adapter_client
                         .invoke(&route, invocation)
@@ -78,7 +89,10 @@ impl EmbeddingsRelay for AdapterAwareEmbeddingsRelay {
     }
 }
 
-fn embeddings_adapter_invocation(request: EmbeddingsRelayRequest) -> AdapterInvocationRequest {
+fn embeddings_adapter_invocation(
+    request: EmbeddingsRelayRequest,
+    secret_resolver: Option<&ProviderSecretResolverRef>,
+) -> DomainResult<AdapterInvocationRequest> {
     build_openai_adapter_invocation(
         EMBEDDINGS_ENDPOINT,
         OpenAiAdapterInvocationParts {
@@ -98,5 +112,6 @@ fn embeddings_adapter_invocation(request: EmbeddingsRelayRequest) -> AdapterInvo
             provider_timeout_ms: request.provider_timeout_ms,
             request_body: request.request_body,
         },
+        secret_resolver,
     )
 }

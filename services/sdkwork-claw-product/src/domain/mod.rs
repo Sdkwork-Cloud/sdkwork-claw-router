@@ -10,10 +10,10 @@ pub use access::{
     ApiKeyGroup, ApiKeyGroupMetricSnapshot, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
 pub use catalog::{
-    AiModel, AiModelPublicMetadata, ModelProviderRoute, ModelVendorDefinition,
-    ProviderAccountPoolRoute, ProviderAuthHeader, ProviderAuthProfile, ProviderAuthType,
-    ProviderCircuitBreakerPolicy, ProviderRetryPolicy,
-    DEFAULT_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD,
+    provider_native_model_id, AiModel, AiModelPublicMetadata, ModelProviderRoute,
+    ModelVendorDefinition, ProviderAccountPoolGroupBinding, ProviderAccountPoolRoute,
+    ProviderAuthHeader, ProviderAuthProfile, ProviderAuthType, ProviderCircuitBreakerPolicy,
+    ProviderRetryPolicy, DEFAULT_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD,
     DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS, DEFAULT_PROVIDER_RETRY_ATTEMPTS,
     DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES,
 };

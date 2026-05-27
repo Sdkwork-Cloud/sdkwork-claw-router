@@ -4,14 +4,6 @@ import type { HttpClient } from '../http/client';
 import type { AdminSkillArtifactCreateRequest, AdminSkillArtifactUpdateRequest, AdminSkillAssetCreateRequest, AdminSkillAssetUpdateRequest, AdminSkillCategoryCreateRequest, AdminSkillCategoryUpdateRequest, AdminSkillCreateRequest, AdminSkillPackageCreateRequest, AdminSkillPackageUpdateRequest, AdminSkillReviewRequest, AdminSkillUpdateRequest, SkillsArtifactsCreateResult, SkillsArtifactsDeleteResult, SkillsArtifactsListResult, SkillsArtifactsRetrieveResult, SkillsArtifactsUpdateResult, SkillsAssetsCreateResult, SkillsAssetsDeleteResult, SkillsAssetsListResult, SkillsAssetsRetrieveResult, SkillsAssetsUpdateResult, SkillsCategoriesCreateResult, SkillsCategoriesDeleteResult, SkillsCategoriesListResult, SkillsCategoriesUpdateResult, SkillsCreateResult, SkillsDeleteResult, SkillsDisableResult, SkillsEnableResult, SkillsListResult, SkillsPackageCreateResult, SkillsPackageDeleteResult, SkillsPackageDisableResult, SkillsPackageEnableResult, SkillsPackageListResult, SkillsPackageRetrieveResult, SkillsPackageUpdateResult, SkillsPublishResult, SkillsRetrieveResult, SkillsReviewApproveResult, SkillsReviewRejectResult, SkillsUnpublishResult, SkillsUpdateResult } from '../types';
 
 
-export interface EcosystemSkillsReviewApproveParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsReviewRejectParams {
-  xRequestId?: string;
-}
-
 export class EcosystemSkillsReviewApi {
   private client: HttpClient;
 
@@ -21,38 +13,14 @@ export class EcosystemSkillsReviewApi {
 
 
 /** Approve skill */
-  async approve(skillId: string, body: AdminSkillReviewRequest, params?: EcosystemSkillsReviewApproveParams): Promise<SkillsReviewApproveResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsReviewApproveResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/review/approve`), body, undefined, requestHeaders, 'application/json');
+  async approve(skillId: string, body: AdminSkillReviewRequest): Promise<SkillsReviewApproveResult> {
+    return this.client.post<SkillsReviewApproveResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/review/approve`), body, undefined, undefined, 'application/json');
   }
 
 /** Reject skill */
-  async reject(skillId: string, body: AdminSkillReviewRequest, params?: EcosystemSkillsReviewRejectParams): Promise<SkillsReviewRejectResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsReviewRejectResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/review/reject`), body, undefined, requestHeaders, 'application/json');
+  async reject(skillId: string, body: AdminSkillReviewRequest): Promise<SkillsReviewRejectResult> {
+    return this.client.post<SkillsReviewRejectResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/review/reject`), body, undefined, undefined, 'application/json');
   }
-}
-
-export interface EcosystemSkillsAssetsCreateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsAssetsDeleteParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsAssetsUpdateParams {
-  xRequestId?: string;
 }
 
 export class EcosystemSkillsAssetsApi {
@@ -69,25 +37,13 @@ export class EcosystemSkillsAssetsApi {
   }
 
 /** Create skill asset */
-  async create(skillId: string, body: AdminSkillAssetCreateRequest, params?: EcosystemSkillsAssetsCreateParams): Promise<SkillsAssetsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsAssetsCreateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/assets`), body, undefined, requestHeaders, 'application/json');
+  async create(skillId: string, body: AdminSkillAssetCreateRequest): Promise<SkillsAssetsCreateResult> {
+    return this.client.post<SkillsAssetsCreateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/assets`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete skill asset */
-  async delete(skillId: string, assetId: string, params?: EcosystemSkillsAssetsDeleteParams): Promise<SkillsAssetsDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<SkillsAssetsDeleteResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/assets/${serializePathParameter(assetId, { name: 'assetId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(skillId: string, assetId: string): Promise<SkillsAssetsDeleteResult> {
+    return this.client.delete<SkillsAssetsDeleteResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/assets/${serializePathParameter(assetId, { name: 'assetId', style: 'simple', explode: false })}`));
   }
 
 /** Get skill asset */
@@ -96,27 +52,9 @@ export class EcosystemSkillsAssetsApi {
   }
 
 /** Update skill asset */
-  async update(skillId: string, assetId: string, body: AdminSkillAssetUpdateRequest, params?: EcosystemSkillsAssetsUpdateParams): Promise<SkillsAssetsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<SkillsAssetsUpdateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/assets/${serializePathParameter(assetId, { name: 'assetId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(skillId: string, assetId: string, body: AdminSkillAssetUpdateRequest): Promise<SkillsAssetsUpdateResult> {
+    return this.client.put<SkillsAssetsUpdateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/assets/${serializePathParameter(assetId, { name: 'assetId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
-}
-
-export interface EcosystemSkillsArtifactsCreateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsArtifactsDeleteParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsArtifactsUpdateParams {
-  xRequestId?: string;
 }
 
 export class EcosystemSkillsArtifactsApi {
@@ -133,25 +71,13 @@ export class EcosystemSkillsArtifactsApi {
   }
 
 /** Create skill artifact */
-  async create(skillId: string, body: AdminSkillArtifactCreateRequest, params?: EcosystemSkillsArtifactsCreateParams): Promise<SkillsArtifactsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsArtifactsCreateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/artifacts`), body, undefined, requestHeaders, 'application/json');
+  async create(skillId: string, body: AdminSkillArtifactCreateRequest): Promise<SkillsArtifactsCreateResult> {
+    return this.client.post<SkillsArtifactsCreateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/artifacts`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete skill artifact */
-  async delete(skillId: string, artifactId: string, params?: EcosystemSkillsArtifactsDeleteParams): Promise<SkillsArtifactsDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<SkillsArtifactsDeleteResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/artifacts/${serializePathParameter(artifactId, { name: 'artifactId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(skillId: string, artifactId: string): Promise<SkillsArtifactsDeleteResult> {
+    return this.client.delete<SkillsArtifactsDeleteResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/artifacts/${serializePathParameter(artifactId, { name: 'artifactId', style: 'simple', explode: false })}`));
   }
 
 /** Get skill artifact */
@@ -160,14 +86,8 @@ export class EcosystemSkillsArtifactsApi {
   }
 
 /** Update skill artifact */
-  async update(skillId: string, artifactId: string, body: AdminSkillArtifactUpdateRequest, params?: EcosystemSkillsArtifactsUpdateParams): Promise<SkillsArtifactsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<SkillsArtifactsUpdateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/artifacts/${serializePathParameter(artifactId, { name: 'artifactId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(skillId: string, artifactId: string, body: AdminSkillArtifactUpdateRequest): Promise<SkillsArtifactsUpdateResult> {
+    return this.client.put<SkillsArtifactsUpdateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/artifacts/${serializePathParameter(artifactId, { name: 'artifactId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -177,22 +97,6 @@ export interface EcosystemSkillsPackageListParams {
   categoryId?: string;
   page?: number;
   pageSize?: number;
-}
-
-export interface EcosystemSkillsPackageCreateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsPackageUpdateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsPackageDisableParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsPackageEnableParams {
-  xRequestId?: string;
 }
 
 export class EcosystemSkillsPackageApi {
@@ -216,14 +120,8 @@ export class EcosystemSkillsPackageApi {
   }
 
 /** Create skill package */
-  async create(body: AdminSkillPackageCreateRequest, params?: EcosystemSkillsPackageCreateParams): Promise<SkillsPackageCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsPackageCreateResult>(backendApiPath(`/ecosystem/skills/package`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminSkillPackageCreateRequest): Promise<SkillsPackageCreateResult> {
+    return this.client.post<SkillsPackageCreateResult>(backendApiPath(`/ecosystem/skills/package`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete skill package */
@@ -237,49 +135,19 @@ export class EcosystemSkillsPackageApi {
   }
 
 /** Update skill package */
-  async update(packageId: string, body: AdminSkillPackageUpdateRequest, params?: EcosystemSkillsPackageUpdateParams): Promise<SkillsPackageUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<SkillsPackageUpdateResult>(backendApiPath(`/ecosystem/skills/package/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(packageId: string, body: AdminSkillPackageUpdateRequest): Promise<SkillsPackageUpdateResult> {
+    return this.client.put<SkillsPackageUpdateResult>(backendApiPath(`/ecosystem/skills/package/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 
 /** Disable skill package */
-  async disable(packageId: string, params?: EcosystemSkillsPackageDisableParams): Promise<SkillsPackageDisableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsPackageDisableResult>(backendApiPath(`/ecosystem/skills/package/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}/disable`), undefined, undefined, requestHeaders);
+  async disable(packageId: string): Promise<SkillsPackageDisableResult> {
+    return this.client.post<SkillsPackageDisableResult>(backendApiPath(`/ecosystem/skills/package/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}/disable`));
   }
 
 /** Enable skill package */
-  async enable(packageId: string, params?: EcosystemSkillsPackageEnableParams): Promise<SkillsPackageEnableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsPackageEnableResult>(backendApiPath(`/ecosystem/skills/package/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}/enable`), undefined, undefined, requestHeaders);
+  async enable(packageId: string): Promise<SkillsPackageEnableResult> {
+    return this.client.post<SkillsPackageEnableResult>(backendApiPath(`/ecosystem/skills/package/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}/enable`));
   }
-}
-
-export interface EcosystemSkillsCategoriesCreateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsCategoriesDeleteParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsCategoriesUpdateParams {
-  xRequestId?: string;
 }
 
 export class EcosystemSkillsCategoriesApi {
@@ -296,36 +164,18 @@ export class EcosystemSkillsCategoriesApi {
   }
 
 /** Create skill category */
-  async create(body: AdminSkillCategoryCreateRequest, params?: EcosystemSkillsCategoriesCreateParams): Promise<SkillsCategoriesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsCategoriesCreateResult>(backendApiPath(`/ecosystem/skills/categories`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminSkillCategoryCreateRequest): Promise<SkillsCategoriesCreateResult> {
+    return this.client.post<SkillsCategoriesCreateResult>(backendApiPath(`/ecosystem/skills/categories`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete skill category */
-  async delete(categoryId: string, params?: EcosystemSkillsCategoriesDeleteParams): Promise<SkillsCategoriesDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<SkillsCategoriesDeleteResult>(backendApiPath(`/ecosystem/skills/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(categoryId: string): Promise<SkillsCategoriesDeleteResult> {
+    return this.client.delete<SkillsCategoriesDeleteResult>(backendApiPath(`/ecosystem/skills/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`));
   }
 
 /** Update skill category */
-  async update(categoryId: string, body: AdminSkillCategoryUpdateRequest, params?: EcosystemSkillsCategoriesUpdateParams): Promise<SkillsCategoriesUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<SkillsCategoriesUpdateResult>(backendApiPath(`/ecosystem/skills/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(categoryId: string, body: AdminSkillCategoryUpdateRequest): Promise<SkillsCategoriesUpdateResult> {
+    return this.client.put<SkillsCategoriesUpdateResult>(backendApiPath(`/ecosystem/skills/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -338,30 +188,6 @@ export interface EcosystemSkillsListParams {
   categoryId?: string;
   page?: number;
   pageSize?: number;
-}
-
-export interface EcosystemSkillsCreateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsUpdateParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsDisableParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsEnableParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsPublishParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsUnpublishParams {
-  xRequestId?: string;
 }
 
 export class EcosystemSkillsApi {
@@ -398,14 +224,8 @@ export class EcosystemSkillsApi {
   }
 
 /** Create skill */
-  async create(body: AdminSkillCreateRequest, params?: EcosystemSkillsCreateParams): Promise<SkillsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsCreateResult>(backendApiPath(`/ecosystem/skills`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminSkillCreateRequest): Promise<SkillsCreateResult> {
+    return this.client.post<SkillsCreateResult>(backendApiPath(`/ecosystem/skills`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete skill */
@@ -419,58 +239,28 @@ export class EcosystemSkillsApi {
   }
 
 /** Update skill */
-  async update(skillId: string, body: AdminSkillUpdateRequest, params?: EcosystemSkillsUpdateParams): Promise<SkillsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<SkillsUpdateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(skillId: string, body: AdminSkillUpdateRequest): Promise<SkillsUpdateResult> {
+    return this.client.put<SkillsUpdateResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 
 /** Disable skill */
-  async disable(skillId: string, params?: EcosystemSkillsDisableParams): Promise<SkillsDisableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsDisableResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/disable`), undefined, undefined, requestHeaders);
+  async disable(skillId: string): Promise<SkillsDisableResult> {
+    return this.client.post<SkillsDisableResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/disable`));
   }
 
 /** Enable skill */
-  async enable(skillId: string, params?: EcosystemSkillsEnableParams): Promise<SkillsEnableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsEnableResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/enable`), undefined, undefined, requestHeaders);
+  async enable(skillId: string): Promise<SkillsEnableResult> {
+    return this.client.post<SkillsEnableResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/enable`));
   }
 
 /** Publish skill */
-  async publish(skillId: string, params?: EcosystemSkillsPublishParams): Promise<SkillsPublishResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsPublishResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/publish`), undefined, undefined, requestHeaders);
+  async publish(skillId: string): Promise<SkillsPublishResult> {
+    return this.client.post<SkillsPublishResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/publish`));
   }
 
 /** Offline skill */
-  async unpublish(skillId: string, params?: EcosystemSkillsUnpublishParams): Promise<SkillsUnpublishResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsUnpublishResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/unpublish`), undefined, undefined, requestHeaders);
+  async unpublish(skillId: string): Promise<SkillsUnpublishResult> {
+    return this.client.post<SkillsUnpublishResult>(backendApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/unpublish`));
   }
 }
 
@@ -719,79 +509,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

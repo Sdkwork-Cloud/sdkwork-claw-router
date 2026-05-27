@@ -108,8 +108,8 @@ export const USER_CENTER_STANDARD_APP_ROUTE_BINDINGS = [
   {
     contractKey: "getCurrentUserMembership",
     operationId: "app.getCurrentUserMembership",
-    routeKey: "vipInfoGet",
-    summary: "Get the current user's VIP or membership projection.",
+    routeKey: "membershipCurrentGet",
+    summary: "Get the current user's membership projection.",
   },
   {
     contractKey: "getCurrentUserProfile",
@@ -168,8 +168,8 @@ export const USER_CENTER_STANDARD_APP_ROUTE_BINDINGS = [
   {
     contractKey: "updateCurrentUserMembership",
     operationId: "app.updateCurrentUserMembership",
-    routeKey: "vipInfoUpdate",
-    summary: "Update the current user's VIP or membership projection for local authority mode.",
+    routeKey: "membershipCurrentUpdate",
+    summary: "Update the current user's membership projection for local authority mode.",
   },
   {
     contractKey: "updateCurrentUserProfile",

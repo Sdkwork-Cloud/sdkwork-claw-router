@@ -21,7 +21,7 @@ public class AnthropicMessageCreateRequest {
     public Integer getMaxTokens() {
         return this.maxTokens;
     }
-    
+
     public void setMaxTokens(Integer maxTokens) {
         this.maxTokens = maxTokens;
     }
@@ -29,7 +29,7 @@ public class AnthropicMessageCreateRequest {
     public List<AnthropicMessageParam> getMessages() {
         return this.messages;
     }
-    
+
     public void setMessages(List<AnthropicMessageParam> messages) {
         this.messages = messages;
     }
@@ -37,7 +37,7 @@ public class AnthropicMessageCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -45,7 +45,7 @@ public class AnthropicMessageCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -53,7 +53,7 @@ public class AnthropicMessageCreateRequest {
     public List<String> getStopSequences() {
         return this.stopSequences;
     }
-    
+
     public void setStopSequences(List<String> stopSequences) {
         this.stopSequences = stopSequences;
     }
@@ -61,7 +61,7 @@ public class AnthropicMessageCreateRequest {
     public Boolean getStream() {
         return this.stream;
     }
-    
+
     public void setStream(Boolean stream) {
         this.stream = stream;
     }
@@ -69,7 +69,7 @@ public class AnthropicMessageCreateRequest {
     public String getSystem() {
         return this.system;
     }
-    
+
     public void setSystem(String system) {
         this.system = system;
     }
@@ -77,7 +77,7 @@ public class AnthropicMessageCreateRequest {
     public Double getTemperature() {
         return this.temperature;
     }
-    
+
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
@@ -85,7 +85,7 @@ public class AnthropicMessageCreateRequest {
     public AnthropicThinkingConfig getThinking() {
         return this.thinking;
     }
-    
+
     public void setThinking(AnthropicThinkingConfig thinking) {
         this.thinking = thinking;
     }
@@ -93,7 +93,7 @@ public class AnthropicMessageCreateRequest {
     public AnthropicToolChoice getToolChoice() {
         return this.toolChoice;
     }
-    
+
     public void setToolChoice(AnthropicToolChoice toolChoice) {
         this.toolChoice = toolChoice;
     }
@@ -101,7 +101,7 @@ public class AnthropicMessageCreateRequest {
     public List<AnthropicTool> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<AnthropicTool> tools) {
         this.tools = tools;
     }
@@ -109,7 +109,7 @@ public class AnthropicMessageCreateRequest {
     public Integer getTopK() {
         return this.topK;
     }
-    
+
     public void setTopK(Integer topK) {
         this.topK = topK;
     }
@@ -117,7 +117,7 @@ public class AnthropicMessageCreateRequest {
     public Double getTopP() {
         return this.topP;
     }
-    
+
     public void setTopP(Double topP) {
         this.topP = topP;
     }

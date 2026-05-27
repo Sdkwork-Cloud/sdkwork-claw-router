@@ -7,7 +7,7 @@ public class OpenAiRoleAssignmentCreateRequest {
     public String getRoleId() {
         return this.roleId;
     }
-    
+
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }

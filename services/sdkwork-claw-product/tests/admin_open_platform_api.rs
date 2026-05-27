@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -64,7 +66,7 @@ async fn admin_open_platform_route_manages_accounts_entries_and_pay_bindings() {
         .oneshot(trusted_json_request(
             "POST",
             "/backend/v3/api/open_platform/accounts",
-            r#"{"key":"wechat.oa.main","name":"WeChat Official Main","provider":"wechat","type":"official_account","appId":"wx123","secretRef":"vault://open-platform/wechat/main/app-secret","tokenRef":"vault://open-platform/wechat/main/token","aesKeyRef":"vault://open-platform/wechat/main/aes-key"}"#,
+            r#"{"key":"wechat.oa.main","name":"WeChat Official Main","provider":"wechat","type":"official_account","appId":"wx123","appSecret":"wx-secret-value","token":"wechat-token","encodingAesKey":"wechat-encoding-aes-key"}"#,
         ))
         .await
         .unwrap();
@@ -84,6 +86,41 @@ async fn admin_open_platform_route_manages_accounts_entries_and_pay_bindings() {
     assert!(create_account_payload["data"]["item"]
         .get("appSecret")
         .is_none());
+    assert!(create_account_payload["data"]["item"]["secretRef"]
+        .as_str()
+        .unwrap()
+        .starts_with("secret://open-platform/wechat/official_account/wechat.oa.main/app-secret/"));
+    assert!(create_account_payload["data"]["item"]["tokenRef"]
+        .as_str()
+        .unwrap()
+        .starts_with("secret://open-platform/wechat/official_account/wechat.oa.main/token/"));
+    assert!(create_account_payload["data"]["item"]["aesKeyRef"]
+        .as_str()
+        .unwrap()
+        .starts_with(
+            "secret://open-platform/wechat/official_account/wechat.oa.main/encoding-aes-key/"
+        ));
+    {
+        let credential_materials = store.credential_materials.lock().unwrap();
+        assert_eq!(1, credential_materials.len());
+        assert_eq!(
+            Some("wx-secret-value"),
+            credential_materials[0].secret_material.as_deref()
+        );
+        assert_eq!(
+            Some("wechat-token"),
+            credential_materials[0].token_material.as_deref()
+        );
+        assert_eq!(
+            Some("wechat-encoding-aes-key"),
+            credential_materials[0].aes_key_material.as_deref()
+        );
+        assert!(!credential_materials[0]
+            .secret_ref
+            .as_deref()
+            .unwrap()
+            .contains("wx-secret-value"));
+    }
 
     let create_entry_response = router
         .clone()
@@ -105,7 +142,7 @@ async fn admin_open_platform_route_manages_accounts_entries_and_pay_bindings() {
         .oneshot(trusted_json_request(
             "PATCH",
             "/backend/v3/api/open_platform/accounts/1",
-            r#"{"defaultEntryId":"1","qrDefault":true}"#,
+            r#"{"defaultEntryId":"1","qrDefault":true,"appSecret":"rotated-secret"}"#,
         ))
         .await
         .unwrap();
@@ -113,6 +150,24 @@ async fn admin_open_platform_route_manages_accounts_entries_and_pay_bindings() {
     let set_default_payload = json_payload(set_default_response).await;
     assert_eq!("1", set_default_payload["data"]["item"]["defaultEntryId"]);
     assert_eq!(true, set_default_payload["data"]["item"]["qrDefault"]);
+    assert!(set_default_payload["data"]["item"]["secretRef"]
+        .as_str()
+        .unwrap()
+        .starts_with("secret://open-platform/wechat/account/account-1/app-secret/"));
+    assert_ne!(
+        create_account_payload["data"]["item"]["secretRef"],
+        set_default_payload["data"]["item"]["secretRef"]
+    );
+    {
+        let credential_materials = store.credential_materials.lock().unwrap();
+        assert_eq!(2, credential_materials.len());
+        assert_eq!(
+            Some("rotated-secret"),
+            credential_materials[1].secret_material.as_deref()
+        );
+        assert_eq!(None, credential_materials[1].token_material.as_deref());
+        assert_eq!(None, credential_materials[1].aes_key_material.as_deref());
+    }
 
     let create_binding_response = router
         .clone()
@@ -344,6 +399,43 @@ async fn admin_open_platform_route_rejects_invalid_payloads_without_calling_stor
         .unwrap()
         .contains("open platform account key"));
 
+    let technical_credential_response = router
+        .clone()
+        .oneshot(trusted_json_request(
+            "POST",
+            "/backend/v3/api/open_platform/accounts",
+            r#"{"key":"wechat.oa.technical","name":"Technical","provider":"wechat","type":"official_account","secretRef":"vault://open-platform/wechat/main/app-secret"}"#,
+        ))
+        .await
+        .unwrap();
+    assert_eq!(
+        StatusCode::BAD_REQUEST,
+        technical_credential_response.status()
+    );
+    let technical_credential_payload = json_payload(technical_credential_response).await;
+    assert_eq!("4001", technical_credential_payload["code"]);
+    assert!(technical_credential_payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("internal credential reference field"));
+
+    let unsupported_alias_response = router
+        .clone()
+        .oneshot(trusted_json_request(
+            "POST",
+            "/backend/v3/api/open_platform/accounts",
+            r#"{"key":"wechat.oa.alias","name":"Alias","provider":"wechat","type":"official_account","clientSecret":"plain"}"#,
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, unsupported_alias_response.status());
+    let unsupported_alias_payload = json_payload(unsupported_alias_response).await;
+    assert_eq!("4001", unsupported_alias_payload["code"]);
+    assert!(unsupported_alias_payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("AppSecret, Token, and EncodingAESKey"));
+
     let bad_entry_response = router
         .oneshot(trusted_json_request(
             "POST",
@@ -367,9 +459,7 @@ fn trusted_request(method: &str, uri: &str, body: Body) -> Request<Body> {
     Request::builder()
         .method(method)
         .uri(uri)
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+        .internal_trusted_subject(10, 20, 30)
         .body(body)
         .unwrap()
 }
@@ -379,9 +469,7 @@ fn trusted_json_request(method: &str, uri: &str, body: &'static str) -> Request<
         .method(method)
         .uri(uri)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+        .internal_trusted_subject(10, 20, 30)
         .header("X-Request-Id", "open-platform-test")
         .body(Body::from(body))
         .unwrap()
@@ -394,12 +482,23 @@ async fn json_payload(response: axum::response::Response) -> Value {
     serde_json::from_slice(&body).unwrap()
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct CapturedOpenPlatformCredentialMaterial {
+    secret_ref: Option<String>,
+    secret_material: Option<String>,
+    token_ref: Option<String>,
+    token_material: Option<String>,
+    aes_key_ref: Option<String>,
+    aes_key_material: Option<String>,
+}
+
 #[derive(Default)]
 struct TestOpenPlatformStore {
     accounts: Mutex<Vec<AdminOpenPlatformAccountItem>>,
     entries: Mutex<Vec<AdminOpenPlatformEntryItem>>,
     pay_bindings: Mutex<Vec<AdminOpenPlatformPayBindingItem>>,
     commands: Mutex<Vec<&'static str>>,
+    credential_materials: Mutex<Vec<CapturedOpenPlatformCredentialMaterial>>,
 }
 
 impl AdminOpenPlatformStore for TestOpenPlatformStore {
@@ -574,6 +673,16 @@ impl AdminOpenPlatformStore for TestOpenPlatformStore {
     ) -> AdminOpenPlatformCommandFuture<'a, AdminOpenPlatformAccountItem> {
         Box::pin(async move {
             self.commands.lock().unwrap().push("create_account");
+            self.credential_materials.lock().unwrap().push(
+                CapturedOpenPlatformCredentialMaterial {
+                    secret_ref: command.secret_ref.clone(),
+                    secret_material: command.secret_material.clone(),
+                    token_ref: command.token_ref.clone(),
+                    token_material: command.token_material.clone(),
+                    aes_key_ref: command.aes_key_ref.clone(),
+                    aes_key_material: command.aes_key_material.clone(),
+                },
+            );
             let id = self.accounts.lock().unwrap().len() as i64 + 1;
             let item = AdminOpenPlatformAccountItem {
                 id,
@@ -606,6 +715,16 @@ impl AdminOpenPlatformStore for TestOpenPlatformStore {
     ) -> AdminOpenPlatformCommandFuture<'a, Option<AdminOpenPlatformAccountItem>> {
         Box::pin(async move {
             self.commands.lock().unwrap().push("update_account");
+            self.credential_materials.lock().unwrap().push(
+                CapturedOpenPlatformCredentialMaterial {
+                    secret_ref: command.secret_ref.clone().flatten(),
+                    secret_material: command.secret_material.clone(),
+                    token_ref: command.token_ref.clone().flatten(),
+                    token_material: command.token_material.clone(),
+                    aes_key_ref: command.aes_key_ref.clone().flatten(),
+                    aes_key_material: command.aes_key_material.clone(),
+                },
+            );
             let mut accounts = self.accounts.lock().unwrap();
             let Some(item) = accounts.iter_mut().find(|item| {
                 item.id == command.account_id

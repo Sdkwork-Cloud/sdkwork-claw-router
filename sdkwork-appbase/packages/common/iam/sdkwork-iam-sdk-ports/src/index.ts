@@ -19,9 +19,6 @@ export interface IamAppSdkClient {
     registrations?: {
       create?: IamSdkMethod;
     };
-    verificationPolicy?: {
-      retrieve?: IamSdkMethod;
-    };
     sessions?: {
       create?: IamSdkMethod;
       current?: {
@@ -36,6 +33,8 @@ export interface IamAppSdkClient {
       verify?: IamSdkMethod;
     };
   };
+  openPlatform?: IamAppOpenPlatformResourceClient;
+  system?: IamAppSystemResourceClient;
   iam?: IamAppIamResourceClient;
 }
 
@@ -48,6 +47,32 @@ export interface IamAppIamResourceClient {
   users?: {
     current?: {
       retrieve?: IamSdkMethod;
+    };
+  };
+}
+
+export interface IamAppSystemResourceClient {
+  iam?: {
+    runtime?: {
+      retrieve?: IamSdkMethod;
+    };
+    verificationPolicy?: {
+      retrieve?: IamSdkMethod;
+    };
+  };
+}
+
+export interface IamAppOpenPlatformResourceClient {
+  qrAuth?: {
+    sessions?: {
+      create?: IamSdkMethod;
+      retrieve?: IamSdkMethod;
+      passwords?: {
+        create?: IamSdkMethod;
+      };
+      scans?: {
+        create?: IamSdkMethod;
+      };
     };
   };
 }
@@ -148,6 +173,13 @@ export const SDKWORK_IAM_BACKEND_SDK_FORBIDDEN_METHODS = [
   ...requiredSdkMethodsForPrefix(SDKWORK_IAM_STANDARD.api.appPrefix).filter((method) => method.startsWith("iam.")),
 ] as const;
 
+const SDKWORK_IAM_APP_OPEN_PLATFORM_QR_METHODS = [
+  "openPlatform.qrAuth.sessions.create",
+  "openPlatform.qrAuth.sessions.passwords.create",
+  "openPlatform.qrAuth.sessions.retrieve",
+  "openPlatform.qrAuth.sessions.scans.create",
+] as const;
+
 export function assertIamAppSdkClient(client: unknown): asserts client is IamAppSdkClient {
   const surface = getIamSdkSurface(client);
   const missingMethods = findMissingMethods(surface, SDKWORK_IAM_APP_SDK_REQUIRED_METHODS);
@@ -167,6 +199,14 @@ export function assertIamAppSdkClient(client: unknown): asserts client is IamApp
     throw new Error(
       `Generated app SDK client exposes retired IAM QR login resources: ${retiredQrMethods.join(", ")}. Use openPlatform.qrAuth.sessions methods.`,
     );
+  }
+
+  const openPlatformQrMethods = surface.filter((method) => method.startsWith("openPlatform.qrAuth.sessions."));
+  if (openPlatformQrMethods.length > 0) {
+    const missingQrMethods = findMissingMethods(surface, SDKWORK_IAM_APP_OPEN_PLATFORM_QR_METHODS);
+    if (missingQrMethods.length > 0) {
+      throw new Error(`Generated app SDK client exposes incomplete IAM QR login resources: ${missingQrMethods.join(", ")}`);
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, CouponsCampaignsListResult, CouponsCodesListResult, CouponsRedemptionsListResult, CouponsTemplatesListResult, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult
+from ..models import AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -245,7 +245,6 @@ class CommerceApi:
         self.audit = CommerceAuditApi(client)
         self.catalog = CommerceCatalogApi(client)
         self.commerce_reports = CommerceCommerceReportsApi(client)
-        self.coupons = CommerceCouponsApi(client)
         self.fulfillments = CommerceFulfillmentsApi(client)
         self.inventory = CommerceInventoryApi(client)
         self.invoices = CommerceInvoicesApi(client)
@@ -534,81 +533,6 @@ class CommerceCommerceReportsRefundsApi:
             {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/commerce_reports/refunds", query))
-
-class CommerceCouponsApi:
-    """commerce commerce.coupons API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.campaigns = CommerceCouponsCampaignsApi(client)
-        self.codes = CommerceCouponsCodesApi(client)
-        self.redemptions = CommerceCouponsRedemptionsApi(client)
-        self.templates = CommerceCouponsTemplatesApi(client)
-
-
-class CommerceCouponsCampaignsApi:
-    """commerce commerce.coupons.campaigns API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> CouponsCampaignsListResult:
-        """Coupons Campaigns List"""
-        query = build_query_string([
-            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/coupons/campaigns", query))
-
-class CommerceCouponsCodesApi:
-    """commerce commerce.coupons.codes API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> CouponsCodesListResult:
-        """Coupons Codes List"""
-        query = build_query_string([
-            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/coupons/codes", query))
-
-class CommerceCouponsRedemptionsApi:
-    """commerce commerce.coupons.redemptions API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> CouponsRedemptionsListResult:
-        """Coupons Redemptions List"""
-        query = build_query_string([
-            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/coupons/redemptions", query))
-
-class CommerceCouponsTemplatesApi:
-    """commerce commerce.coupons.templates API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> CouponsTemplatesListResult:
-        """Coupons Templates List"""
-        query = build_query_string([
-            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/coupons/templates", query))
 
 class CommerceFulfillmentsApi:
     """commerce commerce.fulfillments API client."""

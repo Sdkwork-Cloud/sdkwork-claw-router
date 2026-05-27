@@ -333,7 +333,6 @@ frontend_operations:
   - ai_model_pricing
   - ai_pricing_import_snapshot
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminModelCatalogInitializationRequest
     required: []
@@ -1022,7 +1021,6 @@ frontend_operations:
   write_tables:
   - ai_model_rank_snapshot
   - ops_job_execution
-  request_id_header: true
   request_schema:
     name: ModelRankingRefreshTriggerRequest
     additionalProperties: false
@@ -1163,7 +1161,6 @@ frontend_operations:
   - ai_model_pricing
   - ai_pricing_import_snapshot
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminModelCatalogSyncRequest
     required: []
@@ -1347,7 +1344,6 @@ frontend_operations:
   write_tables:
   - ai_model_vendor
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminModelVendorCreateRequest
     required:
@@ -1407,7 +1403,6 @@ frontend_operations:
   - ai_model_capability
   - ai_model_pricing
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAiModelCreateRequest
     required:
@@ -1624,7 +1619,6 @@ frontend_operations:
   - ai_model_capability
   - ai_model_pricing
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAiModelUpdateRequest
     properties:

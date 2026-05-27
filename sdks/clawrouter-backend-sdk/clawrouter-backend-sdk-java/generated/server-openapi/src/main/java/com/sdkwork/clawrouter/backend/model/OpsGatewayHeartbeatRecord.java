@@ -32,7 +32,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getActiveConnections() {
         return this.activeConnections;
     }
-    
+
     public void setActiveConnections(String activeConnections) {
         this.activeConnections = activeConnections;
     }
@@ -40,7 +40,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getCpuPercent() {
         return this.cpuPercent;
     }
-    
+
     public void setCpuPercent(String cpuPercent) {
         this.cpuPercent = cpuPercent;
     }
@@ -48,7 +48,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -56,7 +56,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getDiskPercent() {
         return this.diskPercent;
     }
-    
+
     public void setDiskPercent(String diskPercent) {
         this.diskPercent = diskPercent;
     }
@@ -64,7 +64,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getHeartbeatAt() {
         return this.heartbeatAt;
     }
-    
+
     public void setHeartbeatAt(String heartbeatAt) {
         this.heartbeatAt = heartbeatAt;
     }
@@ -72,7 +72,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -80,7 +80,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getInstanceId() {
         return this.instanceId;
     }
-    
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -88,7 +88,7 @@ public class OpsGatewayHeartbeatRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -96,7 +96,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getMemoryPercent() {
         return this.memoryPercent;
     }
-    
+
     public void setMemoryPercent(String memoryPercent) {
         this.memoryPercent = memoryPercent;
     }
@@ -104,7 +104,7 @@ public class OpsGatewayHeartbeatRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -112,7 +112,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getNetworkInBytes() {
         return this.networkInBytes;
     }
-    
+
     public void setNetworkInBytes(String networkInBytes) {
         this.networkInBytes = networkInBytes;
     }
@@ -120,7 +120,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getNetworkOutBytes() {
         return this.networkOutBytes;
     }
-    
+
     public void setNetworkOutBytes(String networkOutBytes) {
         this.networkOutBytes = networkOutBytes;
     }
@@ -128,7 +128,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getOpenFileCount() {
         return this.openFileCount;
     }
-    
+
     public void setOpenFileCount(String openFileCount) {
         this.openFileCount = openFileCount;
     }
@@ -136,7 +136,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -144,7 +144,7 @@ public class OpsGatewayHeartbeatRecord {
     public Map<String, String> getPayload() {
         return this.payload;
     }
-    
+
     public void setPayload(Map<String, String> payload) {
         this.payload = payload;
     }
@@ -152,7 +152,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -160,7 +160,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -168,7 +168,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -176,7 +176,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -184,7 +184,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -192,7 +192,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getThreadCount() {
         return this.threadCount;
     }
-    
+
     public void setThreadCount(String threadCount) {
         this.threadCount = threadCount;
     }
@@ -200,7 +200,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -208,7 +208,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getUptimeSeconds() {
         return this.uptimeSeconds;
     }
-    
+
     public void setUptimeSeconds(String uptimeSeconds) {
         this.uptimeSeconds = uptimeSeconds;
     }
@@ -216,7 +216,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -224,7 +224,7 @@ public class OpsGatewayHeartbeatRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

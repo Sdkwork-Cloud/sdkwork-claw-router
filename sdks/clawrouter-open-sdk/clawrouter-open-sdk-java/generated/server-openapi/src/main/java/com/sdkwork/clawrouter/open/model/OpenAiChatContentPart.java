@@ -11,7 +11,7 @@ public class OpenAiChatContentPart {
     public OpenAiChatFile getFile() {
         return this.file;
     }
-    
+
     public void setFile(OpenAiChatFile file) {
         this.file = file;
     }
@@ -19,7 +19,7 @@ public class OpenAiChatContentPart {
     public OpenAiChatImageUrl getImageUrl() {
         return this.imageUrl;
     }
-    
+
     public void setImageUrl(OpenAiChatImageUrl imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -27,7 +27,7 @@ public class OpenAiChatContentPart {
     public OpenAiChatInputAudio getInputAudio() {
         return this.inputAudio;
     }
-    
+
     public void setInputAudio(OpenAiChatInputAudio inputAudio) {
         this.inputAudio = inputAudio;
     }
@@ -35,7 +35,7 @@ public class OpenAiChatContentPart {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -43,7 +43,7 @@ public class OpenAiChatContentPart {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

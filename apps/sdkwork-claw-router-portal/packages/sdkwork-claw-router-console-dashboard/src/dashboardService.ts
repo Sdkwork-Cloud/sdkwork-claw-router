@@ -51,7 +51,14 @@ export interface Announcement {
   type: DashboardAnnouncementType;
 }
 
-export type ConfigurationDomain = SdkDashboardConfigurationDomain;
+export interface ConfigurationDomain {
+  id: SdkDashboardConfigurationDomain['id'];
+  name: SdkDashboardConfigurationDomain['name'];
+  domain: SdkDashboardConfigurationDomain['domain'];
+  ip: SdkDashboardConfigurationDomain['ip'];
+  status: SdkDashboardConfigurationDomain['status'];
+  remark: SdkDashboardConfigurationDomain['remark'];
+}
 
 interface DashboardSnapshot {
   summary: SdkDashboardOverviewResponse['summary'];
@@ -74,6 +81,10 @@ const MODALITY_KEYS = {
 } as const;
 
 const CONFIGURATION_DOMAIN_KEYS = [
+  'configurationNodes',
+  'serviceNodes',
+  'gatewayNodes',
+  'nodes',
   'configurationDomains',
   'domainConfigs',
   'supportedDomains',
@@ -243,18 +254,24 @@ function createInitialConfigurationDomains(): ConfigurationDomain[] {
           ?? readClawRouterRuntimeEnv('VITE_API_BASE_URL')
           ?? DEFAULT_GATEWAY_DOMAIN,
       ),
+      ip: '',
+      status: 'unknown',
       remark: 'Primary OpenAI-compatible API base for model requests.',
     },
     {
       id: 'app-product-api',
       name: 'App Product API',
       domain: normalizeConfigurationDomainUrl(readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL') ?? APP_API_PREFIX),
+      ip: '',
+      status: 'unknown',
       remark: 'Product console API base for user-facing operations.',
     },
     {
       id: 'backend-admin-api',
       name: 'Backend Admin API',
       domain: normalizeConfigurationDomainUrl(readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL') ?? BACKEND_API_PREFIX),
+      ip: '',
+      status: 'unknown',
       remark: 'Admin console API base for management operations.',
     },
   ]);
@@ -314,7 +331,15 @@ function normalizeConfigurationDomains(record: ApiRecord): ConfigurationDomain[]
     .map((item, index) => {
       const name = readRequiredFirstString(item, ['name', 'title', 'label', 'displayName', 'display_name'], 'Dashboard configuration domain name is required');
       const domain = normalizeConfigurationDomainUrl(
-        readRequiredFirstString(item, ['domain', 'url', 'baseUrl', 'base_url', 'endpoint', 'origin'], 'Dashboard configuration domain URL is required'),
+        readRequiredFirstString(
+          item,
+          ['domain', 'url', 'baseUrl', 'base_url', 'endpoint', 'origin', 'hostName', 'host_name', 'hostname', 'instanceCode', 'instance_code'],
+          'Dashboard configuration domain URL is required',
+        ),
+      );
+      const ip = readOptionalFirstString(item, ['ip', 'ipAddress', 'ip_address', 'address']) ?? '';
+      const status = normalizeConfigurationDomainStatus(
+        readOptionalFirstString(item, ['status', 'healthStatus', 'health_status', 'state']) ?? 'unknown',
       );
       const remark = readOptionalFirstString(item, ['remark', 'remarks', 'description', 'note', 'notes', 'memo']) ?? '';
       const explicitId = readOptionalFirstString(item, ['id', 'key', 'code']);
@@ -322,6 +347,8 @@ function normalizeConfigurationDomains(record: ApiRecord): ConfigurationDomain[]
         id: explicitId ?? createConfigurationDomainId(name, domain, index),
         name,
         domain,
+        ip,
+        status,
         remark,
       };
     });
@@ -554,6 +581,20 @@ function normalizeConfigurationDomainUrl(value: string): string {
     throw new Error('Dashboard configuration domain URL must use http, https, or a relative path');
   }
   return `https://${trimmed}`;
+}
+
+function normalizeConfigurationDomainStatus(value: string): ConfigurationDomain['status'] {
+  const normalized = value.trim().toLowerCase();
+  if (['online', 'healthy', 'active', 'enabled', 'up', 'running'].includes(normalized)) {
+    return 'online';
+  }
+  if (['warning', 'warn', 'degraded', 'degrading'].includes(normalized)) {
+    return 'warning';
+  }
+  if (['offline', 'disabled', 'inactive', 'down', 'stopped'].includes(normalized)) {
+    return 'offline';
+  }
+  return 'unknown';
 }
 
 function createConfigurationDomainId(name: string, domain: string, index: number): string {

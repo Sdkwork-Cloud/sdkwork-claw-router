@@ -18,7 +18,7 @@ export function AppCenterPreview() {
     try {
       const fetchedApps = await appService.getApps({ sortBy: 'Most Popular' });
       if (isActive()) {
-        setApps(fetchedApps.slice(0, 3));
+        setApps(fetchedApps.items.slice(0, 3));
       }
     } catch (error) {
       if (isActive()) {

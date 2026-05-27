@@ -53,16 +53,6 @@ describe("sdkwork-iam-core-pc-react", () => {
         registrations: {
           create: vi.fn(),
         },
-        verificationPolicy: {
-          retrieve: vi.fn().mockResolvedValue({
-            data: {
-              emailCodeLoginEnabled: true,
-              emailRegistrationVerificationRequired: true,
-              phoneCodeLoginEnabled: false,
-              phoneRegistrationVerificationRequired: false,
-            },
-          }),
-        },
         sessions: {
           create: vi.fn().mockResolvedValue({
             accessToken: "access-token-1",
@@ -102,6 +92,16 @@ describe("sdkwork-iam-core-pc-react", () => {
         verificationCodes: {
           create: vi.fn(),
           verify: vi.fn(),
+        },
+      },
+      system: {
+        iam: {
+          runtime: {
+            retrieve: vi.fn(),
+          },
+          verificationPolicy: {
+            retrieve: vi.fn(),
+          },
         },
       },
       iam: {
@@ -257,7 +257,6 @@ describe("sdkwork-iam-core-pc-react", () => {
         passwordResetRequests: { create: vi.fn() },
         passwordResets: { create: vi.fn() },
         registrations: { create: vi.fn() },
-        verificationPolicy: { retrieve: vi.fn() },
         sessions: {
           create: vi.fn(),
           current: {
@@ -270,6 +269,12 @@ describe("sdkwork-iam-core-pc-react", () => {
         verificationCodes: {
           create: vi.fn(),
           verify: vi.fn(),
+        },
+      },
+      system: {
+        iam: {
+          runtime: { retrieve: vi.fn() },
+          verificationPolicy: { retrieve: vi.fn() },
         },
       },
       iam: {

@@ -8,7 +8,7 @@ public class OpenAiReasoningConfig {
     public String getEffort() {
         return this.effort;
     }
-    
+
     public void setEffort(String effort) {
         this.effort = effort;
     }
@@ -16,7 +16,7 @@ public class OpenAiReasoningConfig {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }

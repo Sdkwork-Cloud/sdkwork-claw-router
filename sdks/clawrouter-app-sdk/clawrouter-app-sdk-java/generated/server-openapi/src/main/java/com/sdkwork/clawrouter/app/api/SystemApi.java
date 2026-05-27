@@ -13,6 +13,91 @@ public class SystemApi {
         this.client = client;
     }
 
+    /** Promotion Code Redemption Create */
+    public PromotionsCodesRedemptionsCreateResult promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/promotions/codes/redemptions"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PromotionsCodesRedemptionsCreateResult>() {});
+    }
+
+    /** Promotion Discount Application Create */
+    public PromotionsDiscountApplicationsCreateResult promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsCreateResult>() {});
+    }
+
+    /** Promotion Discount Application Reversal Create */
+    public PromotionsDiscountApplicationsReversalsCreateResult promotionsDiscountApplicationsReversalsCreate(PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/reversals"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsReversalsCreateResult>() {});
+    }
+
+    /** Promotion Discount Application Release */
+    public PromotionsDiscountApplicationsReleaseResult promotionsDiscountApplicationsRelease(String applicationId, PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/releases"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsReleaseResult>() {});
+    }
+
+    /** Promotion Discount Application Settle */
+    public PromotionsDiscountApplicationsSettleResult promotionsDiscountApplicationsSettle(String applicationId, PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/settlements"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsSettleResult>() {});
+    }
+
+    /** Promotion User Coupon Claim Create */
+    public PromotionsUserCouponsClaimsCreateResult promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/promotions/user_coupon_claims"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PromotionsUserCouponsClaimsCreateResult>() {});
+    }
+
+    /** Promotion User Coupons Wallet List */
+    public PromotionsUserCouponsWalletListResult promotionsUserCouponsWalletList(String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/promotions/user_coupons"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsUserCouponsWalletListResult>() {});
+    }
+
+    /** Retrieve public IAM runtime settings */
+    public IamRuntimeRetrieveResult iamRuntimeRetrieve(String tenantCode, String organizationCode) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
+            new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/system/iam/runtime"), query));
+        return client.convertValue(raw, new TypeReference<IamRuntimeRetrieveResult>() {});
+    }
+
+    /** Retrieve public IAM verification policy */
+    public IamVerificationPolicyRetrieveResult iamVerificationPolicyRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/system/iam/verification_policy"));
+        return client.convertValue(raw, new TypeReference<IamVerificationPolicyRetrieveResult>() {});
+    }
+
     /** Retrieve public site runtime branding settings */
     public SiteRuntimeRetrieveResult siteRuntimeRetrieve(String tenantCode, String organizationCode) throws Exception {
         String query = buildQueryString(List.of(
@@ -23,6 +108,99 @@ public class SystemApi {
         return client.convertValue(raw, new TypeReference<SiteRuntimeRetrieveResult>() {});
     }
 
+    private record PathParameterSpec(String name, String style, boolean explode) {}
+
+    private static String serializePathParameter(Object value, PathParameterSpec spec) {
+        if (value == null) {
+            return "";
+        }
+        String style = spec.style() == null || spec.style().isBlank() ? "simple" : spec.style();
+        if (value instanceof Iterable<?> iterable) {
+            return serializePathArray(spec.name(), iterable, style, spec.explode());
+        }
+        if (value instanceof Map<?, ?> map) {
+            return serializePathObject(spec.name(), map, style, spec.explode());
+        }
+        return pathPrimitivePrefix(spec.name(), style) + pathEncode(String.valueOf(value));
+    }
+
+    private static String serializePathArray(String name, Iterable<?> values, String style, boolean explode) {
+        List<String> serialized = new java.util.ArrayList<>();
+        for (Object item : values) {
+            if (item != null) {
+                serialized.add(pathEncode(String.valueOf(item)));
+            }
+        }
+        if (serialized.isEmpty()) {
+            return pathPrefix(name, style);
+        }
+        if ("matrix".equals(style)) {
+            if (explode) {
+                List<String> parts = new java.util.ArrayList<>();
+                for (String item : serialized) {
+                    parts.add(";" + name + "=" + item);
+                }
+                return String.join("", parts);
+            }
+            return ";" + name + "=" + String.join(",", serialized);
+        }
+        String separator = explode ? "." : ",";
+        return pathPrefix(name, style) + String.join(separator, serialized);
+    }
+
+    private static String serializePathObject(String name, Map<?, ?> values, String style, boolean explode) {
+        List<String> entries = new java.util.ArrayList<>();
+        List<String> exploded = new java.util.ArrayList<>();
+        values.forEach((key, value) -> {
+            if (value == null) {
+                return;
+            }
+            String escapedKey = pathEncode(String.valueOf(key));
+            String escapedValue = pathEncode(String.valueOf(value));
+            if (explode) {
+                if ("matrix".equals(style)) {
+                    exploded.add(";" + escapedKey + "=" + escapedValue);
+                } else {
+                    exploded.add(escapedKey + "=" + escapedValue);
+                }
+            } else {
+                entries.add(escapedKey);
+                entries.add(escapedValue);
+            }
+        });
+        if ("matrix".equals(style)) {
+            if (explode) {
+                return String.join("", exploded);
+            }
+            return ";" + name + "=" + String.join(",", entries);
+        }
+        if (explode) {
+            String separator = "label".equals(style) ? "." : ",";
+            return pathPrefix(name, style) + String.join(separator, exploded);
+        }
+        return pathPrefix(name, style) + String.join(",", entries);
+    }
+
+    private static String pathPrefix(String name, String style) {
+        if ("label".equals(style)) {
+            return ".";
+        }
+        if ("matrix".equals(style)) {
+            return ";" + name;
+        }
+        return "";
+    }
+
+    private static String pathPrimitivePrefix(String name, String style) {
+        if ("matrix".equals(style)) {
+            return ";" + name + "=";
+        }
+        return pathPrefix(name, style);
+    }
+
+    private static String pathEncode(String value) {
+        return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8).replace("+", "%20");
+    }
 
     private record QueryParameterSpec(String name, Object value, String style, boolean explode, boolean allowReserved, String contentType) {}
 
@@ -119,6 +297,74 @@ public class SystemApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
+    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
+
+    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
+        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
+        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
+            String serialized = serializeParameterValue(entry.getValue());
+            if (serialized != null) {
+                requestHeaders.put(entry.getKey(), serialized);
+            }
+        }
+
+        String cookieHeader = buildCookieHeader(cookies);
+        if (cookieHeader != null && !cookieHeader.isEmpty()) {
+            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
+        }
+
+        return requestHeaders.isEmpty() ? null : requestHeaders;
+    }
+
+    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
+        java.util.List<String> pairs = new java.util.ArrayList<>();
+        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
+            String serialized = serializeParameterValue(entry.getValue());
+            if (serialized != null) {
+                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
+            }
+        }
+        return String.join("; ", pairs);
+    }
+
+    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
+        if (parameter == null || parameter.value() == null) {
+            return null;
+        }
+        Object value = parameter.value();
+        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
+            return headerObjectMapper().writeValueAsString(value);
+        }
+        if (value instanceof Iterable<?> iterable) {
+            java.util.List<String> values = new java.util.ArrayList<>();
+            for (Object item : iterable) {
+                if (item != null) {
+                    values.add(String.valueOf(item));
+                }
+            }
+            return String.join(",", values);
+        }
+        if (value instanceof Map<?, ?> map) {
+            java.util.List<String> values = new java.util.ArrayList<>();
+            map.forEach((key, item) -> {
+                if (item == null) {
+                    return;
+                }
+                if (parameter.explode()) {
+                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
+                } else {
+                    values.add(String.valueOf(key));
+                    values.add(String.valueOf(item));
+                }
+            });
+            return String.join(",", values);
+        }
+        return String.valueOf(value);
+    }
+
+    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
+        return new com.fasterxml.jackson.databind.ObjectMapper();
+    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

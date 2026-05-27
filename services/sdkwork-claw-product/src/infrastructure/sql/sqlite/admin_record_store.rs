@@ -54,8 +54,11 @@ usage_by_request AS (
 SELECT
     COALESCE(NULLIF(t.uuid, ''), 'trace-' || CAST(t.id AS TEXT)) AS id,
     COALESCE(
-        NULLIF(t.owner_name_snapshot, ''),
-        NULLIF(u.owner_name_snapshot, ''),
+        NULLIF(NULLIF(t.owner_name_snapshot, ''), CAST(t.user_id AS TEXT)),
+        NULLIF(NULLIF(u.owner_name_snapshot, ''), CAST(t.user_id AS TEXT)),
+        NULLIF(iu.display_name, ''),
+        NULLIF(iu.email, ''),
+        NULLIF(iu.username, ''),
         NULLIF(CAST(t.user_id AS TEXT), ''),
         '-'
     ) AS user_label,
@@ -84,6 +87,9 @@ LEFT JOIN usage_by_request u
   ON u.tenant_id = t.tenant_id
  AND u.organization_id = t.organization_id
  AND u.request_id = t.request_id
+LEFT JOIN iam_user iu
+  ON iu.tenant_id = CAST(t.tenant_id AS TEXT)
+ AND iu.id = CAST(t.user_id AS TEXT)
 LEFT JOIN ai_routing_decision_log d
   ON d.status = 1
  AND d.tenant_id = t.tenant_id
@@ -93,6 +99,9 @@ WHERE (
     ?3 IS NULL
     OR lower(COALESCE(t.owner_name_snapshot, '')) LIKE ?3
     OR lower(COALESCE(u.owner_name_snapshot, '')) LIKE ?3
+    OR lower(COALESCE(iu.display_name, '')) LIKE ?3
+    OR lower(COALESCE(iu.email, '')) LIKE ?3
+    OR lower(COALESCE(iu.username, '')) LIKE ?3
     OR lower(COALESCE(CAST(t.user_id AS TEXT), '')) LIKE ?3
 )
 AND (
@@ -157,6 +166,9 @@ LEFT JOIN usage_by_request u
   ON u.tenant_id = t.tenant_id
  AND u.organization_id = t.organization_id
  AND u.request_id = t.request_id
+LEFT JOIN iam_user iu
+  ON iu.tenant_id = CAST(t.tenant_id AS TEXT)
+ AND iu.id = CAST(t.user_id AS TEXT)
 LEFT JOIN ai_routing_decision_log d
   ON d.status = 1
  AND d.tenant_id = t.tenant_id
@@ -166,6 +178,9 @@ WHERE (
     ?3 IS NULL
     OR lower(COALESCE(t.owner_name_snapshot, '')) LIKE ?3
     OR lower(COALESCE(u.owner_name_snapshot, '')) LIKE ?3
+    OR lower(COALESCE(iu.display_name, '')) LIKE ?3
+    OR lower(COALESCE(iu.email, '')) LIKE ?3
+    OR lower(COALESCE(iu.username, '')) LIKE ?3
     OR lower(COALESCE(CAST(t.user_id AS TEXT), '')) LIKE ?3
 )
 AND (
@@ -256,7 +271,7 @@ fn row_to_log(row: sqlx::sqlite::SqliteRow) -> Result<AdminRecordLogItem, Domain
         group: string_cell(&row, "api_key_group_snapshot"),
         log_type: modality_label(optional_integer_cell(&row, "modality")),
         model: string_cell(&row, "model"),
-        total_time: duration_label(required_latency_cell(&row, "latency_ms")?),
+        total_time: duration_label(latency_cell(&row, "latency_ms")?),
         ttft: duration_label(integer_cell(&row, "ttft_ms")),
         is_stream: integer_cell(&row, "is_stream") != 0,
         input_tokens: integer_cell(&row, "prompt_tokens"),
@@ -316,14 +331,8 @@ fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {
     optional_integer_cell(row, column).unwrap_or(0)
 }
 
-fn required_latency_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Result<i64, DomainError> {
-    let value = optional_integer_cell(row, column).ok_or_else(|| {
-        if column == "latency_ms" {
-            DomainError::new("missing admin record latency_ms from database row")
-        } else {
-            DomainError::new(format!("missing admin record {column} from database row"))
-        }
-    })?;
+fn latency_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Result<i64, DomainError> {
+    let value = integer_cell(row, column);
     if value < 0 {
         if column == "latency_ms" {
             return Err(DomainError::new(format!(
@@ -404,5 +413,37 @@ mod tests {
                 .contains("invalid admin record amount: not-money"),
             "{unsupported}"
         );
+    }
+
+    #[test]
+    fn list_logs_enriches_user_label_from_iam_user_before_numeric_id() {
+        assert!(LIST_ADMIN_RECORD_LOGS.contains("LEFT JOIN iam_user iu"));
+        assert!(LIST_ADMIN_RECORD_LOGS.contains("iu.tenant_id = CAST(t.tenant_id AS TEXT)"));
+        assert!(LIST_ADMIN_RECORD_LOGS.contains("iu.id = CAST(t.user_id AS TEXT)"));
+        assert_user_label_order(LIST_ADMIN_RECORD_LOGS);
+    }
+
+    #[test]
+    fn list_logs_user_filter_searches_iam_user_identity_fields() {
+        for sql in [LIST_ADMIN_RECORD_LOGS, LIST_ADMIN_RECORD_LOGS_TOTAL] {
+            assert!(sql.contains("lower(COALESCE(iu.display_name, '')) LIKE ?3"));
+            assert!(sql.contains("lower(COALESCE(iu.email, '')) LIKE ?3"));
+            assert!(sql.contains("lower(COALESCE(iu.username, '')) LIKE ?3"));
+        }
+    }
+
+    fn assert_user_label_order(sql: &str) {
+        let owner_snapshot = sql.find("NULLIF(t.owner_name_snapshot, '')").unwrap();
+        let usage_snapshot = sql.find("NULLIF(u.owner_name_snapshot, '')").unwrap();
+        let display_name = sql.find("NULLIF(iu.display_name, '')").unwrap();
+        let email = sql.find("NULLIF(iu.email, '')").unwrap();
+        let username = sql.find("NULLIF(iu.username, '')").unwrap();
+        let user_id = sql.find("NULLIF(CAST(t.user_id AS TEXT), '')").unwrap();
+
+        assert!(owner_snapshot < usage_snapshot);
+        assert!(usage_snapshot < display_name);
+        assert!(display_name < email);
+        assert!(email < username);
+        assert!(username < user_id);
     }
 }

@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class WalletAccountsListResult
     {
         public string? Code { get; set; }
-        public List<CommerceWalletAccountItem>? Data { get; set; }
+        public CommerceStandardCollectionResponse? Data { get; set; }
         public string? Msg { get; set; }
     }
 }

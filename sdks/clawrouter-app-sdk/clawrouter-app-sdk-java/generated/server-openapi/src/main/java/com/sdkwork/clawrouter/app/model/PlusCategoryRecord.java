@@ -13,7 +13,7 @@ public class PlusCategoryRecord {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -21,7 +21,7 @@ public class PlusCategoryRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -29,7 +29,7 @@ public class PlusCategoryRecord {
     public String getGroupName() {
         return this.groupName;
     }
-    
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -37,7 +37,7 @@ public class PlusCategoryRecord {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -45,7 +45,7 @@ public class PlusCategoryRecord {
     public String getParentId() {
         return this.parentId;
     }
-    
+
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
@@ -53,7 +53,7 @@ public class PlusCategoryRecord {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -61,7 +61,7 @@ public class PlusCategoryRecord {
     public String getShopId() {
         return this.shopId;
     }
-    
+
     public void setShopId(String shopId) {
         this.shopId = shopId;
     }

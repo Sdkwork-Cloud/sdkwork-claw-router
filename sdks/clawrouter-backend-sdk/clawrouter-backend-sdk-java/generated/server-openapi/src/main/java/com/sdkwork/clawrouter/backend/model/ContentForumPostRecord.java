@@ -34,7 +34,7 @@ public class ContentForumPostRecord {
     public String getAuthorId() {
         return this.authorId;
     }
-    
+
     public void setAuthorId(String authorId) {
         this.authorId = authorId;
     }
@@ -42,7 +42,7 @@ public class ContentForumPostRecord {
     public Map<String, String> getAuthorSnapshot() {
         return this.authorSnapshot;
     }
-    
+
     public void setAuthorSnapshot(Map<String, String> authorSnapshot) {
         this.authorSnapshot = authorSnapshot;
     }
@@ -50,7 +50,7 @@ public class ContentForumPostRecord {
     public String getBody() {
         return this.body;
     }
-    
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -58,7 +58,7 @@ public class ContentForumPostRecord {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -66,7 +66,7 @@ public class ContentForumPostRecord {
     public String getCommentCount() {
         return this.commentCount;
     }
-    
+
     public void setCommentCount(String commentCount) {
         this.commentCount = commentCount;
     }
@@ -74,7 +74,7 @@ public class ContentForumPostRecord {
     public String getContentSnippet() {
         return this.contentSnippet;
     }
-    
+
     public void setContentSnippet(String contentSnippet) {
         this.contentSnippet = contentSnippet;
     }
@@ -82,7 +82,7 @@ public class ContentForumPostRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -90,7 +90,7 @@ public class ContentForumPostRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -98,7 +98,7 @@ public class ContentForumPostRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -106,7 +106,7 @@ public class ContentForumPostRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -114,7 +114,7 @@ public class ContentForumPostRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -122,7 +122,7 @@ public class ContentForumPostRecord {
     public String getLastRepliedAt() {
         return this.lastRepliedAt;
     }
-    
+
     public void setLastRepliedAt(String lastRepliedAt) {
         this.lastRepliedAt = lastRepliedAt;
     }
@@ -130,7 +130,7 @@ public class ContentForumPostRecord {
     public String getLikeCount() {
         return this.likeCount;
     }
-    
+
     public void setLikeCount(String likeCount) {
         this.likeCount = likeCount;
     }
@@ -138,7 +138,7 @@ public class ContentForumPostRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -146,7 +146,7 @@ public class ContentForumPostRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -154,7 +154,7 @@ public class ContentForumPostRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -162,7 +162,7 @@ public class ContentForumPostRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -170,7 +170,7 @@ public class ContentForumPostRecord {
     public Boolean getPinned() {
         return this.pinned;
     }
-    
+
     public void setPinned(Boolean pinned) {
         this.pinned = pinned;
     }
@@ -178,7 +178,7 @@ public class ContentForumPostRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -186,7 +186,7 @@ public class ContentForumPostRecord {
     public Map<String, String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
@@ -194,7 +194,7 @@ public class ContentForumPostRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -202,7 +202,7 @@ public class ContentForumPostRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -210,7 +210,7 @@ public class ContentForumPostRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -218,7 +218,7 @@ public class ContentForumPostRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -226,7 +226,7 @@ public class ContentForumPostRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -234,7 +234,7 @@ public class ContentForumPostRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -242,7 +242,7 @@ public class ContentForumPostRecord {
     public String getViewCount() {
         return this.viewCount;
     }
-    
+
     public void setViewCount(String viewCount) {
         this.viewCount = viewCount;
     }

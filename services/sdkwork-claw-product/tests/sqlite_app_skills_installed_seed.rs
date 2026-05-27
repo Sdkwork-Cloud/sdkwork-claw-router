@@ -1,26 +1,16 @@
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
+use installed_sqlite_common::repair_sqlite_pool;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppSkillsReadStore;
 use sdkwork_claw_product::ports::{
     AppSkillsCommandStore, AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject,
     EnableAppSkillCommand,
 };
-use sqlx::sqlite::SqlitePoolOptions;
 
 #[tokio::test]
 async fn sqlite_app_skills_reads_installed_seed_assets_artifacts_and_user_installations() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = repair_sqlite_pool().await;
 
     let store = SqliteAppSkillsReadStore::new(pool);
     let items = store

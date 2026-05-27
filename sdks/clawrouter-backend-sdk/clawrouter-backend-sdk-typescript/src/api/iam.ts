@@ -1,16 +1,8 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult } from '../types';
+import type { AccessGroupsChannelBindingsListResult, AccessGroupsChannelBindingsUpdateResult, AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupChannelBindingsReplaceRequest, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult } from '../types';
 
-
-export interface IamUsersCreateParams {
-  xRequestId?: string;
-}
-
-export interface IamUsersUpdateParams {
-  xRequestId?: string;
-}
 
 export class IamUsersApi {
   private client: HttpClient;
@@ -26,31 +18,18 @@ export class IamUsersApi {
   }
 
 /** Create user */
-  async create(body: AdminUserCreateRequest, params?: IamUsersCreateParams): Promise<UsersCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<UsersCreateResult>(backendApiPath(`/iam/users`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminUserCreateRequest): Promise<UsersCreateResult> {
+    return this.client.post<UsersCreateResult>(backendApiPath(`/iam/users`), body, undefined, undefined, 'application/json');
   }
 
 /** Update user */
-  async update(body: AdminUserUpdateRequest, params?: IamUsersUpdateParams): Promise<UsersUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<UsersUpdateResult>(backendApiPath(`/iam/users`), body, undefined, requestHeaders, 'application/json');
+  async update(body: AdminUserUpdateRequest): Promise<UsersUpdateResult> {
+    return this.client.put<UsersUpdateResult>(backendApiPath(`/iam/users`), body, undefined, undefined, 'application/json');
   }
 }
 
 export interface IamApiKeysCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class IamApiKeysApi {
@@ -71,7 +50,6 @@ export class IamApiKeysApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -84,19 +62,32 @@ export class IamApiKeysApi {
   }
 }
 
-export interface IamAccessGroupsCreateParams {
-  xRequestId?: string;
-}
-
-export interface IamAccessGroupsUpdateParams {
-  xRequestId?: string;
-}
-
-export class IamAccessGroupsApi {
+export class IamAccessGroupsChannelBindingsApi {
   private client: HttpClient;
 
   constructor(client: HttpClient) {
     this.client = client;
+  }
+
+
+/** List group channel bindings */
+  async list(groupId: string): Promise<AccessGroupsChannelBindingsListResult> {
+    return this.client.get<AccessGroupsChannelBindingsListResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}/channel_bindings`));
+  }
+
+/** Replace group channel bindings */
+  async update(groupId: string, body: AdminAccessGroupChannelBindingsReplaceRequest): Promise<AccessGroupsChannelBindingsUpdateResult> {
+    return this.client.put<AccessGroupsChannelBindingsUpdateResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}/channel_bindings`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class IamAccessGroupsApi {
+  private client: HttpClient;
+  public readonly channelBindings: IamAccessGroupsChannelBindingsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.channelBindings = new IamAccessGroupsChannelBindingsApi(client);
   }
 
 
@@ -106,14 +97,8 @@ export class IamAccessGroupsApi {
   }
 
 /** Create group */
-  async create(body: AdminAccessGroupCreateRequest, params?: IamAccessGroupsCreateParams): Promise<AccessGroupsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<AccessGroupsCreateResult>(backendApiPath(`/iam/access_groups`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminAccessGroupCreateRequest): Promise<AccessGroupsCreateResult> {
+    return this.client.post<AccessGroupsCreateResult>(backendApiPath(`/iam/access_groups`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete group */
@@ -122,14 +107,8 @@ export class IamAccessGroupsApi {
   }
 
 /** Update group */
-  async update(groupId: string, body: AdminAccessGroupUpdateRequest, params?: IamAccessGroupsUpdateParams): Promise<AccessGroupsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<AccessGroupsUpdateResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  async update(groupId: string, body: AdminAccessGroupUpdateRequest): Promise<AccessGroupsUpdateResult> {
+    return this.client.patch<AccessGroupsUpdateResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 

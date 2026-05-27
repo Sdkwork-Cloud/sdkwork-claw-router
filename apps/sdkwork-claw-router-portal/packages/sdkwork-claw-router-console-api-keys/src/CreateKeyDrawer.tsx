@@ -14,7 +14,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { CopyButton } from 'sdkwork-claw-router-commons';
+import { CopyButton } from 'sdkwork-claw-router-commons/components/CopyButton';
 import type { ApiKey, ApiKeyGroup } from './apiKeyService';
 import { DEFAULT_API_KEY_GROUP, type ApiKeyFormValues as ApiKeyFormValuesContract } from './apiKeyForm';
 import { formatApiKeyGroupOptionLabel, resolveApiKeyGroupCode } from './apiKeyGroups';

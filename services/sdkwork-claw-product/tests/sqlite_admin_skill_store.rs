@@ -1,6 +1,7 @@
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
+use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminSkillStore;
 use sdkwork_claw_product::ports::{
     AdminSkillStore, AdminSkillSubject, CreateAdminSkillArtifactCommand,
@@ -14,7 +15,6 @@ use sdkwork_claw_product::ports::{
     UpdateAdminSkillPackageCommand,
 };
 use serde_json::json;
-use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::Row;
 
 const TENANT_ID: i64 = 42;
@@ -24,17 +24,7 @@ const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 
 #[tokio::test]
 async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_lifecycle() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = SqliteAdminSkillStore::new(pool.clone());
     let subject = admin_subject();
@@ -721,17 +711,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
 
 #[tokio::test]
 async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_records() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = SqliteAdminSkillStore::new(pool.clone());
     let subject = admin_subject();
@@ -1106,17 +1086,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
 
 #[tokio::test]
 async fn sqlite_admin_skill_store_lists_skill_store_visible_catalog_scopes() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = repair_sqlite_pool().await;
 
     insert_admin_visible_skill_catalog(
         &pool,

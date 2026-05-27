@@ -295,6 +295,14 @@ class ClawRouterSdkGuardian:
                     f"{expected.family_directory} bin/generate-sdk.mjs must generate non-TypeScript SDKs "
                     "under <family>-<language>/generated/server-openapi"
                 )
+            if (
+                "cleanGeneratedOutput(language);" not in generate_script
+                or "function cleanGeneratedOutput(language)" not in generate_script
+            ):
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs must clean non-TypeScript "
+                    "generated transport output after generation"
+                )
             strict_type_script_body = self._javascript_function_body(generate_script, "strictTypeScriptArgs")
             if strict_type_script_body is None:
                 messages.append(f"{expected.family_directory} bin/generate-sdk.mjs must define strictTypeScriptArgs()")

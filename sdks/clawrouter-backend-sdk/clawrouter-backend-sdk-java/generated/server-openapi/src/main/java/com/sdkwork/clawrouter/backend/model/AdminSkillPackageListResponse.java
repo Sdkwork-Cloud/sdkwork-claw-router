@@ -8,7 +8,7 @@ public class AdminSkillPackageListResponse {
     public List<AdminSkillPackageItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminSkillPackageItem> items) {
         this.items = items;
     }

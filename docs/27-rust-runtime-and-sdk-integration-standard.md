@@ -1,4 +1,4 @@
-﻿# sdkwork-claw-router Rust Runtime and SDK Integration Standard
+# sdkwork-claw-router Rust Runtime and SDK Integration Standard
 
 ## 1. Purpose
 
@@ -154,7 +154,7 @@ The service/wrapper layer may:
 The service/wrapper layer must not:
 
 - call `fetch`, `axios`, or generic request helpers for app/backend business endpoints
-- manually build `Authorization` or `Sdkwork-Access-Token` headers in feature modules
+- manually build `Authorization` or `Access-Token` headers in feature modules
 - fork generated DTOs to hide missing SDK methods
 - return fake success for missing backend behavior
 - change UI visuals while replacing transport
@@ -199,7 +199,7 @@ The gateway boundary for `/v1/chat/completions` is named `OpenAIChatCompletionsR
 
 For Chat completions, a successful upstream provider response is not commercially complete until its OpenAI `usage` object has been converted into a `GatewayUsageRecordCommand` and persisted through the `GatewayUsageRecorder` port. Database-backed gateway bootstrap must inject `SqliteGatewayUsageRecorder` for SQLite and `PostgresGatewayUsageRecorder` for PostgreSQL so `ai_request_trace` receives the request audit fact and `ai_usage_fact` receives the billable usage fact with tenant, organization, user, API key, provider route, pricing snapshot, token counts, and request id. Missing required `usage` fields on a non-stream 2xx response returns `provider_usage_record_failed`; the runtime must not record zero-token fake usage. Streaming usage is an audited SSE finalization boundary: stream adapters must force upstream `stream_options.include_usage=true` while preserving other `stream_options` fields, and the gateway route must use `StreamingUsageRecordingBody` to parse the final provider usage event and persist it before the response body completes. If streaming usage is missing or usage recording fails, the body must fail instead of silently returning an unbillable success.
 
-The settlement closure after `ai_usage_fact` is asynchronous and idempotent. Runtime or worker bootstrap must use `UsageSettlementWorker`, `UsageSettlementWorkerConfig`, `UsageSettlementStore`, `UsageSettlementCommand`, and `UsageSettlementOutcome` rather than direct SQL in route handlers. The gateway runtime starts the settlement background worker only after schema readiness confirms the required usage, settlement, account, and ledger tables and the `settlement_id` usage column exist. `SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED`, `SDKWORK_CLAW_USAGE_SETTLEMENT_BATCH_SIZE`, and `SDKWORK_CLAW_USAGE_SETTLEMENT_INTERVAL_MILLIS` control deployment activation, batch size, and loop cadence. SQLite deployments use `SqliteUsageSettlementStore`; PostgreSQL deployments use `PostgresUsageSettlementStore` with row locking and `FOR UPDATE SKIP LOCKED`. The settlement store writes `commerce_usage_settlement`, debits the `plus_account` points account, inserts `plus_account_history` as the final account ledger fact, and updates `ai_usage_fact.settlement_status` and `settlement_id`. If available points are insufficient, the store records `INSUFFICIENT_POINTS` on `commerce_usage_settlement`, keeps the balance unchanged, and leaves the usage fact retryable after recharge.
+The settlement closure after `ai_usage_fact` is asynchronous and idempotent. Runtime or worker bootstrap must use `UsageSettlementWorker`, `UsageSettlementWorkerConfig`, `UsageSettlementStore`, `UsageSettlementCommand`, and `UsageSettlementOutcome` rather than direct SQL in route handlers. The gateway runtime starts the settlement background worker only after schema readiness confirms the required usage, settlement, account, and ledger tables and the `settlement_id` usage column exist. `SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED`, `SDKWORK_CLAW_USAGE_SETTLEMENT_BATCH_SIZE`, and `SDKWORK_CLAW_USAGE_SETTLEMENT_INTERVAL_MILLIS` control deployment activation, batch size, and loop cadence. SQLite deployments use `SqliteUsageSettlementStore`; PostgreSQL deployments use `PostgresUsageSettlementStore` with row locking and `FOR UPDATE SKIP LOCKED`. The settlement store writes `commerce_usage_settlement`, aggregates pending usage by tenant, organization, user, and currency before converting decimal customer charges into integer points, debits `commerce_account.available_amount` for the points account with an atomic balance guard, inserts `commerce_account_ledger_entry` as the final account ledger fact, and updates `ai_usage_fact.settlement_status` and `settlement_id`. Micro usage below the minimum billable point remains pending until later usage in the same account/currency makes the aggregate billable. If available points are insufficient, the store records `INSUFFICIENT_POINTS` on `commerce_usage_settlement`, keeps the balance unchanged, and leaves the usage fact retryable after recharge.
 
 The gateway boundary for `/v1/responses` is named `OpenAIResponsesRoute`. It performs the production-safe front half of the request before provider execution: parse request JSON, authenticate the API Key, validate model availability, require responses capability, select the configured provider route, and verify `LlmInputToken` pricing for the API Key group. Non-stream requests enter the `ResponsesRelay` product port through `ResponsesRelayRequest`; if no relay is configured, the route returns the OpenAI-compatible `responses_relay_not_configured` 501 error. Streaming requests return `streaming_relay_not_configured` until an audited SSE relay exists. Fake response objects, fake output items, fake usage, mock provider payloads, buffered fake chunks, or Java `PlusApiResult<T>` envelopes are forbidden.
 
@@ -286,7 +286,7 @@ python -B -m tools.api_contract_manifest --check
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.schema_quality_gate
 cargo test
-cargo fmt --check
+pnpm fmt:rust:check
 ```
 
 If SDK generation is changed, also run the relevant generator check from the owning SDK home. Generated SDK files remain generated artifacts and must not be manually edited.

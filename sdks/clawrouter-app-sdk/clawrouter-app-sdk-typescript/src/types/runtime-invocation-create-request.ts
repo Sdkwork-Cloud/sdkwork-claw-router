@@ -30,8 +30,6 @@ export interface RuntimeInvocationCreateRequest {
   permissionMode?: string;
   /** Provider field on runtime invocation create request. */
   provider?: string;
-  /** Request id field on runtime invocation create request. */
-  requestId?: string;
   /** Request json field on runtime invocation create request. */
   requestJson?: Record<string, JsonValue>;
   /** Runtime field on runtime invocation create request. */

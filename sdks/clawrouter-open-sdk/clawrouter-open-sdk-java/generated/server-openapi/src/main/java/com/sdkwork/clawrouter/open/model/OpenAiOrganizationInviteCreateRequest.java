@@ -10,7 +10,7 @@ public class OpenAiOrganizationInviteCreateRequest {
     public String getEmail() {
         return this.email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -18,7 +18,7 @@ public class OpenAiOrganizationInviteCreateRequest {
     public List<String> getProjects() {
         return this.projects;
     }
-    
+
     public void setProjects(List<String> projects) {
         this.projects = projects;
     }
@@ -26,7 +26,7 @@ public class OpenAiOrganizationInviteCreateRequest {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

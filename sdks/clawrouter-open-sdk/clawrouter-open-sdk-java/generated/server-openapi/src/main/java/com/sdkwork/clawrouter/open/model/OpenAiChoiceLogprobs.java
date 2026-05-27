@@ -9,7 +9,7 @@ public class OpenAiChoiceLogprobs {
     public List<OpenAiTokenLogprob> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<OpenAiTokenLogprob> content) {
         this.content = content;
     }
@@ -17,7 +17,7 @@ public class OpenAiChoiceLogprobs {
     public List<OpenAiTokenLogprob> getRefusal() {
         return this.refusal;
     }
-    
+
     public void setRefusal(List<OpenAiTokenLogprob> refusal) {
         this.refusal = refusal;
     }

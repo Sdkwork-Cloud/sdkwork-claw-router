@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -27,9 +29,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"providerCode":"OpenAI","name":"OpenAI production","secretRef":"vault://providers/openai/account/main","authType":"api-key"}"#,
                 ))
@@ -59,9 +59,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
                 .method("PUT")
                 .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"id":"1","name":"OpenAI rotated","secretRef":"vault://providers/openai/account/rotated","status":"disabled"}"#,
                 ))
@@ -90,9 +88,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(r#"{"providerCode":"openai"}"#))
                 .unwrap(),
         )
@@ -110,9 +106,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/provider_secrets/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -129,9 +123,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -181,9 +173,7 @@ async fn admin_provider_secret_route_rejects_plaintext_secret_without_calling_st
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"providerCode":"openai","name":"OpenAI production","secretRef":"vault://providers/openai/account/main","secretValue":"sk-live-secret"}"#,
                 ))
@@ -216,9 +206,7 @@ async fn admin_provider_secret_route_rejects_invalid_secret_ref_without_calling_
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"providerCode":"openai","name":"OpenAI production","secretRef":"plain-secret-path"}"#,
                 ))
@@ -253,9 +241,7 @@ async fn admin_provider_secret_route_rejects_plaintext_alias_and_empty_locator_w
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"providerCode":"openai","name":"OpenAI production","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret"}"#,
                 ))
@@ -278,9 +264,7 @@ async fn admin_provider_secret_route_rejects_plaintext_alias_and_empty_locator_w
                 .method("POST")
                 .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"providerCode":"openai","name":"OpenAI production","secretRef":"vault://"}"#,
                 ))

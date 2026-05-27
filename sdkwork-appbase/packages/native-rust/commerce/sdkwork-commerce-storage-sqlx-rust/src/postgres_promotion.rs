@@ -1,17 +1,19 @@
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_commerce_core::{
-    CommerceAccountAssetType, CommerceCouponStatus, CommerceLedgerDirection, CommerceServiceError,
+    CommerceAccountAssetType, CommerceLedgerDirection, CommerceServiceError,
 };
 use sdkwork_commerce_promotion::{
-    CurrentUserCouponItem, CurrentUserCouponListQuery, PointsBalance, PointsBalanceQuery,
-    PointsHistoryItem, PointsHistoryQuery, RedeemCodeCommand, RedeemCodeOutcome,
+    PointsBalance, PointsBalanceQuery, PointsHistoryItem, PointsHistoryQuery,
+    PromotionCodeRedemptionCommand, PromotionCodeRedemptionOutcome, PromotionUserCouponItem,
+    PromotionUserCouponListQuery,
 };
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 const POINTS_CURRENCY_CODE: &str = "POINT";
-const REDEMPTION_STATUS_SUCCEEDED: &str = "succeeded";
-const REDEEM_CODE_SCOPE: &str = "coupons.redeem.create";
+const PROMOTION_CODE_REDEMPTION_SCOPE: &str = "promotions.codes.redemptions.create";
+const USER_SUBJECT_TYPE: &str = "user";
+const PROMOTION_USER_COUPON_SOURCE_TYPE: &str = "promotion_user_coupon";
 
 #[derive(Debug, Clone)]
 pub struct PostgresCommercePromotionStore {
@@ -19,11 +21,19 @@ pub struct PostgresCommercePromotionStore {
 }
 
 #[derive(Debug, Clone)]
-struct RedeemTemplate {
-    id: String,
+struct RedeemPromotion {
+    code_id: String,
+    stock_id: String,
+    offer_id: String,
+    offer_version_id: String,
+    stock_type: String,
     discount_value: String,
-    total_quantity: i64,
-    claimed_quantity: i64,
+    currency_code: String,
+    total_quantity: Option<i64>,
+    available_quantity: i64,
+    stock_claimed_quantity: i64,
+    code_max_claims: i64,
+    code_claimed_quantity: i64,
     expires_at: Option<String>,
 }
 
@@ -38,34 +48,37 @@ impl PostgresCommercePromotionStore {
         Self { pool }
     }
 
-    pub async fn list_current_user_coupons(
+    pub async fn list_promotion_user_coupons(
         &self,
-        query: CurrentUserCouponListQuery,
-    ) -> Result<Vec<CurrentUserCouponItem>, CommerceServiceError> {
+        query: PromotionUserCouponListQuery,
+    ) -> Result<Vec<PromotionUserCouponItem>, CommerceServiceError> {
         let rows = sqlx::query(
             r#"
             SELECT c.id,
                    COALESCE(NULLIF(c.coupon_code, ''), '-') AS code,
-                   CAST(COALESCE(r.discount_amount, t.discount_value, '0') AS TEXT) AS amount,
-                   CAST(COALESCE(r.redeemed_at, c.redeemed_at, c.claimed_at, c.created_at) AS TEXT) AS date,
+                   CAST(COALESCE(a.discount_amount, v.discount_value, '0') AS TEXT) AS amount,
+                   CAST(COALESCE(a.applied_at, c.redeemed_at, c.claimed_at, c.created_at) AS TEXT) AS date,
                    c.status AS status
-            FROM commerce_coupon c
-            JOIN commerce_coupon_template t
-              ON t.tenant_id = c.tenant_id
-             AND t.id = c.template_id
-            LEFT JOIN commerce_coupon_redemption r
-              ON r.tenant_id = c.tenant_id
-             AND r.coupon_id = c.id
-             AND r.owner_user_id = c.owner_user_id
+            FROM promotion_user_coupon c
+            JOIN promotion_offer_version v
+              ON v.tenant_id = c.tenant_id
+             AND v.id = c.offer_version_id
+            LEFT JOIN promotion_discount_application a
+              ON a.tenant_id = c.tenant_id
+             AND a.user_coupon_id = c.id
+             AND a.subject_type = c.subject_type
+             AND a.subject_id = c.subject_id
             WHERE c.tenant_id = CAST($1 AS TEXT)
               AND ((c.organization_id = CAST($2 AS TEXT)) OR (c.organization_id IS NULL AND $2 IS NULL))
-              AND c.owner_user_id = CAST($3 AS TEXT)
-              AND ($4 IS NULL OR c.status = $4)
-            ORDER BY COALESCE(r.redeemed_at, c.redeemed_at, c.claimed_at, c.created_at) DESC NULLS LAST, c.id DESC
+              AND c.subject_type = $3
+              AND c.subject_id = CAST($4 AS TEXT)
+              AND ($5 IS NULL OR c.status = $5)
+            ORDER BY COALESCE(a.applied_at, c.redeemed_at, c.claimed_at, c.created_at) DESC NULLS LAST, c.id DESC
             "#,
         )
         .bind(&query.tenant_id)
         .bind(query.organization_id.as_deref())
+        .bind(USER_SUBJECT_TYPE)
         .bind(&query.owner_user_id)
         .bind(query.status.as_deref())
         .fetch_all(&self.pool)
@@ -76,7 +89,7 @@ impl PostgresCommercePromotionStore {
             .map(|row| {
                 let status = coupon_status_label(&required_status_cell(row, "status", "redeem")?)?
                     .to_owned();
-                CurrentUserCouponItem::new(
+                PromotionUserCouponItem::new(
                     &string_cell(row, "id"),
                     &string_cell(row, "code"),
                     &string_cell(row, "amount"),
@@ -161,28 +174,29 @@ impl PostgresCommercePromotionStore {
             .collect()
     }
 
-    pub async fn redeem_code(
+    pub async fn redeem_promotion_code(
         &self,
-        command: RedeemCodeCommand,
-    ) -> Result<RedeemCodeOutcome, CommerceServiceError> {
-        let mut tx = self
-            .pool
-            .begin()
-            .await
-            .map_err(|error| store_error("failed to begin redeem code transaction", error))?;
+        command: PromotionCodeRedemptionCommand,
+    ) -> Result<PromotionCodeRedemptionOutcome, CommerceServiceError> {
+        let mut tx = self.pool.begin().await.map_err(|error| {
+            store_error(
+                "failed to begin promotion code redemption transaction",
+                error,
+            )
+        })?;
         let now = current_timestamp_string();
         let request_hash = redeem_request_hash(&command);
         if let Some(row) = load_redeem_idempotency_row(&mut tx, &command).await? {
             if string_cell(&row, "request_hash") != request_hash {
                 return Err(CommerceServiceError::conflict(
-                    "idempotency key was used with a different redeem code request",
+                    "idempotency key was used with a different promotion code redemption request",
                 ));
             }
             if string_cell(&row, "status") == "completed" {
                 let outcome = replay_redeem_outcome(&row)?;
-                tx.commit()
-                    .await
-                    .map_err(|error| store_error("failed to commit redeem code replay", error))?;
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit promotion code redemption replay", error)
+                })?;
                 return Ok(outcome);
             }
             refresh_redeem_idempotency_lock(&mut tx, &command, &now).await?;
@@ -190,47 +204,67 @@ impl PostgresCommercePromotionStore {
             insert_redeem_idempotency_lock(&mut tx, &command, &request_hash, &now).await?;
         }
 
-        let template = load_template_for_redeem(&mut tx, &command, &now).await?;
-        ensure_template_can_be_redeemed(&mut tx, &command, &template).await?;
+        let promotion = load_promotion_for_redeem(&mut tx, &command, &now).await?;
+        ensure_promotion_can_be_redeemed(&mut tx, &command, &promotion).await?;
         let account = ensure_points_account(&mut tx, &command, &now).await?;
-        let credited_points = coupon_credit_points(&template.discount_value)?;
-        let balance_after = account.available_points + credited_points;
+        let credited_points = coupon_credit_points(&promotion.discount_value)?;
+        let balance_after = checked_points_add(account.available_points, credited_points)?;
         let coupon_id = coupon_id(&command);
-        let redemption_id = redemption_id(&command);
+        let coupon_ledger_entry_id = coupon_ledger_entry_id(&command);
 
-        insert_user_coupon(&mut tx, &command, &template, &coupon_id, &now).await?;
-        insert_coupon_redemption(
+        insert_user_coupon(&mut tx, &command, &promotion, &coupon_id, &now).await?;
+        insert_coupon_ledger_entry(
             &mut tx,
             &command,
-            &template,
+            &promotion,
             &coupon_id,
-            &redemption_id,
+            &coupon_ledger_entry_id,
             &now,
         )
         .await?;
-        update_template_counters(&mut tx, &template.id).await?;
-        update_account_points(&mut tx, &account.id, balance_after, &now).await?;
+        update_promotion_counters(&mut tx, &promotion, &now).await?;
+        update_account_points(
+            &mut tx,
+            &account.id,
+            account.available_points,
+            credited_points,
+            &now,
+        )
+        .await?;
         insert_account_ledger(
             &mut tx,
             &command,
             &account.id,
             balance_after,
             credited_points,
-            &redemption_id,
+            &coupon_id,
             &now,
         )
         .await?;
-        let outcome = RedeemCodeOutcome::new(
-            "Redeem code applied",
+        insert_redeem_billing_history(
+            &mut tx,
+            &command,
+            &coupon_id,
+            &points_to_money_string(credited_points),
+            &promotion.currency_code,
+            credited_points,
+            &now,
+        )
+        .await?;
+        let outcome = PromotionCodeRedemptionOutcome::new(
+            "Promotion code redeemed",
             &points_to_money_string(credited_points),
             credited_points,
             balance_after,
         )?;
         complete_redeem_idempotency(&mut tx, &command, &outcome, &now).await?;
 
-        tx.commit()
-            .await
-            .map_err(|error| store_error("failed to commit redeem code transaction", error))?;
+        tx.commit().await.map_err(|error| {
+            store_error(
+                "failed to commit promotion code redemption transaction",
+                error,
+            )
+        })?;
 
         Ok(outcome)
     }
@@ -238,7 +272,7 @@ impl PostgresCommercePromotionStore {
 
 async fn load_redeem_idempotency_row(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
 ) -> Result<Option<sqlx::postgres::PgRow>, CommerceServiceError> {
     sqlx::query(
         r#"
@@ -250,7 +284,7 @@ async fn load_redeem_idempotency_row(
         "#,
     )
     .bind(&command.tenant_id)
-    .bind(REDEEM_CODE_SCOPE)
+    .bind(PROMOTION_CODE_REDEMPTION_SCOPE)
     .bind(&command.idempotency_key)
     .fetch_optional(&mut **tx)
     .await
@@ -259,7 +293,7 @@ async fn load_redeem_idempotency_row(
 
 async fn refresh_redeem_idempotency_lock(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
     sqlx::query(
@@ -276,7 +310,7 @@ async fn refresh_redeem_idempotency_lock(
     .bind(now)
     .bind(now)
     .bind(&command.tenant_id)
-    .bind(REDEEM_CODE_SCOPE)
+    .bind(PROMOTION_CODE_REDEMPTION_SCOPE)
     .bind(&command.idempotency_key)
     .execute(&mut **tx)
     .await
@@ -286,7 +320,7 @@ async fn refresh_redeem_idempotency_lock(
 
 async fn insert_redeem_idempotency_lock(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
     request_hash: &str,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
@@ -302,7 +336,7 @@ async fn insert_redeem_idempotency_lock(
     .bind(redeem_idempotency_id(command))
     .bind(&command.tenant_id)
     .bind(command.organization_id.as_deref())
-    .bind(REDEEM_CODE_SCOPE)
+    .bind(PROMOTION_CODE_REDEMPTION_SCOPE)
     .bind(&command.idempotency_key)
     .bind(request_hash)
     .bind(now)
@@ -317,8 +351,8 @@ async fn insert_redeem_idempotency_lock(
 
 async fn complete_redeem_idempotency(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
-    outcome: &RedeemCodeOutcome,
+    command: &PromotionCodeRedemptionCommand,
+    outcome: &PromotionCodeRedemptionOutcome,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
     let response_json = serde_json::json!({
@@ -341,7 +375,7 @@ async fn complete_redeem_idempotency(
     .bind(response_json)
     .bind(now)
     .bind(&command.tenant_id)
-    .bind(REDEEM_CODE_SCOPE)
+    .bind(PROMOTION_CODE_REDEMPTION_SCOPE)
     .bind(&command.idempotency_key)
     .execute(&mut **tx)
     .await
@@ -351,7 +385,7 @@ async fn complete_redeem_idempotency(
 
 fn replay_redeem_outcome(
     row: &sqlx::postgres::PgRow,
-) -> Result<RedeemCodeOutcome, CommerceServiceError> {
+) -> Result<PromotionCodeRedemptionOutcome, CommerceServiceError> {
     let response_json = optional_string_cell(row, "response_json").ok_or_else(|| {
         CommerceServiceError::invalid_state("redeem idempotency record has no response")
     })?;
@@ -377,31 +411,55 @@ fn replay_redeem_outcome(
         .and_then(serde_json::Value::as_i64)
         .ok_or_else(|| CommerceServiceError::storage("redeem response balance is missing"))?;
 
-    RedeemCodeOutcome::new(message, amount, credited_points, balance)
+    PromotionCodeRedemptionOutcome::new(message, amount, credited_points, balance)
 }
 
-async fn load_template_for_redeem(
+async fn load_promotion_for_redeem(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
     now: &str,
-) -> Result<RedeemTemplate, CommerceServiceError> {
+) -> Result<RedeemPromotion, CommerceServiceError> {
     let row = sqlx::query(
         r#"
-        SELECT id,
-               CAST(discount_value AS TEXT) AS discount_value,
-               COALESCE(total_quantity, 0) AS total_quantity,
-               COALESCE(claimed_quantity, 0) AS claimed_quantity,
-               CAST(expires_at AS TEXT) AS expires_at
-        FROM commerce_coupon_template
-        WHERE tenant_id = CAST($1 AS TEXT)
-          AND ((organization_id = CAST($2 AS TEXT)) OR (organization_id IS NULL AND $2 IS NULL))
-          AND template_no = CAST($3 AS TEXT)
-          AND status = 'active'
-          AND (starts_at IS NULL OR starts_at <= $4)
-          AND (expires_at IS NULL OR expires_at >= $4)
-        ORDER BY organization_id DESC NULLS LAST, id ASC
+        SELECT pc.id AS code_id,
+               s.id AS stock_id,
+               pc.offer_id AS offer_id,
+               s.offer_version_id AS offer_version_id,
+               s.stock_type AS stock_type,
+               CAST(v.discount_value AS TEXT) AS discount_value,
+               COALESCE(v.currency_code, 'CNY') AS currency_code,
+               s.total_quantity AS total_quantity,
+               COALESCE(s.available_quantity, 0) AS available_quantity,
+               COALESCE(s.claimed_quantity, 0) AS stock_claimed_quantity,
+               COALESCE(pc.max_claims, 1) AS code_max_claims,
+               COALESCE(pc.claimed_quantity, 0) AS code_claimed_quantity,
+               CAST(COALESCE(pc.expires_at, s.expires_at, o.ends_at) AS TEXT) AS expires_at
+        FROM promotion_code pc
+        JOIN promotion_coupon_stock s
+          ON s.tenant_id = pc.tenant_id
+         AND s.id = pc.stock_id
+        JOIN promotion_offer o
+          ON o.tenant_id = pc.tenant_id
+         AND o.id = pc.offer_id
+        JOIN promotion_offer_version v
+          ON v.tenant_id = pc.tenant_id
+         AND v.id = s.offer_version_id
+        WHERE pc.tenant_id = CAST($1 AS TEXT)
+          AND ((pc.organization_id = CAST($2 AS TEXT)) OR (pc.organization_id IS NULL AND $2 IS NULL))
+          AND pc.promotion_code = CAST($3 AS TEXT)
+          AND pc.status = 'active'
+          AND s.status = 'active'
+          AND o.status = 'active'
+          AND v.lifecycle_status = 'published'
+          AND (pc.starts_at IS NULL OR pc.starts_at <= $4)
+          AND (pc.expires_at IS NULL OR pc.expires_at >= $4)
+          AND (s.starts_at IS NULL OR s.starts_at <= $4)
+          AND (s.expires_at IS NULL OR s.expires_at >= $4)
+          AND (o.starts_at IS NULL OR o.starts_at <= $4)
+          AND (o.ends_at IS NULL OR o.ends_at >= $4)
+        ORDER BY pc.organization_id DESC NULLS LAST, pc.id ASC
         LIMIT 1
-        FOR UPDATE
+        FOR UPDATE OF pc, s
         "#,
     )
     .bind(&command.tenant_id)
@@ -410,48 +468,71 @@ async fn load_template_for_redeem(
     .bind(now)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load redeem code", error))?
-    .ok_or_else(|| CommerceServiceError::conflict("redeem code is invalid or unavailable"))?;
+    .map_err(|error| store_error("failed to load promotion code", error))?
+    .ok_or_else(|| CommerceServiceError::conflict("promotion code is invalid or unavailable"))?;
 
-    Ok(RedeemTemplate {
-        id: string_cell(&row, "id"),
+    Ok(RedeemPromotion {
+        code_id: string_cell(&row, "code_id"),
+        stock_id: string_cell(&row, "stock_id"),
+        offer_id: string_cell(&row, "offer_id"),
+        offer_version_id: string_cell(&row, "offer_version_id"),
+        stock_type: string_cell(&row, "stock_type"),
         discount_value: string_cell(&row, "discount_value"),
-        total_quantity: integer_cell(&row, "total_quantity"),
-        claimed_quantity: integer_cell(&row, "claimed_quantity"),
+        currency_code: string_cell(&row, "currency_code"),
+        total_quantity: optional_integer_cell(&row, "total_quantity"),
+        available_quantity: integer_cell(&row, "available_quantity"),
+        stock_claimed_quantity: integer_cell(&row, "stock_claimed_quantity"),
+        code_max_claims: integer_cell(&row, "code_max_claims"),
+        code_claimed_quantity: integer_cell(&row, "code_claimed_quantity"),
         expires_at: optional_string_cell(&row, "expires_at"),
     })
 }
 
-async fn ensure_template_can_be_redeemed(
+async fn ensure_promotion_can_be_redeemed(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
-    template: &RedeemTemplate,
+    command: &PromotionCodeRedemptionCommand,
+    promotion: &RedeemPromotion,
 ) -> Result<(), CommerceServiceError> {
-    if template.total_quantity > 0 && template.claimed_quantity >= template.total_quantity {
+    let requires_stock_quantity = promotion_requires_stock_quantity(promotion);
+    if let Some(total_quantity) = promotion.total_quantity {
+        if promotion.stock_claimed_quantity >= total_quantity || promotion.available_quantity <= 0 {
+            return Err(CommerceServiceError::conflict(
+                "promotion code has reached its issue limit",
+            ));
+        }
+    } else if requires_stock_quantity && promotion.available_quantity <= 0 {
         return Err(CommerceServiceError::conflict(
-            "redeem code has reached its issue limit",
+            "promotion code has reached its issue limit",
+        ));
+    }
+    if promotion.code_max_claims > 0 && promotion.code_claimed_quantity >= promotion.code_max_claims
+    {
+        return Err(CommerceServiceError::conflict(
+            "promotion code has reached its issue limit",
         ));
     }
     let received_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM commerce_coupon
+        FROM promotion_user_coupon
         WHERE tenant_id = CAST($1 AS TEXT)
           AND ((organization_id = CAST($2 AS TEXT)) OR (organization_id IS NULL AND $2 IS NULL))
-          AND owner_user_id = CAST($3 AS TEXT)
-          AND template_id = $4
+          AND subject_type = $3
+          AND subject_id = CAST($4 AS TEXT)
+          AND code_id = $5
         "#,
     )
     .bind(&command.tenant_id)
     .bind(command.organization_id.as_deref())
+    .bind(USER_SUBJECT_TYPE)
     .bind(&command.owner_user_id)
-    .bind(&template.id)
+    .bind(&promotion.code_id)
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to check redeem code user limit", error))?;
+    .map_err(|error| store_error("failed to check promotion code subject limit", error))?;
     if received_count > 0 {
         return Err(CommerceServiceError::conflict(
-            "redeem code user receive limit has been reached",
+            "promotion code subject receive limit has been reached",
         ));
     }
     Ok(())
@@ -459,7 +540,7 @@ async fn ensure_template_can_be_redeemed(
 
 async fn ensure_points_account(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
     now: &str,
 ) -> Result<PointsAccount, CommerceServiceError> {
     if let Some(account) = load_points_account(tx, command).await? {
@@ -497,7 +578,7 @@ async fn ensure_points_account(
 
 async fn load_points_account(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
 ) -> Result<Option<PointsAccount>, CommerceServiceError> {
     let row = sqlx::query(
         r#"
@@ -531,29 +612,38 @@ async fn load_points_account(
 
 async fn insert_user_coupon(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
-    template: &RedeemTemplate,
+    command: &PromotionCodeRedemptionCommand,
+    promotion: &RedeemPromotion,
     coupon_id: &str,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
     sqlx::query(
         r#"
-        INSERT INTO commerce_coupon
-            (id, tenant_id, organization_id, template_id, owner_user_id, coupon_code, status,
-             claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key,
-             created_at, updated_at)
+        INSERT INTO promotion_user_coupon
+            (id, tenant_id, organization_id, coupon_no, stock_id, code_id, offer_id,
+             offer_version_id, subject_type, subject_id, owner_user_id, coupon_code,
+             status, claimed_at, valid_from, expires_at, redeemed_at, disabled_at,
+             request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, $5, $6, 'redeemed', $7, $8, $9, NULL, $10, $11, $12, $13)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12,
+             'redeemed', $13, $14, $15, $16, NULL, $17, $18, $19, $20)
         "#,
     )
     .bind(coupon_id)
     .bind(&command.tenant_id)
     .bind(command.organization_id.as_deref())
-    .bind(&template.id)
+    .bind(coupon_no(command))
+    .bind(&promotion.stock_id)
+    .bind(&promotion.code_id)
+    .bind(&promotion.offer_id)
+    .bind(&promotion.offer_version_id)
+    .bind(USER_SUBJECT_TYPE)
+    .bind(&command.owner_user_id)
     .bind(&command.owner_user_id)
     .bind(issued_coupon_code(command))
     .bind(now)
-    .bind(template.expires_at.as_deref())
+    .bind(now)
+    .bind(promotion.expires_at.as_deref())
     .bind(now)
     .bind(&command.request_no)
     .bind(&command.idempotency_key)
@@ -565,93 +655,163 @@ async fn insert_user_coupon(
     Ok(())
 }
 
-async fn insert_coupon_redemption(
+async fn insert_coupon_ledger_entry(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
-    template: &RedeemTemplate,
+    command: &PromotionCodeRedemptionCommand,
+    promotion: &RedeemPromotion,
     coupon_id: &str,
-    redemption_id: &str,
+    coupon_ledger_entry_id: &str,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
+    let balance_after = (promotion.available_quantity - 1).max(0);
     sqlx::query(
         r#"
-        INSERT INTO commerce_coupon_redemption
-            (id, tenant_id, organization_id, coupon_id, order_id, owner_user_id, discount_amount,
-             status, request_no, idempotency_key, redeemed_at, rolled_back_at, created_at, updated_at)
+        INSERT INTO promotion_coupon_ledger_entry
+            (id, tenant_id, organization_id, ledger_no, user_coupon_id, stock_id, offer_id,
+             subject_type, subject_id, direction, quantity_delta, balance_after, business_type,
+             source_type, source_id, request_no, idempotency_key, occurred_at, created_at)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NULL, $12, $13)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'debit', -1, $10, 'redeem',
+             $11, $12, $13, $14, $15, $16)
         "#,
     )
-    .bind(redemption_id)
+    .bind(coupon_ledger_entry_id)
     .bind(&command.tenant_id)
     .bind(command.organization_id.as_deref())
+    .bind(coupon_ledger_no(command))
     .bind(coupon_id)
-    .bind(&command.request_no)
+    .bind(&promotion.stock_id)
+    .bind(&promotion.offer_id)
+    .bind(USER_SUBJECT_TYPE)
     .bind(&command.owner_user_id)
-    .bind(&template.discount_value)
-    .bind(REDEMPTION_STATUS_SUCCEEDED)
+    .bind(balance_after)
+    .bind(PROMOTION_USER_COUPON_SOURCE_TYPE)
+    .bind(coupon_id)
     .bind(&command.request_no)
     .bind(&command.idempotency_key)
     .bind(now)
     .bind(now)
-    .bind(now)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to record coupon redemption", error))?;
+    .map_err(|error| store_error("failed to record promotion coupon ledger entry", error))?;
     Ok(())
 }
 
-async fn update_template_counters(
+async fn update_promotion_counters(
     tx: &mut Transaction<'_, Postgres>,
-    template_id: &str,
+    promotion: &RedeemPromotion,
+    now: &str,
 ) -> Result<(), CommerceServiceError> {
-    sqlx::query(
+    let requires_stock_quantity = if promotion_requires_stock_quantity(promotion) {
+        1_i64
+    } else {
+        0_i64
+    };
+    let stock_update = sqlx::query(
         r#"
-        UPDATE commerce_coupon_template
-        SET claimed_quantity = COALESCE(claimed_quantity, 0) + 1,
+        UPDATE promotion_coupon_stock
+        SET available_quantity = CASE
+                WHEN $1 = 1 THEN available_quantity - 1
+                ELSE available_quantity
+            END,
+            claimed_quantity = COALESCE(claimed_quantity, 0) + 1,
             redeemed_quantity = COALESCE(redeemed_quantity, 0) + 1,
-            updated_at = CURRENT_TIMESTAMP
-        WHERE id = $1
+            updated_at = $2
+        WHERE id = $3
+          AND status = 'active'
+          AND ($4 = 0 OR available_quantity > 0)
+          AND COALESCE(claimed_quantity, 0) = $5
+          AND ($6 IS NULL OR COALESCE(claimed_quantity, 0) < $7)
         "#,
     )
-    .bind(template_id)
+    .bind(requires_stock_quantity)
+    .bind(now)
+    .bind(&promotion.stock_id)
+    .bind(requires_stock_quantity)
+    .bind(promotion.stock_claimed_quantity)
+    .bind(promotion.total_quantity)
+    .bind(promotion.total_quantity)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to update coupon template counters", error))?;
+    .map_err(|error| store_error("failed to update promotion coupon stock counters", error))?;
+    if stock_update.rows_affected() != 1 {
+        return Err(CommerceServiceError::conflict(
+            "promotion coupon stock was not updated atomically",
+        ));
+    }
+
+    let code_update = sqlx::query(
+        r#"
+        UPDATE promotion_code
+        SET claimed_quantity = COALESCE(claimed_quantity, 0) + 1,
+            updated_at = $1
+        WHERE id = $2
+          AND status = 'active'
+          AND COALESCE(claimed_quantity, 0) = $3
+          AND ($4 <= 0 OR COALESCE(claimed_quantity, 0) < $5)
+        "#,
+    )
+    .bind(now)
+    .bind(&promotion.code_id)
+    .bind(promotion.code_claimed_quantity)
+    .bind(promotion.code_max_claims)
+    .bind(promotion.code_max_claims)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update promotion code counters", error))?;
+    if code_update.rows_affected() != 1 {
+        return Err(CommerceServiceError::conflict(
+            "promotion code counter was not updated atomically",
+        ));
+    }
     Ok(())
 }
 
 async fn update_account_points(
     tx: &mut Transaction<'_, Postgres>,
     account_id: &str,
-    balance_after: i64,
+    current_available_points: i64,
+    credited_points: i64,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
-    sqlx::query(
+    let max_allowed_before_credit = i64::MAX
+        .checked_sub(credited_points)
+        .ok_or_else(|| CommerceServiceError::storage("promotion credit points overflow"))?;
+    let account_update = sqlx::query(
         r#"
         UPDATE commerce_account
-        SET available_amount = $1,
+        SET available_amount = (available_amount::bigint + $1)::text,
             version = version + 1,
             updated_at = $2
         WHERE id = $3
+          AND COALESCE(available_amount, '') ~ '^[0-9]+$'
+          AND available_amount::bigint = $4
+          AND available_amount::bigint <= $5
         "#,
     )
-    .bind(balance_after.to_string())
+    .bind(credited_points)
     .bind(now)
     .bind(account_id)
+    .bind(current_available_points)
+    .bind(max_allowed_before_credit)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update account points", error))?;
+    if account_update.rows_affected() != 1 {
+        return Err(CommerceServiceError::conflict(
+            "promotion points account was not updated atomically",
+        ));
+    }
     Ok(())
 }
 
 async fn insert_account_ledger(
     tx: &mut Transaction<'_, Postgres>,
-    command: &RedeemCodeCommand,
+    command: &PromotionCodeRedemptionCommand,
     account_id: &str,
     balance_after: i64,
     credited_points: i64,
-    redemption_id: &str,
+    source_coupon_id: &str,
     now: &str,
 ) -> Result<(), CommerceServiceError> {
     sqlx::query(
@@ -661,7 +821,7 @@ async fn insert_account_ledger(
              amount, balance_after, business_type, transaction_no, request_no, idempotency_key,
              source_type, source_id, remark, created_at)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'redeem', $10, $11, $12, 'commerce_coupon_redemption', $13, $14, $15)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'redeem', $10, $11, $12, $13, $14, $15, $16)
         "#,
     )
     .bind(ledger_entry_id(command))
@@ -676,12 +836,55 @@ async fn insert_account_ledger(
     .bind(&command.request_no)
     .bind(&command.request_no)
     .bind(&command.idempotency_key)
-    .bind(redemption_id)
-    .bind(format!("redeem_code={}", command.code))
+    .bind(PROMOTION_USER_COUPON_SOURCE_TYPE)
+    .bind(source_coupon_id)
+    .bind(format!("redeem_promotion_code={}", command.code))
     .bind(now)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to insert account ledger entry", error))?;
+    Ok(())
+}
+
+async fn insert_redeem_billing_history(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &PromotionCodeRedemptionCommand,
+    source_coupon_id: &str,
+    amount: &str,
+    currency_code: &str,
+    credited_points: i64,
+    now: &str,
+) -> Result<(), CommerceServiceError> {
+    sqlx::query(
+        r#"
+        INSERT INTO commerce_billing_history
+            (id, tenant_id, organization_id, owner_user_id, history_no, history_type,
+             direction, asset_type, amount, currency_code, points_delta, status,
+             title, reference_no, source_type, source_id, related_order_id,
+             related_order_no, payment_method, occurred_at, metadata_json, created_at, updated_at)
+        VALUES
+            ($1, $2, $3, $4, $5, 'redeem',
+             'credit', 'points', $6, $7, $8, 'success',
+             'Promotion code redemption', $9, $10, $11, NULL,
+             NULL, NULL, $12, NULL, $12, $12)
+        ON CONFLICT (tenant_id, source_type, source_id) DO NOTHING
+        "#,
+    )
+    .bind(format!("billing-history-{source_coupon_id}"))
+    .bind(&command.tenant_id)
+    .bind(command.organization_id.as_deref())
+    .bind(&command.owner_user_id)
+    .bind(format!("BH-{source_coupon_id}"))
+    .bind(amount)
+    .bind(currency_code)
+    .bind(credited_points)
+    .bind(&command.code)
+    .bind(PROMOTION_USER_COUPON_SOURCE_TYPE)
+    .bind(source_coupon_id)
+    .bind(now)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert redeem billing history", error))?;
     Ok(())
 }
 
@@ -712,9 +915,12 @@ fn money_cents(value: &str) -> Result<i64, CommerceServiceError> {
             "invalid commerce money amount: {value}"
         )));
     }
-    let integer_cents = integer.parse::<i64>().map_err(|_| {
+    let integer_value = integer.parse::<i64>().map_err(|_| {
         CommerceServiceError::storage(format!("invalid commerce money amount: {value}"))
-    })? * 100;
+    })?;
+    let integer_cents = integer_value.checked_mul(100).ok_or_else(|| {
+        CommerceServiceError::storage(format!("commerce money amount is too large: {value}"))
+    })?;
     let fraction_cents = match fraction {
         Some(fraction) => {
             if fraction.is_empty()
@@ -736,16 +942,25 @@ fn money_cents(value: &str) -> Result<i64, CommerceServiceError> {
         }
         None => 0,
     };
-    Ok(integer_cents + fraction_cents)
+    integer_cents.checked_add(fraction_cents).ok_or_else(|| {
+        CommerceServiceError::storage(format!("commerce money amount is too large: {value}"))
+    })
+}
+
+fn checked_points_add(left: i64, right: i64) -> Result<i64, CommerceServiceError> {
+    left.checked_add(right)
+        .ok_or_else(|| CommerceServiceError::storage("promotion points balance overflow"))
+}
+
+fn promotion_requires_stock_quantity(promotion: &RedeemPromotion) -> bool {
+    promotion.total_quantity.is_some() || promotion.stock_type.trim() != "unlimited"
 }
 
 fn coupon_status_label(value: &str) -> Result<&'static str, CommerceServiceError> {
     match value.trim().to_ascii_lowercase().as_str() {
-        status if status == CommerceCouponStatus::Redeemed.as_str() => Ok("success"),
-        status if status == CommerceCouponStatus::Active.as_str() => Ok("pending"),
-        status if status == CommerceCouponStatus::Draft.as_str() => Ok("pending"),
-        status if status == CommerceCouponStatus::Expired.as_str() => Ok("failed"),
-        status if status == CommerceCouponStatus::Disabled.as_str() => Ok("failed"),
+        "redeemed" | "used" => Ok("success"),
+        "claimable" | "claimed" | "issued" | "active" | "draft" => Ok("pending"),
+        "expired" | "disabled" | "voided" | "cancelled" => Ok("failed"),
         status => Err(CommerceServiceError::storage(format!(
             "unsupported billing coupon status: {status}"
         ))),
@@ -793,7 +1008,7 @@ fn stable_storage_id(parts: &[&str]) -> String {
         .join("-")
 }
 
-fn account_id(command: &RedeemCodeCommand) -> String {
+fn account_id(command: &PromotionCodeRedemptionCommand) -> String {
     stable_storage_id(&[
         "account",
         &command.tenant_id,
@@ -804,32 +1019,48 @@ fn account_id(command: &RedeemCodeCommand) -> String {
     ])
 }
 
-fn coupon_id(command: &RedeemCodeCommand) -> String {
+fn coupon_id(command: &PromotionCodeRedemptionCommand) -> String {
     stable_storage_id(&["coupon", &command.tenant_id, &command.request_no])
 }
 
-fn redemption_id(command: &RedeemCodeCommand) -> String {
-    stable_storage_id(&["redemption", &command.tenant_id, &command.request_no])
+fn coupon_no(command: &PromotionCodeRedemptionCommand) -> String {
+    stable_storage_id(&["coupon-no", &command.tenant_id, &command.request_no])
 }
 
-fn ledger_entry_id(command: &RedeemCodeCommand) -> String {
+fn coupon_ledger_entry_id(command: &PromotionCodeRedemptionCommand) -> String {
+    stable_storage_id(&[
+        "promotion-coupon-ledger-entry",
+        &command.tenant_id,
+        &command.request_no,
+    ])
+}
+
+fn coupon_ledger_no(command: &PromotionCodeRedemptionCommand) -> String {
+    stable_storage_id(&[
+        "promotion-coupon-ledger",
+        &command.tenant_id,
+        &command.request_no,
+    ])
+}
+
+fn ledger_entry_id(command: &PromotionCodeRedemptionCommand) -> String {
     stable_storage_id(&["ledger", &command.tenant_id, &command.request_no])
 }
 
-fn issued_coupon_code(command: &RedeemCodeCommand) -> String {
+fn issued_coupon_code(command: &PromotionCodeRedemptionCommand) -> String {
     stable_storage_id(&["CP", &command.request_no])
 }
 
-fn redeem_idempotency_id(command: &RedeemCodeCommand) -> String {
+fn redeem_idempotency_id(command: &PromotionCodeRedemptionCommand) -> String {
     stable_storage_id(&[
         "idem",
         &command.tenant_id,
-        REDEEM_CODE_SCOPE,
+        PROMOTION_CODE_REDEMPTION_SCOPE,
         &command.idempotency_key,
     ])
 }
 
-fn redeem_request_hash(command: &RedeemCodeCommand) -> String {
+fn redeem_request_hash(command: &PromotionCodeRedemptionCommand) -> String {
     stable_storage_id(&[
         "redeem",
         &command.tenant_id,
@@ -875,6 +1106,16 @@ fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
         .unwrap_or(0)
 }
 
+fn optional_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<i64> {
+    row.try_get::<Option<i64>, _>(column)
+        .or_else(|_| {
+            row.try_get::<Option<i32>, _>(column)
+                .map(|value| value.map(i64::from))
+        })
+        .ok()
+        .flatten()
+}
+
 fn store_error(context: &str, error: sqlx::Error) -> CommerceServiceError {
     CommerceServiceError::storage(format!("{context}: {error}"))
 }
@@ -910,4 +1151,26 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
     let month = month_prime + if month_prime < 10 { 3 } else { -9 };
     let year = year + if month <= 2 { 1 } else { 0 };
     (year, month, day)
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn postgres_promotion_redeem_updates_use_atomic_guards() {
+        let source = include_str!("postgres_promotion.rs");
+        let stock_update = source
+            .split("UPDATE promotion_coupon_stock")
+            .nth(1)
+            .expect("promotion stock update");
+        let account_update = source
+            .split("UPDATE commerce_account")
+            .nth(1)
+            .expect("commerce account update");
+
+        assert!(stock_update.contains("available_quantity > 0"));
+        assert!(stock_update.contains("stock_update.rows_affected() != 1"));
+        assert!(source.contains("code_update.rows_affected() != 1"));
+        assert!(account_update.contains("available_amount::bigint = $4"));
+        assert!(source.contains("account_update.rows_affected() != 1"));
+    }
 }

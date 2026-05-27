@@ -11,7 +11,7 @@ class AgentsApi {
 
   AgentsApi(this._client);
 
-  /// List user agents
+  /// List Playground agent definitions
   Future<AgentDefinitionsListResult?> agentDefinitionsList([int? page, int? pageSize, String? q]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
@@ -25,7 +25,7 @@ class AgentsApi {
     })();
   }
 
-  /// Create user agent
+  /// Create Playground agent definition
   Future<AgentDefinitionsCreateResult?> agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
@@ -42,7 +42,7 @@ class AgentsApi {
     })();
   }
 
-  /// Retrieve agent run
+  /// Retrieve Playground agent run
   Future<AgentRunsRetrieveResult?> agentRunsRetrieve(String runId) async {
     final response = await _client.get(ApiPaths.appPath('/agents/runs/${serializePathParameter(runId, const PathParameterSpec('runId', 'simple', false))}'));
     return (() {
@@ -51,7 +51,7 @@ class AgentsApi {
     })();
   }
 
-  /// Complete agent run
+  /// Complete Playground agent run
   Future<AgentRunsSubmitResult?> agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
@@ -68,7 +68,7 @@ class AgentsApi {
     })();
   }
 
-  /// List agent run steps
+  /// List Playground agent run steps
   Future<AgentRunStepsListResult?> agentRunStepsList(String runId, [int? page, int? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
@@ -81,7 +81,7 @@ class AgentsApi {
     })();
   }
 
-  /// Create agent run step
+  /// Create Playground agent run step
   Future<AgentRunStepsCreateResult?> agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
@@ -98,7 +98,7 @@ class AgentsApi {
     })();
   }
 
-  /// Complete agent run step
+  /// Complete Playground agent run step
   Future<AgentRunStepsSubmitResult?> agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
@@ -115,7 +115,7 @@ class AgentsApi {
     })();
   }
 
-  /// Retrieve agent session
+  /// Retrieve Playground agent session
   Future<AgentSessionsRetrieveResult?> agentSessionsRetrieve(String sessionId) async {
     final response = await _client.get(ApiPaths.appPath('/agents/sessions/${serializePathParameter(sessionId, const PathParameterSpec('sessionId', 'simple', false))}'));
     return (() {
@@ -124,7 +124,7 @@ class AgentsApi {
     })();
   }
 
-  /// List agent session runs
+  /// List Playground agent runs
   Future<AgentRunsListResult?> agentRunsList(String sessionId, [int? page, int? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
@@ -137,7 +137,7 @@ class AgentsApi {
     })();
   }
 
-  /// Create agent run
+  /// Create Playground agent run
   Future<AgentRunsCreateResult?> agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
@@ -154,7 +154,7 @@ class AgentsApi {
     })();
   }
 
-  /// Retrieve user agent
+  /// Retrieve Playground agent definition
   Future<AgentDefinitionsRetrieveResult?> agentDefinitionsRetrieve(String agentId) async {
     final response = await _client.get(ApiPaths.appPath('/agents/${serializePathParameter(agentId, const PathParameterSpec('agentId', 'simple', false))}'));
     return (() {
@@ -163,7 +163,7 @@ class AgentsApi {
     })();
   }
 
-  /// List agent sessions
+  /// List Playground agent sessions
   Future<AgentSessionsListResult?> agentSessionsList(String agentId, [int? page, int? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
@@ -176,7 +176,7 @@ class AgentsApi {
     })();
   }
 
-  /// Create agent session
+  /// Create Playground agent session
   Future<AgentSessionsCreateResult?> agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{

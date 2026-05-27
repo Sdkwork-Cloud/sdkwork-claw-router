@@ -18,8 +18,11 @@ import type { UsageLogsResponse as SdkUsageLogsResponse } from '@sdkwork/clawrou
 const MAX_USAGE_LOG_PAGE_SIZE = 100;
 const MAX_USAGE_LOG_QUERY_TEXT_LENGTH = 128;
 const MAX_USAGE_LOG_TIMESTAMP_LENGTH = 64;
+const SPEND_DECIMAL_DIGITS = 9;
+const DEFAULT_DECIMAL_DIGITS = 6;
 
 type UsageLogStatus = 'all' | 'success' | 'error';
+type UsageLogResultStatus = 'success' | 'error';
 
 export interface UsageLog {
   id: SdkUsageLogsResponse['logs'][number]['id'];
@@ -29,6 +32,13 @@ export interface UsageLog {
   group: SdkUsageLogsResponse['logs'][number]['group'];
   type: SdkUsageLogsResponse['logs'][number]['type'];
   model: SdkUsageLogsResponse['logs'][number]['model'];
+  providerNativeModel: SdkUsageLogsResponse['logs'][number]['providerNativeModel'];
+  requestedModelCatalogKey: SdkUsageLogsResponse['logs'][number]['requestedModelCatalogKey'];
+  status: UsageLogResultStatus;
+  httpStatus: number;
+  errorCode: string;
+  errorType: string;
+  errorMessage: string;
   totalTime: SdkUsageLogsResponse['logs'][number]['totalTime'];
   ttft: SdkUsageLogsResponse['logs'][number]['ttft'];
   isStream: SdkUsageLogsResponse['logs'][number]['isStream'];
@@ -107,6 +117,14 @@ function optionalUsageLogStatus(value: unknown): UsageLogStatus | undefined {
 
 function normalizeUsageLog(value: unknown): UsageLog {
   const item = readRequiredRecord(value, 'Usage log record is required');
+  const httpStatus = readOptionalNonNegativeNumber(item, 'httpStatus');
+  const errorCode = readOptionalString(item, 'errorCode');
+  const errorType = readOptionalString(item, 'errorType');
+  const errorMessage = readOptionalString(item, 'errorMessage');
+  const status = readOptionalUsageLogResultStatus(item, 'status')
+    ?? ((httpStatus >= 400 || errorCode || errorType || errorMessage) ? 'error' : 'success');
+  const model = readRequiredString(item, 'model', 'Usage log model is required');
+  const providerNativeModel = readOptionalString(item, 'providerNativeModel') || model;
   return {
     id: readRequiredString(item, 'id', 'Usage log id is required'),
     requestId: readRequiredString(item, 'requestId', 'Usage log request id is required'),
@@ -114,7 +132,14 @@ function normalizeUsageLog(value: unknown): UsageLog {
     tokenName: readRequiredString(item, 'tokenName', 'Usage log token name is required'),
     group: readRequiredString(item, 'group', 'Usage log group is required'),
     type: readRequiredString(item, 'type', 'Usage log type is required'),
-    model: readRequiredString(item, 'model', 'Usage log model is required'),
+    model,
+    providerNativeModel,
+    requestedModelCatalogKey: readOptionalString(item, 'requestedModelCatalogKey'),
+    status,
+    httpStatus,
+    errorCode,
+    errorType,
+    errorMessage,
     totalTime: readRequiredString(item, 'totalTime', 'Usage log total time is required'),
     ttft: readRequiredString(item, 'ttft', 'Usage log TTFT is required'),
     isStream: readRequiredBoolean(item, 'isStream', 'Usage log stream flag is required'),
@@ -126,6 +151,7 @@ function normalizeUsageLog(value: unknown): UsageLog {
       'cost',
       'Usage log cost is required',
       'Usage log cost must be a decimal string',
+      SPEND_DECIMAL_DIGITS,
     ),
     multiplier: readRequiredDecimalString(
       item,
@@ -157,6 +183,37 @@ function normalizeUsageLog(value: unknown): UsageLog {
   };
 }
 
+function readOptionalString(record: ApiRecord, key: string): string {
+  const value = record[key];
+  if (value === undefined || value === null) {
+    return '';
+  }
+  return String(value).trim();
+}
+
+function readOptionalNonNegativeNumber(record: ApiRecord, key: string): number {
+  const value = record[key];
+  if (value === undefined || value === null || value === '') {
+    return 0;
+  }
+  const parsed = typeof value === 'number' ? value : Number(String(value).trim());
+  if (Number.isFinite(parsed) && parsed >= 0) {
+    return parsed;
+  }
+  throw new Error(`Usage log ${key} must be a non-negative number`);
+}
+
+function readOptionalUsageLogResultStatus(record: ApiRecord, key: string): UsageLogResultStatus | undefined {
+  const value = readOptionalString(record, key).toLowerCase();
+  if (!value) {
+    return undefined;
+  }
+  if (value === 'success' || value === 'error') {
+    return value;
+  }
+  throw new Error('Usage log status must be success or error');
+}
+
 function readRequiredRecord(value: unknown, message: string): ApiRecord {
   if (!isRecord(value)) {
     throw new Error(message);
@@ -185,6 +242,7 @@ function readRequiredDecimalString(
   key: string,
   missingMessage: string,
   invalidMessage: string,
+  digits = DEFAULT_DECIMAL_DIGITS,
 ): string {
   const value = record[key];
   if (typeof value !== 'string' && typeof value !== 'number') {
@@ -194,8 +252,8 @@ function readRequiredDecimalString(
   if (!normalized) {
     throw new Error(missingMessage);
   }
-  if (!/^-?\d+(?:\.\d{1,6})?$/.test(normalized)) {
+  if (!new RegExp(`^-?\\d+(?:\\.\\d{1,${digits}})?$`).test(normalized)) {
     throw new Error(invalidMessage);
   }
-  return readDecimalString(record, key);
+  return readDecimalString(record, key, digits);
 }

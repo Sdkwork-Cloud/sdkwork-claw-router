@@ -1,26 +1,16 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import {
   Check,
   ChevronDown,
-  CircleDollarSign,
-  Crown,
   Globe,
-  Handshake,
-  Home,
-  Megaphone,
   Menu,
   Moon,
-  Package,
   Shield,
-  ShoppingBag,
-  ShoppingCart,
   Sun,
   Terminal,
-  Wrench,
   X,
-  type LucideIcon,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -29,97 +19,15 @@ import {
   subscribePortalSessionChange,
 } from 'sdkwork-claw-router-commons/runtime';
 import { useSiteBranding } from 'sdkwork-claw-router-commons/runtime';
+import { ADMIN_MODULES, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry';
 
-export type AdminModuleId = 'home' | 'appCenter' | 'productCenter' | 'transactionCenter' | 'memberCenter' | 'marketingCenter' | 'financeCenter' | 'operations' | 'serviceProviderCenter';
+export { ADMIN_MODULES, getActiveModuleFromPath, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry';
 
 interface AdminHeaderProps {
   isDark: boolean;
   toggleTheme: () => void;
   activeModule: AdminModuleId;
   onModuleChange: (moduleId: AdminModuleId) => void;
-}
-
-interface AdminModuleDef {
-  id: AdminModuleId;
-  nameKey: string;
-  icon: LucideIcon;
-  defaultPath: string;
-  pathPrefixes: string[];
-}
-
-export const ADMIN_MODULES: AdminModuleDef[] = [
-  {
-    id: 'home',
-    nameKey: 'admin.header.home',
-    icon: Home,
-    defaultPath: '/admin/dashboard',
-    pathPrefixes: ['/admin/dashboard', '/admin/user', '/admin/group', '/admin/model', '/admin/agents', '/admin/skill', '/admin/channel', '/admin/record', '/admin/analytics', '/admin/announcement'],
-  },
-  {
-    id: 'appCenter',
-    nameKey: 'admin.header.appCenter',
-    icon: Package,
-    defaultPath: '/admin/app',
-    pathPrefixes: ['/admin/app', '/admin/open-platform'],
-  },
-  {
-    id: 'productCenter',
-    nameKey: 'admin.header.productCenter',
-    icon: ShoppingBag,
-    defaultPath: '/admin/catalog/products',
-    pathPrefixes: ['/admin/catalog', '/admin/inventory'],
-  },
-  {
-    id: 'transactionCenter',
-    nameKey: 'admin.header.transactionCenter',
-    icon: ShoppingCart,
-    defaultPath: '/admin/orders/orders',
-    pathPrefixes: ['/admin/orders', '/admin/payments'],
-  },
-  {
-    id: 'memberCenter',
-    nameKey: 'admin.header.memberCenter',
-    icon: Crown,
-    defaultPath: '/admin/memberships/packages',
-    pathPrefixes: ['/admin/memberships'],
-  },
-  {
-    id: 'marketingCenter',
-    nameKey: 'admin.header.marketingCenter',
-    icon: Megaphone,
-    defaultPath: '/admin/marketing/referrals',
-    pathPrefixes: ['/admin/marketing'],
-  },
-  {
-    id: 'financeCenter',
-    nameKey: 'admin.header.financeCenter',
-    icon: CircleDollarSign,
-    defaultPath: '/admin/finance/order-revenue',
-    pathPrefixes: ['/admin/finance', '/admin/wallet'],
-  },
-  {
-    id: 'operations',
-    nameKey: 'admin.header.operations',
-    icon: Wrench,
-    defaultPath: '/admin/monitor',
-    pathPrefixes: ['/admin/ratelimit', '/admin/monitor', '/admin/cache', '/admin/settings', '/admin/site'],
-  },
-  {
-    id: 'serviceProviderCenter',
-    nameKey: 'admin.header.serviceProviderCenter',
-    icon: Handshake,
-    defaultPath: '/admin/service-providers/accounts',
-    pathPrefixes: ['/admin/service-providers'],
-  },
-];
-
-export function getActiveModuleFromPath(pathname: string): AdminModuleId {
-  for (const mod of ADMIN_MODULES) {
-    if (mod.pathPrefixes.some((prefix) => pathname.startsWith(prefix))) {
-      return mod.id;
-    }
-  }
-  return 'home';
 }
 
 export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange }: AdminHeaderProps) {
@@ -186,7 +94,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
       }`}
     >
       <div className="mx-auto flex w-full items-center justify-between px-4 md:px-6 lg:px-8">
-        <div className="flex items-center gap-6">
+        <div className="flex shrink-0 items-center gap-6">
           <Link to="/" className="flex items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
               {siteBranding.logoUrl ? (
@@ -205,7 +113,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
           </div>
         </div>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden min-w-0 flex-1 items-center gap-1 overflow-x-auto px-3 md:flex">
           {ADMIN_MODULES.map((mod) => {
             const isActive = activeModule === mod.id;
             const Icon = mod.icon;
@@ -213,7 +121,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
               <button
                 key={mod.id}
                 onClick={() => handleModuleClick(mod)}
-                className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all ${
+                className={`flex shrink-0 items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all lg:px-4 ${
                   isActive
                     ? 'bg-white/15 text-white shadow-sm'
                     : 'text-slate-300 hover:bg-white/10 hover:text-white'
@@ -227,7 +135,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden shrink-0 items-center gap-3 md:flex">
           <div className="relative" ref={langMenuRef}>
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}

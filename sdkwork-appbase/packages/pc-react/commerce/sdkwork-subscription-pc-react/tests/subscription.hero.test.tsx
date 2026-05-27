@@ -8,13 +8,13 @@ const summary = {
   currentLevelValue: 3,
   growthValue: 180,
   isAuthenticated: true,
-  isVip: true,
+  isMember: true,
   pointBalance: 2400,
   remainingDays: 88,
-  status: "vip" as const,
+  status: "active" as const,
   totalSpent: 399,
   upgradeGrowthValue: 500,
-  vipPoints: 3200,
+  points: 3200,
 };
 
 describe("sdkwork-subscription-pc-react hero", () => {

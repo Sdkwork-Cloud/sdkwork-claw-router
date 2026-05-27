@@ -17,11 +17,11 @@ import {
 } from "@sdkwork/points-pc-react";
 import { createSubscriptionRouteIntent } from "@sdkwork/subscription-pc-react";
 import {
-  createSdkworkVipService,
-  type SdkworkVipDashboardData,
-  type SdkworkVipPlan,
-  type SdkworkVipService,
-} from "@sdkwork/vip-pc-react";
+  createSdkworkMembershipService,
+  type SdkworkMembershipDashboardData,
+  type SdkworkMembershipPlan,
+  type SdkworkMembershipService,
+} from "@sdkwork/membership-pc-react";
 import {
   createSdkworkWalletService,
   type SdkworkWalletOverview,
@@ -44,7 +44,7 @@ import { createSdkworkCommercialAction } from "./commercial-action";
 export interface SdkworkOfferDashboardSources {
   couponDashboard: SdkworkCouponDashboardData;
   pointsDashboard: SdkworkPointsDashboardData;
-  vipDashboard: SdkworkVipDashboardData;
+  membershipDashboard: SdkworkMembershipDashboardData;
   walletOverview: SdkworkWalletOverview;
 }
 
@@ -54,7 +54,7 @@ export interface CreateSdkworkOfferServiceOptions {
   locale?: string | null;
   messages?: SdkworkOfferMessagesOverrides;
   pointsService?: Pick<SdkworkPointsService, "getDashboard">;
-  vipService?: Pick<SdkworkVipService, "getDashboard">;
+  membershipService?: Pick<SdkworkMembershipService, "getDashboard">;
   walletService?: Pick<SdkworkWalletService, "getOverview">;
 }
 
@@ -72,13 +72,13 @@ function roundCurrency(value: number): number {
 }
 
 function resolveMembershipAction(
-  vipDashboard: SdkworkVipDashboardData,
+  membershipDashboard: SdkworkMembershipDashboardData,
 ): "purchase" | "renew" | "upgrade" {
-  if (!vipDashboard.summary.isVip) {
+  if (!membershipDashboard.summary.isMember) {
     return "purchase";
   }
 
-  if ((vipDashboard.summary.remainingDays ?? null) !== null && (vipDashboard.summary.remainingDays ?? 0) <= 30) {
+  if ((membershipDashboard.summary.remainingDays ?? null) !== null && (membershipDashboard.summary.remainingDays ?? 0) <= 30) {
     return "renew";
   }
 
@@ -97,12 +97,12 @@ function decorateOffer(offer: Omit<SdkworkCommercialOffer, "score">): SdkworkCom
 }
 
 function createMembershipOffers(
-  vipDashboard: SdkworkVipDashboardData,
+  membershipDashboard: SdkworkMembershipDashboardData,
   copy: ReturnType<typeof createSdkworkOfferMessages>,
 ): SdkworkCommercialOffer[] {
-  const action = resolveMembershipAction(vipDashboard);
+  const action = resolveMembershipAction(membershipDashboard);
 
-  return vipDashboard.plans.map((plan: SdkworkVipPlan) => {
+  return membershipDashboard.plans.map((plan: SdkworkMembershipPlan) => {
     const estimatedSavingsCny = Math.max(0, toSafeNumber(plan.originalPriceCny) - toSafeNumber(plan.priceCny));
 
     return decorateOffer({
@@ -245,7 +245,7 @@ export function composeSdkworkOfferDashboard(
   }
 
   const featuredOffers = sortSdkworkCommercialOffers([
-    ...createMembershipOffers(sources.vipDashboard, copy),
+    ...createMembershipOffers(sources.membershipDashboard, copy),
     ...createRechargeOffers(sources.pointsDashboard, copy),
     ...createCouponOffers(sources.couponDashboard, copy, sources.walletOverview.pointsToCashRate),
   ]);
@@ -258,11 +258,11 @@ export function composeSdkworkOfferDashboard(
       availablePoints: sources.walletOverview.account.availablePoints,
       claimableCoupons: sources.couponDashboard.catalogDigest.claimableCoupons,
       currentLevelName:
-        sources.vipDashboard.summary.currentLevelName
+        sources.membershipDashboard.summary.currentLevelName
         || copy.service.guestLabel,
       expiringSoonCoupons: sources.couponDashboard.userDigest.expiringSoonCoupons,
       isAuthenticated: true,
-      vipRemainingDays: sources.vipDashboard.summary.remainingDays,
+      membershipRemainingDays: sources.membershipDashboard.summary.remainingDays,
     },
   };
 }
@@ -280,7 +280,7 @@ export function createSdkworkOfferService(
   const pointsService = options.pointsService ?? createSdkworkPointsService({
     commerceService: options.commerceService,
   });
-  const vipService = options.vipService ?? createSdkworkVipService({
+  const membershipService = options.membershipService ?? createSdkworkMembershipService({
     commerceService: options.commerceService,
     locale: options.locale,
   });
@@ -295,17 +295,17 @@ export function createSdkworkOfferService(
         });
       }
 
-      const [couponDashboard, pointsDashboard, vipDashboard] = await Promise.all([
+      const [couponDashboard, pointsDashboard, membershipDashboard] = await Promise.all([
         couponService.getDashboard(),
         pointsService.getDashboard(),
-        vipService.getDashboard(),
+        membershipService.getDashboard(),
       ]);
 
       return composeSdkworkOfferDashboard(
         {
           couponDashboard,
           pointsDashboard,
-          vipDashboard,
+          membershipDashboard,
           walletOverview,
         },
         {

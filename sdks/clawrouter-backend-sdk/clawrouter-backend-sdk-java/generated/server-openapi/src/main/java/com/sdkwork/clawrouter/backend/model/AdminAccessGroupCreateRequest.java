@@ -14,7 +14,7 @@ public class AdminAccessGroupCreateRequest {
     public String getBillingType() {
         return this.billingType;
     }
-    
+
     public void setBillingType(String billingType) {
         this.billingType = billingType;
     }
@@ -22,7 +22,7 @@ public class AdminAccessGroupCreateRequest {
     public Map<String, Object> getCapacity() {
         return this.capacity;
     }
-    
+
     public void setCapacity(Map<String, Object> capacity) {
         this.capacity = capacity;
     }
@@ -30,7 +30,7 @@ public class AdminAccessGroupCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -38,7 +38,7 @@ public class AdminAccessGroupCreateRequest {
     public String getPlatform() {
         return this.platform;
     }
-    
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -46,7 +46,7 @@ public class AdminAccessGroupCreateRequest {
     public Double getRateMultiplier() {
         return this.rateMultiplier;
     }
-    
+
     public void setRateMultiplier(Double rateMultiplier) {
         this.rateMultiplier = rateMultiplier;
     }
@@ -54,7 +54,7 @@ public class AdminAccessGroupCreateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -62,7 +62,7 @@ public class AdminAccessGroupCreateRequest {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

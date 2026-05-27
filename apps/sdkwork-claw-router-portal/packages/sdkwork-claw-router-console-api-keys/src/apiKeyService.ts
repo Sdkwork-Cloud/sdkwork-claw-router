@@ -1,15 +1,16 @@
+import { createRequestToken } from 'sdkwork-claw-router-commons/request-id';
+import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/sdk-clients';
 import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
-  getClawRouterAppSdkClient,
   isRecord,
+  readBoolean,
   readRequiredApiItem,
   readApiRecord,
   readNullableString,
   readRequiredApiItems,
   readRequiredString,
   readString,
-} from 'sdkwork-claw-router-commons/runtime';
+} from 'sdkwork-claw-router-commons/api-result';
 import type { CreateApiKeyRequest, UpdateApiKeyRequest } from '@sdkwork/clawrouter-app-sdk';
 import type {
   AppApiKeyGroupListResponse as SdkAppApiKeyGroupListResponse,
@@ -35,6 +36,7 @@ export interface ApiKey {
   created: SdkAppApiKeyItem['created'];
   expires: SdkAppApiKeyItem['expires'];
   status: SdkAppApiKeyItem['status'];
+  defaultForRuntime: SdkAppApiKeyItem['defaultForRuntime'];
 }
 
 export interface ApiKeyGroup {
@@ -52,6 +54,7 @@ export interface CreateApiKeyInput {
   modalities: string[];
   ipLimit: string;
   expires: string;
+  defaultForRuntime?: boolean;
 }
 
 export interface CreatedApiKey {
@@ -90,11 +93,10 @@ export class ApiKeyService {
 
   static async createKey(input: CreateApiKeyInput): Promise<CreatedApiKey> {
     const idempotencyKey = createRequestToken('create-api-key');
-    const requestId = createRequestToken('request');
     try {
       const result = await getClawRouterAppSdkClient().iam.apiKeys.create(
         toCreateApiKeyRequest(input),
-        { idempotencyKey, xRequestId: requestId },
+        { idempotencyKey },
       );
 
       const data = readApiRecord(result);
@@ -113,12 +115,10 @@ export class ApiKeyService {
   }
 
   static async updateKey(keyId: string, input: UpdateApiKeyInput): Promise<ApiKey> {
-    const requestId = createRequestToken('request');
     try {
       const result = await getClawRouterAppSdkClient().iam.apiKeys.update(
         requiredText(keyId, 'apiKeyId'),
         toUpdateApiKeyRequest(input),
-        { xRequestId: requestId },
       );
       const key = normalizeApiKey(readRequiredApiItem(result, 'API key update response is missing key data', ['item']));
       return key;
@@ -148,7 +148,7 @@ function readSdkErrorMessage(error: unknown, fallback: string): string {
 }
 
 function toCreateApiKeyRequest(input: CreateApiKeyInput): CreateApiKeyRequest {
-  return {
+  const request: CreateApiKeyRequest = {
     name: requiredText(input.name, 'name'),
     group: optionalText(input.group) ?? DEFAULT_API_KEY_GROUP,
     quota: decimalQuota(input.quota),
@@ -157,6 +157,10 @@ function toCreateApiKeyRequest(input: CreateApiKeyInput): CreateApiKeyRequest {
     ipLimit: optionalText(input.ipLimit) ?? 'unrestricted',
     expires: optionalText(input.expires) ?? 'never',
   };
+  if (input.defaultForRuntime !== undefined) {
+    request.defaultForRuntime = Boolean(input.defaultForRuntime);
+  }
+  return request;
 }
 
 function toUpdateApiKeyRequest(input: UpdateApiKeyInput): UpdateApiKeyRequest {
@@ -181,6 +185,9 @@ function toUpdateApiKeyRequest(input: UpdateApiKeyInput): UpdateApiKeyRequest {
   }
   if (input.expires !== undefined) {
     request.expires = optionalText(input.expires) ?? 'never';
+  }
+  if (input.defaultForRuntime !== undefined) {
+    request.defaultForRuntime = Boolean(input.defaultForRuntime);
   }
   return request;
 }
@@ -231,6 +238,7 @@ function normalizeApiKey(value: unknown): ApiKey {
     created: readRequiredString(value, 'created', 'API key created time is required'),
     expires: readRequiredString(value, 'expires', 'API key expiration is required'),
     status: readApiKeyStatus(value),
+    defaultForRuntime: readBoolean(value, 'defaultForRuntime'),
   };
 }
 

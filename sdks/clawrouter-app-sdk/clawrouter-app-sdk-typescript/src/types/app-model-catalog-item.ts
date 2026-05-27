@@ -20,7 +20,7 @@ export interface AppModelCatalogItem {
   /** Display name field on app model catalog item. */
   displayName: string;
   /** Groups field on app model catalog item. */
-  groups: ('default' | 'vip' | 'enterprise' | 'beta')[];
+  groups: string[];
   /** Input modalities field on app model catalog item. */
   inputModalities: string[];
   /** Limitations field on app model catalog item. */

@@ -4,10 +4,11 @@ import {
   createRequestToken,
   isRecord,
   readApiRecord,
-  readRequiredApiItems,
+  readRequiredString,
   readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
+import { RechargeService, type BillingHistoryItem } from 'sdkwork-claw-router-console-recharge';
 
 export interface CommerceHistoryItem {
   id: string;
@@ -27,28 +28,24 @@ export interface RechargeHistoryItem extends CommerceHistoryItem {
 
 export class WalletService {
   static async fetchRedeemHistory(): Promise<RedeemHistoryItem[]> {
-    const result = await appCouponsList({ page: 1, pageSize: 100, status: 'redeemed' });
-    return readRequiredApiItems(result, 'console.billing.errors.redeemHistoryFallback')
-      .map(normalizeRedeemHistoryItem);
+    const history = await RechargeService.fetchBillingHistory({ type: 'redeem' });
+    return history.map(normalizeRedeemHistoryItem);
   }
 
   static async fetchRechargeHistory(): Promise<RechargeHistoryItem[]> {
-    const result = await appWalletLedgerEntriesList({ page: 1, pageSize: 100, status: 'posted' });
-    return readRequiredApiItems(result, 'console.billing.errors.rechargeHistoryFallback')
-      .map(normalizeRechargeHistoryItem);
+    const history = await RechargeService.fetchBillingHistory({ type: 'recharge' });
+    return history.map(normalizeRechargeHistoryItem);
   }
 
   static async redeemCode(code: string): Promise<{ success: boolean; message: string; amount?: string }> {
     try {
       const normalizedCode = requiredText(code, 'code');
       const data = readRequiredRecord(
-        readApiRecord(await appCouponsRedemptionsCreate(
+        readApiRecord(await appPromotionCodeRedemptionsCreate(
           {
-            clientRequestNo: createRequestToken('coupon-redemption'),
-            metadata: {
-              code: normalizedCode,
-              source: 'console-wallet',
-            },
+            clientRequestNo: createRequestToken('promotion-code-redemption'),
+            code: normalizedCode,
+            source: 'console-wallet',
           },
         )),
         'console.billing.errors.redeemFallback',
@@ -70,19 +67,27 @@ export class WalletService {
 }
 
 type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type AppSystem = ReturnType<typeof getClawRouterAppSdkClient>['system'];
 
-export async function appCouponsList(params?: Parameters<AppCommerce['coupons']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.coupons.list(params);
+export async function appPromotionUserCouponsList(params?: Parameters<AppSystem['promotions']['userCoupons']['wallet']['list']>[0]) {
+  return getClawRouterAppSdkClient().system.promotions.userCoupons.wallet.list(params);
 }
 
-export async function appCouponsClaimsCreate(body: Parameters<AppCommerce['coupons']['claims']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.coupons.claims.create(body, createRequestParams('app-coupon-claim-create'));
-}
-
-export async function appCouponsRedemptionsCreate(body: Parameters<AppCommerce['coupons']['redemptions']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.coupons.redemptions.create(
+export async function appPromotionUserCouponClaimsCreate(
+  body: Parameters<AppSystem['promotions']['userCoupons']['claims']['create']>[0],
+) {
+  return getClawRouterAppSdkClient().system.promotions.userCoupons.claims.create(
     body,
-    createRequestParams('app-coupon-redemption-create'),
+    createRequestParams('app-promotion-user-coupon-claim-create'),
+  );
+}
+
+export async function appPromotionCodeRedemptionsCreate(
+  body: Parameters<AppSystem['promotions']['codes']['redemptions']['create']>[0],
+) {
+  return getClawRouterAppSdkClient().system.promotions.codes.redemptions.create(
+    body,
+    createRequestParams('app-promotion-code-redemption-create'),
   );
 }
 
@@ -106,44 +111,26 @@ export async function appWalletPointsExchangeRulesList(params?: Parameters<AppCo
   return getClawRouterAppSdkClient().commerce.wallet.points.exchangeRules.list(params);
 }
 
-export async function appWalletLedgerEntriesList(params?: Parameters<AppCommerce['wallet']['ledgerEntries']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.wallet.ledgerEntries.list(params);
-}
-
-export async function appWalletLedgerEntriesRetrieve(ledgerEntryId: string) {
-  return getClawRouterAppSdkClient().commerce.wallet.ledgerEntries.retrieve(ledgerEntryId);
-}
-
-function normalizeRedeemHistoryItem(value: unknown): RedeemHistoryItem {
-  const item = readRequiredRecord(value, 'Redeem history record is required');
+function normalizeRedeemHistoryItem(value: BillingHistoryItem): RedeemHistoryItem {
+  const item = value as BillingHistoryItem & ApiRecord;
   return {
-    id: firstRequiredString(item, ['id', 'couponId', 'coupon_id', 'redemptionNo', 'redemption_no'], 'Redeem history id is required'),
-    code: firstRequiredString(item, ['code', 'couponCode', 'coupon_code', 'templateCode', 'template_code'], 'Redeem history code is required'),
-    amount: readFirstMoneyString(
-      item,
-      ['amount', 'discountAmount', 'discount_amount'],
-      'Redeem history amount is required',
-      'Redeem history amount must be a money string',
-    ),
-    date: firstRequiredString(item, ['date', 'redeemedAt', 'redeemed_at', 'createdAt', 'created_at'], 'Redeem history date is required'),
-    status: readCommerceStatus(item, 'Redeem history status is required'),
+    id: readRequiredString(item, 'id', 'Redeem history id is required'),
+    code: item.referenceNo || item.relatedOrderNo || item.sourceId || item.historyNo,
+    amount: formatMoneyString(item.amount),
+    date: item.occurredAt,
+    status: readCommerceStatus(item.status),
   };
 }
 
-function normalizeRechargeHistoryItem(value: unknown): RechargeHistoryItem {
-  const item = readRequiredRecord(value, 'Recharge history record is required');
+function normalizeRechargeHistoryItem(value: BillingHistoryItem): RechargeHistoryItem {
+  const item = value as BillingHistoryItem & ApiRecord;
   return {
-    id: firstRequiredString(item, ['id', 'transactionNo', 'transaction_no', 'requestNo', 'request_no'], 'Recharge history id is required'),
-    orderNo: firstRequiredString(item, ['orderNo', 'order_no', 'sourceId', 'source_id', 'requestNo', 'request_no'], 'Recharge history order number is required'),
-    method: readFirstString(item, ['method', 'paymentMethod', 'payment_method', 'sourceType', 'source_type']) || 'wallet',
-    amount: readFirstMoneyString(
-      item,
-      ['amount'],
-      'Recharge history amount is required',
-      'Recharge history amount must be a money string',
-    ),
-    date: firstRequiredString(item, ['date', 'createdAt', 'created_at'], 'Recharge history date is required'),
-    status: readCommerceStatus(item, 'Recharge history status is required'),
+    id: readRequiredString(item, 'id', 'Recharge history id is required'),
+    orderNo: item.relatedOrderNo || item.referenceNo || item.sourceId || item.historyNo,
+    method: item.paymentMethod || item.sourceType || 'billing',
+    amount: formatMoneyString(item.amount),
+    date: item.occurredAt,
+    status: readCommerceStatus(item.status),
   };
 }
 
@@ -162,8 +149,8 @@ function requiredText(value: string, fieldName: string): string {
   return normalized;
 }
 
-function readCommerceStatus(item: ApiRecord, missingMessage: string): 'success' | 'pending' | 'failed' {
-  const status = firstRequiredString(item, ['status', 'state'], missingMessage).toLowerCase();
+function readCommerceStatus(value: string): 'success' | 'pending' | 'failed' {
+  const status = value.trim().toLowerCase();
   if (status === 'success' || status === 'succeeded' || status === 'posted' || status === 'redeemed') {
     return 'success';
   }
@@ -176,24 +163,6 @@ function readCommerceStatus(item: ApiRecord, missingMessage: string): 'success' 
   throw new Error(`Unsupported billing status: ${status}`);
 }
 
-function firstRequiredString(item: ApiRecord, keys: readonly string[], message: string): string {
-  const value = readFirstString(item, keys);
-  if (!value) {
-    throw new Error(message);
-  }
-  return value;
-}
-
-function readFirstString(item: ApiRecord, keys: readonly string[]): string {
-  for (const key of keys) {
-    const value = readString(item, key).trim();
-    if (value) {
-      return value;
-    }
-  }
-  return '';
-}
-
 function readOptionalMoneyString(item: ApiRecord, key: string, invalidMessage: string): string | undefined {
   if (!(key in item)) {
     return undefined;
@@ -201,22 +170,6 @@ function readOptionalMoneyString(item: ApiRecord, key: string, invalidMessage: s
   const value = readString(item, key).trim();
   if (!value) {
     return undefined;
-  }
-  if (!/^-?\d+(?:\.\d{1,2})?$/.test(value)) {
-    throw new Error(invalidMessage);
-  }
-  return formatMoneyString(value);
-}
-
-function readFirstMoneyString(
-  item: ApiRecord,
-  keys: readonly string[],
-  missingMessage: string,
-  invalidMessage: string,
-): string {
-  const value = readFirstString(item, keys);
-  if (!value) {
-    throw new Error(missingMessage);
   }
   if (!/^-?\d+(?:\.\d{1,2})?$/.test(value)) {
     throw new Error(invalidMessage);

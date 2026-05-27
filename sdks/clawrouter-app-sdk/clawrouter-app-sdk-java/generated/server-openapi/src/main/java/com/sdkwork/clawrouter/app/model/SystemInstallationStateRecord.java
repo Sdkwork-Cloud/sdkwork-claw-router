@@ -19,7 +19,7 @@ public class SystemInstallationStateRecord {
     public String getCatalogVersion() {
         return this.catalogVersion;
     }
-    
+
     public void setCatalogVersion(String catalogVersion) {
         this.catalogVersion = catalogVersion;
     }
@@ -27,7 +27,7 @@ public class SystemInstallationStateRecord {
     public String getDatabaseEngine() {
         return this.databaseEngine;
     }
-    
+
     public void setDatabaseEngine(String databaseEngine) {
         this.databaseEngine = databaseEngine;
     }
@@ -35,7 +35,7 @@ public class SystemInstallationStateRecord {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -43,7 +43,7 @@ public class SystemInstallationStateRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,7 +51,7 @@ public class SystemInstallationStateRecord {
     public String getInstallationId() {
         return this.installationId;
     }
-    
+
     public void setInstallationId(String installationId) {
         this.installationId = installationId;
     }
@@ -59,7 +59,7 @@ public class SystemInstallationStateRecord {
     public String getInstalledAt() {
         return this.installedAt;
     }
-    
+
     public void setInstalledAt(String installedAt) {
         this.installedAt = installedAt;
     }
@@ -67,7 +67,7 @@ public class SystemInstallationStateRecord {
     public String getLastCheckedAt() {
         return this.lastCheckedAt;
     }
-    
+
     public void setLastCheckedAt(String lastCheckedAt) {
         this.lastCheckedAt = lastCheckedAt;
     }
@@ -75,7 +75,7 @@ public class SystemInstallationStateRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -83,7 +83,7 @@ public class SystemInstallationStateRecord {
     public String getSchemaVersion() {
         return this.schemaVersion;
     }
-    
+
     public void setSchemaVersion(String schemaVersion) {
         this.schemaVersion = schemaVersion;
     }
@@ -91,7 +91,7 @@ public class SystemInstallationStateRecord {
     public String getSeedProfile() {
         return this.seedProfile;
     }
-    
+
     public void setSeedProfile(String seedProfile) {
         this.seedProfile = seedProfile;
     }
@@ -99,7 +99,7 @@ public class SystemInstallationStateRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -107,7 +107,7 @@ public class SystemInstallationStateRecord {
     public String getUpgradedAt() {
         return this.upgradedAt;
     }
-    
+
     public void setUpgradedAt(String upgradedAt) {
         this.upgradedAt = upgradedAt;
     }

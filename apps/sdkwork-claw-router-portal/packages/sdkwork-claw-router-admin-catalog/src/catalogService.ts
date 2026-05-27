@@ -38,7 +38,7 @@ export async function updateCommerceCategory(categoryId: string, body: Parameter
 }
 
 export async function deleteCommerceCategory(categoryId: string) {
-  return getClawRouterBackendSdkClient().commerce.catalog.categories.delete(categoryId, createRequestParams('backend-catalog-category-delete'));
+  return getClawRouterBackendSdkClient().commerce.catalog.categories.delete(categoryId);
 }
 
 export async function createCommerceProduct(body: Parameters<BackendCommerce['catalog']['products']['create']>[0]) {

@@ -11,7 +11,7 @@ public class AdminModelLimitCreateRequest {
     public String getGroup() {
         return this.group;
     }
-    
+
     public void setGroup(String group) {
         this.group = group;
     }
@@ -19,7 +19,7 @@ public class AdminModelLimitCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -27,7 +27,7 @@ public class AdminModelLimitCreateRequest {
     public Integer getRpm() {
         return this.rpm;
     }
-    
+
     public void setRpm(Integer rpm) {
         this.rpm = rpm;
     }
@@ -35,7 +35,7 @@ public class AdminModelLimitCreateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -43,7 +43,7 @@ public class AdminModelLimitCreateRequest {
     public Integer getTpm() {
         return this.tpm;
     }
-    
+
     public void setTpm(Integer tpm) {
         this.tpm = tpm;
     }

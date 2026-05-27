@@ -11,7 +11,7 @@ public class OpenAiResponseInputItem {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -19,7 +19,7 @@ public class OpenAiResponseInputItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -27,7 +27,7 @@ public class OpenAiResponseInputItem {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -35,7 +35,7 @@ public class OpenAiResponseInputItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -43,7 +43,7 @@ public class OpenAiResponseInputItem {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

@@ -243,13 +243,11 @@ test("admin model page visible copy uses the admin model i18n namespace", () => 
     "utf8",
   );
   const i18nSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/index.ts"),
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts"),
     "utf8",
   );
 
   const expectedKeys = [
-    "admin.model.title",
-    "admin.model.subtitle",
     "admin.model.vendorSidebar.title",
     "admin.model.search.placeholder",
     "admin.model.filters.allModalities",
@@ -580,12 +578,12 @@ test("admin model editor creates default mainland China and global pricing regio
     "utf8",
   );
   const i18nSource = readFileSync(
-    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/index.ts"),
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts"),
     "utf8",
   );
 
   for (const expected of [
-    "const MODEL_PRICING_REGIONS",
+    "MODEL_PRICING_REGIONS = [",
     "code: 'cn'",
     "code: 'global'",
     "formData.get(`priceIn.${regionCode}`)",
@@ -905,10 +903,9 @@ test("admin model service calls generated backend SDK paths and normalizes model
         ],
         contextTokens: "64k",
       });
-      assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-model-catalog-sync-"), true);
-      assert.equal(captured[4].headers["x-request-id"]?.startsWith("admin-model-vendor-create-"), true);
-      assert.equal(captured[5].headers["x-request-id"]?.startsWith("admin-ai-model-create-"), true);
-      assert.equal(captured[6].headers["x-request-id"]?.startsWith("admin-ai-model-update-"), true);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
     },
   );
 });
@@ -990,7 +987,9 @@ test("admin model service initializes empty catalog through generated backend SD
         mode: "official_refresh",
         force: true,
       });
-      assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-model-catalog-sync-"), true);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
     },
   );
 });
@@ -1184,7 +1183,7 @@ test("admin model service triggers model ranking refresh through generated backe
         refreshIntervalSeconds: 3600,
         cacheMaxAgeSeconds: 60,
       });
-      assert.equal(captured[0].headers["x-request-id"]?.startsWith("admin-model-ranking-refresh-"), true);
+      assert.equal(captured[0].headers["x-request-id"], undefined);
     },
   );
 });
@@ -2098,4 +2097,35 @@ test("admin model modality filter closes when clicking outside", () => {
   ]) {
     assert.ok(source.includes(expected), `missing outside-click modality filter marker: ${expected}`);
   }
+});
+
+test("admin model catalog sync action lives in the vendor sidebar header", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  const sidebarStart = source.indexOf('{/* SIDEBAR - VENDORS */}');
+  const mainAreaStart = source.indexOf('{/* MAIN AREA - MODELS LIST */}');
+  assert.notEqual(sidebarStart, -1, "vendor sidebar marker must exist");
+  assert.notEqual(mainAreaStart, -1, "main area marker must exist");
+
+  const syncActionIndex = source.indexOf("t('common.actions.syncModelCatalog')");
+  const syncHandlerIndex = source.indexOf("onClick={handleSyncAll}");
+  const addVendorHandlerIndex = source.indexOf("onClick={openVendorModal}");
+  assert.ok(syncActionIndex > sidebarStart, "sync catalog action must be inside vendor sidebar");
+  assert.ok(syncActionIndex < mainAreaStart, "sync catalog action must stay out of the model table header");
+  assert.ok(syncHandlerIndex > sidebarStart, "sync catalog handler must be wired in vendor sidebar");
+  assert.ok(syncHandlerIndex < mainAreaStart, "sync catalog handler must stay out of the page-level header");
+  assert.ok(syncHandlerIndex < addVendorHandlerIndex, "sync icon button must sit to the left of the add vendor button");
+
+  const vendorHeader = source.slice(sidebarStart, mainAreaStart);
+  assert.match(vendorHeader, /<RefreshCw className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
+  assert.match(vendorHeader, /title=\{isSyncing \? t\('common\.actions\.syncingCatalog'\) : t\('common\.actions\.syncModelCatalog'\)\}/);
+  assert.doesNotMatch(vendorHeader, /className="[^"]*\bw-full\b[^"]*"/);
+  assert.doesNotMatch(vendorHeader, /<span className="truncate">\{isSyncing \? t\('common\.actions\.syncingCatalog'\) : t\('common\.actions\.syncModelCatalog'\)\}<\/span>/);
+
+  const contentBeforeSidebar = source.slice(source.indexOf('return ('), sidebarStart);
+  assert.doesNotMatch(contentBeforeSidebar, /onClick=\{handleSyncAll\}/);
+  assert.doesNotMatch(contentBeforeSidebar, /common\.actions\.syncModelCatalog/);
 });

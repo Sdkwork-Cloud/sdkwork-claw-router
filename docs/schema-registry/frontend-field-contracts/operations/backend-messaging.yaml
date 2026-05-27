@@ -1,0 +1,649 @@
+fragment: operations/backend-messaging
+frontend_operations:
+- route: /admin/messaging/providers
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingProviderAccounts
+  operation_id: providerAccounts.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/provider_accounts
+  sdk_domain: messaging
+  summary: Messaging provider accounts list
+  description: Lists SMS and email provider accounts with messaging capability, health, and approval posture.
+  read_sources:
+  - integration_provider
+  - integration_provider_account
+  - messaging_provider_capability
+  query_parameters: &messagingPageQuery
+  - name: page
+    schema: { type: integer, format: int64, minimum: 1 }
+  - name: page_size
+    schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - name: q
+    schema: { type: string, maxLength: 128 }
+  - name: status
+    schema: { type: string, maxLength: 32 }
+  - name: channel
+    schema: { type: string, enum: [sms, email] }
+  - name: provider_code
+    schema: { type: string, maxLength: 64 }
+  response_schema: &messagingCollectionResponse
+    name: MessagingCollectionResponse
+    type: object
+    additionalProperties: false
+    required: [items, total, page, pageSize]
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: true
+          required: [id]
+          properties:
+            id: { type: string, minLength: 1, maxLength: 128 }
+            code: { type: string, nullable: true, maxLength: 128 }
+            name: { type: string, nullable: true, maxLength: 128 }
+            displayName: { type: string, nullable: true, maxLength: 128 }
+            status: { type: string, nullable: true, maxLength: 32 }
+            publishStatus: { type: string, nullable: true, maxLength: 32 }
+            deliveryStatus: { type: string, nullable: true, maxLength: 32 }
+            channel: { type: string, nullable: true, maxLength: 32 }
+            providerCode: { type: string, nullable: true, maxLength: 64 }
+            sceneCode: { type: string, nullable: true, maxLength: 128 }
+            sceneName: { type: string, nullable: true, maxLength: 128 }
+            templateCode: { type: string, nullable: true, maxLength: 128 }
+            templateName: { type: string, nullable: true, maxLength: 128 }
+            targetMasked: { type: string, nullable: true, maxLength: 128 }
+            targetHash: { type: string, nullable: true, maxLength: 128 }
+            reasonCode: { type: string, nullable: true, maxLength: 64 }
+            scopeType: { type: string, nullable: true, maxLength: 64 }
+            windowStart: { type: string, nullable: true, maxLength: 64 }
+            windowSeconds: { type: integer, nullable: true, format: int64 }
+            sendCount: { type: integer, nullable: true, format: int64 }
+            verifyCount: { type: integer, nullable: true, format: int64 }
+            rejectCount: { type: integer, nullable: true, format: int64 }
+            defaultChannel: { type: string, nullable: true, maxLength: 32 }
+            codeLength: { type: integer, nullable: true, format: int64 }
+            ttlSeconds: { type: integer, nullable: true, format: int64 }
+            maxVerifyAttempts: { type: integer, nullable: true, format: int64 }
+            startsAt: { type: string, nullable: true, maxLength: 64 }
+            createdAt: { type: string, nullable: true, maxLength: 64 }
+            failedAt: { type: string, nullable: true, maxLength: 64 }
+            updatedAt: { type: string, nullable: true, maxLength: 64 }
+      total: { type: integer, format: int64, minimum: 0 }
+      page: { type: integer, format: int64, minimum: 1 }
+      pageSize: { type: integer, format: int64, minimum: 1, maximum: 200 }
+- route: /admin/messaging/providers
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: createMessagingProviderAccount
+  operation_id: providerAccounts.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/provider_accounts
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging provider account create
+  description: Creates a provider account credential reference and declares its SMS or email delivery capability.
+  read_sources:
+  - integration_provider
+  write_tables:
+  - integration_provider_account
+  - messaging_provider_capability
+  - ops_audit_log
+  request_schema:
+    name: MessagingProviderAccountCreateRequest
+    type: object
+    additionalProperties: false
+    required: [providerCode, accountCode, accountName, channel, credential]
+    properties:
+      providerCode: { type: string, minLength: 1, maxLength: 64 }
+      accountCode: { type: string, minLength: 1, maxLength: 64 }
+      accountName: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      deliveryPurpose: { type: string, maxLength: 64 }
+      baseUrl: { type: string, maxLength: 512 }
+      credential:
+        type: object
+        additionalProperties: false
+        required: [secretRef]
+        properties:
+          secretRef: { type: string, minLength: 1, maxLength: 256 }
+          authType: { type: string, maxLength: 64 }
+      capabilitySchema:
+        type: object
+        additionalProperties: true
+  response_schema: &messagingMutationResponse
+    name: MessagingMutationResponse
+    type: object
+    additionalProperties: false
+    required: [id, status]
+    properties:
+      id: { type: string, minLength: 1, maxLength: 128 }
+      status: { type: string, minLength: 1, maxLength: 32 }
+- route: /admin/messaging/sender-identities
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingSenderIdentities
+  operation_id: senderIdentities.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/sender_identities
+  sdk_domain: messaging
+  summary: Messaging sender identities list
+  description: Lists approved and pending SMS signatures, sender IDs, email from addresses, domains, and reply-to identities.
+  read_sources:
+  - messaging_sender_identity
+  - integration_provider_account
+  query_parameters: *messagingPageQuery
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/sender-identities
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: createMessagingSenderIdentity
+  operation_id: senderIdentities.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/sender_identities
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging sender identity create
+  description: Creates a reusable sender identity for SMS signatures, sender IDs, email from addresses, domains, and reply-to settings.
+  read_sources:
+  - integration_provider_account
+  write_tables:
+  - messaging_sender_identity
+  - ops_audit_log
+  request_schema:
+    name: MessagingSenderIdentityCreateRequest
+    type: object
+    additionalProperties: false
+    required: [providerAccountId, channel, identityCode]
+    properties:
+      providerAccountId: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      identityCode: { type: string, minLength: 1, maxLength: 128 }
+      displayName: { type: string, maxLength: 128 }
+      fromEmail: { type: string, maxLength: 256 }
+      fromName: { type: string, maxLength: 128 }
+      replyTo: { type: string, maxLength: 256 }
+      domainName: { type: string, maxLength: 256 }
+      signName: { type: string, maxLength: 128 }
+      senderId: { type: string, maxLength: 128 }
+      countryCode: { type: string, maxLength: 16 }
+  response_schema: *messagingMutationResponse
+- route: /admin/messaging/templates
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingTemplates
+  operation_id: templates.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/templates
+  sdk_domain: messaging
+  summary: Messaging templates list
+  description: Lists SMS and email templates, versions, localized variants, and provider approval bindings.
+  read_sources:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_template_binding
+  query_parameters: *messagingPageQuery
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/templates
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: createMessagingTemplate
+  operation_id: templates.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/templates
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging template create
+  description: Creates a logical SMS or email template and its first version/variant without binding it to any specific provider.
+  read_sources:
+  - messaging_template
+  write_tables:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - ops_audit_log
+  request_schema:
+    name: MessagingTemplateCreateRequest
+    type: object
+    additionalProperties: false
+    required: [templateCode, sceneCode, channel, deliveryPurpose, category, templateName, bodyTemplate]
+    properties:
+      templateCode: { type: string, minLength: 1, maxLength: 128 }
+      sceneCode: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      deliveryPurpose: { type: string, enum: [verification, transactional, marketing, system] }
+      category: { type: string, minLength: 1, maxLength: 64 }
+      templateName: { type: string, minLength: 1, maxLength: 128 }
+      subjectTemplate: { type: string, maxLength: 512 }
+      bodyTemplate: { type: string, minLength: 1, maxLength: 20000 }
+      contentFormat: { type: string, enum: [text, html, markdown] }
+      locale: { type: string, maxLength: 32 }
+      variableSchema:
+        type: object
+        additionalProperties: true
+  response_schema: *messagingMutationResponse
+- route: /admin/messaging/templates
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: publishMessagingTemplateVersion
+  operation_id: templates.versions.publish
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/templates/{templateId}/versions/{versionId}/publish
+  sdk_domain: messaging
+  summary: Messaging template version publish
+  description: Publishes a reviewed template version and makes it eligible for routing and provider binding.
+  read_sources:
+  - messaging_template
+  - messaging_template_version
+  write_tables:
+  - messaging_template
+  - messaging_template_version
+  - ops_audit_log
+  request_body_required: false
+  response_schema: *messagingMutationResponse
+- route: /admin/messaging/route-rules
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingRouteRules
+  operation_id: routeRules.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/route_rules
+  sdk_domain: messaging
+  summary: Messaging route rules list
+  description: Lists routing rules that resolve scene/channel/country/locale traffic to provider accounts, sender identities, and provider template bindings.
+  read_sources:
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - messaging_sender_identity
+  - messaging_template_binding
+  query_parameters: *messagingPageQuery
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/route-rules
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: createMessagingRouteRule
+  operation_id: routeRules.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/route_rules
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging route rule create
+  description: Creates weighted and ordered delivery routing targets for one SMS or email scene.
+  read_sources:
+  - messaging_template
+  - integration_provider_account
+  - messaging_sender_identity
+  - messaging_template_binding
+  write_tables:
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - ops_audit_log
+  request_schema:
+    name: MessagingRouteRuleCreateRequest
+    type: object
+    additionalProperties: false
+    required: [ruleCode, sceneCode, channel, deliveryPurpose, targets]
+    properties:
+      ruleCode: { type: string, minLength: 1, maxLength: 128 }
+      sceneCode: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      deliveryPurpose: { type: string, enum: [verification, transactional, marketing, system] }
+      countryCode: { type: string, maxLength: 16 }
+      locale: { type: string, maxLength: 32 }
+      userSegment: { type: string, maxLength: 128 }
+      priority: { type: integer, minimum: 1, maximum: 100000 }
+      failoverPolicy:
+        type: object
+        additionalProperties: true
+      targets:
+        type: array
+        minItems: 1
+        maxItems: 10
+        items:
+          type: object
+          additionalProperties: false
+          required: [providerAccountId, targetOrder]
+          properties:
+            providerAccountId: { type: string, minLength: 1, maxLength: 128 }
+            senderIdentityId: { type: string, maxLength: 128 }
+            templateBindingId: { type: string, maxLength: 128 }
+            targetOrder: { type: integer, minimum: 1, maximum: 10 }
+            weight: { type: integer, minimum: 1, maximum: 10000 }
+  response_schema: *messagingMutationResponse
+- route: /admin/messaging/send-requests
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingSendRequests
+  operation_id: sendRequests.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/send_requests
+  sdk_domain: messaging
+  summary: Messaging send requests list
+  description: Lists external SMS and email send requests with attempts, provider IDs, status, and redacted payload diagnostics.
+  read_sources:
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  query_parameters:
+  - name: page
+    schema: { type: integer, format: int64, minimum: 1 }
+  - name: page_size
+    schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - name: status
+    schema: { type: string, maxLength: 32 }
+  - name: channel
+    schema: { type: string, enum: [sms, email] }
+  - name: scene_code
+    schema: { type: string, maxLength: 128 }
+  - name: provider_code
+    schema: { type: string, maxLength: 64 }
+  - name: target_hash
+    schema: { type: string, maxLength: 128 }
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/diagnostics
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: simulateMessagingRoute
+  operation_id: diagnostics.routeSimulation.create
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/diagnostics/route_simulation
+  sdk_domain: messaging
+  summary: Messaging route simulation
+  description: Resolves routing rules for a scene/channel/country/locale without sending an external SMS or email.
+  read_sources:
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - messaging_sender_identity
+  - messaging_template_binding
+  write_tables:
+  - ops_audit_log
+  request_schema:
+    name: MessagingRouteSimulationRequest
+    type: object
+    additionalProperties: false
+    required: [sceneCode, channel, deliveryPurpose]
+    properties:
+      sceneCode: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      deliveryPurpose: { type: string, enum: [verification, transactional, marketing, system] }
+      countryCode: { type: string, maxLength: 16 }
+      locale: { type: string, maxLength: 32 }
+      userSegment: { type: string, maxLength: 128 }
+  response_schema:
+    name: MessagingRouteSimulationResponse
+    type: object
+    additionalProperties: false
+    required: [matched, targets]
+    properties:
+      matched: { type: boolean }
+      routeRuleId: { type: string, nullable: true, maxLength: 128 }
+      targets:
+        type: array
+        items:
+          type: object
+          additionalProperties: true
+- route: /admin/messaging/diagnostics
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: testMessagingSend
+  operation_id: diagnostics.testSends.create
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/diagnostics/test_sends
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging test send
+  description: Sends or dry-runs a controlled test SMS or email through the resolved provider route and records the request/attempt audit trail.
+  read_sources:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_route_rule
+  - messaging_suppression
+  write_tables:
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  - messaging_rate_limit_bucket
+  - ops_audit_log
+  request_schema:
+    name: MessagingTestSendRequest
+    type: object
+    additionalProperties: false
+    required: [sceneCode, channel, deliveryPurpose, templateCode, targetMasked, targetHash]
+    properties:
+      sceneCode: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      deliveryPurpose: { type: string, enum: [verification, transactional, marketing, system] }
+      templateCode: { type: string, minLength: 1, maxLength: 128 }
+      countryCode: { type: string, maxLength: 16 }
+      locale: { type: string, maxLength: 32 }
+      userSegment: { type: string, maxLength: 128 }
+      targetMasked: { type: string, minLength: 1, maxLength: 128 }
+      targetHash: { type: string, minLength: 1, maxLength: 128 }
+      dryRun: { type: boolean }
+      variables:
+        type: object
+        additionalProperties: true
+  response_schema:
+    name: MessagingTestSendResponse
+    type: object
+    additionalProperties: false
+    required: [requestId, deliveryStatus]
+    properties:
+      requestId: { type: string, minLength: 1, maxLength: 128 }
+      deliveryStatus: { type: string, minLength: 1, maxLength: 32 }
+      providerCode: { type: string, nullable: true, maxLength: 64 }
+- route: /admin/messaging/diagnostics
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: sendMessagingTemplate
+  operation_id: templateSends.create
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/template_sends
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging template send
+  description: Sends a reusable SMS or email template for verification, transactional, marketing, or system delivery through the same routing, sender identity, template version, and provider account model.
+  read_sources:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - messaging_sender_identity
+  - messaging_suppression
+  write_tables:
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  - messaging_rate_limit_bucket
+  - ops_audit_log
+  request_schema: &messagingTemplateSendRequest
+    name: MessagingTemplateSendRequest
+    type: object
+    additionalProperties: false
+    required: [sceneCode, channel, deliveryPurpose, templateCode, targetMasked, targetHash]
+    properties:
+      sceneCode: { type: string, minLength: 1, maxLength: 128 }
+      channel: { type: string, enum: [sms, email] }
+      deliveryPurpose: { type: string, enum: [verification, transactional, marketing, system] }
+      templateCode: { type: string, minLength: 1, maxLength: 128 }
+      countryCode: { type: string, maxLength: 16 }
+      locale: { type: string, maxLength: 32 }
+      userSegment: { type: string, maxLength: 128 }
+      targetMasked: { type: string, minLength: 1, maxLength: 128 }
+      targetHash: { type: string, minLength: 1, maxLength: 128 }
+      dryRun: { type: boolean }
+      variables:
+        type: object
+        additionalProperties: true
+  response_schema:
+    name: MessagingTemplateSendResponse
+    type: object
+    additionalProperties: false
+    required: [requestId, deliveryStatus]
+    properties:
+      requestId: { type: string, minLength: 1, maxLength: 128 }
+      deliveryStatus: { type: string, minLength: 1, maxLength: 32 }
+      providerCode: { type: string, nullable: true, maxLength: 64 }
+- route: /admin/messaging/suppressions
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingSuppressions
+  operation_id: suppressions.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/suppressions
+  sdk_domain: messaging
+  summary: Messaging suppressions list
+  description: Lists target-level SMS and email suppression records used to stop unsafe, bounced, unsubscribed, or policy-blocked delivery.
+  read_sources:
+  - messaging_suppression
+  query_parameters:
+  - name: page
+    schema: { type: integer, format: int64, minimum: 1 }
+  - name: page_size
+    schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - name: status
+    schema: { type: string, maxLength: 32 }
+  - name: channel
+    schema: { type: string, enum: [sms, email] }
+  - name: target_hash
+    schema: { type: string, maxLength: 128 }
+  - name: reason_code
+    schema: { type: string, maxLength: 128 }
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/suppressions
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: createMessagingSuppression
+  operation_id: suppressions.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/messaging/suppressions
+  sdk_domain: messaging
+  idempotency_required: true
+  summary: Messaging suppression create
+  description: Creates or replays a target-level SMS or email suppression for manual unsubscribe, hard bounce, complaint, abuse, or policy block governance.
+  read_sources:
+  - messaging_suppression
+  write_tables:
+  - messaging_suppression
+  - ops_audit_log
+  request_schema:
+    name: MessagingSuppressionCreateRequest
+    type: object
+    additionalProperties: false
+    required: [channel, targetMasked, targetHash, reasonCode, startsAt]
+    properties:
+      channel: { type: string, enum: [sms, email] }
+      targetMasked: { type: string, minLength: 1, maxLength: 128 }
+      targetHash: { type: string, minLength: 1, maxLength: 128 }
+      reasonCode: { type: string, minLength: 1, maxLength: 128 }
+      scopeType: { type: string, enum: [tenant, organization, user, account, global], default: tenant }
+      scopeId: { type: string, maxLength: 128, default: "*" }
+      startsAt: { type: string, minLength: 1, maxLength: 64 }
+      endsAt: { type: string, nullable: true, maxLength: 64 }
+      source: { type: string, maxLength: 64, default: operator }
+      note: { type: string, nullable: true, maxLength: 512 }
+  response_schema: *messagingMutationResponse
+- route: /admin/messaging/rate-limits
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listMessagingRateLimitBuckets
+  operation_id: rateLimitBuckets.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/rate_limit_buckets
+  sdk_domain: messaging
+  summary: Messaging rate limit buckets list
+  description: Lists scene, target, IP, and device buckets that protect verification-code and external delivery flows from abuse.
+  read_sources:
+  - messaging_rate_limit_bucket
+  query_parameters:
+  - name: page
+    schema: { type: integer, format: int64, minimum: 1 }
+  - name: page_size
+    schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - name: scene_code
+    schema: { type: string, maxLength: 128 }
+  - name: channel
+    schema: { type: string, enum: [sms, email] }
+  - name: target_hash
+    schema: { type: string, maxLength: 128 }
+  - name: ip_hash
+    schema: { type: string, maxLength: 128 }
+  - name: device_hash
+    schema: { type: string, maxLength: 128 }
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/verification-policies
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: listVerificationPolicies
+  operation_id: verificationPolicies.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/messaging/verification_policies
+  sdk_domain: messaging
+  summary: Verification policies list
+  description: Lists IAM verification-code policies that bind auth scenes to messaging templates, channels, TTL, resend, and attempt limits.
+  read_sources:
+  - iam_verification_scene_policy
+  - messaging_template
+  query_parameters: *messagingPageQuery
+  response_schema: *messagingCollectionResponse
+- route: /admin/messaging/verification-policies
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  operation: updateVerificationPolicy
+  operation_id: verificationPolicies.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/messaging/verification_policies/{policyId}
+  sdk_domain: messaging
+  summary: Verification policy update
+  description: Updates IAM verification-code policy limits and template binding for a login, registration, recovery, or MFA scene.
+  read_sources:
+  - iam_verification_scene_policy
+  - messaging_template
+  write_tables:
+  - iam_verification_scene_policy
+  - ops_audit_log
+  request_schema:
+    name: VerificationPolicyUpdateRequest
+    type: object
+    additionalProperties: false
+    required: [allowedChannels, codeLength, ttlSeconds, maxVerifyAttempts, templateCode]
+    properties:
+      allowedChannels:
+        type: array
+        minItems: 1
+        maxItems: 2
+        uniqueItems: true
+        items: { type: string, enum: [sms, email] }
+      defaultChannel: { type: string, enum: [sms, email] }
+      codeLength: { type: integer, minimum: 4, maximum: 10 }
+      ttlSeconds: { type: integer, minimum: 30, maximum: 1800 }
+      resendIntervalSeconds: { type: integer, minimum: 10, maximum: 600 }
+      maxSendPerHour: { type: integer, minimum: 1, maximum: 60 }
+      maxVerifyAttempts: { type: integer, minimum: 1, maximum: 20 }
+      templateCode: { type: string, minLength: 1, maxLength: 128 }
+      riskPolicy:
+        type: object
+        additionalProperties: true
+  response_schema: *messagingMutationResponse

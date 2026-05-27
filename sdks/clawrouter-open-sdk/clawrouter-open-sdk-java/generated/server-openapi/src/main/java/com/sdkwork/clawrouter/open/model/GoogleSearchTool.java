@@ -7,7 +7,7 @@ public class GoogleSearchTool {
     public GoogleDynamicRetrievalConfig getDynamicRetrievalConfig() {
         return this.dynamicRetrievalConfig;
     }
-    
+
     public void setDynamicRetrievalConfig(GoogleDynamicRetrievalConfig dynamicRetrievalConfig) {
         this.dynamicRetrievalConfig = dynamicRetrievalConfig;
     }

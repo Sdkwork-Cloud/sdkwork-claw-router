@@ -9,7 +9,7 @@ public class RankingVendorOption {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -17,7 +17,7 @@ public class RankingVendorOption {
     public String getLabel() {
         return this.label;
     }
-    
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -25,7 +25,7 @@ public class RankingVendorOption {
     public Integer getModelCount() {
         return this.modelCount;
     }
-    
+
     public void setModelCount(Integer modelCount) {
         this.modelCount = modelCount;
     }

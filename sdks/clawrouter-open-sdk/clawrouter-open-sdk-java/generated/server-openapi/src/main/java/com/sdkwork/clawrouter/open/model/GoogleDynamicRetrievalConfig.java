@@ -8,7 +8,7 @@ public class GoogleDynamicRetrievalConfig {
     public Double getDynamicThreshold() {
         return this.dynamicThreshold;
     }
-    
+
     public void setDynamicThreshold(Double dynamicThreshold) {
         this.dynamicThreshold = dynamicThreshold;
     }
@@ -16,7 +16,7 @@ public class GoogleDynamicRetrievalConfig {
     public String getMode() {
         return this.mode;
     }
-    
+
     public void setMode(String mode) {
         this.mode = mode;
     }

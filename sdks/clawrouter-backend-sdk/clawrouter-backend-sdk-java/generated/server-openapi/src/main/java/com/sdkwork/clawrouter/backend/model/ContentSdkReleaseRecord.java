@@ -37,7 +37,7 @@ public class ContentSdkReleaseRecord {
     public String getApiSystem() {
         return this.apiSystem;
     }
-    
+
     public void setApiSystem(String apiSystem) {
         this.apiSystem = apiSystem;
     }
@@ -45,7 +45,7 @@ public class ContentSdkReleaseRecord {
     public Map<String, String> getArtifactManifest() {
         return this.artifactManifest;
     }
-    
+
     public void setArtifactManifest(Map<String, String> artifactManifest) {
         this.artifactManifest = artifactManifest;
     }
@@ -53,7 +53,7 @@ public class ContentSdkReleaseRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -61,7 +61,7 @@ public class ContentSdkReleaseRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -69,7 +69,7 @@ public class ContentSdkReleaseRecord {
     public String getDefaultBaseUrl() {
         return this.defaultBaseUrl;
     }
-    
+
     public void setDefaultBaseUrl(String defaultBaseUrl) {
         this.defaultBaseUrl = defaultBaseUrl;
     }
@@ -77,7 +77,7 @@ public class ContentSdkReleaseRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -85,7 +85,7 @@ public class ContentSdkReleaseRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -93,7 +93,7 @@ public class ContentSdkReleaseRecord {
     public String getDocsUrl() {
         return this.docsUrl;
     }
-    
+
     public void setDocsUrl(String docsUrl) {
         this.docsUrl = docsUrl;
     }
@@ -101,7 +101,7 @@ public class ContentSdkReleaseRecord {
     public String getExampleCode() {
         return this.exampleCode;
     }
-    
+
     public void setExampleCode(String exampleCode) {
         this.exampleCode = exampleCode;
     }
@@ -109,7 +109,7 @@ public class ContentSdkReleaseRecord {
     public Map<String, String> getExampleManifest() {
         return this.exampleManifest;
     }
-    
+
     public void setExampleManifest(Map<String, String> exampleManifest) {
         this.exampleManifest = exampleManifest;
     }
@@ -117,7 +117,7 @@ public class ContentSdkReleaseRecord {
     public String getGithubUrl() {
         return this.githubUrl;
     }
-    
+
     public void setGithubUrl(String githubUrl) {
         this.githubUrl = githubUrl;
     }
@@ -125,7 +125,7 @@ public class ContentSdkReleaseRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -133,7 +133,7 @@ public class ContentSdkReleaseRecord {
     public String getImportCode() {
         return this.importCode;
     }
-    
+
     public void setImportCode(String importCode) {
         this.importCode = importCode;
     }
@@ -141,7 +141,7 @@ public class ContentSdkReleaseRecord {
     public String getInitCode() {
         return this.initCode;
     }
-    
+
     public void setInitCode(String initCode) {
         this.initCode = initCode;
     }
@@ -149,7 +149,7 @@ public class ContentSdkReleaseRecord {
     public String getInstallCommand() {
         return this.installCommand;
     }
-    
+
     public void setInstallCommand(String installCommand) {
         this.installCommand = installCommand;
     }
@@ -157,7 +157,7 @@ public class ContentSdkReleaseRecord {
     public String getLanguage() {
         return this.language;
     }
-    
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -165,7 +165,7 @@ public class ContentSdkReleaseRecord {
     public String getLanguageDescription() {
         return this.languageDescription;
     }
-    
+
     public void setLanguageDescription(String languageDescription) {
         this.languageDescription = languageDescription;
     }
@@ -173,7 +173,7 @@ public class ContentSdkReleaseRecord {
     public String getLanguageIcon() {
         return this.languageIcon;
     }
-    
+
     public void setLanguageIcon(String languageIcon) {
         this.languageIcon = languageIcon;
     }
@@ -181,7 +181,7 @@ public class ContentSdkReleaseRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -189,7 +189,7 @@ public class ContentSdkReleaseRecord {
     public String getOpenapiSnapshotId() {
         return this.openapiSnapshotId;
     }
-    
+
     public void setOpenapiSnapshotId(String openapiSnapshotId) {
         this.openapiSnapshotId = openapiSnapshotId;
     }
@@ -197,7 +197,7 @@ public class ContentSdkReleaseRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -205,7 +205,7 @@ public class ContentSdkReleaseRecord {
     public String getPackageManager() {
         return this.packageManager;
     }
-    
+
     public void setPackageManager(String packageManager) {
         this.packageManager = packageManager;
     }
@@ -213,7 +213,7 @@ public class ContentSdkReleaseRecord {
     public String getPackageName() {
         return this.packageName;
     }
-    
+
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
@@ -221,7 +221,7 @@ public class ContentSdkReleaseRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -229,7 +229,7 @@ public class ContentSdkReleaseRecord {
     public String getSourceRepo() {
         return this.sourceRepo;
     }
-    
+
     public void setSourceRepo(String sourceRepo) {
         this.sourceRepo = sourceRepo;
     }
@@ -237,7 +237,7 @@ public class ContentSdkReleaseRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -245,7 +245,7 @@ public class ContentSdkReleaseRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -253,7 +253,7 @@ public class ContentSdkReleaseRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -261,7 +261,7 @@ public class ContentSdkReleaseRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -269,7 +269,7 @@ public class ContentSdkReleaseRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

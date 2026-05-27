@@ -57,11 +57,13 @@ class AiUsageFactRecord:
     prompt_tokens: Optional[str] = None
     provider_account_id: Optional[str] = None
     provider_id: Optional[str] = None
+    provider_native_model: Optional[str] = None
     rate_multiplier: Optional[str] = None
     reasoning_effort: Optional[str] = None
     reference_multiplier: Optional[str] = None
     request_count: Optional[str] = None
     request_id: Optional[str] = None
+    requested_model_catalog_key: Optional[str] = None
     result_count: Optional[str] = None
     retention_until: Optional[str] = None
     settlement_id: Optional[str] = None

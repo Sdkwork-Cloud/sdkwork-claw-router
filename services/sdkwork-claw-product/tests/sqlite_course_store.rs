@@ -1,26 +1,16 @@
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
+use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteCourseStore;
 use sdkwork_claw_product::ports::{
     CourseApplicationCommandStore, CourseQuery, CourseReadStore, CourseSubject,
     CreateCourseApplicationCommand,
 };
-use sqlx::sqlite::SqlitePoolOptions;
 
 #[tokio::test]
 async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_tables() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = repair_sqlite_pool().await;
 
     let store = SqliteCourseStore::new(pool);
     let courses = store
@@ -113,17 +103,7 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
 
 #[tokio::test]
 async fn sqlite_course_store_persists_course_application_upload_requests() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = SqliteCourseStore::new(pool);
     let item = store

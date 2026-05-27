@@ -48,12 +48,12 @@ test("user-center server validation node contract builds an independent middlewa
   assert.equal(validation.middleware.handshake.required, true);
   assert.deepEqual(validation.middleware.protectedTokenPreference, [
     "auth-token",
-    "Sdkwork-Access-Token",
+    "Access-Token",
     "session-token",
   ]);
   assert.deepEqual(validation.middleware.governedHeaderNames, [
     "Authorization",
-    "Sdkwork-Access-Token",
+    "Access-Token",
     "Refresh-Token",
     "x-sdkwork-user-center-session-id",
     "x-sdkwork-app-id",

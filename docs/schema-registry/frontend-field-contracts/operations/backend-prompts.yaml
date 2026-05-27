@@ -1,0 +1,385 @@
+fragment: operations/backend-prompts
+frontend_operations:
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: listPrompts
+  operation_id: definitions.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/prompts
+  sdk_domain: prompts
+  summary: List admin prompts
+  description: Lists vertical prompt definitions with unified category references and lifecycle state.
+  read_sources:
+  - ai_prompt
+  - plus_category
+  query_parameters:
+  - name: page
+    schema: { type: integer, format: int64, minimum: 1 }
+  - name: page_size
+    schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - name: q
+    schema: { type: string, maxLength: 128 }
+  - name: prompt_type
+    schema: { type: string, maxLength: 64 }
+  - name: visibility
+    schema: { type: string, maxLength: 64 }
+  - name: status
+    schema: { type: string, maxLength: 64 }
+  - name: category_id
+    schema: { type: string, maxLength: 128 }
+  response_schema:
+    name: AdminPromptListResponse
+    type: object
+    additionalProperties: false
+    required: [items]
+    properties:
+      items:
+        type: array
+        maxItems: 200
+        items: &adminPromptItem
+          name: AdminPromptItem
+          type: object
+          additionalProperties: false
+          required: [id, uuid, tenantId, organizationId, promptKey, name, promptType, visibility, status, tags, createdAt, updatedAt]
+          properties:
+            id: { type: integer, format: int64, minimum: 1 }
+            uuid: { type: string, minLength: 1, maxLength: 128 }
+            tenantId: { type: integer, format: int64, minimum: 1 }
+            organizationId: { type: integer, format: int64, minimum: 1 }
+            promptKey: { type: string, minLength: 1, maxLength: 128 }
+            name: { type: string, minLength: 1, maxLength: 255 }
+            description: { type: string, nullable: true, maxLength: 2000 }
+            categoryId: { type: string, nullable: true, maxLength: 128 }
+            categoryCode: { type: string, nullable: true, maxLength: 128 }
+            promptType: { type: string, maxLength: 64 }
+            visibility: { type: string, maxLength: 64 }
+            ownerUserId: { type: integer, nullable: true, format: int64 }
+            latestVersionId: { type: integer, nullable: true, format: int64 }
+            publishedVersionId: { type: integer, nullable: true, format: int64 }
+            status: { type: string, maxLength: 64 }
+            tags:
+              type: array
+              maxItems: 32
+              items: { type: string, maxLength: 64 }
+            createdAt: { type: string, minLength: 1, maxLength: 64 }
+            updatedAt: { type: string, minLength: 1, maxLength: 64 }
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: createPrompt
+  operation_id: definitions.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/prompts
+  sdk_domain: prompts
+  idempotency_required: true
+  summary: Create admin prompt
+  description: Creates a reusable prompt definition; classification is only by unified category references.
+  read_sources:
+  - ai_prompt
+  - plus_category
+  write_tables:
+  - ai_prompt
+  - ops_audit_log
+  request_schema:
+    name: AdminPromptCreateRequest
+    type: object
+    additionalProperties: false
+    required: [promptKey, name]
+    properties:
+      promptKey: { type: string, minLength: 1, maxLength: 128, pattern: "^[A-Za-z0-9_.:-]+$" }
+      name: { type: string, minLength: 1, maxLength: 255 }
+      description: { type: string, maxLength: 2000 }
+      categoryId: { type: string, maxLength: 128 }
+      promptType: { type: string, maxLength: 64 }
+      visibility: { type: string, maxLength: 64 }
+      tags:
+        type: array
+        maxItems: 32
+        items: { type: string, maxLength: 64 }
+  response_schema:
+    name: AdminPromptMutationResponse
+    type: object
+    additionalProperties: false
+    required: [item]
+    properties:
+      item: *adminPromptItem
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: listPromptVersions
+  operation_id: versions.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/prompts/{promptId}/versions
+  sdk_domain: prompts
+  summary: List prompt versions
+  description: Lists immutable prompt versions for one prompt definition.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - plus_category
+  query_parameters: []
+  response_schema:
+    name: AdminPromptVersionListResponse
+    type: object
+    additionalProperties: false
+    required: [items]
+    properties:
+      items:
+        type: array
+        maxItems: 200
+        items: &adminPromptVersionItem
+          name: AdminPromptVersionItem
+          type: object
+          additionalProperties: false
+          required: [id, uuid, tenantId, organizationId, promptId, versionNo, title, content, variableSchema, outputSchema, modelConstraints, safetyPolicy, examplesJson, checksumHash, lifecycleStatus, reviewStatus, createdBy, createdAt, updatedAt]
+          properties:
+            id: { type: integer, format: int64, minimum: 1 }
+            uuid: { type: string, minLength: 1, maxLength: 128 }
+            tenantId: { type: integer, format: int64, minimum: 1 }
+            organizationId: { type: integer, format: int64, minimum: 1 }
+            promptId: { type: integer, format: int64, minimum: 1 }
+            versionNo: { type: string, minLength: 1, maxLength: 128 }
+            title: { type: string, minLength: 1, maxLength: 255 }
+            content: { type: string, minLength: 1, maxLength: 50000 }
+            variableSchema: &jsonObject
+              type: object
+              additionalProperties: true
+            outputSchema: *jsonObject
+            modelConstraints: *jsonObject
+            safetyPolicy: *jsonObject
+            examplesJson:
+              type: array
+              items: *jsonObject
+            checksumHash: { type: string, minLength: 1, maxLength: 128 }
+            lifecycleStatus: { type: string, maxLength: 64 }
+            reviewStatus: { type: string, maxLength: 64 }
+            reviewComment: { type: string, nullable: true, maxLength: 2000 }
+            createdBy: { type: integer, format: int64, minimum: 1 }
+            publishedAt: { type: string, nullable: true, maxLength: 64 }
+            createdAt: { type: string, minLength: 1, maxLength: 64 }
+            updatedAt: { type: string, minLength: 1, maxLength: 64 }
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: createPromptVersion
+  operation_id: versions.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/prompts/{promptId}/versions
+  sdk_domain: prompts
+  idempotency_required: true
+  summary: Create prompt version
+  description: Creates a draft prompt version with typed variables, output schema, examples, and safety policy.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - plus_category
+  write_tables:
+  - ai_prompt
+  - ai_prompt_version
+  - ops_audit_log
+  request_schema:
+    name: AdminPromptVersionCreateRequest
+    type: object
+    additionalProperties: false
+    required: [versionNo, title, content]
+    properties:
+      versionNo: { type: string, minLength: 1, maxLength: 128, pattern: "^[A-Za-z0-9_.:-]+$" }
+      title: { type: string, minLength: 1, maxLength: 255 }
+      content: { type: string, minLength: 1, maxLength: 50000 }
+      variableSchema: *jsonObject
+      outputSchema: *jsonObject
+      modelConstraints: *jsonObject
+      safetyPolicy: *jsonObject
+      examplesJson:
+        oneOf:
+        - type: array
+          items: *jsonObject
+        - *jsonObject
+  response_schema:
+    name: AdminPromptVersionMutationResponse
+    type: object
+    additionalProperties: false
+    required: [item]
+    properties:
+      item: *adminPromptVersionItem
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: publishPromptVersion
+  operation_id: versions.publish
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/prompts/versions/{versionId}/publish
+  sdk_domain: prompts
+  request_body_required: false
+  summary: Publish prompt version
+  description: Publishes a reviewed prompt version and makes it the prompt default runtime version.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - plus_category
+  write_tables:
+  - ai_prompt
+  - ai_prompt_version
+  - ops_audit_log
+  response_schema:
+    name: AdminPromptVersionMutationResponse
+    schema:
+      $ref: "#/components/schemas/AdminPromptVersionMutationResponse"
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: renderPromptVersion
+  operation_id: versionRenders.create
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/prompts/versions/{versionId}/render
+  sdk_domain: prompts
+  summary: Render prompt version
+  description: Renders a prompt version by applying runtime variables without persisting output.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - plus_category
+  write_tables:
+  - ops_audit_log
+  request_schema:
+    name: AdminPromptRenderRequest
+    type: object
+    additionalProperties: false
+    properties:
+      variables: *jsonObject
+  response_schema:
+    name: AdminPromptRenderResponse
+    type: object
+    additionalProperties: false
+    required: [rendered]
+    properties:
+      rendered: { type: string, maxLength: 50000 }
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: listPromptBindings
+  operation_id: definitionBindings.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/prompts/{promptId}/bindings
+  sdk_domain: prompts
+  summary: List prompt bindings
+  description: Lists agent, skill, and runtime owner bindings for a prompt definition.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - ai_prompt_binding
+  - plus_category
+  query_parameters: []
+  response_schema:
+    name: AdminPromptBindingListResponse
+    type: object
+    additionalProperties: false
+    required: [items]
+    properties:
+      items:
+        type: array
+        maxItems: 200
+        items: &adminPromptBindingItem
+          name: AdminPromptBindingItem
+          type: object
+          additionalProperties: false
+          required: [id, uuid, tenantId, organizationId, promptId, ownerType, ownerId, bindingRole, priority, enabled, policyJson, snapshotJson, createdAt, updatedAt]
+          properties:
+            id: { type: integer, format: int64, minimum: 1 }
+            uuid: { type: string, minLength: 1, maxLength: 128 }
+            tenantId: { type: integer, format: int64, minimum: 1 }
+            organizationId: { type: integer, format: int64, minimum: 1 }
+            promptId: { type: integer, format: int64, minimum: 1 }
+            promptVersionId: { type: integer, nullable: true, format: int64 }
+            ownerType: { type: string, maxLength: 64 }
+            ownerId: { type: integer, format: int64, minimum: 1 }
+            bindingRole: { type: string, maxLength: 64 }
+            priority: { type: integer, format: int32 }
+            enabled: { type: boolean }
+            policyJson: *jsonObject
+            snapshotJson: *jsonObject
+            createdAt: { type: string, minLength: 1, maxLength: 64 }
+            updatedAt: { type: string, minLength: 1, maxLength: 64 }
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: createPromptBinding
+  operation_id: definitionBindings.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/prompts/{promptId}/bindings
+  sdk_domain: prompts
+  idempotency_required: true
+  summary: Create prompt binding
+  description: Creates an owner binding for a prompt definition or a specific prompt version.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - ai_prompt_binding
+  - plus_category
+  write_tables:
+  - ai_prompt_binding
+  - ops_audit_log
+  request_schema:
+    name: AdminPromptBindingCreateRequest
+    type: object
+    additionalProperties: false
+    required: [ownerType, ownerId, bindingRole]
+    properties:
+      promptVersionId: { type: integer, nullable: true, format: int64, minimum: 1 }
+      ownerType: { type: string, minLength: 1, maxLength: 64 }
+      ownerId: { type: integer, format: int64, minimum: 1 }
+      bindingRole: { type: string, minLength: 1, maxLength: 64 }
+      priority: { type: integer, format: int32 }
+      enabled: { type: boolean }
+      policyJson: *jsonObject
+  response_schema:
+    name: AdminPromptBindingMutationResponse
+    type: object
+    additionalProperties: false
+    required: [item]
+    properties:
+      item: *adminPromptBindingItem
+- route: /admin/prompts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  operation: updatePromptBinding
+  operation_id: definitionBindings.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/prompts/bindings/{bindingId}
+  sdk_domain: prompts
+  summary: Update prompt binding
+  description: Updates owner binding policy, version scope, priority, and enablement for a prompt binding.
+  read_sources:
+  - ai_prompt
+  - ai_prompt_version
+  - ai_prompt_binding
+  - plus_category
+  write_tables:
+  - ai_prompt_binding
+  - ops_audit_log
+  request_schema:
+    name: AdminPromptBindingUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      promptVersionId: { type: integer, nullable: true, format: int64, minimum: 1 }
+      ownerType: { type: string, maxLength: 64 }
+      ownerId: { type: integer, format: int64, minimum: 1 }
+      bindingRole: { type: string, maxLength: 64 }
+      priority: { type: integer, format: int32 }
+      enabled: { type: boolean }
+      policyJson: *jsonObject
+  response_schema:
+    name: AdminPromptBindingMutationResponse
+    schema:
+      $ref: "#/components/schemas/AdminPromptBindingMutationResponse"

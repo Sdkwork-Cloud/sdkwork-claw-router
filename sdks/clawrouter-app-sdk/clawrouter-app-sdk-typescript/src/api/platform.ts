@@ -22,6 +22,10 @@ export interface PlatformAppsStoreListParams {
   page?: number;
   pageSize?: number;
   q?: string;
+  category?: string;
+  platformType?: 'Desktop' | 'Mobile' | 'Web' | 'Mini Program';
+  platformTypes?: ('Desktop' | 'Mobile' | 'Web' | 'Mini Program')[];
+  sort?: 'popular_desc' | 'rating_desc' | 'newest_desc';
   status?: 'ACTIVE' | 'INACTIVE';
   startTime?: string;
   endTime?: string;
@@ -43,6 +47,10 @@ export class PlatformAppsStoreApi {
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
+      { name: 'category', value: params?.category, style: 'form', explode: true, allowReserved: false },
+      { name: 'platform_type', value: params?.platformType, style: 'form', explode: true, allowReserved: false },
+      { name: 'platform_types', value: params?.platformTypes, style: 'form', explode: false, allowReserved: false },
+      { name: 'sort', value: params?.sort, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
       { name: 'start_time', value: params?.startTime, style: 'form', explode: true, allowReserved: false },
       { name: 'end_time', value: params?.endTime, style: 'form', explode: true, allowReserved: false },

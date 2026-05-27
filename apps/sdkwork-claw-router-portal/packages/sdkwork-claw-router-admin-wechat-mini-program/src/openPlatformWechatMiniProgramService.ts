@@ -1,5 +1,4 @@
 import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -30,9 +29,9 @@ export interface WechatMiniProgramItem {
   qrDefault: boolean;
   defaultEntryId: string;
   appId: string;
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
+  hasAppSecret: boolean;
+  hasToken: boolean;
+  hasEncodingAesKey: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -49,12 +48,12 @@ export interface WechatMiniProgramEntryItem {
 }
 
 export interface WechatMiniProgramInput {
-  key: string;
+  key?: string;
   name: string;
   appId?: string;
-  tokenRef?: string;
-  secretRef?: string;
-  aesKeyRef?: string;
+  appSecret?: string;
+  token?: string;
+  encodingAesKey?: string;
 }
 
 export interface WechatMiniProgramUpdateInput {
@@ -63,9 +62,9 @@ export interface WechatMiniProgramUpdateInput {
   qrDefault?: boolean;
   defaultEntryId?: string;
   appId?: string;
-  tokenRef?: string;
-  secretRef?: string;
-  aesKeyRef?: string;
+  appSecret?: string;
+  token?: string;
+  encodingAesKey?: string;
 }
 
 export interface WechatMiniProgramEntryInput {
@@ -92,18 +91,16 @@ export class WechatMiniProgramService {
 
   static async createAccount(input: WechatMiniProgramInput): Promise<WechatMiniProgramItem> {
     const request: OpenPlatformAccountCreateRequest = {
-      key: input.key.trim(),
+      key: optionalPatchString(input.key) ?? buildOpenPlatformAccountKey('wechat.mini', input.appId, input.name),
       name: input.name.trim(),
       provider: 'wechat',
       type: 'mini_app',
       appId: optionalString(input.appId),
-      tokenRef: optionalString(input.tokenRef),
-      secretRef: optionalString(input.secretRef),
-      aesKeyRef: optionalString(input.aesKeyRef),
+      appSecret: optionalString(input.appSecret),
+      token: optionalString(input.token),
+      encodingAesKey: optionalString(input.encodingAesKey),
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.create(request, {
-      xRequestId: createRequestToken('admin-wechat-mini-program-create'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.create(request);
     ensureSdkworkApiSuccess(result, 'Failed to create WeChat mini program');
     return normalizeMiniProgram(readRequiredApiItem(result, 'WeChat mini program is required'));
   }
@@ -119,13 +116,11 @@ export class WechatMiniProgramService {
       qrDefault: input.qrDefault,
       defaultEntryId: optionalNullablePatchString(input.defaultEntryId),
       appId: optionalNullablePatchString(input.appId),
-      tokenRef: optionalNullablePatchString(input.tokenRef),
-      secretRef: optionalNullablePatchString(input.secretRef),
-      aesKeyRef: optionalNullablePatchString(input.aesKeyRef),
+      appSecret: optionalPatchString(input.appSecret),
+      token: optionalPatchString(input.token),
+      encodingAesKey: optionalPatchString(input.encodingAesKey),
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.update(normalizedAccountId, request, {
-      xRequestId: createRequestToken('admin-wechat-mini-program-update'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.update(normalizedAccountId, request);
     ensureSdkworkApiSuccess(result, 'Failed to update WeChat mini program');
     return normalizeMiniProgram(readRequiredApiItem(result, 'WeChat mini program is required'));
   }
@@ -144,9 +139,7 @@ export class WechatMiniProgramService {
       type: 'mini_app_url',
       url: input.url.trim(),
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.create(normalizedAccountId, request, {
-      xRequestId: createRequestToken('admin-wechat-mini-program-entry-create'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.create(normalizedAccountId, request);
     ensureSdkworkApiSuccess(result, 'Failed to create WeChat mini program URL entry');
     return normalizeMiniProgramEntry(readRequiredApiItem(result, 'WeChat mini program URL entry is required'));
   }
@@ -164,9 +157,7 @@ export class WechatMiniProgramService {
       url: optionalPatchString(input.url),
       status: input.status,
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.update(normalizedAccountId, normalizedEntryId, request, {
-      xRequestId: createRequestToken('admin-wechat-mini-program-entry-update'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.update(normalizedAccountId, normalizedEntryId, request);
     ensureSdkworkApiSuccess(result, 'Failed to update WeChat mini program URL entry');
     return normalizeMiniProgramEntry(readRequiredApiItem(result, 'WeChat mini program URL entry is required'));
   }
@@ -174,9 +165,7 @@ export class WechatMiniProgramService {
   static async deleteEntry(accountId: string, entryId: string): Promise<void> {
     const normalizedAccountId = requiredSafePathSegment(accountId, 'accountId');
     const normalizedEntryId = requiredSafePathSegment(entryId, 'entryId');
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.delete(normalizedAccountId, normalizedEntryId, {
-      xRequestId: createRequestToken('admin-wechat-mini-program-entry-delete'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.delete(normalizedAccountId, normalizedEntryId);
     ensureSdkworkApiSuccess(result, 'Failed to delete WeChat mini program URL entry');
   }
 }
@@ -188,6 +177,9 @@ function normalizeMiniProgram(value: unknown): WechatMiniProgramItem {
   if (provider !== 'wechat' || type !== 'mini_app') {
     throw new Error(`Unsupported WeChat mini program record: ${provider}/${type}`);
   }
+  const tokenRef = readNullableString(item, 'tokenRef') ?? '';
+  const secretRef = readNullableString(item, 'secretRef') ?? '';
+  const aesKeyRef = readNullableString(item, 'aesKeyRef') ?? '';
   return {
     id: readRequiredString(item, 'id', 'WeChat mini program id is required'),
     key: readRequiredString(item, 'key', 'WeChat mini program key is required'),
@@ -196,9 +188,9 @@ function normalizeMiniProgram(value: unknown): WechatMiniProgramItem {
     qrDefault: readBoolean(item, 'qrDefault', false),
     defaultEntryId: readNullableString(item, 'defaultEntryId') ?? '',
     appId: readNullableString(item, 'appId') ?? '',
-    tokenRef: readNullableString(item, 'tokenRef') ?? '',
-    secretRef: readNullableString(item, 'secretRef') ?? '',
-    aesKeyRef: readNullableString(item, 'aesKeyRef') ?? '',
+    hasAppSecret: secretRef.trim().length > 0,
+    hasToken: tokenRef.trim().length > 0,
+    hasEncodingAesKey: aesKeyRef.trim().length > 0,
     createdAt: readString(item, 'createdAt'),
     updatedAt: readString(item, 'updatedAt'),
   };
@@ -260,4 +252,16 @@ function optionalNullablePatchString(value: string | undefined): string | null |
     return undefined;
   }
   return optionalString(value);
+}
+
+function buildOpenPlatformAccountKey(prefix: string, appId: string | undefined, name: string): string {
+  const source = optionalPatchString(appId) ?? optionalPatchString(name) ?? 'account';
+  const normalized = source
+    .toLowerCase()
+    .replace(/[^a-z0-9._:-]+/g, '-')
+    .replace(/^[^a-z0-9]+/, '')
+    .replace(/[._:-]+$/g, '');
+  const segment = normalized || 'account';
+  const key = `${prefix}.${segment}`;
+  return key.length <= 128 ? key : key.slice(0, 128).replace(/[._:-]+$/g, '') || `${prefix}.account`;
 }

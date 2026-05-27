@@ -10,7 +10,7 @@ public class OpenAiFineTuningGraderValidationResult {
     public List<String> getErrors() {
         return this.errors;
     }
-    
+
     public void setErrors(List<String> errors) {
         this.errors = errors;
     }
@@ -18,7 +18,7 @@ public class OpenAiFineTuningGraderValidationResult {
     public Boolean getValid() {
         return this.valid;
     }
-    
+
     public void setValid(Boolean valid) {
         this.valid = valid;
     }
@@ -26,7 +26,7 @@ public class OpenAiFineTuningGraderValidationResult {
     public List<String> getWarnings() {
         return this.warnings;
     }
-    
+
     public void setWarnings(List<String> warnings) {
         this.warnings = warnings;
     }

@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 use serde::Deserialize;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, QueryBuilder, Row, Sqlite, SqlitePool};
@@ -10,17 +8,15 @@ const PACKAGES_JSON: &str = include_str!("../../../../../data/skills/packages.js
 const SKILLS_JSON: &str = include_str!("../../../../../data/skills/skills.json");
 const ASSETS_JSON: &str = include_str!("../../../../../data/skills/assets.json");
 const ARTIFACTS_JSON: &str = include_str!("../../../../../data/skills/artifacts.json");
+const CORE_SKILLS_JSON: &str = include_str!("../../../../../data/skills/core-skills.json");
+const CORE_ASSETS_JSON: &str = include_str!("../../../../../data/skills/core-assets.json");
+const CORE_ARTIFACTS_JSON: &str = include_str!("../../../../../data/skills/core-artifacts.json");
 
 const SYSTEM_TENANT_ID: i64 = 0;
 const SYSTEM_ORGANIZATION_ID: i64 = 0;
 const SYSTEM_DATA_SCOPE: i32 = 0;
 const ACTIVE_STATUS: i32 = 1;
-const SKILL_CATEGORY_TYPE: i32 = 19;
-const SKILL_COLLECTION_CATEGORY_TYPE: i32 = 20;
 const SKILL_TARGET_TYPE: i32 = 35;
-const OFFICIAL_SOURCE_TYPE: &str = "OFFICIAL";
-const SDKWORK_PROVIDER: &str = "SDKWork";
-const SDKWORK_OFFICIAL_CATEGORY_CODE: &str = "sdkwork-official";
 const SQLITE_MAX_BIND_PARAMETERS: usize = 999;
 const SQLITE_COUNT_BATCH_SIZE: usize = 900;
 const SQLITE_SKILL_INSERT_BIND_COUNT: usize = 46;
@@ -32,6 +28,12 @@ const SQLITE_ASSET_INSERT_BATCH_SIZE: usize =
     SQLITE_MAX_BIND_PARAMETERS / SQLITE_ASSET_INSERT_BIND_COUNT;
 const SQLITE_ARTIFACT_INSERT_BATCH_SIZE: usize =
     SQLITE_MAX_BIND_PARAMETERS / SQLITE_ARTIFACT_INSERT_BIND_COUNT;
+const BUNDLED_SKILLS_SEED_SKILL_COUNT: usize = 65_539;
+const BUNDLED_SKILLS_SEED_ASSET_COUNT: usize = 65_539;
+const BUNDLED_SKILLS_SEED_ARTIFACT_COUNT: usize = 65_539;
+const BUNDLED_SKILLS_SEED_SOURCE_HASH: &str =
+    "892e1f301eb5550379ec4de19526773b273d442792a2f69bbb8b3891a13f04be";
+const CORE_SKILL_IDS: [i64; 3] = [8101, 8102, 8103];
 
 #[derive(Debug, Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -183,6 +185,28 @@ struct SkillsSeedCatalog {
     artifacts: Vec<CatalogArtifactSeed>,
 }
 
+#[derive(Debug, Clone)]
+struct SkillsSeedIntegrityCatalog {
+    manifest: SkillsSeedManifest,
+    categories: Vec<SkillCategorySeed>,
+    packages: Vec<SkillPackageSeed>,
+    skill_count: usize,
+    asset_count: usize,
+    artifact_count: usize,
+    source_hash: String,
+}
+
+#[derive(Debug, Clone)]
+struct SkillsSeedCoreCatalog {
+    manifest: SkillsSeedManifest,
+    categories: Vec<SkillCategorySeed>,
+    packages: Vec<SkillPackageSeed>,
+    skills: Vec<AgentSkillSeed>,
+    assets: Vec<CatalogAssetSeed>,
+    artifacts: Vec<CatalogArtifactSeed>,
+    source_hash: String,
+}
+
 impl SkillsSeedCatalog {
     fn load() -> Result<Self, serde_json::Error> {
         Ok(Self {
@@ -194,6 +218,20 @@ impl SkillsSeedCatalog {
             artifacts: serde_json::from_str(ARTIFACTS_JSON)?,
         })
     }
+}
+
+impl SkillsSeedIntegrityCatalog {
+    fn load() -> Result<Self, serde_json::Error> {
+        Ok(Self {
+            manifest: serde_json::from_str(MANIFEST_JSON)?,
+            categories: serde_json::from_str(CATEGORIES_JSON)?,
+            packages: serde_json::from_str(PACKAGES_JSON)?,
+            skill_count: BUNDLED_SKILLS_SEED_SKILL_COUNT,
+            asset_count: BUNDLED_SKILLS_SEED_ASSET_COUNT,
+            artifact_count: BUNDLED_SKILLS_SEED_ARTIFACT_COUNT,
+            source_hash: BUNDLED_SKILLS_SEED_SOURCE_HASH.to_owned(),
+        })
+    }
 
     fn payload(&self) -> String {
         serde_json::json!({
@@ -203,97 +241,90 @@ impl SkillsSeedCatalog {
             "generatedAt": self.manifest.generated_at,
             "categoryCount": self.categories.len(),
             "packageCount": self.packages.len(),
-            "skillCount": self.skills.len(),
-            "assetCount": self.assets.len(),
-            "artifactCount": self.artifacts.len(),
+            "skillCount": self.skill_count,
+            "assetCount": self.asset_count,
+            "artifactCount": self.artifact_count,
         })
         .to_string()
     }
+}
 
-    fn visible_skill_category_count(&self) -> usize {
-        self.categories
-            .iter()
-            .filter(|item| is_visible_skill_category(item))
-            .count()
+impl SkillsSeedCoreCatalog {
+    fn load() -> Result<Self, serde_json::Error> {
+        Ok(Self {
+            manifest: serde_json::from_str(MANIFEST_JSON)?,
+            categories: serde_json::from_str(CATEGORIES_JSON)?,
+            packages: serde_json::from_str(PACKAGES_JSON)?,
+            skills: core_skill_seed_rows()?,
+            assets: core_asset_seed_rows()?,
+            artifacts: core_artifact_seed_rows()?,
+            source_hash: BUNDLED_SKILLS_SEED_SOURCE_HASH.to_owned(),
+        })
     }
+}
 
-    fn store_visible_skill_count(&self) -> usize {
-        let visible_category_ids = self.visible_category_ids();
-        let enabled_package_ids = self.enabled_package_ids();
-        self.skills
+fn core_skill_seed_rows() -> Result<Vec<AgentSkillSeed>, serde_json::Error> {
+    parse_core_seed_rows(CORE_SKILLS_JSON, |item: &AgentSkillSeed| item.id)
+}
+
+fn core_asset_seed_rows() -> Result<Vec<CatalogAssetSeed>, serde_json::Error> {
+    parse_core_seed_rows(CORE_ASSETS_JSON, |item: &CatalogAssetSeed| item.target_id)
+}
+
+fn core_artifact_seed_rows() -> Result<Vec<CatalogArtifactSeed>, serde_json::Error> {
+    parse_core_seed_rows(CORE_ARTIFACTS_JSON, |item: &CatalogArtifactSeed| {
+        item.target_id
+    })
+}
+
+fn parse_core_seed_rows<T, F>(json: &str, id: F) -> Result<Vec<T>, serde_json::Error>
+where
+    T: for<'de> Deserialize<'de>,
+    F: Fn(&T) -> i64,
+{
+    let rows: Vec<T> = serde_json::from_str(json)?;
+    if rows.len() != CORE_SKILL_IDS.len()
+        || !CORE_SKILL_IDS
             .iter()
-            .filter(|item| {
-                is_store_visible_skill_seed(item, &visible_category_ids, &enabled_package_ids)
-            })
-            .count()
+            .all(|expected| rows.iter().any(|row| id(row) == *expected))
+    {
+        return Err(serde::de::Error::custom(
+            "core bundled skills seed data does not match the canonical repair set",
+        ));
     }
+    Ok(rows)
+}
 
-    fn official_store_visible_skill_count(&self) -> usize {
-        let Some(official_category_id) = self.sdkwork_official_category_id() else {
-            return 0;
+impl SkillsSeedCatalog {
+    fn integrity_catalog(&self) -> SkillsSeedIntegrityCatalog {
+        let mut catalog = SkillsSeedIntegrityCatalog {
+            manifest: self.manifest.clone(),
+            categories: self.categories.clone(),
+            packages: self.packages.clone(),
+            skill_count: self.skills.len(),
+            asset_count: self.assets.len(),
+            artifact_count: self.artifacts.len(),
+            source_hash: String::new(),
         };
-        let visible_category_ids = self.visible_category_ids();
-        let enabled_package_ids = self.enabled_package_ids();
-        self.skills
-            .iter()
-            .filter(|item| {
-                is_store_visible_skill_seed(item, &visible_category_ids, &enabled_package_ids)
-                    && item.category_id == Some(official_category_id)
-                    && item.source_type == OFFICIAL_SOURCE_TYPE
-                    && item.provider.as_deref() == Some(SDKWORK_PROVIDER)
-            })
-            .count()
-    }
-
-    fn sdkwork_official_category_id(&self) -> Option<i64> {
-        self.categories
-            .iter()
-            .find(|item| item.code.as_deref() == Some(SDKWORK_OFFICIAL_CATEGORY_CODE))
-            .map(|item| item.id)
-    }
-
-    fn visible_category_ids(&self) -> HashSet<i64> {
-        self.categories
-            .iter()
-            .filter(|item| is_visible_skill_category(item))
-            .map(|item| item.id)
-            .collect()
-    }
-
-    fn enabled_package_ids(&self) -> HashSet<i64> {
-        self.packages
-            .iter()
-            .filter(|item| item.enabled)
-            .map(|item| item.id)
-            .collect()
+        catalog.source_hash = skills_seed_payload_hash(catalog.payload().as_str());
+        catalog
     }
 }
 
-fn is_visible_skill_category(item: &SkillCategorySeed) -> bool {
-    item.visible
-        && item.status == ACTIVE_STATUS
-        && (item.r#type == SKILL_CATEGORY_TYPE || item.r#type == SKILL_COLLECTION_CATEGORY_TYPE)
+impl From<&SkillsSeedCatalog> for SkillsSeedIntegrityCatalog {
+    fn from(seed: &SkillsSeedCatalog) -> Self {
+        seed.integrity_catalog()
+    }
 }
 
-fn is_store_visible_skill_seed(
-    item: &AgentSkillSeed,
-    visible_category_ids: &HashSet<i64>,
-    enabled_package_ids: &HashSet<i64>,
-) -> bool {
-    item.enabled
-        && item.market_status == "PUBLISHED"
-        && item.visibility == "PUBLIC"
-        && item.review_status == "APPROVED"
-        && item
-            .category_id
-            .is_some_and(|category_id| visible_category_ids.contains(&category_id))
-        && item
-            .package_id
-            .is_some_and(|package_id| enabled_package_ids.contains(&package_id))
+impl SkillsSeedCatalog {
+    fn payload(&self) -> String {
+        SkillsSeedIntegrityCatalog::from(self).payload()
+    }
 }
 
 pub(crate) fn bundled_skills_seed_payload() -> Result<String, serde_json::Error> {
-    Ok(SkillsSeedCatalog::load()?.payload())
+    Ok(SkillsSeedIntegrityCatalog::load()?.payload())
 }
 
 pub(crate) async fn import_sqlite_skills_seed(pool: &SqlitePool) -> Result<(), sqlx::Error> {
@@ -304,6 +335,33 @@ pub(crate) async fn import_sqlite_skills_seed(pool: &SqlitePool) -> Result<(), s
     import_sqlite_skills(&mut tx, &seed).await?;
     import_sqlite_assets(&mut tx, &seed).await?;
     import_sqlite_artifacts(&mut tx, &seed).await?;
+    tx.commit().await?;
+    Ok(())
+}
+
+pub(crate) async fn repair_incomplete_sqlite_skills_seed(
+    pool: &SqlitePool,
+) -> Result<(), sqlx::Error> {
+    let seed = SkillsSeedCoreCatalog::load().map_err(json_decode_error)?;
+
+    let mut tx = pool.begin().await?;
+    import_sqlite_category_rows(&mut tx, &seed.categories).await?;
+    import_sqlite_package_rows(&mut tx, &seed.packages).await?;
+    import_sqlite_skill_rows(&mut tx, &seed.skills).await?;
+    import_sqlite_asset_rows(
+        &mut tx,
+        &seed.manifest,
+        &seed.assets,
+        seed.source_hash.as_str(),
+    )
+    .await?;
+    import_sqlite_artifact_rows(
+        &mut tx,
+        &seed.manifest,
+        &seed.artifacts,
+        seed.source_hash.as_str(),
+    )
+    .await?;
     tx.commit().await?;
     Ok(())
 }
@@ -320,78 +378,82 @@ pub(crate) async fn import_postgres_skills_seed(pool: &PgPool) -> Result<(), sql
     Ok(())
 }
 
-pub(crate) async fn sqlite_skills_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
-    let seed = SkillsSeedCatalog::load().map_err(json_decode_error)?;
-    let visible_seed_category_count = seed.visible_skill_category_count();
-    let store_visible_seed_skill_count = seed.store_visible_skill_count();
-    if visible_seed_category_count == 0
-        || store_visible_seed_skill_count == 0
-        || seed.official_store_visible_skill_count() < 3
-    {
-        return Ok(false);
-    }
-    let category_count = sqlite_category_seed_standard_count(pool, &seed.categories).await?;
-    let package_count = sqlite_package_seed_standard_count(pool, &seed.packages).await?;
-    let skill_count = sqlite_skill_seed_standard_count(pool, &seed.skills).await?;
-    let visible_category_count =
-        sqlite_visible_skill_category_seed_standard_count(pool, &seed.categories).await?;
-    let store_visible_skill_count =
-        sqlite_store_visible_skill_seed_standard_count(pool, &seed).await?;
-    let asset_count = sqlite_seed_count(
+pub(crate) async fn postgres_skills_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let seed = SkillsSeedIntegrityCatalog::load().map_err(json_decode_error)?;
+    let category_count = postgres_category_seed_standard_count(pool, &seed.categories).await?;
+    let package_count = postgres_package_seed_standard_count(pool, &seed.packages).await?;
+    let official_skill_count = postgres_official_skill_seed_standard_count(pool).await?;
+    let skill_count = postgres_skill_seed_count(pool).await?;
+    let asset_count = postgres_skill_projection_seed_count(
         pool,
         "studio_catalog_asset",
-        "uuid",
-        &seed
-            .assets
-            .iter()
-            .map(|item| item.uuid.as_str())
-            .collect::<Vec<_>>(),
+        "skill_asset",
+        &seed.source_hash,
     )
     .await?;
-    let artifact_count = sqlite_artifact_seed_standard_count(pool, &seed.artifacts).await?;
+    let artifact_count = postgres_skill_projection_seed_count(
+        pool,
+        "studio_catalog_artifact",
+        "skill_artifact",
+        &seed.source_hash,
+    )
+    .await?;
+    Ok(category_count == seed.categories.len() as i64
+        && package_count == seed.packages.len() as i64
+        && official_skill_count >= 3
+        && skill_count == seed.skill_count as i64
+        && asset_count == seed.asset_count as i64
+        && artifact_count == seed.artifact_count as i64)
+}
+
+pub(crate) async fn sqlite_skills_seed_current(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    let seed = SkillsSeedCoreCatalog::load().map_err(json_decode_error)?;
+    let category_count = sqlite_category_seed_standard_count(pool, &seed.categories).await?;
+    let package_count = sqlite_package_seed_standard_count(pool, &seed.packages).await?;
+    let skill_count = sqlite_core_skill_seed_standard_count(pool, &seed.skills).await?;
+    let asset_count = sqlite_core_asset_seed_standard_count(
+        pool,
+        &seed.manifest,
+        &seed.assets,
+        seed.source_hash.as_str(),
+    )
+    .await?;
+    let artifact_count = sqlite_core_artifact_seed_standard_count(
+        pool,
+        &seed.manifest,
+        &seed.artifacts,
+        seed.source_hash.as_str(),
+    )
+    .await?;
     Ok(category_count == seed.categories.len() as i64
         && package_count == seed.packages.len() as i64
         && skill_count == seed.skills.len() as i64
-        && visible_category_count == visible_seed_category_count as i64
-        && store_visible_skill_count == store_visible_seed_skill_count as i64
         && asset_count == seed.assets.len() as i64
         && artifact_count == seed.artifacts.len() as i64)
 }
 
-pub(crate) async fn postgres_skills_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
-    let seed = SkillsSeedCatalog::load().map_err(json_decode_error)?;
-    let visible_seed_category_count = seed.visible_skill_category_count();
-    let store_visible_seed_skill_count = seed.store_visible_skill_count();
-    if visible_seed_category_count == 0
-        || store_visible_seed_skill_count == 0
-        || seed.official_store_visible_skill_count() < 3
-    {
-        return Ok(false);
-    }
+pub(crate) async fn postgres_skills_seed_current(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let seed = SkillsSeedCoreCatalog::load().map_err(json_decode_error)?;
     let category_count = postgres_category_seed_standard_count(pool, &seed.categories).await?;
     let package_count = postgres_package_seed_standard_count(pool, &seed.packages).await?;
-    let skill_count = postgres_skill_seed_standard_count(pool, &seed.skills).await?;
-    let visible_category_count =
-        postgres_visible_skill_category_seed_standard_count(pool, &seed.categories).await?;
-    let store_visible_skill_count =
-        postgres_store_visible_skill_seed_standard_count(pool, &seed).await?;
-    let asset_count = postgres_seed_count(
+    let skill_count = postgres_core_skill_seed_standard_count(pool, &seed.skills).await?;
+    let asset_count = postgres_core_asset_seed_standard_count(
         pool,
-        "studio_catalog_asset",
-        "uuid",
-        &seed
-            .assets
-            .iter()
-            .map(|item| item.uuid.as_str())
-            .collect::<Vec<_>>(),
+        &seed.manifest,
+        &seed.assets,
+        seed.source_hash.as_str(),
     )
     .await?;
-    let artifact_count = postgres_artifact_seed_standard_count(pool, &seed.artifacts).await?;
+    let artifact_count = postgres_core_artifact_seed_standard_count(
+        pool,
+        &seed.manifest,
+        &seed.artifacts,
+        seed.source_hash.as_str(),
+    )
+    .await?;
     Ok(category_count == seed.categories.len() as i64
         && package_count == seed.packages.len() as i64
         && skill_count == seed.skills.len() as i64
-        && visible_category_count == visible_seed_category_count as i64
-        && store_visible_skill_count == store_visible_seed_skill_count as i64
         && asset_count == seed.assets.len() as i64
         && artifact_count == seed.artifacts.len() as i64)
 }
@@ -400,7 +462,14 @@ async fn import_sqlite_categories(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    for item in &seed.categories {
+    import_sqlite_category_rows(tx, &seed.categories).await
+}
+
+async fn import_sqlite_category_rows(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    categories: &[SkillCategorySeed],
+) -> Result<(), sqlx::Error> {
+    for item in categories {
         sqlx::query(
             r#"
             INSERT INTO plus_category
@@ -456,7 +525,14 @@ async fn import_sqlite_packages(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    for item in &seed.packages {
+    import_sqlite_package_rows(tx, &seed.packages).await
+}
+
+async fn import_sqlite_package_rows(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    packages: &[SkillPackageSeed],
+) -> Result<(), sqlx::Error> {
+    for item in packages {
         sqlx::query(
             r#"
             DELETE FROM plus_agent_skill_package
@@ -534,7 +610,14 @@ async fn import_sqlite_skills(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    for chunk in seed.skills.chunks(SQLITE_SKILL_INSERT_BATCH_SIZE) {
+    import_sqlite_skill_rows(tx, &seed.skills).await
+}
+
+async fn import_sqlite_skill_rows(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    skills: &[AgentSkillSeed],
+) -> Result<(), sqlx::Error> {
+    for chunk in skills.chunks(SQLITE_SKILL_INSERT_BATCH_SIZE) {
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO plus_agent_skill
@@ -645,15 +728,23 @@ async fn import_sqlite_assets(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    let asset_uuids = seed
-        .assets
+    let seed_hash = seed_hash(seed);
+    import_sqlite_asset_rows(tx, &seed.manifest, &seed.assets, seed_hash.as_str()).await
+}
+
+async fn import_sqlite_asset_rows(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    manifest: &SkillsSeedManifest,
+    assets: &[CatalogAssetSeed],
+    source_hash: &str,
+) -> Result<(), sqlx::Error> {
+    let asset_uuids = assets
         .iter()
         .map(|item| item.uuid.as_str())
         .collect::<Vec<_>>();
     delete_sqlite_seed_rows_by_text_values(tx, "studio_catalog_asset", "uuid", &asset_uuids)
         .await?;
-    let seed_hash = seed_hash(seed);
-    for chunk in seed.assets.chunks(SQLITE_ASSET_INSERT_BATCH_SIZE) {
+    for chunk in assets.chunks(SQLITE_ASSET_INSERT_BATCH_SIZE) {
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO studio_catalog_asset
@@ -667,8 +758,8 @@ async fn import_sqlite_assets(
                 .push_bind(SYSTEM_DATA_SCOPE)
                 .push_bind(ACTIVE_STATUS)
                 .push_bind(seed_metadata_with_hash(
-                    seed,
-                    seed_hash.as_str(),
+                    manifest,
+                    source_hash,
                     "skill_asset",
                     &item.uuid,
                 ))
@@ -697,15 +788,23 @@ async fn import_sqlite_artifacts(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
-    let artifact_uuids = seed
-        .artifacts
+    let seed_hash = seed_hash(seed);
+    import_sqlite_artifact_rows(tx, &seed.manifest, &seed.artifacts, seed_hash.as_str()).await
+}
+
+async fn import_sqlite_artifact_rows(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    manifest: &SkillsSeedManifest,
+    artifacts: &[CatalogArtifactSeed],
+    source_hash: &str,
+) -> Result<(), sqlx::Error> {
+    let artifact_uuids = artifacts
         .iter()
         .map(|item| item.uuid.as_str())
         .collect::<Vec<_>>();
     delete_sqlite_seed_rows_by_text_values(tx, "studio_catalog_artifact", "uuid", &artifact_uuids)
         .await?;
-    let seed_hash = seed_hash(seed);
-    for chunk in seed.artifacts.chunks(SQLITE_ARTIFACT_INSERT_BATCH_SIZE) {
+    for chunk in artifacts.chunks(SQLITE_ARTIFACT_INSERT_BATCH_SIZE) {
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO studio_catalog_artifact
@@ -719,8 +818,8 @@ async fn import_sqlite_artifacts(
                 .push_bind(SYSTEM_DATA_SCOPE)
                 .push_bind(ACTIVE_STATUS)
                 .push_bind(seed_metadata_with_hash(
-                    seed,
-                    seed_hash.as_str(),
+                    manifest,
+                    source_hash,
                     "skill_artifact",
                     &item.uuid,
                 ))
@@ -1183,28 +1282,132 @@ async fn import_postgres_artifacts(
     Ok(())
 }
 
-async fn sqlite_seed_count(
+async fn sqlite_core_skill_seed_standard_count(
     pool: &SqlitePool,
-    table_name: &str,
-    column_name: &str,
-    values: &[&str],
+    skills: &[AgentSkillSeed],
 ) -> Result<i64, sqlx::Error> {
-    if values.is_empty() {
-        return Ok(0);
-    }
     let mut count = 0;
-    for chunk in values.chunks(SQLITE_COUNT_BATCH_SIZE) {
-        let placeholders = std::iter::repeat_n("?", chunk.len())
-            .collect::<Vec<_>>()
-            .join(", ");
-        let sql = format!(
-            "SELECT COUNT(1) AS count FROM {table_name} WHERE tenant_id = 0 AND organization_id = 0 AND {column_name} IN ({placeholders})"
-        );
-        let mut query = sqlx::query(sql.as_str());
-        for value in chunk {
-            query = query.bind(value);
-        }
-        let row = query.fetch_one(pool).await?;
+    for item in skills {
+        let row = sqlx::query(
+            r#"
+            SELECT COUNT(1) AS count
+            FROM plus_agent_skill
+            WHERE tenant_id = 0
+              AND organization_id = 0
+              AND data_scope = 0
+              AND id = ?
+              AND uuid = ?
+              AND skill_key = ?
+              AND name = ?
+              AND provider = ?
+              AND source_type = 'OFFICIAL'
+              AND market_status = 'PUBLISHED'
+              AND visibility = 'PUBLIC'
+              AND review_status = 'APPROVED'
+              AND builtin = 1
+              AND is_builtin = 1
+              AND enabled = 1
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(&item.skill_key)
+        .bind(&item.name)
+        .bind(&item.provider)
+        .fetch_one(pool)
+        .await?;
+        count += row.get::<i64, _>("count");
+    }
+    Ok(count)
+}
+
+async fn sqlite_core_asset_seed_standard_count(
+    pool: &SqlitePool,
+    manifest: &SkillsSeedManifest,
+    assets: &[CatalogAssetSeed],
+    source_hash: &str,
+) -> Result<i64, sqlx::Error> {
+    let mut count = 0;
+    for item in assets {
+        let metadata = seed_metadata_with_hash(manifest, source_hash, "skill_asset", &item.uuid);
+        let row = sqlx::query(
+            r#"
+            SELECT COUNT(1) AS count
+            FROM studio_catalog_asset
+            WHERE tenant_id = 0
+              AND organization_id = 0
+              AND status = 1
+              AND deleted_at IS NULL
+              AND uuid = ?
+              AND metadata = ?
+              AND target_type = ?
+              AND target_id = ?
+              AND asset_type = ?
+              AND asset_url = ?
+              AND sort_order = ?
+            "#,
+        )
+        .bind(&item.uuid)
+        .bind(metadata)
+        .bind(item.target_type)
+        .bind(item.target_id)
+        .bind(item.asset_type)
+        .bind(&item.asset_url)
+        .bind(item.sort_order)
+        .fetch_one(pool)
+        .await?;
+        count += row.get::<i64, _>("count");
+    }
+    Ok(count)
+}
+
+async fn sqlite_core_artifact_seed_standard_count(
+    pool: &SqlitePool,
+    manifest: &SkillsSeedManifest,
+    artifacts: &[CatalogArtifactSeed],
+    source_hash: &str,
+) -> Result<i64, sqlx::Error> {
+    let mut count = 0;
+    for item in artifacts {
+        let metadata = seed_metadata_with_hash(manifest, source_hash, "skill_artifact", &item.uuid);
+        let row = sqlx::query(
+            r#"
+            SELECT COUNT(1) AS count
+            FROM studio_catalog_artifact
+            WHERE tenant_id = 0
+              AND organization_id = 0
+              AND status = 1
+              AND deleted_at IS NULL
+              AND uuid = ?
+              AND metadata = ?
+              AND target_type = ?
+              AND target_id = ?
+              AND artifact_type = ?
+              AND version = ?
+              AND platform_type = ?
+              AND os_name = ?
+              AND artifact_ref = ?
+              AND artifact_url = ?
+              AND artifact_size_bytes = ?
+              AND runtime = ?
+              AND checksum_hash = ?
+            "#,
+        )
+        .bind(&item.uuid)
+        .bind(metadata)
+        .bind(item.target_type)
+        .bind(item.target_id)
+        .bind(item.artifact_type)
+        .bind(&item.version)
+        .bind(&item.platform_type)
+        .bind(&item.os_name)
+        .bind(&item.artifact_ref)
+        .bind(&item.artifact_url)
+        .bind(item.artifact_size_bytes)
+        .bind(&item.runtime)
+        .bind(&item.checksum_hash)
+        .fetch_one(pool)
+        .await?;
         count += row.get::<i64, _>("count");
     }
     Ok(count)
@@ -1275,146 +1478,6 @@ async fn sqlite_package_seed_standard_count(
         .bind(item.sort_weight)
         .bind(item.enabled)
         .bind(item.featured)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
-}
-
-async fn sqlite_visible_skill_category_seed_standard_count(
-    pool: &SqlitePool,
-    categories: &[SkillCategorySeed],
-) -> Result<i64, sqlx::Error> {
-    let visible_category_ids = categories
-        .iter()
-        .filter(|item| is_visible_skill_category(item))
-        .map(|item| item.id)
-        .collect::<Vec<_>>();
-    if visible_category_ids.is_empty() {
-        return Ok(0);
-    }
-    let placeholders = std::iter::repeat_n("?", visible_category_ids.len())
-        .collect::<Vec<_>>()
-        .join(", ");
-    let sql = format!(
-        r#"
-        SELECT COUNT(1) AS count
-        FROM plus_category
-        WHERE tenant_id = 0
-          AND organization_id = 0
-          AND id IN ({placeholders})
-          AND type IN (?, ?)
-          AND COALESCE(visible, 1) = 1
-          AND COALESCE(status, 1) = 1
-        "#
-    );
-    let mut query = sqlx::query(sql.as_str());
-    for category_id in visible_category_ids {
-        query = query.bind(category_id);
-    }
-    let row = query
-        .bind(SKILL_CATEGORY_TYPE)
-        .bind(SKILL_COLLECTION_CATEGORY_TYPE)
-        .fetch_one(pool)
-        .await?;
-    Ok(row.get::<i64, _>("count"))
-}
-
-async fn sqlite_store_visible_skill_seed_standard_count(
-    pool: &SqlitePool,
-    seed: &SkillsSeedCatalog,
-) -> Result<i64, sqlx::Error> {
-    let visible_category_ids = seed.visible_category_ids();
-    let enabled_package_ids = seed.enabled_package_ids();
-    let visible_skills = seed
-        .skills
-        .iter()
-        .filter(|item| {
-            is_store_visible_skill_seed(item, &visible_category_ids, &enabled_package_ids)
-        })
-        .collect::<Vec<_>>();
-    let mut count = 0;
-    for item in visible_skills {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM plus_agent_skill s
-            JOIN plus_category c
-              ON c.id = s.category_id
-             AND c.tenant_id = s.tenant_id
-             AND c.organization_id = s.organization_id
-             AND c.type IN (?, ?)
-             AND COALESCE(c.visible, 1) = 1
-             AND COALESCE(c.status, 1) = 1
-            JOIN plus_agent_skill_package p
-              ON p.id = s.package_id
-             AND p.tenant_id = s.tenant_id
-             AND p.organization_id = s.organization_id
-             AND COALESCE(p.enabled, 0) = 1
-            WHERE s.tenant_id = 0
-              AND s.organization_id = 0
-              AND s.skill_key = ?
-              AND COALESCE(s.enabled, 0) = 1
-              AND upper(COALESCE(s.visibility, '')) = 'PUBLIC'
-              AND upper(COALESCE(s.review_status, '')) = 'APPROVED'
-              AND upper(COALESCE(s.market_status, '')) = 'PUBLISHED'
-            "#,
-        )
-        .bind(SKILL_CATEGORY_TYPE)
-        .bind(SKILL_COLLECTION_CATEGORY_TYPE)
-        .bind(&item.skill_key)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
-}
-
-async fn sqlite_skill_seed_standard_count(
-    pool: &SqlitePool,
-    skills: &[AgentSkillSeed],
-) -> Result<i64, sqlx::Error> {
-    let mut count = 0;
-    for item in skills {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM plus_agent_skill
-            WHERE tenant_id = 0
-              AND organization_id = 0
-              AND uuid = ?
-              AND skill_key = ?
-              AND name = ?
-              AND source_type = ?
-              AND market_status = ?
-              AND visibility = ?
-              AND review_status = ?
-              AND builtin = ?
-              AND is_builtin = ?
-              AND enabled = ?
-              AND featured = ?
-              AND recommend_weight = ?
-              AND currency = ?
-              AND install_count = ?
-              AND rating_count = ?
-            "#,
-        )
-        .bind(&item.uuid)
-        .bind(&item.skill_key)
-        .bind(&item.name)
-        .bind(&item.source_type)
-        .bind(&item.market_status)
-        .bind(&item.visibility)
-        .bind(&item.review_status)
-        .bind(item.builtin)
-        .bind(item.is_builtin)
-        .bind(item.enabled)
-        .bind(item.featured)
-        .bind(item.recommend_weight)
-        .bind(&item.currency)
-        .bind(item.install_count)
-        .bind(item.rating_count)
         .fetch_one(pool)
         .await?;
         count += row.get::<i64, _>("count");
@@ -1494,108 +1557,71 @@ async fn postgres_package_seed_standard_count(
     Ok(count)
 }
 
-async fn postgres_visible_skill_category_seed_standard_count(
+async fn postgres_skill_projection_seed_count(
     pool: &PgPool,
-    categories: &[SkillCategorySeed],
+    table_name: &str,
+    item_type: &str,
+    seed_hash: &str,
 ) -> Result<i64, sqlx::Error> {
-    let visible_category_ids = categories
-        .iter()
-        .filter(|item| is_visible_skill_category(item))
-        .map(|item| item.id)
-        .collect::<Vec<_>>();
-    if visible_category_ids.is_empty() {
-        return Ok(0);
-    }
+    let sql = format!(
+        r#"
+        SELECT COUNT(1) AS count
+        FROM {table_name}
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND status = 1
+          AND deleted_at IS NULL
+          AND metadata ->> 'itemType' = $1
+          AND metadata ->> 'sourceHash' = $2
+        "#
+    );
+    let row = sqlx::query(sql.as_str())
+        .bind(item_type)
+        .bind(seed_hash)
+        .fetch_one(pool)
+        .await?;
+    Ok(row.get::<i64, _>("count"))
+}
+
+async fn postgres_skill_seed_count(pool: &PgPool) -> Result<i64, sqlx::Error> {
     let row = sqlx::query(
         r#"
         SELECT COUNT(1) AS count
-        FROM plus_category
+        FROM plus_agent_skill
         WHERE tenant_id = 0
           AND organization_id = 0
-          AND id = ANY($1)
-          AND type IN ($2, $3)
-          AND COALESCE(visible, true) = true
-          AND COALESCE(status, 1) = 1
+          AND data_scope = 0
         "#,
     )
-    .bind(&visible_category_ids)
-    .bind(SKILL_CATEGORY_TYPE)
-    .bind(SKILL_COLLECTION_CATEGORY_TYPE)
     .fetch_one(pool)
     .await?;
     Ok(row.get::<i64, _>("count"))
 }
 
-async fn postgres_store_visible_skill_seed_standard_count(
-    pool: &PgPool,
-    seed: &SkillsSeedCatalog,
-) -> Result<i64, sqlx::Error> {
-    let visible_category_ids = seed.visible_category_ids();
-    let enabled_package_ids = seed.enabled_package_ids();
-    let visible_skills = seed
-        .skills
-        .iter()
-        .filter(|item| {
-            is_store_visible_skill_seed(item, &visible_category_ids, &enabled_package_ids)
-        })
-        .collect::<Vec<_>>();
-    let mut count = 0;
-    for item in visible_skills {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM plus_agent_skill s
-            JOIN plus_category c
-              ON c.id = s.category_id
-             AND c.tenant_id = s.tenant_id
-             AND c.organization_id = s.organization_id
-             AND c.type IN ($1, $2)
-             AND COALESCE(c.visible, true) = true
-             AND COALESCE(c.status, 1) = 1
-            JOIN plus_agent_skill_package p
-              ON p.id = s.package_id
-             AND p.tenant_id = s.tenant_id
-             AND p.organization_id = s.organization_id
-             AND COALESCE(p.enabled, false) = true
-            WHERE s.tenant_id = 0
-              AND s.organization_id = 0
-              AND s.skill_key = $3
-              AND COALESCE(s.enabled, false) = true
-              AND upper(COALESCE(s.visibility, '')) = 'PUBLIC'
-              AND upper(COALESCE(s.review_status, '')) = 'APPROVED'
-              AND upper(COALESCE(s.market_status, '')) = 'PUBLISHED'
-            "#,
-        )
-        .bind(SKILL_CATEGORY_TYPE)
-        .bind(SKILL_COLLECTION_CATEGORY_TYPE)
-        .bind(&item.skill_key)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
-}
-
-async fn postgres_seed_count(
-    pool: &PgPool,
-    table_name: &str,
-    column_name: &str,
-    values: &[&str],
-) -> Result<i64, sqlx::Error> {
-    if values.is_empty() {
-        return Ok(0);
-    }
-    let sql = format!(
-        "SELECT COUNT(1) AS count FROM {table_name} WHERE tenant_id = 0 AND organization_id = 0 AND {column_name} = ANY($1)"
-    );
-    let row = sqlx::query(sql.as_str())
-        .bind(values)
-        .fetch_one(pool)
-        .await?;
+async fn postgres_official_skill_seed_standard_count(pool: &PgPool) -> Result<i64, sqlx::Error> {
+    let row = sqlx::query(
+        r#"
+        SELECT COUNT(1) AS count
+        FROM plus_agent_skill
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND data_scope = 0
+          AND source_type = 'OFFICIAL'
+          AND provider = 'SDKWork'
+          AND market_status = 'PUBLISHED'
+          AND visibility = 'PUBLIC'
+          AND review_status = 'APPROVED'
+          AND builtin = true
+          AND is_builtin = true
+          AND enabled = true
+        "#,
+    )
+    .fetch_one(pool)
+    .await?;
     Ok(row.get::<i64, _>("count"))
 }
 
-async fn postgres_skill_seed_standard_count(
+async fn postgres_core_skill_seed_standard_count(
     pool: &PgPool,
     skills: &[AgentSkillSeed],
 ) -> Result<i64, sqlx::Error> {
@@ -1607,38 +1633,26 @@ async fn postgres_skill_seed_standard_count(
             FROM plus_agent_skill
             WHERE tenant_id = 0
               AND organization_id = 0
-              AND uuid = $1
-              AND skill_key = $2
-              AND name = $3
-              AND source_type = $4
-              AND market_status = $5
-              AND visibility = $6
-              AND review_status = $7
-              AND builtin = $8
-              AND is_builtin = $9
-              AND enabled = $10
-              AND featured = $11
-              AND recommend_weight = $12
-              AND currency = $13
-              AND install_count = $14
-              AND rating_count = $15
+              AND data_scope = 0
+              AND id = $1
+              AND uuid = $2
+              AND skill_key = $3
+              AND name = $4
+              AND provider = $5
+              AND source_type = 'OFFICIAL'
+              AND market_status = 'PUBLISHED'
+              AND visibility = 'PUBLIC'
+              AND review_status = 'APPROVED'
+              AND builtin = true
+              AND is_builtin = true
+              AND enabled = true
             "#,
         )
+        .bind(item.id)
         .bind(&item.uuid)
         .bind(&item.skill_key)
         .bind(&item.name)
-        .bind(&item.source_type)
-        .bind(&item.market_status)
-        .bind(&item.visibility)
-        .bind(&item.review_status)
-        .bind(item.builtin)
-        .bind(item.is_builtin)
-        .bind(item.enabled)
-        .bind(item.featured)
-        .bind(item.recommend_weight)
-        .bind(&item.currency)
-        .bind(item.install_count)
-        .bind(item.rating_count)
+        .bind(&item.provider)
         .fetch_one(pool)
         .await?;
         count += row.get::<i64, _>("count");
@@ -1646,105 +1660,80 @@ async fn postgres_skill_seed_standard_count(
     Ok(count)
 }
 
-async fn sqlite_artifact_seed_standard_count(
-    pool: &SqlitePool,
-    artifacts: &[CatalogArtifactSeed],
+async fn postgres_core_asset_seed_standard_count(
+    pool: &PgPool,
+    manifest: &SkillsSeedManifest,
+    assets: &[CatalogAssetSeed],
+    source_hash: &str,
 ) -> Result<i64, sqlx::Error> {
     let mut count = 0;
-    for chunk in artifacts.chunks(SQLITE_COUNT_BATCH_SIZE / 12) {
-        let predicates = std::iter::repeat_n(
-            r#"
-            SELECT ? AS uuid,
-                   ? AS target_type,
-                   ? AS target_id,
-                   ? AS artifact_type,
-                   ? AS version,
-                   ? AS platform_type,
-                   ? AS os_name,
-                   ? AS artifact_ref,
-                   ? AS artifact_url,
-                   ? AS artifact_size_bytes,
-                   ? AS runtime,
-                   ? AS checksum_hash
-            "#,
-            chunk.len(),
-        )
-        .collect::<Vec<_>>()
-        .join(" UNION ALL ");
-        let sql = format!(
+    for item in assets {
+        let metadata = seed_metadata_with_hash(manifest, source_hash, "skill_asset", &item.uuid);
+        let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
-            FROM studio_catalog_artifact artifact
-            JOIN ({predicates}) seed
-              ON seed.uuid = artifact.uuid
-             AND seed.target_type = artifact.target_type
-             AND seed.target_id = artifact.target_id
-             AND seed.artifact_type = artifact.artifact_type
-             AND seed.version = artifact.version
-             AND seed.platform_type = artifact.platform_type
-             AND seed.os_name = artifact.os_name
-             AND seed.artifact_ref = artifact.artifact_ref
-             AND seed.artifact_url = artifact.artifact_url
-             AND seed.artifact_size_bytes = artifact.artifact_size_bytes
-             AND seed.runtime = artifact.runtime
-             AND seed.checksum_hash = artifact.checksum_hash
-            WHERE artifact.tenant_id = 0
-              AND artifact.organization_id = 0
-              AND artifact.status = ?
-              AND artifact.deleted_at IS NULL
-            "#
-        );
-        let mut query = sqlx::query(sql.as_str());
-        for item in chunk {
-            query = query
-                .bind(&item.uuid)
-                .bind(item.target_type)
-                .bind(item.target_id)
-                .bind(item.artifact_type)
-                .bind(&item.version)
-                .bind(&item.platform_type)
-                .bind(&item.os_name)
-                .bind(&item.artifact_ref)
-                .bind(&item.artifact_url)
-                .bind(item.artifact_size_bytes)
-                .bind(&item.runtime)
-                .bind(&item.checksum_hash);
-        }
-        let row = query.bind(ACTIVE_STATUS).fetch_one(pool).await?;
+            FROM studio_catalog_asset
+            WHERE tenant_id = 0
+              AND organization_id = 0
+              AND status = 1
+              AND deleted_at IS NULL
+              AND uuid = $1
+              AND metadata = $2::jsonb
+              AND target_type = $3
+              AND target_id = $4
+              AND asset_type = $5
+              AND asset_url = $6
+              AND sort_order = $7
+            "#,
+        )
+        .bind(&item.uuid)
+        .bind(metadata)
+        .bind(item.target_type)
+        .bind(item.target_id)
+        .bind(item.asset_type)
+        .bind(&item.asset_url)
+        .bind(item.sort_order)
+        .fetch_one(pool)
+        .await?;
         count += row.get::<i64, _>("count");
     }
     Ok(count)
 }
 
-async fn postgres_artifact_seed_standard_count(
+async fn postgres_core_artifact_seed_standard_count(
     pool: &PgPool,
+    manifest: &SkillsSeedManifest,
     artifacts: &[CatalogArtifactSeed],
+    source_hash: &str,
 ) -> Result<i64, sqlx::Error> {
     let mut count = 0;
     for item in artifacts {
+        let metadata = seed_metadata_with_hash(manifest, source_hash, "skill_artifact", &item.uuid);
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
             FROM studio_catalog_artifact
             WHERE tenant_id = 0
               AND organization_id = 0
-              AND uuid = $1
-              AND target_type = $2
-              AND target_id = $3
-              AND artifact_type = $4
-              AND version = $5
-              AND platform_type = $6
-              AND os_name = $7
-              AND artifact_ref = $8
-              AND artifact_url = $9
-              AND artifact_size_bytes = $10
-              AND runtime = $11
-              AND checksum_hash = $12
-              AND status = $13
+              AND status = 1
               AND deleted_at IS NULL
+              AND uuid = $1
+              AND metadata = $2::jsonb
+              AND target_type = $3
+              AND target_id = $4
+              AND artifact_type = $5
+              AND version = $6
+              AND platform_type = $7
+              AND os_name = $8
+              AND artifact_ref = $9
+              AND artifact_url = $10
+              AND artifact_size_bytes = $11
+              AND runtime = $12
+              AND checksum_hash = $13
             "#,
         )
         .bind(&item.uuid)
+        .bind(metadata)
         .bind(item.target_type)
         .bind(item.target_id)
         .bind(item.artifact_type)
@@ -1756,7 +1745,6 @@ async fn postgres_artifact_seed_standard_count(
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(&item.checksum_hash)
-        .bind(ACTIVE_STATUS)
         .fetch_one(pool)
         .await?;
         count += row.get::<i64, _>("count");
@@ -1769,20 +1757,25 @@ fn json_string<T: serde::Serialize>(value: &T) -> String {
 }
 
 fn seed_metadata(seed: &SkillsSeedCatalog, item_type: &str, item_uuid: &str) -> String {
-    seed_metadata_with_hash(seed, seed_hash(seed).as_str(), item_type, item_uuid)
+    seed_metadata_with_hash(
+        &seed.manifest,
+        seed_hash(seed).as_str(),
+        item_type,
+        item_uuid,
+    )
 }
 
 fn seed_metadata_with_hash(
-    seed: &SkillsSeedCatalog,
+    manifest: &SkillsSeedManifest,
     source_hash: &str,
     item_type: &str,
     item_uuid: &str,
 ) -> String {
     serde_json::json!({
-        "source": seed.manifest.catalog_code,
-        "catalogVersion": seed.manifest.catalog_version,
-        "schemaVersion": seed.manifest.schema_version,
-        "generatedAt": seed.manifest.generated_at,
+        "source": manifest.catalog_code,
+        "catalogVersion": manifest.catalog_version,
+        "schemaVersion": manifest.schema_version,
+        "generatedAt": manifest.generated_at,
         "itemType": item_type,
         "itemUuid": item_uuid,
         "sourceHash": source_hash,
@@ -1791,8 +1784,12 @@ fn seed_metadata_with_hash(
 }
 
 fn seed_hash(seed: &SkillsSeedCatalog) -> String {
+    skills_seed_payload_hash(seed.payload().as_str())
+}
+
+fn skills_seed_payload_hash(payload: &str) -> String {
     let mut hasher = Sha256::new();
-    hasher.update(seed.payload().as_bytes());
+    hasher.update(payload.as_bytes());
     hex::encode(hasher.finalize())
 }
 

@@ -11,7 +11,7 @@ public class AnthropicMessageBatchRequestCounts {
     public Integer getCanceled() {
         return this.canceled;
     }
-    
+
     public void setCanceled(Integer canceled) {
         this.canceled = canceled;
     }
@@ -19,7 +19,7 @@ public class AnthropicMessageBatchRequestCounts {
     public Integer getErrored() {
         return this.errored;
     }
-    
+
     public void setErrored(Integer errored) {
         this.errored = errored;
     }
@@ -27,7 +27,7 @@ public class AnthropicMessageBatchRequestCounts {
     public Integer getExpired() {
         return this.expired;
     }
-    
+
     public void setExpired(Integer expired) {
         this.expired = expired;
     }
@@ -35,7 +35,7 @@ public class AnthropicMessageBatchRequestCounts {
     public Integer getProcessing() {
         return this.processing;
     }
-    
+
     public void setProcessing(Integer processing) {
         this.processing = processing;
     }
@@ -43,7 +43,7 @@ public class AnthropicMessageBatchRequestCounts {
     public Integer getSucceeded() {
         return this.succeeded;
     }
-    
+
     public void setSucceeded(Integer succeeded) {
         this.succeeded = succeeded;
     }

@@ -14,5 +14,9 @@ pub struct PlusApiResult {
 
     /// Human-readable response message.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub message: Option<String>,
+
+    /// Human-readable response message.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub msg: Option<String>,
 }

@@ -121,9 +121,25 @@ pub(crate) fn settings_from_payload(payload: &str) -> DomainResult<SiteSettings>
     let value = serde_json::from_str::<serde_json::Value>(payload)
         .map_err(|error| DomainError::new(error.to_string()))?;
     let settings = value.get("settings").cloned().unwrap_or(value);
+    let missing_short_name = settings
+        .as_object()
+        .map(|object| !object.contains_key("shortName"))
+        .unwrap_or(false);
+    let missing_seo_title = settings
+        .as_object()
+        .map(|object| !object.contains_key("seoTitle"))
+        .unwrap_or(false);
+
     serde_json::from_value::<StoredSiteSettings>(settings)
-        .map(SiteSettings::from)
-        .map(SiteSettings::normalized)
+        .map(|mut stored| {
+            if missing_short_name {
+                stored.short_name.clear();
+            }
+            if missing_seo_title {
+                stored.seo_title.clear();
+            }
+            SiteSettings::from(stored).normalized()
+        })
         .map_err(|error| DomainError::new(error.to_string()))
 }
 

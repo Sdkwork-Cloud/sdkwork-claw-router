@@ -11,7 +11,7 @@ public class OpenAiVectorStoreFileCounts {
     public Integer getCancelled() {
         return this.cancelled;
     }
-    
+
     public void setCancelled(Integer cancelled) {
         this.cancelled = cancelled;
     }
@@ -19,7 +19,7 @@ public class OpenAiVectorStoreFileCounts {
     public Integer getCompleted() {
         return this.completed;
     }
-    
+
     public void setCompleted(Integer completed) {
         this.completed = completed;
     }
@@ -27,7 +27,7 @@ public class OpenAiVectorStoreFileCounts {
     public Integer getFailed() {
         return this.failed;
     }
-    
+
     public void setFailed(Integer failed) {
         this.failed = failed;
     }
@@ -35,7 +35,7 @@ public class OpenAiVectorStoreFileCounts {
     public Integer getInProgress() {
         return this.inProgress;
     }
-    
+
     public void setInProgress(Integer inProgress) {
         this.inProgress = inProgress;
     }
@@ -43,7 +43,7 @@ public class OpenAiVectorStoreFileCounts {
     public Integer getTotal() {
         return this.total;
     }
-    
+
     public void setTotal(Integer total) {
         this.total = total;
     }

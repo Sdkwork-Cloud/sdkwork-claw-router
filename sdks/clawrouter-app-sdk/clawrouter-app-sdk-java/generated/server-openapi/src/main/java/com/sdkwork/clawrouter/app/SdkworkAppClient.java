@@ -2,68 +2,80 @@ package com.sdkwork.clawrouter.app;
 
 import com.sdkwork.common.core.Types;
 import com.sdkwork.clawrouter.app.http.HttpClient;
+import com.sdkwork.clawrouter.app.api.CommerceApi;
 import com.sdkwork.clawrouter.app.api.AgentsApi;
 import com.sdkwork.clawrouter.app.api.AiApi;
 import com.sdkwork.clawrouter.app.api.AuthApi;
-import com.sdkwork.clawrouter.app.api.BillingApi;
 import com.sdkwork.clawrouter.app.api.ChatApi;
 import com.sdkwork.clawrouter.app.api.ContentApi;
 import com.sdkwork.clawrouter.app.api.EcosystemApi;
 import com.sdkwork.clawrouter.app.api.IamApi;
 import com.sdkwork.clawrouter.app.api.MemoryApi;
 import com.sdkwork.clawrouter.app.api.NotificationApi;
+import com.sdkwork.clawrouter.app.api.OpenPlatformApi;
 import com.sdkwork.clawrouter.app.api.PlatformApi;
-import com.sdkwork.clawrouter.app.api.RuntimeApi;
 import com.sdkwork.clawrouter.app.api.SystemApi;
+import com.sdkwork.clawrouter.app.api.RuntimeApi;
+import com.sdkwork.clawrouter.app.api.SdkReferenceApi;
 
 public class SdkworkAppClient {
     private final HttpClient httpClient;
+    private CommerceApi commerce;
     private AgentsApi agents;
     private AiApi ai;
     private AuthApi auth;
-    private BillingApi billing;
     private ChatApi chat;
     private ContentApi content;
     private EcosystemApi ecosystem;
     private IamApi iam;
     private MemoryApi memory;
     private NotificationApi notification;
+    private OpenPlatformApi openPlatform;
     private PlatformApi platform;
-    private RuntimeApi runtime;
     private SystemApi system;
+    private RuntimeApi runtime;
+    private SdkReferenceApi sdkReference;
 
     public SdkworkAppClient(String baseUrl) {
         this.httpClient = new HttpClient(baseUrl);
+        this.commerce = new CommerceApi(httpClient);
         this.agents = new AgentsApi(httpClient);
         this.ai = new AiApi(httpClient);
         this.auth = new AuthApi(httpClient);
-        this.billing = new BillingApi(httpClient);
         this.chat = new ChatApi(httpClient);
         this.content = new ContentApi(httpClient);
         this.ecosystem = new EcosystemApi(httpClient);
         this.iam = new IamApi(httpClient);
         this.memory = new MemoryApi(httpClient);
         this.notification = new NotificationApi(httpClient);
+        this.openPlatform = new OpenPlatformApi(httpClient);
         this.platform = new PlatformApi(httpClient);
-        this.runtime = new RuntimeApi(httpClient);
         this.system = new SystemApi(httpClient);
+        this.runtime = new RuntimeApi(httpClient);
+        this.sdkReference = new SdkReferenceApi(httpClient);
     }
 
     public SdkworkAppClient(Types.SdkConfig config) {
         this.httpClient = new HttpClient(config);
+        this.commerce = new CommerceApi(httpClient);
         this.agents = new AgentsApi(httpClient);
         this.ai = new AiApi(httpClient);
         this.auth = new AuthApi(httpClient);
-        this.billing = new BillingApi(httpClient);
         this.chat = new ChatApi(httpClient);
         this.content = new ContentApi(httpClient);
         this.ecosystem = new EcosystemApi(httpClient);
         this.iam = new IamApi(httpClient);
         this.memory = new MemoryApi(httpClient);
         this.notification = new NotificationApi(httpClient);
+        this.openPlatform = new OpenPlatformApi(httpClient);
         this.platform = new PlatformApi(httpClient);
-        this.runtime = new RuntimeApi(httpClient);
         this.system = new SystemApi(httpClient);
+        this.runtime = new RuntimeApi(httpClient);
+        this.sdkReference = new SdkReferenceApi(httpClient);
+    }
+
+    public CommerceApi getCommerce() {
+        return this.commerce;
     }
 
     public AgentsApi getAgents() {
@@ -76,10 +88,6 @@ public class SdkworkAppClient {
 
     public AuthApi getAuth() {
         return this.auth;
-    }
-
-    public BillingApi getBilling() {
-        return this.billing;
     }
 
     public ChatApi getChat() {
@@ -106,16 +114,24 @@ public class SdkworkAppClient {
         return this.notification;
     }
 
+    public OpenPlatformApi getOpenPlatform() {
+        return this.openPlatform;
+    }
+
     public PlatformApi getPlatform() {
         return this.platform;
+    }
+
+    public SystemApi getSystem() {
+        return this.system;
     }
 
     public RuntimeApi getRuntime() {
         return this.runtime;
     }
 
-    public SystemApi getSystem() {
-        return this.system;
+    public SdkReferenceApi getSdkReference() {
+        return this.sdkReference;
     }
 
     public SdkworkAppClient setApiKey(String apiKey) {

@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -25,9 +27,7 @@ async fn app_agent_session_create_route_creates_resumable_session_with_memory_bi
                 .method("POST")
                 .uri("/app/v3/api/agents/agent-1/sessions")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "title":"Schema design agent session",
@@ -114,9 +114,7 @@ async fn app_agent_session_list_route_uses_product_agent_namespace() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents/agent-1/sessions")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -148,9 +146,7 @@ async fn app_agent_session_detail_route_returns_session_snapshot() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents/sessions/agent-session-1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )

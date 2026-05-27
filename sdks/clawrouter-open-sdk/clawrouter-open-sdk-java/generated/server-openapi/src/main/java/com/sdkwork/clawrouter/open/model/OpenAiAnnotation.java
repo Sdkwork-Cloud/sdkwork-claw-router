@@ -14,7 +14,7 @@ public class OpenAiAnnotation {
     public Integer getEndIndex() {
         return this.endIndex;
     }
-    
+
     public void setEndIndex(Integer endIndex) {
         this.endIndex = endIndex;
     }
@@ -22,7 +22,7 @@ public class OpenAiAnnotation {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -30,7 +30,7 @@ public class OpenAiAnnotation {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -38,7 +38,7 @@ public class OpenAiAnnotation {
     public Integer getIndex() {
         return this.index;
     }
-    
+
     public void setIndex(Integer index) {
         this.index = index;
     }
@@ -46,7 +46,7 @@ public class OpenAiAnnotation {
     public Integer getStartIndex() {
         return this.startIndex;
     }
-    
+
     public void setStartIndex(Integer startIndex) {
         this.startIndex = startIndex;
     }
@@ -54,7 +54,7 @@ public class OpenAiAnnotation {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -62,7 +62,7 @@ public class OpenAiAnnotation {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -70,7 +70,7 @@ public class OpenAiAnnotation {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

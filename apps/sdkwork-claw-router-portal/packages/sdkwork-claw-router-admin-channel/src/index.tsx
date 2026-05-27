@@ -6,6 +6,7 @@ import {
   CheckCircle,
   ChevronLeft,
   ChevronRight,
+  Copy,
   Cpu,
   Edit2,
   Eye,
@@ -42,6 +43,8 @@ import {
 } from './channelService';
 import { authTypesList, knownModelVendors, prefillModels, protocolsList } from './channelOptions';
 import {
+  createChannelCopyDraft,
+  createChannelEditDraft,
   createChannelInputFromForm,
   createChannelStatusUpdateInput,
   createChannelUpdateInputFromForm,
@@ -54,7 +57,7 @@ import {
 import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
-type ModalMode = 'create' | 'edit';
+type ModalMode = 'create' | 'copy' | 'edit';
 type PendingChannelAction = 'test' | 'update' | 'delete';
 type DeleteConfirmation = {
   id: string;
@@ -153,7 +156,7 @@ function optionalTranslatedLabel(
 
 function AddAccountModal({
   mode,
-  initialChannel,
+  initialValues,
   availableModels,
   modelCatalogLoading,
   modelCatalogError,
@@ -162,7 +165,7 @@ function AddAccountModal({
   onSubmit,
 }: {
   mode: ModalMode;
-  initialChannel?: ChannelItem | null;
+  initialValues?: ChannelFormValues | null;
   availableModels: ChannelModelCatalogItem[];
   modelCatalogLoading: boolean;
   modelCatalogError: string | null;
@@ -171,13 +174,13 @@ function AddAccountModal({
   onSubmit: (channel: ChannelFormValues) => Promise<void>;
 }) {
   const { t } = useTranslation();
-  const [selectedProtocol, setSelectedProtocol] = useState(resolveChannelSelectFormValue(initialChannel?.protocol, protocolsList, 'OpenAI'));
-  const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialChannel?.accessType, authTypesList));
+  const [selectedProtocol, setSelectedProtocol] = useState(resolveChannelSelectFormValue(initialValues?.protocol, protocolsList, 'OpenAI'));
+  const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialValues?.accessType, authTypesList));
   const [showMoreAuth, setShowMoreAuth] = useState(false);
-  const [modelVendor, setModelVendor] = useState(resolveChannelSelectFormValue(initialChannel?.vendor, knownModelVendors, 'OpenAI'));
-  const [whitelist, setWhitelist] = useState<string[]>(initialChannel?.models?.length ? initialChannel.models : []);
+  const [modelVendor, setModelVendor] = useState(resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'));
+  const [whitelist, setWhitelist] = useState<string[]>(initialValues?.models?.length ? initialValues.models : []);
   const [capabilities, setCapabilities] = useState<string[]>(
-    initialChannel?.capabilities?.length ? initialChannel.capabilities : ['llm'],
+    initialValues?.capabilities?.length ? initialValues.capabilities : ['llm'],
   );
   const [customModel, setCustomModel] = useState('');
   const [apiKeyVisible, setApiKeyVisible] = useState(false);
@@ -195,10 +198,10 @@ function AddAccountModal({
   }, [modelVendor, vendorCatalogModels]);
 
   useEffect(() => {
-    if (!initialChannel && modelVendor) {
+    if (!initialValues && modelVendor) {
       setWhitelist(defaultModelKeys.slice(0, 5));
     }
-  }, [defaultModelKeys, initialChannel, modelVendor]);
+  }, [defaultModelKeys, initialValues, modelVendor]);
 
   const toggleCapability = (capability: string) => {
     setCapabilities((current) => {
@@ -281,7 +284,7 @@ function AddAccountModal({
         circuitBreakerEnabled,
         circuitBreakerFailureThreshold: String(formData.get('circuitBreakerFailureThreshold') ?? '').trim(),
         weight,
-        status: initialChannel?.status ?? 'active',
+        status: initialValues?.status ?? 'active',
       });
     } catch (err) {
       setLocalError(err instanceof Error ? err.message : t('admin.channel.errors.channelSaveFailed'));
@@ -295,7 +298,11 @@ function AddAccountModal({
         <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] shrink-0">
           <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
             <Server className="w-5 h-5 text-emerald-500" />
-            {isEdit ? t('admin.channel.modals.editChannelTitle') : t('admin.channel.modals.addChannelTitle')}
+            {isEdit
+              ? t('admin.channel.modals.editChannelTitle')
+              : mode === 'copy'
+                ? t('admin.channel.modals.copyChannelTitle')
+                : t('admin.channel.modals.addChannelTitle')}
           </h3>
           <button
             type="button"
@@ -324,7 +331,7 @@ function AddAccountModal({
                     required
                     name="name"
                     type="text"
-                    defaultValue={initialChannel?.name ?? ''}
+                    defaultValue={initialValues?.name ?? ''}
                     placeholder={t('admin.channel.placeholders.channelName')}
                     className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
@@ -468,7 +475,7 @@ function AddAccountModal({
                   <input
                     type="url"
                     name="baseUrl"
-                    defaultValue={initialChannel?.baseUrl ?? ''}
+                    defaultValue={initialValues?.baseUrl ?? ''}
                     placeholder="https://api.openai.com/v1"
                     className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
@@ -506,7 +513,7 @@ function AddAccountModal({
                     type="number"
                     min="1"
                     max="10000"
-                    defaultValue={initialChannel?.weight ?? 100}
+                    defaultValue={initialValues?.weight ?? 100}
                     className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
                 </div>
@@ -515,7 +522,7 @@ function AddAccountModal({
                   <input
                     name="expiresAt"
                     type="datetime-local"
-                    defaultValue={toDateTimeLocalValue(initialChannel?.expiresAt)}
+                    defaultValue={toDateTimeLocalValue(initialValues?.expiresAt)}
                     className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.help.expiresAt')}</p>
@@ -527,7 +534,7 @@ function AddAccountModal({
                   <input
                     name="circuitBreakerEnabled"
                     type="checkbox"
-                    defaultChecked={Boolean(initialChannel?.circuitBreakerPolicy)}
+                    defaultChecked={Boolean(initialValues?.circuitBreakerEnabled)}
                     className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
                   />
                   {t('admin.channel.fields.circuitBreaker')}
@@ -542,7 +549,7 @@ function AddAccountModal({
                     type="number"
                     min="1"
                     max="100"
-                    defaultValue={initialChannel?.circuitBreakerPolicy?.failureThreshold ?? 3}
+                    defaultValue={initialValues?.circuitBreakerFailureThreshold ?? 3}
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
                   />
                 </div>
@@ -732,6 +739,7 @@ function CredentialDetailsModal({
   isLoading,
   loadError,
   onRetry,
+  onCopyApiKey,
   onClose,
 }: {
   channel: ChannelItem;
@@ -739,6 +747,7 @@ function CredentialDetailsModal({
   isLoading: boolean;
   loadError: string | null;
   onRetry: () => void;
+  onCopyApiKey: (channel: ChannelItem) => void;
   onClose: () => void;
 }) {
   const { t } = useTranslation();
@@ -746,6 +755,9 @@ function CredentialDetailsModal({
   const secretRef = channel.secretRef?.trim() ?? '';
   const hasSecretRef = secretRef.length > 0;
   const hasApiKey = Boolean(channel.apiKey?.trim());
+  const apiKeyDisplayValue = apiKeyVisible
+    ? resolveVisibleApiKey(channel)
+    : maskApiKeyForDisplay(channel.apiKey);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
@@ -783,20 +795,17 @@ function CredentialDetailsModal({
                 value={displayChannelTime(channel.expiresAt, t('admin.channel.expiration.never'))}
               />
               <CredentialDetailField
-                label={t('admin.channel.fields.secretReference')}
-                value={secretRef || t('admin.channel.credentials.noReferenceValue')}
-                monospace={hasSecretRef}
-                wide
-              />
-              <CredentialDetailField
                 label={t('admin.channel.fields.apiKey')}
-                value={apiKeyVisible ? channel.apiKey : maskApiKeyForDisplay(channel.apiKey)}
+                value={apiKeyDisplayValue}
                 emptyValue={t('admin.channel.credentials.apiKeyUnavailable')}
                 monospace={hasApiKey}
                 wide
                 onToggleVisibility={() => setApiKeyVisible((current) => !current)}
                 visibilityLabel={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
                 isSecretVisible={apiKeyVisible}
+                onCopy={() => onCopyApiKey(channel)}
+                copyLabel={t('common.actions.copyApiKey')}
+                copyDisabled={!hasApiKey}
               />
             </div>
           </section>
@@ -883,6 +892,10 @@ function maskApiKeyForDisplay(value: string | undefined): string {
   return `${normalized.slice(0, 6)}****${normalized.slice(-4)}`;
 }
 
+function resolveVisibleApiKey(channel: ChannelItem): string {
+  return channel.apiKey ?? '';
+}
+
 function CredentialDetailField({
   label,
   value,
@@ -892,6 +905,9 @@ function CredentialDetailField({
   onToggleVisibility,
   visibilityLabel,
   isSecretVisible = false,
+  onCopy,
+  copyLabel,
+  copyDisabled = false,
 }: {
   label: string;
   value: string | undefined;
@@ -901,6 +917,9 @@ function CredentialDetailField({
   onToggleVisibility?: () => void;
   visibilityLabel?: string;
   isSecretVisible?: boolean;
+  onCopy?: () => void;
+  copyLabel?: string;
+  copyDisabled?: boolean;
 }) {
   const displayValue = value?.trim() ? value : emptyValue ?? '';
   return (
@@ -912,6 +931,18 @@ function CredentialDetailField({
         }`}
       >
         <span className="min-w-0 flex-1 break-words">{displayValue}</span>
+        {onCopy && (
+          <button
+            type="button"
+            onClick={onCopy}
+            disabled={copyDisabled}
+            title={copyLabel}
+            aria-label={copyLabel}
+            className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent dark:hover:bg-white/10 dark:hover:text-slate-200"
+          >
+            <Copy className="h-4 w-4" />
+          </button>
+        )}
         {onToggleVisibility && (
           <button
             type="button"
@@ -935,6 +966,7 @@ export function ChannelAdmin() {
   const [currentPage, setCurrentPage] = useState(1);
   const [modalMode, setModalMode] = useState<ModalMode | null>(null);
   const [editingChannel, setEditingChannel] = useState<ChannelItem | null>(null);
+  const [channelFormDraft, setChannelFormDraft] = useState<ChannelFormValues | null>(null);
   const [viewingCredentialChannel, setViewingCredentialChannel] = useState<ChannelItem | null>(null);
   const [toast, setToast] = useState<ToastState>(null);
   const [loading, setLoading] = useState(true);
@@ -957,6 +989,21 @@ export function ChannelAdmin() {
     setToast({ message, type });
     window.setTimeout(() => setToast(null), 3000);
   }, []);
+
+  const handleCopyApiKey = useCallback((channel: ChannelItem) => {
+    const apiKey = channel.apiKey?.trim();
+    if (!apiKey) {
+      showToast(t('admin.channel.credentials.apiKeyUnavailable'), 'error');
+      return;
+    }
+    if (!navigator.clipboard?.writeText) {
+      showToast(t('common.actions.copyFailed'), 'error');
+      return;
+    }
+    void navigator.clipboard.writeText(apiKey)
+      .then(() => showToast(t('common.actions.copiedApiKey')))
+      .catch(() => showToast(t('common.actions.copyFailed'), 'error'));
+  }, [showToast, t]);
 
   const loadChannels = useCallback(async (isActive: () => boolean = () => true) => {
     setLoading(true);
@@ -1049,12 +1096,20 @@ export function ChannelAdmin() {
 
   const openCreateModal = () => {
     setEditingChannel(null);
+    setChannelFormDraft(null);
     setModalMode('create');
   };
 
   const openEditModal = (channel: ChannelItem) => {
     setEditingChannel(channel);
+    setChannelFormDraft(createChannelEditDraft(channel));
     setModalMode('edit');
+  };
+
+  const openCopyCreateModal = (channel: ChannelItem) => {
+    setEditingChannel(null);
+    setChannelFormDraft(createChannelCopyDraft(channel));
+    setModalMode('copy');
   };
 
   const closeModal = () => {
@@ -1063,6 +1118,7 @@ export function ChannelAdmin() {
     }
     setModalMode(null);
     setEditingChannel(null);
+    setChannelFormDraft(null);
   };
 
   const closeDeleteConfirmation = () => {
@@ -1099,6 +1155,7 @@ export function ChannelAdmin() {
       }
       setModalMode(null);
       setEditingChannel(null);
+      setChannelFormDraft(null);
     } catch (err) {
       const message = err instanceof Error ? err.message : t('admin.channel.errors.channelSaveFailed');
       showToast(message, 'error');
@@ -1179,7 +1236,7 @@ export function ChannelAdmin() {
   };
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       {toast && (
         <div
           className={`fixed right-6 top-6 z-40 rounded-lg border px-4 py-3 text-sm shadow-lg ${
@@ -1192,33 +1249,25 @@ export function ChannelAdmin() {
         </div>
       )}
 
-      <div className="flex shrink-0 flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
-        <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-            <Network className="w-6 h-6 text-emerald-500" />
-            {t('admin.channel.title')}
-          </h2>
-          <p className="text-sm text-slate-500">{t('admin.channel.subtitle')}</p>
-        </div>
-        <div className="flex gap-3 w-full sm:w-auto">
-          <div className="relative flex-1 sm:flex-none">
+      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-admin-channel-toolbar>
+          <div className="relative w-full sm:w-72" data-admin-channel-search>
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
               placeholder={t('admin.channel.searchPlaceholder')}
               value={search}
               onChange={(event) => setSearch(event.target.value)}
-              className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-emerald-500 w-full sm:w-64 text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
+              className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-emerald-500 w-full text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
             />
           </div>
           <button
+            data-admin-channel-primary-action
             onClick={openCreateModal}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0 shadow-lg shadow-emerald-500/20"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex w-full items-center justify-center gap-2 flex-shrink-0 shadow-lg shadow-emerald-500/20 sm:w-auto"
           >
             <Plus className="w-4 h-4" />
             <span className="hidden sm:inline">{t('common.actions.addChannel')}</span>
           </button>
-        </div>
       </div>
 
       <div className="flex shrink-0 items-center gap-1 border-b border-slate-200 dark:border-white/10 pb-4 overflow-x-auto hide-scrollbar">
@@ -1278,6 +1327,7 @@ export function ChannelAdmin() {
               <tr>
                 <th className="px-6 py-4">{t('admin.channel.table.channel')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.provider')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.apiKey')}</th>
                 <th className="px-6 py-4 w-48">{t('admin.channel.table.models')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.weight')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.status')}</th>
@@ -1288,10 +1338,10 @@ export function ChannelAdmin() {
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {loading ? (
-                <BusinessStateTableRow colSpan={8} kind="loading" title={t('admin.channel.states.loadingChannels')} />
+                <BusinessStateTableRow colSpan={9} kind="loading" title={t('admin.channel.states.loadingChannels')} />
               ) : loadError ? (
                 <BusinessStateTableRow
-                  colSpan={8}
+                  colSpan={9}
                   kind="error"
                   title={t('admin.channel.states.channelsLoadErrorTitle')}
                   description={loadError}
@@ -1299,7 +1349,7 @@ export function ChannelAdmin() {
                 />
               ) : paginatedChannels.length === 0 ? (
                 <BusinessStateTableRow
-                  colSpan={8}
+                  colSpan={9}
                   kind="empty"
                   title={t('admin.channel.states.emptyChannelsTitle')}
                   description={
@@ -1312,44 +1362,51 @@ export function ChannelAdmin() {
               ) : (
                 paginatedChannels.map((channel) => (
                   <tr key={channel.id} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
-                    <td className="px-6 py-4 align-top">
-                      <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-                        <span
-                          className={`w-2 h-2 rounded-full ${
-                            channel.status === 'active'
-                              ? 'bg-emerald-500'
-                              : channel.status === 'disabled'
-                                ? 'bg-slate-400'
-                                : 'bg-red-500'
-                          }`}
-                        />
-                        {channel.name}
+                    <td className="px-6 py-4 align-top max-w-[14rem]">
+                      <div className="flex min-w-0 items-center gap-2 whitespace-nowrap">
+                        <span className="flex min-w-0 items-center gap-2 font-semibold text-slate-900 dark:text-white">
+                          <span
+                            className={`h-2 w-2 shrink-0 rounded-full ${
+                              channel.status === 'active'
+                                ? 'bg-emerald-500'
+                                : channel.status === 'disabled'
+                                  ? 'bg-slate-400'
+                                  : 'bg-red-500'
+                            }`}
+                          />
+                          <span className="min-w-0 truncate">{channel.name}</span>
+                        </span>
+                        <CapabilityBadges capabilities={channel.capabilities} />
                       </div>
-                      <CapabilityBadges capabilities={channel.capabilities} />
                     </td>
-                    <td className="px-6 py-4 align-top">
-                      <div className="flex flex-col gap-1.5">
-                        <span className="font-medium text-slate-800 dark:text-slate-200 text-sm flex items-center gap-1.5">
-                          <Cpu className="w-3.5 h-3.5 text-slate-400" />
-                          {channel.vendor}
+                    <td className="px-6 py-4 align-top max-w-[12rem]">
+                      <div className="flex min-w-0 items-center gap-2 whitespace-nowrap">
+                        <span className="font-medium text-slate-800 dark:text-slate-200 text-sm flex min-w-0 items-center gap-1.5 whitespace-nowrap">
+                          <Cpu className="w-3.5 h-3.5 shrink-0 text-slate-400" />
+                          <span className="min-w-0 truncate">{channel.vendor}</span>
                         </span>
-                        <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <Layers className="w-3.5 h-3.5" />
-                          {channel.protocol}
+                        <span className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 whitespace-nowrap">
+                          <Layers className="w-3.5 h-3.5 shrink-0" />
+                          <span className="min-w-0 truncate">{channel.protocol}</span>
                         </span>
-                        <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <Key className="w-3.5 h-3.5" />
-                          {channel.accessType}
+                        <span className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 whitespace-nowrap">
+                          <Key className="w-3.5 h-3.5 shrink-0" />
+                          <span className="min-w-0 truncate">{channel.accessType}</span>
                         </span>
                         {channel.circuitBreakerPolicy && (
-                          <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                            <Network className="w-3.5 h-3.5" />
-                            {t('admin.channel.table.circuitBreakerCount', {
-                              count: channel.circuitBreakerPolicy.failureThreshold,
-                            })}
+                          <span className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 whitespace-nowrap">
+                            <Network className="w-3.5 h-3.5 shrink-0" />
+                            <span className="min-w-0 truncate">
+                              {t('admin.channel.table.circuitBreakerCount', {
+                                count: channel.circuitBreakerPolicy.failureThreshold,
+                              })}
+                            </span>
                           </span>
                         )}
                       </div>
+                    </td>
+                    <td className="px-6 py-4 align-top">
+                      <ApiKeyCell channel={channel} onCopyApiKey={handleCopyApiKey} />
                     </td>
                     <td className="px-6 py-4 align-top">
                       <ChannelModelsCell models={channel.models} />
@@ -1375,6 +1432,13 @@ export function ChannelAdmin() {
                         </IconButton>
                         <IconButton title={t('admin.channel.actions.editChannel')} onClick={() => openEditModal(channel)} disabled={pendingChannelId === channel.id}>
                           <Edit2 className="w-4 h-4" />
+                        </IconButton>
+                        <IconButton
+                          title={t('admin.channel.actions.copyCreateChannel')}
+                          onClick={() => openCopyCreateModal(channel)}
+                          disabled={pendingChannelId === channel.id}
+                        >
+                          <Copy className="w-4 h-4" />
                         </IconButton>
                         <IconButton
                           title={t('admin.channel.actions.testChannel')}
@@ -1437,7 +1501,7 @@ export function ChannelAdmin() {
       {modalMode && (
         <AddAccountModal
           mode={modalMode}
-          initialChannel={editingChannel}
+          initialValues={channelFormDraft}
           availableModels={modelCatalog}
           modelCatalogLoading={modelCatalogLoading}
           modelCatalogError={modelCatalogError}
@@ -1453,6 +1517,7 @@ export function ChannelAdmin() {
           isLoading={providerSecretLoading}
           loadError={providerSecretLoadError}
           onRetry={() => void loadProviderSecrets()}
+          onCopyApiKey={handleCopyApiKey}
           onClose={() => setViewingCredentialChannel(null)}
         />
       )}
@@ -1484,7 +1549,7 @@ function CapabilityBadges({ capabilities }: { capabilities: string[] }) {
   };
 
   return (
-    <div className="flex flex-wrap gap-1 mt-2">
+    <div className="flex max-w-[7rem] shrink-0 items-center gap-1 overflow-hidden whitespace-nowrap">
       {capabilities.map((capability) => {
         const info = mapping[capability];
         if (!info) {
@@ -1537,6 +1602,38 @@ function ChannelModelsCell({ models }: { models: string[] }) {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+function ApiKeyCell({
+  channel,
+  onCopyApiKey,
+}: {
+  channel: ChannelItem;
+  onCopyApiKey: (channel: ChannelItem) => void;
+}) {
+  const { t } = useTranslation();
+  const apiKey = channel.apiKey?.trim();
+  const displayValue = maskApiKeyForDisplay(apiKey);
+  const unavailableLabel = t('admin.channel.credentials.apiKeyUnavailable');
+  const copyLabel = apiKey ? t('common.actions.copyApiKey') : unavailableLabel;
+
+  return (
+    <div className="flex min-w-[9rem] items-center gap-2">
+      <span className={`min-w-0 truncate font-mono text-xs ${apiKey ? 'text-slate-700 dark:text-slate-300' : 'text-slate-400 dark:text-slate-500'}`}>
+        {displayValue || unavailableLabel}
+      </span>
+      <button
+        type="button"
+        onClick={() => onCopyApiKey(channel)}
+        disabled={!apiKey}
+        title={copyLabel}
+        aria-label={copyLabel}
+        className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent dark:hover:bg-white/10 dark:hover:text-slate-200"
+      >
+        <Copy className="h-3.5 w-3.5" />
+      </button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAnnouncementCreateRequest, AdminAnnouncementUpdateRequest, AnnouncementsCreateResult, AnnouncementsDeleteResult, AnnouncementsListResult, AnnouncementsUpdateResult
+from ..models import AdminAnnouncementCreateRequest, AdminAnnouncementUpdateRequest, AdminCourseApplicationReviewRequest, AdminCourseCommentModerationRequest, AdminCourseLessonMutationRequest, AdminCourseMutationRequest, AdminCourseRelationsReplaceRequest, AdminCourseSectionMutationRequest, AnnouncementsCreateResult, AnnouncementsDeleteResult, AnnouncementsListResult, AnnouncementsUpdateResult, CourseApplicationsListResult, CourseApplicationsReviewResult, CourseCommentsListResult, CourseCommentsModerateResult, CourseEngagementListResult, CourseLessonsDeleteResult, CourseLessonsUpdateResult, CoursesCreateResult, CoursesDashboardRetrieveResult, CoursesDeleteResult, CourseSectionsDeleteResult, CourseSectionsUpdateResult, CoursesLessonsCreateResult, CoursesLessonsListResult, CoursesListResult, CoursesRelationsListResult, CoursesRelationsReplaceResult, CoursesSectionsCreateResult, CoursesSectionsListResult, CoursesUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -71,6 +71,116 @@ def serialize_path_primitive(value: Any) -> str:
     return str(value)
 
 
+def build_query_string(parameters: List[Dict[str, Any]]) -> str:
+    pairs: List[str] = []
+    for parameter in parameters:
+        append_serialized_parameter(pairs, parameter)
+    return '&'.join(pairs)
+
+
+def append_serialized_parameter(pairs: List[str], parameter: Dict[str, Any]) -> None:
+    value = parameter.get('value')
+    if value is None:
+        return
+
+    name = str(parameter.get('name') or '')
+    allow_reserved = bool(parameter.get('allow_reserved'))
+    content_type = parameter.get('content_type')
+    if content_type:
+        import json
+
+        pairs.append(f"{encode_query_component(name)}={encode_query_value(json.dumps(value, separators=(',', ':')), allow_reserved)}")
+        return
+
+    style = str(parameter.get('style') or 'form')
+    explode = bool(parameter.get('explode'))
+    if style == 'deepObject':
+        append_deep_object_parameter(pairs, name, value, allow_reserved)
+        return
+    if isinstance(value, (list, tuple)):
+        append_array_parameter(pairs, name, value, style, explode, allow_reserved)
+        return
+    if isinstance(value, dict):
+        append_object_parameter(pairs, name, value, style, explode, allow_reserved)
+        return
+
+    pairs.append(f"{encode_query_component(name)}={encode_query_value(serialize_primitive(value), allow_reserved)}")
+
+
+def append_array_parameter(
+    pairs: List[str],
+    name: str,
+    value: Any,
+    style: str,
+    explode: bool,
+    allow_reserved: bool,
+) -> None:
+    values = [serialize_primitive(item) for item in value if item is not None]
+    if not values:
+        return
+
+    if style == 'form' and explode:
+        for item in values:
+            pairs.append(f"{encode_query_component(name)}={encode_query_value(item, allow_reserved)}")
+        return
+
+    pairs.append(f"{encode_query_component(name)}={encode_query_value(','.join(values), allow_reserved)}")
+
+
+def append_object_parameter(
+    pairs: List[str],
+    name: str,
+    value: Dict[str, Any],
+    style: str,
+    explode: bool,
+    allow_reserved: bool,
+) -> None:
+    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
+    if not entries:
+        return
+
+    if style == 'form' and explode:
+        for key, entry_value in entries:
+            pairs.append(f"{encode_query_component(str(key))}={encode_query_value(serialize_primitive(entry_value), allow_reserved)}")
+        return
+
+    serialized = ','.join(
+        item
+        for key, entry_value in entries
+        for item in (str(key), serialize_primitive(entry_value))
+    )
+    pairs.append(f"{encode_query_component(name)}={encode_query_value(serialized, allow_reserved)}")
+
+
+def append_deep_object_parameter(pairs: List[str], name: str, value: Any, allow_reserved: bool) -> None:
+    if not isinstance(value, dict):
+        pairs.append(f"{encode_query_component(name)}={encode_query_value(serialize_primitive(value), allow_reserved)}")
+        return
+
+    for key, entry_value in value.items():
+        if entry_value is None:
+            continue
+        pairs.append(f"{encode_query_component(f'{name}[{key}]')}={encode_query_value(serialize_primitive(entry_value), allow_reserved)}")
+
+
+def serialize_primitive(value: Any) -> str:
+    if isinstance(value, dict):
+        import json
+
+        return json.dumps(value, separators=(',', ':'))
+    return str(value)
+
+
+def encode_query_component(value: str) -> str:
+    from urllib.parse import quote
+
+    return quote(value, safe='')
+
+
+def encode_query_value(value: str, allow_reserved: bool) -> str:
+    from urllib.parse import quote
+
+    return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
 def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
     request_headers: Dict[str, str] = {}
@@ -133,6 +243,12 @@ class ContentApi:
     def __init__(self, client: HttpClient):
         self._client = client
         self.announcements = ContentAnnouncementsApi(client)
+        self.course_applications = ContentCourseApplicationsApi(client)
+        self.course_lessons = ContentCourseLessonsApi(client)
+        self.course_sections = ContentCourseSectionsApi(client)
+        self.courses = ContentCoursesApi(client)
+        self.course_comments = ContentCourseCommentsApi(client)
+        self.course_engagement = ContentCourseEngagementApi(client)
 
 
 class ContentAnnouncementsApi:
@@ -169,3 +285,271 @@ class ContentAnnouncementsApi:
             {}
         )
         return self._client.patch(f"/backend/v3/api/content/announcements/{serialize_path_parameter(announcement_id, {'name': 'announcementId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class ContentCourseApplicationsApi:
+    """content content.course_applications API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseApplicationsListResult:
+        """Admin Course Applications List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/course-applications", query))
+
+    def review(self, application_id: str, body: AdminCourseApplicationReviewRequest, x_request_id: Optional[str] = None) -> CourseApplicationsReviewResult:
+        """Admin Course Application Review"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/content/course-applications/{serialize_path_parameter(application_id, {'name': 'applicationId', 'style': 'simple', 'explode': False})}/review", json=body, headers=request_headers)
+
+class ContentCourseLessonsApi:
+    """content content.course_lessons API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def delete(self, lesson_id: str, x_request_id: Optional[str] = None) -> CourseLessonsDeleteResult:
+        """Admin Course Lesson Delete"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.delete(f"/backend/v3/api/content/course-lessons/{serialize_path_parameter(lesson_id, {'name': 'lessonId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+
+    def update(self, lesson_id: str, body: AdminCourseLessonMutationRequest, x_request_id: Optional[str] = None) -> CourseLessonsUpdateResult:
+        """Admin Course Lesson Update"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/content/course-lessons/{serialize_path_parameter(lesson_id, {'name': 'lessonId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class ContentCourseSectionsApi:
+    """content content.course_sections API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def delete(self, section_id: str, x_request_id: Optional[str] = None) -> CourseSectionsDeleteResult:
+        """Admin Course Section Delete"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.delete(f"/backend/v3/api/content/course-sections/{serialize_path_parameter(section_id, {'name': 'sectionId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+
+    def update(self, section_id: str, body: AdminCourseSectionMutationRequest, x_request_id: Optional[str] = None) -> CourseSectionsUpdateResult:
+        """Admin Course Section Update"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/content/course-sections/{serialize_path_parameter(section_id, {'name': 'sectionId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class ContentCoursesApi:
+    """content content.courses API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.dashboard = ContentCoursesDashboardApi(client)
+        self.lessons = ContentCoursesLessonsApi(client)
+        self.relations = ContentCoursesRelationsApi(client)
+        self.sections = ContentCoursesSectionsApi(client)
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesListResult:
+        """Admin Courses List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/courses", query))
+
+    def create(self, body: AdminCourseMutationRequest, x_request_id: Optional[str] = None) -> CoursesCreateResult:
+        """Admin Course Create"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/content/courses", json=body, headers=request_headers)
+
+    def delete(self, course_id: str, x_request_id: Optional[str] = None) -> CoursesDeleteResult:
+        """Admin Course Delete"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.delete(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+
+    def update(self, course_id: str, body: AdminCourseMutationRequest, x_request_id: Optional[str] = None) -> CoursesUpdateResult:
+        """Admin Course Update"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class ContentCoursesDashboardApi:
+    """content content.courses.dashboard API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> CoursesDashboardRetrieveResult:
+        """Course Dashboard Retrieve"""
+        return self._client.get(f"/backend/v3/api/content/courses/dashboard")
+
+class ContentCoursesLessonsApi:
+    """content content.courses.lessons API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, course_id: str, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesLessonsListResult:
+        """Admin Course Lessons List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/lessons", query))
+
+    def create(self, course_id: str, body: AdminCourseLessonMutationRequest, x_request_id: Optional[str] = None) -> CoursesLessonsCreateResult:
+        """Admin Course Lesson Create"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/lessons", json=body, headers=request_headers)
+
+class ContentCoursesRelationsApi:
+    """content content.courses.relations API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, course_id: str, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesRelationsListResult:
+        """Admin Course Relations List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/relations", query))
+
+    def replace(self, course_id: str, body: AdminCourseRelationsReplaceRequest, x_request_id: Optional[str] = None) -> CoursesRelationsReplaceResult:
+        """Admin Course Relations Replace"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/relations", json=body, headers=request_headers)
+
+class ContentCoursesSectionsApi:
+    """content content.courses.sections API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, course_id: str, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesSectionsListResult:
+        """Admin Course Sections List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/sections", query))
+
+    def create(self, course_id: str, body: AdminCourseSectionMutationRequest, x_request_id: Optional[str] = None) -> CoursesSectionsCreateResult:
+        """Admin Course Section Create"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/sections", json=body, headers=request_headers)
+
+class ContentCourseCommentsApi:
+    """content content.course_comments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseCommentsListResult:
+        """Admin Course Comments List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/comments", query))
+
+    def moderate(self, comment_id: str, body: AdminCourseCommentModerationRequest, x_request_id: Optional[str] = None) -> CourseCommentsModerateResult:
+        """Admin Course Comment Moderate"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/content/courses/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/moderation", json=body, headers=request_headers)
+
+class ContentCourseEngagementApi:
+    """content content.course_engagement API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseEngagementListResult:
+        """Admin Course Engagement List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/engagement", query))

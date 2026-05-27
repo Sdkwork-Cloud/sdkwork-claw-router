@@ -14,6 +14,8 @@ const USAGE_SETTLEMENT_PENDING: i64 = 0;
 const USAGE_SETTLEMENT_SUCCESS: i64 = 2;
 const USAGE_SETTLEMENT_FAILED: i64 = 3;
 const DECIMAL_SCALE: i128 = 1_000_000_000_000;
+const POINTS_PER_MAJOR_UNIT: i128 = 10;
+const MIN_BILLABLE_POINT_SCALED: i128 = DECIMAL_SCALE;
 
 #[derive(Debug, Clone)]
 pub struct PostgresUsageSettlementStore {
@@ -49,17 +51,30 @@ struct UsageFactForSettlement {
     pricing_snapshot: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct SettlementGroupKey {
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+    currency: String,
+}
+
+#[derive(Debug, Clone)]
+struct SettlementCandidate {
+    usage_fact: UsageFactForSettlement,
+    scaled_amount: i128,
+}
+
+#[derive(Debug, Clone)]
+struct SettlementGroup {
+    key: SettlementGroupKey,
+    candidates: Vec<SettlementCandidate>,
+}
+
 #[derive(Debug, Clone)]
 struct PointsAccount {
     id: String,
     available_amount: i64,
-}
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-enum SettlementStep {
-    Settled(i64),
-    Failed,
-    Skipped,
 }
 
 async fn settle_pending_usage(
@@ -84,17 +99,12 @@ async fn settle_pending_usage(
         failed_count: 0,
         debited_points: 0,
     };
-    for usage_fact in usage_facts {
-        match settle_usage_fact(&mut tx, &command, &usage_fact).await? {
-            SettlementStep::Settled(points) => {
-                outcome.settled_count += 1;
-                outcome.debited_points += points;
-            }
-            SettlementStep::Failed => {
-                outcome.failed_count += 1;
-            }
-            SettlementStep::Skipped => {}
-        }
+    let groups = collect_settlement_groups(&mut tx, &command, usage_facts, &mut outcome).await?;
+    for group in groups {
+        let group_outcome = settle_usage_group(&mut tx, &command, &group).await?;
+        outcome.settled_count += group_outcome.settled_count;
+        outcome.failed_count += group_outcome.failed_count;
+        outcome.debited_points += group_outcome.debited_points;
     }
     tx.commit()
         .await
@@ -154,70 +164,178 @@ async fn load_settleable_usage_facts(
         .collect())
 }
 
-async fn settle_usage_fact(
+async fn collect_settlement_groups(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UsageSettlementCommand,
+    usage_facts: Vec<UsageFactForSettlement>,
+    outcome: &mut UsageSettlementOutcome,
+) -> Result<Vec<SettlementGroup>, DomainError> {
+    let mut groups: Vec<SettlementGroup> = Vec::new();
+    for usage_fact in usage_facts {
+        if already_settled(tx, &usage_fact).await? {
+            continue;
+        }
+        let scaled_amount = match parse_decimal_scaled(&usage_fact.amount) {
+            Ok(amount) => amount,
+            Err(error) => {
+                mark_invalid_usage_fact_failed(tx, command, &usage_fact, &error.to_string())
+                    .await?;
+                outcome.failed_count += 1;
+                continue;
+            }
+        };
+        if scaled_amount == 0 {
+            settle_zero_usage_fact(tx, command, &usage_fact).await?;
+            outcome.settled_count += 1;
+            continue;
+        }
+        let key = SettlementGroupKey {
+            tenant_id: usage_fact.tenant_id,
+            organization_id: usage_fact.organization_id,
+            user_id: usage_fact.user_id,
+            currency: usage_fact.currency.clone(),
+        };
+        let candidate = SettlementCandidate {
+            usage_fact,
+            scaled_amount,
+        };
+        if let Some(group) = groups.iter_mut().find(|group| group.key == key) {
+            group.candidates.push(candidate);
+        } else {
+            groups.push(SettlementGroup {
+                key,
+                candidates: vec![candidate],
+            });
+        }
+    }
+    Ok(groups)
+}
+
+async fn mark_invalid_usage_fact_failed(
     tx: &mut Transaction<'_, Postgres>,
     command: &UsageSettlementCommand,
     usage_fact: &UsageFactForSettlement,
-) -> Result<SettlementStep, DomainError> {
-    if already_settled(tx, usage_fact).await? {
-        return Ok(SettlementStep::Skipped);
-    }
-
-    let points = charge_points(&usage_fact.amount)?;
+    failure_message: &str,
+) -> Result<(), DomainError> {
     let account = ensure_points_account(tx, command, usage_fact).await?;
     let settlement_id =
-        upsert_processing_settlement(tx, command, usage_fact, &account.id, points).await?;
-    if points == 0 {
-        mark_settlement_success(tx, command, usage_fact, settlement_id, None).await?;
-        return Ok(SettlementStep::Settled(0));
-    }
-    if account.available_amount < points {
-        mark_settlement_failed(
-            tx,
-            usage_fact,
-            settlement_id,
-            "INSUFFICIENT_POINTS",
-            "available points are lower than usage charge points",
-        )
-        .await?;
-        return Ok(SettlementStep::Failed);
+        upsert_processing_settlement(tx, command, usage_fact, &account.id, 0).await?;
+    mark_settlement_failed(
+        tx,
+        usage_fact,
+        settlement_id,
+        "INVALID_USAGE_AMOUNT",
+        failure_message,
+    )
+    .await
+}
+
+async fn settle_zero_usage_fact(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UsageSettlementCommand,
+    usage_fact: &UsageFactForSettlement,
+) -> Result<(), DomainError> {
+    let account = ensure_points_account(tx, command, usage_fact).await?;
+    let settlement_id =
+        upsert_processing_settlement(tx, command, usage_fact, &account.id, 0).await?;
+    mark_settlement_success(tx, command, usage_fact, settlement_id, None).await
+}
+
+async fn settle_usage_group(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UsageSettlementCommand,
+    group: &SettlementGroup,
+) -> Result<UsageSettlementOutcome, DomainError> {
+    if group.candidates.is_empty() {
+        return Ok(empty_outcome());
     }
 
-    let transaction_id = settlement_no(usage_fact.id);
+    let points = charge_points_from_scaled(group_total_scaled(group)?)?;
+    if points == 0 {
+        defer_usage_group(tx, group).await?;
+        return Ok(empty_outcome());
+    }
+
+    let first_usage_fact = &group.candidates[0].usage_fact;
+    let account = ensure_points_account(tx, command, first_usage_fact).await?;
+    let allocations = allocate_candidate_points(&group.candidates, points)?;
+    let mut settlement_ids = Vec::with_capacity(group.candidates.len());
+    for (candidate, allocated_points) in group.candidates.iter().zip(allocations.iter()) {
+        settlement_ids.push(
+            upsert_processing_settlement(
+                tx,
+                command,
+                &candidate.usage_fact,
+                &account.id,
+                *allocated_points,
+            )
+            .await?,
+        );
+    }
+
+    if account.available_amount < points {
+        for (candidate, settlement_id) in group.candidates.iter().zip(settlement_ids.iter()) {
+            mark_settlement_failed(
+                tx,
+                &candidate.usage_fact,
+                *settlement_id,
+                "INSUFFICIENT_POINTS",
+                "available points are lower than usage charge points",
+            )
+            .await?;
+        }
+        return Ok(UsageSettlementOutcome {
+            settled_count: 0,
+            failed_count: group.candidates.len() as i64,
+            debited_points: 0,
+        });
+    }
+
+    let transaction_id = settlement_batch_no(&group.candidates);
     if let Some(ledger_entry_id) =
         existing_account_ledger_entry_id(tx, &account.id, &transaction_id).await?
     {
-        mark_settlement_success(
-            tx,
-            command,
-            usage_fact,
-            settlement_id,
-            Some(ledger_entry_id.as_str()),
-        )
-        .await?;
-        return Ok(SettlementStep::Skipped);
+        for (candidate, settlement_id) in group.candidates.iter().zip(settlement_ids.iter()) {
+            mark_settlement_success(
+                tx,
+                command,
+                &candidate.usage_fact,
+                *settlement_id,
+                Some(ledger_entry_id.as_str()),
+            )
+            .await?;
+        }
+        return Ok(empty_outcome());
     }
 
     let balance_after = account.available_amount - points;
-    update_account_points(tx, &account.id, balance_after).await?;
+    update_account_points(tx, &account.id, points, balance_after).await?;
+    let ledger_entry_id = stable_ledger_entry_id(&transaction_id);
     let ledger_entry_id = insert_account_ledger_entry(
         tx,
-        usage_fact,
+        &ledger_entry_id,
+        first_usage_fact,
         &account.id,
         balance_after,
         points,
         &transaction_id,
     )
     .await?;
-    mark_settlement_success(
-        tx,
-        command,
-        usage_fact,
-        settlement_id,
-        Some(ledger_entry_id.as_str()),
-    )
-    .await?;
-    Ok(SettlementStep::Settled(points))
+    for (candidate, settlement_id) in group.candidates.iter().zip(settlement_ids.iter()) {
+        mark_settlement_success(
+            tx,
+            command,
+            &candidate.usage_fact,
+            *settlement_id,
+            Some(ledger_entry_id.as_str()),
+        )
+        .await?;
+    }
+    Ok(UsageSettlementOutcome {
+        settled_count: group.candidates.len() as i64,
+        failed_count: 0,
+        debited_points: points,
+    })
 }
 
 async fn already_settled(
@@ -379,6 +497,7 @@ async fn upsert_processing_settlement(
             settlement_status = excluded.settlement_status,
             failure_code = NULL,
             failure_message = NULL
+        WHERE commerce_usage_settlement.settlement_status <> $19
         RETURNING id
         "#,
     )
@@ -400,10 +519,29 @@ async fn upsert_processing_settlement(
     .bind(&usage_fact.currency)
     .bind(&usage_fact.pricing_snapshot)
     .bind(USAGE_SETTLEMENT_PENDING)
-    .fetch_one(&mut **tx)
+    .bind(USAGE_SETTLEMENT_SUCCESS)
+    .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to upsert usage settlement bridge", error))?;
-    Ok(integer_cell(&row, "id"))
+    if let Some(row) = row {
+        return Ok(integer_cell(&row, "id"));
+    }
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM commerce_usage_settlement
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND usage_fact_id = $3
+        LIMIT 1
+        "#,
+    )
+    .bind(usage_fact.tenant_id)
+    .bind(usage_fact.organization_id)
+    .bind(usage_fact.id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to read usage settlement bridge id", error))
 }
 
 async fn existing_account_ledger_entry_id(
@@ -432,34 +570,42 @@ async fn existing_account_ledger_entry_id(
 async fn update_account_points(
     tx: &mut Transaction<'_, Postgres>,
     account_id: &str,
+    points: i64,
     balance_after: i64,
 ) -> Result<(), DomainError> {
-    sqlx::query(
+    let result = sqlx::query(
         r#"
         UPDATE commerce_account
         SET available_amount = $1,
             version = version + 1,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = $2
+          AND COALESCE(available_amount::numeric, 0) >= $3::numeric
         "#,
     )
     .bind(balance_after.to_string())
     .bind(account_id)
+    .bind(points.to_string())
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update usage settlement account points", error))?;
+    if result.rows_affected() != 1 {
+        return Err(DomainError::conflict(
+            "usage settlement account points update was not applied atomically",
+        ));
+    }
     Ok(())
 }
 
 async fn insert_account_ledger_entry(
     tx: &mut Transaction<'_, Postgres>,
+    ledger_entry_id: &str,
     usage_fact: &UsageFactForSettlement,
     account_id: &str,
     balance_after: i64,
     points: i64,
     transaction_id: &str,
 ) -> Result<String, DomainError> {
-    let ledger_entry_id = stable_uuid("usage-ledger", usage_fact.id);
     sqlx::query(
         r#"
         INSERT INTO commerce_account_ledger_entry
@@ -468,7 +614,7 @@ async fn insert_account_ledger_entry(
             ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $4, CAST($5 AS TEXT), $6, $7, $8, $9, 'usage', $10, $11, $10, 'ai_usage_fact', $12, $13, CURRENT_TIMESTAMP)
         "#,
     )
-    .bind(&ledger_entry_id)
+    .bind(ledger_entry_id)
     .bind(usage_fact.tenant_id)
     .bind(usage_fact.organization_id)
     .bind(account_id)
@@ -484,7 +630,7 @@ async fn insert_account_ledger_entry(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to insert usage settlement account ledger entry", error))?;
-    Ok(ledger_entry_id)
+    Ok(ledger_entry_id.to_owned())
 }
 
 async fn mark_settlement_success(
@@ -575,16 +721,106 @@ fn settlement_no(usage_fact_id: i64) -> String {
     format!("usage-settlement-{usage_fact_id}")
 }
 
-fn charge_points(amount: &str) -> Result<i64, DomainError> {
-    let scaled = parse_decimal_scaled(amount)?;
+fn charge_points_from_scaled(scaled: i128) -> Result<i64, DomainError> {
     if scaled <= 0 {
         return Ok(0);
     }
-    let tenths = scaled
-        .checked_mul(10)
+    let scaled_points = scaled
+        .checked_mul(POINTS_PER_MAJOR_UNIT)
         .ok_or_else(|| DomainError::new("usage settlement amount is too large"))?;
-    let points = (tenths + DECIMAL_SCALE - 1) / DECIMAL_SCALE;
+    if scaled_points < MIN_BILLABLE_POINT_SCALED {
+        return Ok(0);
+    }
+    let points = scaled_points
+        .checked_add(DECIMAL_SCALE - 1)
+        .ok_or_else(|| DomainError::new("usage settlement amount is too large"))?
+        / DECIMAL_SCALE;
     i64::try_from(points).map_err(|_| DomainError::new("usage settlement points overflow"))
+}
+
+fn group_total_scaled(group: &SettlementGroup) -> Result<i128, DomainError> {
+    group
+        .candidates
+        .iter()
+        .try_fold(0_i128, |total, candidate| {
+            total
+                .checked_add(candidate.scaled_amount)
+                .ok_or_else(|| DomainError::new("usage settlement amount is too large"))
+        })
+}
+
+fn allocate_candidate_points(
+    candidates: &[SettlementCandidate],
+    total_points: i64,
+) -> Result<Vec<i64>, DomainError> {
+    let mut allocations = Vec::with_capacity(candidates.len());
+    let mut cumulative_amount = 0_i128;
+    let mut allocated_points = 0_i64;
+    for candidate in candidates {
+        cumulative_amount = cumulative_amount
+            .checked_add(candidate.scaled_amount)
+            .ok_or_else(|| DomainError::new("usage settlement amount is too large"))?;
+        let cumulative_points = charge_points_from_scaled(cumulative_amount)?;
+        let candidate_points = cumulative_points
+            .checked_sub(allocated_points)
+            .ok_or_else(|| DomainError::new("usage settlement point allocation underflow"))?;
+        allocations.push(candidate_points);
+        allocated_points = cumulative_points;
+    }
+    if allocated_points != total_points {
+        return Err(DomainError::new(
+            "usage settlement point allocation does not match batch total",
+        ));
+    }
+    Ok(allocations)
+}
+
+async fn defer_usage_group(
+    tx: &mut Transaction<'_, Postgres>,
+    group: &SettlementGroup,
+) -> Result<(), DomainError> {
+    for candidate in &group.candidates {
+        sqlx::query(
+            r#"
+            UPDATE ai_usage_fact
+            SET settlement_status = $1
+            WHERE id = $2
+            "#,
+        )
+        .bind(USAGE_SETTLEMENT_PENDING)
+        .bind(candidate.usage_fact.id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to defer micro usage settlement fact", error))?;
+        sqlx::query(
+            r#"
+            UPDATE commerce_usage_settlement
+            SET settlement_status = $1,
+                settled_at = NULL,
+                failure_code = NULL,
+                failure_message = NULL
+            WHERE tenant_id = $2
+              AND organization_id = $3
+              AND usage_fact_id = $4
+            "#,
+        )
+        .bind(USAGE_SETTLEMENT_PENDING)
+        .bind(candidate.usage_fact.tenant_id)
+        .bind(candidate.usage_fact.organization_id)
+        .bind(candidate.usage_fact.id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to defer micro usage settlement bridge", error))?;
+    }
+    Ok(())
+}
+
+fn empty_outcome() -> UsageSettlementOutcome {
+    UsageSettlementOutcome {
+        settled_count: 0,
+        failed_count: 0,
+        debited_points: 0,
+    }
 }
 
 fn parse_decimal_scaled(value: &str) -> Result<i128, DomainError> {
@@ -637,6 +873,25 @@ fn stable_uuid(prefix: &str, usage_fact_id: i64) -> String {
     format!("{prefix}-{:016x}", hasher.finish())
 }
 
+fn stable_ledger_entry_id(transaction_id: &str) -> String {
+    let mut hasher = DefaultHasher::new();
+    "usage-ledger".hash(&mut hasher);
+    transaction_id.hash(&mut hasher);
+    format!("usage-ledger-{:016x}", hasher.finish())
+}
+
+fn settlement_batch_no(candidates: &[SettlementCandidate]) -> String {
+    if candidates.len() == 1 {
+        return settlement_no(candidates[0].usage_fact.id);
+    }
+    let mut hasher = DefaultHasher::new();
+    "usage-settlement-batch".hash(&mut hasher);
+    for candidate in candidates {
+        candidate.usage_fact.id.hash(&mut hasher);
+    }
+    format!("usage-settlement-batch-{:016x}", hasher.finish())
+}
+
 fn stable_account_id(usage_fact: &UsageFactForSettlement) -> String {
     let mut hasher = DefaultHasher::new();
     "usage-account".hash(&mut hasher);
@@ -662,13 +917,21 @@ fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
     row.try_get::<Option<i64>, _>(column)
         .ok()
         .flatten()
-        .or_else(|| {
-            string_cell(row, column)
-                .parse::<f64>()
-                .ok()
-                .map(|value| value as i64)
-        })
+        .or_else(|| parse_integer_text(&string_cell(row, column)).ok())
         .unwrap_or(0)
+}
+
+fn parse_integer_text(value: &str) -> Result<i64, DomainError> {
+    let value = value.trim();
+    if value.is_empty() {
+        return Err(DomainError::new("integer value must not be empty"));
+    }
+    if !value.chars().all(|ch| ch.is_ascii_digit()) {
+        return Err(DomainError::new(format!("invalid integer value: {value}")));
+    }
+    value
+        .parse::<i64>()
+        .map_err(|_| DomainError::new(format!("invalid integer value: {value}")))
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {

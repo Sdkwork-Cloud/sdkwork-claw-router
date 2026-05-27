@@ -8,7 +8,7 @@ public class IamVerificationCodeVerifyResponse {
     public Boolean getValid() {
         return this.valid;
     }
-    
+
     public void setValid(Boolean valid) {
         this.valid = valid;
     }
@@ -16,7 +16,7 @@ public class IamVerificationCodeVerifyResponse {
     public Boolean getVerified() {
         return this.verified;
     }
-    
+
     public void setVerified(Boolean verified) {
         this.verified = verified;
     }

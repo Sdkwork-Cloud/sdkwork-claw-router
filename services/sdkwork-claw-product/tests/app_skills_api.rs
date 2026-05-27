@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
@@ -24,9 +26,7 @@ async fn app_skills_catalog_route_returns_sdk_contract_items() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/ecosystem/skills?search_query=router&page=1&page_size=20")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -65,9 +65,7 @@ async fn app_skills_detail_route_returns_direct_item_data() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/ecosystem/skills/routing-skill")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -94,9 +92,7 @@ async fn app_skills_categories_route_returns_string_items() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/ecosystem/skills/categories")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -123,9 +119,7 @@ async fn app_skills_my_route_returns_user_installations() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/ecosystem/skills/mine")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -158,9 +152,7 @@ async fn app_skills_current_user_route_matches_app_sdk_contract() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/ecosystem/users/current/skills")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -189,9 +181,7 @@ async fn app_skills_enable_route_installs_or_reenables_skill() {
             Request::builder()
                 .method("POST")
                 .uri("/app/v3/api/ecosystem/skills/routing-skill/enable")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"config":{"mode":"strict"}}"#))
                 .unwrap(),
@@ -221,9 +211,7 @@ async fn app_skills_disable_route_disables_existing_installation() {
             Request::builder()
                 .method("POST")
                 .uri("/app/v3/api/ecosystem/skills/routing-skill/disable")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -251,9 +239,7 @@ async fn app_skills_config_route_rejects_non_object_config() {
             Request::builder()
                 .method("PUT")
                 .uri("/app/v3/api/ecosystem/skills/routing-skill/config")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"config":["invalid"]}"#))
                 .unwrap(),
@@ -279,9 +265,7 @@ async fn app_skills_config_route_rejects_reserved_portal_metadata() {
             Request::builder()
                 .method("POST")
                 .uri("/app/v3/api/ecosystem/skills/routing-skill/enable")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"config":{"portal":{"features":["bad"]}}}"#))
                 .unwrap(),
@@ -311,9 +295,7 @@ async fn app_skills_config_route_rejects_reserved_portal_metadata_inside_arrays(
             Request::builder()
                 .method("PUT")
                 .uri("/app/v3/api/ecosystem/skills/routing-skill/config")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(
                     r#"{"config":{"rules":[{"portal":{"features":["bad"]}}]}}"#,
@@ -345,9 +327,7 @@ async fn app_skills_config_route_updates_existing_installation_config() {
             Request::builder()
                 .method("PUT")
                 .uri("/app/v3/api/ecosystem/skills/routing-skill/config")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"config":{"mode":"balanced"}}"#))
                 .unwrap(),
@@ -370,9 +350,7 @@ async fn app_skills_detail_route_reports_missing_skill_as_not_found() {
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/ecosystem/skills/missing-skill")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )

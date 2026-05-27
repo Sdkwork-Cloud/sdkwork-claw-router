@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import IamCurrentSessionUpdateRequest, IamLoginQrCodeConfirmRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesConfirmResult, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult
+from ..models import IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -8,67 +8,6 @@ def _append_query_string(path: str, raw_query_string: str) -> str:
         return path
     separator = '&' if '?' in path else '?'
     return f"{path}{separator}{query}"
-
-def serialize_path_parameter(value: Any, spec: Dict[str, Any]) -> str:
-    if value is None:
-        return ''
-
-    style = str(spec.get('style') or 'simple')
-    name = str(spec.get('name') or '')
-    explode = bool(spec.get('explode'))
-    if isinstance(value, (list, tuple)):
-        return serialize_path_array(name, value, style, explode)
-    if isinstance(value, dict):
-        return serialize_path_object(name, value, style, explode)
-    return path_prefix(name, style) + encode_path_value(serialize_path_primitive(value))
-
-
-def serialize_path_array(name: str, values: Any, style: str, explode: bool) -> str:
-    serialized = [encode_path_value(serialize_path_primitive(item)) for item in values if item is not None]
-    if not serialized:
-        return path_prefix(name, style)
-    if style == 'matrix':
-        return ''.join(f";{name}={item}" for item in serialized) if explode else f";{name}={','.join(serialized)}"
-    return path_prefix(name, style) + ('.' if explode else ',').join(serialized)
-
-
-def serialize_path_object(name: str, value: Dict[str, Any], style: str, explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if not entries:
-        return path_prefix(name, style)
-    if style == 'matrix':
-        if explode:
-            return ''.join(f";{encode_path_value(str(key))}={encode_path_value(serialize_path_primitive(entry_value))}" for key, entry_value in entries)
-        serialized = ','.join(item for key, entry_value in entries for item in (encode_path_value(str(key)), encode_path_value(serialize_path_primitive(entry_value))))
-        return f";{name}={serialized}"
-    if explode:
-        separator = '.' if style == 'label' else ','
-        serialized = separator.join(f"{encode_path_value(str(key))}={encode_path_value(serialize_path_primitive(entry_value))}" for key, entry_value in entries)
-    else:
-        serialized = ','.join(item for key, entry_value in entries for item in (encode_path_value(str(key)), encode_path_value(serialize_path_primitive(entry_value))))
-    return path_prefix(name, style) + serialized
-
-
-def path_prefix(name: str, style: str) -> str:
-    if style == 'label':
-        return '.'
-    if style == 'matrix':
-        return f";{name}"
-    return ''
-
-
-def encode_path_value(value: str) -> str:
-    from urllib.parse import quote
-
-    return quote(value, safe='')
-
-
-def serialize_path_primitive(value: Any) -> str:
-    if isinstance(value, dict):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    return str(value)
 
 
 def build_query_string(parameters: List[Dict[str, Any]]) -> str:
@@ -246,12 +185,9 @@ class AuthApi:
         self.oauth_sessions = AuthOauthSessionsApi(client)
         self.password_reset_requests = AuthPasswordResetRequestsApi(client)
         self.password_resets = AuthPasswordResetsApi(client)
-        self.login_qr_codes = AuthLoginQrCodesApi(client)
         self.registrations = AuthRegistrationsApi(client)
-        self.runtime_settings = AuthRuntimeSettingsApi(client)
         self.sessions = AuthSessionsApi(client)
         self.verification_codes = AuthVerificationCodesApi(client)
-        self.verification_policy = AuthVerificationPolicyApi(client)
 
 
 class AuthOauthAuthorizationUrlsApi:
@@ -304,25 +240,6 @@ class AuthPasswordResetsApi:
         """Create password reset"""
         return self._client.post(f"/app/v3/api/auth/password_resets", json=body)
 
-class AuthLoginQrCodesApi:
-    """auth auth.login_qr_codes API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def create(self) -> LoginQrCodesCreateResult:
-        """Create QR login code"""
-        return self._client.post(f"/app/v3/api/auth/qr_login_codes")
-
-    def confirm(self, body: IamLoginQrCodeConfirmRequest) -> LoginQrCodesConfirmResult:
-        """Confirm QR login code"""
-        return self._client.post(f"/app/v3/api/auth/qr_login_codes/confirm", json=body)
-
-    def retrieve(self, qr_key: str) -> LoginQrCodesRetrieveResult:
-        """Retrieve QR login status"""
-        return self._client.get(f"/app/v3/api/auth/qr_login_codes/{serialize_path_parameter(qr_key, {'name': 'qrKey', 'style': 'simple', 'explode': False})}")
-
 class AuthRegistrationsApi:
     """auth auth.registrations API client."""
 
@@ -339,21 +256,6 @@ class AuthRegistrationsApi:
             {}
         )
         return self._client.post(f"/app/v3/api/auth/registrations", json=body, headers=request_headers)
-
-class AuthRuntimeSettingsApi:
-    """auth auth.runtime_settings API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self, tenant_code: Optional[str] = None, organization_code: Optional[str] = None) -> RuntimeSettingsRetrieveResult:
-        """Retrieve public IAM auth runtime settings"""
-        query = build_query_string([
-            {'name': 'tenant_code', 'value': tenant_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'organization_code', 'value': organization_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/app/v3/api/auth/runtime_settings", query))
 
 class AuthSessionsApi:
     """auth auth.sessions API client."""
@@ -410,14 +312,3 @@ class AuthVerificationCodesApi:
     def verify(self, body: IamVerificationCodeVerifyRequest) -> VerificationCodesVerifyResult:
         """Verify verification code"""
         return self._client.post(f"/app/v3/api/auth/verification_codes/verify", json=body)
-
-class AuthVerificationPolicyApi:
-    """auth auth.verification_policy API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self) -> VerificationPolicyRetrieveResult:
-        """Retrieve public IAM verification policy"""
-        return self._client.get(f"/app/v3/api/auth/verification_policy")

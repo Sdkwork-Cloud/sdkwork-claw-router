@@ -4,7 +4,6 @@ import {
   AlertCircle,
   CheckCircle2,
   Edit2,
-  KeyRound,
   Link2,
   MenuSquare,
   MessageCircle,
@@ -41,12 +40,14 @@ interface WechatOfficialAccountAdminProps {
 interface AccountDraft {
   mode: AccountDraftMode;
   accountId?: string;
-  key: string;
   name: string;
   appId: string;
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
+  appSecret: string;
+  token: string;
+  encodingAesKey: string;
+  hasAppSecret: boolean;
+  hasToken: boolean;
+  hasEncodingAesKey: boolean;
   status: WechatOfficialAccountStatus;
   qrDefault: boolean;
 }
@@ -68,14 +69,6 @@ interface DeleteEntryTarget {
 const DEFAULT_OFFICIAL_SECTION_ID: OfficialSectionId = 'accounts';
 const OPEN_PLATFORM_KEY_MAX_LENGTH = 128;
 const OPEN_PLATFORM_KEY_PATTERN = /^[a-z0-9][a-z0-9._:-]*$/;
-const CREDENTIAL_REF_MAX_LENGTH = 256;
-const CREDENTIAL_REF_LOCATOR_PATTERN = /^[!-~]+$/;
-
-interface AccountCredentialRefs {
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
-}
 
 export function resolveOfficialSectionId(sectionId?: string): OfficialSectionId {
   if (sectionId === 'accounts' || sectionId === 'menus' || sectionId === 'messages') {
@@ -180,31 +173,32 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
       return accounts;
     }
     return accounts.filter((account) => [
-      account.key,
       account.name,
       account.appId,
       account.status,
-      account.tokenRef,
-      account.secretRef,
-      account.aesKeyRef,
+      account.hasAppSecret ? 'AppSecret' : '',
+      account.hasToken ? 'Token' : '',
+      account.hasEncodingAesKey ? 'EncodingAESKey' : '',
     ].some((value) => String(value ?? '').toLowerCase().includes(query)));
   }, [accounts, search]);
 
   const selectedAccount = accounts.find((account) => account.id === selectedAccountId) ?? null;
   const activeCount = accounts.filter((account) => account.status === 'active').length;
-  const credentialCompleteCount = accounts.filter((account) => account.appId && account.secretRef && account.tokenRef).length;
+  const credentialCompleteCount = accounts.filter((account) => account.appId && account.hasAppSecret && account.hasToken).length;
 
   const openCreateAccount = () => {
     setNotice(null);
     setFormError(null);
     setAccountDraft({
       mode: 'create',
-      key: 'wechat_official_account',
-      name: t('admin.openPlatform.wechatOfficial.form.defaultAccountName', '公众号'),
+      name: t('admin.openPlatform.wechatOfficial.form.defaultAccountName', 'Official Account'),
       appId: '',
-      tokenRef: '',
-      secretRef: '',
-      aesKeyRef: '',
+      appSecret: '',
+      token: '',
+      encodingAesKey: '',
+      hasAppSecret: false,
+      hasToken: false,
+      hasEncodingAesKey: false,
       status: 'active',
       qrDefault: false,
     });
@@ -216,12 +210,14 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
     setAccountDraft({
       mode: 'edit',
       accountId: account.id,
-      key: account.key,
       name: account.name,
       appId: account.appId,
-      tokenRef: account.tokenRef,
-      secretRef: account.secretRef,
-      aesKeyRef: account.aesKeyRef,
+      appSecret: '',
+      token: '',
+      encodingAesKey: '',
+      hasAppSecret: account.hasAppSecret,
+      hasToken: account.hasToken,
+      hasEncodingAesKey: account.hasEncodingAesKey,
       status: account.status,
       qrDefault: account.qrDefault,
     });
@@ -237,23 +233,21 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
     if (!accountDraft) {
       return;
     }
-    const key = accountDraft.key.trim();
     const name = accountDraft.name.trim();
-    if (!key) {
-      setFormError(t('admin.openPlatform.wechatOfficial.validation.keyRequired', 'Account key is required'));
-      return;
-    }
-    if (!isValidOpenPlatformKey(key)) {
-      setFormError(t('admin.openPlatform.wechatOfficial.validation.keyInvalid', 'Use lowercase letters, numbers, dots, underscores, colons, or hyphens; start with a lowercase letter or number and keep within 128 characters.'));
-      return;
-    }
+    const appId = accountDraft.appId.trim();
+    const appSecret = accountDraft.appSecret.trim();
+    const token = accountDraft.token.trim();
+    const encodingAesKey = accountDraft.encodingAesKey.trim();
     if (!name) {
       setFormError(t('admin.openPlatform.wechatOfficial.validation.nameRequired', 'Account name is required'));
       return;
     }
-    const credentialRefs = validateAccountCredentialRefs(accountDraft);
-    if (!credentialRefs) {
-      setFormError(t('admin.openPlatform.wechatOfficial.validation.credentialRefInvalid', 'Credential references must use vault:// or secret://, or a short ASCII path without spaces. Example: secret://wechat/official/default-secret'));
+    if (!appId) {
+      setFormError(t('admin.openPlatform.wechatOfficial.validation.appIdRequired', 'AppID is required'));
+      return;
+    }
+    if (accountDraft.mode === 'create' && !appSecret) {
+      setFormError(t('admin.openPlatform.wechatOfficial.validation.appSecretRequired', 'AppSecret is required'));
       return;
     }
     setSaving(true);
@@ -261,12 +255,11 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
     try {
       if (accountDraft.mode === 'create') {
         await WechatOfficialAccountService.createAccount({
-          key,
           name,
-          appId: accountDraft.appId.trim(),
-          tokenRef: credentialRefs.tokenRef,
-          secretRef: credentialRefs.secretRef,
-          aesKeyRef: credentialRefs.aesKeyRef,
+          appId,
+          appSecret,
+          token,
+          encodingAesKey,
         });
         setNotice(t('admin.openPlatform.wechatOfficial.notifications.accountCreated', 'WeChat official account created'));
       } else if (accountDraft.accountId) {
@@ -274,10 +267,10 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
           name,
           status: accountDraft.status,
           qrDefault: accountDraft.qrDefault,
-          appId: accountDraft.appId.trim(),
-          tokenRef: credentialRefs.tokenRef,
-          secretRef: credentialRefs.secretRef,
-          aesKeyRef: credentialRefs.aesKeyRef,
+          appId,
+          appSecret: optionalSecretPatch(appSecret),
+          token: optionalSecretPatch(token),
+          encodingAesKey: optionalSecretPatch(encodingAesKey),
         });
         setNotice(t('admin.openPlatform.wechatOfficial.notifications.accountUpdated', 'WeChat official account updated'));
       }
@@ -285,11 +278,7 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
       await loadAccounts();
     } catch (error) {
       const message = error instanceof Error ? error.message : '';
-      setFormError(
-        isCredentialRefValidationErrorMessage(message)
-          ? t('admin.openPlatform.wechatOfficial.validation.credentialRefInvalid', 'Credential references must use vault:// or secret://, or a short ASCII path without spaces. Example: secret://wechat/official/default-secret')
-          : message || t('admin.openPlatform.wechatOfficial.notifications.accountSaveFailed', 'WeChat official account could not be saved'),
-      );
+      setFormError(message || t('admin.openPlatform.wechatOfficial.notifications.accountSaveFailed', 'WeChat official account could not be saved'));
     } finally {
       setSaving(false);
     }
@@ -392,19 +381,7 @@ export function WechatOfficialAccountAdmin({ sectionId }: WechatOfficialAccountA
   return (
     <div className="flex h-full min-h-0 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
       <main className="flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1a1a1a]">
-        <div className="flex shrink-0 flex-col gap-4 border-b border-slate-200 p-5 dark:border-white/10 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-emerald-500">
-              <MessageCircle className="h-4 w-4" />
-              {t('admin.openPlatform.wechatOfficial.kicker', '公众号')}
-            </div>
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-              {t('admin.openPlatform.wechatOfficial.title', 'WeChat Official Accounts')}
-            </h3>
-            <p className="mt-1 max-w-3xl text-sm text-slate-500 dark:text-slate-400">
-              {t('admin.openPlatform.wechatOfficial.subtitle', 'Manage official account credentials, menu entries, and message contract readiness from one independent admin module.')}
-            </p>
-          </div>
+        <div className="flex shrink-0 justify-end border-b border-slate-200 p-3 dark:border-white/10">
           <div className="grid w-full grid-cols-3 overflow-hidden rounded-lg border border-slate-200 bg-slate-50 text-sm shadow-sm dark:border-white/10 dark:bg-white/5 lg:w-auto">
             <SummaryCell label={t('admin.openPlatform.wechatOfficial.summary.accounts', 'Accounts')} value={accounts.length} />
             <SummaryCell label={t('admin.openPlatform.wechatOfficial.summary.active', 'Active')} value={activeCount} tone="emerald" />
@@ -569,7 +546,7 @@ function AccountsSection({
             <tr>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.account', 'Official Account')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.appId', 'App ID')}</th>
-              <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.credentials', 'Credential Refs')}</th>
+              <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.configuration', 'Configuration')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.qrDefault', 'QR Default')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.status', 'Status')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatOfficial.columns.updated', 'Updated')}</th>
@@ -590,18 +567,14 @@ function AccountsSection({
               <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5" key={account.id}>
                 <td className="px-6 py-4">
                   <div className="font-medium text-slate-900 dark:text-slate-200">{account.name}</div>
-                  <div className="mt-1 flex items-center gap-2 font-mono text-xs text-slate-400">
-                    <span>{account.key}</span>
-                    <CopyButton text={account.key} iconClassName="h-3.5 w-3.5" title={t('admin.openPlatform.wechatOfficial.actions.copyKey', 'Copy account key')} />
-                  </div>
                 </td>
                 <td className="px-6 py-4 font-mono text-xs">{account.appId || '-'}</td>
                 <td className="px-6 py-4">
-                  <div className="space-y-1 font-mono text-xs">
-                    <div>{account.tokenRef || '-'}</div>
-                    <div>{account.secretRef || '-'}</div>
-                    <div>{account.aesKeyRef || '-'}</div>
-                  </div>
+                  <CredentialStatusPills
+                    hasAppSecret={account.hasAppSecret}
+                    hasEncodingAesKey={account.hasEncodingAesKey}
+                    hasToken={account.hasToken}
+                  />
                 </td>
                 <td className="px-6 py-4">{account.qrDefault ? t('common.yes', 'Yes') : t('common.no', 'No')}</td>
                 <td className="px-6 py-4"><StatusBadge status={account.status} /></td>
@@ -851,26 +824,46 @@ function AccountDialog({
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/60 px-4 py-8 backdrop-blur-sm">
       <form className="flex max-h-full w-full max-w-2xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]" onSubmit={(event) => void onSubmit(event)}>
         <DialogHeader
-          icon={<KeyRound className="h-4 w-4" />}
-          kicker={t('admin.openPlatform.wechatOfficial.kicker', '公众号')}
+          icon={<MessageCircle className="h-4 w-4" />}
+          kicker={t('admin.openPlatform.wechatOfficial.kicker', 'Official Account')}
           onClose={onClose}
           title={isEdit ? t('admin.openPlatform.wechatOfficial.form.editAccountTitle', 'Edit official account') : t('admin.openPlatform.wechatOfficial.form.createAccountTitle', 'Create official account')}
         />
         <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-5">
           {formError ? <FormError message={formError} /> : null}
-          <div className="grid gap-4 md:grid-cols-2">
-            <TextInput disabled={isEdit} label={t('admin.openPlatform.wechatOfficial.form.key', 'Account key')} mono onChange={(value) => updateDraft({ key: value })} value={draft.key} />
-            <TextInput label={t('admin.openPlatform.wechatOfficial.form.name', 'Account name')} onChange={(value) => updateDraft({ name: value })} value={draft.name} />
-            <TextInput label={t('admin.openPlatform.wechatOfficial.form.appId', 'App ID')} mono onChange={(value) => updateDraft({ appId: value })} value={draft.appId} />
+          <div className="space-y-4">
+            <TextInput label={t('admin.openPlatform.wechatOfficial.form.name', 'Official Account Name')} onChange={(value) => updateDraft({ name: value })} value={draft.name} />
+            <TextInput label={t('admin.openPlatform.wechatOfficial.form.appId', 'AppID')} mono onChange={(value) => updateDraft({ appId: value })} value={draft.appId} />
+            <TextInput
+              autoComplete="new-password"
+              label={t('admin.openPlatform.wechatOfficial.form.appSecret', 'AppSecret')}
+              onChange={(value) => updateDraft({ appSecret: value })}
+              placeholder={isEdit && draft.hasAppSecret ? t('admin.openPlatform.wechatOfficial.form.configuredSecretPlaceholder', 'Configured; leave blank to keep unchanged') : undefined}
+              type="password"
+              value={draft.appSecret}
+            />
+            <TextInput
+              autoComplete="new-password"
+              label={t('admin.openPlatform.wechatOfficial.form.token', 'Token')}
+              onChange={(value) => updateDraft({ token: value })}
+              placeholder={isEdit && draft.hasToken ? t('admin.openPlatform.wechatOfficial.form.configuredSecretPlaceholder', 'Configured; leave blank to keep unchanged') : undefined}
+              type="password"
+              value={draft.token}
+            />
+            <TextInput
+              autoComplete="new-password"
+              label={t('admin.openPlatform.wechatOfficial.form.encodingAesKey', 'EncodingAESKey')}
+              onChange={(value) => updateDraft({ encodingAesKey: value })}
+              placeholder={isEdit && draft.hasEncodingAesKey ? t('admin.openPlatform.wechatOfficial.form.configuredSecretPlaceholder', 'Configured; leave blank to keep unchanged') : undefined}
+              type="password"
+              value={draft.encodingAesKey}
+            />
             {isEdit ? (
               <SelectInput label={t('admin.openPlatform.wechatOfficial.form.status', 'Status')} onChange={(value) => updateDraft({ status: value as WechatOfficialAccountStatus })} value={draft.status}>
                 <option value="active">{t('admin.openPlatform.status.active', 'Active')}</option>
                 <option value="inactive">{t('admin.openPlatform.status.inactive', 'Inactive')}</option>
               </SelectInput>
             ) : null}
-            <TextInput label={t('admin.openPlatform.wechatOfficial.form.tokenRef', 'Token ref')} mono onChange={(value) => updateDraft({ tokenRef: value })} placeholder={t('admin.openPlatform.wechatOfficial.form.tokenRefPlaceholder', 'secret://wechat/official/default-token')} value={draft.tokenRef} />
-            <TextInput hint={t('admin.openPlatform.wechatOfficial.form.credentialRefHint', 'Use vault:// or secret://. Short paths are saved as secret:// paths.')} label={t('admin.openPlatform.wechatOfficial.form.secretRef', 'Secret ref')} mono onChange={(value) => updateDraft({ secretRef: value })} placeholder={t('admin.openPlatform.wechatOfficial.form.secretRefPlaceholder', 'secret://wechat/official/default-secret')} value={draft.secretRef} />
-            <TextInput className="md:col-span-2" label={t('admin.openPlatform.wechatOfficial.form.aesKeyRef', 'AES key ref')} mono onChange={(value) => updateDraft({ aesKeyRef: value })} placeholder={t('admin.openPlatform.wechatOfficial.form.aesKeyRefPlaceholder', 'secret://wechat/official/default-aes-key')} value={draft.aesKeyRef} />
             {isEdit ? (
               <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
                 <input
@@ -918,14 +911,14 @@ function EntryDialog({
         />
         <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-5">
           {formError ? <FormError message={formError} /> : null}
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="space-y-4">
             <TextInput label={t('admin.openPlatform.wechatOfficial.form.menuKey', 'Menu key')} mono onChange={(value) => updateDraft({ key: value })} value={draft.key} />
             <SelectInput label={t('admin.openPlatform.wechatOfficial.form.menuType', 'Menu type')} onChange={(value) => updateDraft({ type: value as WechatOfficialEntryType })} value={draft.type}>
               <option value="url">{t('admin.openPlatform.entryType.url', 'URL')}</option>
               <option value="qr">{t('admin.openPlatform.entryType.qr', 'QR')}</option>
               <option value="mini_app_url">{t('admin.openPlatform.entryType.mini_app_url', 'Mini Program URL')}</option>
             </SelectInput>
-            <TextInput className="md:col-span-2" label={t('admin.openPlatform.wechatOfficial.form.menuUrl', 'Menu URL')} mono onChange={(value) => updateDraft({ url: value })} value={draft.url} />
+            <TextInput label={t('admin.openPlatform.wechatOfficial.form.menuUrl', 'Menu URL')} mono onChange={(value) => updateDraft({ url: value })} value={draft.url} />
             {isEdit ? (
               <SelectInput label={t('admin.openPlatform.wechatOfficial.form.status', 'Status')} onChange={(value) => updateDraft({ status: value as WechatOfficialEntryStatus })} value={draft.status}>
                 <option value="active">{t('admin.openPlatform.status.active', 'Active')}</option>
@@ -1003,6 +996,7 @@ function DialogActions({
 }
 
 function TextInput({
+  autoComplete,
   className = '',
   disabled = false,
   hint,
@@ -1010,8 +1004,10 @@ function TextInput({
   mono = false,
   onChange,
   placeholder,
+  type = 'text',
   value,
 }: {
+  autoComplete?: string;
   className?: string;
   disabled?: boolean;
   hint?: string;
@@ -1019,16 +1015,19 @@ function TextInput({
   mono?: boolean;
   onChange: (value: string) => void;
   placeholder?: string;
+  type?: 'password' | 'text';
   value: string;
 }) {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300">{label}</span>
       <input
+        autoComplete={autoComplete}
         className={`w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-emerald-500 disabled:bg-slate-50 disabled:text-slate-400 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white dark:disabled:bg-white/5 ${mono ? 'font-mono' : ''}`}
         disabled={disabled}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
+        type={type}
         value={value}
       />
       {hint ? <span className="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">{hint}</span> : null}
@@ -1049,7 +1048,7 @@ function SelectInput({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300">{label}</span>
       <select
         className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-emerald-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
         onChange={(event) => onChange(event.target.value)}
@@ -1069,59 +1068,46 @@ function FormError({ message }: { message: string }) {
   );
 }
 
+function CredentialStatusPills({
+  hasAppSecret,
+  hasEncodingAesKey,
+  hasToken,
+}: {
+  hasAppSecret: boolean;
+  hasEncodingAesKey: boolean;
+  hasToken: boolean;
+}) {
+  const { t } = useTranslation();
+  return (
+    <div className="flex flex-wrap gap-2">
+      <CredentialStatusPill configured={hasAppSecret} label={t('admin.openPlatform.wechatOfficial.form.appSecret', 'AppSecret')} />
+      <CredentialStatusPill configured={hasToken} label={t('admin.openPlatform.wechatOfficial.form.token', 'Token')} />
+      <CredentialStatusPill configured={hasEncodingAesKey} label={t('admin.openPlatform.wechatOfficial.form.encodingAesKey', 'EncodingAESKey')} />
+    </div>
+  );
+}
+
+function CredentialStatusPill({ configured, label }: { configured: boolean; label: string }) {
+  const { t } = useTranslation();
+  const tone = configured
+    ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300'
+    : 'border-slate-200 bg-slate-50 text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400';
+  return (
+    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${tone}`}>
+      {configured ? <CheckCircle2 className="h-3.5 w-3.5" /> : null}
+      {label}
+      <span className="text-[11px] opacity-80">{configured ? t('admin.openPlatform.configuration.configured', 'Configured') : t('admin.openPlatform.configuration.notConfigured', 'Not configured')}</span>
+    </span>
+  );
+}
+
 function isValidOpenPlatformKey(value: string): boolean {
   return value.length <= OPEN_PLATFORM_KEY_MAX_LENGTH && OPEN_PLATFORM_KEY_PATTERN.test(value);
 }
 
-function validateAccountCredentialRefs(draft: AccountDraft): AccountCredentialRefs | null {
-  const credentialRefs = {
-    tokenRef: normalizeCredentialRefInput(draft.tokenRef),
-    secretRef: normalizeCredentialRefInput(draft.secretRef),
-    aesKeyRef: normalizeCredentialRefInput(draft.aesKeyRef),
-  };
-  if (
-    !isValidCredentialRef(credentialRefs.tokenRef) ||
-    !isValidCredentialRef(credentialRefs.secretRef) ||
-    !isValidCredentialRef(credentialRefs.aesKeyRef)
-  ) {
-    return null;
-  }
-  return credentialRefs;
-}
-
-function normalizeCredentialRefInput(value: string): string {
-  const trimmed = value.trim();
-  if (!trimmed) {
-    return '';
-  }
-  if (trimmed.startsWith('vault://') || trimmed.startsWith('secret://')) {
-    return trimmed;
-  }
-  if (trimmed.includes('://')) {
-    return trimmed;
-  }
-  return `secret://${trimmed}`;
-}
-
-function isValidCredentialRef(value: string): boolean {
-  if (!value) {
-    return true;
-  }
-  if (value.length > CREDENTIAL_REF_MAX_LENGTH) {
-    return false;
-  }
-  if (!(value.startsWith('vault://') || value.startsWith('secret://'))) {
-    return false;
-  }
-  const locator = value.replace(/^(?:vault|secret):\/\//, '');
-  return CREDENTIAL_REF_LOCATOR_PATTERN.test(locator) && locator.replace(/^\/+|\/+$/g, '').length > 0;
-}
-
-function isCredentialRefValidationErrorMessage(message: string): boolean {
-  return (
-    /\b(?:secretRef|tokenRef|aesKeyRef)\b.*(?:must start with vault:\/\/ or secret:\/\/|must include a non-empty locator)/i.test(message) ||
-    /plaintext open platform secrets are not accepted/i.test(message)
-  );
+function optionalSecretPatch(value: string): string | undefined {
+  const normalized = value.trim();
+  return normalized ? normalized : undefined;
 }
 
 function SummaryCell({ label, tone = 'slate', value }: { label: string; tone?: 'emerald' | 'slate'; value: number }) {

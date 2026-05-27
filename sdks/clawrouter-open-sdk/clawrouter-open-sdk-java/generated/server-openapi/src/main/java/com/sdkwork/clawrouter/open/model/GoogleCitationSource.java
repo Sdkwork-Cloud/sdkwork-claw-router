@@ -10,7 +10,7 @@ public class GoogleCitationSource {
     public Integer getEndIndex() {
         return this.endIndex;
     }
-    
+
     public void setEndIndex(Integer endIndex) {
         this.endIndex = endIndex;
     }
@@ -18,7 +18,7 @@ public class GoogleCitationSource {
     public String getLicense() {
         return this.license;
     }
-    
+
     public void setLicense(String license) {
         this.license = license;
     }
@@ -26,7 +26,7 @@ public class GoogleCitationSource {
     public Integer getStartIndex() {
         return this.startIndex;
     }
-    
+
     public void setStartIndex(Integer startIndex) {
         this.startIndex = startIndex;
     }
@@ -34,7 +34,7 @@ public class GoogleCitationSource {
     public String getUri() {
         return this.uri;
     }
-    
+
     public void setUri(String uri) {
         this.uri = uri;
     }

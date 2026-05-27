@@ -11,7 +11,7 @@ public class OpenAiEmbeddingsRequest {
     public Integer getDimensions() {
         return this.dimensions;
     }
-    
+
     public void setDimensions(Integer dimensions) {
         this.dimensions = dimensions;
     }
@@ -19,7 +19,7 @@ public class OpenAiEmbeddingsRequest {
     public String getEncodingFormat() {
         return this.encodingFormat;
     }
-    
+
     public void setEncodingFormat(String encodingFormat) {
         this.encodingFormat = encodingFormat;
     }
@@ -27,7 +27,7 @@ public class OpenAiEmbeddingsRequest {
     public String getInput() {
         return this.input;
     }
-    
+
     public void setInput(String input) {
         this.input = input;
     }
@@ -35,7 +35,7 @@ public class OpenAiEmbeddingsRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -43,7 +43,7 @@ public class OpenAiEmbeddingsRequest {
     public String getUser() {
         return this.user;
     }
-    
+
     public void setUser(String user) {
         this.user = user;
     }

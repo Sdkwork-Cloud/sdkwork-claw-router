@@ -43,7 +43,7 @@ public class IamGatewayRiskRuleRecord {
     public String getAction() {
         return this.action;
     }
-    
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -51,7 +51,7 @@ public class IamGatewayRiskRuleRecord {
     public String getBlockDurationSeconds() {
         return this.blockDurationSeconds;
     }
-    
+
     public void setBlockDurationSeconds(String blockDurationSeconds) {
         this.blockDurationSeconds = blockDurationSeconds;
     }
@@ -59,7 +59,7 @@ public class IamGatewayRiskRuleRecord {
     public String getBurstLimit() {
         return this.burstLimit;
     }
-    
+
     public void setBurstLimit(String burstLimit) {
         this.burstLimit = burstLimit;
     }
@@ -67,7 +67,7 @@ public class IamGatewayRiskRuleRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -75,7 +75,7 @@ public class IamGatewayRiskRuleRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -83,7 +83,7 @@ public class IamGatewayRiskRuleRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -91,7 +91,7 @@ public class IamGatewayRiskRuleRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -99,7 +99,7 @@ public class IamGatewayRiskRuleRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -107,7 +107,7 @@ public class IamGatewayRiskRuleRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -115,7 +115,7 @@ public class IamGatewayRiskRuleRecord {
     public String getHitCount() {
         return this.hitCount;
     }
-    
+
     public void setHitCount(String hitCount) {
         this.hitCount = hitCount;
     }
@@ -123,7 +123,7 @@ public class IamGatewayRiskRuleRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -131,7 +131,7 @@ public class IamGatewayRiskRuleRecord {
     public String getLastHitAt() {
         return this.lastHitAt;
     }
-    
+
     public void setLastHitAt(String lastHitAt) {
         this.lastHitAt = lastHitAt;
     }
@@ -139,7 +139,7 @@ public class IamGatewayRiskRuleRecord {
     public String getMatchMode() {
         return this.matchMode;
     }
-    
+
     public void setMatchMode(String matchMode) {
         this.matchMode = matchMode;
     }
@@ -147,7 +147,7 @@ public class IamGatewayRiskRuleRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -155,7 +155,7 @@ public class IamGatewayRiskRuleRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -163,7 +163,7 @@ public class IamGatewayRiskRuleRecord {
     public Integer getPriority() {
         return this.priority;
     }
-    
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -171,7 +171,7 @@ public class IamGatewayRiskRuleRecord {
     public String getReason() {
         return this.reason;
     }
-    
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -179,7 +179,7 @@ public class IamGatewayRiskRuleRecord {
     public String getRequestsPerDay() {
         return this.requestsPerDay;
     }
-    
+
     public void setRequestsPerDay(String requestsPerDay) {
         this.requestsPerDay = requestsPerDay;
     }
@@ -187,7 +187,7 @@ public class IamGatewayRiskRuleRecord {
     public String getRequestsPerMinute() {
         return this.requestsPerMinute;
     }
-    
+
     public void setRequestsPerMinute(String requestsPerMinute) {
         this.requestsPerMinute = requestsPerMinute;
     }
@@ -195,7 +195,7 @@ public class IamGatewayRiskRuleRecord {
     public String getRequestsPerSecond() {
         return this.requestsPerSecond;
     }
-    
+
     public void setRequestsPerSecond(String requestsPerSecond) {
         this.requestsPerSecond = requestsPerSecond;
     }
@@ -203,7 +203,7 @@ public class IamGatewayRiskRuleRecord {
     public String getRuleCategory() {
         return this.ruleCategory;
     }
-    
+
     public void setRuleCategory(String ruleCategory) {
         this.ruleCategory = ruleCategory;
     }
@@ -211,7 +211,7 @@ public class IamGatewayRiskRuleRecord {
     public String getRuleName() {
         return this.ruleName;
     }
-    
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -219,7 +219,7 @@ public class IamGatewayRiskRuleRecord {
     public String getRuleType() {
         return this.ruleType;
     }
-    
+
     public void setRuleType(String ruleType) {
         this.ruleType = ruleType;
     }
@@ -227,7 +227,7 @@ public class IamGatewayRiskRuleRecord {
     public String getScopeId() {
         return this.scopeId;
     }
-    
+
     public void setScopeId(String scopeId) {
         this.scopeId = scopeId;
     }
@@ -235,7 +235,7 @@ public class IamGatewayRiskRuleRecord {
     public String getScopeType() {
         return this.scopeType;
     }
-    
+
     public void setScopeType(String scopeType) {
         this.scopeType = scopeType;
     }
@@ -243,7 +243,7 @@ public class IamGatewayRiskRuleRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -251,7 +251,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(String targetType) {
         this.targetType = targetType;
     }
@@ -259,7 +259,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTargetValue() {
         return this.targetValue;
     }
-    
+
     public void setTargetValue(String targetValue) {
         this.targetValue = targetValue;
     }
@@ -267,7 +267,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTargetValueCipherRef() {
         return this.targetValueCipherRef;
     }
-    
+
     public void setTargetValueCipherRef(String targetValueCipherRef) {
         this.targetValueCipherRef = targetValueCipherRef;
     }
@@ -275,7 +275,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTargetValueHash() {
         return this.targetValueHash;
     }
-    
+
     public void setTargetValueHash(String targetValueHash) {
         this.targetValueHash = targetValueHash;
     }
@@ -283,7 +283,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTargetValueMasked() {
         return this.targetValueMasked;
     }
-    
+
     public void setTargetValueMasked(String targetValueMasked) {
         this.targetValueMasked = targetValueMasked;
     }
@@ -291,7 +291,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -299,7 +299,7 @@ public class IamGatewayRiskRuleRecord {
     public String getTokensPerMinute() {
         return this.tokensPerMinute;
     }
-    
+
     public void setTokensPerMinute(String tokensPerMinute) {
         this.tokensPerMinute = tokensPerMinute;
     }
@@ -307,7 +307,7 @@ public class IamGatewayRiskRuleRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -315,7 +315,7 @@ public class IamGatewayRiskRuleRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -323,7 +323,7 @@ public class IamGatewayRiskRuleRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -6,7 +6,6 @@ import type { ChatConversationCreateRequest, ChatTurnCreateRequest, ChatTurnResp
 
 export interface ChatTurnResponsesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class ChatTurnResponsesApi {
@@ -22,7 +21,6 @@ export class ChatTurnResponsesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -32,7 +30,6 @@ export class ChatTurnResponsesApi {
 
 export interface ChatTurnsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class ChatTurnsApi {
@@ -48,7 +45,6 @@ export class ChatTurnsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -86,7 +82,6 @@ export interface ChatConversationsListParams {
 
 export interface ChatConversationsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class ChatConversationsApi {
@@ -111,7 +106,6 @@ export class ChatConversationsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );

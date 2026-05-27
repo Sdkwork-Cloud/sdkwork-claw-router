@@ -1,4 +1,4 @@
-﻿# SDKWork API Specification
+# SDKWork API Specification
 
 This document is the canonical API contract standard for SDKWork application
 APIs, backend management APIs, OpenAPI documents, and generated SDKs. Product
@@ -178,7 +178,7 @@ method can express the operation.
 SDKWork uses dual-token context for app and backend calls:
 
 - Auth token: `Authorization: Bearer <auth_token>`
-- Access token: `Sdkwork-Access-Token: <access_token>`
+- Access token: `Access-Token: <access_token>`
 
 `auth_token` represents authenticated user/session identity. `access_token`
 represents application, tenant, organization, deployment, and access isolation

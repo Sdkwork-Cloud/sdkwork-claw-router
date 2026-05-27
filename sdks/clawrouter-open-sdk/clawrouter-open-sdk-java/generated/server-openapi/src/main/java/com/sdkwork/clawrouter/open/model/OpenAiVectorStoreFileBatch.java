@@ -12,7 +12,7 @@ public class OpenAiVectorStoreFileBatch {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -20,7 +20,7 @@ public class OpenAiVectorStoreFileBatch {
     public OpenAiVectorStoreFileCounts getFileCounts() {
         return this.fileCounts;
     }
-    
+
     public void setFileCounts(OpenAiVectorStoreFileCounts fileCounts) {
         this.fileCounts = fileCounts;
     }
@@ -28,7 +28,7 @@ public class OpenAiVectorStoreFileBatch {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -36,7 +36,7 @@ public class OpenAiVectorStoreFileBatch {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -44,7 +44,7 @@ public class OpenAiVectorStoreFileBatch {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -52,7 +52,7 @@ public class OpenAiVectorStoreFileBatch {
     public String getVectorStoreId() {
         return this.vectorStoreId;
     }
-    
+
     public void setVectorStoreId(String vectorStoreId) {
         this.vectorStoreId = vectorStoreId;
     }

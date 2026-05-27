@@ -1,6 +1,5 @@
 ﻿import type { AdminSiteSettingsResponse, AdminSiteSettingsUpdateRequest } from '@sdkwork/clawrouter-backend-sdk';
 import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   readApiRecord,
@@ -42,9 +41,7 @@ export const SiteSettingsService = {
   },
 
   async updateSettings(input: AdminSiteSettingsUpdateRequest): Promise<SiteSettingsForm> {
-    const result = await getClawRouterBackendSdkClient().system.site.settings.update(input, {
-      xRequestId: createRequestToken('site-settings-update'),
-    });
+    const result = await getClawRouterBackendSdkClient().system.site.settings.update(input);
     ensureSdkworkApiSuccess(result, 'Unable to update site settings');
     return toSiteSettings(readApiRecord(result));
   },

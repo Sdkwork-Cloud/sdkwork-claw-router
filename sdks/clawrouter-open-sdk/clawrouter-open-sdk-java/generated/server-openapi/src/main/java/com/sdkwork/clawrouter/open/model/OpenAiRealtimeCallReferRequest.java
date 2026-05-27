@@ -9,7 +9,7 @@ public class OpenAiRealtimeCallReferRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -17,7 +17,7 @@ public class OpenAiRealtimeCallReferRequest {
     public String getTarget() {
         return this.target;
     }
-    
+
     public void setTarget(String target) {
         this.target = target;
     }

@@ -76,7 +76,8 @@ fn exposes_tauri_adapter_manifest_for_local_private_commerce_runtime() {
         "commerce_cart_current_retrieve",
         "commerce_catalog_products_list",
         "commerce_checkout_sessions_orders_create",
-        "commerce_coupons_claims_create",
+        "commerce_promotions_offers_list",
+        "commerce_promotions_user_coupon_claims_create",
         "commerce_payments_intents_create",
         "commerce_refunds_create",
         "commerce_memberships_purchases_create",
@@ -114,7 +115,7 @@ fn exposes_tauri_adapter_manifest_for_local_private_commerce_runtime() {
     assert!(manifest
         .app_routes
         .iter()
-        .any(|route| route.path == "/app/v3/api/coupons"));
+        .any(|route| route.path == "/app/v3/api/promotions/user_coupons"));
     assert!(manifest
         .app_routes
         .iter()
@@ -151,17 +152,19 @@ fn exposes_tauri_adapter_manifest_for_local_private_commerce_runtime() {
         .app_routes
         .iter()
         .any(|route| route.path == "/app/v3/api/memberships/package_groups"));
-    assert!(manifest
-        .app_routes
-        .iter()
-        .all(|route| !route.path.contains("/billing")
+    assert!(manifest.app_routes.iter().all(|route| {
+        (route.path == "/app/v3/api/billing/history" || !route.path.contains("/billing"))
             && !route.path.contains("/vip")
             && !route.path.contains("/pack_groups")
-            && !route.path.contains("/packs")));
+            && !route.path.contains("/packs")
+    }));
     for retired_path in [
         "/app/v3/api/wallet/topups",
         "/app/v3/api/wallet/tokens/deductions",
         "/app/v3/api/wallet/points/exchanges/{exchangeNo}",
+        "/app/v3/api/coupons",
+        "/app/v3/api/coupons/claims",
+        "/app/v3/api/coupons/redemptions",
         "/app/v3/api/coupons/catalog/{couponId}",
         "/app/v3/api/checkout/preflight/estimates",
     ] {

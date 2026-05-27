@@ -58,6 +58,11 @@ async fn secret_ref_chat_stream_relay_resolves_endpoint_and_secret_from_request_
             )]),
         }));
 
+    let request_body = json!({
+        "model": "gpt-4o-mini",
+        "messages": [{"role": "user", "content": "ping"}],
+        "stream": true
+    });
     let response = relay
         .create_chat_completion_stream(ChatCompletionRelayRequest {
             api_key_id: 101,
@@ -76,11 +81,7 @@ async fn secret_ref_chat_stream_relay_resolves_endpoint_and_secret_from_request_
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "gpt-4o-mini",
-                "messages": [{"role": "user", "content": "ping"}],
-                "stream": true
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -99,9 +100,9 @@ async fn secret_ref_chat_stream_relay_resolves_endpoint_and_secret_from_request_
         Some("Bearer sk-provider-from-secret-ref".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
-    assert_eq!(true, captured[0].body["stream"]);
-    assert_eq!(true, captured[0].body["stream_options"]["include_usage"]);
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("gpt-4o-mini");
+    assert_eq!(expected_body, captured[0].body);
 }
 
 #[tokio::test]

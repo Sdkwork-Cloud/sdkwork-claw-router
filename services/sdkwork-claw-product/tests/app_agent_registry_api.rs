@@ -1,3 +1,6 @@
+mod common;
+use common::missing_internal_tenant_header_message;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -10,6 +13,8 @@ use sdkwork_claw_product::ports::{
 };
 use serde_json::{json, Value};
 use tower::ServiceExt;
+
+const TEST_REQUEST_ID: &str = "11111111-2222-4333-8444-555555555555";
 
 #[tokio::test]
 async fn app_agent_registry_create_route_returns_standard_agent_definition() {
@@ -28,11 +33,9 @@ async fn app_agent_registry_create_route_returns_standard_agent_definition() {
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", "create-product-studio-agent")
-                .header("X-Request-Id", "request-product-studio-agent")
+                .header("X-Request-Id", TEST_REQUEST_ID)
                 .body(Body::from(
                     r#"{
                       "name":"Product Studio Agent",
@@ -94,7 +97,7 @@ async fn app_agent_registry_create_route_returns_standard_agent_definition() {
     assert_eq!(20, commands[0].subject.organization_id);
     assert_eq!(30, commands[0].subject.user_id);
     assert_eq!("create-product-studio-agent", commands[0].idempotency_key);
-    assert_eq!("request-product-studio-agent", commands[0].request_id);
+    assert_eq!(TEST_REQUEST_ID, commands[0].request_id);
     assert_eq!("agent-uuid-001", commands[0].agent_uuid);
     assert_eq!("agent-version-uuid-001", commands[0].version_uuid);
     assert_eq!("Product Studio Agent", commands[0].name);
@@ -119,9 +122,7 @@ async fn app_agent_registry_list_and_detail_routes_return_direct_sdk_contracts()
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents?page=1&pageSize=20&q=studio")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -143,9 +144,7 @@ async fn app_agent_registry_list_and_detail_routes_return_direct_sdk_contracts()
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents/agent-1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -181,9 +180,7 @@ async fn app_agent_registry_list_route_accepts_standard_snake_case_page_size_que
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/agents?page=2&page_size=40&q=studio")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -212,9 +209,7 @@ async fn app_agent_registry_create_route_rejects_blank_names_without_calling_sto
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", "create-blank-agent")
                 .header("X-Request-Id", "request-blank-agent")
                 .body(Body::from(r#"{"name":"   "}"#))
@@ -247,9 +242,7 @@ async fn app_agent_registry_create_route_requires_idempotency_key() {
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "request-without-idempotency")
                 .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
                 .unwrap(),
@@ -282,11 +275,9 @@ async fn app_agent_registry_create_route_rejects_whitespace_wrapped_request_toke
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", " create-product-studio-agent ")
-                .header("X-Request-Id", "request-product-studio-agent")
+                .header("X-Request-Id", TEST_REQUEST_ID)
                 .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
                 .unwrap(),
         )
@@ -307,11 +298,9 @@ async fn app_agent_registry_create_route_rejects_whitespace_wrapped_request_toke
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", "create-product-studio-agent")
-                .header("X-Request-Id", " request-product-studio-agent ")
+                .header("X-Request-Id", "not-a-uuid")
                 .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
                 .unwrap(),
         )
@@ -324,7 +313,7 @@ async fn app_agent_registry_create_route_rejects_whitespace_wrapped_request_toke
     assert!(request_id_payload["msg"]
         .as_str()
         .unwrap()
-        .contains("X-Request-Id must contain only visible ASCII characters"));
+        .contains("X-Request-Id must be a UUID"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -344,11 +333,9 @@ async fn app_agent_registry_create_route_rejects_oversized_request_tokens() {
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", oversized.as_str())
-                .header("X-Request-Id", "request-product-studio-agent")
+                .header("X-Request-Id", TEST_REQUEST_ID)
                 .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
                 .unwrap(),
         )
@@ -369,9 +356,7 @@ async fn app_agent_registry_create_route_rejects_oversized_request_tokens() {
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", "create-product-studio-agent")
                 .header("X-Request-Id", oversized.as_str())
                 .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
@@ -386,7 +371,7 @@ async fn app_agent_registry_create_route_rejects_oversized_request_tokens() {
     assert!(request_id_payload["msg"]
         .as_str()
         .unwrap()
-        .contains("X-Request-Id must be at most 128 characters"));
+        .contains("X-Request-Id must be a UUID"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -396,7 +381,6 @@ async fn app_agent_registry_create_route_generates_request_id_when_header_is_abs
     let router = sdkwork_claw_product::api::app_agent_registry_router_with_store(
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec![
-            "generated-request-id-001",
             "agent-uuid-001",
             "agent-version-uuid-001",
         ])),
@@ -408,9 +392,7 @@ async fn app_agent_registry_create_route_generates_request_id_when_header_is_abs
                 .method("POST")
                 .uri("/app/v3/api/agents")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("Idempotency-Key", "create-product-studio-agent")
                 .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
                 .unwrap(),
@@ -421,7 +403,7 @@ async fn app_agent_registry_create_route_generates_request_id_when_header_is_abs
     assert_eq!(StatusCode::OK, response.status());
     let commands = store.commands.lock().unwrap();
     assert_eq!(1, commands.len());
-    assert_eq!("generated-request-id-001", commands[0].request_id);
+    assert_uuid(&commands[0].request_id);
     assert_eq!("agent-uuid-001", commands[0].agent_uuid);
     assert_eq!("agent-version-uuid-001", commands[0].version_uuid);
 }
@@ -450,7 +432,7 @@ async fn app_agent_registry_routes_require_trusted_subject() {
     assert!(payload["msg"]
         .as_str()
         .unwrap()
-        .contains("x-sdkwork-tenant-id header is required"));
+        .contains(missing_internal_tenant_header_message()));
 }
 
 async fn response_json(response: axum::response::Response) -> Value {
@@ -458,6 +440,24 @@ async fn response_json(response: axum::response::Response) -> Value {
         .await
         .unwrap();
     serde_json::from_slice(&body).unwrap()
+}
+
+fn assert_uuid(value: &str) {
+    let bytes = value.as_bytes();
+    assert_eq!(36, bytes.len(), "request id must be a canonical UUID");
+    assert_eq!(b'-', bytes[8]);
+    assert_eq!(b'-', bytes[13]);
+    assert_eq!(b'-', bytes[18]);
+    assert_eq!(b'-', bytes[23]);
+    assert_eq!(b'4', bytes[14], "generated request id must be UUID v4");
+    assert!(
+        matches!(bytes[19], b'8' | b'9' | b'a' | b'b'),
+        "generated request id must use RFC 4122 variant"
+    );
+    assert!(bytes.iter().enumerate().all(|(index, byte)| {
+        matches!(index, 8 | 13 | 18 | 23) && *byte == b'-'
+            || !matches!(index, 8 | 13 | 18 | 23) && byte.is_ascii_hexdigit()
+    }));
 }
 
 struct FixedAppAgentRegistryStore {

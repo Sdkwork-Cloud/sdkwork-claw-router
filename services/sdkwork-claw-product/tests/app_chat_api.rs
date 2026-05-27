@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -26,9 +28,7 @@ async fn app_chat_create_conversation_uses_product_chat_namespace_and_store_cont
                 .method("POST")
                 .uri("/app/v3/api/chat/conversations")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "title":"Router design",
@@ -79,9 +79,7 @@ async fn app_chat_list_conversations_uses_trusted_subject_and_returns_items() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/chat/conversations?page=1&pageSize=20")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -125,9 +123,7 @@ async fn app_chat_create_turn_carries_message_agent_and_model_context() {
                 .method("POST")
                 .uri("/app/v3/api/chat/conversations/chat-conversation-1/turns")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "message":"Design the chat schema",
@@ -188,9 +184,7 @@ async fn app_chat_complete_turn_response_carries_runtime_usage_and_assistant_out
                 .method("POST")
                 .uri("/app/v3/api/chat/conversations/chat-conversation-1/turns/chat-turn-1/response")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "message":"Use ChatConversation, ChatTurn, ChatMessage, and runtime usage links.",
@@ -270,6 +264,53 @@ async fn app_chat_complete_turn_response_carries_runtime_usage_and_assistant_out
 }
 
 #[tokio::test]
+async fn app_chat_complete_turn_response_preserves_markdown_response_whitespace() {
+    let store = Arc::new(TestAppChatStore::default());
+    let router = sdkwork_claw_product::api::app_chat_router_with_store(
+        store.clone(),
+        Arc::new(SequentialUuidGenerator::new(vec![
+            "assistant-message-uuid-1",
+            "assistant-part-uuid-1",
+            "usage-link-uuid-1",
+        ])),
+    );
+
+    let markdown = "\n### Answer\n\n```ts\n  const first = 1;\n  const second = 2;\n```\n";
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(
+                    "/app/v3/api/chat/conversations/chat-conversation-1/turns/chat-turn-1/response",
+                )
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    serde_json::json!({
+                        "message": markdown,
+                        "status": "completed",
+                        "model": "claude-sonnet-4-5",
+                        "provider": "anthropic",
+                        "runtime": "openai_compatible",
+                        "runtimeInvocationId": "runtime-invocation-1"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+
+    let commands = store.complete_turn_commands.lock().unwrap();
+    assert_eq!(1, commands.len());
+    assert_eq!(markdown, commands[0].message);
+}
+
+#[tokio::test]
 async fn app_chat_complete_turn_response_rejects_non_numeric_usage_fact_id() {
     let store = Arc::new(TestAppChatStore::default());
     let router = sdkwork_claw_product::api::app_chat_router_with_store(
@@ -289,9 +330,7 @@ async fn app_chat_complete_turn_response_rejects_non_numeric_usage_fact_id() {
                     "/app/v3/api/chat/conversations/chat-conversation-1/turns/chat-turn-1/response",
                 )
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "message":"invalid usage id",
@@ -328,9 +367,7 @@ async fn app_chat_does_not_expose_playground_backend_namespace() {
                 .method("POST")
                 .uri("/app/v3/api/playground/chat/conversations")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )

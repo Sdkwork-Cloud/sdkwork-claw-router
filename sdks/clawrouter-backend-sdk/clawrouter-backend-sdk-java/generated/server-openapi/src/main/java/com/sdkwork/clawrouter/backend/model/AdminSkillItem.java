@@ -51,7 +51,7 @@ public class AdminSkillItem {
     public Boolean getBuiltin() {
         return this.builtin;
     }
-    
+
     public void setBuiltin(Boolean builtin) {
         this.builtin = builtin;
     }
@@ -59,7 +59,7 @@ public class AdminSkillItem {
     public List<String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
     }
@@ -67,7 +67,7 @@ public class AdminSkillItem {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -75,7 +75,7 @@ public class AdminSkillItem {
     public Map<String, String> getConfigSchema() {
         return this.configSchema;
     }
-    
+
     public void setConfigSchema(Map<String, String> configSchema) {
         this.configSchema = configSchema;
     }
@@ -83,7 +83,7 @@ public class AdminSkillItem {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -91,7 +91,7 @@ public class AdminSkillItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -99,7 +99,7 @@ public class AdminSkillItem {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -107,7 +107,7 @@ public class AdminSkillItem {
     public Map<String, String> getDefaultConfig() {
         return this.defaultConfig;
     }
-    
+
     public void setDefaultConfig(Map<String, String> defaultConfig) {
         this.defaultConfig = defaultConfig;
     }
@@ -115,7 +115,7 @@ public class AdminSkillItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -123,7 +123,7 @@ public class AdminSkillItem {
     public String getDocumentationUrl() {
         return this.documentationUrl;
     }
-    
+
     public void setDocumentationUrl(String documentationUrl) {
         this.documentationUrl = documentationUrl;
     }
@@ -131,7 +131,7 @@ public class AdminSkillItem {
     public Boolean getEnabled() {
         return this.enabled;
     }
-    
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -139,7 +139,7 @@ public class AdminSkillItem {
     public String getEntrypoint() {
         return this.entrypoint;
     }
-    
+
     public void setEntrypoint(String entrypoint) {
         this.entrypoint = entrypoint;
     }
@@ -147,7 +147,7 @@ public class AdminSkillItem {
     public Boolean getFeatured() {
         return this.featured;
     }
-    
+
     public void setFeatured(Boolean featured) {
         this.featured = featured;
     }
@@ -155,7 +155,7 @@ public class AdminSkillItem {
     public String getHomepageUrl() {
         return this.homepageUrl;
     }
-    
+
     public void setHomepageUrl(String homepageUrl) {
         this.homepageUrl = homepageUrl;
     }
@@ -163,7 +163,7 @@ public class AdminSkillItem {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -171,7 +171,7 @@ public class AdminSkillItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -179,7 +179,7 @@ public class AdminSkillItem {
     public String getInstallCount() {
         return this.installCount;
     }
-    
+
     public void setInstallCount(String installCount) {
         this.installCount = installCount;
     }
@@ -187,7 +187,7 @@ public class AdminSkillItem {
     public Boolean getIsBuiltin() {
         return this.isBuiltin;
     }
-    
+
     public void setIsBuiltin(Boolean isBuiltin) {
         this.isBuiltin = isBuiltin;
     }
@@ -195,7 +195,7 @@ public class AdminSkillItem {
     public String getLatestPublishedAt() {
         return this.latestPublishedAt;
     }
-    
+
     public void setLatestPublishedAt(String latestPublishedAt) {
         this.latestPublishedAt = latestPublishedAt;
     }
@@ -203,7 +203,7 @@ public class AdminSkillItem {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -211,7 +211,7 @@ public class AdminSkillItem {
     public String getManifestUrl() {
         return this.manifestUrl;
     }
-    
+
     public void setManifestUrl(String manifestUrl) {
         this.manifestUrl = manifestUrl;
     }
@@ -219,7 +219,7 @@ public class AdminSkillItem {
     public String getMarketStatus() {
         return this.marketStatus;
     }
-    
+
     public void setMarketStatus(String marketStatus) {
         this.marketStatus = marketStatus;
     }
@@ -227,7 +227,7 @@ public class AdminSkillItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -235,7 +235,7 @@ public class AdminSkillItem {
     public String getPackageId() {
         return this.packageId;
     }
-    
+
     public void setPackageId(String packageId) {
         this.packageId = packageId;
     }
@@ -243,7 +243,7 @@ public class AdminSkillItem {
     public String getPrice() {
         return this.price;
     }
-    
+
     public void setPrice(String price) {
         this.price = price;
     }
@@ -251,7 +251,7 @@ public class AdminSkillItem {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -259,7 +259,7 @@ public class AdminSkillItem {
     public String getRatingAvg() {
         return this.ratingAvg;
     }
-    
+
     public void setRatingAvg(String ratingAvg) {
         this.ratingAvg = ratingAvg;
     }
@@ -267,7 +267,7 @@ public class AdminSkillItem {
     public String getRatingCount() {
         return this.ratingCount;
     }
-    
+
     public void setRatingCount(String ratingCount) {
         this.ratingCount = ratingCount;
     }
@@ -275,7 +275,7 @@ public class AdminSkillItem {
     public Integer getRecommendWeight() {
         return this.recommendWeight;
     }
-    
+
     public void setRecommendWeight(Integer recommendWeight) {
         this.recommendWeight = recommendWeight;
     }
@@ -283,7 +283,7 @@ public class AdminSkillItem {
     public String getRepositoryUrl() {
         return this.repositoryUrl;
     }
-    
+
     public void setRepositoryUrl(String repositoryUrl) {
         this.repositoryUrl = repositoryUrl;
     }
@@ -291,7 +291,7 @@ public class AdminSkillItem {
     public String getReviewComment() {
         return this.reviewComment;
     }
-    
+
     public void setReviewComment(String reviewComment) {
         this.reviewComment = reviewComment;
     }
@@ -299,7 +299,7 @@ public class AdminSkillItem {
     public String getReviewStatus() {
         return this.reviewStatus;
     }
-    
+
     public void setReviewStatus(String reviewStatus) {
         this.reviewStatus = reviewStatus;
     }
@@ -307,7 +307,7 @@ public class AdminSkillItem {
     public String getReviewedAt() {
         return this.reviewedAt;
     }
-    
+
     public void setReviewedAt(String reviewedAt) {
         this.reviewedAt = reviewedAt;
     }
@@ -315,7 +315,7 @@ public class AdminSkillItem {
     public String getReviewedBy() {
         return this.reviewedBy;
     }
-    
+
     public void setReviewedBy(String reviewedBy) {
         this.reviewedBy = reviewedBy;
     }
@@ -323,7 +323,7 @@ public class AdminSkillItem {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -331,7 +331,7 @@ public class AdminSkillItem {
     public String getSkillKey() {
         return this.skillKey;
     }
-    
+
     public void setSkillKey(String skillKey) {
         this.skillKey = skillKey;
     }
@@ -339,7 +339,7 @@ public class AdminSkillItem {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -347,7 +347,7 @@ public class AdminSkillItem {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -355,7 +355,7 @@ public class AdminSkillItem {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -363,7 +363,7 @@ public class AdminSkillItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -371,7 +371,7 @@ public class AdminSkillItem {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -379,7 +379,7 @@ public class AdminSkillItem {
     public String getVersionName() {
         return this.versionName;
     }
-    
+
     public void setVersionName(String versionName) {
         this.versionName = versionName;
     }
@@ -387,7 +387,7 @@ public class AdminSkillItem {
     public String getVisibility() {
         return this.visibility;
     }
-    
+
     public void setVisibility(String visibility) {
         this.visibility = visibility;
     }

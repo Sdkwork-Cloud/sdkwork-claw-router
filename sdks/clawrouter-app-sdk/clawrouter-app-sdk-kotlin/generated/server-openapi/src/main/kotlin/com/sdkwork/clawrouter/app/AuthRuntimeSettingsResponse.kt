@@ -7,6 +7,7 @@ data class AuthRuntimeSettingsResponse(
     val oauthProviders: List<String>? = null,
     val oauthRegion: String? = null,
     val qrLoginEnabled: Boolean? = null,
+    val qrLoginType: String? = null,
     val recoveryMethods: List<String>? = null,
     val registerMethods: List<String>? = null,
     val verificationPolicy: AuthVerificationPolicy? = null

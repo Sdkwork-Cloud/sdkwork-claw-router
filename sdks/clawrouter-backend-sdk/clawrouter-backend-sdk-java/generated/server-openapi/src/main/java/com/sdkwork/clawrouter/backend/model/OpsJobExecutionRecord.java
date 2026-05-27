@@ -32,7 +32,7 @@ public class OpsJobExecutionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -40,7 +40,7 @@ public class OpsJobExecutionRecord {
     public String getDurationMs() {
         return this.durationMs;
     }
-    
+
     public void setDurationMs(String durationMs) {
         this.durationMs = durationMs;
     }
@@ -48,7 +48,7 @@ public class OpsJobExecutionRecord {
     public String getEndedAt() {
         return this.endedAt;
     }
-    
+
     public void setEndedAt(String endedAt) {
         this.endedAt = endedAt;
     }
@@ -56,7 +56,7 @@ public class OpsJobExecutionRecord {
     public String getExecutionStatus() {
         return this.executionStatus;
     }
-    
+
     public void setExecutionStatus(String executionStatus) {
         this.executionStatus = executionStatus;
     }
@@ -64,7 +64,7 @@ public class OpsJobExecutionRecord {
     public String getFailureCount() {
         return this.failureCount;
     }
-    
+
     public void setFailureCount(String failureCount) {
         this.failureCount = failureCount;
     }
@@ -72,7 +72,7 @@ public class OpsJobExecutionRecord {
     public String getFailureReason() {
         return this.failureReason;
     }
-    
+
     public void setFailureReason(String failureReason) {
         this.failureReason = failureReason;
     }
@@ -80,7 +80,7 @@ public class OpsJobExecutionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -88,7 +88,7 @@ public class OpsJobExecutionRecord {
     public String getJobName() {
         return this.jobName;
     }
-    
+
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
@@ -96,7 +96,7 @@ public class OpsJobExecutionRecord {
     public String getJobType() {
         return this.jobType;
     }
-    
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -104,7 +104,7 @@ public class OpsJobExecutionRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -112,7 +112,7 @@ public class OpsJobExecutionRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -120,7 +120,7 @@ public class OpsJobExecutionRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -128,7 +128,7 @@ public class OpsJobExecutionRecord {
     public Map<String, String> getPayload() {
         return this.payload;
     }
-    
+
     public void setPayload(Map<String, String> payload) {
         this.payload = payload;
     }
@@ -136,7 +136,7 @@ public class OpsJobExecutionRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -144,7 +144,7 @@ public class OpsJobExecutionRecord {
     public String getProcessedCount() {
         return this.processedCount;
     }
-    
+
     public void setProcessedCount(String processedCount) {
         this.processedCount = processedCount;
     }
@@ -152,7 +152,7 @@ public class OpsJobExecutionRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -160,7 +160,7 @@ public class OpsJobExecutionRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -168,7 +168,7 @@ public class OpsJobExecutionRecord {
     public String getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
@@ -176,7 +176,7 @@ public class OpsJobExecutionRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -184,7 +184,7 @@ public class OpsJobExecutionRecord {
     public String getSuccessCount() {
         return this.successCount;
     }
-    
+
     public void setSuccessCount(String successCount) {
         this.successCount = successCount;
     }
@@ -192,7 +192,7 @@ public class OpsJobExecutionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -200,7 +200,7 @@ public class OpsJobExecutionRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -208,7 +208,7 @@ public class OpsJobExecutionRecord {
     public String getTriggerType() {
         return this.triggerType;
     }
-    
+
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
     }
@@ -216,7 +216,7 @@ public class OpsJobExecutionRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -224,7 +224,7 @@ public class OpsJobExecutionRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

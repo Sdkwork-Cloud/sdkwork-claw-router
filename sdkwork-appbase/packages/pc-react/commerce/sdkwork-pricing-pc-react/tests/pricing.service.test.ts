@@ -85,7 +85,7 @@ describe("sdkwork-pricing-pc-react service", () => {
             currentLevelName: "Team",
             expiringSoonCoupons: 0,
             isAuthenticated: true,
-            vipRemainingDays: 280,
+            membershipRemainingDays: 280,
           },
         }),
       },
@@ -132,7 +132,7 @@ describe("sdkwork-pricing-pc-react service", () => {
           summary: {
             currentLevelName: "Team",
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
           },
         }),
       },

@@ -1,7 +1,8 @@
 use crate::domain::{
-    AiModel, AiModelPublicMetadata, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter,
-    DecimalValue, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, ModelPrice,
-    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    provider_native_model_id, AiModel, AiModelPublicMetadata, ApiKeyGroup,
+    ApiKeyGroupMetricSnapshot, BillingMeter, DecimalValue, DomainError, DomainResult,
+    GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
+    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAccountPoolGroupBinding,
     ProviderAccountPoolRoute, ProviderAuthProfile, ProviderRetryPolicy, QuotaPolicy,
     RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
     RoutingRule,
@@ -132,6 +133,7 @@ pub struct ProviderAccountPoolRouteRow {
     pub auth_config_json: Option<String>,
     pub timeout_ms: Option<i64>,
     pub retry_policy_json: Option<String>,
+    pub group_bindings_json: String,
 }
 
 impl ProviderAccountPoolRouteRow {
@@ -152,6 +154,7 @@ impl ProviderAccountPoolRouteRow {
             auth_profile,
             timeout_ms,
             retry_policy,
+            group_bindings: parse_provider_account_pool_group_bindings(&self.group_bindings_json)?,
         })
     }
 }
@@ -165,13 +168,15 @@ impl ModelProviderRouteRow {
             self.auth_type.as_deref(),
             self.auth_config_json.as_deref(),
         )?;
+        let provider_model =
+            normalized_provider_model(&self.catalog_key, &self.model, &self.provider_model);
 
         Ok(ModelProviderRoute {
             catalog_key: self.catalog_key,
             model: self.model,
             provider_code: self.provider_code,
             channel_id: self.channel_id,
-            provider_model: self.provider_model,
+            provider_model,
             base_url: self.base_url,
             secret_ref: self.secret_ref,
             auth_profile,
@@ -179,6 +184,29 @@ impl ModelProviderRouteRow {
             retry_policy,
         })
     }
+}
+
+fn normalized_provider_model(catalog_key: &str, model: &str, provider_model: &str) -> String {
+    let provider_model = provider_model.trim();
+    if !provider_model.is_empty() {
+        if is_catalog_model_alias(provider_model, catalog_key, model) {
+            return provider_native_model_id(provider_model);
+        }
+        return provider_model.to_owned();
+    }
+    let model = model.trim();
+    if !model.is_empty() {
+        return model.to_owned();
+    }
+    provider_native_model_id(catalog_key)
+}
+
+fn is_catalog_model_alias(provider_model: &str, catalog_key: &str, model: &str) -> bool {
+    if provider_model == catalog_key.trim() {
+        return true;
+    }
+    let native_model = provider_native_model_id(provider_model);
+    !native_model.is_empty() && native_model == model.trim() && native_model != provider_model
 }
 
 fn parse_timeout_ms(timeout_ms: Option<i64>) -> DomainResult<Option<u64>> {
@@ -295,6 +323,7 @@ pub struct GatewayApiKeyRow {
     pub created_at: String,
     pub expire_at: Option<String>,
     pub status_code: i32,
+    pub default_for_runtime: bool,
 }
 
 impl GatewayApiKeyRow {
@@ -315,6 +344,7 @@ impl GatewayApiKeyRow {
             created_at: self.created_at,
             expire_at: self.expire_at,
             status_code: self.status_code,
+            default_for_runtime: self.default_for_runtime,
         }
     }
 
@@ -482,6 +512,115 @@ fn parse_route_candidates(value: &str, field_name: &str) -> DomainResult<Vec<Rou
         .enumerate()
         .map(|(index, value)| parse_route_candidate(value, field_name, index))
         .collect()
+}
+
+fn parse_provider_account_pool_group_bindings(
+    value: &str,
+) -> DomainResult<Vec<ProviderAccountPoolGroupBinding>> {
+    let value = parse_json_value(value, "iam_api_key_group_channel bindings")?;
+    let serde_json::Value::Array(items) = value else {
+        return Err(DomainError::new(
+            "iam_api_key_group_channel bindings must be a json array",
+        ));
+    };
+
+    items
+        .into_iter()
+        .enumerate()
+        .map(|(index, value)| parse_provider_account_pool_group_binding(value, index))
+        .collect()
+}
+
+fn parse_provider_account_pool_group_binding(
+    value: serde_json::Value,
+    index: usize,
+) -> DomainResult<ProviderAccountPoolGroupBinding> {
+    let serde_json::Value::Object(object) = value else {
+        return Err(DomainError::new(format!(
+            "iam_api_key_group_channel bindings[{index}] must be a json object"
+        )));
+    };
+    let group_id = object
+        .get("groupId")
+        .or_else(|| object.get("group_id"))
+        .and_then(serde_json::Value::as_i64)
+        .ok_or_else(|| {
+            DomainError::new(format!(
+                "iam_api_key_group_channel bindings[{index}] must contain integer groupId"
+            ))
+        })?;
+    if group_id <= 0 {
+        return Err(DomainError::new(format!(
+            "iam_api_key_group_channel bindings[{index}].groupId must be positive"
+        )));
+    }
+    let priority = object
+        .get("priority")
+        .and_then(serde_json::Value::as_i64)
+        .map(i32::try_from)
+        .transpose()
+        .map_err(|error| {
+            DomainError::new(format!(
+                "iam_api_key_group_channel bindings[{index}].priority is invalid: {error}"
+            ))
+        })?
+        .unwrap_or(100);
+    let weight = object
+        .get("weight")
+        .and_then(serde_json::Value::as_i64)
+        .map(i32::try_from)
+        .transpose()
+        .map_err(|error| {
+            DomainError::new(format!(
+                "iam_api_key_group_channel bindings[{index}].weight is invalid: {error}"
+            ))
+        })?
+        .unwrap_or(100);
+    let model_scope = parse_binding_string_array(&object, "modelScope", "model_scope", index)?;
+    let capabilities = parse_binding_string_array(&object, "capabilities", "capabilities", index)?;
+    Ok(ProviderAccountPoolGroupBinding::new_scoped(
+        group_id,
+        priority,
+        weight,
+        model_scope,
+        capabilities,
+    ))
+}
+
+fn parse_binding_string_array(
+    object: &serde_json::Map<String, serde_json::Value>,
+    camel_key: &str,
+    snake_key: &str,
+    index: usize,
+) -> DomainResult<Vec<String>> {
+    let Some(value) = object.get(camel_key).or_else(|| object.get(snake_key)) else {
+        return Ok(Vec::new());
+    };
+    if value.is_null() {
+        return Ok(Vec::new());
+    }
+    let serde_json::Value::Array(items) = value else {
+        return Err(DomainError::new(format!(
+            "iam_api_key_group_channel bindings[{index}].{camel_key} must be a json array"
+        )));
+    };
+    let mut seen = std::collections::BTreeSet::new();
+    let mut normalized = Vec::new();
+    for item in items {
+        let Some(value) = item.as_str() else {
+            return Err(DomainError::new(format!(
+                "iam_api_key_group_channel bindings[{index}].{camel_key} must contain only strings"
+            )));
+        };
+        let value = value.trim();
+        if value.is_empty() {
+            continue;
+        }
+        if seen.insert(value.to_owned()) {
+            normalized.push(value.to_owned());
+        }
+    }
+    Ok(normalized)
 }
 
 fn parse_route_candidate(

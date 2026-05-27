@@ -12,6 +12,23 @@ pub const DEFAULT_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD: usize = 1;
 pub const MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD: usize = 100;
 pub const DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS: u64 = 60;
 
+pub fn provider_native_model_id(model_key: &str) -> String {
+    let value = model_key.trim();
+    if value.is_empty() {
+        return String::new();
+    }
+    let parts = value
+        .split('/')
+        .map(str::trim)
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    if parts.len() >= 3 {
+        parts[2..].join("/")
+    } else {
+        value.to_owned()
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ModelVendorDefinition {
     pub vendor_code: String,
@@ -686,6 +703,49 @@ pub struct ModelProviderRoute {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ProviderAccountPoolGroupBinding {
+    pub group_id: i64,
+    pub priority: i32,
+    pub weight: i32,
+    pub model_scope: Vec<String>,
+    pub capabilities: Vec<String>,
+}
+
+impl ProviderAccountPoolGroupBinding {
+    pub fn new(group_id: i64, priority: i32, weight: i32) -> Self {
+        Self {
+            group_id,
+            priority,
+            weight,
+            model_scope: Vec::new(),
+            capabilities: Vec::new(),
+        }
+    }
+
+    pub fn new_scoped<M, C, MS, CS>(
+        group_id: i64,
+        priority: i32,
+        weight: i32,
+        model_scope: MS,
+        capabilities: CS,
+    ) -> Self
+    where
+        M: Into<String>,
+        C: Into<String>,
+        MS: IntoIterator<Item = M>,
+        CS: IntoIterator<Item = C>,
+    {
+        Self {
+            group_id,
+            priority,
+            weight,
+            model_scope: model_scope.into_iter().map(Into::into).collect(),
+            capabilities: capabilities.into_iter().map(Into::into).collect(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ProviderAccountPoolRoute {
     pub provider_code: String,
     pub channel_id: i64,
@@ -694,6 +754,7 @@ pub struct ProviderAccountPoolRoute {
     pub auth_profile: ProviderAuthProfile,
     pub timeout_ms: Option<u64>,
     pub retry_policy: Option<ProviderRetryPolicy>,
+    pub group_bindings: Vec<ProviderAccountPoolGroupBinding>,
 }
 
 impl ProviderAccountPoolRoute {
@@ -706,6 +767,7 @@ impl ProviderAccountPoolRoute {
             auth_profile: ProviderAuthProfile::default(),
             timeout_ms: None,
             retry_policy: None,
+            group_bindings: Vec::new(),
         }
     }
 
@@ -731,6 +793,47 @@ impl ProviderAccountPoolRoute {
 
     pub fn with_retry_policy(mut self, retry_policy: ProviderRetryPolicy) -> Self {
         self.retry_policy = Some(retry_policy);
+        self
+    }
+
+    pub fn with_group_binding(mut self, group_id: i64, priority: i32, weight: i32) -> Self {
+        self.group_bindings
+            .push(ProviderAccountPoolGroupBinding::new(
+                group_id, priority, weight,
+            ));
+        self
+    }
+
+    pub fn with_scoped_group_binding<M, C, MS, CS>(
+        mut self,
+        group_id: i64,
+        priority: i32,
+        weight: i32,
+        model_scope: MS,
+        capabilities: CS,
+    ) -> Self
+    where
+        M: Into<String>,
+        C: Into<String>,
+        MS: IntoIterator<Item = M>,
+        CS: IntoIterator<Item = C>,
+    {
+        self.group_bindings
+            .push(ProviderAccountPoolGroupBinding::new_scoped(
+                group_id,
+                priority,
+                weight,
+                model_scope,
+                capabilities,
+            ));
+        self
+    }
+
+    pub fn with_group_bindings(
+        mut self,
+        group_bindings: Vec<ProviderAccountPoolGroupBinding>,
+    ) -> Self {
+        self.group_bindings = group_bindings;
         self
     }
 }

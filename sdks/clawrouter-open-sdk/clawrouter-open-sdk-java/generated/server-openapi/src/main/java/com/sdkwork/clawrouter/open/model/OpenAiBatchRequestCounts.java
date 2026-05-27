@@ -9,7 +9,7 @@ public class OpenAiBatchRequestCounts {
     public Integer getCompleted() {
         return this.completed;
     }
-    
+
     public void setCompleted(Integer completed) {
         this.completed = completed;
     }
@@ -17,7 +17,7 @@ public class OpenAiBatchRequestCounts {
     public Integer getFailed() {
         return this.failed;
     }
-    
+
     public void setFailed(Integer failed) {
         this.failed = failed;
     }
@@ -25,7 +25,7 @@ public class OpenAiBatchRequestCounts {
     public Integer getTotal() {
         return this.total;
     }
-    
+
     public void setTotal(Integer total) {
         this.total = total;
     }

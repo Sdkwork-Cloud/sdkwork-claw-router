@@ -527,7 +527,8 @@ SHOULD NOT：
 | 前缀 | 业务域 | 示例表 |
 | --- | --- | --- |
 | `iam` | 身份、租户、组织、RBAC、API key、安全策略 | `iam_user`、`iam_tenant`、`iam_role_permission` |
-| `commerce` | 订单、支付、退款、账户、优惠券、VIP、商品、发票 | `commerce_order`、`commerce_payment`、`commerce_coupon` |
+| `commerce` | 订单、支付、退款、账户、VIP、商品、发票、账单投影 | `commerce_order`、`commerce_payment`、`commerce_usage_statement` |
+| `promotion` | 卡券、活动、库存、券码、用户券、核销、预算、外部平台同步 | `promotion_offer`、`promotion_coupon_stock`、`promotion_user_coupon` |
 | `ai` | Agent、模型、提示词、生成任务、AI 工具 | `ai_agent`、`ai_model_info`、`ai_prompt` |
 | `content` | 文章、评论、收藏、标签、分享、详情页、投票 | `content_article`、`content_comment` |
 | `media` | 文件、图片、视频、语音、音乐、数字人、媒体发布记录 | `media_file`、`media_video` |

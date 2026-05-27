@@ -12,7 +12,7 @@ public class CourseEngagement {
     public Integer getDiscussions() {
         return this.discussions;
     }
-    
+
     public void setDiscussions(Integer discussions) {
         this.discussions = discussions;
     }
@@ -20,7 +20,7 @@ public class CourseEngagement {
     public Integer getLikes() {
         return this.likes;
     }
-    
+
     public void setLikes(Integer likes) {
         this.likes = likes;
     }
@@ -28,7 +28,7 @@ public class CourseEngagement {
     public Integer getSaves() {
         return this.saves;
     }
-    
+
     public void setSaves(Integer saves) {
         this.saves = saves;
     }
@@ -36,7 +36,7 @@ public class CourseEngagement {
     public Integer getShares() {
         return this.shares;
     }
-    
+
     public void setShares(Integer shares) {
         this.shares = shares;
     }
@@ -44,7 +44,7 @@ public class CourseEngagement {
     public Integer getStudentsCount() {
         return this.studentsCount;
     }
-    
+
     public void setStudentsCount(Integer studentsCount) {
         this.studentsCount = studentsCount;
     }
@@ -52,7 +52,7 @@ public class CourseEngagement {
     public Integer getViews() {
         return this.views;
     }
-    
+
     public void setViews(Integer views) {
         this.views = views;
     }

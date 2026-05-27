@@ -33,6 +33,7 @@ export function PlaygroundModelPicker({
   const groupsWithModels = useMemo(() => modelGroups.filter((group) => group[bucket].length > 0), [bucket, modelGroups]);
   const selectedGroup = findModelGroup(groupsWithModels, bucket, selectedModelId) || groupsWithModels[0];
   const selectedModel = findModel(groupsWithModels, bucket, selectedModelId) || firstModel(selectedGroup, bucket) || fallback;
+  const selectedModelLabel = selectedModel.displayName || selectedModel.name || selectedModel.model;
   const [activeVendorCode, setActiveVendorCode] = useState(() => selectedGroup?.vendor.code || selectedModel.vendorCode);
   const containerRef = useRef<HTMLDivElement>(null);
   const activeGroup = groupsWithModels.find((group) => group.vendor.code === activeVendorCode) || selectedGroup;
@@ -79,15 +80,19 @@ export function PlaygroundModelPicker({
           }
         }}
         className={triggerClassName}
+        title={selectedModelLabel}
+        aria-label={selectedModelLabel}
       >
-        <div className={`flex min-w-0 items-center ${compact ? 'gap-2' : 'gap-3'}`}>
+        <div className={`flex min-w-0 flex-1 items-center ${compact ? 'gap-2' : 'gap-3'}`}>
           <div className={versionBadgeClassName}>
             <div className={`flex h-full w-full items-center justify-center px-1 ${isFlat ? '' : `bg-[#1a1a1a] text-white ${compact ? 'rounded-[4px]' : 'rounded-[6px]'}`}`}>
               {selectedModel.versionLabel || selectedModel.ver}
             </div>
           </div>
-          <div className="min-w-0">
-            <div className={`${compact ? 'text-xs' : 'mb-0.5 text-[13px]'} truncate font-bold tracking-wide text-slate-200`}>{selectedModel.name}</div>
+          <div className="min-w-0 flex-1">
+            <div className={`${compact ? 'whitespace-normal break-words text-xs leading-4' : 'mb-0.5 truncate text-[13px]'} font-bold tracking-wide text-slate-200`}>
+              {selectedModelLabel}
+            </div>
             {!compact && (
               <div className="line-clamp-1 text-[10px] tracking-wide text-slate-500">
                 {selectedModel.vendorName} | {selectedModel.desc}
@@ -182,6 +187,7 @@ export function createFallbackModel(name: string, desc: string, versionLabel: st
     officialReferenceCurrency: null,
     officialReferencePrices: [],
     priceAvailability: { status: 'unavailable' },
+    providerCodes: [],
     supportsStreaming: false,
     supportsTools: false,
     supportsJsonSchema: false,

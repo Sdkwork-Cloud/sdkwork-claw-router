@@ -17,6 +17,161 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
     return &SystemApi{client: client}
 }
 
+// Promotion Budget Ledger Entries List
+func (a *SystemApi) PromotionsBudgetLedgerEntriesList(budgetAccountId *string) (sdktypes.PromotionsBudgetLedgerEntriesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "budget_account_id", Value: func() interface{} { if budgetAccountId == nil { return nil }; return *budgetAccountId }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/budget_ledger_entries"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsBudgetLedgerEntriesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsBudgetLedgerEntriesListResult](raw)
+}
+
+// Promotion Coupon Codes List
+func (a *SystemApi) PromotionsCodesList(page *int, pageSize *int, status *string) (sdktypes.PromotionsCodesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/codes"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsCodesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCodesListResult](raw)
+}
+
+// Promotion Coupon Code Redemptions List
+func (a *SystemApi) PromotionsCodesRedemptionsList(page *int, pageSize *int, codeStatus *string) (sdktypes.PromotionsCodesRedemptionsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "code_status", Value: func() interface{} { if codeStatus == nil { return nil }; return *codeStatus }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/codes/redemptions"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsCodesRedemptionsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCodesRedemptionsListResult](raw)
+}
+
+// Promotion Coupon Ledger Entries List
+func (a *SystemApi) PromotionsCouponLedgerEntriesList(stockId *string) (sdktypes.PromotionsCouponLedgerEntriesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "stock_id", Value: func() interface{} { if stockId == nil { return nil }; return *stockId }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/coupon_ledger_entries"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsCouponLedgerEntriesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCouponLedgerEntriesListResult](raw)
+}
+
+// Promotion Coupon Stocks List
+func (a *SystemApi) PromotionsCouponStocksList(page *int, pageSize *int, status *string) (sdktypes.PromotionsCouponStocksListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/coupon_stocks"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsCouponStocksListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCouponStocksListResult](raw)
+}
+
+// Promotion Discount Allocations List
+func (a *SystemApi) PromotionsDiscountAllocationsList(applicationId *string) (sdktypes.PromotionsDiscountAllocationsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "application_id", Value: func() interface{} { if applicationId == nil { return nil }; return *applicationId }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/discount_allocations"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountAllocationsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountAllocationsListResult](raw)
+}
+
+// Promotion Discount Applications List
+func (a *SystemApi) PromotionsDiscountApplicationsList(page *int, pageSize *int, status *string) (sdktypes.PromotionsDiscountApplicationsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/discount_applications"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountApplicationsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountApplicationsListResult](raw)
+}
+
+// Promotion Events List
+func (a *SystemApi) PromotionsEventsList(status *string) (sdktypes.PromotionsEventsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/events"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsEventsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsEventsListResult](raw)
+}
+
+// Promotion External Bindings List
+func (a *SystemApi) PromotionsExternalBindingsList(platform *string) (sdktypes.PromotionsExternalBindingsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "platform", Value: func() interface{} { if platform == nil { return nil }; return *platform }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/external_bindings"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsExternalBindingsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsExternalBindingsListResult](raw)
+}
+
+// Promotion Offers List
+func (a *SystemApi) PromotionsOffersManagementList(page *int, pageSize *int, status *string) (sdktypes.PromotionsOffersManagementListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/offers"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsOffersManagementListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsOffersManagementListResult](raw)
+}
+
+// Promotion User Coupons Management List
+func (a *SystemApi) PromotionsUserCouponsManagementList(page *int, pageSize *int, status *string) (sdktypes.PromotionsUserCouponsManagementListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/user_coupons"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsUserCouponsManagementListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsUserCouponsManagementListResult](raw)
+}
+
 // List overview
 func (a *SystemApi) AnalyticsAdminOverviewRetrieve(timeRange *string, startTime *string, endTime *string, limit *int) (sdktypes.AnalyticsAdminOverviewRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -322,6 +477,60 @@ func (a *SystemApi) RecordsList(page *int, pageSize *int, user *string, token *s
         return zero, err
     }
     return decodeResult[sdktypes.RecordsListResult](raw)
+}
+
+// List service nodes
+func (a *SystemApi) ServiceNodesList(q *string, status *string) (sdktypes.ServiceNodesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/system/service_nodes"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.ServiceNodesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ServiceNodesListResult](raw)
+}
+
+// Create service node
+func (a *SystemApi) ServiceNodesCreate(body sdktypes.AdminServiceNodeCreateRequest) (sdktypes.ServiceNodesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/system/service_nodes"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ServiceNodesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ServiceNodesCreateResult](raw)
+}
+
+// Delete service node
+func (a *SystemApi) ServiceNodesDelete(nodeId string) (sdktypes.ServiceNodesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/system/service_nodes/%s", SerializePathParameter(nodeId, PathParameterSpec{Name: "nodeId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.ServiceNodesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ServiceNodesDeleteResult](raw)
+}
+
+// Update service node
+func (a *SystemApi) ServiceNodesUpdate(nodeId string, body sdktypes.AdminServiceNodeUpdateRequest) (sdktypes.ServiceNodesUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/system/service_nodes/%s", SerializePathParameter(nodeId, PathParameterSpec{Name: "nodeId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ServiceNodesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ServiceNodesUpdateResult](raw)
+}
+
+// Update service node status
+func (a *SystemApi) ServiceNodesStatusUpdate(nodeId string, body sdktypes.AdminServiceNodeStatusUpdateRequest) (sdktypes.ServiceNodesStatusUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/system/service_nodes/%s/status", SerializePathParameter(nodeId, PathParameterSpec{Name: "nodeId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ServiceNodesStatusUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ServiceNodesStatusUpdateResult](raw)
 }
 
 // Retrieve site branding and deployment personalization settings

@@ -8,10 +8,10 @@ pub struct IamVerificationCodeResponse {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub code_id: Option<String>,
 
-    /// Local/private deployment development code returned only when no notification adapter is configured.
-    #[serde(rename = "debugCode")]
+    /// Messaging send request id that carries the external SMS or email delivery audit trail.
+    #[serde(rename = "deliveryRequestId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub debug_code: Option<String>,
+    pub delivery_request_id: Option<String>,
 
     /// Expires at field on iam verification code response.
     #[serde(rename = "expiresAt")]

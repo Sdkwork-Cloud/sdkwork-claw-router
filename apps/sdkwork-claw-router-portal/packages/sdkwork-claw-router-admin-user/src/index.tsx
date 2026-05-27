@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CheckCircle2, Edit, Key, MoreHorizontal, Plus, Search, Shield, User, Users, X } from 'lucide-react';
+import { CheckCircle2, Edit, Key, MoreHorizontal, Plus, Search, Shield, Users, X } from 'lucide-react';
 import { AdminTableShell, BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
 import { ApiKeyItem, UserListItem, UserService } from './userService';
 import {
@@ -37,7 +37,7 @@ function createDefaultUserGroupOptions(t: TranslationFunction) {
 }
 
 function getStatusToggleLabel(u: UserListItem, t: TranslationFunction): string {
-  return u.status === 'active' ? t("admin.user.index.text.1dcdrxo", "禁用") : t("admin.marketing.index.text.5pm2ma", "启用");
+  return u.status === 'active' ? t("admin.user.index.text.1dcdrxo", "禁用") : t("common.actions.enable", "启用");
 }
 
 export function UserAdmin() {
@@ -171,22 +171,12 @@ export function UserAdmin() {
     : users;
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
-      <div className="flex shrink-0 flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-        <div>
-          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
-            <User className="h-6 w-6 text-blue-500" />
-            {t('admin.user.index.title', 'User Management')}
-          </h2>
-          <p className="text-sm text-slate-500">
-            {t('admin.user.index.description', 'Manage identity profiles, user status, groups, and API keys.')}
-          </p>
-        </div>
-        <div className="flex w-full gap-3 sm:w-auto">
-          <div className="relative">
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
+      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-admin-user-toolbar>
+          <div className="relative w-full sm:w-72" data-admin-user-search>
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
-              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder:text-slate-500 focus:border-blue-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white sm:w-64"
+              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder:text-slate-500 focus:border-blue-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
               onChange={(event) => setSearch(event.target.value)}
               placeholder={t('admin.user.index.searchPlaceholder', 'Search email, name, role, or group...')}
               type="text"
@@ -195,13 +185,13 @@ export function UserAdmin() {
           </div>
           <button
             className="flex shrink-0 items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            data-admin-user-primary-action
             onClick={() => setIsModalOpen(true)}
             type="button"
           >
             <Plus className="h-4 w-4" />
             <span className="hidden sm:inline">{t('admin.user.index.createUser', 'Create user')}</span>
           </button>
-        </div>
       </div>
 
       <AdminTableShell

@@ -2,7 +2,7 @@ import Foundation
 
 public class IamApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
@@ -37,6 +37,22 @@ public class IamApi {
             [:]
         )
         return try await client.patch(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccessGroupsUpdateResult.self)
+    }
+
+    /// List group channel bindings
+    public func accessGroupsChannelBindingsList(groupId: String) async throws -> AccessGroupsChannelBindingsListResult? {
+        return try await client.get(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))/channel_bindings"), responseType: AccessGroupsChannelBindingsListResult.self)
+    }
+
+    /// Replace group channel bindings
+    public func accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest, xRequestId: String? = nil) async throws -> AccessGroupsChannelBindingsUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.put(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccessGroupsChannelBindingsUpdateResult.self)
     }
 
     /// List API key map

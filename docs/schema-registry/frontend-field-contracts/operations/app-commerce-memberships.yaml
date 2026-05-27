@@ -306,7 +306,6 @@ frontend_operations:
   - commerce_product_sku
   - commerce_order
   - commerce_payment_attempt
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_order
@@ -389,7 +388,6 @@ frontend_operations:
   - commerce_product_sku
   - commerce_order
   - commerce_payment_attempt
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_order
@@ -421,7 +419,6 @@ frontend_operations:
   - commerce_product_sku
   - commerce_order
   - commerce_payment_attempt
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_order
@@ -496,7 +493,6 @@ frontend_operations:
   - commerce_membership
   - commerce_account
   - commerce_account_ledger_entry
-  request_id_header: true
   write_tables:
   - commerce_account
   - commerce_account_ledger_entry
@@ -560,7 +556,6 @@ frontend_operations:
   - commerce_membership
   - commerce_membership_entitlement
   - commerce_membership_entitlement_usage
-  request_id_header: true
   write_tables:
   - commerce_membership_entitlement_usage
   - ops_audit_log
@@ -604,12 +599,12 @@ frontend_operations:
   kind: create
   api_surface: app
   api_method: POST
-  api_path: /app/v3/api/coupons/redemptions
+  api_path: /app/v3/api/promotions/codes/redemptions
   read_sources:
-  - commerce_coupon_template
-  - commerce_coupon
+  - promotion_offer
+  - promotion_user_coupon
   write_tables:
-  - commerce_coupon_redemption
+  - promotion_discount_application
   - commerce_membership
   - commerce_membership_entitlement
   - ops_audit_log
@@ -649,6 +644,28 @@ frontend_operations:
   openapi_exposed: false
 - route: /console/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  operation: fetchMembershipOverview
+  operation_id: console.membershipOverview.retrieve
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/memberships/current
+  read_sources:
+  - commerce_membership
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_sku
+  - commerce_account
+  - commerce_account_ledger_entry
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
   operation: purchaseMembership
   operation_id: console.membershipPurchases.create
   operation_scope: app_shell
@@ -663,6 +680,88 @@ frontend_operations:
   - commerce_order
   - commerce_order_item
   - commerce_payment_intent
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  operation: renewMembership
+  operation_id: console.membershipPurchases.renew
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/memberships/purchases/renew
+  read_sources:
+  - commerce_membership
+  - commerce_membership_package
+  - commerce_product_sku
+  write_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_membership
+  - commerce_membership_entitlement
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  operation: upgradeMembership
+  operation_id: console.membershipPurchases.upgrade
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/memberships/purchases/upgrade
+  read_sources:
+  - commerce_membership
+  - commerce_membership_package
+  - commerce_product_sku
+  write_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_membership
+  - commerce_membership_entitlement
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  operation: claimDailyReward
+  operation_id: console.membershipDailyRewards.claim
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/memberships/points/daily_rewards
+  read_sources:
+  - commerce_membership
+  - commerce_account
+  - commerce_account_ledger_entry
+  write_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_membership_entitlement_usage
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  operation: activateSpeedUp
+  operation_id: console.membershipPrivileges.speedUps.create
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/memberships/privileges/speed_ups
+  read_sources:
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  write_tables:
+  - commerce_membership_entitlement_usage
   - ops_audit_log
   file_targets: []
   openapi_exposed: false

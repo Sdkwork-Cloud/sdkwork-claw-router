@@ -6,10 +6,10 @@ pub mod health;
 pub mod router;
 
 pub use auth::{
-    app_request_subject_boundary, inject_optional_app_request_subject,
-    inject_verified_app_request_subject, inject_verified_trusted_request_subject,
+    app_request_subject_boundary, attach_trusted_request_subject, optional_app_request_subject,
     optional_app_request_subject_boundary, sign_app_session_token, sign_trusted_request_subject,
-    trusted_request_subject_boundary, verify_app_session_authorization_header,
+    trusted_request_subject_boundary, verified_app_request_subject,
+    verified_signed_trusted_request_subject, verify_app_session_authorization_header,
     verify_app_session_token, ApiKeyCredential, ApiKeyCredentialSource, ApiKeyIdentity,
     ApiKeyIdentityError, AppSessionTokenError, AppSubjectBoundaryConfig, TrustedRequestSubject,
     TrustedRequestSubjectError, TrustedSubjectBoundaryError,

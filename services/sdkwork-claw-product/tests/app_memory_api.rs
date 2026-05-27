@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -26,9 +28,7 @@ async fn app_memory_create_space_uses_product_memory_namespace_and_store_contrac
                 .method("POST")
                 .uri("/app/v3/api/memory/spaces")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "title":"Project coding memory",
@@ -90,9 +90,7 @@ async fn app_memory_create_entry_links_to_space_and_source_context() {
                 .method("POST")
                 .uri("/app/v3/api/memory/spaces/memory-space-1/entries")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{
                       "memoryType":"preference",
@@ -157,9 +155,7 @@ async fn app_memory_lists_spaces_and_entries_for_trusted_subject() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/memory/spaces?page=1&pageSize=20")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -175,9 +171,7 @@ async fn app_memory_lists_spaces_and_entries_for_trusted_subject() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/memory/spaces/memory-space-1/entries")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -212,9 +206,7 @@ async fn app_memory_does_not_expose_playground_backend_namespace() {
                 .method("POST")
                 .uri("/app/v3/api/playground/memory/spaces")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )

@@ -13,7 +13,7 @@ public class OpenAiRealtimeClientSecretCreateRequest {
     public String getInstructions() {
         return this.instructions;
     }
-    
+
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -21,7 +21,7 @@ public class OpenAiRealtimeClientSecretCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -29,7 +29,7 @@ public class OpenAiRealtimeClientSecretCreateRequest {
     public List<String> getModalities() {
         return this.modalities;
     }
-    
+
     public void setModalities(List<String> modalities) {
         this.modalities = modalities;
     }
@@ -37,7 +37,7 @@ public class OpenAiRealtimeClientSecretCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -45,7 +45,7 @@ public class OpenAiRealtimeClientSecretCreateRequest {
     public String getVoice() {
         return this.voice;
     }
-    
+
     public void setVoice(String voice) {
         this.voice = voice;
     }

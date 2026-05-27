@@ -1,5 +1,4 @@
 import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -140,7 +139,6 @@ export class ChannelService {
   static async addChannel(channel: ChannelCreateInput): Promise<ChannelItem> {
     const result = await channelBackendClient().integration.channels.create(
       toCreateChannelRequest(channel),
-      requestParams('admin-channel-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add channel');
     return normalizeChannel(readRequiredApiItem(result, 'Created channel response is missing data'));
@@ -150,7 +148,6 @@ export class ChannelService {
     const channelId = requiredSafePathSegment(id, 'channelId');
     const result = await channelBackendClient().integration.channels.update(
       toUpdateChannelRequest(channelId, updates),
-      requestParams('admin-channel-update'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to update channel');
     return normalizeChannel(readRequiredApiItem(result, 'Updated channel response is missing data'));
@@ -166,7 +163,6 @@ export class ChannelService {
     const channelId = requiredSafePathSegment(id, 'channelId');
     const result = await channelBackendClient().integration.channels.verify(
       channelId,
-      requestParams('admin-channel-test'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to test channel');
     const data = readApiRecord(result);
@@ -201,7 +197,6 @@ export class ProviderSecretService {
   static async addProviderSecret(secret: ProviderSecretInput): Promise<ProviderSecretItem> {
     const result = await channelBackendClient().integration.providerSecrets.create(
       toCreateProviderSecretRequest(secret),
-      requestParams('admin-provider-secret-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add provider credential');
     return normalizeProviderSecret(readRequiredApiItem(result, 'Created provider credential response is missing data'));
@@ -214,7 +209,6 @@ export class ProviderSecretService {
     const providerSecretId = requiredSafePathSegment(id, 'providerSecretId');
     const result = await channelBackendClient().integration.providerSecrets.update(
       toUpdateProviderSecretRequest(providerSecretId, updates),
-      requestParams('admin-provider-secret-update'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to update provider credential');
     return normalizeProviderSecret(readRequiredApiItem(result, 'Updated provider credential response is missing data'));
@@ -363,9 +357,6 @@ function toCatalogModelKey(model: string, vendor: string | undefined): string {
   if (isCatalogModelKey(value)) {
     return value;
   }
-  if (value.includes('/')) {
-    throw new Error(`models must use vendorCode/regionCode/modelId catalog keys: ${value}`);
-  }
   return `${providerCodeForVendor(vendor ?? 'custom')}/global/${value}`;
 }
 
@@ -386,7 +377,7 @@ export function providerCodeForVendor(vendor: string): string {
 
 export function isCatalogModelKey(value: string): boolean {
   const parts = value.trim().split('/');
-  return parts.length === 3 && parts.every((part) => part.trim().length > 0);
+  return parts.length >= 3 && parts.every((part) => part.trim().length > 0);
 }
 
 export function normalizeModelCatalogKey(model: string, vendor: string): string {
@@ -425,10 +416,6 @@ function optionalNullableInteger(value: number | null | undefined): number | nul
 
 function pruneUndefined<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
-}
-
-function requestParams(scope: string): { xRequestId: string } {
-  return { xRequestId: createRequestToken(scope) };
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {

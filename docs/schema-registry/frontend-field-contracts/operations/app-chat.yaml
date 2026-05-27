@@ -60,6 +60,24 @@ frontend_operations:
       - desc
 - route: /playground
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+  operation: cancelRuntimeInvocation
+  operation_scope: app_shell
+  operation_id: playground.chatRuntime.cancel
+  kind: action
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/runtime/invocations/{invocationId}/complete
+  openapi_exposed: false
+  sdk_domain: runtime
+  summary: Cancel Playground chat runtime invocation
+  description: Marks an in-flight Playground chat runtime invocation as cancelled and persists the partial output and usage snapshot through the product runtime boundary.
+  read_sources:
+  - ai_runtime_invocation
+  write_tables:
+  - ai_runtime_invocation
+  file_targets: []
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
   operation: sendMessage
   operation_scope: app_shell
   operation_id: completions.create
@@ -113,6 +131,33 @@ frontend_operations:
       metadata:
         type: object
         additionalProperties: true
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+  operation: resumeMessage
+  operation_scope: app_shell
+  operation_id: playground.chatRuntime.resume
+  kind: action
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/runtime/invocations/{invocationId}/complete
+  openapi_exposed: false
+  sdk_domain: runtime
+  summary: Resume Playground chat runtime invocation
+  description: Resumes streaming runtime events for an existing Playground chat invocation, de-duplicates already seen events, and persists the final assistant turn when the stream reaches a terminal state.
+  read_sources:
+  - ai_chat_conversation
+  - ai_chat_turn
+  - ai_runtime_invocation
+  - ai_runtime_invocation_event
+  write_tables:
+  - ai_chat_turn
+  - ai_chat_item
+  - ai_chat_message
+  - ai_chat_message_part
+  - ai_runtime_invocation
+  - ai_runtime_usage_link
+  - ai_memory_event
+  file_targets: []
 - route: /playground
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
   operation: listChatConversations

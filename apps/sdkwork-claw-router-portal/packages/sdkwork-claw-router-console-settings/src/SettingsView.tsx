@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { Settings, Globe, Bell, Palette, Moon, Sun, Check, Loader2 } from 'lucide-react';
+import { Globe, Bell, Palette, Moon, Sun, Check, Loader2, Monitor } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useOutletContext } from 'react-router-dom';
 import { ConsoleContextProps } from 'sdkwork-claw-router-console-core';
@@ -23,7 +23,7 @@ const Toggle = ({ checked, onChange, disabled = false, label }: { checked: boole
     aria-checked={checked}
     disabled={disabled}
     onClick={onChange}
-    className={`relative inline-flex h-5 w-10 shrink-0 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#1e1e1e] transition-colors duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-60 ${checked ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}
+    className={`relative inline-flex h-5 w-10 shrink-0 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-lobster-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#1e1e1e] transition-colors duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-60 ${checked ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}
   >
     <span className="sr-only">{label}</span>
     <span aria-hidden="true" className={`pointer-events-none absolute left-0.5 inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${checked ? 'translate-x-5' : 'translate-x-0'}`} />
@@ -32,7 +32,7 @@ const Toggle = ({ checked, onChange, disabled = false, label }: { checked: boole
 
 export function SettingsView() {
   const { t } = useTranslation();
-  const { isDark, setTheme } = useOutletContext<ConsoleContextProps>();
+  const { isDark, theme, setTheme, themeColor, setThemeColor } = useOutletContext<ConsoleContextProps>();
   const [activeTab, setActiveTab] = useState('general');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -135,21 +135,41 @@ export function SettingsView() {
     { id: 'notifications', label: t("console.settings.settingsview.text.186jwwc", "通知与提醒"), icon: Bell },
   ];
 
+  const themeModeOptions = [
+    {
+      id: 'system',
+      label: t("console.settings.appearance.systemMode", "跟随系统"),
+      description: t("console.settings.appearance.systemModeDescription", "自动匹配当前设备的浅色或深色外观。"),
+      icon: Monitor,
+    },
+    {
+      id: 'light',
+      label: t("console.settings.settingsview.text.1h50oex", "浅色模式 (Light)"),
+      description: t("console.settings.appearance.lightModeDescription", "适合日间办公和高亮环境的清爽控制台。"),
+      icon: Sun,
+    },
+    {
+      id: 'dark',
+      label: t("console.settings.settingsview.text.mhupa5", "深色控制台模式 (Dark Pro)"),
+      description: t("console.settings.appearance.darkModeDescription", "适合长时间监控、夜间排查和高密度数据浏览。"),
+      icon: Moon,
+    },
+  ] as const;
+
+  const themeColorOptions = [
+    { id: 'lobster', label: t("console.settings.appearance.color.lobster", "珊瑚红"), value: '#e55039', soft: '#fbe4e2' },
+    { id: 'blue', label: t("console.settings.appearance.color.blue", "深海蓝"), value: '#2563eb', soft: '#dbeafe' },
+    { id: 'emerald', label: t("console.settings.appearance.color.emerald", "松石绿"), value: '#059669', soft: '#d1fae5' },
+    { id: 'violet', label: t("console.settings.appearance.color.violet", "紫罗兰"), value: '#7c3aed', soft: '#ede9fe' },
+    { id: 'amber', label: t("console.settings.appearance.color.amber", "琥珀金"), value: '#d97706', soft: '#fef3c7' },
+  ] as const;
+
   return (
-    <div className="p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
-
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4 mb-6">
-        <div className="flex items-center gap-2">
-          <Settings className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t("console.settings.settingsview.text.18giiv0", "控制台设置")}</h1>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-8">
+    <div className="w-full h-[calc(100vh-72px)] mx-auto overflow-hidden flex flex-col animate-in fade-in duration-500 bg-slate-50 p-[5px] dark:bg-[#121212]">
+      <div className="flex-1 min-h-0 overflow-hidden flex flex-col md:flex-row gap-8">
 
         {/* Left Nav */}
-        <div className="w-full md:w-64 shrink-0">
+        <div className="w-full md:w-64 shrink-0 md:min-h-0">
            <nav className="flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-visible custom-scrollbar pb-2 md:pb-0">
              {tabs.map(tab => {
                const Icon = tab.icon;
@@ -160,11 +180,11 @@ export function SettingsView() {
                    onClick={() => setActiveTab(tab.id)}
                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
                      isActive
-                     ? 'bg-blue-50 dark:bg-blue-600/10 text-blue-600 dark:text-blue-500 border border-blue-200 dark:border-blue-500/20'
+                     ? 'bg-lobster-50 dark:bg-lobster-500/10 text-lobster-600 dark:text-lobster-400 border border-lobster-200 dark:border-lobster-500/20'
                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-transparent'
                    }`}
                  >
-                   <Icon className={`w-4 h-4 ${isActive ? 'text-blue-600 dark:text-blue-500' : 'text-slate-500'}`} />
+                   <Icon className={`w-4 h-4 ${isActive ? 'text-lobster-600 dark:text-lobster-400' : 'text-slate-500'}`} />
                    {tab.label}
                  </button>
                )
@@ -173,13 +193,13 @@ export function SettingsView() {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm min-h-[500px]">
+        <div className="flex-1 min-h-0 overflow-hidden flex flex-col bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm">
           <AnimatePresence mode="wait">
             {loading ? (
               <BusinessStatePanel
                 kind="loading"
                 title={t('console.settings.states.loading', '正在加载设置...')}
-                className="min-h-[500px]"
+                className="flex-1 min-h-0"
               />
             ) : loadError ? (
               <BusinessStatePanel
@@ -187,7 +207,7 @@ export function SettingsView() {
                 title={t('console.settings.states.loadErrorTitle', '设置加载失败')}
                 description={loadError}
                 onRetry={() => void loadSettings()}
-                className="min-h-[500px]"
+                className="flex-1 min-h-0"
               />
             ) : activeTab === 'general' ? (
               <motion.div
@@ -196,7 +216,7 @@ export function SettingsView() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="p-6 md:p-8 space-y-8"
+                className="flex-1 min-h-0 overflow-y-auto custom-scrollbar p-6 md:p-8 space-y-8"
               >
                 <div>
                   <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-1">{t("console.settings.settingsview.text.103js93", "通用设置")}</h2>
@@ -219,7 +239,7 @@ export function SettingsView() {
                          <select
                            value={data.language}
                            onChange={e => setData({...data, language: e.target.value})}
-                           className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer shadow-sm">
+                           className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-800 dark:text-white focus:outline-none focus:border-lobster-500 transition-colors cursor-pointer shadow-sm">
                            <option value="zh-CN">{t("console.settings.settingsview.text.vi603f", "简体中文 (zh-CN)")}</option>
                            <option value="en-US">English (en-US)</option>
                            <option value="ja-JP">{t("console.settings.settingsview.text.17iwdgf", "日本語 (ja-JP)")}</option>
@@ -230,7 +250,7 @@ export function SettingsView() {
                          <select
                            value={data.timezone}
                            onChange={e => setData({...data, timezone: e.target.value})}
-                           className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-500 transition-colors cursor-pointer shadow-sm">
+                           className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-800 dark:text-white focus:outline-none focus:border-lobster-500 transition-colors cursor-pointer shadow-sm">
                            <option value="UTC+08:00">(UTC+08:00) Beijing, Shanghai</option>
                            <option value="UTC+00:00">(UTC+00:00) Coordinated Universal Time</option>
                            <option value="UTC-08:00">(UTC-08:00) Pacific Time (US & Canada)</option>
@@ -247,11 +267,11 @@ export function SettingsView() {
                         value={data.webhookUrl}
                         onChange={e => setData({...data, webhookUrl: e.target.value})}
                         placeholder="https://api.yourdomain.com/webhook/callback"
-                        className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-500 transition-colors font-mono placeholder:text-slate-400 dark:placeholder:text-slate-600 shadow-sm" />
+                        className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-800 dark:text-white focus:outline-none focus:border-lobster-500 transition-colors font-mono placeholder:text-slate-400 dark:placeholder:text-slate-600 shadow-sm" />
                     </div>
 
                     <div className="pt-6 flex justify-end">
-                      <button onClick={handleSave} disabled={saving} className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white px-6 py-2.5 rounded-xl flex items-center gap-2 text-sm font-medium transition-colors shadow-sm">
+                      <button onClick={handleSave} disabled={saving} className="bg-lobster-600 hover:bg-lobster-700 disabled:opacity-50 text-white px-6 py-2.5 rounded-xl flex items-center gap-2 text-sm font-medium transition-colors shadow-sm">
                         {saving && <Loader2 className="w-4 h-4 animate-spin" />}
                         {t("console.settings.settingsview.text.sig5u1", "保存全部修改")}</button>
                     </div>
@@ -265,44 +285,119 @@ export function SettingsView() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="p-6 md:p-8 space-y-8"
+                className="flex-1 min-h-0 overflow-y-auto custom-scrollbar p-6 md:p-8 space-y-8"
               >
-                <div>
-                  <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-1">{t("console.settings.settingsview.text.qwhdeg", "外观与排版体验")}</h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">{t("console.settings.settingsview.text.8f9wf1", "控制台作为极度沉浸的数据分析及网关监管中心，极力推荐您在暗色模式下获得最专业的多模态聚合操作体验。")}</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-xl">
-                    <button
-                      onClick={() => setTheme('light')}
-                      className={`flex flex-col items-center gap-4 p-5 rounded-xl border-2 transition-colors relative ${!isDark ? 'border-blue-500 bg-blue-50 dark:bg-blue-500/5' : 'border-slate-200 dark:border-transparent hover:border-blue-300 dark:hover:bg-white/10'}`}
-                    >
-                      {!isDark && (
-                        <div className="absolute top-2 right-2 p-1.5 bg-blue-500 rounded-full shadow-sm z-10">
-                           <Check className="w-3.5 h-3.5 text-white" />
-                        </div>
-                      )}
-                      <div className="w-full h-28 bg-slate-50 dark:bg-white rounded-lg border border-slate-200 flex items-center justify-center shadow-sm">
-                        <Sun className="w-8 h-8 text-amber-500" />
-                      </div>
-                      <span className={`text-sm font-medium ${!isDark ? 'text-blue-600' : 'text-slate-600 dark:text-slate-300'}`}>{t("console.settings.settingsview.text.1h50oex", "浅色模式 (Light)")}</span>
-                    </button>
-
-                    <button
-                      onClick={() => setTheme('dark')}
-                      className={`flex flex-col items-center gap-4 p-5 rounded-xl border-2 transition-colors relative ${isDark ? 'border-blue-500 bg-blue-50 dark:bg-blue-500/5' : 'border-slate-200 dark:border-transparent hover:border-blue-300 dark:hover:bg-white/10'}`}
-                    >
-                      {isDark && (
-                        <div className="absolute top-2 right-2 p-1.5 bg-blue-500 rounded-full shadow-sm z-10">
-                           <Check className="w-3.5 h-3.5 text-white" />
-                        </div>
-                      )}
-                      <div className="w-full h-28 bg-slate-800 dark:bg-[#121212] rounded-lg border border-slate-700 dark:border-[#333] flex items-center justify-center shadow-sm relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-transparent to-blue-500/10"></div>
-                        <Moon className="w-8 h-8 text-blue-200 dark:text-slate-500 relative z-10" />
-                      </div>
-                      <span className={`text-sm font-medium ${isDark ? 'text-blue-600 dark:text-white' : 'text-slate-600 dark:text-slate-300'}`}>{t("console.settings.settingsview.text.mhupa5", "深色控制台模式 (Dark Pro)")}</span>
-                    </button>
+                <div className="space-y-8 max-w-4xl">
+                  <div>
+                    <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-1">{t("console.settings.settingsview.text.qwhdeg", "外观与排版体验")}</h2>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{t("console.settings.settingsview.text.8f9wf1", "控制台外观会影响全局导航、业务卡片、滚动条与关键操作的主色表达。")}</p>
                   </div>
+
+                  <section className="space-y-4">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                      <div>
+                        <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">{t("console.settings.appearance.displayMode", "显示模式")}</h3>
+                        <p className="mt-1 text-[13px] text-slate-500 dark:text-slate-400">{t("console.settings.appearance.displayModeDescription", "按系统、浅色或深色偏好控制控制台界面。")}</p>
+                      </div>
+                      <span className="inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                        {t("console.settings.appearance.resolvedMode", "当前生效")}：{isDark ? t("console.settings.appearance.resolvedDark", "深色") : t("console.settings.appearance.resolvedLight", "浅色")}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                      {themeModeOptions.map((option) => {
+                        const Icon = option.icon;
+                        const selected = theme === option.id;
+
+                        return (
+                          <button
+                            key={option.id}
+                            type="button"
+                            aria-pressed={selected}
+                            onClick={() => setTheme(option.id)}
+                            className={`relative flex min-h-[190px] flex-col gap-4 rounded-xl border-2 p-4 text-left transition-all ${
+                              selected
+                                ? 'border-lobster-500 bg-lobster-50 text-lobster-700 shadow-sm dark:bg-lobster-500/10 dark:text-lobster-200'
+                                : 'border-slate-200 bg-white text-slate-700 hover:border-lobster-300 hover:bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-300 dark:hover:border-lobster-500/50 dark:hover:bg-white/5'
+                            }`}
+                          >
+                            {selected ? (
+                              <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-lobster-500 text-white shadow-sm">
+                                <Check className="h-3.5 w-3.5" />
+                              </span>
+                            ) : null}
+
+                            <div className="h-24 overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-inner dark:border-white/10 dark:bg-[#121212]">
+                              {option.id === 'system' ? (
+                                <div className="grid h-full grid-cols-2">
+                                  <div className="flex items-center justify-center bg-white text-amber-500">
+                                    <Sun className="h-7 w-7" />
+                                  </div>
+                                  <div className="flex items-center justify-center bg-slate-900 text-slate-200">
+                                    <Moon className="h-7 w-7" />
+                                  </div>
+                                </div>
+                              ) : option.id === 'light' ? (
+                                <div className="flex h-full items-center justify-center bg-white text-amber-500">
+                                  <Sun className="h-8 w-8" />
+                                </div>
+                              ) : (
+                                <div className="relative flex h-full items-center justify-center overflow-hidden bg-slate-900 text-slate-200">
+                                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(229,80,57,0.22),transparent_45%)]" />
+                                  <Moon className="relative z-10 h-8 w-8" />
+                                </div>
+                              )}
+                            </div>
+
+                            <div className="space-y-1 pr-7">
+                              <div className="flex items-center gap-2 text-sm font-bold">
+                                <Icon className="h-4 w-4" />
+                                <span>{option.label}</span>
+                              </div>
+                              <p className="text-[13px] leading-5 text-slate-500 dark:text-slate-400">{option.description}</p>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+
+                  <section className="space-y-4 border-t border-slate-200 pt-7 dark:border-white/10">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">{t("console.settings.appearance.themeColor", "主题颜色")}</h3>
+                      <p className="mt-1 text-[13px] text-slate-500 dark:text-slate-400">{t("console.settings.appearance.themeColorDescription", "用于导航高亮、按钮强调、滚动条与关键状态的全局主色。")}</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
+                      {themeColorOptions.map((option) => (
+                        <button
+                          key={option.id}
+                          type="button"
+                          aria-pressed={themeColor === option.id}
+                          onClick={() => setThemeColor(option.id)}
+                          className={`flex min-h-[94px] items-center gap-3 rounded-xl border-2 bg-white p-3 text-left transition-all dark:bg-[#1e1e1e] ${
+                            themeColor === option.id
+                              ? 'border-lobster-500 shadow-sm'
+                              : 'border-slate-200 hover:border-slate-300 dark:border-white/10 dark:hover:border-white/20'
+                          }`}
+                          style={themeColor === option.id ? { borderColor: option.value, boxShadow: `0 0 0 3px ${option.soft}` } : undefined}
+                        >
+                          <span
+                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/40 shadow-sm"
+                            style={{ backgroundColor: option.value }}
+                          >
+                            {themeColor === option.id ? <Check className="h-5 w-5 text-white" /> : null}
+                          </span>
+                          <span className="min-w-0">
+                            <span className={`block truncate text-sm font-bold ${themeColor === option.id ? 'text-lobster-600 dark:text-lobster-300' : 'text-slate-700 dark:text-slate-200'}`}>
+                              {option.label}
+                            </span>
+                            <span className="mt-1 block font-mono text-[11px] uppercase text-slate-400 dark:text-slate-500">{option.value}</span>
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </section>
                 </div>
               </motion.div>
             ) : activeTab === 'notifications' ? (
@@ -312,7 +407,7 @@ export function SettingsView() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="p-6 md:p-8 space-y-8"
+                className="flex-1 min-h-0 overflow-y-auto custom-scrollbar p-6 md:p-8 space-y-8"
               >
                 <div>
                   <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-1">{t("console.settings.settingsview.text.1f88e0w", "关键事件通知中心")}</h2>
@@ -365,7 +460,7 @@ export function SettingsView() {
                       <div className="flex items-start justify-between gap-6">
                         <div>
                           <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                            {t("console.settings.settingsview.text.luzgc3", "网关监控异常跌落报警")}<span className="px-2 py-0.5 rounded border border-blue-500/30 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] uppercase font-bold tracking-wider">{t("console.settings.settingsview.text.6erjpp", "Pro级")}</span>
+                            {t("console.settings.settingsview.text.luzgc3", "网关监控异常跌落报警")}<span className="px-2 py-0.5 rounded border border-lobster-500/30 bg-lobster-50 dark:bg-lobster-500/10 text-lobster-600 dark:text-lobster-400 text-[10px] uppercase font-bold tracking-wider">{t("console.settings.settingsview.text.6erjpp", "Pro级")}</span>
                           </h4>
                           <p className="text-[13px] text-slate-500 mt-1.5 leading-relaxed">{t("console.settings.settingsview.text.1pcv9so", "当您的所有下发令牌在中继网关发生大面积无法访问（如大量出现上游 429、500/5xx 状态码）时，启用高防监控告警。")}</p>
                         </div>

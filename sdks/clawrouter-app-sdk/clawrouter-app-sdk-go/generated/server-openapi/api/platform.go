@@ -18,11 +18,15 @@ func NewPlatformApi(client *sdkhttp.Client) *PlatformApi {
 }
 
 // Get apps
-func (a *PlatformApi) AppsStoreList(page *int, pageSize *int, q *string, status *string, startTime *string, endTime *string) (sdktypes.AppsStoreListResult, error) {
+func (a *PlatformApi) AppsStoreList(page *int, pageSize *int, q *string, category *string, platformType *string, platformTypes []string, sort *string, status *string, startTime *string, endTime *string) (sdktypes.AppsStoreListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "category", Value: func() interface{} { if category == nil { return nil }; return *category }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "platform_type", Value: func() interface{} { if platformType == nil { return nil }; return *platformType }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "platform_types", Value: func() interface{} { if platformTypes == nil { return nil }; return *platformTypes }(), Style: "form", Explode: false, AllowReserved: false},
+        {Name: "sort", Value: func() interface{} { if sort == nil { return nil }; return *sort }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "start_time", Value: func() interface{} { if startTime == nil { return nil }; return *startTime }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "end_time", Value: func() interface{} { if endTime == nil { return nil }; return *endTime }(), Style: "form", Explode: true, AllowReserved: false},

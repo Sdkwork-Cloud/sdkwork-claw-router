@@ -16,11 +16,15 @@ impl PlatformApi {
     }
 
     /// Get apps
-    pub async fn apps_store_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<AppsStoreListResult, SdkworkError> {
+    pub async fn apps_store_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, category: Option<&str>, platform_type: Option<&str>, platform_types: Option<&[String]>, sort: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<AppsStoreListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
             QueryParameterSpec::new("q", q, "form", true, false, None),
+            QueryParameterSpec::new("category", category, "form", true, false, None),
+            QueryParameterSpec::new("platform_type", platform_type, "form", true, false, None),
+            QueryParameterSpec::new("platform_types", platform_types, "form", false, false, None),
+            QueryParameterSpec::new("sort", sort, "form", true, false, None),
             QueryParameterSpec::new("status", status, "form", true, false, None),
             QueryParameterSpec::new("start_time", start_time, "form", true, false, None),
             QueryParameterSpec::new("end_time", end_time, "form", true, false, None),

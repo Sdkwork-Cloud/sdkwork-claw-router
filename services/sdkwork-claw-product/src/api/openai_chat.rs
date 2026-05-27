@@ -30,8 +30,10 @@ use crate::api::openai_runtime::{
     ResolvedOpenAiProviderRoutePlan,
 };
 use crate::api::openai_usage::{
-    build_usage_record_command_builder, chat_usage_billing_profile, chat_usage_from_stream_event,
-    GatewayUsageRecordCommandBuilder, OpenAiTokenUsage, OpenAiUsageRecorder,
+    build_request_trace_command, build_usage_record_command_builder, chat_usage_billing_profile,
+    chat_usage_from_stream_event, provider_error_code_from_body, provider_error_message_from_body,
+    provider_error_type_from_body, record_request_trace, GatewayUsageRecordCommandBuilder,
+    OpenAiTokenUsage, OpenAiUsageRecorder,
 };
 use crate::application::{ApiKeySecretHasher, AuthenticatedApiKeyContext};
 use crate::domain::{BillingMeter, ProviderRetryPolicy, RoutingCapability};
@@ -512,6 +514,20 @@ where
         &uri,
     );
     if let Err(error) = notify_before_route_selection(&state.plugins, &invocation_context).await {
+        record_request_trace(
+            state.usage_recorder.as_ref(),
+            build_request_trace_command(
+                &invocation_context,
+                None,
+                Some(error.status_code.as_u16()),
+                request.stream,
+                None,
+                Some(error.code.to_owned()),
+                Some(error.error_type.to_owned()),
+                Some(error.message.clone()),
+            ),
+        )
+        .await;
         notify_error(&state.plugins, &invocation_context, None, &error).await;
         return error.into_openai_response();
     }
@@ -525,12 +541,50 @@ where
         BillingMeter::LlmInputToken,
     ) {
         Ok(route_plan) => route_plan,
-        Err(response) => return *response,
+        Err(response) => {
+            let http_status = response.status().as_u16();
+            record_request_trace(
+                state.usage_recorder.as_ref(),
+                build_request_trace_command(
+                    &invocation_context,
+                    None,
+                    Some(http_status),
+                    request.stream,
+                    None,
+                    Some("route_selection_failed".to_owned()),
+                    Some(if http_status >= 500 {
+                        "server_error".to_owned()
+                    } else {
+                        "invalid_request_error".to_owned()
+                    }),
+                    Some(format!(
+                        "provider route selection failed for model: {}",
+                        request.model
+                    )),
+                ),
+            )
+            .await;
+            return *response;
+        }
     };
     let mut route = route_plan.first_route();
     if let Err(error) =
         notify_after_route_selection(&state.plugins, &invocation_context, &mut route).await
     {
+        record_request_trace(
+            state.usage_recorder.as_ref(),
+            build_request_trace_command(
+                &invocation_context,
+                Some(&route),
+                Some(error.status_code.as_u16()),
+                request.stream,
+                None,
+                Some(error.code.to_owned()),
+                Some(error.error_type.to_owned()),
+                Some(error.message.clone()),
+            ),
+        )
+        .await;
         notify_error(&state.plugins, &invocation_context, Some(&route), &error).await;
         return error.into_openai_response();
     }
@@ -540,6 +594,23 @@ where
 
     if request.stream {
         let Some(stream_relay) = state.stream_relay.as_ref() else {
+            record_request_trace(
+                state.usage_recorder.as_ref(),
+                build_request_trace_command(
+                    &invocation_context,
+                    Some(&route),
+                    Some(StatusCode::NOT_IMPLEMENTED.as_u16()),
+                    true,
+                    None,
+                    Some("streaming_relay_not_configured".to_owned()),
+                    Some("server_error".to_owned()),
+                    Some(
+                        "streaming provider relay is not implemented for /v1/chat/completions"
+                            .to_owned(),
+                    ),
+                ),
+            )
+            .await;
             return openai_error(
                 StatusCode::NOT_IMPLEMENTED,
                 "streaming_relay_not_configured",
@@ -568,6 +639,20 @@ where
     }
 
     let Some(relay) = state.relay.as_ref() else {
+        record_request_trace(
+            state.usage_recorder.as_ref(),
+            build_request_trace_command(
+                &invocation_context,
+                Some(&route),
+                Some(StatusCode::NOT_IMPLEMENTED.as_u16()),
+                false,
+                None,
+                Some("provider_relay_not_configured".to_owned()),
+                Some("server_error".to_owned()),
+                Some("provider relay is not implemented for /v1/chat/completions".to_owned()),
+            ),
+        )
+        .await;
         return openai_error(
             StatusCode::NOT_IMPLEMENTED,
             "provider_relay_not_configured",
@@ -578,6 +663,7 @@ where
 
     match relay_chat_completion(
         relay.as_ref(),
+        state.usage_recorder.clone(),
         state.usage_recording.clone(),
         &state.plugins,
         &invocation_context,
@@ -719,6 +805,20 @@ async fn relay_chat_completion_stream_route(
         Err(error) => {
             let fault = OpenAiInvocationFault::relay_transport(error.to_string())
                 .with_latency_ms(elapsed_millis(started_at));
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    true,
+                    fault.latency_ms,
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             let plugin_error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,
                 "provider_stream_relay_failed",
@@ -740,6 +840,20 @@ async fn relay_chat_completion_stream_route(
                 "provider relay returned an invalid HTTP status",
             )
             .with_latency_ms(elapsed_millis(started_at));
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    true,
+                    fault.latency_ms,
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             notify_route_fault(plugins, invocation_context, route, &fault).await;
             return Err(RouteRelayFailure::Retryable(openai_error(
                 StatusCode::BAD_GATEWAY,
@@ -768,6 +882,20 @@ async fn relay_chat_completion_stream_route(
             ),
         )
         .with_latency_ms(elapsed_millis(started_at));
+        record_request_trace(
+            usage_recorder.as_ref(),
+            build_request_trace_command(
+                invocation_context,
+                Some(route),
+                Some(response.status_code),
+                true,
+                fault.latency_ms,
+                Some(fault.error_code.clone()),
+                Some("server_error".to_owned()),
+                Some(fault.message.clone()),
+            ),
+        )
+        .await;
         notify_route_fault(plugins, invocation_context, route, &fault).await;
         notify_after_relay_observers(plugins, invocation_context, route, &relay_outcome).await;
         builder = builder.header(CONTENT_TYPE, content_type);
@@ -790,6 +918,20 @@ async fn relay_chat_completion_stream_route(
             .record_after_success(invocation_context, &route, &relay_outcome)
             .await
         {
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(&route),
+                    Some(502),
+                    true,
+                    fault.latency_ms.or(relay_outcome.latency_ms),
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             notify_route_fault(plugins, invocation_context, &route, &fault).await;
             let error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,
@@ -822,7 +964,8 @@ async fn relay_chat_completion_stream_route(
                     "server_error",
                     error,
                 ))
-            })?;
+            })?
+            .with_latency_ms(relay_outcome.latency_ms);
             Body::new(StreamingUsageRecordingBody::new(
                 response.body,
                 usage_recorder,
@@ -846,6 +989,7 @@ async fn relay_chat_completion_stream_route(
 
 async fn relay_chat_completion(
     relay: &(dyn ChatCompletionRelay + Send + Sync),
+    usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
     usage_recording: Option<Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
     plugins: &[OpenAiInvocationPluginRef],
     invocation_context: &OpenAiInvocationContext,
@@ -867,6 +1011,7 @@ async fn relay_chat_completion(
         }
         match relay_chat_completion_route(
             relay,
+            usage_recorder.clone(),
             usage_recording.as_ref(),
             plugins,
             invocation_context,
@@ -912,6 +1057,7 @@ fn elapsed_millis(started_at: Instant) -> i64 {
 
 async fn relay_chat_completion_route(
     relay: &(dyn ChatCompletionRelay + Send + Sync),
+    usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
     usage_recording: Option<&Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
     plugins: &[OpenAiInvocationPluginRef],
     invocation_context: &OpenAiInvocationContext,
@@ -948,6 +1094,20 @@ async fn relay_chat_completion_route(
         Err(error) => {
             let fault = OpenAiInvocationFault::relay_transport(error.to_string())
                 .with_latency_ms(elapsed_millis(started_at));
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    false,
+                    fault.latency_ms,
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             let plugin_error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,
                 "provider_relay_failed",
@@ -969,6 +1129,20 @@ async fn relay_chat_completion_route(
                 "provider relay returned an invalid HTTP status",
             )
             .with_latency_ms(elapsed_millis(started_at));
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    false,
+                    fault.latency_ms,
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             notify_route_fault(plugins, invocation_context, route, &fault).await;
             return Err(RouteRelayFailure::Retryable(openai_error(
                 StatusCode::BAD_GATEWAY,
@@ -990,6 +1164,29 @@ async fn relay_chat_completion_route(
             format!("provider relay returned HTTP {}", response.status_code),
         )
         .with_latency_ms(elapsed_millis(started_at));
+        record_request_trace(
+            usage_recorder.as_ref(),
+            build_request_trace_command(
+                invocation_context,
+                Some(route),
+                Some(response.status_code),
+                false,
+                fault.latency_ms,
+                Some(provider_error_code_from_body(
+                    &response.body,
+                    &fault.error_code,
+                )),
+                Some(provider_error_type_from_body(
+                    &response.body,
+                    response.status_code,
+                )),
+                Some(provider_error_message_from_body(
+                    &response.body,
+                    &fault.message,
+                )),
+            ),
+        )
+        .await;
         notify_route_fault(plugins, invocation_context, route, &fault).await;
         notify_after_relay_observers(plugins, invocation_context, route, &relay_outcome).await;
         let response = (status, Json(response.body)).into_response();
@@ -1005,6 +1202,20 @@ async fn relay_chat_completion_route(
             .record_after_success(invocation_context, route, &relay_outcome)
             .await
         {
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    false,
+                    fault.latency_ms.or(relay_outcome.latency_ms),
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             notify_route_fault(plugins, invocation_context, route, &fault).await;
             let error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,
@@ -1030,8 +1241,10 @@ struct StreamingUsageRecordingBody {
     event_buffer: String,
     usage: Option<OpenAiTokenUsage>,
     recording: Option<GatewayUsageRecordFuture<'static>>,
+    recording_is_trace_only: bool,
     fault_notification: Option<Pin<Box<dyn Future<Output = ()> + Send>>>,
     terminal_error: Option<String>,
+    trace_recorded: bool,
 }
 
 impl StreamingUsageRecordingBody {
@@ -1053,8 +1266,10 @@ impl StreamingUsageRecordingBody {
             event_buffer: String::new(),
             usage: None,
             recording: None,
+            recording_is_trace_only: false,
             fault_notification: None,
             terminal_error: None,
+            trace_recorded: false,
         }
     }
 
@@ -1095,16 +1310,28 @@ impl StreamingUsageRecordingBody {
         if self.recording.is_some() || self.terminal_error.is_some() {
             return;
         }
-        let Some(usage_recorder) = self.usage_recorder.take() else {
+        let Some(usage_recorder) = self.usage_recorder.clone() else {
             return;
         };
-        let Some(command_builder) = self.command_builder.take() else {
+        let Some(command_builder) = self.command_builder.as_ref() else {
             return;
         };
         let Some(usage) = self.usage else {
-            let error = "provider streaming chat completion response is missing usage".to_owned();
-            tracing::warn!(error);
-            self.terminal_error = Some(error);
+            tracing::warn!(
+                "provider streaming chat completion response is missing usage; recording zero-token request usage"
+            );
+            let command = match command_builder.build_zero_token_request() {
+                Ok(command) => command,
+                Err(error) => {
+                    tracing::warn!(error = %error, "failed to build streaming chat zero-token usage record");
+                    self.terminal_error = Some(error.to_string());
+                    return;
+                }
+            };
+            let future: GatewayUsageRecordFuture<'static> =
+                Box::pin(async move { usage_recorder.record_gateway_usage(command).await });
+            self.recording = Some(future);
+            self.recording_is_trace_only = false;
             return;
         };
         let command = match command_builder.build(usage) {
@@ -1118,6 +1345,7 @@ impl StreamingUsageRecordingBody {
         let future: GatewayUsageRecordFuture<'static> =
             Box::pin(async move { usage_recorder.record_gateway_usage(command).await });
         self.recording = Some(future);
+        self.recording_is_trace_only = false;
     }
 
     fn poll_recording(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), axum::Error>> {
@@ -1131,11 +1359,21 @@ impl StreamingUsageRecordingBody {
         match recording.as_mut().poll(cx) {
             Poll::Ready(Ok(())) => {
                 self.recording = None;
+                self.recording_is_trace_only = false;
+                self.usage_recorder = None;
+                self.command_builder = None;
                 Poll::Ready(Ok(()))
             }
             Poll::Ready(Err(error)) => {
-                tracing::warn!(error = %error, "failed to record streaming chat usage");
                 self.recording = None;
+                if self.recording_is_trace_only {
+                    tracing::warn!(error = %error, "failed to record streaming chat trace");
+                    self.recording_is_trace_only = false;
+                    self.usage_recorder = None;
+                    self.command_builder = None;
+                    return Poll::Ready(Ok(()));
+                }
+                tracing::warn!(error = %error, "failed to record streaming chat usage");
                 self.terminal_error = Some(error.to_string());
                 self.poll_terminal_error(cx)
             }
@@ -1151,8 +1389,31 @@ impl StreamingUsageRecordingBody {
             let plugins = self.plugins.clone();
             let invocation_context = self.invocation_context.clone();
             let route = self.route.clone();
+            let usage_recorder = self.usage_recorder.clone();
+            let trace_command = self.command_builder.as_ref().map(|command_builder| {
+                command_builder
+                    .clone()
+                    .with_error(
+                        Some("provider_usage_record_failed".to_owned()),
+                        Some("server_error".to_owned()),
+                        Some(error.clone()),
+                    )
+                    .trace_command()
+            });
+            let should_record_trace = !self.trace_recorded;
+            self.trace_recorded = true;
             let fault = OpenAiInvocationFault::usage_recording(error.clone());
             self.fault_notification = Some(Box::pin(async move {
+                if should_record_trace {
+                    if let (Some(usage_recorder), Some(trace_command)) =
+                        (usage_recorder.as_ref(), trace_command)
+                    {
+                        if let Err(error) = usage_recorder.record_gateway_trace(trace_command).await
+                        {
+                            tracing::warn!(error = %error, "failed to record streaming usage error trace");
+                        }
+                    }
+                }
                 notify_route_fault(&plugins, &invocation_context, &route, &fault).await;
                 let plugin_error = OpenAiInvocationPluginError::new(
                     StatusCode::BAD_GATEWAY,

@@ -12,7 +12,7 @@ public class AdminDashboardDataResponse {
     public List<AdminPieChartItem> getModelDistribution() {
         return this.modelDistribution;
     }
-    
+
     public void setModelDistribution(List<AdminPieChartItem> modelDistribution) {
         this.modelDistribution = modelDistribution;
     }
@@ -20,7 +20,7 @@ public class AdminDashboardDataResponse {
     public List<AdminPieChartItem> getMultimodal() {
         return this.multimodal;
     }
-    
+
     public void setMultimodal(List<AdminPieChartItem> multimodal) {
         this.multimodal = multimodal;
     }
@@ -28,7 +28,7 @@ public class AdminDashboardDataResponse {
     public List<AdminDashboardRecentUsageItem> getRecentUsage() {
         return this.recentUsage;
     }
-    
+
     public void setRecentUsage(List<AdminDashboardRecentUsageItem> recentUsage) {
         this.recentUsage = recentUsage;
     }
@@ -36,7 +36,7 @@ public class AdminDashboardDataResponse {
     public List<AdminDashboardTrafficItem> getTraffic() {
         return this.traffic;
     }
-    
+
     public void setTraffic(List<AdminDashboardTrafficItem> traffic) {
         this.traffic = traffic;
     }
@@ -44,7 +44,7 @@ public class AdminDashboardDataResponse {
     public List<AdminPieChartItem> getUserConsumption() {
         return this.userConsumption;
     }
-    
+
     public void setUserConsumption(List<AdminPieChartItem> userConsumption) {
         this.userConsumption = userConsumption;
     }

@@ -1,19 +1,19 @@
 use sdkwork_rpc_core::{
     map_error_kind_to_code, validate_manifest, SdkworkRpcErrorKind, SdkworkRpcMethod,
-    SdkworkRpcServiceManifest, SDKWORK_ACCESS_TOKEN_METADATA, SDKWORK_AUTHORIZATION_METADATA,
-    SDKWORK_IDEMPOTENCY_KEY_METADATA, SDKWORK_REQUEST_HASH_METADATA, SDKWORK_REQUEST_ID_METADATA,
-    SDKWORK_TRACEPARENT_METADATA,
+    SdkworkRpcServiceManifest, RPC_ACCESS_TOKEN_METADATA, RPC_AUTHORIZATION_METADATA,
+    RPC_IDEMPOTENCY_KEY_METADATA, RPC_REQUEST_HASH_METADATA, RPC_REQUEST_ID_METADATA,
+    RPC_TRACEPARENT_METADATA,
 };
 use tonic::Code;
 
 #[test]
 fn metadata_keys_match_sdkwork_rpc_standard() {
-    assert_eq!(SDKWORK_AUTHORIZATION_METADATA, "authorization");
-    assert_eq!(SDKWORK_ACCESS_TOKEN_METADATA, "sdkwork-access-token");
-    assert_eq!(SDKWORK_REQUEST_ID_METADATA, "x-request-id");
-    assert_eq!(SDKWORK_TRACEPARENT_METADATA, "traceparent");
-    assert_eq!(SDKWORK_IDEMPOTENCY_KEY_METADATA, "idempotency-key");
-    assert_eq!(SDKWORK_REQUEST_HASH_METADATA, "x-request-hash");
+    assert_eq!(RPC_AUTHORIZATION_METADATA, "authorization");
+    assert_eq!(RPC_ACCESS_TOKEN_METADATA, "access-token");
+    assert_eq!(RPC_REQUEST_ID_METADATA, "x-request-id");
+    assert_eq!(RPC_TRACEPARENT_METADATA, "traceparent");
+    assert_eq!(RPC_IDEMPOTENCY_KEY_METADATA, "idempotency-key");
+    assert_eq!(RPC_REQUEST_HASH_METADATA, "x-request-hash");
 }
 
 #[test]

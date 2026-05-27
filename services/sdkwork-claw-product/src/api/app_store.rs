@@ -27,6 +27,10 @@ struct AppStoreState {
 #[derive(Debug, Deserialize)]
 struct AppStoreCatalogQuery {
     q: Option<String>,
+    category: Option<String>,
+    platform_type: Option<String>,
+    platform_types: Option<String>,
+    sort: Option<String>,
     page: Option<i64>,
     page_size: Option<i64>,
     status: Option<String>,
@@ -41,8 +45,8 @@ impl AppStoreReadStore for EmptyAppStoreReadStore {
         &'a self,
         _query: AppStoreQuery,
         _subject: Option<AppStoreSubject>,
-    ) -> AppStoreReadFuture<'a, Vec<AppStoreItem>> {
-        Box::pin(async { Ok(Vec::new()) })
+    ) -> AppStoreReadFuture<'a, AppStoreItems<AppStoreItem>> {
+        Box::pin(async { Ok(AppStoreItems::new(Vec::new())) })
     }
 
     fn load_app_by_id<'a>(
@@ -106,7 +110,7 @@ async fn fetch_apps(
     };
 
     match state.read_store.load_apps(query, subject).await {
-        Ok(items) => Json(PlusApiResult::success(AppStoreItems::new(items))).into_response(),
+        Ok(page) => Json(PlusApiResult::success(page)).into_response(),
         Err(error) => app_store_read_model_error(error),
     }
 }
@@ -161,6 +165,9 @@ fn validate_catalog_query(query: AppStoreCatalogQuery) -> Result<AppStoreQuery, 
 
     Ok(AppStoreQuery {
         keyword: normalize_query_text(query.q, "q", MAX_CATALOG_TEXT_LEN)?,
+        category: normalize_query_text(query.category, "category", MAX_CATALOG_TEXT_LEN)?,
+        platform_types: normalize_platform_type_filters(query.platform_type, query.platform_types)?,
+        sort: normalize_catalog_sort(query.sort)?,
         page_no,
         page_size,
         status: normalize_status_filter(query.status)?,
@@ -221,6 +228,50 @@ fn normalize_status_filter(value: Option<String>) -> Result<Option<String>, Stri
         "ACTIVE" => Ok(Some("ACTIVE".to_owned())),
         "INACTIVE" => Ok(Some("INACTIVE".to_owned())),
         _ => Err("status must be ACTIVE or INACTIVE".to_owned()),
+    }
+}
+
+fn normalize_platform_type_filters(
+    platform_type: Option<String>,
+    platform_types: Option<String>,
+) -> Result<Vec<String>, String> {
+    let mut values = Vec::new();
+    if let Some(value) = normalize_query_text(platform_type, "platform_type", 32)? {
+        values.push(value);
+    }
+    if let Some(raw_values) = normalize_query_text(platform_types, "platform_types", 256)? {
+        for value in raw_values.split(',') {
+            let value = value.split_whitespace().collect::<Vec<_>>().join(" ");
+            if !value.is_empty() {
+                values.push(value);
+            }
+        }
+    }
+    let mut normalized = Vec::new();
+    for value in values {
+        match value.as_str() {
+            "Desktop" | "Mobile" | "Web" | "Mini Program" => {
+                if !normalized.iter().any(|item| item == &value) {
+                    normalized.push(value);
+                }
+            }
+            _ => {
+                return Err(
+                    "platform_type must be Desktop, Mobile, Web, or Mini Program".to_owned(),
+                )
+            }
+        }
+    }
+    Ok(normalized)
+}
+
+fn normalize_catalog_sort(value: Option<String>) -> Result<Option<String>, String> {
+    let Some(value) = normalize_query_text(value, "sort", 32)? else {
+        return Ok(None);
+    };
+    match value.as_str() {
+        "popular_desc" | "rating_desc" | "newest_desc" => Ok(Some(value)),
+        _ => Err("sort must be popular_desc, rating_desc, or newest_desc".to_owned()),
     }
 }
 

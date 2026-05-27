@@ -10,7 +10,7 @@ public class CourseOverviewStats {
     public Integer getTotalCategories() {
         return this.totalCategories;
     }
-    
+
     public void setTotalCategories(Integer totalCategories) {
         this.totalCategories = totalCategories;
     }
@@ -18,7 +18,7 @@ public class CourseOverviewStats {
     public Integer getTotalCourses() {
         return this.totalCourses;
     }
-    
+
     public void setTotalCourses(Integer totalCourses) {
         this.totalCourses = totalCourses;
     }
@@ -26,7 +26,7 @@ public class CourseOverviewStats {
     public Integer getTotalLessons() {
         return this.totalLessons;
     }
-    
+
     public void setTotalLessons(Integer totalLessons) {
         this.totalLessons = totalLessons;
     }
@@ -34,7 +34,7 @@ public class CourseOverviewStats {
     public Integer getTotalStudents() {
         return this.totalStudents;
     }
-    
+
     public void setTotalStudents(Integer totalStudents) {
         this.totalStudents = totalStudents;
     }

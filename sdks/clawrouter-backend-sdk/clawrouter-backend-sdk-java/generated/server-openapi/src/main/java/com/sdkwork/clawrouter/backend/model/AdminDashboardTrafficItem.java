@@ -10,7 +10,7 @@ public class AdminDashboardTrafficItem {
     public Double getCost() {
         return this.cost;
     }
-    
+
     public void setCost(Double cost) {
         this.cost = cost;
     }
@@ -18,7 +18,7 @@ public class AdminDashboardTrafficItem {
     public Double getRequests() {
         return this.requests;
     }
-    
+
     public void setRequests(Double requests) {
         this.requests = requests;
     }
@@ -26,7 +26,7 @@ public class AdminDashboardTrafficItem {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -34,7 +34,7 @@ public class AdminDashboardTrafficItem {
     public Double getTokens() {
         return this.tokens;
     }
-    
+
     public void setTokens(Double tokens) {
         this.tokens = tokens;
     }

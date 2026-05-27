@@ -36,7 +36,7 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                 "description": f"Generated {surface} OpenAPI contract.",
             },
             "servers": [{"url": "http://localhost:18082" if surface == "app" else "http://localhost:18081"}],
-            "security": [{"AuthToken": [], "SdkworkAccessToken": []}],
+            "security": [{"AuthToken": [], "AccessToken": []}],
             "tags": [{"name": "ai"}],
             "paths": {
                 f"{api_prefix}/ai/model_vendors": {
@@ -107,10 +107,10 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                         "scheme": "bearer",
                         "bearerFormat": "SDKWork auth token",
                     },
-                    "SdkworkAccessToken": {
+                    "AccessToken": {
                         "type": "apiKey",
                         "in": "header",
-                        "name": "Sdkwork-Access-Token",
+                        "name": "Access-Token",
                     },
                 },
                 "schemas": {
@@ -270,7 +270,7 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                 result.messages,
             )
             self.assertIn(
-                "app OpenAPI security must require AuthToken and SdkworkAccessToken",
+                "app OpenAPI security must require AuthToken and AccessToken",
                 result.messages,
             )
 
@@ -321,6 +321,40 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_accepts_top_level_vertical_sdk_domains_that_repeat_tag_namespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("backend")
+            create_prompt = spec["paths"].pop("/backend/v3/api/ai/model_vendors")
+            render_prompt = spec["paths"].pop("/backend/v3/api/ai/model_vendors/refresh")
+            create_prompt["post"]["operationId"] = "prompts.create"
+            create_prompt["post"]["tags"] = ["prompts"]
+            create_prompt["post"]["x-sdkwork-domain"] = "prompts"
+            create_prompt["post"]["x-sdkwork-resource"] = "prompts"
+            render_prompt["post"]["operationId"] = "prompts.versions.render"
+            render_prompt["post"]["tags"] = ["prompts"]
+            render_prompt["post"]["x-sdkwork-domain"] = "prompts"
+            render_prompt["post"]["x-sdkwork-resource"] = "prompts.versions"
+
+            discover_mcp = json.loads(json.dumps(render_prompt))
+            discover_mcp["post"]["operationId"] = "mcp.servers.discover"
+            discover_mcp["post"]["tags"] = ["mcp"]
+            discover_mcp["post"]["x-sdkwork-domain"] = "mcp"
+            discover_mcp["post"]["x-sdkwork-resource"] = "mcp.servers"
+            health_check = json.loads(json.dumps(discover_mcp))
+            health_check["post"]["operationId"] = "mcp.servers.healthCheck"
+
+            spec["tags"] = [{"name": "prompts"}, {"name": "mcp"}]
+            spec["paths"]["/backend/v3/api/prompts"] = create_prompt
+            spec["paths"]["/backend/v3/api/prompts/versions/{versionId}/render"] = render_prompt
+            spec["paths"]["/backend/v3/api/mcp/servers/{serverId}/discover"] = discover_mcp
+            spec["paths"]["/backend/v3/api/mcp/servers/{serverId}/health_check"] = health_check
+            self.write_specs(root, backend_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_rejects_non_standard_operation_actions(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -354,6 +388,42 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
             result = ClawRouterOpenApiContractAudit(root=root).run()
 
             self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_backend_course_admin_hyphenated_content_resources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("backend")
+            operation = spec["paths"].pop("/backend/v3/api/ai/model_vendors")
+            operation["post"]["operationId"] = "courseApplications.review"
+            operation["post"]["tags"] = ["content"]
+            operation["post"]["x-sdkwork-domain"] = "content"
+            operation["post"]["x-sdkwork-resource"] = "courseApplications"
+            spec["paths"]["/backend/v3/api/content/course-applications/{applicationId}/review"] = operation
+            self.write_specs(root, backend_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_rejects_unapproved_backend_hyphenated_content_resources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("backend")
+            operation = spec["paths"].pop("/backend/v3/api/ai/model_vendors")
+            operation["post"]["operationId"] = "courseOffers.review"
+            operation["post"]["tags"] = ["content"]
+            operation["post"]["x-sdkwork-domain"] = "content"
+            operation["post"]["x-sdkwork-resource"] = "courseOffers"
+            spec["paths"]["/backend/v3/api/content/course-offers"] = operation
+            self.write_specs(root, backend_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "backend path /backend/v3/api/content/course-offers static segment course-offers must be lowercase lower_snake_case",
+                result.messages,
+            )
 
     def test_rejects_rpc_style_path_segments(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -412,22 +482,38 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                 result.messages,
             )
 
-    def test_rejects_non_standard_sdkwork_access_token_security_scheme(self) -> None:
+    def test_rejects_non_standard_access_token_security_scheme(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             spec = self.valid_spec("app")
-            spec["components"]["securitySchemes"]["SdkworkAccessToken"]["name"] = "Access-Token"
+            spec["components"]["securitySchemes"]["AccessToken"]["name"] = "X-Access-Token"
             self.write_specs(root, app_spec=spec)
 
             result = ClawRouterOpenApiContractAudit(root=root).run()
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "app OpenAPI components.securitySchemes.SdkworkAccessToken must be an apiKey header named Sdkwork-Access-Token",
+                "app OpenAPI components.securitySchemes.AccessToken must be an apiKey header named Access-Token",
                 result.messages,
             )
+
+    def test_rejects_branded_access_token_security_scheme_names(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("app")
+            vendor = "Sdkwork"
+            spec["components"]["securitySchemes"][f"{vendor}AccessToken"] = {
+                "type": "apiKey",
+                "in": "header",
+                "name": "Access-Token",
+            }
+            self.write_specs(root, app_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertFalse(result.ok)
             self.assertIn(
-                "app OpenAPI must not declare legacy Access-Token security scheme headers",
+                "app OpenAPI must not declare branded access token security scheme names",
                 result.messages,
             )
 

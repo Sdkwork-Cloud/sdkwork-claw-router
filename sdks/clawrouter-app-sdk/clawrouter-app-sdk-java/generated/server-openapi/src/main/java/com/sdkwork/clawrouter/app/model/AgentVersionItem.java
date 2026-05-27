@@ -19,7 +19,7 @@ public class AgentVersionItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -27,7 +27,7 @@ public class AgentVersionItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -35,7 +35,7 @@ public class AgentVersionItem {
     public Map<String, String> getMcpPolicy() {
         return this.mcpPolicy;
     }
-    
+
     public void setMcpPolicy(Map<String, String> mcpPolicy) {
         this.mcpPolicy = mcpPolicy;
     }
@@ -43,7 +43,7 @@ public class AgentVersionItem {
     public Map<String, String> getMemoryPolicy() {
         return this.memoryPolicy;
     }
-    
+
     public void setMemoryPolicy(Map<String, String> memoryPolicy) {
         this.memoryPolicy = memoryPolicy;
     }
@@ -51,7 +51,7 @@ public class AgentVersionItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -59,7 +59,7 @@ public class AgentVersionItem {
     public String getReleaseStatus() {
         return this.releaseStatus;
     }
-    
+
     public void setReleaseStatus(String releaseStatus) {
         this.releaseStatus = releaseStatus;
     }
@@ -67,7 +67,7 @@ public class AgentVersionItem {
     public Map<String, String> getRuntimePolicy() {
         return this.runtimePolicy;
     }
-    
+
     public void setRuntimePolicy(Map<String, String> runtimePolicy) {
         this.runtimePolicy = runtimePolicy;
     }
@@ -75,7 +75,7 @@ public class AgentVersionItem {
     public Map<String, String> getSkillPolicy() {
         return this.skillPolicy;
     }
-    
+
     public void setSkillPolicy(Map<String, String> skillPolicy) {
         this.skillPolicy = skillPolicy;
     }
@@ -83,7 +83,7 @@ public class AgentVersionItem {
     public String getSystemPrompt() {
         return this.systemPrompt;
     }
-    
+
     public void setSystemPrompt(String systemPrompt) {
         this.systemPrompt = systemPrompt;
     }
@@ -91,7 +91,7 @@ public class AgentVersionItem {
     public Map<String, String> getToolPolicy() {
         return this.toolPolicy;
     }
-    
+
     public void setToolPolicy(Map<String, String> toolPolicy) {
         this.toolPolicy = toolPolicy;
     }
@@ -99,7 +99,7 @@ public class AgentVersionItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -107,7 +107,7 @@ public class AgentVersionItem {
     public Integer getVersionNo() {
         return this.versionNo;
     }
-    
+
     public void setVersionNo(Integer versionNo) {
         this.versionNo = versionNo;
     }

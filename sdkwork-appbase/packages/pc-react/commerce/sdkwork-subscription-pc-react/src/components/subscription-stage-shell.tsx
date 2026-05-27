@@ -10,9 +10,9 @@ import {
   StatusNotice,
 } from "@sdkwork/ui-pc-react";
 import type {
-  SdkworkVipPlan,
-  SdkworkVipSummary,
-} from "@sdkwork/vip-pc-react";
+  SdkworkMembershipPlan,
+  SdkworkMembershipSummary,
+} from "@sdkwork/membership-pc-react";
 import type {
   SdkworkSubscriptionAction,
   SdkworkSubscriptionCheckoutEstimate,
@@ -36,8 +36,8 @@ export interface SdkworkSubscriptionStageShellProps {
   paymentContent: ReactNode;
   planContent: ReactNode;
   planCount: number;
-  selectedPlan: SdkworkVipPlan | null;
-  summary: SdkworkVipSummary;
+  selectedPlan: SdkworkMembershipPlan | null;
+  summary: SdkworkMembershipSummary;
 }
 
 export function SdkworkSubscriptionStageShell({

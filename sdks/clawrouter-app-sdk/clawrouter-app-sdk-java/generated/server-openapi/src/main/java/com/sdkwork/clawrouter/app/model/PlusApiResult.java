@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class PlusApiResult {
     private String code;
     private NoData data;
+    private String message;
     private String msg;
 
     public String getCode() {
@@ -20,6 +21,14 @@ public class PlusApiResult {
 
     public void setData(NoData data) {
         this.data = data;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getMsg() {

@@ -22,6 +22,7 @@ use std::str::FromStr;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Arc, Mutex};
 use std::time::{SystemTime, UNIX_EPOCH};
+use tokio::time::{sleep, Duration};
 use tower::ServiceExt;
 
 const API_KEYS_PATH: &str = "/app/v3/api/iam/api_keys";
@@ -89,6 +90,65 @@ async fn database_config_app_api_keys_require_app_session_and_scope_to_subject()
     assert!(!body_text.contains("sk-other-secret"));
     assert!(!body_text.contains("hash:owner"));
     assert!(!body_text.contains("hash:other"));
+}
+
+#[tokio::test]
+async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_database_change() {
+    let _refresh_interval = EnvOverride::set(
+        "SDKWORK_CLAW_PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS",
+        "25",
+    );
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+    let (_, initial_payload, _) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/ai/models")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert!(!model_catalog_contains(&initial_payload, "gpt-4o-refresh"));
+
+    let update_pool = create_sqlite_pool(&database_url).await;
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, uuid, catalog_key, model, display_name, vendor_code, capabilities, status, rank_score)
+        VALUES
+            (99, 'model-refresh-99', 'openai/global/gpt-4o-refresh', 'gpt-4o-refresh', 'GPT-4o refresh', 'openai', '["chat"]', 1, '90.0')
+        "#,
+    )
+    .execute(&update_pool)
+    .await
+    .unwrap();
+    update_pool.close().await;
+
+    let mut refreshed_payload = Value::Null;
+    for _ in 0..40 {
+        let (_, payload, _) = request_json(
+            router.clone(),
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/ai/models")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await;
+        if model_catalog_contains(&payload, "gpt-4o-refresh") {
+            return;
+        }
+        refreshed_payload = payload;
+        sleep(Duration::from_millis(50)).await;
+    }
+
+    panic!("refreshed app model catalog did not include gpt-4o-refresh: {refreshed_payload}");
 }
 
 #[tokio::test]
@@ -222,7 +282,7 @@ async fn database_config_password_login_issues_app_session_and_records_password_
             .method("GET")
             .uri("/app/v3/api/iam/users/current")
             .header("authorization", format!("Bearer {auth_token}"))
-            .header("Sdkwork-Access-Token", access_token)
+            .header("Access-Token", access_token)
             .body(Body::empty())
             .unwrap(),
     )
@@ -294,7 +354,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
             .method("GET")
             .uri("/app/v3/api/auth/sessions/current")
             .header("authorization", format!("Bearer {auth_token}"))
-            .header("Sdkwork-Access-Token", access_token)
+            .header("Access-Token", access_token)
             .body(Body::empty())
             .unwrap(),
     )
@@ -319,7 +379,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
             .uri("/app/v3/api/auth/sessions/refresh")
             .header("content-type", "application/json")
             .header("authorization", format!("Bearer {auth_token}"))
-            .header("Sdkwork-Access-Token", access_token)
+            .header("Access-Token", access_token)
             .body(Body::from(
                 json!({
                     "refreshToken": refresh_token
@@ -346,7 +406,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
                 .method("GET")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -362,7 +422,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
             .uri("/app/v3/api/auth/sessions/current")
             .header("content-type", "application/json")
             .header("authorization", format!("Bearer {new_auth_token}"))
-            .header("Sdkwork-Access-Token", new_access_token)
+            .header("Access-Token", new_access_token)
             .body(Body::from(
                 json!({
                     "organizationCode": "workspace"
@@ -384,7 +444,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
             .method("DELETE")
             .uri("/app/v3/api/auth/sessions/current")
             .header("authorization", format!("Bearer {updated_auth_token}"))
-            .header("Sdkwork-Access-Token", updated_access_token)
+            .header("Access-Token", updated_access_token)
             .body(Body::empty())
             .unwrap(),
     )
@@ -398,7 +458,7 @@ async fn database_config_app_session_current_refresh_update_and_logout_use_persi
                 .method("GET")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {updated_auth_token}"))
-                .header("Sdkwork-Access-Token", updated_access_token)
+                .header("Access-Token", updated_access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -796,7 +856,7 @@ async fn database_config_auth_runtime_settings_are_public_and_match_persisted_po
         configured_router(&database_url).await,
         Request::builder()
             .method("GET")
-            .uri("/app/v3/api/auth/runtime_settings")
+            .uri("/app/v3/api/system/iam/runtime")
             .body(Body::empty())
             .unwrap(),
     )
@@ -1156,8 +1216,9 @@ async fn database_config_auth_settings_disable_recovery_and_qr_server_side() {
         router,
         Request::builder()
             .method("POST")
-            .uri("/app/v3/api/auth/qr_login_codes")
-            .body(Body::empty())
+            .uri("/app/v3/api/open_platform/qr_auth/sessions")
+            .header("content-type", "application/json")
+            .body(Body::from(json!({ "purpose": "login" }).to_string()))
             .unwrap(),
     )
     .await;
@@ -1203,6 +1264,304 @@ async fn database_config_auth_verification_codes_fail_closed_without_debug_code_
     assert!(body_text.contains("verification code delivery provider is not configured"));
     assert!(!body_text.contains("debugCode"));
     assert!(!body_text.contains("666666"));
+}
+
+#[tokio::test]
+async fn database_config_auth_verification_codes_queue_messaging_delivery_in_server_mode() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": [],
+                "oauthRegion": "overseas",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email", "phone"],
+                "registerMethods": ["email", "phone"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": false,
+                    "phoneCodeLoginEnabled": false,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneRegistrationVerificationRequired": false,
+                    "captchaAfterFailures": 3
+                }
+            }
+        }),
+    )
+    .await;
+    seed_messaging_verification_delivery(&pool).await;
+    pool.close().await;
+
+    let router =
+        configured_router_with_deployment_mode(&database_url, DeploymentMode::Server).await;
+    let (status, payload, body_text) = request_json(
+        router,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/verification_codes")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "target": "new-user@example.com",
+                    "scene": "REGISTER",
+                    "verifyType": "EMAIL"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::OK, status);
+    assert_eq!("2000", payload["code"]);
+    assert!(payload["data"]["codeId"].as_str().unwrap().len() > 12);
+    assert!(payload["data"].get("debugCode").is_none());
+    assert!(!body_text.contains("666666"));
+
+    let pool = create_sqlite_pool(&database_url).await;
+    let request_row = sqlx::query(
+        r#"
+        SELECT request_no, scene_code, channel, delivery_purpose, target_type, target_masked,
+               template_version_id, template_variant_id, resolved_route_rule_id,
+               resolved_provider_account_id, resolved_sender_identity_id,
+               request_payload_redacted, dry_run, delivery_status
+        FROM messaging_send_request
+        WHERE tenant_id = 10 AND organization_id = 20
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        payload["data"]["codeId"].as_str().unwrap(),
+        request_row.get::<String, _>("request_no")
+    );
+    assert_eq!("register", request_row.get::<String, _>("scene_code"));
+    assert_eq!("email", request_row.get::<String, _>("channel"));
+    assert_eq!(
+        "verification",
+        request_row.get::<String, _>("delivery_purpose")
+    );
+    assert_eq!("email", request_row.get::<String, _>("target_type"));
+    assert_eq!(
+        "n***@example.com",
+        request_row.get::<String, _>("target_masked")
+    );
+    assert_eq!(7001_i64, request_row.get::<i64, _>("template_version_id"));
+    assert_eq!(7101_i64, request_row.get::<i64, _>("template_variant_id"));
+    assert_eq!(
+        4001_i64,
+        request_row.get::<i64, _>("resolved_route_rule_id")
+    );
+    assert_eq!(
+        9101_i64,
+        request_row.get::<i64, _>("resolved_provider_account_id")
+    );
+    assert_eq!(
+        8101_i64,
+        request_row.get::<i64, _>("resolved_sender_identity_id")
+    );
+    assert_eq!(0_i64, request_row.get::<i64, _>("dry_run"));
+    assert_eq!("queued", request_row.get::<String, _>("delivery_status"));
+    let redacted_payload = request_row.get::<String, _>("request_payload_redacted");
+    assert!(redacted_payload.contains("\"variableKeys\":[\"code\",\"expiresAt\"]"));
+    assert!(!redacted_payload.contains("666666"));
+    assert!(!redacted_payload.contains("new-user@example.com"));
+
+    let attempt_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM messaging_send_attempt
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND provider_code = 'sendgrid'
+          AND provider_account_id = 9101
+          AND provider_status = 'queued'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, attempt_count);
+
+    let event_payload: String = sqlx::query_scalar(
+        r#"
+        SELECT payload_redacted
+        FROM messaging_delivery_event
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND provider_code = 'sendgrid'
+          AND event_type = 'queued'
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(event_payload.contains("\"deliveryStatus\":\"queued\""));
+    assert!(event_payload.contains("\"variableKeys\":[\"code\",\"expiresAt\"]"));
+    assert!(!event_payload.contains("666666"));
+    assert!(!event_payload.contains("new-user@example.com"));
+    pool.close().await;
+}
+
+#[tokio::test]
+async fn database_config_auth_verification_codes_return_429_when_messaging_rate_limited_in_server_mode(
+) {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": [],
+                "oauthRegion": "overseas",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email", "phone"],
+                "registerMethods": ["email", "phone"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": false,
+                    "phoneCodeLoginEnabled": false,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneRegistrationVerificationRequired": false,
+                    "captchaAfterFailures": 3
+                }
+            }
+        }),
+    )
+    .await;
+    seed_messaging_verification_delivery(&pool).await;
+    sqlx::query("UPDATE iam_verification_scene_policy SET max_send_per_hour = 1 WHERE id = 6101")
+        .execute(&pool)
+        .await
+        .unwrap();
+    pool.close().await;
+
+    let router =
+        configured_router_with_deployment_mode(&database_url, DeploymentMode::Server).await;
+    let first_response = request_json(
+        router.clone(),
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/verification_codes")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "target": "limited@example.com",
+                    "scene": "REGISTER",
+                    "verifyType": "EMAIL"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, first_response.0);
+    assert_eq!("2000", first_response.1["code"]);
+
+    let (status, payload, body_text) = request_json(
+        router,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/verification_codes")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "target": "limited@example.com",
+                    "scene": "REGISTER",
+                    "verifyType": "EMAIL"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::TOO_MANY_REQUESTS, status);
+    assert_eq!("4290", payload["code"]);
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("verification code delivery is rate limited"));
+    assert!(!body_text.contains("debugCode"));
+    assert!(!body_text.contains("666666"));
+
+    let pool = create_sqlite_pool(&database_url).await;
+    let statuses: Vec<String> = sqlx::query_scalar(
+        r#"
+        SELECT delivery_status
+        FROM messaging_send_request
+        WHERE tenant_id = 10 AND organization_id = 20
+        ORDER BY id ASC
+        "#,
+    )
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        vec!["queued".to_owned(), "rate_limited".to_owned()],
+        statuses
+    );
+
+    let attempt_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM messaging_send_attempt
+        WHERE tenant_id = 10 AND organization_id = 20
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, attempt_count);
+
+    let bucket = sqlx::query(
+        r#"
+        SELECT send_count, reject_count
+        FROM messaging_rate_limit_bucket
+        WHERE tenant_id = 10 AND organization_id = 20
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1_i64, bucket.get::<i64, _>("send_count"));
+    assert_eq!(1_i64, bucket.get::<i64, _>("reject_count"));
+
+    let rate_limited_event_payload: String = sqlx::query_scalar(
+        r#"
+        SELECT payload_redacted
+        FROM messaging_delivery_event
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND event_type = 'rate_limited'
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(rate_limited_event_payload.contains("\"deliveryStatus\":\"rate_limited\""));
+    assert!(rate_limited_event_payload.contains("\"variableKeys\":[\"code\",\"expiresAt\"]"));
+    assert!(!rate_limited_event_payload.contains("limited@example.com"));
+    pool.close().await;
 }
 
 #[tokio::test]
@@ -1357,26 +1716,39 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
 
     let (redeem_status, redeem_payload, redeem_body_text) = request_json(
         router.clone(),
-        session_request_builder("POST", "/app/v3/api/coupons/redemptions", 10, 20, 30)
-            .header("content-type", "application/json")
-            .header("Idempotency-Key", "redeem-idem-standard-1")
-            .header("X-Request-Id", "redeem-request-standard-1")
-            .body(Body::from(r#"{"code":"WELCOME"}"#))
-            .unwrap(),
+        session_request_builder(
+            "POST",
+            "/app/v3/api/promotions/codes/redemptions",
+            10,
+            20,
+            30,
+        )
+        .header("content-type", "application/json")
+        .header("Idempotency-Key", "redeem-idem-standard-1")
+        .header("X-Request-Id", "redeem-request-standard-1")
+        .body(Body::from(r#"{"code":"WELCOME"}"#))
+        .unwrap(),
     )
     .await;
 
     assert_eq!(StatusCode::OK, redeem_status);
     assert_eq!("2000", redeem_payload["code"]);
-    assert_eq!("Redeem code applied", redeem_payload["data"]["message"]);
+    assert_eq!("Promotion code redeemed", redeem_payload["data"]["message"]);
     assert_eq!("5.00", redeem_payload["data"]["amount"]);
     assert_eq!(50, redeem_payload["data"]["creditedPoints"]);
     assert_eq!(150, redeem_payload["data"]["balance"]);
-    assert!(!redeem_body_text.contains("WELCOME-other-user"));
+    assert!(!redeem_body_text.contains("OTHERUSER"));
 
     let (history_status, history_payload, history_body_text) = request_json(
         router.clone(),
-        session_request("GET", "/app/v3/api/coupons", Body::empty(), 10, 20, 30),
+        session_request(
+            "GET",
+            "/app/v3/api/promotions/user_coupons",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
     )
     .await;
 
@@ -1385,7 +1757,7 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
     assert_eq!(1, history_payload["data"].as_array().unwrap().len());
     assert_eq!("5.00", history_payload["data"][0]["amount"]);
     assert_eq!("success", history_payload["data"][0]["status"]);
-    assert!(!history_body_text.contains("WELCOME-other-user"));
+    assert!(!history_body_text.contains("OTHERUSER"));
 
     let (points_status, points_payload, _points_body_text) = request_json(
         router.clone(),
@@ -1438,7 +1810,7 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
     .await
     .unwrap();
     let claimed_count: i64 = sqlx::query_scalar(
-        "SELECT claimed_quantity FROM commerce_coupon_template WHERE template_no = 'WELCOME'",
+        "SELECT claimed_quantity FROM promotion_coupon_stock WHERE id = 'stock-welcome'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -1464,12 +1836,18 @@ async fn database_config_billing_redeem_replays_same_idempotency_key_via_appbase
     for _ in 0..2 {
         let (status, payload, body_text) = request_json(
             router.clone(),
-            session_request_builder("POST", "/app/v3/api/coupons/redemptions", 10, 20, 30)
-                .header("content-type", "application/json")
-                .header("Idempotency-Key", "redeem-idem-1")
-                .header("Sdkwork-Request-No", "redeem-request-1")
-                .body(Body::from(r#"{"code":"WELCOME"}"#))
-                .unwrap(),
+            session_request_builder(
+                "POST",
+                "/app/v3/api/promotions/codes/redemptions",
+                10,
+                20,
+                30,
+            )
+            .header("content-type", "application/json")
+            .header("Idempotency-Key", "redeem-idem-1")
+            .header("Sdkwork-Request-No", "redeem-request-1")
+            .body(Body::from(r#"{"code":"WELCOME"}"#))
+            .unwrap(),
         )
         .await;
 
@@ -1487,7 +1865,7 @@ async fn database_config_billing_redeem_replays_same_idempotency_key_via_appbase
     .await
     .unwrap();
     let coupon_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_coupon WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30'",
+        "SELECT COUNT(1) FROM promotion_user_coupon WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -1579,9 +1957,14 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
     seed_catalog_with_two_user_api_keys(&pool).await;
     seed_app_user_data(&pool).await;
     for table in [
-        "commerce_coupon_redemption",
-        "commerce_coupon",
-        "commerce_coupon_template",
+        "promotion_coupon_ledger_entry",
+        "promotion_user_coupon",
+        "promotion_code",
+        "promotion_coupon_stock",
+        "promotion_offer_version",
+        "promotion_offer",
+        "commerce_billing_history",
+        "commerce_idempotency_key",
         "commerce_account_ledger_entry",
         "commerce_account",
         "commerce_order_amount_breakdown",
@@ -1591,8 +1974,8 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
         "commerce_order",
         "commerce_recharge_package",
         "commerce_payment_method",
-        "commerce_product",
-        "commerce_sku",
+        "commerce_product_spu",
+        "commerce_product_sku",
         "iam_user_security_setting",
         "iam_user_login_event",
         "ai_usage_fact",
@@ -1607,10 +1990,8 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
     let router = configured_router(&database_url).await;
 
     for uri in [
-        "/app/v3/api/coupons",
-        "/app/v3/api/payments/attempts",
+        "/app/v3/api/promotions/user_coupons",
         "/app/v3/api/wallet/points/history",
-        "/app/v3/api/recharges/packages",
     ] {
         let (status, payload, body_text) = request_json(
             router.clone(),
@@ -1625,6 +2006,79 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
             "{uri}: {body_text}"
         );
     }
+
+    let (recharge_packages_status, recharge_packages_payload, recharge_packages_body_text) =
+        request_json(
+            router.clone(),
+            session_request(
+                "GET",
+                "/app/v3/api/recharges/packages",
+                Body::empty(),
+                10,
+                20,
+                30,
+            ),
+        )
+        .await;
+    assert_eq!(
+        StatusCode::OK,
+        recharge_packages_status,
+        "{recharge_packages_body_text}"
+    );
+    assert_eq!(
+        "2000", recharge_packages_payload["code"],
+        "{recharge_packages_body_text}"
+    );
+    let default_recharge_packages = recharge_packages_payload["data"].as_array().unwrap();
+    assert_eq!(
+        4,
+        default_recharge_packages.len(),
+        "{recharge_packages_body_text}"
+    );
+    for package_id in [
+        "seed-recharge-package-990",
+        "seed-recharge-package-1990",
+        "seed-recharge-package-4990",
+        "seed-recharge-package-9990",
+    ] {
+        assert!(
+            default_recharge_packages
+                .iter()
+                .any(|package| package["id"] == package_id),
+            "{package_id}: {recharge_packages_body_text}"
+        );
+    }
+
+    let (billing_history_status, billing_history_payload, billing_history_body_text) =
+        request_json(
+            router.clone(),
+            session_request(
+                "GET",
+                "/app/v3/api/billing/history",
+                Body::empty(),
+                10,
+                20,
+                30,
+            ),
+        )
+        .await;
+    assert_eq!(
+        StatusCode::OK,
+        billing_history_status,
+        "{billing_history_body_text}"
+    );
+    assert_eq!(
+        "2000", billing_history_payload["code"],
+        "{billing_history_body_text}"
+    );
+    assert_eq!(
+        0,
+        billing_history_payload["data"]["items"]
+            .as_array()
+            .unwrap()
+            .len(),
+        "{billing_history_body_text}"
+    );
 
     let (points_status, points_payload, points_body_text) = request_json(
         router.clone(),
@@ -2462,7 +2916,7 @@ async fn database_config_app_routing_channel_test_runs_real_provider_probe_and_r
         Some("Bearer sk-provider-health-probe-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
     assert_eq!("ping", captured[0].body["messages"][0]["content"]);
     drop(captured);
 
@@ -2975,7 +3429,18 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
     assert_eq!(StatusCode::OK, packs_status);
     assert_eq!("2000", packs_payload["code"]);
     let packs = packs_payload["data"].as_array().unwrap();
-    assert_eq!(2, packs.len());
+    assert_eq!(6, packs.len(), "{packs_body_text}");
+    for package_id in [
+        "seed-recharge-package-990",
+        "seed-recharge-package-1990",
+        "seed-recharge-package-4990",
+        "seed-recharge-package-9990",
+    ] {
+        assert!(
+            packs.iter().any(|pack| pack["id"] == package_id),
+            "{package_id}: {packs_body_text}"
+        );
+    }
     assert!(packs.iter().any(|pack| pack["id"] == "6101"
         && pack["rmb"] == "10.00"
         && pack["bonus"] == 25
@@ -3096,7 +3561,7 @@ async fn database_config_commerce_foundation_reads_exchange_rules_for_session_sc
         router,
         session_request(
             "GET",
-            "/app/v3/api/wallet/exchange_rules?source_asset_type=points&target_asset_type=cash",
+            "/app/v3/api/wallet/points/exchanges/rules?source_asset_type=points&target_asset_type=cash",
             Body::empty(),
             10,
             20,
@@ -3291,13 +3756,18 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
     assert_eq!("standard-group", success_logs[0]["group"]);
     assert_eq!("text", success_logs[0]["type"]);
     assert_eq!("gpt-4o-mini", success_logs[0]["model"]);
+    assert_eq!("success", success_logs[0]["status"]);
+    assert_eq!(200, success_logs[0]["httpStatus"]);
+    assert_eq!("", success_logs[0]["errorCode"]);
+    assert_eq!("", success_logs[0]["errorType"]);
+    assert_eq!("", success_logs[0]["errorMessage"]);
     assert_eq!("345ms", success_logs[0]["totalTime"]);
     assert_eq!("120ms", success_logs[0]["ttft"]);
     assert_eq!(true, success_logs[0]["isStream"]);
     assert_eq!(100, success_logs[0]["inputTokens"]);
     assert_eq!(10, success_logs[0]["cacheReadTokens"]);
     assert_eq!(50, success_logs[0]["outputTokens"]);
-    assert_eq!("0.012345", success_logs[0]["cost"]);
+    assert_eq!("0.012345000", success_logs[0]["cost"]);
     assert_eq!("1.250000", success_logs[0]["multiplier"]);
     assert_eq!("0.150000", success_logs[0]["baseInputPrice"]);
     assert_eq!("0.600000", success_logs[0]["baseOutputPrice"]);
@@ -3326,6 +3796,15 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
     let error_logs = error_payload["data"]["logs"].as_array().unwrap();
     assert_eq!(1, error_logs.len());
     assert_eq!("usage-owner-error", error_logs[0]["requestId"]);
+    assert_eq!("error", error_logs[0]["status"]);
+    assert_eq!(502, error_logs[0]["httpStatus"]);
+    assert_eq!("upstream_502", error_logs[0]["errorCode"]);
+    assert_eq!("provider_error", error_logs[0]["errorType"]);
+    assert_eq!(
+        "provider timed out before completion",
+        error_logs[0]["errorMessage"]
+    );
+    assert_eq!("0ms", error_logs[0]["totalTime"]);
     assert_eq!("provider_error", error_logs[0]["reasoningEffort"]);
     assert!(!error_body_text.contains("usage-owner-success"));
     assert!(!error_body_text.contains("other-user-usage-request"));
@@ -3406,6 +3885,35 @@ async fn request_json(router: axum::Router, request: Request<Body>) -> (StatusCo
     (status, payload, body_text)
 }
 
+fn model_catalog_contains(payload: &Value, model: &str) -> bool {
+    payload["data"]["items"]
+        .as_array()
+        .is_some_and(|items| items.iter().any(|item| item["model"] == model))
+}
+
+struct EnvOverride {
+    key: &'static str,
+    previous: Option<String>,
+}
+
+impl EnvOverride {
+    fn set(key: &'static str, value: &str) -> Self {
+        let previous = std::env::var(key).ok();
+        std::env::set_var(key, value);
+        Self { key, previous }
+    }
+}
+
+impl Drop for EnvOverride {
+    fn drop(&mut self) {
+        if let Some(value) = self.previous.as_deref() {
+            std::env::set_var(self.key, value);
+        } else {
+            std::env::remove_var(self.key);
+        }
+    }
+}
+
 fn session_request(
     method: &str,
     uri: &str,
@@ -3469,7 +3977,7 @@ fn session_authorization_header(
     .unwrap();
     builder
         .header("authorization", authorization)
-        .header("Sdkwork-Access-Token", access_token)
+        .header("Access-Token", access_token)
 }
 
 fn unique_sqlite_url() -> String {
@@ -3545,6 +4053,7 @@ async fn create_schema(pool: &SqlitePool) {
             provider_code TEXT NOT NULL,
             account_code TEXT,
             account_name TEXT,
+            base_url TEXT,
             auth_type INTEGER,
             credential_profile INTEGER,
             auth_config TEXT,
@@ -3977,6 +4486,7 @@ async fn create_schema(pool: &SqlitePool) {
             http_status INTEGER,
             provider_error_code TEXT,
             error_type TEXT,
+            error_message_masked TEXT,
             latency_ms INTEGER,
             ttft_ms INTEGER,
             streaming INTEGER,
@@ -4219,6 +4729,261 @@ async fn create_schema(pool: &SqlitePool) {
             failure_code TEXT,
             retry_count INTEGER
         )"#,
+        r#"CREATE TABLE iam_verification_scene_policy (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            scene_code TEXT NOT NULL,
+            scene_name TEXT,
+            allowed_channels TEXT NOT NULL DEFAULT '[]',
+            default_channel TEXT,
+            code_length INTEGER NOT NULL DEFAULT 6,
+            ttl_seconds INTEGER NOT NULL DEFAULT 300,
+            resend_interval_seconds INTEGER NOT NULL DEFAULT 60,
+            max_send_per_hour INTEGER NOT NULL DEFAULT 5,
+            max_verify_attempts INTEGER NOT NULL DEFAULT 5,
+            template_code TEXT NOT NULL,
+            risk_policy TEXT NOT NULL DEFAULT '{}'
+        )"#,
+        r#"CREATE TABLE messaging_provider_capability (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            provider_code TEXT NOT NULL,
+            provider_account_id INTEGER NOT NULL,
+            channel TEXT NOT NULL,
+            delivery_purpose TEXT NOT NULL,
+            capability_schema TEXT NOT NULL DEFAULT '{}',
+            supports_template_sync INTEGER NOT NULL DEFAULT 0,
+            supports_delivery_receipt INTEGER NOT NULL DEFAULT 0,
+            supports_test_send INTEGER NOT NULL DEFAULT 0,
+            supports_batch_send INTEGER NOT NULL DEFAULT 0,
+            supports_webhook INTEGER NOT NULL DEFAULT 0,
+            sandbox_supported INTEGER NOT NULL DEFAULT 0,
+            health_status TEXT NOT NULL DEFAULT 'unknown'
+        )"#,
+        r#"CREATE TABLE messaging_sender_identity (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            provider_account_id INTEGER NOT NULL,
+            provider_code TEXT NOT NULL,
+            channel TEXT NOT NULL,
+            identity_code TEXT NOT NULL,
+            display_name TEXT,
+            from_email TEXT,
+            from_name TEXT,
+            reply_to TEXT,
+            domain_name TEXT,
+            sign_name TEXT,
+            sender_id TEXT,
+            country_code TEXT,
+            approval_status TEXT NOT NULL DEFAULT 'draft'
+        )"#,
+        r#"CREATE TABLE messaging_template (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            template_code TEXT NOT NULL,
+            scene_code TEXT NOT NULL,
+            channel TEXT NOT NULL,
+            delivery_purpose TEXT NOT NULL,
+            category TEXT NOT NULL,
+            template_name TEXT NOT NULL,
+            current_version_id INTEGER,
+            publish_status TEXT NOT NULL DEFAULT 'draft'
+        )"#,
+        r#"CREATE TABLE messaging_template_version (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            template_id INTEGER NOT NULL,
+            version_no INTEGER NOT NULL,
+            subject_template TEXT,
+            text_template TEXT,
+            html_template TEXT,
+            variable_schema TEXT NOT NULL DEFAULT '{}',
+            content_hash TEXT NOT NULL,
+            review_status TEXT NOT NULL DEFAULT 'draft',
+            published_at TEXT
+        )"#,
+        r#"CREATE TABLE messaging_template_variant (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            template_version_id INTEGER NOT NULL,
+            channel TEXT NOT NULL,
+            locale TEXT NOT NULL,
+            content_format TEXT NOT NULL,
+            body_template TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE messaging_route_rule (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            rule_code TEXT NOT NULL,
+            scene_code TEXT NOT NULL,
+            channel TEXT NOT NULL,
+            delivery_purpose TEXT NOT NULL,
+            country_code TEXT NOT NULL DEFAULT '*',
+            locale TEXT NOT NULL DEFAULT '*',
+            user_segment TEXT NOT NULL DEFAULT '*',
+            priority INTEGER NOT NULL DEFAULT 100,
+            weight INTEGER NOT NULL DEFAULT 100,
+            failover_policy TEXT NOT NULL DEFAULT '{}'
+        )"#,
+        r#"CREATE TABLE messaging_route_rule_target (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            route_rule_id INTEGER NOT NULL,
+            provider_account_id INTEGER NOT NULL,
+            provider_code TEXT NOT NULL,
+            sender_identity_id INTEGER,
+            template_binding_id INTEGER,
+            target_order INTEGER NOT NULL DEFAULT 1,
+            weight INTEGER NOT NULL DEFAULT 100
+        )"#,
+        r#"CREATE TABLE messaging_send_request (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            request_id TEXT,
+            payload_hash TEXT NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            scene_code TEXT NOT NULL,
+            channel TEXT NOT NULL,
+            delivery_purpose TEXT NOT NULL,
+            target_type TEXT NOT NULL,
+            target_hash TEXT NOT NULL,
+            target_masked TEXT,
+            template_version_id INTEGER,
+            template_variant_id INTEGER,
+            resolved_route_rule_id INTEGER,
+            resolved_provider_account_id INTEGER,
+            resolved_sender_identity_id INTEGER,
+            render_hash TEXT NOT NULL,
+            request_payload_redacted TEXT NOT NULL DEFAULT '{}',
+            dry_run INTEGER NOT NULL DEFAULT 0,
+            delivery_status TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE messaging_send_attempt (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            request_id TEXT,
+            payload_hash TEXT NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            send_request_id INTEGER NOT NULL,
+            attempt_no INTEGER NOT NULL,
+            provider_code TEXT NOT NULL,
+            provider_account_id INTEGER NOT NULL,
+            provider_status TEXT,
+            attempted_at TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE messaging_delivery_event (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            request_id TEXT,
+            payload_hash TEXT NOT NULL,
+            send_request_id INTEGER NOT NULL,
+            send_attempt_id INTEGER,
+            provider_code TEXT NOT NULL,
+            provider_event_id TEXT NOT NULL,
+            provider_message_id TEXT,
+            event_type TEXT NOT NULL,
+            event_at TEXT NOT NULL,
+            payload_redacted TEXT NOT NULL DEFAULT '{}'
+        )"#,
+        r#"CREATE TABLE messaging_suppression (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            channel TEXT NOT NULL,
+            target_hash TEXT NOT NULL,
+            target_masked TEXT,
+            reason_code TEXT NOT NULL,
+            scope_type TEXT NOT NULL DEFAULT 'tenant',
+            scope_id TEXT NOT NULL DEFAULT '*',
+            starts_at TEXT NOT NULL,
+            ends_at TEXT,
+            source TEXT NOT NULL,
+            note TEXT
+        )"#,
+        r#"CREATE TABLE messaging_rate_limit_bucket (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT,
+            scene_code TEXT NOT NULL,
+            channel TEXT NOT NULL,
+            target_hash TEXT NOT NULL,
+            ip_hash TEXT NOT NULL,
+            device_hash TEXT NOT NULL,
+            window_start TEXT NOT NULL,
+            window_seconds INTEGER NOT NULL,
+            send_count INTEGER NOT NULL DEFAULT 0,
+            verify_count INTEGER NOT NULL DEFAULT 0,
+            reject_count INTEGER NOT NULL DEFAULT 0,
+            last_event_at TEXT
+        )"#,
         r#"CREATE UNIQUE INDEX uk_ops_notification_delivery_user_message_app
             ON ops_notification_delivery (tenant_id, organization_id, message_id, user_id, app_id, delivery_channel)"#,
         r#"CREATE TABLE ops_gateway_instance (
@@ -4232,6 +4997,21 @@ async fn create_schema(pool: &SqlitePool) {
             node_name TEXT,
             health_status INTEGER,
             last_heartbeat_at TEXT
+        )"#,
+        r#"CREATE TABLE commerce_idempotency_key (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            scope TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            request_hash TEXT NOT NULL,
+            response_json TEXT,
+            status TEXT NOT NULL,
+            locked_until TEXT,
+            expires_at TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, scope, idempotency_key)
         )"#,
         r#"CREATE TABLE commerce_account (
             id TEXT PRIMARY KEY,
@@ -4268,34 +5048,129 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT NOT NULL,
             UNIQUE (tenant_id, transaction_no)
         )"#,
-        r#"CREATE TABLE commerce_coupon_template (
+        r#"CREATE TABLE commerce_billing_history (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            template_no TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            history_no TEXT NOT NULL,
+            history_type TEXT NOT NULL,
+            direction TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            amount TEXT NOT NULL DEFAULT '0',
+            currency_code TEXT,
+            points_delta INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
             title TEXT NOT NULL,
+            reference_no TEXT,
+            source_type TEXT NOT NULL,
+            source_id TEXT NOT NULL,
+            related_order_id TEXT,
+            related_order_no TEXT,
+            payment_method TEXT,
+            occurred_at TEXT NOT NULL,
+            metadata_json TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, history_no),
+            UNIQUE (tenant_id, source_type, source_id)
+        )"#,
+        r#"CREATE TABLE promotion_offer (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            offer_no TEXT NOT NULL,
+            offer_code TEXT NOT NULL,
+            name TEXT NOT NULL,
+            offer_type TEXT NOT NULL,
+            audience_scope TEXT NOT NULL,
+            combinability TEXT NOT NULL,
+            priority INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            current_offer_version_id TEXT NOT NULL,
+            starts_at TEXT,
+            ends_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, offer_no),
+            UNIQUE (tenant_id, organization_id, offer_code)
+        )"#,
+        r#"CREATE TABLE promotion_offer_version (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            offer_id TEXT NOT NULL,
+            version_no TEXT NOT NULL,
+            lifecycle_status TEXT NOT NULL,
             discount_type TEXT NOT NULL,
             discount_value TEXT NOT NULL,
             minimum_amount TEXT NOT NULL DEFAULT '0',
+            maximum_discount_amount TEXT,
+            currency_code TEXT,
+            rule_json TEXT NOT NULL,
+            stack_rule_json TEXT,
+            published_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, offer_id, version_no)
+        )"#,
+        r#"CREATE TABLE promotion_coupon_stock (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            stock_no TEXT NOT NULL,
+            name TEXT NOT NULL,
+            offer_id TEXT NOT NULL,
+            offer_version_id TEXT NOT NULL,
+            stock_type TEXT NOT NULL,
             total_quantity INTEGER,
+            available_quantity INTEGER NOT NULL DEFAULT 0,
             claimed_quantity INTEGER NOT NULL DEFAULT 0,
             redeemed_quantity INTEGER NOT NULL DEFAULT 0,
+            locked_quantity INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
             starts_at TEXT,
             expires_at TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, template_no)
+            UNIQUE (tenant_id, stock_no)
         )"#,
-        r#"CREATE TABLE commerce_coupon (
+        r#"CREATE TABLE promotion_code (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            template_id TEXT NOT NULL,
-            owner_user_id TEXT NOT NULL,
+            code_no TEXT NOT NULL,
+            stock_id TEXT NOT NULL,
+            offer_id TEXT NOT NULL,
+            offer_version_id TEXT NOT NULL,
+            promotion_code TEXT NOT NULL,
+            code_type TEXT NOT NULL,
+            max_claims INTEGER NOT NULL DEFAULT 1,
+            claimed_quantity INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            starts_at TEXT,
+            expires_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, code_no),
+            UNIQUE (tenant_id, promotion_code)
+        )"#,
+        r#"CREATE TABLE promotion_user_coupon (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            coupon_no TEXT NOT NULL,
+            stock_id TEXT NOT NULL,
+            code_id TEXT,
+            offer_id TEXT NOT NULL,
+            offer_version_id TEXT NOT NULL,
+            subject_type TEXT NOT NULL,
+            subject_id TEXT NOT NULL,
+            owner_user_id TEXT,
             coupon_code TEXT NOT NULL,
             status TEXT NOT NULL,
-            claimed_at TEXT NOT NULL,
+            claimed_at TEXT,
+            valid_from TEXT,
             expires_at TEXT,
             redeemed_at TEXT,
             disabled_at TEXT,
@@ -4303,47 +5178,62 @@ async fn create_schema(pool: &SqlitePool) {
             idempotency_key TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, coupon_no),
             UNIQUE (tenant_id, coupon_code)
         )"#,
-        r#"CREATE TABLE commerce_coupon_redemption (
+        r#"CREATE TABLE promotion_coupon_ledger_entry (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            coupon_id TEXT NOT NULL,
-            order_id TEXT NOT NULL,
-            owner_user_id TEXT NOT NULL,
-            discount_amount TEXT NOT NULL,
-            status TEXT NOT NULL,
+            ledger_no TEXT NOT NULL,
+            user_coupon_id TEXT,
+            stock_id TEXT NOT NULL,
+            offer_id TEXT NOT NULL,
+            subject_type TEXT,
+            subject_id TEXT,
+            direction TEXT NOT NULL,
+            quantity_delta INTEGER NOT NULL,
+            balance_after INTEGER NOT NULL,
+            business_type TEXT NOT NULL,
+            source_type TEXT NOT NULL,
+            source_id TEXT NOT NULL,
             request_no TEXT NOT NULL,
             idempotency_key TEXT NOT NULL,
-            redeemed_at TEXT NOT NULL,
-            rolled_back_at TEXT,
+            occurred_at TEXT NOT NULL,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, coupon_id, order_id)
+            UNIQUE (tenant_id, ledger_no)
         )"#,
-        r#"CREATE TABLE commerce_product (
+        r#"CREATE TABLE commerce_product_spu (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            product_no TEXT NOT NULL,
+            spu_no TEXT NOT NULL,
             title TEXT NOT NULL,
-            status TEXT NOT NULL,
+            subtitle TEXT,
+            description TEXT,
+            product_type TEXT NOT NULL,
+            category_id TEXT,
+            sales_status TEXT NOT NULL,
+            visible_surfaces TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, product_no)
+            UNIQUE (tenant_id, spu_no)
         )"#,
-        r#"CREATE TABLE commerce_sku (
+        r#"CREATE TABLE commerce_product_sku (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            product_id TEXT NOT NULL,
+            spu_id TEXT NOT NULL,
             sku_no TEXT NOT NULL,
             name TEXT NOT NULL,
             title TEXT NOT NULL,
             price_amount TEXT NOT NULL,
+            original_price_amount TEXT,
             currency_code TEXT NOT NULL,
-            status TEXT NOT NULL,
+            delivery_mode TEXT NOT NULL,
+            inventory_tracking TEXT NOT NULL,
+            sales_status TEXT NOT NULL,
+            spec_json TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, sku_no)
@@ -4497,6 +5387,144 @@ async fn create_schema(pool: &SqlitePool) {
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
+}
+
+async fn seed_messaging_verification_delivery(pool: &SqlitePool) {
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider
+            (id, uuid, tenant_id, organization_id, provider_code, display_name, status)
+        VALUES
+            (9100, 'provider-sendgrid', 10, 20, 'sendgrid', 'SendGrid', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider_account
+            (id, uuid, tenant_id, organization_id, provider_id, provider_code, account_code,
+             account_name, auth_type, secret_ref, status)
+        VALUES
+            (9101, 'provider-account-sendgrid', 10, 20, 9100, 'sendgrid', 'email-primary',
+             'Primary SendGrid', 1, 'vault://providers/sendgrid/account/primary', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_provider_capability
+            (id, uuid, tenant_id, organization_id, provider_code, provider_account_id,
+             channel, delivery_purpose, supports_delivery_receipt, supports_test_send,
+             health_status, status)
+        VALUES
+            (3101, 'cap-sendgrid-email-verification', 10, 20, 'sendgrid', 9101,
+             'email', 'verification', 1, 1, 'healthy', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_sender_identity
+            (id, uuid, tenant_id, organization_id, provider_account_id, provider_code, channel,
+             identity_code, display_name, from_email, from_name, approval_status, status)
+        VALUES
+            (8101, 'sender-noreply', 10, 20, 9101, 'sendgrid', 'email',
+             'noreply', 'No Reply', 'noreply@example.com', 'SDKWORK', 'approved', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO iam_verification_scene_policy
+            (id, tenant_id, organization_id, scene_code, allowed_channels, default_channel,
+             code_length, ttl_seconds, resend_interval_seconds, max_send_per_hour,
+             max_verify_attempts, template_code, risk_policy, status)
+        VALUES
+            (6101, 10, 20, 'register', '["email"]', 'email',
+             6, 300, 60, 5, 5, 'REGISTER_EMAIL', '{}', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_template
+            (id, uuid, tenant_id, organization_id, template_code, scene_code, channel,
+             delivery_purpose, category, template_name, current_version_id, publish_status, status)
+        VALUES
+            (7000, 'template-register-email', 10, 20, 'REGISTER_EMAIL', 'register', 'email',
+             'verification', 'otp', 'Register Email', 7001, 'published', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_template_version
+            (id, uuid, tenant_id, organization_id, template_id, version_no, subject_template,
+             text_template, html_template, variable_schema, content_hash, review_status,
+             published_at, status)
+        VALUES
+            (7001, 'template-register-email-v1', 10, 20, 7000, 1, 'Your verification code',
+             'Code {{code}} expires at {{expiresAt}}',
+             '<p>Code {{code}} expires at {{expiresAt}}</p>',
+             '{"required":["code","expiresAt"]}', 'hash-register-email-v1',
+             'published', '2026-05-25 10:00:00', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_template_variant
+            (id, uuid, tenant_id, organization_id, template_version_id, channel, locale,
+             content_format, body_template, status)
+        VALUES
+            (7101, 'template-register-email-v1-default', 10, 20, 7001, 'email', 'default',
+             'html', '<p>Code {{code}} expires at {{expiresAt}}</p>', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_route_rule
+            (id, uuid, tenant_id, organization_id, rule_code, scene_code, channel,
+             delivery_purpose, country_code, locale, user_segment, priority, weight,
+             failover_policy, status)
+        VALUES
+            (4001, 'route-register-email', 10, 20, 'register-email', 'register', 'email',
+             'verification', '*', '*', '*', 10, 100, '{}', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO messaging_route_rule_target
+            (id, uuid, tenant_id, organization_id, route_rule_id, provider_account_id,
+             provider_code, sender_identity_id, target_order, weight, status)
+        VALUES
+            (5001, 'route-register-email-target', 10, 20, 4001, 9101,
+             'sendgrid', 8101, 1, 100, 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
@@ -4681,11 +5709,26 @@ async fn seed_dashboard_data(pool: &SqlitePool) {
 
 async fn seed_billing_data(pool: &SqlitePool) {
     for statement in [
-        r#"INSERT INTO commerce_coupon_template
-            (id, tenant_id, organization_id, template_no, title, discount_type, discount_value, minimum_amount, total_quantity, claimed_quantity, redeemed_quantity, status, starts_at, expires_at, created_at, updated_at)
+        r#"INSERT INTO promotion_offer
+            (id, tenant_id, organization_id, offer_no, offer_code, name, offer_type, audience_scope, combinability, priority, status, current_offer_version_id, starts_at, ends_at, created_at, updated_at)
             VALUES
-            ('template-welcome', '10', '20', 'WELCOME', 'Welcome points', 'fixed_amount', '5.00', '0', 100, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('template-welcome-other-user', '10', '20', 'WELCOME-other-user', 'Other user welcome points', 'fixed_amount', '9.00', '0', 100, 1, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('offer-welcome', '10', '20', 'offer-welcome', 'welcome_points', 'Welcome points', 'coupon', 'new_user', 'exclusive', 100, 'active', 'offer-version-welcome-v1', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('offer-other-user', '10', '20', 'offer-other-user', 'other_user_points', 'Other user welcome points', 'coupon', 'new_user', 'exclusive', 90, 'active', 'offer-version-other-user-v1', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO promotion_offer_version
+            (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status, discount_type, discount_value, minimum_amount, maximum_discount_amount, currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
+            VALUES
+            ('offer-version-welcome-v1', '10', '20', 'offer-welcome', 'v1', 'published', 'fixed_amount', '5.00', '0', NULL, 'CNY', '{}', NULL, '2026-04-29 08:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('offer-version-other-user-v1', '10', '20', 'offer-other-user', 'v1', 'published', 'fixed_amount', '9.00', '0', NULL, 'CNY', '{}', NULL, '2026-04-29 08:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO promotion_coupon_stock
+            (id, tenant_id, organization_id, stock_no, name, offer_id, offer_version_id, stock_type, total_quantity, available_quantity, claimed_quantity, redeemed_quantity, locked_quantity, status, starts_at, expires_at, created_at, updated_at)
+            VALUES
+            ('stock-welcome', '10', '20', 'stock-welcome', 'Welcome stock', 'offer-welcome', 'offer-version-welcome-v1', 'limited', 100, 100, 0, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('stock-other-user', '10', '20', 'stock-other-user', 'Other user stock', 'offer-other-user', 'offer-version-other-user-v1', 'limited', 100, 99, 1, 0, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO promotion_code
+            (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code, code_type, max_claims, claimed_quantity, status, starts_at, expires_at, created_at, updated_at)
+            VALUES
+            ('code-welcome', '10', '20', 'code-welcome', 'stock-welcome', 'offer-welcome', 'offer-version-welcome-v1', 'WELCOME', 'public', 100, 0, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('code-other-user', '10', '20', 'code-other-user', 'stock-other-user', 'offer-other-user', 'offer-version-other-user-v1', 'OTHERUSER', 'public', 100, 1, 'active', '2026-01-01 00:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_account
             (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
             VALUES
@@ -4693,9 +5736,9 @@ async fn seed_billing_data(pool: &SqlitePool) {
             ('owner-token-account', '10', '20', '30', 'token', NULL, '120', '8', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
             ('other-points-account', '10', '20', '31', 'points', 'POINT', '900', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00'),
             ('other-token-account', '10', '21', '30', 'token', NULL, '999', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
-        r#"INSERT INTO commerce_coupon
-            (id, tenant_id, organization_id, template_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
-            VALUES ('other-user-coupon', '10', '20', 'template-welcome-other-user', '31', 'WELCOME-other-user', 'active', '2026-04-28 08:00:00', '2099-01-01 00:00:00', NULL, NULL, 'other-user-coupon-claim', 'other-user-coupon-claim', '2026-04-28 08:00:00', '2026-04-28 08:00:00')"#,
+        r#"INSERT INTO promotion_user_coupon
+            (id, tenant_id, organization_id, coupon_no, stock_id, code_id, offer_id, offer_version_id, subject_type, subject_id, owner_user_id, coupon_code, status, claimed_at, valid_from, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('other-user-coupon', '10', '20', 'coupon-other-user', 'stock-other-user', 'code-other-user', 'offer-other-user', 'offer-version-other-user-v1', 'user', '31', '31', 'OTHERUSER-31', 'claimed', '2026-04-28 08:00:00', '2026-04-28 08:00:00', '2099-01-01 00:00:00', NULL, NULL, 'other-user-coupon-claim', 'other-user-coupon-claim', '2026-04-28 08:00:00', '2026-04-28 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -4818,18 +5861,18 @@ async fn seed_checkout_runtime_data(pool: &SqlitePool) {
 
 async fn seed_recharge_runtime_data(pool: &SqlitePool) {
     for statement in [
-        r#"INSERT INTO commerce_product
-            (id, tenant_id, organization_id, product_no, title, status, created_at, updated_at)
+        r#"INSERT INTO commerce_product_spu
+            (id, tenant_id, organization_id, spu_no, title, product_type, sales_status, visible_surfaces, created_at, updated_at)
             VALUES
-            ('6301', '10', '20', 'points-recharge-owner', 'Points recharge product', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6302', '10', NULL, 'points-recharge-global', 'Global points recharge product', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6303', '10', '21', 'points-recharge-other-org', 'Other Org Recharge Pack', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
-        r#"INSERT INTO commerce_sku
-            (id, tenant_id, organization_id, product_id, sku_no, name, title, price_amount, currency_code, status, created_at, updated_at)
+            ('6301', '10', '20', 'points-recharge-owner', 'Points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6302', '10', NULL, 'points-recharge-global', 'Global points recharge product', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6303', '10', '21', 'points-recharge-other-org', 'Other Org Recharge Pack', 'points_recharge', 'active', '["app"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO commerce_product_sku
+            (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, created_at, updated_at)
             VALUES
-            ('6401', '10', '20', '6301', 'starter-recharge-pack', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', 'CNY', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6402', '10', NULL, '6302', 'global-recharge-pack', 'Global Recharge Pack', 'Global Recharge Pack', '20.00', 'CNY', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
-            ('6403', '10', '21', '6303', 'other-org-recharge-pack', 'Other Org Recharge Pack', 'Other Org Recharge Pack', '30.00', 'CNY', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+            ('6401', '10', '20', '6301', 'starter-recharge-pack', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6402', '10', NULL, '6302', 'global-recharge-pack', 'Global Recharge Pack', 'Global Recharge Pack', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('6403', '10', '21', '6303', 'other-org-recharge-pack', 'Other Org Recharge Pack', 'Other Org Recharge Pack', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO commerce_recharge_package
             (id, tenant_id, organization_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, created_at, updated_at)
             VALUES
@@ -4886,8 +5929,8 @@ async fn seed_usage_logs_runtime_data(pool: &SqlitePool) {
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
             VALUES (6403, 10, 20, 30, 100, 'usage-owner-error', 'gpt-4o-mini', 1, 1, 25, 20, 0, 5, '0.004000', '0.003000', 1, '1.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 11:15:00')"#,
         r#"INSERT INTO ai_request_trace
-            (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, api_key_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
-            VALUES (6404, 10, 20, 30, 'usage-owner-error', 'trace-usage-owner-error', 1, '2026-04-29 11:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 11:15:00', 502, 'upstream_502', 'provider_error', 987, 0, 0, 20, 0, 5, 'provider_error', 25, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
+            (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, api_key_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, error_message_masked, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
+            VALUES (6404, 10, 20, 30, 'usage-owner-error', 'trace-usage-owner-error', 1, '2026-04-29 11:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-mini', 'gpt-4o-mini', '2026-04-29 11:15:00', 502, 'upstream_502', 'provider_error', 'provider timed out before completion', NULL, 0, 0, 20, 0, 5, 'provider_error', 25, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
             VALUES (6405, 10, 20, 31, 101, 'other-user-usage-request', 'gpt-4o-mini', 1, 1, 999, 900, 0, 99, '9.999999', '8.000000', 1, '2.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 10:30:00')"#,

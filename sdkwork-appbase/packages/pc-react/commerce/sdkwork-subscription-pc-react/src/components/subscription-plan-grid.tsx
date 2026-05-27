@@ -1,8 +1,8 @@
 import { Button } from "@sdkwork/ui-pc-react";
 import type {
-  SdkworkVipBenefit,
-  SdkworkVipSummary,
-} from "@sdkwork/vip-pc-react";
+  SdkworkMembershipBenefit,
+  SdkworkMembershipSummary,
+} from "@sdkwork/membership-pc-react";
 import {
   createSdkworkSubscriptionPanelStyle,
   createSdkworkSubscriptionToneStyle,
@@ -10,7 +10,7 @@ import {
 import { useSdkworkSubscriptionIntl } from "../subscription-intl";
 
 export interface SdkworkSubscriptionPlanGridProps {
-  benefits: SdkworkVipBenefit[];
+  benefits: SdkworkMembershipBenefit[];
   onSelectPlan: (packageId: number) => void;
   plans: Array<{
     description?: string | null;
@@ -25,7 +25,7 @@ export interface SdkworkSubscriptionPlanGridProps {
     tags: string[];
   }>;
   selectedPackageId: number | null;
-  summary: SdkworkVipSummary;
+  summary: SdkworkMembershipSummary;
 }
 
 export function SdkworkSubscriptionPlanGrid({
@@ -42,7 +42,7 @@ export function SdkworkSubscriptionPlanGrid({
     formatDurationDays,
     formatPoints,
   } = useSdkworkSubscriptionIntl();
-  const isFreeCurrent = !summary.isVip;
+  const isFreeCurrent = !summary.isMember;
 
   return (
     <section className="overflow-hidden rounded-[2rem] border border-[var(--sdk-color-border-default)] bg-[var(--sdk-color-surface-panel)] shadow-[var(--sdk-shadow-md)]">
@@ -99,7 +99,7 @@ export function SdkworkSubscriptionPlanGrid({
             {summary.isAuthenticated ? copy.planGrid.noRecurringCharge : copy.planGrid.signInToActivatePremiumCheckout}
           </div>
           <div className="mt-1 text-sm text-[var(--sdk-color-text-secondary)]">
-            {formatCurrentBalance(summary.pointBalance ?? summary.vipPoints ?? 0)}
+            {formatCurrentBalance(summary.pointBalance ?? summary.points ?? 0)}
           </div>
 
           <div className="mt-5 flex flex-wrap gap-2">

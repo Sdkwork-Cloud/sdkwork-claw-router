@@ -2,11 +2,12 @@ use sqlx::{PgPool, Row};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::app_catalog_mapping::{
-    build_app_item, query_matches_app, RawAppStoreRecord, RawCatalogArtifact, RawCatalogAsset,
-    CATALOG_TARGET_TYPE_APP,
+    build_app_item, query_matches_app_catalog_filters, sort_app_catalog_entries, RawAppStoreRecord,
+    RawCatalogArtifact, RawCatalogAsset, CATALOG_TARGET_TYPE_APP,
 };
 use crate::ports::{
-    AppStoreItem, AppStoreQuery, AppStoreReadFuture, AppStoreReadStore, AppStoreSubject,
+    AppStoreItem, AppStoreItems, AppStoreQuery, AppStoreReadFuture, AppStoreReadStore,
+    AppStoreSubject,
 };
 
 const LOAD_APPS_BASE: &str = r#"
@@ -72,6 +73,36 @@ LIMIT $10 OFFSET $11
 
 const LOAD_APPS_UNPAGED_SUFFIX: &str = r#"
 ORDER BY COALESCE(a.updated_at, a.created_at) DESC NULLS LAST, a.id DESC
+"#;
+
+const LOAD_APPS_POPULAR_SUFFIX: &str = r#"
+ORDER BY download_count DESC, COALESCE(a.updated_at, a.created_at) DESC NULLS LAST, a.id DESC
+LIMIT $10 OFFSET $11
+"#;
+
+const LOAD_APPS_RATING_SUFFIX: &str = r#"
+ORDER BY rating DESC, COALESCE(a.updated_at, a.created_at) DESC NULLS LAST, a.id DESC
+LIMIT $10 OFFSET $11
+"#;
+
+const COUNT_APPS: &str = r#"
+SELECT COUNT(1)
+FROM plus_app a
+WHERE (
+      (
+          a.tenant_id = $1
+          AND (
+              a.organization_id = $2
+              OR ($2 > 0 AND a.organization_id = 0)
+          )
+      )
+      OR (a.tenant_id = $9 AND a.organization_id = 0)
+  )
+  AND COALESCE(a.status, 1) = 1
+  AND COALESCE(NULLIF(a.config -> 'portal' ->> 'marketStatus', ''), NULLIF(a.config ->> 'marketStatus', ''), 'DRAFT') = 'PUBLISHED'
+  AND ($3::integer IS NULL OR COALESCE(a.status, 1) = $4)
+  AND ($5::text IS NULL OR COALESCE(a.updated_at, a.created_at) >= $6::timestamp)
+  AND ($7::text IS NULL OR COALESCE(a.updated_at, a.created_at) <= $8::timestamp)
 "#;
 
 const LOAD_APP_BY_ID: &str = r#"
@@ -221,22 +252,24 @@ impl AppStoreReadStore for PostgresAppStoreReadStore {
         &'a self,
         query: AppStoreQuery,
         subject: Option<AppStoreSubject>,
-    ) -> AppStoreReadFuture<'a, Vec<AppStoreItem>> {
+    ) -> AppStoreReadFuture<'a, AppStoreItems<AppStoreItem>> {
         Box::pin(async move {
             let subject = app_store_scope(subject);
             let page_size = query.page_size.unwrap_or(100).clamp(1, 100);
             let page_no = query.page_no.unwrap_or(1).max(1);
             let offset = (page_no - 1) * page_size;
             let status_filter = query.status.as_deref().map(app_status_code).transpose()?;
-            let filter_by_keyword = query
-                .keyword
-                .as_deref()
-                .map(|value| !value.trim().is_empty())
-                .unwrap_or(false);
-            let sql = if filter_by_keyword {
+            let filter_in_memory = has_text_filter(query.keyword.as_deref())
+                || has_text_filter(query.category.as_deref())
+                || !query.platform_types.is_empty();
+            let sql = if filter_in_memory {
                 format!("{LOAD_APPS_BASE}{LOAD_APPS_UNPAGED_SUFFIX}")
             } else {
-                format!("{LOAD_APPS_BASE}{LOAD_APPS_PAGED_SUFFIX}")
+                format!(
+                    "{}{}",
+                    LOAD_APPS_BASE,
+                    paged_sort_suffix(query.sort.as_deref())
+                )
             };
             let mut statement = sqlx::query(&sql)
                 .bind(subject.tenant_id)
@@ -248,30 +281,48 @@ impl AppStoreReadStore for PostgresAppStoreReadStore {
                 .bind(query.end_time.as_deref())
                 .bind(query.end_time.as_deref())
                 .bind(PUBLIC_APP_STORE_TENANT_ID);
-            if !filter_by_keyword {
+            if !filter_in_memory {
                 statement = statement.bind(page_size).bind(offset);
             }
             let rows = statement.fetch_all(&self.pool).await.map_err(sql_error)?;
 
-            let mut items = Vec::with_capacity(rows.len());
+            let mut entries = Vec::with_capacity(rows.len());
             for row in rows {
                 let raw = row_to_raw_app(&row);
                 let target_id = raw.id.parse::<i64>().unwrap_or_default();
                 let assets = load_assets(&self.pool, &raw, target_id).await?;
                 let artifacts = load_artifacts(&self.pool, &raw, target_id).await?;
                 let item = build_app_item(&raw, assets, artifacts);
-                if query_matches_app(&item, &raw, query.keyword.as_deref()) {
-                    items.push(item);
+                if query_matches_app_catalog_filters(
+                    &item,
+                    &raw,
+                    query.keyword.as_deref(),
+                    query.category.as_deref(),
+                    &query.platform_types,
+                ) {
+                    entries.push((item, raw));
                 }
             }
-            if filter_by_keyword {
-                return Ok(items
+
+            if filter_in_memory {
+                sort_app_catalog_entries(&mut entries, query.sort.as_deref());
+                let total = entries.len() as i64;
+                let items = entries
                     .into_iter()
+                    .map(|(item, _)| item)
                     .skip(offset as usize)
                     .take(page_size as usize)
-                    .collect());
+                    .collect();
+                return Ok(AppStoreItems::page(items, total, page_no, page_size));
             }
-            Ok(items)
+
+            let total = count_apps(&self.pool, &subject, &query, status_filter).await?;
+            Ok(AppStoreItems::page(
+                entries.into_iter().map(|(item, _)| item).collect(),
+                total,
+                page_no,
+                page_size,
+            ))
         })
     }
 
@@ -322,6 +373,39 @@ impl AppStoreReadStore for PostgresAppStoreReadStore {
             categories.dedup_by(|left, right| left.eq_ignore_ascii_case(right));
             Ok(categories)
         })
+    }
+}
+
+async fn count_apps(
+    pool: &PgPool,
+    subject: &AppStoreSubject,
+    query: &AppStoreQuery,
+    status_filter: Option<i32>,
+) -> DomainResult<i64> {
+    sqlx::query_scalar(COUNT_APPS)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .bind(status_filter)
+        .bind(status_filter)
+        .bind(query.start_time.as_deref())
+        .bind(query.start_time.as_deref())
+        .bind(query.end_time.as_deref())
+        .bind(query.end_time.as_deref())
+        .bind(PUBLIC_APP_STORE_TENANT_ID)
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)
+}
+
+fn has_text_filter(value: Option<&str>) -> bool {
+    value.map(|value| !value.trim().is_empty()).unwrap_or(false)
+}
+
+fn paged_sort_suffix(sort: Option<&str>) -> &'static str {
+    match sort {
+        Some("popular_desc") => LOAD_APPS_POPULAR_SUFFIX,
+        Some("rating_desc") => LOAD_APPS_RATING_SUFFIX,
+        _ => LOAD_APPS_PAGED_SUFFIX,
     }
 }
 

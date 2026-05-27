@@ -20,7 +20,7 @@ public class ViduCreation {
     public String getAudioUrl() {
         return this.audioUrl;
     }
-    
+
     public void setAudioUrl(String audioUrl) {
         this.audioUrl = audioUrl;
     }
@@ -28,7 +28,7 @@ public class ViduCreation {
     public String getCoverUrl() {
         return this.coverUrl;
     }
-    
+
     public void setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
     }
@@ -36,7 +36,7 @@ public class ViduCreation {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -44,7 +44,7 @@ public class ViduCreation {
     public Double getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Double duration) {
         this.duration = duration;
     }
@@ -52,7 +52,7 @@ public class ViduCreation {
     public Integer getHeight() {
         return this.height;
     }
-    
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -60,7 +60,7 @@ public class ViduCreation {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -68,7 +68,7 @@ public class ViduCreation {
     public String getImageUrl() {
         return this.imageUrl;
     }
-    
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -76,7 +76,7 @@ public class ViduCreation {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -84,7 +84,7 @@ public class ViduCreation {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -92,7 +92,7 @@ public class ViduCreation {
     public String getUri() {
         return this.uri;
     }
-    
+
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -100,7 +100,7 @@ public class ViduCreation {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -108,7 +108,7 @@ public class ViduCreation {
     public String getVideoUrl() {
         return this.videoUrl;
     }
-    
+
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
     }
@@ -116,7 +116,7 @@ public class ViduCreation {
     public Integer getWidth() {
         return this.width;
     }
-    
+
     public void setWidth(Integer width) {
         this.width = width;
     }

@@ -41,11 +41,7 @@ const body = {
   tenantCode: 'tenantCode',
   username: 'username',
 };
-const xRequestId = 'X-Request-Id';
-const params = {
-  xRequestId,
-};
-const result = await client.auth.sessions.create(body, params);
+const result = await client.auth.sessions.create(body);
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -57,7 +53,7 @@ Choose exactly one mode for the same client instance.
 ```typescript
 const client = new SdkworkAppClient({ baseUrl: 'http://localhost:18082' });
 client.setApiKey('your-api-key');
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -68,7 +64,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -101,9 +97,9 @@ const client = new SdkworkAppClient({
 - `client.notification` - notification API
 - `client.openPlatform` - open_platform API
 - `client.platform` - platform API
+- `client.system` - system API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
-- `client.system` - system API
 
 ## Usage Examples
 
@@ -117,7 +113,7 @@ const result = await client.commerce.accounts.current.summary.retrieve();
 ### agents
 
 ```typescript
-// List user agents
+// List Playground agent definitions
 const params = {
   page: 1,
   page_size: 2,
@@ -152,11 +148,7 @@ const body = {
   tenantCode: 'tenantCode',
   username: 'username',
 };
-const xRequestId = 'X-Request-Id';
-const params = {
-  xRequestId,
-};
-const result = await client.auth.sessions.create(body, params);
+const result = await client.auth.sessions.create(body);
 ```
 
 ### chat
@@ -232,6 +224,13 @@ const result = await client.openPlatform.qrAuth.sessions.create(body);
 const result = await client.platform.apps.store.categories.list();
 ```
 
+### system
+
+```typescript
+// Retrieve public IAM verification policy
+const result = await client.system.iam.verificationPolicy.retrieve();
+```
+
 ### runtime
 
 ```typescript
@@ -275,17 +274,6 @@ const body = {
 const result = await client.sdkReference.archives.create(body);
 ```
 
-### system
-
-```typescript
-// Retrieve public site runtime branding settings
-const params = {
-  tenant_code: 'tenant_code',
-  organization_code: 'organization_code',
-};
-const result = await client.system.site.runtime.retrieve(params);
-```
-
 ## Error Handling
 
 ```typescript
@@ -307,11 +295,7 @@ try {
     tenantCode: 'tenantCode',
     username: 'username',
   };
-  const xRequestId = 'X-Request-Id';
-  const params = {
-    xRequestId,
-  };
-  const result = await client.auth.sessions.create(body, params);
+  const result = await client.auth.sessions.create(body);
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

@@ -15,7 +15,7 @@ public class GoogleCachedContentCreateRequest {
     public List<GoogleContent> getContents() {
         return this.contents;
     }
-    
+
     public void setContents(List<GoogleContent> contents) {
         this.contents = contents;
     }
@@ -23,7 +23,7 @@ public class GoogleCachedContentCreateRequest {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -31,7 +31,7 @@ public class GoogleCachedContentCreateRequest {
     public String getExpireTime() {
         return this.expireTime;
     }
-    
+
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
@@ -39,7 +39,7 @@ public class GoogleCachedContentCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -47,7 +47,7 @@ public class GoogleCachedContentCreateRequest {
     public GoogleContent getSystemInstruction() {
         return this.systemInstruction;
     }
-    
+
     public void setSystemInstruction(GoogleContent systemInstruction) {
         this.systemInstruction = systemInstruction;
     }
@@ -55,7 +55,7 @@ public class GoogleCachedContentCreateRequest {
     public GoogleToolConfig getToolConfig() {
         return this.toolConfig;
     }
-    
+
     public void setToolConfig(GoogleToolConfig toolConfig) {
         this.toolConfig = toolConfig;
     }
@@ -63,7 +63,7 @@ public class GoogleCachedContentCreateRequest {
     public List<GoogleTool> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<GoogleTool> tools) {
         this.tools = tools;
     }
@@ -71,7 +71,7 @@ public class GoogleCachedContentCreateRequest {
     public String getTtl() {
         return this.ttl;
     }
-    
+
     public void setTtl(String ttl) {
         this.ttl = ttl;
     }

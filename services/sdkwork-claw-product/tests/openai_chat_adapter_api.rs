@@ -1,3 +1,4 @@
+use std::collections::BTreeMap;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -14,6 +15,7 @@ use sdkwork_claw_product::domain::{
     RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::provider::ProviderSecretMapResolver;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::{ChatCompletionRelay, ChatCompletionRelayRequest};
 use sdkwork_claw_provider_adapter_contract::{
@@ -56,6 +58,31 @@ struct FakeAdapterServer {
     calls: Arc<Mutex<Vec<AdapterInvocationRequest>>>,
 }
 
+fn provider_secret_resolver(
+    secret_ref: &str,
+    secret_value: &str,
+) -> Arc<ProviderSecretMapResolver> {
+    let mut secrets = BTreeMap::new();
+    secrets.insert(secret_ref.to_owned(), secret_value.to_owned());
+    Arc::new(ProviderSecretMapResolver::from_managed_secrets(secrets))
+}
+
+fn assert_gateway_resolved_secret(secret: &AdapterSecret, expected_value: &str) {
+    let AdapterSecret::GatewayResolved(payload) = secret else {
+        panic!("expected gateway resolved adapter secret, got {secret:?}");
+    };
+    assert_eq!("bearer", payload["auth"]["type"]);
+    assert_eq!(expected_value, payload["auth"]["value"]);
+    assert_eq!(serde_json::Value::Null, payload["auth"]["name"]);
+    assert!(payload["defaultHeaders"]
+        .as_array()
+        .expect("defaultHeaders must be an array")
+        .is_empty());
+    assert!(!serde_json::to_string(secret)
+        .unwrap()
+        .contains("vault://providers/openrouter/account/main"));
+}
+
 #[tokio::test]
 async fn openai_chat_registry_hit_calls_internal_adapter_without_direct_relay() {
     let fake_adapter = spawn_fake_adapter_server().await;
@@ -70,7 +97,11 @@ async fn openai_chat_registry_hit_calls_internal_adapter_without_direct_relay() 
                 fake_adapter.base_url.as_str(),
             )])),
             sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient::new("test-token"),
-        );
+        )
+        .with_secret_resolver(provider_secret_resolver(
+            "vault://providers/openrouter/account/main",
+            "sk-openrouter-main",
+        ));
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
@@ -114,18 +145,61 @@ async fn openai_chat_registry_hit_calls_internal_adapter_without_direct_relay() 
     );
     assert_eq!("openrouter", adapter_call.provider.provider_code);
     assert_eq!(3001, adapter_call.provider.channel_id);
-    assert_eq!(
-        "openai/global/gpt-4o-mini",
-        adapter_call.provider.provider_model
-    );
-    assert!(matches!(
-        &adapter_call.secret,
-        AdapterSecret::AdapterResolved { secret_ref }
-            if secret_ref == "vault://providers/openrouter/account/main"
-    ));
+    assert_eq!("gpt-4o-mini", adapter_call.provider.provider_model);
+    assert_gateway_resolved_secret(&adapter_call.secret, "sk-openrouter-main");
     drop(adapter_calls);
     let payload = response_json(response).await;
     assert_eq!("chatcmpl-adapter", payload["id"]);
+}
+
+#[tokio::test]
+async fn openai_chat_registry_hit_requires_gateway_secret_resolution() {
+    let fake_adapter = spawn_fake_adapter_server().await;
+    let direct_calls = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay {
+        captured: Arc::clone(&direct_calls),
+    });
+    let adapter_relay =
+        sdkwork_claw_product::infrastructure::provider::AdapterAwareChatCompletionRelay::new(
+            relay,
+            Arc::new(ProviderAdapterRegistry::new(vec![adapter_route(
+                fake_adapter.base_url.as_str(),
+            )])),
+            sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient::new("test-token"),
+        );
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        hasher,
+        Arc::new(adapter_relay),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_GATEWAY, response.status());
+    assert!(direct_calls.lock().unwrap().is_empty());
+    assert!(fake_adapter.calls.lock().unwrap().is_empty());
+    let payload = response_json(response).await;
+    assert_eq!("provider_relay_failed", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("provider secret resolver is required"));
 }
 
 #[tokio::test]

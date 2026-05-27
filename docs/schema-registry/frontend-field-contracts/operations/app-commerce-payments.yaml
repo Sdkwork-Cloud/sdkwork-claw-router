@@ -146,7 +146,6 @@ frontend_operations:
   summary: Payments Intents Create
   description: Standard appbase commerce API for payments.intents.create; no legacy billing compatibility route is exposed.
   read_sources: *appPaymentReadSources
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_payment_intent
@@ -294,7 +293,6 @@ frontend_operations:
   summary: Payments Intents Attempts Create
   description: Standard appbase commerce API for payments.intents.attempts.create; no legacy billing compatibility route is exposed.
   read_sources: *appPaymentReadSources
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_payment_attempt

@@ -44,7 +44,7 @@ Choose exactly one mode for the same client instance.
 cfg := sdkhttp.NewDefaultConfig("http://localhost:18081")
 client := github.com/sdkwork/clawrouter-backend-sdk.NewSdkworkBackendClientWithConfig(cfg)
 client.SetApiKey("your-api-key")
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -56,7 +56,7 @@ client.SetAuthToken("your-auth-token")
 client.SetAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
@@ -80,9 +80,14 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
+- `client.Mcp` - mcp API
+- `client.Messaging` - messaging API
 - `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
 - `client.System` - system API
+- `client.Prompts` - prompts API
+- `client.ServiceProviders` - service_providers API
+- `client.Storage` - storage API
 
 ## Usage Examples
 
@@ -171,6 +176,45 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### mcp
+
+```go
+// List MCP servers
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+    "transport": "transport",
+    "visibility": "visibility",
+    "status": "status",
+    "category_id": "category_id",
+}
+result, err := client.Mcp.ServersList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### messaging
+
+```go
+// Messaging provider accounts list
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+    "status": "status",
+    "channel": "sms",
+    "provider_code": "provider_code",
+}
+result, err := client.Messaging.ProviderAccountsList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### open_platform
 
 ```go
@@ -201,6 +245,57 @@ fmt.Println(result)
 ```go
 // Retrieve IAM auth runtime settings
 result, err := client.System.AuthSettingsRetrieve()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### prompts
+
+```go
+// List admin prompts
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+    "prompt_type": "prompt_type",
+    "visibility": "visibility",
+    "status": "status",
+    "category_id": "category_id",
+}
+result, err := client.Prompts.DefinitionsList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### service_providers
+
+```go
+// Service Provider Adjustments List
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+    "status": "status",
+    "provider_id": "provider_id",
+    "seller_provider_id": "seller_provider_id",
+    "buyer_provider_id": "buyer_provider_id",
+    "edge_id": "edge_id",
+}
+result, err := client.ServiceProviders.AdjustmentsList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### storage
+
+```go
+// List storage providers
+result, err := client.Storage.OssProvidersList()
 if err != nil {
     panic(err)
 }

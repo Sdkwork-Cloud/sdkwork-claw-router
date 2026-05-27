@@ -10,7 +10,7 @@ import { SdkworkSubscriptionStageShell } from "../src/components/subscription-st
 const selectedPlan = {
   description: "Best for professional creators.",
   durationDays: 30,
-  id: "vip-plan-2",
+  id: "membership-plan-2",
   includedPoints: 5000,
   name: "Pro Monthly",
   originalPriceCny: null,
@@ -36,13 +36,13 @@ const summary = {
   currentLevelValue: 3,
   growthValue: 180,
   isAuthenticated: true,
-  isVip: true,
+  isMember: true,
   pointBalance: 2400,
   remainingDays: 88,
-  status: "vip" as const,
+  status: "active" as const,
   totalSpent: 399,
   upgradeGrowthValue: 500,
-  vipPoints: 3200,
+  points: 3200,
 };
 
 describe("sdkwork-subscription-pc-react stage shell", () => {

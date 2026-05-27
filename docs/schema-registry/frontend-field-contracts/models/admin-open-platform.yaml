@@ -1,50 +1,5 @@
 fragment: models/admin-open-platform
 frontend_models:
-- route: /admin/service-providers/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
-  interface: ServiceProviderAccountItem
-  fields:
-  - id
-  - key
-  - name
-  - provider
-  - type
-  - status
-  - qrDefault
-  - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
-  - createdAt
-  - updatedAt
-  data_sources:
-  - open_platform_account
-- route: /admin/service-providers/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
-  interface: ServiceProviderAccountRow
-  fields:
-  - providerId
-  - providerCode
-  - providerName
-  - providerStatus
-  - account
-  data_sources:
-  - open_platform_provider
-  - open_platform_account
-- route: /admin/service-providers/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
-  interface: ServiceProviderAccountCreateInput
-  fields:
-  - key
-  - name
-  - provider
-  - type
-  - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
-  data_sources:
-  - open_platform_account
 - route: /admin/open-platform/mini-programs/accounts
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   interface: WechatMiniProgramItem
@@ -56,9 +11,9 @@ frontend_models:
   - qrDefault
   - defaultEntryId
   - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
+  - hasAppSecret
+  - hasToken
+  - hasEncodingAesKey
   - createdAt
   - updatedAt
   data_sources:
@@ -84,9 +39,9 @@ frontend_models:
   - key
   - name
   - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
+  - appSecret
+  - token
+  - encodingAesKey
   data_sources:
   - open_platform_account
 - route: /admin/open-platform/mini-programs/accounts
@@ -98,9 +53,9 @@ frontend_models:
   - qrDefault
   - defaultEntryId
   - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
+  - appSecret
+  - token
+  - encodingAesKey
   data_sources:
   - open_platform_account
 - route: /admin/open-platform/mini-programs/urls
@@ -131,9 +86,9 @@ frontend_models:
   - qrDefault
   - defaultEntryId
   - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
+  - hasAppSecret
+  - hasToken
+  - hasEncodingAesKey
   - createdAt
   - updatedAt
   data_sources:
@@ -159,9 +114,9 @@ frontend_models:
   - key
   - name
   - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
+  - appSecret
+  - token
+  - encodingAesKey
   data_sources:
   - open_platform_account
 - route: /admin/open-platform/official-accounts/accounts
@@ -173,9 +128,9 @@ frontend_models:
   - qrDefault
   - defaultEntryId
   - appId
-  - tokenRef
-  - secretRef
-  - aesKeyRef
+  - appSecret
+  - token
+  - encodingAesKey
   data_sources:
   - open_platform_account
 - route: /admin/open-platform/official-accounts/menus

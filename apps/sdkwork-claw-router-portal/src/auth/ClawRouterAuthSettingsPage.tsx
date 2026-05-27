@@ -169,18 +169,11 @@ export function ClawRouterAuthSettingsPage() {
   }
 
   return (
-    <div className="w-full min-w-0 space-y-6">
-      <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 dark:border-white/10 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
-            <ShieldCheck className="h-6 w-6 text-blue-500" />
-            {t('admin.authSettings.title')}
-          </h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            {t('admin.authSettings.description')}
-          </p>
-        </div>
-        <div className="flex gap-3">
+    <div
+      aria-label={t('admin.authSettings.title')}
+      className="flex h-[calc(100vh-112px)] max-h-[calc(100vh-112px)] min-h-0 w-full min-w-0 flex-col gap-3 overflow-hidden md:h-[calc(100vh-128px)] md:max-h-[calc(100vh-128px)]"
+    >
+      <div className="flex shrink-0 justify-end gap-3 border-b border-slate-200 pb-3 dark:border-white/10">
           <button
             type="button"
             onClick={() => void loadSettings()}
@@ -198,155 +191,168 @@ export function ClawRouterAuthSettingsPage() {
             {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
             {t('common.actions.save')}
           </button>
-        </div>
       </div>
 
       {saveError ? (
-        <div role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+        <div role="alert" className="shrink-0 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
           {saveError}
         </div>
       ) : null}
       {saveSuccess ? (
-        <div role="status" className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300">
+        <div role="status" className="shrink-0 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300">
           {saveSuccess}
         </div>
       ) : null}
 
-      <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] min-[1800px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(380px,0.72fr)]">
-        <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-          <SectionHeader icon={<Settings2 className="h-5 w-5 text-blue-500" />} title={t('admin.authSettings.sections.runtime')} />
-          <div className="mt-5 space-y-6">
-            <SegmentedControl
-              label={t('admin.authSettings.fields.leftRail')}
-              value={form.leftRailMode}
-              options={[
-                { label: t('admin.authSettings.options.leftRail.auto'), value: 'auto' },
-                { label: t('admin.authSettings.options.leftRail.highlights'), value: 'highlights-only' },
-                { label: t('admin.authSettings.options.leftRail.qrOnly'), value: 'qr-only' },
-              ]}
-              onChange={(leftRailMode) => setForm((current) => ({
-                ...current,
-                leftRailMode,
-                qrLoginEnabled: leftRailMode === 'qr-only' ? true : current.qrLoginEnabled,
-              }))}
-            />
-            <CheckboxGroup
-              label={t('admin.authSettings.fields.loginMethods')}
-              options={LOGIN_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
-              values={form.loginMethods}
-              onChange={(loginMethods) => setForm((current) => withLoginMethods(current, loginMethods))}
-            />
-            <CheckboxGroup
-              label={t('admin.authSettings.fields.registrationMethods')}
-              options={REGISTER_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
-              values={form.registerMethods}
-              onChange={(registerMethods) => setForm((current) => ({
-                ...current,
-                registerMethods: registerMethods.length > 0 ? registerMethods : ['email'],
-              }))}
-            />
-            <CheckboxGroup
-              label={t('admin.authSettings.fields.recoveryMethods')}
-              options={RECOVERY_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
-              values={form.recoveryMethods}
-              onChange={(recoveryMethods) => setForm((current) => ({
-                ...current,
-                recoveryMethods: recoveryMethods.length > 0 ? recoveryMethods : ['email'],
-              }))}
-            />
-          </div>
-        </section>
+      <div
+        data-admin-auth-settings-body
+        className="min-h-0 flex-1 overflow-y-auto pr-1 custom-scrollbar xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.72fr)] xl:gap-5 xl:overflow-hidden xl:pr-0"
+      >
+        <div
+          data-admin-auth-settings-main
+          className="space-y-5 xl:min-h-0 xl:overflow-y-auto xl:pr-1 custom-scrollbar"
+        >
+          <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
+            <SectionHeader icon={<Settings2 className="h-5 w-5 text-blue-500" />} title={t('admin.authSettings.sections.runtime')} />
+            <div className="mt-5 space-y-6">
+              <SegmentedControl
+                label={t('admin.authSettings.fields.leftRail')}
+                value={form.leftRailMode}
+                options={[
+                  { label: t('admin.authSettings.options.leftRail.auto'), value: 'auto' },
+                  { label: t('admin.authSettings.options.leftRail.highlights'), value: 'highlights-only' },
+                  { label: t('admin.authSettings.options.leftRail.qrOnly'), value: 'qr-only' },
+                ]}
+                onChange={(leftRailMode) => setForm((current) => ({
+                  ...current,
+                  leftRailMode,
+                  qrLoginEnabled: leftRailMode === 'qr-only' ? true : current.qrLoginEnabled,
+                }))}
+              />
+              <CheckboxGroup
+                label={t('admin.authSettings.fields.loginMethods')}
+                options={LOGIN_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
+                values={form.loginMethods}
+                onChange={(loginMethods) => setForm((current) => withLoginMethods(current, loginMethods))}
+              />
+              <CheckboxGroup
+                label={t('admin.authSettings.fields.registrationMethods')}
+                options={REGISTER_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
+                values={form.registerMethods}
+                onChange={(registerMethods) => setForm((current) => ({
+                  ...current,
+                  registerMethods: registerMethods.length > 0 ? registerMethods : ['email'],
+                }))}
+              />
+              <CheckboxGroup
+                label={t('admin.authSettings.fields.recoveryMethods')}
+                options={RECOVERY_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
+                values={form.recoveryMethods}
+                onChange={(recoveryMethods) => setForm((current) => ({
+                  ...current,
+                  recoveryMethods: recoveryMethods.length > 0 ? recoveryMethods : ['email'],
+                }))}
+              />
+            </div>
+          </section>
 
-        <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-          <SectionHeader icon={<QrCode className="h-5 w-5 text-emerald-500" />} title={t('admin.authSettings.sections.oauthQr')} />
-          <div className="mt-5 space-y-5">
-            <ToggleRow
-              label={t('admin.authSettings.fields.qrLogin')}
-              checked={form.qrLoginEnabled}
-              onChange={() => setForm((current) => ({
-                ...current,
-                leftRailMode: current.qrLoginEnabled && current.leftRailMode === 'qr-only'
-                  ? 'highlights-only'
-                  : current.leftRailMode,
-                qrLoginEnabled: !current.qrLoginEnabled,
-              }))}
-            />
-            <SegmentedControl
-              label={t('admin.authSettings.fields.qrLoginType')}
-              value={form.qrLoginType}
-              options={QR_LOGIN_TYPE_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
-              onChange={(qrLoginType) => setForm((current) => ({ ...current, qrLoginType }))}
-            />
-            <WechatChannelEditor
-              kind="official"
-              values={form.wechat.official}
-              onChange={(official) => setForm((current) => ({
-                ...current,
-                wechat: { ...current.wechat, official },
-              }))}
-            />
-            <WechatChannelEditor
-              kind="mini"
-              values={form.wechat.mini}
-              onChange={(mini) => setForm((current) => ({
-                ...current,
-                wechat: { ...current.wechat, mini },
-              }))}
-            />
-            <ToggleRow
-              label={t('admin.authSettings.fields.oauthLogin')}
-              checked={form.oauthLoginEnabled}
-              onChange={() => setForm((current) => ({ ...current, oauthLoginEnabled: !current.oauthLoginEnabled }))}
-            />
-            <SegmentedControl
-              label={t('admin.authSettings.fields.oauthRegion')}
-              value={form.oauthRegion}
-              options={[
-                { label: t('admin.authSettings.options.oauthRegion.mainland'), value: 'mainland' },
-                { label: t('admin.authSettings.options.oauthRegion.overseas'), value: 'overseas' },
-              ]}
-              onChange={(oauthRegion) => setForm((current) => ({ ...current, oauthRegion }))}
-            />
-            <OAuthProviderEditor
-              label={t('admin.authSettings.fields.oauthProviderCodes')}
-              values={form.oauthProviders}
-              onChange={(oauthProviders) => setForm((current) => ({ ...current, oauthProviders }))}
-            />
-          </div>
-        </section>
-        <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a] xl:col-span-2 min-[1800px]:col-span-1">
-          <SectionHeader icon={<ShieldCheck className="h-5 w-5 text-amber-500" />} title={t('admin.authSettings.sections.verificationPolicy')} />
-          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 min-[1800px]:grid-cols-1">
-            <ToggleRow
-              label={t('admin.authSettings.fields.emailCodeLogin')}
-              checked={form.verificationPolicy.emailCodeLoginEnabled}
-              onChange={() => updateVerificationPolicy('emailCodeLoginEnabled', !form.verificationPolicy.emailCodeLoginEnabled, setForm)}
-            />
-            <ToggleRow
-              label={t('admin.authSettings.fields.phoneCodeLogin')}
-              checked={form.verificationPolicy.phoneCodeLoginEnabled}
-              onChange={() => updateVerificationPolicy('phoneCodeLoginEnabled', !form.verificationPolicy.phoneCodeLoginEnabled, setForm)}
-            />
-            <ToggleRow
-              label={t('admin.authSettings.fields.emailRegistrationVerification')}
-              checked={form.verificationPolicy.emailRegistrationVerificationRequired}
-              onChange={() => updateVerificationPolicy(
-                'emailRegistrationVerificationRequired',
-                !form.verificationPolicy.emailRegistrationVerificationRequired,
-                setForm,
-              )}
-            />
-            <ToggleRow
-              label={t('admin.authSettings.fields.phoneRegistrationVerification')}
-              checked={form.verificationPolicy.phoneRegistrationVerificationRequired}
-              onChange={() => updateVerificationPolicy(
-                'phoneRegistrationVerificationRequired',
-                !form.verificationPolicy.phoneRegistrationVerificationRequired,
-                setForm,
-              )}
-            />
-          </div>
-        </section>
+          <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
+            <SectionHeader icon={<ShieldCheck className="h-5 w-5 text-amber-500" />} title={t('admin.authSettings.sections.verificationPolicy')} />
+            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <ToggleRow
+                label={t('admin.authSettings.fields.emailCodeLogin')}
+                checked={form.verificationPolicy.emailCodeLoginEnabled}
+                onChange={() => updateVerificationPolicy('emailCodeLoginEnabled', !form.verificationPolicy.emailCodeLoginEnabled, setForm)}
+              />
+              <ToggleRow
+                label={t('admin.authSettings.fields.phoneCodeLogin')}
+                checked={form.verificationPolicy.phoneCodeLoginEnabled}
+                onChange={() => updateVerificationPolicy('phoneCodeLoginEnabled', !form.verificationPolicy.phoneCodeLoginEnabled, setForm)}
+              />
+              <ToggleRow
+                label={t('admin.authSettings.fields.emailRegistrationVerification')}
+                checked={form.verificationPolicy.emailRegistrationVerificationRequired}
+                onChange={() => updateVerificationPolicy(
+                  'emailRegistrationVerificationRequired',
+                  !form.verificationPolicy.emailRegistrationVerificationRequired,
+                  setForm,
+                )}
+              />
+              <ToggleRow
+                label={t('admin.authSettings.fields.phoneRegistrationVerification')}
+                checked={form.verificationPolicy.phoneRegistrationVerificationRequired}
+                onChange={() => updateVerificationPolicy(
+                  'phoneRegistrationVerificationRequired',
+                  !form.verificationPolicy.phoneRegistrationVerificationRequired,
+                  setForm,
+                )}
+              />
+            </div>
+          </section>
+        </div>
+
+        <div
+          data-admin-auth-settings-right
+          className="mt-5 xl:mt-0 xl:min-h-0 xl:overflow-y-auto xl:pr-1 custom-scrollbar"
+        >
+          <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
+            <SectionHeader icon={<QrCode className="h-5 w-5 text-emerald-500" />} title={t('admin.authSettings.sections.oauthQr')} />
+            <div className="mt-5 space-y-5">
+              <ToggleRow
+                label={t('admin.authSettings.fields.qrLogin')}
+                checked={form.qrLoginEnabled}
+                onChange={() => setForm((current) => ({
+                  ...current,
+                  leftRailMode: current.qrLoginEnabled && current.leftRailMode === 'qr-only'
+                    ? 'highlights-only'
+                    : current.leftRailMode,
+                  qrLoginEnabled: !current.qrLoginEnabled,
+                }))}
+              />
+              <SegmentedControl
+                label={t('admin.authSettings.fields.qrLoginType')}
+                value={form.qrLoginType}
+                options={QR_LOGIN_TYPE_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
+                onChange={(qrLoginType) => setForm((current) => ({ ...current, qrLoginType }))}
+              />
+              <WechatChannelEditor
+                kind="official"
+                values={form.wechat.official}
+                onChange={(official) => setForm((current) => ({
+                  ...current,
+                  wechat: { ...current.wechat, official },
+                }))}
+              />
+              <WechatChannelEditor
+                kind="mini"
+                values={form.wechat.mini}
+                onChange={(mini) => setForm((current) => ({
+                  ...current,
+                  wechat: { ...current.wechat, mini },
+                }))}
+              />
+              <ToggleRow
+                label={t('admin.authSettings.fields.oauthLogin')}
+                checked={form.oauthLoginEnabled}
+                onChange={() => setForm((current) => ({ ...current, oauthLoginEnabled: !current.oauthLoginEnabled }))}
+              />
+              <SegmentedControl
+                label={t('admin.authSettings.fields.oauthRegion')}
+                value={form.oauthRegion}
+                options={[
+                  { label: t('admin.authSettings.options.oauthRegion.mainland'), value: 'mainland' },
+                  { label: t('admin.authSettings.options.oauthRegion.overseas'), value: 'overseas' },
+                ]}
+                onChange={(oauthRegion) => setForm((current) => ({ ...current, oauthRegion }))}
+              />
+              <OAuthProviderEditor
+                label={t('admin.authSettings.fields.oauthProviderCodes')}
+                values={form.oauthProviders}
+                onChange={(oauthProviders) => setForm((current) => ({ ...current, oauthProviders }))}
+              />
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

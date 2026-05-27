@@ -32,57 +32,113 @@ async fn active_config_for(
 ) -> DomainResult<Option<VerificationDeliveryConfig>> {
     let channel = normalize_token(&query.channel);
     let scene = normalize_token(&query.scene);
-    let rows = sqlx::query(
+    sqlx::query(
         r#"
         SELECT
-            c.id AS channel_id,
-            c.tenant_id,
-            c.organization_id,
-            c.provider_code,
-            COALESCE(c.base_url, '') AS base_url,
-            COALESCE(c.capabilities::text, '[]') AS capabilities_json,
-            COALESCE(c.priority, 100) AS priority,
-            COALESCE(c.weight, 0) AS weight,
+            r.id AS route_rule_id,
+            r.tenant_id,
+            r.organization_id,
+            t.provider_code,
+            COALESCE(a.base_url, '') AS base_url,
+            COALESCE(r.priority, 100) AS priority,
+            COALESCE(t.weight, r.weight, 0) AS weight,
             a.id AS account_id,
             COALESCE(a.account_code, '') AS account_code,
             COALESCE(a.secret_ref, '') AS secret_ref,
-            COALESCE(a.auth_config::text, '{}') AS auth_config_json
-        FROM integration_channel c
+            t.sender_identity_id AS sender_identity_id,
+            COALESCE(si.from_email, si.sign_name, si.sender_id, si.display_name, '') AS sender,
+            p.template_code AS template_code
+        FROM messaging_route_rule r
+        JOIN iam_verification_scene_policy p
+          ON p.tenant_id = r.tenant_id
+         AND p.organization_id = r.organization_id
+         AND p.scene_code = r.scene_code
+         AND p.template_code <> ''
+         AND p.status = 1
+         AND p.deleted_at IS NULL
+        JOIN messaging_route_rule_target t
+          ON t.tenant_id = r.tenant_id
+         AND t.organization_id = r.organization_id
+         AND t.route_rule_id = r.id
+         AND t.status = 1
+         AND t.deleted_at IS NULL
+         AND t.target_order = (
+             SELECT MIN(t2.target_order)
+             FROM messaging_route_rule_target t2
+             JOIN messaging_provider_capability pc2
+               ON pc2.tenant_id = t2.tenant_id
+              AND pc2.organization_id = t2.organization_id
+              AND pc2.provider_account_id = t2.provider_account_id
+              AND pc2.provider_code = t2.provider_code
+              AND pc2.channel = r.channel
+              AND pc2.delivery_purpose = 'verification'
+              AND pc2.status = 1
+              AND pc2.deleted_at IS NULL
+             WHERE t2.tenant_id = r.tenant_id
+               AND t2.organization_id = r.organization_id
+               AND t2.route_rule_id = r.id
+               AND t2.status = 1
+               AND t2.deleted_at IS NULL
+         )
+        JOIN messaging_provider_capability pc
+          ON pc.tenant_id = t.tenant_id
+         AND pc.organization_id = t.organization_id
+         AND pc.provider_account_id = t.provider_account_id
+         AND pc.provider_code = t.provider_code
+         AND pc.channel = r.channel
+         AND pc.delivery_purpose = 'verification'
+         AND pc.status = 1
+         AND pc.deleted_at IS NULL
         JOIN integration_provider_account a
-          ON a.id = c.account_id
-         AND a.tenant_id = c.tenant_id
-         AND a.organization_id = c.organization_id
+          ON a.id = t.provider_account_id
+         AND a.tenant_id = t.tenant_id
+         AND a.organization_id = t.organization_id
          AND a.status = 1
          AND a.deleted_at IS NULL
-        WHERE c.tenant_id = $1
-          AND c.organization_id = $2
-          AND c.status = 1
-          AND c.deleted_at IS NULL
-        ORDER BY COALESCE(c.priority, 100) ASC, COALESCE(c.weight, 0) DESC, c.id DESC
+        LEFT JOIN messaging_sender_identity si
+          ON si.id = t.sender_identity_id
+         AND si.tenant_id = t.tenant_id
+         AND si.organization_id = t.organization_id
+         AND si.status = 1
+         AND si.deleted_at IS NULL
+        LEFT JOIN messaging_template mt
+          ON mt.tenant_id = r.tenant_id
+         AND mt.organization_id = r.organization_id
+         AND mt.scene_code = r.scene_code
+         AND mt.channel = r.channel
+         AND mt.delivery_purpose = r.delivery_purpose
+         AND mt.template_code = p.template_code
+         AND mt.publish_status = 'published'
+         AND mt.status = 1
+         AND mt.deleted_at IS NULL
+        WHERE r.tenant_id = $1
+          AND r.organization_id = $2
+          AND r.scene_code = $3
+          AND r.channel = $4
+          AND r.delivery_purpose = 'verification'
+          AND mt.id IS NOT NULL
+          AND r.status = 1
+          AND r.deleted_at IS NULL
+        ORDER BY COALESCE(r.priority, 100) ASC, COALESCE(t.weight, r.weight, 0) DESC, r.id DESC
+        LIMIT 1
         "#,
     )
     .bind(query.tenant_id)
     .bind(query.organization_id)
-    .fetch_all(pool)
+    .bind(&scene)
+    .bind(&channel)
+    .fetch_optional(pool)
     .await
-    .map_err(|error| store_error("failed to read verification delivery config", error))?;
-
-    for row in rows {
-        let capabilities_json = string_cell(&row, "capabilities_json");
-        let capabilities = parse_string_list(&capabilities_json);
-        if !matches_channel(&capabilities, &channel) || !matches_scene(&capabilities, &scene) {
-            continue;
-        }
+    .map_err(|error| store_error("failed to read verification delivery config", error))?
+    .map(|row| {
         let secret_ref = string_cell(&row, "secret_ref");
         if secret_ref.trim().is_empty() {
             return Err(DomainError::new(format!(
                 "verification code delivery provider is missing secret_ref for channel {channel} scene {scene}"
             )));
         }
-        let auth_config_json = string_cell(&row, "auth_config_json");
-        let auth_config = parse_json_object(&auth_config_json);
-        return Ok(Some(VerificationDeliveryConfig {
-            channel_id: integer_cell(&row, "channel_id"),
+        Ok(VerificationDeliveryConfig {
+            route_rule_id: integer_cell(&row, "route_rule_id"),
             account_id: integer_cell(&row, "account_id"),
             tenant_id: integer_cell(&row, "tenant_id"),
             organization_id: integer_cell(&row, "organization_id"),
@@ -92,60 +148,14 @@ async fn active_config_for(
             account_code: string_cell(&row, "account_code"),
             secret_ref,
             base_url: optional_non_empty(string_cell(&row, "base_url")),
-            template_code: config_value(&auth_config, &["templateCode", "template_code"]),
-            sender: config_value(&auth_config, &["sender", "from", "signName", "sign_name"]),
+            template_code: optional_non_empty(string_cell(&row, "template_code")),
+            sender_identity_id: optional_integer_cell(&row, "sender_identity_id"),
+            sender: optional_non_empty(string_cell(&row, "sender")),
             priority: integer_cell(&row, "priority"),
             weight: integer_cell(&row, "weight"),
-        }));
-    }
-    Ok(None)
-}
-
-fn matches_channel(capabilities: &[String], channel: &str) -> bool {
-    let channel_capability = format!("verification:{channel}");
-    capabilities
-        .iter()
-        .any(|capability| capability == channel || capability == &channel_capability)
-}
-
-fn matches_scene(capabilities: &[String], scene: &str) -> bool {
-    let scene_capability = format!("verification:scene:{scene}");
-    capabilities
-        .iter()
-        .any(|capability| capability == &scene_capability)
-        || capabilities
-            .iter()
-            .all(|capability| !capability.starts_with("verification:scene:"))
-}
-
-fn parse_string_list(raw: &str) -> Vec<String> {
-    serde_json::from_str::<Vec<String>>(raw)
-        .unwrap_or_default()
-        .into_iter()
-        .map(|value| normalize_token(&value))
-        .filter(|value| !value.is_empty())
-        .collect()
-}
-
-fn parse_json_object(raw: &str) -> serde_json::Map<String, serde_json::Value> {
-    serde_json::from_str::<serde_json::Value>(raw)
-        .ok()
-        .and_then(|value| value.as_object().cloned())
-        .unwrap_or_default()
-}
-
-fn config_value(
-    object: &serde_json::Map<String, serde_json::Value>,
-    keys: &[&str],
-) -> Option<String> {
-    keys.iter().find_map(|key| {
-        object
-            .get(*key)
-            .and_then(|value| value.as_str())
-            .map(str::trim)
-            .filter(|value| !value.is_empty())
-            .map(str::to_owned)
+        })
     })
+    .transpose()
 }
 
 fn normalize_token(value: &str) -> String {
@@ -166,7 +176,19 @@ fn string_cell(row: &sqlx::postgres::PgRow, name: &str) -> String {
 }
 
 fn integer_cell(row: &sqlx::postgres::PgRow, name: &str) -> i64 {
-    row.try_get::<i64, _>(name).unwrap_or_default()
+    row.try_get::<i64, _>(name)
+        .or_else(|_| row.try_get::<i32, _>(name).map(i64::from))
+        .unwrap_or_default()
+}
+
+fn optional_integer_cell(row: &sqlx::postgres::PgRow, name: &str) -> Option<i64> {
+    row.try_get::<Option<i64>, _>(name)
+        .or_else(|_| {
+            row.try_get::<Option<i32>, _>(name)
+                .map(|value| value.map(i64::from))
+        })
+        .ok()
+        .flatten()
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {

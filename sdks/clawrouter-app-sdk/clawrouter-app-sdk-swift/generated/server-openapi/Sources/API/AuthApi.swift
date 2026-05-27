@@ -2,7 +2,7 @@ import Foundation
 
 public class AuthApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
@@ -33,21 +33,6 @@ public class AuthApi {
         return try await client.post(ApiPaths.appPath("/auth/password_resets"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: PasswordResetsCreateResult.self)
     }
 
-    /// Create QR login code
-    public func loginQrCodesCreate() async throws -> LoginQrCodesCreateResult? {
-        return try await client.post(ApiPaths.appPath("/auth/qr_login_codes"), body: nil, responseType: LoginQrCodesCreateResult.self)
-    }
-
-    /// Confirm QR login code
-    public func loginQrCodesConfirm(body: IamLoginQrCodeConfirmRequest) async throws -> LoginQrCodesConfirmResult? {
-        return try await client.post(ApiPaths.appPath("/auth/qr_login_codes/confirm"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: LoginQrCodesConfirmResult.self)
-    }
-
-    /// Retrieve QR login status
-    public func loginQrCodesRetrieve(qrKey: String) async throws -> LoginQrCodesRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/auth/qr_login_codes/\(serializePathParameter(qrKey, PathParameterSpec(name: "qrKey", style: "simple", explode: false)))"), responseType: LoginQrCodesRetrieveResult.self)
-    }
-
     /// Create IAM registration
     public func registrationsCreate(body: IamRegistrationCreateRequest, xRequestId: String? = nil) async throws -> RegistrationsCreateResult? {
         let requestHeaders = buildRequestHeaders(
@@ -57,15 +42,6 @@ public class AuthApi {
             [:]
         )
         return try await client.post(ApiPaths.appPath("/auth/registrations"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RegistrationsCreateResult.self)
-    }
-
-    /// Retrieve public IAM auth runtime settings
-    public func runtimeSettingsRetrieve(tenantCode: String? = nil, organizationCode: String? = nil) async throws -> RuntimeSettingsRetrieveResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "tenant_code", value: tenantCode, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "organization_code", value: organizationCode, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/auth/runtime_settings"), query), responseType: RuntimeSettingsRetrieveResult.self)
     }
 
     /// Create IAM session
@@ -109,85 +85,6 @@ public class AuthApi {
         return try await client.post(ApiPaths.appPath("/auth/verification_codes/verify"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: VerificationCodesVerifyResult.self)
     }
 
-    /// Retrieve public IAM verification policy
-    public func verificationPolicyRetrieve() async throws -> VerificationPolicyRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/auth/verification_policy"), responseType: VerificationPolicyRetrieveResult.self)
-    }
-
-    private struct PathParameterSpec {
-        let name: String
-        let style: String
-        let explode: Bool
-    }
-
-    private func serializePathParameter(_ value: Any?, _ spec: PathParameterSpec) -> String {
-        guard let value else { return "" }
-        let style = spec.style.isEmpty ? "simple" : spec.style
-        if let array = value as? [Any] {
-            return serializePathArray(spec.name, array, style, spec.explode)
-        }
-        if let object = value as? [String: Any] {
-            return serializePathObject(spec.name, object, style, spec.explode)
-        }
-        return pathPrimitivePrefix(spec.name, style) + pathEncode(String(describing: value))
-    }
-
-    private func serializePathArray(_ name: String, _ values: [Any], _ style: String, _ explode: Bool) -> String {
-        let serialized = values.map { pathEncode(String(describing: $0)) }
-        if serialized.isEmpty { return pathPrefix(name, style) }
-        if style == "matrix" {
-            if explode {
-                return serialized.map { ";\(name)=\($0)" }.joined()
-            }
-            return ";\(name)=" + serialized.joined(separator: ",")
-        }
-        let separator = explode ? "." : ","
-        return pathPrefix(name, style) + serialized.joined(separator: separator)
-    }
-
-    private func serializePathObject(_ name: String, _ values: [String: Any], _ style: String, _ explode: Bool) -> String {
-        var entries: [String] = []
-        var exploded: [String] = []
-        for (key, value) in values {
-            let escapedKey = pathEncode(key)
-            let escapedValue = pathEncode(String(describing: value))
-            if explode {
-                if style == "matrix" {
-                    exploded.append(";\(escapedKey)=\(escapedValue)")
-                } else {
-                    exploded.append("\(escapedKey)=\(escapedValue)")
-                }
-            } else {
-                entries.append(escapedKey)
-                entries.append(escapedValue)
-            }
-        }
-        if style == "matrix" {
-            if explode {
-                return exploded.joined()
-            }
-            return ";\(name)=" + entries.joined(separator: ",")
-        }
-        if explode {
-            let separator = style == "label" ? "." : ","
-            return pathPrefix(name, style) + exploded.joined(separator: separator)
-        }
-        return pathPrefix(name, style) + entries.joined(separator: ",")
-    }
-
-    private func pathPrefix(_ name: String, _ style: String) -> String {
-        if style == "label" { return "." }
-        if style == "matrix" { return ";\(name)" }
-        return ""
-    }
-
-    private func pathPrimitivePrefix(_ name: String, _ style: String) -> String {
-        style == "matrix" ? ";\(name)=" : pathPrefix(name, style)
-    }
-
-    private func pathEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? value
-    }
 
     private struct QueryParameterSpec {
         let name: String

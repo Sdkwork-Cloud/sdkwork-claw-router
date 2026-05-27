@@ -26,7 +26,7 @@ function resolveTransactionIcon(transaction: SdkworkPointsTransaction) {
     return CreditCard;
   }
 
-  if (normalizedType.includes("VIP") || normalizedType.includes("PURCHASE")) {
+  if (normalizedType.includes("MEMBERSHIP") || normalizedType.includes("PURCHASE")) {
     return Crown;
   }
 

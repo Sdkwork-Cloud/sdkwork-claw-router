@@ -40,10 +40,6 @@ export class EcosystemUsersApi {
 
 }
 
-export interface EcosystemSkillsConfigUpdateParams {
-  xRequestId?: string;
-}
-
 export class EcosystemSkillsConfigApi {
   private client: HttpClient;
 
@@ -53,14 +49,8 @@ export class EcosystemSkillsConfigApi {
 
 
 /** Update skill config */
-  async update(skillId: string, body: AppSkillConfigRequest, params?: EcosystemSkillsConfigUpdateParams): Promise<SkillsConfigUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<SkillsConfigUpdateResult>(appApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/config`), body, undefined, requestHeaders, 'application/json');
+  async update(skillId: string, body: AppSkillConfigRequest): Promise<SkillsConfigUpdateResult> {
+    return this.client.put<SkillsConfigUpdateResult>(appApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/config`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -85,14 +75,6 @@ export interface EcosystemSkillsListParams {
   status?: string;
   startTime?: string;
   endTime?: string;
-}
-
-export interface EcosystemSkillsDisableParams {
-  xRequestId?: string;
-}
-
-export interface EcosystemSkillsEnableParams {
-  xRequestId?: string;
 }
 
 export class EcosystemSkillsApi {
@@ -126,25 +108,13 @@ export class EcosystemSkillsApi {
   }
 
 /** Disable skill */
-  async disable(skillId: string, params?: EcosystemSkillsDisableParams): Promise<SkillsDisableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsDisableResult>(appApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/disable`), undefined, undefined, requestHeaders);
+  async disable(skillId: string): Promise<SkillsDisableResult> {
+    return this.client.post<SkillsDisableResult>(appApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/disable`));
   }
 
 /** Enable skill */
-  async enable(skillId: string, body: AppSkillConfigRequest, params?: EcosystemSkillsEnableParams): Promise<SkillsEnableResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SkillsEnableResult>(appApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/enable`), body, undefined, requestHeaders, 'application/json');
+  async enable(skillId: string, body: AppSkillConfigRequest): Promise<SkillsEnableResult> {
+    return this.client.post<SkillsEnableResult>(appApiPath(`/ecosystem/skills/${serializePathParameter(skillId, { name: 'skillId', style: 'simple', explode: false })}/enable`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -395,79 +365,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

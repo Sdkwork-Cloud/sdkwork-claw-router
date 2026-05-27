@@ -8,7 +8,7 @@ public class AdminApiKeyCreateResponse {
     public AdminApiKeyItem getKey() {
         return this.key;
     }
-    
+
     public void setKey(AdminApiKeyItem key) {
         this.key = key;
     }
@@ -16,7 +16,7 @@ public class AdminApiKeyCreateResponse {
     public String getRawKey() {
         return this.rawKey;
     }
-    
+
     public void setRawKey(String rawKey) {
         this.rawKey = rawKey;
     }

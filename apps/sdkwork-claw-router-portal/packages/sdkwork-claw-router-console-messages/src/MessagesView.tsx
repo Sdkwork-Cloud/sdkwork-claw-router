@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   AlertTriangle,
-  Bell,
   CheckCircle2,
   ChevronRight,
   Info,
@@ -91,15 +90,9 @@ export function MessagesView() {
   }, [t]);
 
   return (
-    <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#1e1e1e]">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4 mb-6">
-        <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
-          <Bell className="w-6 h-6 text-lobster-500" /> {t('console.messages.title', '消息中心')}
-        </h1>
-      </div>
-
-      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm flex flex-col md:flex-row overflow-hidden min-h-[650px] relative">
-        <div className="w-full md:w-56 border-r border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#1e1e1e]/50 shrink-0 hidden md:block">
+    <div className="w-full h-[calc(100vh-72px)] mx-auto overflow-hidden flex flex-col animate-in fade-in duration-500 bg-slate-50 p-[5px] dark:bg-[#1e1e1e]">
+      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm flex-1 min-h-0 overflow-hidden flex flex-col md:flex-row relative">
+        <div className="w-full md:w-56 border-r border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#1e1e1e]/50 shrink-0 hidden md:flex md:flex-col md:min-h-0">
           <div className="p-4 flex flex-col gap-2">
             <button
               onClick={() => selectFilter('all')}
@@ -135,11 +128,11 @@ export function MessagesView() {
         </div>
 
         <div
-          className={`flex-1 flex flex-col border-r border-slate-200 dark:border-white/5 transition-all duration-300 ${
+          className={`flex-1 min-h-0 flex flex-col overflow-hidden border-r border-slate-200 dark:border-white/5 transition-all duration-300 ${
             selectedId ? 'hidden md:flex md:w-80 lg:max-w-md shrink-0 border-r-2 dark:border-r-white/5 border-r-slate-200' : 'flex'
           }`}
         >
-          <div className="p-4 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-slate-50 dark:bg-[#1e1e1e]/80">
+          <div className="shrink-0 p-4 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-slate-50 dark:bg-[#1e1e1e]/80">
             <div className="relative w-full max-w-[280px]">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
               <input
@@ -152,7 +145,7 @@ export function MessagesView() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto custom-scrollbar">
+          <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
             {loading ? (
               <BusinessStatePanel
                 kind="loading"
@@ -196,7 +189,7 @@ export function MessagesView() {
         {selectedMsg ? (
           <MessageDetail message={selectedMsg} onClose={() => setSelectedId(null)} />
         ) : (
-          <div className="hidden lg:flex flex-1 flex-col items-center justify-center bg-white dark:bg-[#1e1e1e]/30 text-slate-500">
+          <div className="hidden lg:flex flex-1 min-h-0 overflow-hidden flex-col items-center justify-center bg-white dark:bg-[#1e1e1e]/30 text-slate-500">
             <div className="w-20 h-20 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-transparent rounded-full flex items-center justify-center mb-4 shadow-sm dark:shadow-none">
               <Mail className="w-8 h-8 text-slate-400 dark:text-slate-600" />
             </div>
@@ -243,8 +236,8 @@ function MessageListItem({
 function MessageDetail({ message, onClose }: { message: Message; onClose: () => void }) {
   const { t } = useTranslation();
   return (
-    <div className="flex-1 flex flex-col bg-white dark:bg-[#1e1e1e]/30 absolute inset-0 md:static md:w-auto z-20 w-full h-full md:h-auto">
-      <div className="p-4 sm:px-6 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-slate-50 dark:bg-[#1e1e1e]/80">
+    <div className="flex-1 min-h-0 overflow-hidden flex flex-col bg-white dark:bg-[#1e1e1e]/30 absolute inset-0 md:static md:w-auto z-20 w-full h-full md:h-auto">
+      <div className="shrink-0 p-4 sm:px-6 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-slate-50 dark:bg-[#1e1e1e]/80">
         <div className="flex items-center gap-3">
           <button
             onClick={onClose}
@@ -262,7 +255,7 @@ function MessageDetail({ message, onClose }: { message: Message; onClose: () => 
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-6 md:p-10 custom-scrollbar">
+      <div className="flex-1 min-h-0 overflow-y-auto p-6 md:p-10 custom-scrollbar">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white mb-4 leading-tight">
             {message.title}

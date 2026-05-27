@@ -10,7 +10,7 @@ public class ModelRankingHistoryPoint {
     public String getDate() {
         return this.date;
     }
-    
+
     public void setDate(String date) {
         this.date = date;
     }
@@ -18,7 +18,7 @@ public class ModelRankingHistoryPoint {
     public List<ModelRankingHistoryEntry> getEntries() {
         return this.entries;
     }
-    
+
     public void setEntries(List<ModelRankingHistoryEntry> entries) {
         this.entries = entries;
     }
@@ -26,7 +26,7 @@ public class ModelRankingHistoryPoint {
     public Integer getIndex() {
         return this.index;
     }
-    
+
     public void setIndex(Integer index) {
         this.index = index;
     }

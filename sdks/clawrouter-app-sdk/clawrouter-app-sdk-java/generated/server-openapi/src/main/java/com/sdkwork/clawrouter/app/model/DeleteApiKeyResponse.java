@@ -8,7 +8,7 @@ public class DeleteApiKeyResponse {
     public Boolean getDeleted() {
         return this.deleted;
     }
-    
+
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
@@ -16,7 +16,7 @@ public class DeleteApiKeyResponse {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }

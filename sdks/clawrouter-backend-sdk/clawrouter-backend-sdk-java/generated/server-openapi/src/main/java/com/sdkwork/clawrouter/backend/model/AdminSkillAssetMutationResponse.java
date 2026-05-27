@@ -7,7 +7,7 @@ public class AdminSkillAssetMutationResponse {
     public AdminSkillAssetItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminSkillAssetItem item) {
         this.item = item;
     }

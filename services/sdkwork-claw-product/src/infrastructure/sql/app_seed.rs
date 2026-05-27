@@ -93,6 +93,31 @@ struct AppSeedCatalog {
     artifacts: Vec<AppArtifactSeed>,
 }
 
+#[derive(Debug, Clone, Copy)]
+struct SqliteAppSeedIntegrity {
+    app_count: i64,
+    category_count: i64,
+    asset_count: i64,
+    artifact_count: i64,
+    stale_app_count: i64,
+    stale_category_count: i64,
+    stale_asset_count: i64,
+    stale_artifact_count: i64,
+}
+
+impl SqliteAppSeedIntegrity {
+    fn complete(self, catalog: &AppSeedCatalog) -> bool {
+        self.app_count == catalog.bundle.apps.len() as i64
+            && self.category_count == catalog.categories.len() as i64
+            && self.asset_count == catalog.assets.len() as i64
+            && self.artifact_count == catalog.artifacts.len() as i64
+            && self.stale_app_count == 0
+            && self.stale_category_count == 0
+            && self.stale_asset_count == 0
+            && self.stale_artifact_count == 0
+    }
+}
+
 #[derive(Debug, Clone, Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 struct AppCategorySeedBundle {
@@ -229,6 +254,43 @@ pub(crate) async fn import_sqlite_app_seed(pool: &SqlitePool) -> Result<(), sqlx
     Ok(())
 }
 
+pub(crate) async fn repair_sqlite_app_seed(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    let catalog = AppSeedCatalog::load().map_err(json_decode_error)?;
+    let integrity = sqlite_app_seed_integrity(pool, &catalog).await?;
+    if integrity.complete(&catalog) {
+        return Ok(false);
+    }
+
+    let mut tx = pool.begin().await?;
+    if integrity.category_count != catalog.categories.len() as i64
+        || integrity.stale_category_count != 0
+    {
+        repair_sqlite_categories(&mut tx, &catalog).await?;
+    }
+    if integrity.app_count != catalog.bundle.apps.len() as i64 || integrity.stale_app_count != 0 {
+        repair_sqlite_apps(&mut tx, &catalog).await?;
+    }
+    if integrity.asset_count != catalog.assets.len() as i64 || integrity.stale_asset_count != 0 {
+        repair_sqlite_assets(&mut tx, &catalog).await?;
+    }
+    if integrity.artifact_count != catalog.artifacts.len() as i64
+        || integrity.stale_artifact_count != 0
+    {
+        repair_sqlite_artifacts(&mut tx, &catalog).await?;
+    }
+    tx.commit().await?;
+
+    if !sqlite_app_seed_complete_with_catalog(pool, &catalog).await? {
+        let mut tx = pool.begin().await?;
+        import_sqlite_categories(&mut tx, &catalog).await?;
+        import_sqlite_apps(&mut tx, &catalog).await?;
+        import_sqlite_assets(&mut tx, &catalog).await?;
+        import_sqlite_artifacts(&mut tx, &catalog).await?;
+        tx.commit().await?;
+    }
+    Ok(true)
+}
+
 pub(crate) async fn import_postgres_app_seed(pool: &PgPool) -> Result<(), sqlx::Error> {
     let catalog = AppSeedCatalog::load().map_err(json_decode_error)?;
     let mut tx = pool.begin().await?;
@@ -242,6 +304,22 @@ pub(crate) async fn import_postgres_app_seed(pool: &PgPool) -> Result<(), sqlx::
 
 pub(crate) async fn sqlite_app_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
     let catalog = AppSeedCatalog::load().map_err(json_decode_error)?;
+    sqlite_app_seed_complete_with_catalog(pool, &catalog).await
+}
+
+async fn sqlite_app_seed_complete_with_catalog(
+    pool: &SqlitePool,
+    catalog: &AppSeedCatalog,
+) -> Result<bool, sqlx::Error> {
+    Ok(sqlite_app_seed_integrity(pool, catalog)
+        .await?
+        .complete(catalog))
+}
+
+async fn sqlite_app_seed_integrity(
+    pool: &SqlitePool,
+    catalog: &AppSeedCatalog,
+) -> Result<SqliteAppSeedIntegrity, sqlx::Error> {
     let app_count = sqlite_app_seed_standard_count(pool, &catalog).await?;
     let category_count = sqlite_category_seed_standard_count(pool, &catalog.categories).await?;
     let asset_count = sqlite_asset_seed_standard_count(pool, &catalog.assets).await?;
@@ -251,14 +329,16 @@ pub(crate) async fn sqlite_app_seed_complete(pool: &SqlitePool) -> Result<bool, 
     let stale_asset_count = sqlite_stale_app_asset_count(pool, &catalog).await?;
     let stale_artifact_count = sqlite_stale_app_artifact_count(pool, &catalog).await?;
 
-    Ok(app_count == catalog.bundle.apps.len() as i64
-        && category_count == catalog.categories.len() as i64
-        && asset_count == catalog.assets.len() as i64
-        && artifact_count == catalog.artifacts.len() as i64
-        && stale_app_count == 0
-        && stale_category_count == 0
-        && stale_asset_count == 0
-        && stale_artifact_count == 0)
+    Ok(SqliteAppSeedIntegrity {
+        app_count,
+        category_count,
+        asset_count,
+        artifact_count,
+        stale_app_count,
+        stale_category_count,
+        stale_asset_count,
+        stale_artifact_count,
+    })
 }
 
 pub(crate) async fn postgres_app_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
@@ -283,6 +363,13 @@ pub(crate) async fn postgres_app_seed_complete(pool: &PgPool) -> Result<bool, sq
 }
 
 async fn import_sqlite_categories(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    repair_sqlite_categories(tx, catalog).await
+}
+
+async fn repair_sqlite_categories(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
@@ -340,6 +427,13 @@ async fn import_sqlite_categories(
 }
 
 async fn import_sqlite_apps(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    repair_sqlite_apps(tx, catalog).await
+}
+
+async fn repair_sqlite_apps(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
@@ -412,6 +506,13 @@ async fn import_sqlite_apps(
 }
 
 async fn import_sqlite_assets(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    repair_sqlite_assets(tx, catalog).await
+}
+
+async fn repair_sqlite_assets(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
@@ -512,6 +613,13 @@ async fn import_sqlite_assets(
 }
 
 async fn import_sqlite_artifacts(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AppSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    repair_sqlite_artifacts(tx, catalog).await
+}
+
+async fn repair_sqlite_artifacts(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AppSeedCatalog,
 ) -> Result<(), sqlx::Error> {
@@ -1095,8 +1203,8 @@ async fn retire_sqlite_stale_assets(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND json_extract(metadata, '$.seedKind') = ?
-          AND json_extract(metadata, '$.itemType') = 'app_asset'
+          AND metadata ->> 'seedKind' = ?
+          AND metadata ->> 'itemType' = 'app_asset'
           AND deleted_at IS NULL
         "#,
     )
@@ -1209,8 +1317,8 @@ async fn retire_sqlite_stale_artifacts(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND json_extract(metadata, '$.seedKind') = ?
-          AND json_extract(metadata, '$.itemType') = 'app_artifact'
+          AND metadata ->> 'seedKind' = ?
+          AND metadata ->> 'itemType' = 'app_artifact'
           AND deleted_at IS NULL
         "#,
     )
@@ -1690,125 +1798,97 @@ async fn sqlite_app_seed_standard_count(
     pool: &SqlitePool,
     catalog: &AppSeedCatalog,
 ) -> Result<i64, sqlx::Error> {
-    let mut count = 0;
-    for (index, entry) in catalog.bundle.apps.iter().enumerate() {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM plus_app
-            WHERE id = ?
-              AND uuid = ?
-              AND tenant_id = ?
-              AND organization_id = ?
-              AND data_scope = ?
-              AND user_id = ?
-              AND name = ?
-              AND icon = ?
-              AND resource_list = ?
-              AND project_id = ?
-              AND description IS ?
-              AND version IS ?
-              AND icon_url IS ?
-              AND access_url IS ?
-              AND config = ?
-              AND status = ?
-              AND app_type IS ?
-              AND platforms = ?
-              AND install_platforms = ?
-              AND install_skill = ?
-              AND install_config = ?
-              AND release_notes = ?
-              AND package_name IS ?
-              AND bundle_id IS ?
-              AND store_url IS ?
-              AND download_url IS ?
-            "#,
-        )
-        .bind(stable_app_id(index))
-        .bind(app_uuid(&entry.app_key))
-        .bind(entry.tenant_id)
-        .bind(install_projection_organization_id(entry))
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(0_i64)
-        .bind(&entry.plus_app.name)
-        .bind(icon_json(entry))
-        .bind(resource_list_json(entry))
-        .bind(0_i64)
-        .bind(&entry.plus_app.description)
-        .bind(&entry.plus_app.version)
-        .bind(&entry.plus_app.icon_url)
-        .bind(&entry.plus_app.access_url)
-        .bind(entry.plus_app.config.to_string())
-        .bind(app_status_code(&entry.plus_app.status)?)
-        .bind(&entry.plus_app.app_type)
-        .bind(entry.plus_app.platforms.to_string())
-        .bind(entry.plus_app.install_platforms.to_string())
-        .bind(entry.plus_app.install_skill.to_string())
-        .bind(entry.plus_app.install_config.to_string())
-        .bind(entry.plus_app.release_notes.to_string())
-        .bind(&entry.plus_app.package_name)
-        .bind(&entry.plus_app.bundle_id)
-        .bind(&entry.plus_app.store_url)
-        .bind(&entry.plus_app.download_url)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
+    let expected = sqlite_expected_app_fingerprints(catalog)?;
+    let rows = sqlx::query(
+        r#"
+        SELECT id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon,
+               resource_list, project_id, description, version, icon_url, access_url,
+               config, status, app_type, platforms, install_platforms, install_skill,
+               install_config, release_notes, package_name, bundle_id, store_url, download_url
+        FROM plus_app
+        WHERE uuid LIKE 'sdkwork-app-%'
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    let actual = rows
+        .into_iter()
+        .map(|row| {
+            seed_fingerprint(serde_json::json!([
+                row.get::<i64, _>("id"),
+                row.get::<String, _>("uuid"),
+                row.get::<i64, _>("tenant_id"),
+                row.get::<i64, _>("organization_id"),
+                row.get::<i64, _>("data_scope"),
+                row.get::<i64, _>("user_id"),
+                row.get::<String, _>("name"),
+                row.get::<String, _>("icon"),
+                row.get::<String, _>("resource_list"),
+                row.get::<i64, _>("project_id"),
+                row.get::<Option<String>, _>("description"),
+                row.get::<Option<String>, _>("version"),
+                row.get::<Option<String>, _>("icon_url"),
+                row.get::<Option<String>, _>("access_url"),
+                row.get::<String, _>("config"),
+                row.get::<i64, _>("status"),
+                row.get::<Option<String>, _>("app_type"),
+                row.get::<String, _>("platforms"),
+                row.get::<String, _>("install_platforms"),
+                row.get::<String, _>("install_skill"),
+                row.get::<String, _>("install_config"),
+                row.get::<String, _>("release_notes"),
+                row.get::<Option<String>, _>("package_name"),
+                row.get::<Option<String>, _>("bundle_id"),
+                row.get::<Option<String>, _>("store_url"),
+                row.get::<Option<String>, _>("download_url"),
+            ]))
+        })
+        .collect::<BTreeSet<_>>();
+    Ok(matching_seed_fingerprint_count(&expected, &actual))
 }
 
 async fn sqlite_category_seed_standard_count(
     pool: &SqlitePool,
     categories: &[AppCategorySeed],
 ) -> Result<i64, sqlx::Error> {
-    let mut count = 0;
-    for item in categories {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM plus_category
-            WHERE id = ?
-              AND uuid = ?
-              AND tenant_id = ?
-              AND organization_id = ?
-              AND data_scope = ?
-              AND name = ?
-              AND description = ?
-              AND shop_id = ?
-              AND type = ?
-              AND group_name = ?
-              AND code = ?
-              AND tags = ?
-              AND icon = ?
-              AND sort_weight = ?
-              AND parent_id IS NULL
-              AND path = ?
-              AND visible = ?
-              AND status = ?
-            "#,
-        )
-        .bind(item.id)
-        .bind(&item.uuid)
-        .bind(APP_STORE_TENANT_ID)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(&item.name)
-        .bind(&item.description)
-        .bind(INSTALL_PROJECTION_ORGANIZATION_ID)
-        .bind(APP_CATEGORY_TYPE_OTHER)
-        .bind("app-store")
-        .bind(&item.code)
-        .bind(json_string(&item.tags))
-        .bind(&item.icon)
-        .bind(item.sort_weight)
-        .bind(&item.path)
-        .bind(true)
-        .bind(ACTIVE_STATUS)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
+    let expected = sqlite_expected_category_fingerprints(categories);
+    let rows = sqlx::query(
+        r#"
+        SELECT id, uuid, tenant_id, organization_id, data_scope, name, description,
+               shop_id, type, group_name, code, tags, icon, sort_weight, parent_id,
+               path, visible, status
+        FROM plus_category
+        WHERE uuid LIKE 'sdkwork-app-category-%'
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    let actual = rows
+        .into_iter()
+        .map(|row| {
+            seed_fingerprint(serde_json::json!([
+                row.get::<i64, _>("id"),
+                row.get::<String, _>("uuid"),
+                row.get::<i64, _>("tenant_id"),
+                row.get::<i64, _>("organization_id"),
+                row.get::<i64, _>("data_scope"),
+                row.get::<String, _>("name"),
+                row.get::<Option<String>, _>("description"),
+                row.get::<Option<i64>, _>("shop_id"),
+                row.get::<i64, _>("type"),
+                row.get::<Option<String>, _>("group_name"),
+                row.get::<Option<String>, _>("code"),
+                row.get::<String, _>("tags"),
+                row.get::<Option<String>, _>("icon"),
+                row.get::<i64, _>("sort_weight"),
+                row.get::<Option<i64>, _>("parent_id"),
+                row.get::<Option<String>, _>("path"),
+                row.get::<i64, _>("visible"),
+                row.get::<i64, _>("status"),
+            ]))
+        })
+        .collect::<BTreeSet<_>>();
+    Ok(matching_seed_fingerprint_count(&expected, &actual))
 }
 
 async fn sqlite_stale_app_seed_count(
@@ -1883,120 +1963,240 @@ async fn sqlite_asset_seed_standard_count(
     pool: &SqlitePool,
     assets: &[AppAssetSeed],
 ) -> Result<i64, sqlx::Error> {
-    let mut count = 0;
-    for item in assets {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM studio_catalog_asset
-            WHERE uuid = ?
-              AND tenant_id = ?
-              AND organization_id = ?
-              AND data_scope = ?
-              AND status = ?
-              AND target_type = ?
-              AND target_id = ?
-              AND artifact_id IS NULL
-              AND asset_type = ?
-              AND asset_url = ?
-              AND thumbnail_url IS ?
-              AND title IS ?
-              AND alt_text IS ?
-              AND mime_type IS ?
-              AND width IS ?
-              AND height IS ?
-              AND duration_seconds = ?
-              AND file_size IS ?
-              AND sort_order = ?
-              AND published_at IS ?
-              AND deleted_at IS NULL
-            "#,
-        )
-        .bind(&item.uuid)
-        .bind(item.tenant_id)
-        .bind(item.organization_id)
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(ACTIVE_STATUS)
-        .bind(APP_TARGET_TYPE)
-        .bind(item.target_id)
-        .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
-        .bind(&item.title)
-        .bind(&item.alt_text)
-        .bind(&item.mime_type)
-        .bind(item.width)
-        .bind(item.height)
-        .bind(item.duration_seconds.as_deref().unwrap_or("0"))
-        .bind(item.file_size)
-        .bind(item.sort_order)
-        .bind(&item.published_at)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
+    let expected = sqlite_expected_asset_fingerprints(assets);
+    let rows = sqlx::query(
+        r#"
+        SELECT uuid, tenant_id, organization_id, data_scope, status, target_type,
+               target_id, artifact_id, asset_type, asset_url, thumbnail_url, title,
+               alt_text, mime_type, width, height, CAST(duration_seconds AS TEXT) AS duration_seconds,
+               file_size, sort_order, published_at, deleted_at
+        FROM studio_catalog_asset
+        WHERE metadata ->> 'itemType' = 'app_asset'
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    let actual = rows
+        .into_iter()
+        .map(|row| {
+            seed_fingerprint(serde_json::json!([
+                row.get::<String, _>("uuid"),
+                row.get::<i64, _>("tenant_id"),
+                row.get::<i64, _>("organization_id"),
+                row.get::<i64, _>("data_scope"),
+                row.get::<i64, _>("status"),
+                row.get::<i64, _>("target_type"),
+                row.get::<i64, _>("target_id"),
+                row.get::<Option<i64>, _>("artifact_id"),
+                row.get::<i64, _>("asset_type"),
+                row.get::<String, _>("asset_url"),
+                row.get::<Option<String>, _>("thumbnail_url"),
+                row.get::<Option<String>, _>("title"),
+                row.get::<Option<String>, _>("alt_text"),
+                row.get::<Option<String>, _>("mime_type"),
+                row.get::<Option<i64>, _>("width"),
+                row.get::<Option<i64>, _>("height"),
+                row.get::<String, _>("duration_seconds"),
+                row.get::<Option<i64>, _>("file_size"),
+                row.get::<i64, _>("sort_order"),
+                row.get::<Option<String>, _>("published_at"),
+                row.get::<Option<String>, _>("deleted_at"),
+            ]))
+        })
+        .collect::<BTreeSet<_>>();
+    Ok(matching_seed_fingerprint_count(&expected, &actual))
 }
 
 async fn sqlite_artifact_seed_standard_count(
     pool: &SqlitePool,
     artifacts: &[AppArtifactSeed],
 ) -> Result<i64, sqlx::Error> {
-    let mut count = 0;
-    for item in artifacts {
-        let row = sqlx::query(
-            r#"
-            SELECT COUNT(1) AS count
-            FROM studio_catalog_artifact
-            WHERE uuid = ?
-              AND tenant_id = ?
-              AND organization_id = ?
-              AND data_scope = ?
-              AND status = ?
-              AND target_type = ?
-              AND target_id = ?
-              AND artifact_type = ?
-              AND version = ?
-              AND platform_type = ?
-              AND os_name = ?
-              AND artifact_ref IS ?
-              AND artifact_url IS ?
-              AND artifact_size_bytes = ?
-              AND runtime IS ?
-              AND frameworks = ?
-              AND license_name IS ?
-              AND checksum_hash IS ?
-              AND release_notes IS ?
-              AND published_at IS ?
-              AND deprecated_at IS NULL
-              AND deleted_at IS NULL
-            "#,
-        )
-        .bind(&item.uuid)
-        .bind(item.tenant_id)
-        .bind(item.organization_id)
-        .bind(SYSTEM_DATA_SCOPE)
-        .bind(item.status)
-        .bind(APP_TARGET_TYPE)
-        .bind(item.target_id)
-        .bind(item.artifact_type)
-        .bind(&item.version)
-        .bind(&item.platform_type)
-        .bind(&item.os_name)
-        .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
-        .bind(item.artifact_size_bytes)
-        .bind(&item.runtime)
-        .bind(json_string(&item.frameworks))
-        .bind(&item.license_name)
-        .bind(&item.checksum_hash)
-        .bind(&item.release_notes)
-        .bind(&item.published_at)
-        .fetch_one(pool)
-        .await?;
-        count += row.get::<i64, _>("count");
-    }
-    Ok(count)
+    let expected = sqlite_expected_artifact_fingerprints(artifacts);
+    let rows = sqlx::query(
+        r#"
+        SELECT uuid, tenant_id, organization_id, data_scope, status, target_type,
+               target_id, artifact_type, version, platform_type, os_name, artifact_ref,
+               artifact_url, artifact_size_bytes, runtime, frameworks, license_name,
+               checksum_hash, release_notes, published_at, deprecated_at, deleted_at
+        FROM studio_catalog_artifact
+        WHERE metadata ->> 'itemType' = 'app_artifact'
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    let actual = rows
+        .into_iter()
+        .map(|row| {
+            seed_fingerprint(serde_json::json!([
+                row.get::<String, _>("uuid"),
+                row.get::<i64, _>("tenant_id"),
+                row.get::<i64, _>("organization_id"),
+                row.get::<i64, _>("data_scope"),
+                row.get::<i64, _>("status"),
+                row.get::<i64, _>("target_type"),
+                row.get::<i64, _>("target_id"),
+                row.get::<i64, _>("artifact_type"),
+                row.get::<String, _>("version"),
+                row.get::<String, _>("platform_type"),
+                row.get::<String, _>("os_name"),
+                row.get::<Option<String>, _>("artifact_ref"),
+                row.get::<Option<String>, _>("artifact_url"),
+                row.get::<i64, _>("artifact_size_bytes"),
+                row.get::<Option<String>, _>("runtime"),
+                row.get::<String, _>("frameworks"),
+                row.get::<Option<String>, _>("license_name"),
+                row.get::<Option<String>, _>("checksum_hash"),
+                row.get::<Option<String>, _>("release_notes"),
+                row.get::<Option<String>, _>("published_at"),
+                row.get::<Option<String>, _>("deprecated_at"),
+                row.get::<Option<String>, _>("deleted_at"),
+            ]))
+        })
+        .collect::<BTreeSet<_>>();
+    Ok(matching_seed_fingerprint_count(&expected, &actual))
+}
+
+fn sqlite_expected_app_fingerprints(
+    catalog: &AppSeedCatalog,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    catalog
+        .bundle
+        .apps
+        .iter()
+        .enumerate()
+        .map(|(index, entry)| {
+            Ok(seed_fingerprint(serde_json::json!([
+                stable_app_id(index),
+                app_uuid(&entry.app_key),
+                entry.tenant_id,
+                install_projection_organization_id(entry),
+                SYSTEM_DATA_SCOPE,
+                0_i64,
+                entry.plus_app.name,
+                icon_json(entry),
+                resource_list_json(entry),
+                0_i64,
+                entry.plus_app.description,
+                entry.plus_app.version,
+                entry.plus_app.icon_url,
+                entry.plus_app.access_url,
+                entry.plus_app.config.to_string(),
+                i64::from(app_status_code(&entry.plus_app.status)?),
+                entry.plus_app.app_type,
+                entry.plus_app.platforms.to_string(),
+                entry.plus_app.install_platforms.to_string(),
+                entry.plus_app.install_skill.to_string(),
+                entry.plus_app.install_config.to_string(),
+                entry.plus_app.release_notes.to_string(),
+                entry.plus_app.package_name,
+                entry.plus_app.bundle_id,
+                entry.plus_app.store_url,
+                entry.plus_app.download_url,
+            ])))
+        })
+        .collect()
+}
+
+fn sqlite_expected_category_fingerprints(categories: &[AppCategorySeed]) -> BTreeSet<String> {
+    categories
+        .iter()
+        .map(|item| {
+            seed_fingerprint(serde_json::json!([
+                item.id,
+                item.uuid,
+                APP_STORE_TENANT_ID,
+                INSTALL_PROJECTION_ORGANIZATION_ID,
+                SYSTEM_DATA_SCOPE,
+                item.name,
+                item.description,
+                INSTALL_PROJECTION_ORGANIZATION_ID,
+                APP_CATEGORY_TYPE_OTHER,
+                "app-store",
+                item.code,
+                json_string(&item.tags),
+                item.icon,
+                item.sort_weight,
+                Option::<i64>::None,
+                item.path,
+                1_i64,
+                ACTIVE_STATUS,
+            ]))
+        })
+        .collect()
+}
+
+fn sqlite_expected_asset_fingerprints(assets: &[AppAssetSeed]) -> BTreeSet<String> {
+    assets
+        .iter()
+        .map(|item| {
+            seed_fingerprint(serde_json::json!([
+                item.uuid,
+                item.tenant_id,
+                item.organization_id,
+                SYSTEM_DATA_SCOPE,
+                ACTIVE_STATUS,
+                APP_TARGET_TYPE,
+                item.target_id,
+                Option::<i64>::None,
+                item.asset_type,
+                item.asset_url,
+                item.thumbnail_url,
+                item.title,
+                item.alt_text,
+                item.mime_type,
+                item.width.map(i64::from),
+                item.height.map(i64::from),
+                item.duration_seconds.as_deref().unwrap_or("0"),
+                item.file_size,
+                item.sort_order,
+                item.published_at,
+                Option::<String>::None,
+            ]))
+        })
+        .collect()
+}
+
+fn sqlite_expected_artifact_fingerprints(artifacts: &[AppArtifactSeed]) -> BTreeSet<String> {
+    artifacts
+        .iter()
+        .map(|item| {
+            seed_fingerprint(serde_json::json!([
+                item.uuid,
+                item.tenant_id,
+                item.organization_id,
+                SYSTEM_DATA_SCOPE,
+                item.status,
+                APP_TARGET_TYPE,
+                item.target_id,
+                item.artifact_type,
+                item.version,
+                item.platform_type,
+                item.os_name,
+                item.artifact_ref,
+                item.artifact_url,
+                item.artifact_size_bytes,
+                item.runtime,
+                json_string(&item.frameworks),
+                item.license_name,
+                item.checksum_hash,
+                item.release_notes,
+                item.published_at,
+                Option::<String>::None,
+                Option::<String>::None,
+            ]))
+        })
+        .collect()
+}
+
+fn seed_fingerprint(value: serde_json::Value) -> String {
+    value.to_string()
+}
+
+fn matching_seed_fingerprint_count(expected: &BTreeSet<String>, actual: &BTreeSet<String>) -> i64 {
+    expected
+        .iter()
+        .filter(|fingerprint| actual.contains(*fingerprint))
+        .count() as i64
 }
 
 async fn sqlite_stale_app_asset_count(
@@ -2015,8 +2215,8 @@ async fn sqlite_stale_app_asset_count(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND json_extract(metadata, '$.seedKind') = ?
-          AND json_extract(metadata, '$.itemType') = 'app_asset'
+          AND metadata ->> 'seedKind' = ?
+          AND metadata ->> 'itemType' = 'app_asset'
           AND deleted_at IS NULL
         "#,
     )
@@ -2051,8 +2251,8 @@ async fn sqlite_stale_app_artifact_count(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND json_extract(metadata, '$.seedKind') = ?
-          AND json_extract(metadata, '$.itemType') = 'app_artifact'
+          AND metadata ->> 'seedKind' = ?
+          AND metadata ->> 'itemType' = 'app_artifact'
           AND deleted_at IS NULL
         "#,
     )

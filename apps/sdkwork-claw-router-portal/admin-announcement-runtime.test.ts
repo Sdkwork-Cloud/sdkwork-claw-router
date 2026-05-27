@@ -66,11 +66,10 @@ async function withBackendSdkFetch<T>(
 
 test("admin announcement page localizes page copy, form placeholders, and modal text", () => {
   const pageSource = readPortalFile("./packages/sdkwork-claw-router-admin-announcement/src/index.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const announcementI18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/announcement.ts");
+  const commonI18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/shared/common.ts");
 
   for (const key of [
-    "admin.announcement.title",
-    "admin.announcement.subtitle",
     "admin.announcement.searchPlaceholder",
     "admin.announcement.state.loading",
     "admin.announcement.state.loadErrorTitle",
@@ -129,12 +128,16 @@ test("admin announcement page localizes page copy, form placeholders, and modal 
     "common.actions.save",
   ]) {
     const escaped = key.replaceAll(".", "\\.");
+    const i18nSource = key.startsWith("common.") ? commonI18nSource : announcementI18nSource;
     assert.match(pageSource, new RegExp(escaped), `${key} must be consumed by AnnouncementAdmin`);
     assert.match(i18nSource, new RegExp(`"${escaped}"`), `${key} must exist in i18n resources`);
   }
 
+  assert.doesNotMatch(pageSource, /admin\.announcement\.title/);
+  assert.doesNotMatch(pageSource, /admin\.announcement\.subtitle/);
+
   assert.match(
-    i18nSource,
+    announcementI18nSource,
     /"admin\.announcement\.errors\.publishFallback"/,
     "legacy publish fallback resource should remain available for compatibility",
   );
@@ -458,10 +461,11 @@ test("admin announcement service uses generated backend SDK paths and normalized
         "PATCH /backend/v3/api/content/announcements/ann-1",
         "DELETE /backend/v3/api/content/announcements/ann-1",
       ]);
-      assert.match(captured[1].headers["x-request-id"], /^admin-announcement-create-/);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
       assert.match(captured[1].body, /"target":"vip"/);
       assert.match(captured[1].body, /"showAsPopup":false/);
-      assert.match(captured[2].headers["x-request-id"], /^admin-announcement-update-/);
       assert.match(captured[2].body, /"status":"published"/);
       assert.equal(list[0].status, "draft");
       assert.equal(list[0].showAsPopup, true);

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { User, Mail, Building, ShieldCheck, LogIn, Smartphone, KeyRound, Briefcase, Wallet, CreditCard, ArrowRight } from 'lucide-react';
+import { Mail, Building, ShieldCheck, LogIn, Smartphone, KeyRound, Briefcase, Wallet, CreditCard, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BusinessStatePanel, CopyButton } from 'sdkwork-claw-router-commons';
 import { AccountService, type AccountStats } from './accountService';
@@ -54,7 +54,7 @@ export function AccountView() {
 
   if (loading) {
     return (
-      <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
+      <div className="w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212]">
         <BusinessStatePanel
           kind="loading"
           title={t('console.account.states.loading', '正在加载账户详情...')}
@@ -66,7 +66,7 @@ export function AccountView() {
 
   if (loadError) {
     return (
-      <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
+      <div className="w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212]">
         <BusinessStatePanel
           kind="error"
           title={t('console.account.states.loadErrorTitle', '账户详情加载失败')}
@@ -80,7 +80,7 @@ export function AccountView() {
 
   if (!data) {
     return (
-      <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
+      <div className="w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212]">
         <BusinessStatePanel
           kind="empty"
           title={t('console.account.states.emptyTitle', '账户详情不可用')}
@@ -93,16 +93,7 @@ export function AccountView() {
   }
 
   return (
-    <div className="p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
-
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4">
-        <div className="flex items-center gap-2">
-          <User className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t("console.account.accountview.text.jkt39d", "账户详情与财务总览")}</h1>
-        </div>
-      </div>
-
+    <div className="w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212]">
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
 
         {/* Left Column: Profile & Identity */}

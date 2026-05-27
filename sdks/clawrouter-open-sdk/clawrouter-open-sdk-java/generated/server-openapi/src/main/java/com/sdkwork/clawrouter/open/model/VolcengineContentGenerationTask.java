@@ -19,7 +19,7 @@ public class VolcengineContentGenerationTask {
     public List<VolcengineContentPart> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<VolcengineContentPart> content) {
         this.content = content;
     }
@@ -27,7 +27,7 @@ public class VolcengineContentGenerationTask {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -35,7 +35,7 @@ public class VolcengineContentGenerationTask {
     public ProviderTaskError getError() {
         return this.error;
     }
-    
+
     public void setError(ProviderTaskError error) {
         this.error = error;
     }
@@ -43,7 +43,7 @@ public class VolcengineContentGenerationTask {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,7 +51,7 @@ public class VolcengineContentGenerationTask {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -59,7 +59,7 @@ public class VolcengineContentGenerationTask {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -67,7 +67,7 @@ public class VolcengineContentGenerationTask {
     public ProviderTaskResult getResult() {
         return this.result;
     }
-    
+
     public void setResult(ProviderTaskResult result) {
         this.result = result;
     }
@@ -75,7 +75,7 @@ public class VolcengineContentGenerationTask {
     public String getState() {
         return this.state;
     }
-    
+
     public void setState(String state) {
         this.state = state;
     }
@@ -83,7 +83,7 @@ public class VolcengineContentGenerationTask {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -91,7 +91,7 @@ public class VolcengineContentGenerationTask {
     public String getTaskId() {
         return this.taskId;
     }
-    
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -99,7 +99,7 @@ public class VolcengineContentGenerationTask {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -107,7 +107,7 @@ public class VolcengineContentGenerationTask {
     public List<ProviderGeneratedMedia> getVideos() {
         return this.videos;
     }
-    
+
     public void setVideos(List<ProviderGeneratedMedia> videos) {
         this.videos = videos;
     }

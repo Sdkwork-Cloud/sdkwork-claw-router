@@ -2,22 +2,14 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class OpenPlatformAccountCreateRequest {
-    private String aesKeyRef;
     private String appId;
+    private String appSecret;
+    private String encodingAesKey;
     private String key;
     private String name;
     private String provider;
-    private String secretRef;
-    private String tokenRef;
+    private String token;
     private String type;
-
-    public String getAesKeyRef() {
-        return this.aesKeyRef;
-    }
-
-    public void setAesKeyRef(String aesKeyRef) {
-        this.aesKeyRef = aesKeyRef;
-    }
 
     public String getAppId() {
         return this.appId;
@@ -25,6 +17,22 @@ public class OpenPlatformAccountCreateRequest {
 
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getAppSecret() {
+        return this.appSecret;
+    }
+
+    public void setAppSecret(String appSecret) {
+        this.appSecret = appSecret;
+    }
+
+    public String getEncodingAesKey() {
+        return this.encodingAesKey;
+    }
+
+    public void setEncodingAesKey(String encodingAesKey) {
+        this.encodingAesKey = encodingAesKey;
     }
 
     public String getKey() {
@@ -51,20 +59,12 @@ public class OpenPlatformAccountCreateRequest {
         this.provider = provider;
     }
 
-    public String getSecretRef() {
-        return this.secretRef;
+    public String getToken() {
+        return this.token;
     }
 
-    public void setSecretRef(String secretRef) {
-        this.secretRef = secretRef;
-    }
-
-    public String getTokenRef() {
-        return this.tokenRef;
-    }
-
-    public void setTokenRef(String tokenRef) {
-        this.tokenRef = tokenRef;
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getType() {

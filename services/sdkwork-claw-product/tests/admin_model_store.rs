@@ -1,5 +1,5 @@
 use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
+    CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminModelStore;
 use sdkwork_claw_product::ports::{
@@ -17,10 +17,7 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    install_admin_model_catalog(&pool, &["openai"]).await;
     let store = SqliteAdminModelStore::new(pool.clone());
     let subject = AdminModelSubject {
         tenant_id: 0,
@@ -97,7 +94,7 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
 
     assert_eq!("admin-region-model", item.name);
     assert_eq!(0.18, decimal_value(&item.price_in));
-    assert_eq!(0.45, decimal_value(&item.price_out));
+    assert_eq!(0.56, decimal_value(&item.price_out));
 
     let model_row = sqlx::query(
         r#"
@@ -181,10 +178,7 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    install_admin_model_catalog(&pool, &["openai"]).await;
     let model_id: i64 = sqlx::query_scalar("SELECT id FROM ai_model WHERE model = 'gpt-image-1.5'")
         .fetch_one(&pool)
         .await
@@ -401,10 +395,7 @@ async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    install_admin_model_catalog(&pool, &["minimax"]).await;
 
     let model_id: i64 = sqlx::query_scalar("SELECT id FROM ai_model WHERE model = 'MiniMax-M2.7'")
         .fetch_one(&pool)
@@ -631,15 +622,15 @@ async fn sqlite_admin_model_store_uses_subject_latest_commercial_ranking_snapsho
 
     let current = models
         .iter()
-        .find(|item| item.name == "gpt-current")
+        .find(|item| item.model == "gpt-current")
         .expect("current model exists");
     let old_only = models
         .iter()
-        .find(|item| item.name == "gpt-old-only")
+        .find(|item| item.model == "gpt-old-only")
         .expect("old-only model exists");
     let tenant_current = models
         .iter()
-        .find(|item| item.name == "gpt-tenant-current")
+        .find(|item| item.model == "gpt-tenant-current")
         .expect("tenant current model exists");
 
     assert_eq!("0", current.calls);
@@ -694,7 +685,7 @@ async fn sqlite_admin_model_store_does_not_use_global_tenant_organization_rankin
 
     let current = models
         .iter()
-        .find(|item| item.name == "gpt-current")
+        .find(|item| item.model == "gpt-current")
         .expect("current model exists");
 
     assert_eq!("0", current.calls);
@@ -707,10 +698,7 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    prepare_admin_model_schema(&pool).await;
 
     sqlx::query(
         r#"
@@ -757,7 +745,7 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
     assert!(synced
         .models
         .iter()
-        .any(|model| model.name == "qwen3.6-max-preview"));
+        .any(|model| model.model == "qwen3.6-max-preview"));
     assert_eq!("official_refresh", synced.mode);
     assert!(!synced.dry_run);
     assert_eq!("2026.05.08.1", synced.catalog_version);
@@ -911,10 +899,7 @@ async fn sqlite_admin_model_store_sync_catalog_reactivates_soft_deleted_catalog_
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    prepare_admin_model_schema(&pool).await;
     let store = SqliteAdminModelStore::new(pool.clone());
     let subject = AdminModelSubject {
         tenant_id: 0,
@@ -1000,10 +985,7 @@ async fn sqlite_admin_model_store_vendor_refresh_only_imports_selected_vendor() 
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    prepare_admin_model_schema(&pool).await;
 
     sqlx::query(
         r#"
@@ -1069,10 +1051,7 @@ async fn sqlite_admin_model_store_dry_run_reports_catalog_scope_without_importin
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    prepare_admin_model_schema(&pool).await;
 
     sqlx::query("DELETE FROM ai_model WHERE model = 'qwen3.6-max-preview'")
         .execute(&pool)
@@ -1106,7 +1085,7 @@ async fn sqlite_admin_model_store_dry_run_reports_catalog_scope_without_importin
     assert!(dry_run
         .models
         .iter()
-        .any(|model| model.name == "qwen3.6-max-preview"));
+        .any(|model| model.model == "qwen3.6-max-preview"));
 
     let model_count: i64 =
         sqlx::query_scalar("SELECT COUNT(1) FROM ai_model WHERE model = 'qwen3.6-max-preview'")
@@ -1165,10 +1144,7 @@ async fn sqlite_admin_model_store_dry_run_preserves_existing_catalog_source_succ
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    prepare_admin_model_schema(&pool).await;
     let store = SqliteAdminModelStore::new(pool.clone());
     let subject = AdminModelSubject {
         tenant_id: 0,
@@ -1292,10 +1268,7 @@ async fn sqlite_admin_model_store_sync_catalog_source_hash_is_content_stable() {
         .connect("sqlite::memory:")
         .await
         .unwrap();
-    let installer = DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap();
-    installer.ensure_installed().await.unwrap();
+    prepare_admin_model_schema(&pool).await;
     let store = SqliteAdminModelStore::new(pool.clone());
     let subject = AdminModelSubject {
         tenant_id: 0,
@@ -1373,10 +1346,12 @@ async fn create_admin_model_tables(pool: &sqlx::SqlitePool) {
             organization_id INTEGER NOT NULL DEFAULT 0,
             status INTEGER NOT NULL DEFAULT 1,
             deleted_at TEXT,
+            catalog_key TEXT,
             model TEXT,
             display_name TEXT,
             vendor_id INTEGER,
             vendor_code TEXT,
+            region_code TEXT,
             capability INTEGER,
             modalities TEXT,
             input_modalities TEXT,
@@ -1410,6 +1385,7 @@ async fn create_admin_model_tables(pool: &sqlx::SqlitePool) {
         CREATE TABLE ai_model_pricing (
             id INTEGER PRIMARY KEY,
             model_id INTEGER,
+            region_code TEXT,
             price_side INTEGER,
             billing_meter_code TEXT,
             unit_price TEXT,
@@ -1444,6 +1420,41 @@ async fn create_admin_model_tables(pool: &sqlx::SqlitePool) {
     .execute(pool)
     .await
     .unwrap();
+}
+
+async fn prepare_admin_model_schema(pool: &sqlx::SqlitePool) {
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .refresh_catalog(CatalogRefreshOptions {
+            source: "admin_model_store_schema_fixture".to_owned(),
+            mode: "dry_run".to_owned(),
+            vendor_codes: vec!["alibaba".to_owned()],
+            force: false,
+            catalog_root: None,
+            catalog_version: Some("2026.05.08.1".to_owned()),
+        })
+        .await
+        .unwrap();
+}
+
+async fn install_admin_model_catalog(pool: &sqlx::SqlitePool, vendor_codes: &[&str]) {
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .refresh_catalog(CatalogRefreshOptions {
+            source: "admin_model_store_catalog_fixture".to_owned(),
+            mode: "vendor_refresh".to_owned(),
+            vendor_codes: vendor_codes
+                .iter()
+                .map(|vendor_code| (*vendor_code).to_owned())
+                .collect(),
+            force: true,
+            catalog_root: None,
+            catalog_version: Some("2026.05.08.1".to_owned()),
+        })
+        .await
+        .unwrap();
 }
 
 fn decimal_value(value: &str) -> f64 {

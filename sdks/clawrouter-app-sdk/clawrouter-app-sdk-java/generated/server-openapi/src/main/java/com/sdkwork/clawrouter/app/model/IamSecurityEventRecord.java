@@ -15,7 +15,7 @@ public class IamSecurityEventRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -23,7 +23,7 @@ public class IamSecurityEventRecord {
     public Map<String, String> getDetailJson() {
         return this.detailJson;
     }
-    
+
     public void setDetailJson(Map<String, String> detailJson) {
         this.detailJson = detailJson;
     }
@@ -31,7 +31,7 @@ public class IamSecurityEventRecord {
     public String getEventType() {
         return this.eventType;
     }
-    
+
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
@@ -39,7 +39,7 @@ public class IamSecurityEventRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -47,7 +47,7 @@ public class IamSecurityEventRecord {
     public String getSessionId() {
         return this.sessionId;
     }
-    
+
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
     }
@@ -55,7 +55,7 @@ public class IamSecurityEventRecord {
     public String getSeverity() {
         return this.severity;
     }
-    
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
@@ -63,7 +63,7 @@ public class IamSecurityEventRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -71,7 +71,7 @@ public class IamSecurityEventRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

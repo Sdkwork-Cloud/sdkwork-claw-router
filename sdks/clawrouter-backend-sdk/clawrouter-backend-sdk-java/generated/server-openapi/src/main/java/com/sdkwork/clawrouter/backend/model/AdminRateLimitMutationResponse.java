@@ -7,7 +7,7 @@ public class AdminRateLimitMutationResponse {
     public AdminRateLimitItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminRateLimitItem item) {
         this.item = item;
     }

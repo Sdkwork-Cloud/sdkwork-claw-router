@@ -14,7 +14,7 @@ public class SystemSchemaMigrationRecord {
     public String getChecksum() {
         return this.checksum;
     }
-    
+
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
@@ -22,7 +22,7 @@ public class SystemSchemaMigrationRecord {
     public String getErrorMessage() {
         return this.errorMessage;
     }
-    
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -30,7 +30,7 @@ public class SystemSchemaMigrationRecord {
     public String getFinishedAt() {
         return this.finishedAt;
     }
-    
+
     public void setFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
     }
@@ -38,7 +38,7 @@ public class SystemSchemaMigrationRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -46,7 +46,7 @@ public class SystemSchemaMigrationRecord {
     public String getMigrationKey() {
         return this.migrationKey;
     }
-    
+
     public void setMigrationKey(String migrationKey) {
         this.migrationKey = migrationKey;
     }
@@ -54,7 +54,7 @@ public class SystemSchemaMigrationRecord {
     public String getMigrationVersion() {
         return this.migrationVersion;
     }
-    
+
     public void setMigrationVersion(String migrationVersion) {
         this.migrationVersion = migrationVersion;
     }
@@ -62,7 +62,7 @@ public class SystemSchemaMigrationRecord {
     public String getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
@@ -70,7 +70,7 @@ public class SystemSchemaMigrationRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

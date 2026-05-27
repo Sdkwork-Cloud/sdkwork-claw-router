@@ -1,32 +1,40 @@
 use crate::{
-    CouponClaimDraft, CouponRedemptionDraft, CurrentUserCouponItem, CurrentUserCouponListQuery,
-    PointsBalance, PointsBalanceQuery, PointsHistoryItem, PointsHistoryQuery, RedeemCodeCommand,
-    RedeemCodeOutcome,
+    PointsBalance, PointsBalanceQuery, PointsHistoryItem, PointsHistoryQuery,
+    PromotionCodeRedemptionCommand, PromotionCodeRedemptionOutcome,
+    PromotionDiscountApplicationDraft, PromotionUserCouponClaimDraft, PromotionUserCouponItem,
+    PromotionUserCouponListQuery,
 };
 use sdkwork_commerce_core::CommerceServiceError;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum PromotionRepositoryCommand {
-    CreateTemplate,
-    ClaimCoupon,
-    RedeemCoupon,
-    RollbackRedemption,
-    ExpireCoupon,
+    CreateOffer,
+    CreateOfferVersion,
+    ClaimUserCoupon,
+    ApplyDiscount,
+    ReverseDiscountApplication,
+    ExpireUserCoupon,
 }
 
 pub struct PromotionPortRequirement;
 
 pub trait PromotionRepositoryPort {
-    fn claim_coupon(&self, draft: &CouponClaimDraft) -> Result<(), CommerceServiceError>;
+    fn claim_user_coupon(
+        &self,
+        draft: &PromotionUserCouponClaimDraft,
+    ) -> Result<(), CommerceServiceError>;
 
-    fn redeem_coupon(&self, draft: &CouponRedemptionDraft) -> Result<(), CommerceServiceError>;
+    fn apply_discount(
+        &self,
+        draft: &PromotionDiscountApplicationDraft,
+    ) -> Result<(), CommerceServiceError>;
 }
 
 pub trait PromotionApplicationPort {
-    fn list_current_user_coupons(
+    fn list_promotion_user_coupons(
         &self,
-        query: CurrentUserCouponListQuery,
-    ) -> Result<Vec<CurrentUserCouponItem>, CommerceServiceError>;
+        query: PromotionUserCouponListQuery,
+    ) -> Result<Vec<PromotionUserCouponItem>, CommerceServiceError>;
 
     fn retrieve_points_balance(
         &self,
@@ -38,10 +46,10 @@ pub trait PromotionApplicationPort {
         query: PointsHistoryQuery,
     ) -> Result<Vec<PointsHistoryItem>, CommerceServiceError>;
 
-    fn redeem_code(
+    fn redeem_promotion_code(
         &self,
-        command: RedeemCodeCommand,
-    ) -> Result<RedeemCodeOutcome, CommerceServiceError>;
+        command: PromotionCodeRedemptionCommand,
+    ) -> Result<PromotionCodeRedemptionOutcome, CommerceServiceError>;
 }
 
 pub const PROMOTION_REPOSITORY_PORT: &str = "promotion.repository";
@@ -51,11 +59,12 @@ pub const IDEMPOTENCY_REPOSITORY_PORT: &str = "idempotency.repository";
 impl PromotionPortRequirement {
     pub fn standard_commands() -> Vec<PromotionRepositoryCommand> {
         vec![
-            PromotionRepositoryCommand::CreateTemplate,
-            PromotionRepositoryCommand::ClaimCoupon,
-            PromotionRepositoryCommand::RedeemCoupon,
-            PromotionRepositoryCommand::RollbackRedemption,
-            PromotionRepositoryCommand::ExpireCoupon,
+            PromotionRepositoryCommand::CreateOffer,
+            PromotionRepositoryCommand::CreateOfferVersion,
+            PromotionRepositoryCommand::ClaimUserCoupon,
+            PromotionRepositoryCommand::ApplyDiscount,
+            PromotionRepositoryCommand::ReverseDiscountApplication,
+            PromotionRepositoryCommand::ExpireUserCoupon,
         ]
     }
 }

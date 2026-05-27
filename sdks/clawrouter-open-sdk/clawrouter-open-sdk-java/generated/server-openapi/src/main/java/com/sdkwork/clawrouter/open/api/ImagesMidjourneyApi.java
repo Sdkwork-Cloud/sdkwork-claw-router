@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ImagesMidjourneyApi {
     private final HttpClient client;
-    
+
     public ImagesMidjourneyApi(HttpClient client) {
         this.client = client;
     }

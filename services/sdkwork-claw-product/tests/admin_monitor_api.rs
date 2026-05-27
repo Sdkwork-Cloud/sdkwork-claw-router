@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::Arc;
 
 use axum::body::Body;
@@ -88,9 +90,7 @@ fn signed_request(method: &str, path: &str) -> Request<Body> {
     Request::builder()
         .method(method)
         .uri(path)
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+        .internal_trusted_subject(10, 20, 30)
         .body(Body::empty())
         .unwrap()
 }

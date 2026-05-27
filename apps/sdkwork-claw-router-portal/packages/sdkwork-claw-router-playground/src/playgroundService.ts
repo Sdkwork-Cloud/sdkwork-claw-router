@@ -208,10 +208,17 @@ function normalizeModelOption(value: unknown): PlaygroundModelOption {
     officialReferenceCurrency,
     officialReferencePrices,
     priceAvailability: readPriceAvailability(item, officialReferenceUnitPrice, officialReferencePrices),
+    providerCodes: readProviderCodes(item),
     supportsStreaming: readBoolean(item, 'supportsStreaming', false),
     supportsTools: readBoolean(item, 'supportsTools', false),
     supportsJsonSchema: readBoolean(item, 'supportsJsonSchema', false),
   };
+}
+
+function readProviderCodes(item: ApiRecord): string[] {
+  return readStringArray(item, 'providerCodes')
+    .map((value) => value.trim())
+    .filter((value, index, values) => value.length > 0 && values.indexOf(value) === index);
 }
 
 function readReferencePrices(record: ApiRecord, key: string): PlaygroundModelReferencePrice[] {

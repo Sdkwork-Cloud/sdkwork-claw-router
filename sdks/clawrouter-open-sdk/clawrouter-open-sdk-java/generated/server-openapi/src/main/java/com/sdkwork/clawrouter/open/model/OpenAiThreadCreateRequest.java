@@ -11,7 +11,7 @@ public class OpenAiThreadCreateRequest {
     public List<OpenAiThreadMessageCreateRequest> getMessages() {
         return this.messages;
     }
-    
+
     public void setMessages(List<OpenAiThreadMessageCreateRequest> messages) {
         this.messages = messages;
     }
@@ -19,7 +19,7 @@ public class OpenAiThreadCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -27,7 +27,7 @@ public class OpenAiThreadCreateRequest {
     public String getToolResources() {
         return this.toolResources;
     }
-    
+
     public void setToolResources(String toolResources) {
         this.toolResources = toolResources;
     }

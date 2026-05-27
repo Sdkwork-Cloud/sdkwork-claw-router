@@ -495,7 +495,7 @@ fn row_to_api_key(
 
 fn row_to_request_trace(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppRoutingRequestTraceItem> {
     let http_status = routing_trace_http_status(required_integer_cell(&row, "http_status")?)?;
-    let latency_ms = routing_trace_latency_ms(required_integer_cell(&row, "latency_ms")?)?;
+    let latency_ms = routing_trace_latency_ms(integer_cell(&row, "latency_ms"))?;
     Ok(AppRoutingRequestTraceItem {
         id: string_cell(&row, "id"),
         time: string_cell(&row, "trace_time"),
@@ -704,7 +704,6 @@ fn decode_api_key_copyable_key(
 fn missing_integer_cell_error(column: &str) -> DomainError {
     match column {
         "http_status" => DomainError::new("missing routing trace http_status from database row"),
-        "latency_ms" => DomainError::new("missing routing trace latency_ms from database row"),
         "api_key_status" => DomainError::new("missing routing api key status from database row"),
         column => DomainError::new(format!(
             "missing routing channel {column} from database row"

@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -194,9 +196,7 @@ fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30")
+        .internal_trusted_subject(10, 20, 30)
         .header("Idempotency-Key", "idem-admin-user-test")
         .header("X-Request-Id", "request-admin-user-test")
         .body(Body::from(body.to_owned()))

@@ -136,7 +136,7 @@ fn app_operation_ids_are_bound_to_their_runtime_services() {
     assert_eq!(
         bindings
             .iter()
-            .find(|binding| binding.operation_id == "coupons.redemptions.create")
+            .find(|binding| binding.operation_id == "promotions.codes.redemptions.create")
             .map(|binding| binding.service_name),
         Some("commerce.promotion"),
     );

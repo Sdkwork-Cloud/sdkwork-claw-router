@@ -37,7 +37,7 @@ Choose exactly one mode for the same client instance.
 let config = SdkConfig(baseUrl: "http://localhost:18081")
 let client = SdkworkBackendClient(config: config)
 client.setApiKey("your-api-key")
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -49,7 +49,7 @@ client.setAuthToken("your-auth-token")
 client.setAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -73,9 +73,14 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.mcp` - mcp API
+- `client.messaging` - messaging API
 - `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.prompts` - prompts API
+- `client.serviceProviders` - service_providers API
+- `client.storage` - storage API
 
 ## Usage Examples
 
@@ -143,6 +148,39 @@ let result = try await client.integration.channelsList()
 print(result)
 ```
 
+### mcp
+
+```swift
+// List MCP servers
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+    "transport": "transport",
+    "visibility": "visibility",
+    "status": "status",
+    "category_id": "1"
+]
+let result = try await client.mcp.serversList(params: params)
+print(result)
+```
+
+### messaging
+
+```swift
+// Messaging provider accounts list
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+    "status": "status",
+    "channel": "sms",
+    "provider_code": "ok"
+]
+let result = try await client.messaging.providerAccountsList(params: params)
+print(result)
+```
+
 ### open_platform
 
 ```swift
@@ -167,6 +205,48 @@ print(result)
 ```swift
 // Retrieve IAM auth runtime settings
 let result = try await client.system.authSettingsRetrieve()
+print(result)
+```
+
+### prompts
+
+```swift
+// List admin prompts
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+    "prompt_type": "prompt-type",
+    "visibility": "visibility",
+    "status": "status",
+    "category_id": "1"
+]
+let result = try await client.prompts.definitionsList(params: params)
+print(result)
+```
+
+### service_providers
+
+```swift
+// Service Provider Adjustments List
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2,
+    "status": "status",
+    "provider_id": "1",
+    "seller_provider_id": "1",
+    "buyer_provider_id": "1",
+    "edge_id": "1"
+]
+let result = try await client.serviceProviders.adjustmentsList(params: params)
+print(result)
+```
+
+### storage
+
+```swift
+// List storage providers
+let result = try await client.storage.ossProvidersList()
 print(result)
 ```
 

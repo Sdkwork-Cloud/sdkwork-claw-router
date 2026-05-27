@@ -34,7 +34,7 @@ public class IntegrationChannelModelRecord {
     public String getCapability() {
         return this.capability;
     }
-    
+
     public void setCapability(String capability) {
         this.capability = capability;
     }
@@ -42,7 +42,7 @@ public class IntegrationChannelModelRecord {
     public String getCatalogKey() {
         return this.catalogKey;
     }
-    
+
     public void setCatalogKey(String catalogKey) {
         this.catalogKey = catalogKey;
     }
@@ -50,7 +50,7 @@ public class IntegrationChannelModelRecord {
     public String getChannelId() {
         return this.channelId;
     }
-    
+
     public void setChannelId(String channelId) {
         this.channelId = channelId;
     }
@@ -58,7 +58,7 @@ public class IntegrationChannelModelRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -66,7 +66,7 @@ public class IntegrationChannelModelRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -74,7 +74,7 @@ public class IntegrationChannelModelRecord {
     public Map<String, String> getDefaultParameters() {
         return this.defaultParameters;
     }
-    
+
     public void setDefaultParameters(Map<String, String> defaultParameters) {
         this.defaultParameters = defaultParameters;
     }
@@ -82,7 +82,7 @@ public class IntegrationChannelModelRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -90,7 +90,7 @@ public class IntegrationChannelModelRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -98,7 +98,7 @@ public class IntegrationChannelModelRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -106,7 +106,7 @@ public class IntegrationChannelModelRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -114,7 +114,7 @@ public class IntegrationChannelModelRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -122,7 +122,7 @@ public class IntegrationChannelModelRecord {
     public String getMaxInputTokens() {
         return this.maxInputTokens;
     }
-    
+
     public void setMaxInputTokens(String maxInputTokens) {
         this.maxInputTokens = maxInputTokens;
     }
@@ -130,7 +130,7 @@ public class IntegrationChannelModelRecord {
     public String getMaxOutputTokens() {
         return this.maxOutputTokens;
     }
-    
+
     public void setMaxOutputTokens(String maxOutputTokens) {
         this.maxOutputTokens = maxOutputTokens;
     }
@@ -138,7 +138,7 @@ public class IntegrationChannelModelRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -146,7 +146,7 @@ public class IntegrationChannelModelRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -154,7 +154,7 @@ public class IntegrationChannelModelRecord {
     public Map<String, String> getModelAliases() {
         return this.modelAliases;
     }
-    
+
     public void setModelAliases(Map<String, String> modelAliases) {
         this.modelAliases = modelAliases;
     }
@@ -162,7 +162,7 @@ public class IntegrationChannelModelRecord {
     public String getModelId() {
         return this.modelId;
     }
-    
+
     public void setModelId(String modelId) {
         this.modelId = modelId;
     }
@@ -170,7 +170,7 @@ public class IntegrationChannelModelRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -178,7 +178,7 @@ public class IntegrationChannelModelRecord {
     public String getProviderModel() {
         return this.providerModel;
     }
-    
+
     public void setProviderModel(String providerModel) {
         this.providerModel = providerModel;
     }
@@ -186,7 +186,7 @@ public class IntegrationChannelModelRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -194,7 +194,7 @@ public class IntegrationChannelModelRecord {
     public Boolean getSupportsStreaming() {
         return this.supportsStreaming;
     }
-    
+
     public void setSupportsStreaming(Boolean supportsStreaming) {
         this.supportsStreaming = supportsStreaming;
     }
@@ -202,7 +202,7 @@ public class IntegrationChannelModelRecord {
     public Boolean getSupportsTools() {
         return this.supportsTools;
     }
-    
+
     public void setSupportsTools(Boolean supportsTools) {
         this.supportsTools = supportsTools;
     }
@@ -210,7 +210,7 @@ public class IntegrationChannelModelRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -218,7 +218,7 @@ public class IntegrationChannelModelRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -226,7 +226,7 @@ public class IntegrationChannelModelRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -234,7 +234,7 @@ public class IntegrationChannelModelRecord {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -242,7 +242,7 @@ public class IntegrationChannelModelRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

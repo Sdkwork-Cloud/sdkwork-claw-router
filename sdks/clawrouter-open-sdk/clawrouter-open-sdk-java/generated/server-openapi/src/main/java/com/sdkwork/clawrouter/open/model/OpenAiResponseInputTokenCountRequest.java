@@ -11,7 +11,7 @@ public class OpenAiResponseInputTokenCountRequest {
     public String getInput() {
         return this.input;
     }
-    
+
     public void setInput(String input) {
         this.input = input;
     }
@@ -19,7 +19,7 @@ public class OpenAiResponseInputTokenCountRequest {
     public String getInstructions() {
         return this.instructions;
     }
-    
+
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -27,7 +27,7 @@ public class OpenAiResponseInputTokenCountRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -35,7 +35,7 @@ public class OpenAiResponseInputTokenCountRequest {
     public List<String> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<String> tools) {
         this.tools = tools;
     }

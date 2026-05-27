@@ -53,7 +53,6 @@ struct AppAgentRunListQuery {
 struct AppAgentRunCreateRequest {
     agent_id: Option<String>,
     agent_version_id: Option<String>,
-    request_id: Option<String>,
     trace_id: Option<String>,
     source_surface: Option<String>,
     input_message: Option<String>,
@@ -424,7 +423,7 @@ fn build_create_run_command(
             request.agent_version_id.as_deref(),
             "agentVersionId",
         )?,
-        request_id: normalize_required_id(request.request_id.as_deref(), "requestId")?,
+        request_id: generate_entity_uuid(state)?,
         trace_id: normalize_optional_id(request.trace_id.as_deref(), "traceId")?,
         source_surface: normalize_optional_text(
             request.source_surface.as_deref(),

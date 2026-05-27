@@ -16,6 +16,6 @@ This package is intentionally transport-free. It consumes `SdkworkIamService` fr
 Protected calls are delegated to the common IAM service and use the canonical dual-token model:
 
 - `Authorization: Bearer <auth_token>`
-- `Sdkwork-Access-Token: <access_token>`
+- `Access-Token: <access_token>`
 
 This package must not create raw HTTP clients, manually assemble headers, or import a concrete generated SDK.

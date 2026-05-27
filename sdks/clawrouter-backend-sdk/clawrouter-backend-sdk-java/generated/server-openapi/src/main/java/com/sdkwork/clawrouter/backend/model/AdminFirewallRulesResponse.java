@@ -8,7 +8,7 @@ public class AdminFirewallRulesResponse {
     public List<AdminFirewallItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminFirewallItem> items) {
         this.items = items;
     }

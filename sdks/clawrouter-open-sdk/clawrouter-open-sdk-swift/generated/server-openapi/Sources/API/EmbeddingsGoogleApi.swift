@@ -2,7 +2,7 @@ import Foundation
 
 public class EmbeddingsGoogleApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }

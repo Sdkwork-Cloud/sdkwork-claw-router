@@ -1,9 +1,10 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.typecheck.json",
   "compilerOptions": {
     "baseUrl": "../.."
   },
   "include": [
+    "../../src/typecheck-shims.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     "vite.config.ts"

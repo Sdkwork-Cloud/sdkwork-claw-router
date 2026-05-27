@@ -10,7 +10,7 @@ public class OpenAiModeration {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -18,7 +18,7 @@ public class OpenAiModeration {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -26,7 +26,7 @@ public class OpenAiModeration {
     public List<OpenAiModerationResult> getResults() {
         return this.results;
     }
-    
+
     public void setResults(List<OpenAiModerationResult> results) {
         this.results = results;
     }

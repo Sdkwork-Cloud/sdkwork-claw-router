@@ -10,7 +10,7 @@ public class AuthVerificationPolicy {
     public Boolean getEmailCodeLoginEnabled() {
         return this.emailCodeLoginEnabled;
     }
-    
+
     public void setEmailCodeLoginEnabled(Boolean emailCodeLoginEnabled) {
         this.emailCodeLoginEnabled = emailCodeLoginEnabled;
     }
@@ -18,7 +18,7 @@ public class AuthVerificationPolicy {
     public Boolean getEmailRegistrationVerificationRequired() {
         return this.emailRegistrationVerificationRequired;
     }
-    
+
     public void setEmailRegistrationVerificationRequired(Boolean emailRegistrationVerificationRequired) {
         this.emailRegistrationVerificationRequired = emailRegistrationVerificationRequired;
     }
@@ -26,7 +26,7 @@ public class AuthVerificationPolicy {
     public Boolean getPhoneCodeLoginEnabled() {
         return this.phoneCodeLoginEnabled;
     }
-    
+
     public void setPhoneCodeLoginEnabled(Boolean phoneCodeLoginEnabled) {
         this.phoneCodeLoginEnabled = phoneCodeLoginEnabled;
     }
@@ -34,7 +34,7 @@ public class AuthVerificationPolicy {
     public Boolean getPhoneRegistrationVerificationRequired() {
         return this.phoneRegistrationVerificationRequired;
     }
-    
+
     public void setPhoneRegistrationVerificationRequired(Boolean phoneRegistrationVerificationRequired) {
         this.phoneRegistrationVerificationRequired = phoneRegistrationVerificationRequired;
     }

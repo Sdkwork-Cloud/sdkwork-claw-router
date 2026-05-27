@@ -6,6 +6,221 @@ declare module '@sdkwork/iam-service' {
   }
 }
 
+declare module '@sdkwork/file-sdk-ports' {
+  export type SdkworkStorageBucketLogicalScope =
+    | 'migration_import'
+    | 'system_archive'
+    | 'system_quarantine'
+    | 'system_temp'
+    | 'system_variant'
+    | 'tenant_private'
+    | 'tenant_public_asset';
+
+  export type SdkworkStorageBucketStorageClass =
+    | 'STANDARD'
+    | 'INTELLIGENT_TIERING'
+    | 'STANDARD_IA'
+    | 'ONEZONE_IA'
+    | 'GLACIER_IR'
+    | 'GLACIER'
+    | 'DEEP_ARCHIVE';
+
+  export type SdkworkStorageEncryptionMode = 'none' | 'sse_kms' | 'sse_s3';
+  export type SdkworkStorageProviderType = 'aws_s3' | 'cloudflare_r2' | 'cos_s3' | 'local_dev_s3' | 'minio' | 'oss_s3' | 's3_compatible';
+  export type SdkworkStorageResourceStatus = 'active' | 'archived' | 'disabled';
+  export type SdkworkStorageUsageScopeType = 'app' | 'business_domain' | 'organization' | 'space' | 'tenant' | 'user';
+
+  export interface AdminStorageDefaultBucket {
+    bucketId: string;
+    bucketName: string;
+    dataResidencyRegion?: string;
+    logicalScope: SdkworkStorageBucketLogicalScope;
+    providerCode: string;
+    providerId: string;
+    providerType: SdkworkStorageProviderType;
+    status: SdkworkStorageResourceStatus;
+    updatedAt?: string;
+  }
+
+  export interface AdminStorageUsageQuery {
+    cursor?: string;
+    limit?: number;
+    scopeId?: string;
+    scopeType?: SdkworkStorageUsageScopeType;
+  }
+
+  export interface AdminStorageUsageLedgerQuery extends AdminStorageUsageQuery {
+    occurredAfter?: string;
+    occurredBefore?: string;
+  }
+
+  export interface AdminStorageUsageSnapshotQuery extends AdminStorageUsageQuery {
+    periodEndAt?: string;
+    periodStartAt?: string;
+    snapshotType?: string;
+  }
+
+  export interface AdminStorageBucketQuery {
+    cursor?: string;
+    limit?: number;
+    logicalScope?: SdkworkStorageBucketLogicalScope;
+    providerId?: string;
+    status?: string;
+  }
+
+  export interface AdminStorageDefaultBucketQuery {
+    logicalScope?: SdkworkStorageBucketLogicalScope;
+  }
+
+  export interface AdminStorageProviderHealthCheckResult {
+    checkedAt?: string;
+    healthy: boolean;
+    providerId: string;
+    requestId: string;
+    status: string;
+  }
+
+  export interface AdminStorageUpdateProviderInput {
+    providerId: string;
+    reason: string;
+    status: SdkworkStorageResourceStatus;
+  }
+
+  export interface AdminStorageUpdateBucketInput {
+    bucketId: string;
+    reason: string;
+    status: SdkworkStorageResourceStatus;
+  }
+
+  export interface AdminStorageCreateProviderInput {
+    credentialRef: string;
+    endpointUrl?: string;
+    idempotencyKey: string;
+    pathStyleEnabled?: boolean;
+    providerCode: string;
+    providerType: SdkworkStorageProviderType;
+    region?: string;
+    supportsLifecycle?: boolean;
+    supportsMultipart?: boolean;
+    supportsObjectLock?: boolean;
+  }
+
+  export interface AdminStorageCreateBucketInput {
+    bucketName: string;
+    bucketRegion?: string;
+    dataResidencyRegion?: string;
+    defaultEncryptionMode?: SdkworkStorageEncryptionMode;
+    defaultStorageClass?: SdkworkStorageBucketStorageClass;
+    idempotencyKey: string;
+    kmsKeyRef?: string;
+    lifecycleEnabled?: boolean;
+    logicalScope: SdkworkStorageBucketLogicalScope;
+    objectKeyPrefix?: string;
+    objectLockEnabled?: boolean;
+    providerId: string;
+    publicAccessBlocked?: boolean;
+    versioningEnabled?: boolean;
+  }
+
+  export interface AdminStorageCreateQuotaPolicyInput {
+    idempotencyKey: string;
+    quotaLimitBytes: number;
+    scopeId: string;
+    scopeType: Exclude<SdkworkStorageUsageScopeType, 'business_domain'>;
+    singleFileLimitBytes?: number;
+  }
+
+  export interface AdminStorageReconciliationRunQuery {
+    cursor?: string;
+    limit?: number;
+    runType?: string;
+    status?: string;
+  }
+
+  export interface AdminStorageCreateReconciliationRunInput {
+    bucketId?: string;
+    dryRun: boolean;
+    idempotencyKey: string;
+    providerId?: string;
+    runType: string;
+  }
+
+  export interface AdminStorageCreateGarbageCollectionJobInput {
+    criteria?: Record<string, unknown>;
+    dryRun: boolean;
+    idempotencyKey: string;
+    jobType: string;
+  }
+
+  export interface AdminStorageSetDefaultBucketInput {
+    bucketId: string;
+    logicalScope: SdkworkStorageBucketLogicalScope;
+    reason: string;
+  }
+
+  export interface AdminStoragePort {
+    createProvider(input: AdminStorageCreateProviderInput): Promise<{ provider: unknown; requestId: string }>;
+    updateProvider(input: AdminStorageUpdateProviderInput): Promise<{ provider: unknown; requestId: string }>;
+    createBucket(input: AdminStorageCreateBucketInput): Promise<{ bucket: unknown; requestId: string }>;
+    updateBucket(input: AdminStorageUpdateBucketInput): Promise<{ bucket: unknown; requestId: string }>;
+    createQuotaPolicy(input: AdminStorageCreateQuotaPolicyInput): Promise<{ quotaPolicy: unknown; requestId: string }>;
+    createReconciliationRun(input: AdminStorageCreateReconciliationRunInput): Promise<{ reconciliationRun: unknown; requestId: string }>;
+    createGarbageCollectionJob(input: AdminStorageCreateGarbageCollectionJobInput): Promise<{ job: unknown; requestId: string }>;
+    healthCheckProvider(input: { providerId: string }): Promise<AdminStorageProviderHealthCheckResult>;
+    listProviders(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId: string }>;
+    listBuckets(input: AdminStorageBucketQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
+    listDefaultBuckets(input: AdminStorageDefaultBucketQuery): Promise<{ items: AdminStorageDefaultBucket[]; requestId: string }>;
+    listQuotaPolicies(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId: string }>;
+    listReconciliationRuns(input: AdminStorageReconciliationRunQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
+    listUsageCounters(input: AdminStorageUsageQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
+    listUsageLedger(input: AdminStorageUsageLedgerQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
+    listUsageSnapshots(input: AdminStorageUsageSnapshotQuery): Promise<{ items: unknown[]; nextCursor?: string; requestId: string }>;
+    setDefaultBucket(input: AdminStorageSetDefaultBucketInput): Promise<{ defaultBucket: AdminStorageDefaultBucket; requestId: string }>;
+  }
+}
+
+declare module '@sdkwork/file-service' {
+  export interface FilePlatformService {
+    abortUpload(input: unknown): Promise<unknown>;
+    bindFile(input: unknown): Promise<unknown>;
+    completeUpload(input: unknown): Promise<unknown>;
+    createUploadSession(input: unknown): Promise<unknown>;
+    deleteBinding(input: unknown): Promise<unknown>;
+    getFile(input: unknown): Promise<unknown>;
+    getStorageUsage(input: unknown): Promise<unknown>;
+    getSlot(slotCode: string): unknown;
+    issueDownloadUrl(input: unknown): Promise<unknown>;
+    issuePreviewUrl(input: unknown): Promise<unknown>;
+    listBindings(input: unknown): Promise<unknown>;
+    listDriveNodes(input: { parentNodeId?: string; spaceId: string }): Promise<{ items: unknown[]; requestId?: string }>;
+    listDriveSpaces(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId?: string }>;
+    listFiles(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId?: string }>;
+    presignUploadPart(input: unknown): Promise<unknown>;
+  }
+}
+
+declare module '@sdkwork/file-platform-pc-react' {
+  import type { ReactElement } from 'react';
+  import type { AdminStoragePort } from '@sdkwork/file-sdk-ports';
+  import type { FilePlatformService } from '@sdkwork/file-service';
+
+  export interface StorageOperationsSettingsProps {
+    onError?: (error: Error) => void;
+    port: AdminStoragePort;
+    title?: string;
+  }
+
+  export function StorageOperationsSettings(props: StorageOperationsSettingsProps): ReactElement;
+
+  export interface DriveBrowserProps {
+    onError?: (error: Error) => void;
+    service: FilePlatformService;
+    title?: string;
+  }
+
+  export function DriveBrowser(props: DriveBrowserProps): ReactElement;
+}
+
 declare module '@sdkwork/iam-runtime' {
   import type { IamStoredSession } from '@sdkwork/iam-service';
 
@@ -146,10 +361,17 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
     durationSeconds?: number;
     imageCount?: number;
     imageMode?: unknown;
+    loop?: boolean;
+    promptInfluence?: number;
     quality?: 'high' | 'standard';
+    responseFormat?: 'aac' | 'flac' | 'mp3' | 'opus' | 'pcm' | 'wav';
     resolution?: '4k' | '720p' | '1080p';
+    sfxMode?: unknown;
+    speechMode?: unknown;
+    speed?: number;
     syncAudioVideo?: boolean;
     videoMode?: unknown;
+    voice?: string;
   }
 
   export interface SdkworkGenerationArtifact {
@@ -244,12 +466,26 @@ declare module '@sdkwork/generation-pc-react/react' {
     syncAudioVideo: boolean;
   }
 
+  export interface SdkworkGenerationSpeechModeConfig {
+    responseFormat?: 'aac' | 'flac' | 'mp3' | 'opus' | 'pcm' | 'wav';
+    speed?: number;
+    voice?: string;
+  }
+
+  export interface SdkworkGenerationSfxModeConfig {
+    loop: boolean;
+    promptInfluence: number;
+    responseFormat?: 'mp3' | 'wav';
+  }
+
   export interface SdkworkGenerationAssetConfig {
     aspectRatio: SdkworkGenerationAssetAspectRatio;
     durationSeconds: number;
     imageCount: number;
     imageMode?: SdkworkGenerationImageModeConfig;
     quality: SdkworkGenerationAssetQuality;
+    sfxMode?: SdkworkGenerationSfxModeConfig;
+    speechMode?: SdkworkGenerationSpeechModeConfig;
     videoMode?: SdkworkGenerationVideoModeConfig;
   }
 
@@ -258,10 +494,17 @@ declare module '@sdkwork/generation-pc-react/react' {
     durationSeconds?: number;
     imageCount?: number;
     imageMode?: SdkworkGenerationImageModeConfig;
+    loop?: boolean;
+    promptInfluence?: number;
     quality?: SdkworkGenerationAssetQuality;
+    responseFormat?: SdkworkGenerationSpeechModeConfig['responseFormat'] | SdkworkGenerationSfxModeConfig['responseFormat'];
     resolution?: SdkworkGenerationVideoModeConfig['resolution'];
+    sfxMode?: SdkworkGenerationSfxModeConfig;
+    speechMode?: SdkworkGenerationSpeechModeConfig;
+    speed?: number;
     syncAudioVideo?: boolean;
     videoMode?: SdkworkGenerationVideoModeConfig;
+    voice?: string;
   }
 
   export interface SdkworkGenerationReferencePrice {
@@ -336,6 +579,8 @@ declare module '@sdkwork/generation-pc-react/react' {
   }
 
   export const DEFAULT_SDKWORK_GENERATION_IMAGE_MODE_CONFIG: SdkworkGenerationImageModeConfig;
+  export const DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG: SdkworkGenerationSfxModeConfig;
+  export const DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG: SdkworkGenerationSpeechModeConfig;
   export const DEFAULT_SDKWORK_GENERATION_VIDEO_MODE_CONFIG: SdkworkGenerationVideoModeConfig;
   export function SdkworkGenerationModePopupBase(props: Record<string, unknown>): ReactNode;
   export function appendSdkworkGenerationArtifactToHistoryItem<TItem extends SdkworkGenerationHistoryItem>(
@@ -391,6 +636,14 @@ declare module '@sdkwork/generation-pc-react/react' {
   export function updateSdkworkGenerationImageModeConfig(
     config: SdkworkGenerationAssetConfig,
     updates: Partial<SdkworkGenerationImageModeConfig>,
+  ): SdkworkGenerationAssetConfig;
+  export function updateSdkworkGenerationSpeechModeConfig(
+    config: SdkworkGenerationAssetConfig,
+    updates: Partial<SdkworkGenerationSpeechModeConfig>,
+  ): SdkworkGenerationAssetConfig;
+  export function updateSdkworkGenerationSfxModeConfig(
+    config: SdkworkGenerationAssetConfig,
+    updates: Partial<SdkworkGenerationSfxModeConfig>,
   ): SdkworkGenerationAssetConfig;
   export function updateSdkworkGenerationVideoModeConfig(
     config: SdkworkGenerationAssetConfig,

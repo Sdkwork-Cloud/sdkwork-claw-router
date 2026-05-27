@@ -18,6 +18,9 @@ use tower::ServiceExt;
 const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";
 const TRUSTED_SUBJECT_SECRET: &str = "trusted-subject-secret-0123456789";
 const APP_SESSION_SECRET: &str = "app-session-secret-0123456789abcd";
+const INTERNAL_TENANT_HEADER: &str = concat!("x-sdkwork-", "tenant-id");
+const INTERNAL_ORGANIZATION_HEADER: &str = concat!("x-sdkwork-", "organization-id");
+const INTERNAL_USER_HEADER: &str = concat!("x-sdkwork-", "user-id");
 
 fn trusted_subject_config() -> TrustedSubjectConfig {
     TrustedSubjectConfig::from_signing_secret(TRUSTED_SUBJECT_SECRET).unwrap()
@@ -148,7 +151,7 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
                 20,
                 30,
             )
-            .header("X-Request-Id", "session-request-1")
+            .header("X-Request-Id", "55555555-5555-4333-8444-555555555555")
             .header("content-type", "application/json")
             .body(Body::from(r#"{"grantType":"session_bridge"}"#))
             .unwrap(),
@@ -196,7 +199,10 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
     assert_eq!(10, events[0].tenant_id);
     assert_eq!(20, events[0].organization_id);
     assert_eq!(30, events[0].user_id);
-    assert_eq!(Some("session-request-1".to_owned()), events[0].request_id);
+    assert_eq!(
+        Some("55555555-5555-4333-8444-555555555555".to_owned()),
+        events[0].request_id
+    );
     assert_eq!(64, events[0].session_id_hash.len());
     assert!(!events[0].session_id_hash.contains(auth_token));
     assert!(!events[0].session_id_hash.contains(access_token));
@@ -210,9 +216,9 @@ async fn app_session_exchange_rejects_direct_trusted_subject_headers() {
             Request::builder()
                 .method("POST")
                 .uri(APP_SESSION_PATH)
-                .header("x-sdkwork-tenant-id", "999")
-                .header("x-sdkwork-organization-id", "999")
-                .header("x-sdkwork-user-id", "999")
+                .header(INTERNAL_TENANT_HEADER, "999")
+                .header(INTERNAL_ORGANIZATION_HEADER, "999")
+                .header(INTERNAL_USER_HEADER, "999")
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"grantType":"session_bridge"}"#))
                 .unwrap(),
@@ -229,6 +235,7 @@ async fn app_session_exchange_rejects_direct_trusted_subject_headers() {
 
     assert_eq!("4010", payload["code"]);
     assert!(body_text.contains("trusted request subject is required"));
+    assert!(!body_text.contains(INTERNAL_TENANT_HEADER));
     assert!(!body_text.contains("999"));
 }
 

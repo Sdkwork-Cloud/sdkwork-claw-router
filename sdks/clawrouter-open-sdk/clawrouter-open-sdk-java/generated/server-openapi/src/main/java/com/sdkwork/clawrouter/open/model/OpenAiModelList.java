@@ -9,7 +9,7 @@ public class OpenAiModelList {
     public List<OpenAiModel> getData() {
         return this.data;
     }
-    
+
     public void setData(List<OpenAiModel> data) {
         this.data = data;
     }
@@ -17,7 +17,7 @@ public class OpenAiModelList {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

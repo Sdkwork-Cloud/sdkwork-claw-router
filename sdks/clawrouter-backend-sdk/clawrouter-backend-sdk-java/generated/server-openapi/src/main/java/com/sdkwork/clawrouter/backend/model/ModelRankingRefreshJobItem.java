@@ -25,7 +25,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getDurationMs() {
         return this.durationMs;
     }
-    
+
     public void setDurationMs(Integer durationMs) {
         this.durationMs = durationMs;
     }
@@ -33,7 +33,7 @@ public class ModelRankingRefreshJobItem {
     public String getEndedAt() {
         return this.endedAt;
     }
-    
+
     public void setEndedAt(String endedAt) {
         this.endedAt = endedAt;
     }
@@ -41,7 +41,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getFailureCount() {
         return this.failureCount;
     }
-    
+
     public void setFailureCount(Integer failureCount) {
         this.failureCount = failureCount;
     }
@@ -49,7 +49,7 @@ public class ModelRankingRefreshJobItem {
     public String getFailureReason() {
         return this.failureReason;
     }
-    
+
     public void setFailureReason(String failureReason) {
         this.failureReason = failureReason;
     }
@@ -57,7 +57,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getGeneratedCount() {
         return this.generatedCount;
     }
-    
+
     public void setGeneratedCount(Integer generatedCount) {
         this.generatedCount = generatedCount;
     }
@@ -65,7 +65,7 @@ public class ModelRankingRefreshJobItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -73,7 +73,7 @@ public class ModelRankingRefreshJobItem {
     public String getJobName() {
         return this.jobName;
     }
-    
+
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
@@ -81,7 +81,7 @@ public class ModelRankingRefreshJobItem {
     public String getNextRefreshAt() {
         return this.nextRefreshAt;
     }
-    
+
     public void setNextRefreshAt(String nextRefreshAt) {
         this.nextRefreshAt = nextRefreshAt;
     }
@@ -89,7 +89,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(Integer organizationId) {
         this.organizationId = organizationId;
     }
@@ -97,7 +97,7 @@ public class ModelRankingRefreshJobItem {
     public String getRankScope() {
         return this.rankScope;
     }
-    
+
     public void setRankScope(String rankScope) {
         this.rankScope = rankScope;
     }
@@ -105,7 +105,7 @@ public class ModelRankingRefreshJobItem {
     public String getSnapshotDate() {
         return this.snapshotDate;
     }
-    
+
     public void setSnapshotDate(String snapshotDate) {
         this.snapshotDate = snapshotDate;
     }
@@ -113,7 +113,7 @@ public class ModelRankingRefreshJobItem {
     public String getSnapshotPeriod() {
         return this.snapshotPeriod;
     }
-    
+
     public void setSnapshotPeriod(String snapshotPeriod) {
         this.snapshotPeriod = snapshotPeriod;
     }
@@ -121,7 +121,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getSourceCount() {
         return this.sourceCount;
     }
-    
+
     public void setSourceCount(Integer sourceCount) {
         this.sourceCount = sourceCount;
     }
@@ -129,7 +129,7 @@ public class ModelRankingRefreshJobItem {
     public String getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
@@ -137,7 +137,7 @@ public class ModelRankingRefreshJobItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -145,7 +145,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getSuccessCount() {
         return this.successCount;
     }
-    
+
     public void setSuccessCount(Integer successCount) {
         this.successCount = successCount;
     }
@@ -153,7 +153,7 @@ public class ModelRankingRefreshJobItem {
     public Integer getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(Integer tenantId) {
         this.tenantId = tenantId;
     }
@@ -161,7 +161,7 @@ public class ModelRankingRefreshJobItem {
     public String getWindowEnd() {
         return this.windowEnd;
     }
-    
+
     public void setWindowEnd(String windowEnd) {
         this.windowEnd = windowEnd;
     }
@@ -169,7 +169,7 @@ public class ModelRankingRefreshJobItem {
     public String getWindowStart() {
         return this.windowStart;
     }
-    
+
     public void setWindowStart(String windowStart) {
         this.windowStart = windowStart;
     }

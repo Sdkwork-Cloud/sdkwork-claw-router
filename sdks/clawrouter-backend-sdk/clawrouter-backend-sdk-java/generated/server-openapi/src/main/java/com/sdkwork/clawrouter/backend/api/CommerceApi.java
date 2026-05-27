@@ -207,50 +207,6 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<CommerceReportsRefundsListResult>() {});
     }
 
-    /** Coupons Campaigns List */
-    public CouponsCampaignsListResult couponsCampaignsList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/campaigns"), query));
-        return client.convertValue(raw, new TypeReference<CouponsCampaignsListResult>() {});
-    }
-
-    /** Coupons Codes List */
-    public CouponsCodesListResult couponsCodesList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/codes"), query));
-        return client.convertValue(raw, new TypeReference<CouponsCodesListResult>() {});
-    }
-
-    /** Coupons Redemptions List */
-    public CouponsRedemptionsListResult couponsRedemptionsList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/redemptions"), query));
-        return client.convertValue(raw, new TypeReference<CouponsRedemptionsListResult>() {});
-    }
-
-    /** Coupons Templates List */
-    public CouponsTemplatesListResult couponsTemplatesList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/templates"), query));
-        return client.convertValue(raw, new TypeReference<CouponsTemplatesListResult>() {});
-    }
-
     /** Fulfillments List */
     public FulfillmentsListResult fulfillmentsList(Integer page, Integer pageSize, String status) throws Exception {
         String query = buildQueryString(List.of(

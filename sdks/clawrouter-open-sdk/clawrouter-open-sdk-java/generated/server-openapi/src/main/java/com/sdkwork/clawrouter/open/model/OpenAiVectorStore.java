@@ -19,7 +19,7 @@ public class OpenAiVectorStore {
     public Integer getBytes() {
         return this.bytes;
     }
-    
+
     public void setBytes(Integer bytes) {
         this.bytes = bytes;
     }
@@ -27,7 +27,7 @@ public class OpenAiVectorStore {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -35,7 +35,7 @@ public class OpenAiVectorStore {
     public String getExpiresAfter() {
         return this.expiresAfter;
     }
-    
+
     public void setExpiresAfter(String expiresAfter) {
         this.expiresAfter = expiresAfter;
     }
@@ -43,7 +43,7 @@ public class OpenAiVectorStore {
     public Integer getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(Integer expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -51,7 +51,7 @@ public class OpenAiVectorStore {
     public OpenAiVectorStoreFileCounts getFileCounts() {
         return this.fileCounts;
     }
-    
+
     public void setFileCounts(OpenAiVectorStoreFileCounts fileCounts) {
         this.fileCounts = fileCounts;
     }
@@ -59,7 +59,7 @@ public class OpenAiVectorStore {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -67,7 +67,7 @@ public class OpenAiVectorStore {
     public Integer getLastActiveAt() {
         return this.lastActiveAt;
     }
-    
+
     public void setLastActiveAt(Integer lastActiveAt) {
         this.lastActiveAt = lastActiveAt;
     }
@@ -75,7 +75,7 @@ public class OpenAiVectorStore {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -83,7 +83,7 @@ public class OpenAiVectorStore {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -91,7 +91,7 @@ public class OpenAiVectorStore {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -99,7 +99,7 @@ public class OpenAiVectorStore {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -107,7 +107,7 @@ public class OpenAiVectorStore {
     public Integer getUsageBytes() {
         return this.usageBytes;
     }
-    
+
     public void setUsageBytes(Integer usageBytes) {
         this.usageBytes = usageBytes;
     }

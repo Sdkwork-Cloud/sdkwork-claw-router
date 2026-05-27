@@ -7,7 +7,7 @@ public class AdminSkillCategoryMutationResponse {
     public AdminSkillCategoryItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminSkillCategoryItem item) {
         this.item = item;
     }

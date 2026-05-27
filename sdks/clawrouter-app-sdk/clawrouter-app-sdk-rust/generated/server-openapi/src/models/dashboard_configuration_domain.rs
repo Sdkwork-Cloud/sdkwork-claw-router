@@ -9,9 +9,15 @@ pub struct DashboardConfigurationDomain {
     /// Id field on dashboard configuration domain.
     pub id: String,
 
+    /// Ip field on dashboard configuration domain.
+    pub ip: String,
+
     /// Name field on dashboard configuration domain.
     pub name: String,
 
     /// Remark field on dashboard configuration domain.
     pub remark: String,
+
+    /// Status field on dashboard configuration domain.
+    pub status: String,
 }

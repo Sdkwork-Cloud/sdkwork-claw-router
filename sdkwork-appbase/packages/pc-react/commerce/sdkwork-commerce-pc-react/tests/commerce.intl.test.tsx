@@ -175,7 +175,7 @@ function createSnapshot() {
       pendingPaymentOrders: 1,
       totalOrders: 9,
       totalSpentCny: 699,
-      vipRemainingDays: 38,
+      membershipRemainingDays: 38,
     },
   };
 }
@@ -210,7 +210,7 @@ function createEmptySnapshot() {
       pendingPaymentOrders: 0,
       totalOrders: 0,
       totalSpentCny: 0,
-      vipRemainingDays: null,
+      membershipRemainingDays: null,
     },
   };
 }

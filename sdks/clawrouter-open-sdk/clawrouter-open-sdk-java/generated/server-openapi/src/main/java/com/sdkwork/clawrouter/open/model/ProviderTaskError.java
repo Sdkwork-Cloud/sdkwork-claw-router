@@ -9,7 +9,7 @@ public class ProviderTaskError {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -17,7 +17,7 @@ public class ProviderTaskError {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -25,7 +25,7 @@ public class ProviderTaskError {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

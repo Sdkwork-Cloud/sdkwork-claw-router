@@ -3365,7 +3365,7 @@ function apiPlaygroundCorsHeaders(request) {
     { name: "access-control-allow-origin", value: origin },
     { name: "access-control-allow-credentials", value: "true" },
     { name: "access-control-allow-methods", value: "GET, POST, PUT, PATCH, DELETE, OPTIONS" },
-    { name: "access-control-allow-headers", value: "authorization, content-type, sdkwork-access-token, x-browser-smoke" },
+    { name: "access-control-allow-headers", value: "authorization, content-type, access-token, x-browser-smoke" },
     { name: "access-control-expose-headers", value: "content-type, x-browser-smoke" },
     { name: "vary", value: "origin" },
   ];

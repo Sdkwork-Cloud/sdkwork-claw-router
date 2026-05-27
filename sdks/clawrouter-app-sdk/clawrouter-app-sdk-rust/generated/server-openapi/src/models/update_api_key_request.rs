@@ -3,6 +3,11 @@ use serde::{Deserialize, Serialize};
 /// Update api key request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct UpdateApiKeyRequest {
+    /// Marks this API key as the default backend runtime API key for Playground and app runtime calls.
+    #[serde(rename = "defaultForRuntime")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub default_for_runtime: Option<bool>,
+
     /// Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires: Option<String>,

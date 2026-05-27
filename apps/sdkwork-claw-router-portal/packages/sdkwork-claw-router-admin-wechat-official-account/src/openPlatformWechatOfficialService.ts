@@ -1,5 +1,4 @@
 import {
-  createRequestToken,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -31,9 +30,9 @@ export interface WechatOfficialAccountItem {
   qrDefault: boolean;
   defaultEntryId: string;
   appId: string;
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
+  hasAppSecret: boolean;
+  hasToken: boolean;
+  hasEncodingAesKey: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -50,12 +49,12 @@ export interface WechatOfficialEntryItem {
 }
 
 export interface WechatOfficialAccountInput {
-  key: string;
+  key?: string;
   name: string;
   appId?: string;
-  tokenRef?: string;
-  secretRef?: string;
-  aesKeyRef?: string;
+  appSecret?: string;
+  token?: string;
+  encodingAesKey?: string;
 }
 
 export interface WechatOfficialAccountUpdateInput {
@@ -64,9 +63,9 @@ export interface WechatOfficialAccountUpdateInput {
   qrDefault?: boolean;
   defaultEntryId?: string;
   appId?: string;
-  tokenRef?: string;
-  secretRef?: string;
-  aesKeyRef?: string;
+  appSecret?: string;
+  token?: string;
+  encodingAesKey?: string;
 }
 
 export interface WechatOfficialEntryInput {
@@ -95,18 +94,16 @@ export class WechatOfficialAccountService {
 
   static async createAccount(input: WechatOfficialAccountInput): Promise<WechatOfficialAccountItem> {
     const request: OpenPlatformAccountCreateRequest = {
-      key: input.key.trim(),
+      key: optionalPatchString(input.key) ?? buildOpenPlatformAccountKey('wechat.official', input.appId, input.name),
       name: input.name.trim(),
       provider: 'wechat',
       type: 'official_account',
       appId: optionalString(input.appId),
-      tokenRef: optionalString(input.tokenRef),
-      secretRef: optionalString(input.secretRef),
-      aesKeyRef: optionalString(input.aesKeyRef),
+      appSecret: optionalString(input.appSecret),
+      token: optionalString(input.token),
+      encodingAesKey: optionalString(input.encodingAesKey),
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.create(request, {
-      xRequestId: createRequestToken('admin-wechat-official-account-create'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.create(request);
     ensureSdkworkApiSuccess(result, 'Failed to create WeChat official account');
     return normalizeOfficialAccount(readRequiredApiItem(result, 'WeChat official account is required'));
   }
@@ -122,13 +119,11 @@ export class WechatOfficialAccountService {
       qrDefault: input.qrDefault,
       defaultEntryId: optionalNullablePatchString(input.defaultEntryId),
       appId: optionalNullablePatchString(input.appId),
-      tokenRef: optionalNullablePatchString(input.tokenRef),
-      secretRef: optionalNullablePatchString(input.secretRef),
-      aesKeyRef: optionalNullablePatchString(input.aesKeyRef),
+      appSecret: optionalPatchString(input.appSecret),
+      token: optionalPatchString(input.token),
+      encodingAesKey: optionalPatchString(input.encodingAesKey),
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.update(normalizedAccountId, request, {
-      xRequestId: createRequestToken('admin-wechat-official-account-update'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.update(normalizedAccountId, request);
     ensureSdkworkApiSuccess(result, 'Failed to update WeChat official account');
     return normalizeOfficialAccount(readRequiredApiItem(result, 'WeChat official account is required'));
   }
@@ -147,9 +142,7 @@ export class WechatOfficialAccountService {
       type: input.type,
       url: input.url.trim(),
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.create(normalizedAccountId, request, {
-      xRequestId: createRequestToken('admin-wechat-official-menu-create'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.create(normalizedAccountId, request);
     ensureSdkworkApiSuccess(result, 'Failed to create WeChat official account menu entry');
     return normalizeOfficialEntry(readRequiredApiItem(result, 'WeChat official account menu entry is required'));
   }
@@ -167,9 +160,7 @@ export class WechatOfficialAccountService {
       url: optionalPatchString(input.url),
       status: input.status,
     };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.update(normalizedAccountId, normalizedEntryId, request, {
-      xRequestId: createRequestToken('admin-wechat-official-menu-update'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.update(normalizedAccountId, normalizedEntryId, request);
     ensureSdkworkApiSuccess(result, 'Failed to update WeChat official account menu entry');
     return normalizeOfficialEntry(readRequiredApiItem(result, 'WeChat official account menu entry is required'));
   }
@@ -177,9 +168,7 @@ export class WechatOfficialAccountService {
   static async deleteEntry(accountId: string, entryId: string): Promise<void> {
     const normalizedAccountId = requiredSafePathSegment(accountId, 'accountId');
     const normalizedEntryId = requiredSafePathSegment(entryId, 'entryId');
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.delete(normalizedAccountId, normalizedEntryId, {
-      xRequestId: createRequestToken('admin-wechat-official-menu-delete'),
-    });
+    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.entries.delete(normalizedAccountId, normalizedEntryId);
     ensureSdkworkApiSuccess(result, 'Failed to delete WeChat official account menu entry');
   }
 }
@@ -191,6 +180,9 @@ function normalizeOfficialAccount(value: unknown): WechatOfficialAccountItem {
   if (provider !== 'wechat' || type !== 'official_account') {
     throw new Error(`Unsupported WeChat official account record: ${provider}/${type}`);
   }
+  const tokenRef = readNullableString(item, 'tokenRef') ?? '';
+  const secretRef = readNullableString(item, 'secretRef') ?? '';
+  const aesKeyRef = readNullableString(item, 'aesKeyRef') ?? '';
   return {
     id: readRequiredString(item, 'id', 'WeChat official account id is required'),
     key: readRequiredString(item, 'key', 'WeChat official account key is required'),
@@ -199,9 +191,9 @@ function normalizeOfficialAccount(value: unknown): WechatOfficialAccountItem {
     qrDefault: readBoolean(item, 'qrDefault', false),
     defaultEntryId: readNullableString(item, 'defaultEntryId') ?? '',
     appId: readNullableString(item, 'appId') ?? '',
-    tokenRef: readNullableString(item, 'tokenRef') ?? '',
-    secretRef: readNullableString(item, 'secretRef') ?? '',
-    aesKeyRef: readNullableString(item, 'aesKeyRef') ?? '',
+    hasAppSecret: secretRef.trim().length > 0,
+    hasToken: tokenRef.trim().length > 0,
+    hasEncodingAesKey: aesKeyRef.trim().length > 0,
     createdAt: readString(item, 'createdAt'),
     updatedAt: readString(item, 'updatedAt'),
   };
@@ -267,4 +259,16 @@ function optionalNullablePatchString(value: string | undefined): string | null |
     return undefined;
   }
   return optionalString(value);
+}
+
+function buildOpenPlatformAccountKey(prefix: string, appId: string | undefined, name: string): string {
+  const source = optionalPatchString(appId) ?? optionalPatchString(name) ?? 'account';
+  const normalized = source
+    .toLowerCase()
+    .replace(/[^a-z0-9._:-]+/g, '-')
+    .replace(/^[^a-z0-9]+/, '')
+    .replace(/[._:-]+$/g, '');
+  const segment = normalized || 'account';
+  const key = `${prefix}.${segment}`;
+  return key.length <= 128 ? key : key.slice(0, 128).replace(/[._:-]+$/g, '') || `${prefix}.account`;
 }

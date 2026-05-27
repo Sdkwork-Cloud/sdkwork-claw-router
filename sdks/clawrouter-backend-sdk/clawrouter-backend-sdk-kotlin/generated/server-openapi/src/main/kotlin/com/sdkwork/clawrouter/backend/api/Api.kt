@@ -13,7 +13,12 @@ class Api(private val client: HttpClient) {
     val ecosystem: EcosystemApi = EcosystemApi(client)
     val iam: IamApi = IamApi(client)
     val integration: IntegrationApi = IntegrationApi(client)
+    val mcp: McpApi = McpApi(client)
+    val messaging: MessagingApi = MessagingApi(client)
     val openPlatform: OpenPlatformApi = OpenPlatformApi(client)
     val platform: PlatformApi = PlatformApi(client)
     val system: SystemApi = SystemApi(client)
+    val prompts: PromptsApi = PromptsApi(client)
+    val serviceProviders: ServiceProvidersApi = ServiceProvidersApi(client)
+    val storage: StorageApi = StorageApi(client)
 }

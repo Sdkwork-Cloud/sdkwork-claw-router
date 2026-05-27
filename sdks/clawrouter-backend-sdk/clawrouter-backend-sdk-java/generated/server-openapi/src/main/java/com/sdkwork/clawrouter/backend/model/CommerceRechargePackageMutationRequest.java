@@ -9,7 +9,7 @@ public class CommerceRechargePackageMutationRequest {
     public Integer getBonus() {
         return this.bonus;
     }
-    
+
     public void setBonus(Integer bonus) {
         this.bonus = bonus;
     }
@@ -17,7 +17,7 @@ public class CommerceRechargePackageMutationRequest {
     public String getRmb() {
         return this.rmb;
     }
-    
+
     public void setRmb(String rmb) {
         this.rmb = rmb;
     }
@@ -25,7 +25,7 @@ public class CommerceRechargePackageMutationRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

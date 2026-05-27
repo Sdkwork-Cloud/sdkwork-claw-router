@@ -407,6 +407,33 @@ test("console api key table separates status and created columns after IP ACL", 
   assert.match(source, /{key\.ipLimit}[\s\S]*displayApiKeyStatus\(key\.status, t\)[\s\S]*{key\.created}[\s\S]*{key\.expires}/);
 });
 
+test("console api key page starts with the action toolbar without a duplicate title header", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.doesNotMatch(source, /<h1[^>]*>\{t\('console\.apiKeys\.title', 'API Keys'\)\}<\/h1>/);
+  assert.doesNotMatch(source, /<Key className=/);
+  assert.doesNotMatch(source, /(^|\n)\s*Key,\r?\n/);
+  assert.doesNotMatch(source, /py-2 border-b border-slate-200/);
+  assert.match(source, /<Plus className="w-4 h-4" \/>\s*\{t\('common\.actions\.createKey'\)\}/);
+  assert.match(source, /placeholder=\{t\('console\.apiKeys\.searchPlaceholder'/);
+});
+
+test("console api key table keeps pagination visible while rows scroll inside the viewport", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /h-\[calc\(100vh-72px\)\][^"]*overflow-hidden[^"]*flex[^"]*flex-col/);
+  assert.match(source, /className="[^"]*shrink-0[^"]*flex[^"]*flex-col[^"]*md:flex-row/);
+  assert.match(source, /className="[^"]*flex[^"]*flex-col[^"]*flex-1[^"]*min-h-0/);
+  assert.match(source, /className="[^"]*flex-1[^"]*min-h-0[^"]*overflow-auto/);
+  assert.match(source, /className="[^"]*sticky[^"]*top-0[^"]*z-10/);
+  assert.match(source, /className="[^"]*shrink-0[^"]*border-t/);
+  assert.doesNotMatch(source, /\{filteredKeys\.length > 0 && \(/);
+});
+
 test("console api key usage details profiles cover supported tool setup tabs", async () => {
   const {
     API_KEY_USAGE_TOOL_PROFILES,
@@ -471,7 +498,7 @@ test("console api key edit drawer hides batch create controls", async () => {
 
 test("console api key i18n keys are present in English and Chinese resources", async () => {
   const source = await import("node:fs/promises").then((fs) =>
-    fs.readFile(new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url), "utf8"),
+    fs.readFile(new URL("./packages/sdkwork-claw-router-i18n/src/resources/console/api-keys.ts", import.meta.url), "utf8"),
   );
 
   for (const key of [
@@ -675,7 +702,7 @@ test("console api key creation uses raw key material when the returned item omit
   );
 });
 
-test("console api key service creates keys through the generated app SDK with request tokens", async () => {
+test("console api key service creates keys through the generated app SDK with idempotency keys only", async () => {
   await withApiKeySdkResponse(
     {
       code: "2000",
@@ -717,12 +744,12 @@ test("console api key service creates keys through the generated app SDK with re
       assert.equal(captured[0].method, "POST");
       assert.match(captured[0].body, /"name":"Created"/);
       assert.match(captured[0].headers["idempotency-key"], /^create-api-key-/);
-      assert.match(captured[0].headers["x-request-id"], /^request-/);
+      assert.equal(captured[0].headers["x-request-id"], undefined);
     },
   );
 });
 
-test("console api key service updates keys through the generated app SDK with request ids", async () => {
+test("console api key service updates keys through the generated app SDK without request ids", async () => {
   await withApiKeySdkResponse(
     {
       code: "2000",
@@ -762,7 +789,7 @@ test("console api key service updates keys through the generated app SDK with re
       assert.equal(captured[0].method, "PATCH");
       assert.match(captured[0].body, /"group":"premium"/);
       assert.equal(JSON.parse(captured[0].body).ipLimit, "unrestricted");
-      assert.match(captured[0].headers["x-request-id"], /^request-/);
+      assert.equal(captured[0].headers["x-request-id"], undefined);
     },
   );
 });

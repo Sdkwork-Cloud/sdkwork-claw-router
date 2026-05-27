@@ -12,6 +12,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -21,12 +22,10 @@ use crate::ports::{
 };
 
 const MAX_RULE_NAME_LEN: usize = 128;
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MIN_LIMIT_VALUE: i64 = 1;
 const MAX_LIMIT_VALUE: i64 = 1_000_000;
 const DEFAULT_BLOCK_DURATION_SECONDS: i64 = 600;
 const MAX_BLOCK_DURATION_SECONDS: i64 = 86_400;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminIpRateLimitState {
@@ -348,7 +347,7 @@ fn normalize_cidr(address: IpAddr, prefix: u8) -> Result<String, String> {
 
 fn build_create_command(
     state: AdminIpRateLimitState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminIpRateLimitSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminIpRateLimitCommand, IpRateLimitCommandBuildError> {
@@ -367,7 +366,7 @@ fn build_create_command(
         rpm: request.rpm,
         block_duration_seconds: request.block_duration_seconds,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -381,29 +380,13 @@ fn generate_entity_uuid(
         .map_err(IpRateLimitCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminIpRateLimitState,
-) -> Result<String, IpRateLimitCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(IpRateLimitCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> IpRateLimitCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => IpRateLimitCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            IpRateLimitCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_item_response(item: AdminIpRateLimitItem) -> AdminIpRateLimitItemResponse {

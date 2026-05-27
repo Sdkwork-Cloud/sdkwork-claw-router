@@ -8,6 +8,7 @@ class CreateApiKeyRequest:
     """Create api key request schema exposed by Claw Router."""
     group: str
     name: str
+    default_for_runtime: Optional[bool] = None
     expires: Optional[str] = None
     ip_limit: Optional[str] = None
     is_unlimited_quota: Optional[bool] = None

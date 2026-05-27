@@ -9,7 +9,7 @@ public class AppModelCatalogReferencePrice {
     public String getBillingMeter() {
         return this.billingMeter;
     }
-    
+
     public void setBillingMeter(String billingMeter) {
         this.billingMeter = billingMeter;
     }
@@ -17,7 +17,7 @@ public class AppModelCatalogReferencePrice {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -25,7 +25,7 @@ public class AppModelCatalogReferencePrice {
     public String getUnitPrice() {
         return this.unitPrice;
     }
-    
+
     public void setUnitPrice(String unitPrice) {
         this.unitPrice = unitPrice;
     }

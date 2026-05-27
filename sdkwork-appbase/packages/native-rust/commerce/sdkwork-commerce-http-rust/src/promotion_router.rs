@@ -1,36 +1,37 @@
-use axum::extract::{Query, State};
+use axum::extract::{Extension, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_promotion::{
-    CurrentUserCouponItem, CurrentUserCouponListQuery, PointsBalance, PointsBalanceQuery,
-    PointsHistoryItem, PointsHistoryQuery, RedeemCodeCommand, RedeemCodeOutcome,
+    PointsBalance, PointsBalanceQuery, PointsHistoryItem, PointsHistoryQuery,
+    PromotionCodeRedemptionCommand, PromotionCodeRedemptionOutcome, PromotionUserCouponItem,
+    PromotionUserCouponListQuery,
 };
 use sdkwork_commerce_storage_sqlx::{PostgresCommercePromotionStore, SqliteCommercePromotionStore};
+use sdkwork_iam_core::IamAppContext;
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, SqlitePool};
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
 
-const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
-const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
-const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
+use crate::subject::{app_runtime_subject_from_extension, AppRuntimeSubject};
+use crate::with_request_identity;
+
 const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
 const REQUEST_NO_HEADER: &str = "Sdkwork-Request-No";
-const X_REQUEST_ID_HEADER: &str = "X-Request-Id";
-const MAX_REDEEM_CODE_LEN: usize = 128;
+const MAX_PROMOTION_CODE_LEN: usize = 128;
 
 pub type AppbasePromotionFuture<'a, T> =
     Pin<Box<dyn Future<Output = Result<T, CommerceServiceError>> + Send + 'a>>;
 
 pub trait AppbasePromotionStore: Send + Sync {
-    fn list_current_user_coupons<'a>(
+    fn list_promotion_user_coupons<'a>(
         &'a self,
-        query: CurrentUserCouponListQuery,
-    ) -> AppbasePromotionFuture<'a, Vec<CurrentUserCouponItem>>;
+        query: PromotionUserCouponListQuery,
+    ) -> AppbasePromotionFuture<'a, Vec<PromotionUserCouponItem>>;
 
     fn retrieve_points_balance<'a>(
         &'a self,
@@ -42,22 +43,15 @@ pub trait AppbasePromotionStore: Send + Sync {
         query: PointsHistoryQuery,
     ) -> AppbasePromotionFuture<'a, Vec<PointsHistoryItem>>;
 
-    fn redeem_code<'a>(
+    fn redeem_promotion_code<'a>(
         &'a self,
-        command: RedeemCodeCommand,
-    ) -> AppbasePromotionFuture<'a, RedeemCodeOutcome>;
+        command: PromotionCodeRedemptionCommand,
+    ) -> AppbasePromotionFuture<'a, PromotionCodeRedemptionOutcome>;
 }
 
 #[derive(Clone)]
 struct AppPromotionState {
     store: Arc<dyn AppbasePromotionStore>,
-}
-
-#[derive(Debug, Clone)]
-struct AppPromotionSubject {
-    tenant_id: String,
-    organization_id: Option<String>,
-    user_id: String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -67,7 +61,7 @@ struct CouponListQueryParams {
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct RedeemCodeRequest {
+struct PromotionCodeRedemptionRequest {
     code: Option<String>,
 }
 
@@ -82,7 +76,7 @@ struct AppPromotionApiResult<T: Serialize> {
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
-struct CurrentUserCouponItemResponse {
+struct PromotionUserCouponItemResponse {
     id: String,
     code: String,
     amount: String,
@@ -110,7 +104,7 @@ struct PointsHistoryItemResponse {
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
-struct RedeemCodeOutcomeResponse {
+struct PromotionCodeRedemptionOutcomeResponse {
     message: String,
     amount: String,
     credited_points: i64,
@@ -118,11 +112,11 @@ struct RedeemCodeOutcomeResponse {
 }
 
 impl AppbasePromotionStore for SqliteCommercePromotionStore {
-    fn list_current_user_coupons<'a>(
+    fn list_promotion_user_coupons<'a>(
         &'a self,
-        query: CurrentUserCouponListQuery,
-    ) -> AppbasePromotionFuture<'a, Vec<CurrentUserCouponItem>> {
-        Box::pin(async move { self.list_current_user_coupons(query).await })
+        query: PromotionUserCouponListQuery,
+    ) -> AppbasePromotionFuture<'a, Vec<PromotionUserCouponItem>> {
+        Box::pin(async move { self.list_promotion_user_coupons(query).await })
     }
 
     fn retrieve_points_balance<'a>(
@@ -139,20 +133,20 @@ impl AppbasePromotionStore for SqliteCommercePromotionStore {
         Box::pin(async move { self.list_points_history(query).await })
     }
 
-    fn redeem_code<'a>(
+    fn redeem_promotion_code<'a>(
         &'a self,
-        command: RedeemCodeCommand,
-    ) -> AppbasePromotionFuture<'a, RedeemCodeOutcome> {
-        Box::pin(async move { self.redeem_code(command).await })
+        command: PromotionCodeRedemptionCommand,
+    ) -> AppbasePromotionFuture<'a, PromotionCodeRedemptionOutcome> {
+        Box::pin(async move { self.redeem_promotion_code(command).await })
     }
 }
 
 impl AppbasePromotionStore for PostgresCommercePromotionStore {
-    fn list_current_user_coupons<'a>(
+    fn list_promotion_user_coupons<'a>(
         &'a self,
-        query: CurrentUserCouponListQuery,
-    ) -> AppbasePromotionFuture<'a, Vec<CurrentUserCouponItem>> {
-        Box::pin(async move { self.list_current_user_coupons(query).await })
+        query: PromotionUserCouponListQuery,
+    ) -> AppbasePromotionFuture<'a, Vec<PromotionUserCouponItem>> {
+        Box::pin(async move { self.list_promotion_user_coupons(query).await })
     }
 
     fn retrieve_points_balance<'a>(
@@ -169,11 +163,11 @@ impl AppbasePromotionStore for PostgresCommercePromotionStore {
         Box::pin(async move { self.list_points_history(query).await })
     }
 
-    fn redeem_code<'a>(
+    fn redeem_promotion_code<'a>(
         &'a self,
-        command: RedeemCodeCommand,
-    ) -> AppbasePromotionFuture<'a, RedeemCodeOutcome> {
-        Box::pin(async move { self.redeem_code(command).await })
+        command: PromotionCodeRedemptionCommand,
+    ) -> AppbasePromotionFuture<'a, PromotionCodeRedemptionOutcome> {
+        Box::pin(async move { self.redeem_promotion_code(command).await })
     }
 }
 
@@ -206,27 +200,35 @@ pub fn app_promotion_router_with_postgres_pool(pool: PgPool) -> Router {
 }
 
 pub fn app_promotion_router_with_store(store: Arc<dyn AppbasePromotionStore>) -> Router {
-    Router::new()
-        .route("/app/v3/api/coupons", get(fetch_current_user_coupons))
-        .route("/app/v3/api/wallet/points", get(fetch_points_balance))
-        .route(
-            "/app/v3/api/wallet/points/history",
-            get(fetch_points_history),
-        )
-        .route("/app/v3/api/coupons/redemptions", post(redeem_code))
-        .with_state(AppPromotionState { store })
+    with_request_identity(
+        Router::new()
+            .route(
+                "/app/v3/api/promotions/user_coupons",
+                get(fetch_promotion_user_coupons),
+            )
+            .route("/app/v3/api/wallet/points", get(fetch_points_balance))
+            .route(
+                "/app/v3/api/wallet/points/history",
+                get(fetch_points_history),
+            )
+            .route(
+                "/app/v3/api/promotions/codes/redemptions",
+                post(redeem_promotion_code),
+            )
+            .with_state(AppPromotionState { store }),
+    )
 }
 
-async fn fetch_current_user_coupons(
+async fn fetch_promotion_user_coupons(
     State(state): State<AppPromotionState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Query(query): Query<CouponListQueryParams>,
 ) -> Response {
-    let subject = match app_promotion_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
-    let query = match CurrentUserCouponListQuery::new(
+    let query = match PromotionUserCouponListQuery::new(
         &subject.tenant_id,
         subject.organization_id.as_deref(),
         &subject.user_id,
@@ -236,11 +238,11 @@ async fn fetch_current_user_coupons(
         Err(error) => return commerce_error_response(error),
     };
 
-    match state.store.list_current_user_coupons(query).await {
+    match state.store.list_promotion_user_coupons(query).await {
         Ok(items) => Json(AppPromotionApiResult::success(
             items
                 .into_iter()
-                .map(map_current_user_coupon)
+                .map(map_promotion_user_coupon)
                 .collect::<Vec<_>>(),
         ))
         .into_response(),
@@ -250,11 +252,11 @@ async fn fetch_current_user_coupons(
 
 async fn fetch_points_balance(
     State(state): State<AppPromotionState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match app_promotion_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let query = match PointsBalanceQuery::new(
         &subject.tenant_id,
@@ -275,11 +277,11 @@ async fn fetch_points_balance(
 
 async fn fetch_points_history(
     State(state): State<AppPromotionState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match app_promotion_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let query = match PointsHistoryQuery::new(
         &subject.tenant_id,
@@ -302,16 +304,17 @@ async fn fetch_points_history(
     }
 }
 
-async fn redeem_code(
+async fn redeem_promotion_code(
     State(state): State<AppPromotionState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
-    Json(request): Json<RedeemCodeRequest>,
+    Json(request): Json<PromotionCodeRedemptionRequest>,
 ) -> Response {
-    let subject = match app_promotion_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
-    let code = match validate_redeem_code_request(request) {
+    let code = match validate_promotion_code_redemption_request(request) {
         Ok(code) => code,
         Err(message) => return validation_response(message),
     };
@@ -320,9 +323,8 @@ async fn redeem_code(
         Err(response) => return response,
     };
     let request_no = optional_text_header(&headers, REQUEST_NO_HEADER)
-        .or_else(|| optional_text_header(&headers, X_REQUEST_ID_HEADER))
         .unwrap_or_else(|| fallback_request_no(&subject, &code, &idempotency_key));
-    let command = match RedeemCodeCommand::new(
+    let command = match PromotionCodeRedemptionCommand::new(
         &subject.tenant_id,
         subject.organization_id.as_deref(),
         &subject.user_id,
@@ -334,23 +336,13 @@ async fn redeem_code(
         Err(error) => return commerce_error_response(error),
     };
 
-    match state.store.redeem_code(command).await {
-        Ok(outcome) => Json(AppPromotionApiResult::success(map_redeem_code_outcome(
-            outcome,
-        )))
+    match state.store.redeem_promotion_code(command).await {
+        Ok(outcome) => Json(AppPromotionApiResult::success(
+            map_promotion_code_redemption_outcome(outcome),
+        ))
         .into_response(),
         Err(error) => commerce_error_response(error),
     }
-}
-
-fn app_promotion_subject_from_headers(
-    headers: &HeaderMap,
-) -> Result<AppPromotionSubject, Response> {
-    Ok(AppPromotionSubject {
-        tenant_id: required_text_header(headers, X_SDKWORK_TENANT_ID)?,
-        organization_id: optional_text_header(headers, X_SDKWORK_ORGANIZATION_ID),
-        user_id: required_text_header(headers, X_SDKWORK_USER_ID)?,
-    })
 }
 
 fn required_text_header(headers: &HeaderMap, name: &'static str) -> Result<String, Response> {
@@ -375,24 +367,26 @@ fn optional_text_header(headers: &HeaderMap, name: &'static str) -> Option<Strin
         .map(str::to_owned)
 }
 
-fn validate_redeem_code_request(request: RedeemCodeRequest) -> Result<String, String> {
+fn validate_promotion_code_redemption_request(
+    request: PromotionCodeRedemptionRequest,
+) -> Result<String, String> {
     let code = request.code.unwrap_or_default().trim().to_owned();
     if code.is_empty() {
-        return Err("redeem code must not be empty".to_owned());
+        return Err("promotion code must not be empty".to_owned());
     }
-    if code.chars().count() > MAX_REDEEM_CODE_LEN {
+    if code.chars().count() > MAX_PROMOTION_CODE_LEN {
         return Err(format!(
-            "redeem code length must not exceed {MAX_REDEEM_CODE_LEN} characters"
+            "promotion code length must not exceed {MAX_PROMOTION_CODE_LEN} characters"
         ));
     }
     if !code.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
-        return Err("redeem code must contain only visible ASCII characters".to_owned());
+        return Err("promotion code must contain only visible ASCII characters".to_owned());
     }
     Ok(code)
 }
 
-fn map_current_user_coupon(value: CurrentUserCouponItem) -> CurrentUserCouponItemResponse {
-    CurrentUserCouponItemResponse {
+fn map_promotion_user_coupon(value: PromotionUserCouponItem) -> PromotionUserCouponItemResponse {
+    PromotionUserCouponItemResponse {
         id: value.id,
         code: value.code,
         amount: value.amount.as_str().to_owned(),
@@ -419,8 +413,10 @@ fn map_points_history(value: PointsHistoryItem) -> PointsHistoryItemResponse {
     }
 }
 
-fn map_redeem_code_outcome(value: RedeemCodeOutcome) -> RedeemCodeOutcomeResponse {
-    RedeemCodeOutcomeResponse {
+fn map_promotion_code_redemption_outcome(
+    value: PromotionCodeRedemptionOutcome,
+) -> PromotionCodeRedemptionOutcomeResponse {
+    PromotionCodeRedemptionOutcomeResponse {
         message: value.message,
         amount: value.amount.as_str().to_owned(),
         credited_points: value.credited_points,
@@ -466,7 +462,7 @@ fn validation_response(message: impl Into<String>) -> Response {
         .into_response()
 }
 
-fn fallback_request_no(subject: &AppPromotionSubject, code: &str, idempotency_key: &str) -> String {
+fn fallback_request_no(subject: &AppRuntimeSubject, code: &str, idempotency_key: &str) -> String {
     let code_part = code
         .chars()
         .map(|character| {
@@ -478,7 +474,7 @@ fn fallback_request_no(subject: &AppPromotionSubject, code: &str, idempotency_ke
         })
         .collect::<String>();
     format!(
-        "coupon-redeem-{}-{}-{}",
+        "promotion-code-redemption-{}-{}-{}",
         subject.user_id,
         code_part,
         stable_header_token(idempotency_key),

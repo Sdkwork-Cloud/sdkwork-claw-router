@@ -1,10 +1,10 @@
 use sdkwork_commerce_core::{
     assert_status_transition, validate_commerce_context, CapabilityFlag, CommerceAccountAssetType,
-    CommerceCouponStatus, CommerceExchangeStatus, CommerceIdempotencyRecord,
-    CommerceLedgerDirection, CommerceMoney, CommercePaymentStatus, CommercePoints,
-    CommerceRechargeStatus, CommerceRequestHash, CommerceRuntimeContext, CommerceServiceContract,
-    CommerceServiceError, CommerceStatusMachine, CommerceSurfaceProfile, DeploymentMode,
-    Environment, IdempotencyDecision, IdempotencyRepositoryCommand, OperationExecutionPolicy,
+    CommerceExchangeStatus, CommerceIdempotencyRecord, CommerceLedgerDirection, CommerceMoney,
+    CommercePaymentStatus, CommercePoints, CommerceRechargeStatus, CommerceRequestHash,
+    CommerceRuntimeContext, CommerceServiceContract, CommerceServiceError, CommerceStatusMachine,
+    CommerceSurfaceProfile, DeploymentMode, Environment, IdempotencyDecision,
+    IdempotencyRepositoryCommand, OperationExecutionPolicy, PromotionCouponStatus,
     TransactionBoundaryKind,
 };
 
@@ -56,12 +56,12 @@ fn exposes_standard_asset_and_ledger_direction_names() {
 }
 
 #[test]
-fn exposes_standard_coupon_recharge_payment_and_exchange_status_names() {
-    assert_eq!(CommerceCouponStatus::Draft.as_str(), "draft");
-    assert_eq!(CommerceCouponStatus::Active.as_str(), "active");
-    assert_eq!(CommerceCouponStatus::Redeemed.as_str(), "redeemed");
-    assert_eq!(CommerceCouponStatus::Expired.as_str(), "expired");
-    assert_eq!(CommerceCouponStatus::Disabled.as_str(), "disabled");
+fn exposes_standard_promotion_recharge_payment_and_exchange_status_names() {
+    assert_eq!(PromotionCouponStatus::Draft.as_str(), "draft");
+    assert_eq!(PromotionCouponStatus::Active.as_str(), "active");
+    assert_eq!(PromotionCouponStatus::Redeemed.as_str(), "redeemed");
+    assert_eq!(PromotionCouponStatus::Expired.as_str(), "expired");
+    assert_eq!(PromotionCouponStatus::Disabled.as_str(), "disabled");
 
     assert_eq!(CommerceRechargeStatus::Pending.as_str(), "pending");
     assert_eq!(CommerceRechargeStatus::Paid.as_str(), "paid");

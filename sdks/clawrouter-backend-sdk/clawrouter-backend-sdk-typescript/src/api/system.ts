@@ -1,12 +1,8 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
+import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsCouponStocksListResult, PromotionsDiscountAllocationsListResult, PromotionsDiscountApplicationsListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, PromotionsOffersManagementListResult, PromotionsUserCouponsManagementListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
 
-
-export interface SystemSiteSettingsUpdateParams {
-  xRequestId?: string;
-}
 
 export class SystemSiteSettingsApi {
   private client: HttpClient;
@@ -22,14 +18,8 @@ export class SystemSiteSettingsApi {
   }
 
 /** Update site branding and deployment personalization settings */
-  async update(body: AdminSiteSettingsUpdateRequest, params?: SystemSiteSettingsUpdateParams): Promise<SiteSettingsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<SiteSettingsUpdateResult>(backendApiPath(`/system/site/settings`), body, undefined, requestHeaders, 'application/json');
+  async update(body: AdminSiteSettingsUpdateRequest): Promise<SiteSettingsUpdateResult> {
+    return this.client.patch<SiteSettingsUpdateResult>(backendApiPath(`/system/site/settings`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -42,6 +32,60 @@ export class SystemSiteApi {
     this.settings = new SystemSiteSettingsApi(client);
   }
 
+}
+
+export class SystemServiceNodesStatusApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Update service node status */
+  async update(nodeId: string, body: AdminServiceNodeStatusUpdateRequest): Promise<ServiceNodesStatusUpdateResult> {
+    return this.client.put<ServiceNodesStatusUpdateResult>(backendApiPath(`/system/service_nodes/${serializePathParameter(nodeId, { name: 'nodeId', style: 'simple', explode: false })}/status`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export interface SystemServiceNodesListParams {
+  q?: string;
+  status?: 'enabled' | 'disabled';
+}
+
+export class SystemServiceNodesApi {
+  private client: HttpClient;
+  public readonly status: SystemServiceNodesStatusApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.status = new SystemServiceNodesStatusApi(client);
+  }
+
+
+/** List service nodes */
+  async list(params?: SystemServiceNodesListParams): Promise<ServiceNodesListResult> {
+    const query = buildQueryString([
+      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<ServiceNodesListResult>(appendQueryString(backendApiPath(`/system/service_nodes`), query));
+  }
+
+/** Create service node */
+  async create(body: AdminServiceNodeCreateRequest): Promise<ServiceNodesCreateResult> {
+    return this.client.post<ServiceNodesCreateResult>(backendApiPath(`/system/service_nodes`), body, undefined, undefined, 'application/json');
+  }
+
+/** Delete service node */
+  async delete(nodeId: string): Promise<ServiceNodesDeleteResult> {
+    return this.client.delete<ServiceNodesDeleteResult>(backendApiPath(`/system/service_nodes/${serializePathParameter(nodeId, { name: 'nodeId', style: 'simple', explode: false })}`));
+  }
+
+/** Update service node */
+  async update(nodeId: string, body: AdminServiceNodeUpdateRequest): Promise<ServiceNodesUpdateResult> {
+    return this.client.put<ServiceNodesUpdateResult>(backendApiPath(`/system/service_nodes/${serializePathParameter(nodeId, { name: 'nodeId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+  }
 }
 
 export interface SystemRecordsListParams {
@@ -73,10 +117,6 @@ export class SystemRecordsApi {
   }
 }
 
-export interface SystemRateLimitsModelsCreateParams {
-  xRequestId?: string;
-}
-
 export class SystemRateLimitsModelsApi {
   private client: HttpClient;
 
@@ -91,19 +131,9 @@ export class SystemRateLimitsModelsApi {
   }
 
 /** Create model limit */
-  async create(body: AdminModelLimitCreateRequest, params?: SystemRateLimitsModelsCreateParams): Promise<RateLimitsModelsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<RateLimitsModelsCreateResult>(backendApiPath(`/system/rate_limits/models`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminModelLimitCreateRequest): Promise<RateLimitsModelsCreateResult> {
+    return this.client.post<RateLimitsModelsCreateResult>(backendApiPath(`/system/rate_limits/models`), body, undefined, undefined, 'application/json');
   }
-}
-
-export interface SystemRateLimitsIpCreateParams {
-  xRequestId?: string;
 }
 
 export class SystemRateLimitsIpApi {
@@ -120,19 +150,9 @@ export class SystemRateLimitsIpApi {
   }
 
 /** Create IP limit */
-  async create(body: AdminIpLimitCreateRequest, params?: SystemRateLimitsIpCreateParams): Promise<RateLimitsIpCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<RateLimitsIpCreateResult>(backendApiPath(`/system/rate_limits/ip`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminIpLimitCreateRequest): Promise<RateLimitsIpCreateResult> {
+    return this.client.post<RateLimitsIpCreateResult>(backendApiPath(`/system/rate_limits/ip`), body, undefined, undefined, 'application/json');
   }
-}
-
-export interface SystemRateLimitsApiKeysCreateParams {
-  xRequestId?: string;
 }
 
 export class SystemRateLimitsApiKeysApi {
@@ -149,14 +169,8 @@ export class SystemRateLimitsApiKeysApi {
   }
 
 /** Create token limit */
-  async create(body: AdminTokenLimitCreateRequest, params?: SystemRateLimitsApiKeysCreateParams): Promise<RateLimitsApiKeysCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<RateLimitsApiKeysCreateResult>(backendApiPath(`/system/rate_limits/api_keys`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminTokenLimitCreateRequest): Promise<RateLimitsApiKeysCreateResult> {
+    return this.client.post<RateLimitsApiKeysCreateResult>(backendApiPath(`/system/rate_limits/api_keys`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -282,10 +296,6 @@ export class SystemInstallationApi {
 
 }
 
-export interface SystemFirewallsRulesCreateParams {
-  xRequestId?: string;
-}
-
 export class SystemFirewallsRulesApi {
   private client: HttpClient;
 
@@ -300,14 +310,8 @@ export class SystemFirewallsRulesApi {
   }
 
 /** Create firewall */
-  async create(body: AdminFirewallRuleCreateRequest, params?: SystemFirewallsRulesCreateParams): Promise<FirewallsRulesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<FirewallsRulesCreateResult>(backendApiPath(`/system/firewalls/rules`), body, undefined, requestHeaders, 'application/json');
+  async create(body: AdminFirewallRuleCreateRequest): Promise<FirewallsRulesCreateResult> {
+    return this.client.post<FirewallsRulesCreateResult>(backendApiPath(`/system/firewalls/rules`), body, undefined, undefined, 'application/json');
   }
 
 /** Delete firewall */
@@ -498,10 +502,6 @@ export class SystemCacheApi {
 
 }
 
-export interface SystemAuthSettingsUpdateParams {
-  xRequestId?: string;
-}
-
 export class SystemAuthSettingsApi {
   private client: HttpClient;
 
@@ -516,14 +516,8 @@ export class SystemAuthSettingsApi {
   }
 
 /** Update IAM auth runtime settings */
-  async update(body: AdminAuthSettingsUpdateRequest, params?: SystemAuthSettingsUpdateParams): Promise<AuthSettingsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<AuthSettingsUpdateResult>(backendApiPath(`/system/auth/settings`), body, undefined, requestHeaders, 'application/json');
+  async update(body: AdminAuthSettingsUpdateRequest): Promise<AuthSettingsUpdateResult> {
+    return this.client.patch<AuthSettingsUpdateResult>(backendApiPath(`/system/auth/settings`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -587,8 +581,317 @@ export class SystemAnalyticsApi {
 
 }
 
+export interface SystemPromotionsUserCouponsManagementListParams {
+  page?: number;
+  pageSize?: number;
+  status?: string;
+}
+
+export class SystemPromotionsUserCouponsManagementApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion User Coupons Management List */
+  async list(params?: SystemPromotionsUserCouponsManagementListParams): Promise<PromotionsUserCouponsManagementListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsUserCouponsManagementListResult>(appendQueryString(backendApiPath(`/promotions/user_coupons`), query));
+  }
+}
+
+export class SystemPromotionsUserCouponsApi {
+  private client: HttpClient;
+  public readonly management: SystemPromotionsUserCouponsManagementApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.management = new SystemPromotionsUserCouponsManagementApi(client);
+  }
+
+}
+
+export interface SystemPromotionsOffersManagementListParams {
+  page?: number;
+  pageSize?: number;
+  status?: string;
+}
+
+export class SystemPromotionsOffersManagementApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Offers List */
+  async list(params?: SystemPromotionsOffersManagementListParams): Promise<PromotionsOffersManagementListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsOffersManagementListResult>(appendQueryString(backendApiPath(`/promotions/offers`), query));
+  }
+}
+
+export class SystemPromotionsOffersApi {
+  private client: HttpClient;
+  public readonly management: SystemPromotionsOffersManagementApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.management = new SystemPromotionsOffersManagementApi(client);
+  }
+
+}
+
+export interface SystemPromotionsExternalBindingsListParams {
+  platform?: string;
+}
+
+export class SystemPromotionsExternalBindingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion External Bindings List */
+  async list(params?: SystemPromotionsExternalBindingsListParams): Promise<PromotionsExternalBindingsListResult> {
+    const query = buildQueryString([
+      { name: 'platform', value: params?.platform, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsExternalBindingsListResult>(appendQueryString(backendApiPath(`/promotions/external_bindings`), query));
+  }
+}
+
+export interface SystemPromotionsEventsListParams {
+  status?: string;
+}
+
+export class SystemPromotionsEventsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Events List */
+  async list(params?: SystemPromotionsEventsListParams): Promise<PromotionsEventsListResult> {
+    const query = buildQueryString([
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsEventsListResult>(appendQueryString(backendApiPath(`/promotions/events`), query));
+  }
+}
+
+export interface SystemPromotionsDiscountApplicationsListParams {
+  page?: number;
+  pageSize?: number;
+  status?: string;
+}
+
+export class SystemPromotionsDiscountApplicationsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Discount Applications List */
+  async list(params?: SystemPromotionsDiscountApplicationsListParams): Promise<PromotionsDiscountApplicationsListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsDiscountApplicationsListResult>(appendQueryString(backendApiPath(`/promotions/discount_applications`), query));
+  }
+}
+
+export interface SystemPromotionsDiscountAllocationsListParams {
+  applicationId?: string;
+}
+
+export class SystemPromotionsDiscountAllocationsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Discount Allocations List */
+  async list(params?: SystemPromotionsDiscountAllocationsListParams): Promise<PromotionsDiscountAllocationsListResult> {
+    const query = buildQueryString([
+      { name: 'application_id', value: params?.applicationId, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsDiscountAllocationsListResult>(appendQueryString(backendApiPath(`/promotions/discount_allocations`), query));
+  }
+}
+
+export interface SystemPromotionsCouponStocksListParams {
+  page?: number;
+  pageSize?: number;
+  status?: string;
+}
+
+export class SystemPromotionsCouponStocksApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Coupon Stocks List */
+  async list(params?: SystemPromotionsCouponStocksListParams): Promise<PromotionsCouponStocksListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsCouponStocksListResult>(appendQueryString(backendApiPath(`/promotions/coupon_stocks`), query));
+  }
+}
+
+export interface SystemPromotionsCouponLedgerEntriesListParams {
+  stockId?: string;
+}
+
+export class SystemPromotionsCouponLedgerEntriesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Coupon Ledger Entries List */
+  async list(params?: SystemPromotionsCouponLedgerEntriesListParams): Promise<PromotionsCouponLedgerEntriesListResult> {
+    const query = buildQueryString([
+      { name: 'stock_id', value: params?.stockId, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsCouponLedgerEntriesListResult>(appendQueryString(backendApiPath(`/promotions/coupon_ledger_entries`), query));
+  }
+}
+
+export interface SystemPromotionsCodesRedemptionsListParams {
+  page?: number;
+  pageSize?: number;
+  codeStatus?: string;
+}
+
+export class SystemPromotionsCodesRedemptionsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Coupon Code Redemptions List */
+  async list(params?: SystemPromotionsCodesRedemptionsListParams): Promise<PromotionsCodesRedemptionsListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'code_status', value: params?.codeStatus, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsCodesRedemptionsListResult>(appendQueryString(backendApiPath(`/promotions/codes/redemptions`), query));
+  }
+}
+
+export interface SystemPromotionsCodesListParams {
+  page?: number;
+  pageSize?: number;
+  status?: string;
+}
+
+export class SystemPromotionsCodesApi {
+  private client: HttpClient;
+  public readonly redemptions: SystemPromotionsCodesRedemptionsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.redemptions = new SystemPromotionsCodesRedemptionsApi(client);
+  }
+
+
+/** Promotion Coupon Codes List */
+  async list(params?: SystemPromotionsCodesListParams): Promise<PromotionsCodesListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsCodesListResult>(appendQueryString(backendApiPath(`/promotions/codes`), query));
+  }
+}
+
+export interface SystemPromotionsBudgetLedgerEntriesListParams {
+  budgetAccountId?: string;
+}
+
+export class SystemPromotionsBudgetLedgerEntriesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Promotion Budget Ledger Entries List */
+  async list(params?: SystemPromotionsBudgetLedgerEntriesListParams): Promise<PromotionsBudgetLedgerEntriesListResult> {
+    const query = buildQueryString([
+      { name: 'budget_account_id', value: params?.budgetAccountId, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PromotionsBudgetLedgerEntriesListResult>(appendQueryString(backendApiPath(`/promotions/budget_ledger_entries`), query));
+  }
+}
+
+export class SystemPromotionsApi {
+  private client: HttpClient;
+  public readonly budgetLedgerEntries: SystemPromotionsBudgetLedgerEntriesApi;
+  public readonly codes: SystemPromotionsCodesApi;
+  public readonly couponLedgerEntries: SystemPromotionsCouponLedgerEntriesApi;
+  public readonly couponStocks: SystemPromotionsCouponStocksApi;
+  public readonly discountAllocations: SystemPromotionsDiscountAllocationsApi;
+  public readonly discountApplications: SystemPromotionsDiscountApplicationsApi;
+  public readonly events: SystemPromotionsEventsApi;
+  public readonly externalBindings: SystemPromotionsExternalBindingsApi;
+  public readonly offers: SystemPromotionsOffersApi;
+  public readonly userCoupons: SystemPromotionsUserCouponsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.budgetLedgerEntries = new SystemPromotionsBudgetLedgerEntriesApi(client);
+    this.codes = new SystemPromotionsCodesApi(client);
+    this.couponLedgerEntries = new SystemPromotionsCouponLedgerEntriesApi(client);
+    this.couponStocks = new SystemPromotionsCouponStocksApi(client);
+    this.discountAllocations = new SystemPromotionsDiscountAllocationsApi(client);
+    this.discountApplications = new SystemPromotionsDiscountApplicationsApi(client);
+    this.events = new SystemPromotionsEventsApi(client);
+    this.externalBindings = new SystemPromotionsExternalBindingsApi(client);
+    this.offers = new SystemPromotionsOffersApi(client);
+    this.userCoupons = new SystemPromotionsUserCouponsApi(client);
+  }
+
+}
+
 export class SystemApi {
   private client: HttpClient;
+  public readonly promotions: SystemPromotionsApi;
   public readonly analytics: SystemAnalyticsApi;
   public readonly auth: SystemAuthApi;
   public readonly cache: SystemCacheApi;
@@ -599,10 +902,12 @@ export class SystemApi {
   public readonly monitor: SystemMonitorApi;
   public readonly rateLimits: SystemRateLimitsApi;
   public readonly records: SystemRecordsApi;
+  public readonly serviceNodes: SystemServiceNodesApi;
   public readonly site: SystemSiteApi;
 
   constructor(client: HttpClient) {
     this.client = client;
+    this.promotions = new SystemPromotionsApi(client);
     this.analytics = new SystemAnalyticsApi(client);
     this.auth = new SystemAuthApi(client);
     this.cache = new SystemCacheApi(client);
@@ -613,6 +918,7 @@ export class SystemApi {
     this.monitor = new SystemMonitorApi(client);
     this.rateLimits = new SystemRateLimitsApi(client);
     this.records = new SystemRecordsApi(client);
+    this.serviceNodes = new SystemServiceNodesApi(client);
     this.site = new SystemSiteApi(client);
   }
 
@@ -852,79 +1158,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

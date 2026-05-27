@@ -1,0 +1,371 @@
+fragment: operations/backend-promotion
+frontend_operations:
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionOffersList
+  operation_id: promotions.offers.management.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/offers
+  sdk_domain: promotion
+  summary: Promotion Offers List
+  description: Standard appbase promotion API for promotions.offers.management.list.
+  read_sources:
+  - promotion_offer
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  - promotion_discount_application
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: &id001
+    name: PromotionCollectionResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionCouponStocksList
+  operation_id: promotions.couponStocks.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/coupon_stocks
+  sdk_domain: promotion
+  summary: Promotion Coupon Stocks List
+  description: Standard appbase promotion API for promotions.couponStocks.list.
+  read_sources:
+  - promotion_offer
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  - promotion_discount_application
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionCodesList
+  operation_id: promotions.codes.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/codes
+  sdk_domain: promotion
+  summary: Promotion Coupon Codes List
+  description: Standard appbase promotion API for promotions.codes.list.
+  read_sources:
+  - promotion_offer
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  - promotion_discount_application
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionDiscountApplicationsList
+  operation_id: promotions.discountApplications.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/discount_applications
+  sdk_domain: promotion
+  summary: Promotion Discount Applications List
+  description: Standard appbase promotion API for promotions.discountApplications.list.
+  read_sources:
+  - promotion_offer
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionCodeRedemptionsList
+  operation_id: promotions.codes.redemptions.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/codes/redemptions
+  sdk_domain: promotion
+  summary: Promotion Coupon Code Redemptions List
+  description: Lists code-exchange outcomes from user coupons, code counters, stock counters, and coupon ledgers.
+  read_sources:
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_coupon_ledger_entry
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: code_status
+    schema:
+      type: string
+      maxLength: 64
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionUserCouponsList
+  operation_id: promotions.userCoupons.management.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/user_coupons
+  sdk_domain: promotion
+  summary: Promotion User Coupons Management List
+  description: Lists wallet coupon lifecycle records for admin inspection, support, lock tracing, and return decisions.
+  read_sources:
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_coupon_ledger_entry
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 64
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionDiscountAllocationsList
+  operation_id: promotions.discountAllocations.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/discount_allocations
+  sdk_domain: promotion
+  summary: Promotion Discount Allocations List
+  description: Lists item-level discount allocation evidence used by refund, invoice, accounting, and reporting.
+  read_sources:
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: application_id
+    schema:
+      type: string
+      maxLength: 128
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionCouponLedgerEntriesList
+  operation_id: promotions.couponLedgerEntries.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/coupon_ledger_entries
+  sdk_domain: promotion
+  summary: Promotion Coupon Ledger Entries List
+  description: Lists append-only coupon lifecycle evidence for stock create, claim, lock, release, redeem, return, expire, disable, and adjustment.
+  read_sources:
+  - promotion_coupon_ledger_entry
+  - promotion_coupon_stock
+  - promotion_user_coupon
+  - promotion_discount_application
+  query_parameters:
+  - name: stock_id
+    schema:
+      type: string
+      maxLength: 128
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionBudgetLedgerEntriesList
+  operation_id: promotions.budgetLedgerEntries.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/budget_ledger_entries
+  sdk_domain: promotion
+  summary: Promotion Budget Ledger Entries List
+  description: Lists append-only budget reserve, release, consume, reverse, and adjustment evidence.
+  read_sources:
+  - promotion_budget_account
+  - promotion_budget_ledger_entry
+  - promotion_discount_application
+  query_parameters:
+  - name: budget_account_id
+    schema:
+      type: string
+      maxLength: 128
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionExternalBindingsList
+  operation_id: promotions.externalBindings.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/external_bindings
+  sdk_domain: promotion
+  summary: Promotion External Bindings List
+  description: Lists WeChat, Alipay, Antom, Stripe, partner, and internal platform bindings with sync status.
+  read_sources:
+  - promotion_external_binding
+  - promotion_offer
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_user_coupon
+  - promotion_external_operation
+  query_parameters:
+  - name: platform
+    schema:
+      type: string
+      maxLength: 64
+  response_schema: *id001
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  operation: backendPromotionEventsList
+  operation_id: promotions.events.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/promotions/events
+  sdk_domain: promotion
+  summary: Promotion Events List
+  description: Lists promotion outbox events for publish, retry, and dead-letter operations.
+  read_sources:
+  - promotion_event_outbox
+  query_parameters:
+  - name: status
+    schema:
+      type: string
+      maxLength: 64
+  response_schema: *id001

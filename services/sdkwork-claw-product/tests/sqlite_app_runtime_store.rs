@@ -5,8 +5,12 @@ use sdkwork_claw_product::ports::{
     CreateAppRuntimeInvocationCommand,
 };
 use serde_json::json;
-use sqlx::sqlite::SqlitePoolOptions;
+use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::Row;
+use std::str::FromStr;
+use std::sync::Arc;
+use std::time::{SystemTime, UNIX_EPOCH};
+use tokio::sync::Barrier;
 
 #[tokio::test]
 async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
@@ -111,6 +115,28 @@ async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
     assert_eq!(1, event.event_no);
     assert_eq!("hello", event.payload_json["delta"].as_str().unwrap());
 
+    let whitespace_delta = "\n  const value = 42;\n";
+    let whitespace_event = store
+        .create_event(CreateAppRuntimeEventCommand {
+            subject,
+            invocation_id: "runtime-invocation-uuid-1".to_owned(),
+            event_uuid: "runtime-event-uuid-2".to_owned(),
+            event_type: "response.output_text.delta".to_owned(),
+            event_source: "provider".to_owned(),
+            payload_json: json!({"delta": whitespace_delta}),
+            text_delta: Some(whitespace_delta.to_owned()),
+            metadata: json!({"sequence":"whitespace"}),
+            requested_at: "2026-05-18 09:00:02".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(2, whitespace_event.event_no);
+    assert_eq!(
+        Some(whitespace_delta),
+        whitespace_event.text_delta.as_deref()
+    );
+
     let artifact = store
         .create_artifact(CreateAppRuntimeArtifactCommand {
             subject,
@@ -191,8 +217,12 @@ async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
         .list_events(subject, "runtime-invocation-uuid-1".to_owned(), 1, 20)
         .await
         .unwrap();
-    assert_eq!(1, events.items.len());
+    assert_eq!(2, events.items.len());
     assert_eq!("runtime-event-uuid-1", events.items[0].id);
+    assert_eq!(
+        Some(whitespace_delta),
+        events.items[1].text_delta.as_deref()
+    );
 
     let artifacts = store
         .list_artifacts(subject, "runtime-invocation-uuid-1".to_owned(), 1, 20)
@@ -216,6 +246,206 @@ async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
     assert!(invocation_row
         .get::<String, _>("usage_json")
         .contains("inputTokens"));
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 4)]
+async fn sqlite_app_runtime_store_serializes_concurrent_events_for_one_invocation() {
+    let nonce = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_nanos();
+    let db_path = std::env::temp_dir().join(format!(
+        "sdkwork-claw-runtime-events-{}-{nonce}.db",
+        std::process::id()
+    ));
+    let database_url = format!("sqlite://{}", db_path.to_string_lossy().replace('\\', "/"));
+    let options = SqliteConnectOptions::from_str(database_url.as_str())
+        .unwrap()
+        .create_if_missing(true);
+    let pool = SqlitePoolOptions::new()
+        .max_connections(16)
+        .connect_with(options)
+        .await
+        .unwrap();
+    create_runtime_tables(&pool).await;
+    seed_runtime_context(&pool, 30).await;
+    let store = SqliteAppRuntimeStore::new(pool.clone());
+    let subject = AppRuntimeSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+    };
+    store
+        .create_invocation(CreateAppRuntimeInvocationCommand {
+            subject,
+            invocation_uuid: "runtime-invocation-concurrent-events".to_owned(),
+            invocation_type: "chat_response".to_owned(),
+            runtime: "openai_compatible".to_owned(),
+            endpoint: Some("chat.completions.create".to_owned()),
+            status: "streaming".to_owned(),
+            conversation_id: Some("chat-conversation-1".to_owned()),
+            chat_turn_id: Some("chat-turn-1".to_owned()),
+            chat_item_id: Some("chat-item-1".to_owned()),
+            agent_session_id: None,
+            agent_run_id: None,
+            agent_run_step_id: None,
+            request_id: Some("request-concurrent-events".to_owned()),
+            trace_id: None,
+            model: Some("gpt-4o-mini".to_owned()),
+            provider: Some("openai".to_owned()),
+            tool_name: None,
+            tool_call_id: None,
+            cwd: None,
+            sandbox_policy: None,
+            approval_policy: None,
+            permission_mode: None,
+            streaming: true,
+            request_json: json!({"messages":[{"role":"user","content":"hello"}]}),
+            metadata: json!({"surface":"chat"}),
+            requested_at: "2026-05-18 09:00:00".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    let event_count = 16;
+    let barrier = Arc::new(Barrier::new(event_count));
+    let mut handles = Vec::new();
+    for index in 0..event_count {
+        let store = store.clone();
+        let barrier = barrier.clone();
+        handles.push(tokio::spawn(async move {
+            barrier.wait().await;
+            store
+                .create_event(CreateAppRuntimeEventCommand {
+                    subject,
+                    invocation_id: "runtime-invocation-concurrent-events".to_owned(),
+                    event_uuid: format!("runtime-event-concurrent-{index}"),
+                    event_type: "response.output_text.delta".to_owned(),
+                    event_source: "provider".to_owned(),
+                    payload_json: json!({"delta": format!("chunk-{index}")}),
+                    text_delta: Some(format!("chunk-{index}")),
+                    metadata: json!({"index": index}),
+                    requested_at: format!("2026-05-18 09:00:{:02}", index + 1),
+                })
+                .await
+                .map(|event| event.event_no)
+        }));
+    }
+
+    let mut event_nos = Vec::new();
+    for handle in handles {
+        event_nos.push(handle.await.unwrap().unwrap());
+    }
+    event_nos.sort_unstable();
+    assert_eq!(
+        (1..=event_count as i64).collect::<Vec<_>>(),
+        event_nos,
+        "concurrent stream events must receive contiguous event numbers"
+    );
+
+    let events = store
+        .list_events(
+            subject,
+            "runtime-invocation-concurrent-events".to_owned(),
+            1,
+            64,
+        )
+        .await
+        .unwrap();
+    assert_eq!(event_count, events.items.len());
+
+    pool.close().await;
+    let _ = std::fs::remove_file(db_path);
+}
+
+#[tokio::test]
+async fn sqlite_app_runtime_store_reuses_existing_terminal_event_for_invocation() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_runtime_tables(&pool).await;
+    seed_runtime_context(&pool, 30).await;
+    let store = SqliteAppRuntimeStore::new(pool);
+    let subject = AppRuntimeSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+    };
+    store
+        .create_invocation(CreateAppRuntimeInvocationCommand {
+            subject,
+            invocation_uuid: "runtime-invocation-terminal-idempotency".to_owned(),
+            invocation_type: "chat_response".to_owned(),
+            runtime: "openai_compatible".to_owned(),
+            endpoint: Some("chat.completions.create".to_owned()),
+            status: "streaming".to_owned(),
+            conversation_id: Some("chat-conversation-1".to_owned()),
+            chat_turn_id: Some("chat-turn-1".to_owned()),
+            chat_item_id: Some("chat-item-1".to_owned()),
+            agent_session_id: None,
+            agent_run_id: None,
+            agent_run_step_id: None,
+            request_id: Some("request-terminal-idempotency".to_owned()),
+            trace_id: None,
+            model: Some("gpt-4o-mini".to_owned()),
+            provider: Some("openai".to_owned()),
+            tool_name: None,
+            tool_call_id: None,
+            cwd: None,
+            sandbox_policy: None,
+            approval_policy: None,
+            permission_mode: None,
+            streaming: true,
+            request_json: json!({"messages":[{"role":"user","content":"hello"}]}),
+            metadata: json!({"surface":"chat"}),
+            requested_at: "2026-05-18 09:00:00".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    let completed = store
+        .create_event(CreateAppRuntimeEventCommand {
+            subject,
+            invocation_id: "runtime-invocation-terminal-idempotency".to_owned(),
+            event_uuid: "runtime-event-terminal-completed".to_owned(),
+            event_type: "runtime.completed".to_owned(),
+            event_source: "runtime".to_owned(),
+            payload_json: json!({"status":"completed"}),
+            text_delta: None,
+            metadata: json!({}),
+            requested_at: "2026-05-18 09:00:01".to_owned(),
+        })
+        .await
+        .unwrap();
+    let cancelled = store
+        .create_event(CreateAppRuntimeEventCommand {
+            subject,
+            invocation_id: "runtime-invocation-terminal-idempotency".to_owned(),
+            event_uuid: "runtime-event-terminal-cancelled".to_owned(),
+            event_type: "runtime.cancelled".to_owned(),
+            event_source: "runtime".to_owned(),
+            payload_json: json!({"status":"cancelled","reason":"stop"}),
+            text_delta: None,
+            metadata: json!({}),
+            requested_at: "2026-05-18 09:00:02".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(completed.id, cancelled.id);
+    assert_eq!("runtime.completed", cancelled.event_type);
+    let events = store
+        .list_events(
+            subject,
+            "runtime-invocation-terminal-idempotency".to_owned(),
+            1,
+            20,
+        )
+        .await
+        .unwrap();
+    assert_eq!(1, events.items.len());
 }
 
 #[tokio::test]
@@ -853,6 +1083,8 @@ CREATE TABLE ai_runtime_invocation_event (
     created_at TEXT NOT NULL,
     metadata TEXT NOT NULL DEFAULT '{}'
 );
+CREATE UNIQUE INDEX uk_ai_runtime_invocation_event_no
+ON ai_runtime_invocation_event (tenant_id, organization_id, invocation_id, event_no);
 CREATE TABLE ai_runtime_artifact (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     uuid TEXT NOT NULL,

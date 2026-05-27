@@ -1,5 +1,4 @@
 ﻿import {
-  createRequestParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -260,7 +259,6 @@ export class ModelService {
   static async triggerModelRankingRefresh(): Promise<ModelRankingRefreshTriggerView> {
     const result = await getClawRouterBackendSdkClient().ai.modelRankings.refresh(
       toModelRankingRefreshTriggerRequest(),
-      createRequestParams('admin-model-ranking-refresh'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to trigger model ranking refresh');
     return normalizeModelRankingRefreshTrigger(readApiRecord(result));
@@ -269,7 +267,6 @@ export class ModelService {
   static async syncVendorsAndModels(): Promise<ModelCatalogSyncReport> {
     const result = await getClawRouterBackendSdkClient().ai.models.refresh(
       toSyncCatalogRequest(),
-      createRequestParams('admin-model-catalog-sync'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to sync vendors and models');
     const data = readApiRecord(result);
@@ -303,7 +300,6 @@ export class ModelService {
   static async addVendor(vendor: VendorCreateInput): Promise<Vendor> {
     const result = await getClawRouterBackendSdkClient().ai.modelVendors.create(
       toCreateVendorRequest(vendor),
-      createRequestParams('admin-model-vendor-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add vendor');
     return normalizeVendor(readRequiredApiItem(result, 'Created vendor response is missing data'));
@@ -312,7 +308,6 @@ export class ModelService {
   static async addModel(model: ModelCreateInput): Promise<Model> {
     const result = await getClawRouterBackendSdkClient().ai.models.create(
       toCreateModelRequest(model),
-      createRequestParams('admin-ai-model-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add model');
     return normalizeModel(readRequiredApiItem(result, 'Created model response is missing data'));
@@ -322,14 +317,13 @@ export class ModelService {
     const result = await getClawRouterBackendSdkClient().ai.models.update(
       requiredSafePathSegment(id, 'modelId'),
       toUpdateModelRequest(model),
-      createRequestParams('admin-ai-model-update'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to update model');
     return normalizeModel(readRequiredApiItem(result, 'Updated model response is missing data'));
   }
 
   static updateModelStatus(id: string, status: Model['status']): Promise<Model> {
-    return updateModelPatch(id, { status }, 'admin-ai-model-status-update', 'Failed to update model status');
+    return updateModelPatch(id, { status }, 'Failed to update model status');
   }
 
   static async deleteModel(id: string): Promise<boolean> {
@@ -342,13 +336,11 @@ export class ModelService {
 async function updateModelPatch(
   id: string,
   model: ModelPatchInput,
-  requestIdPrefix: string,
   errorMessage: string,
 ): Promise<Model> {
   const result = await getClawRouterBackendSdkClient().ai.models.update(
     requiredSafePathSegment(id, 'modelId'),
     toUpdateModelRequest(model),
-    createRequestParams(requestIdPrefix),
   );
   ensureSdkworkApiSuccess(result, errorMessage);
   return normalizeModel(readRequiredApiItem(result, 'Updated model response is missing data'));

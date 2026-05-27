@@ -15,7 +15,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public String getAssistantId() {
         return this.assistantId;
     }
-    
+
     public void setAssistantId(String assistantId) {
         this.assistantId = assistantId;
     }
@@ -23,7 +23,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public String getInstructions() {
         return this.instructions;
     }
-    
+
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -31,7 +31,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -39,7 +39,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -47,7 +47,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public Boolean getStream() {
         return this.stream;
     }
-    
+
     public void setStream(Boolean stream) {
         this.stream = stream;
     }
@@ -55,7 +55,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public OpenAiThreadCreateRequest getThread() {
         return this.thread;
     }
-    
+
     public void setThread(OpenAiThreadCreateRequest thread) {
         this.thread = thread;
     }
@@ -63,7 +63,7 @@ public class OpenAiThreadAndRunCreateRequest {
     public List<String> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<String> tools) {
         this.tools = tools;
     }

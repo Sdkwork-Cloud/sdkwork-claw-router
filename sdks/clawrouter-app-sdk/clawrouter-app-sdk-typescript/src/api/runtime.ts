@@ -25,7 +25,6 @@ export interface RuntimeInvocationEventsListParams {
 
 export interface RuntimeInvocationEventsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class RuntimeInvocationEventsApi {
@@ -50,7 +49,6 @@ export class RuntimeInvocationEventsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -65,7 +63,6 @@ export interface RuntimeArtifactsListParams {
 
 export interface RuntimeArtifactsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class RuntimeArtifactsApi {
@@ -90,7 +87,6 @@ export class RuntimeArtifactsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -110,12 +106,10 @@ export interface RuntimeInvocationsListParams {
 
 export interface RuntimeInvocationsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface RuntimeInvocationsSubmitParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class RuntimeInvocationsApi {
@@ -145,7 +139,6 @@ export class RuntimeInvocationsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -162,7 +155,6 @@ export class RuntimeInvocationsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );

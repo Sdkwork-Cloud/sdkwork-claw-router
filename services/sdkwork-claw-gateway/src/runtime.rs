@@ -28,7 +28,9 @@ use sdkwork_claw_product::infrastructure::provider::{
     SecretRefOpenAiCompatibleResponsesRelay, UpstreamProviderEndpoint,
     DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
 };
-use sdkwork_claw_product::infrastructure::sql::catalog::RefreshableSqlPricingCatalog;
+use sdkwork_claw_product::infrastructure::sql::catalog::{
+    RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshotSummary,
+};
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
@@ -362,6 +364,7 @@ where
             Arc::clone(&catalog),
             Arc::clone(&api_key_hasher),
             secret_resolver,
+            usage_recorder.clone(),
         ))
     } else {
         router
@@ -376,6 +379,7 @@ where
                 provider_adapter_config,
                 provider_secret_resolver
                     .map(|resolver| resolver as Arc<dyn ProviderSecretResolver + Send + Sync>),
+                usage_recorder.clone(),
             ),
         ),
         (Some(config), false) => router.merge(
@@ -384,6 +388,7 @@ where
                 catalog,
                 api_key_hasher,
                 provider_adapter_config,
+                usage_recorder.clone(),
             ),
         ),
         (None, true) if provider_adapter_config.is_some() => router.merge(
@@ -394,6 +399,7 @@ where
                 provider_adapter_config,
                 provider_secret_resolver
                     .map(|resolver| resolver as Arc<dyn ProviderSecretResolver + Send + Sync>),
+                usage_recorder.clone(),
             ),
         ),
         _ => router,
@@ -547,10 +553,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             )
             .load_snapshot()
             .await?;
-            let provider_secret_resolver = provider_secret_resolver_from_config_and_managed_secrets(
+            log_gateway_runtime_catalog_snapshot_summary("sqlite", "startup", snapshot.summary());
+            let provider_secret_resolver = Some(openai_runtime_relay_secret_resolver(
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
-            );
+            ));
             let relays = apply_provider_adapter_config(
                 build_openai_runtime_relays(
                     provider_relay_config.clone(),
@@ -558,6 +565,10 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                     provider_runtime.clone(),
                 )?,
                 provider_adapter_config.clone(),
+                provider_secret_resolver.clone().map(|resolver| {
+                    let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
+                    resolver
+                }),
             )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_recorder: UsageRecorder =
@@ -618,10 +629,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             )
             .load_snapshot()
             .await?;
-            let provider_secret_resolver = provider_secret_resolver_from_config_and_managed_secrets(
+            log_gateway_runtime_catalog_snapshot_summary("postgres", "startup", snapshot.summary());
+            let provider_secret_resolver = Some(openai_runtime_relay_secret_resolver(
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
-            );
+            ));
             let relays = apply_provider_adapter_config(
                 build_openai_runtime_relays(
                     provider_relay_config.clone(),
@@ -629,6 +641,10 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                     provider_runtime.clone(),
                 )?,
                 provider_adapter_config.clone(),
+                provider_secret_resolver.clone().map(|resolver| {
+                    let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
+                    resolver
+                }),
             )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_recorder: UsageRecorder =
@@ -847,10 +863,12 @@ fn spawn_sqlite_catalog_refresh_worker(
             .await
             {
                 Ok(snapshot) => {
+                    let summary = snapshot.summary();
                     if let Some(resolver) = provider_secret_resolver.as_ref() {
                         resolver.replace_managed_secrets(snapshot.managed_provider_secrets());
                     }
-                    catalog.replace_snapshot(snapshot)
+                    catalog.replace_snapshot(snapshot);
+                    log_gateway_runtime_catalog_snapshot_summary("sqlite", "refresh", summary);
                 }
                 Err(error) => {
                     tracing::warn!(
@@ -884,10 +902,12 @@ fn spawn_postgres_catalog_refresh_worker(
             .await
             {
                 Ok(snapshot) => {
+                    let summary = snapshot.summary();
                     if let Some(resolver) = provider_secret_resolver.as_ref() {
                         resolver.replace_managed_secrets(snapshot.managed_provider_secrets());
                     }
-                    catalog.replace_snapshot(snapshot)
+                    catalog.replace_snapshot(snapshot);
+                    log_gateway_runtime_catalog_snapshot_summary("postgres", "refresh", summary);
                 }
                 Err(error) => {
                     tracing::warn!(
@@ -898,6 +918,56 @@ fn spawn_postgres_catalog_refresh_worker(
             }
         }
     })
+}
+
+fn log_gateway_runtime_catalog_snapshot_summary(
+    engine: &'static str,
+    phase: &'static str,
+    summary: SqlPricingCatalogSnapshotSummary,
+) {
+    if phase == "refresh" {
+        tracing::debug!(
+            service = "sdkwork-claw-gateway",
+            catalog_engine = engine,
+            catalog_phase = phase,
+            vendors = summary.vendors,
+            models = summary.models,
+            provider_routes = summary.provider_routes,
+            callable_provider_routes = summary.callable_provider_routes,
+            provider_account_pool_routes = summary.provider_account_pool_routes,
+            callable_provider_account_pool_routes = summary.callable_provider_account_pool_routes,
+            provider_account_pool_group_bindings = summary.provider_account_pool_group_bindings,
+            routing_policies = summary.routing_policies,
+            routing_rules = summary.routing_rules,
+            pricing_plans = summary.pricing_plans,
+            api_key_groups = summary.api_key_groups,
+            api_keys = summary.api_keys,
+            prices = summary.prices,
+            managed_provider_secrets = summary.managed_provider_secrets,
+            "gateway runtime catalog snapshot loaded"
+        );
+    } else {
+        tracing::info!(
+            service = "sdkwork-claw-gateway",
+            catalog_engine = engine,
+            catalog_phase = phase,
+            vendors = summary.vendors,
+            models = summary.models,
+            provider_routes = summary.provider_routes,
+            callable_provider_routes = summary.callable_provider_routes,
+            provider_account_pool_routes = summary.provider_account_pool_routes,
+            callable_provider_account_pool_routes = summary.callable_provider_account_pool_routes,
+            provider_account_pool_group_bindings = summary.provider_account_pool_group_bindings,
+            routing_policies = summary.routing_policies,
+            routing_rules = summary.routing_rules,
+            pricing_plans = summary.pricing_plans,
+            api_key_groups = summary.api_key_groups,
+            api_keys = summary.api_keys,
+            prices = summary.prices,
+            managed_provider_secrets = summary.managed_provider_secrets,
+            "gateway runtime catalog snapshot loaded"
+        );
+    }
 }
 
 async fn sqlite_usage_settlement_schema_ready(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
@@ -1117,24 +1187,17 @@ fn require_api_key_security_config(
     })
 }
 
-fn provider_secret_resolver_from_config_and_managed_secrets(
+fn openai_runtime_relay_secret_resolver(
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
     managed_provider_secrets: std::collections::BTreeMap<String, String>,
-) -> Option<Arc<RefreshableProviderSecretMapResolver>> {
-    match (
-        provider_secret_map_config,
-        managed_provider_secrets.is_empty(),
-    ) {
-        (Some(config), _) => Some(Arc::new(RefreshableProviderSecretMapResolver::from_maps(
-            config.into_secret_map(),
-            managed_provider_secrets,
-        ))),
-        (None, false) => Some(Arc::new(RefreshableProviderSecretMapResolver::from_maps(
-            std::collections::BTreeMap::new(),
-            managed_provider_secrets,
-        ))),
-        (None, true) => None,
-    }
+) -> Arc<RefreshableProviderSecretMapResolver> {
+    let external_secrets = provider_secret_map_config
+        .map(ProviderSecretMapConfig::into_secret_map)
+        .unwrap_or_default();
+    Arc::new(RefreshableProviderSecretMapResolver::from_maps(
+        external_secrets,
+        managed_provider_secrets,
+    ))
 }
 
 fn build_openai_runtime_relays(
@@ -1215,6 +1278,7 @@ fn build_openai_runtime_relays(
 fn apply_provider_adapter_config(
     mut relays: OpenAiRuntimeRelays,
     provider_adapter_config: Option<ProviderAdapterConfig>,
+    provider_secret_resolver: Option<Arc<dyn ProviderSecretResolver + Send + Sync>>,
 ) -> Result<OpenAiRuntimeRelays, GatewayRouterError> {
     let Some(provider_adapter_config) = provider_adapter_config else {
         return Ok(relays);
@@ -1236,11 +1300,17 @@ fn apply_provider_adapter_config(
                     .to_owned(),
             ));
         };
-        relays.chat = Some(Arc::new(AdapterAwareChatCompletionRelay::new(
+        let adapter_relay = AdapterAwareChatCompletionRelay::new(
             chat_relay,
             Arc::clone(&registry),
             adapter_client.clone(),
-        )));
+        );
+        let adapter_relay = if let Some(resolver) = provider_secret_resolver.clone() {
+            adapter_relay.with_secret_resolver(resolver)
+        } else {
+            adapter_relay
+        };
+        relays.chat = Some(Arc::new(adapter_relay));
     }
     if has_responses_adapter_route(routes) {
         let Some(responses_relay) = relays.responses.take() else {
@@ -1249,11 +1319,17 @@ fn apply_provider_adapter_config(
                     .to_owned(),
             ));
         };
-        relays.responses = Some(Arc::new(AdapterAwareResponsesRelay::new(
+        let adapter_relay = AdapterAwareResponsesRelay::new(
             responses_relay,
             Arc::clone(&registry),
             adapter_client.clone(),
-        )));
+        );
+        let adapter_relay = if let Some(resolver) = provider_secret_resolver.clone() {
+            adapter_relay.with_secret_resolver(resolver)
+        } else {
+            adapter_relay
+        };
+        relays.responses = Some(Arc::new(adapter_relay));
     }
     if has_embeddings_adapter_route(routes) {
         let Some(embeddings_relay) = relays.embeddings.take() else {
@@ -1262,11 +1338,14 @@ fn apply_provider_adapter_config(
                     .to_owned(),
             ));
         };
-        relays.embeddings = Some(Arc::new(AdapterAwareEmbeddingsRelay::new(
-            embeddings_relay,
-            registry,
-            adapter_client,
-        )));
+        let adapter_relay =
+            AdapterAwareEmbeddingsRelay::new(embeddings_relay, registry, adapter_client);
+        let adapter_relay = if let Some(resolver) = provider_secret_resolver {
+            adapter_relay.with_secret_resolver(resolver)
+        } else {
+            adapter_relay
+        };
+        relays.embeddings = Some(Arc::new(adapter_relay));
     }
     Ok(relays)
 }
@@ -1560,6 +1639,38 @@ mod tests {
         assert!(error.contains("fail_closed"));
     }
 
+    #[test]
+    fn database_runtime_mounts_secret_ref_chat_relays_without_static_provider_relay_config() {
+        let relays = build_openai_runtime_relays(
+            None,
+            Some(openai_runtime_relay_secret_resolver(
+                None,
+                std::collections::BTreeMap::new(),
+            )),
+            provider_relay_runtime_for_test(),
+        )
+        .unwrap();
+
+        assert!(
+            relays.chat.is_some(),
+            "database-backed gateway chat completions must use route-scoped provider settings"
+        );
+        assert!(
+            relays.chat_stream.is_some(),
+            "database-backed gateway streaming chat completions must not fall through to 501"
+        );
+    }
+
+    fn provider_relay_runtime_for_test() -> ProviderRelayRuntimeConfig {
+        ProviderRelayRuntimeConfig {
+            response_timeout: Duration::from_secs(1),
+            default_retry_policy: ProviderRetryPolicy::default(),
+            catalog_refresh_interval: Duration::from_secs(1),
+            circuit_breaker_recovery_window_seconds: 1,
+            failure_strategy: OpenAiRuntimeFailureStrategy::default(),
+        }
+    }
+
     #[tokio::test]
     async fn provider_adapter_config_wraps_chat_relay_and_preserves_direct_miss() {
         #[derive(Clone)]
@@ -1607,6 +1718,7 @@ mod tests {
                 responses: None,
             },
             Some(adapter_config),
+            None,
         )
         .unwrap();
 
@@ -1867,6 +1979,7 @@ gateway_token = "adapter-token"
                 responses: Some(Arc::new(DirectResponsesRelay)),
             },
             Some(adapter_config),
+            None,
         )
         .unwrap();
 

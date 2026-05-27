@@ -18,7 +18,7 @@ public class GoogleCachedContent {
     public List<GoogleContent> getContents() {
         return this.contents;
     }
-    
+
     public void setContents(List<GoogleContent> contents) {
         this.contents = contents;
     }
@@ -26,7 +26,7 @@ public class GoogleCachedContent {
     public String getCreateTime() {
         return this.createTime;
     }
-    
+
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
@@ -34,7 +34,7 @@ public class GoogleCachedContent {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -42,7 +42,7 @@ public class GoogleCachedContent {
     public String getExpireTime() {
         return this.expireTime;
     }
-    
+
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
@@ -50,7 +50,7 @@ public class GoogleCachedContent {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -58,7 +58,7 @@ public class GoogleCachedContent {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -66,7 +66,7 @@ public class GoogleCachedContent {
     public GoogleContent getSystemInstruction() {
         return this.systemInstruction;
     }
-    
+
     public void setSystemInstruction(GoogleContent systemInstruction) {
         this.systemInstruction = systemInstruction;
     }
@@ -74,7 +74,7 @@ public class GoogleCachedContent {
     public GoogleToolConfig getToolConfig() {
         return this.toolConfig;
     }
-    
+
     public void setToolConfig(GoogleToolConfig toolConfig) {
         this.toolConfig = toolConfig;
     }
@@ -82,7 +82,7 @@ public class GoogleCachedContent {
     public List<GoogleTool> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<GoogleTool> tools) {
         this.tools = tools;
     }
@@ -90,7 +90,7 @@ public class GoogleCachedContent {
     public String getUpdateTime() {
         return this.updateTime;
     }
-    
+
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
@@ -98,7 +98,7 @@ public class GoogleCachedContent {
     public GoogleCachedContentUsageMetadata getUsageMetadata() {
         return this.usageMetadata;
     }
-    
+
     public void setUsageMetadata(GoogleCachedContentUsageMetadata usageMetadata) {
         this.usageMetadata = usageMetadata;
     }

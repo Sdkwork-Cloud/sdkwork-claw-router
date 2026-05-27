@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class VectorStoresApi {
     private final HttpClient client;
-    
+
     public VectorStoresApi(HttpClient client) {
         this.client = client;
     }

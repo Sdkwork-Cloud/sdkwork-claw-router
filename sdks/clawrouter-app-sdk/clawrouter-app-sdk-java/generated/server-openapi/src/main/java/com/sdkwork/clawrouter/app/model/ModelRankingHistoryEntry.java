@@ -11,7 +11,7 @@ public class ModelRankingHistoryEntry {
     public String getCatalogKey() {
         return this.catalogKey;
     }
-    
+
     public void setCatalogKey(String catalogKey) {
         this.catalogKey = catalogKey;
     }
@@ -19,7 +19,7 @@ public class ModelRankingHistoryEntry {
     public String getColor() {
         return this.color;
     }
-    
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -27,7 +27,7 @@ public class ModelRankingHistoryEntry {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -35,7 +35,7 @@ public class ModelRankingHistoryEntry {
     public Integer getRank() {
         return this.rank;
     }
-    
+
     public void setRank(Integer rank) {
         this.rank = rank;
     }
@@ -43,7 +43,7 @@ public class ModelRankingHistoryEntry {
     public Integer getVolume() {
         return this.volume;
     }
-    
+
     public void setVolume(Integer volume) {
         this.volume = volume;
     }

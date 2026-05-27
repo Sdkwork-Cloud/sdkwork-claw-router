@@ -9,7 +9,7 @@ public class AdminFirewallRuleCreateRequest {
     public String getReason() {
         return this.reason;
     }
-    
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -17,7 +17,7 @@ public class AdminFirewallRuleCreateRequest {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -25,7 +25,7 @@ public class AdminFirewallRuleCreateRequest {
     public String getValue() {
         return this.value;
     }
-    
+
     public void setValue(String value) {
         this.value = value;
     }

@@ -1,6 +1,5 @@
 import {
   ensureSdkworkApiSuccess,
-  createRequestToken,
   hasStoredPortalSession,
   isRecord,
   readApiItem,
@@ -113,7 +112,6 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
   const selectedModel = normalizeText(input.selectedModel);
   const requestedTargetType = input.targetType;
   const agent = await resolvePlaygroundAgent(selectedModel);
-  const requestId = createRequestToken('playground-agent-run');
   const session = await createGenerationAgentSession({
     agent,
     prompt,
@@ -123,7 +121,6 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
   const run = await createGenerationAgentRun({
     agent,
     prompt,
-    requestId,
     requestedTargetType,
     selectedModel,
     sessionId: session.id,
@@ -133,7 +130,6 @@ export async function runPlaygroundGeneration(input: GenerationAgentRunCreateInp
     agent,
     input,
     prompt,
-    requestId,
     run,
     requestedTargetType,
     selectedModel,
@@ -300,7 +296,6 @@ async function createGenerationAgentRun(
     agent,
     input,
     prompt,
-    requestId,
     requestedTargetType,
     selectedModel,
     sessionId,
@@ -308,7 +303,6 @@ async function createGenerationAgentRun(
     agent: AgentItem;
     input: GenerationAgentRunCreateInput;
     prompt: string;
-    requestId: string;
     requestedTargetType?: PlaygroundGenerationTargetType;
     selectedModel: string;
     sessionId: string;
@@ -324,18 +318,16 @@ async function createGenerationAgentRun(
       metadata: compactJsonObject({
         generationConfig: input.generationConfig,
         generationService: 'playground-generation-service',
+        referenceAssets: input.referenceAssets,
         referenceImages: input.referenceImages,
+        referenceMode: input.referenceMode,
         targetType: requestedTargetType,
       }),
       model: selectedModel || agent.defaultVersion.model || undefined,
-      requestId,
       runtime: RUNTIME_ADAPTER,
       sourceSurface: PLAYGROUND_SOURCE_SURFACE,
     },
-    {
-      idempotencyPrefix: 'playground-agent-run-create',
-      xRequestId: requestId,
-    },
+    { idempotencyPrefix: 'playground-agent-run-create' },
   );
   ensureSdkworkApiSuccess(result, 'Failed to create playground agent run');
   const item = readApiItem(result);
@@ -350,7 +342,6 @@ async function createAgentRuntimeInvocation(
     agent,
     input,
     prompt,
-    requestId,
     run,
     requestedTargetType,
     selectedModel,
@@ -359,7 +350,6 @@ async function createAgentRuntimeInvocation(
     agent: AgentItem;
     input: GenerationAgentRunCreateInput;
     prompt: string;
-    requestId: string;
     run: AgentRunItem;
     requestedTargetType?: PlaygroundGenerationTargetType;
     selectedModel: string;
@@ -384,7 +374,9 @@ async function createAgentRuntimeInvocation(
       requestJson: compactJsonObject({
         generationConfig: input.generationConfig,
         prompt,
+        referenceAssets: input.referenceAssets,
         referenceImages: input.referenceImages,
+        referenceMode: input.referenceMode,
         selectedModel: selectedModel || undefined,
         targetType: requestedTargetType,
       }),
@@ -392,10 +384,7 @@ async function createAgentRuntimeInvocation(
       status: 'streaming',
       streaming: true,
     },
-    {
-      idempotencyPrefix: 'playground-agent-runtime',
-      xRequestId: requestId,
-    },
+    { idempotencyPrefix: 'playground-agent-runtime' },
   );
   ensureSdkworkApiSuccess(result, 'Failed to create playground runtime invocation');
   const item = readApiItem(result);
@@ -428,7 +417,9 @@ async function createGenerationAgentRunStep(
       inputJson: compactJsonObject({
         generationConfig: input.generationConfig,
         prompt,
+        referenceAssets: input.referenceAssets,
         referenceImages: input.referenceImages,
+        referenceMode: input.referenceMode,
         selectedModel: selectedModel || undefined,
         targetType: requestedTargetType,
       }),

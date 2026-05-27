@@ -115,15 +115,12 @@ export function CatalogAdmin({ sectionId }: CatalogAdminProps = {}) {
   return (
     <AdminResourceCenter
       activeSectionId={activeSectionId}
-      description={t('admin.commerce.catalog.desc', 'SPU, SKU, attributes, categories, and price lists.')}
       emptyTitle={t('admin.commerce.catalog.empty', 'No catalog records')}
       errorTitle={t('admin.commerce.catalog.error', 'Catalog data could not be loaded')}
-      icon={<Package className="h-5 w-5 text-blue-500" />}
       loadingTitle={t('admin.commerce.catalog.loading', 'Loading catalog records...')}
       sections={sections}
       showSectionNavigation={false}
       tableViewportDataAttribute="admin-catalog-table-viewport"
-      title={t('admin.commerce.catalog.title', 'Catalog')}
     />
   );
 }

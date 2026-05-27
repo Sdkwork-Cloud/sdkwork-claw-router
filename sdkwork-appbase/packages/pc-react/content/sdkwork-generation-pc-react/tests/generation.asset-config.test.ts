@@ -5,8 +5,10 @@ import {
   reconcileSdkworkGenerationAssetConfig,
   serializeSdkworkGenerationAssetConfig,
   updateSdkworkGenerationImageModeConfig,
+  updateSdkworkGenerationSpeechModeConfig,
+  updateSdkworkGenerationSfxModeConfig,
   updateSdkworkGenerationVideoModeConfig,
-} from "../src/react.ts";
+} from "../src/generation-asset-config.ts";
 
 describe("sdkwork-generation-pc-react asset config", () => {
   it("creates modality-specific defaults that are already reconciled", () => {
@@ -35,6 +37,32 @@ describe("sdkwork-generation-pc-react asset config", () => {
         resolution: "720p",
         syncAudioVideo: true,
       },
+    });
+    expect(createDefaultSdkworkGenerationAssetConfig("audio")).toEqual({
+      aspectRatio: "1:1",
+      durationSeconds: 10,
+      imageCount: 1,
+      imageMode: undefined,
+      quality: "standard",
+      speechMode: {
+        responseFormat: "mp3",
+        speed: 1,
+      },
+      videoMode: undefined,
+    });
+    expect(createDefaultSdkworkGenerationAssetConfig("sfx")).toEqual({
+      aspectRatio: "1:1",
+      durationSeconds: 5,
+      imageCount: 1,
+      imageMode: undefined,
+      quality: "standard",
+      sfxMode: {
+        loop: false,
+        promptInfluence: 0.3,
+        responseFormat: "mp3",
+      },
+      speechMode: undefined,
+      videoMode: undefined,
     });
   });
 
@@ -86,6 +114,56 @@ describe("sdkwork-generation-pc-react asset config", () => {
     });
   });
 
+  it("serializes audio speech mode config into runtime request payload fields", () => {
+    const config = updateSdkworkGenerationSpeechModeConfig(
+      createDefaultSdkworkGenerationAssetConfig("audio"),
+      {
+        responseFormat: "wav",
+        speed: 1.25,
+        voice: "nova",
+      },
+    );
+
+    expect(serializeSdkworkGenerationAssetConfig(config, "audio")).toEqual({
+      aspectRatio: "1:1",
+      durationSeconds: 10,
+      imageCount: 1,
+      quality: "standard",
+      responseFormat: "wav",
+      speechMode: {
+        responseFormat: "wav",
+        speed: 1.25,
+        voice: "nova",
+      },
+      speed: 1.25,
+      voice: "nova",
+    });
+  });
+
+  it("serializes sound effect mode config into ElevenLabs-compatible runtime fields", () => {
+    const baseConfig = createDefaultSdkworkGenerationAssetConfig("sfx");
+    const config = updateSdkworkGenerationSfxModeConfig(baseConfig, {
+      loop: true,
+      promptInfluence: 0.85,
+      responseFormat: "wav",
+    });
+
+    expect(serializeSdkworkGenerationAssetConfig(config, "sfx")).toEqual({
+      aspectRatio: "1:1",
+      durationSeconds: 5,
+      imageCount: 1,
+      loop: true,
+      promptInfluence: 0.85,
+      quality: "standard",
+      responseFormat: "wav",
+      sfxMode: {
+        loop: true,
+        promptInfluence: 0.85,
+        responseFormat: "wav",
+      },
+    });
+  });
+
   it("resets image generation config to image defaults when switching from another modality", () => {
     const videoConfig = updateSdkworkGenerationVideoModeConfig(createDefaultSdkworkGenerationAssetConfig("video"), {
       aspectRatio: "9:16",
@@ -111,6 +189,33 @@ describe("sdkwork-generation-pc-react asset config", () => {
 
     expect(reconcileSdkworkGenerationAssetConfig(videoConfig, "audio")).toEqual(
       createDefaultSdkworkGenerationAssetConfig("audio"),
+    );
+  });
+
+  it("resets speech generation config when switching away from audio", () => {
+    const audioConfig = updateSdkworkGenerationSpeechModeConfig(
+      createDefaultSdkworkGenerationAssetConfig("audio"),
+      {
+        responseFormat: "wav",
+        speed: 1.25,
+        voice: "nova",
+      },
+    );
+
+    expect(reconcileSdkworkGenerationAssetConfig(audioConfig, "music")).toEqual(
+      createDefaultSdkworkGenerationAssetConfig("music"),
+    );
+  });
+
+  it("resets sound effect generation config when switching away from sfx", () => {
+    const sfxConfig = updateSdkworkGenerationSfxModeConfig(createDefaultSdkworkGenerationAssetConfig("sfx"), {
+      loop: true,
+      promptInfluence: 0.85,
+      responseFormat: "wav",
+    });
+
+    expect(reconcileSdkworkGenerationAssetConfig(sfxConfig, "music")).toEqual(
+      createDefaultSdkworkGenerationAssetConfig("music"),
     );
   });
 
@@ -158,6 +263,31 @@ describe("sdkwork-generation-pc-react asset config", () => {
         resolution: "1080p",
         syncAudioVideo: false,
       },
+    });
+  });
+
+  it("restores sound effect asset config from serialized mode config and summary fields", () => {
+    expect(createSdkworkGenerationAssetConfigFromSerialized({
+      durationSeconds: 8,
+      loop: true,
+      promptInfluence: 2,
+      responseFormat: "wav",
+      sfxMode: {
+        promptInfluence: -1,
+      },
+    }, "sfx")).toEqual({
+      aspectRatio: "1:1",
+      durationSeconds: 8,
+      imageCount: 1,
+      imageMode: undefined,
+      quality: "standard",
+      sfxMode: {
+        loop: true,
+        promptInfluence: 1,
+        responseFormat: "wav",
+      },
+      speechMode: undefined,
+      videoMode: undefined,
     });
   });
 });

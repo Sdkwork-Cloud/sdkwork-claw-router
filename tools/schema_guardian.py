@@ -207,6 +207,33 @@ REQUIRED_TABLE_COLUMNS = {
     "integration_channel_model": {"model", "vendor_code", "provider_model", "capability"},
 }
 
+MESSAGING_STANDARD_TABLES: tuple[str, ...] = (
+    "messaging_provider_capability",
+    "messaging_sender_identity",
+    "messaging_template",
+    "messaging_template_version",
+    "messaging_template_variant",
+    "messaging_template_binding",
+    "messaging_route_rule",
+    "messaging_route_rule_target",
+    "messaging_send_request",
+    "messaging_send_attempt",
+    "messaging_delivery_event",
+    "messaging_suppression",
+    "messaging_rate_limit_bucket",
+)
+
+MESSAGING_TABLE_NAME_TOKENS: tuple[str, ...] = (
+    "email",
+    "provider",
+    "route",
+    "send",
+    "sender",
+    "sms",
+    "template",
+    "webhook",
+)
+
 @dataclass(frozen=True)
 class SchemaGuardianResult:
     ok: bool
@@ -250,6 +277,7 @@ class SchemaGuardian:
         messages.extend(self._check_skills_hub_tables(by_table))
         messages.extend(self._check_domain_names(data, by_table))
         messages.extend(self._check_pricing_and_billing_contracts(by_table))
+        messages.extend(self._check_messaging_delivery_standard(by_table))
         messages.extend(self._check_projection_source_contracts(by_table))
         messages.extend(self._check_api_prefixes(data))
         messages.extend(self._check_table_naming_guardrails(data, by_table))
@@ -479,6 +507,35 @@ class SchemaGuardian:
             for column in sorted(required_columns):
                 if column not in columns:
                     messages.append(f"{table} must include column {column}")
+
+        return messages
+
+    def _check_messaging_delivery_standard(self, by_table: dict[str, dict[str, Any]]) -> list[str]:
+        messages: list[str] = []
+        has_messaging_table = False
+
+        for table, metadata in by_table.items():
+            domain = metadata.get("domain")
+            if table.startswith("messaging_") or domain == "messaging":
+                has_messaging_table = True
+                if not table.startswith("messaging_") or domain != "messaging":
+                    messages.append(
+                        f"external messaging table must use messaging_* prefix and messaging domain: {table}"
+                    )
+                continue
+
+            if table.startswith("ops_notification_"):
+                continue
+            if table.startswith("notification_") or domain == "notification":
+                if any(token in table for token in MESSAGING_TABLE_NAME_TOKENS):
+                    messages.append(
+                        f"external messaging table must use messaging_* prefix and messaging domain: {table}"
+                    )
+
+        if has_messaging_table:
+            for table in MESSAGING_STANDARD_TABLES:
+                if table not in by_table:
+                    messages.append(f"messaging standard table is required: {table}")
 
         return messages
 

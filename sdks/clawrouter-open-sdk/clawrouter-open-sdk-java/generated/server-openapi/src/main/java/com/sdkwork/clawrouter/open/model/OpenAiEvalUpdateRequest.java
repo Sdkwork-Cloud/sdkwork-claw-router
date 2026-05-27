@@ -13,7 +13,7 @@ public class OpenAiEvalUpdateRequest {
     public String getDataSource() {
         return this.dataSource;
     }
-    
+
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
     }
@@ -21,7 +21,7 @@ public class OpenAiEvalUpdateRequest {
     public String getDataSourceConfig() {
         return this.dataSourceConfig;
     }
-    
+
     public void setDataSourceConfig(String dataSourceConfig) {
         this.dataSourceConfig = dataSourceConfig;
     }
@@ -29,7 +29,7 @@ public class OpenAiEvalUpdateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -37,7 +37,7 @@ public class OpenAiEvalUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -45,7 +45,7 @@ public class OpenAiEvalUpdateRequest {
     public List<String> getTestingCriteria() {
         return this.testingCriteria;
     }
-    
+
     public void setTestingCriteria(List<String> testingCriteria) {
         this.testingCriteria = testingCriteria;
     }

@@ -2873,23 +2873,19 @@ run-claw-router-product.test.mjs: 30 passed
 
 The admin marketing hardening covers:
 
-- `MarketingService.addCoupon` accepts `CouponCreateInput`, not a trimmed
-  server-returned `Coupon` view model.
-- `MarketingService.generateBatch` accepts `CouponBatchGenerateInput`, making
-  the coupon batch generation command explicit instead of page-local shape
-  assembly.
-- `marketingForm.ts` is the pure form adapter for trimming coupon create and
-  coupon batch forms, normalizing unsupported coupon types to `amount`,
-  rounding invalid batch counts to a safe positive integer, defaulting blank
-  batch names to `Coupon batch`, and defaulting blank prefixes to `COUPON`
-  without clock or random drift.
-- `CouponCreateInput` and `CouponBatchGenerateInput` are declared in the
-  frontend field registry and generated field audit, so marketing command
-  payloads are checked alongside returned coupon, batch, and promo-code view
-  models.
+- Promotion offer commands use `CreatePromotionOfferRequest`, keeping the
+  command shape separate from the returned `PromotionOfferRecord` read model.
+- Promotion coupon stock commands use `GeneratePromotionCouponStockRequest`,
+  making stock issuance explicit instead of page-local shape assembly.
+- The admin marketing view exposes standardized read models:
+  `PromotionOfferRecord`, `PromotionCouponStockRecord`,
+  `PromotionCodeRecord`, and `PromotionCodeRedemptionRecord`.
+- Marketing command payloads are checked alongside `promotion_offer`,
+  `promotion_coupon_stock`, `promotion_code`, and `promotion_code_redemption`
+  read/write contracts.
 - `scripts/verify-claw-router-product.mjs` includes `portal admin marketing
-  runtime tests` before broad Rust and Python suites, so coupon creation and
-  batch generation payload correctness is part of the main commercial gate.
+  runtime tests` before broad Rust and Python suites, so promotion offer and
+  coupon stock payload correctness is part of the main commercial gate.
 
 ## Admin Announcement Create Input Standard
 

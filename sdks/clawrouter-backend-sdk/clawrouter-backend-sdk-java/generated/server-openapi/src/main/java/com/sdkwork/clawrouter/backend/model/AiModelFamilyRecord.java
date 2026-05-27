@@ -34,7 +34,7 @@ public class AiModelFamilyRecord {
     public String getColorToken() {
         return this.colorToken;
     }
-    
+
     public void setColorToken(String colorToken) {
         this.colorToken = colorToken;
     }
@@ -42,7 +42,7 @@ public class AiModelFamilyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -50,7 +50,7 @@ public class AiModelFamilyRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -58,7 +58,7 @@ public class AiModelFamilyRecord {
     public String getDefaultModel() {
         return this.defaultModel;
     }
-    
+
     public void setDefaultModel(String defaultModel) {
         this.defaultModel = defaultModel;
     }
@@ -66,7 +66,7 @@ public class AiModelFamilyRecord {
     public String getDefaultModelId() {
         return this.defaultModelId;
     }
-    
+
     public void setDefaultModelId(String defaultModelId) {
         this.defaultModelId = defaultModelId;
     }
@@ -74,7 +74,7 @@ public class AiModelFamilyRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -82,7 +82,7 @@ public class AiModelFamilyRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -90,7 +90,7 @@ public class AiModelFamilyRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -98,7 +98,7 @@ public class AiModelFamilyRecord {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -106,7 +106,7 @@ public class AiModelFamilyRecord {
     public String getDocsUrl() {
         return this.docsUrl;
     }
-    
+
     public void setDocsUrl(String docsUrl) {
         this.docsUrl = docsUrl;
     }
@@ -114,7 +114,7 @@ public class AiModelFamilyRecord {
     public String getFamilyCode() {
         return this.familyCode;
     }
-    
+
     public void setFamilyCode(String familyCode) {
         this.familyCode = familyCode;
     }
@@ -122,7 +122,7 @@ public class AiModelFamilyRecord {
     public String getFamilyType() {
         return this.familyType;
     }
-    
+
     public void setFamilyType(String familyType) {
         this.familyType = familyType;
     }
@@ -130,7 +130,7 @@ public class AiModelFamilyRecord {
     public String getIconUrl() {
         return this.iconUrl;
     }
-    
+
     public void setIconUrl(String iconUrl) {
         this.iconUrl = iconUrl;
     }
@@ -138,7 +138,7 @@ public class AiModelFamilyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -146,7 +146,7 @@ public class AiModelFamilyRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -154,7 +154,7 @@ public class AiModelFamilyRecord {
     public String getModelCount() {
         return this.modelCount;
     }
-    
+
     public void setModelCount(String modelCount) {
         this.modelCount = modelCount;
     }
@@ -162,7 +162,7 @@ public class AiModelFamilyRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -170,7 +170,7 @@ public class AiModelFamilyRecord {
     public String getPrimaryModality() {
         return this.primaryModality;
     }
-    
+
     public void setPrimaryModality(String primaryModality) {
         this.primaryModality = primaryModality;
     }
@@ -178,7 +178,7 @@ public class AiModelFamilyRecord {
     public String getRegionCode() {
         return this.regionCode;
     }
-    
+
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
@@ -186,7 +186,7 @@ public class AiModelFamilyRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -194,7 +194,7 @@ public class AiModelFamilyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -202,7 +202,7 @@ public class AiModelFamilyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -210,7 +210,7 @@ public class AiModelFamilyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -218,7 +218,7 @@ public class AiModelFamilyRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -226,7 +226,7 @@ public class AiModelFamilyRecord {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -234,7 +234,7 @@ public class AiModelFamilyRecord {
     public String getVendorId() {
         return this.vendorId;
     }
-    
+
     public void setVendorId(String vendorId) {
         this.vendorId = vendorId;
     }
@@ -242,7 +242,7 @@ public class AiModelFamilyRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

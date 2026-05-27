@@ -142,6 +142,7 @@ struct CourseSeedCatalog {
     bundle: CourseSeedBundle,
     course_ids: BTreeMap<String, i64>,
     section_ids: BTreeMap<(String, i32), i64>,
+    source_hash: String,
 }
 
 impl CourseSeedCatalog {
@@ -166,6 +167,7 @@ impl CourseSeedCatalog {
             bundle,
             course_ids,
             section_ids,
+            source_hash: seed_hash(),
         })
     }
 
@@ -219,6 +221,34 @@ pub(crate) async fn import_sqlite_course_seed(pool: &SqlitePool) -> Result<(), s
     import_sqlite_reactions(&mut tx, &seed).await?;
     tx.commit().await?;
     Ok(())
+}
+
+pub(crate) async fn repair_sqlite_course_seed(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    if sqlite_course_seed_complete(pool).await? {
+        return Ok(false);
+    }
+
+    let seed = CourseSeedCatalog::load().map_err(json_decode_error)?;
+    let sections_complete = sqlite_course_sections_complete(pool, &seed).await?;
+    let relations_complete = sqlite_course_relations_complete(pool, &seed).await?;
+    if sections_complete && relations_complete {
+        import_sqlite_course_seed(pool).await?;
+        return Ok(true);
+    }
+
+    let mut tx = pool.begin().await?;
+    if !sections_complete {
+        import_sqlite_sections(&mut tx, &seed).await?;
+    }
+    if !relations_complete {
+        import_sqlite_relations(&mut tx, &seed).await?;
+    }
+    tx.commit().await?;
+
+    if !sqlite_course_seed_complete(pool).await? {
+        import_sqlite_course_seed(pool).await?;
+    }
+    Ok(true)
 }
 
 pub(crate) async fn import_postgres_course_seed(pool: &PgPool) -> Result<(), sqlx::Error> {
@@ -309,12 +339,16 @@ pub(crate) async fn sqlite_course_seed_complete(pool: &SqlitePool) -> Result<boo
             .collect::<Vec<_>>(),
     )
     .await?;
-    Ok(course_count == seed.bundle.courses.len() as i64
+    if !(course_count == seed.bundle.courses.len() as i64
         && category_count == seed.bundle.categories.len() as i64
         && section_count == seed.bundle.sections.len() as i64
         && lesson_count == seed.bundle.lessons.len() as i64
         && relation_count == seed.bundle.relations.len() as i64
         && comment_count == seed.bundle.comments.len() as i64)
+    {
+        return Ok(false);
+    }
+    sqlite_course_seed_standard_fields_complete(pool, &seed).await
 }
 
 pub(crate) async fn postgres_course_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
@@ -391,12 +425,602 @@ pub(crate) async fn postgres_course_seed_complete(pool: &PgPool) -> Result<bool,
             .collect::<Vec<_>>(),
     )
     .await?;
-    Ok(course_count == seed.bundle.courses.len() as i64
+    if !(course_count == seed.bundle.courses.len() as i64
         && category_count == seed.bundle.categories.len() as i64
         && section_count == seed.bundle.sections.len() as i64
         && lesson_count == seed.bundle.lessons.len() as i64
         && relation_count == seed.bundle.relations.len() as i64
         && comment_count == seed.bundle.comments.len() as i64)
+    {
+        return Ok(false);
+    }
+    postgres_course_seed_standard_fields_complete(pool, &seed).await
+}
+
+async fn sqlite_course_seed_standard_fields_complete(
+    pool: &SqlitePool,
+    seed: &CourseSeedCatalog,
+) -> Result<bool, sqlx::Error> {
+    for item in &seed.bundle.categories {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM plus_category
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND shop_id = ?
+              AND type = ?
+              AND group_name = 'course'
+              AND code = ?
+              AND sort_weight = ?
+              AND parent_id IS NULL
+              AND path = ?
+              AND visible = 1
+              AND status = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(COURSE_CATEGORY_TYPE)
+        .bind(&item.code)
+        .bind(item.sort_weight)
+        .bind(format!("/course/{}", item.code))
+        .bind(ACTIVE_STATUS)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.courses {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND status = ?
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_code = ?
+              AND title = ?
+              AND lessons_count = ?
+              AND level = ?
+              AND category = ?
+              AND external_bvid = ?
+              AND currency = ?
+              AND is_collection = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(&item.course_code)
+        .bind(&item.title)
+        .bind(item.lessons_count)
+        .bind(item.level)
+        .bind(&item.category)
+        .bind(&item.external_bvid)
+        .bind(&item.currency)
+        .bind(item.is_collection)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.sections {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_section
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND status = ?
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = ?
+              AND section_no = ?
+              AND title = ?
+              AND sort_order = ?
+              AND lesson_count = ?
+              AND duration_seconds = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(item.section_no)
+        .bind(&item.title)
+        .bind(item.sort_order)
+        .bind(item.lesson_count)
+        .bind(item.duration_seconds)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.lessons {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_lesson
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND status = ?
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = ?
+              AND section_id = ?
+              AND lesson_no = ?
+              AND title = ?
+              AND external_bvid = ?
+              AND source_provider = ?
+              AND duration_seconds = ?
+              AND sort_order = ?
+              AND free_preview = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(seed.section_id(&item.course_code, item.section_no)?)
+        .bind(item.lesson_no)
+        .bind(&item.title)
+        .bind(&item.external_bvid)
+        .bind(&item.source_provider)
+        .bind(item.duration_seconds)
+        .bind(item.sort_order)
+        .bind(item.free_preview)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.relations {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_relation
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND status = ?
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = ?
+              AND related_course_id = ?
+              AND relation_type = ?
+              AND sort_order = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(seed.course_id(&item.related_course_code)?)
+        .bind(item.relation_type)
+        .bind(item.sort_order)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.comments {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM plus_comments
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND user_id = ?
+              AND content_type = ?
+              AND content_id = ?
+              AND status = ?
+              AND likes = ?
+              AND reply_count = 0
+              AND is_top = 0
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(item.user_id)
+        .bind(CONTENT_TYPE_COURSE)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(COMMENT_STATUS_PUBLISHED)
+        .bind(item.likes)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    Ok(true)
+}
+
+async fn sqlite_course_sections_complete(
+    pool: &SqlitePool,
+    seed: &CourseSeedCatalog,
+) -> Result<bool, sqlx::Error> {
+    for item in &seed.bundle.sections {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_section
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND status = ?
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = ?
+              AND section_no = ?
+              AND title = ?
+              AND sort_order = ?
+              AND lesson_count = ?
+              AND duration_seconds = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(item.section_no)
+        .bind(&item.title)
+        .bind(item.sort_order)
+        .bind(item.lesson_count)
+        .bind(item.duration_seconds)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    Ok(true)
+}
+
+async fn sqlite_course_relations_complete(
+    pool: &SqlitePool,
+    seed: &CourseSeedCatalog,
+) -> Result<bool, sqlx::Error> {
+    for item in &seed.bundle.relations {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_relation
+            WHERE id = ?
+              AND uuid = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND data_scope = ?
+              AND status = ?
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = ?
+              AND related_course_id = ?
+              AND relation_type = ?
+              AND sort_order = ?
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(seed.course_id(&item.related_course_code)?)
+        .bind(item.relation_type)
+        .bind(item.sort_order)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    Ok(true)
+}
+
+async fn postgres_course_seed_standard_fields_complete(
+    pool: &PgPool,
+    seed: &CourseSeedCatalog,
+) -> Result<bool, sqlx::Error> {
+    for item in &seed.bundle.categories {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM plus_category
+            WHERE id = $1
+              AND uuid = $2
+              AND tenant_id = $3
+              AND organization_id = $4
+              AND data_scope = $5
+              AND shop_id = $6
+              AND type = $7
+              AND group_name = 'course'
+              AND code = $8
+              AND sort_weight = $9
+              AND parent_id IS NULL
+              AND path = $10
+              AND visible = TRUE
+              AND status = $11
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(COURSE_CATEGORY_TYPE)
+        .bind(&item.code)
+        .bind(item.sort_weight)
+        .bind(format!("/course/{}", item.code))
+        .bind(ACTIVE_STATUS)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.courses {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course
+            WHERE id = $1
+              AND uuid = $2
+              AND tenant_id = $3
+              AND organization_id = $4
+              AND data_scope = $5
+              AND status = $6
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_code = $7
+              AND title = $8
+              AND lessons_count = $9
+              AND level = $10
+              AND category = $11
+              AND external_bvid = $12
+              AND currency = $13
+              AND is_collection = $14
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(&item.course_code)
+        .bind(&item.title)
+        .bind(item.lessons_count)
+        .bind(item.level)
+        .bind(&item.category)
+        .bind(&item.external_bvid)
+        .bind(&item.currency)
+        .bind(item.is_collection)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.sections {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_section
+            WHERE id = $1
+              AND uuid = $2
+              AND tenant_id = $3
+              AND organization_id = $4
+              AND data_scope = $5
+              AND status = $6
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = $7
+              AND section_no = $8
+              AND title = $9
+              AND sort_order = $10
+              AND lesson_count = $11
+              AND duration_seconds = $12
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(item.section_no)
+        .bind(&item.title)
+        .bind(item.sort_order)
+        .bind(item.lesson_count)
+        .bind(item.duration_seconds)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.lessons {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_lesson
+            WHERE id = $1
+              AND uuid = $2
+              AND tenant_id = $3
+              AND organization_id = $4
+              AND data_scope = $5
+              AND status = $6
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = $7
+              AND section_id = $8
+              AND lesson_no = $9
+              AND title = $10
+              AND external_bvid = $11
+              AND source_provider = $12
+              AND duration_seconds = $13
+              AND sort_order = $14
+              AND free_preview = $15
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(seed.section_id(&item.course_code, item.section_no)?)
+        .bind(item.lesson_no)
+        .bind(&item.title)
+        .bind(&item.external_bvid)
+        .bind(&item.source_provider)
+        .bind(item.duration_seconds)
+        .bind(item.sort_order)
+        .bind(item.free_preview)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.relations {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM content_course_relation
+            WHERE id = $1
+              AND uuid = $2
+              AND tenant_id = $3
+              AND organization_id = $4
+              AND data_scope = $5
+              AND status = $6
+              AND deleted_at IS NULL
+              AND deleted_by IS NULL
+              AND course_id = $7
+              AND related_course_id = $8
+              AND relation_type = $9
+              AND sort_order = $10
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(seed.course_id(&item.related_course_code)?)
+        .bind(item.relation_type)
+        .bind(item.sort_order)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    for item in &seed.bundle.comments {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM plus_comments
+            WHERE id = $1
+              AND uuid = $2
+              AND tenant_id = $3
+              AND organization_id = $4
+              AND data_scope = $5
+              AND user_id = $6
+              AND content_type = $7
+              AND content_id = $8
+              AND status = $9
+              AND likes = $10
+              AND reply_count = 0
+              AND is_top = FALSE
+            "#,
+        )
+        .bind(item.id)
+        .bind(&item.uuid)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(item.user_id)
+        .bind(CONTENT_TYPE_COURSE)
+        .bind(seed.course_id(&item.course_code)?)
+        .bind(COMMENT_STATUS_PUBLISHED)
+        .bind(item.likes)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+
+    Ok(true)
 }
 
 async fn import_sqlite_categories(
@@ -923,6 +1547,7 @@ async fn import_sqlite_comments(
             .bind(item.id)
             .bind(&item.uuid)
             .bind(&item.created_at)
+            .bind(&item.created_at)
             .bind(SYSTEM_TENANT_ID)
             .bind(SYSTEM_ORGANIZATION_ID)
             .bind(SYSTEM_DATA_SCOPE)
@@ -1390,7 +2015,7 @@ fn seed_metadata(seed: &CourseSeedCatalog, item_type: &str, item_uuid: &str) -> 
         "generatedAt": seed.bundle.generated_at,
         "itemType": item_type,
         "itemUuid": item_uuid,
-        "sourceHash": seed_hash(),
+        "sourceHash": &seed.source_hash,
     })
     .to_string()
 }

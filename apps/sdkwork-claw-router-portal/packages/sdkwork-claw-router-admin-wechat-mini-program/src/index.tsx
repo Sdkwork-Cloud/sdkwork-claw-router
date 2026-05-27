@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import {
   CheckCircle2,
   Edit2,
-  KeyRound,
   Link2,
   Plus,
   RefreshCw,
@@ -38,12 +37,14 @@ interface WechatMiniProgramAdminProps {
 interface AccountDraft {
   mode: AccountDraftMode;
   accountId?: string;
-  key: string;
   name: string;
   appId: string;
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
+  appSecret: string;
+  token: string;
+  encodingAesKey: string;
+  hasAppSecret: boolean;
+  hasToken: boolean;
+  hasEncodingAesKey: boolean;
   status: WechatMiniProgramStatus;
   qrDefault: boolean;
 }
@@ -62,16 +63,9 @@ interface DeleteEntryTarget {
 }
 
 const DEFAULT_MINI_PROGRAM_SECTION_ID: MiniProgramSectionId = 'accounts';
+const WECHAT_MINI_PROGRAM_PRODUCT_SIGNAL = '小程序';
 const OPEN_PLATFORM_KEY_MAX_LENGTH = 128;
 const OPEN_PLATFORM_KEY_PATTERN = /^[a-z0-9][a-z0-9._:-]*$/;
-const CREDENTIAL_REF_MAX_LENGTH = 256;
-const CREDENTIAL_REF_LOCATOR_PATTERN = /^[!-~]+$/;
-
-interface AccountCredentialRefs {
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
-}
 
 export function resolveMiniProgramSectionId(sectionId?: string): MiniProgramSectionId {
   if (sectionId === 'accounts' || sectionId === 'urls') {
@@ -176,31 +170,32 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
       return accounts;
     }
     return accounts.filter((account) => [
-      account.key,
       account.name,
       account.appId,
       account.status,
-      account.tokenRef,
-      account.secretRef,
-      account.aesKeyRef,
+      account.hasAppSecret ? 'AppSecret' : '',
+      account.hasToken ? 'Token' : '',
+      account.hasEncodingAesKey ? 'EncodingAESKey' : '',
     ].some((value) => String(value ?? '').toLowerCase().includes(query)));
   }, [accounts, search]);
 
   const selectedAccount = accounts.find((account) => account.id === selectedAccountId) ?? null;
   const activeCount = accounts.filter((account) => account.status === 'active').length;
-  const credentialCompleteCount = accounts.filter((account) => account.appId && account.secretRef && account.tokenRef).length;
+  const credentialCompleteCount = accounts.filter((account) => account.appId && account.hasAppSecret && account.hasToken).length;
 
   const openCreateAccount = () => {
     setNotice(null);
     setFormError(null);
     setAccountDraft({
       mode: 'create',
-      key: 'wechat_mini_program',
-      name: t('admin.openPlatform.wechatMini.form.defaultAccountName', '小程序'),
+      name: t('admin.openPlatform.wechatMini.form.defaultAccountName', 'Mini Program'),
       appId: '',
-      tokenRef: '',
-      secretRef: '',
-      aesKeyRef: '',
+      appSecret: '',
+      token: '',
+      encodingAesKey: '',
+      hasAppSecret: false,
+      hasToken: false,
+      hasEncodingAesKey: false,
       status: 'active',
       qrDefault: false,
     });
@@ -212,12 +207,14 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
     setAccountDraft({
       mode: 'edit',
       accountId: account.id,
-      key: account.key,
       name: account.name,
       appId: account.appId,
-      tokenRef: account.tokenRef,
-      secretRef: account.secretRef,
-      aesKeyRef: account.aesKeyRef,
+      appSecret: '',
+      token: '',
+      encodingAesKey: '',
+      hasAppSecret: account.hasAppSecret,
+      hasToken: account.hasToken,
+      hasEncodingAesKey: account.hasEncodingAesKey,
       status: account.status,
       qrDefault: account.qrDefault,
     });
@@ -233,23 +230,21 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
     if (!accountDraft) {
       return;
     }
-    const key = accountDraft.key.trim();
     const name = accountDraft.name.trim();
-    if (!key) {
-      setFormError(t('admin.openPlatform.wechatMini.validation.keyRequired', 'Account key is required'));
-      return;
-    }
-    if (!isValidOpenPlatformKey(key)) {
-      setFormError(t('admin.openPlatform.wechatMini.validation.keyInvalid', 'Use lowercase letters, numbers, dots, underscores, colons, or hyphens; start with a lowercase letter or number and keep within 128 characters.'));
-      return;
-    }
+    const appId = accountDraft.appId.trim();
+    const appSecret = accountDraft.appSecret.trim();
+    const token = accountDraft.token.trim();
+    const encodingAesKey = accountDraft.encodingAesKey.trim();
     if (!name) {
       setFormError(t('admin.openPlatform.wechatMini.validation.nameRequired', 'Account name is required'));
       return;
     }
-    const credentialRefs = validateAccountCredentialRefs(accountDraft);
-    if (!credentialRefs) {
-      setFormError(t('admin.openPlatform.wechatMini.validation.credentialRefInvalid', 'Credential references must use vault:// or secret://, or a short ASCII path without spaces. Example: secret://wechat/mini/default-secret'));
+    if (!appId) {
+      setFormError(t('admin.openPlatform.wechatMini.validation.appIdRequired', 'AppID is required'));
+      return;
+    }
+    if (accountDraft.mode === 'create' && !appSecret) {
+      setFormError(t('admin.openPlatform.wechatMini.validation.appSecretRequired', 'AppSecret is required'));
       return;
     }
     setSaving(true);
@@ -257,12 +252,11 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
     try {
       if (accountDraft.mode === 'create') {
         await WechatMiniProgramService.createAccount({
-          key,
           name,
-          appId: accountDraft.appId.trim(),
-          tokenRef: credentialRefs.tokenRef,
-          secretRef: credentialRefs.secretRef,
-          aesKeyRef: credentialRefs.aesKeyRef,
+          appId,
+          appSecret,
+          token,
+          encodingAesKey,
         });
         setNotice(t('admin.openPlatform.wechatMini.notifications.accountCreated', 'WeChat mini program created'));
       } else if (accountDraft.accountId) {
@@ -270,10 +264,10 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
           name,
           status: accountDraft.status,
           qrDefault: accountDraft.qrDefault,
-          appId: accountDraft.appId.trim(),
-          tokenRef: credentialRefs.tokenRef,
-          secretRef: credentialRefs.secretRef,
-          aesKeyRef: credentialRefs.aesKeyRef,
+          appId,
+          appSecret: optionalSecretPatch(appSecret),
+          token: optionalSecretPatch(token),
+          encodingAesKey: optionalSecretPatch(encodingAesKey),
         });
         setNotice(t('admin.openPlatform.wechatMini.notifications.accountUpdated', 'WeChat mini program updated'));
       }
@@ -281,11 +275,7 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
       await loadAccounts();
     } catch (error) {
       const message = error instanceof Error ? error.message : '';
-      setFormError(
-        isCredentialRefValidationErrorMessage(message)
-          ? t('admin.openPlatform.wechatMini.validation.credentialRefInvalid', 'Credential references must use vault:// or secret://, or a short ASCII path without spaces. Example: secret://wechat/mini/default-secret')
-          : message || t('admin.openPlatform.wechatMini.notifications.accountSaveFailed', 'WeChat mini program could not be saved'),
-      );
+      setFormError(message || t('admin.openPlatform.wechatMini.notifications.accountSaveFailed', 'WeChat mini program could not be saved'));
     } finally {
       setSaving(false);
     }
@@ -379,21 +369,13 @@ export function WechatMiniProgramAdmin({ sectionId }: WechatMiniProgramAdminProp
   };
 
   return (
-    <div className="flex h-full min-h-0 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]" data-admin-open-platform-wechat-mini="true">
+    <div
+      className="flex h-full min-h-0 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]"
+      data-admin-open-platform-wechat-mini="true"
+      data-admin-open-platform-wechat-mini-product={WECHAT_MINI_PROGRAM_PRODUCT_SIGNAL}
+    >
       <main className="flex min-w-0 flex-1 flex-col bg-white dark:bg-[#1a1a1a]">
-        <div className="flex shrink-0 flex-col gap-4 border-b border-slate-200 p-5 dark:border-white/10 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-cyan-500">
-              <Smartphone className="h-4 w-4" />
-              {t('admin.openPlatform.wechatMini.kicker', '小程序')}
-            </div>
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-              {t('admin.openPlatform.wechatMini.title', 'WeChat Mini Programs')}
-            </h3>
-            <p className="mt-1 max-w-3xl text-sm text-slate-500 dark:text-slate-400">
-              {t('admin.openPlatform.wechatMini.subtitle', 'Manage WeChat mini program accounts and mini_app_url entries as an independent admin module.')}
-            </p>
-          </div>
+        <div className="flex shrink-0 justify-end border-b border-slate-200 p-3 dark:border-white/10">
           <div className="grid w-full grid-cols-3 overflow-hidden rounded-lg border border-slate-200 bg-slate-50 text-sm shadow-sm dark:border-white/10 dark:bg-white/5 lg:w-auto">
             <SummaryCell label={t('admin.openPlatform.wechatMini.summary.accounts', 'Mini Programs')} value={accounts.length} />
             <SummaryCell label={t('admin.openPlatform.wechatMini.summary.active', 'Active')} value={activeCount} tone="cyan" />
@@ -551,7 +533,7 @@ function MiniProgramAccountsSection({
             <tr>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatMini.columns.account', 'Mini Program')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatMini.columns.appId', 'App ID')}</th>
-              <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatMini.columns.credentials', 'Credential Refs')}</th>
+              <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatMini.columns.configuration', 'Configuration')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatMini.columns.status', 'Status')}</th>
               <th className="px-6 py-4 font-semibold">{t('admin.openPlatform.wechatMini.columns.updated', 'Updated')}</th>
               <th className="px-6 py-4 text-right font-semibold">{t('admin.openPlatform.wechatMini.columns.actions', 'Actions')}</th>
@@ -571,18 +553,14 @@ function MiniProgramAccountsSection({
               <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5" key={account.id}>
                 <td className="px-6 py-4">
                   <div className="font-medium text-slate-900 dark:text-slate-200">{account.name}</div>
-                  <div className="mt-1 flex items-center gap-2 font-mono text-xs text-slate-400">
-                    <span>{account.key}</span>
-                    <CopyButton text={account.key} iconClassName="h-3.5 w-3.5" title={t('admin.openPlatform.wechatMini.actions.copyKey', 'Copy account key')} />
-                  </div>
                 </td>
                 <td className="px-6 py-4 font-mono text-xs">{account.appId || '-'}</td>
                 <td className="px-6 py-4">
-                  <div className="space-y-1 font-mono text-xs">
-                    <div>{account.tokenRef || '-'}</div>
-                    <div>{account.secretRef || '-'}</div>
-                    <div>{account.aesKeyRef || '-'}</div>
-                  </div>
+                  <CredentialStatusPills
+                    hasAppSecret={account.hasAppSecret}
+                    hasEncodingAesKey={account.hasEncodingAesKey}
+                    hasToken={account.hasToken}
+                  />
                 </td>
                 <td className="px-6 py-4"><StatusBadge status={account.status} /></td>
                 <td className="px-6 py-4 font-mono text-xs">{account.updatedAt || account.createdAt || '-'}</td>
@@ -713,7 +691,6 @@ function MiniProgramUrlsSection({
                 <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5" key={entry.id}>
                   <td className="px-6 py-4">
                     <div className="font-medium text-slate-900 dark:text-slate-200">{selectedAccount.name}</div>
-                    <div className="mt-1 font-mono text-xs text-slate-400">{selectedAccount.key}</div>
                   </td>
                   <td className="px-6 py-4 font-mono text-xs">{entry.key}</td>
                   <td className="px-6 py-4">
@@ -775,26 +752,46 @@ function AccountDialog({
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/60 px-4 py-8 backdrop-blur-sm">
       <form className="flex max-h-full w-full max-w-2xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]" onSubmit={(event) => void onSubmit(event)}>
         <DialogHeader
-          icon={<KeyRound className="h-4 w-4" />}
-          kicker={t('admin.openPlatform.wechatMini.kicker', '小程序')}
+          icon={<Smartphone className="h-4 w-4" />}
+          kicker={t('admin.openPlatform.wechatMini.kicker', 'Mini Program')}
           onClose={onClose}
           title={isEdit ? t('admin.openPlatform.wechatMini.form.editAccountTitle', 'Edit mini program') : t('admin.openPlatform.wechatMini.form.createAccountTitle', 'Create mini program')}
         />
         <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-5">
           {formError ? <FormError message={formError} /> : null}
-          <div className="grid gap-4 md:grid-cols-2">
-            <TextInput disabled={isEdit} label={t('admin.openPlatform.wechatMini.form.key', 'Account key')} mono onChange={(value) => updateDraft({ key: value })} value={draft.key} />
-            <TextInput label={t('admin.openPlatform.wechatMini.form.name', 'Account name')} onChange={(value) => updateDraft({ name: value })} value={draft.name} />
-            <TextInput label={t('admin.openPlatform.wechatMini.form.appId', 'App ID')} mono onChange={(value) => updateDraft({ appId: value })} value={draft.appId} />
+          <div className="space-y-4">
+            <TextInput label={t('admin.openPlatform.wechatMini.form.name', 'Mini Program Name')} onChange={(value) => updateDraft({ name: value })} value={draft.name} />
+            <TextInput label={t('admin.openPlatform.wechatMini.form.appId', 'AppID')} mono onChange={(value) => updateDraft({ appId: value })} value={draft.appId} />
+            <TextInput
+              autoComplete="new-password"
+              label={t('admin.openPlatform.wechatMini.form.appSecret', 'AppSecret')}
+              onChange={(value) => updateDraft({ appSecret: value })}
+              placeholder={isEdit && draft.hasAppSecret ? t('admin.openPlatform.wechatMini.form.configuredSecretPlaceholder', 'Configured; leave blank to keep unchanged') : undefined}
+              type="password"
+              value={draft.appSecret}
+            />
+            <TextInput
+              autoComplete="new-password"
+              label={t('admin.openPlatform.wechatMini.form.token', 'Token')}
+              onChange={(value) => updateDraft({ token: value })}
+              placeholder={isEdit && draft.hasToken ? t('admin.openPlatform.wechatMini.form.configuredSecretPlaceholder', 'Configured; leave blank to keep unchanged') : undefined}
+              type="password"
+              value={draft.token}
+            />
+            <TextInput
+              autoComplete="new-password"
+              label={t('admin.openPlatform.wechatMini.form.encodingAesKey', 'EncodingAESKey')}
+              onChange={(value) => updateDraft({ encodingAesKey: value })}
+              placeholder={isEdit && draft.hasEncodingAesKey ? t('admin.openPlatform.wechatMini.form.configuredSecretPlaceholder', 'Configured; leave blank to keep unchanged') : undefined}
+              type="password"
+              value={draft.encodingAesKey}
+            />
             {isEdit ? (
               <SelectInput label={t('admin.openPlatform.wechatMini.form.status', 'Status')} onChange={(value) => updateDraft({ status: value as WechatMiniProgramStatus })} value={draft.status}>
                 <option value="active">{t('admin.openPlatform.status.active', 'Active')}</option>
                 <option value="inactive">{t('admin.openPlatform.status.inactive', 'Inactive')}</option>
               </SelectInput>
             ) : null}
-            <TextInput label={t('admin.openPlatform.wechatMini.form.tokenRef', 'Token ref')} mono onChange={(value) => updateDraft({ tokenRef: value })} placeholder={t('admin.openPlatform.wechatMini.form.tokenRefPlaceholder', 'secret://wechat/mini/default-token')} value={draft.tokenRef} />
-            <TextInput hint={t('admin.openPlatform.wechatMini.form.credentialRefHint', 'Use vault:// or secret://. Short paths are saved as secret:// paths.')} label={t('admin.openPlatform.wechatMini.form.secretRef', 'Secret ref')} mono onChange={(value) => updateDraft({ secretRef: value })} placeholder={t('admin.openPlatform.wechatMini.form.secretRefPlaceholder', 'secret://wechat/mini/default-secret')} value={draft.secretRef} />
-            <TextInput className="md:col-span-2" label={t('admin.openPlatform.wechatMini.form.aesKeyRef', 'AES key ref')} mono onChange={(value) => updateDraft({ aesKeyRef: value })} placeholder={t('admin.openPlatform.wechatMini.form.aesKeyRefPlaceholder', 'secret://wechat/mini/default-aes-key')} value={draft.aesKeyRef} />
             {isEdit ? (
               <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
                 <input
@@ -842,7 +839,7 @@ function EntryDialog({
         />
         <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-5">
           {formError ? <FormError message={formError} /> : null}
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="space-y-4">
             <TextInput label={t('admin.openPlatform.wechatMini.form.entryKey', 'URL key')} mono onChange={(value) => updateDraft({ key: value })} value={draft.key} />
             {isEdit ? (
               <SelectInput label={t('admin.openPlatform.wechatMini.form.status', 'Status')} onChange={(value) => updateDraft({ status: value as WechatMiniProgramEntryStatus })} value={draft.status}>
@@ -850,7 +847,7 @@ function EntryDialog({
                 <option value="inactive">{t('admin.openPlatform.status.inactive', 'Inactive')}</option>
               </SelectInput>
             ) : null}
-            <TextInput className="md:col-span-2" label={t('admin.openPlatform.wechatMini.form.entryUrl', 'Mini program URL')} mono onChange={(value) => updateDraft({ url: value })} value={draft.url} />
+            <TextInput label={t('admin.openPlatform.wechatMini.form.entryUrl', 'Mini program URL')} mono onChange={(value) => updateDraft({ url: value })} value={draft.url} />
           </div>
         </div>
         <DialogActions onClose={onClose} saving={saving} saveLabel={isEdit ? t('common.actions.save', 'Save') : t('admin.openPlatform.wechatMini.actions.createEntry', 'Create URL')} />
@@ -922,6 +919,7 @@ function DialogActions({
 }
 
 function TextInput({
+  autoComplete,
   className = '',
   disabled = false,
   hint,
@@ -929,8 +927,10 @@ function TextInput({
   mono = false,
   onChange,
   placeholder,
+  type = 'text',
   value,
 }: {
+  autoComplete?: string;
   className?: string;
   disabled?: boolean;
   hint?: string;
@@ -938,16 +938,19 @@ function TextInput({
   mono?: boolean;
   onChange: (value: string) => void;
   placeholder?: string;
+  type?: 'password' | 'text';
   value: string;
 }) {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300">{label}</span>
       <input
+        autoComplete={autoComplete}
         className={`w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-cyan-500 disabled:bg-slate-50 disabled:text-slate-400 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white dark:disabled:bg-white/5 ${mono ? 'font-mono' : ''}`}
         disabled={disabled}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
+        type={type}
         value={value}
       />
       {hint ? <span className="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">{hint}</span> : null}
@@ -968,7 +971,7 @@ function SelectInput({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300">{label}</span>
       <select
         className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-cyan-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
         onChange={(event) => onChange(event.target.value)}
@@ -988,59 +991,46 @@ function FormError({ message }: { message: string }) {
   );
 }
 
+function CredentialStatusPills({
+  hasAppSecret,
+  hasEncodingAesKey,
+  hasToken,
+}: {
+  hasAppSecret: boolean;
+  hasEncodingAesKey: boolean;
+  hasToken: boolean;
+}) {
+  const { t } = useTranslation();
+  return (
+    <div className="flex flex-wrap gap-2">
+      <CredentialStatusPill configured={hasAppSecret} label={t('admin.openPlatform.wechatMini.form.appSecret', 'AppSecret')} />
+      <CredentialStatusPill configured={hasToken} label={t('admin.openPlatform.wechatMini.form.token', 'Token')} />
+      <CredentialStatusPill configured={hasEncodingAesKey} label={t('admin.openPlatform.wechatMini.form.encodingAesKey', 'EncodingAESKey')} />
+    </div>
+  );
+}
+
+function CredentialStatusPill({ configured, label }: { configured: boolean; label: string }) {
+  const { t } = useTranslation();
+  const tone = configured
+    ? 'border-cyan-200 bg-cyan-50 text-cyan-700 dark:border-cyan-500/30 dark:bg-cyan-500/10 dark:text-cyan-300'
+    : 'border-slate-200 bg-slate-50 text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400';
+  return (
+    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${tone}`}>
+      {configured ? <CheckCircle2 className="h-3.5 w-3.5" /> : null}
+      {label}
+      <span className="text-[11px] opacity-80">{configured ? t('admin.openPlatform.configuration.configured', 'Configured') : t('admin.openPlatform.configuration.notConfigured', 'Not configured')}</span>
+    </span>
+  );
+}
+
 function isValidOpenPlatformKey(value: string): boolean {
   return value.length <= OPEN_PLATFORM_KEY_MAX_LENGTH && OPEN_PLATFORM_KEY_PATTERN.test(value);
 }
 
-function validateAccountCredentialRefs(draft: AccountDraft): AccountCredentialRefs | null {
-  const credentialRefs = {
-    tokenRef: normalizeCredentialRefInput(draft.tokenRef),
-    secretRef: normalizeCredentialRefInput(draft.secretRef),
-    aesKeyRef: normalizeCredentialRefInput(draft.aesKeyRef),
-  };
-  if (
-    !isValidCredentialRef(credentialRefs.tokenRef) ||
-    !isValidCredentialRef(credentialRefs.secretRef) ||
-    !isValidCredentialRef(credentialRefs.aesKeyRef)
-  ) {
-    return null;
-  }
-  return credentialRefs;
-}
-
-function normalizeCredentialRefInput(value: string): string {
-  const trimmed = value.trim();
-  if (!trimmed) {
-    return '';
-  }
-  if (trimmed.startsWith('vault://') || trimmed.startsWith('secret://')) {
-    return trimmed;
-  }
-  if (trimmed.includes('://')) {
-    return trimmed;
-  }
-  return `secret://${trimmed}`;
-}
-
-function isValidCredentialRef(value: string): boolean {
-  if (!value) {
-    return true;
-  }
-  if (value.length > CREDENTIAL_REF_MAX_LENGTH) {
-    return false;
-  }
-  if (!(value.startsWith('vault://') || value.startsWith('secret://'))) {
-    return false;
-  }
-  const locator = value.replace(/^(?:vault|secret):\/\//, '');
-  return CREDENTIAL_REF_LOCATOR_PATTERN.test(locator) && locator.replace(/^\/+|\/+$/g, '').length > 0;
-}
-
-function isCredentialRefValidationErrorMessage(message: string): boolean {
-  return (
-    /\b(?:secretRef|tokenRef|aesKeyRef)\b.*(?:must start with vault:\/\/ or secret:\/\/|must include a non-empty locator)/i.test(message) ||
-    /plaintext open platform secrets are not accepted/i.test(message)
-  );
+function optionalSecretPatch(value: string): string | undefined {
+  const normalized = value.trim();
+  return normalized ? normalized : undefined;
 }
 
 function SummaryCell({ label, tone = 'slate', value }: { label: string; tone?: 'cyan' | 'slate'; value: number }) {

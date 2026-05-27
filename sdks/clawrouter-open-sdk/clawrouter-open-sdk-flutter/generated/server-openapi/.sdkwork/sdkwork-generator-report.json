@@ -12,31 +12,132 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "e6ade7f9f02216ad42c717966c360d680b265ad70af569b226aeef91a950024b",
+  "changeFingerprint": "fbf39c9b93d06aaf71e01dc90047da8b459508d87c71658a4aad27bd576dad0e",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
-      "models"
+      "api-surface",
+      "models",
+      "runtime",
+      "build-metadata",
+      "publish-workflow",
+      "documentation",
+      "custom-scaffold",
+      "unknown"
     ],
     "details": [
       {
+        "area": "api-surface",
+        "paths": [
+          "lib/ai_client.dart",
+          "lib/src/api/api.dart",
+          "lib/src/api/assistants.dart",
+          "lib/src/api/audio_suno.dart",
+          "lib/src/api/audio.dart",
+          "lib/src/api/batches_anthropic.dart",
+          "lib/src/api/batches.dart",
+          "lib/src/api/chat_anthropic.dart",
+          "lib/src/api/chat_google.dart",
+          "lib/src/api/chat.dart",
+          "lib/src/api/completion.dart",
+          "lib/src/api/container.dart",
+          "lib/src/api/conversation.dart",
+          "lib/src/api/embeddings_google.dart",
+          "lib/src/api/embeddings.dart",
+          "lib/src/api/eval.dart",
+          "lib/src/api/files_anthropic.dart",
+          "lib/src/api/files_google.dart",
+          "lib/src/api/files.dart",
+          "lib/src/api/fine_tuning.dart",
+          "lib/src/api/images_midjourney.dart",
+          "lib/src/api/images_nano_banana.dart",
+          "lib/src/api/images_vidu.dart",
+          "lib/src/api/images.dart",
+          "lib/src/api/models.dart",
+          "lib/src/api/moderations.dart",
+          "lib/src/api/organization.dart",
+          "lib/src/api/paths.dart",
+          "lib/src/api/project.dart",
+          "lib/src/api/realtime.dart",
+          "lib/src/api/response_helpers.dart",
+          "lib/src/api/responses_google.dart",
+          "lib/src/api/responses.dart",
+          "lib/src/api/skill.dart",
+          "lib/src/api/threads.dart",
+          "lib/src/api/uploads.dart",
+          "lib/src/api/vector_stores.dart",
+          "lib/src/api/video.dart",
+          "lib/src/api/videos_kling.dart",
+          "lib/src/api/videos_vidu.dart",
+          "lib/src/api/videos_volcengine.dart",
+          "lib/src/http/client.dart"
+        ]
+      },
+      {
         "area": "models",
         "paths": [
+          "lib/src/api/models.dart",
           "lib/src/models.dart"
+        ]
+      },
+      {
+        "area": "runtime",
+        "paths": [
+          "lib/src/http/client.dart"
+        ]
+      },
+      {
+        "area": "build-metadata",
+        "paths": [
+          "pubspec.yaml",
+          "sdkwork-sdk.json"
+        ]
+      },
+      {
+        "area": "publish-workflow",
+        "paths": [
+          "bin/publish-core.mjs",
+          "bin/publish.ps1",
+          "bin/publish.sh"
+        ]
+      },
+      {
+        "area": "documentation",
+        "paths": [
+          "CHANGELOG.md",
+          "custom/README.md",
+          "README.md"
+        ]
+      },
+      {
+        "area": "custom-scaffold",
+        "paths": [
+          "custom/README.md"
+        ]
+      },
+      {
+        "area": "unknown",
+        "paths": [
+          "lib/clawrouter_open_sdk.dart",
+          "LICENSE",
+          "pubspec_overrides.yaml"
         ]
       }
     ],
     "requiresVerification": true,
-    "summary": "Detected impact areas: models. Verification is required."
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required."
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "medium",
+    "riskLevel": "high",
     "nextAction": "verify",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
     "summary": "Changes have been applied. Run the required verification plan now.",
     "reasons": [
+      "manual-review-required",
+      "preserved-legacy-files",
+      "unknown-impact",
       "verification-required"
     ]
   },
@@ -48,7 +149,7 @@
         "id": "verify-check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
         "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-open-sdk\\clawrouter-open-sdk-flutter\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -67,13 +168,13 @@
   "verificationPlan": {
     "shouldRun": true,
     "runPhase": "now",
-    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
     "steps": [
       {
         "id": "check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
         "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-open-sdk\\clawrouter-open-sdk-flutter\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -110,18 +211,14 @@
   "warnings": [],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 1,
-    "skippedScaffoldFiles": 1,
-    "skippedUnchangedGeneratedFiles": 52,
+    "writtenFiles": 54,
+    "skippedScaffoldFiles": 0,
+    "skippedUnchangedGeneratedFiles": 0,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "e6ade7f9f02216ad42c717966c360d680b265ad70af569b226aeef91a950024b",
+    "changeFingerprint": "fbf39c9b93d06aaf71e01dc90047da8b459508d87c71658a4aad27bd576dad0e",
     "changes": {
-      "createdGeneratedFiles": [],
-      "updatedGeneratedFiles": [
-        "lib/src/models.dart"
-      ],
-      "unchangedGeneratedFiles": [
+      "createdGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
         "bin/publish.sh",
@@ -169,45 +266,146 @@
         "lib/src/api/videos_vidu.dart",
         "lib/src/api/videos_volcengine.dart",
         "lib/src/http/client.dart",
+        "lib/src/models.dart",
         "LICENSE",
         "pubspec_overrides.yaml",
         "pubspec.yaml",
         "README.md",
         "sdkwork-sdk.json"
       ],
+      "updatedGeneratedFiles": [],
+      "unchangedGeneratedFiles": [],
       "deletedGeneratedFiles": [],
-      "scaffoldedFiles": [],
-      "preservedScaffoldFiles": [
+      "scaffoldedFiles": [
         "custom/README.md"
       ],
+      "preservedScaffoldFiles": [],
       "backedUpFiles": []
     },
     "impact": {
       "schemaVersion": 1,
       "areas": [
-        "models"
+        "api-surface",
+        "models",
+        "runtime",
+        "build-metadata",
+        "publish-workflow",
+        "documentation",
+        "custom-scaffold",
+        "unknown"
       ],
       "details": [
         {
+          "area": "api-surface",
+          "paths": [
+            "lib/ai_client.dart",
+            "lib/src/api/api.dart",
+            "lib/src/api/assistants.dart",
+            "lib/src/api/audio_suno.dart",
+            "lib/src/api/audio.dart",
+            "lib/src/api/batches_anthropic.dart",
+            "lib/src/api/batches.dart",
+            "lib/src/api/chat_anthropic.dart",
+            "lib/src/api/chat_google.dart",
+            "lib/src/api/chat.dart",
+            "lib/src/api/completion.dart",
+            "lib/src/api/container.dart",
+            "lib/src/api/conversation.dart",
+            "lib/src/api/embeddings_google.dart",
+            "lib/src/api/embeddings.dart",
+            "lib/src/api/eval.dart",
+            "lib/src/api/files_anthropic.dart",
+            "lib/src/api/files_google.dart",
+            "lib/src/api/files.dart",
+            "lib/src/api/fine_tuning.dart",
+            "lib/src/api/images_midjourney.dart",
+            "lib/src/api/images_nano_banana.dart",
+            "lib/src/api/images_vidu.dart",
+            "lib/src/api/images.dart",
+            "lib/src/api/models.dart",
+            "lib/src/api/moderations.dart",
+            "lib/src/api/organization.dart",
+            "lib/src/api/paths.dart",
+            "lib/src/api/project.dart",
+            "lib/src/api/realtime.dart",
+            "lib/src/api/response_helpers.dart",
+            "lib/src/api/responses_google.dart",
+            "lib/src/api/responses.dart",
+            "lib/src/api/skill.dart",
+            "lib/src/api/threads.dart",
+            "lib/src/api/uploads.dart",
+            "lib/src/api/vector_stores.dart",
+            "lib/src/api/video.dart",
+            "lib/src/api/videos_kling.dart",
+            "lib/src/api/videos_vidu.dart",
+            "lib/src/api/videos_volcengine.dart",
+            "lib/src/http/client.dart"
+          ]
+        },
+        {
           "area": "models",
           "paths": [
+            "lib/src/api/models.dart",
             "lib/src/models.dart"
+          ]
+        },
+        {
+          "area": "runtime",
+          "paths": [
+            "lib/src/http/client.dart"
+          ]
+        },
+        {
+          "area": "build-metadata",
+          "paths": [
+            "pubspec.yaml",
+            "sdkwork-sdk.json"
+          ]
+        },
+        {
+          "area": "publish-workflow",
+          "paths": [
+            "bin/publish-core.mjs",
+            "bin/publish.ps1",
+            "bin/publish.sh"
+          ]
+        },
+        {
+          "area": "documentation",
+          "paths": [
+            "CHANGELOG.md",
+            "custom/README.md",
+            "README.md"
+          ]
+        },
+        {
+          "area": "custom-scaffold",
+          "paths": [
+            "custom/README.md"
+          ]
+        },
+        {
+          "area": "unknown",
+          "paths": [
+            "lib/clawrouter_open_sdk.dart",
+            "LICENSE",
+            "pubspec_overrides.yaml"
           ]
         }
       ],
       "requiresVerification": true,
-      "summary": "Detected impact areas: models. Verification is required."
+      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required."
     },
     "verificationPlan": {
       "shouldRun": true,
       "runPhase": "now",
-      "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
       "steps": [
         {
           "id": "check",
           "title": "Unified package check",
           "required": true,
-          "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+          "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
           "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-open-sdk\\clawrouter-open-sdk-flutter\\generated\\server-openapi",
           "command": "node",
           "args": [
@@ -225,16 +423,19 @@
     },
     "executionDecision": {
       "schemaVersion": 1,
-      "riskLevel": "medium",
+      "riskLevel": "high",
       "nextAction": "verify",
       "requiresManualReview": false,
       "applyRequiresExpectedFingerprint": false,
       "summary": "Changes have been applied. Run the required verification plan now.",
       "reasons": [
+        "manual-review-required",
+        "preserved-legacy-files",
+        "unknown-impact",
         "verification-required"
       ]
     },
     "backedUpFiles": [],
-    "preservedLegacyFiles": false
+    "preservedLegacyFiles": true
   }
 }

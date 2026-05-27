@@ -1,3 +1,6 @@
+mod common;
+use common::missing_internal_tenant_header_message;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -27,9 +30,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
                 .method("POST")
                 .uri("/backend/v3/api/content/announcements")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"title":"Gateway maintenance","target":"all","status":"draft","showAsPopup":true,"content":"Maintenance window at 23:00 UTC"}"#,
                 ))
@@ -60,9 +61,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
                 .method("PATCH")
                 .uri("/backend/v3/api/content/announcements/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"status":"published","target":"vip","showAsPopup":false}"#,
                 ))
@@ -86,9 +85,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
         .oneshot(
             Request::builder()
                 .uri("/backend/v3/api/content/announcements")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -109,9 +106,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/content/announcements/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -126,9 +121,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
         .oneshot(
             Request::builder()
                 .uri("/backend/v3/api/content/announcements")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -164,7 +157,7 @@ async fn admin_announcement_route_rejects_missing_trusted_subject_for_store_back
     assert!(payload["msg"]
         .as_str()
         .unwrap()
-        .contains("x-sdkwork-tenant-id header is required"));
+        .contains(missing_internal_tenant_header_message()));
 }
 
 #[tokio::test]
@@ -181,9 +174,7 @@ async fn admin_announcement_route_rejects_invalid_payload_without_calling_store(
                 .method("POST")
                 .uri("/backend/v3/api/content/announcements")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"title":"","target":"all","status":"published","content":"x"}"#,
                 ))

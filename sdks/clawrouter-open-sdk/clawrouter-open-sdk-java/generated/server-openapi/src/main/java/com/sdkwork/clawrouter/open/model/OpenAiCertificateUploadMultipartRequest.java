@@ -10,7 +10,7 @@ public class OpenAiCertificateUploadMultipartRequest {
     public String getCertificate() {
         return this.certificate;
     }
-    
+
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -18,7 +18,7 @@ public class OpenAiCertificateUploadMultipartRequest {
     public String getFile() {
         return this.file;
     }
-    
+
     public void setFile(String file) {
         this.file = file;
     }
@@ -26,7 +26,7 @@ public class OpenAiCertificateUploadMultipartRequest {
     public String getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
@@ -34,7 +34,7 @@ public class OpenAiCertificateUploadMultipartRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

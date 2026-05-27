@@ -11,7 +11,6 @@ export type SdkworkCommercialActionCapability =
   | "points"
   | "pricing"
   | "subscription"
-  | "vip"
   | "wallet";
 
 export type SdkworkCommercialActionIntent =

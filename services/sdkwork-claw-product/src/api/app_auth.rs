@@ -3,23 +3,24 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
-use axum::middleware::from_fn_with_state;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_http::{
-    sign_app_session_token, verify_app_session_authorization_header, verify_app_session_token,
-    TrustedRequestSubject,
+    sign_app_session_token, verified_signed_trusted_request_subject,
+    verify_app_session_authorization_header, verify_app_session_token, TrustedRequestSubject,
 };
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::{
     default_desktop_cache_manager, EntityUuidGenerator, PasswordHasher, RuntimeCacheManager,
     AUTH_QR_CACHE_NAMESPACE,
 };
+use crate::domain::DomainError;
 use crate::ports::{
     ActiveAppSession, AdminAuthSettings, AdminAuthSettingsStore, AdminOpenPlatformStore,
     AdminOpenPlatformSubject, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
@@ -37,7 +38,6 @@ const APP_ID: &str = "sdkwork-claw-router";
 const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";
 const DEPLOYMENT_MODE: &str = "local";
 const ENVIRONMENT: &str = "dev";
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const INVALID_CREDENTIALS_MESSAGE: &str = "Invalid account or password";
 const INVALID_CODE_MESSAGE: &str = "Invalid or expired verification code";
 const MAX_ACCOUNT_LENGTH: usize = 128;
@@ -58,7 +58,7 @@ const LOGIN_QR_CODE_TTL_SECONDS: i64 = 300;
 const INVALID_QR_AUTH_SESSION_MESSAGE: &str = "Invalid or expired QR auth session";
 const LOCAL_DEBUG_VERIFICATION_CODE: &str = "666666";
 const AUTHORIZATION_HEADER: &str = "authorization";
-const SDKWORK_ACCESS_TOKEN_HEADER: &str = "Sdkwork-Access-Token";
+const ACCESS_TOKEN_HEADER: &str = "Access-Token";
 
 #[derive(Clone)]
 struct AppAuthState {
@@ -68,6 +68,7 @@ struct AppAuthState {
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     cache_manager: RuntimeCacheManager,
@@ -445,6 +446,7 @@ pub fn app_auth_router_with_store(
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
 ) -> Router {
@@ -453,6 +455,7 @@ pub fn app_auth_router_with_store(
         None,
         event_store,
         entity_uuid_generator,
+        trusted_subject_config,
         app_session_config,
         password_hasher,
         None,
@@ -466,6 +469,7 @@ pub fn app_auth_router_with_store_and_verification_sender(
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
@@ -476,6 +480,7 @@ pub fn app_auth_router_with_store_and_verification_sender(
         None,
         event_store,
         entity_uuid_generator,
+        trusted_subject_config,
         app_session_config,
         password_hasher,
         verification_code_sender,
@@ -487,6 +492,7 @@ pub fn app_auth_router_with_store_and_cache_manager(
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     cache_manager: RuntimeCacheManager,
@@ -496,6 +502,7 @@ pub fn app_auth_router_with_store_and_cache_manager(
         None,
         event_store,
         entity_uuid_generator,
+        trusted_subject_config,
         app_session_config,
         password_hasher,
         None,
@@ -510,6 +517,7 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
@@ -520,6 +528,7 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
         auth_settings_store,
         event_store,
         entity_uuid_generator,
+        trusted_subject_config,
         app_session_config,
         password_hasher,
         None,
@@ -534,6 +543,7 @@ pub fn app_auth_router_with_store_auth_settings_store_cache_and_verification_sen
     auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
@@ -541,13 +551,14 @@ pub fn app_auth_router_with_store_auth_settings_store_cache_and_verification_sen
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     expose_debug_code: bool,
 ) -> Router {
-    app_auth_routes().with_state(AppAuthState {
+    app_auth_routes_with_state(AppAuthState {
         auth_store,
         auth_settings_store,
         open_platform_store,
         event_store,
         verification_code_sender,
         entity_uuid_generator,
+        trusted_subject_config,
         app_session_config,
         password_hasher,
         cache_manager,
@@ -561,6 +572,7 @@ pub fn app_auth_router_with_store_auth_settings_store_open_platform_store_cache_
     open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
     cache_manager: RuntimeCacheManager,
@@ -572,6 +584,7 @@ pub fn app_auth_router_with_store_auth_settings_store_open_platform_store_cache_
         auth_settings_store,
         event_store,
         entity_uuid_generator,
+        trusted_subject_config,
         app_session_config,
         password_hasher,
         open_platform_store,
@@ -591,23 +604,19 @@ pub fn app_sessions_router_with_store(
     app_session_config: AppSessionConfig,
     password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
 ) -> Router {
-    app_auth_routes()
-        .with_state(AppAuthState {
-            auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
-            auth_settings_store,
-            open_platform_store,
-            event_store,
-            verification_code_sender: Arc::new(DebugVerificationCodeSender),
-            entity_uuid_generator,
-            app_session_config,
-            password_hasher,
-            cache_manager: default_desktop_cache_manager(),
-            expose_debug_code: true,
-        })
-        .layer(from_fn_with_state(
-            trusted_subject_config,
-            sdkwork_claw_http::trusted_request_subject_boundary,
-        ))
+    app_session_routes().with_state(AppAuthState {
+        auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
+        auth_settings_store,
+        open_platform_store,
+        event_store,
+        verification_code_sender: Arc::new(DebugVerificationCodeSender),
+        entity_uuid_generator,
+        trusted_subject_config,
+        app_session_config,
+        password_hasher,
+        cache_manager: default_desktop_cache_manager(),
+        expose_debug_code: true,
+    })
 }
 
 pub fn app_sessions_router_with_store_and_verification_sender(
@@ -622,35 +631,66 @@ pub fn app_sessions_router_with_store_and_verification_sender(
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     expose_debug_code: bool,
 ) -> Router {
-    app_auth_routes()
-        .with_state(AppAuthState {
-            auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
-            auth_settings_store,
-            open_platform_store,
-            event_store,
-            verification_code_sender,
-            entity_uuid_generator,
-            app_session_config,
-            password_hasher,
-            cache_manager: default_desktop_cache_manager(),
-            expose_debug_code,
-        })
-        .layer(from_fn_with_state(
-            trusted_subject_config,
-            sdkwork_claw_http::trusted_request_subject_boundary,
-        ))
+    app_session_routes().with_state(AppAuthState {
+        auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
+        auth_settings_store,
+        open_platform_store,
+        event_store,
+        verification_code_sender,
+        entity_uuid_generator,
+        trusted_subject_config,
+        app_session_config,
+        password_hasher,
+        cache_manager: default_desktop_cache_manager(),
+        expose_debug_code,
+    })
 }
 
-fn app_auth_routes() -> Router<AppAuthState> {
+pub fn app_public_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
+    auth_store: Option<Arc<dyn AppAuthStore + Send + Sync>>,
+    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
+    open_platform_store: Option<Arc<dyn AdminOpenPlatformStore + Send + Sync>>,
+    event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+    password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
+    cache_manager: RuntimeCacheManager,
+    verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
+    expose_debug_code: bool,
+) -> Router {
+    app_public_auth_routes_with_state(AppAuthState {
+        auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
+        auth_settings_store,
+        open_platform_store,
+        event_store,
+        verification_code_sender,
+        entity_uuid_generator,
+        trusted_subject_config,
+        app_session_config,
+        password_hasher,
+        cache_manager,
+        expose_debug_code,
+    })
+}
+
+fn app_auth_routes_with_state(state: AppAuthState) -> Router {
     Router::new()
-        .route(APP_SESSION_PATH, post(create_session))
-        .route(
-            "/app/v3/api/auth/sessions/current",
-            get(retrieve_current_session)
-                .delete(delete_current_session)
-                .patch(update_current_session),
-        )
-        .route("/app/v3/api/auth/sessions/refresh", post(refresh_session))
+        .merge(app_public_auth_routes())
+        .merge(app_public_iam_runtime_routes())
+        .merge(app_session_routes())
+        .with_state(state)
+}
+
+fn app_public_auth_routes_with_state(state: AppAuthState) -> Router {
+    Router::new()
+        .merge(app_public_auth_routes())
+        .merge(app_public_iam_runtime_routes())
+        .with_state(state)
+}
+
+fn app_public_auth_routes() -> Router<AppAuthState> {
+    Router::new()
         .route(
             "/app/v3/api/open_platform/qr_auth/sessions",
             post(create_qr_auth_session),
@@ -692,14 +732,30 @@ fn app_auth_routes() -> Router<AppAuthState> {
             "/app/v3/api/auth/oauth_sessions",
             post(create_oauth_session),
         )
+}
+
+fn app_public_iam_runtime_routes() -> Router<AppAuthState> {
+    Router::new()
         .route(
-            "/app/v3/api/auth/runtime_settings",
+            "/app/v3/api/system/iam/runtime",
             get(retrieve_runtime_settings),
         )
         .route(
-            "/app/v3/api/auth/verification_policy",
+            "/app/v3/api/system/iam/verification_policy",
             get(retrieve_verification_policy),
         )
+}
+
+fn app_session_routes() -> Router<AppAuthState> {
+    Router::new()
+        .route(APP_SESSION_PATH, post(create_session))
+        .route(
+            "/app/v3/api/auth/sessions/current",
+            get(retrieve_current_session)
+                .delete(delete_current_session)
+                .patch(update_current_session),
+        )
+        .route("/app/v3/api/auth/sessions/refresh", post(refresh_session))
 }
 
 async fn create_session(
@@ -725,6 +781,11 @@ async fn create_session(
         Err(AppSessionCreateError::BadRequest(message)) => (
             StatusCode::BAD_REQUEST,
             Json(PlusApiResult::error("4001", message)),
+        )
+            .into_response(),
+        Err(AppSessionCreateError::TooManyRequests(message)) => (
+            StatusCode::TOO_MANY_REQUESTS,
+            Json(PlusApiResult::error("4290", message)),
         )
             .into_response(),
         Err(AppSessionCreateError::System(message)) => (
@@ -2012,6 +2073,11 @@ fn auth_error_response(error: AppSessionCreateError) -> Response {
             Json(PlusApiResult::error("4001", message)),
         )
             .into_response(),
+        AppSessionCreateError::TooManyRequests(message) => (
+            StatusCode::TOO_MANY_REQUESTS,
+            Json(PlusApiResult::error("4290", message)),
+        )
+            .into_response(),
         AppSessionCreateError::System(message) => (
             StatusCode::INTERNAL_SERVER_ERROR,
             Json(PlusApiResult::error("5000", message)),
@@ -2042,8 +2108,11 @@ async fn create_session_inner(
     )?;
     ensure_login_method_enabled(&state, &tenant_code, &organization_code, &grant_type).await?;
     if grant_type == "session_bridge" {
-        let request_id = normalize_request_id(&headers)?;
+        let request_id = generate_server_request_id()
+            .map(Some)
+            .map_err(app_session_request_id_error)?;
         return create_session_bridge_response(
+            &state.trusted_subject_config,
             &state.app_session_config,
             state.event_store.as_ref(),
             state.entity_uuid_generator.as_ref(),
@@ -2071,7 +2140,9 @@ async fn create_session_inner(
         request.password.as_deref().unwrap_or_default(),
         MAX_PASSWORD_LENGTH,
     )?;
-    let request_id = normalize_request_id(&headers)?;
+    let request_id = generate_server_request_id()
+        .map(Some)
+        .map_err(app_session_request_id_error)?;
     let Some(user) = state
         .auth_store
         .find_user_for_password_login(&account)
@@ -2350,7 +2421,7 @@ impl PresentedSessionTokens {
             verify_app_session_authorization_header(app_session_config, &authorization, now)
                 .map_err(|_| AppSessionCreateError::Unauthorized)?;
         let auth_token = bearer_token_from_authorization_header(&authorization)?;
-        let access_token = header_value(headers, SDKWORK_ACCESS_TOKEN_HEADER)?;
+        let access_token = header_value(headers, ACCESS_TOKEN_HEADER)?;
         let access_subject = verify_app_session_token(app_session_config, &access_token, now)
             .map_err(|_| AppSessionCreateError::Unauthorized)?;
         if subject != access_subject {
@@ -2685,7 +2756,7 @@ async fn rotate_current_session_tokens(
 
 async fn create_code_login_session(
     state: AppAuthState,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     request: IamSessionCreateRequest,
     grant_type: &str,
 ) -> Result<IamSessionResponse, AppSessionCreateError> {
@@ -2712,7 +2783,9 @@ async fn create_code_login_session(
         request.code.as_deref().unwrap_or_default(),
         MAX_CODE_LENGTH,
     )?;
-    let request_id = normalize_request_id(&headers)?;
+    let request_id = generate_server_request_id()
+        .map(Some)
+        .map_err(app_session_request_id_error)?;
     let code_hash = sha256_hex(&code);
     let valid = state
         .auth_store
@@ -2766,7 +2839,7 @@ async fn create_registration(
 
 async fn create_registration_inner(
     state: AppAuthState,
-    headers: HeaderMap,
+    _headers: HeaderMap,
     request: IamRegistrationCreateRequest,
 ) -> Result<IamSessionResponse, AppSessionCreateError> {
     let username = normalize_required_field("username", &request.username, MAX_ACCOUNT_LENGTH)?;
@@ -2810,7 +2883,9 @@ async fn create_registration_inner(
             "verificationCode must not be empty".to_owned(),
         ));
     }
-    let request_id = normalize_request_id(&headers)?;
+    let request_id = generate_server_request_id()
+        .map(Some)
+        .map_err(app_session_request_id_error)?;
     let now = current_unix_seconds();
     let password_hash = state
         .password_hasher
@@ -2926,7 +3001,7 @@ async fn create_verification_code_inner(
             expires_at: expires_at_api.clone(),
         })
         .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+        .map_err(map_verification_delivery_error)?;
     Ok(IamVerificationCodeResponse {
         code_id,
         expires_at: expires_at_api,
@@ -3023,7 +3098,7 @@ async fn create_password_reset_request_inner(
             expires_at: expires_at_api.clone(),
         })
         .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+        .map_err(map_verification_delivery_error)?;
     Ok(IamPasswordResetRequestResponse {
         request_id,
         expires_at: expires_at_api,
@@ -3314,14 +3389,23 @@ pub(crate) async fn issue_iam_session(
 }
 
 async fn create_session_bridge_response(
+    trusted_subject_config: &TrustedSubjectConfig,
     app_session_config: &AppSessionConfig,
     event_store: &(dyn AppSessionEventStore + Send + Sync),
     entity_uuid_generator: &(dyn EntityUuidGenerator + Send + Sync),
     headers: &HeaderMap,
     request_id: Option<String>,
 ) -> Result<IamSessionResponse, AppSessionCreateError> {
-    let subject = TrustedRequestSubject::from_headers(headers)
-        .map_err(|_| AppSessionCreateError::TrustedSubjectRequired)?;
+    let mut headers = headers.clone();
+    let subject = verified_signed_trusted_request_subject(
+        &mut headers,
+        "POST",
+        APP_SESSION_PATH,
+        trusted_subject_config,
+        current_unix_seconds(),
+    )
+    .map_err(|_| AppSessionCreateError::TrustedSubjectRequired)?
+    .ok_or(AppSessionCreateError::TrustedSubjectRequired)?;
     let user = IamSessionIssueUser {
         id: subject.user_id,
         tenant_id: subject.tenant_id,
@@ -3395,7 +3479,16 @@ pub(crate) enum AppSessionCreateError {
     Unauthorized,
     TrustedSubjectRequired,
     BadRequest(String),
+    TooManyRequests(String),
     System(String),
+}
+
+fn map_verification_delivery_error(error: DomainError) -> AppSessionCreateError {
+    if error.is_conflict() {
+        AppSessionCreateError::TooManyRequests(error.to_string())
+    } else {
+        AppSessionCreateError::System(error.to_string())
+    }
 }
 
 fn normalize_grant_type(value: &str) -> String {
@@ -3512,27 +3605,11 @@ fn optional_string(value: String) -> Option<String> {
     }
 }
 
-pub(crate) fn normalize_request_id(
-    headers: &HeaderMap,
-) -> Result<Option<String>, AppSessionCreateError> {
-    let Some(value) = headers.get(REQUEST_ID_HEADER) else {
-        return Ok(None);
-    };
-    let value = value
-        .to_str()
-        .map_err(|_| {
-            AppSessionCreateError::BadRequest("X-Request-Id header is invalid".to_owned())
-        })?
-        .trim();
-    if value.is_empty() {
-        return Ok(None);
+fn app_session_request_id_error(error: RequestIdError) -> AppSessionCreateError {
+    match error {
+        RequestIdError::Invalid(message) => AppSessionCreateError::BadRequest(message),
+        RequestIdError::System(message) => AppSessionCreateError::System(message),
     }
-    if value.len() > 128 {
-        return Err(AppSessionCreateError::BadRequest(
-            "X-Request-Id header must be at most 128 characters".to_owned(),
-        ));
-    }
-    Ok(Some(value.to_owned()))
 }
 
 fn expires_at(config: &AppSessionConfig, issued_at: i64) -> Result<i64, AppSessionCreateError> {

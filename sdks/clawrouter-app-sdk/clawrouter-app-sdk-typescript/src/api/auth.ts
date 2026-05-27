@@ -1,22 +1,8 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult } from '../types';
+import type { IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult } from '../types';
 
-
-export class AuthVerificationPolicyApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Retrieve public IAM verification policy */
-  async retrieve(): Promise<VerificationPolicyRetrieveResult> {
-    return this.client.get<VerificationPolicyRetrieveResult>(appApiPath(`/auth/verification_policy`));
-  }
-}
 
 export class AuthVerificationCodesApi {
   private client: HttpClient;
@@ -61,10 +47,6 @@ export class AuthSessionsCurrentApi {
   }
 }
 
-export interface AuthSessionsCreateParams {
-  xRequestId?: string;
-}
-
 export class AuthSessionsApi {
   private client: HttpClient;
   public readonly current: AuthSessionsCurrentApi;
@@ -76,47 +58,14 @@ export class AuthSessionsApi {
 
 
 /** Create IAM session */
-  async create(body: IamSessionCreateRequest, params?: AuthSessionsCreateParams): Promise<SessionsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<SessionsCreateResult>(appApiPath(`/auth/sessions`), body, undefined, requestHeaders, 'application/json');
+  async create(body: IamSessionCreateRequest): Promise<SessionsCreateResult> {
+    return this.client.post<SessionsCreateResult>(appApiPath(`/auth/sessions`), body, undefined, undefined, 'application/json');
   }
 
 /** Refresh IAM session */
   async refresh(body: IamSessionRefreshRequest): Promise<SessionsRefreshResult> {
     return this.client.post<SessionsRefreshResult>(appApiPath(`/auth/sessions/refresh`), body, undefined, undefined, 'application/json');
   }
-}
-
-export interface AuthRuntimeSettingsRetrieveParams {
-  tenantCode?: string;
-  organizationCode?: string;
-}
-
-export class AuthRuntimeSettingsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Retrieve public IAM auth runtime settings */
-  async retrieve(params?: AuthRuntimeSettingsRetrieveParams): Promise<RuntimeSettingsRetrieveResult> {
-    const query = buildQueryString([
-      { name: 'tenant_code', value: params?.tenantCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'organization_code', value: params?.organizationCode, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<RuntimeSettingsRetrieveResult>(appendQueryString(appApiPath(`/auth/runtime_settings`), query));
-  }
-}
-
-export interface AuthRegistrationsCreateParams {
-  xRequestId?: string;
 }
 
 export class AuthRegistrationsApi {
@@ -128,14 +77,8 @@ export class AuthRegistrationsApi {
 
 
 /** Create IAM registration */
-  async create(body: IamRegistrationCreateRequest, params?: AuthRegistrationsCreateParams): Promise<RegistrationsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<RegistrationsCreateResult>(appApiPath(`/auth/registrations`), body, undefined, requestHeaders, 'application/json');
+  async create(body: IamRegistrationCreateRequest): Promise<RegistrationsCreateResult> {
+    return this.client.post<RegistrationsCreateResult>(appApiPath(`/auth/registrations`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -215,10 +158,8 @@ export class AuthApi {
   public readonly passwordResetRequests: AuthPasswordResetRequestsApi;
   public readonly passwordResets: AuthPasswordResetsApi;
   public readonly registrations: AuthRegistrationsApi;
-  public readonly runtimeSettings: AuthRuntimeSettingsApi;
   public readonly sessions: AuthSessionsApi;
   public readonly verificationCodes: AuthVerificationCodesApi;
-  public readonly verificationPolicy: AuthVerificationPolicyApi;
 
   constructor(client: HttpClient) {
     this.client = client;
@@ -227,10 +168,8 @@ export class AuthApi {
     this.passwordResetRequests = new AuthPasswordResetRequestsApi(client);
     this.passwordResets = new AuthPasswordResetsApi(client);
     this.registrations = new AuthRegistrationsApi(client);
-    this.runtimeSettings = new AuthRuntimeSettingsApi(client);
     this.sessions = new AuthSessionsApi(client);
     this.verificationCodes = new AuthVerificationCodesApi(client);
-    this.verificationPolicy = new AuthVerificationPolicyApi(client);
   }
 
 }
@@ -399,79 +338,4 @@ function encodeQueryValue(value: string, allowReserved: boolean): string {
     .replace(/%2C/gi, ',')
     .replace(/%3B/gi, ';')
     .replace(/%3D/gi, '=');
-}
-function buildRequestHeaders(
-  headers: Record<string, HeaderParameterSpec | undefined>,
-  cookies: Record<string, HeaderParameterSpec | undefined> = {},
-): Record<string, string> | undefined {
-  const requestHeaders: Record<string, string> = {};
-
-  for (const [name, parameter] of Object.entries(headers)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      requestHeaders[name] = serialized;
-    }
-  }
-
-  const cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader) {
-    requestHeaders.Cookie = requestHeaders.Cookie
-      ? `${requestHeaders.Cookie}; ${cookieHeader}`
-      : cookieHeader;
-  }
-
-  return Object.keys(requestHeaders).length > 0 ? requestHeaders : undefined;
-}
-
-interface HeaderParameterSpec {
-  value: unknown;
-  style: string;
-  explode: boolean;
-  contentType?: string;
-}
-
-function buildCookieHeader(cookies: Record<string, HeaderParameterSpec | undefined>): string | undefined {
-  const pairs: string[] = [];
-  for (const [name, parameter] of Object.entries(cookies)) {
-    const serialized = serializeParameterValue(parameter);
-    if (serialized !== undefined) {
-      pairs.push(`${encodeURIComponent(name)}=${encodeURIComponent(serialized)}`);
-    }
-  }
-  return pairs.length > 0 ? pairs.join('; ') : undefined;
-}
-
-function serializeParameterValue(parameter: HeaderParameterSpec | undefined): string | undefined {
-  const value = parameter?.value;
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  if (parameter?.contentType) {
-    return JSON.stringify(value);
-  }
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => serializeHeaderPrimitive(item)).join(',');
-  }
-  if (typeof value === 'object' && value !== null) {
-    return serializeHeaderObject(value as Record<string, unknown>, parameter?.explode === true);
-  }
-  return serializeHeaderPrimitive(value);
-}
-
-function serializeHeaderObject(value: Record<string, unknown>, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (explode) {
-    return entries.map(([key, entryValue]) => `${key}=${serializeHeaderPrimitive(entryValue)}`).join(',');
-  }
-  return entries.flatMap(([key, entryValue]) => [key, serializeHeaderPrimitive(entryValue)]).join(',');
-}
-
-function serializeHeaderPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  return String(value);
 }

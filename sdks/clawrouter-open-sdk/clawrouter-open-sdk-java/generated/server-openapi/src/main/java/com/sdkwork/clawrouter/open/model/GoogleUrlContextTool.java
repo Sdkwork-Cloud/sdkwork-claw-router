@@ -8,7 +8,7 @@ public class GoogleUrlContextTool {
     public List<String> getAllowedDomains() {
         return this.allowedDomains;
     }
-    
+
     public void setAllowedDomains(List<String> allowedDomains) {
         this.allowedDomains = allowedDomains;
     }

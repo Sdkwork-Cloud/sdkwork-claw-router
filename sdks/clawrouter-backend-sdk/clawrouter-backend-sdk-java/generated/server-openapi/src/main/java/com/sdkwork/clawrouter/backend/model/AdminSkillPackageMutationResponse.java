@@ -7,7 +7,7 @@ public class AdminSkillPackageMutationResponse {
     public AdminSkillPackageItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminSkillPackageItem item) {
         this.item = item;
     }

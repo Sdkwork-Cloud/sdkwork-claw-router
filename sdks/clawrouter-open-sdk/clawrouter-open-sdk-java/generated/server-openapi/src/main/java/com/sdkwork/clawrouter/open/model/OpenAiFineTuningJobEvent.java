@@ -13,7 +13,7 @@ public class OpenAiFineTuningJobEvent {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -21,7 +21,7 @@ public class OpenAiFineTuningJobEvent {
     public String getData() {
         return this.data;
     }
-    
+
     public void setData(String data) {
         this.data = data;
     }
@@ -29,7 +29,7 @@ public class OpenAiFineTuningJobEvent {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -37,7 +37,7 @@ public class OpenAiFineTuningJobEvent {
     public String getLevel() {
         return this.level;
     }
-    
+
     public void setLevel(String level) {
         this.level = level;
     }
@@ -45,7 +45,7 @@ public class OpenAiFineTuningJobEvent {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -53,7 +53,7 @@ public class OpenAiFineTuningJobEvent {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -61,7 +61,7 @@ public class OpenAiFineTuningJobEvent {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

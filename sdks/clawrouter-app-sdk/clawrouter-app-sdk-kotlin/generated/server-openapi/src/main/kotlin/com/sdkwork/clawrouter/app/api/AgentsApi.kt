@@ -8,7 +8,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 
 class AgentsApi(private val client: HttpClient) {
 
-    /** List user agents */
+    /** List Playground agent definitions */
     suspend fun agentDefinitionsList(page: Int? = null, pageSize: Int? = null, q: String? = null): AgentDefinitionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
@@ -19,7 +19,7 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentDefinitionsListResult>() {})
     }
 
-    /** Create user agent */
+    /** Create Playground agent definition */
     suspend fun agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentDefinitionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
@@ -32,13 +32,13 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentDefinitionsCreateResult>() {})
     }
 
-    /** Retrieve agent run */
+    /** Retrieve Playground agent run */
     suspend fun agentRunsRetrieve(runId: String): AgentRunsRetrieveResult? {
         val raw = client.get(ApiPaths.appPath("/agents/runs/${serializePathParameter(runId, PathParameterSpec("runId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<AgentRunsRetrieveResult>() {})
     }
 
-    /** Complete agent run */
+    /** Complete Playground agent run */
     suspend fun agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunsSubmitResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
@@ -51,7 +51,7 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentRunsSubmitResult>() {})
     }
 
-    /** List agent run steps */
+    /** List Playground agent run steps */
     suspend fun agentRunStepsList(runId: String, page: Int? = null, pageSize: Int? = null): AgentRunStepsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
@@ -61,7 +61,7 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentRunStepsListResult>() {})
     }
 
-    /** Create agent run step */
+    /** Create Playground agent run step */
     suspend fun agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunStepsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
@@ -74,7 +74,7 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentRunStepsCreateResult>() {})
     }
 
-    /** Complete agent run step */
+    /** Complete Playground agent run step */
     suspend fun agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunStepsSubmitResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
@@ -87,13 +87,13 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentRunStepsSubmitResult>() {})
     }
 
-    /** Retrieve agent session */
+    /** Retrieve Playground agent session */
     suspend fun agentSessionsRetrieve(sessionId: String): AgentSessionsRetrieveResult? {
         val raw = client.get(ApiPaths.appPath("/agents/sessions/${serializePathParameter(sessionId, PathParameterSpec("sessionId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<AgentSessionsRetrieveResult>() {})
     }
 
-    /** List agent session runs */
+    /** List Playground agent runs */
     suspend fun agentRunsList(sessionId: String, page: Int? = null, pageSize: Int? = null): AgentRunsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
@@ -103,7 +103,7 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentRunsListResult>() {})
     }
 
-    /** Create agent run */
+    /** Create Playground agent run */
     suspend fun agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
@@ -116,13 +116,13 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentRunsCreateResult>() {})
     }
 
-    /** Retrieve user agent */
+    /** Retrieve Playground agent definition */
     suspend fun agentDefinitionsRetrieve(agentId: String): AgentDefinitionsRetrieveResult? {
         val raw = client.get(ApiPaths.appPath("/agents/${serializePathParameter(agentId, PathParameterSpec("agentId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<AgentDefinitionsRetrieveResult>() {})
     }
 
-    /** List agent sessions */
+    /** List Playground agent sessions */
     suspend fun agentSessionsList(agentId: String, page: Int? = null, pageSize: Int? = null): AgentSessionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
@@ -132,7 +132,7 @@ class AgentsApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AgentSessionsListResult>() {})
     }
 
-    /** Create agent session */
+    /** Create Playground agent session */
     suspend fun agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentSessionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(

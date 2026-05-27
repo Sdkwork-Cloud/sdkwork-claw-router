@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
@@ -116,11 +116,59 @@ test("portal workspace packages resolve to source files outside node_modules in 
   assert.ok(!String(resolvedSubpath).includes(`${path.sep}node_modules${path.sep}`));
 });
 
+test("portal workspace packages resolve to source files during production build", async () => {
+  const config = await resolvePortalViteConfig();
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+  const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-local-package-resolver"));
+
+  assert.ok(resolver && typeof resolver === "object");
+  assert.ok("resolveId" in resolver);
+  assert.notEqual("apply" in resolver ? resolver.apply : undefined, "serve");
+
+  const resolvedRoot = await callResolveId(
+    resolver.resolveId,
+    "sdkwork-claw-router-admin-messaging",
+    new URL("./src/App.tsx", import.meta.url).pathname,
+  );
+
+  assert.equal(
+    resolvedRoot,
+    path.resolve(import.meta.dirname, "packages/sdkwork-claw-router-admin-messaging/src/index.tsx"),
+  );
+  assert.ok(!String(resolvedRoot).includes(`${path.sep}node_modules${path.sep}`));
+});
+
 test("portal dev server may serve workspace SDK sources resolved by aliases", async () => {
   const config = await resolvePortalViteConfig();
   const workspaceRoot = path.resolve(import.meta.dirname, "../..");
 
   assert.ok(config.server?.fs?.allow?.includes(workspaceRoot));
+});
+
+test("portal resolves sdkwork UI workspace imports to the app workspace source root", async () => {
+  const config = await resolvePortalViteConfig();
+  const aliases = config.resolve?.alias;
+  const expectedUiEntry = path.resolve(
+    import.meta.dirname,
+    "../../../sdkwork-ui/sdkwork-ui-pc-react/src/index.ts",
+  );
+  const expectedUiRoot = path.resolve(import.meta.dirname, "../../../sdkwork-ui");
+
+  assert.ok(Array.isArray(aliases));
+  assert.equal(
+    aliases.find((alias) => (
+      typeof alias === "object"
+      && alias !== null
+      && "find" in alias
+      && alias.find === "@sdkwork/ui-pc-react"
+    ))?.replacement,
+    expectedUiEntry,
+  );
+  assert.ok(existsSync(expectedUiEntry), "@sdkwork/ui-pc-react alias must point to a real source file");
+  assert.ok(
+    config.server?.fs?.allow?.includes(expectedUiRoot),
+    "Vite dev server must allow serving sdkwork-ui workspace sources",
+  );
 });
 
 test("workspace package imports resolve to one React and router runtime instance", async () => {

@@ -7,7 +7,7 @@ public class AdminAccessGroupMutationResponse {
     public AdminAccessGroupItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminAccessGroupItem item) {
         this.item = item;
     }

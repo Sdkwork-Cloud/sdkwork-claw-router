@@ -1,3 +1,6 @@
+mod common;
+use common::missing_internal_tenant_header_message;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -76,9 +79,7 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
             Request::builder()
                 .method("GET")
                 .uri("/app/v3/api/ai/generations")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -152,7 +153,7 @@ async fn generation_history_route_rejects_missing_trusted_subject_for_store_back
     assert!(payload["msg"]
         .as_str()
         .unwrap()
-        .contains("x-sdkwork-tenant-id header is required"));
+        .contains(missing_internal_tenant_header_message()));
 }
 
 async fn json_payload(response: axum::response::Response) -> Value {

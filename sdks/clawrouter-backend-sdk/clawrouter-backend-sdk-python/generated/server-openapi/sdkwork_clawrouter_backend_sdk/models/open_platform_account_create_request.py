@@ -10,7 +10,7 @@ class OpenPlatformAccountCreateRequest:
     name: str
     provider: str
     type: str
-    aes_key_ref: Optional[str] = None
     app_id: Optional[str] = None
-    secret_ref: Optional[str] = None
-    token_ref: Optional[str] = None
+    app_secret: Optional[str] = None
+    encoding_aes_key: Optional[str] = None
+    token: Optional[str] = None

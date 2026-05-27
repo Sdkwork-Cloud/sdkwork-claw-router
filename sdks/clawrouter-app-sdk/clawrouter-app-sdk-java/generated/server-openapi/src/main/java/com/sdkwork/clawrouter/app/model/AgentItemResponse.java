@@ -7,7 +7,7 @@ public class AgentItemResponse {
     public AgentItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AgentItem item) {
         this.item = item;
     }

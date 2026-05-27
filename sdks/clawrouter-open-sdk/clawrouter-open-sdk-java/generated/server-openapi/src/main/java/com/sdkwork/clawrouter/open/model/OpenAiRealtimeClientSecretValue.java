@@ -8,7 +8,7 @@ public class OpenAiRealtimeClientSecretValue {
     public Integer getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(Integer expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -16,7 +16,7 @@ public class OpenAiRealtimeClientSecretValue {
     public String getValue() {
         return this.value;
     }
-    
+
     public void setValue(String value) {
         this.value = value;
     }

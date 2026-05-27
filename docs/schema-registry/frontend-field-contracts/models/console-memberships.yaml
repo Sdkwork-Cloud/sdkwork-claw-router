@@ -6,6 +6,7 @@ frontend_models:
   fields:
   - membershipNo
   - planId
+  - planName
   - status
   - startsAt
   - expiresAt
@@ -15,18 +16,217 @@ frontend_models:
   - commerce_membership_entitlement
 - route: /console/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipPackageGroup
+  fields:
+  - id
+  - groupNo
+  - name
+  - description
+  - status
+  - sortOrder
+  - packages
+  - packages.id
+  - packages.packageNo
+  - packages.packageGroupId
+  - packages.planId
+  - packages.planName
+  - packages.skuId
+  - packages.priceAmount
+  - packages.currencyCode
+  - packages.durationDays
+  - packages.recurrenceCycle
+  - packages.status
+  - packages.isPurchasable
+  data_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+  - commerce_membership_plan
+  - commerce_product_sku
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
   interface: MembershipPackage
   fields:
   - id
   - packageNo
+  - packageGroupId
   - planId
+  - planName
   - skuId
   - priceAmount
   - currencyCode
   - durationDays
   - recurrenceCycle
   - status
+  - isPurchasable
   data_sources:
   - commerce_membership_package
+  - commerce_membership_package_group
   - commerce_membership_plan
   - commerce_product_sku
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipBenefit
+  fields:
+  - code
+  - name
+  - quotaAmount
+  - quotaPeriod
+  - resetPolicy
+  - status
+  data_sources:
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipPointsBalance
+  fields:
+  - balance
+  - status
+  - updatedAt
+  data_sources:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_membership
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipPointsHistoryItem
+  fields:
+  - id
+  - title
+  - amount
+  - occurredAt
+  - status
+  data_sources:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_membership
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipDailyRewardStatus
+  fields:
+  - available
+  - claimedToday
+  - rewardPoints
+  - status
+  - nextAvailableAt
+  data_sources:
+  - commerce_membership
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_membership_entitlement_usage
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipPrivilegeUsageItem
+  fields:
+  - code
+  - name
+  - used
+  - quota
+  - remaining
+  - status
+  data_sources:
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipPrivilegeUsage
+  fields:
+  - speedUpAvailable
+  - speedUpRemaining
+  - items
+  - items.code
+  - items.name
+  - items.used
+  - items.quota
+  - items.remaining
+  - items.status
+  data_sources:
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipActionResult
+  fields:
+  - success
+  - requestNo
+  - status
+  - rewardPoints
+  data_sources:
+  - commerce_membership
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_membership_entitlement_usage
+  - ops_audit_log
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipOverview
+  fields:
+  - summary
+  - packageGroups
+  - packageGroups.id
+  - packageGroups.groupNo
+  - packageGroups.name
+  - packageGroups.description
+  - packageGroups.status
+  - packageGroups.sortOrder
+  - packageGroups.packages
+  - packageGroups.packages.id
+  - packageGroups.packages.packageNo
+  - packageGroups.packages.packageGroupId
+  - packageGroups.packages.planId
+  - packageGroups.packages.planName
+  - packageGroups.packages.skuId
+  - packageGroups.packages.priceAmount
+  - packageGroups.packages.currencyCode
+  - packageGroups.packages.durationDays
+  - packageGroups.packages.recurrenceCycle
+  - packageGroups.packages.status
+  - packageGroups.packages.isPurchasable
+  - benefits
+  - benefits.code
+  - benefits.name
+  - benefits.quotaAmount
+  - benefits.quotaPeriod
+  - benefits.resetPolicy
+  - benefits.status
+  - pointsBalance
+  - pointsBalance.balance
+  - pointsBalance.status
+  - pointsBalance.updatedAt
+  - pointsHistory
+  - pointsHistory.id
+  - pointsHistory.title
+  - pointsHistory.amount
+  - pointsHistory.occurredAt
+  - pointsHistory.status
+  - dailyReward
+  - dailyReward.available
+  - dailyReward.claimedToday
+  - dailyReward.rewardPoints
+  - dailyReward.status
+  - dailyReward.nextAvailableAt
+  - privilegeUsage
+  - privilegeUsage.speedUpAvailable
+  - privilegeUsage.speedUpRemaining
+  - privilegeUsage.items
+  - privilegeUsage.items.code
+  - privilegeUsage.items.name
+  - privilegeUsage.items.used
+  - privilegeUsage.items.quota
+  - privilegeUsage.items.remaining
+  - privilegeUsage.items.status
+  data_sources:
+  - commerce_product_sku
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_account
+  - commerce_account_ledger_entry

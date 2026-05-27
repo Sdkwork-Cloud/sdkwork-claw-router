@@ -1,5 +1,5 @@
 import { Button } from "@sdkwork/ui-pc-react";
-import type { SdkworkVipSummary } from "@sdkwork/vip-pc-react";
+import type { SdkworkMembershipSummary } from "@sdkwork/membership-pc-react";
 import type { SdkworkSubscriptionAction } from "../subscription";
 import {
   createSdkworkSubscriptionGlassStyle,
@@ -14,7 +14,7 @@ export interface SdkworkSubscriptionHeroProps {
   couponCount: number;
   onActionChange: (action: SdkworkSubscriptionAction) => void;
   planCount: number;
-  summary: SdkworkVipSummary;
+  summary: SdkworkMembershipSummary;
 }
 
 const ACTIONS: SdkworkSubscriptionAction[] = ["purchase", "upgrade", "renew"];
@@ -36,7 +36,7 @@ export function SdkworkSubscriptionHero({
   } = useSdkworkSubscriptionIntl();
   const balanceValue = summary.totalSpent !== null && summary.totalSpent !== undefined && summary.totalSpent > 0
     ? formatCurrencyCny(summary.totalSpent)
-    : `${formatPoints(summary.vipPoints ?? summary.pointBalance ?? 0)} ${copy.common.points}`;
+    : `${formatPoints(summary.points ?? summary.pointBalance ?? 0)} ${copy.common.points}`;
   const primaryHeroTextStyle = createSdkworkSubscriptionHeroTextStyle();
   const mutedHeroTextStyle = createSdkworkSubscriptionHeroTextStyle("muted");
   const subtleHeroTextStyle = createSdkworkSubscriptionHeroTextStyle("subtle");
@@ -136,7 +136,7 @@ export function SdkworkSubscriptionHero({
               {balanceValue}
             </div>
             <div className="mt-1 text-sm" style={mutedHeroTextStyle}>
-              {summary.isVip ? copy.hero.premiumMembershipActive : copy.hero.freeMembershipActive}
+              {summary.isMember ? copy.hero.premiumMembershipActive : copy.hero.freeMembershipActive}
             </div>
           </div>
         </div>

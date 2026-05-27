@@ -16,7 +16,7 @@ public class ListVideosItem {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -24,7 +24,7 @@ public class ListVideosItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -32,7 +32,7 @@ public class ListVideosItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -40,7 +40,7 @@ public class ListVideosItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -48,7 +48,7 @@ public class ListVideosItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -56,7 +56,7 @@ public class ListVideosItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -64,7 +64,7 @@ public class ListVideosItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -72,7 +72,7 @@ public class ListVideosItem {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -80,7 +80,7 @@ public class ListVideosItem {
     public String getVideo() {
         return this.video;
     }
-    
+
     public void setVideo(String video) {
         this.video = video;
     }

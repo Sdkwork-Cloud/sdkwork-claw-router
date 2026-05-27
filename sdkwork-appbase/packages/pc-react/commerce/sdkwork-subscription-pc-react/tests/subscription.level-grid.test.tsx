@@ -14,7 +14,7 @@ describe("sdkwork-subscription-pc-react level grid", () => {
           levels={[
             {
               description: "Best for professional creators.",
-              id: "vip-level-3",
+              id: "membership-level-3",
               isCurrent: true,
               levelValue: 3,
               name: "Pro",
@@ -22,7 +22,7 @@ describe("sdkwork-subscription-pc-react level grid", () => {
             },
             {
               description: "For studios with advanced workflows.",
-              id: "vip-level-4",
+              id: "membership-level-4",
               isCurrent: false,
               levelValue: 4,
               name: "Studio",
@@ -33,11 +33,11 @@ describe("sdkwork-subscription-pc-react level grid", () => {
       </SdkworkThemeProvider>,
     );
 
-    expect(screen.getByRole("heading", { name: /vip levels/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /membership levels/i })).toBeInTheDocument();
     expect(screen.getByText("Pro")).toBeInTheDocument();
     expect(screen.getByText("Studio")).toBeInTheDocument();
 
-    const levelGrid = screen.getByRole("heading", { name: /vip levels/i }).closest("section");
+    const levelGrid = screen.getByRole("heading", { name: /membership levels/i }).closest("section");
     expect(levelGrid).not.toBeNull();
     expect(levelGrid?.className).toContain("shadow-[var(--sdk-shadow-md)]");
     expect(levelGrid?.className).not.toContain("shadow-[0_18px_48px_rgba");

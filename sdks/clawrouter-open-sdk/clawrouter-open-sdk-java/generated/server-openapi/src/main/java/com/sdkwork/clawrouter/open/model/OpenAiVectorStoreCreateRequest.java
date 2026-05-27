@@ -13,7 +13,7 @@ public class OpenAiVectorStoreCreateRequest {
     public String getChunkingStrategy() {
         return this.chunkingStrategy;
     }
-    
+
     public void setChunkingStrategy(String chunkingStrategy) {
         this.chunkingStrategy = chunkingStrategy;
     }
@@ -21,7 +21,7 @@ public class OpenAiVectorStoreCreateRequest {
     public String getExpiresAfter() {
         return this.expiresAfter;
     }
-    
+
     public void setExpiresAfter(String expiresAfter) {
         this.expiresAfter = expiresAfter;
     }
@@ -29,7 +29,7 @@ public class OpenAiVectorStoreCreateRequest {
     public List<String> getFileIds() {
         return this.fileIds;
     }
-    
+
     public void setFileIds(List<String> fileIds) {
         this.fileIds = fileIds;
     }
@@ -37,7 +37,7 @@ public class OpenAiVectorStoreCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -45,7 +45,7 @@ public class OpenAiVectorStoreCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

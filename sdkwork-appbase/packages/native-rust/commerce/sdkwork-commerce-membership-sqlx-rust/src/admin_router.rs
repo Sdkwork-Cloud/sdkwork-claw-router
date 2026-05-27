@@ -2,15 +2,18 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, Query, State};
+use axum::extract::{Extension, Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch, put};
 use axum::{Json, Router};
 use sdkwork_commerce_core::CommerceServiceError;
+use sdkwork_iam_core::IamAppContext;
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, SqlitePool};
 
+use crate::request_identity::{resolve_request_id, with_request_identity};
+use crate::subject::numeric_runtime_subject_from_extension;
 use crate::{
     AdminMembershipPackageGroupMutation, AdminMembershipPackageMutation,
     AdminMembershipPlanMutation, AdminMembershipStore, AdminMembershipSubject,
@@ -26,14 +29,9 @@ use crate::{
     UpdateAdminMembershipPlanCommand,
 };
 
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const MAX_CODE_LEN: usize = 128;
 const MAX_NAME_LEN: usize = 128;
-const MAX_REQUEST_ID_LEN: usize = 128;
 const DEFAULT_OPERATOR_TYPE: i32 = 1;
-const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
-const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
-const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -212,52 +210,54 @@ pub fn admin_membership_router_with_store(
     store: Arc<dyn AdminMembershipStore + Send + Sync>,
     entity_id_generator: Arc<dyn AppMembershipEntityIdGenerator + Send + Sync>,
 ) -> Router {
-    Router::new()
-        .route(
-            "/backend/v3/api/memberships/plans",
-            get(list_plans).post(create_plan),
-        )
-        .route(
-            "/backend/v3/api/memberships/plans/{planId}",
-            put(update_plan_by_id).delete(delete_plan),
-        )
-        .route(
-            "/backend/v3/api/memberships/packages",
-            get(list_packages).post(create_package),
-        )
-        .route(
-            "/backend/v3/api/memberships/package_groups",
-            get(list_package_groups).post(create_package_group),
-        )
-        .route(
-            "/backend/v3/api/memberships/package_groups/{packageGroupId}",
-            put(update_package_group).delete(delete_package_group),
-        )
-        .route(
-            "/backend/v3/api/memberships/packages/{packageId}",
-            put(update_package).delete(delete_package),
-        )
-        .route("/backend/v3/api/memberships/members", get(list_memberships))
-        .route(
-            "/backend/v3/api/memberships/members/{membershipId}/status",
-            patch(update_membership_status),
-        )
-        .route(
-            "/backend/v3/api/memberships/entitlements",
-            get(list_entitlements),
-        )
-        .with_state(AdminMembershipState {
-            store,
-            entity_id_generator,
-        })
+    with_request_identity(
+        Router::new()
+            .route(
+                "/backend/v3/api/memberships/plans",
+                get(list_plans).post(create_plan),
+            )
+            .route(
+                "/backend/v3/api/memberships/plans/{planId}",
+                put(update_plan_by_id).delete(delete_plan),
+            )
+            .route(
+                "/backend/v3/api/memberships/packages",
+                get(list_packages).post(create_package),
+            )
+            .route(
+                "/backend/v3/api/memberships/package_groups",
+                get(list_package_groups).post(create_package_group),
+            )
+            .route(
+                "/backend/v3/api/memberships/package_groups/{packageGroupId}",
+                put(update_package_group).delete(delete_package_group),
+            )
+            .route(
+                "/backend/v3/api/memberships/packages/{packageId}",
+                put(update_package).delete(delete_package),
+            )
+            .route("/backend/v3/api/memberships/members", get(list_memberships))
+            .route(
+                "/backend/v3/api/memberships/members/{membershipId}/status",
+                patch(update_membership_status),
+            )
+            .route(
+                "/backend/v3/api/memberships/entitlements",
+                get(list_entitlements),
+            )
+            .with_state(AdminMembershipState {
+                store,
+                entity_id_generator,
+            }),
+    )
 }
 
 async fn list_plans(
     State(state): State<AdminMembershipState>,
     Query(params): Query<AdminMembershipStatusQuery>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -276,10 +276,11 @@ async fn list_plans(
 
 async fn create_plan(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -318,11 +319,12 @@ async fn create_plan(
 
 async fn update_plan_by_id(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(plan_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -358,10 +360,11 @@ async fn update_plan_by_id(
 
 async fn delete_plan(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(plan_id): Path<String>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -395,9 +398,9 @@ async fn delete_plan(
 async fn list_packages(
     State(state): State<AdminMembershipState>,
     Query(params): Query<AdminMembershipPackagesQuery>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -418,10 +421,11 @@ async fn list_packages(
 
 async fn create_package(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -461,11 +465,12 @@ async fn create_package(
 
 async fn update_package(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(package_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -505,10 +510,11 @@ async fn update_package(
 
 async fn delete_package(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(package_id): Path<String>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -542,9 +548,9 @@ async fn delete_package(
 async fn list_package_groups(
     State(state): State<AdminMembershipState>,
     Query(params): Query<AdminMembershipStatusQuery>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -563,10 +569,11 @@ async fn list_package_groups(
 
 async fn create_package_group(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -613,11 +620,12 @@ async fn create_package_group(
 
 async fn update_package_group(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(package_group_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -663,10 +671,11 @@ async fn update_package_group(
 
 async fn delete_package_group(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(package_group_id): Path<String>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -708,9 +717,9 @@ async fn delete_package_group(
 async fn list_memberships(
     State(state): State<AdminMembershipState>,
     Query(params): Query<AdminMembershipMembershipsQuery>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -732,11 +741,12 @@ async fn list_memberships(
 
 async fn update_membership_status(
     State(state): State<AdminMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
     headers: HeaderMap,
     Path(membership_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -779,9 +789,9 @@ async fn update_membership_status(
 async fn list_entitlements(
     State(state): State<AdminMembershipState>,
     Query(params): Query<AdminMembershipEntitlementsQuery>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match admin_membership_subject_from_headers(&headers) {
+    let subject = match admin_membership_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -802,33 +812,17 @@ async fn list_entitlements(
     }
 }
 
-fn admin_membership_subject_from_headers(
-    headers: &HeaderMap,
+fn admin_membership_subject_from_extension(
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Result<AdminMembershipSubject, Response> {
+    let subject =
+        numeric_runtime_subject_from_extension(runtime_context).map_err(unauthorized_response)?;
     Ok(AdminMembershipSubject {
-        tenant_id: required_positive_i64_header(headers, X_SDKWORK_TENANT_ID)?,
-        organization_id: required_positive_i64_header(headers, X_SDKWORK_ORGANIZATION_ID)?,
-        operator_id: required_positive_i64_header(headers, X_SDKWORK_USER_ID)?,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        operator_id: subject.user_id,
         operator_type: DEFAULT_OPERATOR_TYPE,
     })
-}
-
-fn required_positive_i64_header(headers: &HeaderMap, name: &'static str) -> Result<i64, Response> {
-    let value = headers
-        .get(name)
-        .ok_or_else(|| unauthorized_response(format!("{name} header is required")))?
-        .to_str()
-        .map(str::trim)
-        .map_err(|_| unauthorized_response(format!("{name} header value is invalid")))?;
-    let parsed = value
-        .parse::<i64>()
-        .map_err(|_| unauthorized_response(format!("{name} header must be a positive integer")))?;
-    if parsed <= 0 {
-        return Err(unauthorized_response(format!(
-            "{name} header must be a positive integer"
-        )));
-    }
-    Ok(parsed)
 }
 
 fn parse_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
@@ -1126,33 +1120,15 @@ fn normalize_path_id(value: &str, field_name: &str) -> Result<String, String> {
 
 fn rank_from_plan_code(code: &str) -> i64 {
     match code.trim().to_ascii_lowercase().as_str() {
-        "basic" => 1,
-        "pro" | "advanced" => 2,
-        "premium" | "ultimate" => 3,
+        "pro" => 1,
+        "max" => 2,
+        "vip" => 3,
         _ => 0,
     }
 }
 
-fn request_id(headers: &HeaderMap, state: &AdminMembershipState) -> AppMembershipResult<String> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(CommerceServiceError::storage(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
-        }
-        return Ok(value.to_owned());
-    }
-    state.entity_id_generator.generate_entity_uuid()
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
+fn request_id(headers: &HeaderMap, _state: &AdminMembershipState) -> AppMembershipResult<String> {
+    resolve_request_id(headers).map_err(CommerceServiceError::validation)
 }
 
 fn list_response<T>(items: Vec<T>) -> Response
@@ -1256,4 +1232,58 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
     let month = month_prime + if month_prime < 10 { 3 } else { -9 };
     let year = year + if month <= 2 { 1 } else { 0 };
     (year, month, day)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::request_identity::REQUEST_ID_HEADER;
+
+    #[tokio::test]
+    async fn request_id_generates_canonical_uuid_when_upstream_header_is_absent() {
+        let headers = HeaderMap::new();
+        let state = test_state();
+
+        let request_id = request_id(&headers, &state).expect("request id");
+
+        assert!(is_canonical_uuid(&request_id), "{request_id}");
+    }
+
+    #[tokio::test]
+    async fn request_id_rejects_malformed_upstream_header() {
+        let mut headers = HeaderMap::new();
+        headers.insert(REQUEST_ID_HEADER, "browser-generated-id".parse().unwrap());
+        let state = test_state();
+
+        let error = request_id(&headers, &state).expect_err("malformed request id");
+
+        assert!(error.message().contains("canonical UUID"));
+    }
+
+    fn test_state() -> AdminMembershipState {
+        let pool = SqlitePool::connect_lazy("sqlite::memory:").expect("sqlite pool");
+        AdminMembershipState {
+            store: Arc::new(SqliteCommerceMembershipStore::new(pool)),
+            entity_id_generator: Arc::new(TimestampMembershipEntityIdGenerator::default()),
+        }
+    }
+
+    fn is_canonical_uuid(value: &str) -> bool {
+        let bytes = value.as_bytes();
+        if bytes.len() != 36 {
+            return false;
+        }
+        for (index, byte) in bytes.iter().enumerate() {
+            if matches!(index, 8 | 13 | 18 | 23) {
+                if *byte != b'-' {
+                    return false;
+                }
+                continue;
+            }
+            if !byte.is_ascii_hexdigit() || byte.is_ascii_uppercase() {
+                return false;
+            }
+        }
+        true
+    }
 }

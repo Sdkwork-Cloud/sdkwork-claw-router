@@ -7,12 +7,12 @@
   source_docs:
   - ../18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md
   - ../19-Finance-Trade-Java-compatible-design.md
-  - ../05-閺佺増宓佹惔鎾诡啎鐠?md
-  - ../11-閺佺増宓佹總鎴犲娑撳孩鐗宠箛鍐€冪拋鎹愵吀.md
-  - ../12-閸撳秶顏崝鐔诲厴濡€虫健娑撳孩鏆熼幑顔肩氨鐞涖劎绮ㄩ弸鍕Ё鐏?md
-  - ../13-妞ょ敻娼扮痪褎鏆熼幑顔剧波閺嬪嫯顩惄鏍︾瑢SchemaRegistry閽€钘夋勾鐠佹崘顓?md
-  - ../14-閺佺増宓佺紒鎾寸€紒鍡氬Ν婢跺秵鐗虫稉搴に夊楦款唶瑜?md
-  - ../15-new-api-sub2api娴犻攱鐗告担鎾堕兇鐎佃鐦稉宥awRouter鐎规矮鐜拋鎹愵吀.md
+  - ../05-闁轰胶澧楀畵浣规償閹捐鍟庨悹?md
+  - ../11-闁轰胶澧楀畵浣圭附閹寸姴顔婂☉鎾冲閻楀疇绠涢崘顓溾偓鍐媼閹规劦鍚€.md
+  - ../12-闁告挸绉堕顒勫礉閻旇鍘存俊顖椻偓铏仴濞戞挸瀛╅弳鐔煎箲椤旇偐姘ㄩ悶娑栧妿缁劑寮搁崟顒佇侀悘?md
+  - ../13-濡炪倗鏁诲鎵棯瑜庨弳鐔煎箲椤斿墽娉㈤柡瀣椤╊偊鎯勯弽锔剧憿SchemaRegistry闁解偓閽樺鍕鹃悹浣瑰礃??md
+  - ../14-闁轰胶澧楀畵浣虹磼閹惧鈧垳绱掗崱姘濆璺虹У閻楄櫕绋夋惔銇顕ｆウ娆惧敹??md
+  - ../15-new-api-sub2api濞寸娀鏀遍悧鍛婃媴閹惧爼鍏囬悗浣冾潐閻︻喗绋夊顦抋wRouter閻庤鐭悳顖滄媼閹规劦鍚€.md
   api_prefixes:
     app: /app/v3/api
     backend: /backend/v3/api
@@ -29,6 +29,8 @@
     - integration
     - ai
     - commerce
+    - promotion
+    - messaging
     - studio
     - content
     - ops
@@ -150,6 +152,9 @@ domains:
   commerce:
     owner: commerce-projection
     bounded_context: router-commerce-projection
+  messaging:
+    owner: sdkwork-appbase-messaging
+    bounded_context: external-message-delivery
   studio:
     owner: portal-ecosystem
     bounded_context: portal-studio-assets
@@ -165,8 +170,8 @@ domains:
 domain_names:
   model_vendor:
     canonical_name: ModelVendor
-    zh_name: 濡€崇€烽崢鍌氼啀
-    description: 濡€崇€烽惃鍕斧婵鐖洪崣?閸欐垵绔烽崢鍌氼啀閿涘奔绗夌粵澶婃倱娴?API 閹恒儱鍙嗘笟娑樼安閸熷棙鍨ㄧ捄顖滄暠濞撶娀浜鹃妴?
+    zh_name: 婵☆垪鈧磭鈧兘宕㈤崒姘煎晙
+    description: 婵☆垪鈧磭鈧兘鎯冮崟顐㈡枾濠殿喖顑囬悥娲矗?闁告瑦鍨电粩鐑藉储閸屾凹鍟€闁挎稑濂旂粭澶岀驳婢跺﹥鍊卞ù?API 闁规亽鍎遍崣鍡樼瑹濞戞瀹夐柛鐔锋閸ㄣ劎鎹勯婊勬殸婵炴挾濞€娴滈箖??
     persistence:
       table: ai_model_vendor
       code_column: vendor_code
@@ -299,58 +304,58 @@ domain_names:
       label: Custom integration
   price_side:
     canonical_name: PriceSide
-    zh_name: 娴犻攱鐗告笟?
-    description: 閸氬奔绔村Ο鈥崇€锋禒閿嬬壐閻ㄥ嫯顕㈡稊澶夋櫠閿涘苯灏崚鍡楃暭閺傜懓寮懓鍐х幆閵嗕椒绶垫惔鏂挎櫌閹存劖婀版禒鏋偓浣割吂閹寸兘鏀㈤崬顔荤幆閸滃苯鍞撮柈銊х波缁犳ぞ鐜妴?
+    zh_name: 濞寸娀鏀遍悧鍛婄瑹?
+    description: 闁告艾濂旂粩鏉懳熼垾宕団偓閿嬬闁垮澹愰柣銊ュ椤曘垺绋婃径澶嬫珷闁挎稑鑻亸顖炲礆閸℃鏆柡鍌滄嚀瀵剟鎳撻崘褏骞嗛柕鍡曟缁跺灚鎯旈弬鎸庢珜闁瑰瓨鍔栧﹢鐗堢閺嬵偀鍋撴担鍓插悅闁瑰鍏橀弨銏ゅ船椤旇崵骞嗛柛婊冭嫰閸炴挳鏌堥妸褏娉㈢紒鐘炽仦閻滎垶??
     db_type: enum_int32
     api_serialization: stable_string_code
     builtin_values:
     - code: official_reference
-      label: 鐎规ɑ鏌熼崣鍌濃偓鍐х幆
+      label: 閻庤蓱閺岀喖宕ｉ崒婵冨亾閸愌呭箚
     - code: upstream_cost
-      label: 娑撳﹥鐖舵笟娑樼安閸熷棙鍨氶張顑跨幆
+      label: 濞戞挸锕ラ悥鑸电瑹濞戞瀹夐柛鐔锋閸ㄦ岸寮甸璺ㄥ箚
     - code: customer_charge
-      label: 鐎广垺鍩涢柨鈧崬顔荤幆
+      label: 閻庡箍鍨洪崺娑㈡煥閳ь剟宕鑽ゅ箚
     - code: internal_transfer
-      label: 閸愬懘鍎寸紒鎾剁暬娴?
+      label: 闁告劕鎳橀崕瀵哥磼閹惧墎鏆ù?
   billing_mode:
     canonical_name: BillingMode
-    zh_name: 鐠伮ゅ瀭濡€崇础
-    description: 鐎规矮鐜崗顒€绱￠惃鍕⒔鐞涘本膩瀵骏绱濋崥鍛婃暪 new-api 閻?ratio/price/tiered_expr 閸?sub2api 閻?token/per_request/image 濡€崇础閿涘苯鑻熼弨顖涘瘮閺堫亝娼?API 閹稿绮ㄩ弸婧库偓浣瑰瘻娑擃亝鏆熼妴浣瑰瘻鐎涙ê鍋嶉柌蹇曠搼鐠伮ゅ瀭閵?
+    zh_name: 閻犱籍銈呯€俊顖椻偓宕囩
+    description: 閻庤鐭悳顖炲礂椤掆偓缁憋繝鎯冮崟顒€鈷旈悶娑樻湰鑶╃€殿喖楠忕槐婵嬪触閸涘﹥??new-api ??ratio/price/tiered_expr ??sub2api ??token/per_request/image 婵☆垪鈧磭纭€闁挎稑鑻懟鐔煎绩椤栨稑鐦柡鍫簼??API 闁圭顦辩划銊╁几濠у簱鍋撴担鐟扮樆濞戞搩浜濋弳鐔煎Υ娴ｇ懓鐦婚悗娑櫭崑宥夋煂韫囨洜鎼奸悹浼倕鐎柕?
     db_type: enum_int32
     api_serialization: stable_string_code
     builtin_values:
     - code: token
-      label: Token 鐠伮ゅ瀭
+      label: Token 閻犱籍銈??
     - code: fixed_price
-      label: 閸ュ搫鐣鹃崡鏇氱幆
+      label: 闁搞儱鎼悾楣冨础閺囨氨??
     - code: per_request
-      label: 閹稿顕Ч鍌濐吀鐠?
+      label: 闁圭顦抽顒€效閸屾繍鍚€??
     - code: per_result
-      label: 閹稿绮ㄩ弸婊嗩吀鐠?
+      label: 闁圭顦辩划銊╁几濠婂棭鍚€??
     - code: per_item
-      label: 閹稿閲滈弫鎷岊吀鐠?
+      label: 闁圭顦柌婊堝极閹峰矈鍚€??
     - code: duration
-      label: 閹稿妞傞梹鑳吀鐠?
+      label: 闁圭顦板鍌炴⒐閼愁垼鍚€??
     - code: character
-      label: 閹稿鐡х粭锕侇吀鐠?
+      label: 闁圭顦悺褏绮敃渚囧悁??
     - code: storage
-      label: 閹稿鐡ㄩ崒銊╁櫤鐠伮ゅ瀭
+      label: 闁圭顦悺銊╁磼閵娾晛娅ら悹浼倕??
     - code: bandwidth
-      label: 閹稿绁﹂柌蹇氼吀鐠?
+      label: 闁圭顦扮粊锕傛煂韫囨凹鍚€??
     - code: tiered
-      label: 闂冭埖顫拋陇鍨?
+      label: 闂傚啳鍩栭～顏嗘媼闄囬崹?
     - code: expression
-      label: 鐞涖劏鎻蹇氼吀鐠?
+      label: 閻炴稏鍔忛幓顏勵嚕韫囨凹鍚€??
     - code: image
-      label: 閸ュ墽澧栫拋陇鍨?
+      label: 闁搞儱澧芥晶鏍媼闄囬崹?
     - code: audio
-      label: 闂婃娊顣剁拋陇鍨?
+      label: 闂傚﹥濞婇。鍓佹媼闄囬崹?
     - code: video
-      label: 鐟欏棝顣剁拋陇鍨?
+      label: 閻熸瑥妫濋。鍓佹媼闄囬崹?
   billing_meter:
     canonical_name: BillingMeter
-    zh_name: 鐠伮ゅ瀭鐠侊繝鍣虹悰?
-    description: 缂佺喍绔寸€规矮绠?LLM閵嗕礁娴橀悧鍥モ偓浣筋嚔闂婄偨鈧浇顫嬫０鎴欌偓渚€鐓舵稊鎰┾偓渚€鐓堕弫鍫濇嫲閺堫亝娼?API 閻ㄥ嫬褰茬拋陇鍨傜紒鏉戝閿涘奔绶ユ俊?input_token閵嗕巩mage_result閵嗕工udio_second閵嗕箍ideo_second閵嗕工pi_result閵嗕工pi_item閵?
+    zh_name: 閻犱籍銈呯€悹渚婄節閸ｈ櫣??
+    description: 缂備胶鍠嶇粩瀵糕偓瑙勭煯??LLM闁靛棔绀佸ù姗€鎮ч崶銉㈠亾娴ｇ瓔鍤旈梻濠勫仺閳ь兛娴囬～瀣紣閹存瑢鍋撴笟鈧悡鑸电▕閹扳斁鍋撴笟鈧悡鍫曞极閸繃瀚查柡鍫簼??API 闁汇劌瀚ぐ鑼媼闄囬崹鍌滅磼閺夋垵顔婇柨娑樺缁躲儲??input_token闁靛棔宸﹎age_result闁靛棔宸dio_second闁靛棔绠峣deo_second闁靛棔宸i_result闁靛棔宸i_item??
     persistence:
       table: ai_billing_meter
       code_column: meter_code
@@ -447,29 +452,29 @@ domain_names:
       label: Unknown billing meter
   pricing_plan:
     canonical_name: PricingPlan
-    zh_name: 鐎规矮鐜弬瑙勵攳
-    description: 閸欘垳绮︾€规艾鍩?API Key 閸掑棛绮嶉妴涓凱I Key閵嗕箓IP閵嗕胶顫ら幋鏋偓浣烘暏閹撮攱鍨?SKU 閻ㄥ嫪鐜弽鑲╃摜閻ｃ儲鏌熷鍫礉姒涙顓婚崣顖涘瘻鐎规ɑ鏌熼崣鍌濃偓鍐х幆閸婂秶宸煎ú鍓ф晸闁库偓閸烆喕鐜妴?
+    zh_name: 閻庤鐭悳顖炲棘鐟欏嫷??
+    description: 闁告瑯鍨崇划锔锯偓瑙勮壘??API Key 闁告帒妫涚划宥夊Υ娑撳嚤I Key闁靛棔绠揑P闁靛棔鑳堕～銈夊箣閺嬵偀鍋撴担鐑樻殢闁规挳鏀遍崹?SKU 闁汇劌瀚悳顖炲冀閼测晝鎽滈柣锝冨劜閺岀喎顩奸崼顒傜濮掓稒顭堥濠氬矗椤栨稑鐦婚悗瑙勆戦弻鐔煎矗閸屾績鍋撻崘褏骞嗛柛濠傜Ф瀹哥厧煤閸撗勬櫢闂佸簱鍋撻柛鐑嗗枙閻滎垶??
     persistence:
       table: ai_pricing_plan
       code_column: plan_code
       display_column: plan_name
   pricing_formula_mode:
     canonical_name: PricingFormulaMode
-    zh_name: 鐎规矮鐜崗顒€绱″Ο鈥崇础
-    description: 娴犻攱鐗哥憴鍕灟婵″倷缍嶆禒搴″棘閼板啩鐜悽鐔稿灇閺堚偓缂佸牅鐜弽绗衡偓?
+    zh_name: 閻庤鐭悳顖炲礂椤掆偓缁扁€澄熼垾宕囩
+    description: 濞寸娀鏀遍悧鍝ユ喆閸曨偄鐏熷┑鈥冲€风紞宥嗙鎼粹€虫闁兼澘鍟╅悳顖炴偨閻旂鐏囬柡鍫氬亾缂備礁鐗呴悳顖炲冀缁楄　??
     db_type: enum_int32
     api_serialization: stable_string_code
     builtin_values:
     - code: fixed
-      label: 閸ュ搫鐣鹃崡鏇氱幆
+      label: 闁搞儱鎼悾楣冨础閺囨氨??
     - code: multiplier
-      label: 閸欏倽鈧啩鐜崐宥囧芳
+      label: 闁告瑥鍊介埀顒€鍟╅悳顖炲磹瀹ュ洤??
     - code: multiplier_plus_offset
-      label: 閸婂秶宸奸崝鐘叉祼鐎规艾濮炴禒?
+      label: 闁稿﹤绉跺濂稿礉閻樺弶绁奸悗瑙勮壘婵偞??
     - code: tiered
-      label: 闂冭埖顫憴鍕灟
+      label: 闂傚啳鍩栭～顏嗘喆閸曨偄??
     - code: expression
-      label: 鐞涖劏鎻蹇氼潐閸?
+      label: 閻炴稏鍔忛幓顏勵嚕韫囨凹娼愰柛?
 tables:
 - table: system_installation_state
   domain: system
@@ -711,6 +716,20 @@ tables:
   - /admin/marketing
   - /console/account
   - /admin/marketing/referrals
+  - /admin/storage
+  - /admin/storage/providers
+  - /admin/storage/buckets
+  - /admin/storage/default-buckets
+  - /admin/storage/quotas
+  - /admin/storage/usage
+  - /admin/storage/reconciliation
+  - /admin/storage/garbage-collection
+  - /admin/drive
+  - /admin/drive/spaces
+  - /admin/drive/nodes
+  - /admin/drive/permissions
+  - /admin/drive/share-links
+  - /admin/drive/audit
   api_surfaces:
   - app
   - backend
@@ -1443,6 +1462,8 @@ tables:
   - /admin/app
   - /admin/open-platform
   - /admin/skill
+  - /admin/prompts
+  - /admin/mcp
   - /admin/open-platform/official-accounts
   - /admin/open-platform/official-accounts/accounts
   - /admin/open-platform/official-accounts/menus
@@ -1692,6 +1713,18 @@ tables:
     - enabled
     - featured
     - sort_weight
+  - name: idx_plus_agent_skill_package_seed_scope
+    columns:
+    - tenant_id
+    - organization_id
+    - data_scope
+    - id
+    - uuid
+    - package_key
+    - name
+    - sort_weight
+    - enabled
+    - featured
 - table: plus_agent_skill
   domain: legacy
   profile: java_compatible_owned
@@ -1948,6 +1981,24 @@ tables:
     columns:
     - featured
     - recommend_weight
+  - name: idx_plus_agent_skill_seed_scope
+    columns:
+    - tenant_id
+    - organization_id
+    - data_scope
+  - name: idx_plus_agent_skill_official_seed
+    columns:
+    - tenant_id
+    - organization_id
+    - data_scope
+    - source_type
+    - provider
+    - market_status
+    - visibility
+    - review_status
+    - builtin
+    - is_builtin
+    - enabled
 - table: plus_user_agent_skill
   domain: legacy
   profile: java_compatible_owned
@@ -2247,6 +2298,9 @@ tables:
   - /forum/:id
   - /courses
   - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/comments
   api_surfaces:
   - app
   - backend
@@ -2671,12 +2725,12 @@ tables:
   - /console/checkout
   - /vip
   - /admin/wallet
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
   - /admin/wallet/wallet-ledger
   - /admin/wallet/exchange-rules
+  - /admin/service-providers/wallet
   api_surfaces:
   - app
   - backend
@@ -2742,12 +2796,13 @@ tables:
   - /console/checkout
   - /console/settlements
   - /admin/wallet
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
   - /admin/wallet/wallet-ledger
   - /admin/wallet/exchange-rules
+  - /admin/service-providers/wallet
+  - /admin/service-providers/adjustments
   api_surfaces:
   - app
   - backend
@@ -2811,10 +2866,10 @@ tables:
   write_owner: sdkwork-appbase-commerce
   generated_by_this_project: false
   frontend_routes:
+  - /admin/marketing
   - /console/wallet
   - /admin/wallet
   - /console/checkout
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -2870,32 +2925,123 @@ tables:
     - tenant_id
     - status
     - expires_at
-- table: commerce_coupon_template
+- table: commerce_billing_history
   domain: commerce
+  profile: read_model
+  compliance_level: L3
+  system_of_record: false
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  source_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - promotion_user_coupon
+  - promotion_discount_application
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_recharge_package
+  frontend_routes:
+  - /console/wallet
+  - /console/recharge
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    history_no: string(512)
+    history_type: string(512)
+    direction: string(512)
+    asset_type: string(512)
+    amount:
+      type: string(512)
+      constraints: DEFAULT '0'
+    currency_code: string(512)
+    points_delta:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    title: string(512)
+    reference_no: string(512)
+    source_type: string(512)
+    source_id: string(512)
+    related_order_id: string(512)
+    related_order_no: string(512)
+    payment_method: string(512)
+    occurred_at: string(512)
+    metadata_json: json
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - history_no
+  - history_type
+  - direction
+  - asset_type
+  - amount
+  - points_delta
+  - status
+  - title
+  - source_type
+  - source_id
+  - occurred_at
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - history_no
+  - columns:
+    - tenant_id
+    - source_type
+    - source_id
+  indexes:
+  - name: idx_commerce_billing_history_owner_occurred_at
+    columns:
+    - tenant_id
+    - owner_user_id
+    - occurred_at
+  - name: idx_commerce_billing_history_owner_type_occurred_at
+    columns:
+    - tenant_id
+    - owner_user_id
+    - history_type
+    - occurred_at
+  - name: idx_commerce_billing_history_source
+    columns:
+    - tenant_id
+    - source_type
+    - source_id
+- table: promotion_offer
+  domain: promotion
   profile: appbase_standard
   compliance_level: L3
   system_of_record: true
-  write_owner: sdkwork-appbase-commerce
+  write_owner: sdkwork-appbase-promotion
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
-  - /console/wallet
-  - /admin/finance
-  - /admin/finance/invoice-titles
-  - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
-  - /admin/finance/payment-reconciliation
-  - /admin/finance/order-revenue
-  - /admin/finance/refunds-report
-  - /admin/finance/audit-events
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
   - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
   - /vip
   api_surfaces:
   - app
@@ -2907,74 +3053,88 @@ tables:
       constraints: PRIMARY KEY
     tenant_id: string(512)
     organization_id: string(512)
-    template_no: string(512)
-    title: string(512)
-    discount_type: string(512)
-    discount_value: string(512)
-    minimum_amount:
-      type: string(512)
-      constraints: DEFAULT '0'
-    total_quantity: int64
-    claimed_quantity:
-      type: int64
+    offer_no: string(128)
+    offer_code: string(128)
+    name: string(256)
+    description: string(2048)
+    offer_type: string(64)
+    audience_scope: string(64)
+    combinability: string(64)
+    priority:
+      type: int32
       constraints: DEFAULT 0
-    redeemed_quantity:
-      type: int64
-      constraints: DEFAULT 0
-    status: string(512)
-    starts_at: string(512)
-    expires_at: string(512)
-    created_at: string(512)
-    updated_at: string(512)
+    status: string(64)
+    current_offer_version_id: string(512)
+    starts_at: instant
+    ends_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
   not_null_columns:
   - tenant_id
-  - template_no
-  - title
-  - discount_type
-  - discount_value
-  - minimum_amount
-  - claimed_quantity
-  - redeemed_quantity
+  - offer_no
+  - offer_code
+  - name
+  - offer_type
+  - audience_scope
+  - combinability
+  - priority
   - status
   - created_at
   - updated_at
   unique_constraints:
   - columns:
     - tenant_id
-    - template_no
+    - offer_no
+  - columns:
+    - tenant_id
+    - organization_id
+    - offer_code
   indexes:
-  - name: idx_commerce_coupon_template_status
+  - name: idx_promotion_offer_status
     columns:
     - tenant_id
+    - organization_id
     - status
     - starts_at
-    - expires_at
-- table: commerce_coupon_issue_batch
-  domain: commerce
+    - ends_at
+  - name: idx_promotion_offer_code
+    columns:
+    - tenant_id
+    - organization_id
+    - offer_code
+  - name: idx_promotion_offer_current_version
+    columns:
+    - tenant_id
+    - current_offer_version_id
+- table: promotion_offer_version
+  domain: promotion
   profile: appbase_standard
   compliance_level: L3
   system_of_record: true
-  write_owner: sdkwork-appbase-commerce
+  write_owner: sdkwork-appbase-promotion
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
-  - /admin/finance
-  - /admin/finance/invoice-titles
-  - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
-  - /admin/finance/payment-reconciliation
-  - /admin/finance/order-revenue
-  - /admin/finance/refunds-report
-  - /admin/finance/audit-events
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
   - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
   api_surfaces:
+  - app
   - backend
   - worker
   columns:
@@ -2983,16 +3143,614 @@ tables:
       constraints: PRIMARY KEY
     tenant_id: string(512)
     organization_id: string(512)
-    coupon_template_id: string(512)
-    batch_no: string(512)
-    campaign_code: string(512)
-    title: string(512)
-    code_prefix: string(512)
-    code_pattern: string(512)
-    requested_quantity: int64
+    offer_id: string(512)
+    version_no: int64
+    lifecycle_status: string(64)
+    discount_type: string(64)
+    discount_amount_minor: int64
+    discount_percent_bps: int32
+    fixed_price_minor: int64
+    maximum_discount_amount_minor: int64
+    minimum_order_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    benefit_kind: string(64)
+    face_value_minor: int64
+    liability_policy: string(64)
+    breakage_policy: string(64)
+    tax_treatment: string(64)
+    validity_type: string(64)
+    validity_duration_seconds: int64
+    return_policy: string(64)
+    settlement_policy: string(64)
+    customer_visible:
+      type: bool
+      constraints: DEFAULT TRUE
+    benefit_definition_id: string(512)
+    benefit_quantity: decimal
+    stack_strategy: string(64)
+    rule_snapshot_json: json
+    published_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - offer_id
+  - version_no
+  - lifecycle_status
+  - discount_type
+  - currency_code
+  - benefit_kind
+  - face_value_minor
+  - liability_policy
+  - breakage_policy
+  - tax_treatment
+  - validity_type
+  - return_policy
+  - settlement_policy
+  - customer_visible
+  - minimum_order_amount_minor
+  - stack_strategy
+  - rule_snapshot_json
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - offer_id
+    - version_no
+  indexes:
+  - name: idx_promotion_offer_version_offer_status
+    columns:
+    - tenant_id
+    - offer_id
+    - lifecycle_status
+  - name: idx_promotion_offer_version_status_published
+    columns:
+    - tenant_id
+    - lifecycle_status
+    - published_at
+- table: promotion_offer_presentation
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    presentation_no: string(128)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    surface_type: string(64)
+    locale: string(32)
+    display_name: string(256)
+    merchant_display_name: string(256)
+    brand_name: string(256)
+    logo_asset_id: string(512)
+    cover_asset_id: string(512)
+    primary_color: string(32)
+    secondary_color: string(32)
+    param_schema_json: json
+    field_schema_json: json
+    verify_method: string(64)
+    recognition_type: string(64)
+    recognition_hash: string(256)
+    terms_json: json
+    customer_action_json: json
+    style_snapshot_json: json
+    status: string(64)
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - presentation_no
+  - offer_version_id
+  - surface_type
+  - locale
+  - display_name
+  - merchant_display_name
+  - param_schema_json
+  - field_schema_json
+  - verify_method
+  - recognition_type
+  - terms_json
+  - customer_action_json
+  - style_snapshot_json
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - presentation_no
+  - columns:
+    - tenant_id
+    - offer_version_id
+    - surface_type
+    - locale
+  indexes:
+  - name: idx_promotion_offer_presentation_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - status
+  - name: idx_promotion_offer_presentation_surface
+    columns:
+    - tenant_id
+    - surface_type
+    - locale
+    - status
+- table: promotion_offer_scope
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_version_id: string(512)
+    scope_type: string(64)
+    match_mode: string(64)
+    target_id: string(512)
+    target_code: string(256)
+    priority:
+      type: int32
+      constraints: DEFAULT 0
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - offer_version_id
+  - scope_type
+  - match_mode
+  - priority
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_promotion_offer_scope_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - scope_type
+    - match_mode
+  - name: idx_promotion_offer_scope_target
+    columns:
+    - tenant_id
+    - scope_type
+    - target_id
+- table: promotion_offer_audience_rule
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_version_id: string(512)
+    rule_type: string(64)
+    rule_operator: string(64)
+    rule_value: string(1024)
+    rule_value_json: json
+    priority:
+      type: int32
+      constraints: DEFAULT 0
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - offer_version_id
+  - rule_type
+  - rule_operator
+  - priority
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_promotion_offer_audience_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - rule_type
+- table: promotion_offer_time_window
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_version_id: string(512)
+    window_type: string(64)
+    starts_at: instant
+    ends_at: instant
+    timezone: string(64)
+    local_start_time: string(32)
+    local_end_time: string(32)
+    weekday_mask: int32
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - offer_version_id
+  - window_type
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_promotion_offer_time_window_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - window_type
+    - starts_at
+    - ends_at
+- table: promotion_budget_account
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    budget_no: string(128)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    stock_id: string(512)
+    budget_type: string(64)
+    currency_code: string(3)
+    total_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    reserved_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    consumed_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    available_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    planned_amount_minor: int64
+    overrun_amount_minor: int64
+    lock_mode: string(64)
+    total_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    reserved_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    consumed_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    available_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    status: string(64)
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - budget_no
+  - offer_id
+  - budget_type
+  - currency_code
+  - total_amount_minor
+  - reserved_amount_minor
+  - consumed_amount_minor
+  - available_amount_minor
+  - planned_amount_minor
+  - overrun_amount_minor
+  - lock_mode
+  - total_quantity
+  - reserved_quantity
+  - consumed_quantity
+  - available_quantity
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - budget_no
+  indexes:
+  - name: idx_promotion_budget_account_offer
+    columns:
+    - tenant_id
+    - offer_id
+    - status
+  - name: idx_promotion_budget_account_stock
+    columns:
+    - tenant_id
+    - stock_id
+    - status
+- table: promotion_budget_ledger_entry
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    ledger_no: string(128)
+    budget_account_id: string(512)
+    application_id: string(512)
+    direction: string(64)
+    amount_delta_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    quantity_delta:
+      type: decimal
+      constraints: DEFAULT 0
+    balance_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    balance_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    business_type: string(64)
+    source_type: string(64)
+    source_id: string(512)
+    request_no: string(128)
+    idempotency_key: string(128)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - ledger_no
+  - budget_account_id
+  - direction
+  - amount_delta_minor
+  - currency_code
+  - quantity_delta
+  - balance_amount_minor
+  - balance_quantity
+  - business_type
+  - source_type
+  - source_id
+  - request_no
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - ledger_no
+  - columns:
+    - tenant_id
+    - request_no
+  indexes:
+  - name: idx_promotion_budget_ledger_account_time
+    columns:
+    - tenant_id
+    - budget_account_id
+    - occurred_at
+  - name: idx_promotion_budget_ledger_currency_time
+    columns:
+    - tenant_id
+    - currency_code
+    - occurred_at
+- table: promotion_coupon_stock
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    stock_no: string(128)
+    name: string(256)
+    title: string(256)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    budget_account_id: string(512)
+    stock_type: string(64)
+    currency_code: string(3)
+    issue_channel: string(64)
+    stock_creator_merchant_id: string(256)
+    code_mode: string(64)
+    activation_status: string(64)
+    cancel_until: instant
+    can_resend: bool
+    budget_warning_threshold_bps: int32
+    budget_stop_threshold_bps: int32
+    overspend_policy: string(64)
+    code_prefix: string(64)
+    requested_quantity:
+      type: int64
+      constraints: DEFAULT 0
     generated_quantity:
       type: int64
       constraints: DEFAULT 0
+    total_quantity: int64
     available_quantity:
       type: int64
       constraints: DEFAULT 0
@@ -3002,141 +3760,107 @@ tables:
     redeemed_quantity:
       type: int64
       constraints: DEFAULT 0
+    locked_quantity:
+      type: int64
+      constraints: DEFAULT 0
     disabled_quantity:
       type: int64
       constraints: DEFAULT 0
-    status: string(512)
-    generation_status: string(512)
-    audience_filter: string(512)
-    generated_at: string(512)
+    returned_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    max_claims_per_subject: int32
+    max_claims_per_natural_person: int32
+    per_subject_limit: int64
+    status: string(64)
+    starts_at: instant
+    expires_at: instant
+    created_at: instant
+    updated_at: instant
     created_by: string(512)
-    created_at: string(512)
-    updated_at: string(512)
+    updated_by: string(512)
   not_null_columns:
   - tenant_id
-  - coupon_template_id
-  - batch_no
+  - stock_no
+  - name
   - title
-  - code_prefix
-  - code_pattern
+  - offer_id
+  - offer_version_id
+  - stock_type
+  - currency_code
+  - issue_channel
+  - code_mode
+  - activation_status
+  - can_resend
+  - overspend_policy
   - requested_quantity
   - generated_quantity
   - available_quantity
   - claimed_quantity
   - redeemed_quantity
+  - locked_quantity
   - disabled_quantity
+  - returned_quantity
   - status
-  - generation_status
   - created_at
   - updated_at
   unique_constraints:
   - columns:
     - tenant_id
-    - batch_no
+    - stock_no
   indexes:
-  - name: idx_commerce_coupon_issue_batch_status
+  - name: idx_promotion_coupon_stock_offer_status
     columns:
     - tenant_id
-    - status
-    - created_at
-- table: commerce_coupon
-  domain: commerce
-  profile: appbase_standard
-  compliance_level: L3
-  system_of_record: true
-  write_owner: sdkwork-appbase-commerce
-  generated_by_this_project: false
-  frontend_routes:
-  - /admin/marketing
-  - /console/wallet
-  - /console/checkout
-  - /admin/finance
-  - /admin/finance/invoice-titles
-  - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
-  - /admin/finance/payment-reconciliation
-  - /admin/finance/order-revenue
-  - /admin/finance/refunds-report
-  - /admin/finance/audit-events
-  - /admin/marketing/referrals
-  - /vip
-  api_surfaces:
-  - app
-  - backend
-  - worker
-  columns:
-    id:
-      type: string(512)
-      constraints: PRIMARY KEY
-    tenant_id: string(512)
-    organization_id: string(512)
-    template_id: string(512)
-    issue_batch_id: string(512)
-    owner_user_id: string(512)
-    coupon_code: string(512)
-    status: string(512)
-    claimed_at: string(512)
-    expires_at: string(512)
-    redeemed_at: string(512)
-    disabled_at: string(512)
-    request_no: string(512)
-    idempotency_key: string(512)
-    created_at: string(512)
-    updated_at: string(512)
-  not_null_columns:
-  - tenant_id
-  - template_id
-  - coupon_code
-  - status
-  - request_no
-  - idempotency_key
-  - created_at
-  - updated_at
-  unique_constraints:
-  - columns:
-    - tenant_id
-    - coupon_code
-  indexes:
-  - name: idx_commerce_coupon_owner_status_expires_at
-    columns:
-    - tenant_id
-    - owner_user_id
+    - offer_id
     - status
     - expires_at
-- table: commerce_coupon_redemption
-  domain: commerce
+  - name: idx_promotion_coupon_stock_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - status
+  - name: idx_promotion_coupon_stock_currency_status
+    columns:
+    - tenant_id
+    - currency_code
+    - status
+    - expires_at
+  - name: idx_promotion_coupon_stock_code_mode
+    columns:
+    - tenant_id
+    - code_mode
+    - status
+  - name: idx_promotion_coupon_stock_activation
+    columns:
+    - tenant_id
+    - activation_status
+    - cancel_until
+- table: promotion_code
+  domain: promotion
   profile: appbase_standard
   compliance_level: L3
   system_of_record: true
-  write_owner: sdkwork-appbase-commerce
+  write_owner: sdkwork-appbase-promotion
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
   - /console/wallet
   - /console/checkout
-  - /admin/finance
-  - /admin/finance/invoice-titles
-  - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
-  - /admin/finance/payment-reconciliation
-  - /admin/finance/order-revenue
-  - /admin/finance/refunds-report
-  - /admin/finance/audit-events
-  - /admin/marketing/referrals
+  - /console/commerce
   - /vip
   api_surfaces:
   - app
@@ -3148,40 +3872,859 @@ tables:
       constraints: PRIMARY KEY
     tenant_id: string(512)
     organization_id: string(512)
-    coupon_id: string(512)
-    order_id: string(512)
-    owner_user_id: string(512)
-    discount_amount: string(512)
-    status: string(512)
-    request_no: string(512)
-    idempotency_key: string(512)
-    redeemed_at: string(512)
-    rolled_back_at: string(512)
-    created_at: string(512)
-    updated_at: string(512)
+    code_no: string(128)
+    stock_id: string(512)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    promotion_code_hash: string(256)
+    promotion_code_last4: string(16)
+    code_type: string(64)
+    currency_code: string(3)
+    claim_code_hash: string(256)
+    claim_code_suffix: string(16)
+    activation_status: string(64)
+    activated_at: instant
+    canceled_at: instant
+    cancel_until: instant
+    can_resend: bool
+    channel_code: string(128)
+    max_claims:
+      type: int64
+      constraints: DEFAULT 1
+    claimed_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(64)
+    starts_at: instant
+    expires_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
   not_null_columns:
   - tenant_id
-  - coupon_id
-  - order_id
-  - owner_user_id
-  - discount_amount
+  - code_no
+  - stock_id
+  - offer_id
+  - offer_version_id
+  - promotion_code_hash
+  - code_type
+  - currency_code
+  - activation_status
+  - can_resend
+  - max_claims
+  - claimed_quantity
   - status
-  - request_no
-  - idempotency_key
-  - redeemed_at
   - created_at
   - updated_at
   unique_constraints:
   - columns:
     - tenant_id
-    - coupon_id
-    - order_id
+    - code_no
+  - columns:
+    - tenant_id
+    - promotion_code_hash
   indexes:
-  - name: idx_commerce_coupon_redemption_order
+  - name: idx_promotion_code_stock_status
+    columns:
+    - tenant_id
+    - stock_id
+    - status
+    - expires_at
+  - name: idx_promotion_code_hash
+    columns:
+    - tenant_id
+    - promotion_code_hash
+  - name: idx_promotion_code_last4
+    columns:
+    - tenant_id
+    - promotion_code_last4
+  - name: idx_promotion_code_claim_hash
+    columns:
+    - tenant_id
+    - claim_code_hash
+  - name: idx_promotion_code_activation
+    columns:
+    - tenant_id
+    - activation_status
+    - cancel_until
+- table: promotion_code_redemption
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    redemption_no: string(128)
+    code_id: string(512)
+    stock_id: string(512)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    user_coupon_id: string(512)
+    submitted_code_hash: string(256)
+    submitted_code_suffix: string(16)
+    subject_type: string(64)
+    subject_id: string(512)
+    owner_user_id: string(512)
+    currency_code: string(3)
+    result_status: string(64)
+    failure_code: string(128)
+    failure_message: string(1024)
+    redemption_channel: string(64)
+    redemption_scene: string(64)
+    request_no: string(128)
+    idempotency_key: string(128)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - redemption_no
+  - stock_id
+  - offer_id
+  - offer_version_id
+  - submitted_code_hash
+  - subject_type
+  - subject_id
+  - currency_code
+  - result_status
+  - redemption_channel
+  - request_no
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - redemption_no
+  - columns:
+    - tenant_id
+    - request_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_code_redemption_code_time
+    columns:
+    - tenant_id
+    - code_id
+    - occurred_at
+  - name: idx_promotion_code_redemption_hash_time
+    columns:
+    - tenant_id
+    - submitted_code_hash
+    - occurred_at
+  - name: idx_promotion_code_redemption_subject_status
+    columns:
+    - tenant_id
+    - subject_type
+    - subject_id
+    - result_status
+    - occurred_at
+  - name: idx_promotion_code_redemption_stock_status
+    columns:
+    - tenant_id
+    - stock_id
+    - result_status
+    - occurred_at
+- table: promotion_user_coupon
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    coupon_no: string(128)
+    stock_id: string(512)
+    code_id: string(512)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    budget_account_id: string(512)
+    subject_type: string(64)
+    subject_id: string(512)
+    owner_user_id: string(512)
+    coupon_code_hash: string(256)
+    coupon_code_suffix: string(16)
+    verify_method: string(64)
+    recognition_type: string(64)
+    recognition_hash: string(256)
+    claim_code_hash: string(256)
+    claim_code_suffix: string(16)
+    activation_status: string(64)
+    cancel_until: instant
+    can_resend: bool
+    face_value_minor:
+      type: int64
+      constraints: DEFAULT 0
+    maximum_discount_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    minimum_order_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    discount_percent_bps: int32
+    currency_code: string(3)
+    status: string(64)
+    claim_source: string(64)
+    claimed_at: instant
+    valid_from: instant
+    expires_at: instant
+    locked_at: instant
+    lock_expires_at: instant
+    redeemed_at: instant
+    disabled_at: instant
+    returned_at: instant
+    request_no: string(128)
+    idempotency_key: string(128)
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - coupon_no
+  - stock_id
+  - offer_id
+  - offer_version_id
+  - subject_type
+  - subject_id
+  - face_value_minor
+  - maximum_discount_amount_minor
+  - minimum_order_amount_minor
+  - currency_code
+  - verify_method
+  - activation_status
+  - can_resend
+  - status
+  - claim_source
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - coupon_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_user_coupon_subject_status
+    columns:
+    - tenant_id
+    - subject_type
+    - subject_id
+    - status
+    - expires_at
+  - name: idx_promotion_user_coupon_stock
+    columns:
+    - tenant_id
+    - stock_id
+    - status
+  - name: idx_promotion_user_coupon_currency_status
+    columns:
+    - tenant_id
+    - currency_code
+    - status
+    - expires_at
+  - name: idx_promotion_user_coupon_claim_hash
+    columns:
+    - tenant_id
+    - claim_code_hash
+  - name: idx_promotion_user_coupon_activation
+    columns:
+    - tenant_id
+    - activation_status
+    - cancel_until
+- table: promotion_discount_application
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    application_no: string(128)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    stock_id: string(512)
+    user_coupon_id: string(512)
+    budget_account_id: string(512)
+    order_id: string(512)
+    order_no: string(128)
+    payment_id: string(512)
+    subject_type: string(64)
+    subject_id: string(512)
+    discount_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    status: string(64)
+    request_no: string(128)
+    idempotency_key: string(128)
+    reserved_at: instant
+    reservation_expires_at: instant
+    applied_at: instant
+    settled_at: instant
+    released_at: instant
+    rolled_back_at: instant
+    failure_code: string(128)
+    failure_message: string(1024)
+    rule_snapshot_json: json
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - application_no
+  - offer_id
+  - offer_version_id
+  - order_id
+  - subject_type
+  - subject_id
+  - discount_amount_minor
+  - currency_code
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - application_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_discount_application_order
     columns:
     - tenant_id
     - order_id
     - status
+  - name: idx_promotion_discount_application_coupon
+    columns:
+    - tenant_id
+    - user_coupon_id
+    - status
+  - name: idx_promotion_discount_application_currency_status
+    columns:
+    - tenant_id
+    - currency_code
+    - status
+    - created_at
+- table: promotion_discount_allocation
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    application_id: string(512)
+    order_id: string(512)
+    order_item_id: string(512)
+    sku_id: string(512)
+    allocation_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    allocation_ratio_bps: int32
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - application_id
+  - order_id
+  - allocation_amount_minor
+  - currency_code
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - application_id
+    - order_item_id
+  indexes:
+  - name: idx_promotion_discount_allocation_order
+    columns:
+    - tenant_id
+    - order_id
+    - order_item_id
+- table: promotion_coupon_ledger_entry
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    ledger_no: string(128)
+    stock_id: string(512)
+    user_coupon_id: string(512)
+    application_id: string(512)
+    offer_id: string(512)
+    subject_type: string(64)
+    subject_id: string(512)
+    direction: string(64)
+    quantity_delta:
+      type: int64
+      constraints: DEFAULT 0
+    balance_after:
+      type: int64
+      constraints: DEFAULT 0
+    business_type: string(64)
+    source_type: string(64)
+    source_id: string(512)
+    request_no: string(128)
+    idempotency_key: string(128)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - ledger_no
+  - stock_id
+  - offer_id
+  - direction
+  - quantity_delta
+  - balance_after
+  - business_type
+  - source_type
+  - source_id
+  - request_no
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - ledger_no
+  - columns:
+    - tenant_id
+    - request_no
+  indexes:
+  - name: idx_promotion_coupon_ledger_stock_time
+    columns:
+    - tenant_id
+    - stock_id
+    - occurred_at
+  - name: idx_promotion_coupon_ledger_coupon_time
+    columns:
+    - tenant_id
+    - user_coupon_id
+    - occurred_at
+- table: promotion_external_binding
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    binding_no: string(128)
+    platform: string(64)
+    external_merchant_id: string(256)
+    external_object_type: string(64)
+    external_object_id: string(512)
+    external_currency_code: string(3)
+    platform_template_id: string(512)
+    platform_stock_id: string(512)
+    platform_card_id: string(512)
+    platform_coupon_id: string(512)
+    claim_code_hash: string(256)
+    claim_code_suffix: string(16)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    stock_id: string(512)
+    code_id: string(512)
+    user_coupon_id: string(512)
+    sync_status: string(64)
+    last_sync_at: instant
+    last_error_code: string(128)
+    last_error_message: string(1024)
+    metadata_json: json
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - binding_no
+  - platform
+  - external_object_type
+  - external_object_id
+  - external_currency_code
+  - sync_status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - binding_no
+  - columns:
+    - tenant_id
+    - platform
+    - external_object_type
+    - external_object_id
+  indexes:
+  - name: idx_promotion_external_binding_offer
+    columns:
+    - tenant_id
+    - offer_id
+    - platform
+  - name: idx_promotion_external_binding_sync
+    columns:
+    - tenant_id
+    - sync_status
+    - last_sync_at
+- table: promotion_external_operation
+  domain: promotion
+  profile: external_operation_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    operation_no: string(128)
+    binding_id: string(512)
+    platform: string(64)
+    aggregate_type: string(64)
+    aggregate_id: string(512)
+    operation_type: string(64)
+    external_request_no: string(256)
+    external_operation_id: string(512)
+    provider_request_id: string(256)
+    provider_code: string(128)
+    callback_id: string(256)
+    callback_sig_hash: string(256)
+    callback_at: instant
+    external_status: string(64)
+    status: string(64)
+    request_hash: string(128)
+    response_hash: string(128)
+    sanitized_request_json: json
+    sanitized_response_json: json
+    retry_count:
+      type: int32
+      constraints: DEFAULT 0
+    next_retry_at: instant
+    cancel_until: instant
+    replay_op_id: string(512)
+    idempotency_key: string(128)
+    error_code: string(128)
+    error_message: string(1024)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - operation_no
+  - platform
+  - aggregate_type
+  - aggregate_id
+  - operation_type
+  - status
+  - sanitized_request_json
+  - sanitized_response_json
+  - retry_count
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - operation_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_external_operation_binding_time
+    columns:
+    - tenant_id
+    - binding_id
+    - occurred_at
+  - name: idx_promotion_external_operation_platform_status
+    columns:
+    - tenant_id
+    - platform
+    - status
+    - next_retry_at
+  - name: idx_promotion_external_operation_request
+    columns:
+    - tenant_id
+    - platform
+    - external_request_no
+  - name: idx_promotion_external_operation_provider_request
+    columns:
+    - tenant_id
+    - platform
+    - provider_request_id
+  - name: idx_promotion_external_operation_callback
+    columns:
+    - tenant_id
+    - platform
+    - callback_id
+- table: promotion_event_outbox
+  domain: promotion
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    event_no: string(128)
+    aggregate_type: string(64)
+    aggregate_id: string(512)
+    event_type: string(128)
+    event_version: int32
+    payload_json: json
+    payload_hash: string(128)
+    status: string(64)
+    publish_attempts:
+      type: int32
+      constraints: DEFAULT 0
+    next_retry_at: instant
+    occurred_at: instant
+    published_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - event_no
+  - aggregate_type
+  - aggregate_id
+  - event_type
+  - event_version
+  - payload_json
+  - status
+  - publish_attempts
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - event_no
+  indexes:
+  - name: idx_promotion_event_outbox_status_retry
+    columns:
+    - tenant_id
+    - status
+    - next_retry_at
+    - occurred_at
+  - name: idx_promotion_event_outbox_aggregate
+    columns:
+    - tenant_id
+    - aggregate_type
+    - aggregate_id
+    - occurred_at
 - table: commerce_product_category
   domain: commerce
   profile: appbase_standard
@@ -3272,7 +4815,6 @@ tables:
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -3355,7 +4897,6 @@ tables:
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -4620,7 +6161,6 @@ tables:
   - /console/recharge
   - /console/checkout
   - /admin/wallet
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -4719,7 +6259,6 @@ tables:
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -4727,14 +6266,21 @@ tables:
   - /admin/wallet/exchange-rules
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -4796,6 +6342,7 @@ tables:
   write_owner: sdkwork-appbase-commerce
   generated_by_this_project: false
   frontend_routes:
+  - /admin/marketing
   - /console/wallet
   - /console/recharge
   - /console/checkout
@@ -4813,7 +6360,6 @@ tables:
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -4821,14 +6367,21 @@ tables:
   - /admin/wallet/exchange-rules
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -5356,7 +6909,6 @@ tables:
   - /admin/payments/attempts
   - /admin/payments/webhook-events
   - /admin/payments/reconciliation-runs
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -5438,7 +6990,6 @@ tables:
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -5446,14 +6997,14 @@ tables:
   - /admin/wallet/exchange-rules
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -5752,14 +7303,14 @@ tables:
   - /admin/orders/shipments
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -5817,14 +7368,14 @@ tables:
   - /admin/orders/shipments
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -5884,14 +7435,14 @@ tables:
   - /admin/orders/shipments
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -5960,14 +7511,14 @@ tables:
   - /admin/orders/shipments
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -6273,7 +7824,6 @@ tables:
   - /admin/marketing
   - /console/wallet
   - /admin/wallet
-  - /admin/wallet/recharge-packages
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -6338,14 +7888,14 @@ tables:
   - /console/account
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -6385,14 +7935,14 @@ tables:
   - /admin/finance
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -6450,14 +8000,14 @@ tables:
   - /admin/finance
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -6498,14 +8048,14 @@ tables:
   - /admin/finance
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -6563,14 +8113,14 @@ tables:
   - /admin/finance
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -6861,6 +8411,7 @@ tables:
   - /console/api-keys
   - /admin/user
   - /admin/ratelimit
+  - /admin/service-providers/bindings
   api_surfaces:
   - app
   - backend
@@ -6935,9 +8486,12 @@ tables:
   write_owner: access-policy-service
   common_columns: tenant_entity
   frontend_routes:
+  - /models
   - /console/api-keys
+  - /console/usage
   - /admin/group
   - /admin/ratelimit
+  - /admin/service-providers/bindings
   api_surfaces:
   - app
   - backend
@@ -6987,6 +8541,68 @@ tables:
     - pricing_plan_id
     - status
     - updated_at
+    - id
+- table: iam_api_key_group_channel
+  domain: iam
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: access-policy-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /admin/group
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    group_id: int64
+    channel_id: int64
+    priority: int32
+    weight: int32
+    model_scope: json
+    capabilities: json
+    effective_from: instant
+    effective_to: instant
+  required_columns:
+  - group_id
+  - channel_id
+  indexes:
+  - name: uk_iam_api_key_group_channel
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - group_id
+    - channel_id
+  - name: idx_iam_api_key_group_channel_group
+    columns:
+    - tenant_id
+    - organization_id
+    - group_id
+    - status
+    - priority
+    - weight
+    - id
+  - name: idx_iam_api_key_group_channel_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_id
+    - status
+    - id
+  foreign_keys:
+  - name: fk_iam_api_key_group_channel_group
+    columns:
+    - group_id
+    references_table: iam_gateway_api_key_group
+    references_columns:
+    - id
+  - name: fk_iam_api_key_group_channel_channel
+    columns:
+    - channel_id
+    references_table: integration_channel
+    references_columns:
     - id
 - table: iam_gateway_api_key_group_metric_snapshot
   domain: iam
@@ -7269,6 +8885,244 @@ tables:
     payload_stored: metadata_only
     stores_secret_plaintext: false
     audit_required: true
+- table: iam_verification_scene_policy
+  domain: iam
+  profile: verification_policy
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  common_columns: tenant_entity
+  source_tables:
+  - messaging_template
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /admin/messaging/verification-policies
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    scene_name: string(128)
+    allowed_channels:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    default_channel: string(32)
+    code_length:
+      type: int32
+      constraints: NOT NULL DEFAULT 6
+    code_charset:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'digits'
+    ttl_seconds:
+      type: int32
+      constraints: NOT NULL DEFAULT 300
+    resend_interval_seconds:
+      type: int32
+      constraints: NOT NULL DEFAULT 60
+    max_send_per_hour:
+      type: int32
+      constraints: NOT NULL DEFAULT 5
+    max_verify_attempts:
+      type: int32
+      constraints: NOT NULL DEFAULT 5
+    target_binding_required:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    template_code:
+      type: string(128)
+      constraints: NOT NULL
+    risk_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    rollout_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_iam_verification_scene_policy_scene
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - scene_code
+  - name: idx_iam_verification_scene_policy_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - scene_code
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: iam_verification_challenge
+  domain: iam
+  profile: verification_challenge
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  common_columns: tenant_entity
+  source_tables:
+  - iam_verification_scene_policy
+  - messaging_send_request
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /admin/messaging/verification-policies
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    code_id:
+      type: string(128)
+      constraints: NOT NULL
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    target_type:
+      type: string(32)
+      constraints: NOT NULL
+    target_hash:
+      type: string(128)
+      constraints: NOT NULL
+    target_masked: string(128)
+    user_id: int64
+    code_hash:
+      type: string(256)
+      constraints: NOT NULL
+    hash_algorithm:
+      type: string(64)
+      constraints: NOT NULL
+    salt_ref: string(256)
+    delivery_request_id: int64
+    policy_snapshot:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    expires_at:
+      type: instant
+      constraints: NOT NULL
+    verified_at: instant
+    consumed_at: instant
+    challenge_status:
+      type: string(32)
+      constraints: NOT NULL
+    verify_attempts:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    locked_until: instant
+  indexes:
+  - name: uk_iam_verification_challenge_code_id
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - code_id
+  - name: idx_iam_verification_challenge_target_scene
+    columns:
+    - tenant_id
+    - organization_id
+    - target_type
+    - target_hash
+    - scene_code
+    - created_at
+  - name: idx_iam_verification_challenge_delivery
+    columns:
+    - tenant_id
+    - organization_id
+    - delivery_request_id
+  - name: idx_iam_verification_challenge_expiry
+    columns:
+    - tenant_id
+    - organization_id
+    - challenge_status
+    - expires_at
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 30d
+    archive_retention: 180d
+  security:
+    pii: true
+    sensitivity: VERIFICATION_CODE
+    stores_secret_plaintext: false
+    encrypted_fields:
+    - salt_ref
+    audit_required: true
+- table: iam_verification_attempt
+  domain: iam
+  profile: verification_attempt
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  common_columns: event_log
+  source_tables:
+  - iam_verification_challenge
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /admin/messaging/verification-policies
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    challenge_id:
+      type: int64
+      constraints: NOT NULL
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    target_type:
+      type: string(32)
+      constraints: NOT NULL
+    target_hash:
+      type: string(128)
+      constraints: NOT NULL
+    result:
+      type: string(32)
+      constraints: NOT NULL
+    failure_reason: string(128)
+    ip_hash: string(128)
+    device_hash: string(128)
+    risk_snapshot:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    occurred_at:
+      type: instant
+      constraints: NOT NULL
+  indexes:
+  - name: idx_iam_verification_attempt_challenge
+    columns:
+    - tenant_id
+    - organization_id
+    - challenge_id
+    - occurred_at
+  - name: idx_iam_verification_attempt_target
+    columns:
+    - tenant_id
+    - organization_id
+    - target_type
+    - target_hash
+    - occurred_at
+  lifecycle:
+    partition_by: occurred_at_month
+    online_retention: 90d
+    archive_retention: 1y
+  security:
+    pii: true
+    sensitivity: AUTH_EVENT
+    payload_stored: metadata_only
+    stores_secret_plaintext: false
+    audit_required: true
 - table: integration_provider
   domain: integration
   profile: dictionary_entity
@@ -7280,7 +9134,9 @@ tables:
   - /playground
   - /console/routing
   - /console/providers
+  - /admin/group
   - /admin/channel
+  - /admin/messaging/providers
   api_surfaces:
   - app
   - backend
@@ -7322,6 +9178,7 @@ tables:
   frontend_routes:
   - /console/routing
   - /console/providers
+  - /admin/group
   - /admin/channel
   api_surfaces:
   - app
@@ -7372,7 +9229,11 @@ tables:
   frontend_routes:
   - /console/routing
   - /console/providers
+  - /admin/group
   - /admin/channel
+  - /admin/messaging/providers
+  - /admin/messaging/sender-identities
+  - /admin/messaging/route-rules
   api_surfaces:
   - app
   - backend
@@ -7413,6 +9274,921 @@ tables:
     - account_code
   security:
     sensitivity: SECRET_REF
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_provider_capability
+  domain: messaging
+  profile: provider_capability
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - integration_provider
+  - integration_provider_account
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/providers
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL
+    provider_account_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    delivery_purpose:
+      type: string(64)
+      constraints: NOT NULL
+    country_code:
+      type: string(16)
+      constraints: NOT NULL DEFAULT '*'
+    locale:
+      type: string(32)
+      constraints: NOT NULL DEFAULT '*'
+    supports_template_sync:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    supports_delivery_receipt:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    supports_test_send:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    supports_batch_send:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    supports_webhook:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    sandbox_supported:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    capability_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    rate_limit_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    health_status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'unknown'
+    last_verified_at: instant
+  indexes:
+  - name: uk_messaging_provider_capability_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - provider_account_id
+    - channel
+    - delivery_purpose
+    - country_code
+    - locale
+  - name: idx_messaging_provider_capability_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - channel
+    - delivery_purpose
+    - status
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_sender_identity
+  domain: messaging
+  profile: sender_identity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - integration_provider_account
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/sender-identities
+  - /admin/messaging/route-rules
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    provider_account_id:
+      type: int64
+      constraints: NOT NULL
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    identity_code:
+      type: string(128)
+      constraints: NOT NULL
+    display_name: string(128)
+    from_email: string(256)
+    from_name: string(128)
+    reply_to: string(256)
+    domain_name: string(256)
+    sign_name: string(128)
+    sender_id: string(128)
+    country_code: string(16)
+    approval_status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'draft'
+    verified_at: instant
+    approval_payload:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    rejection_reason: string(512)
+  indexes:
+  - name: uk_messaging_sender_identity_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_account_id
+    - identity_code
+  - name: idx_messaging_sender_identity_channel_status
+    columns:
+    - tenant_id
+    - organization_id
+    - channel
+    - approval_status
+    - status
+  security:
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_template
+  domain: messaging
+  profile: template
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  frontend_routes:
+  - /auth/login
+  - /admin/messaging
+  - /admin/messaging/templates
+  - /admin/messaging/route-rules
+  - /admin/messaging/diagnostics
+  - /admin/messaging/verification-policies
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    template_code:
+      type: string(128)
+      constraints: NOT NULL
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    delivery_purpose:
+      type: string(64)
+      constraints: NOT NULL
+    category:
+      type: string(64)
+      constraints: NOT NULL
+    owner_app_id: string(128)
+    template_name:
+      type: string(128)
+      constraints: NOT NULL
+    description: string(512)
+    current_version_id: int64
+    publish_status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'draft'
+  indexes:
+  - name: uk_messaging_template_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - template_code
+  - name: idx_messaging_template_scene_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - scene_code
+    - channel
+    - delivery_purpose
+    - status
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_template_version
+  domain: messaging
+  profile: template_version
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - messaging_template
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/templates
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    template_id:
+      type: int64
+      constraints: NOT NULL
+    version_no:
+      type: int32
+      constraints: NOT NULL
+    subject_template: string(512)
+    text_template: text
+    html_template: text
+    variable_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    render_engine:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'handlebars'
+    content_hash:
+      type: string(128)
+      constraints: NOT NULL
+    review_status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'draft'
+    published_at: instant
+    retired_at: instant
+  indexes:
+  - name: uk_messaging_template_version_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - template_id
+    - version_no
+  - name: idx_messaging_template_version_status
+    columns:
+    - tenant_id
+    - organization_id
+    - template_id
+    - review_status
+    - published_at
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_template_variant
+  domain: messaging
+  profile: template_variant
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - messaging_template_version
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/templates
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    template_version_id:
+      type: int64
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    locale:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'default'
+    content_format:
+      type: string(32)
+      constraints: NOT NULL
+    body_template:
+      type: text
+      constraints: NOT NULL
+    length_limit: int32
+    provider_payload_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    render_options:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_messaging_template_variant_locale
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - template_version_id
+    - channel
+    - locale
+    - content_format
+  - name: idx_messaging_template_variant_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - channel
+    - locale
+    - status
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_template_binding
+  domain: messaging
+  profile: template_binding
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - messaging_template_variant
+  - integration_provider_account
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/templates
+  - /admin/messaging/route-rules
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    template_variant_id:
+      type: int64
+      constraints: NOT NULL
+    provider_account_id:
+      type: int64
+      constraints: NOT NULL
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL
+    provider_template_code:
+      type: string(128)
+      constraints: NOT NULL
+    approval_status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'draft'
+    provider_template_version: string(64)
+    last_synced_at: instant
+    sync_payload_hash: string(128)
+    rejection_reason: string(512)
+    provider_payload:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_messaging_template_binding_provider
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - template_variant_id
+    - provider_account_id
+  - name: idx_messaging_template_binding_code
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - provider_template_code
+    - approval_status
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_route_rule
+  domain: messaging
+  profile: route_rule
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - messaging_template
+  frontend_routes:
+  - /auth/login
+  - /admin/messaging
+  - /admin/messaging/route-rules
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    rule_code:
+      type: string(128)
+      constraints: NOT NULL
+    app_id: string(128)
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    delivery_purpose:
+      type: string(64)
+      constraints: NOT NULL
+    locale:
+      type: string(32)
+      constraints: NOT NULL DEFAULT '*'
+    country_code:
+      type: string(16)
+      constraints: NOT NULL DEFAULT '*'
+    user_segment:
+      type: string(128)
+      constraints: NOT NULL DEFAULT '*'
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    effective_from: instant
+    effective_to: instant
+    failover_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    selection_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_messaging_route_rule_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - rule_code
+  - name: idx_messaging_route_rule_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - scene_code
+    - channel
+    - delivery_purpose
+    - country_code
+    - locale
+    - user_segment
+    - priority
+    - status
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_route_rule_target
+  domain: messaging
+  profile: route_rule_target
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  source_tables:
+  - messaging_route_rule
+  - integration_provider_account
+  - messaging_sender_identity
+  - messaging_template_binding
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/route-rules
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    route_rule_id:
+      type: int64
+      constraints: NOT NULL
+    provider_account_id:
+      type: int64
+      constraints: NOT NULL
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL
+    sender_identity_id: int64
+    template_binding_id: int64
+    target_order:
+      type: int32
+      constraints: NOT NULL DEFAULT 1
+    weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    circuit_breaker_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_messaging_route_rule_target_order
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - route_rule_id
+    - target_order
+  - name: idx_messaging_route_rule_target_provider
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_account_id
+    - status
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_send_request
+  domain: messaging
+  profile: send_request
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: event_log
+  source_tables:
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_route_rule
+  - integration_provider_account
+  - messaging_sender_identity
+  frontend_routes:
+  - /auth/login
+  - /admin/messaging
+  - /admin/messaging/send-requests
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    request_no:
+      type: string(128)
+      constraints: NOT NULL
+    idempotency_key:
+      type: string(128)
+      constraints: NOT NULL
+    app_id: string(128)
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    delivery_purpose:
+      type: string(64)
+      constraints: NOT NULL
+    target_type:
+      type: string(32)
+      constraints: NOT NULL
+    target_hash:
+      type: string(128)
+      constraints: NOT NULL
+    target_masked: string(128)
+    template_version_id: int64
+    template_variant_id: int64
+    resolved_route_rule_id: int64
+    resolved_provider_account_id: int64
+    resolved_sender_identity_id: int64
+    payload_hash:
+      type: string(128)
+      constraints: NOT NULL
+    render_hash:
+      type: string(128)
+      constraints: NOT NULL
+    request_payload_redacted:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    dry_run:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    delivery_status:
+      type: string(32)
+      constraints: NOT NULL
+    scheduled_at: instant
+    accepted_at: instant
+    sent_at: instant
+    delivered_at: instant
+    failed_at: instant
+    expires_at: instant
+  indexes:
+  - name: uk_messaging_send_request_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - request_no
+  - name: uk_messaging_send_request_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_messaging_send_request_scene_status
+    columns:
+    - tenant_id
+    - organization_id
+    - scene_code
+    - channel
+    - delivery_status
+    - created_at
+  - name: idx_messaging_send_request_target
+    columns:
+    - tenant_id
+    - organization_id
+    - target_type
+    - target_hash
+    - created_at
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 180d
+    archive_retention: 3y
+  security:
+    pii: true
+    sensitivity: EXTERNAL_MESSAGE_TARGET
+    payload_stored: redacted_only
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_send_attempt
+  domain: messaging
+  profile: send_attempt
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: event_log
+  source_tables:
+  - messaging_send_request
+  - integration_provider_account
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/send-requests
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    send_request_id:
+      type: int64
+      constraints: NOT NULL
+    attempt_no:
+      type: int32
+      constraints: NOT NULL
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL
+    provider_account_id:
+      type: int64
+      constraints: NOT NULL
+    provider_request_id: string(256)
+    provider_message_id: string(256)
+    http_status: int32
+    provider_status: string(64)
+    latency_ms: int32
+    failure_code: string(128)
+    failure_message_masked: string(512)
+    retry_after_at: instant
+    attempted_at:
+      type: instant
+      constraints: NOT NULL
+  indexes:
+  - name: uk_messaging_send_attempt_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - send_request_id
+    - attempt_no
+  - name: idx_messaging_send_attempt_provider_message
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - provider_message_id
+  - name: idx_messaging_send_attempt_status
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_status
+    - attempted_at
+  lifecycle:
+    partition_by: attempted_at_month
+    online_retention: 180d
+    archive_retention: 3y
+  security:
+    pii: false
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_delivery_event
+  domain: messaging
+  profile: delivery_event
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: event_log
+  source_tables:
+  - messaging_send_request
+  - messaging_send_attempt
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/send-requests
+  - /admin/messaging/diagnostics
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    send_request_id:
+      type: int64
+      constraints: NOT NULL
+    send_attempt_id: int64
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL
+    provider_event_id:
+      type: string(256)
+      constraints: NOT NULL
+    provider_message_id: string(256)
+    event_type:
+      type: string(64)
+      constraints: NOT NULL
+    event_at:
+      type: instant
+      constraints: NOT NULL
+    payload_hash:
+      type: string(128)
+      constraints: NOT NULL
+    payload_redacted:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_messaging_delivery_event_provider
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - provider_event_id
+  - name: idx_messaging_delivery_event_request
+    columns:
+    - tenant_id
+    - organization_id
+    - send_request_id
+    - event_at
+  - name: idx_messaging_delivery_event_message
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_message_id
+    - event_type
+  lifecycle:
+    partition_by: event_at_month
+    online_retention: 180d
+    archive_retention: 3y
+  security:
+    pii: true
+    payload_stored: redacted_only
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_suppression
+  domain: messaging
+  profile: suppression
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/messaging
+  - /admin/messaging/diagnostics
+  - /admin/messaging/suppressions
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    target_hash:
+      type: string(128)
+      constraints: NOT NULL
+    target_masked: string(128)
+    reason_code:
+      type: string(128)
+      constraints: NOT NULL
+    scope_type:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'tenant'
+    scope_id:
+      type: string(128)
+      constraints: NOT NULL DEFAULT '*'
+    starts_at:
+      type: instant
+      constraints: NOT NULL
+    ends_at: instant
+    source:
+      type: string(64)
+      constraints: NOT NULL
+    note: string(512)
+  indexes:
+  - name: uk_messaging_suppression_scope_target
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - channel
+    - target_hash
+    - scope_type
+    - scope_id
+    - reason_code
+  - name: idx_messaging_suppression_active
+    columns:
+    - tenant_id
+    - organization_id
+    - channel
+    - status
+    - starts_at
+    - ends_at
+  security:
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: messaging_rate_limit_bucket
+  domain: messaging
+  profile: rate_limit_bucket
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-messaging
+  common_columns: tenant_entity
+  frontend_routes:
+  - /auth/login
+  - /admin/messaging
+  - /admin/messaging/diagnostics
+  - /admin/messaging/rate-limits
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    scene_code:
+      type: string(128)
+      constraints: NOT NULL
+    channel:
+      type: string(32)
+      constraints: NOT NULL
+    target_hash:
+      type: string(128)
+      constraints: NOT NULL DEFAULT '*'
+    ip_hash:
+      type: string(128)
+      constraints: NOT NULL DEFAULT '*'
+    device_hash:
+      type: string(128)
+      constraints: NOT NULL DEFAULT '*'
+    window_start:
+      type: instant
+      constraints: NOT NULL
+    window_seconds:
+      type: int32
+      constraints: NOT NULL
+    send_count:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    verify_count:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    reject_count:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    last_event_at: instant
+  indexes:
+  - name: uk_messaging_rate_limit_bucket_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - scene_code
+    - channel
+    - target_hash
+    - ip_hash
+    - device_hash
+    - window_start
+    - window_seconds
+  - name: idx_messaging_rate_limit_bucket_window
+    columns:
+    - tenant_id
+    - organization_id
+    - scene_code
+    - channel
+    - window_start
+  lifecycle:
+    partition_by: window_start_day
+    online_retention: 30d
+    archive_retention: 180d
+  security:
+    pii: true
     stores_secret_plaintext: false
     audit_required: true
 - table: open_platform_provider
@@ -7725,6 +10501,7 @@ tables:
   frontend_routes:
   - /console/routing
   - /console/providers
+  - /admin/group
   - /admin/channel
   api_surfaces:
   - app
@@ -7919,6 +10696,7 @@ tables:
   - /models/:provider/:model
   - /rankings
   - /playground
+  - /c/:conversationId
   - /admin/model
   - /admin/channel
   api_surfaces:
@@ -8151,6 +10929,7 @@ tables:
   - /models/:provider/:model
   - /rankings
   - /playground
+  - /c/:conversationId
   - /admin/model
   - /admin/channel
   api_surfaces:
@@ -8644,6 +11423,7 @@ tables:
   - /playground
   - /console/api-keys
   - /admin/model
+  - /admin/service-providers/pricing
   api_surfaces:
   - app
   - backend
@@ -9564,7 +12344,9 @@ tables:
     channel_name_snapshot: string(128)
     provider_account_id: int64
     requested_model: string(128)
+    requested_model_catalog_key: string(256)
     provider_model: string(128)
+    provider_native_model: string(256)
     endpoint: string(256)
     request_path: string(256)
     http_method: string(16)
@@ -9651,6 +12433,7 @@ tables:
   - /admin/record
   - /console/account
   - /console/settlements
+  - /admin/service-providers/usage
   api_surfaces:
   - app
   - backend
@@ -9672,7 +12455,9 @@ tables:
     owner_id: int64
     owner_name_snapshot: string(128)
     catalog_key: string(256)
+    requested_model_catalog_key: string(256)
     model: string(128)
+    provider_native_model: string(256)
     provider_id: int64
     channel_id: int64
     provider_account_id: int64
@@ -9858,6 +12643,499 @@ tables:
     pii: true
     stores_secret_plaintext: false
     audit_required: true
+- table: ai_prompt
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: prompt-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/prompts
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - prompt_key
+  - name
+  - prompt_type
+  - visibility
+  - status
+  columns:
+    prompt_key: string(128)
+    name: string(255)
+    description: text
+    category_id: int64
+    category_code: string(128)
+    prompt_type: string(64)
+    visibility: string(64)
+    owner_user_id: int64
+    latest_version_id: int64
+    published_version_id: int64
+    tags:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_prompt_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_key
+  - name: idx_ai_prompt_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_prompt_type
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_type
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: PROMPT_DEFINITION
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_prompt_version
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: prompt-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_prompt
+  frontend_routes:
+  - /admin/prompts
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - prompt_id
+  - version_no
+  - content
+  - lifecycle_status
+  - status
+  columns:
+    prompt_id: int64
+    version_no: string(64)
+    title: string(255)
+    content: text
+    variable_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    output_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    model_constraints:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    safety_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    examples_json:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    checksum_hash: string(128)
+    lifecycle_status: string(64)
+    review_status: string(64)
+    review_comment: text
+    created_by: int64
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_prompt_version_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - version_no
+  - name: idx_ai_prompt_version_prompt
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - lifecycle_status
+    - created_at
+    - id
+  security:
+    sensitivity: PROMPT_DEFINITION
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_prompt_binding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: prompt-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_prompt
+  - ai_prompt_version
+  frontend_routes:
+  - /admin/prompts
+  - /admin/agents
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - prompt_id
+  - owner_type
+  - owner_id
+  - binding_role
+  - status
+  columns:
+    prompt_id: int64
+    prompt_version_id: int64
+    owner_type: string(64)
+    owner_id: int64
+    binding_role: string(64)
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    policy_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    snapshot_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: idx_ai_prompt_binding_owner
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - binding_role
+    - priority
+    - id
+  - name: idx_ai_prompt_binding_prompt
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - prompt_version_id
+    - enabled
+    - id
+  security:
+    sensitivity: PROMPT_BINDING
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_mcp_server
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/mcp
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_key
+  - name
+  - transport
+  - visibility
+  - status
+  columns:
+    server_key: string(128)
+    name: string(255)
+    description: text
+    category_id: int64
+    category_code: string(128)
+    transport: string(64)
+    visibility: string(64)
+    owner_user_id: int64
+    latest_revision_id: int64
+    published_revision_id: int64
+    health_status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'unchecked'
+    last_checked_at: instant
+    last_error_masked: text
+    tags:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_mcp_server_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_key
+  - name: idx_ai_mcp_server_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_mcp_server_health
+    columns:
+    - tenant_id
+    - organization_id
+    - health_status
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: MCP_SERVER
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_mcp_server_revision
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_mcp_server
+  frontend_routes:
+  - /admin/mcp
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_id
+  - revision_no
+  - transport
+  - lifecycle_status
+  - status
+  columns:
+    server_id: int64
+    revision_no: string(64)
+    transport: string(64)
+    endpoint_url: string(1024)
+    command: string(1024)
+    args_json:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    env_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    auth_type:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'none'
+    secret_ref: string(512)
+    timeout_ms:
+      type: int32
+      constraints: NOT NULL DEFAULT 30000
+    retry_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    config_hash: string(128)
+    lifecycle_status: string(64)
+    created_by: int64
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_mcp_server_revision_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - revision_no
+  - name: idx_ai_mcp_server_revision_server
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - lifecycle_status
+    - created_at
+    - id
+  security:
+    sensitivity: MCP_SERVER_CONFIG
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_mcp_tool
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_mcp_server
+  - ai_mcp_server_revision
+  frontend_routes:
+  - /admin/mcp
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_id
+  - tool_key
+  - name
+  - status
+  columns:
+    server_id: int64
+    server_revision_id: int64
+    tool_key: string(128)
+    name: string(255)
+    description: text
+    input_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    output_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    risk_level:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'low'
+    requires_approval:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    rate_limit_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    schema_hash: string(128)
+    discovered_at: instant
+    last_invoked_at: instant
+    sort_weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+  indexes:
+  - name: uk_ai_mcp_tool_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - tool_key
+  - name: idx_ai_mcp_tool_server
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - enabled
+    - sort_weight
+    - id
+  - name: idx_ai_mcp_tool_risk
+    columns:
+    - tenant_id
+    - organization_id
+    - risk_level
+    - requires_approval
+    - enabled
+    - id
+  security:
+    sensitivity: MCP_TOOL_SCHEMA
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_mcp_binding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_mcp_server
+  - ai_mcp_server_revision
+  - ai_mcp_tool
+  frontend_routes:
+  - /admin/mcp
+  - /admin/agents
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_id
+  - owner_type
+  - owner_id
+  - status
+  columns:
+    server_id: int64
+    server_revision_id: int64
+    tool_id: int64
+    owner_type: string(64)
+    owner_id: int64
+    allowed_tools:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    denied_tools:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    policy_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    snapshot_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: idx_ai_mcp_binding_owner
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - priority
+    - id
+  - name: idx_ai_mcp_binding_server
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - server_revision_id
+    - enabled
+    - id
+  security:
+    sensitivity: MCP_BINDING
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
 - table: ai_agent
   domain: ai
   profile: tenant_entity
@@ -9867,7 +13145,7 @@ tables:
   common_columns: tenant_entity
   frontend_routes:
   - /playground
-  - /console/agents
+  - /c/:conversationId
   - /admin/agents
   api_surfaces:
   - app
@@ -9929,7 +13207,7 @@ tables:
   common_columns: tenant_entity
   frontend_routes:
   - /playground
-  - /console/agents
+  - /c/:conversationId
   - /admin/agents
   api_surfaces:
   - app
@@ -9991,7 +13269,7 @@ tables:
   common_columns: event_log
   frontend_routes:
   - /playground
-  - /console/agents
+  - /c/:conversationId
   - /admin/agents
   api_surfaces:
   - app
@@ -10265,7 +13543,7 @@ tables:
   common_columns: user_entity
   frontend_routes:
   - /playground
-  - /console/agents
+  - /c/:conversationId
   - /admin/agents
   api_surfaces:
   - app
@@ -10347,6 +13625,7 @@ tables:
   common_columns: event_log
   frontend_routes:
   - /playground
+  - /c/:conversationId
   api_surfaces:
   - app
   - backend
@@ -10687,7 +13966,7 @@ tables:
   common_columns: user_entity
   frontend_routes:
   - /playground
-  - /console/agents
+  - /c/:conversationId
   - /admin/agents
   api_surfaces:
   - app
@@ -11180,7 +14459,7 @@ tables:
   common_columns: event_log
   frontend_routes:
   - /playground
-  - /console/agents
+  - /c/:conversationId
   - /admin/agents
   api_surfaces:
   - app
@@ -11891,14 +15170,14 @@ tables:
   - /admin/finance
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -11992,14 +15271,14 @@ tables:
   - /admin/finance
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
@@ -12220,6 +15499,24 @@ tables:
     - artifact_id
     - sort_order
     - id
+  - name: idx_studio_catalog_asset_seed_source
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    expressions:
+    - metadata ->> 'itemType'
+    - metadata ->> 'sourceHash'
+    where: deleted_at IS NULL
+  - name: idx_studio_catalog_asset_seed_kind
+    columns:
+    - tenant_id
+    - organization_id
+    - target_type
+    expressions:
+    - metadata ->> 'seedKind'
+    - metadata ->> 'itemType'
+    where: deleted_at IS NULL
 - table: studio_catalog_artifact
   domain: studio
   profile: tenant_entity
@@ -12276,6 +15573,221 @@ tables:
     - version
     - platform_type
     - os_name
+  - name: idx_studio_catalog_artifact_seed_source
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    expressions:
+    - metadata ->> 'itemType'
+    - metadata ->> 'sourceHash'
+    where: deleted_at IS NULL
+  - name: idx_studio_catalog_artifact_seed_kind
+    columns:
+    - tenant_id
+    - organization_id
+    - target_type
+    expressions:
+    - metadata ->> 'seedKind'
+    - metadata ->> 'itemType'
+    where: deleted_at IS NULL
+- table: studio_app_template
+  domain: studio
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: app-center-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/app
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    template_no: string(64)
+    template_code: string(128)
+    template_name: string(255)
+    description: text
+    category_id: int64
+    category_code: string(128)
+    template_type: string(64)
+    runtime: string(128)
+    framework: string(128)
+    language: string(64)
+    icon_url: string(1024)
+    cover_url: string(1024)
+    visibility: enum_int32
+    publish_status: enum_int32
+    featured: bool
+    sort_weight: int32
+    owner_user_id: int64
+    source_app_id: int64
+    git_repo_url: string(1024)
+    git_ref: string(128)
+    git_sub_path: string(1024)
+    current_version_id: int64
+    app_config_schema: json
+    default_app_config: json
+    variable_schema: json
+    dependency_manifest: json
+    capability_manifest: json
+    metadata: json
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_studio_app_template_no
+    unique: true
+    columns:
+    - tenant_id
+    - template_no
+  - name: uk_studio_app_template_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - template_code
+  - name: idx_studio_app_template_scope_status
+    columns:
+    - tenant_id
+    - organization_id
+    - visibility
+    - publish_status
+    - status
+    - updated_at
+    - id
+  - name: idx_studio_app_template_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - publish_status
+    - sort_weight
+    - id
+  - name: idx_studio_app_template_type_runtime
+    columns:
+    - tenant_id
+    - organization_id
+    - template_type
+    - runtime
+    - framework
+    - status
+    - id
+  - name: idx_studio_app_template_git_source
+    columns:
+    - tenant_id
+    - organization_id
+    - git_repo_url
+    - git_sub_path
+    - status
+    - id
+  - name: idx_studio_app_template_featured
+    columns:
+    - tenant_id
+    - organization_id
+    - featured
+    - sort_weight
+    - id
+- table: studio_app_template_version
+  domain: studio
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: app-center-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/app
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    template_id: int64
+    version_no: string(64)
+    artifact_id: int64
+    changelog: text
+    file_manifest: json
+    dependency_manifest: json
+    capability_manifest: json
+    variable_schema: json
+    app_config_schema: json
+    default_app_config: json
+    publish_status: enum_int32
+    metadata: json
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_studio_app_template_version_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - template_id
+    - version_no
+  - name: idx_studio_app_template_version_template
+    columns:
+    - tenant_id
+    - organization_id
+    - template_id
+    - publish_status
+    - created_at
+    - id
+  - name: idx_studio_app_template_version_artifact
+    columns:
+    - tenant_id
+    - organization_id
+    - artifact_id
+    - status
+    - id
+- table: studio_app_template_usage
+  domain: studio
+  profile: event_log
+  compliance_level: L2
+  system_of_record: true
+  write_owner: app-center-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/app
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    template_id: int64
+    template_version_id: int64
+    target_app_id: int64
+    user_id: int64
+    request_id: string(128)
+    usage_type: enum_int32
+    input_snapshot: json
+    output_snapshot: json
+    metadata: json
+  indexes:
+  - name: idx_studio_app_template_usage_template
+    columns:
+    - tenant_id
+    - organization_id
+    - template_id
+    - template_version_id
+    - created_at
+    - id
+  - name: idx_studio_app_template_usage_target
+    columns:
+    - tenant_id
+    - organization_id
+    - target_app_id
+    - created_at
+    - id
+  - name: idx_studio_app_template_usage_user
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  - name: idx_studio_app_template_usage_request
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+    - id
 - table: content_announcement
   domain: content
   profile: content_entity
@@ -12478,8 +15990,12 @@ tables:
   write_owner: legacy-static-fixture
   common_columns: user_entity
   generated_by_this_project: false
-  frontend_routes: []
-  api_surfaces: []
+  frontend_routes:
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/comments
+  api_surfaces:
+  - backend
   superseded_by: plus_comments
   retirement_reason: Forum and course comments align to Java PlusComments. Keep this historical contract documented only; do not generate a physical table for the new Rust application.
   columns:
@@ -12517,6 +16033,9 @@ tables:
   frontend_routes:
   - /courses
   - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/engagement
   api_surfaces:
   - app
   - backend
@@ -12556,6 +16075,15 @@ tables:
   frontend_routes:
   - /courses
   - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/catalog
+  - /admin/courses/sections
+  - /admin/courses/lessons
+  - /admin/courses/relations
+  - /admin/courses/applications
+  - /admin/courses/comments
+  - /admin/courses/engagement
   api_surfaces:
   - app
   - backend
@@ -12598,6 +16126,9 @@ tables:
   common_columns: tenant_entity
   frontend_routes:
   - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/sections
   api_surfaces:
   - app
   - backend
@@ -12629,6 +16160,9 @@ tables:
   common_columns: tenant_entity
   frontend_routes:
   - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/lessons
   api_surfaces:
   - app
   - backend
@@ -12667,6 +16201,10 @@ tables:
   frontend_routes:
   - /courses
   - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/relations
+  - /admin/courses/engagement
   api_surfaces:
   - app
   - backend
@@ -12691,6 +16229,9 @@ tables:
   common_columns: user_entity
   frontend_routes:
   - /courses
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/applications
   api_surfaces:
   - app
   - backend
@@ -12738,8 +16279,10 @@ tables:
   write_owner: ops-service
   common_columns: tenant_entity
   frontend_routes:
+  - /console/dashboard
   - /console/gateway
   - /admin/monitor
+  - /admin/service-nodes
   api_surfaces:
   - app
   - backend
@@ -12816,6 +16359,7 @@ tables:
   - /auth/login
   - /console/routing
   - /console/providers
+  - /admin/group
   - /admin/cache
   - /admin/settings
   - /admin/site
@@ -12869,7 +16413,17 @@ tables:
   - /admin/model
   - /admin/app
   - /admin/skill
+  - /admin/prompts
+  - /admin/mcp
   - /admin/channel
+  - /admin/storage
+  - /admin/storage/providers
+  - /admin/storage/buckets
+  - /admin/storage/default-buckets
+  - /admin/storage/quotas
+  - /admin/storage/usage
+  - /admin/storage/reconciliation
+  - /admin/storage/garbage-collection
   - /admin/announcement
   - /admin/marketing
   - /admin/ratelimit
@@ -12919,9 +16473,30 @@ tables:
   - /admin/open-platform/mini-programs
   - /admin/open-platform/mini-programs/accounts
   - /admin/open-platform/mini-programs/urls
+  - /admin/courses
   - /admin/service-providers
   - /admin/service-providers/accounts
-  - /admin/wallet/recharge-packages
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/providers
+  - /admin/service-providers/relations
+  - /admin/service-providers/downstreams
+  - /admin/service-providers/members
+  - /admin/service-providers/bindings
+  - /admin/service-providers/contracts
+  - /admin/service-providers/pricing
+  - /admin/service-providers/usage
+  - /admin/service-providers/wallet
+  - /admin/service-providers/statements
+  - /admin/service-providers/reconciliation
+  - /admin/service-providers/adjustments
+  - /admin/service-providers/risk
+  - /admin/service-providers/audit
+  - /admin/messaging/providers
+  - /admin/messaging/sender-identities
+  - /admin/messaging/templates
+  - /admin/messaging/route-rules
+  - /admin/messaging/diagnostics
+  - /admin/messaging/verification-policies
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
   - /admin/wallet/wallet-accounts
@@ -12929,19 +16504,34 @@ tables:
   - /admin/wallet/exchange-rules
   - /admin/finance/invoice-titles
   - /admin/finance/invoices
-  - /admin/finance/coupon-templates
-  - /admin/finance/coupon-campaigns
-  - /admin/finance/coupon-codes
-  - /admin/finance/coupon-redemptions
-  - /admin/marketing/coupon-templates
-  - /admin/marketing/coupon-campaigns
-  - /admin/marketing/coupon-codes
-  - /admin/marketing/coupon-redemptions
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
   - /admin/finance/payment-reconciliation
   - /admin/finance/order-revenue
   - /admin/finance/refunds-report
   - /admin/finance/audit-events
   - /admin/marketing/referrals
+  - /admin/messaging/suppressions
+  - /admin/storage
+  - /admin/storage/providers
+  - /admin/storage/buckets
+  - /admin/storage/default-buckets
+  - /admin/storage/quotas
+  - /admin/storage/usage
+  - /admin/storage/reconciliation
+  - /admin/storage/garbage-collection
+  - /admin/drive
+  - /admin/drive/spaces
+  - /admin/drive/nodes
+  - /admin/drive/permissions
+  - /admin/drive/share-links
+  - /admin/drive/audit
   api_surfaces:
   - app
   - backend
@@ -13500,3 +17090,2150 @@ tables:
     - period_start
     - dimension_key
     - dimension_value
+- table: integration_service_provider
+  domain: integration
+  profile: commercial_provider_subject
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/service-providers
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/providers
+  - /admin/service-providers/relations
+  - /admin/service-providers/downstreams
+  - /admin/service-providers/members
+  - /admin/service-providers/bindings
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - provider_no
+  - display_name
+  columns:
+    provider_no: string(64)
+    display_name: string(128)
+    provider_type: string(64)
+    owner_tenant_id: int64
+    owner_organization_id: int64
+    owner_user_id: int64
+    default_currency: string(10)
+    default_timezone: string(64)
+    risk_level: enum_int32
+    suspended_reason_code: string(128)
+    activated_at: instant
+    suspended_at: instant
+  indexes:
+  - name: uk_integration_service_provider_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_no
+  - name: idx_integration_service_provider_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - risk_level
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_edge
+  domain: integration
+  profile: commercial_provider_contract_edge
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider
+  frontend_routes:
+  - /admin/service-providers
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/relations
+  - /admin/service-providers/downstreams
+  - /admin/service-providers/contracts
+  - /admin/service-providers/pricing
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - edge_no
+  - seller_provider_id
+  - buyer_provider_id
+  columns:
+    edge_no: string(64)
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    edge_type: string(64)
+    contract_no: string(128)
+    settlement_mode: string(32)
+    effective_from: instant
+    effective_to: instant
+    contract_snapshot: json
+  indexes:
+  - name: uk_integration_service_provider_edge_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - edge_no
+  - name: idx_integration_service_provider_edge_seller
+    columns:
+    - tenant_id
+    - organization_id
+    - seller_provider_id
+    - status
+    - effective_from
+    - id
+  - name: idx_integration_service_provider_edge_buyer
+    columns:
+    - tenant_id
+    - organization_id
+    - buyer_provider_id
+    - status
+    - effective_from
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_closure
+  domain: integration
+  profile: commercial_provider_tree_closure
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider
+  - integration_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/relations
+  - /admin/service-providers/downstreams
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - ancestor_provider_id
+  - descendant_provider_id
+  columns:
+    ancestor_provider_id: int64
+    descendant_provider_id: int64
+    depth: int32
+    path: string(2048)
+    direct_edge_id: int64
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_integration_service_provider_closure_pair
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - ancestor_provider_id
+    - descendant_provider_id
+    - effective_from
+  - name: idx_integration_service_provider_closure_desc
+    columns:
+    - tenant_id
+    - organization_id
+    - descendant_provider_id
+    - depth
+    - status
+    - id
+  security:
+    audit_required: true
+- table: integration_service_provider_member
+  domain: integration
+  profile: commercial_provider_member
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider
+  frontend_routes:
+  - /admin/service-providers/members
+  api_surfaces:
+  - backend
+  required_columns:
+  - uuid
+  - service_provider_id
+  - member_user_id
+  columns:
+    service_provider_id: int64
+    member_user_id: int64
+    role_code: string(64)
+    permission_policy_id: int64
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_integration_service_provider_member_user
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - service_provider_id
+    - member_user_id
+    - role_code
+  - name: idx_integration_service_provider_member_user
+    columns:
+    - tenant_id
+    - organization_id
+    - member_user_id
+    - status
+    - id
+  security:
+    pii: true
+    audit_required: true
+- table: integration_service_provider_subject_binding
+  domain: integration
+  profile: commercial_provider_subject_binding
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider
+  - iam_gateway_api_key
+  - iam_gateway_api_key_group
+  frontend_routes:
+  - /admin/service-providers/bindings
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - service_provider_id
+  - subject_type
+  - subject_id
+  columns:
+    service_provider_id: int64
+    subject_type: string(64)
+    subject_id: int64
+    subject_code: string(128)
+    binding_priority: int32
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_integration_service_provider_subject_binding
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - subject_type
+    - subject_id
+    - effective_from
+  - name: idx_integration_service_provider_subject_provider
+    columns:
+    - tenant_id
+    - organization_id
+    - service_provider_id
+    - status
+    - binding_priority
+    - id
+  security:
+    audit_required: true
+- table: integration_service_provider_contract
+  domain: integration
+  profile: commercial_provider_contract
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/contracts
+  api_surfaces:
+  - backend
+  required_columns:
+  - uuid
+  - contract_no
+  - edge_id
+  columns:
+    contract_no: string(128)
+    edge_id: int64
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    contract_type: string(64)
+    current_version_id: int64
+    signed_at: instant
+    effective_from: instant
+    effective_to: instant
+    contract_file_ref: string(512)
+  indexes:
+  - name: uk_integration_service_provider_contract_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - contract_no
+  - name: idx_integration_service_provider_contract_edge
+    columns:
+    - tenant_id
+    - organization_id
+    - edge_id
+    - status
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_contract_version
+  domain: integration
+  profile: commercial_provider_contract_version
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider_contract
+  frontend_routes:
+  - /admin/service-providers/contracts
+  api_surfaces:
+  - backend
+  required_columns:
+  - uuid
+  - contract_id
+  - version_no
+  columns:
+    contract_id: int64
+    version_no: int32
+    version_hash: string(128)
+    contract_payload: json
+    approval_status: string(32)
+    requested_by: int64
+    approved_by: int64
+    approved_at: instant
+    published_at: instant
+  indexes:
+  - name: uk_integration_service_provider_contract_version
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - contract_id
+    - version_no
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_finance_profile
+  domain: integration
+  profile: commercial_provider_finance_profile
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider
+  frontend_routes:
+  - /admin/service-providers/contracts
+  - /admin/service-providers/wallet
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - service_provider_id
+  columns:
+    service_provider_id: int64
+    settlement_mode: string(32)
+    billing_cycle: string(32)
+    settlement_day: int32
+    credit_limit_amount: decimal
+    warning_threshold_amount: decimal
+    suspend_threshold_amount: decimal
+    currency: string(10)
+    invoice_title_id: int64
+    tax_profile_ref: string(256)
+    payment_terms_days: int32
+  indexes:
+  - name: uk_integration_service_provider_finance_profile
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - service_provider_id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_account_binding
+  domain: integration
+  profile: commercial_provider_account_binding
+  compliance_level: L3
+  system_of_record: true
+  write_owner: service-provider-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider
+  - commerce_account
+  frontend_routes:
+  - /admin/service-providers/wallet
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - service_provider_id
+  - commerce_account_id
+  columns:
+    service_provider_id: int64
+    commerce_account_id: string(128)
+    account_role: string(64)
+    asset_type: string(32)
+    currency: string(10)
+  indexes:
+  - name: uk_integration_service_provider_account_binding
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - service_provider_id
+    - account_role
+    - asset_type
+    - currency
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_price_plan
+  domain: integration
+  profile: commercial_provider_price_plan
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/downstreams
+  - /admin/service-providers/pricing
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - edge_id
+  - plan_code
+  columns:
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    edge_id: int64
+    plan_code: string(64)
+    plan_name: string(128)
+    base_amount_source: string(64)
+    pricing_mode: string(64)
+    default_multiplier: decimal
+    default_markup_amount: decimal
+    currency: string(10)
+    fallback_mode: string(32)
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_integration_service_provider_price_plan_edge_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - edge_id
+    - plan_code
+  - name: idx_integration_service_provider_price_plan_buyer
+    columns:
+    - tenant_id
+    - organization_id
+    - buyer_provider_id
+    - status
+    - effective_from
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_price_rule
+  domain: integration
+  profile: commercial_provider_price_rule
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider_price_plan
+  - ai_model_pricing
+  frontend_routes:
+  - /admin/service-providers/pricing
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - edge_id
+  - price_plan_id
+  columns:
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    edge_id: int64
+    price_plan_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    provider_code: string(64)
+    channel_id: int64
+    billing_meter_code: string(64)
+    token_kind: string(64)
+    unit_price: decimal
+    unit_size: decimal
+    minimum_charge: decimal
+    rounding_mode: string(32)
+    priority: int32
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_integration_service_provider_price_rule_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - edge_id
+    - catalog_key
+    - billing_meter_code
+    - token_kind
+    - status
+    - priority
+  - name: idx_integration_service_provider_price_rule_model
+    columns:
+    - tenant_id
+    - organization_id
+    - buyer_provider_id
+    - model
+    - billing_meter_code
+    - token_kind
+    - status
+  security:
+    financial: true
+    audit_required: true
+- table: integration_service_provider_price_change_request
+  domain: integration
+  profile: commercial_provider_price_change_request
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  source_tables:
+  - integration_service_provider_price_plan
+  - integration_service_provider_price_rule
+  frontend_routes:
+  - /admin/service-providers/pricing
+  api_surfaces:
+  - backend
+  required_columns:
+  - uuid
+  - change_no
+  columns:
+    change_no: string(128)
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    change_type: string(64)
+    draft_payload: json
+    before_hash: string(128)
+    after_hash: string(128)
+    approval_status: string(32)
+    requested_by: int64
+    approved_by: int64
+    effective_from: instant
+    published_at: instant
+  indexes:
+  - name: uk_integration_service_provider_price_change_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - change_no
+  security:
+    financial: true
+    audit_required: true
+- table: object_provider
+  domain: content
+  profile: object_storage_provider
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/providers
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - provider_code
+  - provider_type
+  - credential_ref
+  columns:
+    status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'active'
+    provider_code: string(96)
+    provider_type: string(64)
+    endpoint_url: string(512)
+    region: string(64)
+    credential_ref: string(256)
+    path_style_enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    supports_multipart:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    supports_lifecycle:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    supports_object_lock:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    health_status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'unknown'
+    last_health_check_at: instant
+    idempotency_key: string(128)
+    request_id: string(128)
+  indexes:
+  - name: uk_object_provider_tenant_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+  - name: uk_object_provider_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_object_provider_tenant_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - id
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: object_bucket
+  domain: content
+  profile: object_storage_bucket
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - object_provider
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/buckets
+  - /admin/storage/default-buckets
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - provider_id
+  - bucket_name
+  - logical_scope
+  columns:
+    status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'active'
+    provider_id: int64
+    bucket_name: string(128)
+    bucket_region: string(64)
+    logical_scope: string(64)
+    data_residency_region: string(64)
+    object_key_prefix:
+      type: string(512)
+      constraints: NOT NULL DEFAULT ''
+    default_storage_class:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'STANDARD'
+    default_encryption_mode:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'sse_s3'
+    kms_key_ref: string(256)
+    versioning_enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    object_lock_enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    lifecycle_enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    public_access_blocked:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    idempotency_key: string(128)
+    request_id: string(128)
+  indexes:
+  - name: uk_object_bucket_provider_name
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_id
+    - bucket_name
+  - name: uk_object_bucket_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_object_bucket_scope_status
+    columns:
+    - tenant_id
+    - organization_id
+    - logical_scope
+    - status
+    - id
+  security:
+    audit_required: true
+- table: storage_default_bucket_policy
+  domain: content
+  profile: object_storage_routing_policy
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - object_bucket
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/default-buckets
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - logical_scope
+  - bucket_id
+  - bucket_logical_scope
+  - updated_by
+  columns:
+    status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'active'
+    logical_scope: string(64)
+    bucket_id: int64
+    bucket_logical_scope: string(64)
+    updated_by: int64
+    reason: string(512)
+    request_id: string(128)
+  indexes:
+  - name: uk_storage_default_bucket_policy_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - logical_scope
+  - name: idx_storage_default_bucket_policy_bucket
+    columns:
+    - tenant_id
+    - organization_id
+    - bucket_id
+    - status
+    - id
+  security:
+    audit_required: true
+- table: storage_quota_policy
+  domain: content
+  profile: storage_quota_policy
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/quotas
+  - /admin/storage/usage
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - scope_type
+  - scope_id
+  - quota_limit_bytes
+  columns:
+    status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'active'
+    scope_type: string(64)
+    scope_id: string(128)
+    quota_limit_bytes: int64
+    single_file_limit_bytes: int64
+    enforcement: string(64)
+    idempotency_key: string(128)
+    request_id: string(128)
+  indexes:
+  - name: uk_storage_quota_policy_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - scope_id
+  - name: uk_storage_quota_policy_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_storage_quota_policy_tenant_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - id
+  security:
+    audit_required: true
+- table: storage_quota_reservation
+  domain: content
+  profile: storage_quota_reservation
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - storage_quota_policy
+  - upload_session
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/quotas
+  - /admin/storage/usage
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - scope_type
+  - scope_id
+  - reservation_no
+  - reserved_bytes
+  columns:
+    scope_type: string(64)
+    scope_id: string(128)
+    reservation_no: string(128)
+    upload_session_id: int64
+    reserved_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    expires_at: instant
+    released_at: instant
+    idempotency_key: string(128)
+  indexes:
+  - name: uk_storage_quota_reservation_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - reservation_no
+  - name: idx_storage_quota_reservation_scope_status
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - scope_id
+    - status
+    - id
+  security:
+    audit_required: true
+- table: storage_usage_counter
+  domain: content
+  profile: storage_usage_counter
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: user_entity
+  source_tables:
+  - object_blob
+  - storage_usage_ledger
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/usage
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - scope_type
+  - scope_id
+  columns:
+    scope_type: string(64)
+    scope_id: string(128)
+    space_id: string(128)
+    app_id: string(128)
+    business_domain: string(128)
+    used_logical_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    used_physical_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    reserved_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    retained_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    trash_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    file_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    last_ledger_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+  indexes:
+  - name: uk_storage_usage_counter_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - scope_id
+  - name: idx_storage_usage_counter_tenant_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - updated_at
+    - id
+  security:
+    audit_required: true
+- table: storage_usage_ledger
+  domain: content
+  profile: storage_usage_ledger
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: event_log
+  source_tables:
+  - object_blob
+  - upload_session
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/usage
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - scope_type
+  - scope_id
+  - usage_event_type
+  - delta_logical_bytes
+  - occurred_at
+  columns:
+    scope_type: string(64)
+    scope_id: string(128)
+    space_id: string(128)
+    app_id: string(128)
+    business_domain: string(128)
+    usage_event_type: string(128)
+    delta_logical_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    delta_physical_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    delta_reserved_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    delta_file_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    reason: string(512)
+    idempotency_key: string(128)
+    occurred_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+  indexes:
+  - name: uk_storage_usage_ledger_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_storage_usage_ledger_scope_time
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - scope_id
+    - occurred_at
+    - id
+  security:
+    audit_required: true
+- table: storage_usage_snapshot
+  domain: content
+  profile: storage_usage_snapshot
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - storage_usage_counter
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/usage
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - scope_type
+  - scope_id
+  - snapshot_type
+  - snapshot_at
+  columns:
+    user_id: int64
+    scope_type: string(64)
+    scope_id: string(128)
+    space_id: string(128)
+    app_id: string(128)
+    business_domain: string(128)
+    snapshot_type: string(64)
+    snapshot_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    used_logical_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    used_physical_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    reserved_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    retained_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    trash_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    file_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+  indexes:
+  - name: uk_storage_usage_snapshot_scope_time
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - scope_id
+    - snapshot_type
+    - snapshot_at
+  - name: idx_storage_usage_snapshot_scope
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - scope_id
+    - id
+  security:
+    audit_required: true
+- table: storage_reconciliation_run
+  domain: content
+  profile: storage_reconciliation_run
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - object_provider
+  - object_bucket
+  - object_blob
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/reconciliation
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - run_type
+  - dry_run
+  - requested_by
+  - idempotency_key
+  columns:
+    provider_id: int64
+    bucket_id: int64
+    run_type: string(64)
+    check_mode: string(64)
+    dry_run:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    started_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    completed_at: instant
+    scanned_object_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    missing_object_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    orphan_object_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    checksum_mismatch_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    requested_by: int64
+    idempotency_key: string(128)
+    request_id: string(128)
+    summary_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_storage_reconciliation_run_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_storage_reconciliation_run_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - started_at
+    - id
+  security:
+    audit_required: true
+- table: storage_reconciliation_item
+  domain: content
+  profile: storage_reconciliation_item
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: event_log
+  source_tables:
+  - storage_reconciliation_run
+  - object_blob
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/reconciliation
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - run_id
+  - issue_type
+  - object_key
+  columns:
+    run_id: int64
+    bucket_id: int64
+    object_blob_id: int64
+    object_key: string(1024)
+    issue_type: string(64)
+    expected_hash: string(128)
+    actual_hash: string(128)
+    expected_size_bytes: int64
+    actual_size_bytes: int64
+    repair_status: string(64)
+    repair_payload: json
+  indexes:
+  - name: idx_storage_reconciliation_item_run
+    columns:
+    - tenant_id
+    - organization_id
+    - run_id
+    - issue_type
+    - id
+  security:
+    audit_required: true
+- table: storage_gc_job
+  domain: content
+  profile: storage_garbage_collection_job
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - upload_session
+  - object_blob
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/garbage-collection
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - job_type
+  - dry_run
+  - requested_by
+  - idempotency_key
+  columns:
+    job_type: string(64)
+    dry_run:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    requested_by: int64
+    idempotency_key: string(128)
+    cursor_token: string(512)
+    candidate_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    deleted_object_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    released_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    started_at: instant
+    completed_at: instant
+    request_id: string(128)
+    criteria_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    result_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: uk_storage_gc_job_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_storage_gc_job_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - created_at
+    - id
+  security:
+    audit_required: true
+- table: object_blob
+  domain: content
+  profile: object_blob
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: user_entity
+  source_tables:
+  - object_provider
+  - object_bucket
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/garbage-collection
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - bucket_id
+  - object_key
+  - content_sha256
+  columns:
+    provider_id: int64
+    bucket_id: int64
+    object_key: string(1024)
+    version_id: string(256)
+    storage_etag: string(256)
+    content_sha256: string(128)
+    content_type: string(256)
+    original_filename: string(512)
+    size_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    physical_size_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    storage_class: string(64)
+    encryption_mode: string(64)
+    kms_key_ref: string(256)
+    retention_until: instant
+    legal_hold:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    last_verified_at: instant
+  indexes:
+  - name: uk_object_blob_bucket_key_version
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - bucket_id
+    - object_key
+    - version_id
+  - name: idx_object_blob_owner_status
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - status
+    - id
+  - name: idx_object_blob_bucket_status
+    columns:
+    - tenant_id
+    - organization_id
+    - bucket_id
+    - status
+    - id
+  security:
+    audit_required: true
+- table: object_tag
+  domain: content
+  profile: object_tag
+  compliance_level: L2
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - object_blob
+  frontend_routes:
+  - /admin/storage
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - object_blob_id
+  - tag_key
+  - tag_value
+  columns:
+    object_blob_id: int64
+    tag_key: string(128)
+    tag_value: string(512)
+  indexes:
+  - name: uk_object_tag_blob_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - object_blob_id
+    - tag_key
+  - name: idx_object_tag_key_value
+    columns:
+    - tenant_id
+    - organization_id
+    - tag_key
+    - tag_value
+    - id
+  security:
+    audit_required: true
+- table: upload_session
+  domain: content
+  profile: object_upload_session
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: user_entity
+  source_tables:
+  - object_provider
+  - object_bucket
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/garbage-collection
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - upload_session_no
+  - bucket_id
+  - object_key
+  - upload_mode
+  columns:
+    upload_session_no: string(128)
+    provider_id: int64
+    bucket_id: int64
+    logical_scope: string(64)
+    object_key: string(1024)
+    upload_mode: string(64)
+    s3_upload_id: string(512)
+    content_type: string(256)
+    original_filename: string(512)
+    expected_size_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    expected_sha256: string(128)
+    part_size_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    part_count:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    completed_part_count:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    completed_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    expires_at: instant
+    completed_at: instant
+    aborted_at: instant
+    idempotency_key: string(128)
+    request_id: string(128)
+  indexes:
+  - name: uk_upload_session_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - upload_session_no
+  - name: uk_upload_session_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - idempotency_key
+  - name: idx_upload_session_owner_status
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - status
+    - id
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: upload_part
+  domain: content
+  profile: object_upload_part
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: tenant_entity
+  source_tables:
+  - upload_session
+  frontend_routes:
+  - /admin/storage
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - upload_session_id
+  - part_number
+  columns:
+    upload_session_id: int64
+    part_number: int32
+    part_etag: string(256)
+    part_sha256: string(128)
+    size_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    presigned_url_expires_at: instant
+    uploaded_at: instant
+  indexes:
+  - name: uk_upload_part_session_part
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - upload_session_id
+    - part_number
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: upload_presign_grant
+  domain: content
+  profile: object_upload_presign_grant
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: event_log
+  source_tables:
+  - upload_session
+  frontend_routes:
+  - /admin/storage
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - upload_session_id
+  - method
+  - object_key
+  - expires_at
+  columns:
+    upload_session_id: int64
+    upload_part_id: int64
+    provider_id: int64
+    bucket_id: int64
+    method: string(16)
+    object_key: string(1024)
+    canonical_headers: json
+    signed_headers: json
+    expires_at: instant
+    consumed_at: instant
+  indexes:
+  - name: idx_upload_presign_grant_session
+    columns:
+    - tenant_id
+    - organization_id
+    - upload_session_id
+    - created_at
+    - id
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: upload_completion_attempt
+  domain: content
+  profile: object_upload_completion_attempt
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: event_log
+  source_tables:
+  - upload_session
+  - object_blob
+  frontend_routes:
+  - /admin/storage
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - upload_session_id
+  - attempt_no
+  - completion_status
+  columns:
+    upload_session_id: int64
+    object_blob_id: int64
+    attempt_no: int32
+    completion_status: string(64)
+    provider_request_id: string(256)
+    error_code: string(128)
+    error_message_masked: string(1024)
+    payload_hash: string(128)
+  indexes:
+  - name: uk_upload_completion_attempt_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - upload_session_id
+    - attempt_no
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_usage_service_provider_chain
+  domain: ai
+  profile: commercial_usage_chain_fact
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  source_tables:
+  - ai_usage_fact
+  - integration_service_provider
+  frontend_routes:
+  - /admin/service-providers/usage
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - usage_fact_id
+  columns:
+    usage_fact_id: int64
+    leaf_provider_id: int64
+    root_provider_id: int64
+    chain_depth: int32
+    chain_path_snapshot: json
+    chain_hash: string(128)
+    resolved_subject_type: string(64)
+    resolved_subject_id: int64
+    occurred_at: instant
+  indexes:
+  - name: uk_ai_usage_service_provider_chain_usage
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+  - name: idx_ai_usage_service_provider_chain_leaf_time
+    columns:
+    - tenant_id
+    - organization_id
+    - leaf_provider_id
+    - occurred_at
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: ai_usage_service_provider_edge
+  domain: ai
+  profile: commercial_usage_edge_fact
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  source_tables:
+  - ai_usage_fact
+  - ai_usage_service_provider_chain
+  - integration_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/usage
+  - /admin/service-providers/statements
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - usage_fact_id
+  - edge_id
+  columns:
+    usage_fact_id: int64
+    chain_id: int64
+    edge_id: int64
+    edge_depth: int32
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    amount_role: string(64)
+    pricing_plan_id: int64
+    pricing_rule_id: int64
+    billing_meter_code: string(64)
+    token_kind: string(64)
+    billable_quantity: decimal
+    unit_price: decimal
+    unit_size: decimal
+    charge_amount: decimal
+    currency: string(10)
+    fx_rate_snapshot: decimal
+    settlement_currency: string(10)
+    converted_charge_amount: decimal
+    seller_snapshot: json
+    buyer_snapshot: json
+    price_snapshot: json
+    occurred_at: instant
+    settlement_status: enum_int32
+  indexes:
+  - name: uk_ai_usage_service_provider_edge_usage_depth
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+    - edge_depth
+    - amount_role
+  - name: idx_ai_usage_service_provider_edge_seller_time
+    columns:
+    - tenant_id
+    - organization_id
+    - seller_provider_id
+    - occurred_at
+    - id
+  - name: idx_ai_usage_service_provider_edge_buyer_time
+    columns:
+    - tenant_id
+    - organization_id
+    - buyer_provider_id
+    - occurred_at
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: commerce_usage_service_provider_settlement
+  domain: commerce
+  profile: commercial_provider_usage_settlement
+  compliance_level: L3
+  system_of_record: false
+  write_owner: settlement-worker
+  common_columns: event_log
+  source_tables:
+  - ai_usage_service_provider_edge
+  - commerce_account
+  - commerce_account_ledger_entry
+  frontend_routes:
+  - /admin/service-providers/statements
+  - /admin/service-providers/wallet
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    settlement_no: string(128)
+    usage_edge_id: int64
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    buyer_account_id: string(128)
+    seller_account_id: string(128)
+    buyer_ledger_entry_id: string(128)
+    seller_ledger_entry_id: string(128)
+    settlement_mode: string(32)
+    direction: string(16)
+    amount: decimal
+    currency: string(10)
+    settlement_status: enum_int32
+    settled_at: instant
+    failure_code: string(128)
+    failure_message: string(512)
+  indexes:
+  - name: uk_commerce_usage_service_provider_settlement_edge
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_edge_id
+    - direction
+  - name: idx_commerce_usage_service_provider_settlement_status
+    columns:
+    - tenant_id
+    - organization_id
+    - settlement_status
+    - created_at
+    - id
+  security:
+    financial: true
+- table: commerce_usage_service_provider_statement
+  domain: commerce
+  profile: commercial_provider_statement
+  compliance_level: L3
+  system_of_record: false
+  write_owner: billing-worker
+  common_columns: projection
+  source_tables:
+  - ai_usage_service_provider_edge
+  - commerce_usage_service_provider_settlement
+  frontend_routes:
+  - /admin/service-providers/statements
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    statement_no: string(128)
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    period: string(32)
+    period_start: instant
+    period_end: instant
+    total_requests: int64
+    total_tokens: int64
+    receivable_amount: decimal
+    payable_amount: decimal
+    currency: string(10)
+    statement_status: enum_int32
+    payment_status: enum_int32
+    invoice_id: int64
+    generated_at: instant
+    due_at: instant
+    paid_at: instant
+  indexes:
+  - name: uk_commerce_usage_service_provider_statement_edge_period
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - seller_provider_id
+    - buyer_provider_id
+    - period
+  - name: idx_commerce_usage_service_provider_statement_status
+    columns:
+    - tenant_id
+    - organization_id
+    - statement_status
+    - period_end
+    - id
+  security:
+    financial: true
+- table: commerce_usage_service_provider_statement_item
+  domain: commerce
+  profile: commercial_provider_statement_item
+  compliance_level: L3
+  system_of_record: false
+  write_owner: billing-worker
+  common_columns: projection
+  source_tables:
+  - commerce_usage_service_provider_statement
+  - ai_usage_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/statements
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    statement_id: int64
+    usage_edge_id: int64
+    billing_meter_code: string(64)
+    token_kind: string(64)
+    model: string(128)
+    request_count: int64
+    token_count: int64
+    quantity: decimal
+    amount: decimal
+    currency: string(10)
+    source_usage_fact_ids: json
+  indexes:
+  - name: idx_commerce_usage_service_provider_statement_item_statement
+    columns:
+    - tenant_id
+    - organization_id
+    - statement_id
+    - billing_meter_code
+    - token_kind
+  security:
+    financial: true
+- table: commerce_usage_service_provider_adjustment
+  domain: commerce
+  profile: commercial_provider_adjustment
+  compliance_level: L3
+  system_of_record: true
+  write_owner: billing-worker
+  common_columns: event_log
+  source_tables:
+  - ai_usage_service_provider_edge
+  - commerce_usage_service_provider_statement
+  frontend_routes:
+  - /admin/service-providers/adjustments
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    adjustment_no: string(128)
+    usage_edge_id: int64
+    statement_id: int64
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    adjustment_type: string(64)
+    amount: decimal
+    currency: string(10)
+    reason_code: string(128)
+    reason_message: string(512)
+    approval_status: string(32)
+    approved_by: int64
+    settled_ledger_entry_id: string(128)
+  indexes:
+  - name: uk_commerce_usage_service_provider_adjustment_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - adjustment_no
+  - name: idx_commerce_usage_service_provider_adjustment_edge
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_edge_id
+    - status
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_provider_invoice_import
+  domain: integration
+  profile: upstream_provider_invoice_import
+  compliance_level: L3
+  system_of_record: true
+  write_owner: reconciliation-worker
+  common_columns: event_log
+  source_tables:
+  - integration_provider
+  - integration_provider_account
+  frontend_routes:
+  - /admin/service-providers/reconciliation
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    import_no: string(128)
+    provider_code: string(64)
+    provider_account_id: int64
+    period_start: instant
+    period_end: instant
+    currency: string(10)
+    total_amount: decimal
+    source_file_ref: string(512)
+    source_hash: string(128)
+    import_status: enum_int32
+  indexes:
+  - name: uk_integration_provider_invoice_import_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - import_no
+  - name: idx_integration_provider_invoice_import_provider_period
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - period_start
+    - period_end
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: integration_provider_invoice_item
+  domain: integration
+  profile: upstream_provider_invoice_item
+  compliance_level: L3
+  system_of_record: true
+  write_owner: reconciliation-worker
+  common_columns: event_log
+  source_tables:
+  - integration_provider_invoice_import
+  - ai_usage_fact
+  frontend_routes:
+  - /admin/service-providers/reconciliation
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    import_id: int64
+    provider_request_id: string(256)
+    provider_usage_id: string(256)
+    model: string(128)
+    billing_meter_code: string(64)
+    quantity: decimal
+    amount: decimal
+    currency: string(10)
+    raw_payload_hash: string(128)
+    match_status: enum_int32
+  indexes:
+  - name: idx_integration_provider_invoice_item_import
+    columns:
+    - tenant_id
+    - organization_id
+    - import_id
+    - match_status
+    - id
+  - name: idx_integration_provider_invoice_item_request
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_request_id
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: commerce_usage_service_provider_reconciliation_run
+  domain: commerce
+  profile: commercial_provider_reconciliation_run
+  compliance_level: L3
+  system_of_record: true
+  write_owner: reconciliation-worker
+  common_columns: event_log
+  source_tables:
+  - ai_usage_service_provider_edge
+  - integration_provider_invoice_item
+  - commerce_usage_service_provider_statement_item
+  frontend_routes:
+  - /admin/service-providers/reconciliation
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    run_no: string(128)
+    scope_type: string(64)
+    scope_id: string(128)
+    period_start: instant
+    period_end: instant
+    matched_count: int64
+    mismatch_count: int64
+    missing_internal_count: int64
+    missing_external_count: int64
+    total_internal_amount: decimal
+    total_external_amount: decimal
+    difference_amount: decimal
+  indexes:
+  - name: uk_commerce_usage_service_provider_reconciliation_run_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - run_no
+  - name: idx_commerce_usage_service_provider_reconciliation_run_period
+    columns:
+    - tenant_id
+    - organization_id
+    - scope_type
+    - period_start
+    - period_end
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: commerce_usage_service_provider_reconciliation_item
+  domain: commerce
+  profile: commercial_provider_reconciliation_item
+  compliance_level: L3
+  system_of_record: true
+  write_owner: reconciliation-worker
+  common_columns: event_log
+  source_tables:
+  - commerce_usage_service_provider_reconciliation_run
+  - ai_usage_service_provider_edge
+  - integration_provider_invoice_item
+  - commerce_usage_service_provider_statement_item
+  frontend_routes:
+  - /admin/service-providers/reconciliation
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    run_id: int64
+    usage_edge_id: int64
+    usage_fact_id: int64
+    provider_invoice_item_id: int64
+    statement_item_id: int64
+    match_status: string(64)
+    internal_amount: decimal
+    external_amount: decimal
+    difference_amount: decimal
+    reason_code: string(128)
+    resolution_status: string(64)
+  indexes:
+  - name: idx_commerce_usage_service_provider_reconciliation_item_run
+    columns:
+    - tenant_id
+    - organization_id
+    - run_id
+    - match_status
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: commerce_service_provider_exposure_snapshot
+  domain: commerce
+  profile: commercial_provider_exposure_snapshot
+  compliance_level: L3
+  system_of_record: false
+  write_owner: settlement-worker
+  common_columns: projection
+  source_tables:
+  - integration_service_provider
+  - commerce_account
+  - commerce_account_ledger_entry
+  frontend_routes:
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/wallet
+  - /admin/service-providers/risk
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    service_provider_id: int64
+    balance_amount: decimal
+    frozen_amount: decimal
+    credit_limit_amount: decimal
+    used_credit_amount: decimal
+    exposure_amount: decimal
+    pending_settlement_amount: decimal
+    overdue_amount: decimal
+    currency: string(10)
+    risk_status: string(64)
+    calculated_at: instant
+  indexes:
+  - name: uk_commerce_service_provider_exposure_snapshot_provider
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - service_provider_id
+    - currency
+  security:
+    financial: true
+- table: analytics_service_provider_daily
+  domain: commerce
+  profile: commercial_provider_daily_projection
+  compliance_level: L3
+  system_of_record: false
+  write_owner: analytics-worker
+  common_columns: projection
+  source_tables:
+  - ai_usage_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/providers
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    provider_id: int64
+    ancestor_provider_id: int64
+    report_date: date
+    currency: string(10)
+    request_count: int64
+    success_count: int64
+    failure_count: int64
+    token_count: int64
+    income_amount: decimal
+    expense_amount: decimal
+    margin_amount: decimal
+    upstream_cost_amount: decimal
+  indexes:
+  - name: uk_analytics_service_provider_daily
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_id
+    - ancestor_provider_id
+    - report_date
+    - currency
+  security:
+    financial: true
+- table: analytics_service_provider_edge_daily
+  domain: commerce
+  profile: commercial_provider_edge_daily_projection
+  compliance_level: L3
+  system_of_record: false
+  write_owner: analytics-worker
+  common_columns: projection
+  source_tables:
+  - ai_usage_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/downstreams
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    edge_id: int64
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    report_date: date
+    model: string(128)
+    catalog_key: string(256)
+    billing_meter_code: string(64)
+    token_kind: string(64)
+    currency: string(10)
+    request_count: int64
+    token_count: int64
+    income_amount: decimal
+    expense_amount: decimal
+    margin_amount: decimal
+  indexes:
+  - name: uk_analytics_service_provider_edge_daily
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - edge_id
+    - report_date
+    - model
+    - billing_meter_code
+    - token_kind
+    - currency
+  security:
+    financial: true

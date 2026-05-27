@@ -494,13 +494,6 @@ export const SDKWORK_MOBILE_REACT_STARTER_PACKAGES: SdkworkCapabilityPackageMeta
     title: "Wallet",
   },
   {
-    capability: "vip",
-    description: "Membership tiers, benefits, and upgrade routing.",
-    domain: "commerce",
-    packageName: "@sdkwork/vip-mobile-react",
-    title: "VIP",
-  },
-  {
     capability: "points",
     description: "Points balances, earning rules, and redemption flows.",
     domain: "commerce",

@@ -45,7 +45,7 @@ Choose exactly one mode for the same client instance.
 val config = SdkConfig(baseUrl = "http://localhost:18081")
 val client = SdkworkBackendClient(config)
 client.setApiKey("your-api-key")
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -57,7 +57,7 @@ client.setAuthToken("your-auth-token")
 client.setAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -78,9 +78,14 @@ val client = SdkworkBackendClient(config)
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.mcp` - mcp API
+- `client.messaging` - messaging API
 - `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.prompts` - prompts API
+- `client.serviceProviders` - service_providers API
+- `client.storage` - storage API
 
 ## Usage Examples
 
@@ -148,6 +153,39 @@ val result = client.integration.channelsList()
 println(result)
 ```
 
+### mcp
+
+```kotlin
+// List MCP servers
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2,
+    "q" to "q",
+    "transport" to "transport",
+    "visibility" to "visibility",
+    "status" to "status",
+    "category_id" to "1"
+)
+val result = client.mcp.serversList(params)
+println(result)
+```
+
+### messaging
+
+```kotlin
+// Messaging provider accounts list
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2,
+    "q" to "q",
+    "status" to "status",
+    "channel" to "sms",
+    "provider_code" to "ok"
+)
+val result = client.messaging.providerAccountsList(params)
+println(result)
+```
+
 ### open_platform
 
 ```kotlin
@@ -172,6 +210,48 @@ println(result)
 ```kotlin
 // Retrieve IAM auth runtime settings
 val result = client.system.authSettingsRetrieve()
+println(result)
+```
+
+### prompts
+
+```kotlin
+// List admin prompts
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2,
+    "q" to "q",
+    "prompt_type" to "prompt-type",
+    "visibility" to "visibility",
+    "status" to "status",
+    "category_id" to "1"
+)
+val result = client.prompts.definitionsList(params)
+println(result)
+```
+
+### service_providers
+
+```kotlin
+// Service Provider Adjustments List
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2,
+    "status" to "status",
+    "provider_id" to "1",
+    "seller_provider_id" to "1",
+    "buyer_provider_id" to "1",
+    "edge_id" to "1"
+)
+val result = client.serviceProviders.adjustmentsList(params)
+println(result)
+```
+
+### storage
+
+```kotlin
+// List storage providers
+val result = client.storage.ossProvidersList()
 println(result)
 ```
 

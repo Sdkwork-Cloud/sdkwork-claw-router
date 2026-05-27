@@ -5,7 +5,7 @@ use crate::models::{IamAppContext, IamUserResponse};
 /// Iam session response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct IamSessionResponse {
-    /// Data isolation and tenant access token. Clients send it as Sdkwork-Access-Token.
+    /// Data isolation and tenant access token. Clients send it as Access-Token.
     #[serde(rename = "accessToken")]
     pub access_token: String,
 

@@ -8,7 +8,6 @@ import {
   ChevronDown,
   Edit3,
   Image as ImageIcon,
-  Key,
   Loader2,
   Lock,
   MessageSquare,
@@ -23,7 +22,8 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { ConfirmDialog, CopyButton } from 'sdkwork-claw-router-commons';
+import { ConfirmDialog } from 'sdkwork-claw-router-commons/components/ConfirmDialog';
+import { CopyButton } from 'sdkwork-claw-router-commons/components/CopyButton';
 import { CreateKeyDrawer, type ApiKeyFormValues } from './CreateKeyDrawer';
 import { createApiKeyInputsFromForm } from './apiKeyForm';
 import { ApiKeyService, type ApiKey, type ApiKeyGroup } from './apiKeyService';
@@ -147,6 +147,8 @@ export function ApiKeysView() {
 
   const totalPages = Math.max(1, Math.ceil(filteredKeys.length / itemsPerPage));
   const paginatedKeys = filteredKeys.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const visibleStart = paginatedKeys.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
+  const visibleEnd = paginatedKeys.length > 0 ? Math.min(currentPage * itemsPerPage, filteredKeys.length) : 0;
 
   const handleCreateSubmit = async (data: ApiKeyFormValues) => {
     setCreating(true);
@@ -211,6 +213,26 @@ export function ApiKeysView() {
     }
   };
 
+  const handleSetDefaultRuntimeKey = async (key: ApiKey) => {
+    if (key.defaultForRuntime) {
+      return;
+    }
+    setMutatingKeyId(key.id);
+    setError(null);
+    try {
+      const updated = await ApiKeyService.updateKey(key.id, { defaultForRuntime: true });
+      setKeysData((previous) => previous.map((item) => (
+        item.id === updated.id
+          ? { ...updated, defaultForRuntime: true }
+          : { ...item, defaultForRuntime: false }
+      )));
+    } catch (reason) {
+      setError(getApiKeyProductErrorMessage(reason, t('console.apiKeys.errors.updateFallback', 'API Key update failed.'), t));
+    } finally {
+      setMutatingKeyId(null);
+    }
+  };
+
   const handleDeleteConfirm = async () => {
     if (!deletingKey) {
       return;
@@ -252,27 +274,9 @@ export function ApiKeysView() {
   };
 
   return (
-    <div className="p-4 md:p-6 lg:p-8 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4">
-        <div className="flex items-center gap-2">
-          <Key className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t('console.apiKeys.title', 'API Keys')}</h1>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-white dark:bg-[#252525] p-4 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm">
-        <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap w-full sm:w-auto">
-          <button
-            onClick={() => {
-              void openCreateDrawer();
-            }}
-            className="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors border border-transparent shadow-sm flex items-center justify-center gap-2"
-          >
-            <Plus className="w-4 h-4" /> {t('common.actions.createKey')}
-          </button>
-        </div>
-
-        <div className="relative w-full sm:w-72">
+    <div className="w-full mx-auto box-border h-[calc(100vh-72px)] overflow-hidden flex flex-col gap-6 animate-in fade-in duration-500 bg-slate-50 p-[5px] dark:bg-[#121212]">
+      <div className="shrink-0 flex flex-col gap-3 bg-white p-4 shadow-sm dark:bg-[#252525] md:flex-row md:items-center md:justify-between rounded-xl border border-slate-200 dark:border-white/5" data-console-api-keys-toolbar>
+        <div className="relative w-full sm:w-72" data-console-api-keys-search>
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
@@ -285,10 +289,22 @@ export function ApiKeysView() {
             className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 pl-9 pr-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-shadow text-slate-800 dark:text-white placeholder:text-slate-400"
           />
         </div>
+
+        <div className="flex w-full items-center justify-end sm:w-auto">
+          <button
+            data-console-api-keys-primary-action
+            onClick={() => {
+              void openCreateDrawer();
+            }}
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 sm:w-auto"
+          >
+            <Plus className="w-4 h-4" /> {t('common.actions.createKey')}
+          </button>
+        </div>
       </div>
 
       {error && (
-        <div className="bg-rose-50 dark:bg-rose-500/10 border border-rose-200 dark:border-rose-500/20 text-rose-700 dark:text-rose-300 rounded-xl px-4 py-3 text-sm flex items-center gap-2">
+        <div className="shrink-0 bg-rose-50 dark:bg-rose-500/10 border border-rose-200 dark:border-rose-500/20 text-rose-700 dark:text-rose-300 rounded-xl px-4 py-3 text-sm flex items-center gap-2">
           <AlertCircle className="w-4 h-4" />
           {error}
           <button onClick={() => setError(null)} className="ml-auto text-rose-500 hover:text-rose-700">
@@ -297,10 +313,10 @@ export function ApiKeysView() {
         </div>
       )}
 
-      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl shadow-sm flex flex-col min-h-[500px] overflow-hidden">
-        <div className="overflow-x-auto flex-1">
+      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-0 w-full">
+        <div className="flex-1 min-h-0 overflow-auto custom-scrollbar">
           <table className="w-full text-left text-sm whitespace-nowrap min-w-[1120px]">
-            <thead className="bg-slate-50 dark:bg-[#1e1e1e]/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/5 text-xs font-semibold uppercase tracking-wider">
+            <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#1e1e1e] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/5 text-xs font-semibold uppercase tracking-wider">
               <tr>
                 <th className="px-5 py-4">{t('console.apiKeys.nameToken', '名称 / 密钥')}</th>
                 <th className="px-4 py-4">{t('console.apiKeys.group', '分组')}</th>
@@ -416,9 +432,38 @@ export function ApiKeysView() {
                       </span>
                     </td>
                     <td className="px-4 py-4">
-                      <span className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 px-2 flex items-center gap-1 py-0.5 rounded text-[10px] uppercase font-bold tracking-wide w-fit">
-                        <CheckSquare className="w-3 h-3" /> {displayApiKeyStatus(key.status, t)}
-                      </span>
+                      <div className="flex flex-col items-start gap-1.5">
+                        <span className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 px-2 flex items-center gap-1 py-0.5 rounded text-[10px] uppercase font-bold tracking-wide w-fit">
+                          <CheckSquare className="w-3 h-3" /> {displayApiKeyStatus(key.status, t)}
+                        </span>
+                        <button
+                          type="button"
+                          disabled={mutatingKeyId === key.id || key.defaultForRuntime}
+                          onClick={() => {
+                            void handleSetDefaultRuntimeKey(key);
+                          }}
+                          className={`inline-flex items-center gap-1 rounded border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide transition-colors disabled:cursor-default disabled:opacity-100 ${
+                            key.defaultForRuntime
+                              ? 'border-blue-200 bg-blue-50 text-blue-600 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300'
+                              : 'border-slate-200 bg-slate-50 text-slate-500 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 dark:hover:border-blue-500/20 dark:hover:bg-blue-500/10 dark:hover:text-blue-300'
+                          }`}
+                          title={key.defaultForRuntime
+                            ? t('console.apiKeys.runtimeDefault', 'Runtime default')
+                            : t('console.apiKeys.setRuntimeDefault', 'Set runtime default')}
+                          aria-label={key.defaultForRuntime
+                            ? t('console.apiKeys.runtimeDefault', 'Runtime default')
+                            : t('console.apiKeys.setRuntimeDefault', 'Set runtime default')}
+                        >
+                          {mutatingKeyId === key.id && !key.defaultForRuntime
+                            ? <Loader2 className="h-3 w-3 animate-spin" />
+                            : <Check className="h-3 w-3" />}
+                          <span>
+                            {key.defaultForRuntime
+                              ? t('console.apiKeys.runtimeDefault', 'Runtime default')
+                              : t('console.apiKeys.setRuntimeDefault', 'Set default')}
+                          </span>
+                        </button>
+                      </div>
                     </td>
                     <td className="px-4 py-4">
                       <span className="text-[11px] font-mono text-slate-700 dark:text-slate-300 font-medium">{key.created}</span>
@@ -479,37 +524,35 @@ export function ApiKeysView() {
           </table>
         </div>
 
-        {filteredKeys.length > 0 && (
-          <div className="p-4 border-t border-slate-200 dark:border-white/5 flex flex-col sm:flex-row gap-4 items-center justify-between text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-[#1e1e1e]/50">
-            <div>
-              {t('console.apiKeys.showing', {
-                defaultValue: 'Showing {{start}} - {{end}} of {{total}}',
-                start: (currentPage - 1) * itemsPerPage + 1,
-                end: Math.min(currentPage * itemsPerPage, filteredKeys.length),
-                total: filteredKeys.length,
-              })}
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                disabled={currentPage === 1}
-                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
-                className="p-1.5 border border-slate-200 dark:border-transparent hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-300 rounded disabled:opacity-50 transition-colors"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <div className="bg-blue-600 text-white min-w-[28px] h-7 px-2 rounded flex items-center justify-center font-bold shadow-sm">
-                {currentPage}
-              </div>
-              <button
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
-                className="p-1.5 border border-slate-200 dark:border-transparent hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-300 rounded disabled:opacity-50 transition-colors"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
+        <div className="shrink-0 p-4 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row gap-4 items-center justify-between text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-[#1e1e1e]/50">
+          <div>
+            {t('console.apiKeys.showing', {
+              defaultValue: 'Showing {{start}} - {{end}} of {{total}}',
+              start: visibleStart,
+              end: visibleEnd,
+              total: filteredKeys.length,
+            })}
           </div>
-        )}
+          <div className="flex items-center gap-2">
+            <button
+              disabled={currentPage === 1 || loading}
+              onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+              className="p-1.5 border border-slate-200 dark:border-transparent hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-300 rounded disabled:opacity-50 transition-colors"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="bg-blue-600 text-white min-w-[28px] h-7 px-2 rounded flex items-center justify-center font-bold shadow-sm">
+              {currentPage}
+            </div>
+            <button
+              disabled={currentPage === totalPages || loading}
+              onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+              className="p-1.5 border border-slate-200 dark:border-transparent hover:bg-slate-200 dark:hover:bg-white/5 text-slate-500 dark:text-slate-300 rounded disabled:opacity-50 transition-colors"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
       </div>
 
       <CreateKeyDrawer

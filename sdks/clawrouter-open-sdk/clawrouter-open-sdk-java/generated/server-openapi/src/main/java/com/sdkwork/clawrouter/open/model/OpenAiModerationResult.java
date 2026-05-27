@@ -10,7 +10,7 @@ public class OpenAiModerationResult {
     public Map<String, String> getCategories() {
         return this.categories;
     }
-    
+
     public void setCategories(Map<String, String> categories) {
         this.categories = categories;
     }
@@ -18,7 +18,7 @@ public class OpenAiModerationResult {
     public Map<String, Double> getCategoryScores() {
         return this.categoryScores;
     }
-    
+
     public void setCategoryScores(Map<String, Double> categoryScores) {
         this.categoryScores = categoryScores;
     }
@@ -26,7 +26,7 @@ public class OpenAiModerationResult {
     public Boolean getFlagged() {
         return this.flagged;
     }
-    
+
     public void setFlagged(Boolean flagged) {
         this.flagged = flagged;
     }

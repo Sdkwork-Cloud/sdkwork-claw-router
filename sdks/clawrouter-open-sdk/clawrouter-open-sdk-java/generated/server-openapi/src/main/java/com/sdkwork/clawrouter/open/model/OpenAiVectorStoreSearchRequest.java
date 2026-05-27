@@ -11,7 +11,7 @@ public class OpenAiVectorStoreSearchRequest {
     public String getFilters() {
         return this.filters;
     }
-    
+
     public void setFilters(String filters) {
         this.filters = filters;
     }
@@ -19,7 +19,7 @@ public class OpenAiVectorStoreSearchRequest {
     public Integer getMaxNumResults() {
         return this.maxNumResults;
     }
-    
+
     public void setMaxNumResults(Integer maxNumResults) {
         this.maxNumResults = maxNumResults;
     }
@@ -27,7 +27,7 @@ public class OpenAiVectorStoreSearchRequest {
     public String getQuery() {
         return this.query;
     }
-    
+
     public void setQuery(String query) {
         this.query = query;
     }
@@ -35,7 +35,7 @@ public class OpenAiVectorStoreSearchRequest {
     public String getRankingOptions() {
         return this.rankingOptions;
     }
-    
+
     public void setRankingOptions(String rankingOptions) {
         this.rankingOptions = rankingOptions;
     }
@@ -43,7 +43,7 @@ public class OpenAiVectorStoreSearchRequest {
     public Boolean getRewriteQuery() {
         return this.rewriteQuery;
     }
-    
+
     public void setRewriteQuery(Boolean rewriteQuery) {
         this.rewriteQuery = rewriteQuery;
     }

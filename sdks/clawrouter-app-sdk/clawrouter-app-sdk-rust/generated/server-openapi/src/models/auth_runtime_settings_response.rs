@@ -30,6 +30,10 @@ pub struct AuthRuntimeSettingsResponse {
     #[serde(rename = "qrLoginEnabled")]
     pub qr_login_enabled: bool,
 
+    /// Qr login type field on auth runtime settings response.
+    #[serde(rename = "qrLoginType")]
+    pub qr_login_type: String,
+
     /// Recovery methods field on auth runtime settings response.
     #[serde(rename = "recoveryMethods")]
     pub recovery_methods: Vec<String>,

@@ -9,7 +9,7 @@ public class OpenAiImageVariationMultipartRequest {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -17,7 +17,7 @@ public class OpenAiImageVariationMultipartRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -25,7 +25,7 @@ public class OpenAiImageVariationMultipartRequest {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }

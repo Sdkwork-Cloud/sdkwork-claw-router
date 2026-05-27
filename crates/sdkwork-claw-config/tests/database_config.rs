@@ -380,7 +380,7 @@ fn initializes_default_desktop_runtime_config_at_explicit_location() {
 
     assert_eq!(RuntimeConfigInitializationAction::Created, report.action);
     assert_eq!(DatabaseEngine::Sqlite, report.database.engine);
-    assert_eq!(1, report.database.max_connections);
+    assert_eq!(8, report.database.max_connections);
     assert_eq!(
         format!("sqlite://{}", slash_path(&location.sqlite_database_path())),
         report.database.url
@@ -390,7 +390,7 @@ fn initializes_default_desktop_runtime_config_at_explicit_location() {
 
     let content = fs::read_to_string(&location.config_file).unwrap();
     assert!(content.contains("engine = \"sqlite\""));
-    assert!(content.contains("max_connections = 1"));
+    assert!(content.contains("max_connections = 8"));
     assert!(content.contains("[runtime]"));
 }
 

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ContentApi {
     private final HttpClient client;
-    
+
     public ContentApi(HttpClient client) {
         this.client = client;
     }

@@ -1,11 +1,38 @@
 use crate::application::{AuthenticatedApiKeyContext, PricingResolver, ResolveModelPriceQuery};
+use std::cmp::Reverse;
+use std::collections::BTreeMap;
 use std::fmt::{Display, Formatter};
 
 use crate::domain::{
-    BillingMeter, DomainError, DomainResult, ModelProviderRoute, ProviderAccountPoolRoute,
-    RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    provider_native_model_id, BillingMeter, DomainError, DomainResult, ModelProviderRoute,
+    ProviderAccountPoolGroupBinding, ProviderAccountPoolRoute, RouteCandidate, RoutingCapability,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use crate::ports::PricingCatalog;
+
+#[derive(Debug, Clone, Default)]
+struct AccountPoolGroupBindings {
+    has_any_group_binding: bool,
+    by_channel: BTreeMap<i64, Vec<ProviderAccountPoolGroupBinding>>,
+}
+
+impl AccountPoolGroupBindings {
+    fn unrestricted(&self) -> bool {
+        !self.has_any_group_binding
+    }
+
+    fn contains_channel(&self, channel_id: i64) -> bool {
+        self.by_channel.contains_key(&channel_id)
+    }
+
+    fn get(&self, channel_id: i64) -> Option<&[ProviderAccountPoolGroupBinding]> {
+        self.by_channel.get(&channel_id).map(Vec::as_slice)
+    }
+
+    fn matched_channel_count(&self) -> usize {
+        self.by_channel.len()
+    }
+}
 
 pub struct ProviderRouteSelector<'a, C: PricingCatalog> {
     catalog: &'a C,
@@ -137,12 +164,35 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: SelectProviderRouteQuery,
     ) -> Result<SelectedProviderRoutePlan, ProviderRouteSelectionError> {
-        let routes = self.catalog.list_provider_routes(&query.catalog_key);
-        if routes.is_empty() {
+        let account_pool_routes = self.catalog.list_provider_account_pool_routes();
+        let account_pool_routes_loaded = account_pool_routes.len();
+        let model_scope_keys = [query.catalog_key.as_str(), query.requested_model.as_str()];
+        let group_bindings = account_pool_group_bindings(
+            &account_pool_routes,
+            query.context.group_id,
+            &model_scope_keys,
+            query.capability,
+        );
+        let model_routes = self.catalog.list_provider_routes(&query.catalog_key);
+        let model_routes_loaded = model_routes.len();
+        let routes =
+            self.group_scoped_model_routes(model_routes, &account_pool_routes, &group_bindings);
+        let account_pool_routes =
+            self.group_scoped_account_pool_routes(account_pool_routes, &group_bindings);
+        if routes.is_empty() && account_pool_routes.is_empty() {
+            log_unavailable_model_route_diagnostics(
+                &query,
+                model_routes_loaded,
+                account_pool_routes_loaded,
+                &group_bindings,
+                routes.len(),
+                account_pool_routes.len(),
+            );
             return Err(ProviderRouteSelectionError::provider_route_unavailable(
-                format!(
-                    "provider route is not available for model: {}",
-                    query.catalog_key
+                unavailable_model_route_message(
+                    &query,
+                    model_routes_loaded,
+                    account_pool_routes_loaded,
                 ),
             ));
         }
@@ -150,13 +200,27 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         let policy_scopes = self.select_policy_scopes(&query.context);
         let mut last_unavailable = None;
         for policy_scope in policy_scopes {
-            match self.select_plan_from_policy_scope(&query, &routes, policy_scope) {
+            match self.select_plan_from_policy_scope(
+                &query,
+                &routes,
+                &account_pool_routes,
+                policy_scope,
+                &group_bindings,
+            ) {
                 PolicyScopeRouteSelection::Planned(selection) => return Ok(selection),
                 PolicyScopeRouteSelection::SoftUnavailable(error) => {
                     last_unavailable = Some(error);
                 }
                 PolicyScopeRouteSelection::HardError(error) => return Err(error),
             }
+        }
+        if let Some(selection) = self.select_group_bound_account_pool_route_plan(
+            &query,
+            &routes,
+            &account_pool_routes,
+            &group_bindings,
+        )? {
+            return Ok(selection);
         }
         if let Some(error) = last_unavailable {
             return Err(error);
@@ -174,7 +238,14 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: SelectProviderAccountPoolRouteQuery,
     ) -> Result<SelectedProviderAccountPoolRoute, ProviderRouteSelectionError> {
-        let routes = self.catalog.list_provider_account_pool_routes();
+        let account_pool_routes = self.catalog.list_provider_account_pool_routes();
+        let group_bindings = account_pool_group_bindings(
+            &account_pool_routes,
+            query.context.group_id,
+            &[],
+            query.capability,
+        );
+        let routes = self.group_scoped_account_pool_routes(account_pool_routes, &group_bindings);
         if routes.is_empty() {
             return Err(ProviderRouteSelectionError::provider_route_unavailable(
                 "provider route is not available for configured account pool: no account pool channels are configured",
@@ -184,13 +255,23 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         let policy_scopes = self.select_policy_scopes(&query.context);
         let mut last_unavailable = None;
         for policy_scope in policy_scopes {
-            match self.select_account_pool_from_policy_scope(&query, &routes, policy_scope) {
+            match self.select_account_pool_from_policy_scope(
+                &query,
+                &routes,
+                policy_scope,
+                &group_bindings,
+            ) {
                 PolicyScopeAccountPoolSelection::Selected(selection) => return Ok(selection),
                 PolicyScopeAccountPoolSelection::SoftUnavailable(error) => {
                     last_unavailable = Some(error);
                 }
                 PolicyScopeAccountPoolSelection::HardError(error) => return Err(error),
             }
+        }
+        if let Some(selection) =
+            self.select_group_bound_account_pool_route(&routes, &group_bindings)
+        {
+            return Ok(selection);
         }
         if let Some(error) = last_unavailable {
             return Err(error);
@@ -236,20 +317,24 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: &SelectProviderRouteQuery,
         routes: &[ModelProviderRoute],
+        account_pool_routes: &[ProviderAccountPoolRoute],
         policy_scope: SelectedPolicyScope,
+        group_bindings: &AccountPoolGroupBindings,
     ) -> PolicyScopeRouteSelection {
         let policy = match self
             .select_policy_for_capability(&policy_scope.policies, query.capability)
         {
             Some(policy) => policy,
             None => {
-                return PolicyScopeRouteSelection::HardError(
-                    ProviderRouteSelectionError::provider_route_unavailable(format!(
+                let error = ProviderRouteSelectionError::provider_route_unavailable(format!(
                         "provider route is not available for configured account pool: {} policy scope has no routing policy for capability {:?}",
                         scope_label(policy_scope.scope),
                         query.capability
-                    )),
-                );
+                    ));
+                if group_bindings.unrestricted() {
+                    return PolicyScopeRouteSelection::HardError(error);
+                }
+                return PolicyScopeRouteSelection::SoftUnavailable(error);
             }
         };
         let Some(profile_id) = policy.default_profile_id else {
@@ -267,9 +352,15 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             .filter(|rule| self.rule_is_in_scope(rule, &query.context))
             .filter(|rule| rule.matches_catalog_key(&query.catalog_key, &query.requested_model))
         {
-            let candidate_chain = candidate_chain(&rule, &policy);
-            let used_rule_fallback_chain = candidate_chain.len() > rule.candidate_channels.len();
-            match self.evaluate_candidate_route_plan(query, routes, candidate_chain) {
+            let candidate_chain = scoped_candidate_chain(&rule, &policy, group_bindings);
+            let used_rule_fallback_chain =
+                candidate_chain_uses_rule_fallback(&rule, &candidate_chain);
+            match self.evaluate_candidate_route_plan(
+                query,
+                routes,
+                account_pool_routes,
+                candidate_chain,
+            ) {
                 CandidateRouteEvaluation::Planned(routes) => {
                     return PolicyScopeRouteSelection::Planned(SelectedProviderRoutePlan {
                         routes: routes
@@ -329,19 +420,22 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         query: &SelectProviderAccountPoolRouteQuery,
         routes: &[ProviderAccountPoolRoute],
         policy_scope: SelectedPolicyScope,
+        group_bindings: &AccountPoolGroupBindings,
     ) -> PolicyScopeAccountPoolSelection {
         let policy = match self
             .select_policy_for_capability(&policy_scope.policies, query.capability)
         {
             Some(policy) => policy,
             None => {
-                return PolicyScopeAccountPoolSelection::HardError(
-                    ProviderRouteSelectionError::provider_route_unavailable(format!(
+                let error = ProviderRouteSelectionError::provider_route_unavailable(format!(
                         "provider route is not available for configured account pool: {} policy scope has no routing policy for capability {:?}",
                         scope_label(policy_scope.scope),
                         query.capability
-                    )),
-                );
+                    ));
+                if group_bindings.unrestricted() {
+                    return PolicyScopeAccountPoolSelection::HardError(error);
+                }
+                return PolicyScopeAccountPoolSelection::SoftUnavailable(error);
             }
         };
         let Some(profile_id) = policy.default_profile_id else {
@@ -359,8 +453,9 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             .filter(|rule| self.rule_is_in_scope(rule, &query.context))
             .filter(|rule| rule.matches_route_key(&query.route_key))
         {
-            let candidate_chain = candidate_chain(&rule, &policy);
-            let used_rule_fallback_chain = candidate_chain.len() > rule.candidate_channels.len();
+            let candidate_chain = scoped_candidate_chain(&rule, &policy, group_bindings);
+            let used_rule_fallback_chain =
+                candidate_chain_uses_rule_fallback(&rule, &candidate_chain);
             match self.evaluate_candidate_account_pool_routes(routes, candidate_chain) {
                 CandidateAccountPoolRouteEvaluation::Selected(route) => {
                     return PolicyScopeAccountPoolSelection::Selected(
@@ -461,16 +556,18 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: &SelectProviderRouteQuery,
         routes: &[ModelProviderRoute],
+        account_pool_routes: &[ProviderAccountPoolRoute],
         candidates: Vec<RouteCandidate>,
     ) -> CandidateRouteEvaluation {
         let mut pricing_error = None;
         let mut selected_routes = Vec::new();
         for candidate in candidates {
-            let Some(route) = routes
-                .iter()
-                .find(|route| route.channel_id == candidate.channel_id)
-                .cloned()
-            else {
+            let Some(route) = self.resolve_candidate_model_route(
+                query,
+                routes,
+                account_pool_routes,
+                candidate.channel_id,
+            ) else {
                 continue;
             };
             if !self.route_is_callable(&route) {
@@ -490,6 +587,67 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         } else {
             CandidateRouteEvaluation::Planned(selected_routes)
         }
+    }
+
+    fn select_group_bound_account_pool_route_plan(
+        &self,
+        query: &SelectProviderRouteQuery,
+        routes: &[ModelProviderRoute],
+        account_pool_routes: &[ProviderAccountPoolRoute],
+        group_bindings: &AccountPoolGroupBindings,
+    ) -> Result<Option<SelectedProviderRoutePlan>, ProviderRouteSelectionError> {
+        if group_bindings.unrestricted() {
+            return Ok(None);
+        }
+
+        let candidates = group_bound_account_pool_candidates(account_pool_routes, group_bindings);
+        if candidates.is_empty() {
+            return Ok(None);
+        }
+
+        match self.evaluate_candidate_route_plan(query, routes, account_pool_routes, candidates) {
+            CandidateRouteEvaluation::Planned(routes) => Ok(Some(SelectedProviderRoutePlan {
+                routes: routes
+                    .into_iter()
+                    .map(|route| SelectedProviderRoute {
+                        route,
+                        policy_id: None,
+                        rule_id: None,
+                    })
+                    .collect(),
+                policy_id: None,
+                rule_id: None,
+            })),
+            CandidateRouteEvaluation::PricingUnavailable(error) => {
+                Err(ProviderRouteSelectionError::pricing_unavailable(format!(
+                    "pricing is not available for group-bound account pool route for model {}: {}",
+                    query.catalog_key, error
+                )))
+            }
+            CandidateRouteEvaluation::NoCallableCandidate => Ok(None),
+        }
+    }
+
+    fn resolve_candidate_model_route(
+        &self,
+        query: &SelectProviderRouteQuery,
+        routes: &[ModelProviderRoute],
+        account_pool_routes: &[ProviderAccountPoolRoute],
+        channel_id: i64,
+    ) -> Option<ModelProviderRoute> {
+        if let Some(route) = routes
+            .iter()
+            .find(|route| route.channel_id == channel_id)
+            .cloned()
+        {
+            return Some(route);
+        }
+
+        account_pool_routes
+            .iter()
+            .find(|route| route.channel_id == channel_id)
+            .filter(|route| self.account_pool_route_is_callable(route))
+            .map(|route| synthetic_model_route_from_account_pool(query, route))
     }
 
     fn route_is_callable(&self, route: &ModelProviderRoute) -> bool {
@@ -514,6 +672,66 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             }
         }
         CandidateAccountPoolRouteEvaluation::NoCallableCandidate
+    }
+
+    fn select_group_bound_account_pool_route(
+        &self,
+        routes: &[ProviderAccountPoolRoute],
+        group_bindings: &AccountPoolGroupBindings,
+    ) -> Option<SelectedProviderAccountPoolRoute> {
+        if group_bindings.unrestricted() {
+            return None;
+        }
+
+        let candidates = group_bound_account_pool_candidates(routes, group_bindings);
+        match self.evaluate_candidate_account_pool_routes(routes, candidates) {
+            CandidateAccountPoolRouteEvaluation::Selected(route) => {
+                Some(SelectedProviderAccountPoolRoute {
+                    route,
+                    policy_id: None,
+                    rule_id: None,
+                })
+            }
+            CandidateAccountPoolRouteEvaluation::NoCallableCandidate => None,
+        }
+    }
+
+    fn group_scoped_account_pool_routes(
+        &self,
+        routes: Vec<ProviderAccountPoolRoute>,
+        group_bindings: &AccountPoolGroupBindings,
+    ) -> Vec<ProviderAccountPoolRoute> {
+        if group_bindings.unrestricted() {
+            return routes;
+        }
+
+        routes
+            .into_iter()
+            .filter(|route| group_bindings.contains_channel(route.channel_id))
+            .collect()
+    }
+
+    fn group_scoped_model_routes(
+        &self,
+        routes: Vec<ModelProviderRoute>,
+        account_pool_routes: &[ProviderAccountPoolRoute],
+        group_bindings: &AccountPoolGroupBindings,
+    ) -> Vec<ModelProviderRoute> {
+        if group_bindings.unrestricted() {
+            return routes;
+        }
+
+        routes
+            .into_iter()
+            .filter(|route| {
+                account_pool_routes.iter().any(|account_pool_route| {
+                    account_pool_route.channel_id == route.channel_id
+                        && account_pool_route.provider_code == route.provider_code
+                        && group_bindings.contains_channel(account_pool_route.channel_id)
+                        && self.account_pool_route_is_callable(account_pool_route)
+                })
+            })
+            .collect()
     }
 
     fn account_pool_route_is_callable(&self, route: &ProviderAccountPoolRoute) -> bool {
@@ -558,6 +776,84 @@ fn candidate_chain(rule: &RoutingRule, policy: &RoutingPolicy) -> Vec<RouteCandi
     candidates
 }
 
+fn scoped_candidate_chain(
+    rule: &RoutingRule,
+    policy: &RoutingPolicy,
+    group_bindings: &AccountPoolGroupBindings,
+) -> Vec<RouteCandidate> {
+    if group_bindings.unrestricted() {
+        return candidate_chain(rule, policy);
+    }
+
+    let mut candidates = group_bound_candidates(rule.candidate_channels.clone(), group_bindings);
+    if policy
+        .fallback_mode_or_default()
+        .allows_rule_fallback_chain()
+    {
+        candidates.extend(group_bound_candidates(
+            rule.fallback_chain.clone(),
+            group_bindings,
+        ));
+    }
+    candidates
+}
+
+fn group_bound_candidates(
+    mut candidates: Vec<RouteCandidate>,
+    group_bindings: &AccountPoolGroupBindings,
+) -> Vec<RouteCandidate> {
+    candidates.retain(|candidate| group_bindings.contains_channel(candidate.channel_id));
+    candidates.sort_by_key(|candidate| {
+        let binding = group_bindings
+            .get(candidate.channel_id)
+            .and_then(best_group_binding)
+            .expect("group-bound candidate must have a binding");
+        (
+            binding.priority,
+            Reverse(binding.weight),
+            Reverse(candidate.weight),
+            candidate.channel_id,
+        )
+    });
+    candidates
+}
+
+fn group_bound_account_pool_candidates(
+    routes: &[ProviderAccountPoolRoute],
+    group_bindings: &AccountPoolGroupBindings,
+) -> Vec<RouteCandidate> {
+    let mut candidates = routes
+        .iter()
+        .filter_map(|route| {
+            let binding = group_bindings
+                .get(route.channel_id)
+                .and_then(best_group_binding)?;
+            Some((
+                binding.priority,
+                Reverse(binding.weight),
+                route.channel_id,
+                RouteCandidate::new(route.channel_id, i64::from(binding.weight)),
+            ))
+        })
+        .collect::<Vec<_>>();
+    candidates.sort_by_key(|(priority, weight, channel_id, _candidate)| {
+        (*priority, *weight, *channel_id)
+    });
+    candidates
+        .into_iter()
+        .map(|(_priority, _weight, _channel_id, candidate)| candidate)
+        .collect()
+}
+
+fn candidate_chain_uses_rule_fallback(rule: &RoutingRule, candidates: &[RouteCandidate]) -> bool {
+    candidates.iter().any(|candidate| {
+        !rule
+            .candidate_channels
+            .iter()
+            .any(|primary| primary.channel_id == candidate.channel_id)
+    })
+}
+
 fn policy_rank(scope: RoutingPolicyScope) -> i32 {
     match scope {
         RoutingPolicyScope::ApiKeyGroup => 0,
@@ -596,4 +892,217 @@ fn same_tenant(policy: &RoutingPolicy, context: &AuthenticatedApiKeyContext) -> 
 
 fn has_text(value: Option<&str>) -> bool {
     value.map(str::trim).is_some_and(|value| !value.is_empty())
+}
+
+fn unavailable_model_route_message(
+    query: &SelectProviderRouteQuery,
+    model_routes_loaded: usize,
+    account_pool_routes_loaded: usize,
+) -> String {
+    if model_routes_loaded == 0 && account_pool_routes_loaded == 0 {
+        return format!(
+            "provider route snapshot is empty for model: {}",
+            query.catalog_key
+        );
+    }
+    format!(
+        "provider route is not available for model: {}",
+        query.catalog_key
+    )
+}
+
+fn log_unavailable_model_route_diagnostics(
+    query: &SelectProviderRouteQuery,
+    model_routes_loaded: usize,
+    account_pool_routes_loaded: usize,
+    group_bindings: &AccountPoolGroupBindings,
+    scoped_model_routes: usize,
+    scoped_account_pool_routes: usize,
+) {
+    tracing::warn!(
+        requested_model = %query.requested_model,
+        catalog_key = %query.catalog_key,
+        api_key_id = query.context.api_key_id,
+        tenant_id = query.context.tenant_id,
+        organization_id = query.context.organization_id,
+        user_id = query.context.user_id,
+        api_key_group_id = query.context.group_id,
+        api_key_group_code = %query.context.group_code,
+        capability = ?query.capability,
+        model_routes_loaded,
+        account_pool_routes_loaded,
+        any_group_bindings = group_bindings.has_any_group_binding,
+        matching_group_bound_channels = group_bindings.matched_channel_count(),
+        scoped_model_routes,
+        scoped_account_pool_routes,
+        "provider route selection found no available model or account-pool route"
+    );
+}
+
+fn account_pool_group_bindings(
+    routes: &[ProviderAccountPoolRoute],
+    group_id: i64,
+    model_scope_keys: &[&str],
+    capability: RoutingCapability,
+) -> AccountPoolGroupBindings {
+    let mut bindings = AccountPoolGroupBindings::default();
+    for route in routes {
+        bindings.has_any_group_binding |= !route.group_bindings.is_empty();
+        let route_bindings = route
+            .group_bindings
+            .iter()
+            .filter(|binding| {
+                if binding.group_id != group_id {
+                    return false;
+                }
+                binding_matches_model_scope(binding, model_scope_keys)
+                    && binding_matches_capability(binding, capability)
+            })
+            .cloned()
+            .collect::<Vec<_>>();
+        if !route_bindings.is_empty() {
+            bindings.by_channel.insert(route.channel_id, route_bindings);
+        }
+    }
+    bindings
+}
+
+fn best_group_binding(
+    bindings: &[ProviderAccountPoolGroupBinding],
+) -> Option<&ProviderAccountPoolGroupBinding> {
+    bindings
+        .iter()
+        .min_by_key(|binding| (binding.priority, Reverse(binding.weight)))
+}
+
+fn binding_matches_model_scope(
+    binding: &ProviderAccountPoolGroupBinding,
+    model_scope_keys: &[&str],
+) -> bool {
+    if binding.model_scope.is_empty() {
+        return true;
+    }
+    if model_scope_keys.is_empty() {
+        return false;
+    }
+    binding.model_scope.iter().any(|scope| {
+        model_scope_keys
+            .iter()
+            .any(|key| model_scope_value_matches_key(scope, key))
+    })
+}
+
+fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
+    let scope = normalize_model_scope_value(scope);
+    let key = normalize_model_scope_value(key);
+    if scope.is_empty() || key.is_empty() {
+        return false;
+    }
+    if scope == "*" || scope == "all" {
+        return true;
+    }
+    if scope == key {
+        return true;
+    }
+    if let Some(prefix) = scope.strip_suffix("/*") {
+        return !prefix.is_empty()
+            && (key == prefix
+                || key
+                    .strip_prefix(prefix)
+                    .is_some_and(|tail| tail.starts_with('/')));
+    }
+
+    let scope_parts = scope
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    let key_parts = key
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    if key_parts.len() < 3 {
+        return false;
+    }
+    let vendor = key_parts[0];
+    let region = key_parts[1];
+    let native_model_parts = &key_parts[2..];
+    let native_model = native_model_parts.join("/");
+    match scope_parts.as_slice() {
+        [scope_value] => {
+            *scope_value == vendor
+                || *scope_value == native_model.as_str()
+                || native_model_parts
+                    .last()
+                    .is_some_and(|model| *scope_value == *model)
+        }
+        [scope_vendor, scope_region] => {
+            (*scope_vendor == vendor && *scope_region == region) || scope == native_model
+        }
+        [scope_vendor, scope_region, scope_model @ ..] => {
+            (*scope_vendor == vendor
+                && *scope_region == region
+                && scope_model == native_model_parts)
+                || scope == native_model
+        }
+        [] => false,
+    }
+}
+
+fn normalize_model_scope_value(value: &str) -> String {
+    value.trim().trim_matches('/').to_ascii_lowercase()
+}
+
+fn binding_matches_capability(
+    binding: &ProviderAccountPoolGroupBinding,
+    capability: RoutingCapability,
+) -> bool {
+    if binding.capabilities.is_empty() {
+        return true;
+    }
+    let expected = capability_binding_codes(capability);
+    binding.capabilities.iter().any(|value| {
+        expected
+            .iter()
+            .any(|expected| value.trim().eq_ignore_ascii_case(expected))
+    })
+}
+
+fn capability_binding_codes(capability: RoutingCapability) -> &'static [&'static str] {
+    match capability {
+        RoutingCapability::Chat => &["llm", "chat", "text"],
+        RoutingCapability::Image => &["image"],
+        RoutingCapability::Audio => &["audio", "sfx", "speech"],
+        RoutingCapability::Music => &["music"],
+        RoutingCapability::Video => &["video"],
+        RoutingCapability::Embedding => &["llm", "embedding", "embeddings"],
+        RoutingCapability::Rerank => &["llm", "rerank", "ranking"],
+        RoutingCapability::Network => &["network", "http"],
+    }
+}
+
+fn synthetic_model_route_from_account_pool(
+    query: &SelectProviderRouteQuery,
+    route: &ProviderAccountPoolRoute,
+) -> ModelProviderRoute {
+    let provider_model = provider_native_model_from_query(query);
+    let mut model_route = ModelProviderRoute::new_for_catalog_key(
+        &query.catalog_key,
+        &query.requested_model,
+        &route.provider_code,
+        route.channel_id,
+        &provider_model,
+    )
+    .with_provider_endpoint(route.base_url.clone(), route.secret_ref.clone())
+    .with_auth_profile(route.auth_profile.clone());
+    model_route.timeout_ms = route.timeout_ms;
+    model_route.retry_policy = route.retry_policy.clone();
+    model_route
+}
+
+fn provider_native_model_from_query(query: &SelectProviderRouteQuery) -> String {
+    let requested_model = query.requested_model.trim();
+    if !requested_model.is_empty() {
+        return provider_native_model_id(requested_model);
+    }
+    provider_native_model_id(&query.catalog_key)
 }

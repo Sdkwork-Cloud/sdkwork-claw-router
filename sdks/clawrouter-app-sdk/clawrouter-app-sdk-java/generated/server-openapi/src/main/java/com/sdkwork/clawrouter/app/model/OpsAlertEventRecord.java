@@ -30,7 +30,7 @@ public class OpsAlertEventRecord {
     public String getAlertNo() {
         return this.alertNo;
     }
-    
+
     public void setAlertNo(String alertNo) {
         this.alertNo = alertNo;
     }
@@ -38,7 +38,7 @@ public class OpsAlertEventRecord {
     public String getAlertStatus() {
         return this.alertStatus;
     }
-    
+
     public void setAlertStatus(String alertStatus) {
         this.alertStatus = alertStatus;
     }
@@ -46,7 +46,7 @@ public class OpsAlertEventRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -54,7 +54,7 @@ public class OpsAlertEventRecord {
     public String getFirstSeenAt() {
         return this.firstSeenAt;
     }
-    
+
     public void setFirstSeenAt(String firstSeenAt) {
         this.firstSeenAt = firstSeenAt;
     }
@@ -62,7 +62,7 @@ public class OpsAlertEventRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -70,7 +70,7 @@ public class OpsAlertEventRecord {
     public String getLastSeenAt() {
         return this.lastSeenAt;
     }
-    
+
     public void setLastSeenAt(String lastSeenAt) {
         this.lastSeenAt = lastSeenAt;
     }
@@ -78,7 +78,7 @@ public class OpsAlertEventRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -86,7 +86,7 @@ public class OpsAlertEventRecord {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -94,7 +94,7 @@ public class OpsAlertEventRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -102,7 +102,7 @@ public class OpsAlertEventRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -110,7 +110,7 @@ public class OpsAlertEventRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -118,7 +118,7 @@ public class OpsAlertEventRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -126,7 +126,7 @@ public class OpsAlertEventRecord {
     public String getResolvedAt() {
         return this.resolvedAt;
     }
-    
+
     public void setResolvedAt(String resolvedAt) {
         this.resolvedAt = resolvedAt;
     }
@@ -134,7 +134,7 @@ public class OpsAlertEventRecord {
     public String getResolvedBy() {
         return this.resolvedBy;
     }
-    
+
     public void setResolvedBy(String resolvedBy) {
         this.resolvedBy = resolvedBy;
     }
@@ -142,7 +142,7 @@ public class OpsAlertEventRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -150,7 +150,7 @@ public class OpsAlertEventRecord {
     public String getSeverity() {
         return this.severity;
     }
-    
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
@@ -158,7 +158,7 @@ public class OpsAlertEventRecord {
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -166,7 +166,7 @@ public class OpsAlertEventRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -174,7 +174,7 @@ public class OpsAlertEventRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -182,7 +182,7 @@ public class OpsAlertEventRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -190,7 +190,7 @@ public class OpsAlertEventRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -198,7 +198,7 @@ public class OpsAlertEventRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -206,7 +206,7 @@ public class OpsAlertEventRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

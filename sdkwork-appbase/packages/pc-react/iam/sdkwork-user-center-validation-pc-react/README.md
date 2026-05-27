@@ -4,7 +4,7 @@ Independent validation plugin for the canonical SDKWork user-center standard.
 
 This package depends on `@sdkwork/user-center-core-pc-react` and converts the user-center bridge into a dedicated validation capability. The validation plugin is responsible for:
 
-- governed header names for `Authorization`, `Sdkwork-Access-Token`, `Refresh-Token`, session, and handshake transport
+- governed header names for `Authorization`, `Access-Token`, `Refresh-Token`, session, and handshake transport
 - protected token resolution with canonical precedence
 - dependency-aware validation plugin manifests
 - exposing the active auth mode, validation strategy, cache policy, secret-resolution policy, and handshake policy as a standalone validation contract

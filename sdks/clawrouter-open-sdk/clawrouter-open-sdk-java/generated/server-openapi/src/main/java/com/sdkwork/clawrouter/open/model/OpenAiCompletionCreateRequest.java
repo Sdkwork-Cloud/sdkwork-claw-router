@@ -24,7 +24,7 @@ public class OpenAiCompletionCreateRequest {
     public Integer getBestOf() {
         return this.bestOf;
     }
-    
+
     public void setBestOf(Integer bestOf) {
         this.bestOf = bestOf;
     }
@@ -32,7 +32,7 @@ public class OpenAiCompletionCreateRequest {
     public Boolean getEcho() {
         return this.echo;
     }
-    
+
     public void setEcho(Boolean echo) {
         this.echo = echo;
     }
@@ -40,7 +40,7 @@ public class OpenAiCompletionCreateRequest {
     public Double getFrequencyPenalty() {
         return this.frequencyPenalty;
     }
-    
+
     public void setFrequencyPenalty(Double frequencyPenalty) {
         this.frequencyPenalty = frequencyPenalty;
     }
@@ -48,7 +48,7 @@ public class OpenAiCompletionCreateRequest {
     public Map<String, Double> getLogitBias() {
         return this.logitBias;
     }
-    
+
     public void setLogitBias(Map<String, Double> logitBias) {
         this.logitBias = logitBias;
     }
@@ -56,7 +56,7 @@ public class OpenAiCompletionCreateRequest {
     public Integer getLogprobs() {
         return this.logprobs;
     }
-    
+
     public void setLogprobs(Integer logprobs) {
         this.logprobs = logprobs;
     }
@@ -64,7 +64,7 @@ public class OpenAiCompletionCreateRequest {
     public Integer getMaxTokens() {
         return this.maxTokens;
     }
-    
+
     public void setMaxTokens(Integer maxTokens) {
         this.maxTokens = maxTokens;
     }
@@ -72,7 +72,7 @@ public class OpenAiCompletionCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -80,7 +80,7 @@ public class OpenAiCompletionCreateRequest {
     public Integer getN() {
         return this.n;
     }
-    
+
     public void setN(Integer n) {
         this.n = n;
     }
@@ -88,7 +88,7 @@ public class OpenAiCompletionCreateRequest {
     public Double getPresencePenalty() {
         return this.presencePenalty;
     }
-    
+
     public void setPresencePenalty(Double presencePenalty) {
         this.presencePenalty = presencePenalty;
     }
@@ -96,7 +96,7 @@ public class OpenAiCompletionCreateRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -104,7 +104,7 @@ public class OpenAiCompletionCreateRequest {
     public Integer getSeed() {
         return this.seed;
     }
-    
+
     public void setSeed(Integer seed) {
         this.seed = seed;
     }
@@ -112,7 +112,7 @@ public class OpenAiCompletionCreateRequest {
     public String getStop() {
         return this.stop;
     }
-    
+
     public void setStop(String stop) {
         this.stop = stop;
     }
@@ -120,7 +120,7 @@ public class OpenAiCompletionCreateRequest {
     public Boolean getStream() {
         return this.stream;
     }
-    
+
     public void setStream(Boolean stream) {
         this.stream = stream;
     }
@@ -128,7 +128,7 @@ public class OpenAiCompletionCreateRequest {
     public String getSuffix() {
         return this.suffix;
     }
-    
+
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
@@ -136,7 +136,7 @@ public class OpenAiCompletionCreateRequest {
     public Double getTemperature() {
         return this.temperature;
     }
-    
+
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
@@ -144,7 +144,7 @@ public class OpenAiCompletionCreateRequest {
     public Double getTopP() {
         return this.topP;
     }
-    
+
     public void setTopP(Double topP) {
         this.topP = topP;
     }
@@ -152,7 +152,7 @@ public class OpenAiCompletionCreateRequest {
     public String getUser() {
         return this.user;
     }
-    
+
     public void setUser(String user) {
         this.user = user;
     }

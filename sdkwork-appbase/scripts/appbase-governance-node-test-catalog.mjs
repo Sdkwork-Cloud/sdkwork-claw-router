@@ -2,6 +2,7 @@ export const APPBASE_GOVERNANCE_NODE_TEST_FILES = [
   'scripts/appbase-governance-node-test-catalog.test.mjs',
   'scripts/api-prefix-standard-governance.test.mjs',
   'scripts/common-package-test-script-standard.test.mjs',
+  'scripts/request-identity-standard-governance.test.mjs',
   'scripts/run-iam-standard-governance.test.mjs',
   'scripts/run-appbase-governance-node-tests.test.mjs',
   'scripts/run-workspace-vitest.test.mjs',

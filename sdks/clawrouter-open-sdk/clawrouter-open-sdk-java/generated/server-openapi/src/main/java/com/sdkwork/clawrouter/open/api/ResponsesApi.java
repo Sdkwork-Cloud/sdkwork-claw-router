@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ResponsesApi {
     private final HttpClient client;
-    
+
     public ResponsesApi(HttpClient client) {
         this.client = client;
     }

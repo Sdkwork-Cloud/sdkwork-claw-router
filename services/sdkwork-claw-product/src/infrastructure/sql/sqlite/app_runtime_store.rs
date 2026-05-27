@@ -286,6 +286,119 @@ impl AppRuntimeStore for SqliteAppRuntimeStore {
         })
     }
 
+    fn list_events_after<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+        after_event_no: i64,
+        limit: i64,
+    ) -> AppRuntimeFuture<'a, AppRuntimeEventList> {
+        Box::pin(async move {
+            let invocation = load_invocation_row_by_uuid(&self.pool, subject, &invocation_id)
+                .await?
+                .ok_or_else(|| DomainError::not_found("runtime invocation was not found"))?;
+            let rows = sqlx::query(
+                r#"
+                SELECT e.*, i.uuid AS invocation_uuid
+                FROM ai_runtime_invocation_event e
+                INNER JOIN ai_runtime_invocation i
+                  ON i.id = e.invocation_id
+                 AND i.tenant_id = e.tenant_id
+                 AND i.organization_id = e.organization_id
+                WHERE e.tenant_id = ?1
+                  AND e.organization_id = ?2
+                  AND e.invocation_id = ?3
+                  AND e.user_id = ?4
+                  AND e.event_no > ?5
+                ORDER BY e.event_no ASC, e.id ASC
+                LIMIT ?6
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(integer_cell(&invocation, "id"))
+            .bind(subject.user_id)
+            .bind(after_event_no.max(0))
+            .bind(limit.max(1))
+            .fetch_all(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            rows.into_iter()
+                .map(row_to_event)
+                .collect::<DomainResult<Vec<_>>>()
+                .map(|items| AppRuntimeEventList { items })
+        })
+    }
+
+    fn has_terminal_event<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+    ) -> AppRuntimeFuture<'a, bool> {
+        Box::pin(async move {
+            let exists = sqlx::query_scalar::<_, i64>(
+                r#"
+                SELECT EXISTS(
+                    SELECT 1
+                    FROM ai_runtime_invocation_event e
+                    INNER JOIN ai_runtime_invocation i
+                      ON i.id = e.invocation_id
+                     AND i.tenant_id = e.tenant_id
+                     AND i.organization_id = e.organization_id
+                    WHERE e.tenant_id = ?1
+                      AND e.organization_id = ?2
+                      AND e.user_id = ?3
+                      AND i.uuid = ?4
+                      AND e.event_type IN ('runtime.completed', 'runtime.failed', 'runtime.cancelled')
+                    LIMIT 1
+                )
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(&invocation_id)
+            .fetch_one(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            Ok(exists != 0)
+        })
+    }
+
+    fn get_terminal_event<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+    ) -> AppRuntimeFuture<'a, Option<AppRuntimeEventItem>> {
+        Box::pin(async move {
+            let row = sqlx::query(
+                r#"
+                SELECT e.*, i.uuid AS invocation_uuid
+                FROM ai_runtime_invocation_event e
+                INNER JOIN ai_runtime_invocation i
+                  ON i.id = e.invocation_id
+                 AND i.tenant_id = e.tenant_id
+                 AND i.organization_id = e.organization_id
+                WHERE e.tenant_id = ?1
+                  AND e.organization_id = ?2
+                  AND e.user_id = ?3
+                  AND i.uuid = ?4
+                  AND e.event_type IN ('runtime.completed', 'runtime.failed', 'runtime.cancelled')
+                ORDER BY e.event_no ASC, e.id ASC
+                LIMIT 1
+                "#,
+            )
+            .bind(subject.tenant_id)
+            .bind(subject.organization_id)
+            .bind(subject.user_id)
+            .bind(&invocation_id)
+            .fetch_optional(&self.pool)
+            .await
+            .map_err(sql_error)?;
+            row.map(row_to_event).transpose()
+        })
+    }
+
     fn create_event<'a>(
         &'a self,
         command: CreateAppRuntimeEventCommand,
@@ -347,14 +460,27 @@ async fn create_event(
 ) -> DomainResult<AppRuntimeEventItem> {
     let payload_json = json_string(&command.payload_json, "runtime event payload json")?;
     let metadata = json_string(&command.metadata, "runtime event metadata")?;
-    let mut tx = pool.begin().await.map_err(|error| {
-        DomainError::new(format!("failed to begin runtime transaction: {error}"))
+    let mut tx = pool.begin_with("BEGIN IMMEDIATE").await.map_err(|error| {
+        DomainError::new(format!(
+            "failed to begin immediate runtime event transaction: {error}"
+        ))
     })?;
     let invocation =
         load_invocation_row_by_uuid_in_tx(&mut tx, command.subject, &command.invocation_id)
             .await?
             .ok_or_else(|| DomainError::not_found("runtime invocation was not found"))?;
     let invocation_pk = integer_cell(&invocation, "id");
+    if is_runtime_terminal_event_type(&command.event_type) {
+        if let Some(row) =
+            load_terminal_event_row_in_tx(&mut tx, command.subject, invocation_pk).await?
+        {
+            let item = row_to_event(row)?;
+            tx.commit().await.map_err(|error| {
+                DomainError::new(format!("failed to commit runtime transaction: {error}"))
+            })?;
+            return Ok(item);
+        }
+    }
     let event_no = next_event_no(&mut tx, command.subject, invocation_pk).await?;
     sqlx::query(
         r#"
@@ -552,6 +678,41 @@ async fn next_event_no(
     .await
     .map_err(sql_error)?;
     Ok(integer_cell(&row, "next_value"))
+}
+
+async fn load_terminal_event_row_in_tx(
+    tx: &mut Transaction<'_, Sqlite>,
+    subject: AppRuntimeSubject,
+    invocation_pk: i64,
+) -> DomainResult<Option<sqlx::sqlite::SqliteRow>> {
+    sqlx::query(
+        r#"
+        SELECT e.*, i.uuid AS invocation_uuid
+        FROM ai_runtime_invocation_event e
+        INNER JOIN ai_runtime_invocation i ON i.id = e.invocation_id
+        WHERE e.tenant_id = ?1
+          AND e.organization_id = ?2
+          AND e.user_id = ?3
+          AND e.invocation_id = ?4
+          AND e.event_type IN ('runtime.completed', 'runtime.failed', 'runtime.cancelled')
+        ORDER BY e.event_no ASC, e.id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(invocation_pk)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(sql_error)
+}
+
+fn is_runtime_terminal_event_type(event_type: &str) -> bool {
+    matches!(
+        event_type,
+        "runtime.completed" | "runtime.failed" | "runtime.cancelled"
+    )
 }
 
 async fn load_invocation_row_by_uuid(
@@ -924,7 +1085,7 @@ fn row_to_event(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppRuntimeEventIte
         event_type: string_cell(&row, "event_type"),
         event_source: string_cell(&row, "event_source"),
         payload_json: json_cell(&row, "payload_json")?,
-        text_delta: optional_string_cell(&row, "text_delta"),
+        text_delta: optional_text_cell(&row, "text_delta"),
         created_at: string_cell(&row, "created_at"),
     })
 }
@@ -973,6 +1134,13 @@ fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
 fn optional_string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<String> {
     let value = string_cell(row, column).trim().to_owned();
     (!value.is_empty()).then_some(value)
+}
+
+fn optional_text_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<String> {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .filter(|value| !value.is_empty())
 }
 
 fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {

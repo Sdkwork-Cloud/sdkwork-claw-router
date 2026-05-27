@@ -10,7 +10,9 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
+use sha2::{Digest, Sha256};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -32,11 +34,9 @@ const DEFAULT_PAGE_SIZE: i64 = 50;
 const MAX_PAGE_SIZE: i64 = 200;
 const MAX_KEY_LEN: usize = 128;
 const MAX_NAME_LEN: usize = 128;
-const MAX_REF_LEN: usize = 256;
+const MAX_SECRET_VALUE_LEN: usize = 4096;
 const MAX_ID_TEXT_LEN: usize = 128;
 const MAX_URL_LEN: usize = 1024;
-const MAX_REQUEST_ID_LEN: usize = 128;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 const PROVIDERS: &[&str] = &["wechat", "alipay", "douyin", "baidu", "kuaishou", "feishu"];
 const ACCOUNT_TYPES: &[&str] = &["official_account", "mini_app", "life_account", "bot"];
@@ -92,8 +92,11 @@ struct NormalizedCreateAccountRequest {
     account_type: String,
     app_id: Option<String>,
     secret_ref: Option<String>,
+    secret_material: Option<String>,
     token_ref: Option<String>,
+    token_material: Option<String>,
     aes_key_ref: Option<String>,
+    aes_key_material: Option<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -101,11 +104,20 @@ struct NormalizedUpdateAccountRequest {
     name: Option<String>,
     app_id: Option<Option<String>>,
     secret_ref: Option<Option<String>>,
+    secret_material: Option<String>,
     token_ref: Option<Option<String>>,
+    token_material: Option<String>,
     aes_key_ref: Option<Option<String>>,
+    aes_key_material: Option<String>,
     default_entry_id: Option<Option<i64>>,
     qr_default: Option<bool>,
     status: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct NormalizedSecretMaterial {
+    secret_ref: String,
+    material: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -491,7 +503,7 @@ async fn update_account(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let request = match normalize_update_account_request(request) {
+    let request = match normalize_update_account_request(account_id, request) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -903,29 +915,109 @@ fn normalize_create_account_request(
         &required_text(&request, "key", "open platform account key", MAX_KEY_LEN)?,
         "open platform account key",
     )?;
-    reject_plaintext_secret_values(&request)?;
+    reject_technical_credential_request_fields(&request)?;
+    reject_unsupported_secret_aliases(&request)?;
+    let provider = normalize_required_enum(&request, "provider", "provider", PROVIDERS)?;
+    let account_type = normalize_required_enum(&request, "type", "account type", ACCOUNT_TYPES)?;
+    let app_secret = normalize_secret_material_for_create(
+        &request,
+        "appSecret",
+        "AppSecret",
+        &provider,
+        &account_type,
+        &key,
+        "app-secret",
+    )?;
+    let token = normalize_secret_material_for_create(
+        &request,
+        "token",
+        "Token",
+        &provider,
+        &account_type,
+        &key,
+        "token",
+    )?;
+    let encoding_aes_key = normalize_secret_material_for_create(
+        &request,
+        "encodingAesKey",
+        "EncodingAESKey",
+        &provider,
+        &account_type,
+        &key,
+        "encoding-aes-key",
+    )?;
     Ok(NormalizedCreateAccountRequest {
+        secret_ref: app_secret.as_ref().map(|value| value.secret_ref.clone()),
+        secret_material: app_secret.map(|value| value.material),
+        token_ref: token.as_ref().map(|value| value.secret_ref.clone()),
+        token_material: token.map(|value| value.material),
+        aes_key_ref: encoding_aes_key
+            .as_ref()
+            .map(|value| value.secret_ref.clone()),
+        aes_key_material: encoding_aes_key.map(|value| value.material),
         key,
         name: required_text(&request, "name", "open platform account name", MAX_NAME_LEN)?,
-        provider: normalize_required_enum(&request, "provider", "provider", PROVIDERS)?,
-        account_type: normalize_required_enum(&request, "type", "account type", ACCOUNT_TYPES)?,
+        provider,
+        account_type,
         app_id: normalize_nullable_text_for_create(&request, "appId", "appId", MAX_ID_TEXT_LEN)?,
-        secret_ref: normalize_nullable_secret_ref_for_create(&request, "secretRef", "secretRef")?,
-        token_ref: normalize_nullable_secret_ref_for_create(&request, "tokenRef", "tokenRef")?,
-        aes_key_ref: normalize_nullable_secret_ref_for_create(&request, "aesKeyRef", "aesKeyRef")?,
     })
 }
 
 fn normalize_update_account_request(
+    account_id: i64,
     request: Map<String, Value>,
 ) -> Result<NormalizedUpdateAccountRequest, String> {
-    reject_plaintext_secret_values(&request)?;
+    reject_technical_credential_request_fields(&request)?;
+    reject_unsupported_secret_aliases(&request)?;
+    let account_key = normalize_update_secret_ref_account_key(account_id, &request)?;
+    let provider = optional_text(&request, "provider", "provider", 64)?
+        .map(|provider| normalize_enum_value(provider, "provider", PROVIDERS))
+        .transpose()?
+        .unwrap_or_else(|| "wechat".to_owned());
+    let account_type = optional_text(&request, "type", "account type", 64)?
+        .map(|account_type| normalize_enum_value(account_type, "account type", ACCOUNT_TYPES))
+        .transpose()?
+        .unwrap_or_else(|| "account".to_owned());
+    let app_secret = normalize_secret_material_for_update(
+        &request,
+        "appSecret",
+        "AppSecret",
+        &provider,
+        &account_type,
+        &account_key,
+        "app-secret",
+    )?;
+    let token = normalize_secret_material_for_update(
+        &request,
+        "token",
+        "Token",
+        &provider,
+        &account_type,
+        &account_key,
+        "token",
+    )?;
+    let encoding_aes_key = normalize_secret_material_for_update(
+        &request,
+        "encodingAesKey",
+        "EncodingAESKey",
+        &provider,
+        &account_type,
+        &account_key,
+        "encoding-aes-key",
+    )?;
     let request = NormalizedUpdateAccountRequest {
         name: optional_text(&request, "name", "open platform account name", MAX_NAME_LEN)?,
         app_id: normalize_nullable_text_for_update(&request, "appId", "appId", MAX_ID_TEXT_LEN)?,
-        secret_ref: normalize_nullable_secret_ref_for_update(&request, "secretRef", "secretRef")?,
-        token_ref: normalize_nullable_secret_ref_for_update(&request, "tokenRef", "tokenRef")?,
-        aes_key_ref: normalize_nullable_secret_ref_for_update(&request, "aesKeyRef", "aesKeyRef")?,
+        secret_ref: app_secret
+            .as_ref()
+            .map(|value| Some(value.secret_ref.clone())),
+        secret_material: app_secret.map(|value| value.material),
+        token_ref: token.as_ref().map(|value| Some(value.secret_ref.clone())),
+        token_material: token.map(|value| value.material),
+        aes_key_ref: encoding_aes_key
+            .as_ref()
+            .map(|value| Some(value.secret_ref.clone())),
+        aes_key_material: encoding_aes_key.map(|value| value.material),
         default_entry_id: normalize_nullable_id_for_update(
             &request,
             "defaultEntryId",
@@ -940,8 +1032,11 @@ fn normalize_update_account_request(
     if request.name.is_none()
         && request.app_id.is_none()
         && request.secret_ref.is_none()
+        && request.secret_material.is_none()
         && request.token_ref.is_none()
+        && request.token_material.is_none()
         && request.aes_key_ref.is_none()
+        && request.aes_key_material.is_none()
         && request.default_entry_id.is_none()
         && request.qr_default.is_none()
         && request.status.is_none()
@@ -1185,28 +1280,78 @@ fn normalize_nullable_text_for_update(
     }
 }
 
-fn normalize_nullable_secret_ref_for_create(
+fn normalize_secret_material_for_create(
     request: &Map<String, Value>,
     key: &str,
     field_name: &str,
-) -> Result<Option<String>, String> {
-    let value = normalize_nullable_text_for_create(request, key, field_name, MAX_REF_LEN)?;
-    if let Some(value) = value.as_deref() {
-        validate_secret_ref(value, field_name)?;
-    }
-    Ok(value)
+    provider: &str,
+    account_type: &str,
+    account_key: &str,
+    material_kind: &str,
+) -> Result<Option<NormalizedSecretMaterial>, String> {
+    let Some(secret_material) = optional_text(request, key, field_name, MAX_SECRET_VALUE_LEN)?
+    else {
+        return Ok(None);
+    };
+    validate_secret_material(&secret_material, field_name)?;
+    Ok(Some(NormalizedSecretMaterial {
+        secret_ref: open_platform_secret_ref(
+            provider,
+            account_type,
+            account_key,
+            material_kind,
+            &secret_material,
+        ),
+        material: secret_material,
+    }))
 }
 
-fn normalize_nullable_secret_ref_for_update(
+fn normalize_secret_material_for_update(
     request: &Map<String, Value>,
     key: &str,
     field_name: &str,
-) -> Result<Option<Option<String>>, String> {
-    let value = normalize_nullable_text_for_update(request, key, field_name, MAX_REF_LEN)?;
-    if let Some(Some(value)) = value.as_ref() {
-        validate_secret_ref(value, field_name)?;
+    provider: &str,
+    account_type: &str,
+    account_key: &str,
+    material_kind: &str,
+) -> Result<Option<NormalizedSecretMaterial>, String> {
+    if !request.contains_key(key) {
+        return Ok(None);
     }
-    Ok(value)
+    let Some(secret_material) = optional_text(request, key, field_name, MAX_SECRET_VALUE_LEN)?
+    else {
+        return Ok(None);
+    };
+    validate_secret_material(&secret_material, field_name)?;
+    Ok(Some(NormalizedSecretMaterial {
+        secret_ref: open_platform_secret_ref(
+            provider,
+            account_type,
+            account_key,
+            material_kind,
+            &secret_material,
+        ),
+        material: secret_material,
+    }))
+}
+
+fn normalize_update_secret_ref_account_key(
+    account_id: i64,
+    request: &Map<String, Value>,
+) -> Result<String, String> {
+    if let Some(key) = optional_text(request, "key", "open platform account key", MAX_KEY_LEN)? {
+        return normalize_key(&key, "open platform account key");
+    }
+    Ok(format!("account-{account_id}"))
+}
+
+fn validate_secret_material(value: &str, field_name: &str) -> Result<(), String> {
+    if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
+        return Err(format!(
+            "{field_name} must contain only visible ASCII characters without spaces"
+        ));
+    }
+    Ok(())
 }
 
 fn normalize_nullable_id_for_update(
@@ -1230,9 +1375,20 @@ fn normalize_nullable_id_for_update(
     }
 }
 
-fn reject_plaintext_secret_values(request: &Map<String, Value>) -> Result<(), String> {
+fn reject_technical_credential_request_fields(request: &Map<String, Value>) -> Result<(), String> {
+    for key in ["secretRef", "tokenRef", "aesKeyRef"] {
+        if request.contains_key(key) {
+            return Err(format!(
+                "{key} is an internal credential reference field; submit AppSecret, Token, or EncodingAESKey"
+            ));
+        }
+    }
+    Ok(())
+}
+
+fn reject_unsupported_secret_aliases(request: &Map<String, Value>) -> Result<(), String> {
     for (key, value) in request {
-        if !is_plaintext_secret_key(key) {
+        if !is_unsupported_open_platform_secret_alias(key) {
             continue;
         }
         let has_plaintext = match value {
@@ -1242,7 +1398,7 @@ fn reject_plaintext_secret_values(request: &Map<String, Value>) -> Result<(), St
         };
         if has_plaintext {
             return Err(
-                "plaintext open platform secrets are not accepted; submit only secretRef, tokenRef, and aesKeyRef"
+                "open platform credentials must use AppSecret, Token, and EncodingAESKey fields"
                     .to_owned(),
             );
         }
@@ -1250,7 +1406,7 @@ fn reject_plaintext_secret_values(request: &Map<String, Value>) -> Result<(), St
     Ok(())
 }
 
-fn is_plaintext_secret_key(key: &str) -> bool {
+fn is_unsupported_open_platform_secret_alias(key: &str) -> bool {
     let normalized = key
         .chars()
         .filter(|character| *character != '_' && *character != '-')
@@ -1259,30 +1415,63 @@ fn is_plaintext_secret_key(key: &str) -> bool {
     matches!(
         normalized.as_str(),
         "secret"
-            | "appsecret"
+            | "secretvalue"
             | "clientsecret"
-            | "token"
             | "accesstoken"
+            | "apikey"
+            | "authkey"
             | "aeskey"
-            | "encodingaeskey"
             | "privatekey"
     )
 }
 
-fn validate_secret_ref(value: &str, field_name: &str) -> Result<(), String> {
-    let locator = if let Some(locator) = value.strip_prefix("vault://") {
-        locator
-    } else if let Some(locator) = value.strip_prefix("secret://") {
-        locator
+fn open_platform_secret_ref(
+    provider: &str,
+    account_type: &str,
+    account_key: &str,
+    material_kind: &str,
+    secret_material: &str,
+) -> String {
+    let digest = digest_hex(secret_material);
+    let suffix = digest.chars().take(16).collect::<String>();
+    format!(
+        "secret://open-platform/{}/{}/{}/{}/{}",
+        normalize_secret_ref_segment(provider),
+        normalize_secret_ref_segment(account_type),
+        normalize_secret_ref_segment(account_key),
+        normalize_secret_ref_segment(material_kind),
+        suffix,
+    )
+}
+
+fn normalize_secret_ref_segment(value: &str) -> String {
+    let normalized = value
+        .to_ascii_lowercase()
+        .chars()
+        .map(|character| {
+            if character.is_ascii_lowercase()
+                || character.is_ascii_digit()
+                || matches!(character, '.' | '_' | ':' | '-')
+            {
+                character
+            } else {
+                '-'
+            }
+        })
+        .collect::<String>()
+        .trim_matches(|character| matches!(character, '.' | '_' | ':' | '-'))
+        .to_owned();
+    if normalized.is_empty() {
+        "item".to_owned()
     } else {
-        return Err(format!(
-            "{field_name} must start with vault:// or secret://"
-        ));
-    };
-    if locator.trim_matches('/').is_empty() {
-        return Err(format!("{field_name} must include a non-empty locator"));
+        normalized
     }
-    Ok(())
+}
+
+fn digest_hex(value: &str) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(value.as_bytes());
+    format!("{:x}", hasher.finalize())
 }
 
 fn validate_entry_url(value: &str) -> Result<(), String> {
@@ -1325,7 +1514,7 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
 
 fn build_create_account_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     request: NormalizedCreateAccountRequest,
 ) -> Result<CreateAdminOpenPlatformAccountCommand, OpenPlatformCommandBuildError> {
@@ -1339,16 +1528,19 @@ fn build_create_account_command(
         account_type: request.account_type,
         app_id: request.app_id,
         secret_ref: request.secret_ref,
+        secret_material: request.secret_material,
         token_ref: request.token_ref,
+        token_material: request.token_material,
         aes_key_ref: request.aes_key_ref,
-        request_id: normalize_request_id(headers, &state)?,
+        aes_key_material: request.aes_key_material,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_account_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
     request: NormalizedUpdateAccountRequest,
@@ -1360,19 +1552,22 @@ fn build_update_account_command(
         name: request.name,
         app_id: request.app_id,
         secret_ref: request.secret_ref,
+        secret_material: request.secret_material,
         token_ref: request.token_ref,
+        token_material: request.token_material,
         aes_key_ref: request.aes_key_ref,
+        aes_key_material: request.aes_key_material,
         default_entry_id: request.default_entry_id,
         qr_default: request.qr_default,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_account_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
 ) -> Result<DeleteAdminOpenPlatformAccountCommand, OpenPlatformCommandBuildError> {
@@ -1380,14 +1575,14 @@ fn build_delete_account_command(
         subject,
         account_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_entry_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
     request: NormalizedCreateEntryRequest,
@@ -1400,14 +1595,14 @@ fn build_create_entry_command(
         key: request.key,
         entry_type: request.entry_type,
         url: request.url,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_entry_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
     entry_id: i64,
@@ -1422,14 +1617,14 @@ fn build_update_entry_command(
         entry_type: request.entry_type,
         url: request.url,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_entry_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
     entry_id: i64,
@@ -1439,14 +1634,14 @@ fn build_delete_entry_command(
         account_id,
         entry_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_pay_binding_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
     request: NormalizedCreatePayBindingRequest,
@@ -1460,14 +1655,14 @@ fn build_create_pay_binding_command(
         payment_channel_id: request.payment_channel_id,
         scene: request.scene,
         mode: request.mode,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_pay_binding_command(
     state: AdminOpenPlatformState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminOpenPlatformSubject,
     account_id: i64,
     binding_id: i64,
@@ -1477,7 +1672,7 @@ fn build_delete_pay_binding_command(
         account_id,
         binding_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -1491,29 +1686,13 @@ fn generate_entity_uuid(
         .map_err(OpenPlatformCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminOpenPlatformState,
-) -> Result<String, OpenPlatformCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(OpenPlatformCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> OpenPlatformCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => OpenPlatformCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            OpenPlatformCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_provider_response(

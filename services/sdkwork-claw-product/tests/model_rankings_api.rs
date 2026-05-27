@@ -1,5 +1,7 @@
+mod common;
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
+use common::InternalTrustedSubjectHeaders;
 use sdkwork_claw_product::domain::{DomainError, DomainResult};
 use sdkwork_claw_product::ports::{
     ModelRankingRefreshAuditCommand, ModelRankingRefreshAuditFuture, ModelRankingRefreshCommand,
@@ -88,9 +90,7 @@ async fn admin_model_ranking_status_route_returns_refresh_observability_snapshot
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/ai/model_rankings/status?rank_scope=commercial-default")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -131,9 +131,7 @@ async fn admin_model_ranking_jobs_route_returns_recent_refresh_execution_history
                 .uri(
                     "/backend/v3/api/ai/model_rankings/jobs?rank_scope=commercial-default&limit=20",
                 )
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -200,9 +198,7 @@ async fn admin_model_ranking_manual_refresh_route_runs_worker_and_returns_result
             Request::builder()
                 .method("POST")
                 .uri("/backend/v3/api/ai/model_rankings/refresh")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(
                     r#"{"rankScope":"Commercial-Default","snapshotPeriod":"daily","limit":5,"lookbackDays":3,"refreshIntervalSeconds":1800,"cacheMaxAgeSeconds":30}"#,
@@ -273,9 +269,7 @@ async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
                 Request::builder()
                     .method("POST")
                     .uri("/backend/v3/api/ai/model_rankings/refresh")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .header("content-type", "application/json")
                     .body(Body::from(r#"{"rankScope":"commercial-default"}"#))
                     .unwrap(),
@@ -290,9 +284,7 @@ async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
             Request::builder()
                 .method("POST")
                 .uri("/backend/v3/api/ai/model_rankings/refresh")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"rankScope":"commercial-default"}"#))
                 .unwrap(),

@@ -14,7 +14,7 @@ public class OpenAiOrganizationUsageBucket {
     public Integer getEndTime() {
         return this.endTime;
     }
-    
+
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
     }
@@ -22,7 +22,7 @@ public class OpenAiOrganizationUsageBucket {
     public Integer getInputTokens() {
         return this.inputTokens;
     }
-    
+
     public void setInputTokens(Integer inputTokens) {
         this.inputTokens = inputTokens;
     }
@@ -30,7 +30,7 @@ public class OpenAiOrganizationUsageBucket {
     public Integer getNumRequests() {
         return this.numRequests;
     }
-    
+
     public void setNumRequests(Integer numRequests) {
         this.numRequests = numRequests;
     }
@@ -38,7 +38,7 @@ public class OpenAiOrganizationUsageBucket {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -46,7 +46,7 @@ public class OpenAiOrganizationUsageBucket {
     public Integer getOutputTokens() {
         return this.outputTokens;
     }
-    
+
     public void setOutputTokens(Integer outputTokens) {
         this.outputTokens = outputTokens;
     }
@@ -54,7 +54,7 @@ public class OpenAiOrganizationUsageBucket {
     public List<String> getResults() {
         return this.results;
     }
-    
+
     public void setResults(List<String> results) {
         this.results = results;
     }
@@ -62,7 +62,7 @@ public class OpenAiOrganizationUsageBucket {
     public Integer getStartTime() {
         return this.startTime;
     }
-    
+
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }

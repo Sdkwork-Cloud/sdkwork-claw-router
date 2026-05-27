@@ -11,7 +11,7 @@ public class AnthropicFileListResponse {
     public List<AnthropicFile> getData() {
         return this.data;
     }
-    
+
     public void setData(List<AnthropicFile> data) {
         this.data = data;
     }
@@ -19,7 +19,7 @@ public class AnthropicFileListResponse {
     public String getFirstId() {
         return this.firstId;
     }
-    
+
     public void setFirstId(String firstId) {
         this.firstId = firstId;
     }
@@ -27,7 +27,7 @@ public class AnthropicFileListResponse {
     public Boolean getHasMore() {
         return this.hasMore;
     }
-    
+
     public void setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
     }
@@ -35,7 +35,7 @@ public class AnthropicFileListResponse {
     public String getLastId() {
         return this.lastId;
     }
-    
+
     public void setLastId(String lastId) {
         this.lastId = lastId;
     }

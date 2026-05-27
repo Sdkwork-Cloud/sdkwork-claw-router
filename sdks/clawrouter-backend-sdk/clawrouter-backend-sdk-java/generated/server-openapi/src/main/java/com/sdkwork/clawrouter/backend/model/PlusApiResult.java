@@ -10,7 +10,7 @@ public class PlusApiResult {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -18,7 +18,7 @@ public class PlusApiResult {
     public NoData getData() {
         return this.data;
     }
-    
+
     public void setData(NoData data) {
         this.data = data;
     }
@@ -26,7 +26,7 @@ public class PlusApiResult {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -34,7 +34,7 @@ public class PlusApiResult {
     public String getMsg() {
         return this.msg;
     }
-    
+
     public void setMsg(String msg) {
         this.msg = msg;
     }

@@ -74,9 +74,10 @@ def serialize_path_primitive(value: Any) -> str:
 
 
 
+
 class VideosKlingApi:
     """videos_kling API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

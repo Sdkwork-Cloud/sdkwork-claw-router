@@ -34,7 +34,7 @@ public class ContentCourseApplicationRecord {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -42,7 +42,7 @@ public class ContentCourseApplicationRecord {
     public String getContactEmail() {
         return this.contactEmail;
     }
-    
+
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
@@ -50,7 +50,7 @@ public class ContentCourseApplicationRecord {
     public String getContactName() {
         return this.contactName;
     }
-    
+
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
@@ -58,7 +58,7 @@ public class ContentCourseApplicationRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -66,7 +66,7 @@ public class ContentCourseApplicationRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -74,7 +74,7 @@ public class ContentCourseApplicationRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -82,7 +82,7 @@ public class ContentCourseApplicationRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -90,7 +90,7 @@ public class ContentCourseApplicationRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -98,7 +98,7 @@ public class ContentCourseApplicationRecord {
     public String getExternalBvid() {
         return this.externalBvid;
     }
-    
+
     public void setExternalBvid(String externalBvid) {
         this.externalBvid = externalBvid;
     }
@@ -106,7 +106,7 @@ public class ContentCourseApplicationRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -114,7 +114,7 @@ public class ContentCourseApplicationRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -122,7 +122,7 @@ public class ContentCourseApplicationRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -130,7 +130,7 @@ public class ContentCourseApplicationRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -138,7 +138,7 @@ public class ContentCourseApplicationRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -146,7 +146,7 @@ public class ContentCourseApplicationRecord {
     public String getReviewComment() {
         return this.reviewComment;
     }
-    
+
     public void setReviewComment(String reviewComment) {
         this.reviewComment = reviewComment;
     }
@@ -154,7 +154,7 @@ public class ContentCourseApplicationRecord {
     public String getReviewedAt() {
         return this.reviewedAt;
     }
-    
+
     public void setReviewedAt(String reviewedAt) {
         this.reviewedAt = reviewedAt;
     }
@@ -162,7 +162,7 @@ public class ContentCourseApplicationRecord {
     public String getReviewedBy() {
         return this.reviewedBy;
     }
-    
+
     public void setReviewedBy(String reviewedBy) {
         this.reviewedBy = reviewedBy;
     }
@@ -170,7 +170,7 @@ public class ContentCourseApplicationRecord {
     public String getSourceProvider() {
         return this.sourceProvider;
     }
-    
+
     public void setSourceProvider(String sourceProvider) {
         this.sourceProvider = sourceProvider;
     }
@@ -178,7 +178,7 @@ public class ContentCourseApplicationRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -186,7 +186,7 @@ public class ContentCourseApplicationRecord {
     public String getSubmittedAt() {
         return this.submittedAt;
     }
-    
+
     public void setSubmittedAt(String submittedAt) {
         this.submittedAt = submittedAt;
     }
@@ -194,7 +194,7 @@ public class ContentCourseApplicationRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -202,7 +202,7 @@ public class ContentCourseApplicationRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -210,7 +210,7 @@ public class ContentCourseApplicationRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -218,7 +218,7 @@ public class ContentCourseApplicationRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -226,7 +226,7 @@ public class ContentCourseApplicationRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -234,7 +234,7 @@ public class ContentCourseApplicationRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -242,7 +242,7 @@ public class ContentCourseApplicationRecord {
     public String getVideoUrl() {
         return this.videoUrl;
     }
-    
+
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
     }

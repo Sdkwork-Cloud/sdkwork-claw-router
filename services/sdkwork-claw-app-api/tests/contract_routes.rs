@@ -89,20 +89,24 @@ async fn database_config_router_exposes_sdk_reference_generation_route() {
         .unwrap();
     let payload: Value = serde_json::from_slice(&body).unwrap();
 
-    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, status);
-    assert_eq!("5030", payload["code"]);
-    assert_eq!("SDK generator is not configured", payload["msg"]);
+    assert_eq!(StatusCode::OK, status);
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("typescript", payload["data"]["language"]);
+    assert_eq!(false, payload["data"]["generated"]);
+    assert!(payload["data"]["readme"]
+        .as_str()
+        .is_some_and(|value| value.contains("Claw Router App API")));
 
     clear_generator_env();
 }
 
 #[tokio::test]
-async fn app_coupon_redemption_route_is_not_product_local_without_appbase_store() {
+async fn app_promotion_code_redemption_route_is_not_product_local_without_appbase_store() {
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
                 .method(Method::POST)
-                .uri("/app/v3/api/coupons/redemptions")
+                .uri("/app/v3/api/promotions/codes/redemptions")
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"code":"WELCOME"}"#))
                 .unwrap(),
@@ -189,7 +193,7 @@ fn env_guard() -> &'static Mutex<()> {
 #[tokio::test]
 async fn default_router_does_not_serve_appbase_owned_commerce_routes_without_appbase_store() {
     let cases = [
-        (Method::POST, "/app/v3/api/coupons/redemptions"),
+        (Method::POST, "/app/v3/api/promotions/codes/redemptions"),
         (Method::GET, "/app/v3/api/accounts/current/summary"),
         (Method::GET, "/app/v3/api/wallet/accounts"),
         (Method::GET, "/app/v3/api/wallet/tokens"),
@@ -204,7 +208,7 @@ async fn default_router_does_not_serve_appbase_owned_commerce_routes_without_app
 
     for (method, path) in cases {
         let mut builder = Request::builder().method(method).uri(path);
-        let body = if path.ends_with("/coupons/redemptions") {
+        let body = if path.ends_with("/promotions/codes/redemptions") {
             builder = builder.header("content-type", "application/json");
             Body::from(r#"{"code":"WELCOME"}"#)
         } else {
@@ -229,7 +233,7 @@ async fn default_router_does_not_serve_appbase_owned_commerce_routes_without_app
         (Method::POST, "/app/v3/api/wallet/exchanges"),
         (Method::POST, "/app/v3/api/wallet/tokens/deductions"),
         (Method::POST, "/app/v3/api/checkout/preflight/estimates"),
-        (Method::POST, "/app/v3/api/coupons/usage"),
+        (Method::POST, "/app/v3/api/promotions/codes/usage"),
         (Method::POST, "/app/v3/api/invoices/invoice-1/submissions"),
     ] {
         let response = sdkwork_claw_app_api::router()

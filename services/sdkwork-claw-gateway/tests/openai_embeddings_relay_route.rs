@@ -7,8 +7,8 @@ use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, DomainResult, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    ProviderAccountPoolRoute, ProviderRetryPolicy, RouteCandidate, RoutingCapability,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -47,6 +47,15 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         )
         .with_timeout_ms(30_000)
         .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter"),
+                Some("vault://providers/openrouter/account/embedding"),
+            )
+            .with_timeout_ms(30_000)
+            .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
     );
     catalog.add_plan(PricingPlan::new(
         "standard",
@@ -171,10 +180,16 @@ async fn gateway_can_mount_non_stream_embeddings_relay() {
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
+    assert_eq!(
+        StatusCode::OK,
+        status,
+        "unexpected response body: {}",
+        String::from_utf8_lossy(&body)
+    );
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("list", payload["object"]);

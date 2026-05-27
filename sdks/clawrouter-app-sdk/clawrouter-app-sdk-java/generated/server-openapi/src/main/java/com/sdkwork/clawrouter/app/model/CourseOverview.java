@@ -8,7 +8,7 @@ public class CourseOverview {
     public CourseOverviewSource getSource() {
         return this.source;
     }
-    
+
     public void setSource(CourseOverviewSource source) {
         this.source = source;
     }
@@ -16,7 +16,7 @@ public class CourseOverview {
     public CourseOverviewStats getStats() {
         return this.stats;
     }
-    
+
     public void setStats(CourseOverviewStats stats) {
         this.stats = stats;
     }

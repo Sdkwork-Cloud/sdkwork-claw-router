@@ -492,20 +492,20 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                             {
                                 "api_surface": "app",
                                 "api_method": "GET",
-                                "api_path": "/app/v3/api/coupons/my",
-                                "operation": "fetchRedeemHistory",
-                                "operation_id": "coupons.mine.retrieve",
-                                "tag": "coupons",
+                                "api_path": "/app/v3/api/promotions/user_coupons",
+                                "operation": "appPromotionUserCouponsList",
+                                "operation_id": "promotions.userCoupons.wallet.list",
+                                "tag": "promotions",
                                 "kind": "read",
                                 "path_params": [],
-                                "source": "apps/portal/billingService.ts",
-                                "read_sources": ["plus_coupon", "plus_user_coupon"],
+                                "source": "apps/portal/promotionService.ts",
+                                "read_sources": ["promotion_user_coupon", "promotion_coupon_stock"],
                                 "write_tables": [],
                                 "response_schema": {
-                                    "name": "BillingRedeemHistoryResponse",
+                                    "name": "PromotionUserCouponWalletListResponse",
                                     "schema": {
                                         "type": "array",
-                                        "items": {"$ref": "#/components/schemas/BillingRedeemHistoryItem"},
+                                        "items": {"$ref": "#/components/schemas/PromotionCouponWalletItem"},
                                     },
                                 },
                             }
@@ -519,47 +519,51 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             )
             ClawRouterOpenApiGenerator(root=root).write()
             spec = self.read_app_spec(root)
-            spec["components"]["schemas"]["BillingRedeemHistoryItem"] = {
+            spec["components"]["schemas"]["PromotionCouponWalletItem"] = {
                 "type": "object",
                 "additionalProperties": False,
-                "required": ["id", "code"],
-                "properties": {"id": {"type": "integer"}, "code": {"type": "string"}},
+                "required": ["coupon_no", "currency_code", "status"],
+                "properties": {
+                    "coupon_no": {"type": "string"},
+                    "currency_code": {"type": "string"},
+                    "status": {"type": "string"},
+                },
             }
             self.write_app_spec(root, spec)
 
             base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
-            (base / "src" / "api" / "coupons.ts").write_text(
+            (base / "src" / "api" / "promotions.ts").write_text(
                 "import { appApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { CouponsMineRetrieveResult } from '../types';\n"
-                "export class CouponsApi {\n"
+                "import type { PromotionsUserCouponsWalletListResult } from '../types';\n"
+                "export class PromotionsUserCouponsWalletApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async retrieve(): Promise<CouponsMineRetrieveResult> {\n"
-                "    return this.client.get<CouponsMineRetrieveResult>(appApiPath(`/coupons/my`));\n"
+                "  async list(): Promise<PromotionsUserCouponsWalletListResult> {\n"
+                "    return this.client.get<PromotionsUserCouponsWalletListResult>(appApiPath(`/promotions/user_coupons`));\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "billing-redeem-history-item.ts").write_text(
-                "export interface BillingRedeemHistoryItem { id: number; code: string; }\n",
+            (base / "src" / "types" / "promotion-coupon-wallet-item.ts").write_text(
+                "export interface PromotionCouponWalletItem { couponNo: string; currencyCode: string; status: string; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "billing-redeem-history-response.ts").write_text(
-                "import type { BillingRedeemHistoryItem } from './billing-redeem-history-item';\n"
-                "export type BillingRedeemHistoryResponse = BillingRedeemHistoryItem[];\n",
+            (base / "src" / "types" / "promotion-user-coupon-wallet-list-response.ts").write_text(
+                "import type { PromotionCouponWalletItem } from './promotion-coupon-wallet-item';\n"
+                "export type PromotionUserCouponWalletListResponse = PromotionCouponWalletItem[];\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "coupons-mine-retrieve-result.ts").write_text(
-                "import type { BillingRedeemHistoryResponse } from './billing-redeem-history-response';\n"
-                "export interface CouponsMineRetrieveResult { code: string; data?: BillingRedeemHistoryResponse; }\n",
+            (base / "src" / "types" / "promotions-user-coupons-wallet-list-result.ts").write_text(
+                "import type { PromotionUserCouponWalletListResponse } from './promotion-user-coupon-wallet-list-response';\n"
+                "export interface PromotionsUserCouponsWalletListResult { code: string; data?: PromotionUserCouponWalletListResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { BillingRedeemHistoryItem } from './billing-redeem-history-item';\n"
-                "export type { BillingRedeemHistoryResponse } from './billing-redeem-history-response';\n"
-                "export type { CouponsMineRetrieveResult } from './coupons-mine-retrieve-result';\n",
+                "export type { PromotionCouponWalletItem } from './promotion-coupon-wallet-item';\n"
+                "export type { PromotionUserCouponWalletListResponse } from './promotion-user-coupon-wallet-list-response';\n"
+                "export type { PromotionsUserCouponsWalletListResult } from './promotions-user-coupons-wallet-list-result';\n",
                 encoding="utf-8",
             )
             backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"

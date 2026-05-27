@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class VideosKlingApi {
     private final HttpClient client;
-    
+
     public VideosKlingApi(HttpClient client) {
         this.client = client;
     }

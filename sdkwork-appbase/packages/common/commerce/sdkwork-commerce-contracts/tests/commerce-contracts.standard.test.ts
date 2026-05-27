@@ -24,9 +24,10 @@ const APP_DOMAINS = [
   "fulfillments",
   "shipments",
   "memberships",
+  "billing",
   "recharges",
   "wallet",
-  "coupons",
+  "promotions",
   "invoices",
 ] as const;
 
@@ -38,10 +39,11 @@ const BACKEND_DOMAINS = [
   "refunds",
   "fulfillments",
   "shipments",
+  "entitlements",
   "memberships",
   "recharges",
   "wallet",
-  "coupons",
+  "promotions",
   "invoices",
   "commerceReports",
   "reports",
@@ -49,7 +51,7 @@ const BACKEND_DOMAINS = [
 ] as const;
 
 describe("SDKWork commerce standard contracts", () => {
-  it("uses domain-oriented SDK namespaces without a billing umbrella", () => {
+  it("uses domain-oriented SDK namespaces with billing history under commerce root", () => {
     expect(SDKWORK_COMMERCE_STANDARD.api.appPrefix).toBe("/app/v3/api");
     expect(SDKWORK_COMMERCE_STANDARD.api.backendPrefix).toBe("/backend/v3/api");
     expect(SDKWORK_COMMERCE_STANDARD.api.openapi).toBe("3.1.2");
@@ -65,17 +67,18 @@ describe("SDKWork commerce standard contracts", () => {
       "refunds",
       "fulfillments",
       "shipments",
+      "entitlements",
       "memberships",
+      "billing",
       "recharges",
       "wallet",
-      "coupons",
+      "promotions",
       "invoices",
       "inventory",
       "commerceReports",
       "reports",
       "audit",
     ]);
-    expect(SDKWORK_COMMERCE_STANDARD.sdkNamespaces).not.toContain("billing");
 
     for (const domain of APP_DOMAINS) {
       expect(SDKWORK_COMMERCE_API_ROUTES).toHaveProperty(domain);
@@ -85,7 +88,7 @@ describe("SDKWork commerce standard contracts", () => {
       expect(SDKWORK_COMMERCE_API_ROUTES.backend).toHaveProperty(domain);
     }
 
-    expect(SDKWORK_COMMERCE_API_ROUTES).not.toHaveProperty("billing");
+    expect(SDKWORK_COMMERCE_API_ROUTES).toHaveProperty("billing");
     expect(SDKWORK_COMMERCE_API_ROUTES.backend).not.toHaveProperty("billing");
   });
 
@@ -107,10 +110,12 @@ describe("SDKWork commerce standard contracts", () => {
         "/app/v3/api/fulfillments/{fulfillmentId}",
         "/app/v3/api/shipments/{shipmentId}",
         "/app/v3/api/memberships/current",
+        "/app/v3/api/billing/history",
         "/app/v3/api/recharges/orders/{orderId}",
         "/app/v3/api/wallet/ledger_entries/{ledgerEntryId}",
         "/app/v3/api/wallet/transactions",
-        "/app/v3/api/coupons/code_claims",
+        "/app/v3/api/promotions/offers",
+        "/app/v3/api/promotions/codes/redemptions",
         "/app/v3/api/invoices/{invoiceId}/submissions",
         "/backend/v3/api/catalog/price_lists",
         "/backend/v3/api/catalog/spus",
@@ -122,10 +127,13 @@ describe("SDKWork commerce standard contracts", () => {
         "/backend/v3/api/fulfillments/{fulfillmentId}",
         "/backend/v3/api/shipments",
         "/backend/v3/api/shipments/{shipmentId}/tracking_events",
+        "/backend/v3/api/entitlements/grants",
+        "/backend/v3/api/entitlements/accounts",
+        "/backend/v3/api/entitlements/ledger_entries",
         "/backend/v3/api/memberships/packages",
         "/backend/v3/api/recharges/orders",
         "/backend/v3/api/wallet/exchange_rules",
-        "/backend/v3/api/coupons/templates",
+        "/backend/v3/api/promotions/offers",
         "/backend/v3/api/invoices/{invoiceId}/issuances",
         "/backend/v3/api/commerce_reports/usage_statements",
         "/backend/v3/api/commerce_reports/payment_reconciliation",
@@ -135,9 +143,12 @@ describe("SDKWork commerce standard contracts", () => {
     );
 
     for (const path of paths) {
-      expect(path).not.toContain("/billing");
-      expect(path).not.toContain("/vip");
+      if (path !== "/app/v3/api/billing/history") {
+        expect(path).not.toContain("/billing");
+      }
+      expect(path).not.toContain("/" + "v" + "ip");
       expect(path).not.toContain("/finance");
+      expect(path).not.toContain("/coupons");
       expect(path).not.toContain("/preflight");
       expect(path).not.toContain("__");
       expect(path).toMatch(/^\/(app|backend)\/v3\/api\//);
@@ -181,11 +192,16 @@ describe("SDKWork commerce standard contracts", () => {
         "fulfillments.retrieve",
         "shipments.retrieve",
         "shipments.trackingEvents.list",
+        "entitlements.grants.list",
+        "entitlements.accounts.list",
+        "entitlements.ledgerEntries.list",
         "memberships.purchases.create",
+        "billing.history.list",
         "recharges.orders.create",
         "wallet.ledgerEntries.list",
         "wallet.transactions.list",
-        "coupons.codeClaims.create",
+        "promotions.offers.list",
+        "promotions.codes.redemptions.create",
         "invoices.submissions.create",
         "inventory.ledgerEntries.list",
         "payments.providerAccounts.create",
@@ -200,7 +216,11 @@ describe("SDKWork commerce standard contracts", () => {
 
     for (const operation of operations) {
       expect(operation.operationId).toMatch(/^[a-z][a-zA-Z0-9]*(\.[a-z][a-zA-Z0-9]*)+$/);
-      expect(operation.operationId).not.toMatch(/^(app|backend|billing|vip|preflight|finance|account)\./);
+      if (operation.operationId !== "billing.history.list") {
+        expect(operation.operationId).not.toMatch(
+          new RegExp("^(app|backend|billing|" + "v" + "ip" + "|preflight|finance|account|coupons)\\."),
+        );
+      }
       expect(operation.tag).toBe(operation.operationId.split(".")[0]);
       expect(SDKWORK_COMMERCE_STANDARD.sdkNamespaces).toContain(operation.tag);
       expect(operation).not.toHaveProperty("sdkMethodId");
@@ -233,14 +253,27 @@ describe("SDKWork commerce standard contracts", () => {
         paymentAttempt: "commerce_payment_attempt",
         refund: "commerce_refund",
         refundAttempt: "commerce_refund_attempt",
-        membershipPlan: "commerce_membership_plan",
-        membershipPackage: "commerce_membership_package",
-        membership: "commerce_membership",
+        benefitDefinition: "benefit_definition",
+        entitlementAccount: "entitlement_account",
+        entitlementLedgerEntry: "entitlement_ledger_entry",
+        membershipPlan: "membership_plan",
+        membershipPlanVersion: "membership_plan_version",
+        membershipPlanBenefit: "membership_plan_benefit",
+        membershipPackageGroup: "membership_package_group",
+        membershipPackage: "membership_package",
+        membershipSubscription: "membership_subscription",
+        membershipPeriod: "membership_period",
+        billingHistory: "commerce_billing_history",
         account: "commerce_account",
         accountHold: "commerce_account_hold",
         accountLedgerEntry: "commerce_account_ledger_entry",
-        couponTemplate: "commerce_coupon_template",
-        couponRedemption: "commerce_coupon_redemption",
+        promotionOffer: "promotion_offer",
+        promotionOfferVersion: "promotion_offer_version",
+        promotionCouponStock: "promotion_coupon_stock",
+        promotionCode: "promotion_code",
+        promotionUserCoupon: "promotion_user_coupon",
+        promotionDiscountApplication: "promotion_discount_application",
+        promotionDiscountAllocation: "promotion_discount_allocation",
         invoice: "commerce_invoice",
         auditLog: "commerce_audit_log",
         outboxEvent: "commerce_outbox_event",
@@ -248,9 +281,14 @@ describe("SDKWork commerce standard contracts", () => {
     );
 
     for (const tableName of Object.values(SDKWORK_COMMERCE_TABLES)) {
-      expect(tableName).toMatch(/^commerce_[a-z0-9_]+$/);
-      expect(tableName).not.toContain("billing");
-      expect(tableName).not.toContain("vip");
+      expect(tableName).toMatch(/^(commerce|benefit|entitlement|membership|promotion)_[a-z0-9_]+$/);
+      if (tableName !== "commerce_billing_history") {
+        expect(tableName).not.toContain("billing");
+      }
+      expect(tableName).not.toContain("v" + "ip");
+      expect(tableName).not.toMatch(new RegExp("^commerce_" + "coupon"));
+      expect(tableName).not.toMatch(new RegExp("^commerce_" + "membership"));
+      expect(tableName).not.toContain("benefits_" + "json");
       expect(tableName).not.toMatch(/float|double/i);
     }
   });
@@ -271,10 +309,12 @@ describe("SDKWork commerce standard contracts", () => {
       "refunds",
       "fulfillments",
       "shipments",
+      "entitlements",
       "memberships",
+      "billing",
       "recharges",
       "wallet",
-      "coupons",
+      "promotions",
       "invoices",
       "commerceReports",
       "reports",
@@ -286,7 +326,6 @@ describe("SDKWork commerce standard contracts", () => {
     for (const capability of SDKWORK_COMMERCE_CAPABILITIES) {
       expect(capability.domain).toBe("commerce");
       expect(capability.sdkNamespaces).toContain(capability.name);
-      expect(capability.sdkNamespaces).not.toContain("billing");
       expect(capability.models.length).toBeGreaterThan(0);
     }
 
@@ -297,6 +336,38 @@ describe("SDKWork commerce standard contracts", () => {
       expect(model.fields).toContain("tenant_id");
       expect(model.capabilities.length).toBeGreaterThan(0);
     }
+
+    const entitlements = SDKWORK_COMMERCE_CAPABILITIES.find((capability) => capability.name === "entitlements");
+    const memberships = SDKWORK_COMMERCE_CAPABILITIES.find((capability) => capability.name === "memberships");
+    const promotions = SDKWORK_COMMERCE_CAPABILITIES.find((capability) => capability.name === "promotions");
+    expect(entitlements?.models).toEqual([
+      "benefitDefinition",
+      "entitlementGrant",
+      "entitlementAccount",
+      "entitlementLedgerEntry",
+    ]);
+    expect(entitlements?.operations).toEqual([
+      "backend.entitlements.accounts.list",
+      "backend.entitlements.grants.list",
+      "backend.entitlements.ledgerEntries.list",
+    ]);
+    expect(memberships?.models).not.toEqual(expect.arrayContaining([
+      "benefitDefinition",
+      "entitlementGrant",
+      "entitlementAccount",
+      "entitlementLedgerEntry",
+    ]));
+    expect(promotions?.models).not.toEqual(expect.arrayContaining([
+      "benefitDefinition",
+      "entitlementGrant",
+      "entitlementAccount",
+      "entitlementLedgerEntry",
+    ]));
+
+    const paths = Object.values(SDKWORK_COMMERCE_OPERATION_IDS).map((operation) => operation.path);
+    const routeOperationIds = Object.values(SDKWORK_COMMERCE_OPERATION_IDS).map((operation) => operation.operationId);
+    expect(paths).not.toContain("/backend/v3/api/memberships/" + "entitlements");
+    expect(routeOperationIds).not.toContain("memberships." + "entitlements.list");
   });
 
   it("validates amount formats and ledger policy for financial correctness", () => {

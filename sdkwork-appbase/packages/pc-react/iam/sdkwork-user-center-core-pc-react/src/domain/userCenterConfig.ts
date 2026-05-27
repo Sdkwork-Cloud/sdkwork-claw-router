@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   UserCenterAuthProfileInput,
   UserCenterRuntimeConfig,
   UserCenterRuntimeConfigInput,
@@ -32,7 +32,7 @@ export {
 function normalizeModeScopedAuthInput(
   auth: UserCenterAuthProfileInput | undefined,
   mode:
-    | "auth-Sdkwork-Access-Token"
+    | "dual-token"
     | "upstream-app-api-token-bridge"
     | "upstream-external-token-bridge",
 ): UserCenterAuthProfileInput | undefined {
@@ -126,7 +126,7 @@ export function normalizeUserCenterConfig(
     "external-hub",
   );
   const builtinLocalAuth = normalizeUserCenterAuthProfile({
-    auth: normalizeModeScopedAuthInput(input.auth, "auth-Sdkwork-Access-Token"),
+    auth: normalizeModeScopedAuthInput(input.auth, "dual-token"),
     mode: "local-native",
     namespace,
     provider: builtinLocalProvider,

@@ -1850,6 +1850,285 @@ components:
         last_opened_at:
           type: string
           format: date-time
+    AiMcpBindingRecord:
+      type: object
+      x-table: ai_mcp_binding
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        server_id:
+          type: string
+          format: int64
+        server_revision_id:
+          type: string
+          format: int64
+        tool_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          maxLength: 64
+        owner_id:
+          type: string
+          format: int64
+    AiMcpServerRecord:
+      type: object
+      x-table: ai_mcp_server
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        server_key:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        category_id:
+          type: string
+          format: int64
+        category_code:
+          type: string
+          maxLength: 128
+        transport:
+          type: string
+          maxLength: 64
+        visibility:
+          type: string
+          maxLength: 64
+        owner_user_id:
+          type: string
+          format: int64
+        latest_revision_id:
+          type: string
+          format: int64
+        published_revision_id:
+          type: string
+          format: int64
+        last_checked_at:
+          type: string
+          format: date-time
+        last_error_masked:
+          type: string
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
+    AiMcpServerRevisionRecord:
+      type: object
+      x-table: ai_mcp_server_revision
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        server_id:
+          type: string
+          format: int64
+        revision_no:
+          type: string
+          maxLength: 64
+        transport:
+          type: string
+          maxLength: 64
+        endpoint_url:
+          type: string
+          maxLength: 1024
+        command:
+          type: string
+          maxLength: 1024
+        secret_ref:
+          type: string
+          maxLength: 512
+        config_hash:
+          type: string
+          maxLength: 128
+        lifecycle_status:
+          type: string
+          maxLength: 64
+        created_by:
+          type: string
+          format: int64
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
+    AiMcpToolRecord:
+      type: object
+      x-table: ai_mcp_tool
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        server_id:
+          type: string
+          format: int64
+        server_revision_id:
+          type: string
+          format: int64
+        tool_key:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        schema_hash:
+          type: string
+          maxLength: 128
+        discovered_at:
+          type: string
+          format: date-time
+        last_invoked_at:
+          type: string
+          format: date-time
     AiMemoryEmbeddingRecord:
       type: object
       x-table: ai_memory_embedding
@@ -4110,6 +4389,213 @@ components:
       - billing_meter_code
       - sort_order
       - effective_from
+    AiPromptBindingRecord:
+      type: object
+      x-table: ai_prompt_binding
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        prompt_id:
+          type: string
+          format: int64
+        prompt_version_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          maxLength: 64
+        owner_id:
+          type: string
+          format: int64
+        binding_role:
+          type: string
+          maxLength: 64
+    AiPromptRecord:
+      type: object
+      x-table: ai_prompt
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        prompt_key:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        category_id:
+          type: string
+          format: int64
+        category_code:
+          type: string
+          maxLength: 128
+        prompt_type:
+          type: string
+          maxLength: 64
+        visibility:
+          type: string
+          maxLength: 64
+        owner_user_id:
+          type: string
+          format: int64
+        latest_version_id:
+          type: string
+          format: int64
+        published_version_id:
+          type: string
+          format: int64
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
+    AiPromptVersionRecord:
+      type: object
+      x-table: ai_prompt_version
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        prompt_id:
+          type: string
+          format: int64
+        version_no:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 255
+        content:
+          type: string
+        checksum_hash:
+          type: string
+          maxLength: 128
+        lifecycle_status:
+          type: string
+          maxLength: 64
+        review_status:
+          type: string
+          maxLength: 64
+        review_comment:
+          type: string
+        created_by:
+          type: string
+          format: int64
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
     AiQuotaPolicyRecord:
       type: object
       x-table: ai_quota_policy
@@ -4385,9 +4871,15 @@ components:
         requested_model:
           type: string
           maxLength: 128
+        requested_model_catalog_key:
+          type: string
+          maxLength: 256
         provider_model:
           type: string
           maxLength: 128
+        provider_native_model:
+          type: string
+          maxLength: 256
         endpoint:
           type: string
           maxLength: 256
@@ -5267,9 +5759,15 @@ components:
         catalog_key:
           type: string
           maxLength: 256
+        requested_model_catalog_key:
+          type: string
+          maxLength: 256
         model:
           type: string
           maxLength: 128
+        provider_native_model:
+          type: string
+          maxLength: 256
         provider_id:
           type: string
           format: int64
@@ -5411,6 +5909,355 @@ components:
       required:
       - uuid
       - catalog_key
+    AiUsageServiceProviderChainRecord:
+      type: object
+      x-table: ai_usage_service_provider_chain
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        usage_fact_id:
+          type: string
+          format: int64
+        leaf_provider_id:
+          type: string
+          format: int64
+        root_provider_id:
+          type: string
+          format: int64
+        chain_depth:
+          type: integer
+          format: int32
+        chain_path_snapshot:
+          type: object
+          additionalProperties: true
+        chain_hash:
+          type: string
+          maxLength: 128
+        resolved_subject_type:
+          type: string
+          maxLength: 64
+        resolved_subject_id:
+          type: string
+          format: int64
+        occurred_at:
+          type: string
+          format: date-time
+    AiUsageServiceProviderEdgeRecord:
+      type: object
+      x-table: ai_usage_service_provider_edge
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        usage_fact_id:
+          type: string
+          format: int64
+        chain_id:
+          type: string
+          format: int64
+        edge_id:
+          type: string
+          format: int64
+        edge_depth:
+          type: integer
+          format: int32
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        amount_role:
+          type: string
+          maxLength: 64
+        pricing_plan_id:
+          type: string
+          format: int64
+        pricing_rule_id:
+          type: string
+          format: int64
+        billing_meter_code:
+          type: string
+          maxLength: 64
+        token_kind:
+          type: string
+          maxLength: 64
+        billable_quantity:
+          type: string
+          format: decimal
+        unit_price:
+          type: string
+          format: decimal
+        unit_size:
+          type: string
+          format: decimal
+        charge_amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        fx_rate_snapshot:
+          type: string
+          format: decimal
+        settlement_currency:
+          type: string
+          maxLength: 10
+        converted_charge_amount:
+          type: string
+          format: decimal
+        seller_snapshot:
+          type: object
+          additionalProperties: true
+        buyer_snapshot:
+          type: object
+          additionalProperties: true
+        price_snapshot:
+          type: object
+          additionalProperties: true
+        occurred_at:
+          type: string
+          format: date-time
+        settlement_status:
+          type: string
+          x-db-type: enum_int32
+    AnalyticsServiceProviderDailyRecord:
+      type: object
+      x-table: analytics_service_provider_daily
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        ancestor_provider_id:
+          type: string
+          format: int64
+        report_date:
+          type: string
+          format: date
+        currency:
+          type: string
+          maxLength: 10
+        request_count:
+          type: string
+          format: int64
+        success_count:
+          type: string
+          format: int64
+        failure_count:
+          type: string
+          format: int64
+        token_count:
+          type: string
+          format: int64
+        income_amount:
+          type: string
+          format: decimal
+        expense_amount:
+          type: string
+          format: decimal
+        margin_amount:
+          type: string
+          format: decimal
+        upstream_cost_amount:
+          type: string
+          format: decimal
+    AnalyticsServiceProviderEdgeDailyRecord:
+      type: object
+      x-table: analytics_service_provider_edge_daily
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        edge_id:
+          type: string
+          format: int64
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        report_date:
+          type: string
+          format: date
+        model:
+          type: string
+          maxLength: 128
+        catalog_key:
+          type: string
+          maxLength: 256
+        billing_meter_code:
+          type: string
+          maxLength: 64
+        token_kind:
+          type: string
+          maxLength: 64
+        currency:
+          type: string
+          maxLength: 10
+        request_count:
+          type: string
+          format: int64
+        token_count:
+          type: string
+          format: int64
+        income_amount:
+          type: string
+          format: decimal
+        expense_amount:
+          type: string
+          format: decimal
+        margin_amount:
+          type: string
+          format: decimal
     CommerceAccountHoldRecord:
       type: object
       x-table: commerce_account_hold
@@ -5577,6 +6424,86 @@ components:
       - owner_user_id
       - asset_type
       - status
+      - created_at
+      - updated_at
+    CommerceBillingHistoryRecord:
+      type: object
+      x-table: commerce_billing_history
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        owner_user_id:
+          type: string
+          maxLength: 512
+        history_no:
+          type: string
+          maxLength: 512
+        history_type:
+          type: string
+          maxLength: 512
+        direction:
+          type: string
+          maxLength: 512
+        asset_type:
+          type: string
+          maxLength: 512
+        currency_code:
+          type: string
+          maxLength: 512
+        status:
+          type: string
+          maxLength: 512
+        title:
+          type: string
+          maxLength: 512
+        reference_no:
+          type: string
+          maxLength: 512
+        source_type:
+          type: string
+          maxLength: 512
+        source_id:
+          type: string
+          maxLength: 512
+        related_order_id:
+          type: string
+          maxLength: 512
+        related_order_no:
+          type: string
+          maxLength: 512
+        payment_method:
+          type: string
+          maxLength: 512
+        occurred_at:
+          type: string
+          maxLength: 512
+        metadata_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - owner_user_id
+      - history_no
+      - history_type
+      - direction
+      - asset_type
+      - status
+      - title
+      - source_type
+      - source_id
+      - occurred_at
       - created_at
       - updated_at
     CommerceCartItemRecord:
@@ -5793,240 +6720,6 @@ components:
       - idempotency_key
       - request_hash
       - expires_at
-      - created_at
-      - updated_at
-    CommerceCouponIssueBatchRecord:
-      type: object
-      x-table: commerce_coupon_issue_batch
-      x-domain: commerce
-      x-generated-by-this-project: false
-      properties:
-        tenant_id:
-          type: string
-          maxLength: 512
-        organization_id:
-          type: string
-          maxLength: 512
-        coupon_template_id:
-          type: string
-          maxLength: 512
-        batch_no:
-          type: string
-          maxLength: 512
-        campaign_code:
-          type: string
-          maxLength: 512
-        title:
-          type: string
-          maxLength: 512
-        code_prefix:
-          type: string
-          maxLength: 512
-        code_pattern:
-          type: string
-          maxLength: 512
-        requested_quantity:
-          type: string
-          format: int64
-        status:
-          type: string
-          maxLength: 512
-        generation_status:
-          type: string
-          maxLength: 512
-        audience_filter:
-          type: string
-          maxLength: 512
-        generated_at:
-          type: string
-          maxLength: 512
-        created_by:
-          type: string
-          maxLength: 512
-        created_at:
-          type: string
-          maxLength: 512
-        updated_at:
-          type: string
-          maxLength: 512
-      required:
-      - tenant_id
-      - coupon_template_id
-      - batch_no
-      - title
-      - code_prefix
-      - code_pattern
-      - requested_quantity
-      - status
-      - generation_status
-      - created_at
-      - updated_at
-    CommerceCouponRecord:
-      type: object
-      x-table: commerce_coupon
-      x-domain: commerce
-      x-generated-by-this-project: false
-      properties:
-        tenant_id:
-          type: string
-          maxLength: 512
-        organization_id:
-          type: string
-          maxLength: 512
-        template_id:
-          type: string
-          maxLength: 512
-        issue_batch_id:
-          type: string
-          maxLength: 512
-        owner_user_id:
-          type: string
-          maxLength: 512
-        coupon_code:
-          type: string
-          maxLength: 512
-        status:
-          type: string
-          maxLength: 512
-        claimed_at:
-          type: string
-          maxLength: 512
-        expires_at:
-          type: string
-          maxLength: 512
-        redeemed_at:
-          type: string
-          maxLength: 512
-        disabled_at:
-          type: string
-          maxLength: 512
-        request_no:
-          type: string
-          maxLength: 512
-        idempotency_key:
-          type: string
-          maxLength: 512
-        created_at:
-          type: string
-          maxLength: 512
-        updated_at:
-          type: string
-          maxLength: 512
-      required:
-      - tenant_id
-      - template_id
-      - coupon_code
-      - status
-      - request_no
-      - idempotency_key
-      - created_at
-      - updated_at
-    CommerceCouponRedemptionRecord:
-      type: object
-      x-table: commerce_coupon_redemption
-      x-domain: commerce
-      x-generated-by-this-project: false
-      properties:
-        tenant_id:
-          type: string
-          maxLength: 512
-        organization_id:
-          type: string
-          maxLength: 512
-        coupon_id:
-          type: string
-          maxLength: 512
-        order_id:
-          type: string
-          maxLength: 512
-        owner_user_id:
-          type: string
-          maxLength: 512
-        discount_amount:
-          type: string
-          maxLength: 512
-        status:
-          type: string
-          maxLength: 512
-        request_no:
-          type: string
-          maxLength: 512
-        idempotency_key:
-          type: string
-          maxLength: 512
-        redeemed_at:
-          type: string
-          maxLength: 512
-        rolled_back_at:
-          type: string
-          maxLength: 512
-        created_at:
-          type: string
-          maxLength: 512
-        updated_at:
-          type: string
-          maxLength: 512
-      required:
-      - tenant_id
-      - coupon_id
-      - order_id
-      - owner_user_id
-      - discount_amount
-      - status
-      - request_no
-      - idempotency_key
-      - redeemed_at
-      - created_at
-      - updated_at
-    CommerceCouponTemplateRecord:
-      type: object
-      x-table: commerce_coupon_template
-      x-domain: commerce
-      x-generated-by-this-project: false
-      properties:
-        tenant_id:
-          type: string
-          maxLength: 512
-        organization_id:
-          type: string
-          maxLength: 512
-        template_no:
-          type: string
-          maxLength: 512
-        title:
-          type: string
-          maxLength: 512
-        discount_type:
-          type: string
-          maxLength: 512
-        discount_value:
-          type: string
-          maxLength: 512
-        total_quantity:
-          type: string
-          format: int64
-        status:
-          type: string
-          maxLength: 512
-        starts_at:
-          type: string
-          maxLength: 512
-        expires_at:
-          type: string
-          maxLength: 512
-        created_at:
-          type: string
-          maxLength: 512
-        updated_at:
-          type: string
-          maxLength: 512
-      required:
-      - tenant_id
-      - template_no
-      - title
-      - discount_type
-      - discount_value
-      - status
       - created_at
       - updated_at
     CommerceDigitalDeliveryRecord:
@@ -8468,6 +9161,81 @@ components:
       - idempotency_key
       - created_at
       - updated_at
+    CommerceServiceProviderExposureSnapshotRecord:
+      type: object
+      x-table: commerce_service_provider_exposure_snapshot
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        service_provider_id:
+          type: string
+          format: int64
+        balance_amount:
+          type: string
+          format: decimal
+        frozen_amount:
+          type: string
+          format: decimal
+        credit_limit_amount:
+          type: string
+          format: decimal
+        used_credit_amount:
+          type: string
+          format: decimal
+        exposure_amount:
+          type: string
+          format: decimal
+        pending_settlement_amount:
+          type: string
+          format: decimal
+        overdue_amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        risk_status:
+          type: string
+          maxLength: 64
+        calculated_at:
+          type: string
+          format: date-time
     CommerceSettlementExportRecord:
       type: object
       x-table: commerce_settlement_export
@@ -8708,6 +9476,506 @@ components:
           type: string
           format: date-time
         effective_to:
+          type: string
+          format: date-time
+    CommerceUsageServiceProviderAdjustmentRecord:
+      type: object
+      x-table: commerce_usage_service_provider_adjustment
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        adjustment_no:
+          type: string
+          maxLength: 128
+        usage_edge_id:
+          type: string
+          format: int64
+        statement_id:
+          type: string
+          format: int64
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        adjustment_type:
+          type: string
+          maxLength: 64
+        amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        reason_code:
+          type: string
+          maxLength: 128
+        reason_message:
+          type: string
+          maxLength: 512
+        approval_status:
+          type: string
+          maxLength: 32
+        approved_by:
+          type: string
+          format: int64
+        settled_ledger_entry_id:
+          type: string
+          maxLength: 128
+    CommerceUsageServiceProviderReconciliationItemRecord:
+      type: object
+      x-table: commerce_usage_service_provider_reconciliation_item
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        run_id:
+          type: string
+          format: int64
+        usage_edge_id:
+          type: string
+          format: int64
+        usage_fact_id:
+          type: string
+          format: int64
+        provider_invoice_item_id:
+          type: string
+          format: int64
+        statement_item_id:
+          type: string
+          format: int64
+        match_status:
+          type: string
+          maxLength: 64
+        internal_amount:
+          type: string
+          format: decimal
+        external_amount:
+          type: string
+          format: decimal
+        difference_amount:
+          type: string
+          format: decimal
+        reason_code:
+          type: string
+          maxLength: 128
+        resolution_status:
+          type: string
+          maxLength: 64
+    CommerceUsageServiceProviderReconciliationRunRecord:
+      type: object
+      x-table: commerce_usage_service_provider_reconciliation_run
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        run_no:
+          type: string
+          maxLength: 128
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        period_start:
+          type: string
+          format: date-time
+        period_end:
+          type: string
+          format: date-time
+        matched_count:
+          type: string
+          format: int64
+        mismatch_count:
+          type: string
+          format: int64
+        missing_internal_count:
+          type: string
+          format: int64
+        missing_external_count:
+          type: string
+          format: int64
+        total_internal_amount:
+          type: string
+          format: decimal
+        total_external_amount:
+          type: string
+          format: decimal
+        difference_amount:
+          type: string
+          format: decimal
+    CommerceUsageServiceProviderSettlementRecord:
+      type: object
+      x-table: commerce_usage_service_provider_settlement
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        settlement_no:
+          type: string
+          maxLength: 128
+        usage_edge_id:
+          type: string
+          format: int64
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        buyer_account_id:
+          type: string
+          maxLength: 128
+        seller_account_id:
+          type: string
+          maxLength: 128
+        buyer_ledger_entry_id:
+          type: string
+          maxLength: 128
+        seller_ledger_entry_id:
+          type: string
+          maxLength: 128
+        settlement_mode:
+          type: string
+          maxLength: 32
+        direction:
+          type: string
+          maxLength: 16
+        amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        settlement_status:
+          type: string
+          x-db-type: enum_int32
+        settled_at:
+          type: string
+          format: date-time
+        failure_code:
+          type: string
+          maxLength: 128
+        failure_message:
+          type: string
+          maxLength: 512
+    CommerceUsageServiceProviderStatementItemRecord:
+      type: object
+      x-table: commerce_usage_service_provider_statement_item
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        statement_id:
+          type: string
+          format: int64
+        usage_edge_id:
+          type: string
+          format: int64
+        billing_meter_code:
+          type: string
+          maxLength: 64
+        token_kind:
+          type: string
+          maxLength: 64
+        model:
+          type: string
+          maxLength: 128
+        request_count:
+          type: string
+          format: int64
+        token_count:
+          type: string
+          format: int64
+        quantity:
+          type: string
+          format: decimal
+        amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        source_usage_fact_ids:
+          type: object
+          additionalProperties: true
+    CommerceUsageServiceProviderStatementRecord:
+      type: object
+      x-table: commerce_usage_service_provider_statement
+      x-domain: commerce
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        statement_no:
+          type: string
+          maxLength: 128
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        period:
+          type: string
+          maxLength: 32
+        period_start:
+          type: string
+          format: date-time
+        period_end:
+          type: string
+          format: date-time
+        total_requests:
+          type: string
+          format: int64
+        total_tokens:
+          type: string
+          format: int64
+        receivable_amount:
+          type: string
+          format: decimal
+        payable_amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        statement_status:
+          type: string
+          x-db-type: enum_int32
+        payment_status:
+          type: string
+          x-db-type: enum_int32
+        invoice_id:
+          type: string
+          format: int64
+        generated_at:
+          type: string
+          format: date-time
+        due_at:
+          type: string
+          format: date-time
+        paid_at:
           type: string
           format: date-time
     CommerceUsageSettlementRecord:
@@ -9962,6 +11230,72 @@ components:
           type: object
           additionalProperties: true
         published_at:
+          type: string
+          format: date-time
+    IamApiKeyGroupChannelRecord:
+      type: object
+      x-table: iam_api_key_group_channel
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        group_id:
+          type: string
+          format: int64
+        channel_id:
+          type: string
+          format: int64
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
+        model_scope:
+          type: object
+          additionalProperties: true
+        capabilities:
+          type: object
+          additionalProperties: true
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
           type: string
           format: date-time
     IamApiKeyRecord:
@@ -11238,6 +12572,170 @@ components:
         third_party_bound_snapshot:
           type: object
           additionalProperties: true
+    IamVerificationAttemptRecord:
+      type: object
+      x-table: iam_verification_attempt
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        failure_reason:
+          type: string
+          maxLength: 128
+        ip_hash:
+          type: string
+          maxLength: 128
+        device_hash:
+          type: string
+          maxLength: 128
+    IamVerificationChallengeRecord:
+      type: object
+      x-table: iam_verification_challenge
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        target_masked:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          format: int64
+        salt_ref:
+          type: string
+          maxLength: 256
+        delivery_request_id:
+          type: string
+          format: int64
+        verified_at:
+          type: string
+          format: date-time
+        consumed_at:
+          type: string
+          format: date-time
+        locked_until:
+          type: string
+          format: date-time
+    IamVerificationScenePolicyRecord:
+      type: object
+      x-table: iam_verification_scene_policy
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        scene_name:
+          type: string
+          maxLength: 128
+        default_channel:
+          type: string
+          maxLength: 32
     IntegrationChannelModelRecord:
       type: object
       x-table: integration_channel_model
@@ -11628,6 +13126,154 @@ components:
         checked_at:
           type: string
           format: date-time
+    IntegrationProviderInvoiceImportRecord:
+      type: object
+      x-table: integration_provider_invoice_import
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        import_no:
+          type: string
+          maxLength: 128
+        provider_code:
+          type: string
+          maxLength: 64
+        provider_account_id:
+          type: string
+          format: int64
+        period_start:
+          type: string
+          format: date-time
+        period_end:
+          type: string
+          format: date-time
+        currency:
+          type: string
+          maxLength: 10
+        total_amount:
+          type: string
+          format: decimal
+        source_file_ref:
+          type: string
+          maxLength: 512
+        source_hash:
+          type: string
+          maxLength: 128
+        import_status:
+          type: string
+          x-db-type: enum_int32
+    IntegrationProviderInvoiceItemRecord:
+      type: object
+      x-table: integration_provider_invoice_item
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        import_id:
+          type: string
+          format: int64
+        provider_request_id:
+          type: string
+          maxLength: 256
+        provider_usage_id:
+          type: string
+          maxLength: 256
+        model:
+          type: string
+          maxLength: 128
+        billing_meter_code:
+          type: string
+          maxLength: 64
+        quantity:
+          type: string
+          format: decimal
+        amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        raw_payload_hash:
+          type: string
+          maxLength: 128
+        match_status:
+          type: string
+          x-db-type: enum_int32
     IntegrationProviderRecord:
       type: object
       x-table: integration_provider
@@ -11790,6 +13436,864 @@ components:
         description:
           type: string
           maxLength: 512
+    IntegrationServiceProviderAccountBindingRecord:
+      type: object
+      x-table: integration_service_provider_account_binding
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        service_provider_id:
+          type: string
+          format: int64
+        commerce_account_id:
+          type: string
+          maxLength: 128
+        account_role:
+          type: string
+          maxLength: 64
+        asset_type:
+          type: string
+          maxLength: 32
+        currency:
+          type: string
+          maxLength: 10
+    IntegrationServiceProviderClosureRecord:
+      type: object
+      x-table: integration_service_provider_closure
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        ancestor_provider_id:
+          type: string
+          format: int64
+        descendant_provider_id:
+          type: string
+          format: int64
+        depth:
+          type: integer
+          format: int32
+        path:
+          type: string
+          maxLength: 2048
+        direct_edge_id:
+          type: string
+          format: int64
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+    IntegrationServiceProviderContractRecord:
+      type: object
+      x-table: integration_service_provider_contract
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        contract_no:
+          type: string
+          maxLength: 128
+        edge_id:
+          type: string
+          format: int64
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        contract_type:
+          type: string
+          maxLength: 64
+        current_version_id:
+          type: string
+          format: int64
+        signed_at:
+          type: string
+          format: date-time
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+        contract_file_ref:
+          type: string
+          maxLength: 512
+    IntegrationServiceProviderContractVersionRecord:
+      type: object
+      x-table: integration_service_provider_contract_version
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        contract_id:
+          type: string
+          format: int64
+        version_no:
+          type: integer
+          format: int32
+        version_hash:
+          type: string
+          maxLength: 128
+        contract_payload:
+          type: object
+          additionalProperties: true
+        approval_status:
+          type: string
+          maxLength: 32
+        requested_by:
+          type: string
+          format: int64
+        approved_by:
+          type: string
+          format: int64
+        approved_at:
+          type: string
+          format: date-time
+        published_at:
+          type: string
+          format: date-time
+    IntegrationServiceProviderEdgeRecord:
+      type: object
+      x-table: integration_service_provider_edge
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        edge_no:
+          type: string
+          maxLength: 64
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        edge_type:
+          type: string
+          maxLength: 64
+        contract_no:
+          type: string
+          maxLength: 128
+        settlement_mode:
+          type: string
+          maxLength: 32
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+        contract_snapshot:
+          type: object
+          additionalProperties: true
+    IntegrationServiceProviderFinanceProfileRecord:
+      type: object
+      x-table: integration_service_provider_finance_profile
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        service_provider_id:
+          type: string
+          format: int64
+        settlement_mode:
+          type: string
+          maxLength: 32
+        billing_cycle:
+          type: string
+          maxLength: 32
+        settlement_day:
+          type: integer
+          format: int32
+        credit_limit_amount:
+          type: string
+          format: decimal
+        warning_threshold_amount:
+          type: string
+          format: decimal
+        suspend_threshold_amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        invoice_title_id:
+          type: string
+          format: int64
+        tax_profile_ref:
+          type: string
+          maxLength: 256
+        payment_terms_days:
+          type: integer
+          format: int32
+    IntegrationServiceProviderMemberRecord:
+      type: object
+      x-table: integration_service_provider_member
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        service_provider_id:
+          type: string
+          format: int64
+        member_user_id:
+          type: string
+          format: int64
+        role_code:
+          type: string
+          maxLength: 64
+        permission_policy_id:
+          type: string
+          format: int64
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+    IntegrationServiceProviderPriceChangeRequestRecord:
+      type: object
+      x-table: integration_service_provider_price_change_request
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        change_no:
+          type: string
+          maxLength: 128
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        change_type:
+          type: string
+          maxLength: 64
+        draft_payload:
+          type: object
+          additionalProperties: true
+        before_hash:
+          type: string
+          maxLength: 128
+        after_hash:
+          type: string
+          maxLength: 128
+        approval_status:
+          type: string
+          maxLength: 32
+        requested_by:
+          type: string
+          format: int64
+        approved_by:
+          type: string
+          format: int64
+        effective_from:
+          type: string
+          format: date-time
+        published_at:
+          type: string
+          format: date-time
+    IntegrationServiceProviderPricePlanRecord:
+      type: object
+      x-table: integration_service_provider_price_plan
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        edge_id:
+          type: string
+          format: int64
+        plan_code:
+          type: string
+          maxLength: 64
+        plan_name:
+          type: string
+          maxLength: 128
+        base_amount_source:
+          type: string
+          maxLength: 64
+        pricing_mode:
+          type: string
+          maxLength: 64
+        default_multiplier:
+          type: string
+          format: decimal
+        default_markup_amount:
+          type: string
+          format: decimal
+        currency:
+          type: string
+          maxLength: 10
+        fallback_mode:
+          type: string
+          maxLength: 32
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+    IntegrationServiceProviderPriceRuleRecord:
+      type: object
+      x-table: integration_service_provider_price_rule
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        seller_provider_id:
+          type: string
+          format: int64
+        buyer_provider_id:
+          type: string
+          format: int64
+        edge_id:
+          type: string
+          format: int64
+        price_plan_id:
+          type: string
+          format: int64
+        catalog_key:
+          type: string
+          maxLength: 256
+        model:
+          type: string
+          maxLength: 128
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_id:
+          type: string
+          format: int64
+        billing_meter_code:
+          type: string
+          maxLength: 64
+        token_kind:
+          type: string
+          maxLength: 64
+        unit_price:
+          type: string
+          format: decimal
+        unit_size:
+          type: string
+          format: decimal
+        minimum_charge:
+          type: string
+          format: decimal
+        rounding_mode:
+          type: string
+          maxLength: 32
+        priority:
+          type: integer
+          format: int32
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+    IntegrationServiceProviderRecord:
+      type: object
+      x-table: integration_service_provider
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_no:
+          type: string
+          maxLength: 64
+        display_name:
+          type: string
+          maxLength: 128
+        provider_type:
+          type: string
+          maxLength: 64
+        owner_tenant_id:
+          type: string
+          format: int64
+        owner_organization_id:
+          type: string
+          format: int64
+        owner_user_id:
+          type: string
+          format: int64
+        default_currency:
+          type: string
+          maxLength: 10
+        default_timezone:
+          type: string
+          maxLength: 64
+        risk_level:
+          type: string
+          x-db-type: enum_int32
+        suspended_reason_code:
+          type: string
+          maxLength: 128
+        activated_at:
+          type: string
+          format: date-time
+        suspended_at:
+          type: string
+          format: date-time
+    IntegrationServiceProviderSubjectBindingRecord:
+      type: object
+      x-table: integration_service_provider_subject_binding
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        service_provider_id:
+          type: string
+          format: int64
+        subject_type:
+          type: string
+          maxLength: 64
+        subject_id:
+          type: string
+          format: int64
+        subject_code:
+          type: string
+          maxLength: 128
+        binding_priority:
+          type: integer
+          format: int32
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
     IntegrationWebhookEndpointRecord:
       type: object
       x-table: integration_webhook_endpoint
@@ -11874,6 +14378,997 @@ components:
         failure_count:
           type: string
           format: int64
+    MessagingDeliveryEventRecord:
+      type: object
+      x-table: messaging_delivery_event
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        send_attempt_id:
+          type: string
+          format: int64
+        provider_message_id:
+          type: string
+          maxLength: 256
+    MessagingProviderCapabilityRecord:
+      type: object
+      x-table: messaging_provider_capability
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        last_verified_at:
+          type: string
+          format: date-time
+    MessagingRateLimitBucketRecord:
+      type: object
+      x-table: messaging_rate_limit_bucket
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        last_event_at:
+          type: string
+          format: date-time
+    MessagingRouteRuleRecord:
+      type: object
+      x-table: messaging_route_rule
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        app_id:
+          type: string
+          maxLength: 128
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+    MessagingRouteRuleTargetRecord:
+      type: object
+      x-table: messaging_route_rule_target
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        sender_identity_id:
+          type: string
+          format: int64
+        template_binding_id:
+          type: string
+          format: int64
+    MessagingSendAttemptRecord:
+      type: object
+      x-table: messaging_send_attempt
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_request_id:
+          type: string
+          maxLength: 256
+        provider_message_id:
+          type: string
+          maxLength: 256
+        http_status:
+          type: integer
+          format: int32
+        provider_status:
+          type: string
+          maxLength: 64
+        latency_ms:
+          type: integer
+          format: int32
+        failure_code:
+          type: string
+          maxLength: 128
+        failure_message_masked:
+          type: string
+          maxLength: 512
+        retry_after_at:
+          type: string
+          format: date-time
+    MessagingSendRequestRecord:
+      type: object
+      x-table: messaging_send_request
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        app_id:
+          type: string
+          maxLength: 128
+        target_masked:
+          type: string
+          maxLength: 128
+        template_version_id:
+          type: string
+          format: int64
+        template_variant_id:
+          type: string
+          format: int64
+        resolved_route_rule_id:
+          type: string
+          format: int64
+        resolved_provider_account_id:
+          type: string
+          format: int64
+        resolved_sender_identity_id:
+          type: string
+          format: int64
+        scheduled_at:
+          type: string
+          format: date-time
+        accepted_at:
+          type: string
+          format: date-time
+        sent_at:
+          type: string
+          format: date-time
+        delivered_at:
+          type: string
+          format: date-time
+        failed_at:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+    MessagingSenderIdentityRecord:
+      type: object
+      x-table: messaging_sender_identity
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        display_name:
+          type: string
+          maxLength: 128
+        from_email:
+          type: string
+          maxLength: 256
+        from_name:
+          type: string
+          maxLength: 128
+        reply_to:
+          type: string
+          maxLength: 256
+        domain_name:
+          type: string
+          maxLength: 256
+        sign_name:
+          type: string
+          maxLength: 128
+        sender_id:
+          type: string
+          maxLength: 128
+        country_code:
+          type: string
+          maxLength: 16
+        verified_at:
+          type: string
+          format: date-time
+        rejection_reason:
+          type: string
+          maxLength: 512
+    MessagingSuppressionRecord:
+      type: object
+      x-table: messaging_suppression
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        target_masked:
+          type: string
+          maxLength: 128
+        ends_at:
+          type: string
+          format: date-time
+        note:
+          type: string
+          maxLength: 512
+    MessagingTemplateBindingRecord:
+      type: object
+      x-table: messaging_template_binding
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_template_version:
+          type: string
+          maxLength: 64
+        last_synced_at:
+          type: string
+          format: date-time
+        sync_payload_hash:
+          type: string
+          maxLength: 128
+        rejection_reason:
+          type: string
+          maxLength: 512
+    MessagingTemplateRecord:
+      type: object
+      x-table: messaging_template
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        owner_app_id:
+          type: string
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 512
+        current_version_id:
+          type: string
+          format: int64
+    MessagingTemplateVariantRecord:
+      type: object
+      x-table: messaging_template_variant
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        length_limit:
+          type: integer
+          format: int32
+    MessagingTemplateVersionRecord:
+      type: object
+      x-table: messaging_template_version
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        subject_template:
+          type: string
+          maxLength: 512
+        text_template:
+          type: string
+        html_template:
+          type: string
+        published_at:
+          type: string
+          format: date-time
+        retired_at:
+          type: string
+          format: date-time
+    ObjectBlobRecord:
+      type: object
+      x-table: object_blob
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          x-db-type: enum_int32
+        owner_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        bucket_id:
+          type: string
+          format: int64
+        object_key:
+          type: string
+          maxLength: 1024
+        version_id:
+          type: string
+          maxLength: 256
+        storage_etag:
+          type: string
+          maxLength: 256
+        content_sha256:
+          type: string
+          maxLength: 128
+        content_type:
+          type: string
+          maxLength: 256
+        original_filename:
+          type: string
+          maxLength: 512
+        storage_class:
+          type: string
+          maxLength: 64
+        encryption_mode:
+          type: string
+          maxLength: 64
+        kms_key_ref:
+          type: string
+          maxLength: 256
+        retention_until:
+          type: string
+          format: date-time
+        last_verified_at:
+          type: string
+          format: date-time
+    ObjectBucketRecord:
+      type: object
+      x-table: object_bucket
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        bucket_name:
+          type: string
+          maxLength: 128
+        bucket_region:
+          type: string
+          maxLength: 64
+        logical_scope:
+          type: string
+          maxLength: 64
+        data_residency_region:
+          type: string
+          maxLength: 64
+        kms_key_ref:
+          type: string
+          maxLength: 256
+        idempotency_key:
+          type: string
+          maxLength: 128
+        request_id:
+          type: string
+          maxLength: 128
+    ObjectProviderRecord:
+      type: object
+      x-table: object_provider
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_code:
+          type: string
+          maxLength: 96
+        provider_type:
+          type: string
+          maxLength: 64
+        endpoint_url:
+          type: string
+          maxLength: 512
+        region:
+          type: string
+          maxLength: 64
+        credential_ref:
+          type: string
+          maxLength: 256
+        last_health_check_at:
+          type: string
+          format: date-time
+        idempotency_key:
+          type: string
+          maxLength: 128
+        request_id:
+          type: string
+          maxLength: 128
+    ObjectTagRecord:
+      type: object
+      x-table: object_tag
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        object_blob_id:
+          type: string
+          format: int64
+        tag_key:
+          type: string
+          maxLength: 128
+        tag_value:
+          type: string
+          maxLength: 512
     OpenPlatformAccountRecord:
       type: object
       x-table: open_platform_account
@@ -13629,6 +17124,2320 @@ components:
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}
+    PromotionBudgetAccountRecord:
+      type: object
+      x-table: promotion_budget_account
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        budget_no:
+          type: string
+          maxLength: 128
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        stock_id:
+          type: string
+          maxLength: 512
+        budget_type:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 3
+        planned_amount_minor:
+          type: string
+          format: int64
+        overrun_amount_minor:
+          type: string
+          format: int64
+        lock_mode:
+          type: string
+          maxLength: 64
+        status:
+          type: string
+          maxLength: 64
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - budget_no
+      - offer_id
+      - budget_type
+      - currency_code
+      - planned_amount_minor
+      - overrun_amount_minor
+      - lock_mode
+      - status
+      - created_at
+      - updated_at
+    PromotionBudgetLedgerEntryRecord:
+      type: object
+      x-table: promotion_budget_ledger_entry
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        ledger_no:
+          type: string
+          maxLength: 128
+        budget_account_id:
+          type: string
+          maxLength: 512
+        application_id:
+          type: string
+          maxLength: 512
+        direction:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 3
+        business_type:
+          type: string
+          maxLength: 64
+        source_type:
+          type: string
+          maxLength: 64
+        source_id:
+          type: string
+          maxLength: 512
+        request_no:
+          type: string
+          maxLength: 128
+        idempotency_key:
+          type: string
+          maxLength: 128
+        occurred_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - ledger_no
+      - budget_account_id
+      - direction
+      - currency_code
+      - business_type
+      - source_type
+      - source_id
+      - request_no
+      - idempotency_key
+      - occurred_at
+      - created_at
+    PromotionCodeRecord:
+      type: object
+      x-table: promotion_code
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        code_no:
+          type: string
+          maxLength: 128
+        stock_id:
+          type: string
+          maxLength: 512
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        promotion_code_hash:
+          type: string
+          maxLength: 256
+        promotion_code_last4:
+          type: string
+          maxLength: 16
+        code_type:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 3
+        claim_code_hash:
+          type: string
+          maxLength: 256
+        claim_code_suffix:
+          type: string
+          maxLength: 16
+        activation_status:
+          type: string
+          maxLength: 64
+        activated_at:
+          type: string
+          format: date-time
+        canceled_at:
+          type: string
+          format: date-time
+        cancel_until:
+          type: string
+          format: date-time
+        can_resend:
+          type: boolean
+        channel_code:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          maxLength: 64
+        starts_at:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - code_no
+      - stock_id
+      - offer_id
+      - offer_version_id
+      - promotion_code_hash
+      - code_type
+      - currency_code
+      - activation_status
+      - can_resend
+      - status
+      - created_at
+      - updated_at
+    PromotionCodeRedemptionRecord:
+      type: object
+      x-table: promotion_code_redemption
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        redemption_no:
+          type: string
+          maxLength: 128
+        code_id:
+          type: string
+          maxLength: 512
+        stock_id:
+          type: string
+          maxLength: 512
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        user_coupon_id:
+          type: string
+          maxLength: 512
+        submitted_code_hash:
+          type: string
+          maxLength: 256
+        submitted_code_suffix:
+          type: string
+          maxLength: 16
+        subject_type:
+          type: string
+          maxLength: 64
+        subject_id:
+          type: string
+          maxLength: 512
+        owner_user_id:
+          type: string
+          maxLength: 512
+        currency_code:
+          type: string
+          maxLength: 3
+        result_status:
+          type: string
+          maxLength: 64
+        failure_code:
+          type: string
+          maxLength: 128
+        failure_message:
+          type: string
+          maxLength: 1024
+        redemption_channel:
+          type: string
+          maxLength: 64
+        redemption_scene:
+          type: string
+          maxLength: 64
+        request_no:
+          type: string
+          maxLength: 128
+        idempotency_key:
+          type: string
+          maxLength: 128
+        occurred_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - redemption_no
+      - stock_id
+      - offer_id
+      - offer_version_id
+      - submitted_code_hash
+      - subject_type
+      - subject_id
+      - currency_code
+      - result_status
+      - redemption_channel
+      - request_no
+      - idempotency_key
+      - occurred_at
+      - created_at
+    PromotionCouponLedgerEntryRecord:
+      type: object
+      x-table: promotion_coupon_ledger_entry
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        ledger_no:
+          type: string
+          maxLength: 128
+        stock_id:
+          type: string
+          maxLength: 512
+        user_coupon_id:
+          type: string
+          maxLength: 512
+        application_id:
+          type: string
+          maxLength: 512
+        offer_id:
+          type: string
+          maxLength: 512
+        subject_type:
+          type: string
+          maxLength: 64
+        subject_id:
+          type: string
+          maxLength: 512
+        direction:
+          type: string
+          maxLength: 64
+        business_type:
+          type: string
+          maxLength: 64
+        source_type:
+          type: string
+          maxLength: 64
+        source_id:
+          type: string
+          maxLength: 512
+        request_no:
+          type: string
+          maxLength: 128
+        idempotency_key:
+          type: string
+          maxLength: 128
+        occurred_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - ledger_no
+      - stock_id
+      - offer_id
+      - direction
+      - business_type
+      - source_type
+      - source_id
+      - request_no
+      - idempotency_key
+      - occurred_at
+      - created_at
+    PromotionCouponStockRecord:
+      type: object
+      x-table: promotion_coupon_stock
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        stock_no:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
+        title:
+          type: string
+          maxLength: 256
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        budget_account_id:
+          type: string
+          maxLength: 512
+        stock_type:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 3
+        issue_channel:
+          type: string
+          maxLength: 64
+        stock_creator_merchant_id:
+          type: string
+          maxLength: 256
+        code_mode:
+          type: string
+          maxLength: 64
+        activation_status:
+          type: string
+          maxLength: 64
+        cancel_until:
+          type: string
+          format: date-time
+        can_resend:
+          type: boolean
+        budget_warning_threshold_bps:
+          type: integer
+          format: int32
+        budget_stop_threshold_bps:
+          type: integer
+          format: int32
+        overspend_policy:
+          type: string
+          maxLength: 64
+        code_prefix:
+          type: string
+          maxLength: 64
+        total_quantity:
+          type: string
+          format: int64
+        max_claims_per_subject:
+          type: integer
+          format: int32
+        max_claims_per_natural_person:
+          type: integer
+          format: int32
+        per_subject_limit:
+          type: string
+          format: int64
+        status:
+          type: string
+          maxLength: 64
+        starts_at:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - stock_no
+      - name
+      - title
+      - offer_id
+      - offer_version_id
+      - stock_type
+      - currency_code
+      - issue_channel
+      - code_mode
+      - activation_status
+      - can_resend
+      - overspend_policy
+      - status
+      - created_at
+      - updated_at
+    PromotionDiscountAllocationRecord:
+      type: object
+      x-table: promotion_discount_allocation
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        application_id:
+          type: string
+          maxLength: 512
+        order_id:
+          type: string
+          maxLength: 512
+        order_item_id:
+          type: string
+          maxLength: 512
+        sku_id:
+          type: string
+          maxLength: 512
+        currency_code:
+          type: string
+          maxLength: 3
+        allocation_ratio_bps:
+          type: integer
+          format: int32
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - application_id
+      - order_id
+      - currency_code
+      - created_at
+    PromotionDiscountApplicationRecord:
+      type: object
+      x-table: promotion_discount_application
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        application_no:
+          type: string
+          maxLength: 128
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        stock_id:
+          type: string
+          maxLength: 512
+        user_coupon_id:
+          type: string
+          maxLength: 512
+        budget_account_id:
+          type: string
+          maxLength: 512
+        order_id:
+          type: string
+          maxLength: 512
+        order_no:
+          type: string
+          maxLength: 128
+        payment_id:
+          type: string
+          maxLength: 512
+        subject_type:
+          type: string
+          maxLength: 64
+        subject_id:
+          type: string
+          maxLength: 512
+        currency_code:
+          type: string
+          maxLength: 3
+        status:
+          type: string
+          maxLength: 64
+        request_no:
+          type: string
+          maxLength: 128
+        idempotency_key:
+          type: string
+          maxLength: 128
+        reserved_at:
+          type: string
+          format: date-time
+        reservation_expires_at:
+          type: string
+          format: date-time
+        applied_at:
+          type: string
+          format: date-time
+        settled_at:
+          type: string
+          format: date-time
+        released_at:
+          type: string
+          format: date-time
+        rolled_back_at:
+          type: string
+          format: date-time
+        failure_code:
+          type: string
+          maxLength: 128
+        failure_message:
+          type: string
+          maxLength: 1024
+        rule_snapshot_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - application_no
+      - offer_id
+      - offer_version_id
+      - order_id
+      - subject_type
+      - subject_id
+      - currency_code
+      - status
+      - request_no
+      - idempotency_key
+      - created_at
+      - updated_at
+    PromotionEventOutboxRecord:
+      type: object
+      x-table: promotion_event_outbox
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        event_no:
+          type: string
+          maxLength: 128
+        aggregate_type:
+          type: string
+          maxLength: 64
+        aggregate_id:
+          type: string
+          maxLength: 512
+        event_type:
+          type: string
+          maxLength: 128
+        event_version:
+          type: integer
+          format: int32
+        payload_json:
+          type: object
+          additionalProperties: true
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          maxLength: 64
+        next_retry_at:
+          type: string
+          format: date-time
+        occurred_at:
+          type: string
+          format: date-time
+        published_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - event_no
+      - aggregate_type
+      - aggregate_id
+      - event_type
+      - event_version
+      - payload_json
+      - status
+      - occurred_at
+      - created_at
+    PromotionExternalBindingRecord:
+      type: object
+      x-table: promotion_external_binding
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        binding_no:
+          type: string
+          maxLength: 128
+        platform:
+          type: string
+          maxLength: 64
+        external_merchant_id:
+          type: string
+          maxLength: 256
+        external_object_type:
+          type: string
+          maxLength: 64
+        external_object_id:
+          type: string
+          maxLength: 512
+        external_currency_code:
+          type: string
+          maxLength: 3
+        platform_template_id:
+          type: string
+          maxLength: 512
+        platform_stock_id:
+          type: string
+          maxLength: 512
+        platform_card_id:
+          type: string
+          maxLength: 512
+        platform_coupon_id:
+          type: string
+          maxLength: 512
+        claim_code_hash:
+          type: string
+          maxLength: 256
+        claim_code_suffix:
+          type: string
+          maxLength: 16
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        stock_id:
+          type: string
+          maxLength: 512
+        code_id:
+          type: string
+          maxLength: 512
+        user_coupon_id:
+          type: string
+          maxLength: 512
+        sync_status:
+          type: string
+          maxLength: 64
+        last_sync_at:
+          type: string
+          format: date-time
+        last_error_code:
+          type: string
+          maxLength: 128
+        last_error_message:
+          type: string
+          maxLength: 1024
+        metadata_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - binding_no
+      - platform
+      - external_object_type
+      - external_object_id
+      - external_currency_code
+      - sync_status
+      - created_at
+      - updated_at
+    PromotionExternalOperationRecord:
+      type: object
+      x-table: promotion_external_operation
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        operation_no:
+          type: string
+          maxLength: 128
+        binding_id:
+          type: string
+          maxLength: 512
+        platform:
+          type: string
+          maxLength: 64
+        aggregate_type:
+          type: string
+          maxLength: 64
+        aggregate_id:
+          type: string
+          maxLength: 512
+        operation_type:
+          type: string
+          maxLength: 64
+        external_request_no:
+          type: string
+          maxLength: 256
+        external_operation_id:
+          type: string
+          maxLength: 512
+        provider_request_id:
+          type: string
+          maxLength: 256
+        provider_code:
+          type: string
+          maxLength: 128
+        callback_id:
+          type: string
+          maxLength: 256
+        callback_sig_hash:
+          type: string
+          maxLength: 256
+        callback_at:
+          type: string
+          format: date-time
+        external_status:
+          type: string
+          maxLength: 64
+        status:
+          type: string
+          maxLength: 64
+        request_hash:
+          type: string
+          maxLength: 128
+        response_hash:
+          type: string
+          maxLength: 128
+        sanitized_request_json:
+          type: object
+          additionalProperties: true
+        sanitized_response_json:
+          type: object
+          additionalProperties: true
+        next_retry_at:
+          type: string
+          format: date-time
+        cancel_until:
+          type: string
+          format: date-time
+        replay_op_id:
+          type: string
+          maxLength: 512
+        idempotency_key:
+          type: string
+          maxLength: 128
+        error_code:
+          type: string
+          maxLength: 128
+        error_message:
+          type: string
+          maxLength: 1024
+        occurred_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - operation_no
+      - platform
+      - aggregate_type
+      - aggregate_id
+      - operation_type
+      - status
+      - sanitized_request_json
+      - sanitized_response_json
+      - idempotency_key
+      - occurred_at
+      - created_at
+    PromotionOfferAudienceRuleRecord:
+      type: object
+      x-table: promotion_offer_audience_rule
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        rule_type:
+          type: string
+          maxLength: 64
+        rule_operator:
+          type: string
+          maxLength: 64
+        rule_value:
+          type: string
+          maxLength: 1024
+        rule_value_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - offer_version_id
+      - rule_type
+      - rule_operator
+      - created_at
+      - updated_at
+    PromotionOfferPresentationRecord:
+      type: object
+      x-table: promotion_offer_presentation
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        presentation_no:
+          type: string
+          maxLength: 128
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        surface_type:
+          type: string
+          maxLength: 64
+        locale:
+          type: string
+          maxLength: 32
+        display_name:
+          type: string
+          maxLength: 256
+        merchant_display_name:
+          type: string
+          maxLength: 256
+        brand_name:
+          type: string
+          maxLength: 256
+        logo_asset_id:
+          type: string
+          maxLength: 512
+        cover_asset_id:
+          type: string
+          maxLength: 512
+        primary_color:
+          type: string
+          maxLength: 32
+        secondary_color:
+          type: string
+          maxLength: 32
+        param_schema_json:
+          type: object
+          additionalProperties: true
+        field_schema_json:
+          type: object
+          additionalProperties: true
+        verify_method:
+          type: string
+          maxLength: 64
+        recognition_type:
+          type: string
+          maxLength: 64
+        recognition_hash:
+          type: string
+          maxLength: 256
+        terms_json:
+          type: object
+          additionalProperties: true
+        customer_action_json:
+          type: object
+          additionalProperties: true
+        style_snapshot_json:
+          type: object
+          additionalProperties: true
+        status:
+          type: string
+          maxLength: 64
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - presentation_no
+      - offer_version_id
+      - surface_type
+      - locale
+      - display_name
+      - merchant_display_name
+      - param_schema_json
+      - field_schema_json
+      - verify_method
+      - recognition_type
+      - terms_json
+      - customer_action_json
+      - style_snapshot_json
+      - status
+      - created_at
+      - updated_at
+    PromotionOfferRecord:
+      type: object
+      x-table: promotion_offer
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        offer_no:
+          type: string
+          maxLength: 128
+        offer_code:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
+        description:
+          type: string
+          maxLength: 2048
+        offer_type:
+          type: string
+          maxLength: 64
+        audience_scope:
+          type: string
+          maxLength: 64
+        combinability:
+          type: string
+          maxLength: 64
+        status:
+          type: string
+          maxLength: 64
+        current_offer_version_id:
+          type: string
+          maxLength: 512
+        starts_at:
+          type: string
+          format: date-time
+        ends_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - offer_no
+      - offer_code
+      - name
+      - offer_type
+      - audience_scope
+      - combinability
+      - status
+      - created_at
+      - updated_at
+    PromotionOfferScopeRecord:
+      type: object
+      x-table: promotion_offer_scope
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        scope_type:
+          type: string
+          maxLength: 64
+        match_mode:
+          type: string
+          maxLength: 64
+        target_id:
+          type: string
+          maxLength: 512
+        target_code:
+          type: string
+          maxLength: 256
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - offer_version_id
+      - scope_type
+      - match_mode
+      - created_at
+      - updated_at
+    PromotionOfferTimeWindowRecord:
+      type: object
+      x-table: promotion_offer_time_window
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        window_type:
+          type: string
+          maxLength: 64
+        starts_at:
+          type: string
+          format: date-time
+        ends_at:
+          type: string
+          format: date-time
+        timezone:
+          type: string
+          maxLength: 64
+        local_start_time:
+          type: string
+          maxLength: 32
+        local_end_time:
+          type: string
+          maxLength: 32
+        weekday_mask:
+          type: integer
+          format: int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - offer_version_id
+      - window_type
+      - created_at
+      - updated_at
+    PromotionOfferVersionRecord:
+      type: object
+      x-table: promotion_offer_version
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        offer_id:
+          type: string
+          maxLength: 512
+        version_no:
+          type: string
+          format: int64
+        lifecycle_status:
+          type: string
+          maxLength: 64
+        discount_type:
+          type: string
+          maxLength: 64
+        discount_amount_minor:
+          type: string
+          format: int64
+        discount_percent_bps:
+          type: integer
+          format: int32
+        fixed_price_minor:
+          type: string
+          format: int64
+        maximum_discount_amount_minor:
+          type: string
+          format: int64
+        currency_code:
+          type: string
+          maxLength: 3
+        benefit_kind:
+          type: string
+          maxLength: 64
+        face_value_minor:
+          type: string
+          format: int64
+        liability_policy:
+          type: string
+          maxLength: 64
+        breakage_policy:
+          type: string
+          maxLength: 64
+        tax_treatment:
+          type: string
+          maxLength: 64
+        validity_type:
+          type: string
+          maxLength: 64
+        validity_duration_seconds:
+          type: string
+          format: int64
+        return_policy:
+          type: string
+          maxLength: 64
+        settlement_policy:
+          type: string
+          maxLength: 64
+        benefit_definition_id:
+          type: string
+          maxLength: 512
+        benefit_quantity:
+          type: string
+          format: decimal
+        stack_strategy:
+          type: string
+          maxLength: 64
+        rule_snapshot_json:
+          type: object
+          additionalProperties: true
+        published_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+          maxLength: 512
+        updated_by:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - offer_id
+      - version_no
+      - lifecycle_status
+      - discount_type
+      - currency_code
+      - benefit_kind
+      - face_value_minor
+      - liability_policy
+      - breakage_policy
+      - tax_treatment
+      - validity_type
+      - return_policy
+      - settlement_policy
+      - stack_strategy
+      - rule_snapshot_json
+      - created_at
+      - updated_at
+    PromotionUserCouponRecord:
+      type: object
+      x-table: promotion_user_coupon
+      x-domain: promotion
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        coupon_no:
+          type: string
+          maxLength: 128
+        stock_id:
+          type: string
+          maxLength: 512
+        code_id:
+          type: string
+          maxLength: 512
+        offer_id:
+          type: string
+          maxLength: 512
+        offer_version_id:
+          type: string
+          maxLength: 512
+        budget_account_id:
+          type: string
+          maxLength: 512
+        subject_type:
+          type: string
+          maxLength: 64
+        subject_id:
+          type: string
+          maxLength: 512
+        owner_user_id:
+          type: string
+          maxLength: 512
+        coupon_code_hash:
+          type: string
+          maxLength: 256
+        coupon_code_suffix:
+          type: string
+          maxLength: 16
+        verify_method:
+          type: string
+          maxLength: 64
+        recognition_type:
+          type: string
+          maxLength: 64
+        recognition_hash:
+          type: string
+          maxLength: 256
+        claim_code_hash:
+          type: string
+          maxLength: 256
+        claim_code_suffix:
+          type: string
+          maxLength: 16
+        activation_status:
+          type: string
+          maxLength: 64
+        cancel_until:
+          type: string
+          format: date-time
+        can_resend:
+          type: boolean
+        discount_percent_bps:
+          type: integer
+          format: int32
+        currency_code:
+          type: string
+          maxLength: 3
+        status:
+          type: string
+          maxLength: 64
+        claim_source:
+          type: string
+          maxLength: 64
+        claimed_at:
+          type: string
+          format: date-time
+        valid_from:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+        locked_at:
+          type: string
+          format: date-time
+        lock_expires_at:
+          type: string
+          format: date-time
+        redeemed_at:
+          type: string
+          format: date-time
+        disabled_at:
+          type: string
+          format: date-time
+        returned_at:
+          type: string
+          format: date-time
+        request_no:
+          type: string
+          maxLength: 128
+        idempotency_key:
+          type: string
+          maxLength: 128
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+      - tenant_id
+      - coupon_no
+      - stock_id
+      - offer_id
+      - offer_version_id
+      - subject_type
+      - subject_id
+      - currency_code
+      - verify_method
+      - activation_status
+      - can_resend
+      - status
+      - claim_source
+      - request_no
+      - idempotency_key
+      - created_at
+      - updated_at
+    StorageDefaultBucketPolicyRecord:
+      type: object
+      x-table: storage_default_bucket_policy
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        logical_scope:
+          type: string
+          maxLength: 64
+        bucket_id:
+          type: string
+          format: int64
+        bucket_logical_scope:
+          type: string
+          maxLength: 64
+        updated_by:
+          type: string
+          format: int64
+        reason:
+          type: string
+          maxLength: 512
+        request_id:
+          type: string
+          maxLength: 128
+    StorageGcJobRecord:
+      type: object
+      x-table: storage_gc_job
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        job_type:
+          type: string
+          maxLength: 64
+        requested_by:
+          type: string
+          format: int64
+        idempotency_key:
+          type: string
+          maxLength: 128
+        cursor_token:
+          type: string
+          maxLength: 512
+        started_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        request_id:
+          type: string
+          maxLength: 128
+    StorageQuotaPolicyRecord:
+      type: object
+      x-table: storage_quota_policy
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        quota_limit_bytes:
+          type: string
+          format: int64
+        single_file_limit_bytes:
+          type: string
+          format: int64
+        enforcement:
+          type: string
+          maxLength: 64
+        idempotency_key:
+          type: string
+          maxLength: 128
+        request_id:
+          type: string
+          maxLength: 128
+    StorageQuotaReservationRecord:
+      type: object
+      x-table: storage_quota_reservation
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        reservation_no:
+          type: string
+          maxLength: 128
+        upload_session_id:
+          type: string
+          format: int64
+        expires_at:
+          type: string
+          format: date-time
+        released_at:
+          type: string
+          format: date-time
+        idempotency_key:
+          type: string
+          maxLength: 128
+    StorageReconciliationItemRecord:
+      type: object
+      x-table: storage_reconciliation_item
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        run_id:
+          type: string
+          format: int64
+        bucket_id:
+          type: string
+          format: int64
+        object_blob_id:
+          type: string
+          format: int64
+        object_key:
+          type: string
+          maxLength: 1024
+        issue_type:
+          type: string
+          maxLength: 64
+        expected_hash:
+          type: string
+          maxLength: 128
+        actual_hash:
+          type: string
+          maxLength: 128
+        expected_size_bytes:
+          type: string
+          format: int64
+        actual_size_bytes:
+          type: string
+          format: int64
+        repair_status:
+          type: string
+          maxLength: 64
+        repair_payload:
+          type: object
+          additionalProperties: true
+    StorageReconciliationRunRecord:
+      type: object
+      x-table: storage_reconciliation_run
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        bucket_id:
+          type: string
+          format: int64
+        run_type:
+          type: string
+          maxLength: 64
+        check_mode:
+          type: string
+          maxLength: 64
+        completed_at:
+          type: string
+          format: date-time
+        requested_by:
+          type: string
+          format: int64
+        idempotency_key:
+          type: string
+          maxLength: 128
+        request_id:
+          type: string
+          maxLength: 128
+    StorageUsageCounterRecord:
+      type: object
+      x-table: storage_usage_counter
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          x-db-type: enum_int32
+        owner_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        space_id:
+          type: string
+          maxLength: 128
+        app_id:
+          type: string
+          maxLength: 128
+        business_domain:
+          type: string
+          maxLength: 128
+    StorageUsageLedgerRecord:
+      type: object
+      x-table: storage_usage_ledger
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        space_id:
+          type: string
+          maxLength: 128
+        app_id:
+          type: string
+          maxLength: 128
+        business_domain:
+          type: string
+          maxLength: 128
+        usage_event_type:
+          type: string
+          maxLength: 128
+        reason:
+          type: string
+          maxLength: 512
+        idempotency_key:
+          type: string
+          maxLength: 128
+    StorageUsageSnapshotRecord:
+      type: object
+      x-table: storage_usage_snapshot
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        user_id:
+          type: string
+          format: int64
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        space_id:
+          type: string
+          maxLength: 128
+        app_id:
+          type: string
+          maxLength: 128
+        business_domain:
+          type: string
+          maxLength: 128
+        snapshot_type:
+          type: string
+          maxLength: 64
+    StudioAppTemplateRecord:
+      type: object
+      x-table: studio_app_template
+      x-domain: studio
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        template_no:
+          type: string
+          maxLength: 64
+        template_code:
+          type: string
+          maxLength: 128
+        template_name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        category_id:
+          type: string
+          format: int64
+        category_code:
+          type: string
+          maxLength: 128
+        template_type:
+          type: string
+          maxLength: 64
+        runtime:
+          type: string
+          maxLength: 128
+        framework:
+          type: string
+          maxLength: 128
+        language:
+          type: string
+          maxLength: 64
+        icon_url:
+          type: string
+          maxLength: 1024
+        cover_url:
+          type: string
+          maxLength: 1024
+        visibility:
+          type: string
+          x-db-type: enum_int32
+        publish_status:
+          type: string
+          x-db-type: enum_int32
+        featured:
+          type: boolean
+        sort_weight:
+          type: integer
+          format: int32
+        owner_user_id:
+          type: string
+          format: int64
+        source_app_id:
+          type: string
+          format: int64
+        git_repo_url:
+          type: string
+          maxLength: 1024
+        git_ref:
+          type: string
+          maxLength: 128
+        git_sub_path:
+          type: string
+          maxLength: 1024
+        current_version_id:
+          type: string
+          format: int64
+        app_config_schema:
+          type: object
+          additionalProperties: true
+        default_app_config:
+          type: object
+          additionalProperties: true
+        variable_schema:
+          type: object
+          additionalProperties: true
+        dependency_manifest:
+          type: object
+          additionalProperties: true
+        capability_manifest:
+          type: object
+          additionalProperties: true
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
+    StudioAppTemplateUsageRecord:
+      type: object
+      x-table: studio_app_template_usage
+      x-domain: studio
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        template_id:
+          type: string
+          format: int64
+        template_version_id:
+          type: string
+          format: int64
+        target_app_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        usage_type:
+          type: string
+          x-db-type: enum_int32
+        input_snapshot:
+          type: object
+          additionalProperties: true
+        output_snapshot:
+          type: object
+          additionalProperties: true
+    StudioAppTemplateVersionRecord:
+      type: object
+      x-table: studio_app_template_version
+      x-domain: studio
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        template_id:
+          type: string
+          format: int64
+        version_no:
+          type: string
+          maxLength: 64
+        artifact_id:
+          type: string
+          format: int64
+        changelog:
+          type: string
+        file_manifest:
+          type: object
+          additionalProperties: true
+        dependency_manifest:
+          type: object
+          additionalProperties: true
+        capability_manifest:
+          type: object
+          additionalProperties: true
+        variable_schema:
+          type: object
+          additionalProperties: true
+        app_config_schema:
+          type: object
+          additionalProperties: true
+        default_app_config:
+          type: object
+          additionalProperties: true
+        publish_status:
+          type: string
+          x-db-type: enum_int32
+        published_at:
+          type: string
+          format: date-time
+        deprecated_at:
+          type: string
+          format: date-time
     StudioCatalogActionRecord:
       type: object
       x-table: studio_catalog_action
@@ -13943,3 +19752,298 @@ components:
           format: date-time
         error_message:
           type: string
+    UploadCompletionAttemptRecord:
+      type: object
+      x-table: upload_completion_attempt
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        upload_session_id:
+          type: string
+          format: int64
+        object_blob_id:
+          type: string
+          format: int64
+        attempt_no:
+          type: integer
+          format: int32
+        completion_status:
+          type: string
+          maxLength: 64
+        provider_request_id:
+          type: string
+          maxLength: 256
+        error_code:
+          type: string
+          maxLength: 128
+        error_message_masked:
+          type: string
+          maxLength: 1024
+    UploadPartRecord:
+      type: object
+      x-table: upload_part
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        upload_session_id:
+          type: string
+          format: int64
+        part_number:
+          type: integer
+          format: int32
+        part_etag:
+          type: string
+          maxLength: 256
+        part_sha256:
+          type: string
+          maxLength: 128
+        presigned_url_expires_at:
+          type: string
+          format: date-time
+        uploaded_at:
+          type: string
+          format: date-time
+    UploadPresignGrantRecord:
+      type: object
+      x-table: upload_presign_grant
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        upload_session_id:
+          type: string
+          format: int64
+        upload_part_id:
+          type: string
+          format: int64
+        provider_id:
+          type: string
+          format: int64
+        bucket_id:
+          type: string
+          format: int64
+        method:
+          type: string
+          maxLength: 16
+        object_key:
+          type: string
+          maxLength: 1024
+        canonical_headers:
+          type: object
+          additionalProperties: true
+        signed_headers:
+          type: object
+          additionalProperties: true
+        expires_at:
+          type: string
+          format: date-time
+        consumed_at:
+          type: string
+          format: date-time
+    UploadSessionRecord:
+      type: object
+      x-table: upload_session
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          x-db-type: enum_int32
+        owner_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        upload_session_no:
+          type: string
+          maxLength: 128
+        provider_id:
+          type: string
+          format: int64
+        bucket_id:
+          type: string
+          format: int64
+        logical_scope:
+          type: string
+          maxLength: 64
+        object_key:
+          type: string
+          maxLength: 1024
+        upload_mode:
+          type: string
+          maxLength: 64
+        s3_upload_id:
+          type: string
+          maxLength: 512
+        content_type:
+          type: string
+          maxLength: 256
+        original_filename:
+          type: string
+          maxLength: 512
+        expected_sha256:
+          type: string
+          maxLength: 128
+        expires_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        aborted_at:
+          type: string
+          format: date-time
+        idempotency_key:
+          type: string
+          maxLength: 128
+        request_id:
+          type: string
+          maxLength: 128

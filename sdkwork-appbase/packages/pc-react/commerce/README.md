@@ -6,7 +6,7 @@ Packages in this domain:
 
 - `sdkwork-wallet-pc-react`
 - `sdkwork-points-pc-react`
-- `sdkwork-vip-pc-react`
+- `sdkwork-membership-pc-react`
 - `sdkwork-entitlement-pc-react`
 - `sdkwork-coupon-pc-react`
 - `sdkwork-offer-pc-react`

@@ -9,7 +9,7 @@ public class OpenAiThreadUpdateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -17,7 +17,7 @@ public class OpenAiThreadUpdateRequest {
     public String getToolResources() {
         return this.toolResources;
     }
-    
+
     public void setToolResources(String toolResources) {
         this.toolResources = toolResources;
     }

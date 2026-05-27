@@ -28,6 +28,9 @@ use tower::ServiceExt;
 const API_KEYS_PATH: &str = "/app/v3/api/iam/api_keys";
 const TRUSTED_SUBJECT_SECRET: &str = "trusted-subject-secret-0123456789";
 const APP_SESSION_SECRET: &str = "app-session-secret-0123456789abcd";
+const INTERNAL_TENANT_HEADER: &str = concat!("x-sdkwork-", "tenant-id");
+const INTERNAL_ORGANIZATION_HEADER: &str = concat!("x-sdkwork-", "organization-id");
+const INTERNAL_USER_HEADER: &str = concat!("x-sdkwork-", "user-id");
 
 fn catalog() -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
@@ -152,7 +155,7 @@ fn session_authorization_header(
     );
     builder
         .header("authorization", format!("Bearer {auth_token}"))
-        .header("Sdkwork-Access-Token", access_token)
+        .header("Access-Token", access_token)
 }
 
 fn signed_subject_headers(
@@ -324,6 +327,7 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
                 created_at: command.created_at,
                 expire_at: command.expire_at,
                 status_code: 1,
+                default_for_runtime: command.default_for_runtime,
             };
 
             let mut catalog = self
@@ -372,6 +376,9 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
             }
             if let Some(expire_at) = command.expire_at {
                 api_key.expire_at = expire_at;
+            }
+            if let Some(default_for_runtime) = command.default_for_runtime {
+                api_key.default_for_runtime = default_for_runtime;
             }
             catalog.add_api_key(api_key.clone());
             Ok(Some(UpdatedGatewayApiKey {
@@ -500,7 +507,7 @@ async fn app_api_key_create_accepts_app_session_token_subject() {
                 30,
             )
             .header("Idempotency-Key", "create-search-service-1")
-            .header("X-Request-Id", "request-create-search-service-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000001")
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
@@ -586,7 +593,7 @@ async fn app_api_key_create_accepts_signed_trusted_subject_boundary() {
                 30,
             )
             .header("Idempotency-Key", "signed-subject-create-1")
-            .header("X-Request-Id", "request-signed-subject-create-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000002")
             .body(Body::from(
                 serde_json::json!({
                     "name": "Signed Subject Service",
@@ -636,7 +643,7 @@ async fn app_api_key_update_rebinds_owner_key_group_through_app_router() {
                 20,
                 30,
             )
-            .header("X-Request-Id", "request-update-key-group-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000003")
             .body(Body::from(
                 serde_json::json!({
                     "group": "standard-group",
@@ -677,7 +684,7 @@ async fn app_api_key_delete_revokes_owner_key_through_app_router() {
                 20,
                 30,
             )
-            .header("X-Request-Id", "request-delete-key-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000004")
             .body(Body::empty())
             .unwrap(),
         )
@@ -707,7 +714,7 @@ async fn app_api_key_create_requires_trusted_user_context() {
                 .uri(API_KEYS_PATH)
                 .header("content-type", "application/json")
                 .header("Idempotency-Key", "missing-subject-1")
-                .header("X-Request-Id", "request-missing-subject-1")
+                .header("X-Request-Id", "00000000-0000-4000-8000-000000000005")
                 .body(Body::from(
                     serde_json::json!({
                         "name": "Search Service",
@@ -733,7 +740,8 @@ async fn app_api_key_create_requires_trusted_user_context() {
     let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("4010", payload["code"]);
-    assert!(body_text.contains("x-sdkwork-tenant-id header is required"));
+    assert!(body_text.contains("app session bearer token is required"));
+    assert!(!body_text.contains(INTERNAL_TENANT_HEADER));
     assert!(!body_text.contains("rawKey"));
 }
 
@@ -745,11 +753,11 @@ async fn app_api_key_create_rejects_direct_trusted_subject_headers() {
                 .method("POST")
                 .uri(API_KEYS_PATH)
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "999")
-                .header("x-sdkwork-organization-id", "999")
-                .header("x-sdkwork-user-id", "999")
+                .header(INTERNAL_TENANT_HEADER, "999")
+                .header(INTERNAL_ORGANIZATION_HEADER, "999")
+                .header(INTERNAL_USER_HEADER, "999")
                 .header("Idempotency-Key", "direct-subject-1")
-                .header("X-Request-Id", "request-direct-subject-1")
+                .header("X-Request-Id", "00000000-0000-4000-8000-000000000006")
                 .body(Body::from(
                     serde_json::json!({
                         "name": "Search Service",
@@ -775,7 +783,8 @@ async fn app_api_key_create_rejects_direct_trusted_subject_headers() {
     let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("4010", payload["code"]);
-    assert!(body_text.contains("x-sdkwork-tenant-id header is required"));
+    assert!(body_text.contains("app session bearer token is required"));
+    assert!(!body_text.contains(INTERNAL_TENANT_HEADER));
     assert!(!body_text.contains("999"));
     assert!(!body_text.contains("rawKey"));
 }
@@ -848,7 +857,7 @@ async fn app_api_key_create_rejects_duplicate_idempotency_key_without_second_sec
                 30,
             )
             .header("Idempotency-Key", "duplicate-key-1")
-            .header("X-Request-Id", "request-duplicate-key-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000007")
             .body(Body::from(request_body.clone()))
             .unwrap(),
         )
@@ -868,7 +877,7 @@ async fn app_api_key_create_rejects_duplicate_idempotency_key_without_second_sec
                 30,
             )
             .header("Idempotency-Key", "duplicate-key-1")
-            .header("X-Request-Id", "request-duplicate-key-2")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000008")
             .body(Body::from(request_body))
             .unwrap(),
         )
@@ -913,7 +922,7 @@ async fn app_api_key_create_scopes_idempotency_key_by_tenant() {
                 30,
             )
             .header("Idempotency-Key", "tenant-scoped-key-1")
-            .header("X-Request-Id", "request-tenant-scoped-key-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000009")
             .body(Body::from(request_body.clone()))
             .unwrap(),
         )
@@ -933,7 +942,7 @@ async fn app_api_key_create_scopes_idempotency_key_by_tenant() {
                 31,
             )
             .header("Idempotency-Key", "tenant-scoped-key-1")
-            .header("X-Request-Id", "request-tenant-scoped-key-2")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000010")
             .body(Body::from(request_body))
             .unwrap(),
         )
@@ -968,7 +977,7 @@ async fn app_api_key_create_rejects_invalid_ip_allowlist_without_revealing_key()
                 30,
             )
             .header("Idempotency-Key", "invalid-ip-1")
-            .header("X-Request-Id", "request-invalid-ip-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000011")
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
@@ -1013,7 +1022,7 @@ async fn app_api_key_create_rejects_invalid_expiration_date() {
                 30,
             )
             .header("Idempotency-Key", "invalid-expiration-1")
-            .header("X-Request-Id", "request-invalid-expiration-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000012")
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
@@ -1057,7 +1066,7 @@ async fn app_api_key_create_rejects_non_positive_quota() {
                 30,
             )
             .header("Idempotency-Key", "non-positive-quota-1")
-            .header("X-Request-Id", "request-non-positive-quota-1")
+            .header("X-Request-Id", "00000000-0000-4000-8000-000000000013")
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",

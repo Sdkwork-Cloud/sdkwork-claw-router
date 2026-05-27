@@ -15,7 +15,7 @@ namespace Sdkwork.ClawRouter.App.Http
 {
     public class HttpClient
     {
-        private const string ApiKeyHeader = "Sdkwork-Access-Token";
+        private const string ApiKeyHeader = "Access-Token";
         private static readonly bool ApiKeyUseBearer = false;
 
         private readonly System.Net.Http.HttpClient _client;
@@ -73,10 +73,10 @@ namespace Sdkwork.ClawRouter.App.Http
                 _client.DefaultRequestHeaders.Authorization = null;
             }
 
-            if (!ApiKeyHeader.Equals("Sdkwork-Access-Token", StringComparison.OrdinalIgnoreCase)
-                && _client.DefaultRequestHeaders.Contains("Sdkwork-Access-Token"))
+            if (!ApiKeyHeader.Equals("Access-Token", StringComparison.OrdinalIgnoreCase)
+                && _client.DefaultRequestHeaders.Contains("Access-Token"))
             {
-                _client.DefaultRequestHeaders.Remove("Sdkwork-Access-Token");
+                _client.DefaultRequestHeaders.Remove("Access-Token");
             }
         }
 
@@ -93,16 +93,16 @@ namespace Sdkwork.ClawRouter.App.Http
 
         public void SetAccessToken(string token)
         {
-            if (!ApiKeyHeader.Equals("Sdkwork-Access-Token", StringComparison.OrdinalIgnoreCase)
+            if (!ApiKeyHeader.Equals("Access-Token", StringComparison.OrdinalIgnoreCase)
                 && _client.DefaultRequestHeaders.Contains(ApiKeyHeader))
             {
                 _client.DefaultRequestHeaders.Remove(ApiKeyHeader);
             }
-            if (_client.DefaultRequestHeaders.Contains("Sdkwork-Access-Token"))
+            if (_client.DefaultRequestHeaders.Contains("Access-Token"))
             {
-                _client.DefaultRequestHeaders.Remove("Sdkwork-Access-Token");
+                _client.DefaultRequestHeaders.Remove("Access-Token");
             }
-            _client.DefaultRequestHeaders.TryAddWithoutValidation("Sdkwork-Access-Token", token);
+            _client.DefaultRequestHeaders.TryAddWithoutValidation("Access-Token", token);
         }
 
         public void SetHeader(string key, string value)

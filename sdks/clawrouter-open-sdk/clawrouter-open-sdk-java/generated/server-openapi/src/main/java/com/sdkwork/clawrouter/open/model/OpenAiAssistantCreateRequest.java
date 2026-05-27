@@ -18,7 +18,7 @@ public class OpenAiAssistantCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -26,7 +26,7 @@ public class OpenAiAssistantCreateRequest {
     public String getInstructions() {
         return this.instructions;
     }
-    
+
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -34,7 +34,7 @@ public class OpenAiAssistantCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -42,7 +42,7 @@ public class OpenAiAssistantCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -50,7 +50,7 @@ public class OpenAiAssistantCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -58,7 +58,7 @@ public class OpenAiAssistantCreateRequest {
     public String getResponseFormat() {
         return this.responseFormat;
     }
-    
+
     public void setResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
     }
@@ -66,7 +66,7 @@ public class OpenAiAssistantCreateRequest {
     public Double getTemperature() {
         return this.temperature;
     }
-    
+
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
@@ -74,7 +74,7 @@ public class OpenAiAssistantCreateRequest {
     public String getToolResources() {
         return this.toolResources;
     }
-    
+
     public void setToolResources(String toolResources) {
         this.toolResources = toolResources;
     }
@@ -82,7 +82,7 @@ public class OpenAiAssistantCreateRequest {
     public List<String> getTools() {
         return this.tools;
     }
-    
+
     public void setTools(List<String> tools) {
         this.tools = tools;
     }
@@ -90,7 +90,7 @@ public class OpenAiAssistantCreateRequest {
     public Double getTopP() {
         return this.topP;
     }
-    
+
     public void setTopP(Double topP) {
         this.topP = topP;
     }

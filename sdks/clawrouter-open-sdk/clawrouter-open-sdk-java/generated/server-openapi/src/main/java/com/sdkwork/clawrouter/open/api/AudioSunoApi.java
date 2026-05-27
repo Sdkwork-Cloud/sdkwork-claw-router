@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class AudioSunoApi {
     private final HttpClient client;
-    
+
     public AudioSunoApi(HttpClient client) {
         this.client = client;
     }

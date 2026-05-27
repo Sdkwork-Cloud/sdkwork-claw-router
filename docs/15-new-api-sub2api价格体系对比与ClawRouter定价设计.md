@@ -257,5 +257,5 @@ billable_quantity = ceil(media_duration_seconds / quantity_step) * quantity_step
 
 - 不使用 `ai_pricing_group`，避免把业务分组误建为价格专用分组。
 - 不使用 `claw_`、`router_`、`sdkwork_`、`console_`、`admin_`、`portal_` 作为新业务表前缀。
-- 不复制 `plus_user`、`plus_vip_*`、`plus_account*`、`plus_coupon*`、`plus_order*`、`plus_payment*` 的事实表结构；这些表保持与 `spring-ai-plus-business-entity` 完全一致。
+- 不复制 `plus_user`、`plus_vip_*`、`plus_account*`、`plus_order*`、`plus_payment*` 的事实表结构；卡券营销统一使用标准 `promotion_*` 事实表。
 - 不以 JSON map 作为价格事实唯一来源；JSON 只保存快照、表达式参数、导入原文引用和扩展 metadata。

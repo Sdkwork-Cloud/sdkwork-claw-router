@@ -9,9 +9,7 @@ frontend_models:
   - date
   - status
   data_sources:
-  - commerce_account_ledger_entry
-  - commerce_order
-  - commerce_payment_attempt
+  - commerce_billing_history
 - route: /console/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
   interface: RechargeHistoryItem
@@ -19,17 +17,11 @@ frontend_models:
   - orderNo
   - method
   data_sources:
-  - commerce_account_ledger_entry
-  - commerce_order
-  - commerce_payment_attempt
+  - commerce_billing_history
 - route: /console/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
   interface: RedeemHistoryItem
   fields:
   - code
   data_sources:
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_account_ledger_entry
-  - commerce_order
-  - commerce_payment_attempt
+  - commerce_billing_history

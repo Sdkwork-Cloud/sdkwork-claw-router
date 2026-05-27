@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   CreateIdentityDeploymentProfileOptions,
   IdentityAuthorityKind,
   IdentityDeploymentMode,
@@ -20,9 +20,9 @@
 import { USER_CENTER_STANDARD_HANDSHAKE_MODE_HEADER_NAME } from "./userCenterStandard.ts";
 
 export const USER_CENTER_DEPLOYMENT_VARIABLE_NAMES = Object.freeze({
-  accessTokenHeaderName: "SDKWORK_USER_CENTER_ACCESS_TOKEN_HEADER_NAME",
+  accessTokenHeaderName: "USER_CENTER_ACCESS_TOKEN_HEADER_NAME",
   allowAuthorizationFallbackToAccessToken:
-    "SDKWORK_USER_CENTER_ALLOW_AUTHORIZATION_FALLBACK_TO_ACCESS_TOKEN",
+    "USER_CENTER_ALLOW_AUTHORIZATION_FALLBACK_TO_ACCESS_TOKEN",
   appApiBaseUrl: "SDKWORK_USER_CENTER_APP_API_BASE_URL",
   appId: "SDKWORK_USER_CENTER_APP_ID",
   authorizationHeaderName: "SDKWORK_USER_CENTER_AUTHORIZATION_HEADER_NAME",
@@ -95,7 +95,7 @@ function createBaseDeploymentVariables(options: {
     {
       canonicalName: USER_CENTER_DEPLOYMENT_VARIABLE_NAMES.accessTokenHeaderName,
       defaultValue: options.auth.tokenHeaders.accessTokenHeaderName,
-      description: "Overrides the governed Sdkwork-Access-Token header name used to transport the AccessToken.",
+      description: "Overrides the governed Access-Token header name used to transport the AccessToken.",
       required: false,
       targets,
     },

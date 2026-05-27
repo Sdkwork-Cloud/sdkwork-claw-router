@@ -8,10 +8,18 @@ export interface UsageLogItem {
   cacheReadPrice: string;
   /** Cache read tokens field on usage log item. */
   cacheReadTokens: number;
-  /** Cost field on usage log item. */
+  /** Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and falls back to cost_amount only for legacy rows. */
   cost: string;
-  /** Group field on usage log item. */
+  /** Error code field on usage log item. */
+  errorCode: string;
+  /** Error message field on usage log item. */
+  errorMessage: string;
+  /** Error type field on usage log item. */
+  errorType: string;
+  /** Maintained API key group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model. */
   group: string;
+  /** Http status field on usage log item. */
+  httpStatus: number;
   /** Id field on usage log item. */
   id: string;
   /** Input tokens field on usage log item. */
@@ -20,7 +28,7 @@ export interface UsageLogItem {
   ip: string;
   /** Is stream field on usage log item. */
   isStream: boolean;
-  /** Model field on usage log item. */
+  /** Provider native model id used in the upstream provider request, kept as the visible model value for usage tables. */
   model: string;
   /** Multiplier field on usage log item. */
   multiplier: string;
@@ -28,10 +36,16 @@ export interface UsageLogItem {
   outputTokens: number;
   /** Path field on usage log item. */
   path: string;
+  /** Provider native model id, for example gpt-5.5. */
+  providerNativeModel: string;
   /** Reasoning effort field on usage log item. */
   reasoningEffort: string;
   /** Request id field on usage log item. */
   requestId: string;
+  /** Routed catalog model identity in vendor/region/model form, for example openai/global/gpt-5.5. */
+  requestedModelCatalogKey: string;
+  /** Status field on usage log item. */
+  status: string;
   /** Time field on usage log item. */
   time: string;
   /** Token name field on usage log item. */

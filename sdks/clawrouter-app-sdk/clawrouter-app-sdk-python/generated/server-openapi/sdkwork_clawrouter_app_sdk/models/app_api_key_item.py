@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AppApiKeyItem:
     """Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions."""
     created: str
+    default_for_runtime: bool
     expires: str
     group: str
     id: str

@@ -7,7 +7,7 @@ public class UpdateApiKeyResponse {
     public AppApiKeyItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AppApiKeyItem item) {
         this.item = item;
     }

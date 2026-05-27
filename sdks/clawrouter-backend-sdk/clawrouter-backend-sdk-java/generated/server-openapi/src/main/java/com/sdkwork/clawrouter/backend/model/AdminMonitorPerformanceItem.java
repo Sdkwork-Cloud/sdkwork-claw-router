@@ -10,7 +10,7 @@ public class AdminMonitorPerformanceItem {
     public Double getCpu() {
         return this.cpu;
     }
-    
+
     public void setCpu(Double cpu) {
         this.cpu = cpu;
     }
@@ -18,7 +18,7 @@ public class AdminMonitorPerformanceItem {
     public Double getMemory() {
         return this.memory;
     }
-    
+
     public void setMemory(Double memory) {
         this.memory = memory;
     }
@@ -26,7 +26,7 @@ public class AdminMonitorPerformanceItem {
     public Double getNetwork() {
         return this.network;
     }
-    
+
     public void setNetwork(Double network) {
         this.network = network;
     }
@@ -34,7 +34,7 @@ public class AdminMonitorPerformanceItem {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }

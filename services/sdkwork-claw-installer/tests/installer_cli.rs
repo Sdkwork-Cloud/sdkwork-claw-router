@@ -71,7 +71,11 @@ fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
         &database_url,
         &["refresh-catalog", "--vendor", "openai"],
     );
-    assert!(refresh.status.success());
+    assert!(
+        refresh.status.success(),
+        "refresh-catalog failed: {}",
+        stderr_trim(&refresh)
+    );
     let refresh_payload = stdout_json(&refresh);
     assert_eq!("refreshed_catalog", refresh_payload["status"]);
     assert_eq!("2026.05.08.1", refresh_payload["catalogVersion"]);
@@ -362,7 +366,11 @@ async fn installer_cli_dry_run_prepares_schema_without_importing_catalog_facts()
             "--dry-run",
         ],
     );
-    assert!(dry_run.status.success());
+    assert!(
+        dry_run.status.success(),
+        "dry-run refresh-catalog failed: {}",
+        stderr_trim(&dry_run)
+    );
     let dry_run_payload = stdout_json(&dry_run);
     assert_eq!("catalog_refresh_dry_run", dry_run_payload["status"]);
     assert_eq!(false, dry_run_payload["synced"]);
@@ -421,7 +429,11 @@ async fn installer_cli_dry_run_prepares_schema_without_importing_catalog_facts()
             "--force",
         ],
     );
-    assert!(refresh.status.success());
+    assert!(
+        refresh.status.success(),
+        "refresh-catalog after dry-run failed: {}",
+        stderr_trim(&refresh)
+    );
     let refresh_payload = stdout_json(&refresh);
     assert_eq!("refreshed_catalog", refresh_payload["status"]);
     assert_eq!("installed", refresh_payload["installationStatus"]);
@@ -534,7 +546,11 @@ async fn installer_cli_recovers_from_failed_first_catalog_refresh() {
             "--force",
         ],
     );
-    assert!(recovered_refresh.status.success());
+    assert!(
+        recovered_refresh.status.success(),
+        "recovered refresh-catalog failed: {}",
+        stderr_trim(&recovered_refresh)
+    );
     let recovered_payload = stdout_json(&recovered_refresh);
     assert_eq!("refreshed_catalog", recovered_payload["status"]);
     assert_eq!("installed", recovered_payload["installationStatus"]);
@@ -570,7 +586,11 @@ async fn installer_cli_status_remains_machine_readable_when_persisted_external_c
             "--force",
         ],
     );
-    assert!(refresh.status.success());
+    assert!(
+        refresh.status.success(),
+        "refresh-catalog failed: {}",
+        stderr_trim(&refresh)
+    );
     assert_eq!("installed", stdout_json(&refresh)["installationStatus"]);
 
     remove_catalog_root(catalog_root);
@@ -588,9 +608,9 @@ async fn installer_cli_status_remains_machine_readable_when_persisted_external_c
 }
 
 #[test]
-fn installer_cli_auto_initializes_server_sqlite_runtime_config() {
+fn installer_cli_auto_initializes_server_postgres_template_and_rejects_placeholder_config() {
     let binary = env!("CARGO_BIN_EXE_clawrouterctl");
-    let config_path = unique_runtime_config_path("server-sqlite");
+    let config_path = unique_runtime_config_path("server-postgres");
 
     let output = Command::new(binary)
         .arg("status")
@@ -601,19 +621,26 @@ fn installer_cli_auto_initializes_server_sqlite_runtime_config() {
         .unwrap();
 
     assert!(
-        output.status.success(),
-        "server installer startup should initialize local SQLite config and continue: {}",
-        stderr_trim(&output)
+        !output.status.success(),
+        "server installer startup must reject placeholder PostgreSQL config"
     );
-    assert_eq!("not_installed", stdout_json(&output)["status"]);
+    assert_eq!("", stdout_trim(&output));
+    let payload = stderr_json(&output);
+    assert_eq!("error", payload["status"]);
+    assert_eq!("missing_database_url", payload["errorCode"]);
+    assert!(payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("PostgreSQL configuration is incomplete"));
     assert!(
         config_path.exists(),
         "missing server runtime TOML must be initialized automatically"
     );
     let generated_config = fs::read_to_string(config_path).unwrap();
-    assert!(generated_config.contains("engine = \"sqlite\""));
+    assert!(generated_config.contains("engine = \"postgresql\""));
     assert!(generated_config.contains("deployment_mode = \"server\""));
-    assert!(generated_config.contains("sdkwork-claw-router.sqlite"));
+    assert!(generated_config.contains("host = \"db.example.com\""));
+    assert!(generated_config.contains("password_file ="));
 }
 
 #[test]
@@ -896,6 +923,13 @@ fn single_vendor_catalog_root(vendor_code: &str) -> PathBuf {
             .join("models")
             .join("meters.json"),
         root.join("models").join("meters.json"),
+    )
+    .unwrap();
+    fs::copy(
+        sdkwork_models_source_root()
+            .join("models")
+            .join("protocols.json"),
+        root.join("models").join("protocols.json"),
     )
     .unwrap();
     copy_dir_recursive(

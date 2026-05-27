@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -150,7 +150,7 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
             "updateSkillArtifact",
             "deleteSkillArtifact",
         ]:
-            self.assertTrue(operations[operation_name]["request_id_header"])
+            self.assertFalse(operations[operation_name]["request_id_header"])
 
     def test_backend_skill_openapi_and_sdk_expose_generated_skill_client(self) -> None:
         openapi = json.loads(BACKEND_OPENAPI_PATH.read_text(encoding="utf-8"))

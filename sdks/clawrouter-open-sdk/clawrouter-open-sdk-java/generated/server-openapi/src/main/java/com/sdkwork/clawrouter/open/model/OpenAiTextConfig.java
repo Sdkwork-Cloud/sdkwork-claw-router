@@ -7,7 +7,7 @@ public class OpenAiTextConfig {
     public OpenAiResponseFormat getFormat() {
         return this.format;
     }
-    
+
     public void setFormat(OpenAiResponseFormat format) {
         this.format = format;
     }

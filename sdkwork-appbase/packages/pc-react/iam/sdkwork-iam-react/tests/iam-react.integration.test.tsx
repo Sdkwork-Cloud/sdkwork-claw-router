@@ -66,9 +66,6 @@ function createStandardAppClient() {
       registrations: {
         create: vi.fn(),
       },
-      verificationPolicy: {
-        retrieve: vi.fn(),
-      },
       sessions: {
         create: vi.fn(),
         current: {
@@ -81,6 +78,16 @@ function createStandardAppClient() {
       verificationCodes: {
         create: vi.fn(),
         verify: vi.fn(),
+      },
+    },
+    system: {
+      iam: {
+        runtime: {
+          retrieve: vi.fn(),
+        },
+        verificationPolicy: {
+          retrieve: vi.fn(),
+        },
       },
     },
     iam: {

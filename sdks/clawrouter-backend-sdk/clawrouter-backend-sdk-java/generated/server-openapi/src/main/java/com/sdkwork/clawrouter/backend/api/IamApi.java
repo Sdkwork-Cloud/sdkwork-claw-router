@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class IamApi {
     private final HttpClient client;
-    
+
     public IamApi(HttpClient client) {
         this.client = client;
     }
@@ -43,6 +43,22 @@ public class IamApi {
         );
         Object raw = client.patch(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<AccessGroupsUpdateResult>() {});
+    }
+
+    /** List group channel bindings */
+    public AccessGroupsChannelBindingsListResult accessGroupsChannelBindingsList(String groupId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + "/channel_bindings"));
+        return client.convertValue(raw, new TypeReference<AccessGroupsChannelBindingsListResult>() {});
+    }
+
+    /** Replace group channel bindings */
+    public AccessGroupsChannelBindingsUpdateResult accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.put(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + "/channel_bindings"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AccessGroupsChannelBindingsUpdateResult>() {});
     }
 
     /** List API key map */

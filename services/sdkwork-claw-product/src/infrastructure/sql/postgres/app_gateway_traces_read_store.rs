@@ -84,7 +84,7 @@ impl AppGatewayTracesReadStore for PostgresAppGatewayTracesReadStore {
 
 fn row_to_gateway_trace(row: sqlx::postgres::PgRow) -> DomainResult<AppGatewayTraceItem> {
     let status = gateway_http_status(required_integer_cell(&row, "status")?)?;
-    let latency_ms = gateway_latency_ms(required_integer_cell(&row, "latency_ms")?)?;
+    let latency_ms = gateway_latency_ms(integer_cell(&row, "latency_ms"))?;
     let health_status = gateway_health_status(&row)?;
     let deployment_mode = gateway_deployment_mode(&row)?;
     Ok(AppGatewayTraceItem {
@@ -175,6 +175,10 @@ fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
 
 fn required_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> DomainResult<i64> {
     optional_integer_cell(row, column).ok_or_else(|| missing_integer_cell_error(column))
+}
+
+fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
+    optional_integer_cell(row, column).unwrap_or(0)
 }
 
 fn optional_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<i64> {

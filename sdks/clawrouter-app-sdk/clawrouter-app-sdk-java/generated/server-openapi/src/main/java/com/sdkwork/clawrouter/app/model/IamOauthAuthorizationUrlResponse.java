@@ -7,7 +7,7 @@ public class IamOauthAuthorizationUrlResponse {
     public String getAuthUrl() {
         return this.authUrl;
     }
-    
+
     public void setAuthUrl(String authUrl) {
         this.authUrl = authUrl;
     }

@@ -1,0 +1,38 @@
+import type { I18nMessageBundle } from '../types';
+
+export const adminCommerceOrdersMessages = {
+  en: {
+    "admin.commerce.orders.title": "Orders",
+    "admin.commerce.orders.desc": "Unified order, refund, fulfillment, and shipment operations.",
+    "admin.commerce.orders.empty": "No order records",
+    "admin.commerce.orders.error": "Order data could not be loaded",
+    "admin.commerce.orders.loading": "Loading order records...",
+    "admin.commerce.orders.group.orders": "Orders",
+    "admin.commerce.orders.group.refundsFulfillment": "Refunds & Fulfillment",
+    "admin.commerce.orders.orders.title": "Orders",
+    "admin.commerce.orders.orders.desc": "Unified order center for physical goods, virtual goods, memberships, and recharges.",
+    "admin.commerce.orders.refunds.title": "Refunds",
+    "admin.commerce.orders.refunds.desc": "Refund requests, refund items, provider attempts, and lifecycle state.",
+    "admin.commerce.orders.fulfillments.title": "Fulfillments",
+    "admin.commerce.orders.fulfillments.desc": "Fulfillment orders for physical delivery, virtual delivery, membership entitlement, and recharge grant.",
+    "admin.commerce.orders.shipments.title": "Shipments",
+    "admin.commerce.orders.shipments.desc": "Physical shipment records and carrier tracking state.",
+  },
+  zh: {
+    "admin.commerce.orders.title": "订单管理",
+    "admin.commerce.orders.desc": "统一订单、退款、履约和发货管理。",
+    "admin.commerce.orders.empty": "暂无订单记录",
+    "admin.commerce.orders.error": "订单数据加载失败",
+    "admin.commerce.orders.loading": "正在加载订单数据...",
+    "admin.commerce.orders.group.orders": "订单",
+    "admin.commerce.orders.group.refundsFulfillment": "退款与履约",
+    "admin.commerce.orders.orders.title": "订单查询",
+    "admin.commerce.orders.orders.desc": "实物商品、虚拟商品、会员和充值的统一订单中心。",
+    "admin.commerce.orders.refunds.title": "退款管理",
+    "admin.commerce.orders.refunds.desc": "退款请求、退款明细、供应商尝试和生命周期状态。",
+    "admin.commerce.orders.fulfillments.title": "履约管理",
+    "admin.commerce.orders.fulfillments.desc": "实物配送、虚拟交付、会员权益和充值发放的履约订单。",
+    "admin.commerce.orders.shipments.title": "发货管理",
+    "admin.commerce.orders.shipments.desc": "实物发货记录和承运商物流跟踪状态。",
+  },
+} satisfies I18nMessageBundle;

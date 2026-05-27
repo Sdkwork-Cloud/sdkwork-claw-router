@@ -122,6 +122,42 @@ SDK_GENERATED_OPENAPI_PATHS = {
     "clawrouter-backend-sdk": Path("generated/openapi/clawrouter-backend-openapi.json"),
     "clawrouter-open-sdk": Path("apps/sdkwork-claw-router-portal/public/openapi.json"),
 }
+GENERATED_TEXT_FILE_EXTENSIONS = {
+    ".bat",
+    ".cmd",
+    ".cs",
+    ".dart",
+    ".go",
+    ".gradle",
+    ".java",
+    ".js",
+    ".json",
+    ".kt",
+    ".kts",
+    ".lock",
+    ".md",
+    ".mjs",
+    ".properties",
+    ".ps1",
+    ".py",
+    ".rs",
+    ".sh",
+    ".swift",
+    ".toml",
+    ".ts",
+    ".txt",
+    ".xml",
+    ".yaml",
+    ".yml",
+}
+GENERATED_TEXT_FILE_NAMES = {
+    ".gitattributes",
+    ".gitignore",
+    "Dockerfile",
+    "LICENSE",
+    "Makefile",
+    "NOTICE",
+}
 
 
 def sdk_generation_input_spec(sdk_family: str) -> str:
@@ -727,7 +763,7 @@ class SdkRuntimeStandardizer:
         )
         return (
             "#!/usr/bin/env node\n"
-            "import { rmSync } from 'node:fs';\n"
+            "import { existsSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';\n"
             "import { spawnSync } from 'node:child_process';\n"
             "import path from 'node:path';\n"
             "import { fileURLToPath } from 'node:url';\n\n"
@@ -744,6 +780,8 @@ class SdkRuntimeStandardizer:
             "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
             f"const packageNames = {json.dumps(package_names, ensure_ascii=False, sort_keys=True)};\n"
             f"const namespaces = {json.dumps(namespaces, ensure_ascii=False, sort_keys=True)};\n\n"
+            "const TEXT_FILE_EXTENSIONS = new Set(['.bat', '.cmd', '.cs', '.dart', '.go', '.gradle', '.java', '.js', '.json', '.kt', '.kts', '.lock', '.md', '.mjs', '.properties', '.ps1', '.py', '.rs', '.sh', '.swift', '.toml', '.ts', '.txt', '.xml', '.yaml', '.yml']);\n"
+            "const TEXT_FILE_NAMES = new Set(['.gitattributes', '.gitignore', 'Dockerfile', 'LICENSE', 'Makefile', 'NOTICE']);\n\n"
             "const languages = parseLanguages(process.argv.slice(2));\n"
             "for (const language of languages) {\n"
             "  runLanguage(language);\n"
@@ -810,6 +848,9 @@ class SdkRuntimeStandardizer:
             "  if ((result.status ?? 1) !== 0) {\n"
             "    process.exit(result.status ?? 1);\n"
             "  }\n"
+            "  if (language !== 'typescript') {\n"
+            "    cleanGeneratedOutput(language);\n"
+            "  }\n"
             "}\n\n"
             "function strictTypeScriptArgs() {\n"
             "  return [\n"
@@ -853,6 +894,38 @@ class SdkRuntimeStandardizer:
             "    args.push('--namespace', namespaces[language]);\n"
             "  }\n"
             "  return args;\n"
+            "}\n\n"
+            "function cleanGeneratedOutput(language) {\n"
+            "  const outputRoot = path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`);\n"
+            "  if (!existsSync(outputRoot)) {\n"
+            "    return;\n"
+            "  }\n"
+            "  for (const filePath of listGeneratedFiles(outputRoot)) {\n"
+            "    if (!isTextGeneratedFile(filePath)) {\n"
+            "      continue;\n"
+            "    }\n"
+            "    const source = readFileSync(filePath, 'utf8');\n"
+            "    const normalized = source.replace(/[ \\t]+(?=\\r?\\n)/g, '');\n"
+            "    if (normalized !== source) {\n"
+            "      writeFileSync(filePath, normalized, 'utf8');\n"
+            "    }\n"
+            "  }\n"
+            "}\n\n"
+            "function listGeneratedFiles(root) {\n"
+            "  const files = [];\n"
+            "  for (const entry of readdirSync(root)) {\n"
+            "    const entryPath = path.join(root, entry);\n"
+            "    const stats = statSync(entryPath);\n"
+            "    if (stats.isDirectory()) {\n"
+            "      files.push(...listGeneratedFiles(entryPath));\n"
+            "    } else if (stats.isFile()) {\n"
+            "      files.push(entryPath);\n"
+            "    }\n"
+            "  }\n"
+            "  return files;\n"
+            "}\n\n"
+            "function isTextGeneratedFile(filePath) {\n"
+            "  return TEXT_FILE_NAMES.has(path.basename(filePath)) || TEXT_FILE_EXTENSIONS.has(path.extname(filePath));\n"
             "}\n"
         )
 
@@ -1075,7 +1148,7 @@ class SdkRuntimeStandardizer:
                 updated.append(publish_core_path)
 
         updated.extend(self._remove_unexported_api_artifacts(base))
-        updated.extend(self._remove_trailing_whitespace(base))
+        updated.extend(self._remove_trailing_whitespace(base, sdk_family))
 
         return updated
 
@@ -1507,18 +1580,36 @@ class SdkRuntimeStandardizer:
                     return source[:start] + replacement + source[index + 1 :]
         return source
 
-    def _remove_trailing_whitespace(self, base: Path) -> list[Path]:
+    def _remove_trailing_whitespace(self, base: Path, sdk_family: str) -> list[Path]:
         updated: list[Path] = []
         candidates = [base / "vite.config.ts", *sorted((base / "src").rglob("*.ts"))]
+        family = self.root / "sdks" / sdk_family
+        for language in OFFICIAL_SDK_LANGUAGES:
+            if language == "typescript":
+                continue
+            generated_root = family / f"{sdk_family}-{language}" / "generated" / "server-openapi"
+            if not generated_root.is_dir():
+                continue
+            candidates.extend(
+                source_path
+                for source_path in sorted(generated_root.rglob("*"))
+                if source_path.is_file() and self._is_generated_text_file(source_path)
+            )
         for source_path in candidates:
             if not source_path.is_file():
                 continue
-            source = source_path.read_text(encoding="utf-8")
+            try:
+                source = source_path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
             normalized = re.sub(r"[ \t]+(?=\r?\n)", "", source)
             if normalized != source:
                 source_path.write_text(normalized, encoding="utf-8", newline="\n")
                 updated.append(source_path)
         return updated
+
+    def _is_generated_text_file(self, source_path: Path) -> bool:
+        return source_path.name in GENERATED_TEXT_FILE_NAMES or source_path.suffix in GENERATED_TEXT_FILE_EXTENSIONS
 
     def _remove_unexported_api_artifacts(self, base: Path) -> list[Path]:
         api_dir = base / "src" / "api"

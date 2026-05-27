@@ -1,4 +1,4 @@
-schema: sdkwork-claw-router-frontend-route-classification
+﻿schema: sdkwork-claw-router-frontend-route-classification
 version: 0.1.0
 source: apps/sdkwork-claw-router-portal/src/App.tsx
 rule: every actual portal route declares whether it is SDK-backed runtime, schema-provenanced content, or a gated local developer tool surface.
@@ -55,6 +55,43 @@ routes:
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/prompts
+  package: sdkwork-claw-router-admin-prompts
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/prompts
+  required_tables:
+  - ai_prompt
+  - ai_prompt_version
+  - ai_prompt_binding
+  - plus_category
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/mcp
+  package: sdkwork-claw-router-admin-mcp
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/mcp
+  required_tables:
+  - ai_mcp_server
+  - ai_mcp_server_revision
+  - ai_mcp_tool
+  - ai_mcp_binding
+  - plus_category
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/channel
   package: sdkwork-claw-router-admin-channel
   owner: admin-control-plane
@@ -91,6 +128,126 @@ routes:
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/courses
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables: &adminCourseRequiredTables
+  - content_course
+  - content_course_section
+  - content_course_lesson
+  - content_course_relation
+  - content_course_application
+  - content_forum_comment
+  - content_reaction
+  - ops_audit_log
+  evidence: &adminCourseEvidence
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/courses/dashboard
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_course_lesson
+  - content_course_application
+  - content_forum_comment
+  - content_reaction
+  evidence: *adminCourseEvidence
+- route: /admin/courses/catalog
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  evidence: *adminCourseEvidence
+- route: /admin/courses/sections
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_course_section
+  evidence: *adminCourseEvidence
+- route: /admin/courses/lessons
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_course_lesson
+  evidence: *adminCourseEvidence
+- route: /admin/courses/relations
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_course_relation
+  evidence: *adminCourseEvidence
+- route: /admin/courses/applications
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_course_application
+  evidence: *adminCourseEvidence
+- route: /admin/courses/comments
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_forum_comment
+  evidence: *adminCourseEvidence
+- route: /admin/courses/engagement
+  package: sdkwork-claw-router-admin-courses
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/courses
+  required_tables:
+  - content_course
+  - content_course_relation
+  - content_reaction
+  evidence: *adminCourseEvidence
 - route: /admin/group
   package: sdkwork-claw-router-admin-group
   owner: admin-control-plane
@@ -106,6 +263,27 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
+  required_tables: &promotionAdminRequiredTables
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_budget_account
+  - promotion_budget_ledger_entry
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_coupon_ledger_entry
+  - promotion_external_binding
+  - promotion_external_operation
+  - promotion_event_outbox
+  - commerce_order
+  - commerce_order_item
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
@@ -160,6 +338,17 @@ routes:
   api_surface: backend
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-nodes
+  package: sdkwork-claw-router-admin-service-nodes
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  required_tables:
+  - ops_gateway_instance
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/ratelimit
   package: sdkwork-claw-router-admin-ratelimit
@@ -311,28 +500,6 @@ routes:
   - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
   - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
   - docs/schema-registry/frontend-field-contracts.yaml
-- route: /console/agents
-  package: sdkwork-claw-router-console-agents
-  owner: customer-console
-  route_scope: console
-  delivery_kind: sdk_backed_business_runtime
-  api_surface: app
-  required_tables:
-  - ai_agent
-  - ai_agent_version
-  - ai_agent_tool_binding
-  - ai_agent_mcp_server
-  - ai_agent_memory
-  - ai_agent_run
-  - ai_agent_run_step
-  - ai_agent_session
-  - ai_chat_conversation
-  - ai_memory_space
-  - ai_memory_space_binding
-  - ai_runtime_invocation
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
 - route: /console/api-keys
   package: sdkwork-claw-router-console-api-keys
   owner: customer-console
@@ -384,24 +551,6 @@ routes:
   - apps/sdkwork-claw-router-portal/src/App.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /console/providers
-  package: sdkwork-claw-router-console-providers
-  owner: customer-console
-  route_scope: console
-  delivery_kind: sdk_backed_business_runtime
-  api_surface: app
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /console/routing
-  package: sdkwork-claw-router-console-routing
-  owner: customer-console
-  route_scope: console
-  delivery_kind: sdk_backed_business_runtime
-  api_surface: app
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /console/settings
   package: sdkwork-claw-router-console-settings
@@ -509,6 +658,15 @@ routes:
   route_scope: public
   delivery_kind: sdk_backed_business_runtime
   api_surface: app
+  required_tables:
+  - ai_model_vendor
+  - ai_model_vendor_region
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ai_billing_meter
+  - iam_gateway_api_key_group
+  - iam_api_key_group_channel
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
@@ -549,6 +707,19 @@ routes:
   - /chat
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /c/:conversationId
+  package: sdkwork-claw-router-playground
+  owner: customer-console
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /playground
+  - /chat
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /product-docs
@@ -625,9 +796,16 @@ routes:
   - commerce_membership
   - commerce_membership_entitlement
   - commerce_account
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_coupon_ledger_entry
+  - promotion_external_operation
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/VipView.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
@@ -648,6 +826,29 @@ routes:
   route_scope: console
   delivery_kind: sdk_backed_business_runtime
   api_surface: app
+  required_tables:
+  - commerce_billing_history
+  - commerce_account
+  - commerce_account_ledger_entry
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_budget_account
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_external_operation
+  - promotion_event_outbox
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_account_hold
+  - commerce_exchange_rule
+  - ops_audit_log
+  - commerce_order_item
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/WalletView.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
@@ -668,6 +869,57 @@ routes:
   route_scope: console
   delivery_kind: sdk_backed_business_runtime
   api_surface: app
+  required_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_payment_method
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_price_list_item
+  - commerce_inventory_stock
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_budget_account
+  - promotion_coupon_ledger_entry
+  - promotion_budget_ledger_entry
+  - promotion_external_operation
+  - promotion_event_outbox
+  - ops_audit_log
+  - commerce_user_address
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_checkout_quote
+  - commerce_inventory_reservation
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_fulfillment_order
+  - commerce_refund
+  - commerce_payment_provider
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_fulfillment_item
+  - commerce_shipment
+  - commerce_digital_delivery
+  - commerce_shipment_tracking_event
+  - commerce_recharge_package
+  - commerce_account
+  - commerce_account_ledger_entry
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/CheckoutView.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
@@ -1533,56 +1785,432 @@ routes:
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/service-providers/accounts
+  - /admin/service-providers/dashboard
   required_tables:
-  - open_platform_provider
-  - open_platform_account
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
   - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/src/App.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/service-providers/accounts
+- route: /admin/service-providers/dashboard
   package: sdkwork-claw-router-admin-service-provider
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/service-providers/accounts
+  - /admin/service-providers/dashboard
   required_tables:
-  - open_platform_provider
-  - open_platform_account
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
+  - ai_usage_service_provider_edge
+  - commerce_service_provider_exposure_snapshot
+  - analytics_service_provider_daily
   - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/src/App.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/wallet/recharge-packages
-  package: sdkwork-claw-router-admin-wallet
+- route: /admin/service-providers/providers
+  package: sdkwork-claw-router-admin-service-provider
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/wallet
+  - /admin/service-providers/providers
   required_tables:
+  - integration_service_provider
+  - analytics_service_provider_daily
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/relations
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/relations
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/downstreams
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/downstreams
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_edge
+  - integration_service_provider_closure
+  - integration_service_provider_price_plan
+  - analytics_service_provider_edge_daily
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/members
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/members
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_member
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/bindings
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/bindings
+  required_tables:
+  - integration_service_provider
+  - integration_service_provider_subject_binding
+  - iam_gateway_api_key
+  - iam_gateway_api_key_group
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/contracts
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/contracts
+  required_tables:
+  - integration_service_provider_edge
+  - integration_service_provider_contract
+  - integration_service_provider_contract_version
+  - integration_service_provider_finance_profile
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/pricing
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/pricing
+  required_tables:
+  - integration_service_provider_edge
+  - integration_service_provider_price_plan
+  - integration_service_provider_price_rule
+  - integration_service_provider_price_change_request
+  - ai_model_pricing
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/usage
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/usage
+  required_tables:
+  - ai_usage_fact
+  - ai_usage_service_provider_chain
+  - ai_usage_service_provider_edge
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/wallet
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/wallet
+  required_tables:
+  - integration_service_provider_account_binding
   - commerce_account
   - commerce_account_ledger_entry
-  - commerce_account_hold
-  - commerce_recharge_package
-  - commerce_order
-  - commerce_payment_intent
-  - commerce_payment_attempt
-  - commerce_exchange_rule
+  - commerce_service_provider_exposure_snapshot
   - ops_audit_log
-  - commerce_product_spu
-  - commerce_product_sku
-  - commerce_order_item
   evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/statements
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/statements
+  required_tables:
+  - commerce_usage_service_provider_settlement
+  - commerce_usage_service_provider_statement
+  - commerce_usage_service_provider_statement_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/reconciliation
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/reconciliation
+  required_tables:
+  - integration_provider_invoice_import
+  - integration_provider_invoice_item
+  - commerce_usage_service_provider_reconciliation_run
+  - commerce_usage_service_provider_reconciliation_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/adjustments
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/adjustments
+  required_tables:
+  - commerce_usage_service_provider_adjustment
+  - commerce_account_ledger_entry
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/risk
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/risk
+  required_tables:
+  - commerce_service_provider_exposure_snapshot
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/audit
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/audit
+  required_tables:
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/messaging
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes: &adminMessagingOperationRoutes
+  - /admin/messaging/providers
+  - /admin/messaging/sender-identities
+  - /admin/messaging/templates
+  - /admin/messaging/route-rules
+  - /admin/messaging/send-requests
+  - /admin/messaging/diagnostics
+  - /admin/messaging/suppressions
+  - /admin/messaging/rate-limits
+  - /admin/messaging/verification-policies
+  required_tables: &adminMessagingRequiredTables
+  - messaging_provider_capability
+  - messaging_template
+  - messaging_route_rule
+  - messaging_send_request
+  - messaging_suppression
+  - messaging_rate_limit_bucket
+  evidence: &adminMessagingEvidence
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/messaging/providers
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/providers
+  required_tables:
+  - integration_provider
+  - integration_provider_account
+  - messaging_provider_capability
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/sender-identities
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/sender-identities
+  required_tables:
+  - integration_provider_account
+  - messaging_sender_identity
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/templates
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/templates
+  required_tables:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_template_binding
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/route-rules
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/route-rules
+  required_tables:
+  - messaging_template
+  - integration_provider_account
+  - messaging_sender_identity
+  - messaging_template_binding
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/send-requests
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/send-requests
+  required_tables:
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/diagnostics
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/diagnostics
+  required_tables:
+  - messaging_template
+  - messaging_template_version
+  - messaging_template_variant
+  - messaging_route_rule
+  - messaging_route_rule_target
+  - messaging_sender_identity
+  - messaging_template_binding
+  - messaging_suppression
+  - messaging_send_request
+  - messaging_send_attempt
+  - messaging_delivery_event
+  - messaging_rate_limit_bucket
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/suppressions
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/suppressions
+  required_tables:
+  - messaging_suppression
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/rate-limits
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/rate-limits
+  required_tables:
+  - messaging_rate_limit_bucket
+  evidence: *adminMessagingEvidence
+- route: /admin/messaging/verification-policies
+  package: sdkwork-claw-router-admin-messaging
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/messaging/verification-policies
+  required_tables:
+  - iam_verification_scene_policy
+  - messaging_template
+  - ops_audit_log
+  evidence: *adminMessagingEvidence
 - route: /admin/wallet/recharge-orders
   package: sdkwork-claw-router-admin-wallet
   owner: admin-control-plane
@@ -1692,10 +2320,6 @@ routes:
   operation_routes:
   - /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -1722,10 +2346,6 @@ routes:
   operation_routes:
   - /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -1743,246 +2363,119 @@ routes:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/finance/coupon-templates
-  package: sdkwork-claw-router-admin-finance
+- route: /admin/marketing/offers
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: &promotionAdminEvidence
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/finance/coupon-campaigns
-  package: sdkwork-claw-router-admin-finance
+- route: /admin/marketing/promotion-coupon-stocks
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/finance/coupon-codes
-  package: sdkwork-claw-router-admin-finance
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/promotion-codes
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/finance/coupon-redemptions
-  package: sdkwork-claw-router-admin-finance
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/promotion-code-redemptions
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/marketing/coupon-templates
-  package: sdkwork-claw-router-admin-finance
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/user-coupons
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/marketing/coupon-campaigns
-  package: sdkwork-claw-router-admin-finance
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/discount-applications
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/marketing/coupon-codes
-  package: sdkwork-claw-router-admin-finance
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/discount-allocations
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/marketing/coupon-redemptions
-  package: sdkwork-claw-router-admin-finance
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/promotion-coupon-ledger
+  package: sdkwork-claw-router-admin-marketing
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   operation_routes:
-  - /admin/finance
-  required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
-  - commerce_invoice_title
-  - commerce_invoice
-  - commerce_invoice_item
-  - commerce_invoice_event
-  - commerce_order
-  - commerce_payment_attempt
-  - commerce_refund
-  - commerce_refund_item
-  - commerce_refund_attempt
-  - ops_audit_log
-  - commerce_order_item
-  - commerce_usage_statement
-  - commerce_usage_settlement
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/budget-ledger
+  package: sdkwork-claw-router-admin-marketing
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/external-bindings
+  package: sdkwork-claw-router-admin-marketing
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
+- route: /admin/marketing/events
+  package: sdkwork-claw-router-admin-marketing
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/marketing
+  required_tables: *promotionAdminRequiredTables
+  evidence: *promotionAdminEvidence
 - route: /admin/finance/payment-reconciliation
   package: sdkwork-claw-router-admin-finance
   owner: admin-control-plane
@@ -1992,10 +2485,6 @@ routes:
   operation_routes:
   - /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2022,10 +2511,6 @@ routes:
   operation_routes:
   - /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2052,10 +2537,6 @@ routes:
   operation_routes:
   - /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2082,10 +2563,6 @@ routes:
   operation_routes:
   - /admin/finance
   required_tables:
-  - commerce_coupon_template
-  - commerce_coupon_issue_batch
-  - commerce_coupon
-  - commerce_coupon_redemption
   - commerce_invoice_title
   - commerce_invoice
   - commerce_invoice_item
@@ -2112,24 +2589,236 @@ routes:
   operation_routes:
   - /admin/marketing
   required_tables:
-  - iam_user
-  - commerce_coupon_template
-  - commerce_coupon
-  - commerce_coupon_issue_batch
-  - commerce_coupon_redemption
-  - commerce_order
-  - commerce_payment_intent
-  - commerce_payment_method
-  - commerce_recharge_package
-  - commerce_exchange_rule
+  - promotion_offer
+  - promotion_offer_version
+  - promotion_offer_presentation
+  - promotion_offer_scope
+  - promotion_offer_audience_rule
+  - promotion_offer_time_window
+  - promotion_budget_account
+  - promotion_budget_ledger_entry
+  - promotion_coupon_stock
+  - promotion_code
+  - promotion_code_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
+  - promotion_discount_allocation
+  - promotion_coupon_ledger_entry
+  - promotion_external_binding
+  - promotion_external_operation
+  - promotion_event_outbox
   - plus_invitation_code
   - plus_invitation_relation
   - ops_referral_stat_snapshot
-  - commerce_payment_attempt
-  - commerce_product_spu
-  - commerce_product_sku
+  evidence: *promotionAdminEvidence
+- route: /admin/storage
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/providers
+  required_tables: &adminStorageRequiredTables
+  - object_provider
+  - object_bucket
+  - object_blob
+  - upload_session
+  - storage_default_bucket_policy
+  - storage_quota_policy
+  - storage_usage_counter
+  - storage_usage_ledger
+  - storage_usage_snapshot
+  - storage_reconciliation_run
+  - storage_reconciliation_item
+  - storage_gc_job
   - ops_audit_log
-  evidence:
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  evidence: &adminStorageEvidence
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/storage/providers
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/providers
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/storage/buckets
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/buckets
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/storage/default-buckets
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/default-buckets
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/storage/quotas
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/quotas
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/storage/usage
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/usage
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/storage/reconciliation
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/reconciliation
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/storage/garbage-collection
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/storage/garbage-collection
+  required_tables: *adminStorageRequiredTables
+  evidence: *adminStorageEvidence
+- route: /admin/drive
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: schema_provenanced_content
+  provenance_tables: &adminDriveProvenanceTables
+  - iam_user
+  required_tables: &adminDriveRequiredTables
+  - drive_space
+  - drive_node
+  - drive_acl_entry
+  - drive_change_log
+  - file_node
+  - file_version
+  - file_binding
+  - file_audit_log
+  - ops_audit_log
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - tenant_specific_data
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/admin/drive
+  evidence: &adminDriveEvidence
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/drive/spaces
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: schema_provenanced_content
+  provenance_tables: *adminDriveProvenanceTables
+  required_tables: *adminDriveRequiredTables
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - tenant_specific_data
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/admin/drive/spaces
+  evidence: *adminDriveEvidence
+- route: /admin/drive/nodes
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: schema_provenanced_content
+  provenance_tables: *adminDriveProvenanceTables
+  required_tables: *adminDriveRequiredTables
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - tenant_specific_data
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/admin/drive/nodes
+  evidence: *adminDriveEvidence
+- route: /admin/drive/permissions
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: schema_provenanced_content
+  provenance_tables: *adminDriveProvenanceTables
+  required_tables: *adminDriveRequiredTables
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - tenant_specific_data
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/admin/drive/permissions
+  evidence: *adminDriveEvidence
+- route: /admin/drive/share-links
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: schema_provenanced_content
+  provenance_tables: *adminDriveProvenanceTables
+  required_tables: *adminDriveRequiredTables
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - tenant_specific_data
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/admin/drive/share-links
+  evidence: *adminDriveEvidence
+- route: /admin/drive/audit
+  package: sdkwork-claw-router-admin-file-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: schema_provenanced_content
+  provenance_tables: *adminDriveProvenanceTables
+  required_tables: *adminDriveRequiredTables
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - tenant_specific_data
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/admin/drive/audit
+  evidence: *adminDriveEvidence

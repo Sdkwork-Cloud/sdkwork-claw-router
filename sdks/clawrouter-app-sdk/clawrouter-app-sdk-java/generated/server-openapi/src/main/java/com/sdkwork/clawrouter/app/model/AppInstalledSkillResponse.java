@@ -7,7 +7,7 @@ public class AppInstalledSkillResponse {
     public AppInstalledSkillItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AppInstalledSkillItem item) {
         this.item = item;
     }

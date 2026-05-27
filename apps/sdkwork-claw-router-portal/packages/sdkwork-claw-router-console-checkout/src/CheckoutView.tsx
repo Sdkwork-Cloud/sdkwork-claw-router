@@ -112,12 +112,12 @@ export function CheckoutView() {
 
   if (status === 'success' && checkoutStatus) {
     return (
-      <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212] flex items-center justify-center">
+      <div className="w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212] flex items-center justify-center">
         <div className="bg-white dark:bg-[#252525] p-8 md:p-12 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm text-center max-w-md w-full">
           <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">{t("admin.marketing.index.text.hxhd0b", "支付成功")}</h2>
+          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">{t("console.checkout.paymentSuccess", "支付成功")}</h2>
           <p className="text-slate-500 dark:text-slate-400 mb-2">
             {t("console.billing.checkoutview.text.6uzdjk", "订单")}{checkoutStatus.orderNo} {t("console.billing.checkoutview.text.no4p2k", "已完成支付。")}</p>
           <p className="text-slate-500 dark:text-slate-400 mb-8">
@@ -135,9 +135,9 @@ export function CheckoutView() {
   return (
     <div
       data-business-state={loadError ? 'error' : undefined}
-      className="p-4 lg:p-6 w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]"
+      className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#121212]"
     >
-      <div className="flex items-center gap-4 border-b border-slate-200 dark:border-white/5 pb-4">
+      <div className="flex items-center justify-between gap-3">
         <button
           onClick={() => navigate(-1)}
           className="p-2 hover:bg-slate-200 dark:hover:bg-white/10 rounded-full transition-colors text-slate-500 dark:text-slate-400"
@@ -145,10 +145,11 @@ export function CheckoutView() {
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
-        <div>
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t("console.billing.checkoutview.text.cxkxif", "收银台")}</h1>
-          {orderNo && <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t("admin.marketing.index.text.14vvhet", "订单号")}{orderNo}</p>}
-        </div>
+        {orderNo && (
+          <span className="min-w-0 truncate rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-500 shadow-sm dark:border-white/5 dark:bg-[#252525] dark:text-slate-400">
+            {t("admin.col.orderNo", "订单号")}{orderNo}
+          </span>
+        )}
       </div>
 
       {loadError && (

@@ -7,7 +7,7 @@ public class AdminAppPortalConfig {
     public String getMarketStatus() {
         return this.marketStatus;
     }
-    
+
     public void setMarketStatus(String marketStatus) {
         this.marketStatus = marketStatus;
     }

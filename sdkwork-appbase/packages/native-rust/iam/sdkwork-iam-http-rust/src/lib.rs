@@ -441,5 +441,5 @@ pub fn backend_routes() -> Vec<IamHttpRoute> {
 }
 
 pub fn required_dual_token_headers() -> [&'static str; 2] {
-    ["Authorization", "Sdkwork-Access-Token"]
+    ["Authorization", "Access-Token"]
 }

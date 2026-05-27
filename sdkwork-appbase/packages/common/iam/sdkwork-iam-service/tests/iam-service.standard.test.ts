@@ -8,6 +8,13 @@ import {
 
 import { createSdkworkIamService } from "../src/index";
 
+const SDKWORK_IAM_APP_OPEN_PLATFORM_QR_FACADE_METHODS = [
+  "openPlatform.qrAuth.sessions.create",
+  "openPlatform.qrAuth.sessions.passwords.create",
+  "openPlatform.qrAuth.sessions.retrieve",
+  "openPlatform.qrAuth.sessions.scans.create",
+] as const;
+
 describe("SDKWork IAM service", () => {
   it("exposes the same resource facade surface as the canonical app and backend SDK ports", () => {
     const service = createSdkworkIamService({
@@ -16,7 +23,11 @@ describe("SDKWork IAM service", () => {
     });
 
     expect(getIamSdkSurface(service)).toEqual(
-      [...SDKWORK_IAM_APP_SDK_REQUIRED_METHODS, ...SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS].sort(),
+      [
+        ...SDKWORK_IAM_APP_SDK_REQUIRED_METHODS,
+        ...SDKWORK_IAM_APP_OPEN_PLATFORM_QR_FACADE_METHODS,
+        ...SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS,
+      ].sort(),
     );
   });
 
@@ -388,16 +399,6 @@ describe("SDKWork IAM service", () => {
             },
           }),
         },
-        verificationPolicy: {
-          retrieve: vi.fn().mockResolvedValue({
-            data: {
-              emailCodeLoginEnabled: true,
-              emailRegisterVerificationRequired: true,
-              phoneCodeLoginEnabled: false,
-              phoneRegisterVerificationRequired: false,
-            },
-          }),
-        },
         sessions: {
           create: vi.fn().mockResolvedValue({
             data: {
@@ -432,6 +433,33 @@ describe("SDKWork IAM service", () => {
           verify: vi.fn().mockResolvedValue({ data: { verified: true } }),
         },
       },
+      system: {
+        iam: {
+          runtime: {
+            retrieve: vi.fn().mockResolvedValue({
+              data: {
+                loginMethods: ["password", "emailCode"],
+                verificationPolicy: {
+                  emailCodeLoginEnabled: true,
+                  emailRegistrationVerificationRequired: true,
+                  phoneCodeLoginEnabled: false,
+                  phoneRegistrationVerificationRequired: false,
+                },
+              },
+            }),
+          },
+          verificationPolicy: {
+            retrieve: vi.fn().mockResolvedValue({
+              data: {
+                emailCodeLoginEnabled: true,
+                emailRegisterVerificationRequired: true,
+                phoneCodeLoginEnabled: false,
+                phoneRegisterVerificationRequired: false,
+              },
+            }),
+          },
+        },
+      },
     };
     const service = createSdkworkIamService({ appClient });
 
@@ -460,7 +488,16 @@ describe("SDKWork IAM service", () => {
         id: "registered-user",
       },
     });
-    await expect(service.auth.verificationPolicy.retrieve()).resolves.toEqual({
+    await expect(service.system.iam.runtime.retrieve({ tenantCode: "default" })).resolves.toEqual({
+      loginMethods: ["password", "emailCode"],
+      verificationPolicy: {
+        emailCodeLoginEnabled: true,
+        emailRegistrationVerificationRequired: true,
+        phoneCodeLoginEnabled: false,
+        phoneRegistrationVerificationRequired: false,
+      },
+    });
+    await expect(service.system.iam.verificationPolicy.retrieve()).resolves.toEqual({
       emailCodeLoginEnabled: true,
       emailRegisterVerificationRequired: true,
       phoneCodeLoginEnabled: false,
@@ -480,8 +517,71 @@ describe("SDKWork IAM service", () => {
       username: "new-user",
       verificationCode: "123456",
     });
-    expect(appClient.auth.verificationPolicy.retrieve).toHaveBeenCalledTimes(1);
+    expect(appClient.system.iam.runtime.retrieve).toHaveBeenCalledWith({ tenantCode: "default" });
+    expect(appClient.system.iam.verificationPolicy.retrieve).toHaveBeenCalledTimes(1);
     expect(appClient.auth.verificationCodes.verify).toHaveBeenCalledWith({ code: "123456", codeId: "code-1" });
+  });
+
+  it("routes open platform QR auth resources to the generated app SDK", async () => {
+    const appClient = {
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn().mockResolvedValue({
+              data: {
+                sessionKey: "qr-session-1",
+              },
+            }),
+            retrieve: vi.fn().mockResolvedValue({
+              data: {
+                sessionKey: "qr-session-1",
+                status: "pending",
+              },
+            }),
+            scans: {
+              create: vi.fn().mockResolvedValue({
+                data: {
+                  status: "scanned",
+                },
+              }),
+            },
+            passwords: {
+              create: vi.fn().mockResolvedValue({
+                data: {
+                  status: "confirmed",
+                },
+              }),
+            },
+          },
+        },
+      },
+    };
+    const service = createSdkworkIamService({ appClient });
+
+    await expect(service.openPlatform.qrAuth.sessions.create({ purpose: "login" })).resolves.toEqual({
+      sessionKey: "qr-session-1",
+    });
+    await expect(service.openPlatform.qrAuth.sessions.retrieve("qr-session-1")).resolves.toEqual({
+      sessionKey: "qr-session-1",
+      status: "pending",
+    });
+    await expect(service.openPlatform.qrAuth.sessions.scans.create("qr-session-1", { scanSource: "browser" })).resolves.toEqual({
+      status: "scanned",
+    });
+    await expect(service.openPlatform.qrAuth.sessions.passwords.create("qr-session-1", {
+      password: "secret",
+      username: "alice",
+    })).resolves.toEqual({
+      status: "confirmed",
+    });
+
+    expect(appClient.openPlatform.qrAuth.sessions.create).toHaveBeenCalledWith({ purpose: "login" });
+    expect(appClient.openPlatform.qrAuth.sessions.retrieve).toHaveBeenCalledWith("qr-session-1");
+    expect(appClient.openPlatform.qrAuth.sessions.scans.create).toHaveBeenCalledWith("qr-session-1", { scanSource: "browser" });
+    expect(appClient.openPlatform.qrAuth.sessions.passwords.create).toHaveBeenCalledWith("qr-session-1", {
+      password: "secret",
+      username: "alice",
+    });
   });
 
   it("keeps OAuth authorization URL service calls object-shaped while adapting positional generated SDK methods", async () => {

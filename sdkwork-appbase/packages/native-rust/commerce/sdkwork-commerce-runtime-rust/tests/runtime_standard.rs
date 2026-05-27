@@ -64,8 +64,12 @@ fn exposes_first_slice_capabilities_and_service_names() {
     assert!(manifest.contains(&"commerce.inventory.stock"));
     assert!(manifest.contains(&"commerce.inventory.reservation"));
     assert!(manifest.contains(&"commerce.inventory.ledger"));
-    assert!(manifest.contains(&"commerce.promotion.coupon"));
-    assert!(manifest.contains(&"commerce.promotion.redemption"));
+    assert!(manifest.contains(&"commerce.promotion.offer"));
+    assert!(manifest.contains(&"commerce.promotion.couponStock"));
+    assert!(manifest.contains(&"commerce.promotion.code"));
+    assert!(manifest.contains(&"commerce.promotion.userCoupon"));
+    assert!(manifest.contains(&"commerce.promotion.discountApplication"));
+    assert!(manifest.contains(&"commerce.promotion.discountAllocation"));
     assert!(manifest.contains(&"commerce.promotion.points"));
     assert!(manifest.contains(&"commerce.order.checkout"));
     assert!(manifest.contains(&"commerce.order.lifecycle"));
@@ -220,7 +224,8 @@ fn promotion_points_operation_contracts_are_registered_with_standard_policy() {
     let contracts = operation_contracts();
 
     for operation_id in [
-        "coupons.list",
+        "promotions.offers.list",
+        "promotions.userCoupons.list",
         "wallet.exchangeRate.retrieve",
         "wallet.points.exchangeRules.list",
     ] {
@@ -240,15 +245,15 @@ fn promotion_points_operation_contracts_are_registered_with_standard_policy() {
 
     let redeem = contracts
         .iter()
-        .find(|contract| contract.operation_id == "coupons.redemptions.create")
-        .expect("coupon redeem operation contract");
+        .find(|contract| contract.operation_id == "promotions.codes.redemptions.create")
+        .expect("promotion code redemption operation contract");
 
     assert_eq!(redeem.service_name, "commerce.promotion");
     assert_eq!(
         redeem.execution_policy,
         OperationExecutionPolicy::TransactionalWrite
     );
-    assert_eq!(redeem.capability_name, "commerce.promotion.redemption");
+    assert_eq!(redeem.capability_name, "commerce.promotion.code");
     assert!(redeem.requires_transaction());
     assert!(redeem.requires_idempotency());
 }
@@ -264,6 +269,7 @@ fn wallet_operation_contracts_are_registered_with_account_runtime_policy() {
         "wallet.accounts.list",
         "wallet.ledgerEntries.list",
         "wallet.ledgerEntries.retrieve",
+        "billing.history.list",
     ] {
         let contract = contracts
             .iter()

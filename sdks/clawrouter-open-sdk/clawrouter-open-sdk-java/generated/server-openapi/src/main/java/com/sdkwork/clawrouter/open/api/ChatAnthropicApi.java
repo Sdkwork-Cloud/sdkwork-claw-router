@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ChatAnthropicApi {
     private final HttpClient client;
-    
+
     public ChatAnthropicApi(HttpClient client) {
         this.client = client;
     }

@@ -16,7 +16,7 @@ pub struct VerificationDeliveryConfigQuery {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct VerificationDeliveryConfig {
-    pub channel_id: i64,
+    pub route_rule_id: i64,
     pub account_id: i64,
     pub tenant_id: i64,
     pub organization_id: i64,
@@ -27,6 +27,7 @@ pub struct VerificationDeliveryConfig {
     pub secret_ref: String,
     pub base_url: Option<String>,
     pub template_code: Option<String>,
+    pub sender_identity_id: Option<i64>,
     pub sender: Option<String>,
     pub priority: i64,
     pub weight: i64,

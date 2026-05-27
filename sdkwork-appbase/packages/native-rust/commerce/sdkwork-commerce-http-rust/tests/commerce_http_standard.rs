@@ -119,16 +119,25 @@ fn canonical_app_route_specs() -> Vec<(HttpMethod, &'static str, &'static str)> 
             "/app/v3/api/checkout/sessions/{checkoutSessionId}/orders",
             "checkout.sessions.orders.create",
         ),
-        (HttpMethod::Get, "/app/v3/api/coupons", "coupons.list"),
         (
-            HttpMethod::Post,
-            "/app/v3/api/coupons/claims",
-            "coupons.claims.create",
+            HttpMethod::Get,
+            "/app/v3/api/promotions/user_coupons",
+            "promotions.userCoupons.list",
+        ),
+        (
+            HttpMethod::Get,
+            "/app/v3/api/promotions/offers",
+            "promotions.offers.list",
         ),
         (
             HttpMethod::Post,
-            "/app/v3/api/coupons/redemptions",
-            "coupons.redemptions.create",
+            "/app/v3/api/promotions/user_coupon_claims",
+            "promotions.userCoupons.claims.create",
+        ),
+        (
+            HttpMethod::Post,
+            "/app/v3/api/promotions/codes/redemptions",
+            "promotions.codes.redemptions.create",
         ),
         (HttpMethod::Get, "/app/v3/api/orders", "orders.list"),
         (
@@ -232,8 +241,8 @@ fn canonical_app_route_specs() -> Vec<(HttpMethod, &'static str, &'static str)> 
         ),
         (
             HttpMethod::Get,
-            "/app/v3/api/recharges/orders",
-            "recharges.orders.list",
+            "/app/v3/api/billing/history",
+            "billing.history.list",
         ),
         (
             HttpMethod::Post,
@@ -425,8 +434,8 @@ fn canonical_backend_route_specs() -> Vec<(HttpMethod, &'static str, &'static st
         ),
         (
             HttpMethod::Get,
-            "/backend/v3/api/coupons/templates",
-            "coupons.templates.management.list",
+            "/backend/v3/api/promotions/offers",
+            "promotions.offers.management.list",
         ),
         (
             HttpMethod::Get,
@@ -477,6 +486,9 @@ fn exposes_canonical_standard_app_commerce_routes_only() {
         "/app/v3/api/wallet/tokens/deductions",
         "/app/v3/api/wallet/points/exchanges",
         "/app/v3/api/wallet/points/exchanges/{exchangeNo}",
+        "/app/v3/api/coupons",
+        "/app/v3/api/coupons/claims",
+        "/app/v3/api/coupons/redemptions",
         "/app/v3/api/coupons/catalog",
         "/app/v3/api/coupons/catalog/{couponId}",
         "/app/v3/api/coupons/user_coupons/{userCouponId}",
@@ -499,6 +511,9 @@ fn exposes_canonical_standard_app_commerce_routes_only() {
         "wallet.points.exchanges.rules.list",
         "wallet.points.exchanges.create",
         "wallet.points.exchanges.retrieve",
+        "coupons.list",
+        "coupons.claims.create",
+        "coupons.redemptions.create",
         "coupons.catalog.list",
         "coupons.catalog.retrieve",
         "coupons.userCoupons.retrieve",
@@ -515,7 +530,7 @@ fn exposes_canonical_standard_app_commerce_routes_only() {
 
     for route in routes {
         assert!(route.path.starts_with("/app/v3/api/"));
-        assert!(!route.path.contains("/billing/"));
+        assert!(route.path == "/app/v3/api/billing/history" || !route.path.contains("/billing/"));
         assert!(!route.path.contains("/vip/"));
         assert!(!route.path.contains("__"));
         assert!(!route.operation_id.contains('_'));
@@ -587,7 +602,7 @@ fn assert_unique_route_specs(routes: &[(HttpMethod, &str, &str)]) {
 fn requires_dual_token_headers_for_private_runtime_parity() {
     assert_eq!(
         required_dual_token_headers(),
-        ["Authorization", "Sdkwork-Access-Token"]
+        ["Authorization", "Access-Token"]
     );
 }
 

@@ -256,10 +256,10 @@ const EN_US_MESSAGES: SdkworkSubscriptionMessages = {
     title: "Subscription center",
   },
   levelGrid: {
-    empty: "Membership level comparison will appear when the current runtime exposes VIP levels.",
+    empty: "Membership level comparison will appear when the current runtime exposes membership levels.",
     eyebrow: "Membership ladder",
     levelFallback: "Membership level",
-    title: "VIP levels",
+    title: "Membership levels",
   },
   page: {
     errorTitle: "Subscription center error",

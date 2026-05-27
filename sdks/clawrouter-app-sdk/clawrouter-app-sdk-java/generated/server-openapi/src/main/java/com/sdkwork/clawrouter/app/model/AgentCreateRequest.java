@@ -17,7 +17,7 @@ public class AgentCreateRequest {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -25,7 +25,7 @@ public class AgentCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -33,7 +33,7 @@ public class AgentCreateRequest {
     public Map<String, String> getMcpPolicy() {
         return this.mcpPolicy;
     }
-    
+
     public void setMcpPolicy(Map<String, String> mcpPolicy) {
         this.mcpPolicy = mcpPolicy;
     }
@@ -41,7 +41,7 @@ public class AgentCreateRequest {
     public Map<String, String> getMemoryPolicy() {
         return this.memoryPolicy;
     }
-    
+
     public void setMemoryPolicy(Map<String, String> memoryPolicy) {
         this.memoryPolicy = memoryPolicy;
     }
@@ -49,7 +49,7 @@ public class AgentCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -57,7 +57,7 @@ public class AgentCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -65,7 +65,7 @@ public class AgentCreateRequest {
     public Map<String, String> getRuntimePolicy() {
         return this.runtimePolicy;
     }
-    
+
     public void setRuntimePolicy(Map<String, String> runtimePolicy) {
         this.runtimePolicy = runtimePolicy;
     }
@@ -73,7 +73,7 @@ public class AgentCreateRequest {
     public Map<String, String> getSkillPolicy() {
         return this.skillPolicy;
     }
-    
+
     public void setSkillPolicy(Map<String, String> skillPolicy) {
         this.skillPolicy = skillPolicy;
     }
@@ -81,7 +81,7 @@ public class AgentCreateRequest {
     public String getSystemPrompt() {
         return this.systemPrompt;
     }
-    
+
     public void setSystemPrompt(String systemPrompt) {
         this.systemPrompt = systemPrompt;
     }
@@ -89,7 +89,7 @@ public class AgentCreateRequest {
     public Map<String, String> getToolPolicy() {
         return this.toolPolicy;
     }
-    
+
     public void setToolPolicy(Map<String, String> toolPolicy) {
         this.toolPolicy = toolPolicy;
     }

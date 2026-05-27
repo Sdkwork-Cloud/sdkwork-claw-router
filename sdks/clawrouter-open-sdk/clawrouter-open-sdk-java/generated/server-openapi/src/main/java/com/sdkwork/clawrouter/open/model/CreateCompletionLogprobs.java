@@ -12,7 +12,7 @@ public class CreateCompletionLogprobs {
     public List<Integer> getTextOffset() {
         return this.textOffset;
     }
-    
+
     public void setTextOffset(List<Integer> textOffset) {
         this.textOffset = textOffset;
     }
@@ -20,7 +20,7 @@ public class CreateCompletionLogprobs {
     public List<Double> getTokenLogprobs() {
         return this.tokenLogprobs;
     }
-    
+
     public void setTokenLogprobs(List<Double> tokenLogprobs) {
         this.tokenLogprobs = tokenLogprobs;
     }
@@ -28,7 +28,7 @@ public class CreateCompletionLogprobs {
     public List<String> getTokens() {
         return this.tokens;
     }
-    
+
     public void setTokens(List<String> tokens) {
         this.tokens = tokens;
     }
@@ -36,7 +36,7 @@ public class CreateCompletionLogprobs {
     public List<Map<String, Object>> getTopLogprobs() {
         return this.topLogprobs;
     }
-    
+
     public void setTopLogprobs(List<Map<String, Object>> topLogprobs) {
         this.topLogprobs = topLogprobs;
     }

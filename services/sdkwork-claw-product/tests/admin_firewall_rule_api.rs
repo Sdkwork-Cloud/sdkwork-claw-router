@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -27,9 +29,7 @@ async fn admin_firewall_rule_route_creates_lists_and_deletes_rules() {
                 .method("POST")
                 .uri("/backend/v3/api/router/firewall/rules")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"type":"IP blacklist","value":"192.168.1.99/24","reason":"\u4e2d\u6587 crawler source"}"#,
                 ))
@@ -58,9 +58,7 @@ async fn admin_firewall_rule_route_creates_lists_and_deletes_rules() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/router/firewall/rules")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -78,9 +76,7 @@ async fn admin_firewall_rule_route_creates_lists_and_deletes_rules() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/router/firewall/rules/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -96,9 +92,7 @@ async fn admin_firewall_rule_route_creates_lists_and_deletes_rules() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/router/firewall/rules")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -130,9 +124,7 @@ async fn admin_firewall_rule_route_rejects_invalid_value_without_calling_store()
                 .method("POST")
                 .uri("/backend/v3/api/router/firewall/rules")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"type":"IP blacklist","value":"not-an-address","reason":"bad source"}"#,
                 ))

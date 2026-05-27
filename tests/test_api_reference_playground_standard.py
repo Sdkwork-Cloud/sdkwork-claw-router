@@ -274,7 +274,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         self.assertIn("clickRouteButtonByTitle(\"Close Drawer\")", browser_smoke)
         self.assertIn('!document.body.innerText.includes("API PLAYGROUND")', browser_smoke)
         self.assertIn("max-w-[100vw]", playground)
-        self.assertIn('title="Close Drawer"', playground)
+        self.assertIn("title={t('common.actions.closeDrawer')}", playground)
         self.assertIn('type="button"', playground)
         self.assertIn("group-focus-within/send:opacity-100", playground)
         self.assertIn("group-focus-within/send:visible", playground)
@@ -382,7 +382,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         self.assertIn("function buildAxiosSnippet", code_snippet_source)
         self.assertIn("function buildFetchSnippet", code_snippet_source)
         self.assertIn('text={generatedCode}', endpoint_view)
-        self.assertIn('title="Copy code"', endpoint_view)
+        self.assertIn("title={t('common.actions.copyCode')}", endpoint_view)
 
 
 if __name__ == "__main__":

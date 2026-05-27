@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { spawnSync } from 'node:child_process';
-import { relative } from 'node:path';
+import { relative, resolve } from 'node:path';
 import process from 'node:process';
 
 function run(command, args, options = {}) {
@@ -34,26 +34,106 @@ function readCargoMetadata() {
   return JSON.parse(result.stdout);
 }
 
-function formatWorkspace({ check }) {
+function normalizeCargoFmtArgs(args) {
+  if (args[0] === 'fmt') {
+    return args.slice(1);
+  }
+  return args;
+}
+
+function commandPathEquals(left, right) {
+  return resolve(left).toLowerCase() === resolve(right).toLowerCase();
+}
+
+function resolveCargoFmtCommand() {
+  const configured = process.env.SDKWORK_CLAW_CARGO_FMT_BINARY?.trim();
+  if (configured) {
+    return configured;
+  }
+
+  const rustup = run('rustup', ['which', 'cargo-fmt']);
+  const rustupCandidate = rustup.stdout?.trim();
+  if ((rustup.status ?? 1) === 0 && rustupCandidate) {
+    return rustupCandidate;
+  }
+
+  if (process.platform === 'win32') {
+    const currentShim = resolve(process.cwd(), 'cargo-fmt.cmd');
+    const where = run('where.exe', ['cargo-fmt']);
+    if ((where.status ?? 1) === 0) {
+      const candidate = where.stdout
+        .split(/\r?\n/u)
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .find((line) => !commandPathEquals(line, currentShim));
+      if (candidate) {
+        return candidate;
+      }
+    }
+  } else {
+    const command = run('sh', ['-lc', 'command -v cargo-fmt']);
+    const candidate = command.stdout?.trim();
+    if ((command.status ?? 1) === 0 && candidate) {
+      return candidate;
+    }
+  }
+
+  return 'cargo-fmt';
+}
+
+function shouldDelegateToCargoFmt(args) {
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === '--') {
+      return false;
+    }
+    if (arg === '--help' || arg === '-h' || arg === '--version') {
+      return true;
+    }
+    if (
+      arg === '-p'
+      || arg === '--package'
+      || arg.startsWith('--package=')
+      || arg === '--manifest-path'
+      || arg.startsWith('--manifest-path=')
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function workspaceCargoFmtArgs(args) {
+  return args.filter((arg) => arg !== '--all');
+}
+
+function formatWorkspace({ args }) {
+  const cargoFmtCommand = resolveCargoFmtCommand();
+  if (shouldDelegateToCargoFmt(args)) {
+    runInherited(cargoFmtCommand, args);
+    return;
+  }
+
   const metadata = readCargoMetadata();
   const packagesById = new Map(metadata.packages.map((pkg) => [pkg.id, pkg]));
   const workspacePackages = metadata.workspace_members
     .map((id) => packagesById.get(id))
     .filter(Boolean)
     .sort((left, right) => left.name.localeCompare(right.name));
+  const forwardedArgs = workspaceCargoFmtArgs(args);
+  const quiet = forwardedArgs.includes('-q') || forwardedArgs.includes('--quiet');
 
   for (const pkg of workspacePackages) {
     const manifestPath = relative(process.cwd(), pkg.manifest_path);
-    const args = ['fmt', '--manifest-path', manifestPath];
-    if (check) {
-      args.push('--check');
+    const packageArgs = ['--manifest-path', manifestPath, ...forwardedArgs];
+    if (!quiet) {
+      console.error(`[cargo-fmt-workspace] ${pkg.name}: ${cargoFmtCommand} ${packageArgs.join(' ')}`);
     }
-    console.error(`[cargo-fmt-workspace] ${pkg.name}: cargo ${args.join(' ')}`);
-    runInherited('cargo', args);
+    runInherited(cargoFmtCommand, packageArgs);
   }
 }
 
 const args = process.argv.slice(2);
 formatWorkspace({
-  check: args.includes('--check'),
+  args: normalizeCargoFmtArgs(args),
 });

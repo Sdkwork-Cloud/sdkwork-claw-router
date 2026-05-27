@@ -43,6 +43,40 @@ fn payment_callback_uses_appbase_order_payment_and_accounting_schema() {
     }
 }
 
+#[test]
+fn payment_callback_never_parses_points_or_ids_through_f64() {
+    for source in [
+        SQLITE_PAYMENT_CALLBACK_STORE,
+        POSTGRES_PAYMENT_CALLBACK_STORE,
+    ] {
+        assert!(
+            !source.contains("parse::<f64>"),
+            "payment callback store must not parse point balances or identifiers through f64"
+        );
+    }
+}
+
+#[test]
+fn payment_callback_credits_points_with_atomic_increment_and_overflow_guard() {
+    for source in [
+        SQLITE_PAYMENT_CALLBACK_STORE,
+        POSTGRES_PAYMENT_CALLBACK_STORE,
+    ] {
+        assert!(
+            source.contains("checked_add"),
+            "payment callback must check point balance overflow before crediting"
+        );
+        assert!(
+            source.contains("payment callback account points overflow"),
+            "payment callback must return a domain error when points overflow"
+        );
+        assert!(
+            source.contains("rows_affected() != 1"),
+            "payment callback must verify account point credit was applied atomically"
+        );
+    }
+}
+
 #[tokio::test]
 async fn sqlite_payment_callback_fulfills_appbase_recharge_once_and_records_webhook_success() {
     let pool = test_pool().await;
@@ -265,6 +299,129 @@ async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_faile
         scalar_i64(
             &pool,
             "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1004'"
+        )
+        .await
+    );
+}
+
+#[tokio::test]
+async fn sqlite_payment_callback_success_cannot_reopen_failed_payment_or_credit_points() {
+    let pool = test_pool().await;
+    let store = SqlitePaymentCallbackStore::new(pool.clone());
+    seed_pending_recharge_payment(&pool, "order-1006", "payment-1006", "15.00", 150).await;
+
+    let mut failed = success_command(
+        "evt-1006-failed",
+        "nonce-1006-failed",
+        "order-1006",
+        "txn-1006-failed",
+        None,
+    );
+    failed.status = PaymentCallbackStatus::Failed;
+    store.process_payment_callback(failed).await.unwrap();
+
+    let error = store
+        .process_payment_callback(success_command(
+            "evt-1006-success",
+            "nonce-1006-success",
+            "order-1006",
+            "txn-1006-success",
+            Some("15.00"),
+        ))
+        .await
+        .unwrap_err();
+
+    assert!(error.is_conflict());
+    assert!(error.to_string().contains("terminal payment"));
+    assert_eq!(
+        "failed",
+        scalar_string(
+            &pool,
+            "SELECT status FROM commerce_payment_attempt WHERE out_trade_no = 'order-1006'"
+        )
+        .await
+    );
+    assert_eq!(
+        "cancelled",
+        scalar_string(
+            &pool,
+            "SELECT status FROM commerce_order WHERE id = 'order-entity-order-1006'"
+        )
+        .await
+    );
+    assert_eq!(
+        1000,
+        scalar_i64(
+            &pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE owner_user_id = '30' AND asset_type = 'points'"
+        )
+        .await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1006'"
+        )
+        .await
+    );
+    assert_eq!(
+        "FAILED",
+        scalar_string(
+            &pool,
+            "SELECT status FROM commerce_payment_webhook_event WHERE event_id = 'evt-1006-success'"
+        )
+        .await
+    );
+}
+
+#[tokio::test]
+async fn sqlite_payment_callback_rejects_points_balance_overflow_without_ledger() {
+    let pool = test_pool().await;
+    let store = SqlitePaymentCallbackStore::new(pool.clone());
+    seed_pending_recharge_payment(&pool, "order-1005", "payment-1005", "1.00", 1).await;
+    sqlx::query(
+        "UPDATE commerce_account SET available_amount = ? WHERE owner_user_id = '30' AND asset_type = 'points'",
+    )
+    .bind(i64::MAX.to_string())
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let error = store
+        .process_payment_callback(success_command(
+            "evt-1005",
+            "nonce-1005",
+            "order-1005",
+            "txn-1005",
+            Some("1.00"),
+        ))
+        .await
+        .unwrap_err();
+
+    assert!(error.is_conflict());
+    assert!(error.to_string().contains("points overflow"), "{error}");
+    assert_eq!(
+        i64::MAX,
+        scalar_i64(
+            &pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE owner_user_id = '30' AND asset_type = 'points'"
+        )
+        .await
+    );
+    assert_eq!(
+        0,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1005'"
+        )
+        .await
+    );
+    assert_eq!(
+        "FAILED",
+        scalar_string(
+            &pool,
+            "SELECT status FROM commerce_payment_webhook_event WHERE event_id = 'evt-1005'"
         )
         .await
     );

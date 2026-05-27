@@ -1,5 +1,5 @@
-import type { ApiKey } from 'sdkwork-claw-router-console-api-keys';
 import type { PlaygroundModelOption } from '../../playgroundTypes';
+import type { RuntimeUsageSnapshot } from 'sdkwork-claw-router-commons/runtime';
 
 export type ChatRole = 'user' | 'assistant';
 
@@ -11,6 +11,7 @@ export interface ChatMessage {
   content: string;
   createdAt: string;
   status: ChatMessageStatus;
+  errorMessage?: string;
   modelName?: string;
   vendorName?: string;
 }
@@ -27,35 +28,48 @@ export interface ChatSessionSummary {
   messageCount?: number;
 }
 
-export interface ChatApiKeyOption {
-  id: ApiKey['id'];
-  name: ApiKey['name'];
-  displayName: ApiKey['displayName'];
-  maskedKey: ApiKey['maskedKey'];
-  copyableKey: ApiKey['copyableKey'];
-  group: ApiKey['group'];
-  groupName: ApiKey['groupName'];
-  status: ApiKey['status'];
-}
-
 export interface SimpleChatInputSubmit {
   prompt: string;
   selectedModelId: string;
-  selectedApiKeyId: string;
-  apiKey?: string;
 }
 
 export interface ChatSendInput {
-  apiKey?: string;
+  cancelledFallbackContent?: string;
   messages: ChatMessage[];
   onDelta?: (delta: string) => void;
+  onRuntimeEvent?: (event: ChatRuntimeEventProgress) => void;
+  onStreamStarted?: (stream: ChatStreamStarted) => void;
   prompt: string;
-  selectedApiKeyId?: string;
   selectedModel: PlaygroundModelOption;
   sessionId?: string;
 }
 
+export interface ChatRuntimeEventProgress {
+  cancelled?: boolean;
+  eventNo?: number;
+  usage?: Partial<RuntimeUsageSnapshot> | null;
+}
+
+export interface ChatStreamStarted {
+  runtimeInvocationId: string;
+  session: ChatSessionSummary;
+  sessionId: string;
+  startedAt: string;
+  turnId: string;
+}
+
+export interface ChatResumeInput extends ChatSendInput {
+  initialContent?: string;
+  initialUsage?: Partial<RuntimeUsageSnapshot> | null;
+  lastEventNo?: number;
+  runtimeInvocationId: string;
+  session: ChatSessionSummary;
+  sessionId: string;
+  turnId: string;
+}
+
 export interface ChatSendResult {
   assistantMessage: ChatMessage;
+  cancelled?: boolean;
   session: ChatSessionSummary;
 }

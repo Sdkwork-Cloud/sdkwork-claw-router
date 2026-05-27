@@ -4,6 +4,7 @@ use sdkwork_claw_product::application::{
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    ProviderAccountPoolRoute,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
@@ -60,6 +61,16 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.000000").unwrap(),
         DecimalValue::parse("1.100000").unwrap(),
     ));
+    catalog.add_api_key_group(
+        ApiKeyGroup::new(
+            11,
+            "premium-lab",
+            "standard",
+            DecimalValue::parse("1.000000").unwrap(),
+            DecimalValue::parse("1.100000").unwrap(),
+        )
+        .with_name("Premium Lab"),
+    );
     catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
     catalog.add_price(
         ModelPrice::new(
@@ -232,8 +243,13 @@ fn list_keeps_unpriced_models_explicitly_unavailable_instead_of_fake_success() {
 }
 
 #[test]
-fn list_models_derives_taxonomy_and_applies_catalog_filters() {
-    let catalog = catalog_for_model_list();
+fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
+    let mut catalog = catalog_for_model_list();
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3001)
+            .with_scoped_group_binding(10, 10, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"])
+            .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
+    );
     let service = ModelCatalogQueryService::new(&catalog);
 
     let page = service
@@ -245,7 +261,7 @@ fn list_models_derives_taxonomy_and_applies_catalog_filters() {
             modalities: vec!["text".to_owned()],
             capabilities: vec!["tools".to_owned()],
             categories: vec!["Recommended".to_owned(), "Proprietary".to_owned()],
-            groups: vec!["enterprise".to_owned()],
+            groups: vec!["premium-lab".to_owned()],
             search_query: Some("gpt".to_owned()),
             limit: Some(10),
         })
@@ -254,6 +270,55 @@ fn list_models_derives_taxonomy_and_applies_catalog_filters() {
     assert_eq!(1, page.items.len());
     let item = &page.items[0];
     assert_eq!("openai/global/gpt-4o-mini", item.catalog_key);
-    assert_eq!(vec!["default", "enterprise"], item.groups);
+    assert_eq!(vec!["premium-lab", "standard-group"], item.groups);
     assert_eq!(vec!["Recommended", "Proprietary"], item.categories);
+}
+
+#[test]
+fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters() {
+    let mut catalog = catalog_for_model_list();
+    catalog.add_api_key_group(
+        ApiKeyGroup::new(
+            12,
+            "empty-admin-group",
+            "standard",
+            DecimalValue::parse("1.000000").unwrap(),
+            DecimalValue::parse("1.100000").unwrap(),
+        )
+        .with_name("Empty Admin Group"),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3001)
+            .with_scoped_group_binding(10, 10, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"])
+            .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
+    );
+    let service = ModelCatalogQueryService::new(&catalog);
+
+    let page = service
+        .list_models(ListModelCatalogQuery {
+            api_key_id: None,
+            billing_meter: BillingMeter::LlmInputToken,
+            vendor_code: None,
+            vendor_codes: vec!["openai".to_owned()],
+            modalities: vec!["text".to_owned()],
+            capabilities: vec!["tools".to_owned()],
+            categories: Vec::new(),
+            groups: vec!["premium-lab".to_owned()],
+            search_query: Some("gpt".to_owned()),
+            limit: Some(10),
+        })
+        .unwrap();
+
+    assert_eq!(1, page.items.len());
+    assert_eq!(vec!["premium-lab", "standard-group"], page.items[0].groups);
+    assert_eq!(3, page.groups.len());
+    assert_eq!("premium-lab", page.groups[0].key);
+    assert_eq!("Premium Lab", page.groups[0].label);
+    assert_eq!(1, page.groups[0].model_count);
+    assert_eq!("standard-group", page.groups[1].key);
+    assert_eq!("standard-group", page.groups[1].label);
+    assert_eq!(1, page.groups[1].model_count);
+    assert_eq!("empty-admin-group", page.groups[2].key);
+    assert_eq!("Empty Admin Group", page.groups[2].label);
+    assert_eq!(0, page.groups[2].model_count);
 }

@@ -36,7 +36,7 @@ public class CommerceUsageStatementRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -44,7 +44,7 @@ public class CommerceUsageStatementRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -52,7 +52,7 @@ public class CommerceUsageStatementRecord {
     public String getDueAt() {
         return this.dueAt;
     }
-    
+
     public void setDueAt(String dueAt) {
         this.dueAt = dueAt;
     }
@@ -60,7 +60,7 @@ public class CommerceUsageStatementRecord {
     public String getExportId() {
         return this.exportId;
     }
-    
+
     public void setExportId(String exportId) {
         this.exportId = exportId;
     }
@@ -68,7 +68,7 @@ public class CommerceUsageStatementRecord {
     public String getGeneratedAt() {
         return this.generatedAt;
     }
-    
+
     public void setGeneratedAt(String generatedAt) {
         this.generatedAt = generatedAt;
     }
@@ -76,7 +76,7 @@ public class CommerceUsageStatementRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -84,7 +84,7 @@ public class CommerceUsageStatementRecord {
     public String getInvoiceId() {
         return this.invoiceId;
     }
-    
+
     public void setInvoiceId(String invoiceId) {
         this.invoiceId = invoiceId;
     }
@@ -92,7 +92,7 @@ public class CommerceUsageStatementRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -100,7 +100,7 @@ public class CommerceUsageStatementRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -108,7 +108,7 @@ public class CommerceUsageStatementRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -116,7 +116,7 @@ public class CommerceUsageStatementRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -124,7 +124,7 @@ public class CommerceUsageStatementRecord {
     public String getPaidAt() {
         return this.paidAt;
     }
-    
+
     public void setPaidAt(String paidAt) {
         this.paidAt = paidAt;
     }
@@ -132,7 +132,7 @@ public class CommerceUsageStatementRecord {
     public String getPaymentStatus() {
         return this.paymentStatus;
     }
-    
+
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
     }
@@ -140,7 +140,7 @@ public class CommerceUsageStatementRecord {
     public String getPeriod() {
         return this.period;
     }
-    
+
     public void setPeriod(String period) {
         this.period = period;
     }
@@ -148,7 +148,7 @@ public class CommerceUsageStatementRecord {
     public String getPeriodEnd() {
         return this.periodEnd;
     }
-    
+
     public void setPeriodEnd(String periodEnd) {
         this.periodEnd = periodEnd;
     }
@@ -156,7 +156,7 @@ public class CommerceUsageStatementRecord {
     public String getPeriodStart() {
         return this.periodStart;
     }
-    
+
     public void setPeriodStart(String periodStart) {
         this.periodStart = periodStart;
     }
@@ -164,7 +164,7 @@ public class CommerceUsageStatementRecord {
     public String getRebuildVersion() {
         return this.rebuildVersion;
     }
-    
+
     public void setRebuildVersion(String rebuildVersion) {
         this.rebuildVersion = rebuildVersion;
     }
@@ -172,7 +172,7 @@ public class CommerceUsageStatementRecord {
     public String getSourceId() {
         return this.sourceId;
     }
-    
+
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
@@ -180,7 +180,7 @@ public class CommerceUsageStatementRecord {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -188,7 +188,7 @@ public class CommerceUsageStatementRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -196,7 +196,7 @@ public class CommerceUsageStatementRecord {
     public String getStatementNo() {
         return this.statementNo;
     }
-    
+
     public void setStatementNo(String statementNo) {
         this.statementNo = statementNo;
     }
@@ -204,7 +204,7 @@ public class CommerceUsageStatementRecord {
     public String getStatementStatus() {
         return this.statementStatus;
     }
-    
+
     public void setStatementStatus(String statementStatus) {
         this.statementStatus = statementStatus;
     }
@@ -212,7 +212,7 @@ public class CommerceUsageStatementRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -220,7 +220,7 @@ public class CommerceUsageStatementRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -228,7 +228,7 @@ public class CommerceUsageStatementRecord {
     public String getTotalCost() {
         return this.totalCost;
     }
-    
+
     public void setTotalCost(String totalCost) {
         this.totalCost = totalCost;
     }
@@ -236,7 +236,7 @@ public class CommerceUsageStatementRecord {
     public String getTotalRequests() {
         return this.totalRequests;
     }
-    
+
     public void setTotalRequests(String totalRequests) {
         this.totalRequests = totalRequests;
     }
@@ -244,7 +244,7 @@ public class CommerceUsageStatementRecord {
     public String getTotalTokens() {
         return this.totalTokens;
     }
-    
+
     public void setTotalTokens(String totalTokens) {
         this.totalTokens = totalTokens;
     }
@@ -252,7 +252,7 @@ public class CommerceUsageStatementRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -260,7 +260,7 @@ public class CommerceUsageStatementRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

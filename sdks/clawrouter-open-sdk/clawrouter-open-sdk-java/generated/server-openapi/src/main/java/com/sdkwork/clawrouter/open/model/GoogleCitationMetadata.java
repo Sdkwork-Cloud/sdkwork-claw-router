@@ -8,7 +8,7 @@ public class GoogleCitationMetadata {
     public List<GoogleCitationSource> getCitationSources() {
         return this.citationSources;
     }
-    
+
     public void setCitationSources(List<GoogleCitationSource> citationSources) {
         this.citationSources = citationSources;
     }

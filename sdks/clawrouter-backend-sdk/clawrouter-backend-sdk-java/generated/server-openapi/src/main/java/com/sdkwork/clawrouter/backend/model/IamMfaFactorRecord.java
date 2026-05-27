@@ -14,7 +14,7 @@ public class IamMfaFactorRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -22,7 +22,7 @@ public class IamMfaFactorRecord {
     public String getFactorType() {
         return this.factorType;
     }
-    
+
     public void setFactorType(String factorType) {
         this.factorType = factorType;
     }
@@ -30,7 +30,7 @@ public class IamMfaFactorRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -38,7 +38,7 @@ public class IamMfaFactorRecord {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -46,7 +46,7 @@ public class IamMfaFactorRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -54,7 +54,7 @@ public class IamMfaFactorRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -62,7 +62,7 @@ public class IamMfaFactorRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -70,7 +70,7 @@ public class IamMfaFactorRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

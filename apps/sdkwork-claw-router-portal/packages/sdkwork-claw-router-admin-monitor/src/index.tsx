@@ -75,7 +75,7 @@ function NodesTab() {
   });
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       {/* Overview Cards */}
       <div className="grid shrink-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
@@ -100,7 +100,7 @@ function NodesTab() {
       </div>
 
       {/* Charts */}
-      <div className="grid shrink-0 grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid shrink-0 grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-white dark:bg-[#1a1a1a] p-5 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm">
           <h3 className="text-sm font-medium text-slate-900 dark:text-white mb-4">Cluster Resource Usage (Avg)</h3>
           <div className="h-64">
@@ -296,7 +296,7 @@ function AlertsTab() {
   });
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       {/* Alert Stats */}
       <div className="grid shrink-0 grid-cols-1 md:grid-cols-3 gap-4">
          <div className="bg-red-50 dark:bg-red-500/5 p-5 rounded-xl border border-red-100 dark:border-red-500/10 flex items-center justify-between">
@@ -400,14 +400,7 @@ export function MonitorAdmin() {
   const [activeTab, setActiveTab] = useState('nodes');
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
-      <div className="flex shrink-0 flex-col">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-          <Activity className="w-6 h-6 text-red-500" />
-          {t("admin.monitor.index.text.kga9uh", "运维与监控")}</h2>
-        <p className="text-sm text-slate-500">{t("admin.monitor.index.text.akk4xs", "监控计算节点，查看异常告警及API健康检测大盘。")}</p>
-      </div>
-
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       <div className="flex shrink-0 gap-4 border-b border-slate-200 dark:border-white/10">
         <button
           className={`px-4 py-2 font-medium text-sm transition-colors border-b-2 ${activeTab === 'nodes' ? 'border-red-500 text-slate-900 dark:text-white' : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}

@@ -2,17 +2,21 @@ import Foundation
 
 public class PlatformApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
 
     /// Get apps
-    public func appsStoreList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> AppsStoreListResult? {
+    public func appsStoreList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, category: String? = nil, platformType: String? = nil, platformTypes: [String]? = nil, sort: String? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> AppsStoreListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "category", value: category, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "platform_type", value: platformType, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "platform_types", value: platformTypes, style: "form", explode: false, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "sort", value: sort, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "start_time", value: startTime, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "end_time", value: endTime, style: "form", explode: true, allowReserved: false, contentType: nil)

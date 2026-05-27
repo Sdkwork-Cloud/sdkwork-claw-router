@@ -16,7 +16,7 @@ public class CourseSectionItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -24,7 +24,7 @@ public class CourseSectionItem {
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -32,7 +32,7 @@ public class CourseSectionItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -40,7 +40,7 @@ public class CourseSectionItem {
     public Integer getLessonCount() {
         return this.lessonCount;
     }
-    
+
     public void setLessonCount(Integer lessonCount) {
         this.lessonCount = lessonCount;
     }
@@ -48,7 +48,7 @@ public class CourseSectionItem {
     public List<CourseLessonItem> getLessons() {
         return this.lessons;
     }
-    
+
     public void setLessons(List<CourseLessonItem> lessons) {
         this.lessons = lessons;
     }
@@ -56,7 +56,7 @@ public class CourseSectionItem {
     public Integer getSectionId() {
         return this.sectionId;
     }
-    
+
     public void setSectionId(Integer sectionId) {
         this.sectionId = sectionId;
     }
@@ -64,7 +64,7 @@ public class CourseSectionItem {
     public Integer getSectionNo() {
         return this.sectionNo;
     }
-    
+
     public void setSectionNo(Integer sectionNo) {
         this.sectionNo = sectionNo;
     }
@@ -72,7 +72,7 @@ public class CourseSectionItem {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -80,7 +80,7 @@ public class CourseSectionItem {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

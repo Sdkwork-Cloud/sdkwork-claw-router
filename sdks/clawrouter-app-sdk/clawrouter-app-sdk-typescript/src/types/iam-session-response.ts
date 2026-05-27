@@ -3,7 +3,7 @@ import type { IamUserResponse } from './iam-user-response';
 
 /** Iam session response schema exposed by Claw Router. */
 export interface IamSessionResponse {
-  /** Data isolation and tenant access token. Clients send it as Sdkwork-Access-Token. */
+  /** Data isolation and tenant access token. Clients send it as Access-Token. */
   accessToken: string;
   /** Bearer authentication token. Clients send it as Authorization Bearer. */
   authToken: string;

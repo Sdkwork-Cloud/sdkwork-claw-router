@@ -11,7 +11,7 @@ public class IamRolePermissionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -19,7 +19,7 @@ public class IamRolePermissionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -27,7 +27,7 @@ public class IamRolePermissionRecord {
     public String getPermissionId() {
         return this.permissionId;
     }
-    
+
     public void setPermissionId(String permissionId) {
         this.permissionId = permissionId;
     }
@@ -35,7 +35,7 @@ public class IamRolePermissionRecord {
     public String getRoleId() {
         return this.roleId;
     }
-    
+
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
@@ -43,7 +43,7 @@ public class IamRolePermissionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

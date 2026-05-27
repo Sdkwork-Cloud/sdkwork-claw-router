@@ -6,8 +6,12 @@ export type RuntimeStreamEvent = RuntimeEventItem;
 export async function* streamRuntimeInvocationEvents(
   client: ClawRouterAppSdkClient,
   invocationId: string,
+  afterEventNo = 0,
 ): AsyncIterable<RuntimeStreamEvent> {
-  const runtimeInvocationEventStreamPath = `/runtime/invocations/${encodeURIComponent(invocationId)}/events/stream`;
+  const eventCursor = Number.isFinite(afterEventNo) && afterEventNo > 0
+    ? `?afterEventNo=${Math.trunc(afterEventNo)}`
+    : '';
+  const runtimeInvocationEventStreamPath = `/runtime/invocations/${encodeURIComponent(invocationId)}/events/stream${eventCursor}`;
   yield* client.http.streamJson<RuntimeStreamEvent>(
     `${APP_API_PREFIX}${runtimeInvocationEventStreamPath}`,
   );
@@ -86,46 +90,87 @@ function isRuntimeTextDeltaEvent(event: RuntimeStreamEvent): boolean {
 }
 
 function readRuntimePayloadTextDelta(payload: unknown): string {
-  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
-    return '';
-  }
-  const record = payload as Record<string, unknown>;
-  for (const key of ['textDelta', 'delta', 'content', 'outputText', 'text']) {
-    const value = record[key];
-    if (typeof value === 'string' && value.length > 0) {
-      return value;
-    }
-  }
-
-  const nestedDelta = readNestedRuntimeTextDelta(record.delta);
-  if (nestedDelta) {
-    return nestedDelta;
-  }
-
-  const choices = record.choices;
-  if (Array.isArray(choices)) {
-    for (const choice of choices) {
-      const choiceDelta = readNestedRuntimeTextDelta(choice);
-      if (choiceDelta) {
-        return choiceDelta;
-      }
-    }
-  }
-  return '';
+  return readRuntimePayloadTextDeltaFromUnknown(payload, 0);
 }
 
-function readNestedRuntimeTextDelta(value: unknown): string {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+function readRuntimePayloadTextDeltaFromUnknown(value: unknown, depth: number): string {
+  if (depth > 8 || value === null || value === undefined) {
     return '';
   }
+
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  if (typeof value !== 'object') {
+    return '';
+  }
+
+  if (Array.isArray(value)) {
+    const textParts = value
+      .map((item) => readRuntimePayloadTextDeltaFromUnknown(item, depth + 1))
+      .filter((item) => item.length > 0);
+    return joinRuntimeTextParts(textParts);
+  }
+
   const record = value as Record<string, unknown>;
-  for (const key of ['textDelta', 'content', 'outputText', 'text']) {
+
+  for (const key of ['textDelta', 'text_delta', 'outputText', 'output_text', 'delta', 'content', 'text']) {
     const item = record[key];
     if (typeof item === 'string' && item.length > 0) {
       return item;
     }
   }
-  return readNestedRuntimeTextDelta(record.delta);
+
+  for (const key of [
+    'delta',
+    'content',
+    'parts',
+    'output',
+    'choices',
+    'candidates',
+    'message',
+    'response',
+    'data',
+    'result',
+    'payload',
+    'payloadJson',
+    'gatewayEvent',
+    'providerEvent',
+    'gatewayResponse',
+    'providerResponse',
+  ]) {
+    const text = readRuntimePayloadTextDeltaFromUnknown(record[key], depth + 1);
+    if (text) {
+      return text;
+    }
+  }
+
+  return '';
+}
+
+function joinRuntimeTextParts(parts: string[]): string {
+  if (parts.length === 0) {
+    return '';
+  }
+  let result = parts[0] || '';
+  for (const part of parts.slice(1)) {
+    if (shouldInsertRuntimeTextPartBoundary(result, part)) {
+      result += '\n';
+    }
+    result += part;
+  }
+  return result;
+}
+
+function shouldInsertRuntimeTextPartBoundary(left: string, right: string): boolean {
+  if (!left || !right) {
+    return false;
+  }
+  if (/[\s]$/.test(left) || /^[\s]/.test(right)) {
+    return false;
+  }
+  return true;
 }
 
 function readRuntimeUsageSnapshotFromUnknown(value: unknown, depth = 0): Partial<RuntimeUsageSnapshot> | null {
@@ -138,7 +183,7 @@ function readRuntimeUsageSnapshotFromUnknown(value: unknown, depth = 0): Partial
     return direct;
   }
 
-  for (const key of ['usage', 'usageJson', 'usage_json', 'tokenUsage', 'token_usage', 'metrics', 'payloadJson', 'payload', 'data', 'result', 'output', 'response']) {
+  for (const key of ['usage', 'usageJson', 'usage_json', 'tokenUsage', 'token_usage', 'metrics', 'payloadJson', 'gatewayResponse', 'gatewayEvent', 'providerEvent', 'providerResponse', 'payload', 'data', 'result', 'output', 'response']) {
     const nested = readRuntimeUsageSnapshotFromUnknown(value[key], depth + 1);
     if (nested) {
       return nested;
@@ -204,6 +249,8 @@ function isRuntimeRecord(value: unknown): value is Record<string, unknown> {
 
 export * from './api-result.ts';
 export * from './api-request-url.ts';
+export * from './admin-category-options.ts';
+export * from './admin-resource-options.ts';
 export * from './app-session-token.ts';
 export * from './decimal.ts';
 export * from './iam-runtime.ts';

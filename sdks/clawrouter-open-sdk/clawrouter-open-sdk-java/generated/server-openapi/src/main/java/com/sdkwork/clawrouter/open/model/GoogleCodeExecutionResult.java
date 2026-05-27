@@ -8,7 +8,7 @@ public class GoogleCodeExecutionResult {
     public String getOutcome() {
         return this.outcome;
     }
-    
+
     public void setOutcome(String outcome) {
         this.outcome = outcome;
     }
@@ -16,7 +16,7 @@ public class GoogleCodeExecutionResult {
     public String getOutput() {
         return this.output;
     }
-    
+
     public void setOutput(String output) {
         this.output = output;
     }

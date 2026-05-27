@@ -44,6 +44,24 @@ class IamApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AccessGroupsUpdateResult>() {})
     }
 
+    /** List group channel bindings */
+    suspend fun accessGroupsChannelBindingsList(groupId: String): AccessGroupsChannelBindingsListResult? {
+        val raw = client.get(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}/channel_bindings"))
+        return client.convertValue(raw, object : TypeReference<AccessGroupsChannelBindingsListResult>() {})
+    }
+
+    /** Replace group channel bindings */
+    suspend fun accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest, xRequestId: String? = null): AccessGroupsChannelBindingsUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AccessGroupsChannelBindingsUpdateResult>() {})
+    }
+
     /** List API key map */
     suspend fun apiKeysList(): ApiKeysListResult? {
         val raw = client.get(ApiPaths.backendPath("/iam/api_keys"))

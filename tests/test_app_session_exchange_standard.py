@@ -64,7 +64,8 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("PostgresAppSessionEventStore", app_api)
         self.assertIn("app_sessions_router(", app_api)
         self.assertIn("app_sessions_router_with_store", app_api)
-        self.assertIn("trusted_request_subject_boundary", app_auth_api)
+        self.assertIn("verified_signed_trusted_request_subject", app_auth_api)
+        self.assertIn("generate_server_request_id", app_auth_api)
         self.assertNotIn('"/app/v3/api/auth/session"', app_auth_api)
 
         self.assertTrue(app_sdk_api_index.exists())
@@ -230,11 +231,10 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("const accessToken = getStoredAppSessionAccessToken();", playground)
         self.assertIn("authToken,", playground)
         self.assertIn("accessToken,", playground)
-        self.assertIn("'access-token'", playground_request)
-        self.assertIn("'sdkwork-access-token'", playground_request)
+        self.assertIn("ACCESS_TOKEN_HEADER = 'Access-Token'", playground_request)
+        self.assertIn("ACCESS_TOKEN_HEADER.toLowerCase()", playground_request)
         self.assertIn("headers.Authorization = `Bearer ${input.authToken.trim()}`", playground_request)
-        self.assertIn("headers['Sdkwork-Access-Token'] = input.accessToken.trim();", playground_request)
-        self.assertNotIn("headers['Access-Token'] = input.accessToken.trim();", playground_request)
+        self.assertIn("headers[ACCESS_TOKEN_HEADER] = input.accessToken.trim();", playground_request)
         self.assertNotIn("localStorage.getItem('access_token')", playground)
         self.assertNotIn('localStorage.getItem("access_token")', playground)
         self.assertNotIn("localStorage.getItem('token')", playground)
@@ -355,7 +355,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertNotIn("Authorization", navbar)
         self.assertNotIn("token", navbar.lower())
 
-    def test_app_session_exchange_declares_and_sends_request_id_header(self):
+    def test_app_session_exchange_omits_request_id_header_and_reads_server_response_id(self):
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
         )
@@ -384,14 +384,14 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
 
         self.assertIn("operation: createAppSession", contract)
         self.assertIn("operation_id: sessions.create", contract)
-        self.assertIn("request_id_header: true", contract)
+        self.assertNotIn("request_id_header: true", contract)
 
         operations = {
             operation["operation_id"]: operation
             for operation in manifest["operations"]
             if operation["source"].endswith("sessionService.ts")
         }
-        self.assertTrue(operations["sessions.create"]["request_id_header"])
+        self.assertFalse(operations["sessions.create"]["request_id_header"])
 
         parameters = openapi["paths"]["/app/v3/api/auth/sessions"]["post"]["parameters"]
         request_id_params = [
@@ -400,19 +400,19 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         idempotency_params = [
             parameter for parameter in parameters if parameter["name"] == "Idempotency-Key"
         ]
-        self.assertEqual(1, len(request_id_params))
-        self.assertFalse(request_id_params[0]["required"])
+        self.assertEqual([], request_id_params)
         self.assertEqual([], idempotency_params)
         self.assertNotIn("/app/v3/api/auth/session", openapi["paths"])
 
         self.assertIn(
-            "async create(body: IamSessionCreateRequest, params?: AuthSessionsCreateParams): Promise<SessionsCreateResult>",
+            "async create(body: IamSessionCreateRequest): Promise<SessionsCreateResult>",
             app_sdk_auth,
         )
-        self.assertIn("params?.xRequestId", app_sdk_auth)
-        self.assertIn("createRequestParams('app-session')", session_service)
+        self.assertNotIn("xRequestId", app_sdk_auth)
+        self.assertNotIn("createRequestParams('app-session')", session_service)
         self.assertIn(".auth.sessions.create(", session_service)
         self.assertIn("grantType: 'session_bridge'", session_service)
+        self.assertNotIn("xRequestId", session_service)
 
 
 if __name__ == "__main__":

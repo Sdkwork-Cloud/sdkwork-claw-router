@@ -11,7 +11,7 @@ public class OpenAiAudioTranscriptionRequest {
     public OpenAiFileReferenceInput getFile() {
         return this.file;
     }
-    
+
     public void setFile(OpenAiFileReferenceInput file) {
         this.file = file;
     }
@@ -19,7 +19,7 @@ public class OpenAiAudioTranscriptionRequest {
     public String getLanguage() {
         return this.language;
     }
-    
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -27,7 +27,7 @@ public class OpenAiAudioTranscriptionRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -35,7 +35,7 @@ public class OpenAiAudioTranscriptionRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -43,7 +43,7 @@ public class OpenAiAudioTranscriptionRequest {
     public String getResponseFormat() {
         return this.responseFormat;
     }
-    
+
     public void setResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
     }

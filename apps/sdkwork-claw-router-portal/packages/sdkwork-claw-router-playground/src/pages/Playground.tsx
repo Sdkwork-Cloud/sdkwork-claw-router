@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { createRequestToken } from 'sdkwork-claw-router-commons/runtime';
 import {
   appendSdkworkGenerationArtifactToHistoryItem,
@@ -41,6 +42,7 @@ import { AudioView } from '../components/views/AudioView';
 import { SfxView } from '../components/views/SfxView';
 import { AssetView } from '../components/views/AssetView';
 import { ChatPage } from '../components/chat/ChatPage';
+import { ChatMarkdownMessage } from '../components/chat/ChatMarkdownMessage';
 import { IconSidebarItem } from '../components/IconSidebarItem';
 import { getDeterministicWaveBarStyle } from '../components/waveform';
 import { PlaygroundService } from '../playgroundService';
@@ -53,8 +55,20 @@ import type {
 
 export type Modality = 'agent' | 'chat' | 'image' | 'video' | 'music' | 'audio' | 'sfx' | 'package' | 'assets';
 export type GenerationModality = Exclude<Modality, 'chat' | 'assets'>;
+type PlaygroundRouteModality = Exclude<Modality, 'package'>;
+type PlaygroundAssetRouteModality = Exclude<PlaygroundRouteModality, 'agent' | 'chat'>;
 
 const DEFAULT_FILTER = 'all';
+const PLAYGROUND_MODALITY_ROUTES = {
+  agent: '/playground/agent',
+  chat: '/playground/chat',
+  image: '/playground/image',
+  video: '/playground/video',
+  music: '/playground/music',
+  audio: '/playground/audio',
+  sfx: '/playground/sfx',
+  assets: '/playground/assets',
+} as const satisfies Record<PlaygroundRouteModality, string>;
 
 const typeOptions = [
   { id: DEFAULT_FILTER, labelKey: 'playground.history.filter.all' },
@@ -166,7 +180,9 @@ function createClientRunId(): string {
 
 export function Playground() {
   const { t } = useTranslation();
-  const [modality, setModality] = useState<Modality>('image');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [modality, setModality] = useState<Modality>(() => readPlaygroundModalityFromPath(location.pathname));
   const [selectedModality, setSelectedModality] = useState<GenerationModality>('image');
   const [previewItem, setPreviewItem] = useState<PlaygroundHistoryItem | null>(null);
   const [agentHistory, setAgentHistory] = useState<PlaygroundHistoryItem[]>([]);
@@ -204,6 +220,19 @@ export function Playground() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    const nextModality = readPlaygroundModalityFromPath(location.pathname);
+    setModality(nextModality);
+    if (nextModality === 'agent') {
+      setSelectedModality('agent');
+    }
+
+    const canonicalPath = readCanonicalPlaygroundPath(location.pathname);
+    if (canonicalPath) {
+      navigate(canonicalPath, { replace: true });
+    }
+  }, [location.pathname, navigate]);
 
   useEffect(() => {
     let cancelled = false;
@@ -300,8 +329,14 @@ export function Playground() {
   };
 
   const openAgentView = () => {
+    navigate(PLAYGROUND_MODALITY_ROUTES.agent);
     setModality('agent');
     setSelectedModality('agent');
+  };
+
+  const openPlaygroundModality = (nextModality: PlaygroundAssetRouteModality) => {
+    navigate(PLAYGROUND_MODALITY_ROUTES[nextModality]);
+    setModality(nextModality);
   };
 
   const submitAgentGeneration = async ({
@@ -310,6 +345,8 @@ export function Playground() {
     selectedModel,
     generationConfig,
     referenceImages,
+    referenceAssets,
+    referenceMode,
   }: PlaygroundGenerationSubmitInput) => {
     setAgentSubmitError(null);
     setIsAgentSubmitting(true);
@@ -330,6 +367,8 @@ export function Playground() {
         selectedModel: modelId,
         generationConfig,
         referenceImages,
+        referenceAssets,
+        referenceMode,
         onDelta: (delta) => {
           if (!delta) {
             return;
@@ -450,15 +489,15 @@ export function Playground() {
     <div className="theme-aware-dark-surface flex h-[100dvh] w-full overflow-hidden bg-slate-50 dark:bg-[#0a0a0a] pt-[58px]">
       <div className="z-20 flex w-[80px] shrink-0 flex-col items-center gap-4 border-r border-white/5 bg-[#111111] py-4">
         <IconSidebarItem active={modality === 'agent'} icon={<Bot className="h-5 w-5" />} label={t('playground.modality.agent')} onClick={openAgentView} isPrimary />
-        <IconSidebarItem active={modality === 'chat'} icon={<MessageSquare className="h-5 w-5" />} label={t('playground.modality.chat')} onClick={() => setModality('chat')} />
+        <IconSidebarItem active={modality === 'chat'} icon={<MessageSquare className="h-5 w-5" />} label={t('playground.modality.chat')} onClick={() => { setModality('chat'); navigate(PLAYGROUND_MODALITY_ROUTES.chat); }} />
         <div className="my-1 h-px w-8 bg-white/10" />
-        <IconSidebarItem active={modality === 'image'} icon={<ImageIcon className="h-5 w-5" />} label={t('playground.modality.image')} onClick={() => setModality('image')} />
-        <IconSidebarItem active={modality === 'video'} icon={<Video className="h-5 w-5" />} label={t('playground.modality.video')} onClick={() => setModality('video')} />
-        <IconSidebarItem active={modality === 'music'} icon={<Music className="h-5 w-5" />} label={t('playground.modality.music')} onClick={() => setModality('music')} />
-        <IconSidebarItem active={modality === 'audio'} icon={<Headphones className="h-5 w-5" />} label={t('playground.modality.audio')} onClick={() => setModality('audio')} />
-        <IconSidebarItem active={modality === 'sfx'} icon={<FileAudio className="h-5 w-5" />} label={t('playground.modality.sfx')} onClick={() => setModality('sfx')} />
+        <IconSidebarItem active={modality === 'image'} icon={<ImageIcon className="h-5 w-5" />} label={t('playground.modality.image')} onClick={() => openPlaygroundModality('image')} />
+        <IconSidebarItem active={modality === 'video'} icon={<Video className="h-5 w-5" />} label={t('playground.modality.video')} onClick={() => openPlaygroundModality('video')} />
+        <IconSidebarItem active={modality === 'music'} icon={<Music className="h-5 w-5" />} label={t('playground.modality.music')} onClick={() => openPlaygroundModality('music')} />
+        <IconSidebarItem active={modality === 'audio'} icon={<Headphones className="h-5 w-5" />} label={t('playground.modality.audio')} onClick={() => openPlaygroundModality('audio')} />
+        <IconSidebarItem active={modality === 'sfx'} icon={<FileAudio className="h-5 w-5" />} label={t('playground.modality.sfx')} onClick={() => openPlaygroundModality('sfx')} />
         <div className="my-1 h-px w-8 bg-white/10" />
-        <IconSidebarItem active={modality === 'assets'} icon={<FolderOpen className="h-5 w-5" />} label={t('playground.modality.assets')} onClick={() => setModality('assets')} />
+        <IconSidebarItem active={modality === 'assets'} icon={<FolderOpen className="h-5 w-5" />} label={t('playground.modality.assets')} onClick={() => openPlaygroundModality('assets')} />
       </div>
 
       <div className="relative flex h-full min-w-0 flex-1 flex-col bg-[#111] text-white">
@@ -656,8 +695,12 @@ export function Playground() {
                           <Bot className="h-5 w-5 text-indigo-300" />
                           {t('playground.preview.textOutput')}
                         </div>
-                        <div className="custom-scrollbar min-h-0 flex-1 whitespace-pre-wrap px-6 py-5 text-[15px] leading-7 text-slate-100">
-                          {previewText || t('playground.preview.noTextOutput')}
+                        <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto px-6 py-5 text-[15px] leading-7 text-slate-100">
+                          <ChatMarkdownMessage
+                            content={previewText || t('playground.preview.noTextOutput')}
+                            tone="assistant"
+                            streaming={previewItem?.status === 'processing' || previewItem?.status === 'running'}
+                          />
                         </div>
                       </div>
                     )}
@@ -816,4 +859,52 @@ export function Playground() {
       </div>
     </div>
   );
+}
+
+function isPlaygroundChatPath(pathname: string): boolean {
+  return pathname === '/playground/chat'
+    || pathname.startsWith('/playground/chat/')
+    || pathname.startsWith('/c/');
+}
+
+function readPlaygroundModalityFromPath(pathname: string): PlaygroundRouteModality {
+  if (isPlaygroundChatPath(pathname)) {
+    return 'chat';
+  }
+  if (pathname === PLAYGROUND_MODALITY_ROUTES.agent) {
+    return 'agent';
+  }
+  if (pathname === PLAYGROUND_MODALITY_ROUTES.video) {
+    return 'video';
+  }
+  if (pathname === PLAYGROUND_MODALITY_ROUTES.music) {
+    return 'music';
+  }
+  if (pathname === PLAYGROUND_MODALITY_ROUTES.audio) {
+    return 'audio';
+  }
+  if (pathname === PLAYGROUND_MODALITY_ROUTES.sfx) {
+    return 'sfx';
+  }
+  if (pathname === PLAYGROUND_MODALITY_ROUTES.assets) {
+    return 'assets';
+  }
+  return 'image';
+}
+
+function readCanonicalPlaygroundPath(pathname: string): string | null {
+  if (pathname === '/playground') {
+    return PLAYGROUND_MODALITY_ROUTES.image;
+  }
+  if (pathname.startsWith('/playground/') && !isKnownPlaygroundRoute(pathname)) {
+    return PLAYGROUND_MODALITY_ROUTES.image;
+  }
+  return null;
+}
+
+function isKnownPlaygroundRoute(pathname: string): boolean {
+  if (isPlaygroundChatPath(pathname)) {
+    return true;
+  }
+  return (Object.values(PLAYGROUND_MODALITY_ROUTES) as string[]).includes(pathname);
 }

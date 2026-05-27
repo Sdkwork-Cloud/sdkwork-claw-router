@@ -8,8 +8,9 @@ use sdkwork_claw_provider_adapter_registry::{
 
 use super::adapter_aware_openai_relay::{
     adapter_http_error, build_openai_adapter_invocation, OpenAiAdapterEndpoint,
-    OpenAiAdapterInvocationParts,
+    OpenAiAdapterInvocationParts, ProviderSecretResolverRef,
 };
+use crate::domain::DomainResult;
 use crate::ports::{
     ChatCompletionRelay, ChatCompletionRelayFuture, ChatCompletionRelayRequest,
     ChatCompletionRelayResponse,
@@ -28,6 +29,7 @@ pub struct AdapterAwareChatCompletionRelay {
     direct_relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
     adapter_registry: Arc<ProviderAdapterRegistry>,
     adapter_client: ProviderAdapterHttpClient,
+    provider_secret_resolver: Option<ProviderSecretResolverRef>,
 }
 
 impl AdapterAwareChatCompletionRelay {
@@ -40,7 +42,13 @@ impl AdapterAwareChatCompletionRelay {
             direct_relay,
             adapter_registry,
             adapter_client,
+            provider_secret_resolver: None,
         }
+    }
+
+    pub fn with_secret_resolver(mut self, resolver: ProviderSecretResolverRef) -> Self {
+        self.provider_secret_resolver = Some(resolver);
+        self
     }
 }
 
@@ -63,7 +71,10 @@ impl ChatCompletionRelay for AdapterAwareChatCompletionRelay {
                     self.direct_relay.create_chat_completion(request).await
                 }
                 ProviderInvocationMode::InternalHttpAdapter(route) => {
-                    let invocation = chat_completion_adapter_invocation(request);
+                    let invocation = chat_completion_adapter_invocation(
+                        request,
+                        self.provider_secret_resolver.as_ref(),
+                    )?;
                     let response = self
                         .adapter_client
                         .invoke(&route, invocation)
@@ -81,7 +92,8 @@ impl ChatCompletionRelay for AdapterAwareChatCompletionRelay {
 
 fn chat_completion_adapter_invocation(
     request: ChatCompletionRelayRequest,
-) -> AdapterInvocationRequest {
+    secret_resolver: Option<&ProviderSecretResolverRef>,
+) -> DomainResult<AdapterInvocationRequest> {
     build_openai_adapter_invocation(
         CHAT_COMPLETIONS_ENDPOINT,
         OpenAiAdapterInvocationParts {
@@ -101,5 +113,6 @@ fn chat_completion_adapter_invocation(
             provider_timeout_ms: request.provider_timeout_ms,
             request_body: request.request_body,
         },
+        secret_resolver,
     )
 }

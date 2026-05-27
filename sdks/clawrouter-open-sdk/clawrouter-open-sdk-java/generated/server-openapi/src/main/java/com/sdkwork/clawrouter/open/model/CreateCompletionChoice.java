@@ -10,7 +10,7 @@ public class CreateCompletionChoice {
     public String getFinishReason() {
         return this.finishReason;
     }
-    
+
     public void setFinishReason(String finishReason) {
         this.finishReason = finishReason;
     }
@@ -18,7 +18,7 @@ public class CreateCompletionChoice {
     public Integer getIndex() {
         return this.index;
     }
-    
+
     public void setIndex(Integer index) {
         this.index = index;
     }
@@ -26,7 +26,7 @@ public class CreateCompletionChoice {
     public CreateCompletionLogprobs getLogprobs() {
         return this.logprobs;
     }
-    
+
     public void setLogprobs(CreateCompletionLogprobs logprobs) {
         this.logprobs = logprobs;
     }
@@ -34,7 +34,7 @@ public class CreateCompletionChoice {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }

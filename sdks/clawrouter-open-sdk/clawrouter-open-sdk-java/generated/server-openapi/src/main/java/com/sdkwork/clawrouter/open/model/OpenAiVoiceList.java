@@ -12,7 +12,7 @@ public class OpenAiVoiceList {
     public List<OpenAiVoice> getData() {
         return this.data;
     }
-    
+
     public void setData(List<OpenAiVoice> data) {
         this.data = data;
     }
@@ -20,7 +20,7 @@ public class OpenAiVoiceList {
     public String getFirstId() {
         return this.firstId;
     }
-    
+
     public void setFirstId(String firstId) {
         this.firstId = firstId;
     }
@@ -28,7 +28,7 @@ public class OpenAiVoiceList {
     public Boolean getHasMore() {
         return this.hasMore;
     }
-    
+
     public void setHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
     }
@@ -36,7 +36,7 @@ public class OpenAiVoiceList {
     public String getLastId() {
         return this.lastId;
     }
-    
+
     public void setLastId(String lastId) {
         this.lastId = lastId;
     }
@@ -44,7 +44,7 @@ public class OpenAiVoiceList {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

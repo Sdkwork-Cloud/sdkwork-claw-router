@@ -239,7 +239,7 @@ frontend_operations:
   api_path: /app/v3/api/runtime/invocations
   sdk_domain: runtime
   summary: Create runtime invocation
-  description: Creates one normalized runtime invocation for Claude Code, Gemini, Codex, OpenAI-compatible providers, tools, MCP calls, skills, or custom runtime adapters.
+  description: Creates one normalized runtime invocation for Claude Code, Gemini, Codex, OpenAI-compatible providers, tools, MCP calls, skills, or custom runtime adapters. The server generates the runtime request id.
   read_sources:
   - ai_chat_conversation
   - ai_chat_turn
@@ -289,9 +289,6 @@ frontend_operations:
         type: string
         maxLength: 128
       agentRunStepId:
-        type: string
-        maxLength: 128
-      requestId:
         type: string
         maxLength: 128
       traceId:

@@ -13,7 +13,7 @@ public class OpenAiOrganizationCostBucket {
     public Double getAmount() {
         return this.amount;
     }
-    
+
     public void setAmount(Double amount) {
         this.amount = amount;
     }
@@ -21,7 +21,7 @@ public class OpenAiOrganizationCostBucket {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -29,7 +29,7 @@ public class OpenAiOrganizationCostBucket {
     public Integer getEndTime() {
         return this.endTime;
     }
-    
+
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
     }
@@ -37,7 +37,7 @@ public class OpenAiOrganizationCostBucket {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -45,7 +45,7 @@ public class OpenAiOrganizationCostBucket {
     public List<String> getResults() {
         return this.results;
     }
-    
+
     public void setResults(List<String> results) {
         this.results = results;
     }
@@ -53,7 +53,7 @@ public class OpenAiOrganizationCostBucket {
     public Integer getStartTime() {
         return this.startTime;
     }
-    
+
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }

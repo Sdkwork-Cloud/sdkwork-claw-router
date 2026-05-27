@@ -134,9 +134,12 @@ test("VIP purchase page remains a dedicated product module backed by standard me
 test("VIP service preserves product purchase APIs while using generated app SDK membership paths", () => {
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/vipService.ts");
+  const indexSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/index.ts");
 
   for (const marker of [
     "VipView",
+    "VipPurchasePage",
+    "VipPurchaseModal",
     "VipService.fetchVipCatalog",
     "VipService.purchaseVipPackage",
     "handlePurchase",
@@ -169,14 +172,21 @@ test("VIP service preserves product purchase APIs while using generated app SDK 
     "qrCodeImageUrl",
     "toDataURL(paymentDialog.qrCodePayload",
     "handlePurchase(pkg)",
+    "onPurchased?.()",
+    "variant === 'modal'",
+    "aria-modal=\"true\"",
   ]) {
     assert.match(viewSource, new RegExp(escapeRegExp(purchaseModalMarker)));
   }
+
+  assert.match(indexSource, /export \{ VipView, VipPurchasePage, VipPurchaseModal \} from '\.\/VipView'/);
 
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.current\.retrieve\(\)/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.packages\.list/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
+  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.system\.promotions\.codes\.redemptions\.create/);
+  assert.doesNotMatch(serviceSource, /commerce\.coupons/);
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
   assert.doesNotMatch(serviceSource, /billing\(\)\.vip|\/billing\/vip|\/app\/v3\/api\/vip|\/backend\/v3\/api\/vip/);
@@ -185,7 +195,7 @@ test("VIP service preserves product purchase APIs while using generated app SDK 
 test("VIP page localizes public tab, package, and feature copy", () => {
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/vipService.ts");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/vip.ts");
 
   for (const marker of [
     "t(pkg.badge",
@@ -233,7 +243,7 @@ test("VIP page localizes public tab, package, and feature copy", () => {
 
 test("VIP page exposes direct points purchase and membership redeem modals", () => {
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/vip.ts");
 
   for (const marker of [
     "VipPointsPurchaseModal",
@@ -274,12 +284,12 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
   const vipPackageJson = readPortalFile("./packages/sdkwork-claw-router-vip/package.json");
 
   for (const marker of [
-    "RechargeService.fetchPackages",
+    "RechargePackageSelector",
     "RechargeService.submitRecharge",
     "CheckoutService.fetchCheckoutStatus",
     "toDataURL(pointsCheckoutStatus.qrCodePayload",
-    "selectedRechargePackageId",
-    "handlePointsPackageSelect",
+    "selectedRechargeOptionId",
+    "handleRechargeOptionChange",
     "handlePointsCheckout",
     "pointsCheckoutStatus",
     "document.body.style.overflow",
@@ -294,6 +304,9 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
   for (const retiredMarker of [
     'href="/console/recharge"',
     "vip.pointsPurchase.goRecharge",
+    "RechargeService.fetchPackages",
+    "rechargePackages.map",
+    "createPointsCheckout(firstPackage",
   ]) {
     assert.doesNotMatch(viewSource, new RegExp(escapeRegExp(retiredMarker)));
   }
@@ -302,29 +315,117 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
   assert.match(vipPackageJson, /"sdkwork-claw-router-console-checkout": "workspace:\*"/);
 });
 
-test("membership console package preserves purchase UI while using app SDK membership APIs", () => {
+test("VIP points purchase modal uses current user avatar with localized fallback identity copy", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/vip.ts");
+  const vipPackageJson = readPortalFile("./packages/sdkwork-claw-router-vip/package.json");
+
+  for (const marker of [
+    "UserService.fetchCurrentUser",
+    "type UserProfile",
+    "currentUser",
+    "currentUserAvatarUrl",
+    "currentUserDisplayName",
+    "vip.pointsPurchase.defaultUserName",
+    "vip.pointsPurchase.defaultAvatarLabel",
+    "vip.pointsPurchase.userAvatarAlt",
+    "vip.pointsPurchase.accountLabel",
+  ]) {
+    assert.match(viewSource, new RegExp(escapeRegExp(marker)));
+  }
+
+  assert.match(viewSource, /<img[\s\S]*src=\{currentUserAvatarUrl\}/);
+  assert.match(viewSource, /<User[\s\S]*aria-hidden="true"/);
+  assert.doesNotMatch(viewSource, />\s*Z\s*</);
+  assert.doesNotMatch(viewSource, /vip\.pointsPurchase\.brand/);
+  assert.match(vipPackageJson, /"sdkwork-claw-router-console-user": "workspace:\*"/);
+
+  for (const marker of [
+    "vip.pointsPurchase.defaultUserName",
+    "vip.pointsPurchase.defaultAvatarLabel",
+    "vip.pointsPurchase.userAvatarAlt",
+    "vip.pointsPurchase.accountLabel",
+    "vip.pointsPurchase.packageTitle",
+    "vip.pointsPurchase.createCheckout",
+    "vip.pointsPurchase.selectPackageHint",
+    "vip.pointsPurchase.paymentHint",
+    "vip.pointsPurchase.rules",
+  ]) {
+    assert.equal((i18nSource.match(new RegExp(escapeRegExp(marker), "g")) ?? []).length, 2, `${marker} should be localized in English and Chinese`);
+  }
+
+  for (const staleCopy of [
+    "Click a package to refresh the payment code",
+    "点击套餐刷新支付码",
+    "Credit rules",
+    " 积分规则",
+  ]) {
+    assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(staleCopy)));
+  }
+});
+
+test("membership console package uses VIP modal purchase and a professional entitlement dashboard", () => {
   const source = readPortalFile("./packages/sdkwork-claw-router-console-memberships/src/MembershipsView.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-console-memberships/src/membershipService.ts");
+  const packageJson = readPortalFile("./packages/sdkwork-claw-router-console-memberships/package.json");
 
   for (const marker of [
     "MembershipsView",
-    "MembershipService.fetchMembershipSummary",
-    "MembershipService.fetchMembershipPackages",
-    "MembershipService.purchaseMembership",
-    "handleMembershipPurchase",
-    "selectedMembershipPackageId",
-    "membershipPurchaseSuccessMsg",
-    "membershipPurchaseErrorMsg",
+    "VipPurchaseModal",
+    "vipPurchaseModalOpen",
+    "openVipPurchaseModal",
+    "MembershipStatusHero",
+    "EntitlementOverviewPanel",
+    "EntitlementStatusSummary",
+    "UsageSnapshotPanel",
+    "EntitlementAccessBadge",
+    "entitlementRows",
+    "entitlementAccessCounts",
+    "console.memberships.actions.openVipPurchase",
+    "console.memberships.dashboard.heroEyebrow",
+    "console.memberships.entitlements.includedTitle",
+    "console.memberships.entitlements.tableHeaderBenefit",
+    "console.memberships.entitlements.tableHeaderQuota",
+    "console.memberships.entitlements.tableHeaderPeriod",
+    "console.memberships.entitlements.tableHeaderAccess",
+    "console.memberships.entitlements.accessIncluded",
+    "console.memberships.usage.title",
+    "table-fixed",
   ]) {
     assert.match(source, new RegExp(escapeRegExp(marker)));
   }
 
+  assert.equal(
+    (source.match(/console\.memberships\.actions\.openVipPurchase/g) ?? []).length,
+    1,
+    "console membership page should expose a single VIP purchase CTA",
+  );
+
+  for (const retiredMarker of [
+    "MembershipPackageCard",
+    "runPackageAction",
+    "handleMembershipPackageAction",
+    "MembershipService.purchaseMembership",
+    "selectedMembershipPackageId",
+    "PackageConfigurationPanel",
+    "PackageSummaryRow",
+    "MembershipLifecyclePanel",
+    "console.memberships.lifecycle.title",
+    "mt-1 rounded-xl bg-lobster-50 p-2 text-lobster-600",
+    "console.memberships.packageGroups.title",
+    "console.memberships.packages.configuredGroups",
+  ]) {
+    assert.doesNotMatch(source, new RegExp(escapeRegExp(retiredMarker)));
+  }
+
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.current\.retrieve\(\)/);
-  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packages\.list/);
+  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
+  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.benefits\.list/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
   assert.doesNotMatch(serviceSource, /billing\(\)\.vip|\/billing\/vip|\/vip/);
+  assert.match(packageJson, /"sdkwork-claw-router-vip": "workspace:\*"/);
 });
 
 test("VIP catalog uses the generated app SDK standard membership package group path", async () => {
@@ -621,7 +722,7 @@ test("VIP purchase rejects explicit failed purchase responses", async () => {
   );
 });
 
-test("VIP membership redeem uses idempotent generated app SDK coupon redemption path", async () => {
+test("VIP membership redeem uses idempotent generated app SDK promotion code redemption path", async () => {
   await withMembershipSdkResponse(
     {
       code: "2000",
@@ -639,14 +740,17 @@ test("VIP membership redeem uses idempotent generated app SDK coupon redemption 
         status: "accepted",
         success: true,
       });
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/coupons/redemptions");
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/promotions/codes/redemptions");
       assert.equal(captured[0]?.method, "POST");
       assert.match(captured[0]?.body ?? "", /"clientRequestNo":"vip-membership-redemption-/);
-      assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}").metadata, {
+      const body = JSON.parse(captured[0]?.body ?? "{}");
+      assert.deepEqual(body, {
+        clientRequestNo: body.clientRequestNo,
         code: "VIP-CODE-001",
         scene: "membership_redeem",
         source: "vip-page",
       });
+      assert.equal(body.metadata, undefined);
     },
   );
 });
@@ -678,8 +782,11 @@ test("membership package listing uses the generated app SDK standard path", asyn
           currencyCode: "CNY",
           durationDays: 365,
           id: "member-pkg-1",
+          isPurchasable: false,
+          packageGroupId: null,
           packageNo: "member-pkg-1",
           planId: "vip-pro",
+          planName: "vip-pro",
           priceAmount: "199.00",
           recurrenceCycle: "one_time",
           skuId: "sku-vip-pro",
@@ -740,10 +847,24 @@ test("membership service fails closed for malformed packages and blank purchase 
       },
     },
     async () => {
-      await assert.rejects(
-        () => MembershipService.fetchMembershipPackages(),
-        /Membership package price amount is required must be a positive money amount/,
-      );
+      const packages = await MembershipService.fetchMembershipPackages();
+
+      assert.deepEqual(packages, [
+        {
+          currencyCode: "CNY",
+          durationDays: 0,
+          id: "member-pkg-1",
+          isPurchasable: false,
+          packageGroupId: null,
+          packageNo: "member-pkg-1",
+          planId: "vip-pro",
+          planName: "vip-pro",
+          priceAmount: "0.00",
+          recurrenceCycle: "one_time",
+          skuId: "sku-vip-pro",
+          status: "active",
+        },
+      ]);
     },
   );
 

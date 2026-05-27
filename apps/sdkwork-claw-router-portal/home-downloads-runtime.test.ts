@@ -67,7 +67,7 @@ test("home page mounts download components in both hero and deploy sections", ()
 
 test("home hero release badge is driven by the download catalog version", () => {
   const heroSource = readPortalSource("./packages/sdkwork-claw-router-home/src/components/Hero.tsx");
-  const i18nSource = readPortalSource("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalSource("./packages/sdkwork-claw-router-i18n/src/resources/shared/navigation.ts");
 
   assert.ok(heroSource.includes("createClawRouterDownloadCatalog"));
   assert.ok(heroSource.includes("clawRouterDownloadCatalog"));

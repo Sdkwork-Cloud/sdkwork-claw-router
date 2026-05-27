@@ -26,6 +26,33 @@ export interface PlaygroundReferenceImageInput {
   assetId?: string;
 }
 
+export type PlaygroundReferenceAssetKind = 'image' | 'audio' | 'video';
+
+export type PlaygroundReferenceAssetRole =
+  | 'first_frame'
+  | 'last_frame'
+  | 'reference_image'
+  | 'reference_audio'
+  | 'reference_video';
+
+export type PlaygroundReferenceAssetMode =
+  | 'text_to_video'
+  | 'first_frame'
+  | 'first_last_frame'
+  | 'multi_reference'
+  | 'omni_reference';
+
+export interface PlaygroundReferenceAssetInput {
+  kind: 'image' | 'audio' | 'video';
+  role: 'first_frame' | 'last_frame' | 'reference_image' | 'reference_audio' | 'reference_video';
+  name: string;
+  mimeType?: string;
+  sizeBytes?: number;
+  dataUrl?: string;
+  url?: string;
+  assetId?: string;
+}
+
 export type PlaygroundGenerationArtifact = SdkworkGenerationArtifact;
 
 export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem;
@@ -35,7 +62,9 @@ export interface GenerationAgentRunCreateInput {
   targetType?: PlaygroundGenerationTargetType;
   selectedModel?: string;
   generationConfig?: PlaygroundGenerationConfig;
+  referenceAssets?: PlaygroundReferenceAssetInput[];
   referenceImages?: PlaygroundReferenceImageInput[];
+  referenceMode?: PlaygroundReferenceAssetMode;
   onDelta?: (delta: string) => void;
   onArtifact?: (artifact: PlaygroundGenerationArtifact) => void;
 }
@@ -46,7 +75,9 @@ export interface PlaygroundGenerationSubmitInput {
   targetType?: PlaygroundGenerationTargetType;
   selectedModel?: string;
   generationConfig?: PlaygroundGenerationConfig;
+  referenceAssets?: PlaygroundReferenceAssetInput[];
   referenceImages?: PlaygroundReferenceImageInput[];
+  referenceMode?: PlaygroundReferenceAssetMode;
 }
 
 export interface GenerationAgentSnapshot {
@@ -176,6 +207,7 @@ export interface PlaygroundModelOption {
   officialReferenceCurrency?: string | null;
   officialReferencePrices: PlaygroundModelReferencePrice[];
   priceAvailability: PlaygroundModelPriceAvailability;
+  providerCodes: string[];
   supportsStreaming: boolean;
   supportsTools: boolean;
   supportsJsonSchema: boolean;

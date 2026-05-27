@@ -17,4 +17,4 @@ pub use manifest::{
 };
 pub use registry::{AdapterKind, AdapterRouteStatus};
 pub use task::AdapterTaskStatus;
-pub use usage::AdapterUsage;
+pub use usage::{AdapterUsage, AdapterUsageLine};

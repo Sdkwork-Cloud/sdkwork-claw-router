@@ -114,10 +114,9 @@ pub(super) fn find_catalog_model<C>(catalog: &C, model: &str) -> Result<AiModel,
 where
     C: PricingCatalog,
 {
-    if model.contains('/') {
-        return catalog
-            .find_model(model)
-            .ok_or_else(|| model_not_found(model));
+    let model = model.trim();
+    if let Some(catalog_model) = catalog.find_model(model) {
+        return Ok(catalog_model);
     }
 
     let matches = catalog
@@ -252,22 +251,11 @@ where
 }
 
 fn route_scope_catalog_key(requested_model: &str, model_catalog_key: &str) -> String {
-    if catalog_key_is_regional(requested_model) {
+    if requested_model.trim() == model_catalog_key.trim() {
         requested_model.trim().to_owned()
     } else {
         model_catalog_key.to_owned()
     }
-}
-
-fn catalog_key_is_regional(value: &str) -> bool {
-    matches!(
-        value
-            .split('/')
-            .filter(|part| !part.trim().is_empty())
-            .collect::<Vec<_>>()
-            .as_slice(),
-        [_vendor, _region, _model]
-    )
 }
 
 fn resolve_model_route(
@@ -307,19 +295,51 @@ fn resolve_model_route(
         ));
     }
 
+    let provider_model = normalized_resolved_provider_model(
+        &model_route.catalog_key,
+        &model_route.model,
+        &model_route.provider_model,
+    );
+
     Ok(ResolvedOpenAiProviderRoute {
         catalog_key: model_route.catalog_key,
         policy_id: selection.policy_id,
         rule_id: selection.rule_id,
         provider_code: model_route.provider_code,
         channel_id: model_route.channel_id,
-        provider_model: model_route.provider_model,
+        provider_model,
         provider_base_url: account_pool_route.base_url,
         provider_secret_ref: account_pool_route.secret_ref,
         provider_auth_profile: account_pool_route.auth_profile,
         provider_timeout_ms: account_pool_route.timeout_ms,
         provider_retry_policy: account_pool_route.retry_policy,
     })
+}
+
+fn normalized_resolved_provider_model(
+    catalog_key: &str,
+    model: &str,
+    provider_model: &str,
+) -> String {
+    let provider_model = provider_model.trim();
+    if provider_model.is_empty() {
+        let model = model.trim();
+        return if model.is_empty() {
+            crate::domain::provider_native_model_id(catalog_key)
+        } else {
+            model.to_owned()
+        };
+    }
+    let native_model = crate::domain::provider_native_model_id(provider_model);
+    if provider_model == catalog_key.trim()
+        || (!native_model.is_empty()
+            && native_model == model.trim()
+            && native_model != provider_model)
+    {
+        native_model
+    } else {
+        provider_model.to_owned()
+    }
 }
 
 impl ResolvedOpenAiProviderRoutePlan {
@@ -348,7 +368,11 @@ fn provider_route_selection_error(error: ProviderRouteSelectionError) -> OpenAiR
     match error.kind() {
         ProviderRouteSelectionErrorKind::ProviderRouteUnavailable => Box::new(openai_error(
             StatusCode::SERVICE_UNAVAILABLE,
-            "provider_route_not_available",
+            if message.contains("provider route snapshot is empty") {
+                "provider_route_snapshot_empty"
+            } else {
+                "provider_route_not_available"
+            },
             "server_error",
             message,
         )),

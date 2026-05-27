@@ -30,7 +30,7 @@ public class AiRoutingPolicyRecord {
     public String getCapability() {
         return this.capability;
     }
-    
+
     public void setCapability(String capability) {
         this.capability = capability;
     }
@@ -38,7 +38,7 @@ public class AiRoutingPolicyRecord {
     public String getCostCeiling() {
         return this.costCeiling;
     }
-    
+
     public void setCostCeiling(String costCeiling) {
         this.costCeiling = costCeiling;
     }
@@ -46,7 +46,7 @@ public class AiRoutingPolicyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -54,7 +54,7 @@ public class AiRoutingPolicyRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -62,7 +62,7 @@ public class AiRoutingPolicyRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -70,7 +70,7 @@ public class AiRoutingPolicyRecord {
     public String getDefaultProfileId() {
         return this.defaultProfileId;
     }
-    
+
     public void setDefaultProfileId(String defaultProfileId) {
         this.defaultProfileId = defaultProfileId;
     }
@@ -78,7 +78,7 @@ public class AiRoutingPolicyRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -86,7 +86,7 @@ public class AiRoutingPolicyRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -94,7 +94,7 @@ public class AiRoutingPolicyRecord {
     public String getFallbackMode() {
         return this.fallbackMode;
     }
-    
+
     public void setFallbackMode(String fallbackMode) {
         this.fallbackMode = fallbackMode;
     }
@@ -102,7 +102,7 @@ public class AiRoutingPolicyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -110,7 +110,7 @@ public class AiRoutingPolicyRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -118,7 +118,7 @@ public class AiRoutingPolicyRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -126,7 +126,7 @@ public class AiRoutingPolicyRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -134,7 +134,7 @@ public class AiRoutingPolicyRecord {
     public String getPolicyCode() {
         return this.policyCode;
     }
-    
+
     public void setPolicyCode(String policyCode) {
         this.policyCode = policyCode;
     }
@@ -142,7 +142,7 @@ public class AiRoutingPolicyRecord {
     public String getPolicyScope() {
         return this.policyScope;
     }
-    
+
     public void setPolicyScope(String policyScope) {
         this.policyScope = policyScope;
     }
@@ -150,7 +150,7 @@ public class AiRoutingPolicyRecord {
     public Integer getSloLatencyMs() {
         return this.sloLatencyMs;
     }
-    
+
     public void setSloLatencyMs(Integer sloLatencyMs) {
         this.sloLatencyMs = sloLatencyMs;
     }
@@ -158,7 +158,7 @@ public class AiRoutingPolicyRecord {
     public String getSloSuccessRate() {
         return this.sloSuccessRate;
     }
-    
+
     public void setSloSuccessRate(String sloSuccessRate) {
         this.sloSuccessRate = sloSuccessRate;
     }
@@ -166,7 +166,7 @@ public class AiRoutingPolicyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -174,7 +174,7 @@ public class AiRoutingPolicyRecord {
     public String getSubjectId() {
         return this.subjectId;
     }
-    
+
     public void setSubjectId(String subjectId) {
         this.subjectId = subjectId;
     }
@@ -182,7 +182,7 @@ public class AiRoutingPolicyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -190,7 +190,7 @@ public class AiRoutingPolicyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -198,7 +198,7 @@ public class AiRoutingPolicyRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -206,7 +206,7 @@ public class AiRoutingPolicyRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

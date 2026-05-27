@@ -12,7 +12,7 @@ public class OpenAiThreadMessageCreateRequest {
     public List<String> getAttachments() {
         return this.attachments;
     }
-    
+
     public void setAttachments(List<String> attachments) {
         this.attachments = attachments;
     }
@@ -20,7 +20,7 @@ public class OpenAiThreadMessageCreateRequest {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -28,7 +28,7 @@ public class OpenAiThreadMessageCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -36,7 +36,7 @@ public class OpenAiThreadMessageCreateRequest {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

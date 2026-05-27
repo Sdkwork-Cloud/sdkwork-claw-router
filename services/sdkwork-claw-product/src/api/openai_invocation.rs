@@ -1,17 +1,18 @@
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
+use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::http::{HeaderMap, StatusCode, Uri};
 use axum::response::Response;
 use serde_json::Value;
 
+use crate::api::request_id::generate_server_request_id;
 use crate::api::openai_error::openai_error;
 use crate::application::AuthenticatedApiKeyContext;
 
 pub use super::openai_runtime::ResolvedOpenAiProviderRoute as OpenAiProviderRoute;
 
-const X_REQUEST_ID: &str = "x-request-id";
 const X_TRACE_ID: &str = "x-trace-id";
 
 pub type OpenAiInvocationPluginFuture<'a> =
@@ -44,7 +45,7 @@ pub struct OpenAiInvocationContext {
     pub request_body: Value,
     pub request_path: String,
     pub http_method: String,
-    pub request_id: Option<String>,
+    pub request_id: String,
     pub trace_id: Option<String>,
 }
 
@@ -66,7 +67,7 @@ impl OpenAiInvocationContext {
             request_body,
             request_path: uri.path().to_owned(),
             http_method: "POST".to_owned(),
-            request_id: header_value(headers, X_REQUEST_ID),
+            request_id: server_generated_request_id(),
             trace_id: header_value(headers, X_TRACE_ID),
         }
     }
@@ -351,8 +352,17 @@ pub(super) async fn notify_after_route_selection(
     context: &OpenAiInvocationContext,
     route: &mut OpenAiProviderRoute,
 ) -> Result<(), OpenAiInvocationPluginError> {
+    let selected_route = route.clone();
     for plugin in plugins {
-        plugin.after_route_selection(context, route).await?;
+        let result = plugin.after_route_selection(context, route).await;
+        let route_was_mutated = *route != selected_route;
+        if route_was_mutated {
+            *route = selected_route.clone();
+        }
+        result?;
+        if route_was_mutated {
+            return Err(provider_route_mutation_not_allowed());
+        }
     }
     Ok(())
 }
@@ -362,10 +372,28 @@ pub(super) async fn notify_before_relay(
     context: &OpenAiInvocationContext,
     route: &mut OpenAiProviderRoute,
 ) -> Result<(), OpenAiInvocationPluginError> {
+    let selected_route = route.clone();
     for plugin in plugins {
-        plugin.before_relay(context, route).await?;
+        let result = plugin.before_relay(context, route).await;
+        let route_was_mutated = *route != selected_route;
+        if route_was_mutated {
+            *route = selected_route.clone();
+        }
+        result?;
+        if route_was_mutated {
+            return Err(provider_route_mutation_not_allowed());
+        }
     }
     Ok(())
+}
+
+fn provider_route_mutation_not_allowed() -> OpenAiInvocationPluginError {
+    OpenAiInvocationPluginError::new(
+        StatusCode::INTERNAL_SERVER_ERROR,
+        "provider_route_mutation_not_allowed",
+        "server_error",
+        "plugin mutated selected provider route; provider account changes must be configured through account-pool routing",
+    )
 }
 
 pub(super) async fn notify_after_relay_observers(
@@ -447,6 +475,24 @@ fn ok_plugin_future<'a>() -> OpenAiInvocationPluginFuture<'a> {
     Box::pin(async { Ok(()) })
 }
 
+fn server_generated_request_id() -> String {
+    generate_server_request_id().unwrap_or_else(|error| {
+        tracing::warn!(
+            error = ?error,
+            "failed to generate canonical OpenAI invocation request id; falling back to server-local id"
+        );
+        fallback_server_request_id()
+    })
+}
+
+fn fallback_server_request_id() -> String {
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_nanos())
+        .unwrap_or_default();
+    format!("openai-invocation-{nanos}")
+}
+
 fn header_value(headers: &HeaderMap, name: &str) -> Option<String> {
     headers
         .get(name)
@@ -454,4 +500,59 @@ fn header_value(headers: &HeaderMap, name: &str) -> Option<String> {
         .map(str::trim)
         .filter(|value| !value.is_empty())
         .map(str::to_owned)
+}
+
+#[cfg(test)]
+mod tests {
+    use axum::http::{HeaderMap, HeaderValue, Uri};
+    use serde_json::json;
+
+    use super::{OpenAiInvocationContext, OpenAiInvocationEndpoint};
+    use crate::application::AuthenticatedApiKeyContext;
+
+    #[test]
+    fn openai_invocation_context_ignores_client_request_id_header() {
+        let mut headers = HeaderMap::new();
+        headers.insert("x-request-id", HeaderValue::from_static("client-request-id"));
+        headers.insert("x-trace-id", HeaderValue::from_static("client-trace-id"));
+        let uri: Uri = "/v1/chat/completions".parse().unwrap();
+
+        let context = OpenAiInvocationContext::new(
+            OpenAiInvocationEndpoint::ChatCompletions,
+            authenticated_api_key_context(),
+            "gpt-4o-mini",
+            false,
+            json!({"model": "gpt-4o-mini"}),
+            &headers,
+            &uri,
+        );
+
+        assert_ne!("client-request-id", context.request_id);
+        assert!(is_uuid(&context.request_id));
+        assert_eq!(Some("client-trace-id"), context.trace_id.as_deref());
+    }
+
+    fn authenticated_api_key_context() -> AuthenticatedApiKeyContext {
+        AuthenticatedApiKeyContext {
+            api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
+            api_key_name_snapshot: "sk-live".to_owned(),
+            group_id: 10,
+            group_code: "standard-group".to_owned(),
+            pricing_plan_code: "standard".to_owned(),
+        }
+    }
+
+    fn is_uuid(value: &str) -> bool {
+        let bytes = value.as_bytes();
+        bytes.len() == 36
+            && bytes.iter().enumerate().all(|(index, byte)| {
+                matches!(index, 8 | 13 | 18 | 23) && *byte == b'-'
+                    || !matches!(index, 8 | 13 | 18 | 23) && byte.is_ascii_hexdigit()
+            })
+            && bytes.get(14) == Some(&b'4')
+            && matches!(bytes.get(19), Some(b'8' | b'9' | b'a' | b'b'))
+    }
 }

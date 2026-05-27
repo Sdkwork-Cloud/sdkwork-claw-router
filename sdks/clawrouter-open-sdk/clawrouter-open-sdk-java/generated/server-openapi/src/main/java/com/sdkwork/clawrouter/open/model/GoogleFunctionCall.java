@@ -9,7 +9,7 @@ public class GoogleFunctionCall {
     public Map<String, Object> getArgs() {
         return this.args;
     }
-    
+
     public void setArgs(Map<String, Object> args) {
         this.args = args;
     }
@@ -17,7 +17,7 @@ public class GoogleFunctionCall {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

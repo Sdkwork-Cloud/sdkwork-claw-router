@@ -11,7 +11,7 @@ public class AdminModelVendorCreateRequest {
     public String getColor() {
         return this.color;
     }
-    
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -19,7 +19,7 @@ public class AdminModelVendorCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -27,7 +27,7 @@ public class AdminModelVendorCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -35,7 +35,7 @@ public class AdminModelVendorCreateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -43,7 +43,7 @@ public class AdminModelVendorCreateRequest {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }

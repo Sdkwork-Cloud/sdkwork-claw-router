@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
-import { Search, Plus, Cpu, X, Sparkles, Layers, Image as ImageIcon, MessageSquare, Headphones, ChevronRight, ChevronDown, Activity, Trash2, Edit, Music, Loader2, RefreshCw, Video, Volume2, Power, PowerOff } from 'lucide-react';
+import { Search, Plus, Cpu, X, Layers, Image as ImageIcon, MessageSquare, Headphones, ChevronRight, ChevronDown, Activity, Trash2, Edit, Music, Loader2, RefreshCw, Video, Volume2, Power, PowerOff } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ModelService, Vendor, Model, KNOWN_VENDORS, selectPreferredModelVendorId } from './modelService';
 import { MODEL_PRICING_REGIONS, createModelInputFromForm, createVendorInputFromForm, updateModelInputFromForm } from './modelForm';
@@ -393,37 +393,27 @@ export function ModelAdmin() {
 
   return (
     <div className="flex min-h-0 h-full w-full flex-col bg-slate-50 dark:bg-[#121212] rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-white/5">
-      {/* HEADER SECTION */}
-      <div className="bg-white dark:bg-[#1a1a1a] border-b border-slate-200 dark:border-white/10 px-6 py-4 flex justify-between items-center shrink-0">
-        <div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
-              <Sparkles className="w-4 h-4" />
-            </span>
-            {t('admin.model.title')}
-          </h2>
-          <p className="text-sm text-slate-500 mt-1">{t('admin.model.subtitle')}</p>
-        </div>
-        <div>
-          <button
-            onClick={handleSyncAll}
-            disabled={isSyncing}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 disabled:opacity-50 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-white rounded-lg shadow-sm transition-colors text-sm font-medium flex items-center gap-2"
-          >
-            {isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4" />}
-            {isSyncing ? t('common.actions.syncingCatalog') : t('common.actions.syncModelCatalog')}
-          </button>
-        </div>
-      </div>
-
       <div className="flex min-h-0 flex-1 overflow-hidden">
         {/* SIDEBAR - VENDORS */}
         <div className="w-64 bg-white dark:bg-[#1a1a1a] border-r border-slate-200 dark:border-white/10 flex flex-col shrink-0">
-          <div className="p-4 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
-             <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">{t('admin.model.vendorSidebar.title')}</span>
-             <button onClick={openVendorModal} className="p-1.5 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-500/10 rounded-md transition-colors" title={t('common.actions.addModelVendor')}>
-               <Plus className="w-4 h-4" />
-             </button>
+          <div className="border-b border-slate-200 bg-slate-50/50 p-4 dark:border-white/10 dark:bg-[#121212]/50">
+            <div className="flex items-center justify-between gap-2">
+              <span className="min-w-0 truncate text-sm font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">{t('admin.model.vendorSidebar.title')}</span>
+              <div className="flex shrink-0 items-center gap-1">
+                <button
+                  type="button"
+                  onClick={handleSyncAll}
+                  disabled={isSyncing}
+                  className="rounded-md p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-white/10 dark:hover:text-slate-200"
+                  title={isSyncing ? t('common.actions.syncingCatalog') : t('common.actions.syncModelCatalog')}
+                >
+                  {isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4" />}
+                </button>
+                <button type="button" onClick={openVendorModal} className="rounded-md p-1.5 text-slate-400 transition-colors hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-500/10 dark:hover:text-indigo-400" title={t('common.actions.addModelVendor')}>
+                  <Plus className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           </div>
           <div className="flex-1 overflow-y-auto p-3 space-y-1.5">
             {vendors.map(v => {

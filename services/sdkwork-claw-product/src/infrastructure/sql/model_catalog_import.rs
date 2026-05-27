@@ -23,6 +23,10 @@ pub(crate) fn model_base_catalog_key(vendor_code: &str, model_id: &str) -> Strin
     format!("{vendor_code}/{model_id}")
 }
 
+pub(crate) fn model_catalog_key(vendor_code: &str, region_code: &str, model_id: &str) -> String {
+    catalog_key(vendor_code, region_code, model_id)
+}
+
 #[derive(Debug)]
 pub(crate) enum CatalogImportError {
     Catalog(sdkwork_models::CatalogError),
@@ -130,10 +134,13 @@ pub(crate) fn catalog_scope_model_count(catalog: &ModelCatalog) -> usize {
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor
-                .models
-                .iter()
-                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
+            vendor.models.iter().map(|model| {
+                model_catalog_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &model.model_id,
+                )
+            })
         })
         .collect::<BTreeSet<_>>()
         .len()
@@ -178,25 +185,32 @@ pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor
-                .models
-                .iter()
-                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
+            vendor.models.iter().map(|model| {
+                model_catalog_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &model.model_id,
+                )
+            })
         })
         .collect::<BTreeSet<_>>();
     let capability_count = catalog
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().flat_map(|model| {
+            let region_code = vendor.vendor.region_code.clone();
+            vendor.models.iter().flat_map(move |model| {
                 let vendor_code = vendor.vendor.vendor_code.clone();
+                let region_code = region_code.clone();
                 let capabilities = if model.capabilities.is_empty() {
                     vec![model.primary_capability.clone()]
                 } else {
                     model.capabilities.clone()
                 };
                 capabilities.into_iter().map(move |capability| {
-                    model_base_catalog_key(&vendor_code, &model.model_id) + "/" + &capability
+                    model_catalog_key(&vendor_code, &region_code, &model.model_id)
+                        + "/"
+                        + &capability
                 })
             })
         })
@@ -217,7 +231,7 @@ pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts
             vendor.rankings.iter().flat_map(move |snapshot| {
                 snapshot.items.iter().map(move |item| {
                     (
-                        model_base_catalog_key(vendor_code, &item.model_id),
+                        model_catalog_key(vendor_code, region_code, &item.model_id),
                         catalog_key(vendor_code, region_code, &item.model_id),
                     )
                 })
@@ -252,10 +266,13 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor
-                .models
-                .iter()
-                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
+            vendor.models.iter().map(|model| {
+                model_catalog_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &model.model_id,
+                )
+            })
         })
         .collect::<BTreeSet<_>>()
         .into_iter()
@@ -296,15 +313,20 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
         .iter()
         .flat_map(|vendor| {
             let vendor_code = vendor.vendor.vendor_code.clone();
+            let region_code = vendor.vendor.region_code.clone();
             vendor.models.iter().flat_map(move |model| {
                 let vendor_code = vendor_code.clone();
+                let region_code = region_code.clone();
                 let capabilities = if model.capabilities.is_empty() {
                     vec![model.primary_capability.clone()]
                 } else {
                     model.capabilities.clone()
                 };
                 capabilities.into_iter().map(move |capability| {
-                    stable_uuid("sdk-cap", &[&vendor_code, &model.model_id, &capability])
+                    stable_uuid(
+                        "sdk-cap",
+                        &[&vendor_code, &region_code, &model.model_id, &capability],
+                    )
                 })
             })
         })
@@ -344,7 +366,8 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
                 let region_code = region_code.clone();
                 let model_catalog_key_set = model_catalog_key_set.clone();
                 snapshot.items.iter().filter_map(move |item| {
-                    let model_catalog_key = model_base_catalog_key(&vendor_code, &item.model_id);
+                    let model_catalog_key =
+                        model_catalog_key(&vendor_code, &region_code, &item.model_id);
                     if model_catalog_key_set.contains(&model_catalog_key) {
                         Some(stable_uuid(
                             "sdk-rank",
@@ -411,13 +434,20 @@ pub(crate) fn catalog_preview_admin_items(
                     .pricing
                     .iter()
                     .find(|pricing| pricing.model_id == model.model_id);
-                let catalog_key =
-                    model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id);
+                let catalog_key = model_catalog_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &model.model_id,
+                );
                 let item = AdminAiModelItem {
                     id: 0,
                     uuid: stable_uuid(
                         "sdk-model-preview",
-                        &[&vendor.vendor.vendor_code, &model.model_id],
+                        &[
+                            &vendor.vendor.vendor_code,
+                            &vendor.vendor.region_code,
+                            &model.model_id,
+                        ],
                     ),
                     tenant_id: subject.tenant_id,
                     organization_id: subject.organization_id,

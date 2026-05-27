@@ -27,18 +27,42 @@ use sdkwork_commerce_tauri::{
 pub struct CommerceExperienceSeedManifest {
     pub name: &'static str,
     pub seed_version: &'static str,
+    pub benefit_definition_count: usize,
     pub membership_plan_count: usize,
+    pub membership_plan_version_count: usize,
+    pub membership_plan_benefit_count: usize,
     pub membership_package_group_count: usize,
     pub membership_package_count: usize,
+    pub promotion_offer_count: usize,
+    pub promotion_offer_version_count: usize,
+    pub promotion_coupon_stock_count: usize,
+    pub promotion_code_count: usize,
+    pub promotion_user_coupon_count: usize,
     pub recharge_package_count: usize,
     pub payment_method_count: usize,
+    pub payment_provider_count: usize,
+    pub payment_provider_account_count: usize,
+    pub payment_channel_count: usize,
+    pub payment_route_rule_count: usize,
     pub payload_json: String,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommerceBenefitDefinitionSeed {
+    pub id: &'static str,
+    pub benefit_code: &'static str,
+    pub name: &'static str,
+    pub benefit_type: &'static str,
+    pub value_unit: &'static str,
+    pub measurement_type: &'static str,
+    pub description: &'static str,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct CommerceMembershipPlanSeed {
     pub id: &'static str,
     pub plan_no: &'static str,
+    pub plan_code: &'static str,
     pub name: &'static str,
     pub rank: i64,
     pub required_points: i64,
@@ -46,6 +70,29 @@ pub struct CommerceMembershipPlanSeed {
     pub badge: &'static str,
     pub description: &'static str,
     pub benefits: Vec<CommerceMembershipBenefitSeed>,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommerceMembershipPlanVersionSeed {
+    pub id: &'static str,
+    pub plan_no: &'static str,
+    pub version_no: &'static str,
+    pub lifecycle_status: &'static str,
+    pub title: &'static str,
+    pub effective_from: &'static str,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommerceMembershipPlanBenefitSeed {
+    pub id: &'static str,
+    pub plan_no: &'static str,
+    pub version_no: &'static str,
+    pub benefit_code: &'static str,
+    pub grant_quantity: &'static str,
+    pub grant_period: Option<&'static str>,
+    pub reset_policy: Option<&'static str>,
+    pub usage_policy: Option<&'static str>,
+    pub sort_weight: i64,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -113,6 +160,119 @@ pub struct CommercePaymentMethodSeed {
     pub display_name: &'static str,
     pub provider: &'static str,
     pub sort_weight: i64,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePaymentProviderSeed {
+    pub id: &'static str,
+    pub provider_code: &'static str,
+    pub display_name: &'static str,
+    pub provider_type: &'static str,
+    pub supported_countries: Vec<&'static str>,
+    pub supported_currencies: Vec<&'static str>,
+    pub supported_methods: Vec<&'static str>,
+    pub sort_order: i64,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePaymentProviderAccountSeed {
+    pub id: &'static str,
+    pub account_no: &'static str,
+    pub provider_code: &'static str,
+    pub merchant_id: &'static str,
+    pub environment: &'static str,
+    pub country_code: &'static str,
+    pub settlement_currency: &'static str,
+    pub secret_ref: &'static str,
+    pub webhook_secret_ref: Option<&'static str>,
+    pub certificate_ref: Option<&'static str>,
+    pub status: &'static str,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePaymentChannelSeed {
+    pub id: String,
+    pub channel_no: String,
+    pub provider_account_id: String,
+    pub method_id: &'static str,
+    pub method_key: &'static str,
+    pub provider_code: &'static str,
+    pub scene_code: &'static str,
+    pub currency_code: &'static str,
+    pub country_code: &'static str,
+    pub status: &'static str,
+    pub priority: i64,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePaymentRouteRuleSeed {
+    pub id: String,
+    pub rule_no: String,
+    pub priority: i64,
+    pub purchase_type: &'static str,
+    pub country_code: &'static str,
+    pub currency_code: &'static str,
+    pub client_platform: &'static str,
+    pub channel_id: String,
+    pub status: &'static str,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePromotionOfferSeed {
+    pub id: &'static str,
+    pub offer_no: &'static str,
+    pub offer_code: &'static str,
+    pub name: &'static str,
+    pub offer_type: &'static str,
+    pub current_offer_version_id: &'static str,
+    pub audience_scope: &'static str,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePromotionOfferVersionSeed {
+    pub id: &'static str,
+    pub offer_code: &'static str,
+    pub version_no: &'static str,
+    pub lifecycle_status: &'static str,
+    pub discount_type: &'static str,
+    pub discount_value: &'static str,
+    pub minimum_amount: &'static str,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePromotionCouponStockSeed {
+    pub id: &'static str,
+    pub stock_no: &'static str,
+    pub name: &'static str,
+    pub offer_code: &'static str,
+    pub offer_version_id: &'static str,
+    pub stock_type: &'static str,
+    pub total_quantity: Option<i64>,
+    pub available_quantity: i64,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePromotionCodeSeed {
+    pub id: &'static str,
+    pub code_no: &'static str,
+    pub stock_no: &'static str,
+    pub offer_code: &'static str,
+    pub offer_version_id: &'static str,
+    pub promotion_code: &'static str,
+    pub code_type: &'static str,
+    pub max_claims: i64,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct CommercePromotionUserCouponSeed {
+    pub id: &'static str,
+    pub coupon_no: &'static str,
+    pub stock_no: &'static str,
+    pub offer_code: &'static str,
+    pub subject_type: &'static str,
+    pub subject_id: &'static str,
+    pub coupon_code: &'static str,
+    pub status: &'static str,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -998,80 +1158,292 @@ pub fn run_commerce_local_private_bootstrap_preflight(
 }
 
 pub fn commerce_experience_seed_manifest() -> CommerceExperienceSeedManifest {
-    let membership_plans = commerce_membership_plan_seeds();
-    let membership_package_groups = commerce_membership_package_group_seeds();
-    let membership_packages = commerce_membership_package_seeds();
+    let benefit_definitions = commerce_benefit_definition_seeds();
+    let membership_plans = membership_plan_seeds();
+    let membership_plan_versions = membership_plan_version_seeds();
+    let membership_plan_benefits = membership_plan_benefit_seeds();
+    let membership_package_groups = membership_package_group_seeds();
+    let membership_packages = membership_package_seeds();
+    let promotion_offers = commerce_promotion_offer_seeds();
+    let promotion_offer_versions = commerce_promotion_offer_version_seeds();
+    let promotion_coupon_stocks = commerce_promotion_coupon_stock_seeds();
+    let promotion_codes = commerce_promotion_code_seeds();
+    let promotion_user_coupons = commerce_promotion_user_coupon_seeds();
     let recharge_packages = commerce_recharge_package_seeds();
     let payment_methods = commerce_payment_method_seeds();
+    let payment_providers = commerce_payment_provider_seeds();
+    let payment_provider_accounts = commerce_payment_provider_account_seeds();
+    let payment_channels = commerce_payment_channel_seeds();
+    let payment_route_rules = commerce_payment_route_rule_seeds();
 
     CommerceExperienceSeedManifest {
         name: "sdkwork-commerce-experience-seed",
         seed_version: "commerce.experience.seed.v1",
+        benefit_definition_count: benefit_definitions.len(),
         membership_plan_count: membership_plans.len(),
+        membership_plan_version_count: membership_plan_versions.len(),
+        membership_plan_benefit_count: membership_plan_benefits.len(),
         membership_package_group_count: membership_package_groups.len(),
         membership_package_count: membership_packages.len(),
+        promotion_offer_count: promotion_offers.len(),
+        promotion_offer_version_count: promotion_offer_versions.len(),
+        promotion_coupon_stock_count: promotion_coupon_stocks.len(),
+        promotion_code_count: promotion_codes.len(),
+        promotion_user_coupon_count: promotion_user_coupons.len(),
         recharge_package_count: recharge_packages.len(),
         payment_method_count: payment_methods.len(),
+        payment_provider_count: payment_providers.len(),
+        payment_provider_account_count: payment_provider_accounts.len(),
+        payment_channel_count: payment_channels.len(),
+        payment_route_rule_count: payment_route_rules.len(),
         payload_json: commerce_experience_seed_payload(
+            &benefit_definitions,
             &membership_plans,
+            &membership_plan_versions,
+            &membership_plan_benefits,
             &membership_package_groups,
             &membership_packages,
+            &promotion_offers,
+            &promotion_offer_versions,
+            &promotion_coupon_stocks,
+            &promotion_codes,
+            &promotion_user_coupons,
             &recharge_packages,
             &payment_methods,
+            &payment_providers,
+            &payment_provider_accounts,
+            &payment_channels,
+            &payment_route_rules,
         ),
     }
 }
 
-pub fn commerce_membership_plan_seeds() -> Vec<CommerceMembershipPlanSeed> {
+pub fn commerce_benefit_definition_seeds() -> Vec<CommerceBenefitDefinitionSeed> {
+    vec![
+        CommerceBenefitDefinitionSeed {
+            id: "seed-benefit-ai-quota",
+            benefit_code: "ai_quota",
+            name: "AI usage quota",
+            benefit_type: "quota",
+            value_unit: "points",
+            measurement_type: "metered",
+            description: "Reusable quota account for model calls, tools, and generation tasks.",
+        },
+        CommerceBenefitDefinitionSeed {
+            id: "seed-benefit-priority-speed-up",
+            benefit_code: "priority_speed_up",
+            name: "Priority speed up",
+            benefit_type: "priority",
+            value_unit: "priority",
+            measurement_type: "ranked",
+            description: "Queue priority and routing acceleration for paid members.",
+        },
+        CommerceBenefitDefinitionSeed {
+            id: "seed-benefit-member-discount",
+            benefit_code: "member_discount",
+            name: "Member discount",
+            benefit_type: "discount",
+            value_unit: "percent",
+            measurement_type: "discount",
+            description: "Member-exclusive percentage discount for eligible purchases.",
+        },
+        CommerceBenefitDefinitionSeed {
+            id: "seed-benefit-monthly-coupon-grant",
+            benefit_code: "monthly_coupon_grant",
+            name: "Monthly coupon grant",
+            benefit_type: "coupon_grant",
+            value_unit: "coupon",
+            measurement_type: "grant",
+            description: "Monthly coupon bundle issued by membership plan benefit rules.",
+        },
+    ]
+}
+
+pub fn membership_plan_seeds() -> Vec<CommerceMembershipPlanSeed> {
     vec![
         CommerceMembershipPlanSeed {
             id: "seed-membership-plan-free",
             plan_no: "free",
+            plan_code: "free",
             name: "Free",
             rank: 0,
             required_points: 0,
             validity_days: 1,
             badge: "Free",
             description: "Entry access for product discovery, public model routing, and a small trial quota.",
-            benefits: free_membership_benefits(),
-        },
-        CommerceMembershipPlanSeed {
-            id: "seed-membership-plan-basic",
-            plan_no: "basic",
-            name: "Basic member",
-            rank: 1,
-            required_points: 1_000,
-            validity_days: 30,
-            badge: "Basic",
-            description: "Daily individual usage with standard model access, stable routing, API keys, and longer history.",
-            benefits: basic_membership_benefits(),
+            benefits: Vec::new(),
         },
         CommerceMembershipPlanSeed {
             id: "seed-membership-plan-pro",
             plan_no: "pro",
-            name: "Advanced member",
-            rank: 2,
+            plan_code: "pro",
+            name: "Pro member",
+            rank: 1,
             required_points: 5_000,
             validity_days: 30,
             badge: "Pro",
-            description: "High-frequency creation and development workflows with advanced models, larger context, and higher concurrency.",
-            benefits: pro_membership_benefits(),
+            description: "High-frequency individual workflows with advanced models, larger context, and higher concurrency.",
+            benefits: Vec::new(),
         },
         CommerceMembershipPlanSeed {
-            id: "seed-membership-plan-premium",
-            plan_no: "premium",
-            name: "Premium member",
+            id: "seed-membership-plan-max",
+            plan_no: "max",
+            plan_code: "max",
+            name: "Max member",
+            rank: 2,
+            required_points: 12_000,
+            validity_days: 30,
+            badge: "Max",
+            description: "Professional usage with higher quota, faster routing, member discounts, and monthly coupon grants.",
+            benefits: Vec::new(),
+        },
+        CommerceMembershipPlanSeed {
+            id: "seed-membership-plan-vip",
+            plan_no: "vip",
+            plan_code: "vip",
+            name: "VIP member",
             rank: 3,
             required_points: 20_000,
             validity_days: 30,
-            badge: "Premium",
-            description: "Team and critical business usage with frontier model access, highest priority, and dedicated support.",
-            benefits: premium_membership_benefits(),
+            badge: "VIP",
+            description: "Highest-priority member tier for teams and critical workloads with the strongest quota and promotion bundle.",
+            benefits: Vec::new(),
         },
     ]
 }
 
-pub fn commerce_membership_package_group_seeds() -> Vec<CommerceMembershipPackageGroupSeed> {
+pub fn membership_plan_version_seeds() -> Vec<CommerceMembershipPlanVersionSeed> {
+    vec![
+        membership_plan_version("free", "Free v1"),
+        membership_plan_version("pro", "Pro v1"),
+        membership_plan_version("max", "Max v1"),
+        membership_plan_version("vip", "VIP v1"),
+    ]
+}
+
+pub fn membership_plan_benefit_seeds() -> Vec<CommerceMembershipPlanBenefitSeed> {
+    vec![
+        plan_benefit(
+            "free",
+            "ai_quota",
+            "1000",
+            Some("month"),
+            Some("monthly"),
+            Some("consume"),
+            10,
+        ),
+        plan_benefit(
+            "pro",
+            "ai_quota",
+            "45000",
+            Some("month"),
+            Some("monthly"),
+            Some("consume"),
+            10,
+        ),
+        plan_benefit(
+            "pro",
+            "priority_speed_up",
+            "2",
+            None,
+            None,
+            Some("priority_queue"),
+            20,
+        ),
+        plan_benefit(
+            "pro",
+            "member_discount",
+            "5",
+            None,
+            None,
+            Some("eligible_orders"),
+            30,
+        ),
+        plan_benefit(
+            "pro",
+            "monthly_coupon_grant",
+            "1",
+            Some("month"),
+            Some("monthly"),
+            Some("auto_grant"),
+            40,
+        ),
+        plan_benefit(
+            "max",
+            "ai_quota",
+            "120000",
+            Some("month"),
+            Some("monthly"),
+            Some("consume"),
+            10,
+        ),
+        plan_benefit(
+            "max",
+            "priority_speed_up",
+            "3",
+            None,
+            None,
+            Some("priority_queue"),
+            20,
+        ),
+        plan_benefit(
+            "max",
+            "member_discount",
+            "10",
+            None,
+            None,
+            Some("eligible_orders"),
+            30,
+        ),
+        plan_benefit(
+            "max",
+            "monthly_coupon_grant",
+            "2",
+            Some("month"),
+            Some("monthly"),
+            Some("auto_grant"),
+            40,
+        ),
+        plan_benefit(
+            "vip",
+            "ai_quota",
+            "300000",
+            Some("month"),
+            Some("monthly"),
+            Some("consume"),
+            10,
+        ),
+        plan_benefit(
+            "vip",
+            "priority_speed_up",
+            "4",
+            None,
+            None,
+            Some("priority_queue"),
+            20,
+        ),
+        plan_benefit(
+            "vip",
+            "member_discount",
+            "15",
+            None,
+            None,
+            Some("eligible_orders"),
+            30,
+        ),
+        plan_benefit(
+            "vip",
+            "monthly_coupon_grant",
+            "4",
+            Some("month"),
+            Some("monthly"),
+            Some("auto_grant"),
+            40,
+        ),
+    ]
+}
+
+pub fn membership_package_group_seeds() -> Vec<CommerceMembershipPackageGroupSeed> {
     vec![
         CommerceMembershipPackageGroupSeed {
             id: "seed-membership-package-group-month",
@@ -1093,49 +1465,101 @@ pub fn commerce_membership_package_group_seeds() -> Vec<CommerceMembershipPackag
             duration_days: 365,
             sort_weight: 20,
         },
-        CommerceMembershipPackageGroupSeed {
-            id: "seed-membership-package-group-day",
-            external_id: 3,
-            package_group_no: "membership-day",
-            name: "Single-day purchase",
-            description:
-                "Single-day membership packages for short trials and temporary high-intensity work.",
-            billing_cycle: "day",
-            duration_days: 1,
-            sort_weight: 30,
-        },
-        CommerceMembershipPackageGroupSeed {
-            id: "seed-membership-package-group-week",
-            external_id: 4,
-            package_group_no: "membership-week",
-            name: "Weekly purchase",
-            description:
-                "Weekly membership packages for project sprints and short-term team validation.",
-            billing_cycle: "week",
-            duration_days: 7,
-            sort_weight: 40,
-        },
     ]
 }
 
-pub fn commerce_membership_package_seeds() -> Vec<CommerceMembershipPackageSeed> {
+pub fn membership_package_seeds() -> Vec<CommerceMembershipPackageSeed> {
     vec![
-        membership_package(301, "membership-month", "free", "Monthly Free", "Monthly purchase - Free", "Monthly free quota for low-frequency product experience.", "0.00", None, 1_000, 30, 301, false, &["monthly", "free", "trial"]),
-        membership_package(302, "membership-month", "basic", "Monthly Basic", "Monthly purchase - Basic member", "Monthly basic membership for everyday model calls and API access.", "29.90", Some("49.90"), 12_000, 30, 302, false, &["monthly", "basic", "individual"]),
-        membership_package(303, "membership-month", "pro", "Monthly Advanced", "Monthly purchase - Advanced member", "Monthly advanced membership for high-frequency creation, development, and operations workflows.", "69.90", Some("129.00"), 45_000, 30, 303, true, &["monthly", "advanced", "recommended"]),
-        membership_package(304, "membership-month", "premium", "Monthly Premium", "Monthly purchase - Premium member", "Monthly premium membership for team usage and critical business workloads.", "199.00", Some("299.00"), 160_000, 30, 304, false, &["monthly", "premium", "team"]),
-        membership_package(401, "membership-year", "free", "Yearly Free", "Yearly purchase - Free", "Yearly free quota for long-term product discovery.", "0.00", None, 12_000, 365, 401, false, &["yearly", "free", "trial"]),
-        membership_package(402, "membership-year", "basic", "Yearly Basic", "Yearly purchase - Basic member", "Yearly basic membership for stable individual usage with annual value.", "299.00", Some("358.80"), 180_000, 365, 402, false, &["yearly", "basic", "annual"]),
-        membership_package(403, "membership-year", "pro", "Yearly Advanced", "Yearly purchase - Advanced member", "Yearly advanced membership for sustained creation, development, and automation workflows.", "699.00", Some("838.80"), 720_000, 365, 403, false, &["yearly", "advanced", "annual"]),
-        membership_package(404, "membership-year", "premium", "Yearly Premium", "Yearly purchase - Premium member", "Yearly premium membership for long-term teams, dedicated support, and highest priority.", "1999.00", Some("2388.00"), 2_400_000, 365, 404, true, &["yearly", "premium", "best-value"]),
-        membership_package(101, "membership-day", "free", "Single-day Free", "Single-day purchase - Free", "Single-day free experience for first-time model routing and basic chat.", "0.00", None, 100, 1, 101, false, &["single-day", "free", "trial"]),
-        membership_package(102, "membership-day", "basic", "Single-day Basic", "Single-day purchase - Basic member", "Single-day basic membership for short standard model and API trials.", "1.90", Some("3.90"), 500, 1, 102, false, &["single-day", "basic", "api"]),
-        membership_package(103, "membership-day", "pro", "Single-day Advanced", "Single-day purchase - Advanced member", "Single-day advanced membership for temporary high-intensity creation and long-context tasks.", "4.90", Some("9.90"), 1_500, 1, 103, false, &["single-day", "advanced", "long-context"]),
-        membership_package(104, "membership-day", "premium", "Single-day Premium", "Single-day purchase - Premium member", "Single-day premium membership for trying frontier models and highest priority.", "9.90", Some("19.90"), 4_000, 1, 104, false, &["single-day", "premium", "priority"]),
-        membership_package(201, "membership-week", "free", "Weekly Free", "Weekly purchase - Free", "Weekly free experience for low-frequency exploration.", "0.00", None, 300, 7, 201, false, &["weekly", "free", "trial"]),
-        membership_package(202, "membership-week", "basic", "Weekly Basic", "Weekly purchase - Basic member", "Weekly basic membership for one week of stable standard model usage.", "9.90", Some("19.90"), 3_000, 7, 202, false, &["weekly", "basic", "standard-models"]),
-        membership_package(203, "membership-week", "pro", "Weekly Advanced", "Weekly purchase - Advanced member", "Weekly advanced membership for project sprints, batch creation, and development validation.", "19.90", Some("39.90"), 9_000, 7, 203, false, &["weekly", "advanced", "batch-work"]),
-        membership_package(204, "membership-week", "premium", "Weekly Premium", "Weekly purchase - Premium member", "Weekly premium membership for short-term team collaboration and key business validation.", "49.90", Some("99.90"), 24_000, 7, 204, false, &["weekly", "premium", "team"]),
+        membership_package(
+            301,
+            "membership-month",
+            "pro",
+            "Monthly Pro",
+            "Monthly purchase - Pro member",
+            "Monthly pro membership for high-frequency creation and development workflows.",
+            "69.90",
+            Some("129.00"),
+            45_000,
+            30,
+            301,
+            true,
+            &["monthly", "pro", "recommended"],
+        ),
+        membership_package(
+            302,
+            "membership-month",
+            "max",
+            "Monthly Max",
+            "Monthly purchase - Max member",
+            "Monthly max membership with higher quota, faster routing, and member discounts.",
+            "129.00",
+            Some("199.00"),
+            120_000,
+            30,
+            302,
+            false,
+            &["monthly", "max", "professional"],
+        ),
+        membership_package(
+            303,
+            "membership-month",
+            "vip",
+            "Monthly VIP",
+            "Monthly purchase - VIP member",
+            "Monthly VIP membership for team usage and critical business workloads.",
+            "299.00",
+            Some("399.00"),
+            300_000,
+            30,
+            303,
+            false,
+            &["monthly", "vip", "team"],
+        ),
+        membership_package(
+            401,
+            "membership-year",
+            "pro",
+            "Yearly Pro",
+            "Yearly purchase - Pro member",
+            "Yearly pro membership for sustained creation, development, and automation workflows.",
+            "699.00",
+            Some("838.80"),
+            720_000,
+            365,
+            401,
+            false,
+            &["yearly", "pro", "annual"],
+        ),
+        membership_package(
+            402,
+            "membership-year",
+            "max",
+            "Yearly Max",
+            "Yearly purchase - Max member",
+            "Yearly max membership for professional usage with annual value.",
+            "1299.00",
+            Some("1548.00"),
+            1_800_000,
+            365,
+            402,
+            false,
+            &["yearly", "max", "annual"],
+        ),
+        membership_package(
+            403,
+            "membership-year",
+            "vip",
+            "Yearly VIP",
+            "Yearly purchase - VIP member",
+            "Yearly VIP membership for long-term teams, dedicated support, and highest priority.",
+            "2999.00",
+            Some("3588.00"),
+            4_800_000,
+            365,
+            403,
+            true,
+            &["yearly", "vip", "best-value"],
+        ),
     ]
 }
 
@@ -1143,7 +1567,7 @@ pub fn commerce_recharge_package_seeds() -> Vec<CommerceRechargePackageSeed> {
     vec![
         recharge_package(
             "seed-recharge-package-990",
-            "seed-recharge-sku-990",
+            "seed-sku-points-recharge-990",
             "points-990",
             "points-recharge-990",
             990,
@@ -1154,7 +1578,7 @@ pub fn commerce_recharge_package_seeds() -> Vec<CommerceRechargePackageSeed> {
         ),
         recharge_package(
             "seed-recharge-package-1990",
-            "seed-recharge-sku-1990",
+            "seed-sku-points-recharge-1990",
             "points-1990",
             "points-recharge-1990",
             1990,
@@ -1165,7 +1589,7 @@ pub fn commerce_recharge_package_seeds() -> Vec<CommerceRechargePackageSeed> {
         ),
         recharge_package(
             "seed-recharge-package-4990",
-            "seed-recharge-sku-4990",
+            "seed-sku-points-recharge-4990",
             "points-4990",
             "points-recharge-4990",
             4990,
@@ -1176,7 +1600,7 @@ pub fn commerce_recharge_package_seeds() -> Vec<CommerceRechargePackageSeed> {
         ),
         recharge_package(
             "seed-recharge-package-9990",
-            "seed-recharge-sku-9990",
+            "seed-sku-points-recharge-9990",
             "points-9990",
             "points-recharge-9990",
             9990,
@@ -1191,27 +1615,499 @@ pub fn commerce_recharge_package_seeds() -> Vec<CommerceRechargePackageSeed> {
 pub fn commerce_payment_method_seeds() -> Vec<CommercePaymentMethodSeed> {
     vec![
         CommercePaymentMethodSeed {
-            id: "seed-payment-wechat",
-            method_key: "wechat",
+            id: "seed-payment-method-wechat-pay",
+            method_key: "wechat_pay",
             display_name: "WeChat Pay",
-            provider: "wechatpay",
+            provider: "wechat_pay",
             sort_weight: 10,
         },
         CommercePaymentMethodSeed {
-            id: "seed-payment-alipay",
+            id: "seed-payment-method-alipay",
             method_key: "alipay",
             display_name: "Alipay",
             provider: "alipay",
             sort_weight: 20,
         },
         CommercePaymentMethodSeed {
-            id: "seed-payment-stripe",
-            method_key: "stripe",
-            display_name: "Bank card",
-            provider: "stripe",
+            id: "seed-payment-method-paypal",
+            method_key: "paypal",
+            display_name: "PayPal",
+            provider: "paypal",
             sort_weight: 30,
         },
+        CommercePaymentMethodSeed {
+            id: "seed-payment-method-card",
+            method_key: "card",
+            display_name: "Card",
+            provider: "stripe",
+            sort_weight: 40,
+        },
+        CommercePaymentMethodSeed {
+            id: "seed-payment-method-apple-pay",
+            method_key: "apple_pay",
+            display_name: "Apple Pay",
+            provider: "apple_pay",
+            sort_weight: 50,
+        },
+        CommercePaymentMethodSeed {
+            id: "seed-payment-method-google-pay",
+            method_key: "google_pay",
+            display_name: "Google Pay",
+            provider: "google_pay",
+            sort_weight: 60,
+        },
+        CommercePaymentMethodSeed {
+            id: "seed-payment-method-wallet-balance",
+            method_key: "wallet_balance",
+            display_name: "Wallet balance",
+            provider: "wallet_balance",
+            sort_weight: 70,
+        },
     ]
+}
+
+pub fn commerce_payment_provider_seeds() -> Vec<CommercePaymentProviderSeed> {
+    vec![
+        payment_provider_seed(
+            "wechat_pay",
+            "WeChat Pay",
+            "domestic_wallet",
+            &["CN"],
+            &["CNY"],
+            &["wechat_pay"],
+            10,
+        ),
+        payment_provider_seed(
+            "alipay",
+            "Alipay",
+            "domestic_wallet",
+            &["CN"],
+            &["CNY"],
+            &["alipay"],
+            20,
+        ),
+        payment_provider_seed(
+            "paypal",
+            "PayPal",
+            "international_wallet",
+            &["US", "CN"],
+            &["USD", "CNY"],
+            &["paypal"],
+            30,
+        ),
+        payment_provider_seed(
+            "stripe",
+            "Stripe",
+            "card_processor",
+            &["US", "CN"],
+            &["USD", "CNY"],
+            &["card"],
+            40,
+        ),
+        payment_provider_seed(
+            "apple_pay",
+            "Apple Pay",
+            "international_wallet",
+            &["US", "CN"],
+            &["USD", "CNY"],
+            &["apple_pay"],
+            50,
+        ),
+        payment_provider_seed(
+            "google_pay",
+            "Google Pay",
+            "international_wallet",
+            &["US", "CN"],
+            &["USD", "CNY"],
+            &["google_pay"],
+            60,
+        ),
+    ]
+}
+
+pub fn commerce_payment_provider_account_seeds() -> Vec<CommercePaymentProviderAccountSeed> {
+    vec![
+        payment_provider_account_seed("wechat_pay", "CN", "CNY"),
+        payment_provider_account_seed("alipay", "CN", "CNY"),
+        payment_provider_account_seed("paypal", "US", "USD"),
+        payment_provider_account_seed("stripe", "US", "USD"),
+        payment_provider_account_seed("apple_pay", "US", "USD"),
+        payment_provider_account_seed("google_pay", "US", "USD"),
+    ]
+}
+
+pub fn commerce_payment_channel_seeds() -> Vec<CommercePaymentChannelSeed> {
+    commerce_payment_method_seeds()
+        .into_iter()
+        .filter(|method| method.method_key != "wallet_balance")
+        .flat_map(|method| {
+            payment_scene_codes()
+                .into_iter()
+                .enumerate()
+                .map(move |(index, scene)| {
+                    let provider_code = method.provider;
+                    let country_code = default_payment_country(provider_code);
+                    let currency_code = default_payment_currency(provider_code);
+                    CommercePaymentChannelSeed {
+                        id: format!("seed-payment-channel-{}-{scene}", method.method_key),
+                        channel_no: format!("seed-{}-{scene}", method.method_key),
+                        provider_account_id: payment_provider_account_id(provider_code).to_owned(),
+                        method_id: method.id,
+                        method_key: method.method_key,
+                        provider_code,
+                        scene_code: scene,
+                        currency_code,
+                        country_code,
+                        status: "active",
+                        priority: ((index + 1) as i64) * 10,
+                    }
+                })
+        })
+        .collect()
+}
+
+pub fn commerce_payment_route_rule_seeds() -> Vec<CommercePaymentRouteRuleSeed> {
+    commerce_payment_channel_seeds()
+        .into_iter()
+        .map(|channel| CommercePaymentRouteRuleSeed {
+            id: format!("seed-payment-route-rule-{}", channel.channel_no),
+            rule_no: format!("route-{}", channel.channel_no),
+            priority: channel.priority,
+            purchase_type: channel.scene_code,
+            country_code: channel.country_code,
+            currency_code: channel.currency_code,
+            client_platform: "all",
+            channel_id: channel.id,
+            status: "active",
+        })
+        .collect()
+}
+
+fn payment_provider_seed(
+    provider_code: &'static str,
+    display_name: &'static str,
+    provider_type: &'static str,
+    supported_countries: &[&'static str],
+    supported_currencies: &[&'static str],
+    supported_methods: &[&'static str],
+    sort_order: i64,
+) -> CommercePaymentProviderSeed {
+    CommercePaymentProviderSeed {
+        id: payment_provider_id(provider_code),
+        provider_code,
+        display_name,
+        provider_type,
+        supported_countries: supported_countries.to_vec(),
+        supported_currencies: supported_currencies.to_vec(),
+        supported_methods: supported_methods.to_vec(),
+        sort_order,
+    }
+}
+
+fn payment_provider_account_seed(
+    provider_code: &'static str,
+    country_code: &'static str,
+    settlement_currency: &'static str,
+) -> CommercePaymentProviderAccountSeed {
+    CommercePaymentProviderAccountSeed {
+        id: payment_provider_account_id(provider_code),
+        account_no: payment_provider_account_no(provider_code),
+        provider_code,
+        merchant_id: payment_provider_placeholder_merchant_id(provider_code),
+        environment: "sandbox",
+        country_code,
+        settlement_currency,
+        secret_ref: payment_provider_placeholder_secret_ref(provider_code),
+        webhook_secret_ref: Some(payment_provider_placeholder_webhook_secret_ref(
+            provider_code,
+        )),
+        certificate_ref: payment_provider_placeholder_certificate_ref(provider_code),
+        status: "active",
+    }
+}
+
+fn payment_scene_codes() -> [&'static str; 6] {
+    [
+        "checkout",
+        "membership_purchase",
+        "points_recharge",
+        "wallet_recharge",
+        "subscription",
+        "invoice",
+    ]
+}
+
+fn payment_provider_id(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" => "seed-payment-provider-wechat-pay",
+        "alipay" => "seed-payment-provider-alipay",
+        "paypal" => "seed-payment-provider-paypal",
+        "stripe" => "seed-payment-provider-stripe",
+        "apple_pay" => "seed-payment-provider-apple-pay",
+        "google_pay" => "seed-payment-provider-google-pay",
+        _ => "seed-payment-provider-unknown",
+    }
+}
+
+fn payment_provider_account_id(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" => "seed-payment-provider-account-wechat-pay",
+        "alipay" => "seed-payment-provider-account-alipay",
+        "paypal" => "seed-payment-provider-account-paypal",
+        "stripe" => "seed-payment-provider-account-stripe",
+        "apple_pay" => "seed-payment-provider-account-apple-pay",
+        "google_pay" => "seed-payment-provider-account-google-pay",
+        _ => "seed-payment-provider-account-unknown",
+    }
+}
+
+fn payment_provider_account_no(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" => "seed-wechat-pay-sandbox",
+        "alipay" => "seed-alipay-sandbox",
+        "paypal" => "seed-paypal-sandbox",
+        "stripe" => "seed-stripe-sandbox",
+        "apple_pay" => "seed-apple-pay-sandbox",
+        "google_pay" => "seed-google-pay-sandbox",
+        _ => "seed-unknown-sandbox",
+    }
+}
+
+fn payment_provider_placeholder_merchant_id(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" => "EDIT_ME_WECHAT_PAY_MERCHANT_ID",
+        "alipay" => "EDIT_ME_ALIPAY_APP_ID",
+        "paypal" => "EDIT_ME_PAYPAL_CLIENT_ID",
+        "stripe" => "EDIT_ME_STRIPE_ACCOUNT_ID",
+        "apple_pay" => "EDIT_ME_APPLE_PAY_MERCHANT_ID",
+        "google_pay" => "EDIT_ME_GOOGLE_PAY_MERCHANT_ID",
+        _ => "EDIT_ME_PAYMENT_MERCHANT_ID",
+    }
+}
+
+fn payment_provider_placeholder_secret_ref(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" => "secret://payment/wechat_pay/sandbox/api-key",
+        "alipay" => "secret://payment/alipay/sandbox/private-key",
+        "paypal" => "secret://payment/paypal/sandbox/client-secret",
+        "stripe" => "secret://payment/stripe/sandbox/secret-key",
+        "apple_pay" => "secret://payment/apple_pay/sandbox/merchant-key",
+        "google_pay" => "secret://payment/google_pay/sandbox/gateway-key",
+        _ => "secret://payment/unknown/sandbox/key",
+    }
+}
+
+fn payment_provider_placeholder_webhook_secret_ref(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" => "secret://payment/wechat_pay/sandbox/webhook",
+        "alipay" => "secret://payment/alipay/sandbox/webhook",
+        "paypal" => "secret://payment/paypal/sandbox/webhook",
+        "stripe" => "secret://payment/stripe/sandbox/webhook",
+        "apple_pay" => "secret://payment/apple_pay/sandbox/webhook",
+        "google_pay" => "secret://payment/google_pay/sandbox/webhook",
+        _ => "secret://payment/unknown/sandbox/webhook",
+    }
+}
+
+fn payment_provider_placeholder_certificate_ref(provider_code: &str) -> Option<&'static str> {
+    match provider_code {
+        "wechat_pay" => Some("secret://payment/wechat_pay/sandbox/certificate"),
+        "alipay" => Some("secret://payment/alipay/sandbox/certificate"),
+        "apple_pay" => Some("secret://payment/apple_pay/sandbox/certificate"),
+        _ => None,
+    }
+}
+
+fn default_payment_country(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" | "alipay" => "CN",
+        _ => "US",
+    }
+}
+
+fn default_payment_currency(provider_code: &str) -> &'static str {
+    match provider_code {
+        "wechat_pay" | "alipay" => "CNY",
+        _ => "USD",
+    }
+}
+
+pub fn commerce_promotion_offer_seeds() -> Vec<CommercePromotionOfferSeed> {
+    vec![
+        CommercePromotionOfferSeed {
+            id: "seed-promotion-offer-new-user",
+            offer_no: "offer-new-user-2026",
+            offer_code: "new_user_coupon",
+            name: "New user coupon",
+            offer_type: "coupon",
+            current_offer_version_id: "seed-promotion-offer-version-new-user-v1",
+            audience_scope: "new_user",
+        },
+        CommercePromotionOfferSeed {
+            id: "seed-promotion-offer-vip-monthly",
+            offer_no: "offer-vip-monthly-2026",
+            offer_code: "vip_monthly_coupon",
+            name: "VIP monthly coupon",
+            offer_type: "coupon",
+            current_offer_version_id: "seed-promotion-offer-version-vip-monthly-v1",
+            audience_scope: "vip_member",
+        },
+    ]
+}
+
+pub fn commerce_promotion_offer_version_seeds() -> Vec<CommercePromotionOfferVersionSeed> {
+    vec![
+        CommercePromotionOfferVersionSeed {
+            id: "seed-promotion-offer-version-new-user-v1",
+            offer_code: "new_user_coupon",
+            version_no: "v1",
+            lifecycle_status: "published",
+            discount_type: "fixed_amount",
+            discount_value: "20.00",
+            minimum_amount: "50.00",
+        },
+        CommercePromotionOfferVersionSeed {
+            id: "seed-promotion-offer-version-vip-monthly-v1",
+            offer_code: "vip_monthly_coupon",
+            version_no: "v1",
+            lifecycle_status: "published",
+            discount_type: "percent_off",
+            discount_value: "15",
+            minimum_amount: "0",
+        },
+    ]
+}
+
+pub fn commerce_promotion_coupon_stock_seeds() -> Vec<CommercePromotionCouponStockSeed> {
+    vec![
+        CommercePromotionCouponStockSeed {
+            id: "seed-promotion-stock-new-user",
+            stock_no: "stock-new-user-2026",
+            name: "New user coupon stock",
+            offer_code: "new_user_coupon",
+            offer_version_id: "seed-promotion-offer-version-new-user-v1",
+            stock_type: "limited",
+            total_quantity: Some(10_000),
+            available_quantity: 10_000,
+        },
+        CommercePromotionCouponStockSeed {
+            id: "seed-promotion-stock-vip-monthly",
+            stock_no: "stock-vip-monthly-2026",
+            name: "VIP monthly coupon stock",
+            offer_code: "vip_monthly_coupon",
+            offer_version_id: "seed-promotion-offer-version-vip-monthly-v1",
+            stock_type: "monthly_member_grant",
+            total_quantity: None,
+            available_quantity: 0,
+        },
+    ]
+}
+
+pub fn commerce_promotion_code_seeds() -> Vec<CommercePromotionCodeSeed> {
+    vec![
+        CommercePromotionCodeSeed {
+            id: "seed-promotion-code-new-user",
+            code_no: "code-new-user-2026",
+            stock_no: "stock-new-user-2026",
+            offer_code: "new_user_coupon",
+            offer_version_id: "seed-promotion-offer-version-new-user-v1",
+            promotion_code: "NEWUSER2026",
+            code_type: "public",
+            max_claims: 1,
+        },
+        CommercePromotionCodeSeed {
+            id: "seed-promotion-code-vip-monthly",
+            code_no: "code-vip-monthly-2026",
+            stock_no: "stock-vip-monthly-2026",
+            offer_code: "vip_monthly_coupon",
+            offer_version_id: "seed-promotion-offer-version-vip-monthly-v1",
+            promotion_code: "VIPMONTHLY2026",
+            code_type: "member_only",
+            max_claims: 1,
+        },
+    ]
+}
+
+pub fn commerce_promotion_user_coupon_seeds() -> Vec<CommercePromotionUserCouponSeed> {
+    vec![
+        CommercePromotionUserCouponSeed {
+            id: "seed-user-coupon-new-user",
+            coupon_no: "seed-coupon-new-user",
+            stock_no: "stock-new-user-2026",
+            offer_code: "new_user_coupon",
+            subject_type: "user",
+            subject_id: "seed-user-new",
+            coupon_code: "SEED-NEW-USER-001",
+            status: "claimable",
+        },
+        CommercePromotionUserCouponSeed {
+            id: "seed-user-coupon-vip-monthly",
+            coupon_no: "seed-coupon-vip-monthly",
+            stock_no: "stock-vip-monthly-2026",
+            offer_code: "vip_monthly_coupon",
+            subject_type: "user",
+            subject_id: "seed-user-vip",
+            coupon_code: "SEED-VIP-MONTHLY-001",
+            status: "active",
+        },
+    ]
+}
+
+fn membership_plan_version(
+    plan_no: &'static str,
+    title: &'static str,
+) -> CommerceMembershipPlanVersionSeed {
+    CommerceMembershipPlanVersionSeed {
+        id: match plan_no {
+            "free" => "seed-membership-plan-version-free-v1",
+            "pro" => "seed-membership-plan-version-pro-v1",
+            "max" => "seed-membership-plan-version-max-v1",
+            "vip" => "seed-membership-plan-version-vip-v1",
+            _ => "seed-membership-plan-version-unknown",
+        },
+        plan_no,
+        version_no: "v1",
+        lifecycle_status: "published",
+        title,
+        effective_from: "2026-01-01T00:00:00Z",
+    }
+}
+
+fn plan_benefit(
+    plan_no: &'static str,
+    benefit_code: &'static str,
+    grant_quantity: &'static str,
+    grant_period: Option<&'static str>,
+    reset_policy: Option<&'static str>,
+    usage_policy: Option<&'static str>,
+    sort_weight: i64,
+) -> CommerceMembershipPlanBenefitSeed {
+    CommerceMembershipPlanBenefitSeed {
+        id: match (plan_no, benefit_code) {
+            ("free", "ai_quota") => "seed-plan-benefit-free-ai-quota",
+            ("pro", "ai_quota") => "seed-plan-benefit-pro-ai-quota",
+            ("pro", "priority_speed_up") => "seed-plan-benefit-pro-priority-speed-up",
+            ("pro", "member_discount") => "seed-plan-benefit-pro-member-discount",
+            ("pro", "monthly_coupon_grant") => "seed-plan-benefit-pro-monthly-coupon-grant",
+            ("max", "ai_quota") => "seed-plan-benefit-max-ai-quota",
+            ("max", "priority_speed_up") => "seed-plan-benefit-max-priority-speed-up",
+            ("max", "member_discount") => "seed-plan-benefit-max-member-discount",
+            ("max", "monthly_coupon_grant") => "seed-plan-benefit-max-monthly-coupon-grant",
+            ("vip", "ai_quota") => "seed-plan-benefit-vip-ai-quota",
+            ("vip", "priority_speed_up") => "seed-plan-benefit-vip-priority-speed-up",
+            ("vip", "member_discount") => "seed-plan-benefit-vip-member-discount",
+            ("vip", "monthly_coupon_grant") => "seed-plan-benefit-vip-monthly-coupon-grant",
+            _ => "seed-plan-benefit-unknown",
+        },
+        plan_no,
+        version_no: "v1",
+        benefit_code,
+        grant_quantity,
+        grant_period,
+        reset_policy,
+        usage_policy,
+        sort_weight,
+    }
 }
 
 fn membership_package(
@@ -1232,82 +2128,42 @@ fn membership_package(
     let group_code = package_group_no.trim_start_matches("membership-");
     CommerceMembershipPackageSeed {
         id: match external_id {
-            101 => "101",
-            102 => "102",
-            103 => "103",
-            104 => "104",
-            201 => "201",
-            202 => "202",
-            203 => "203",
-            204 => "204",
             301 => "301",
             302 => "302",
             303 => "303",
-            304 => "304",
             401 => "401",
             402 => "402",
             403 => "403",
-            404 => "404",
             _ => "0",
         },
         external_id,
         package_no: match external_id {
-            101 => "membership-day-free",
-            102 => "membership-day-basic",
-            103 => "membership-day-pro",
-            104 => "membership-day-premium",
-            201 => "membership-week-free",
-            202 => "membership-week-basic",
-            203 => "membership-week-pro",
-            204 => "membership-week-premium",
-            301 => "membership-month-free",
-            302 => "membership-month-basic",
-            303 => "membership-month-pro",
-            304 => "membership-month-premium",
-            401 => "membership-year-free",
-            402 => "membership-year-basic",
-            403 => "membership-year-pro",
-            404 => "membership-year-premium",
+            301 => "membership-month-pro",
+            302 => "membership-month-max",
+            303 => "membership-month-vip",
+            401 => "membership-year-pro",
+            402 => "membership-year-max",
+            403 => "membership-year-vip",
             _ => "membership-unknown",
         },
         package_group_no,
         plan_no,
         sku_id: match external_id {
-            101 => "101",
-            102 => "102",
-            103 => "103",
-            104 => "104",
-            201 => "201",
-            202 => "202",
-            203 => "203",
-            204 => "204",
-            301 => "301",
-            302 => "302",
-            303 => "303",
-            304 => "304",
-            401 => "401",
-            402 => "402",
-            403 => "403",
-            404 => "404",
-            _ => "0",
+            301 => "seed-sku-membership-month-pro",
+            302 => "seed-sku-membership-month-max",
+            303 => "seed-sku-membership-month-vip",
+            401 => "seed-sku-membership-year-pro",
+            402 => "seed-sku-membership-year-max",
+            403 => "seed-sku-membership-year-vip",
+            _ => "seed-sku-membership-unknown",
         },
         sku_no: match (group_code, plan_no) {
-            ("day", "free") => "membership-day-free",
-            ("day", "basic") => "membership-day-basic",
-            ("day", "pro") => "membership-day-pro",
-            ("day", "premium") => "membership-day-premium",
-            ("week", "free") => "membership-week-free",
-            ("week", "basic") => "membership-week-basic",
-            ("week", "pro") => "membership-week-pro",
-            ("week", "premium") => "membership-week-premium",
-            ("month", "free") => "membership-month-free",
-            ("month", "basic") => "membership-month-basic",
             ("month", "pro") => "membership-month-pro",
-            ("month", "premium") => "membership-month-premium",
-            ("year", "free") => "membership-year-free",
-            ("year", "basic") => "membership-year-basic",
+            ("month", "max") => "membership-month-max",
+            ("month", "vip") => "membership-month-vip",
             ("year", "pro") => "membership-year-pro",
-            ("year", "premium") => "membership-year-premium",
+            ("year", "max") => "membership-year-max",
+            ("year", "vip") => "membership-year-vip",
             _ => "membership-unknown",
         },
         name,
@@ -1349,274 +2205,56 @@ fn recharge_package(
     }
 }
 
-fn free_membership_benefits() -> Vec<CommerceMembershipBenefitSeed> {
-    vec![
-        benefit(
-            1,
-            "basic_models",
-            "Basic model access",
-            "Use the basic model catalog and public routes.",
-            "model_access",
-            0,
-        ),
-        benefit(
-            2,
-            "trial_points",
-            "Trial points",
-            "Small point quota for first-time product evaluation.",
-            "quota",
-            1_000,
-        ),
-        benefit(
-            3,
-            "low_priority",
-            "Normal queue",
-            "Requests enter the shared normal queue.",
-            "priority",
-            1,
-        ),
-        benefit(
-            4,
-            "concurrent_requests",
-            "Concurrent requests",
-            "Up to 1 concurrent request.",
-            "limit",
-            1,
-        ),
-        benefit(
-            5,
-            "context_window",
-            "Context window",
-            "Up to 4K context window.",
-            "limit",
-            4_000,
-        ),
-        benefit(
-            6,
-            "history_retention",
-            "History retention",
-            "Conversation and call history retained for 7 days.",
-            "retention",
-            7,
-        ),
-    ]
-}
-
-fn basic_membership_benefits() -> Vec<CommerceMembershipBenefitSeed> {
-    vec![
-        benefit(
-            1,
-            "standard_models",
-            "Standard model access",
-            "Unlock standard models, common multimodal capabilities, and stable routing.",
-            "model_access",
-            1,
-        ),
-        benefit(
-            2,
-            "monthly_points",
-            "Member points quota",
-            "Monthly points for chat, tool execution, and generation tasks.",
-            "quota",
-            12_000,
-        ),
-        benefit(
-            3,
-            "normal_priority",
-            "Standard priority",
-            "Requests use a standard priority queue for daily work.",
-            "priority",
-            2,
-        ),
-        benefit(
-            4,
-            "concurrent_requests",
-            "Concurrent requests",
-            "Up to 3 concurrent requests.",
-            "limit",
-            3,
-        ),
-        benefit(
-            5,
-            "context_window",
-            "Context window",
-            "Up to 16K context window.",
-            "limit",
-            16_000,
-        ),
-        benefit(
-            6,
-            "history_retention",
-            "History retention",
-            "Conversation and call history retained for 30 days.",
-            "retention",
-            30,
-        ),
-        benefit(
-            7,
-            "api_key_access",
-            "API keys",
-            "Create API keys for gateway access.",
-            "api",
-            1,
-        ),
-    ]
-}
-
-fn pro_membership_benefits() -> Vec<CommerceMembershipBenefitSeed> {
-    vec![
-        benefit(
-            1,
-            "advanced_models",
-            "Advanced model access",
-            "Unlock advanced reasoning, coding, and multimodal models.",
-            "model_access",
-            2,
-        ),
-        benefit(
-            2,
-            "monthly_points",
-            "Member points quota",
-            "Higher monthly points for high-frequency workflows.",
-            "quota",
-            45_000,
-        ),
-        benefit(
-            3,
-            "high_priority",
-            "High priority",
-            "Requests are placed ahead in peak periods.",
-            "priority",
-            3,
-        ),
-        benefit(
-            4,
-            "concurrent_requests",
-            "Concurrent requests",
-            "Up to 8 concurrent requests.",
-            "limit",
-            8,
-        ),
-        benefit(
-            5,
-            "context_window",
-            "Context window",
-            "Up to 64K context window.",
-            "limit",
-            64_000,
-        ),
-        benefit(
-            6,
-            "history_retention",
-            "History retention",
-            "Conversation and call history retained for 180 days.",
-            "retention",
-            180,
-        ),
-        benefit(
-            7,
-            "batch_tools",
-            "Batch and tool capabilities",
-            "Batch tasks, tool calls, and advanced routing strategies.",
-            "tools",
-            1,
-        ),
-    ]
-}
-
-fn premium_membership_benefits() -> Vec<CommerceMembershipBenefitSeed> {
-    vec![
-        benefit(
-            1,
-            "frontier_models",
-            "Frontier model access",
-            "Priority access to frontier models, long context, and high-quality generation.",
-            "model_access",
-            3,
-        ),
-        benefit(
-            2,
-            "monthly_points",
-            "Member points quota",
-            "Highest point quota for teams and critical workloads.",
-            "quota",
-            160_000,
-        ),
-        benefit(
-            3,
-            "top_priority",
-            "Top priority",
-            "Requests enter the highest priority queue in peak periods.",
-            "priority",
-            4,
-        ),
-        benefit(
-            4,
-            "concurrent_requests",
-            "Concurrent requests",
-            "Up to 20 concurrent requests.",
-            "limit",
-            20,
-        ),
-        benefit(
-            5,
-            "context_window",
-            "Context window",
-            "Up to 128K context window.",
-            "limit",
-            128_000,
-        ),
-        benefit(
-            6,
-            "history_retention",
-            "History retention",
-            "Conversation and call history retained for 365 days.",
-            "retention",
-            365,
-        ),
-        benefit(
-            7,
-            "dedicated_support",
-            "Dedicated support",
-            "Dedicated support, early capability trials, and usage guidance.",
-            "support",
-            1,
-        ),
-    ]
-}
-
-fn benefit(
-    id: i64,
-    benefit_key: &'static str,
-    name: &'static str,
-    description: &'static str,
-    benefit_type: &'static str,
-    usage_limit: i64,
-) -> CommerceMembershipBenefitSeed {
-    CommerceMembershipBenefitSeed {
-        id,
-        benefit_key,
-        name,
-        description,
-        benefit_type,
-        usage_limit,
-    }
-}
-
 fn commerce_experience_seed_payload(
+    benefits: &[CommerceBenefitDefinitionSeed],
     plans: &[CommerceMembershipPlanSeed],
+    plan_versions: &[CommerceMembershipPlanVersionSeed],
+    plan_benefits: &[CommerceMembershipPlanBenefitSeed],
     groups: &[CommerceMembershipPackageGroupSeed],
     packages: &[CommerceMembershipPackageSeed],
+    promotion_offers: &[CommercePromotionOfferSeed],
+    promotion_offer_versions: &[CommercePromotionOfferVersionSeed],
+    promotion_coupon_stocks: &[CommercePromotionCouponStockSeed],
+    promotion_codes: &[CommercePromotionCodeSeed],
+    promotion_user_coupons: &[CommercePromotionUserCouponSeed],
     recharge_packages: &[CommerceRechargePackageSeed],
     payment_methods: &[CommercePaymentMethodSeed],
+    payment_providers: &[CommercePaymentProviderSeed],
+    payment_provider_accounts: &[CommercePaymentProviderAccountSeed],
+    payment_channels: &[CommercePaymentChannelSeed],
+    payment_route_rules: &[CommercePaymentRouteRuleSeed],
 ) -> String {
     format!(
-        r#"{{"version":"commerce.experience.seed.v1","membershipPlans":{},"membershipPackageGroups":{},"membershipPackages":{},"rechargePackages":{},"paymentMethods":{}}}"#,
+        r#"{{"version":"commerce.experience.seed.v1","benefitDefinitions":{},"membershipPlans":{},"membershipPlanVersions":{},"membershipPlanBenefits":{},"membershipPackageGroups":{},"membershipPackages":{},"promotionOffers":{},"promotionOfferVersions":{},"promotionCouponStocks":{},"promotionCodes":{},"promotionUserCoupons":{},"rechargePackages":{},"paymentMethods":{},"paymentProviders":{},"paymentProviderAccounts":{},"paymentChannels":{},"paymentRouteRules":{}}}"#,
+        string_array_json(benefits.iter().map(|benefit| benefit.benefit_code)),
         string_array_json(plans.iter().map(|plan| plan.plan_no)),
+        string_array_json(plan_versions.iter().map(|version| version.id)),
+        string_array_json(plan_benefits.iter().map(|benefit| benefit.id)),
         string_array_json(groups.iter().map(|group| group.package_group_no)),
         string_array_json(packages.iter().map(|package| package.package_no)),
+        string_array_json(promotion_offers.iter().map(|offer| offer.offer_code)),
+        string_array_json(promotion_offer_versions.iter().map(|version| version.id)),
+        string_array_json(promotion_coupon_stocks.iter().map(|stock| stock.stock_no)),
+        string_array_json(promotion_codes.iter().map(|code| code.promotion_code)),
+        string_array_json(promotion_user_coupons.iter().map(|coupon| coupon.coupon_no)),
         string_array_json(recharge_packages.iter().map(|package| package.package_no)),
         string_array_json(payment_methods.iter().map(|method| method.method_key)),
+        string_array_json(
+            payment_providers
+                .iter()
+                .map(|provider| provider.provider_code)
+        ),
+        string_array_json(
+            payment_provider_accounts
+                .iter()
+                .map(|account| account.account_no)
+        ),
+        string_array_json(
+            payment_channels
+                .iter()
+                .map(|channel| channel.channel_no.as_str())
+        ),
+        string_array_json(payment_route_rules.iter().map(|rule| rule.rule_no.as_str())),
     )
 }
 

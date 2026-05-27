@@ -9,7 +9,7 @@ public class GoogleFunctionCallingConfig {
     public List<String> getAllowedFunctionNames() {
         return this.allowedFunctionNames;
     }
-    
+
     public void setAllowedFunctionNames(List<String> allowedFunctionNames) {
         this.allowedFunctionNames = allowedFunctionNames;
     }
@@ -17,7 +17,7 @@ public class GoogleFunctionCallingConfig {
     public String getMode() {
         return this.mode;
     }
-    
+
     public void setMode(String mode) {
         this.mode = mode;
     }

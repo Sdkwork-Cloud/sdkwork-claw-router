@@ -1,22 +1,24 @@
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct ClaimCouponCommand {
+pub struct ClaimPromotionUserCouponCommand {
     pub idempotency_key: String,
-    pub owner_user_id: String,
-    pub template_id: String,
+    pub offer_id: String,
+    pub subject_id: String,
+    pub subject_type: String,
     pub tenant_id: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct RedeemCouponCommand {
-    pub coupon_id: String,
+pub struct ApplyPromotionDiscountCommand {
     pub idempotency_key: String,
     pub order_id: String,
-    pub owner_user_id: String,
+    pub subject_id: String,
+    pub subject_type: String,
     pub tenant_id: String,
+    pub user_coupon_id: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct RedeemCodeCommand {
+pub struct PromotionCodeRedemptionCommand {
     pub code: String,
     pub idempotency_key: String,
     pub organization_id: Option<String>,
@@ -25,7 +27,7 @@ pub struct RedeemCodeCommand {
     pub tenant_id: String,
 }
 
-impl RedeemCodeCommand {
+impl PromotionCodeRedemptionCommand {
     pub fn new(
         tenant_id: &str,
         organization_id: Option<&str>,

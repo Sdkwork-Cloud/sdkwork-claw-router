@@ -71,7 +71,7 @@ function SdkworkOfferPageContent({
     formatFilterLabel,
     formatOfferSavings,
     formatPoints,
-    formatVipTerm,
+    formatMembershipTerm,
   } = useSdkworkOfferIntl();
   const heroHighlights = [
     {
@@ -214,10 +214,10 @@ function SdkworkOfferPageContent({
                 style={createSdkworkOfferPanelStyle("neutral")}
               >
                 <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sdk-color-text-muted)]">
-                  {copy.inventory.vipTerm}
+                  {copy.inventory.membershipTerm}
                 </div>
                 <div className="mt-3 text-lg font-semibold text-[var(--sdk-color-text-primary)]">
-                  {formatVipTerm(state.dashboard.inventory.vipRemainingDays)}
+                  {formatMembershipTerm(state.dashboard.inventory.membershipRemainingDays)}
                 </div>
               </div>
             </div>

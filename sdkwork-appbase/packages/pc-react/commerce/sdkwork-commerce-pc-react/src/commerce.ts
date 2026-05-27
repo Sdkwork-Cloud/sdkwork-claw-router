@@ -40,7 +40,7 @@ function normalizeBasePath(basePath: string | undefined): string {
 }
 
 export function createCommerceWorkspaceManifest({
-  description = "Commerce workspace for wallet, pricing, shared offers, points, coupons, subscriptions, billing, VIP, orders, payments, and invoice-center composition across one reusable desktop hub.",
+  description = "Commerce workspace for wallet, pricing, shared offers, points, coupons, subscriptions, billing, membership, orders, payments, and invoice-center composition across one reusable desktop hub.",
   host,
   id = "sdkwork-commerce",
   packageNames = [
@@ -52,8 +52,8 @@ export function createCommerceWorkspaceManifest({
     "@sdkwork/pricing-pc-react",
     "@sdkwork/wallet-pc-react",
     "@sdkwork/points-pc-react",
-    "@sdkwork/vip-pc-react",
-    "@sdkwork/vip-purchase-pc-react",
+    "@sdkwork/membership-pc-react",
+    "@sdkwork/membership-purchase-pc-react",
     "@sdkwork/coupon-pc-react",
     "@sdkwork/subscription-pc-react",
     "@sdkwork/order-pc-react",

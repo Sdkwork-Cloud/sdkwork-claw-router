@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class UpdateApiKeyRequest:
     """Update api key request schema exposed by Claw Router."""
+    default_for_runtime: Optional[bool] = None
     expires: Optional[str] = None
     group: Optional[str] = None
     ip_limit: Optional[str] = None

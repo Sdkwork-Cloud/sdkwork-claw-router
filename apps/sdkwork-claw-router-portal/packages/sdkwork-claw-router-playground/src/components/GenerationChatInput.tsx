@@ -120,9 +120,9 @@ export function GenerationChatInput({
   return (
     <div ref={containerRef} className="w-full max-w-[1280px] relative">
       <div
-        className={`w-full bg-[#1c1c1e] border border-white/10 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_8px_30px_rgba(0,0,0,0.5)] ${
+        className={`w-full bg-[#1c1c1e] border border-white/10 transition-colors duration-200 shadow-[0_8px_30px_rgba(0,0,0,0.5)] ${
           isFocused
-            ? 'rounded-[12px] p-2 shadow-[0_16px_40px_rgba(0,0,0,0.8)]'
+            ? 'rounded-2xl border-white/15 p-2 shadow-[0_12px_32px_rgba(0,0,0,0.58)]'
             : 'rounded-full p-2 cursor-text hover:border-white/20'
         }`}
         onClick={() => { if (!isFocused) setIsFocused(true); }}
@@ -174,7 +174,7 @@ export function GenerationChatInput({
                        void handleSubmit();
                      }
                    }}
-                   className="w-full min-h-[120px] bg-transparent border-none text-[15px] leading-relaxed text-white placeholder:text-slate-500 focus:outline-none resize-none"
+                   className="custom-scrollbar min-h-[112px] max-h-[160px] w-full resize-none overflow-y-auto border-none bg-transparent text-[15px] leading-6 text-white outline-none placeholder:text-slate-500"
                    placeholder={currentPlaceholder}
                  />
               </div>

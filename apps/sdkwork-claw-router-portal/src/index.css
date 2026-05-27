@@ -7,9 +7,12 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --color-lobster-50: #fdf3f2;
   --color-lobster-100: #fbe4e2;
+  --color-lobster-200: #f8c8c1;
+  --color-lobster-300: #f59a8c;
   --color-lobster-400: #ef705d;
   --color-lobster-500: #e55039;
   --color-lobster-600: #c83f2a;
+  --color-lobster-700: #9f3020;
   --color-lobster-900: #641e13;
   --animate-scan: scan 3s linear infinite;
   @keyframes scan {
@@ -37,6 +40,30 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   @apply bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-slate-50 transition-colors duration-300;
+}
+
+.sdkwork-console-shell {
+  --sdkwork-console-card-radius: 0.5rem;
+}
+
+.sdkwork-console-shell
+  :where(div, section, article, aside, header, footer, dialog):is(
+    [class*="rounded-xl"],
+    [class*="rounded-2xl"],
+    [class*="rounded-3xl"],
+    [class*="rounded-["]
+  ):is(
+    [class^="bg-"],
+    [class*=" bg-"],
+    [class*=" dark:bg-"],
+    [class^="border"],
+    [class*=" border"],
+    [class^="shadow"],
+    [class*=" shadow"],
+    [class^="ring"],
+    [class*=" ring"]
+  ):not([class*="rounded-full"]) {
+  border-radius: var(--sdkwork-console-card-radius) !important;
 }
 
 .claw-router-navbar-notification-bell {

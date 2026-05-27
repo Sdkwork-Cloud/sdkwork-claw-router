@@ -13,7 +13,7 @@ public class AdminMonitorAlertItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -21,7 +21,7 @@ public class AdminMonitorAlertItem {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -29,7 +29,7 @@ public class AdminMonitorAlertItem {
     public String getSeverity() {
         return this.severity;
     }
-    
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
@@ -37,7 +37,7 @@ public class AdminMonitorAlertItem {
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -45,7 +45,7 @@ public class AdminMonitorAlertItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -53,7 +53,7 @@ public class AdminMonitorAlertItem {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -61,7 +61,7 @@ public class AdminMonitorAlertItem {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

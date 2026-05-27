@@ -503,9 +503,45 @@ async fn complete_turn_response(
         .ok_or_else(|| DomainError::not_found("chat turn was not found"))?;
     let turn_pk = turn.get::<i64, _>("id");
     let output_item =
-        load_pending_output_item_row(&mut tx, command.subject, conversation_pk, turn_pk)
+        match load_pending_output_item_row(&mut tx, command.subject, conversation_pk, turn_pk)
             .await?
-            .ok_or_else(|| DomainError::conflict("chat turn output item is not pending"))?;
+        {
+            Some(item) => item,
+            None => {
+                if let Some(outcome) = update_existing_streaming_turn_response_outcome(
+                    &mut tx,
+                    command.subject,
+                    conversation_pk,
+                    turn_pk,
+                    &turn,
+                    &command,
+                    &metadata,
+                    &usage_metadata,
+                )
+                .await?
+                {
+                    tx.commit().await.map_err(|error| {
+                        DomainError::new(format!("failed to commit chat transaction: {error}"))
+                    })?;
+                    return Ok(outcome);
+                }
+                if let Some(outcome) = load_existing_turn_response_outcome(
+                    &mut tx,
+                    command.subject,
+                    conversation_pk,
+                    turn_pk,
+                    &turn,
+                    &command,
+                )
+                .await?
+                {
+                    return Ok(outcome);
+                }
+                return Err(DomainError::conflict(
+                    "chat turn output item is not pending",
+                ));
+            }
+        };
     let output_item_pk = output_item.get::<i64, _>("id");
     let input_item = load_turn_input_item_row(&mut tx, command.subject, conversation_pk, turn_pk)
         .await?
@@ -826,7 +862,7 @@ async fn load_pending_output_item_row(
 ) -> DomainResult<Option<sqlx::postgres::PgRow>> {
     sqlx::query(
         r#"
-        SELECT id
+        SELECT id, uuid
         FROM ai_chat_item
         WHERE tenant_id = $1
           AND organization_id = $2
@@ -838,6 +874,7 @@ async fn load_pending_output_item_row(
           AND status = 'pending'
         ORDER BY sequence_no ASC, id ASC
         LIMIT 1
+        FOR UPDATE
         "#,
     )
     .bind(subject.tenant_id)
@@ -848,6 +885,407 @@ async fn load_pending_output_item_row(
     .fetch_optional(&mut **tx)
     .await
     .map_err(sql_error)
+}
+
+async fn load_existing_turn_response_outcome(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AppChatSubject,
+    conversation_pk: i64,
+    turn_pk: i64,
+    turn: &sqlx::postgres::PgRow,
+    command: &CompleteAppChatTurnCommand,
+) -> DomainResult<Option<AppChatTurnOutcome>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            m.uuid,
+            c.conversation_code,
+            t.uuid AS turn_uuid,
+            m.role,
+            m.direction,
+            m.content_text,
+            m.status,
+            m.model,
+            m.provider,
+            m.runtime,
+            m.runtime_invocation_id,
+            m.usage_link_id,
+            u.uuid AS usage_link_uuid,
+            u.input_tokens AS usage_input_tokens,
+            u.output_tokens AS usage_output_tokens,
+            u.cached_tokens AS usage_cached_tokens,
+            u.reasoning_tokens AS usage_reasoning_tokens,
+            u.total_tokens AS usage_total_tokens,
+            CAST(u.cost_amount AS TEXT) AS usage_cost_amount,
+            u.currency AS usage_currency,
+            CAST(m.created_at AS TEXT) AS created_at
+        FROM ai_chat_message m
+        INNER JOIN ai_chat_conversation c
+          ON c.id = m.conversation_id
+         AND c.tenant_id = m.tenant_id
+         AND c.organization_id = m.organization_id
+         AND c.user_id = m.user_id
+        LEFT JOIN ai_chat_turn t
+          ON t.id = m.turn_id
+         AND t.tenant_id = m.tenant_id
+         AND t.organization_id = m.organization_id
+         AND t.user_id = m.user_id
+        LEFT JOIN ai_runtime_usage_link u
+          ON u.uuid = m.usage_link_id
+         AND u.tenant_id = m.tenant_id
+         AND u.organization_id = m.organization_id
+        WHERE m.tenant_id = $1
+          AND m.organization_id = $2
+          AND m.user_id = $3
+          AND m.conversation_id = $4
+          AND m.turn_id = $5
+          AND m.role = 'assistant'
+          AND m.direction = 'output'
+          AND m.status IN ('completed', 'failed', 'cancelled')
+        ORDER BY m.message_no DESC, m.id DESC
+        LIMIT 1
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(conversation_pk)
+    .bind(turn_pk)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let message = row_to_message(row)?;
+    if let Some(expected_invocation_id) = command.runtime_invocation_id.as_deref() {
+        if message.runtime_invocation_id.as_deref() != Some(expected_invocation_id) {
+            return Ok(None);
+        }
+    }
+    Ok(Some(AppChatTurnOutcome {
+        turn: AppChatTurnItem {
+            id: command.turn_id.clone(),
+            conversation_id: command.conversation_id.clone(),
+            status: message.status.clone(),
+            model: message
+                .model
+                .clone()
+                .or_else(|| optional_string_cell(turn, "model")),
+            provider: message
+                .provider
+                .clone()
+                .or_else(|| optional_string_cell(turn, "provider")),
+            agent_id: optional_string_cell(turn, "agent_id"),
+            agent_session_id: optional_string_cell(turn, "agent_session_id"),
+            created_at: string_cell(turn, "created_at"),
+            updated_at: message.created_at.clone(),
+        },
+        messages: vec![message],
+    }))
+}
+
+async fn update_existing_streaming_turn_response_outcome(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AppChatSubject,
+    conversation_pk: i64,
+    turn_pk: i64,
+    turn: &sqlx::postgres::PgRow,
+    command: &CompleteAppChatTurnCommand,
+    metadata: &str,
+    usage_metadata: &str,
+) -> DomainResult<Option<AppChatTurnOutcome>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            m.id AS message_pk,
+            m.uuid,
+            c.conversation_code,
+            t.uuid AS turn_uuid,
+            m.role,
+            m.direction,
+            m.content_text,
+            m.status,
+            m.model,
+            m.provider,
+            m.runtime,
+            m.runtime_invocation_id,
+            m.usage_link_id,
+            u.uuid AS usage_link_uuid,
+            u.input_tokens AS usage_input_tokens,
+            u.output_tokens AS usage_output_tokens,
+            u.cached_tokens AS usage_cached_tokens,
+            u.reasoning_tokens AS usage_reasoning_tokens,
+            u.total_tokens AS usage_total_tokens,
+            CAST(u.cost_amount AS TEXT) AS usage_cost_amount,
+            u.currency AS usage_currency,
+            CAST(m.created_at AS TEXT) AS created_at,
+            i.id AS output_item_pk
+        FROM ai_chat_item i
+        INNER JOIN ai_chat_message m
+          ON m.item_id = i.id
+         AND m.tenant_id = i.tenant_id
+         AND m.organization_id = i.organization_id
+         AND m.user_id = i.user_id
+         AND m.conversation_id = i.conversation_id
+         AND m.turn_id = i.turn_id
+         AND m.role = 'assistant'
+         AND m.direction = 'output'
+         AND m.status = 'streaming'
+        INNER JOIN ai_chat_conversation c
+          ON c.id = i.conversation_id
+         AND c.tenant_id = i.tenant_id
+         AND c.organization_id = i.organization_id
+         AND c.user_id = i.user_id
+        LEFT JOIN ai_chat_turn t
+          ON t.id = i.turn_id
+         AND t.tenant_id = i.tenant_id
+         AND t.organization_id = i.organization_id
+         AND t.user_id = i.user_id
+        LEFT JOIN ai_runtime_usage_link u
+          ON u.uuid = m.usage_link_id
+         AND u.tenant_id = m.tenant_id
+         AND u.organization_id = m.organization_id
+        WHERE i.tenant_id = $1
+          AND i.organization_id = $2
+          AND i.user_id = $3
+          AND i.conversation_id = $4
+          AND i.turn_id = $5
+          AND i.direction = 'output'
+          AND i.role = 'assistant'
+          AND i.status = 'streaming'
+        ORDER BY i.sequence_no ASC, i.id ASC, m.message_no DESC, m.id DESC
+        LIMIT 1
+        FOR UPDATE OF i, m
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(conversation_pk)
+    .bind(turn_pk)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    if let Some(expected_invocation_id) = command.runtime_invocation_id.as_deref() {
+        let existing_invocation_id = optional_string_cell(&row, "runtime_invocation_id");
+        if existing_invocation_id
+            .as_deref()
+            .is_some_and(|value| value != expected_invocation_id)
+        {
+            return Ok(None);
+        }
+    }
+
+    let message_pk = integer_cell(&row, "message_pk");
+    let message_uuid = string_cell(&row, "uuid");
+    let output_item_pk = integer_cell(&row, "output_item_pk");
+    let conversation_code = string_cell(&row, "conversation_code");
+    let input_item = load_turn_input_item_row(tx, subject, conversation_pk, turn_pk)
+        .await?
+        .ok_or_else(|| DomainError::conflict("chat turn input item was not found"))?;
+    let output_item = load_output_item_row_by_pk(tx, output_item_pk).await?;
+    let usage = command.usage.clone().unwrap_or_default();
+    let existing_usage = usage_from_row(&row).unwrap_or_default();
+    let usage_link_id = reconcile_usage_link(
+        tx,
+        command,
+        &conversation_code,
+        &message_uuid,
+        optional_string_cell(&row, "usage_link_id"),
+        &usage,
+        usage_metadata,
+    )
+    .await?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_chat_item
+        SET status = $1,
+            content_text = $2,
+            provider = COALESCE($3, provider),
+            model = COALESCE($4, model),
+            runtime_invocation_id = COALESCE($5, runtime_invocation_id),
+            completed_at = CASE WHEN $6 IN ('completed', 'failed', 'cancelled') THEN $7::timestamp AT TIME ZONE 'UTC' ELSE completed_at END,
+            metadata = $8::jsonb
+        WHERE id = $9
+        "#,
+    )
+    .bind(&command.status)
+    .bind(&command.message)
+    .bind(&command.provider)
+    .bind(&command.model)
+    .bind(&command.runtime_invocation_id)
+    .bind(&command.status)
+    .bind(&command.requested_at)
+    .bind(metadata)
+    .bind(output_item_pk)
+    .execute(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_chat_message
+        SET status = $1,
+            content_text = $2,
+            model = COALESCE($3, model),
+            provider = COALESCE($4, provider),
+            runtime = COALESCE($5, runtime),
+            runtime_invocation_id = COALESCE($6, runtime_invocation_id),
+            usage_link_id = $7,
+            updated_at = $8::timestamp AT TIME ZONE 'UTC',
+            metadata = $9::jsonb
+        WHERE id = $10
+        "#,
+    )
+    .bind(&command.status)
+    .bind(&command.message)
+    .bind(&command.model)
+    .bind(&command.provider)
+    .bind(&command.runtime)
+    .bind(&command.runtime_invocation_id)
+    .bind(&usage_link_id)
+    .bind(&command.requested_at)
+    .bind(metadata)
+    .bind(message_pk)
+    .execute(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_chat_message_part
+        SET text_content = $1,
+            metadata = $2::jsonb
+        WHERE message_id = $3
+          AND item_id = $4
+          AND part_no = 1
+          AND part_type = 'text'
+        "#,
+    )
+    .bind(&command.message)
+    .bind(metadata)
+    .bind(message_pk)
+    .bind(output_item_pk)
+    .execute(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    let context_snapshot_id = insert_context_snapshot(
+        tx,
+        command,
+        conversation_pk,
+        turn_pk,
+        &input_item,
+        &output_item,
+        &usage,
+        metadata,
+    )
+    .await?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_chat_turn
+        SET status = $1,
+            updated_at = $2::timestamp AT TIME ZONE 'UTC',
+            completed_at = CASE WHEN $3 IN ('completed', 'failed', 'cancelled') THEN $2::timestamp AT TIME ZONE 'UTC' ELSE completed_at END,
+            provider = COALESCE($4, provider),
+            model = COALESCE($5, model),
+            final_output_item_id = $6,
+            input_token_total = $7,
+            output_token_total = $8,
+            cached_token_total = $9,
+            reasoning_token_total = $10,
+            cost_amount = $11::numeric,
+            currency = $12,
+            response_snapshot = $13::jsonb,
+            usage_snapshot = $14::jsonb,
+            context_snapshot_id = $15,
+            metadata = $16::jsonb
+        WHERE id = $17
+        "#,
+    )
+    .bind(&command.status)
+    .bind(&command.requested_at)
+    .bind(&command.status)
+    .bind(&command.provider)
+    .bind(&command.model)
+    .bind(output_item_pk)
+    .bind(usage.input_tokens)
+    .bind(usage.output_tokens)
+    .bind(usage.cached_tokens)
+    .bind(usage.reasoning_tokens)
+    .bind(&usage.cost_amount)
+    .bind(&usage.currency)
+    .bind(metadata)
+    .bind(usage_metadata)
+    .bind(context_snapshot_id)
+    .bind(metadata)
+    .bind(turn_pk)
+    .execute(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_chat_conversation
+        SET updated_at = $1::timestamp AT TIME ZONE 'UTC',
+            last_message_preview = $2,
+            last_turn_id = $3,
+            last_item_id = $4,
+            input_token_total = input_token_total + $5,
+            output_token_total = output_token_total + $6,
+            cached_token_total = cached_token_total + $7,
+            reasoning_token_total = reasoning_token_total + $8,
+            cost_amount_total = COALESCE(cost_amount_total, 0) + (COALESCE($9::numeric, 0) - COALESCE($10::numeric, 0)),
+            currency = COALESCE($11, currency),
+            version = version + 1
+        WHERE id = $12
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(&command.message)
+    .bind(turn_pk)
+    .bind(output_item_pk)
+    .bind(usage.input_tokens - existing_usage.input_tokens)
+    .bind(usage.output_tokens - existing_usage.output_tokens)
+    .bind(usage.cached_tokens - existing_usage.cached_tokens)
+    .bind(usage.reasoning_tokens - existing_usage.reasoning_tokens)
+    .bind(&usage.cost_amount)
+    .bind(&existing_usage.cost_amount)
+    .bind(&usage.currency)
+    .bind(conversation_pk)
+    .execute(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+
+    let message = load_turn_response_message_by_pk(tx, subject, message_pk).await?;
+    Ok(Some(AppChatTurnOutcome {
+        turn: AppChatTurnItem {
+            id: command.turn_id.clone(),
+            conversation_id: command.conversation_id.clone(),
+            status: command.status.clone(),
+            model: command
+                .model
+                .clone()
+                .or_else(|| optional_string_cell(turn, "model")),
+            provider: command
+                .provider
+                .clone()
+                .or_else(|| optional_string_cell(turn, "provider")),
+            agent_id: optional_string_cell(turn, "agent_id"),
+            agent_session_id: optional_string_cell(turn, "agent_session_id"),
+            created_at: string_cell(turn, "created_at"),
+            updated_at: command.requested_at.clone(),
+        },
+        messages: vec![message],
+    }))
 }
 
 async fn load_turn_input_item_row(
@@ -880,6 +1318,78 @@ async fn load_turn_input_item_row(
     .fetch_optional(&mut **tx)
     .await
     .map_err(sql_error)
+}
+
+async fn load_output_item_row_by_pk(
+    tx: &mut Transaction<'_, Postgres>,
+    output_item_pk: i64,
+) -> DomainResult<sqlx::postgres::PgRow> {
+    sqlx::query("SELECT id, uuid FROM ai_chat_item WHERE id = $1")
+        .bind(output_item_pk)
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(sql_error)
+}
+
+async fn load_turn_response_message_by_pk(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AppChatSubject,
+    message_pk: i64,
+) -> DomainResult<AppChatMessageItem> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            m.uuid,
+            c.conversation_code,
+            t.uuid AS turn_uuid,
+            m.role,
+            m.direction,
+            m.content_text,
+            m.status,
+            m.model,
+            m.provider,
+            m.runtime,
+            m.runtime_invocation_id,
+            m.usage_link_id,
+            u.uuid AS usage_link_uuid,
+            u.input_tokens AS usage_input_tokens,
+            u.output_tokens AS usage_output_tokens,
+            u.cached_tokens AS usage_cached_tokens,
+            u.reasoning_tokens AS usage_reasoning_tokens,
+            u.total_tokens AS usage_total_tokens,
+            CAST(u.cost_amount AS TEXT) AS usage_cost_amount,
+            u.currency AS usage_currency,
+            CAST(m.created_at AS TEXT) AS created_at
+        FROM ai_chat_message m
+        INNER JOIN ai_chat_conversation c
+          ON c.id = m.conversation_id
+         AND c.tenant_id = m.tenant_id
+         AND c.organization_id = m.organization_id
+         AND c.user_id = m.user_id
+        LEFT JOIN ai_chat_turn t
+          ON t.id = m.turn_id
+         AND t.tenant_id = m.tenant_id
+         AND t.organization_id = m.organization_id
+         AND t.user_id = m.user_id
+        LEFT JOIN ai_runtime_usage_link u
+          ON u.uuid = m.usage_link_id
+         AND u.tenant_id = m.tenant_id
+         AND u.organization_id = m.organization_id
+        WHERE m.tenant_id = $1
+          AND m.organization_id = $2
+          AND m.user_id = $3
+          AND m.id = $4
+        LIMIT 1
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(subject.user_id)
+    .bind(message_pk)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+    row_to_message(row)
 }
 
 async fn insert_context_snapshot(
@@ -1037,6 +1547,27 @@ async fn insert_usage_link(
     usage: &AppChatUsageSnapshot,
     metadata: &str,
 ) -> DomainResult<()> {
+    insert_usage_link_for_message(
+        tx,
+        command,
+        conversation_code,
+        &command.output_message_uuid,
+        &command.usage_link_uuid,
+        usage,
+        metadata,
+    )
+    .await
+}
+
+async fn insert_usage_link_for_message(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CompleteAppChatTurnCommand,
+    conversation_code: &str,
+    message_id: &str,
+    usage_link_uuid: &str,
+    usage: &AppChatUsageSnapshot,
+    metadata: &str,
+) -> DomainResult<()> {
     sqlx::query(
         r#"
         INSERT INTO ai_runtime_usage_link (
@@ -1065,13 +1596,13 @@ async fn insert_usage_link(
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'chat_response', $10, $11, $12, $13, $14, $15, $16, $17::numeric, $18, $19::timestamp AT TIME ZONE 'UTC', $20::jsonb)
         "#,
     )
-    .bind(&command.usage_link_uuid)
+    .bind(usage_link_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.subject.user_id)
     .bind(conversation_code)
     .bind(&command.turn_id)
-    .bind(&command.output_message_uuid)
+    .bind(message_id)
     .bind(&command.runtime_invocation_id)
     .bind(command.usage_fact_id)
     .bind(&command.provider)
@@ -1089,6 +1620,107 @@ async fn insert_usage_link(
     .await
     .map_err(sql_error)?;
     Ok(())
+}
+
+async fn update_usage_link_for_message(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CompleteAppChatTurnCommand,
+    conversation_code: &str,
+    message_id: &str,
+    usage_link_id: &str,
+    usage: &AppChatUsageSnapshot,
+    metadata: &str,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_runtime_usage_link
+        SET user_id = $1,
+            conversation_id = $2,
+            chat_turn_id = $3,
+            message_id = $4,
+            runtime_invocation_id = $5,
+            usage_fact_id = $6,
+            provider = $7,
+            model = $8,
+            input_tokens = $9,
+            output_tokens = $10,
+            cached_tokens = $11,
+            reasoning_tokens = $12,
+            total_tokens = $13,
+            cost_amount = $14::numeric,
+            currency = $15,
+            occurred_at = $16::timestamp AT TIME ZONE 'UTC',
+            metadata = $17::jsonb
+        WHERE tenant_id = $18
+          AND organization_id = $19
+          AND uuid = $20
+        "#,
+    )
+    .bind(command.subject.user_id)
+    .bind(conversation_code)
+    .bind(&command.turn_id)
+    .bind(message_id)
+    .bind(&command.runtime_invocation_id)
+    .bind(command.usage_fact_id)
+    .bind(&command.provider)
+    .bind(&command.model)
+    .bind(usage.input_tokens)
+    .bind(usage.output_tokens)
+    .bind(usage.cached_tokens)
+    .bind(usage.reasoning_tokens)
+    .bind(usage.total_tokens)
+    .bind(&usage.cost_amount)
+    .bind(&usage.currency)
+    .bind(&command.requested_at)
+    .bind(metadata)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(usage_link_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(sql_error)?;
+    Ok(())
+}
+
+async fn reconcile_usage_link(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CompleteAppChatTurnCommand,
+    conversation_code: &str,
+    message_id: &str,
+    existing_usage_link_id: Option<String>,
+    usage: &AppChatUsageSnapshot,
+    metadata: &str,
+) -> DomainResult<Option<String>> {
+    if !(command.usage.is_some()
+        || command.runtime_invocation_id.is_some()
+        || command.usage_fact_id.is_some())
+    {
+        return Ok(existing_usage_link_id);
+    }
+    if let Some(usage_link_id) = existing_usage_link_id {
+        update_usage_link_for_message(
+            tx,
+            command,
+            conversation_code,
+            message_id,
+            &usage_link_id,
+            usage,
+            metadata,
+        )
+        .await?;
+        return Ok(Some(usage_link_id));
+    }
+    insert_usage_link_for_message(
+        tx,
+        command,
+        conversation_code,
+        message_id,
+        &command.usage_link_uuid,
+        usage,
+        metadata,
+    )
+    .await?;
+    Ok(Some(command.usage_link_uuid.clone()))
 }
 
 async fn next_count(

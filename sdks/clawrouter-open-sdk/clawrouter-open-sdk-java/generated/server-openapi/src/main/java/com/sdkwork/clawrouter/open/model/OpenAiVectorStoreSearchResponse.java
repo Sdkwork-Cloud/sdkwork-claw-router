@@ -10,7 +10,7 @@ public class OpenAiVectorStoreSearchResponse {
     public List<OpenAiVectorStoreSearchResult> getData() {
         return this.data;
     }
-    
+
     public void setData(List<OpenAiVectorStoreSearchResult> data) {
         this.data = data;
     }
@@ -18,7 +18,7 @@ public class OpenAiVectorStoreSearchResponse {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -26,7 +26,7 @@ public class OpenAiVectorStoreSearchResponse {
     public List<String> getSearchQuery() {
         return this.searchQuery;
     }
-    
+
     public void setSearchQuery(List<String> searchQuery) {
         this.searchQuery = searchQuery;
     }

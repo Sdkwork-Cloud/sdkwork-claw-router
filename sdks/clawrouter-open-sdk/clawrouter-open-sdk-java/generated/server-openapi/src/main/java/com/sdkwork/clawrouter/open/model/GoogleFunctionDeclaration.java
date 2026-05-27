@@ -10,7 +10,7 @@ public class GoogleFunctionDeclaration {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -18,7 +18,7 @@ public class GoogleFunctionDeclaration {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -26,7 +26,7 @@ public class GoogleFunctionDeclaration {
     public GoogleSchema getParameters() {
         return this.parameters;
     }
-    
+
     public void setParameters(GoogleSchema parameters) {
         this.parameters = parameters;
     }
@@ -34,7 +34,7 @@ public class GoogleFunctionDeclaration {
     public GoogleSchema getResponse() {
         return this.response;
     }
-    
+
     public void setResponse(GoogleSchema response) {
         this.response = response;
     }

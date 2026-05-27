@@ -12,7 +12,7 @@ public class OpenAiAudioTranscription {
     public Double getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Double duration) {
         this.duration = duration;
     }
@@ -20,7 +20,7 @@ public class OpenAiAudioTranscription {
     public String getLanguage() {
         return this.language;
     }
-    
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -28,7 +28,7 @@ public class OpenAiAudioTranscription {
     public List<String> getSegments() {
         return this.segments;
     }
-    
+
     public void setSegments(List<String> segments) {
         this.segments = segments;
     }
@@ -36,7 +36,7 @@ public class OpenAiAudioTranscription {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -44,7 +44,7 @@ public class OpenAiAudioTranscription {
     public List<String> getWords() {
         return this.words;
     }
-    
+
     public void setWords(List<String> words) {
         this.words = words;
     }

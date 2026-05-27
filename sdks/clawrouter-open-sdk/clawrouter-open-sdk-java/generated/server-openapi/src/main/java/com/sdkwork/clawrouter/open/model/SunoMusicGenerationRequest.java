@@ -13,7 +13,7 @@ public class SunoMusicGenerationRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -21,7 +21,7 @@ public class SunoMusicGenerationRequest {
     public Double getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Double duration) {
         this.duration = duration;
     }
@@ -29,7 +29,7 @@ public class SunoMusicGenerationRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -37,7 +37,7 @@ public class SunoMusicGenerationRequest {
     public String getNegativeTags() {
         return this.negativeTags;
     }
-    
+
     public void setNegativeTags(String negativeTags) {
         this.negativeTags = negativeTags;
     }
@@ -45,7 +45,7 @@ public class SunoMusicGenerationRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -53,7 +53,7 @@ public class SunoMusicGenerationRequest {
     public String getTags() {
         return this.tags;
     }
-    
+
     public void setTags(String tags) {
         this.tags = tags;
     }
@@ -61,7 +61,7 @@ public class SunoMusicGenerationRequest {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

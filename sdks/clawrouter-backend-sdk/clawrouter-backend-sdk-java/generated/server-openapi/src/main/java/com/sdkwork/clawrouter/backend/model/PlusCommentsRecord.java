@@ -13,7 +13,7 @@ public class PlusCommentsRecord {
     public Map<String, String> getAuthor() {
         return this.author;
     }
-    
+
     public void setAuthor(Map<String, String> author) {
         this.author = author;
     }
@@ -21,7 +21,7 @@ public class PlusCommentsRecord {
     public String getDeviceInfo() {
         return this.deviceInfo;
     }
-    
+
     public void setDeviceInfo(String deviceInfo) {
         this.deviceInfo = deviceInfo;
     }
@@ -29,7 +29,7 @@ public class PlusCommentsRecord {
     public String getIpAddress() {
         return this.ipAddress;
     }
-    
+
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
@@ -37,7 +37,7 @@ public class PlusCommentsRecord {
     public String getParentId() {
         return this.parentId;
     }
-    
+
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
@@ -45,7 +45,7 @@ public class PlusCommentsRecord {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -53,7 +53,7 @@ public class PlusCommentsRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

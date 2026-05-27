@@ -9,7 +9,7 @@ public class OpenAiUploadCompleteRequest {
     public String getMd5() {
         return this.md5;
     }
-    
+
     public void setMd5(String md5) {
         this.md5 = md5;
     }
@@ -17,7 +17,7 @@ public class OpenAiUploadCompleteRequest {
     public List<String> getPartIds() {
         return this.partIds;
     }
-    
+
     public void setPartIds(List<String> partIds) {
         this.partIds = partIds;
     }

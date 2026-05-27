@@ -20,7 +20,7 @@ struct CapturedUpstreamRequest {
 }
 
 #[tokio::test]
-async fn openai_compatible_embeddings_relay_posts_provider_model_and_upstream_secret() {
+async fn openai_compatible_embeddings_relay_uses_provider_model_and_upstream_secret() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
         .route("/v1/embeddings", post(capture_embedding))
@@ -35,6 +35,12 @@ async fn openai_compatible_embeddings_relay_posts_provider_model_and_upstream_se
         UpstreamProviderEndpoint::new(format!("http://{addr}"), "sk-upstream-provider-secret")
             .unwrap();
     let relay = OpenAiCompatibleEmbeddingsRelay::new(endpoint);
+    let request_body = json!({
+        "model": "text-embedding-3-small",
+        "input": ["ping"],
+        "encoding_format": "float",
+        "dimensions": 256
+    });
     let response = relay
         .create_embedding(EmbeddingsRelayRequest {
             api_key_id: 101,
@@ -53,11 +59,7 @@ async fn openai_compatible_embeddings_relay_posts_provider_model_and_upstream_se
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "text-embedding-3-small",
-                "input": ["ping"],
-                "encoding_format": "float"
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -83,11 +85,9 @@ async fn openai_compatible_embeddings_relay_posts_provider_model_and_upstream_se
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!(
-        "openai/global/text-embedding-3-small",
-        captured[0].body["model"]
-    );
-    assert_eq!("ping", captured[0].body["input"][0]);
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("text-embedding-3-small");
+    assert_eq!(expected_body, captured[0].body);
 }
 
 async fn capture_embedding(

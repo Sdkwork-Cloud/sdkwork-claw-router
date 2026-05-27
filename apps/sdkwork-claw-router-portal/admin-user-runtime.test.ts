@@ -154,7 +154,7 @@ test("admin user balance adjustment modals do not expose unsupported remark fiel
   );
 
   assert.doesNotMatch(source, /name="remark"/);
-  assert.doesNotMatch(source, />备注<\/label>/);
+  assert.doesNotMatch(source, />婢跺洦鏁?\/label>/);
 });
 
 test("admin user records modal does not render static fake success rows", () => {
@@ -164,7 +164,7 @@ test("admin user records modal does not render static fake success rows", () => 
   );
 
   assert.doesNotMatch(source, /<td className="px-4 py-3 font-mono text-xs">Unavailable<\/td>/);
-  assert.doesNotMatch(source, /text-emerald-600 bg-emerald-50[^>]+>.*鎴愬姛/);
+  assert.doesNotMatch(source, /text-emerald-600 bg-emerald-50/);
   assert.match(source, /Records are available from the billing history and recharge records modules/);
 });
 
@@ -187,7 +187,7 @@ test("admin user create modal does not expose unsupported concurrency controls",
   );
 
   assert.doesNotMatch(source, /name="concurrency"/);
-  assert.doesNotMatch(source, />并发数<\/label>/);
+  assert.doesNotMatch(source, />楠炶泛褰傞弫?\/label>/);
   assert.doesNotMatch(source, />Concurrency<\/label>/);
 });
 
@@ -244,7 +244,9 @@ test("admin user table exposes backend-backed status toggle actions", () => {
 
   assert.match(source, /handleStatusToggle/);
   assert.match(source, /createUserStatusUpdateInput\(nextStatus\)/);
-  assert.match(source, /u\.status === 'active' \? t\("admin\.user\.index\.text\.1dcdrxo", "禁用"\) : t\("admin\.marketing\.index\.text\.5pm2ma", "启用"\)/);
+  assert.match(source, /getStatusToggleLabel/);
+  assert.match(source, /u\.status === 'active' \? t\("admin\.user\.index\.text\.1dcdrxo"/);
+  assert.match(source, /: t\("common\.actions\.enable"/);
 });
 
 test("admin user group selector preserves backend custom groups", () => {
@@ -425,8 +427,10 @@ test("admin user create and update use generated IAM users SDK commands", async 
         username: "Owner",
         group: "vip",
       });
-      assert.ok(captured[0].headers["x-request-id"]);
-      assert.ok(captured[1].headers["x-request-id"]);
+      assert.equal(captured[0].headers["x-request-id"], undefined);
+      assert.equal(captured[1].headers["x-request-id"], undefined);
+      assert.equal(captured[0].headers["idempotency-key"], undefined);
+      assert.equal(captured[1].headers["idempotency-key"], undefined);
     },
   );
 });

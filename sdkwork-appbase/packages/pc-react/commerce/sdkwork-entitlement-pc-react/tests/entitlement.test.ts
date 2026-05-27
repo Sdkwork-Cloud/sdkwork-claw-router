@@ -29,7 +29,7 @@ describe("sdkwork-entitlement-pc-react headless contract", () => {
         "@sdkwork/offer-pc-react",
         "@sdkwork/points-pc-react",
         "@sdkwork/subscription-pc-react",
-        "@sdkwork/vip-pc-react",
+        "@sdkwork/membership-pc-react",
         "@sdkwork/wallet-pc-react",
       ],
       routePath: "/entitlements",

@@ -16,12 +16,26 @@ export interface SdkworkGenerationVideoModeConfig {
   syncAudioVideo: boolean;
 }
 
+export interface SdkworkGenerationSpeechModeConfig {
+  responseFormat?: "aac" | "flac" | "mp3" | "opus" | "pcm" | "wav";
+  speed?: number;
+  voice?: string;
+}
+
+export interface SdkworkGenerationSfxModeConfig {
+  loop: boolean;
+  promptInfluence: number;
+  responseFormat?: "mp3" | "wav";
+}
+
 export interface SdkworkGenerationAssetConfig {
   aspectRatio: SdkworkGenerationAssetAspectRatio;
   durationSeconds: number;
   imageCount: number;
   imageMode?: SdkworkGenerationImageModeConfig;
   quality: SdkworkGenerationAssetQuality;
+  sfxMode?: SdkworkGenerationSfxModeConfig;
+  speechMode?: SdkworkGenerationSpeechModeConfig;
   videoMode?: SdkworkGenerationVideoModeConfig;
 }
 
@@ -30,10 +44,17 @@ export interface SdkworkGenerationSerializedAssetConfig {
   durationSeconds?: number;
   imageCount?: number;
   imageMode?: SdkworkGenerationImageModeConfig;
+  loop?: boolean;
+  promptInfluence?: number;
   quality?: SdkworkGenerationAssetQuality;
+  responseFormat?: SdkworkGenerationSpeechModeConfig["responseFormat"] | SdkworkGenerationSfxModeConfig["responseFormat"];
   resolution?: SdkworkGenerationVideoModeConfig["resolution"];
+  sfxMode?: Partial<SdkworkGenerationSfxModeConfig>;
+  speechMode?: Partial<SdkworkGenerationSpeechModeConfig>;
+  speed?: number;
   syncAudioVideo?: boolean;
   videoMode?: SdkworkGenerationVideoModeConfig;
+  voice?: string;
 }
 
 export type SdkworkGenerationModelBucket = "llms" | "images" | "videos" | "audios" | "music" | "sfx";
@@ -91,6 +112,17 @@ export const DEFAULT_SDKWORK_GENERATION_VIDEO_MODE_CONFIG: SdkworkGenerationVide
   syncAudioVideo: true,
 };
 
+export const DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG: SdkworkGenerationSpeechModeConfig = {
+  responseFormat: "mp3",
+  speed: 1,
+};
+
+export const DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG: SdkworkGenerationSfxModeConfig = {
+  loop: false,
+  promptInfluence: 0.3,
+  responseFormat: "mp3",
+};
+
 export function getDefaultSdkworkGenerationDurationSeconds(
   modality: SdkworkGenerationAssetModality,
 ): number {
@@ -119,6 +151,8 @@ export function createDefaultSdkworkGenerationAssetConfig(
       imageCount: imageMode.count,
       imageMode,
       quality: imageMode.quality === "2k" ? "high" : "standard",
+      sfxMode: undefined,
+      speechMode: undefined,
       videoMode: undefined,
     };
   }
@@ -131,16 +165,26 @@ export function createDefaultSdkworkGenerationAssetConfig(
       imageCount: videoMode.count,
       imageMode: undefined,
       quality: "standard",
+      sfxMode: undefined,
+      speechMode: undefined,
       videoMode,
     };
   }
 
+  const speechMode = modality === "audio"
+    ? { ...DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG }
+    : undefined;
+  const sfxMode = modality === "sfx"
+    ? { ...DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG }
+    : undefined;
   return {
     aspectRatio: "1:1",
     durationSeconds: getDefaultSdkworkGenerationDurationSeconds(modality),
     imageCount: 1,
     imageMode: undefined,
     quality: "standard",
+    sfxMode,
+    speechMode,
     videoMode: undefined,
   };
 }
@@ -152,9 +196,15 @@ export function reconcileSdkworkGenerationAssetConfig(
   const defaultConfig = createDefaultSdkworkGenerationAssetConfig(modality);
   const hasImageMode = config.imageMode !== undefined;
   const hasVideoMode = config.videoMode !== undefined;
+  const hasSpeechMode = config.speechMode !== undefined;
+  const hasSfxMode = config.sfxMode !== undefined;
   const isCrossModalityConfig = (modality === "image" && hasVideoMode && !hasImageMode)
     || (modality === "video" && hasImageMode && !hasVideoMode)
-    || (modality !== "image" && modality !== "video" && (hasImageMode || hasVideoMode));
+    || (modality === "audio" && (hasImageMode || hasVideoMode || hasSfxMode))
+    || (modality === "sfx" && (hasImageMode || hasVideoMode || hasSpeechMode))
+    || (modality !== "image" && modality !== "video" && modality !== "audio" && modality !== "sfx" && (hasImageMode || hasVideoMode || hasSpeechMode || hasSfxMode))
+    || (modality !== "audio" && hasSpeechMode)
+    || (modality !== "sfx" && hasSfxMode);
   if (isCrossModalityConfig) {
     return defaultConfig;
   }
@@ -173,6 +223,8 @@ export function reconcileSdkworkGenerationAssetConfig(
       imageCount: imageMode.count,
       imageMode,
       quality: imageMode.quality === "2k" ? "high" : "standard",
+      sfxMode: undefined,
+      speechMode: undefined,
       videoMode: undefined,
     };
   }
@@ -185,13 +237,37 @@ export function reconcileSdkworkGenerationAssetConfig(
       durationSeconds: videoMode.duration,
       imageCount: videoMode.count,
       imageMode: undefined,
+      sfxMode: undefined,
+      speechMode: undefined,
       videoMode,
+    };
+  }
+
+  if (modality === "audio") {
+    return {
+      ...next,
+      imageMode: undefined,
+      sfxMode: undefined,
+      speechMode: normalizeSpeechModeConfig(next.speechMode ?? DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG),
+      videoMode: undefined,
+    };
+  }
+
+  if (modality === "sfx") {
+    return {
+      ...next,
+      imageMode: undefined,
+      sfxMode: normalizeSfxModeConfig(next.sfxMode ?? DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG),
+      speechMode: undefined,
+      videoMode: undefined,
     };
   }
 
   return {
     ...next,
     imageMode: undefined,
+    sfxMode: undefined,
+    speechMode: undefined,
     videoMode: undefined,
   };
 }
@@ -213,6 +289,28 @@ export function serializeSdkworkGenerationAssetConfig(
   if (modality === "video" && reconciled.videoMode) {
     result.resolution = reconciled.videoMode.resolution;
     result.syncAudioVideo = reconciled.videoMode.syncAudioVideo;
+  }
+
+  if (modality === "audio" && reconciled.speechMode) {
+    result.speechMode = reconciled.speechMode;
+    if (reconciled.speechMode.voice) {
+      result.voice = reconciled.speechMode.voice;
+    }
+    if (reconciled.speechMode.responseFormat) {
+      result.responseFormat = reconciled.speechMode.responseFormat;
+    }
+    if (reconciled.speechMode.speed !== undefined) {
+      result.speed = reconciled.speechMode.speed;
+    }
+  }
+
+  if (modality === "sfx" && reconciled.sfxMode) {
+    result.sfxMode = reconciled.sfxMode;
+    result.loop = reconciled.sfxMode.loop;
+    result.promptInfluence = reconciled.sfxMode.promptInfluence;
+    if (reconciled.sfxMode.responseFormat) {
+      result.responseFormat = reconciled.sfxMode.responseFormat;
+    }
   }
 
   return result;
@@ -243,6 +341,7 @@ export function createSdkworkGenerationAssetConfigFromSerialized(
       imageCount: serialized.imageCount ?? imageMode.count,
       imageMode,
       quality: serialized.quality ?? (imageMode.quality === "2k" ? "high" : "standard"),
+      sfxMode: undefined,
       videoMode: undefined,
     }, modality);
   }
@@ -264,7 +363,53 @@ export function createSdkworkGenerationAssetConfigFromSerialized(
       imageCount: serialized.imageCount ?? videoMode.count,
       imageMode: undefined,
       quality: serialized.quality ?? defaultConfig.quality,
+      sfxMode: undefined,
+      speechMode: undefined,
       videoMode,
+    }, modality);
+  }
+
+  if (modality === "audio") {
+    const speechMode = normalizeSpeechModeConfig({
+      ...DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG,
+      ...serialized.speechMode,
+      responseFormat: serialized.responseFormat ?? serialized.speechMode?.responseFormat ?? DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG.responseFormat,
+      speed: serialized.speed ?? serialized.speechMode?.speed ?? DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG.speed,
+      voice: serialized.voice ?? serialized.speechMode?.voice,
+    });
+    return reconcileSdkworkGenerationAssetConfig({
+      ...defaultConfig,
+      aspectRatio: serialized.aspectRatio ?? defaultConfig.aspectRatio,
+      durationSeconds: serialized.durationSeconds ?? defaultConfig.durationSeconds,
+      imageCount: serialized.imageCount ?? defaultConfig.imageCount,
+      imageMode: undefined,
+      quality: serialized.quality ?? defaultConfig.quality,
+      sfxMode: undefined,
+      speechMode,
+      videoMode: undefined,
+    }, modality);
+  }
+
+  if (modality === "sfx") {
+    const sfxMode = normalizeSfxModeConfig({
+      ...DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG,
+      ...serialized.sfxMode,
+      loop: serialized.loop ?? serialized.sfxMode?.loop ?? DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG.loop,
+      promptInfluence: serialized.promptInfluence ?? serialized.sfxMode?.promptInfluence ?? DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG.promptInfluence,
+      responseFormat: normalizeSfxResponseFormat(serialized.responseFormat)
+        ?? normalizeSfxResponseFormat(serialized.sfxMode?.responseFormat)
+        ?? DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG.responseFormat,
+    });
+    return reconcileSdkworkGenerationAssetConfig({
+      ...defaultConfig,
+      aspectRatio: serialized.aspectRatio ?? defaultConfig.aspectRatio,
+      durationSeconds: serialized.durationSeconds ?? defaultConfig.durationSeconds,
+      imageCount: serialized.imageCount ?? defaultConfig.imageCount,
+      imageMode: undefined,
+      quality: serialized.quality ?? defaultConfig.quality,
+      sfxMode,
+      speechMode: undefined,
+      videoMode: undefined,
     }, modality);
   }
 
@@ -275,6 +420,8 @@ export function createSdkworkGenerationAssetConfigFromSerialized(
     imageCount: serialized.imageCount ?? defaultConfig.imageCount,
     imageMode: undefined,
     quality: serialized.quality ?? defaultConfig.quality,
+    sfxMode: undefined,
+    speechMode: undefined,
     videoMode: undefined,
   }, modality);
 }
@@ -297,6 +444,26 @@ export function updateSdkworkGenerationVideoModeConfig(
     ...config,
     videoMode,
   }, "video");
+}
+
+export function updateSdkworkGenerationSpeechModeConfig(
+  config: SdkworkGenerationAssetConfig,
+  speechMode: SdkworkGenerationSpeechModeConfig,
+): SdkworkGenerationAssetConfig {
+  return reconcileSdkworkGenerationAssetConfig({
+    ...config,
+    speechMode: normalizeSpeechModeConfig(speechMode),
+  }, "audio");
+}
+
+export function updateSdkworkGenerationSfxModeConfig(
+  config: SdkworkGenerationAssetConfig,
+  sfxMode: SdkworkGenerationSfxModeConfig,
+): SdkworkGenerationAssetConfig {
+  return reconcileSdkworkGenerationAssetConfig({
+    ...config,
+    sfxMode: normalizeSfxModeConfig(sfxMode),
+  }, "sfx");
 }
 
 export function getSdkworkGenerationModelBucket(
@@ -401,6 +568,72 @@ function normalizeImageAspectRatio(
     return aspectRatio;
   }
   return fallback;
+}
+
+function normalizeSpeechModeConfig(
+  speechMode: SdkworkGenerationSpeechModeConfig,
+): SdkworkGenerationSpeechModeConfig {
+  const voice = speechMode.voice?.trim();
+  return {
+    responseFormat: normalizeSpeechResponseFormat(speechMode.responseFormat)
+      ?? DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG.responseFormat,
+    speed: normalizeSpeechSpeed(speechMode.speed)
+      ?? DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG.speed,
+    ...(voice ? { voice } : {}),
+  };
+}
+
+function normalizeSfxModeConfig(
+  sfxMode: Partial<SdkworkGenerationSfxModeConfig>,
+): SdkworkGenerationSfxModeConfig {
+  return {
+    loop: sfxMode.loop === true,
+    promptInfluence: normalizeSfxPromptInfluence(sfxMode.promptInfluence)
+      ?? DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG.promptInfluence,
+    responseFormat: normalizeSfxResponseFormat(sfxMode.responseFormat)
+      ?? DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG.responseFormat,
+  };
+}
+
+function normalizeSpeechResponseFormat(
+  responseFormat: SdkworkGenerationSpeechModeConfig["responseFormat"] | string | undefined,
+): SdkworkGenerationSpeechModeConfig["responseFormat"] | undefined {
+  const normalized = responseFormat?.trim().replace(/^\./u, "").toLowerCase();
+  if (
+    normalized === "aac"
+    || normalized === "flac"
+    || normalized === "mp3"
+    || normalized === "opus"
+    || normalized === "pcm"
+    || normalized === "wav"
+  ) {
+    return normalized;
+  }
+  return undefined;
+}
+
+function normalizeSfxResponseFormat(
+  responseFormat: SdkworkGenerationSfxModeConfig["responseFormat"] | string | undefined,
+): SdkworkGenerationSfxModeConfig["responseFormat"] | undefined {
+  const normalized = responseFormat?.trim().replace(/^\./u, "").toLowerCase();
+  if (normalized === "mp3" || normalized === "wav") {
+    return normalized;
+  }
+  return undefined;
+}
+
+function normalizeSpeechSpeed(speed: number | undefined): number | undefined {
+  if (speed === undefined || !Number.isFinite(speed)) {
+    return undefined;
+  }
+  return Math.min(4, Math.max(0.25, speed));
+}
+
+function normalizeSfxPromptInfluence(promptInfluence: number | undefined): number | undefined {
+  if (promptInfluence === undefined || !Number.isFinite(promptInfluence)) {
+    return undefined;
+  }
+  return Math.min(1, Math.max(0, promptInfluence));
 }
 
 function createUnavailableSdkworkGenerationCreditEstimate(detail: string): SdkworkGenerationCreditEstimate {

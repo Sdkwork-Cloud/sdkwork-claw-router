@@ -31,6 +31,40 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
+  - name: category
+    schema:
+      type: string
+      maxLength: 128
+  - name: platform_type
+    schema:
+      type: string
+      enum:
+      - Desktop
+      - Mobile
+      - Web
+      - Mini Program
+    deprecated: true
+  - name: platform_types
+    schema:
+      type: array
+      maxItems: 4
+      uniqueItems: true
+      items:
+        type: string
+        enum:
+        - Desktop
+        - Mobile
+        - Web
+        - Mini Program
+    style: form
+    explode: false
+  - name: sort
+    schema:
+      type: string
+      enum:
+      - popular_desc
+      - rating_desc
+      - newest_desc
   - name: status
     schema:
       type: string
@@ -53,6 +87,10 @@ frontend_operations:
     name: AppCatalogResponse
     required:
     - items
+    - total
+    - page
+    - pageSize
+    - hasNextPage
     properties:
       items:
         type: array
@@ -176,6 +214,21 @@ frontend_operations:
                   whatsNew:
                     type: string
                     maxLength: 4096
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int32
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+      hasNextPage:
+        type: boolean
 - route: /apps
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
   operation: getAppById

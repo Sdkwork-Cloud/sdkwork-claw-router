@@ -45,7 +45,7 @@ client.set_auth_token("your-auth-token");
 client.set_access_token("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.

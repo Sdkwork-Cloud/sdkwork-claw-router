@@ -1,9 +1,10 @@
 use std::collections::BTreeMap;
 
 use crate::domain::{
-    AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, DomainResult,
+    AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, DecimalValue, DomainResult,
     GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
-    PriceSide, PricingPlan, ProviderAccountPoolRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
+    Money, PriceSide, PricingPlan, ProviderAccountPoolRoute, QuotaPolicy, RoutingPolicy,
+    RoutingRule,
 };
 use crate::infrastructure::sql::rows::{
     AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
@@ -28,6 +29,24 @@ pub struct PricingCatalogRows {
     pub quota_policies: Vec<QuotaPolicyRow>,
     pub api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshotRow>,
     pub prices: Vec<ModelPriceRow>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SqlPricingCatalogSnapshotSummary {
+    pub vendors: usize,
+    pub models: usize,
+    pub provider_routes: usize,
+    pub callable_provider_routes: usize,
+    pub provider_account_pool_routes: usize,
+    pub callable_provider_account_pool_routes: usize,
+    pub provider_account_pool_group_bindings: usize,
+    pub routing_policies: usize,
+    pub routing_rules: usize,
+    pub pricing_plans: usize,
+    pub api_key_groups: usize,
+    pub api_keys: usize,
+    pub prices: usize,
+    pub managed_provider_secrets: usize,
 }
 
 pub struct SqlPricingCatalogSnapshot {
@@ -56,6 +75,10 @@ impl SqlPricingCatalogSnapshot {
         rows: PricingCatalogRows,
         managed_provider_secrets: BTreeMap<String, String>,
     ) -> DomainResult<Self> {
+        let pricing_plans = pricing_plans_with_standard_fallback(map_rows(
+            rows.pricing_plans,
+            PricingPlanRow::try_into_domain,
+        )?)?;
         Ok(Self {
             vendors: map_rows(rows.vendors, ModelVendorRow::try_into_domain)?,
             models: map_rows(rows.models, AiModelRow::try_into_domain)?,
@@ -69,7 +92,7 @@ impl SqlPricingCatalogSnapshot {
             )?,
             routing_policies: map_rows(rows.routing_policies, RoutingPolicyRow::try_into_domain)?,
             routing_rules: map_rows(rows.routing_rules, RoutingRuleRow::try_into_domain)?,
-            pricing_plans: map_rows(rows.pricing_plans, PricingPlanRow::try_into_domain)?,
+            pricing_plans,
             api_key_groups: map_rows(rows.api_key_groups, ApiKeyGroupRow::try_into_domain)?,
             api_keys: rows
                 .api_keys
@@ -92,6 +115,41 @@ impl SqlPricingCatalogSnapshot {
 
     pub fn managed_provider_secrets(&self) -> BTreeMap<String, String> {
         self.managed_provider_secrets.clone()
+    }
+
+    pub fn summary(&self) -> SqlPricingCatalogSnapshotSummary {
+        SqlPricingCatalogSnapshotSummary {
+            vendors: self.vendors.len(),
+            models: self.models.len(),
+            provider_routes: self.provider_routes.len(),
+            callable_provider_routes: self
+                .provider_routes
+                .iter()
+                .filter(|route| {
+                    has_text(route.base_url.as_deref()) && has_text(route.secret_ref.as_deref())
+                })
+                .count(),
+            provider_account_pool_routes: self.provider_account_pool_routes.len(),
+            callable_provider_account_pool_routes: self
+                .provider_account_pool_routes
+                .iter()
+                .filter(|route| {
+                    has_text(route.base_url.as_deref()) && has_text(route.secret_ref.as_deref())
+                })
+                .count(),
+            provider_account_pool_group_bindings: self
+                .provider_account_pool_routes
+                .iter()
+                .map(|route| route.group_bindings.len())
+                .sum(),
+            routing_policies: self.routing_policies.len(),
+            routing_rules: self.routing_rules.len(),
+            pricing_plans: self.pricing_plans.len(),
+            api_key_groups: self.api_key_groups.len(),
+            api_keys: self.api_keys.len(),
+            prices: self.prices.len(),
+            managed_provider_secrets: self.managed_provider_secrets.len(),
+        }
     }
 }
 
@@ -404,6 +462,27 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
 
 fn map_rows<R, T>(rows: Vec<R>, mapper: impl Fn(R) -> DomainResult<T>) -> DomainResult<Vec<T>> {
     rows.into_iter().map(mapper).collect()
+}
+
+fn pricing_plans_with_standard_fallback(
+    mut pricing_plans: Vec<PricingPlan>,
+) -> DomainResult<Vec<PricingPlan>> {
+    if pricing_plans
+        .iter()
+        .all(|plan| plan.plan_code.trim() != "standard")
+    {
+        pricing_plans.push(PricingPlan::new(
+            "standard",
+            PriceSide::OfficialReference,
+            DecimalValue::parse("1.000000")?,
+            Money::usd("0.000000")?,
+        ));
+    }
+    Ok(pricing_plans)
+}
+
+fn has_text(value: Option<&str>) -> bool {
+    value.map(str::trim).is_some_and(|value| !value.is_empty())
 }
 
 fn option_matches(actual: Option<&str>, expected: Option<&str>) -> bool {

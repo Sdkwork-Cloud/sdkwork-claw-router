@@ -14,7 +14,7 @@ public class AppInstalledSkillItem {
     public Map<String, String> getConfig() {
         return this.config;
     }
-    
+
     public void setConfig(Map<String, String> config) {
         this.config = config;
     }
@@ -22,7 +22,7 @@ public class AppInstalledSkillItem {
     public Boolean getEnabled() {
         return this.enabled;
     }
-    
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -30,7 +30,7 @@ public class AppInstalledSkillItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -38,7 +38,7 @@ public class AppInstalledSkillItem {
     public String getInstalledAt() {
         return this.installedAt;
     }
-    
+
     public void setInstalledAt(String installedAt) {
         this.installedAt = installedAt;
     }
@@ -46,7 +46,7 @@ public class AppInstalledSkillItem {
     public String getLastEnabledAt() {
         return this.lastEnabledAt;
     }
-    
+
     public void setLastEnabledAt(String lastEnabledAt) {
         this.lastEnabledAt = lastEnabledAt;
     }
@@ -54,7 +54,7 @@ public class AppInstalledSkillItem {
     public SkillCatalogItem getSkill() {
         return this.skill;
     }
-    
+
     public void setSkill(SkillCatalogItem skill) {
         this.skill = skill;
     }
@@ -62,7 +62,7 @@ public class AppInstalledSkillItem {
     public String getSkillId() {
         return this.skillId;
     }
-    
+
     public void setSkillId(String skillId) {
         this.skillId = skillId;
     }

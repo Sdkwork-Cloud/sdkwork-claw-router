@@ -1,14 +1,13 @@
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminAppStore;
 use sdkwork_claw_product::ports::{
-    AdminAppStore, AdminAppSubject, CreateAdminAppCommand, DeleteAdminAppCommand, GetAdminAppQuery,
-    ListAdminAppsQuery, SetAdminAppStatusCommand, UpdateAdminAppCommand,
+    AdminAppStore, AdminAppSubject, CreateAdminAppCommand, CreateAdminAppTemplateCommand,
+    DeleteAdminAppCommand, DeleteAdminAppTemplateCommand, GetAdminAppQuery,
+    ListAdminAppTemplatesQuery, ListAdminAppsQuery, SetAdminAppStatusCommand,
+    SetAdminAppTemplatePublishStatusCommand, UpdateAdminAppCommand, UpdateAdminAppTemplateCommand,
 };
 use serde_json::json;
 use sqlx::sqlite::SqlitePoolOptions;
-use sqlx::Row;
+use sqlx::{Row, SqlitePool};
 
 const TENANT_ID: i64 = 42;
 const ORGANIZATION_ID: i64 = 84;
@@ -18,17 +17,7 @@ const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 
 #[tokio::test]
 async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and_audit() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
     let subject = admin_subject();
@@ -181,6 +170,7 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
             status: Some("INACTIVE".to_owned()),
             market_status: Some("PUBLISHED".to_owned()),
             app_type: Some("react".to_owned()),
+            category_id: None,
             page_no: Some(1),
             page_size: Some(10),
         })
@@ -292,18 +282,255 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
 }
 
 #[tokio::test]
-async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
+async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
+    let pool = sqlite_pool().await;
+
+    let store = SqliteAdminAppStore::new(pool.clone());
+    let subject = admin_subject();
+
+    let created = store
+        .create_app_template(CreateAdminAppTemplateCommand {
+            subject,
+            template_uuid: "admin-app-template-agent-dashboard".to_owned(),
+            audit_log_uuid: "audit-create-admin-app-template-agent-dashboard".to_owned(),
+            template_no: "TPL-AGENT-DASHBOARD".to_owned(),
+            template_code: "agent-dashboard".to_owned(),
+            template_name: "Agent Dashboard".to_owned(),
+            description: Some("Start from an agent operations shell.".to_owned()),
+            category_id: Some(6001),
+            category_code: Some("operations".to_owned()),
+            template_type: Some("dashboard".to_owned()),
+            runtime: Some("web".to_owned()),
+            framework: Some("react".to_owned()),
+            language: Some("typescript".to_owned()),
+            icon_url: Some("https://cdn.example.test/templates/agent.svg".to_owned()),
+            cover_url: Some("https://cdn.example.test/templates/agent.png".to_owned()),
+            visibility: "TENANT".to_owned(),
+            publish_status: "DRAFT".to_owned(),
+            featured: true,
+            sort_weight: 90,
+            source_app_id: None,
+            git_repo_url: Some("https://github.com/sdkwork/app-templates.git".to_owned()),
+            git_ref: Some("main".to_owned()),
+            git_sub_path: Some("apps/agent-dashboard".to_owned()),
+            app_config_schema: json!({"type": "object"}),
+            default_app_config: json!({"theme": "light"}),
+            variable_schema: json!({"required": ["agentId"]}),
+            dependency_manifest: json!([{"name": "@sdkwork/runtime"}]),
+            capability_manifest: json!([{"capability": "agent"}]),
+            request_id: "req-create-admin-app-template".to_owned(),
+            requested_at: "2026-05-09 12:00:00".to_owned(),
+        })
         .await
         .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+
+    assert!(
+        created.id > ASSIGNED_ID_FLOOR,
+        "admin-created app templates must use Java-compatible assigned ids"
+    );
+    assert_eq!("agent-dashboard", created.template_code);
+    assert_eq!("TENANT", created.visibility);
+    assert_eq!("DRAFT", created.publish_status);
+    assert_eq!(true, created.featured);
+    assert_eq!(
+        Some("https://github.com/sdkwork/app-templates.git"),
+        created.git_repo_url.as_deref()
+    );
+    assert_eq!(Some("main"), created.git_ref.as_deref());
+    assert_eq!(
+        Some("apps/agent-dashboard"),
+        created.git_sub_path.as_deref()
+    );
+
+    let stored_template: (i64, i64, String, String, String) =
+        sqlx::query_as("SELECT visibility, publish_status, git_repo_url, git_ref, git_sub_path FROM studio_app_template WHERE id = ?")
+            .bind(created.id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!(
+        (
+            1,
+            1,
+            "https://github.com/sdkwork/app-templates.git".to_owned(),
+            "main".to_owned(),
+            "apps/agent-dashboard".to_owned()
+        ),
+        stored_template
+    );
+
+    let updated = store
+        .update_app_template(UpdateAdminAppTemplateCommand {
+            subject,
+            template_id: created.id,
+            audit_log_uuid: "audit-update-admin-app-template-agent-dashboard".to_owned(),
+            template_name: Some("Agent Dashboard Pro".to_owned()),
+            description: None,
+            category_id: None,
+            category_code: None,
+            template_type: None,
+            runtime: None,
+            framework: Some(Some("react-router".to_owned())),
+            language: None,
+            icon_url: None,
+            cover_url: None,
+            visibility: None,
+            publish_status: None,
+            featured: Some(false),
+            sort_weight: None,
+            source_app_id: None,
+            git_repo_url: Some(Some("git@github.com:sdkwork/app-templates.git".to_owned())),
+            git_ref: Some(Some("release/2026.05".to_owned())),
+            git_sub_path: Some(Some("apps/agent-dashboard-pro".to_owned())),
+            app_config_schema: None,
+            default_app_config: Some(json!({"theme": "dark"})),
+            variable_schema: None,
+            dependency_manifest: None,
+            capability_manifest: None,
+            request_id: "req-update-admin-app-template".to_owned(),
+            requested_at: "2026-05-09 12:01:00".to_owned(),
+        })
+        .await
         .unwrap()
-        .ensure_installed()
+        .unwrap();
+
+    assert_eq!("Agent Dashboard Pro", updated.template_name);
+    assert_eq!("react-router", updated.framework.as_deref().unwrap());
+    assert_eq!(false, updated.featured);
+    assert_eq!(
+        Some("git@github.com:sdkwork/app-templates.git"),
+        updated.git_repo_url.as_deref()
+    );
+    assert_eq!(Some("release/2026.05"), updated.git_ref.as_deref());
+    assert_eq!(
+        Some("apps/agent-dashboard-pro"),
+        updated.git_sub_path.as_deref()
+    );
+    assert_eq!("dark", updated.default_app_config["theme"]);
+
+    let published = store
+        .set_app_template_publish_status(SetAdminAppTemplatePublishStatusCommand {
+            subject,
+            template_id: created.id,
+            publish_status: "PUBLISHED".to_owned(),
+            audit_log_uuid: "audit-publish-admin-app-template-agent-dashboard".to_owned(),
+            request_id: "req-publish-admin-app-template".to_owned(),
+            requested_at: "2026-05-09 12:02:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!("PUBLISHED", published.publish_status);
+
+    let listed = store
+        .list_app_templates(ListAdminAppTemplatesQuery {
+            subject,
+            keyword: Some("Agent".to_owned()),
+            publish_status: Some("PUBLISHED".to_owned()),
+            template_type: Some("dashboard".to_owned()),
+            runtime: Some("web".to_owned()),
+            category_id: Some(6001),
+            page_no: Some(1),
+            page_size: Some(10),
+        })
         .await
         .unwrap();
+    assert_eq!(
+        vec![created.id],
+        listed.iter().map(|item| item.id).collect::<Vec<_>>()
+    );
+
+    let offline = store
+        .set_app_template_publish_status(SetAdminAppTemplatePublishStatusCommand {
+            subject,
+            template_id: created.id,
+            publish_status: "OFFLINE".to_owned(),
+            audit_log_uuid: "audit-offline-admin-app-template-agent-dashboard".to_owned(),
+            request_id: "req-offline-admin-app-template".to_owned(),
+            requested_at: "2026-05-09 12:03:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!("OFFLINE", offline.publish_status);
+
+    sqlx::query(
+        r#"
+        INSERT INTO studio_catalog_asset
+            (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_url)
+        VALUES
+            ('admin-app-template-asset-agent-dashboard', ?, ?, 16, ?, 1, 'https://cdn.example.test/templates/agent.svg')
+        "#,
+    )
+    .bind(TENANT_ID)
+    .bind(ORGANIZATION_ID)
+    .bind(created.id)
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let deleted = store
+        .delete_app_template(DeleteAdminAppTemplateCommand {
+            subject,
+            template_id: created.id,
+            audit_log_uuid: "audit-delete-admin-app-template-agent-dashboard".to_owned(),
+            request_id: "req-delete-admin-app-template".to_owned(),
+            requested_at: "2026-05-09 12:04:00".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert!(deleted);
+
+    let template_status: i64 =
+        sqlx::query_scalar("SELECT status FROM studio_app_template WHERE id = ?")
+            .bind(created.id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!(-1, template_status);
+    let asset_rows: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM studio_catalog_asset WHERE target_type = 16 AND target_id = ?",
+    )
+    .bind(created.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, asset_rows);
+
+    let audit_rows = sqlx::query(
+        r#"
+        SELECT action, target_type, target_id
+        FROM ops_audit_log
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND target_type = 16
+        ORDER BY id
+        "#,
+    )
+    .bind(TENANT_ID)
+    .bind(ORGANIZATION_ID)
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    assert_eq!(5, audit_rows.len());
+    assert_eq!(
+        "create_app_template",
+        audit_rows[0].get::<String, _>("action")
+    );
+    assert_eq!(
+        "publish_app_template",
+        audit_rows[2].get::<String, _>("action")
+    );
+    assert_eq!(
+        "delete_app_template",
+        audit_rows[4].get::<String, _>("action")
+    );
+    assert_eq!(created.id, audit_rows[4].get::<i64, _>("target_id"));
+}
+
+#[tokio::test]
+async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status() {
+    let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
     let subject = admin_subject();
@@ -368,17 +595,7 @@ async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status()
 
 #[tokio::test]
 async fn sqlite_admin_app_store_rejects_invalid_market_status_values() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
     let subject = admin_subject();
@@ -485,17 +702,7 @@ async fn sqlite_admin_app_store_rejects_invalid_market_status_values() {
 
 #[tokio::test]
 async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
     let subject = admin_subject();
@@ -563,17 +770,7 @@ async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
 
 #[tokio::test]
 async fn sqlite_admin_app_store_lists_app_center_visible_catalog_scopes() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = sqlite_pool().await;
 
     insert_admin_visible_app(
         &pool,
@@ -612,6 +809,7 @@ async fn sqlite_admin_app_store_lists_app_center_visible_catalog_scopes() {
             status: Some("ACTIVE".to_owned()),
             market_status: Some("PUBLISHED".to_owned()),
             app_type: Some("web".to_owned()),
+            category_id: None,
             page_no: Some(1),
             page_size: Some(20),
         })
@@ -670,8 +868,178 @@ fn admin_subject() -> AdminAppSubject {
     }
 }
 
+async fn sqlite_pool() -> SqlitePool {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_admin_app_store_tables(&pool).await;
+    pool
+}
+
+async fn create_admin_app_store_tables(pool: &SqlitePool) {
+    for statement in [
+        r#"
+        CREATE TABLE plus_app (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            data_scope INTEGER,
+            user_id INTEGER,
+            name TEXT NOT NULL,
+            icon TEXT,
+            resource_list TEXT,
+            project_id INTEGER,
+            description TEXT,
+            version TEXT,
+            icon_url TEXT,
+            access_url TEXT,
+            config TEXT,
+            status INTEGER,
+            app_type TEXT,
+            platforms TEXT,
+            install_platforms TEXT,
+            install_skill TEXT,
+            install_config TEXT,
+            release_notes TEXT,
+            package_name TEXT,
+            bundle_id TEXT,
+            store_url TEXT,
+            download_url TEXT,
+            created_at TEXT,
+            updated_at TEXT,
+            v INTEGER
+        )
+        "#,
+        r#"
+        CREATE TABLE plus_category (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            data_scope INTEGER,
+            name TEXT NOT NULL,
+            description TEXT,
+            type INTEGER NOT NULL,
+            group_name TEXT,
+            code TEXT,
+            icon TEXT,
+            sort_weight INTEGER,
+            parent_id INTEGER,
+            path TEXT,
+            visible INTEGER,
+            status INTEGER,
+            created_at TEXT,
+            updated_at TEXT,
+            v INTEGER
+        )
+        "#,
+        r#"
+        CREATE TABLE studio_catalog_action (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            target_type INTEGER NOT NULL,
+            target_id INTEGER NOT NULL
+        )
+        "#,
+        r#"
+        CREATE TABLE studio_catalog_asset (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            target_type INTEGER NOT NULL,
+            target_id INTEGER NOT NULL,
+            artifact_id INTEGER,
+            asset_type INTEGER,
+            asset_url TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE studio_catalog_artifact (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            target_type INTEGER NOT NULL,
+            target_id INTEGER NOT NULL,
+            artifact_type INTEGER,
+            version TEXT,
+            platform_type TEXT,
+            os_name TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE studio_app_template (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL UNIQUE,
+            created_at TEXT,
+            updated_at TEXT,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            version INTEGER NOT NULL DEFAULT 0,
+            template_no TEXT NOT NULL,
+            template_code TEXT NOT NULL,
+            template_name TEXT NOT NULL,
+            description TEXT,
+            category_id INTEGER,
+            category_code TEXT,
+            template_type TEXT,
+            runtime TEXT,
+            framework TEXT,
+            language TEXT,
+            icon_url TEXT,
+            cover_url TEXT,
+            visibility INTEGER NOT NULL DEFAULT 1,
+            publish_status INTEGER NOT NULL DEFAULT 1,
+            featured INTEGER NOT NULL DEFAULT 0,
+            sort_weight INTEGER NOT NULL DEFAULT 0,
+            owner_user_id INTEGER,
+            source_app_id INTEGER,
+            git_repo_url TEXT,
+            git_ref TEXT,
+            git_sub_path TEXT,
+            current_version_id INTEGER,
+            app_config_schema TEXT NOT NULL DEFAULT '{}',
+            default_app_config TEXT NOT NULL DEFAULT '{}',
+            variable_schema TEXT NOT NULL DEFAULT '{}',
+            dependency_manifest TEXT NOT NULL DEFAULT '[]',
+            capability_manifest TEXT NOT NULL DEFAULT '[]',
+            metadata TEXT NOT NULL DEFAULT '{}',
+            published_at TEXT,
+            deprecated_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ops_audit_log (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            action TEXT NOT NULL,
+            target_type INTEGER NOT NULL,
+            target_id INTEGER NOT NULL,
+            request_id TEXT,
+            operator_id INTEGER,
+            operator_type INTEGER,
+            change_summary TEXT,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+        "#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
 async fn insert_admin_visible_app(
-    pool: &sqlx::SqlitePool,
+    pool: &SqlitePool,
     id: i64,
     tenant_id: i64,
     organization_id: i64,

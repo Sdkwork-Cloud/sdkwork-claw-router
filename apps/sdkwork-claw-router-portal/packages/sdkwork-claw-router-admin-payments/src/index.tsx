@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BarChart3, CreditCard, Receipt, ShieldCheck } from 'lucide-react';
 import { AdminResourceCenter, type AdminResourceSection } from 'sdkwork-claw-router-commons';
@@ -38,6 +38,8 @@ type PaymentProviderAccountFormState = {
   secretRef: string;
   certificateRef: string;
   webhookSecretRef: string;
+  rotatedAt: string;
+  note: string;
   status: string;
 };
 
@@ -45,7 +47,7 @@ const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
 const DEFAULT_PAYMENTS_SECTION_ID: PaymentsAdminTab = 'providerAccounts';
 const DEFAULT_PAYMENT_PROVIDER_ACCOUNT_FORM: PaymentProviderAccountFormState = {
   accountNo: '',
-  providerCode: 'stripe',
+  providerCode: '',
   merchantId: '',
   environment: 'sandbox',
   countryCode: 'US',
@@ -53,6 +55,8 @@ const DEFAULT_PAYMENT_PROVIDER_ACCOUNT_FORM: PaymentProviderAccountFormState = {
   secretRef: '',
   certificateRef: '',
   webhookSecretRef: '',
+  rotatedAt: '',
+  note: '',
   status: 'active',
 };
 
@@ -87,13 +91,63 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
   const [providerAccountSaving, setProviderAccountSaving] = useState(false);
   const [providerAccountError, setProviderAccountError] = useState<string | null>(null);
   const [providerAccountSuccess, setProviderAccountSuccess] = useState<string | null>(null);
+  const [providerAccountRefreshKey, setProviderAccountRefreshKey] = useState(0);
+  const [paymentProviderCodeOptions, setPaymentProviderCodeOptions] = useState<
+    readonly PaymentProviderAccountSelectOption[]
+  >([]);
+  const paymentProviderEnvironmentOptions = useMemo<readonly PaymentProviderAccountSelectOption[]>(
+    () => [
+      { value: 'sandbox', label: t('admin.commerce.payments.providerAccounts.environment.sandbox', 'Sandbox') },
+      { value: 'production', label: t('admin.commerce.payments.providerAccounts.environment.production', 'Production') },
+    ],
+    [t],
+  );
+  const paymentProviderAccountStatusOptions = useMemo<readonly PaymentProviderAccountSelectOption[]>(
+    () => [
+      { value: 'active', label: t('admin.commerce.payments.providerAccounts.status.active', 'Active') },
+      { value: 'inactive', label: t('admin.commerce.payments.providerAccounts.status.inactive', 'Inactive') },
+      { value: 'disabled', label: t('admin.commerce.payments.providerAccounts.status.disabled', 'Disabled') },
+    ],
+    [t],
+  );
+
+  const loadPaymentProviderOptions = useCallback(async () => {
+    try {
+      const response = await backendPaymentsProvidersList(DEFAULT_PAGE_PARAMS);
+      const options = readPaymentProviderCodeOptions(response);
+      setPaymentProviderCodeOptions(options);
+      setProviderAccountForm((current) => {
+        if (options.some((option) => option.value === current.providerCode)) {
+          return current;
+        }
+        return {
+          ...current,
+          providerCode: firstPaymentProviderCode(options),
+        };
+      });
+    } catch (error) {
+      setProviderAccountError(error instanceof Error && error.message
+        ? error.message
+        : t('admin.commerce.payments.providerAccounts.providerOptionsError', 'Payment providers could not be loaded.'));
+    }
+  }, [t]);
+
+  useEffect(() => {
+    void loadPaymentProviderOptions();
+  }, [loadPaymentProviderOptions]);
 
   const openProviderAccountForm = useCallback(() => {
-    setProviderAccountForm(DEFAULT_PAYMENT_PROVIDER_ACCOUNT_FORM);
+    setProviderAccountForm({
+      ...DEFAULT_PAYMENT_PROVIDER_ACCOUNT_FORM,
+      providerCode: firstPaymentProviderCode(paymentProviderCodeOptions),
+    });
     setProviderAccountError(null);
     setProviderAccountSuccess(null);
+    if (paymentProviderCodeOptions.length === 0) {
+      void loadPaymentProviderOptions();
+    }
     setProviderAccountFormOpen(true);
-  }, []);
+  }, [loadPaymentProviderOptions, paymentProviderCodeOptions]);
 
   const paymentSections = useMemo<AdminResourceSection<PaymentsAdminTab, PaymentsAdminGroup>[]>(() => [
     {
@@ -107,10 +161,13 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'displayName', label: t('admin.col.name', 'Name') },
         { key: 'providerType', label: t('admin.col.type', 'Type') },
+        { key: 'supportedCountries', label: t('admin.col.countries', 'Countries') },
+        { key: 'supportedCurrencies', label: t('admin.col.currencies', 'Currencies') },
+        { key: 'capabilities', label: t('admin.col.capabilities', 'Capabilities') },
         { key: 'status', label: t('admin.col.status', 'Status') },
         { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['providerCode', 'displayName', 'providerType', 'status'],
+      searchFields: ['providerCode', 'displayName', 'providerType', 'supportedCountries', 'supportedCurrencies', 'capabilities', 'status'],
     },
     {
       id: 'providerAccounts',
@@ -125,10 +182,14 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'merchantId', label: t('admin.col.merchant', 'Merchant') },
         { key: 'environment', label: t('admin.col.env', 'Env') },
+        { key: 'countryCode', label: t('admin.col.country', 'Country') },
         { key: 'settlementCurrency', label: t('admin.col.currency', 'Currency') },
         { key: 'status', label: t('admin.col.status', 'Status') },
+        { key: 'rotatedAt', label: t('admin.col.rotated', 'Rotated') },
+        { key: 'note', label: t('admin.col.note', 'Note') },
+        { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['accountNo', 'providerCode', 'merchantId', 'environment', 'countryCode', 'settlementCurrency', 'status'],
+      searchFields: ['accountNo', 'providerCode', 'merchantId', 'environment', 'countryCode', 'settlementCurrency', 'status', 'rotatedAt', 'note'],
     },
     {
       id: 'methods',
@@ -140,11 +201,14 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       columns: [
         { key: 'methodCode', label: t('admin.col.method', 'Method') },
         { key: 'displayName', label: t('admin.col.name', 'Name') },
+        { key: 'methodType', label: t('admin.col.type', 'Type') },
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
+        { key: 'checkoutScenes', label: t('admin.col.scenes', 'Scenes') },
+        { key: 'sortOrder', label: t('admin.col.sort', 'Sort'), align: 'right' },
         { key: 'status', label: t('admin.col.status', 'Status') },
         { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['methodCode', 'displayName', 'providerCode', 'status'],
+      searchFields: ['methodCode', 'displayName', 'methodType', 'providerCode', 'checkoutScenes', 'status'],
     },
     {
       id: 'channels',
@@ -156,12 +220,16 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       columns: [
         { key: 'channelNo', label: t('admin.col.channel', 'Channel') },
         { key: 'methodCode', label: t('admin.col.method', 'Method') },
+        { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'providerAccountId', label: t('admin.col.account', 'Account') },
+        { key: 'sceneCode', label: t('admin.col.scene', 'Scene') },
         { key: 'countryCode', label: t('admin.col.country', 'Country') },
         { key: 'currencyCode', label: t('admin.col.currency', 'Currency') },
+        { key: 'priority', label: t('admin.col.priority', 'Priority'), align: 'right' },
         { key: 'status', label: t('admin.col.status', 'Status') },
+        { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['channelNo', 'methodCode', 'providerAccountId', 'countryCode', 'currencyCode', 'sceneCode', 'status'],
+      searchFields: ['channelNo', 'methodCode', 'providerAccountId', 'countryCode', 'currencyCode', 'sceneCode', 'status', 'updatedAt'],
     },
     {
       id: 'routeRules',
@@ -173,11 +241,16 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       columns: [
         { key: 'ruleNo', label: t('admin.col.rule', 'Rule') },
         { key: 'methodCode', label: t('admin.col.method', 'Method') },
+        { key: 'sceneCode', label: t('admin.col.scene', 'Scene') },
+        { key: 'countryCode', label: t('admin.col.country', 'Country') },
         { key: 'currencyCode', label: t('admin.col.currency', 'Currency') },
+        { key: 'channelId', label: t('admin.col.channel', 'Channel') },
+        { key: 'fallbackEnabled', label: t('admin.col.fallback', 'Fallback') },
         { key: 'priority', label: t('admin.col.priority', 'Priority'), align: 'right' },
         { key: 'status', label: t('admin.col.status', 'Status') },
+        { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['ruleNo', 'methodCode', 'currencyCode', 'countryCode', 'sceneCode', 'status'],
+      searchFields: ['ruleNo', 'methodCode', 'currencyCode', 'countryCode', 'sceneCode', 'status', 'updatedAt'],
     },
     {
       id: 'intents',
@@ -189,12 +262,16 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       columns: [
         { key: 'intentNo', label: t('admin.col.intent', 'Intent') },
         { key: 'orderId', label: t('admin.col.order', 'Order') },
+        { key: 'subjectType', label: t('admin.col.subjectType', 'Subject Type') },
+        { key: 'methodCode', label: t('admin.col.method', 'Method') },
+        { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'amount', label: t('admin.col.amount', 'Amount'), align: 'right' },
         { key: 'currencyCode', label: t('admin.col.currency', 'Currency') },
         { key: 'status', label: t('admin.col.status', 'Status') },
         { key: 'createdAt', label: t('admin.col.created', 'Created') },
+        { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['intentNo', 'orderId', 'status', 'currencyCode', 'providerCode'],
+      searchFields: ['intentNo', 'orderId', 'status', 'currencyCode', 'methodCode', 'providerCode', 'createdAt', 'updatedAt'],
     },
     {
       id: 'attempts',
@@ -206,12 +283,17 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       columns: [
         { key: 'attemptNo', label: t('admin.col.attempt', 'Attempt') },
         { key: 'intentId', label: t('admin.col.intent', 'Intent') },
+        { key: 'methodCode', label: t('admin.col.method', 'Method') },
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
+        { key: 'externalTradeNo', label: t('admin.col.externalTrade', 'External Trade') },
         { key: 'amount', label: t('admin.col.amount', 'Amount'), align: 'right' },
+        { key: 'currencyCode', label: t('admin.col.currency', 'Currency') },
         { key: 'status', label: t('admin.col.status', 'Status') },
+        { key: 'paidAt', label: t('admin.col.paid', 'Paid') },
         { key: 'createdAt', label: t('admin.col.created', 'Created') },
+        { key: 'updatedAt', label: t('admin.col.updated', 'Updated') },
       ],
-      searchFields: ['attemptNo', 'intentId', 'providerCode', 'status', 'externalTradeNo'],
+      searchFields: ['attemptNo', 'intentId', 'methodCode', 'providerCode', 'status', 'externalTradeNo', 'createdAt', 'updatedAt'],
     },
     {
       id: 'webhookEvents',
@@ -224,8 +306,10 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
         { key: 'eventNo', label: t('admin.col.event', 'Event') },
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'eventType', label: t('admin.col.type', 'Type') },
+        { key: 'externalEventId', label: t('admin.col.externalEvent', 'External Event') },
         { key: 'processStatus', label: t('admin.col.process', 'Process') },
         { key: 'receivedAt', label: t('admin.col.received', 'Received') },
+        { key: 'processedAt', label: t('admin.col.processed', 'Processed') },
       ],
       searchFields: ['eventNo', 'providerCode', 'eventType', 'processStatus', 'externalEventId'],
     },
@@ -241,9 +325,10 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
         { key: 'providerCode', label: t('admin.col.provider', 'Provider') },
         { key: 'businessDate', label: t('admin.col.businessDate', 'Business Date') },
         { key: 'status', label: t('admin.col.status', 'Status') },
+        { key: 'createdAt', label: t('admin.col.created', 'Created') },
         { key: 'finishedAt', label: t('admin.col.finished', 'Finished') },
       ],
-      searchFields: ['runNo', 'providerCode', 'businessDate', 'status'],
+      searchFields: ['runNo', 'providerCode', 'businessDate', 'status', 'createdAt'],
     },
   ], [t, openProviderAccountForm]);
 
@@ -255,6 +340,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
     try {
       const response = await backendPaymentsProviderAccountsCreate(toPaymentProviderAccountRequest(providerAccountForm));
       setProviderAccountSuccess(t('admin.commerce.payments.providerAccounts.saveSuccess', 'Provider account request accepted: {{requestNo}}', { requestNo: readCommerceOperationRequestNo(response) }));
+      setProviderAccountRefreshKey((current) => current + 1);
       setProviderAccountForm(DEFAULT_PAYMENT_PROVIDER_ACCOUNT_FORM);
       setProviderAccountFormOpen(false);
     } catch (error) {
@@ -267,17 +353,16 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
   return (
     <>
       <AdminResourceCenter
-        activeSectionId={activeSectionId}
-        description={t('admin.commerce.payments.desc', 'Payment provider setup, routing, runtime attempts, webhook events, and reconciliation.')}
         emptyTitle={t('admin.commerce.payments.empty', 'No payment records')}
         errorTitle={t('admin.commerce.payments.error', 'Payment data could not be loaded')}
-        icon={<CreditCard className="h-5 w-5 text-blue-500" />}
-        initialSectionId="providerAccounts"
+        activeSectionId={activeSectionId}
+        initialSectionId={DEFAULT_PAYMENTS_SECTION_ID}
+        key={activeSectionId}
         loadingTitle={t('admin.commerce.payments.loading', 'Loading payment records...')}
+        refreshKey={providerAccountRefreshKey}
         sections={paymentSections}
         showSectionNavigation={false}
         tableViewportDataAttribute="admin-payments-table-viewport"
-        title={t('admin.commerce.payments.title', 'Payments')}
       />
       {providerAccountFormOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
@@ -293,15 +378,19 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
             </div>
             <div className="grid gap-4 p-5 md:grid-cols-2">
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.accountNo', 'Account No')} value={providerAccountForm.accountNo} onChange={(accountNo) => setProviderAccountForm((current) => ({ ...current, accountNo }))} required />
-              <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.providerCode', 'Provider code')} value={providerAccountForm.providerCode} onChange={(providerCode) => setProviderAccountForm((current) => ({ ...current, providerCode }))} required />
+              <PaymentProviderAccountSelect disabled={paymentProviderCodeOptions.length === 0} emptyLabel={t('admin.commerce.payments.providerAccounts.providerOptionsEmpty', 'No configured providers')} label={t('admin.commerce.payments.providerAccounts.providerCode', 'Provider code')} value={providerAccountForm.providerCode} onChange={(providerCode) => setProviderAccountForm((current) => ({ ...current, providerCode }))} options={paymentProviderCodeOptions} required />
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.merchantId', 'Merchant ID')} value={providerAccountForm.merchantId} onChange={(merchantId) => setProviderAccountForm((current) => ({ ...current, merchantId }))} required />
-              <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.environment', 'Environment')} value={providerAccountForm.environment} onChange={(environment) => setProviderAccountForm((current) => ({ ...current, environment }))} required />
+              <PaymentProviderAccountSelect label={t('admin.commerce.payments.providerAccounts.environment', 'Environment')} value={providerAccountForm.environment} onChange={(environment) => setProviderAccountForm((current) => ({ ...current, environment }))} options={paymentProviderEnvironmentOptions} required />
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.countryCode', 'Country code')} value={providerAccountForm.countryCode} onChange={(countryCode) => setProviderAccountForm((current) => ({ ...current, countryCode }))} required />
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.settlementCurrency', 'Settlement currency')} value={providerAccountForm.settlementCurrency} onChange={(settlementCurrency) => setProviderAccountForm((current) => ({ ...current, settlementCurrency }))} required />
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.secretRef', 'Secret ref')} value={providerAccountForm.secretRef} onChange={(secretRef) => setProviderAccountForm((current) => ({ ...current, secretRef }))} required />
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.certificateRef', 'Certificate ref')} value={providerAccountForm.certificateRef} onChange={(certificateRef) => setProviderAccountForm((current) => ({ ...current, certificateRef }))} />
               <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.webhookSecretRef', 'Webhook secret ref')} value={providerAccountForm.webhookSecretRef} onChange={(webhookSecretRef) => setProviderAccountForm((current) => ({ ...current, webhookSecretRef }))} />
-              <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.status', 'Status')} value={providerAccountForm.status} onChange={(status) => setProviderAccountForm((current) => ({ ...current, status }))} required />
+              <PaymentProviderAccountInput label={t('admin.commerce.payments.providerAccounts.rotatedAt', 'Rotated at')} value={providerAccountForm.rotatedAt} onChange={(rotatedAt) => setProviderAccountForm((current) => ({ ...current, rotatedAt }))} />
+              <PaymentProviderAccountSelect label={t('admin.commerce.payments.providerAccounts.status', 'Status')} value={providerAccountForm.status} onChange={(status) => setProviderAccountForm((current) => ({ ...current, status }))} options={paymentProviderAccountStatusOptions} required />
+              <div className="md:col-span-2">
+                <PaymentProviderAccountTextArea label={t('admin.commerce.payments.providerAccounts.note', 'Note')} value={providerAccountForm.note} onChange={(note) => setProviderAccountForm((current) => ({ ...current, note }))} />
+              </div>
             </div>
             {(providerAccountError || providerAccountSuccess) && (
               <div className="px-5 pb-4">
@@ -325,7 +414,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
               </button>
               <button
                 className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:opacity-60"
-                disabled={providerAccountSaving}
+                disabled={providerAccountSaving || paymentProviderCodeOptions.length === 0}
                 type="submit"
               >
                 {providerAccountSaving ? t('admin.action.saving', 'Saving...') : t('admin.commerce.payments.providerAccounts.save', 'Save account')}
@@ -362,6 +451,74 @@ function PaymentProviderAccountInput({
   );
 }
 
+type PaymentProviderAccountSelectOption = {
+  label: string;
+  value: string;
+};
+
+function PaymentProviderAccountSelect({
+  disabled = false,
+  emptyLabel,
+  label,
+  onChange,
+  options,
+  required = false,
+  value,
+}: {
+  disabled?: boolean;
+  emptyLabel?: string;
+  label: string;
+  onChange: (value: string) => void;
+  options: readonly PaymentProviderAccountSelectOption[];
+  required?: boolean;
+  value: string;
+}) {
+  return (
+    <label className="block text-sm">
+      <span className="font-medium text-slate-700 dark:text-slate-300">{label}</span>
+      <select
+        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+        disabled={disabled}
+        onChange={(event) => onChange(event.target.value)}
+        required={required}
+        value={value}
+      >
+        {options.length === 0 && emptyLabel ? (
+          <option disabled value="">
+            {emptyLabel}
+          </option>
+        ) : null}
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function PaymentProviderAccountTextArea({
+  label,
+  onChange,
+  value,
+}: {
+  label: string;
+  onChange: (value: string) => void;
+  value: string;
+}) {
+  return (
+    <label className="block text-sm">
+      <span className="font-medium text-slate-700 dark:text-slate-300">{label}</span>
+      <textarea
+        className="mt-2 min-h-24 w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+        onChange={(event) => onChange(event.target.value)}
+        value={value}
+      />
+    </label>
+  );
+}
+
 type PaymentProviderCode = PaymentProviderAccountMutationInput['providerCode'];
 type PaymentProviderEnvironment = PaymentProviderAccountMutationInput['environment'];
 type PaymentProviderAccountStatus = PaymentProviderAccountMutationInput['status'];
@@ -376,7 +533,6 @@ const PAYMENT_PROVIDER_CODES: readonly PaymentProviderCode[] = [
 ];
 const PAYMENT_PROVIDER_ENVIRONMENTS: readonly PaymentProviderEnvironment[] = ['sandbox', 'production'];
 const PAYMENT_PROVIDER_ACCOUNT_STATUSES: readonly PaymentProviderAccountStatus[] = ['active', 'inactive', 'disabled'];
-
 function toPaymentProviderAccountRequest(form: PaymentProviderAccountFormState): PaymentProviderAccountMutationInput {
   return {
     accountNo: requiredText(form.accountNo, 'accountNo'),
@@ -389,6 +545,8 @@ function toPaymentProviderAccountRequest(form: PaymentProviderAccountFormState):
     status: requiredPaymentStatus(form.status),
     ...(form.certificateRef.trim() ? { certificateRef: form.certificateRef.trim() } : {}),
     ...(form.webhookSecretRef.trim() ? { webhookSecretRef: form.webhookSecretRef.trim() } : {}),
+    ...(form.rotatedAt.trim() ? { rotatedAt: form.rotatedAt.trim() } : {}),
+    ...(form.note.trim() ? { note: form.note.trim() } : {}),
   };
 }
 
@@ -409,6 +567,30 @@ function readPaymentPayload(value: unknown): unknown {
   return 'data' in value ? value.data : value;
 }
 
+function readPaymentProviderCodeOptions(result: unknown): readonly PaymentProviderAccountSelectOption[] {
+  const data = readPaymentPayload(result);
+  if (!isPaymentRecord(data) || !Array.isArray(data.items)) {
+    return [];
+  }
+  const options: PaymentProviderAccountSelectOption[] = [];
+  const seen = new Set<string>();
+  for (const item of data.items) {
+    if (!isPaymentRecord(item)) {
+      continue;
+    }
+    const providerCode = readPaymentProviderCode(item.providerCode);
+    if (!providerCode || seen.has(providerCode)) {
+      continue;
+    }
+    const displayName = typeof item.displayName === 'string' && item.displayName.trim()
+      ? item.displayName.trim()
+      : providerCode;
+    seen.add(providerCode);
+    options.push({ value: providerCode, label: displayName });
+  }
+  return options;
+}
+
 function isPaymentRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
@@ -423,10 +605,26 @@ function requiredText(value: string, fieldName: string): string {
 
 function requiredPaymentProviderCode(value: string): PaymentProviderCode {
   const normalized = requiredText(value, 'providerCode').toLowerCase() as PaymentProviderCode;
-  if (!PAYMENT_PROVIDER_CODES.includes(normalized)) {
+  if (!isPaymentProviderCode(normalized)) {
     throw new Error(`providerCode must be one of ${PAYMENT_PROVIDER_CODES.join(', ')}`);
   }
   return normalized;
+}
+
+function firstPaymentProviderCode(options: readonly PaymentProviderAccountSelectOption[]): string {
+  return options[0]?.value ?? '';
+}
+
+function readPaymentProviderCode(value: unknown): PaymentProviderCode | null {
+  if (typeof value !== 'string') {
+    return null;
+  }
+  const normalized = value.trim().toLowerCase();
+  return isPaymentProviderCode(normalized) ? normalized : null;
+}
+
+function isPaymentProviderCode(value: string): value is PaymentProviderCode {
+  return PAYMENT_PROVIDER_CODES.includes(value as PaymentProviderCode);
 }
 
 function requiredPaymentEnvironment(value: string): PaymentProviderEnvironment {

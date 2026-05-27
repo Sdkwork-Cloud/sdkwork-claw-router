@@ -13,7 +13,7 @@ public class OpenAiVectorStoreSearchResult {
     public Map<String, String> getAttributes() {
         return this.attributes;
     }
-    
+
     public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }
@@ -21,7 +21,7 @@ public class OpenAiVectorStoreSearchResult {
     public List<String> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<String> content) {
         this.content = content;
     }
@@ -29,7 +29,7 @@ public class OpenAiVectorStoreSearchResult {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -37,7 +37,7 @@ public class OpenAiVectorStoreSearchResult {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -45,7 +45,7 @@ public class OpenAiVectorStoreSearchResult {
     public Double getScore() {
         return this.score;
     }
-    
+
     public void setScore(Double score) {
         this.score = score;
     }

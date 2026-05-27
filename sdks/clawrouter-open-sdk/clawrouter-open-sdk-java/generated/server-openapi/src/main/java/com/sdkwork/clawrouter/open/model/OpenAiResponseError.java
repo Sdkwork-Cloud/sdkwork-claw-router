@@ -10,7 +10,7 @@ public class OpenAiResponseError {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -18,7 +18,7 @@ public class OpenAiResponseError {
     public String getMessage() {
         return this.message;
     }
-    
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -26,7 +26,7 @@ public class OpenAiResponseError {
     public String getParam() {
         return this.param;
     }
-    
+
     public void setParam(String param) {
         this.param = param;
     }
@@ -34,7 +34,7 @@ public class OpenAiResponseError {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

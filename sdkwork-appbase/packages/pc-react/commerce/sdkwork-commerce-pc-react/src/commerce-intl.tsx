@@ -32,7 +32,7 @@ export interface SdkworkCommerceIntlValue {
   formatShare: (value: number) => string;
   formatTrackedOrders: (value: number) => string;
   formatTrend: (value: number) => string;
-  formatVipTerm: (value: number | null) => string;
+  formatMembershipTerm: (value: number | null) => string;
   locale: string;
 }
 
@@ -124,7 +124,7 @@ function createSdkworkCommerceIntlValue(
         value: `${value >= 0 ? "+" : ""}${value}`,
       });
     },
-    formatVipTerm(value) {
+    formatMembershipTerm(value) {
       if (value === null) {
         return copy.common.noActiveTerm;
       }

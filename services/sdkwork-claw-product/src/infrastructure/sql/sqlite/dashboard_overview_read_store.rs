@@ -4,9 +4,10 @@ use crate::domain::DomainError;
 use crate::infrastructure::sql::dashboard_overview_metrics::derive_dashboard_summary_rates;
 use crate::infrastructure::sql::model_modality;
 use crate::ports::{
-    DashboardAnnouncement, DashboardChartPoint, DashboardOverviewQuery,
-    DashboardOverviewReadFuture, DashboardOverviewReadStore, DashboardOverviewSnapshot,
-    DashboardOverviewSubject, DashboardOverviewSummary, DashboardSparklinePoint, DashboardTopModel,
+    DashboardAnnouncement, DashboardChartPoint, DashboardConfigurationDomain,
+    DashboardOverviewQuery, DashboardOverviewReadFuture, DashboardOverviewReadStore,
+    DashboardOverviewSnapshot, DashboardOverviewSubject, DashboardOverviewSummary,
+    DashboardSparklinePoint, DashboardTopModel,
 };
 
 const LOAD_USAGE_SUMMARY: &str = r#"
@@ -89,7 +90,16 @@ FROM ai_model_rank_snapshot
 WHERE status = 1
   AND (tenant_id = ?1 OR tenant_id = 0 OR tenant_id IS NULL)
   AND (organization_id = ?2 OR organization_id = 0 OR organization_id IS NULL)
-ORDER BY snapshot_date DESC, snapshot_period DESC, rank_no ASC, id DESC
+ORDER BY
+    CASE
+        WHEN organization_id = ?2 THEN 0
+        WHEN tenant_id = ?1 THEN 1
+        ELSE 2
+    END ASC,
+    snapshot_date DESC,
+    snapshot_period DESC,
+    rank_no ASC,
+    id DESC
 LIMIT 5
 "#;
 
@@ -133,6 +143,25 @@ ORDER BY period_start DESC, id DESC
 LIMIT 10
 "#;
 
+const LOAD_CONFIGURATION_NODES: &str = r#"
+SELECT
+    COALESCE(NULLIF(i.instance_code, ''), CAST(i.id AS TEXT), i.uuid) AS id,
+    COALESCE(NULLIF(i.node_name, ''), NULLIF(i.host_name, ''), NULLIF(i.instance_code, ''), i.uuid) AS name,
+    COALESCE(NULLIF(i.host_name, ''), NULLIF(i.instance_code, ''), i.uuid) AS host_name,
+    COALESCE(i.ip_address_masked, '') AS ip,
+    COALESCE(i.region, '') AS region,
+    COALESCE(i.cell, '') AS cell,
+    COALESCE(CAST(i.metadata AS TEXT), '') AS metadata,
+    i.health_status AS health_status
+FROM ops_gateway_instance i
+WHERE (i.tenant_id = ?1 OR i.tenant_id = 0 OR i.tenant_id IS NULL)
+  AND (i.organization_id = ?2 OR i.organization_id = 0 OR i.organization_id IS NULL)
+  AND i.status = 1
+  AND i.deleted_at IS NULL
+ORDER BY i.last_heartbeat_at DESC, i.updated_at DESC, i.id DESC
+LIMIT 20
+"#;
+
 pub struct SqliteDashboardOverviewReadStore {
     pool: SqlitePool,
 }
@@ -158,6 +187,7 @@ impl DashboardOverviewReadStore for SqliteDashboardOverviewReadStore {
             let top_models = load_top_models(&self.pool, subject).await?;
             let announcements = load_announcements(&self.pool, subject).await?;
             let performance_sparkline = load_performance_sparkline(&self.pool, subject).await?;
+            let configuration_domains = load_configuration_nodes(&self.pool, subject).await?;
 
             if summary.request_count == 0 {
                 summary.request_count = chart_data
@@ -180,7 +210,7 @@ impl DashboardOverviewReadStore for SqliteDashboardOverviewReadStore {
                 chart_data,
                 top_models,
                 announcements,
-                configuration_domains: Vec::new(),
+                configuration_domains,
                 warnings: Vec::new(),
             })
         })
@@ -365,6 +395,51 @@ async fn load_performance_sparkline(
     Ok(points)
 }
 
+async fn load_configuration_nodes(
+    pool: &SqlitePool,
+    subject: DashboardOverviewSubject,
+) -> Result<Vec<DashboardConfigurationDomain>, DomainError> {
+    let rows = sqlx::query(LOAD_CONFIGURATION_NODES)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .fetch_all(pool)
+        .await
+        .map_err(sql_error)?;
+
+    Ok(rows.into_iter().map(configuration_node_from_row).collect())
+}
+
+fn configuration_node_from_row(row: sqlx::sqlite::SqliteRow) -> DashboardConfigurationDomain {
+    let metadata = parse_metadata(&string_cell(&row, "metadata"));
+    let host_name = string_cell(&row, "host_name");
+    let region = string_cell(&row, "region");
+    let cell = string_cell(&row, "cell");
+    DashboardConfigurationDomain {
+        id: string_cell(&row, "id"),
+        name: string_cell(&row, "name"),
+        domain: metadata_text(
+            &metadata,
+            &[
+                "domain",
+                "baseUrl",
+                "base_url",
+                "endpoint",
+                "publicUrl",
+                "public_url",
+                "origin",
+            ],
+        )
+        .unwrap_or(host_name),
+        ip: string_cell(&row, "ip"),
+        status: configuration_node_status(optional_integer_cell(&row, "health_status")),
+        remark: metadata_text(
+            &metadata,
+            &["remark", "remarks", "description", "note", "memo"],
+        )
+        .unwrap_or_else(|| configuration_node_remark(&region, &cell)),
+    }
+}
+
 fn build_sparkline(
     chart_data: &[DashboardChartPoint],
     selector: fn(&DashboardChartPoint) -> f64,
@@ -413,6 +488,40 @@ fn announcement_type_label(value: Option<i64>) -> String {
         Some(_) => "unknown",
     }
     .to_owned()
+}
+
+fn configuration_node_status(value: Option<i64>) -> String {
+    match value {
+        Some(1) => "online",
+        Some(2) => "warning",
+        Some(0) => "offline",
+        _ => "unknown",
+    }
+    .to_owned()
+}
+
+fn configuration_node_remark(region: &str, cell: &str) -> String {
+    match (region.trim(), cell.trim()) {
+        ("", "") => String::new(),
+        (region, "") => region.to_owned(),
+        ("", cell) => cell.to_owned(),
+        (region, cell) => format!("{region} / {cell}"),
+    }
+}
+
+fn parse_metadata(value: &str) -> serde_json::Value {
+    serde_json::from_str(value).unwrap_or(serde_json::Value::Null)
+}
+
+fn metadata_text(metadata: &serde_json::Value, keys: &[&str]) -> Option<String> {
+    keys.iter().find_map(|key| {
+        metadata
+            .get(*key)
+            .and_then(|value| value.as_str())
+            .map(str::trim)
+            .filter(|value| !value.is_empty())
+            .map(str::to_owned)
+    })
 }
 
 fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {

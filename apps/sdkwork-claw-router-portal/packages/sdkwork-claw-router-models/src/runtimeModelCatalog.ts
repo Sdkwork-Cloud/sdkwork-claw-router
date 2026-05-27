@@ -218,8 +218,8 @@ function isStringArray(value: unknown): value is string[] {
 
 function normalizeRuntimeModelGroups(values: string[]): ModelGroupKey[] {
   const groups = values
-    .map((value) => normalizeKey(value) as ModelGroupKey)
-    .filter((value): value is ModelGroupKey => isRuntimeModelGroup(value));
+    .map(normalizeRuntimeModelGroup)
+    .filter((value): value is ModelGroupKey => value !== null);
   return Array.from(new Set(groups));
 }
 
@@ -230,8 +230,15 @@ function normalizeRuntimeModelCategories(values: string[]): ModelCategoryKey[] {
   return Array.from(new Set(categories));
 }
 
-function isRuntimeModelGroup(value: string): value is ModelGroupKey {
-  return value === 'default' || value === 'vip' || value === 'enterprise' || value === 'beta';
+function normalizeRuntimeModelGroup(value: string): ModelGroupKey | null {
+  const normalized = value
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9_.:-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return normalized.length > 0 ? normalized : null;
 }
 
 function normalizeRuntimeModelCategory(value: string): ModelCategoryKey | null {

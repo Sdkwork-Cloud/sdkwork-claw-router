@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.open.api;
 
 public class ApiPaths {
     public static final String API_PREFIX = "/v1";
-    
+
     public static String aiPath(String path) {
         if (path == null || path.isEmpty()) {
             return API_PREFIX;

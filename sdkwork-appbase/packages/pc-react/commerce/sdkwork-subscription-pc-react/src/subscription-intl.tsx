@@ -4,7 +4,7 @@ import {
   useMemo,
   type PropsWithChildren,
 } from "react";
-import type { SdkworkVipSummary } from "@sdkwork/vip-pc-react";
+import type { SdkworkMembershipSummary } from "@sdkwork/membership-pc-react";
 import {
   formatSdkworkCommerceCurrencyCny as formatSdkworkCurrencyCny,
   formatSdkworkCommercePoints as formatSdkworkPoints,
@@ -30,7 +30,7 @@ export interface SdkworkSubscriptionIntlValue {
   formatCouponOffer: (coupon: Pick<SdkworkSubscriptionCoupon, "amountCny" | "discountAmountCny" | "discountRate">) => string;
   formatCurrencyCny: (value: number | null | undefined) => string;
   formatCurrentBalance: (points: number) => string;
-  formatCurrentLevelMeta: (summary: Pick<SdkworkVipSummary, "remainingDays">) => string;
+  formatCurrentLevelMeta: (summary: Pick<SdkworkMembershipSummary, "remainingDays">) => string;
   formatDurationDays: (durationDays: number | null | undefined) => string;
   formatPaymentMethodDescription: (
     method: Pick<SdkworkSubscriptionPaymentMethodOption, "description" | "recommendedProductType">,

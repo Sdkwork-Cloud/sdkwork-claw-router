@@ -18,7 +18,7 @@ struct CapturedUpstreamRequest {
 }
 
 #[tokio::test]
-async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_secret() {
+async fn openai_compatible_responses_relay_uses_provider_model_and_upstream_secret() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
         .route("/v1/responses", post(capture_response))
@@ -33,6 +33,12 @@ async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_sec
         UpstreamProviderEndpoint::new(format!("http://{addr}"), "sk-upstream-provider-secret")
             .unwrap();
     let relay = OpenAiCompatibleResponsesRelay::new(endpoint);
+    let request_body = json!({
+        "model": "gpt-4.1-mini",
+        "input": "ping",
+        "temperature": 0.2,
+        "stream": false
+    });
     let response = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
@@ -51,11 +57,7 @@ async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_sec
             provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
-            request_body: json!({
-                "model": "gpt-4.1-mini",
-                "input": "ping",
-                "stream": false
-            }),
+            request_body: request_body.clone(),
         })
         .await
         .unwrap();
@@ -85,8 +87,9 @@ async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_sec
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4.1-mini", captured[0].body["model"]);
-    assert_eq!("ping", captured[0].body["input"]);
+    let mut expected_body = request_body;
+    expected_body["model"] = json!("gpt-4.1-mini");
+    assert_eq!(expected_body, captured[0].body);
 }
 
 async fn capture_response(

@@ -34,7 +34,7 @@ public class CourseDetail {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -42,7 +42,7 @@ public class CourseDetail {
     public String getCategoryLabel() {
         return this.categoryLabel;
     }
-    
+
     public void setCategoryLabel(String categoryLabel) {
         this.categoryLabel = categoryLabel;
     }
@@ -50,7 +50,7 @@ public class CourseDetail {
     public Integer getCommentCount() {
         return this.commentCount;
     }
-    
+
     public void setCommentCount(Integer commentCount) {
         this.commentCount = commentCount;
     }
@@ -58,7 +58,7 @@ public class CourseDetail {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -66,7 +66,7 @@ public class CourseDetail {
     public Integer getContentId() {
         return this.contentId;
     }
-    
+
     public void setContentId(Integer contentId) {
         this.contentId = contentId;
     }
@@ -74,7 +74,7 @@ public class CourseDetail {
     public String getCourseCode() {
         return this.courseCode;
     }
-    
+
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
@@ -82,7 +82,7 @@ public class CourseDetail {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -90,7 +90,7 @@ public class CourseDetail {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -98,7 +98,7 @@ public class CourseDetail {
     public String getDurationText() {
         return this.durationText;
     }
-    
+
     public void setDurationText(String durationText) {
         this.durationText = durationText;
     }
@@ -106,7 +106,7 @@ public class CourseDetail {
     public CourseEngagement getEngagement() {
         return this.engagement;
     }
-    
+
     public void setEngagement(CourseEngagement engagement) {
         this.engagement = engagement;
     }
@@ -114,7 +114,7 @@ public class CourseDetail {
     public String getExternalBvid() {
         return this.externalBvid;
     }
-    
+
     public void setExternalBvid(String externalBvid) {
         this.externalBvid = externalBvid;
     }
@@ -122,7 +122,7 @@ public class CourseDetail {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -130,7 +130,7 @@ public class CourseDetail {
     public CourseInstructor getInstructor() {
         return this.instructor;
     }
-    
+
     public void setInstructor(CourseInstructor instructor) {
         this.instructor = instructor;
     }
@@ -138,7 +138,7 @@ public class CourseDetail {
     public Boolean getIsCollection() {
         return this.isCollection;
     }
-    
+
     public void setIsCollection(Boolean isCollection) {
         this.isCollection = isCollection;
     }
@@ -146,7 +146,7 @@ public class CourseDetail {
     public Integer getLessonsCount() {
         return this.lessonsCount;
     }
-    
+
     public void setLessonsCount(Integer lessonsCount) {
         this.lessonsCount = lessonsCount;
     }
@@ -154,7 +154,7 @@ public class CourseDetail {
     public Integer getLevel() {
         return this.level;
     }
-    
+
     public void setLevel(Integer level) {
         this.level = level;
     }
@@ -162,7 +162,7 @@ public class CourseDetail {
     public String getLevelLabel() {
         return this.levelLabel;
     }
-    
+
     public void setLevelLabel(String levelLabel) {
         this.levelLabel = levelLabel;
     }
@@ -170,7 +170,7 @@ public class CourseDetail {
     public String getPriceAmount() {
         return this.priceAmount;
     }
-    
+
     public void setPriceAmount(String priceAmount) {
         this.priceAmount = priceAmount;
     }
@@ -178,7 +178,7 @@ public class CourseDetail {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -186,7 +186,7 @@ public class CourseDetail {
     public Double getRatingScore() {
         return this.ratingScore;
     }
-    
+
     public void setRatingScore(Double ratingScore) {
         this.ratingScore = ratingScore;
     }
@@ -194,7 +194,7 @@ public class CourseDetail {
     public List<CourseItem> getRelatedCourses() {
         return this.relatedCourses;
     }
-    
+
     public void setRelatedCourses(List<CourseItem> relatedCourses) {
         this.relatedCourses = relatedCourses;
     }
@@ -202,7 +202,7 @@ public class CourseDetail {
     public List<CourseSectionItem> getSections() {
         return this.sections;
     }
-    
+
     public void setSections(List<CourseSectionItem> sections) {
         this.sections = sections;
     }
@@ -210,7 +210,7 @@ public class CourseDetail {
     public CourseOverviewSource getSource() {
         return this.source;
     }
-    
+
     public void setSource(CourseOverviewSource source) {
         this.source = source;
     }
@@ -218,7 +218,7 @@ public class CourseDetail {
     public Integer getStudentsCount() {
         return this.studentsCount;
     }
-    
+
     public void setStudentsCount(Integer studentsCount) {
         this.studentsCount = studentsCount;
     }
@@ -226,7 +226,7 @@ public class CourseDetail {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -234,7 +234,7 @@ public class CourseDetail {
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
-    
+
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
@@ -242,7 +242,7 @@ public class CourseDetail {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

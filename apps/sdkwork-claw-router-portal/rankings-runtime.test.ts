@@ -95,7 +95,10 @@ test("ranking runtime defaults are empty until the SDK-backed snapshot loads", (
 
 test("ranking page wires i18n keys and server-backed vendor loading", () => {
   const rankingsSource = readFileSync(new URL("./packages/sdkwork-claw-router-rankings/src/Rankings.tsx", import.meta.url), "utf8");
-  const i18nSource = readFileSync(new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url), "utf8");
+  const i18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/public/rankings.ts", import.meta.url),
+    "utf8",
+  );
   const expectedKeys = [
     "rankings.badge",
     "rankings.title",

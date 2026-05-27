@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class AiApi {
     private final HttpClient client;
-    
+
     public AiApi(HttpClient client) {
         this.client = client;
     }

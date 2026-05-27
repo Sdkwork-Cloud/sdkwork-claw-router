@@ -168,23 +168,24 @@ fn pbkdf2_hmac_sha256(
     let hash_len = 32_usize;
     let blocks = output_len.div_ceil(hash_len);
     let mut derived_key = Vec::with_capacity(blocks * hash_len);
+    let mac_template = hmac_for_password(password)?;
     for block_index in 1..=blocks {
-        let mut mac = hmac_for_password(password)?;
+        let mut mac = mac_template.clone();
         mac.update(salt);
         mac.update(&(block_index as u32).to_be_bytes());
-        let mut block = mac.finalize().into_bytes().to_vec();
-        let mut accumulator = block.clone();
+        let mut block = mac.finalize().into_bytes();
+        let mut accumulator = block;
 
         for _ in 1..iterations {
-            let mut mac = hmac_for_password(password)?;
-            mac.update(&block);
-            block = mac.finalize().into_bytes().to_vec();
+            let mut mac = mac_template.clone();
+            mac.update(block.as_slice());
+            block = mac.finalize().into_bytes();
             for (left, right) in accumulator.iter_mut().zip(block.iter()) {
                 *left ^= *right;
             }
         }
 
-        derived_key.extend_from_slice(&accumulator);
+        derived_key.extend_from_slice(accumulator.as_slice());
     }
     derived_key.truncate(output_len);
     Ok(derived_key)

@@ -28,7 +28,7 @@ public class AdminRecordLogItem {
     public String getBaseInputPrice() {
         return this.baseInputPrice;
     }
-    
+
     public void setBaseInputPrice(String baseInputPrice) {
         this.baseInputPrice = baseInputPrice;
     }
@@ -36,7 +36,7 @@ public class AdminRecordLogItem {
     public String getBaseOutputPrice() {
         return this.baseOutputPrice;
     }
-    
+
     public void setBaseOutputPrice(String baseOutputPrice) {
         this.baseOutputPrice = baseOutputPrice;
     }
@@ -44,7 +44,7 @@ public class AdminRecordLogItem {
     public String getCacheReadPrice() {
         return this.cacheReadPrice;
     }
-    
+
     public void setCacheReadPrice(String cacheReadPrice) {
         this.cacheReadPrice = cacheReadPrice;
     }
@@ -52,7 +52,7 @@ public class AdminRecordLogItem {
     public Integer getCacheReadTokens() {
         return this.cacheReadTokens;
     }
-    
+
     public void setCacheReadTokens(Integer cacheReadTokens) {
         this.cacheReadTokens = cacheReadTokens;
     }
@@ -60,7 +60,7 @@ public class AdminRecordLogItem {
     public String getCost() {
         return this.cost;
     }
-    
+
     public void setCost(String cost) {
         this.cost = cost;
     }
@@ -68,7 +68,7 @@ public class AdminRecordLogItem {
     public String getGroup() {
         return this.group;
     }
-    
+
     public void setGroup(String group) {
         this.group = group;
     }
@@ -76,7 +76,7 @@ public class AdminRecordLogItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -84,7 +84,7 @@ public class AdminRecordLogItem {
     public Integer getInputTokens() {
         return this.inputTokens;
     }
-    
+
     public void setInputTokens(Integer inputTokens) {
         this.inputTokens = inputTokens;
     }
@@ -92,7 +92,7 @@ public class AdminRecordLogItem {
     public String getIp() {
         return this.ip;
     }
-    
+
     public void setIp(String ip) {
         this.ip = ip;
     }
@@ -100,7 +100,7 @@ public class AdminRecordLogItem {
     public Boolean getIsStream() {
         return this.isStream;
     }
-    
+
     public void setIsStream(Boolean isStream) {
         this.isStream = isStream;
     }
@@ -108,7 +108,7 @@ public class AdminRecordLogItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -116,7 +116,7 @@ public class AdminRecordLogItem {
     public String getMultiplier() {
         return this.multiplier;
     }
-    
+
     public void setMultiplier(String multiplier) {
         this.multiplier = multiplier;
     }
@@ -124,7 +124,7 @@ public class AdminRecordLogItem {
     public Integer getOutputTokens() {
         return this.outputTokens;
     }
-    
+
     public void setOutputTokens(Integer outputTokens) {
         this.outputTokens = outputTokens;
     }
@@ -132,7 +132,7 @@ public class AdminRecordLogItem {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -140,7 +140,7 @@ public class AdminRecordLogItem {
     public String getReasoningEffort() {
         return this.reasoningEffort;
     }
-    
+
     public void setReasoningEffort(String reasoningEffort) {
         this.reasoningEffort = reasoningEffort;
     }
@@ -148,7 +148,7 @@ public class AdminRecordLogItem {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -156,7 +156,7 @@ public class AdminRecordLogItem {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -164,7 +164,7 @@ public class AdminRecordLogItem {
     public String getTokenName() {
         return this.tokenName;
     }
-    
+
     public void setTokenName(String tokenName) {
         this.tokenName = tokenName;
     }
@@ -172,7 +172,7 @@ public class AdminRecordLogItem {
     public String getTotalTime() {
         return this.totalTime;
     }
-    
+
     public void setTotalTime(String totalTime) {
         this.totalTime = totalTime;
     }
@@ -180,7 +180,7 @@ public class AdminRecordLogItem {
     public String getTtft() {
         return this.ttft;
     }
-    
+
     public void setTtft(String ttft) {
         this.ttft = ttft;
     }
@@ -188,7 +188,7 @@ public class AdminRecordLogItem {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -196,7 +196,7 @@ public class AdminRecordLogItem {
     public String getUser() {
         return this.user;
     }
-    
+
     public void setUser(String user) {
         this.user = user;
     }

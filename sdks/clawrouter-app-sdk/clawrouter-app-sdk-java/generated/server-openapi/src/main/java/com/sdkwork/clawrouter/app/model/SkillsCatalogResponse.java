@@ -8,7 +8,7 @@ public class SkillsCatalogResponse {
     public List<SkillCatalogItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<SkillCatalogItem> items) {
         this.items = items;
     }

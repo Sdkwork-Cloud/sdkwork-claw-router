@@ -20,6 +20,12 @@ const scanRoots = [
   "scripts/package-catalog.mjs",
   "packages",
 ];
+const packageCatalogPath = path.join(appbaseRoot, "scripts/package-catalog.mjs");
+const tsconfigBasePath = path.join(appbaseRoot, "tsconfig.base.json");
+const mobileAppbaseCatalogPath = path.join(
+  appbaseRoot,
+  "packages/mobile-react/foundation/sdkwork-appbase-mobile-react/src/catalog.ts",
+);
 
 function isTextFile(filePath) {
   return textFileExtensions.has(path.extname(filePath));
@@ -64,4 +70,35 @@ test("appbase public packages use Sdkwork branding instead of legacy product nam
   const violations = findForbiddenBrandMentions();
 
   assert.deepEqual(violations, []);
+});
+
+test("appbase package catalog uses membership package names instead of vip aliases", () => {
+  const content = fs.readFileSync(packageCatalogPath, "utf8");
+
+  assert.match(content, /sdkwork-membership-pc-react/);
+  assert.match(content, /sdkwork-membership-purchase-pc-react/);
+  assert.match(content, /sdkwork-membership-admin-pc-react/);
+  assert.ok(!content.includes("sdkwork-vip-pc-react"));
+  assert.ok(!content.includes("sdkwork-vip-purchase-pc-react"));
+  assert.ok(!content.includes("sdkwork-vip-admin-pc-react"));
+  assert.ok(!content.includes("sdkwork-react-vip"));
+});
+
+test("appbase TypeScript paths use membership aliases instead of vip aliases", () => {
+  const content = fs.readFileSync(tsconfigBasePath, "utf8");
+
+  assert.match(content, /@sdkwork\/membership-pc-react/);
+  assert.match(content, /@sdkwork\/membership-purchase-pc-react/);
+  assert.match(content, /@sdkwork\/membership-admin-pc-react/);
+  assert.ok(!content.includes("@sdkwork/vip-pc-react"));
+  assert.ok(!content.includes("@sdkwork/vip-purchase-pc-react"));
+  assert.ok(!content.includes("@sdkwork/vip-admin-pc-react"));
+});
+
+test("mobile appbase catalog does not register a vip commerce package placeholder", () => {
+  const content = fs.readFileSync(mobileAppbaseCatalogPath, "utf8");
+
+  assert.ok(!content.includes('@sdkwork/vip-mobile-react'));
+  assert.ok(!content.includes('capability: "vip"'));
+  assert.ok(!content.includes('title: "VIP"'));
 });

@@ -400,7 +400,7 @@ impl OpenAiInvocationPlugin for RecordingEmbeddingsInvocationPlugin {
 }
 
 #[tokio::test]
-async fn openai_embeddings_invocation_plugins_can_observe_and_override_account_before_relay() {
+async fn openai_embeddings_invocation_plugins_cannot_override_account_before_relay() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
@@ -430,31 +430,30 @@ async fn openai_embeddings_invocation_plugins_can_observe_and_override_account_b
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(StatusCode::INTERNAL_SERVER_ERROR, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!(
+        "provider_route_mutation_not_allowed",
+        payload["error"]["code"]
+    );
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("plugin mutated selected provider route"));
     assert_eq!(
         vec![
             "before_route_selection:text-embedding-3-small",
             "after_route_selection:openrouter:3001",
             "before_relay:http://provider-proxy.internal/openrouter",
-            "after_relay:200",
         ],
         *events.lock().unwrap()
     );
 
     let captured = captured.lock().unwrap();
-    assert_eq!(1, captured.len());
-    assert_eq!(
-        Some("http://plugin-account-pool.internal/embeddings"),
-        captured[0].provider_base_url.as_deref()
-    );
-    assert_eq!(
-        Some("vault://providers/openrouter/account/embeddings-plugin"),
-        captured[0].provider_secret_ref.as_deref()
-    );
-    assert_eq!(
-        ProviderAuthProfile::header("x-api-key"),
-        captured[0].provider_auth_profile
-    );
+    assert!(captured.is_empty());
 }
 
 #[tokio::test]
@@ -505,10 +504,7 @@ async fn openai_embeddings_relays_request_after_auth_model_and_price_validation(
     assert_eq!("standard", captured[0].pricing_plan_code);
     assert_eq!("text-embedding-3-small", captured[0].model);
     assert_eq!("openrouter", captured[0].provider_code);
-    assert_eq!(
-        "openai/global/text-embedding-3-small",
-        captured[0].provider_model
-    );
+    assert_eq!("text-embedding-3-small", captured[0].provider_model);
     assert_eq!(
         Some("http://provider-proxy.internal/openrouter"),
         captured[0].provider_base_url.as_deref()
@@ -566,19 +562,21 @@ async fn openai_embeddings_records_usage_after_provider_success() {
     let captured = usage_captured.lock().unwrap();
     assert_eq!(1, captured.len());
     let command = &captured[0];
-    assert_eq!("req-embeddings-usage-1", command.request_id);
+    assert_server_generated_request_id(&command.request_id, "req-embeddings-usage-1");
     assert_eq!(
         Some("trace-embeddings-usage-1"),
         command.trace_id.as_deref()
     );
     assert_eq!("openai/global/text-embedding-3-small", command.catalog_key);
     assert_eq!("text-embedding-3-small", command.requested_model);
-    assert_eq!("openrouter", command.provider_code);
-    assert_eq!(3001, command.channel_id);
     assert_eq!(
         "openai/global/text-embedding-3-small",
-        command.provider_model
+        command.requested_model_catalog_key
     );
+    assert_eq!("openrouter", command.provider_code);
+    assert_eq!(3001, command.channel_id);
+    assert_eq!("text-embedding-3-small", command.provider_model);
+    assert_eq!("text-embedding-3-small", command.provider_native_model);
     assert_eq!("/v1/embeddings", command.request_path);
     assert_eq!("POST", command.http_method);
     assert_eq!(200, command.http_status);
@@ -592,8 +590,9 @@ async fn openai_embeddings_records_usage_after_provider_success() {
     assert_eq!("embedding_input_token", command.billing_meter_code);
     assert_eq!("0.026400", command.base_input_unit_price);
     assert_eq!("0.000000", command.base_output_unit_price);
-    assert_eq!("0.026400", command.customer_charge_amount);
-    assert_eq!("0.010000", command.upstream_cost_amount);
+    assert_eq!("0.000000", command.cache_read_unit_price);
+    assert_eq!("0.000000026400", command.customer_charge_amount);
+    assert_eq!("0.000000010000", command.upstream_cost_amount);
     assert_eq!("USD", command.currency);
     assert_eq!("standard", command.pricing_plan_code);
 }
@@ -686,4 +685,20 @@ async fn openai_embeddings_rejects_chat_only_model_before_fake_success() {
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("model_capability_not_supported", payload["error"]["code"]);
+}
+
+fn assert_server_generated_request_id(actual: &str, rejected_client_request_id: &str) {
+    assert_ne!(rejected_client_request_id, actual);
+    assert!(is_uuid(actual), "expected server-generated UUID, got {actual}");
+}
+
+fn is_uuid(value: &str) -> bool {
+    let bytes = value.as_bytes();
+    bytes.len() == 36
+        && bytes.iter().enumerate().all(|(index, byte)| {
+            matches!(index, 8 | 13 | 18 | 23) && *byte == b'-'
+                || !matches!(index, 8 | 13 | 18 | 23) && byte.is_ascii_hexdigit()
+        })
+        && bytes.get(14) == Some(&b'4')
+        && matches!(bytes.get(19), Some(b'8' | b'9' | b'a' | b'b'))
 }

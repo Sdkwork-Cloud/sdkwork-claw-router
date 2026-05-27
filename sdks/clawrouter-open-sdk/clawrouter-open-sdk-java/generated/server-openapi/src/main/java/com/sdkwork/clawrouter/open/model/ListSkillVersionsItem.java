@@ -16,7 +16,7 @@ public class ListSkillVersionsItem {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -24,7 +24,7 @@ public class ListSkillVersionsItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -32,7 +32,7 @@ public class ListSkillVersionsItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -40,7 +40,7 @@ public class ListSkillVersionsItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -48,7 +48,7 @@ public class ListSkillVersionsItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -56,7 +56,7 @@ public class ListSkillVersionsItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -64,7 +64,7 @@ public class ListSkillVersionsItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -72,7 +72,7 @@ public class ListSkillVersionsItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -80,7 +80,7 @@ public class ListSkillVersionsItem {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

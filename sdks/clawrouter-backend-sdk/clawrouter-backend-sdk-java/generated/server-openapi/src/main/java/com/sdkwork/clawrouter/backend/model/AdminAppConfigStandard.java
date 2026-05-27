@@ -7,7 +7,7 @@ public class AdminAppConfigStandard {
     public String getAppKey() {
         return this.appKey;
     }
-    
+
     public void setAppKey(String appKey) {
         this.appKey = appKey;
     }

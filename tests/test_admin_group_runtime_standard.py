@@ -80,6 +80,38 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type { AccessGroupsCreateResult }", type_exports)
         self.assertIn("export type { AccessGroupsUpdateResult }", type_exports)
 
+    def test_admin_group_channel_binding_modal_lists_only_current_group_bindings(self) -> None:
+        view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-admin-group"
+            / "src"
+            / "index.tsx"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "data-admin-group-channel-bindings-modal",
+            "data-admin-group-channel-bindings-toolbar",
+            "data-admin-group-channel-binding-search",
+            "data-admin-group-channel-binding-add",
+            "data-admin-group-channel-binding-remove",
+            "data-admin-group-channel-picker-modal",
+            "visibleBindingRows",
+            "availableChannelOptions",
+            "openChannelBindingPicker",
+            "addSelectedChannelBindings",
+            "removeChannelBindingDraft",
+            "max-h-[92vh]",
+            "max-w-7xl",
+        ]:
+            self.assertIn(marker, view)
+
+        self.assertNotIn("orderedChannelOptions.map", view)
+        self.assertNotIn("toggleChannelBinding", view)
+        self.assertNotIn("columns.enabled", view)
+
     def test_admin_group_frontend_uses_standard_domain_values_without_mojibake(self) -> None:
         package = (
             ROOT
@@ -102,10 +134,10 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
             "status: 'active' | 'disabled'",
             "return type === 'dedicated' ? 'dedicated' : 'public'",
             "return status === 'disabled' ? 'disabled' : 'active'",
-            "type: formData.get('isPublic') ? 'public' : 'dedicated'",
             "status: 'active'",
         ]:
             self.assertIn(token, combined_source)
+        self.assertNotIn("type: formData.get('isPublic') ? 'public' : 'dedicated'", combined_source)
 
     def test_admin_group_create_form_uses_dedicated_input_without_client_fake_ids(self) -> None:
         package_root = (

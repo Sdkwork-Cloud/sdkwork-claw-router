@@ -1,5 +1,7 @@
 /** Create api key request schema exposed by Claw Router. */
 export interface CreateApiKeyRequest {
+  /** Create this key as the default backend runtime API key. */
+  defaultForRuntime?: boolean;
   /** Expiration timestamp in YYYY-MM-DDTHH:mm format, or never. */
   expires?: string;
   /** API key group code. */

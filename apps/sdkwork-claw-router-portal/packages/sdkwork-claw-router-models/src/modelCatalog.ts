@@ -41,12 +41,12 @@ export type ModelCatalogFilters = {
   [Field in ModelCatalogFilterField]: ModelCatalogFilterValueByField[Field];
 };
 
-export const MODEL_GROUPS: Array<{ key: ModelGroupKey; label: string }> = [
-  { key: 'default', label: 'Default group' },
-  { key: 'vip', label: 'VIP group' },
-  { key: 'enterprise', label: 'Enterprise exclusive' },
-  { key: 'beta', label: 'Beta access' },
-];
+const KNOWN_MODEL_GROUP_LABELS: Record<string, string> = {
+  default: 'Default group',
+  vip: 'VIP group',
+  enterprise: 'Enterprise exclusive',
+  beta: 'Beta access',
+};
 
 export type ProviderShowMoreState =
   | {
@@ -68,6 +68,13 @@ export type ModelCatalogFilterOptions = {
   providers: string[];
   modalities: string[];
   capabilities: string[];
+  groups: ModelCatalogGroupOption[];
+};
+
+export type ModelCatalogGroupOption = {
+  key: ModelGroupKey;
+  label: string;
+  modelCount?: number;
 };
 
 export type ModelCatalogCardView = {
@@ -197,12 +204,45 @@ export function filterProvidersForCatalog(providers: string[], providerSearchQue
   return providers.filter((provider) => provider.toLowerCase().includes(normalizedSearch));
 }
 
-export function deriveModelCatalogFilterOptions(models: Model[]): ModelCatalogFilterOptions {
+export function deriveModelCatalogFilterOptions(
+  models: Model[],
+  configuredGroups: readonly ModelCatalogGroupOption[] = [],
+): ModelCatalogFilterOptions {
   return {
     providers: uniqueSortedStrings(models.map((model) => model.provider)),
     modalities: uniqueSortedStrings(models.map((model) => model.modality)),
     capabilities: uniqueSortedStrings(models.flatMap((model) => model.capabilities)),
+    groups: configuredGroups.length > 0
+      ? normalizeConfiguredModelCatalogGroupOptions(configuredGroups)
+      : deriveModelCatalogGroupOptions(models),
   };
+}
+
+export function deriveModelCatalogGroupOptions(models: Model[]): ModelCatalogGroupOption[] {
+  return uniqueSortedStrings(models.flatMap((model) => model.groups))
+    .map((group) => ({
+      key: group,
+      label: modelCatalogGroupFallbackLabel(group),
+    }));
+}
+
+function normalizeConfiguredModelCatalogGroupOptions(
+  groups: readonly ModelCatalogGroupOption[],
+): ModelCatalogGroupOption[] {
+  const normalizedGroups = new Map<string, ModelCatalogGroupOption>();
+  for (const group of groups) {
+    const key = group.key.trim();
+    if (key.length === 0 || normalizedGroups.has(key)) {
+      continue;
+    }
+    const label = group.label.trim() || modelCatalogGroupFallbackLabel(key);
+    const option: ModelCatalogGroupOption = { key, label };
+    if (group.modelCount !== undefined && Number.isFinite(group.modelCount)) {
+      option.modelCount = Math.max(0, Math.trunc(group.modelCount));
+    }
+    normalizedGroups.set(key, option);
+  }
+  return Array.from(normalizedGroups.values());
 }
 
 export function deriveModelCatalogCardView(model: Model): ModelCatalogCardView {
@@ -310,6 +350,15 @@ export function modelCatalogCapabilityLabelKey(capability: string): string {
   return `models.capability.${modelCatalogLabelKeySuffix(capability)}`;
 }
 
+export function modelCatalogGroupLabelKey(group: string): string {
+  return `models.group.${modelCatalogLabelKeySuffix(group)}`;
+}
+
+export function modelCatalogGroupFallbackLabel(group: string): string {
+  const normalized = group.trim().toLowerCase();
+  return KNOWN_MODEL_GROUP_LABELS[normalized] ?? titleCase(group.replace(/[_-]+/g, ' '));
+}
+
 export function resolveDisplayedProvidersForCatalog(
   filteredProviders: string[],
   options: {
@@ -397,6 +446,15 @@ function uniqueSortedStrings(values: string[]): string[] {
 
 function modelCatalogLabelKeySuffix(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, '');
+}
+
+function titleCase(value: string): string {
+  return value
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
 
 function providerDocsUrlForCatalog(provider: string): string {

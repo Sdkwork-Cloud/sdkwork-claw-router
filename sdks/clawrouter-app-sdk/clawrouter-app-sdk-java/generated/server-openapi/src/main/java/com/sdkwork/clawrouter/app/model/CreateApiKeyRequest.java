@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class CreateApiKeyRequest {
+    private Boolean defaultForRuntime;
     private String expires;
     private String group;
     private String ipLimit;
@@ -11,10 +12,18 @@ public class CreateApiKeyRequest {
     private String name;
     private String quota;
 
+    public Boolean getDefaultForRuntime() {
+        return this.defaultForRuntime;
+    }
+
+    public void setDefaultForRuntime(Boolean defaultForRuntime) {
+        this.defaultForRuntime = defaultForRuntime;
+    }
+
     public String getExpires() {
         return this.expires;
     }
-    
+
     public void setExpires(String expires) {
         this.expires = expires;
     }
@@ -22,7 +31,7 @@ public class CreateApiKeyRequest {
     public String getGroup() {
         return this.group;
     }
-    
+
     public void setGroup(String group) {
         this.group = group;
     }
@@ -30,7 +39,7 @@ public class CreateApiKeyRequest {
     public String getIpLimit() {
         return this.ipLimit;
     }
-    
+
     public void setIpLimit(String ipLimit) {
         this.ipLimit = ipLimit;
     }
@@ -38,7 +47,7 @@ public class CreateApiKeyRequest {
     public Boolean getIsUnlimitedQuota() {
         return this.isUnlimitedQuota;
     }
-    
+
     public void setIsUnlimitedQuota(Boolean isUnlimitedQuota) {
         this.isUnlimitedQuota = isUnlimitedQuota;
     }
@@ -46,7 +55,7 @@ public class CreateApiKeyRequest {
     public List<String> getModalities() {
         return this.modalities;
     }
-    
+
     public void setModalities(List<String> modalities) {
         this.modalities = modalities;
     }
@@ -54,7 +63,7 @@ public class CreateApiKeyRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,7 +71,7 @@ public class CreateApiKeyRequest {
     public String getQuota() {
         return this.quota;
     }
-    
+
     public void setQuota(String quota) {
         this.quota = quota;
     }

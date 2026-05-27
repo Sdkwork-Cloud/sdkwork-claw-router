@@ -18,13 +18,17 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Get apps
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AppsStoreListResult?> AppsStoreListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? startTime = null, string? endTime = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AppsStoreListResult?> AppsStoreListAsync(int? page = null, int? pageSize = null, string? q = null, string? category = null, string? platformType = null, List<string>? platformTypes = null, string? sort = null, string? status = null, string? startTime = null, string? endTime = null)
         {
             var queryString = BuildQueryString(new[]
             {
                 new QueryParameterSpec("page", page, "form", true, false, null),
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
                 new QueryParameterSpec("q", q, "form", true, false, null),
+                new QueryParameterSpec("category", category, "form", true, false, null),
+                new QueryParameterSpec("platform_type", platformType, "form", true, false, null),
+                new QueryParameterSpec("platform_types", platformTypes, "form", false, false, null),
+                new QueryParameterSpec("sort", sort, "form", true, false, null),
                 new QueryParameterSpec("status", status, "form", true, false, null),
                 new QueryParameterSpec("start_time", startTime, "form", true, false, null),
                 new QueryParameterSpec("end_time", endTime, "form", true, false, null),

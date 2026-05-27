@@ -10,7 +10,9 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
+use crate::api::subject::required_subject;
 use crate::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
 use crate::domain::{
     ApiKeyGroup, ApiKeyGroupMetricSnapshot, DecimalValue, DomainError, GatewayAccessPolicy,
@@ -29,7 +31,6 @@ const UNRESTRICTED_MODALITIES: [&str; 5] = ["text", "image", "video", "audio", "
 const HASH_ALG_HMAC_SHA256: &str = "HMAC_SHA256";
 const SECRET_VERSION: i64 = 1;
 const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 struct ReadOnlyAppApiKeyState<C> {
     catalog: Arc<C>,
@@ -112,6 +113,7 @@ struct AppApiKeyItemResponse {
     created: String,
     expires: String,
     status: &'static str,
+    default_for_runtime: bool,
 }
 
 #[derive(Debug, Serialize)]
@@ -134,6 +136,7 @@ struct AppApiKeyCreateRequest {
     modalities: Option<Vec<String>>,
     ip_limit: Option<String>,
     expires: Option<String>,
+    default_for_runtime: Option<bool>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -147,6 +150,7 @@ struct AppApiKeyUpdateRequest {
     modalities: Option<Vec<String>>,
     ip_limit: Option<String>,
     expires: Option<String>,
+    default_for_runtime: Option<bool>,
 }
 
 pub fn app_api_key_router<C>(catalog: Arc<C>) -> Router
@@ -203,16 +207,13 @@ where
     Json(PlusApiResult::success(group_list_response(&snapshot)))
 }
 
-async fn fetch_keys(State(state): State<AppApiKeyState>, headers: HeaderMap) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
+async fn fetch_keys(
+    State(state): State<AppApiKeyState>,
+    subject: Option<TrustedRequestSubject>,
+) -> Response {
+    let subject = match required_subject(subject) {
         Ok(subject) => subject,
-        Err(error) => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response();
-        }
+        Err(response) => return response,
     };
 
     match state
@@ -236,16 +237,13 @@ async fn fetch_keys(State(state): State<AppApiKeyState>, headers: HeaderMap) -> 
     }
 }
 
-async fn fetch_key_groups(State(state): State<AppApiKeyState>, headers: HeaderMap) -> Response {
-    let subject = match TrustedRequestSubject::from_headers(&headers) {
+async fn fetch_key_groups(
+    State(state): State<AppApiKeyState>,
+    subject: Option<TrustedRequestSubject>,
+) -> Response {
+    let subject = match required_subject(subject) {
         Ok(subject) => subject,
-        Err(error) => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error("4010", error.to_string())),
-            )
-                .into_response();
-        }
+        Err(response) => return response,
     };
 
     match state
@@ -274,10 +272,11 @@ async fn fetch_key_groups(State(state): State<AppApiKeyState>, headers: HeaderMa
 
 async fn create_key(
     State(state): State<AppApiKeyState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Json(request): Json<AppApiKeyCreateRequest>,
 ) -> Response {
-    match create_key_inner(state, headers, request).await {
+    match create_key_inner(state, subject, headers, request).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
         Err(AppApiKeyCreateError::Unauthorized(message)) => (
             StatusCode::UNAUTHORIZED,
@@ -304,11 +303,12 @@ async fn create_key(
 
 async fn update_key(
     State(state): State<AppApiKeyState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Path(api_key_id): Path<i64>,
     Json(request): Json<AppApiKeyUpdateRequest>,
 ) -> Response {
-    match update_key_inner(state, headers, api_key_id, request).await {
+    match update_key_inner(state, subject, headers, api_key_id, request).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
         Err(AppApiKeyCreateError::Unauthorized(message)) => (
             StatusCode::UNAUTHORIZED,
@@ -335,10 +335,11 @@ async fn update_key(
 
 async fn delete_key(
     State(state): State<AppApiKeyState>,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     Path(api_key_id): Path<i64>,
 ) -> Response {
-    match delete_key_inner(state, headers, api_key_id).await {
+    match delete_key_inner(state, subject, headers, api_key_id).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
         Err(AppApiKeyCreateError::Unauthorized(message)) => (
             StatusCode::UNAUTHORIZED,
@@ -365,10 +366,12 @@ async fn delete_key(
 
 async fn create_key_inner(
     state: AppApiKeyState,
+    subject: Option<TrustedRequestSubject>,
     headers: HeaderMap,
     request: AppApiKeyCreateRequest,
 ) -> Result<AppApiKeyCreateResponse, AppApiKeyCreateError> {
-    let subject = TrustedRequestSubject::from_headers(&headers).map_err(unauthorized_error)?;
+    let subject =
+        subject.ok_or_else(|| unauthorized_error("trusted request subject is required"))?;
     let snapshot = state
         .read_store
         .load_gateway_api_key_management_snapshot()
@@ -386,7 +389,7 @@ async fn create_key_inner(
     let ip_allowlist = normalize_ip_allowlist(request.ip_limit.as_deref())?;
     let expire_at = normalize_expire_at(request.expires.as_deref())?;
     let idempotency_key = normalize_idempotency_key(&headers)?;
-    let request_id = normalize_request_id(&headers, &state)?;
+    let request_id = generate_server_request_id().map_err(app_api_key_request_id_error)?;
     let raw_key = state
         .secret_generator
         .generate_api_key_secret()
@@ -432,6 +435,7 @@ async fn create_key_inner(
         allowed_capabilities,
         ip_allowlist,
         quota_limit,
+        default_for_runtime: request.default_for_runtime.unwrap_or(false),
     };
 
     let created = state
@@ -452,11 +456,13 @@ async fn create_key_inner(
 
 async fn update_key_inner(
     state: AppApiKeyState,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     api_key_id: i64,
     request: AppApiKeyUpdateRequest,
 ) -> Result<AppApiKeyUpdateResponse, AppApiKeyCreateError> {
-    let subject = TrustedRequestSubject::from_headers(&headers).map_err(unauthorized_error)?;
+    let subject =
+        subject.ok_or_else(|| unauthorized_error("trusted request subject is required"))?;
     let api_key_id = positive_api_key_id(api_key_id)?;
     let snapshot = state
         .read_store
@@ -493,7 +499,7 @@ async fn update_key_inner(
         name: optional_updated_name(request.name.as_deref())?,
         group_id,
         requested_at: current_timestamp_string(),
-        request_id: normalize_request_id(&headers, &state)?,
+        request_id: generate_server_request_id().map_err(app_api_key_request_id_error)?,
         access_policy_uuid: state
             .secret_generator
             .generate_entity_uuid()
@@ -506,6 +512,7 @@ async fn update_key_inner(
             .map_err(system_error)?,
         quota_limit,
         expire_at,
+        default_for_runtime: request.default_for_runtime,
     };
 
     let updated = state
@@ -537,10 +544,12 @@ async fn update_key_inner(
 
 async fn delete_key_inner(
     state: AppApiKeyState,
-    headers: HeaderMap,
+    subject: Option<TrustedRequestSubject>,
+    _headers: HeaderMap,
     api_key_id: i64,
 ) -> Result<AppApiKeyDeleteResponse, AppApiKeyCreateError> {
-    let subject = TrustedRequestSubject::from_headers(&headers).map_err(unauthorized_error)?;
+    let subject =
+        subject.ok_or_else(|| unauthorized_error("trusted request subject is required"))?;
     let api_key_id = positive_api_key_id(api_key_id)?;
     let snapshot = state
         .read_store
@@ -573,7 +582,7 @@ async fn delete_key_inner(
         operator_type: subject.operator_type,
         api_key_id,
         requested_at: current_timestamp_string(),
-        request_id: normalize_request_id(&headers, &state)?,
+        request_id: generate_server_request_id().map_err(app_api_key_request_id_error)?,
     };
     let deleted = state
         .command_store
@@ -677,6 +686,7 @@ fn to_item_response_with_used_quota(
             .clone()
             .unwrap_or_else(|| "never".to_owned()),
         status: api_key.status_label(),
+        default_for_runtime: api_key.default_for_runtime,
     }
 }
 
@@ -909,19 +919,6 @@ fn normalize_idempotency_key(headers: &HeaderMap) -> Result<String, AppApiKeyCre
     validate_request_token(value, "Idempotency-Key")
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AppApiKeyState,
-) -> Result<String, AppApiKeyCreateError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        return validate_request_token(value, "X-Request-Id");
-    }
-    state
-        .secret_generator
-        .generate_entity_uuid()
-        .map_err(system_error)
-}
-
 fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
     headers
         .get(name)
@@ -942,6 +939,13 @@ fn validate_request_token(value: &str, field: &str) -> Result<String, AppApiKeyC
         )));
     }
     Ok(value.to_owned())
+}
+
+fn app_api_key_request_id_error(error: RequestIdError) -> AppApiKeyCreateError {
+    match error {
+        RequestIdError::Invalid(message) => AppApiKeyCreateError::BadRequest(message),
+        RequestIdError::System(message) => AppApiKeyCreateError::System(message),
+    }
 }
 
 fn normalize_modalities(value: Option<Vec<String>>) -> Result<Vec<String>, AppApiKeyCreateError> {

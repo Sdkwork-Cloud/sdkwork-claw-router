@@ -25,7 +25,7 @@ public class PlusAppRecord {
     public String getAccessUrl() {
         return this.accessUrl;
     }
-    
+
     public void setAccessUrl(String accessUrl) {
         this.accessUrl = accessUrl;
     }
@@ -33,7 +33,7 @@ public class PlusAppRecord {
     public String getAppType() {
         return this.appType;
     }
-    
+
     public void setAppType(String appType) {
         this.appType = appType;
     }
@@ -41,7 +41,7 @@ public class PlusAppRecord {
     public String getBundleId() {
         return this.bundleId;
     }
-    
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -49,7 +49,7 @@ public class PlusAppRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -57,7 +57,7 @@ public class PlusAppRecord {
     public String getDownloadUrl() {
         return this.downloadUrl;
     }
-    
+
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
     }
@@ -65,7 +65,7 @@ public class PlusAppRecord {
     public Map<String, String> getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(Map<String, String> icon) {
         this.icon = icon;
     }
@@ -73,7 +73,7 @@ public class PlusAppRecord {
     public String getIconUrl() {
         return this.iconUrl;
     }
-    
+
     public void setIconUrl(String iconUrl) {
         this.iconUrl = iconUrl;
     }
@@ -81,7 +81,7 @@ public class PlusAppRecord {
     public Map<String, String> getInstallConfig() {
         return this.installConfig;
     }
-    
+
     public void setInstallConfig(Map<String, String> installConfig) {
         this.installConfig = installConfig;
     }
@@ -89,7 +89,7 @@ public class PlusAppRecord {
     public Map<String, String> getInstallPlatforms() {
         return this.installPlatforms;
     }
-    
+
     public void setInstallPlatforms(Map<String, String> installPlatforms) {
         this.installPlatforms = installPlatforms;
     }
@@ -97,7 +97,7 @@ public class PlusAppRecord {
     public Map<String, String> getInstallSkill() {
         return this.installSkill;
     }
-    
+
     public void setInstallSkill(Map<String, String> installSkill) {
         this.installSkill = installSkill;
     }
@@ -105,7 +105,7 @@ public class PlusAppRecord {
     public String getPackageName() {
         return this.packageName;
     }
-    
+
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
@@ -113,7 +113,7 @@ public class PlusAppRecord {
     public Map<String, String> getPlatforms() {
         return this.platforms;
     }
-    
+
     public void setPlatforms(Map<String, String> platforms) {
         this.platforms = platforms;
     }
@@ -121,7 +121,7 @@ public class PlusAppRecord {
     public String getProjectId() {
         return this.projectId;
     }
-    
+
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
@@ -129,7 +129,7 @@ public class PlusAppRecord {
     public Map<String, String> getReleaseNotes() {
         return this.releaseNotes;
     }
-    
+
     public void setReleaseNotes(Map<String, String> releaseNotes) {
         this.releaseNotes = releaseNotes;
     }
@@ -137,7 +137,7 @@ public class PlusAppRecord {
     public Map<String, String> getResourceList() {
         return this.resourceList;
     }
-    
+
     public void setResourceList(Map<String, String> resourceList) {
         this.resourceList = resourceList;
     }
@@ -145,7 +145,7 @@ public class PlusAppRecord {
     public String getStoreUrl() {
         return this.storeUrl;
     }
-    
+
     public void setStoreUrl(String storeUrl) {
         this.storeUrl = storeUrl;
     }
@@ -153,7 +153,7 @@ public class PlusAppRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -161,7 +161,7 @@ public class PlusAppRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

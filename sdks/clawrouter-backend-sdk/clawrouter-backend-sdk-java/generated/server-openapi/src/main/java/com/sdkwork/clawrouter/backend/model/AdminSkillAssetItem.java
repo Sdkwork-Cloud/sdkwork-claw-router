@@ -26,7 +26,7 @@ public class AdminSkillAssetItem {
     public String getAltText() {
         return this.altText;
     }
-    
+
     public void setAltText(String altText) {
         this.altText = altText;
     }
@@ -34,7 +34,7 @@ public class AdminSkillAssetItem {
     public String getArtifactId() {
         return this.artifactId;
     }
-    
+
     public void setArtifactId(String artifactId) {
         this.artifactId = artifactId;
     }
@@ -42,7 +42,7 @@ public class AdminSkillAssetItem {
     public Integer getAssetType() {
         return this.assetType;
     }
-    
+
     public void setAssetType(Integer assetType) {
         this.assetType = assetType;
     }
@@ -50,7 +50,7 @@ public class AdminSkillAssetItem {
     public String getAssetUrl() {
         return this.assetUrl;
     }
-    
+
     public void setAssetUrl(String assetUrl) {
         this.assetUrl = assetUrl;
     }
@@ -58,7 +58,7 @@ public class AdminSkillAssetItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -66,7 +66,7 @@ public class AdminSkillAssetItem {
     public String getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -74,7 +74,7 @@ public class AdminSkillAssetItem {
     public Integer getFileSize() {
         return this.fileSize;
     }
-    
+
     public void setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
     }
@@ -82,7 +82,7 @@ public class AdminSkillAssetItem {
     public Integer getHeight() {
         return this.height;
     }
-    
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -90,7 +90,7 @@ public class AdminSkillAssetItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -98,7 +98,7 @@ public class AdminSkillAssetItem {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -106,7 +106,7 @@ public class AdminSkillAssetItem {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -114,7 +114,7 @@ public class AdminSkillAssetItem {
     public String getSkillId() {
         return this.skillId;
     }
-    
+
     public void setSkillId(String skillId) {
         this.skillId = skillId;
     }
@@ -122,7 +122,7 @@ public class AdminSkillAssetItem {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -130,7 +130,7 @@ public class AdminSkillAssetItem {
     public Integer getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -138,7 +138,7 @@ public class AdminSkillAssetItem {
     public String getTargetId() {
         return this.targetId;
     }
-    
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -146,7 +146,7 @@ public class AdminSkillAssetItem {
     public Integer getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(Integer targetType) {
         this.targetType = targetType;
     }
@@ -154,7 +154,7 @@ public class AdminSkillAssetItem {
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
-    
+
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
@@ -162,7 +162,7 @@ public class AdminSkillAssetItem {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -170,7 +170,7 @@ public class AdminSkillAssetItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -178,7 +178,7 @@ public class AdminSkillAssetItem {
     public Integer getWidth() {
         return this.width;
     }
-    
+
     public void setWidth(Integer width) {
         this.width = width;
     }

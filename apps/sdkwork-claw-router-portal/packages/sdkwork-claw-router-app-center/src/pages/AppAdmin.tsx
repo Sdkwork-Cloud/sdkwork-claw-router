@@ -8,6 +8,7 @@ import {
   Folder,
   FolderPlus,
   FolderTree,
+  LayoutTemplate,
   Loader2,
   Package,
   Plus,
@@ -21,25 +22,50 @@ import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog
 import {
   AdminAppService,
   createAdminAppInputFromForm,
+  createAdminAppTemplateInputFromForm,
   createAppCategoryInputFromForm,
   updateAdminAppInputFromForm,
+  updateAdminAppTemplateInputFromForm,
   updateAppCategoryInputFromForm,
   type AdminApp,
   type AdminAppCategory,
+  type AdminAppPage,
   type AdminAppMarketStatus,
   type AdminAppStatus,
+  type AdminAppTemplate,
+  type AdminAppTemplatePage,
+  type AdminAppTemplatePublishStatus,
 } from '../services/adminAppService';
 
+type AdminAppTab = 'apps' | 'templates';
 type AppModalMode = 'create' | 'edit';
+type TemplateModalMode = 'create' | 'edit';
 type CategoryModalMode = 'create' | 'edit';
 type AppStatusFilter = '' | AdminAppStatus;
 type AppMarketStatusFilter = '' | AdminAppMarketStatus;
+type TemplatePublishStatusFilter = '' | AdminAppTemplatePublishStatus;
 type CategoryTreeNode = AdminAppCategory & { children: CategoryTreeNode[]; depth: number };
 type CategoryModalState = {
   mode: CategoryModalMode;
   category: AdminAppCategory | null;
   parentId: string | null;
 } | null;
+
+const emptyAdminAppPage: AdminAppPage = {
+  items: [],
+  total: 0,
+  page: 1,
+  pageSize: 20,
+  hasNextPage: false,
+};
+
+const emptyAdminAppTemplatePage: AdminAppTemplatePage = {
+  items: [],
+  total: 0,
+  page: 1,
+  pageSize: 20,
+  hasNextPage: false,
+};
 
 const statusOptions = [
   { value: '', labelKey: 'admin.app.filters.allRuntime' },
@@ -49,6 +75,13 @@ const statusOptions = [
 
 const marketStatusOptions = [
   { value: '', labelKey: 'admin.app.filters.allMarketplace' },
+  { value: 'DRAFT', labelKey: 'admin.app.status.draft' },
+  { value: 'PUBLISHED', labelKey: 'admin.app.status.published' },
+  { value: 'OFFLINE', labelKey: 'admin.app.status.offline' },
+];
+
+const templatePublishStatusOptions = [
+  { value: '', labelKey: 'admin.app.filters.allTemplatePublishStatus' },
   { value: 'DRAFT', labelKey: 'admin.app.status.draft' },
   { value: 'PUBLISHED', labelKey: 'admin.app.status.published' },
   { value: 'OFFLINE', labelKey: 'admin.app.status.offline' },
@@ -122,7 +155,7 @@ function AppCategoryTree({
   tree,
   selectedCategoryId,
   selectedCategoryName,
-  apps,
+  totalApps,
   loading,
   onSelect,
   onCreateRoot,
@@ -134,7 +167,7 @@ function AppCategoryTree({
   tree: CategoryTreeNode[];
   selectedCategoryId: string;
   selectedCategoryName: string | undefined;
-  apps: AdminApp[];
+  totalApps: number;
   loading: boolean;
   onSelect: (categoryId: string) => void;
   onCreateRoot: () => void;
@@ -179,7 +212,7 @@ function AppCategoryTree({
             <span className="truncate font-semibold">{t('admin.app.tree.all')}</span>
           </span>
           <span className="rounded bg-white px-1.5 py-0.5 text-[11px] font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-300">
-            {t('admin.app.tree.count', { count: apps.length })}
+            {t('admin.app.tree.count', { count: totalApps })}
           </span>
         </button>
 
@@ -276,12 +309,17 @@ function CategoryTreeItem({
 
 export function AppAdmin() {
   const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState<AdminAppTab>('apps');
   const [categories, setCategories] = useState<AdminAppCategory[]>([]);
   const [apps, setApps] = useState<AdminApp[]>([]);
+  const [pageInfo, setPageInfo] = useState<AdminAppPage>(emptyAdminAppPage);
+  const [templates, setTemplates] = useState<AdminAppTemplate[]>([]);
+  const [templatePageInfo, setTemplatePageInfo] = useState<AdminAppTemplatePage>(emptyAdminAppTemplatePage);
   const [keyword, setKeyword] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
   const [status, setStatus] = useState<AppStatusFilter>('');
   const [marketStatus, setMarketStatus] = useState<AppMarketStatusFilter>('');
+  const [templatePublishStatus, setTemplatePublishStatus] = useState<TemplatePublishStatusFilter>('');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(20);
   const [loading, setLoading] = useState(true);
@@ -293,8 +331,12 @@ export function AppAdmin() {
   const [modalMode, setModalMode] = useState<AppModalMode>('create');
   const [modalOpen, setModalOpen] = useState(false);
   const [editingApp, setEditingApp] = useState<AdminApp | null>(null);
+  const [templateModalMode, setTemplateModalMode] = useState<TemplateModalMode>('create');
+  const [templateModalOpen, setTemplateModalOpen] = useState(false);
+  const [editingTemplate, setEditingTemplate] = useState<AdminAppTemplate | null>(null);
   const [categoryModalState, setCategoryModalState] = useState<CategoryModalState>(null);
   const [deleteTarget, setDeleteTarget] = useState<AdminApp | null>(null);
+  const [deleteTemplateTarget, setDeleteTemplateTarget] = useState<AdminAppTemplate | null>(null);
   const [deleteCategoryTarget, setDeleteCategoryTarget] = useState<AdminAppCategory | null>(null);
 
   const adminAppQuery = useMemo(() => {
@@ -303,26 +345,66 @@ export function AppAdmin() {
       searchQuery: normalizedKeyword,
       status: status || undefined,
       marketStatus: marketStatus || undefined,
+      categoryId: selectedCategoryId || undefined,
       page,
       pageSize,
     };
-  }, [keyword, marketStatus, page, pageSize, status]);
+  }, [keyword, marketStatus, page, pageSize, selectedCategoryId, status]);
+
+  const adminTemplateQuery = useMemo(() => {
+    const normalizedKeyword = keyword.trim();
+    return {
+      searchQuery: normalizedKeyword,
+      publishStatus: templatePublishStatus || undefined,
+      categoryId: selectedCategoryId || undefined,
+      page,
+      pageSize,
+    };
+  }, [keyword, page, pageSize, selectedCategoryId, templatePublishStatus]);
 
   const loadApps = useCallback(async () => {
     setLoading(true);
     setLoadError(null);
     try {
-      setApps(await AdminAppService.fetchApps(adminAppQuery));
+      const result = await AdminAppService.fetchApps(adminAppQuery);
+      setApps(result.items);
+      setPageInfo(result);
     } catch (error) {
+      setApps([]);
+      setPageInfo({ ...emptyAdminAppPage, page, pageSize });
       setLoadError(errorMessage(error, t('admin.app.errors.loadFallback')));
     } finally {
       setLoading(false);
     }
-  }, [adminAppQuery, t]);
+  }, [adminAppQuery, page, pageSize, t]);
 
   useEffect(() => {
-    void loadApps();
-  }, [loadApps]);
+    if (activeTab === 'apps') {
+      void loadApps();
+    }
+  }, [activeTab, loadApps]);
+
+  const loadTemplates = useCallback(async () => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const result = await AdminAppService.fetchAppTemplates(adminTemplateQuery);
+      setTemplates(result.items);
+      setTemplatePageInfo(result);
+    } catch (error) {
+      setTemplates([]);
+      setTemplatePageInfo({ ...emptyAdminAppTemplatePage, page, pageSize });
+      setLoadError(errorMessage(error, t('admin.app.errors.templateLoadFallback')));
+    } finally {
+      setLoading(false);
+    }
+  }, [adminTemplateQuery, page, pageSize, t]);
+
+  useEffect(() => {
+    if (activeTab === 'templates') {
+      void loadTemplates();
+    }
+  }, [activeTab, loadTemplates]);
 
   const loadCategories = useCallback(async () => {
     setCategoryLoading(true);
@@ -341,11 +423,16 @@ export function AppAdmin() {
   }, [loadCategories]);
 
   const summary = useMemo(() => ({
-    total: apps.length,
+    total: activeTab === 'templates' ? templatePageInfo.total : pageInfo.total,
     active: apps.filter((item) => item.status === 'ACTIVE').length,
-    published: apps.filter((item) => item.marketStatus === 'PUBLISHED').length,
-    draft: apps.filter((item) => item.marketStatus === 'DRAFT').length,
-  }), [apps]);
+    published: activeTab === 'templates'
+      ? templates.filter((item) => item.publishStatus === 'PUBLISHED').length
+      : apps.filter((item) => item.marketStatus === 'PUBLISHED').length,
+    draft: activeTab === 'templates'
+      ? templates.filter((item) => item.publishStatus === 'DRAFT').length
+      : apps.filter((item) => item.marketStatus === 'DRAFT').length,
+    templates: templatePageInfo.total,
+  }), [activeTab, apps, pageInfo.total, templatePageInfo.total, templates]);
 
   const categoryNameById = useMemo(() => new Map(categories.map((item) => [item.id, item.name])), [categories]);
   const categoryTree = useMemo(() => buildCategoryTree(categories), [categories]);
@@ -362,6 +449,10 @@ export function AppAdmin() {
   };
 
   const openCreate = () => {
+    if (activeTab === 'templates') {
+      openCreateTemplate();
+      return;
+    }
     setModalMode('create');
     setEditingApp(null);
     setActionError(null);
@@ -373,6 +464,20 @@ export function AppAdmin() {
     setEditingApp(app);
     setActionError(null);
     setModalOpen(true);
+  };
+
+  const openCreateTemplate = () => {
+    setTemplateModalMode('create');
+    setEditingTemplate(null);
+    setActionError(null);
+    setTemplateModalOpen(true);
+  };
+
+  const openEditTemplate = (template: AdminAppTemplate) => {
+    setTemplateModalMode('edit');
+    setEditingTemplate(template);
+    setActionError(null);
+    setTemplateModalOpen(true);
   };
 
   const handleSaveApp = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -424,6 +529,30 @@ export function AppAdmin() {
     }
   };
 
+  const handleSaveTemplate = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (saving) {
+      return;
+    }
+    setSaving(true);
+    setActionError(null);
+    try {
+      const form = new FormData(event.currentTarget);
+      if (templateModalMode === 'edit' && editingTemplate) {
+        await AdminAppService.updateAppTemplate(editingTemplate.id, updateAdminAppTemplateInputFromForm(form));
+      } else {
+        await AdminAppService.createAppTemplate(createAdminAppTemplateInputFromForm(form));
+      }
+      await loadTemplates();
+      setTemplateModalOpen(false);
+      setEditingTemplate(null);
+    } catch (error) {
+      setActionError(errorMessage(error, t('admin.app.errors.templateSaveFallback')));
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const runAppAction = async (app: AdminApp, action: 'enable' | 'disable' | 'publish' | 'offline') => {
     setPendingActionId(app.id);
     setActionError(null);
@@ -435,6 +564,22 @@ export function AppAdmin() {
         offline: () => AdminAppService.offlineApp(app.id),
       }[action]();
       await loadApps();
+    } catch (error) {
+      setActionError(errorMessage(error, t('admin.app.errors.actionFallback', { action: t(`admin.app.actions.${action}`) })));
+    } finally {
+      setPendingActionId(null);
+    }
+  };
+
+  const runTemplateAction = async (template: AdminAppTemplate, action: 'publish' | 'offline') => {
+    setPendingActionId(`template:${template.id}`);
+    setActionError(null);
+    try {
+      await {
+        publish: () => AdminAppService.publishAppTemplate(template.id),
+        offline: () => AdminAppService.offlineAppTemplate(template.id),
+      }[action]();
+      await loadTemplates();
     } catch (error) {
       setActionError(errorMessage(error, t('admin.app.errors.actionFallback', { action: t(`admin.app.actions.${action}`) })));
     } finally {
@@ -485,25 +630,69 @@ export function AppAdmin() {
     }
   };
 
+  const executeDeleteTemplate = async () => {
+    if (!deleteTemplateTarget) {
+      return;
+    }
+    const id = deleteTemplateTarget.id;
+    setPendingActionId(`template:${id}`);
+    setActionError(null);
+    try {
+      const deleted = await AdminAppService.deleteAppTemplate(id);
+      if (deleted) {
+        await loadTemplates();
+      }
+      setDeleteTemplateTarget(null);
+    } catch (error) {
+      setActionError(errorMessage(error, t('admin.app.errors.templateDeleteFallback')));
+    } finally {
+      setPendingActionId(null);
+    }
+  };
+
   return (
     <div className="flex h-full min-h-0 w-full min-w-0 flex-col gap-4 overflow-hidden">
-      <div className="flex shrink-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
-            <Package className="h-6 w-6 text-sky-500" />
-            {t('admin.app.title')}
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm text-slate-500 dark:text-slate-400">
-            {t('admin.app.subtitle')}
-          </p>
-        </div>
+      <div className="flex shrink-0 justify-end">
         <button
           type="button"
           onClick={openCreate}
           className="inline-flex w-fit items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
         >
           <Plus className="h-4 w-4" />
-          {t('admin.app.actions.create')}
+          {activeTab === 'templates' ? t('admin.app.actions.createTemplate') : t('admin.app.actions.create')}
+        </button>
+      </div>
+
+      <div data-admin-app-tabs className="flex shrink-0 gap-2 rounded-lg border border-slate-200 bg-white p-1 dark:border-white/10 dark:bg-[#171717]">
+        <button
+          type="button"
+          onClick={() => {
+            setActiveTab('apps');
+            setPage(1);
+          }}
+          className={`inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
+            activeTab === 'apps'
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950'
+              : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/[0.04]'
+          }`}
+        >
+          <Package className="h-4 w-4" />
+          {t('admin.app.tabs.apps')}
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setActiveTab('templates');
+            setPage(1);
+          }}
+          className={`inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
+            activeTab === 'templates'
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950'
+              : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/[0.04]'
+          }`}
+        >
+          <LayoutTemplate className="h-4 w-4" />
+          {t('admin.app.tabs.templates')}
         </button>
       </div>
 
@@ -511,7 +700,7 @@ export function AppAdmin() {
         <Metric label={t('admin.app.metrics.total')} value={summary.total} />
         <Metric label={t('admin.app.metrics.active')} value={summary.active} />
         <Metric label={t('admin.app.metrics.published')} value={summary.published} />
-        <Metric label={t('admin.app.metrics.draft')} value={summary.draft} />
+        <Metric label={activeTab === 'templates' ? t('admin.app.metrics.templates') : t('admin.app.metrics.draft')} value={activeTab === 'templates' ? summary.templates : summary.draft} />
       </div>
 
       <div data-admin-app-layout className="grid min-h-0 flex-1 grid-rows-[minmax(0,240px)_minmax(0,1fr)] gap-4 overflow-hidden xl:grid-cols-[320px_minmax(0,1fr)] xl:grid-rows-[minmax(0,1fr)]">
@@ -520,7 +709,7 @@ export function AppAdmin() {
           tree={categoryTree}
           selectedCategoryId={selectedCategoryId}
           selectedCategoryName={selectedCategoryName}
-          apps={apps}
+          totalApps={pageInfo.total}
           loading={categoryLoading}
           onSelect={(categoryId) => {
             setPage(1);
@@ -557,7 +746,7 @@ export function AppAdmin() {
                       setPage(1);
                       setStatus(event.target.value as AppStatusFilter);
                     }}
-                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                    className={`rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200 ${activeTab === 'apps' ? '' : 'hidden'}`}
                   >
                     {statusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
                   </select>
@@ -567,9 +756,19 @@ export function AppAdmin() {
                       setPage(1);
                       setMarketStatus(event.target.value as AppMarketStatusFilter);
                     }}
-                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                    className={`rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200 ${activeTab === 'apps' ? '' : 'hidden'}`}
                   >
                     {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
+                  </select>
+                  <select
+                    value={templatePublishStatus}
+                    onChange={(event) => {
+                      setPage(1);
+                      setTemplatePublishStatus(event.target.value as TemplatePublishStatusFilter);
+                    }}
+                    className={`rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200 ${activeTab === 'templates' ? '' : 'hidden'}`}
+                  >
+                    {templatePublishStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
                   </select>
                 </div>
               </div>
@@ -585,8 +784,8 @@ export function AppAdmin() {
               <BottomPagination
                 page={page}
                 pageSize={pageSize}
-                itemCount={apps.length}
-                hasNextPage={apps.length >= pageSize}
+                itemCount={activeTab === 'templates' ? templates.length : apps.length}
+                hasNextPage={activeTab === 'templates' ? templatePageInfo.hasNextPage : pageInfo.hasNextPage}
                 disabled={loading}
                 showingLabel={t('admin.app.pagination.showing')}
                 pageLabel={t('admin.app.pagination.page', { page })}
@@ -603,6 +802,94 @@ export function AppAdmin() {
             </div>
           )}
         >
+          {activeTab === 'templates' ? (
+            <table data-admin-app-template-table className="w-full min-w-[1100px] text-left text-sm">
+              <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">{t('admin.app.table.template')}</th>
+                  <th className="px-4 py-3 font-semibold">{t('admin.app.templateTable.scope')}</th>
+                  <th className="px-4 py-3 font-semibold">{t('admin.app.templateTable.manifests')}</th>
+                  <th className="px-4 py-3 font-semibold">{t('admin.app.templateTable.lifecycle')}</th>
+                  <th className="px-4 py-3 text-right font-semibold">{t('admin.app.table.actions')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 dark:divide-white/10">
+                {loading ? (
+                  <BusinessStateTableRow colSpan={5} kind="loading" title={t('admin.app.template.state.loading')} />
+                ) : loadError ? (
+                  <BusinessStateTableRow colSpan={5} kind="error" title={loadError} onRetry={() => void loadTemplates()} />
+                ) : templates.length === 0 ? (
+                  <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.app.template.state.empty')} />
+                ) : (
+                  templates.map((template) => (
+                    <tr key={template.id} className="align-top transition-colors hover:bg-slate-50/80 dark:hover:bg-white/[0.03]">
+                      <td className="px-4 py-4">
+                        <div className="flex items-start gap-3">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-300">
+                            <LayoutTemplate className="h-5 w-5" />
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <span className="font-semibold text-slate-900 dark:text-white">{template.templateName}</span>
+                              <Badge value={template.templateType ?? 'template'} />
+                            </div>
+                            <div className="mt-1 font-mono text-xs text-slate-600 dark:text-slate-300">{template.templateCode}</div>
+                            <div className="mt-1 font-mono text-xs text-slate-500">{template.templateNo}</div>
+                            {template.gitRepoUrl ? (
+                              <div className="mt-1 max-w-lg truncate font-mono text-xs text-slate-500">
+                                {t('admin.app.fields.gitRepoUrl')}: {template.gitRepoUrl}
+                              </div>
+                            ) : null}
+                            {template.gitSubPath || template.gitRef ? (
+                              <div className="mt-1 flex flex-wrap gap-2 text-xs text-slate-500">
+                                {template.gitRef ? <span>{t('admin.app.fields.gitRef')}: {template.gitRef}</span> : null}
+                                {template.gitSubPath ? <span>{t('admin.app.fields.gitSubPath')}: {template.gitSubPath}</span> : null}
+                              </div>
+                            ) : null}
+                            <div className="mt-2 max-w-lg text-xs leading-5 text-slate-500 dark:text-slate-400">{template.description || t('admin.app.empty.noDescription')}</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-4 py-4 text-slate-600 dark:text-slate-300">
+                        <div>{template.visibility}</div>
+                        <div className="mt-1 text-xs text-slate-500">{template.categoryCode || (template.categoryId ? categoryNameById.get(template.categoryId) ?? template.categoryId : '-')}</div>
+                      </td>
+                      <td className="px-4 py-4 text-slate-600 dark:text-slate-300">
+                        <div>{template.runtime || '-'} · {template.framework || '-'}</div>
+                        <div className="mt-1 text-xs text-slate-500">
+                          {t('admin.app.templateTable.manifestCount', { count: template.dependencyManifest.length + template.capabilityManifest.length })}
+                        </div>
+                      </td>
+                      <td className="px-4 py-4">
+                        <div className="flex flex-col gap-1.5">
+                          <StatusBadge value={template.publishStatus} label={appStatusLabel(template.publishStatus, t)} />
+                          {template.featured ? <Badge value={t('admin.app.template.featured')} /> : null}
+                        </div>
+                      </td>
+                      <td className="px-4 py-4">
+                        <div className="flex justify-end gap-2">
+                          <IconButton title={t('common.actions.edit')} onClick={() => openEditTemplate(template)} icon={<Edit2 className="h-4 w-4" />} />
+                          <IconButton
+                            title={template.publishStatus === 'PUBLISHED' ? t('common.actions.offline') : t('common.actions.publish')}
+                            onClick={() => void runTemplateAction(template, template.publishStatus === 'PUBLISHED' ? 'offline' : 'publish')}
+                            icon={template.publishStatus === 'PUBLISHED' ? <CircleOff className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
+                            disabled={pendingActionId === `template:${template.id}`}
+                          />
+                          <IconButton
+                            title={t('common.actions.delete')}
+                            onClick={() => setDeleteTemplateTarget(template)}
+                            icon={<Trash2 className="h-4 w-4" />}
+                            disabled={pendingActionId === `template:${template.id}`}
+                            danger
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          ) : (
           <table className="w-full min-w-[1100px] text-left text-sm">
             <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
               <tr>
@@ -682,6 +969,7 @@ export function AppAdmin() {
               )}
             </tbody>
           </table>
+          )}
         </AdminTableShell>
       </div>
 
@@ -698,6 +986,23 @@ export function AppAdmin() {
             }
           }}
           onSubmit={handleSaveApp}
+        />
+      ) : null}
+
+      {templateModalOpen ? (
+        <TemplateModal
+          mode={templateModalMode}
+          template={editingTemplate}
+          categories={categories}
+          isSaving={saving}
+          error={actionError}
+          onClose={() => {
+            if (!saving) {
+              setTemplateModalOpen(false);
+              setEditingTemplate(null);
+            }
+          }}
+          onSubmit={handleSaveTemplate}
         />
       ) : null}
 
@@ -730,6 +1035,23 @@ export function AppAdmin() {
           onCancel={() => {
             if (!pendingActionId) {
               setDeleteTarget(null);
+            }
+          }}
+        />
+      ) : null}
+
+      {deleteTemplateTarget ? (
+        <ConfirmDialog
+          title={t('admin.app.confirm.deleteTemplate.title')}
+          description={t('admin.app.confirm.deleteTemplate.description', { name: deleteTemplateTarget.templateName })}
+          confirmLabel={t('common.actions.delete')}
+          tone="danger"
+          isBusy={pendingActionId === `template:${deleteTemplateTarget.id}`}
+          icon={<Trash2 className="h-4 w-4" />}
+          onConfirm={() => void executeDeleteTemplate()}
+          onCancel={() => {
+            if (!pendingActionId) {
+              setDeleteTemplateTarget(null);
             }
           }}
         />
@@ -824,6 +1146,108 @@ function AppModal({
             <TextArea label={t('admin.app.fields.installSkill')} name="installSkill" defaultValue={formatJson(app?.installSkill ?? {})} />
             <TextArea label={t('admin.app.fields.installConfig')} name="installConfig" defaultValue={formatJson(app?.installConfig ?? {})} />
             <TextArea label={t('admin.app.fields.releaseNotes')} name="releaseNotes" defaultValue={formatJson(app?.releaseNotes ?? [])} />
+          </div>
+          <div className="mt-5 flex justify-end gap-3">
+            <button type="button" onClick={onClose} disabled={isSaving} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
+              {t('common.actions.cancel')}
+            </button>
+            <button type="submit" disabled={isSaving} className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-800 disabled:opacity-60 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200">
+              {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+              {t('common.actions.save')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function TemplateModal({
+  mode,
+  template,
+  categories,
+  isSaving,
+  error,
+  onClose,
+  onSubmit,
+}: {
+  mode: TemplateModalMode;
+  template: AdminAppTemplate | null;
+  categories: AdminAppCategory[];
+  isSaving: boolean;
+  error: string | null;
+  onClose: () => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+}) {
+  const { t } = useTranslation();
+  const isEdit = mode === 'edit';
+  const categoryOptions = useMemo(() => flattenCategoryTree(buildCategoryTree(categories)), [categories]);
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/50 px-4 py-6 backdrop-blur-sm">
+      <div data-admin-app-template-modal className="max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
+        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">{isEdit ? t('admin.app.modals.template.editTitle') : t('admin.app.modals.template.createTitle')}</h3>
+            <p className="mt-1 text-xs text-slate-500">{t('admin.app.modals.template.description')}</p>
+          </div>
+          <button type="button" onClick={onClose} className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-white">
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <form onSubmit={onSubmit} className="max-h-[calc(90vh-73px)] overflow-y-auto p-5">
+          {error ? <div className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-500/10 dark:text-red-300">{error}</div> : null}
+          <div className="grid gap-4 md:grid-cols-2">
+            {isEdit ? (
+              <Field label={t('admin.app.fields.templateCode')} name="displayTemplateCode" defaultValue={template?.templateCode ?? ''} />
+            ) : (
+              <Field label={t('admin.app.fields.templateCode')} name="templateCode" defaultValue={template?.templateCode ?? ''} required />
+            )}
+            <Field label={t('admin.app.fields.templateName')} name="templateName" defaultValue={template?.templateName ?? ''} required />
+            <Field label={t('admin.app.fields.templateNo')} name="templateNo" defaultValue={template?.templateNo ?? ''} />
+            <SelectField label={t('admin.app.fields.category')} name="categoryId" defaultValue={template?.categoryId ?? ''}>
+              <option value="">{t('admin.app.tree.all')}</option>
+              {categoryOptions.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {`${'  '.repeat(item.depth)}${item.name}`}
+                </option>
+              ))}
+            </SelectField>
+            <Field label={t('admin.app.fields.categoryCode')} name="categoryCode" defaultValue={template?.categoryCode ?? ''} />
+            <Field label={t('admin.app.fields.templateType')} name="templateType" defaultValue={template?.templateType ?? 'dashboard'} />
+            <Field label={t('admin.app.fields.runtime')} name="runtime" defaultValue={template?.runtime ?? 'web'} />
+            <Field label={t('admin.app.fields.framework')} name="framework" defaultValue={template?.framework ?? 'react'} />
+            <Field label={t('admin.app.fields.language')} name="language" defaultValue={template?.language ?? 'typescript'} />
+            <Field label={t('admin.app.fields.iconUrl')} name="iconUrl" defaultValue={template?.iconUrl ?? ''} />
+            <Field label={t('admin.app.fields.coverUrl')} name="coverUrl" defaultValue={template?.coverUrl ?? ''} />
+            <SelectField label={t('admin.app.fields.visibility')} name="visibility" defaultValue={template?.visibility ?? 'TENANT'}>
+              <option value="PRIVATE">{t('admin.app.template.visibility.private')}</option>
+              <option value="TENANT">{t('admin.app.template.visibility.tenant')}</option>
+              <option value="PUBLIC">{t('admin.app.template.visibility.public')}</option>
+            </SelectField>
+            <SelectField label={t('admin.app.fields.publishStatus')} name="publishStatus" defaultValue={template?.publishStatus ?? 'DRAFT'}>
+              <option value="DRAFT">{t('admin.app.status.draft')}</option>
+              <option value="PUBLISHED">{t('admin.app.status.published')}</option>
+              <option value="OFFLINE">{t('admin.app.status.offline')}</option>
+            </SelectField>
+            <SelectField label={t('admin.app.fields.featured')} name="featured" defaultValue={String(template?.featured ?? false)}>
+              <option value="true">{t('admin.app.boolean.yes')}</option>
+              <option value="false">{t('admin.app.boolean.no')}</option>
+            </SelectField>
+            <Field label={t('admin.app.fields.sortWeight')} name="sortWeight" type="number" defaultValue={String(template?.sortWeight ?? 0)} />
+            <Field label={t('admin.app.fields.sourceAppId')} name="sourceAppId" defaultValue={template?.sourceAppId ?? ''} />
+            <Field label={t('admin.app.fields.gitRepoUrl')} name="gitRepoUrl" defaultValue={template?.gitRepoUrl ?? ''} />
+            <Field label={t('admin.app.fields.gitRef')} name="gitRef" defaultValue={template?.gitRef ?? ''} />
+            <Field label={t('admin.app.fields.gitSubPath')} name="gitSubPath" defaultValue={template?.gitSubPath ?? ''} />
+          </div>
+          <div className="mt-4">
+            <TextArea label={t('admin.app.fields.description')} name="description" rows={4} defaultValue={template?.description ?? ''} plain />
+          </div>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <TextArea label={t('admin.app.fields.appConfigSchema')} name="appConfigSchema" defaultValue={formatJson(template?.appConfigSchema ?? {})} />
+            <TextArea label={t('admin.app.fields.defaultAppConfig')} name="defaultAppConfig" defaultValue={formatJson(template?.defaultAppConfig ?? {})} />
+            <TextArea label={t('admin.app.fields.variableSchema')} name="variableSchema" defaultValue={formatJson(template?.variableSchema ?? {})} />
+            <TextArea label={t('admin.app.fields.dependencyManifest')} name="dependencyManifest" defaultValue={formatJson(template?.dependencyManifest ?? [])} />
+            <TextArea label={t('admin.app.fields.capabilityManifest')} name="capabilityManifest" defaultValue={formatJson(template?.capabilityManifest ?? [])} />
           </div>
           <div className="mt-5 flex justify-end gap-3">
             <button type="button" onClick={onClose} disabled={isSaving} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">

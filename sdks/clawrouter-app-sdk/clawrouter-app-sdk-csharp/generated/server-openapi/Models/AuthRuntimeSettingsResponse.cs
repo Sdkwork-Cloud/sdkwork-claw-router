@@ -12,6 +12,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public List<string>? OauthProviders { get; set; }
         public string? OauthRegion { get; set; }
         public bool? QrLoginEnabled { get; set; }
+        public string? QrLoginType { get; set; }
         public List<string>? RecoveryMethods { get; set; }
         public List<string>? RegisterMethods { get; set; }
         public AuthVerificationPolicy? VerificationPolicy { get; set; }

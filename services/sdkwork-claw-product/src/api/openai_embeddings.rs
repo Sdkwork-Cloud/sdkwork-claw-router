@@ -26,7 +26,10 @@ use crate::api::openai_runtime::{
     OpenAiRouteError, OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig,
     ResolvedOpenAiProviderRoute, ResolvedOpenAiProviderRoutePlan,
 };
-use crate::api::openai_usage::OpenAiUsageRecorder;
+use crate::api::openai_usage::{
+    build_request_trace_command, provider_error_code_from_body, provider_error_message_from_body,
+    provider_error_type_from_body, record_request_trace, OpenAiUsageRecorder,
+};
 use crate::application::{ApiKeySecretHasher, AuthenticatedApiKeyContext};
 use crate::domain::{BillingMeter, ProviderRetryPolicy, RoutingCapability};
 use crate::ports::{EmbeddingsRelay, EmbeddingsRelayRequest, GatewayUsageRecorder, PricingCatalog};
@@ -329,17 +332,69 @@ where
         &uri,
     );
     if let Err(error) = notify_before_route_selection(&state.plugins, &invocation_context).await {
+        record_request_trace(
+            state.usage_recorder.as_ref(),
+            build_request_trace_command(
+                &invocation_context,
+                None,
+                Some(error.status_code.as_u16()),
+                false,
+                None,
+                Some(error.code.to_owned()),
+                Some(error.error_type.to_owned()),
+                Some(error.message.clone()),
+            ),
+        )
+        .await;
         notify_error(&state.plugins, &invocation_context, None, &error).await;
         return error.into_openai_response();
     }
     let mut route_plan = match validate_embeddings_model(&state, &context, &request.model) {
         Ok(route_plan) => route_plan,
-        Err(response) => return *response,
+        Err(response) => {
+            let http_status = response.status().as_u16();
+            record_request_trace(
+                state.usage_recorder.as_ref(),
+                build_request_trace_command(
+                    &invocation_context,
+                    None,
+                    Some(http_status),
+                    false,
+                    None,
+                    Some("route_selection_failed".to_owned()),
+                    Some(if http_status >= 500 {
+                        "server_error".to_owned()
+                    } else {
+                        "invalid_request_error".to_owned()
+                    }),
+                    Some(format!(
+                        "provider route selection failed for model: {}",
+                        request.model
+                    )),
+                ),
+            )
+            .await;
+            return *response;
+        }
     };
     let mut route = route_plan.first_route();
     if let Err(error) =
         notify_after_route_selection(&state.plugins, &invocation_context, &mut route).await
     {
+        record_request_trace(
+            state.usage_recorder.as_ref(),
+            build_request_trace_command(
+                &invocation_context,
+                Some(&route),
+                Some(error.status_code.as_u16()),
+                false,
+                None,
+                Some(error.code.to_owned()),
+                Some(error.error_type.to_owned()),
+                Some(error.message.clone()),
+            ),
+        )
+        .await;
         notify_error(&state.plugins, &invocation_context, Some(&route), &error).await;
         return error.into_openai_response();
     }
@@ -348,6 +403,20 @@ where
     }
 
     let Some(relay) = state.relay.as_ref() else {
+        record_request_trace(
+            state.usage_recorder.as_ref(),
+            build_request_trace_command(
+                &invocation_context,
+                Some(&route),
+                Some(StatusCode::NOT_IMPLEMENTED.as_u16()),
+                false,
+                None,
+                Some("embedding_relay_not_configured".to_owned()),
+                Some("server_error".to_owned()),
+                Some("provider relay is not implemented for /v1/embeddings".to_owned()),
+            ),
+        )
+        .await;
         return openai_error(
             StatusCode::NOT_IMPLEMENTED,
             "embedding_relay_not_configured",
@@ -358,6 +427,7 @@ where
 
     match relay_embedding(
         relay.as_ref(),
+        state.usage_recorder.clone(),
         state.usage_recording.clone(),
         &state.plugins,
         &invocation_context,
@@ -409,6 +479,7 @@ where
 
 async fn relay_embedding(
     relay: &(dyn EmbeddingsRelay + Send + Sync),
+    usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
     usage_recording: Option<Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
     plugins: &[OpenAiInvocationPluginRef],
     invocation_context: &OpenAiInvocationContext,
@@ -430,6 +501,7 @@ async fn relay_embedding(
         }
         match relay_embedding_route(
             relay,
+            usage_recorder.clone(),
             usage_recording.as_ref(),
             plugins,
             invocation_context,
@@ -473,6 +545,7 @@ fn elapsed_millis(started_at: Instant) -> i64 {
 
 async fn relay_embedding_route(
     relay: &(dyn EmbeddingsRelay + Send + Sync),
+    usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
     usage_recording: Option<&Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
     plugins: &[OpenAiInvocationPluginRef],
     invocation_context: &OpenAiInvocationContext,
@@ -509,6 +582,20 @@ async fn relay_embedding_route(
         Err(error) => {
             let fault = OpenAiInvocationFault::relay_transport(error.to_string())
                 .with_latency_ms(elapsed_millis(started_at));
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    false,
+                    fault.latency_ms,
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             let plugin_error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,
                 "provider_relay_failed",
@@ -530,6 +617,20 @@ async fn relay_embedding_route(
                 "provider relay returned an invalid HTTP status",
             )
             .with_latency_ms(elapsed_millis(started_at));
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    false,
+                    fault.latency_ms,
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             notify_route_fault(plugins, invocation_context, route, &fault).await;
             return Err(RouteRelayFailure::Retryable(openai_error(
                 StatusCode::BAD_GATEWAY,
@@ -550,6 +651,29 @@ async fn relay_embedding_route(
             format!("provider relay returned HTTP {}", response.status_code),
         )
         .with_latency_ms(elapsed_millis(started_at));
+        record_request_trace(
+            usage_recorder.as_ref(),
+            build_request_trace_command(
+                invocation_context,
+                Some(route),
+                Some(response.status_code),
+                false,
+                fault.latency_ms,
+                Some(provider_error_code_from_body(
+                    &response.body,
+                    &fault.error_code,
+                )),
+                Some(provider_error_type_from_body(
+                    &response.body,
+                    response.status_code,
+                )),
+                Some(provider_error_message_from_body(
+                    &response.body,
+                    &fault.message,
+                )),
+            ),
+        )
+        .await;
         notify_route_fault(plugins, invocation_context, route, &fault).await;
         notify_after_relay_observers(plugins, invocation_context, route, &outcome).await;
         let response = (status, Json(response.body)).into_response();
@@ -565,6 +689,20 @@ async fn relay_embedding_route(
             .record_after_success(invocation_context, route, &outcome)
             .await
         {
+            record_request_trace(
+                usage_recorder.as_ref(),
+                build_request_trace_command(
+                    invocation_context,
+                    Some(route),
+                    Some(502),
+                    false,
+                    fault.latency_ms.or(outcome.latency_ms),
+                    Some(fault.error_code.clone()),
+                    Some("server_error".to_owned()),
+                    Some(fault.message.clone()),
+                ),
+            )
+            .await;
             notify_route_fault(plugins, invocation_context, route, &fault).await;
             let error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,

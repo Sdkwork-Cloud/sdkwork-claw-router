@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult
+from ..models import AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppTemplateCreateRequest, AdminAppTemplateUpdateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsTemplatesCreateResult, AppsTemplatesDeleteResult, AppsTemplatesListResult, AppsTemplatesPublishResult, AppsTemplatesRetrieveResult, AppsTemplatesUnpublishResult, AppsTemplatesUpdateResult, AppsUnpublishResult, AppsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -251,15 +251,17 @@ class PlatformAppsApi:
     def __init__(self, client: HttpClient):
         self._client = client
         self.categories = PlatformAppsCategoriesApi(client)
+        self.templates = PlatformAppsTemplatesApi(client)
 
 
-    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsListResult:
+    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsListResult:
         """List apps"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'market_status', 'value': market_status, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'app_type', 'value': app_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'category_id', 'value': category_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
@@ -391,3 +393,89 @@ class PlatformAppsCategoriesApi:
             {}
         )
         return self._client.put(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class PlatformAppsTemplatesApi:
+    """platform platform.apps.templates API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, q: Optional[str] = None, publish_status: Optional[str] = None, template_type: Optional[str] = None, runtime: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsTemplatesListResult:
+        """List app templates"""
+        query = build_query_string([
+            {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'publish_status', 'value': publish_status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'template_type', 'value': template_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'runtime', 'value': runtime, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'category_id', 'value': category_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.get(_append_query_string(f"/backend/v3/api/platform/apps/templates", query), headers=request_headers)
+
+    def create(self, body: AdminAppTemplateCreateRequest, x_request_id: Optional[str] = None) -> AppsTemplatesCreateResult:
+        """Create app template"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/platform/apps/templates", json=body, headers=request_headers)
+
+    def delete(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesDeleteResult:
+        """Delete app template"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.delete(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+
+    def retrieve(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesRetrieveResult:
+        """List app template"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.get(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+
+    def update(self, template_id: str, body: AdminAppTemplateUpdateRequest, x_request_id: Optional[str] = None) -> AppsTemplatesUpdateResult:
+        """Update app template"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+    def publish(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesPublishResult:
+        """Publish app template"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+
+    def unpublish(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesUnpublishResult:
+        """Offline app template"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/unpublish", headers=request_headers)

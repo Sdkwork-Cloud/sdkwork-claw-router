@@ -1,0 +1,83 @@
+# SDKWork File SDK Generation
+
+Canonical SDK generation manifest and OpenAPI artifact exporter for the
+SDKWork file platform.
+
+This package does not generate code itself. It gives the repository-standard
+generator a stable, testable source for app/backend TypeScript SDK targets,
+source OpenAPI documents, package names, client names, API prefixes, and
+artifact filenames.
+
+The generation manifest does not trust arbitrary OpenAPI inputs. Its standard
+validation delegates to `@sdkwork/file-api-contracts`, so source documents must
+pass route, operation, typed response, command request, surface pruning, and
+schema `$ref` resolution rules before they are accepted as SDK generation
+inputs.
+
+## Artifact Plan
+
+`createFileSdkArtifactWritePlan()` returns deterministic files for the standard
+SDK family layout:
+
+- `sdks/file-app-sdk/.sdkwork-assembly.json`
+- `sdks/file-app-sdk/README.md`
+- `sdks/file-app-sdk/openapi/file-app-sdk.openapi.json`
+- `sdks/file-app-sdk/openapi/file-app-sdk.sdkgen.json`
+- `sdks/file-backend-sdk/.sdkwork-assembly.json`
+- `sdks/file-backend-sdk/README.md`
+- `sdks/file-backend-sdk/openapi/file-backend-sdk.openapi.json`
+- `sdks/file-backend-sdk/openapi/file-backend-sdk.sdkgen.json`
+- `sdks/file-sdk-generation-manifest.json`
+
+Every planned file carries a SHA-256 hash and stable content. The plan contains
+no timestamp, no raw HTTP settings, no auth headers, and no local SDK fork path.
+The OpenAPI artifacts preserve typed command and read/list response schemas,
+including storage-safe app file/drive/usage responses and backend admin storage
+resource envelopes, so downstream generated SDKs do not need package-local DTO
+forks. They also preserve canonical path parameters derived from templated
+routes and adapter-facing query parameters for request IDs, pagination, filters,
+and storage usage scopes, giving generated SDK methods explicit input shapes.
+Every exported operation has a typed JSON `200` response, and every command
+operation has a JSON request body with `requestId`, so generated SDK packages do
+not need weak fallback DTOs or transport-specific method overloads.
+Each surface artifact includes only component schemas reachable from that
+surface's operations, preventing app SDK generation from carrying backend admin
+governance types.
+
+## Materialization and Drift Check
+
+`materializeFileSdkArtifacts()` applies the deterministic artifact plan through
+an injected file host. It only reads and writes files that appear in the plan,
+never traverses the filesystem, and never deletes unplanned files.
+
+`createNodeFileSdkArtifactHost()` provides the standard Node filesystem host for
+repository tooling. It resolves artifact paths under the configured workspace
+root, creates parent directories when applying files, and rejects direct reads
+or writes that try to escape the workspace root.
+
+Use `mode: "check"` or `verifyFileSdkArtifacts()` for drift detection. Missing
+planned files are reported as `create`, changed planned files are reported as
+`update`, and matching planned files are reported as `unchanged`. Check mode
+does not write.
+
+Use `mode: "apply"` to create or update only the planned files. Before any
+write, the materializer rejects unsafe plans with absolute paths, path traversal,
+paths outside the root directory, duplicate paths, or stale content hashes.
+
+## Repository Commands
+
+The repository exposes one standard CLI for SDK family artifacts:
+
+- `pnpm.cmd file-sdk:artifacts:check -- --json`
+- `pnpm.cmd file-sdk:artifacts:write -- --json`
+
+The package also exposes local equivalents:
+
+- `pnpm.cmd --dir packages/common/file/sdkwork-file-sdk-generation artifacts:check -- --json`
+- `pnpm.cmd --dir packages/common/file/sdkwork-file-sdk-generation artifacts:write -- --json`
+
+`check` exits with code `1` when any planned artifact is missing or drifted and
+does not write files. `write` applies only the deterministic plan and exits with
+code `0` when the plan is materialized. Both commands use the same safe
+materializer, so existing unrelated SDK directories such as `sdks/clawrouter-*`
+are not read, rewritten, or deleted.

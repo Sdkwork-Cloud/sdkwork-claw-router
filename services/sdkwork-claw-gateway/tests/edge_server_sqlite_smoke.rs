@@ -519,7 +519,7 @@ impl JsonRequestBuilder {
             builder = builder.header(header::AUTHORIZATION, authorization);
         }
         if let Some(access_token) = self.access_token {
-            builder = builder.header("Sdkwork-Access-Token", access_token);
+            builder = builder.header("Access-Token", access_token);
         }
         if let Some(content_type) = self.content_type {
             builder = builder.header(header::CONTENT_TYPE, content_type);

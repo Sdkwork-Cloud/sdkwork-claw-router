@@ -31,7 +31,7 @@ describe("sdkwork-commerce-pc-react hero panel", () => {
             pendingPaymentOrders: 1,
             totalOrders: 42,
             totalSpentCny: 1299,
-            vipRemainingDays: 38,
+            membershipRemainingDays: 38,
           }}
         />
       </SdkworkThemeProvider>,

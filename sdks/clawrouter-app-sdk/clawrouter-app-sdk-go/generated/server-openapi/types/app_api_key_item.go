@@ -4,6 +4,7 @@ package types
 type AppApiKeyItem struct {
 	CopyableKey string `json:"copyableKey"`
 	Created string `json:"created"`
+	DefaultForRuntime bool `json:"defaultForRuntime"`
 	Expires string `json:"expires"`
 	Group string `json:"group"`
 	GroupName string `json:"groupName"`

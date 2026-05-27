@@ -10,7 +10,7 @@ public class OpenAiConversationContentPart {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -18,7 +18,7 @@ public class OpenAiConversationContentPart {
     public String getImageUrl() {
         return this.imageUrl;
     }
-    
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -26,7 +26,7 @@ public class OpenAiConversationContentPart {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -34,7 +34,7 @@ public class OpenAiConversationContentPart {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

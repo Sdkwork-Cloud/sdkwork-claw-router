@@ -14,7 +14,7 @@ public class ForumCreateFeedRequest {
     public Integer getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
@@ -22,7 +22,7 @@ public class ForumCreateFeedRequest {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -30,7 +30,7 @@ public class ForumCreateFeedRequest {
     public List<String> getImages() {
         return this.images;
     }
-    
+
     public void setImages(List<String> images) {
         this.images = images;
     }
@@ -38,7 +38,7 @@ public class ForumCreateFeedRequest {
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -46,7 +46,7 @@ public class ForumCreateFeedRequest {
     public String getSourceUrl() {
         return this.sourceUrl;
     }
-    
+
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
@@ -54,7 +54,7 @@ public class ForumCreateFeedRequest {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -62,7 +62,7 @@ public class ForumCreateFeedRequest {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

@@ -65,7 +65,7 @@ SaaS Java, private Java/Rust, and local Rust deployments must provide clients wi
 Protected flows use the SDKWork dual token model:
 
 - `Authorization: Bearer <auth_token>`
-- `Sdkwork-Access-Token: <access_token>`
+- `Access-Token: <access_token>`
 
 This package stores token values only through injected callbacks. It does not assemble raw HTTP headers.
 

@@ -35,6 +35,9 @@ export interface GeneratedSdkToolConfig {
   apiSpecPath: string;
   baseUrl: string;
   apiPrefix: string;
+  endpointPath?: string;
+  endpointMethod?: string;
+  operationId?: string;
   packageName: string;
   author: string;
   license: string;
@@ -77,10 +80,11 @@ export function getGeneratedSdkMetadataForSystem(system: SdkReferenceSystem): Ge
 
 export function createGeneratedSdkToolConfig(
   system: SdkReferenceSystem,
-  language: string,
+  languageId: string,
   schemaUrl = defaultSchemaUrlForSystem(system),
 ): GeneratedSdkToolConfig {
   const sdkMetadata = getGeneratedSdkMetadataForSystem(system);
+  const language = normalizeSdkReferenceLanguage(languageId);
   return {
     name: sdkMetadata.name,
     version: sdkMetadata.version,
@@ -136,9 +140,25 @@ function resolveGeneratedSdkApiPrefix(system: SdkReferenceSystem): string {
 
 function stripGatewayOpenAiVersionBaseUrl(baseUrl: string): string {
   const normalized = baseUrl.trim().replace(/\/+$/g, '');
-  return normalized.endsWith('/v1')
-    ? normalized.slice(0, -'/v1'.length)
-    : normalized;
+  if (!normalized.endsWith('/v1')) {
+    return normalized;
+  }
+  const withoutOpenAiVersion = normalized.slice(0, -'/v1'.length);
+  if (withoutOpenAiVersion) {
+    return withoutOpenAiVersion;
+  }
+  return readBrowserOrigin() ?? GATEWAY_GENERATED_SDK_DEFAULT_BASE_URL;
+}
+
+function readBrowserOrigin(): string | undefined {
+  if (typeof window === 'undefined') {
+    return undefined;
+  }
+  const origin = window.location?.origin?.trim();
+  if (!origin || origin === 'null') {
+    return undefined;
+  }
+  return origin.replace(/\/+$/g, '');
 }
 
 function isSdkReferenceSystemData(system: ApiReferenceSystemData): system is ApiReferenceSystemData & { id: SdkReferenceSystem } {

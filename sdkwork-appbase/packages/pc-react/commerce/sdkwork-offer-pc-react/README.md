@@ -19,7 +19,7 @@ Shared commercial offer cards, featured pricing opportunities, and reusable rout
 
 ## Ownership
 
-This package is implemented as an independent SDKWork commerce capability. It owns its public React/service contracts and consumes commerce data through injected service boundaries with wallet and VIP ownership kept separate.
+This package is implemented as an independent SDKWork commerce capability. It owns its public React/service contracts and consumes commerce data through injected service boundaries with wallet and membership ownership kept separate.
 
 ## Runtime boundary
 

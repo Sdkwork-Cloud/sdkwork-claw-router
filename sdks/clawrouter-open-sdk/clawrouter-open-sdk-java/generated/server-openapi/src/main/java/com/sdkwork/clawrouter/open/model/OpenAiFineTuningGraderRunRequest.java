@@ -10,7 +10,7 @@ public class OpenAiFineTuningGraderRunRequest {
     public String getGrader() {
         return this.grader;
     }
-    
+
     public void setGrader(String grader) {
         this.grader = grader;
     }
@@ -18,7 +18,7 @@ public class OpenAiFineTuningGraderRunRequest {
     public String getInput() {
         return this.input;
     }
-    
+
     public void setInput(String input) {
         this.input = input;
     }
@@ -26,7 +26,7 @@ public class OpenAiFineTuningGraderRunRequest {
     public String getModelSample() {
         return this.modelSample;
     }
-    
+
     public void setModelSample(String modelSample) {
         this.modelSample = modelSample;
     }
@@ -34,7 +34,7 @@ public class OpenAiFineTuningGraderRunRequest {
     public String getReferenceAnswer() {
         return this.referenceAnswer;
     }
-    
+
     public void setReferenceAnswer(String referenceAnswer) {
         this.referenceAnswer = referenceAnswer;
     }

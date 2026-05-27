@@ -28,7 +28,7 @@ public class AdminSkillArtifactItem {
     public String getArtifactRef() {
         return this.artifactRef;
     }
-    
+
     public void setArtifactRef(String artifactRef) {
         this.artifactRef = artifactRef;
     }
@@ -36,7 +36,7 @@ public class AdminSkillArtifactItem {
     public Integer getArtifactSizeBytes() {
         return this.artifactSizeBytes;
     }
-    
+
     public void setArtifactSizeBytes(Integer artifactSizeBytes) {
         this.artifactSizeBytes = artifactSizeBytes;
     }
@@ -44,7 +44,7 @@ public class AdminSkillArtifactItem {
     public Integer getArtifactType() {
         return this.artifactType;
     }
-    
+
     public void setArtifactType(Integer artifactType) {
         this.artifactType = artifactType;
     }
@@ -52,7 +52,7 @@ public class AdminSkillArtifactItem {
     public String getArtifactUrl() {
         return this.artifactUrl;
     }
-    
+
     public void setArtifactUrl(String artifactUrl) {
         this.artifactUrl = artifactUrl;
     }
@@ -60,7 +60,7 @@ public class AdminSkillArtifactItem {
     public String getChecksumHash() {
         return this.checksumHash;
     }
-    
+
     public void setChecksumHash(String checksumHash) {
         this.checksumHash = checksumHash;
     }
@@ -68,7 +68,7 @@ public class AdminSkillArtifactItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -76,7 +76,7 @@ public class AdminSkillArtifactItem {
     public String getDeprecatedAt() {
         return this.deprecatedAt;
     }
-    
+
     public void setDeprecatedAt(String deprecatedAt) {
         this.deprecatedAt = deprecatedAt;
     }
@@ -84,7 +84,7 @@ public class AdminSkillArtifactItem {
     public List<String> getFrameworks() {
         return this.frameworks;
     }
-    
+
     public void setFrameworks(List<String> frameworks) {
         this.frameworks = frameworks;
     }
@@ -92,7 +92,7 @@ public class AdminSkillArtifactItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -100,7 +100,7 @@ public class AdminSkillArtifactItem {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -108,7 +108,7 @@ public class AdminSkillArtifactItem {
     public String getOsName() {
         return this.osName;
     }
-    
+
     public void setOsName(String osName) {
         this.osName = osName;
     }
@@ -116,7 +116,7 @@ public class AdminSkillArtifactItem {
     public String getPlatformType() {
         return this.platformType;
     }
-    
+
     public void setPlatformType(String platformType) {
         this.platformType = platformType;
     }
@@ -124,7 +124,7 @@ public class AdminSkillArtifactItem {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -132,7 +132,7 @@ public class AdminSkillArtifactItem {
     public String getReleaseNotes() {
         return this.releaseNotes;
     }
-    
+
     public void setReleaseNotes(String releaseNotes) {
         this.releaseNotes = releaseNotes;
     }
@@ -140,7 +140,7 @@ public class AdminSkillArtifactItem {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -148,7 +148,7 @@ public class AdminSkillArtifactItem {
     public String getSkillId() {
         return this.skillId;
     }
-    
+
     public void setSkillId(String skillId) {
         this.skillId = skillId;
     }
@@ -156,7 +156,7 @@ public class AdminSkillArtifactItem {
     public Integer getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -164,7 +164,7 @@ public class AdminSkillArtifactItem {
     public String getTargetId() {
         return this.targetId;
     }
-    
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -172,7 +172,7 @@ public class AdminSkillArtifactItem {
     public Integer getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(Integer targetType) {
         this.targetType = targetType;
     }
@@ -180,7 +180,7 @@ public class AdminSkillArtifactItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -188,7 +188,7 @@ public class AdminSkillArtifactItem {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

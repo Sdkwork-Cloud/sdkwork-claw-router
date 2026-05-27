@@ -8,7 +8,7 @@ public class OpenAiNamedToolChoice {
     public OpenAiNamedToolChoiceFunction getFunction() {
         return this.function;
     }
-    
+
     public void setFunction(OpenAiNamedToolChoiceFunction function) {
         this.function = function;
     }
@@ -16,7 +16,7 @@ public class OpenAiNamedToolChoice {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

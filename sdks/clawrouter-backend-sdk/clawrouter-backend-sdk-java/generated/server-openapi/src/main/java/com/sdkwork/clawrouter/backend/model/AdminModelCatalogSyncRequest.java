@@ -13,7 +13,7 @@ public class AdminModelCatalogSyncRequest {
     public String getCatalogRoot() {
         return this.catalogRoot;
     }
-    
+
     public void setCatalogRoot(String catalogRoot) {
         this.catalogRoot = catalogRoot;
     }
@@ -21,7 +21,7 @@ public class AdminModelCatalogSyncRequest {
     public String getCatalogVersion() {
         return this.catalogVersion;
     }
-    
+
     public void setCatalogVersion(String catalogVersion) {
         this.catalogVersion = catalogVersion;
     }
@@ -29,7 +29,7 @@ public class AdminModelCatalogSyncRequest {
     public Boolean getForce() {
         return this.force;
     }
-    
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -37,7 +37,7 @@ public class AdminModelCatalogSyncRequest {
     public String getMode() {
         return this.mode;
     }
-    
+
     public void setMode(String mode) {
         this.mode = mode;
     }
@@ -45,7 +45,7 @@ public class AdminModelCatalogSyncRequest {
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -53,7 +53,7 @@ public class AdminModelCatalogSyncRequest {
     public List<String> getVendorCodes() {
         return this.vendorCodes;
     }
-    
+
     public void setVendorCodes(List<String> vendorCodes) {
         this.vendorCodes = vendorCodes;
     }

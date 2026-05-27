@@ -8,7 +8,7 @@ public class AppInstalledSkillsResponse {
     public List<AppInstalledSkillItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AppInstalledSkillItem> items) {
         this.items = items;
     }

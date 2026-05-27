@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -5,10 +7,13 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminAppCategoryItem, AdminAppCommandFuture, AdminAppItem, AdminAppStore,
-    CreateAdminAppCategoryCommand, CreateAdminAppCommand, DeleteAdminAppCategoryCommand,
-    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppCategoriesQuery, ListAdminAppsQuery,
-    SetAdminAppStatusCommand, UpdateAdminAppCategoryCommand, UpdateAdminAppCommand,
+    AdminAppCategoryItem, AdminAppCommandFuture, AdminAppItem, AdminAppPage, AdminAppStore,
+    AdminAppTemplateItem, AdminAppTemplatePage, CreateAdminAppCategoryCommand,
+    CreateAdminAppCommand, CreateAdminAppTemplateCommand, DeleteAdminAppCategoryCommand,
+    DeleteAdminAppCommand, DeleteAdminAppTemplateCommand, GetAdminAppQuery,
+    GetAdminAppTemplateQuery, ListAdminAppCategoriesQuery, ListAdminAppTemplatesQuery,
+    ListAdminAppsQuery, SetAdminAppStatusCommand, SetAdminAppTemplatePublishStatusCommand,
+    UpdateAdminAppCategoryCommand, UpdateAdminAppCommand, UpdateAdminAppTemplateCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -28,10 +33,8 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
-                .header("X-Request-Id", "req-create-app")
+                .internal_trusted_subject(10, 20, 30)
+                .header("X-Request-Id", "00000000-0000-4000-8000-000000000101")
                 .body(Body::from(
                     r#"{"name":"Claw Router Portal","description":"Unified app portal","version":"1.0.0","iconUrl":"https://cdn.example.test/app.png","accessUrl":"https://portal.example.test","config":{"standard":{"appKey":"claw-router-portal"}},"appType":"web","platforms":{"platforms":["web"]},"installPlatforms":{"platforms":["web"]},"installSkill":{"name":"Portal Installer"},"installConfig":{"packages":[{"version":"1.0.0","downloadUrl":"https://cdn.example.test/portal.zip"}]},"releaseNotes":[{"version":"1.0.0","notes":["Initial release"]}],"packageName":"com.sdkwork.claw.portal","bundleId":"com.sdkwork.claw.portal","storeUrl":"https://store.example.test/portal","downloadUrl":"https://cdn.example.test/portal.zip"}"#,
                 ))
@@ -63,9 +66,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
                 .method("PUT")
                 .uri("/backend/v3/api/platform/apps/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"description":"Production-grade app portal","version":"1.0.1","config":{"standard":{"appKey":"claw-router-portal","framework":"react"}},"releaseNotes":[{"version":"1.0.1","notes":["Polished app management"]}]}"#,
                 ))
@@ -115,9 +116,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
                     .method("POST")
                     .uri(path)
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::from("{}"))
                     .unwrap(),
             )
@@ -138,9 +137,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/platform/apps/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -160,9 +157,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"keyword":"portal","marketStatus":"OFFLINE"}"#,
                 ))
@@ -174,6 +169,10 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
     assert_eq!(StatusCode::OK, list_response.status());
     let list_payload = json_payload(list_response).await;
     assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
+    assert_eq!(1, list_payload["data"]["total"]);
+    assert_eq!(1, list_payload["data"]["page"]);
+    assert_eq!(100, list_payload["data"]["pageSize"]);
+    assert_eq!(false, list_payload["data"]["hasNextPage"]);
     assert_eq!(
         "Claw Router Portal",
         list_payload["data"]["items"][0]["name"]
@@ -185,9 +184,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/platform/apps/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -228,10 +225,8 @@ async fn admin_app_route_manages_app_store_categories() {
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps/categories")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
-                .header("X-Request-Id", "req-create-app-category")
+                .internal_trusted_subject(10, 20, 30)
+                .header("X-Request-Id", "00000000-0000-4000-8000-000000000102")
                 .body(Body::from(
                     r#"{"name":"Productivity","code":"app-store-productivity","description":"Work apps","sortWeight":120,"path":"/app-store/productivity","visible":true,"status":1}"#,
                 ))
@@ -252,9 +247,7 @@ async fn admin_app_route_manages_app_store_categories() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/platform/apps/categories")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -271,9 +264,7 @@ async fn admin_app_route_manages_app_store_categories() {
                 .method("PUT")
                 .uri("/backend/v3/api/platform/apps/categories/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(r#"{"name":"Workflows","sortWeight":140}"#))
                 .unwrap(),
         )
@@ -289,9 +280,7 @@ async fn admin_app_route_manages_app_store_categories() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/platform/apps/categories/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -306,6 +295,173 @@ async fn admin_app_route_manages_app_store_categories() {
             "list_app_categories",
             "update_app_category",
             "delete_app_category"
+        ],
+        *store.commands.lock().unwrap()
+    );
+}
+
+#[tokio::test]
+async fn admin_app_route_manages_app_templates() {
+    let store = Arc::new(TestAdminAppStore::default());
+    let router = sdkwork_claw_product::api::admin_app_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/platform/apps/templates")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .header("X-Request-Id", "00000000-0000-4000-8000-000000000103")
+                .body(Body::from(
+                    r#"{"templateCode":"agent-dashboard","templateName":"Agent Dashboard","description":"Start from an agent operations app shell","templateType":"dashboard","runtime":"web","framework":"react","language":"typescript","visibility":"TENANT","publishStatus":"DRAFT","featured":true,"sortWeight":90,"gitRepoUrl":"https://github.com/sdkwork/app-templates.git","gitRef":"main","gitSubPath":"apps/agent-dashboard","appConfigSchema":{"type":"object"},"defaultAppConfig":{"theme":"light"},"variableSchema":{"required":["agentId"]},"dependencyManifest":[{"name":"@sdkwork/runtime"}],"capabilityManifest":[{"capability":"agent"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, create_response.status());
+    let create_payload = json_payload(create_response).await;
+    assert_eq!("2000", create_payload["code"]);
+    assert_eq!("1", create_payload["data"]["item"]["id"]);
+    assert_eq!(
+        "agent-dashboard",
+        create_payload["data"]["item"]["templateCode"]
+    );
+    assert_eq!(
+        "Agent Dashboard",
+        create_payload["data"]["item"]["templateName"]
+    );
+    assert_eq!("TENANT", create_payload["data"]["item"]["visibility"]);
+    assert_eq!("DRAFT", create_payload["data"]["item"]["publishStatus"]);
+    assert_eq!(true, create_payload["data"]["item"]["featured"]);
+    assert_eq!(
+        "https://github.com/sdkwork/app-templates.git",
+        create_payload["data"]["item"]["gitRepoUrl"]
+    );
+    assert_eq!("main", create_payload["data"]["item"]["gitRef"]);
+    assert_eq!(
+        "apps/agent-dashboard",
+        create_payload["data"]["item"]["gitSubPath"]
+    );
+
+    let update_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("PUT")
+                .uri("/backend/v3/api/platform/apps/templates/1")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"templateName":"Agent Dashboard Pro","framework":"react-router","featured":false,"gitRepoUrl":"git@github.com:sdkwork/app-templates.git","gitRef":"release/2026.05","gitSubPath":"apps/agent-dashboard-pro","defaultAppConfig":{"theme":"dark"}}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, update_response.status());
+    let update_payload = json_payload(update_response).await;
+    assert_eq!(
+        "Agent Dashboard Pro",
+        update_payload["data"]["item"]["templateName"]
+    );
+    assert_eq!("react-router", update_payload["data"]["item"]["framework"]);
+    assert_eq!(false, update_payload["data"]["item"]["featured"]);
+    assert_eq!(
+        "git@github.com:sdkwork/app-templates.git",
+        update_payload["data"]["item"]["gitRepoUrl"]
+    );
+    assert_eq!("release/2026.05", update_payload["data"]["item"]["gitRef"]);
+    assert_eq!(
+        "apps/agent-dashboard-pro",
+        update_payload["data"]["item"]["gitSubPath"]
+    );
+
+    let publish_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/platform/apps/templates/1/publish")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, publish_response.status());
+    let publish_payload = json_payload(publish_response).await;
+    assert_eq!(
+        "PUBLISHED",
+        publish_payload["data"]["item"]["publishStatus"]
+    );
+
+    let list_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/backend/v3/api/platform/apps/templates?q=agent&publish_status=PUBLISHED&page=1&page_size=20")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, list_response.status());
+    let list_payload = json_payload(list_response).await;
+    assert_eq!(1, list_payload["data"]["total"]);
+    assert_eq!(
+        "Agent Dashboard Pro",
+        list_payload["data"]["items"][0]["templateName"]
+    );
+
+    let offline_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/platform/apps/templates/1/offline")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, offline_response.status());
+    let offline_payload = json_payload(offline_response).await;
+    assert_eq!("OFFLINE", offline_payload["data"]["item"]["publishStatus"]);
+
+    let delete_response = router
+        .oneshot(
+            Request::builder()
+                .method("DELETE")
+                .uri("/backend/v3/api/platform/apps/templates/1")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, delete_response.status());
+    let delete_payload = json_payload(delete_response).await;
+    assert_eq!(true, delete_payload["data"]["deleted"]);
+    assert_eq!(
+        vec![
+            "create_app_template",
+            "update_app_template",
+            "set_template_publish_status",
+            "list_app_templates",
+            "set_template_publish_status",
+            "delete_app_template"
         ],
         *store.commands.lock().unwrap()
     );
@@ -348,9 +504,7 @@ async fn admin_app_route_rejects_invalid_payload_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"","config":{"standard":{"appKey":"valid-app-key"}}}"#,
                 ))
@@ -448,9 +602,7 @@ async fn admin_app_route_rejects_invalid_runtime_status_without_calling_store() 
                     .method(method)
                     .uri(uri)
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::from(request_body))
                     .unwrap(),
             )
@@ -511,9 +663,7 @@ async fn admin_app_route_rejects_invalid_market_status_without_calling_store() {
                     .method(method)
                     .uri(uri)
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::from(request_body))
                     .unwrap(),
             )
@@ -556,9 +706,7 @@ async fn admin_app_route_rejects_reserved_config_shapes_without_calling_store() 
                     .method("POST")
                     .uri("/backend/v3/api/platform/apps")
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::from(request_body))
                     .unwrap(),
             )
@@ -631,9 +779,7 @@ async fn admin_app_route_requires_standard_app_key_on_create_and_update_config()
                     .method(method)
                     .uri(uri)
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::from(request_body))
                     .unwrap(),
             )
@@ -667,9 +813,7 @@ async fn admin_app_route_accepts_market_status_independently_from_runtime_status
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"Published Market App","marketStatus":"PUBLISHED","config":{"standard":{"appKey":"published-market-app"},"portal":{}}}"#,
                 ))
@@ -700,9 +844,7 @@ async fn admin_app_publish_does_not_change_runtime_status() {
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"Inactive Draft App","status":"INACTIVE","marketStatus":"DRAFT","config":{"standard":{"appKey":"inactive-draft-app"}}}"#,
                 ))
@@ -721,9 +863,7 @@ async fn admin_app_publish_does_not_change_runtime_status() {
                 .method("POST")
                 .uri("/backend/v3/api/platform/apps/1/publish")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -751,6 +891,7 @@ async fn json_payload(response: axum::response::Response) -> Value {
 struct TestAdminAppStore {
     apps: Mutex<Vec<AdminAppItem>>,
     categories: Mutex<Vec<AdminAppCategoryItem>>,
+    templates: Mutex<Vec<AdminAppTemplateItem>>,
     commands: Mutex<Vec<&'static str>>,
 }
 
@@ -847,10 +988,10 @@ impl AdminAppStore for TestAdminAppStore {
     fn list_apps<'a>(
         &'a self,
         query: ListAdminAppsQuery,
-    ) -> AdminAppCommandFuture<'a, Vec<AdminAppItem>> {
+    ) -> AdminAppCommandFuture<'a, AdminAppPage> {
         Box::pin(async move {
             let keyword = query.keyword.as_deref().map(str::to_lowercase);
-            Ok(self
+            let mut items = self
                 .apps
                 .lock()
                 .unwrap()
@@ -889,7 +1030,17 @@ impl AdminAppStore for TestAdminAppStore {
                         .map_or(true, |status| item.market_status == *status)
                 })
                 .cloned()
-                .collect())
+                .collect::<Vec<_>>();
+            let total = items.len() as i64;
+            let page_size = query.page_size.unwrap_or(100).max(1);
+            let page_no = query.page_no.unwrap_or(1).max(1);
+            let offset = ((page_no - 1) * page_size) as usize;
+            items = items
+                .into_iter()
+                .skip(offset)
+                .take(page_size as usize)
+                .collect();
+            Ok(AdminAppPage::new(items, total, page_no, page_size))
         })
     }
 
@@ -1028,6 +1179,203 @@ impl AdminAppStore for TestAdminAppStore {
                     && item.organization_id == command.subject.organization_id)
             });
             Ok(apps.len() != before)
+        })
+    }
+
+    fn list_app_templates<'a>(
+        &'a self,
+        query: ListAdminAppTemplatesQuery,
+    ) -> AdminAppCommandFuture<'a, AdminAppTemplatePage> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("list_app_templates");
+            let keyword = query.keyword.as_deref().map(str::to_lowercase);
+            let mut items = self
+                .templates
+                .lock()
+                .unwrap()
+                .iter()
+                .filter(|item| {
+                    item.tenant_id == query.subject.tenant_id
+                        && item.organization_id == query.subject.organization_id
+                })
+                .filter(|item| {
+                    keyword.as_ref().map_or(true, |keyword| {
+                        item.template_name.to_lowercase().contains(keyword)
+                            || item.template_code.to_lowercase().contains(keyword)
+                            || item
+                                .description
+                                .as_deref()
+                                .unwrap_or_default()
+                                .to_lowercase()
+                                .contains(keyword)
+                    })
+                })
+                .filter(|item| {
+                    query
+                        .publish_status
+                        .as_ref()
+                        .map_or(true, |status| item.publish_status == *status)
+                })
+                .cloned()
+                .collect::<Vec<_>>();
+            let total = items.len() as i64;
+            let page_size = query.page_size.unwrap_or(100).max(1);
+            let page_no = query.page_no.unwrap_or(1).max(1);
+            let offset = ((page_no - 1) * page_size) as usize;
+            items = items
+                .into_iter()
+                .skip(offset)
+                .take(page_size as usize)
+                .collect();
+            Ok(AdminAppTemplatePage::new(items, total, page_no, page_size))
+        })
+    }
+
+    fn get_app_template<'a>(
+        &'a self,
+        query: GetAdminAppTemplateQuery,
+    ) -> AdminAppCommandFuture<'a, Option<AdminAppTemplateItem>> {
+        Box::pin(async move {
+            Ok(self
+                .templates
+                .lock()
+                .unwrap()
+                .iter()
+                .find(|item| {
+                    item.id == query.template_id
+                        && item.tenant_id == query.subject.tenant_id
+                        && item.organization_id == query.subject.organization_id
+                })
+                .cloned())
+        })
+    }
+
+    fn create_app_template<'a>(
+        &'a self,
+        command: CreateAdminAppTemplateCommand,
+    ) -> AdminAppCommandFuture<'a, AdminAppTemplateItem> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("create_app_template");
+            let id = self.templates.lock().unwrap().len() as i64 + 1;
+            let item = AdminAppTemplateItem {
+                id,
+                uuid: command.template_uuid,
+                tenant_id: command.subject.tenant_id,
+                organization_id: command.subject.organization_id,
+                template_no: command.template_no,
+                template_code: command.template_code,
+                template_name: command.template_name,
+                description: command.description,
+                category_id: command.category_id,
+                category_code: command.category_code,
+                template_type: command.template_type,
+                runtime: command.runtime,
+                framework: command.framework,
+                language: command.language,
+                icon_url: command.icon_url,
+                cover_url: command.cover_url,
+                visibility: command.visibility,
+                publish_status: command.publish_status,
+                featured: command.featured,
+                sort_weight: command.sort_weight,
+                source_app_id: command.source_app_id,
+                git_repo_url: command.git_repo_url,
+                git_ref: command.git_ref,
+                git_sub_path: command.git_sub_path,
+                current_version_id: None,
+                app_config_schema: command.app_config_schema,
+                default_app_config: command.default_app_config,
+                variable_schema: command.variable_schema,
+                dependency_manifest: command.dependency_manifest,
+                capability_manifest: command.capability_manifest,
+                created_at: command.requested_at.clone(),
+                updated_at: command.requested_at,
+            };
+            self.templates.lock().unwrap().push(item.clone());
+            Ok(item)
+        })
+    }
+
+    fn update_app_template<'a>(
+        &'a self,
+        command: UpdateAdminAppTemplateCommand,
+    ) -> AdminAppCommandFuture<'a, Option<AdminAppTemplateItem>> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("update_app_template");
+            let mut templates = self.templates.lock().unwrap();
+            let Some(item) = templates.iter_mut().find(|item| {
+                item.id == command.template_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id
+            }) else {
+                return Ok(None);
+            };
+            if let Some(value) = command.template_name {
+                item.template_name = value;
+            }
+            if let Some(value) = command.description {
+                item.description = value;
+            }
+            if let Some(value) = command.framework {
+                item.framework = value;
+            }
+            if let Some(value) = command.featured {
+                item.featured = value;
+            }
+            if let Some(value) = command.git_repo_url {
+                item.git_repo_url = value;
+            }
+            if let Some(value) = command.git_ref {
+                item.git_ref = value;
+            }
+            if let Some(value) = command.git_sub_path {
+                item.git_sub_path = value;
+            }
+            if let Some(value) = command.default_app_config {
+                item.default_app_config = value;
+            }
+            item.updated_at = command.requested_at;
+            Ok(Some(item.clone()))
+        })
+    }
+
+    fn set_app_template_publish_status<'a>(
+        &'a self,
+        command: SetAdminAppTemplatePublishStatusCommand,
+    ) -> AdminAppCommandFuture<'a, Option<AdminAppTemplateItem>> {
+        Box::pin(async move {
+            self.commands
+                .lock()
+                .unwrap()
+                .push("set_template_publish_status");
+            let mut templates = self.templates.lock().unwrap();
+            let Some(item) = templates.iter_mut().find(|item| {
+                item.id == command.template_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id
+            }) else {
+                return Ok(None);
+            };
+            item.publish_status = command.publish_status;
+            item.updated_at = command.requested_at;
+            Ok(Some(item.clone()))
+        })
+    }
+
+    fn delete_app_template<'a>(
+        &'a self,
+        command: DeleteAdminAppTemplateCommand,
+    ) -> AdminAppCommandFuture<'a, bool> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("delete_app_template");
+            let mut templates = self.templates.lock().unwrap();
+            let before = templates.len();
+            templates.retain(|item| {
+                !(item.id == command.template_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id)
+            });
+            Ok(templates.len() != before)
         })
     }
 }

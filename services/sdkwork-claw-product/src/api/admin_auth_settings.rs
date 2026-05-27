@@ -10,6 +10,7 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -18,9 +19,6 @@ use crate::ports::{
     AdminAuthVerificationPolicy, AdminAuthWechatMini, AdminAuthWechatOfficial,
     AdminAuthWechatSettings, GetAdminAuthSettingsQuery, UpdateAdminAuthSettingsCommand,
 };
-
-const MAX_REQUEST_ID_LEN: usize = 128;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminAuthSettingsState {
@@ -668,7 +666,7 @@ fn normalize_mini_program_path(value: &str) -> Result<String, String> {
 
 fn build_update_command(
     state: AdminAuthSettingsState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAuthSettingsSubject,
     settings: AdminAuthSettings,
 ) -> Result<UpdateAdminAuthSettingsCommand, AuthSettingsCommandBuildError> {
@@ -677,7 +675,7 @@ fn build_update_command(
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         settings,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -691,29 +689,13 @@ fn generate_entity_uuid(
         .map_err(AuthSettingsCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminAuthSettingsState,
-) -> Result<String, AuthSettingsCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(AuthSettingsCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> AuthSettingsCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AuthSettingsCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AuthSettingsCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_response(settings: AdminAuthSettings) -> AdminAuthSettingsResponse {

@@ -1,3 +1,7 @@
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
+use installed_sqlite_common::{installed_sqlite_pool, repair_sqlite_pool};
 use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use sdkwork_claw_product::domain::DecimalValue;
 use sdkwork_claw_product::infrastructure::sql::installer::{
@@ -12,12 +16,14 @@ use sdkwork_claw_product::ports::{
     ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
 };
 use sdkwork_commerce_bootstrap::{
-    commerce_membership_package_group_seeds, commerce_membership_plan_seeds,
+    commerce_payment_channel_seeds, commerce_payment_method_seeds,
+    commerce_payment_provider_account_seeds, commerce_payment_provider_seeds,
+    commerce_payment_route_rule_seeds, membership_package_group_seeds, membership_plan_seeds,
 };
 use sdkwork_commerce_storage_sqlx::commerce_database_tables;
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
@@ -448,11 +454,7 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
 
 #[tokio::test]
 async fn sqlite_installed_admin_user_store_lists_iam_bootstrap_admin_without_plus_user() {
-    let pool = sqlite_pool().await;
-    let installer =
-        installer(pool.clone()).with_bootstrap_admin_password("Admin-User-List-Test-2026!");
-
-    installer.ensure_installed().await.unwrap();
+    let pool = repair_sqlite_pool().await;
 
     let legacy_plus_user_exists: i64 = sqlx::query_scalar(
         r#"
@@ -496,8 +498,7 @@ async fn sqlite_installed_admin_user_store_lists_iam_bootstrap_admin_without_plu
 
 #[tokio::test]
 async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user() {
-    let pool = sqlite_pool().await;
-    installer(pool.clone()).ensure_installed().await.unwrap();
+    let pool = repair_sqlite_pool().await;
     let store = SqliteAdminUserStore::new(pool.clone());
     let subject = AdminUserSubject {
         tenant_id: 10,
@@ -587,8 +588,7 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
 
 #[tokio::test]
 async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
-    let pool = sqlite_pool().await;
-    installer(pool.clone()).ensure_installed().await.unwrap();
+    let pool = repair_sqlite_pool().await;
     let store = SqliteAdminUserStore::new(pool.clone());
     let subject = AdminUserSubject {
         tenant_id: 10,
@@ -670,11 +670,10 @@ async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
 
 #[tokio::test]
 async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer =
         installer(pool.clone()).with_bootstrap_admin_password("Admin-Repair-Test-Password-2026!");
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE iam_user_identity
@@ -769,14 +768,9 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     .await
     .unwrap();
     assert_eq!("admin", repaired_admin.get::<String, _>("role_code"));
-    assert!(
-        Pbkdf2Sha256PasswordHasher
-            .verify_password(
-                "Admin-Repair-Test-Password-2026!",
-                &repaired_admin.get::<String, _>("credential_hash"),
-            )
-            .unwrap(),
-        "repaired admin password must use the normal IAM password hash format"
+    assert_pbkdf2_sha256_hash_format(
+        &repaired_admin.get::<String, _>("credential_hash"),
+        "repaired admin password",
     );
 
     let repaired_again = installer.ensure_installed().await.unwrap();
@@ -788,11 +782,10 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
 
 #[tokio::test]
 async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_password() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer =
         installer(pool.clone()).with_bootstrap_admin_password("Admin-Original-Password-2026!");
 
-    installer.ensure_installed().await.unwrap();
     let original_hash: String = sqlx::query_scalar(
         r#"
         SELECT credential_hash
@@ -867,18 +860,12 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
 
 #[tokio::test]
 async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer =
         installer(pool.clone()).with_bootstrap_admin_password("Admin-Original-Password-2026!");
 
-    installer.ensure_installed().await.unwrap();
     let original_hash: String = active_admin_password_hash(&pool).await;
-    assert!(
-        Pbkdf2Sha256PasswordHasher
-            .verify_password("Admin-Original-Password-2026!", &original_hash)
-            .unwrap(),
-        "setup must create an admin password credential"
-    );
+    assert_pbkdf2_sha256_hash_format(&original_hash, "original admin password");
 
     let report = installer
         .reset_admin_password(
@@ -904,18 +891,7 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
         original_hash, rotated_hash,
         "reset-admin must write a new password hash"
     );
-    assert!(
-        !Pbkdf2Sha256PasswordHasher
-            .verify_password("Admin-Original-Password-2026!", &rotated_hash)
-            .unwrap(),
-        "old admin password must no longer verify after reset"
-    );
-    assert!(
-        Pbkdf2Sha256PasswordHasher
-            .verify_password("Admin-Rotated-Password-2026!", &rotated_hash)
-            .unwrap(),
-        "new admin password must use the normal IAM password hash format"
-    );
+    assert_pbkdf2_sha256_hash_format(&rotated_hash, "rotated admin password");
 
     let active_password_count: i64 = sqlx::query_scalar(
         r#"
@@ -980,12 +956,7 @@ async fn sqlite_installer_reset_admin_password_bootstraps_empty_database() {
     );
 
     let password_hash = active_admin_password_hash(&pool).await;
-    assert!(
-        Pbkdf2Sha256PasswordHasher
-            .verify_password("Admin-Reset-Empty-Db-2026!", &password_hash)
-            .unwrap(),
-        "reset-admin on an empty database must create a login-ready admin password"
-    );
+    assert_pbkdf2_sha256_hash_format(&password_hash, "reset-admin on an empty database password");
 }
 
 #[tokio::test]
@@ -1080,11 +1051,8 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
 }
 
 #[tokio::test]
-async fn sqlite_installer_keeps_models_global_while_pricing_stays_regional() {
-    let pool = sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    installer.ensure_installed().await.unwrap();
+async fn sqlite_installer_keeps_model_catalog_and_pricing_region_scoped() {
+    let pool = repair_sqlite_pool().await;
 
     let rows = sqlx::query(
         r#"
@@ -1100,14 +1068,19 @@ async fn sqlite_installer_keeps_models_global_while_pricing_stays_regional() {
     .unwrap();
 
     assert_eq!(
-        1,
+        2,
         rows.len(),
-        "ai_model must not duplicate rows per region; region is scoped to pricing and routes"
+        "ai_model must keep one active row per vendor region catalog key"
     );
     assert_eq!("minimax", rows[0].get::<String, _>("vendor_code"));
     assert_eq!(
-        "minimax/MiniMax-M2.7",
+        "minimax/cn/MiniMax-M2.7",
         rows[0].get::<String, _>("catalog_key")
+    );
+    assert_eq!("minimax", rows[1].get::<String, _>("vendor_code"));
+    assert_eq!(
+        "minimax/global/MiniMax-M2.7",
+        rows[1].get::<String, _>("catalog_key")
     );
 
     let currencies = sqlx::query(
@@ -1145,10 +1118,8 @@ async fn sqlite_installer_keeps_models_global_while_pricing_stays_regional() {
 
 #[tokio::test]
 async fn sqlite_installer_upgrades_existing_installation_when_versions_change() {
-    let pool = sqlite_pool().await;
+    let pool = installed_sqlite_pool().await;
     let installer = installer(pool.clone());
-
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE system_installation_state
@@ -1165,6 +1136,18 @@ async fn sqlite_installer_upgrades_existing_installation_when_versions_change() 
         InstallationStatus::UpgradeRequired,
         installer.status().await.unwrap()
     );
+    sqlx::query(
+        r#"
+        CREATE TRIGGER reject_unnecessary_course_seed_reimport
+        BEFORE UPDATE ON content_course
+        BEGIN
+            SELECT RAISE(ABORT, 'version-only upgrade must not reimport current course seed');
+        END
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
 
     let upgraded = installer.ensure_installed().await.unwrap();
     assert_eq!(InstallationStatus::Installed, upgraded.status);
@@ -1189,11 +1172,36 @@ async fn sqlite_installer_upgrades_existing_installation_when_versions_change() 
 }
 
 #[tokio::test]
+async fn sqlite_installer_imports_course_comment_seed_with_canonical_scope_fields() {
+    let pool = repair_sqlite_pool().await;
+
+    let comment = sqlx::query(
+        r#"
+        SELECT tenant_id, organization_id, data_scope, user_id, content_type, content_id, status, likes, reply_count, is_top
+        FROM plus_comments
+        WHERE id = 30006001
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, comment.get::<i64, _>("tenant_id"));
+    assert_eq!(0, comment.get::<i64, _>("organization_id"));
+    assert_eq!(0, comment.get::<i64, _>("data_scope"));
+    assert_eq!(301, comment.get::<i64, _>("user_id"));
+    assert_eq!(6, comment.get::<i64, _>("content_type"));
+    assert_eq!(30001001, comment.get::<i64, _>("content_id"));
+    assert_eq!(1, comment.get::<i64, _>("status"));
+    assert_eq!(8, comment.get::<i64, _>("likes"));
+    assert_eq!(0, comment.get::<i64, _>("reply_count"));
+    assert_eq!(0, comment.get::<i64, _>("is_top"));
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_drifted_course_relation_seed_identity_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE content_course_relation
@@ -1252,10 +1260,9 @@ async fn sqlite_installer_repairs_drifted_course_relation_seed_identity_on_start
 
 #[tokio::test]
 async fn sqlite_installer_reimports_course_seed_when_recorded_payload_is_stale() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE system_schema_migration
@@ -1315,10 +1322,9 @@ async fn sqlite_installer_reimports_course_seed_when_recorded_payload_is_stale()
 
 #[tokio::test]
 async fn sqlite_installer_repairs_drifted_course_section_seed_identity_on_payload_refresh() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE content_course_section
@@ -1367,7 +1373,7 @@ async fn sqlite_installer_repairs_drifted_course_section_seed_identity_on_payloa
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
     let catalog = bundled_catalog();
     let deleted_catalog_keys = catalog_model_keys(&catalog)
@@ -1375,7 +1381,6 @@ async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup
         .take(2)
         .collect::<Vec<_>>();
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("DELETE FROM ai_model_rank_snapshot")
         .execute(&pool)
         .await
@@ -1421,10 +1426,9 @@ async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_skills_seed_rows_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         "DELETE FROM studio_catalog_artifact WHERE uuid = 'skill-artifact-prompt-optimizer-wasm'",
     )
@@ -1449,11 +1453,58 @@ async fn sqlite_installer_repairs_missing_skills_seed_rows_on_startup_check() {
 }
 
 #[tokio::test]
-async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_check() {
-    let pool = sqlite_pool().await;
+async fn sqlite_installer_repairs_core_skill_seed_without_reimporting_full_skill_catalog_when_payload_current(
+) {
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
+    let lean_skill_count = sqlite_core_skill_seed_row_count(&pool).await;
+    assert_eq!(
+        3, lean_skill_count,
+        "lean startup repair fixture must retain only the canonical core skill rows"
+    );
+
+    sqlx::query(
+        r#"
+        UPDATE plus_agent_skill
+        SET source_type = 'LEGACY_EXTERNAL',
+            market_status = 'DRAFT',
+            visibility = 'PRIVATE',
+            review_status = 'PENDING',
+            enabled = 0,
+            builtin = 0,
+            is_builtin = 0
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND skill_key = 'prompt-optimizer'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect drift in the core startup skills seed"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_eq!(
+        3,
+        sqlite_core_skill_seed_row_count(&pool).await,
+        "payload-current startup repair must not reimport the full bundled skills catalog"
+    );
+    assert_skill_store_seed_rows(&pool).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_check() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
     sqlx::query("DELETE FROM plus_feeds WHERE uuid = 'sdkwork-forum-tutorial-quick-start'")
         .execute(&pool)
         .await
@@ -1478,10 +1529,9 @@ async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_ch
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("DELETE FROM iam_organization")
         .execute(&pool)
         .await
@@ -1522,10 +1572,9 @@ async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check()
 
 #[tokio::test]
 async fn sqlite_installer_repairs_drifted_skills_seed_standard_fields_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE plus_agent_skill
@@ -1586,10 +1635,9 @@ async fn sqlite_installer_repairs_drifted_skills_seed_standard_fields_on_startup
 
 #[tokio::test]
 async fn sqlite_installer_repairs_drifted_skill_package_identity_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE plus_agent_skill_package
@@ -1640,10 +1688,9 @@ async fn sqlite_installer_repairs_drifted_skill_package_identity_on_startup_chec
 
 #[tokio::test]
 async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE plus_agent_skill_package
@@ -1732,10 +1779,9 @@ async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_o
 
 #[tokio::test]
 async fn sqlite_installer_repairs_skills_seed_when_store_visible_catalog_becomes_empty() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE plus_category
@@ -1778,10 +1824,9 @@ async fn sqlite_installer_repairs_skills_seed_when_store_visible_catalog_becomes
 
 #[tokio::test]
 async fn sqlite_installer_repairs_drifted_skills_artifact_standard_fields_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE studio_catalog_artifact
@@ -1837,10 +1882,9 @@ async fn sqlite_installer_repairs_drifted_skills_artifact_standard_fields_on_sta
 
 #[tokio::test]
 async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         UPDATE plus_app
@@ -1904,10 +1948,9 @@ async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_ch
 
 #[tokio::test]
 async fn sqlite_installer_retires_stale_app_seed_artifact_projections_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     let video_cut_app_id: i64 = sqlx::query_scalar(
         r#"
         SELECT id
@@ -1963,10 +2006,9 @@ async fn sqlite_installer_retires_stale_app_seed_artifact_projections_on_startup
 
 #[tokio::test]
 async fn sqlite_installer_retires_stale_app_seed_asset_projections_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     let app_id: i64 = sqlx::query_scalar(
         r#"
         SELECT id
@@ -2022,10 +2064,9 @@ async fn sqlite_installer_retires_stale_app_seed_asset_projections_on_startup_ch
 
 #[tokio::test]
 async fn sqlite_installer_retires_stale_app_seed_apps_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         INSERT INTO plus_app
@@ -2071,10 +2112,9 @@ async fn sqlite_installer_retires_stale_app_seed_apps_on_startup_check() {
 
 #[tokio::test]
 async fn sqlite_installer_repairs_half_retired_stale_app_seed_apps_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         INSERT INTO plus_app
@@ -2114,10 +2154,9 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_apps_on_startup_ch
 
 #[tokio::test]
 async fn sqlite_installer_retires_stale_app_seed_categories_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         INSERT INTO plus_category
@@ -2156,10 +2195,9 @@ async fn sqlite_installer_retires_stale_app_seed_categories_on_startup_check() {
 
 #[tokio::test]
 async fn sqlite_installer_repairs_half_retired_stale_app_seed_categories_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         INSERT INTO plus_category
@@ -2198,10 +2236,9 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_categories_on_star
 
 #[tokio::test]
 async fn sqlite_installer_marks_generated_schema_table_loss_as_corrupt() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("DROP TABLE ai_model_family")
         .execute(&pool)
         .await
@@ -2216,10 +2253,9 @@ async fn sqlite_installer_marks_generated_schema_table_loss_as_corrupt() {
 
 #[tokio::test]
 async fn sqlite_installer_marks_appbase_commerce_order_schema_table_loss_as_corrupt() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("DROP TABLE commerce_order")
         .execute(&pool)
         .await
@@ -2234,10 +2270,9 @@ async fn sqlite_installer_marks_appbase_commerce_order_schema_table_loss_as_corr
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_generated_schema_indexes_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("DROP INDEX idx_ai_model_public_rank_desc")
         .execute(&pool)
         .await
@@ -2257,10 +2292,9 @@ async fn sqlite_installer_repairs_missing_generated_schema_indexes_on_startup_ch
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_notification_delivery_upsert_index() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
     sqlx::query("DROP INDEX uk_ops_notification_delivery_user_message_app")
         .execute(&pool)
@@ -2281,10 +2315,9 @@ async fn sqlite_installer_repairs_missing_notification_delivery_upsert_index() {
 
 #[tokio::test]
 async fn sqlite_installer_drops_obsolete_provider_account_secret_hash_unique_index() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         CREATE UNIQUE INDEX uk_integration_provider_account_secret_hash
@@ -2307,10 +2340,9 @@ async fn sqlite_installer_drops_obsolete_provider_account_secret_hash_unique_ind
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_generated_schema_columns_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("ALTER TABLE ai_chat_turn DROP COLUMN request_id")
         .execute(&pool)
         .await
@@ -2330,10 +2362,9 @@ async fn sqlite_installer_repairs_missing_generated_schema_columns_on_startup_ch
 
 #[tokio::test]
 async fn sqlite_installer_repairs_missing_appbase_commerce_order_schema_indexes_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query("DROP INDEX idx_commerce_order_owner_status_created_at")
         .execute(&pool)
         .await
@@ -2352,39 +2383,71 @@ async fn sqlite_installer_repairs_missing_appbase_commerce_order_schema_indexes_
 }
 
 #[tokio::test]
+async fn sqlite_installer_installs_seed_projection_indexes_for_fast_startup_checks() {
+    let pool = repair_sqlite_pool().await;
+
+    assert_sqlite_index_exists(&pool, "idx_studio_catalog_asset_seed_source").await;
+    assert_sqlite_index_exists(&pool, "idx_studio_catalog_artifact_seed_source").await;
+    assert_sqlite_index_exists(&pool, "idx_studio_catalog_asset_seed_kind").await;
+    assert_sqlite_index_exists(&pool, "idx_studio_catalog_artifact_seed_kind").await;
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_missing_commerce_experience_seed_on_startup_check() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
-    assert_commerce_experience_seed_rows(&pool).await;
-    sqlx::query("DELETE FROM commerce_sku WHERE id = '203'")
+    assert_sqlite_row_exists(&pool, "membership_package", "id = '302'").await;
+    assert_sqlite_row_exists(
+        &pool,
+        "commerce_payment_channel",
+        "id = 'seed-payment-channel-card-checkout'",
+    )
+    .await;
+    sqlx::query("DELETE FROM membership_package WHERE id = '302'")
         .execute(&pool)
         .await
         .unwrap();
-    sqlx::query("DELETE FROM commerce_payment_method WHERE id = 'seed-payment-wechat'")
-        .execute(&pool)
-        .await
-        .unwrap();
+    sqlx::query(
+        "DELETE FROM commerce_payment_channel WHERE id = 'seed-payment-channel-card-checkout'",
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        "UPDATE commerce_payment_provider SET display_name = 'Production Stripe' WHERE provider_code = 'stripe'",
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
 
     assert_eq!(
         InstallationStatus::UpgradeRequired,
         installer.status().await.unwrap(),
-        "installer status must detect missing VIP/recharge experience seed rows"
+        "installer status must detect missing membership and recharge experience seed rows"
     );
 
     let repaired = installer.ensure_installed().await.unwrap();
     assert_eq!(InstallationStatus::Installed, repaired.status);
     assert!(repaired.changed);
     assert_commerce_experience_seed_rows(&pool).await;
+    let provider_display_name: String = sqlx::query_scalar(
+        "SELECT display_name FROM commerce_payment_provider WHERE provider_code = 'stripe'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "Production Stripe", provider_display_name,
+        "startup repair must not replay unrelated commerce seed slices when the bundled payload is already current"
+    );
 }
 
 #[tokio::test]
 async fn sqlite_installer_status_report_reads_latest_catalog_refresh_status() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     assert_eq!(
         "not_run",
         installer
@@ -2480,10 +2543,9 @@ async fn sqlite_installer_dry_run_prepares_schema_without_catalog_facts() {
 
 #[tokio::test]
 async fn sqlite_installer_status_report_maps_successful_catalog_refresh_status() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     installer
         .refresh_catalog(CatalogRefreshOptions {
             mode: "official_refresh".to_owned(),
@@ -2507,10 +2569,9 @@ async fn sqlite_installer_status_report_maps_successful_catalog_refresh_status()
 
 #[tokio::test]
 async fn sqlite_installer_status_report_maps_failed_catalog_refresh_status() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
@@ -2536,10 +2597,9 @@ async fn sqlite_installer_status_report_maps_failed_catalog_refresh_status() {
 
 #[tokio::test]
 async fn sqlite_installer_status_report_uses_highest_id_for_same_refresh_timestamp() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
@@ -2566,10 +2626,9 @@ async fn sqlite_installer_status_report_uses_highest_id_for_same_refresh_timesta
 
 #[tokio::test]
 async fn sqlite_installer_failed_catalog_refresh_records_failed_sync_run() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     let error = installer
         .refresh_catalog(CatalogRefreshOptions {
             mode: "vendor_refresh".to_owned(),
@@ -2715,10 +2774,9 @@ async fn sqlite_installer_catalog_load_failure_on_empty_database_records_failed_
 
 #[tokio::test]
 async fn sqlite_installer_catalog_sync_failure_records_failed_sync_run() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         CREATE TRIGGER reject_success_catalog_sync_run
@@ -2793,10 +2851,9 @@ async fn sqlite_installer_catalog_sync_failure_records_failed_sync_run() {
 
 #[tokio::test]
 async fn sqlite_installer_catalog_sync_failure_rolls_back_catalog_rows() {
-    let pool = sqlite_pool().await;
+    let pool = installed_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     let original_price: String = sqlx::query_scalar(
         r#"
         SELECT printf('%.6f', unit_price)
@@ -2876,10 +2933,9 @@ async fn sqlite_installer_catalog_sync_failure_rolls_back_catalog_rows() {
 
 #[tokio::test]
 async fn sqlite_installer_catalog_sync_failure_preserves_original_error_when_audit_fails() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     sqlx::query(
         r#"
         CREATE TRIGGER reject_all_catalog_sync_runs
@@ -2920,10 +2976,9 @@ async fn sqlite_installer_catalog_sync_failure_preserves_original_error_when_aud
 
 #[tokio::test]
 async fn sqlite_installer_ensure_upgrade_report_preserves_latest_catalog_refresh_status() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     installer
         .refresh_catalog(CatalogRefreshOptions {
             mode: "official_refresh".to_owned(),
@@ -3014,7 +3069,7 @@ async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install
 }
 
 #[tokio::test]
-async fn sqlite_installer_status_uses_external_catalog_scope() {
+async fn sqlite_installer_installs_external_catalog_scope() {
     let catalog_root = single_vendor_catalog_root("openai");
     let catalog = sdkwork_models::load_catalog(&catalog_root).unwrap();
     assert_eq!(1, catalog.vendors.len());
@@ -3079,6 +3134,8 @@ async fn sqlite_installer_refresh_deactivates_models_removed_from_vendor_catalog
     installer
         .refresh_catalog(CatalogRefreshOptions {
             catalog_root: Some(catalog_root.to_string_lossy().to_string()),
+            mode: "vendor_refresh".to_owned(),
+            vendor_codes: vec!["openai".to_owned()],
             force: true,
             ..CatalogRefreshOptions::default()
         })
@@ -3090,6 +3147,8 @@ async fn sqlite_installer_refresh_deactivates_models_removed_from_vendor_catalog
     installer
         .refresh_catalog(CatalogRefreshOptions {
             catalog_root: Some(catalog_root.to_string_lossy().to_string()),
+            mode: "vendor_refresh".to_owned(),
+            vendor_codes: vec!["openai".to_owned()],
             force: true,
             ..CatalogRefreshOptions::default()
         })
@@ -3112,6 +3171,8 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
     installer
         .refresh_catalog(CatalogRefreshOptions {
             catalog_root: Some(catalog_root.to_string_lossy().to_string()),
+            mode: "vendor_refresh".to_owned(),
+            vendor_codes: vec!["openai".to_owned()],
             force: true,
             ..CatalogRefreshOptions::default()
         })
@@ -3148,6 +3209,8 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
     installer
         .refresh_catalog(CatalogRefreshOptions {
             catalog_root: Some(catalog_root.to_string_lossy().to_string()),
+            mode: "vendor_refresh".to_owned(),
+            vendor_codes: vec!["openai".to_owned()],
             force: true,
             ..CatalogRefreshOptions::default()
         })
@@ -3180,10 +3243,9 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
 
 #[tokio::test]
 async fn sqlite_installer_status_detects_catalog_rows_hidden_by_soft_delete_markers() {
-    let pool = sqlite_pool().await;
+    let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    installer.ensure_installed().await.unwrap();
     let family_code: String = sqlx::query_scalar(
         "SELECT family_code FROM ai_model WHERE model = 'gpt-5.2' AND status = 1",
     )
@@ -3387,7 +3449,18 @@ async fn active_admin_password_hash(pool: &SqlitePool) -> String {
     .unwrap()
 }
 
+fn assert_pbkdf2_sha256_hash_format(hash: &str, label: &str) {
+    assert!(
+        hash.starts_with("pbkdf2-sha256$v=1$i=") && hash.contains("$s=") && hash.contains("$h="),
+        "{label} must use the normal IAM PBKDF2-SHA256 password hash format"
+    );
+}
+
 async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelCatalog) {
+    let expected_model_keys = catalog_model_keys(catalog);
+    let expected_price_keys = catalog_price_keys(catalog);
+    let expected_ranking_keys = catalog_ranking_keys(catalog);
+
     let vendor_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(DISTINCT vendor_code)
@@ -3432,57 +3505,47 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
     .fetch_one(pool)
     .await
     .unwrap();
-    let expected_ranking_count = catalog_ranking_keys(catalog).len() as i64;
 
     assert_eq!(catalog_vendor_codes(catalog).len() as i64, vendor_count);
     assert_eq!(catalog.vendors.len() as i64, vendor_region_count);
-    assert_eq!(catalog_model_keys(catalog).len() as i64, model_count);
+    assert_eq!(expected_model_keys.len() as i64, model_count);
     assert_eq!(catalog.meters.len() as i64, meter_count);
     assert!(
-        pricing_count >= catalog_price_keys(catalog).len() as i64,
+        pricing_count >= expected_price_keys.len() as i64,
         "ai_model_pricing may expand catalog price entries into runtime-specific rows, but it must contain every catalog price key"
     );
-    assert_eq!(expected_ranking_count, ranking_count);
+    assert_eq!(expected_ranking_keys.len() as i64, ranking_count);
+
+    let actual_model_capabilities = sqlx::query(
+        r#"
+        SELECT catalog_key, capabilities
+        FROM ai_model
+        WHERE status = 1
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| {
+        (
+            row.get::<String, _>("catalog_key"),
+            row.get::<Option<String>, _>("capabilities")
+                .unwrap_or_default(),
+        )
+    })
+    .collect::<BTreeMap<_, _>>();
 
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &model.model_id);
-            let count: i64 = sqlx::query_scalar(
-                r#"
-                SELECT COUNT(1)
-                FROM ai_model
-                WHERE catalog_key = ?
-                  AND status = 1
-                "#,
-            )
-            .bind(&catalog_key)
-            .fetch_one(pool)
-            .await
-            .unwrap();
-            assert_eq!(
-                1, count,
-                "{} must be imported from sdkwork-models",
-                catalog_key
+            let catalog_key = catalog_model_key(
+                &vendor.vendor.vendor_code,
+                &vendor.vendor.region_code,
+                &model.model_id,
             );
-
-            let capabilities: Option<String> = sqlx::query_scalar(
-                r#"
-                SELECT capabilities
-                FROM ai_model
-                WHERE catalog_key = ?
-                  AND status = 1
-                "#,
-            )
-            .bind(&catalog_key)
-            .fetch_one(pool)
-            .await
-            .unwrap();
-            let capabilities = capabilities.unwrap_or_else(|| {
-                panic!(
-                    "{} must preserve sdkwork-models capabilities on ai_model",
-                    catalog_key
-                )
-            });
+            let capabilities = actual_model_capabilities
+                .get(&catalog_key)
+                .unwrap_or_else(|| panic!("{catalog_key} must be imported from sdkwork-models"));
             let capabilities: Vec<String> = serde_json::from_str(&capabilities)
                 .expect("ai_model.capabilities must be a JSON string array");
             assert!(
@@ -3505,27 +3568,27 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
         }
     }
 
-    for price_key in catalog_price_keys(catalog) {
-        let count: i64 = sqlx::query_scalar(
-            r#"
-            SELECT COUNT(1)
-            FROM ai_model_pricing
-            WHERE catalog_key = ?
-              AND billing_meter_code = ?
-              AND price_side = ?
-              AND pricing_scope = ?
-              AND status = 1
-            "#,
-        )
-        .bind(&price_key.catalog_key)
-        .bind(&price_key.meter_code)
-        .bind(price_key.price_side)
-        .bind(price_key.pricing_scope)
-        .fetch_one(pool)
-        .await
-        .unwrap();
+    let actual_price_keys = sqlx::query(
+        r#"
+        SELECT catalog_key, billing_meter_code, price_side, pricing_scope
+        FROM ai_model_pricing
+        WHERE status = 1
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| CatalogPriceKey {
+        catalog_key: row.get::<String, _>("catalog_key"),
+        meter_code: row.get::<String, _>("billing_meter_code"),
+        price_side: row.get::<i64, _>("price_side") as i32,
+        pricing_scope: row.get::<i64, _>("pricing_scope") as i32,
+    })
+    .collect::<BTreeSet<_>>();
+    for price_key in expected_price_keys {
         assert!(
-            count > 0,
+            actual_price_keys.contains(&price_key),
             "{} {} side={} scope={} must be imported from sdkwork-models pricing",
             price_key.catalog_key,
             price_key.meter_code,
@@ -3534,48 +3597,30 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
         );
     }
 
-    for ranking_key in catalog_ranking_keys(catalog) {
-        let count: i64 = sqlx::query_scalar(
-            r#"
-            SELECT COUNT(1)
-            FROM ai_model_rank_snapshot
-            WHERE snapshot_date = ?
-              AND rank_scope = ?
-              AND catalog_key = ?
-              AND status = 1
-            "#,
-        )
-        .bind(&ranking_key.snapshot_date)
-        .bind(&ranking_key.rank_scope)
-        .bind(&ranking_key.catalog_key)
-        .fetch_one(pool)
-        .await
-        .unwrap();
+    let actual_ranking_keys = sqlx::query(
+        r#"
+        SELECT snapshot_date, rank_scope, catalog_key
+        FROM ai_model_rank_snapshot
+        WHERE status = 1
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| CatalogRankingKey {
+        snapshot_date: row.get::<String, _>("snapshot_date"),
+        rank_scope: row.get::<String, _>("rank_scope"),
+        catalog_key: row.get::<String, _>("catalog_key"),
+    })
+    .collect::<BTreeSet<_>>();
+    for ranking_key in expected_ranking_keys {
         assert!(
-            count > 0,
+            actual_ranking_keys.contains(&ranking_key),
             "{} {} {} must be imported from sdkwork-models rankings",
             ranking_key.snapshot_date,
             ranking_key.rank_scope,
             ranking_key.catalog_key
-        );
-    }
-
-    for catalog_key in catalog_model_keys(catalog) {
-        let count: i64 = sqlx::query_scalar(
-            r#"
-            SELECT COUNT(1)
-            FROM ai_model
-            WHERE catalog_key = ?
-              AND status = 1
-            "#,
-        )
-        .bind(&catalog_key)
-        .fetch_one(pool)
-        .await
-        .unwrap();
-        assert_eq!(
-            1, count,
-            "{catalog_key} must be imported from sdkwork-models"
         );
     }
 }
@@ -3692,6 +3737,20 @@ async fn assert_skill_store_seed_rows(pool: &SqlitePool) {
         "Prompt Copilot", default_config["portal"]["developer"],
         "seeded skill portal metadata must be available to the SkillsHub adapter"
     );
+}
+
+async fn sqlite_core_skill_seed_row_count(pool: &SqlitePool) -> i64 {
+    sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_agent_skill
+        WHERE tenant_id = 0
+          AND organization_id = 0
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap()
 }
 
 async fn assert_app_store_seed_rows(pool: &SqlitePool) {
@@ -3895,7 +3954,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     let membership_plan_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM commerce_membership_plan
+        FROM membership_plan
         WHERE tenant_id = '0'
           AND organization_id = '0'
           AND status = 'active'
@@ -3906,7 +3965,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     .unwrap();
     assert_eq!(
         4, membership_plan_count,
-        "installer must seed four membership plans: free, basic, pro, premium"
+        "installer must seed four membership plans: free, pro, max, vip"
     );
 
     let membership_product_count: i64 = sqlx::query_scalar(
@@ -3930,23 +3989,22 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     let membership_package_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM commerce_product_sku
+        FROM membership_package
         WHERE tenant_id = '0'
           AND organization_id = '0'
-          AND spu_id = 'seed-product-membership'
-          AND sku_no LIKE 'membership-%'
-          AND sales_status = 'active'
+          AND package_no LIKE 'membership-%'
+          AND status = 'active'
         "#,
     )
     .fetch_one(pool)
     .await
     .unwrap();
     assert_eq!(
-        16, membership_package_count,
-        "installer must seed four purchase groups with four membership packages each"
+        6, membership_package_count,
+        "installer must seed two purchase groups with three membership packages each"
     );
 
-    let expected_groups = commerce_membership_package_group_seeds()
+    let expected_groups = membership_package_group_seeds()
         .into_iter()
         .map(|group| {
             (
@@ -3964,12 +4022,11 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         let group_count: i64 = sqlx::query_scalar(
             r#"
             SELECT COUNT(1)
-            FROM commerce_product_sku
+            FROM membership_package
             WHERE tenant_id = '0'
               AND organization_id = '0'
-              AND spu_id = 'seed-product-membership'
-              AND sku_no LIKE ?
-              AND sales_status = 'active'
+              AND package_no LIKE ?
+              AND status = 'active'
             "#,
         )
         .bind(format!("membership-{group_code}-%"))
@@ -3977,8 +4034,8 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         .await
         .unwrap();
         assert_eq!(
-            4, group_count,
-            "{group_name} group must contain free/basic/pro/premium packages"
+            3, group_count,
+            "{group_name} group must contain pro/max/vip packages"
         );
 
         let rows = sqlx::query(
@@ -4024,7 +4081,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
             );
         }
         assert_eq!(
-            ["basic", "free", "premium", "pro"]
+            ["max", "pro", "vip"]
                 .into_iter()
                 .map(str::to_owned)
                 .collect::<BTreeSet<_>>(),
@@ -4033,15 +4090,15 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         );
     }
 
-    let expected_levels = commerce_membership_plan_seeds()
+    let expected_levels = membership_plan_seeds()
         .into_iter()
         .map(|level| (level.plan_no.to_owned(), level.name.to_owned(), level.rank))
         .collect::<Vec<_>>();
     for (level_no, name, level_value) in expected_levels {
         let row = sqlx::query(
             r#"
-            SELECT name, benefits_json AS benefit_json
-            FROM commerce_membership_plan
+            SELECT name, rank
+            FROM membership_plan
             WHERE tenant_id = '0'
               AND organization_id = '0'
               AND plan_no = ?
@@ -4053,16 +4110,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         .await
         .unwrap();
         assert_eq!(name, row.get::<String, _>("name"));
-        let benefits: serde_json::Value =
-            serde_json::from_str(&row.get::<String, _>("benefit_json")).unwrap();
-        assert_eq!(
-            level_value,
-            benefits["planRank"].as_i64().unwrap_or_default()
-        );
-        assert!(
-            benefits["items"].as_array().map_or(0, Vec::len) >= 5,
-            "{name} must expose enough benefit rows for the membership page"
-        );
+        assert_eq!(level_value, row.get::<i64, _>("rank"));
     }
 
     let recharge_product_count: i64 = sqlx::query_scalar(
@@ -4100,29 +4148,103 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         "installer must seed four points recharge packages"
     );
 
-    let payment_methods = sqlx::query(
-        r#"
-        SELECT method_key
-        FROM commerce_payment_method
-        WHERE tenant_id = '0'
-          AND organization_id = '0'
-          AND status = 'active'
-        ORDER BY method_key
-        "#,
+    assert_seed_statuses(
+        pool,
+        "commerce_payment_method",
+        "method_key",
+        "status",
+        commerce_payment_method_seeds()
+            .into_iter()
+            .map(|method| (method.method_key.to_owned(), "active".to_owned()))
+            .collect(),
+        "payment methods",
+    )
+    .await;
+
+    assert_seed_statuses(
+        pool,
+        "commerce_payment_provider",
+        "provider_code",
+        "status",
+        commerce_payment_provider_seeds()
+            .into_iter()
+            .map(|provider| (provider.provider_code.to_owned(), "active".to_owned()))
+            .collect(),
+        "payment providers",
+    )
+    .await;
+    assert_seed_statuses(
+        pool,
+        "commerce_payment_provider_account",
+        "account_no",
+        "status",
+        commerce_payment_provider_account_seeds()
+            .into_iter()
+            .map(|account| (account.account_no.to_owned(), account.status.to_owned()))
+            .collect(),
+        "payment provider accounts",
+    )
+    .await;
+    assert_seed_statuses(
+        pool,
+        "commerce_payment_channel",
+        "channel_no",
+        "status",
+        commerce_payment_channel_seeds()
+            .into_iter()
+            .map(|channel| (channel.channel_no.to_owned(), channel.status.to_owned()))
+            .collect(),
+        "payment channels",
+    )
+    .await;
+    assert_seed_statuses(
+        pool,
+        "commerce_payment_route_rule",
+        "rule_no",
+        "status",
+        commerce_payment_route_rule_seeds()
+            .into_iter()
+            .map(|rule| (rule.rule_no.to_owned(), rule.status.to_owned()))
+            .collect(),
+        "payment route rules",
+    )
+    .await;
+}
+
+async fn assert_seed_statuses(
+    pool: &SqlitePool,
+    table: &str,
+    key_column: &str,
+    status_column: &str,
+    expected: BTreeMap<String, String>,
+    label: &str,
+) {
+    let rows = sqlx::query(
+        format!(
+            r#"
+            SELECT {key_column} AS seed_key, {status_column} AS seed_status
+            FROM {table}
+            WHERE tenant_id = '0'
+              AND organization_id = '0'
+            "#
+        )
+        .as_str(),
     )
     .fetch_all(pool)
     .await
-    .unwrap()
-    .into_iter()
-    .map(|row| row.get::<String, _>("method_key"))
-    .collect::<BTreeSet<_>>();
+    .unwrap();
+    let actual = rows
+        .into_iter()
+        .map(|row| {
+            (
+                row.get::<String, _>("seed_key"),
+                row.get::<String, _>("seed_status"),
+            )
+        })
+        .collect::<BTreeMap<_, _>>();
     assert_eq!(
-        ["alipay", "stripe", "wechat"]
-            .into_iter()
-            .map(str::to_owned)
-            .collect::<BTreeSet<_>>(),
-        payment_methods,
-        "installer must seed payment methods required by recharge submission"
+        expected, actual,
+        "installer must seed all standard {label} with the bootstrap-defined status"
     );
 }
 
@@ -4338,10 +4460,13 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor
-                .models
-                .iter()
-                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
+            vendor.models.iter().map(|model| {
+                catalog_model_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &model.model_id,
+                )
+            })
         })
         .collect::<Vec<_>>();
     catalog_keys.sort();
@@ -4349,8 +4474,8 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
     catalog_keys
 }
 
-fn catalog_model_key(vendor_code: &str, model_id: &str) -> String {
-    format!("{vendor_code}/{model_id}")
+fn catalog_model_key(vendor_code: &str, region_code: &str, model_id: &str) -> String {
+    sdkwork_models::catalog_key(vendor_code, region_code, model_id)
 }
 
 fn catalog_vendor_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
@@ -4370,7 +4495,13 @@ fn catalog_routable_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> 
                 .models
                 .iter()
                 .filter(|model| model.routing_state == "enabled" && model.shelf_state != "archived")
-                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
+                .map(|model| {
+                    catalog_model_key(
+                        &vendor.vendor.vendor_code,
+                        &vendor.vendor.region_code,
+                        &model.model_id,
+                    )
+                })
         })
         .collect::<Vec<_>>();
     catalog_keys.sort();
@@ -4452,8 +4583,11 @@ fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Cata
                     &vendor.vendor.region_code,
                     &item.model_id,
                 );
-                let model_catalog_key =
-                    catalog_model_key(&vendor.vendor.vendor_code, &item.model_id);
+                let model_catalog_key = catalog_model_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &item.model_id,
+                );
                 if model_catalog_keys.contains(&model_catalog_key) {
                     Some(CatalogRankingKey {
                         snapshot_date: snapshot.snapshot_date.clone(),
@@ -4492,6 +4626,13 @@ fn single_vendor_catalog_root(vendor_code: &str) -> PathBuf {
             .join("models")
             .join("meters.json"),
         root.join("models").join("meters.json"),
+    )
+    .unwrap();
+    fs::copy(
+        sdkwork_models_source_root()
+            .join("models")
+            .join("protocols.json"),
+        root.join("models").join("protocols.json"),
     )
     .unwrap();
     copy_dir_recursive(
@@ -4750,6 +4891,15 @@ async fn assert_sqlite_index_absent(pool: &SqlitePool, index: &str) {
     .await
     .unwrap();
     assert_eq!(0, exists, "{index} index must not exist after repair");
+}
+
+async fn assert_sqlite_row_exists(pool: &SqlitePool, table: &str, predicate: &str) {
+    let sql = format!("SELECT COUNT(1) FROM {table} WHERE {predicate}");
+    let exists: i64 = sqlx::query_scalar(sql.as_str())
+        .fetch_one(pool)
+        .await
+        .unwrap();
+    assert_eq!(1, exists, "{table} seed row must exist before repair");
 }
 
 async fn assert_sqlite_columns_exist(pool: &SqlitePool, table: &str, expected_columns: &[&str]) {

@@ -17,7 +17,7 @@ func NewAgentsApi(client *sdkhttp.Client) *AgentsApi {
     return &AgentsApi{client: client}
 }
 
-// List user agents
+// List Playground agent definitions
 func (a *AgentsApi) AgentDefinitionsList(page *int, pageSize *int, q *string) (sdktypes.AgentDefinitionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
@@ -32,7 +32,7 @@ func (a *AgentsApi) AgentDefinitionsList(page *int, pageSize *int, q *string) (s
     return decodeResult[sdktypes.AgentDefinitionsListResult](raw)
 }
 
-// Create user agent
+// Create Playground agent definition
 func (a *AgentsApi) AgentDefinitionsCreate(body sdktypes.AgentCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentDefinitionsCreateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{
@@ -49,7 +49,7 @@ func (a *AgentsApi) AgentDefinitionsCreate(body sdktypes.AgentCreateRequest, ide
     return decodeResult[sdktypes.AgentDefinitionsCreateResult](raw)
 }
 
-// Retrieve agent run
+// Retrieve Playground agent run
 func (a *AgentsApi) AgentRunsRetrieve(runId string) (sdktypes.AgentRunsRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/agents/runs/%s", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
@@ -59,7 +59,7 @@ func (a *AgentsApi) AgentRunsRetrieve(runId string) (sdktypes.AgentRunsRetrieveR
     return decodeResult[sdktypes.AgentRunsRetrieveResult](raw)
 }
 
-// Complete agent run
+// Complete Playground agent run
 func (a *AgentsApi) AgentRunsSubmit(runId string, body sdktypes.AgentRunCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunsSubmitResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{
@@ -76,7 +76,7 @@ func (a *AgentsApi) AgentRunsSubmit(runId string, body sdktypes.AgentRunComplete
     return decodeResult[sdktypes.AgentRunsSubmitResult](raw)
 }
 
-// List agent run steps
+// List Playground agent run steps
 func (a *AgentsApi) AgentRunStepsList(runId string, page *int, pageSize *int) (sdktypes.AgentRunStepsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
@@ -90,7 +90,7 @@ func (a *AgentsApi) AgentRunStepsList(runId string, page *int, pageSize *int) (s
     return decodeResult[sdktypes.AgentRunStepsListResult](raw)
 }
 
-// Create agent run step
+// Create Playground agent run step
 func (a *AgentsApi) AgentRunStepsCreate(runId string, body sdktypes.AgentRunStepCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunStepsCreateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{
@@ -107,7 +107,7 @@ func (a *AgentsApi) AgentRunStepsCreate(runId string, body sdktypes.AgentRunStep
     return decodeResult[sdktypes.AgentRunStepsCreateResult](raw)
 }
 
-// Complete agent run step
+// Complete Playground agent run step
 func (a *AgentsApi) AgentRunStepsSubmit(runId string, stepId string, body sdktypes.AgentRunStepCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunStepsSubmitResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{
@@ -124,7 +124,7 @@ func (a *AgentsApi) AgentRunStepsSubmit(runId string, stepId string, body sdktyp
     return decodeResult[sdktypes.AgentRunStepsSubmitResult](raw)
 }
 
-// Retrieve agent session
+// Retrieve Playground agent session
 func (a *AgentsApi) AgentSessionsRetrieve(sessionId string) (sdktypes.AgentSessionsRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/agents/sessions/%s", SerializePathParameter(sessionId, PathParameterSpec{Name: "sessionId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
@@ -134,7 +134,7 @@ func (a *AgentsApi) AgentSessionsRetrieve(sessionId string) (sdktypes.AgentSessi
     return decodeResult[sdktypes.AgentSessionsRetrieveResult](raw)
 }
 
-// List agent session runs
+// List Playground agent runs
 func (a *AgentsApi) AgentRunsList(sessionId string, page *int, pageSize *int) (sdktypes.AgentRunsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
@@ -148,7 +148,7 @@ func (a *AgentsApi) AgentRunsList(sessionId string, page *int, pageSize *int) (s
     return decodeResult[sdktypes.AgentRunsListResult](raw)
 }
 
-// Create agent run
+// Create Playground agent run
 func (a *AgentsApi) AgentRunsCreate(sessionId string, body sdktypes.AgentRunCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunsCreateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{
@@ -165,7 +165,7 @@ func (a *AgentsApi) AgentRunsCreate(sessionId string, body sdktypes.AgentRunCrea
     return decodeResult[sdktypes.AgentRunsCreateResult](raw)
 }
 
-// Retrieve user agent
+// Retrieve Playground agent definition
 func (a *AgentsApi) AgentDefinitionsRetrieve(agentId string) (sdktypes.AgentDefinitionsRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/agents/%s", SerializePathParameter(agentId, PathParameterSpec{Name: "agentId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
@@ -175,7 +175,7 @@ func (a *AgentsApi) AgentDefinitionsRetrieve(agentId string) (sdktypes.AgentDefi
     return decodeResult[sdktypes.AgentDefinitionsRetrieveResult](raw)
 }
 
-// List agent sessions
+// List Playground agent sessions
 func (a *AgentsApi) AgentSessionsList(agentId string, page *int, pageSize *int) (sdktypes.AgentSessionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
@@ -189,7 +189,7 @@ func (a *AgentsApi) AgentSessionsList(agentId string, page *int, pageSize *int) 
     return decodeResult[sdktypes.AgentSessionsListResult](raw)
 }
 
-// Create agent session
+// Create Playground agent session
 func (a *AgentsApi) AgentSessionsCreate(agentId string, body sdktypes.AgentSessionCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentSessionsCreateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{

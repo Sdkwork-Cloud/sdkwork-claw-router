@@ -27,6 +27,8 @@ export function AppCenter() {
   const [sortBy, setSortBy] = useState<AppSortKey>('Most Popular');
 
   const [apps, setApps] = useState<App[]>([]);
+  const [page, setPage] = useState(1);
+  const [pageSize] = useState(100);
   const [categories, setCategories] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -56,9 +58,11 @@ export function AppCenter() {
         platformTypes: selectedPlatforms,
         categories: selectedCategory !== 'All' ? [selectedCategory] : undefined,
         sortBy: sortBy,
+        page,
+        pageSize,
       });
       if (isActive()) {
-        setApps(fetchedApps);
+        setApps(fetchedApps.items);
       }
     } catch (error) {
       if (isActive()) {
@@ -70,7 +74,7 @@ export function AppCenter() {
         setIsLoading(false);
       }
     }
-  }, [searchQuery, selectedPlatforms, selectedCategory, sortBy, t]);
+  }, [searchQuery, selectedPlatforms, selectedCategory, sortBy, page, pageSize, t]);
 
   useEffect(() => {
     let active = true;
@@ -89,6 +93,7 @@ export function AppCenter() {
   }, [loadApps]);
 
   const togglePlatform = (platform: PlatformType) => {
+    setPage(1);
     setSelectedPlatforms(prev =>
       prev.includes(platform)
         ? prev.filter(p => p !== platform)
@@ -131,7 +136,10 @@ export function AppCenter() {
                 key={category.id}
                 checked={selectedCategory === category.id}
                 label={category.id === 'All' ? t('apps.category.all') : category.label}
-                onClick={() => setSelectedCategory(category.id)}
+                onClick={() => {
+                  setPage(1);
+                  setSelectedCategory(category.id);
+                }}
                 activeColorClass="bg-lobster-500 border-lobster-500"
               />
             ))}
@@ -172,14 +180,20 @@ export function AppCenter() {
                   type="text"
                   placeholder={t('apps.search')}
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setPage(1);
+                    setSearchQuery(e.target.value);
+                  }}
                   className="w-full bg-white dark:bg-[#0a0a0a] border border-slate-200 dark:border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-lobster-500 focus:ring-1 focus:ring-lobster-500 transition-all shadow-sm"
                 />
               </div>
               <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
                 <select
                   value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as AppSortKey)}
+                  onChange={(e) => {
+                    setPage(1);
+                    setSortBy(e.target.value as AppSortKey);
+                  }}
                   className="bg-white dark:bg-[#0a0a0a] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-lobster-500 focus:ring-1 focus:ring-lobster-500 shadow-sm cursor-pointer transition-all hover:border-slate-300 dark:hover:border-white/20"
                 >
                   {view.sortOptions.map(option => (

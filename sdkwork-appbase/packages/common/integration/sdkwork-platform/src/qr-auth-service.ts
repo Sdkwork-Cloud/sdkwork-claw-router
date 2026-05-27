@@ -826,8 +826,10 @@ function parseAbsoluteUrl(value: string, label: string): URL {
 }
 
 function createRandomSessionKey(): string {
-  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
-    return crypto.randomUUID();
+  if (typeof crypto !== "undefined" && "getRandomValues" in crypto) {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
   }
   return `${Date.now()}_${Math.random().toString(36).slice(2)}`;
 }

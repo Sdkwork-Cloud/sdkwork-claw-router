@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace Sdkwork.ClawRouter.App.Models
+{
+    public class CommerceUsageServiceProviderSettlementRecord
+    {
+        public string? Amount { get; set; }
+        public string? BuyerAccountId { get; set; }
+        public string? BuyerLedgerEntryId { get; set; }
+        public string? BuyerProviderId { get; set; }
+        public string? CreatedAt { get; set; }
+        public string? Currency { get; set; }
+        public string? Direction { get; set; }
+        public string? FailureCode { get; set; }
+        public string? FailureMessage { get; set; }
+        public string? Id { get; set; }
+        public bool? LegalHold { get; set; }
+        public Dictionary<string, string>? Metadata { get; set; }
+        public string? OrganizationId { get; set; }
+        public string? PayloadHash { get; set; }
+        public string? RequestId { get; set; }
+        public string? RetentionUntil { get; set; }
+        public string? SellerAccountId { get; set; }
+        public string? SellerLedgerEntryId { get; set; }
+        public string? SellerProviderId { get; set; }
+        public string? SettledAt { get; set; }
+        public string? SettlementMode { get; set; }
+        public string? SettlementNo { get; set; }
+        public string? SettlementStatus { get; set; }
+        public string? Status { get; set; }
+        public string? TenantId { get; set; }
+        public string? TraceId { get; set; }
+        public string? UsageEdgeId { get; set; }
+        public string? UserId { get; set; }
+        public string? Uuid { get; set; }
+    }
+}

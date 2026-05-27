@@ -11,6 +11,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -24,8 +25,6 @@ const MAX_PROVIDER_CODE_LEN: usize = 64;
 const MAX_NAME_LEN: usize = 128;
 const MAX_AUTH_TYPE_LEN: usize = 64;
 const MAX_SECRET_REF_LEN: usize = 256;
-const MAX_REQUEST_ID_LEN: usize = 128;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 
 #[derive(Clone)]
 struct AdminProviderSecretState {
@@ -663,7 +662,7 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
 
 fn build_create_command(
     state: AdminProviderSecretState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminProviderSecretSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminProviderSecretCommand, ProviderSecretCommandBuildError> {
@@ -680,14 +679,14 @@ fn build_create_command(
         secret_ref: request.secret_ref,
         masked_label: request.masked_label,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_command(
     state: AdminProviderSecretState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminProviderSecretSubject,
     request: NormalizedUpdateRequest,
 ) -> Result<UpdateAdminProviderSecretCommand, ProviderSecretCommandBuildError> {
@@ -702,14 +701,14 @@ fn build_update_command(
         secret_ref: request.secret_ref,
         masked_label: request.masked_label,
         status: request.status,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_command(
     state: AdminProviderSecretState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminProviderSecretSubject,
     secret_id: i64,
 ) -> Result<DeleteAdminProviderSecretCommand, ProviderSecretCommandBuildError> {
@@ -718,7 +717,7 @@ fn build_delete_command(
         secret_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -732,29 +731,13 @@ fn generate_entity_uuid(
         .map_err(ProviderSecretCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminProviderSecretState,
-) -> Result<String, ProviderSecretCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(ProviderSecretCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> ProviderSecretCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => ProviderSecretCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            ProviderSecretCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_item_response(item: AdminProviderSecretItem) -> AdminProviderSecretItemResponse {

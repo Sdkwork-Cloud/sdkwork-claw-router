@@ -9,7 +9,7 @@ public class OpenAiRunSubmitToolOutputsRequest {
     public Boolean getStream() {
         return this.stream;
     }
-    
+
     public void setStream(Boolean stream) {
         this.stream = stream;
     }
@@ -17,7 +17,7 @@ public class OpenAiRunSubmitToolOutputsRequest {
     public List<String> getToolOutputs() {
         return this.toolOutputs;
     }
-    
+
     public void setToolOutputs(List<String> toolOutputs) {
         this.toolOutputs = toolOutputs;
     }

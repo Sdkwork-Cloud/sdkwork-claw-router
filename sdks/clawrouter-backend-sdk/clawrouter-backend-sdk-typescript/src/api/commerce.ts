@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, CouponsCampaignsListResult, CouponsCodesListResult, CouponsRedemptionsListResult, CouponsTemplatesListResult, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
+import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
 
 
 export interface CommerceWalletLedgerEntriesListParams {
@@ -56,7 +56,6 @@ export class CommerceWalletExchangeRulesApi {
 
 export interface CommerceWalletAdjustmentsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceWalletAdjustmentsApi {
@@ -72,7 +71,6 @@ export class CommerceWalletAdjustmentsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -212,16 +210,10 @@ export interface CommerceRechargesPackagesListParams {
 
 export interface CommerceRechargesPackagesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export interface CommerceRechargesPackagesDeleteParams {
-  xRequestId?: string;
 }
 
 export interface CommerceRechargesPackagesUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceRechargesPackagesApi {
@@ -247,7 +239,6 @@ export class CommerceRechargesPackagesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -255,14 +246,8 @@ export class CommerceRechargesPackagesApi {
   }
 
 /** Recharges Packages Delete */
-  async delete(packageId: string, params?: CommerceRechargesPackagesDeleteParams): Promise<RechargesPackagesDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<RechargesPackagesDeleteResult>(backendApiPath(`/recharges/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(packageId: string): Promise<RechargesPackagesDeleteResult> {
+    return this.client.delete<RechargesPackagesDeleteResult>(backendApiPath(`/recharges/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`));
   }
 
 /** Recharges Packages Update */
@@ -270,7 +255,6 @@ export class CommerceRechargesPackagesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -437,7 +421,6 @@ export interface CommercePaymentsProviderAccountsListParams {
 
 export interface CommercePaymentsProviderAccountsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommercePaymentsProviderAccountsApi {
@@ -464,7 +447,6 @@ export class CommercePaymentsProviderAccountsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -676,16 +658,10 @@ export interface CommerceMembershipsPlansListParams {
 
 export interface CommerceMembershipsPlansCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export interface CommerceMembershipsPlansDeleteParams {
-  xRequestId?: string;
 }
 
 export interface CommerceMembershipsPlansUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceMembershipsPlansApi {
@@ -711,7 +687,6 @@ export class CommerceMembershipsPlansApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -719,14 +694,8 @@ export class CommerceMembershipsPlansApi {
   }
 
 /** Memberships Plans Delete */
-  async delete(planId: string, params?: CommerceMembershipsPlansDeleteParams): Promise<MembershipsPlansDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<MembershipsPlansDeleteResult>(backendApiPath(`/memberships/plans/${serializePathParameter(planId, { name: 'planId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(planId: string): Promise<MembershipsPlansDeleteResult> {
+    return this.client.delete<MembershipsPlansDeleteResult>(backendApiPath(`/memberships/plans/${serializePathParameter(planId, { name: 'planId', style: 'simple', explode: false })}`));
   }
 
 /** Memberships Plans Update */
@@ -734,7 +703,6 @@ export class CommerceMembershipsPlansApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -752,16 +720,10 @@ export interface CommerceMembershipsPackagesListParams {
 
 export interface CommerceMembershipsPackagesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export interface CommerceMembershipsPackagesDeleteParams {
-  xRequestId?: string;
 }
 
 export interface CommerceMembershipsPackagesUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceMembershipsPackagesApi {
@@ -789,7 +751,6 @@ export class CommerceMembershipsPackagesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -797,14 +758,8 @@ export class CommerceMembershipsPackagesApi {
   }
 
 /** Memberships Packages Delete */
-  async delete(packageId: string, params?: CommerceMembershipsPackagesDeleteParams): Promise<MembershipsPackagesDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<MembershipsPackagesDeleteResult>(backendApiPath(`/memberships/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(packageId: string): Promise<MembershipsPackagesDeleteResult> {
+    return this.client.delete<MembershipsPackagesDeleteResult>(backendApiPath(`/memberships/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`));
   }
 
 /** Memberships Packages Update */
@@ -812,7 +767,6 @@ export class CommerceMembershipsPackagesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -828,16 +782,10 @@ export interface CommerceMembershipsPackageGroupsListParams {
 
 export interface CommerceMembershipsPackageGroupsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export interface CommerceMembershipsPackageGroupsDeleteParams {
-  xRequestId?: string;
 }
 
 export interface CommerceMembershipsPackageGroupsUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceMembershipsPackageGroupsApi {
@@ -863,7 +811,6 @@ export class CommerceMembershipsPackageGroupsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -871,14 +818,8 @@ export class CommerceMembershipsPackageGroupsApi {
   }
 
 /** Memberships Package Groups Delete */
-  async delete(packageGroupId: string, params?: CommerceMembershipsPackageGroupsDeleteParams): Promise<MembershipsPackageGroupsDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<MembershipsPackageGroupsDeleteResult>(backendApiPath(`/memberships/package_groups/${serializePathParameter(packageGroupId, { name: 'packageGroupId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(packageGroupId: string): Promise<MembershipsPackageGroupsDeleteResult> {
+    return this.client.delete<MembershipsPackageGroupsDeleteResult>(backendApiPath(`/memberships/package_groups/${serializePathParameter(packageGroupId, { name: 'packageGroupId', style: 'simple', explode: false })}`));
   }
 
 /** Memberships Package Groups Update */
@@ -886,7 +827,6 @@ export class CommerceMembershipsPackageGroupsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -896,7 +836,6 @@ export class CommerceMembershipsPackageGroupsApi {
 
 export interface CommerceMembershipsMembersStatusUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceMembershipsMembersStatusApi {
@@ -912,7 +851,6 @@ export class CommerceMembershipsMembersStatusApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1068,7 +1006,6 @@ export interface CommerceInventoryStocksListParams {
 
 export interface CommerceInventoryStocksUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceInventoryStocksApi {
@@ -1096,7 +1033,6 @@ export class CommerceInventoryStocksApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1206,123 +1142,6 @@ export class CommerceFulfillmentsApi {
   }
 }
 
-export interface CommerceCouponsTemplatesListParams {
-  page?: number;
-  pageSize?: number;
-  status?: string;
-}
-
-export class CommerceCouponsTemplatesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Coupons Templates List */
-  async list(params?: CommerceCouponsTemplatesListParams): Promise<CouponsTemplatesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CouponsTemplatesListResult>(appendQueryString(backendApiPath(`/coupons/templates`), query));
-  }
-}
-
-export interface CommerceCouponsRedemptionsListParams {
-  page?: number;
-  pageSize?: number;
-  status?: string;
-}
-
-export class CommerceCouponsRedemptionsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Coupons Redemptions List */
-  async list(params?: CommerceCouponsRedemptionsListParams): Promise<CouponsRedemptionsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CouponsRedemptionsListResult>(appendQueryString(backendApiPath(`/coupons/redemptions`), query));
-  }
-}
-
-export interface CommerceCouponsCodesListParams {
-  page?: number;
-  pageSize?: number;
-  status?: string;
-}
-
-export class CommerceCouponsCodesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Coupons Codes List */
-  async list(params?: CommerceCouponsCodesListParams): Promise<CouponsCodesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CouponsCodesListResult>(appendQueryString(backendApiPath(`/coupons/codes`), query));
-  }
-}
-
-export interface CommerceCouponsCampaignsListParams {
-  page?: number;
-  pageSize?: number;
-  status?: string;
-}
-
-export class CommerceCouponsCampaignsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Coupons Campaigns List */
-  async list(params?: CommerceCouponsCampaignsListParams): Promise<CouponsCampaignsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CouponsCampaignsListResult>(appendQueryString(backendApiPath(`/coupons/campaigns`), query));
-  }
-}
-
-export class CommerceCouponsApi {
-  private client: HttpClient;
-  public readonly campaigns: CommerceCouponsCampaignsApi;
-  public readonly codes: CommerceCouponsCodesApi;
-  public readonly redemptions: CommerceCouponsRedemptionsApi;
-  public readonly templates: CommerceCouponsTemplatesApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.campaigns = new CommerceCouponsCampaignsApi(client);
-    this.codes = new CommerceCouponsCodesApi(client);
-    this.redemptions = new CommerceCouponsRedemptionsApi(client);
-    this.templates = new CommerceCouponsTemplatesApi(client);
-  }
-
-}
-
 export interface CommerceCommerceReportsRefundsListParams {
   page?: number;
   pageSize?: number;
@@ -1412,12 +1231,10 @@ export interface CommerceCatalogSkusListParams {
 
 export interface CommerceCatalogSkusCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceCatalogSkusUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCatalogSkusApi {
@@ -1445,7 +1262,6 @@ export class CommerceCatalogSkusApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1457,7 +1273,6 @@ export class CommerceCatalogSkusApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1477,12 +1292,10 @@ export interface CommerceCatalogProductsListParams {
 
 export interface CommerceCatalogProductsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface CommerceCatalogProductsUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCatalogProductsApi {
@@ -1512,7 +1325,6 @@ export class CommerceCatalogProductsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1524,7 +1336,6 @@ export class CommerceCatalogProductsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1542,7 +1353,6 @@ export interface CommerceCatalogPriceListsListParams {
 
 export interface CommerceCatalogPriceListsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCatalogPriceListsApi {
@@ -1570,7 +1380,6 @@ export class CommerceCatalogPriceListsApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1587,16 +1396,10 @@ export interface CommerceCatalogCategoriesListParams {
 
 export interface CommerceCatalogCategoriesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
-}
-
-export interface CommerceCatalogCategoriesDeleteParams {
-  xRequestId?: string;
 }
 
 export interface CommerceCatalogCategoriesUpdateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCatalogCategoriesApi {
@@ -1623,7 +1426,6 @@ export class CommerceCatalogCategoriesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1631,14 +1433,8 @@ export class CommerceCatalogCategoriesApi {
   }
 
 /** Delete product category */
-  async delete(categoryId: string, params?: CommerceCatalogCategoriesDeleteParams): Promise<CatalogCategoriesDeleteResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.delete<CatalogCategoriesDeleteResult>(backendApiPath(`/catalog/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  async delete(categoryId: string): Promise<CatalogCategoriesDeleteResult> {
+    return this.client.delete<CatalogCategoriesDeleteResult>(backendApiPath(`/catalog/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`));
   }
 
 /** Update product category */
@@ -1646,7 +1442,6 @@ export class CommerceCatalogCategoriesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1663,7 +1458,6 @@ export interface CommerceCatalogAttributesListParams {
 
 export interface CommerceCatalogAttributesCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class CommerceCatalogAttributesApi {
@@ -1690,7 +1484,6 @@ export class CommerceCatalogAttributesApi {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -1758,7 +1551,6 @@ export class CommerceApi {
   public readonly audit: CommerceAuditApi;
   public readonly catalog: CommerceCatalogApi;
   public readonly commerceReports: CommerceCommerceReportsApi;
-  public readonly coupons: CommerceCouponsApi;
   public readonly fulfillments: CommerceFulfillmentsApi;
   public readonly inventory: CommerceInventoryApi;
   public readonly invoices: CommerceInvoicesApi;
@@ -1775,7 +1567,6 @@ export class CommerceApi {
     this.audit = new CommerceAuditApi(client);
     this.catalog = new CommerceCatalogApi(client);
     this.commerceReports = new CommerceCommerceReportsApi(client);
-    this.coupons = new CommerceCouponsApi(client);
     this.fulfillments = new CommerceFulfillmentsApi(client);
     this.inventory = new CommerceInventoryApi(client);
     this.invoices = new CommerceInvoicesApi(client);

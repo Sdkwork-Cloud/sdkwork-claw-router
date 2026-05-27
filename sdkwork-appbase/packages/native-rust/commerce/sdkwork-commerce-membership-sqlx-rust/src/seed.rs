@@ -1,8 +1,10 @@
 use sdkwork_commerce_bootstrap::{
-    commerce_membership_package_group_seeds, commerce_membership_package_seeds,
-    commerce_membership_plan_seeds, commerce_payment_method_seeds, commerce_recharge_package_seeds,
-    CommerceMembershipBenefitSeed, CommerceMembershipPackageGroupSeed,
-    CommerceMembershipPackageSeed, CommerceMembershipPlanSeed, CommercePaymentMethodSeed,
+    commerce_benefit_definition_seeds, commerce_payment_channel_seeds,
+    commerce_payment_method_seeds, commerce_payment_provider_account_seeds,
+    commerce_payment_provider_seeds, commerce_payment_route_rule_seeds,
+    commerce_recharge_package_seeds, membership_package_group_seeds, membership_package_seeds,
+    membership_plan_benefit_seeds, membership_plan_seeds, membership_plan_version_seeds,
+    CommerceMembershipPackageGroupSeed, CommerceMembershipPackageSeed, CommercePaymentMethodSeed,
     CommerceRechargePackageSeed,
 };
 use sdkwork_commerce_core::CommerceServiceError;
@@ -11,41 +13,203 @@ use sqlx::{PgPool, SqlitePool};
 const SEED_TIMESTAMP: &str = "2026-05-19 00:00:00";
 const MEMBERSHIP_PRODUCT_ID: &str = "seed-product-membership";
 const RECHARGE_PRODUCT_ID: &str = "seed-product-points-recharge";
+const PAYMENT_METHOD_SEED_COUNT: i64 = 7;
+const PAYMENT_PROVIDER_SEED_COUNT: i64 = 6;
+const PAYMENT_PROVIDER_ACCOUNT_SEED_COUNT: i64 = 6;
+const PAYMENT_CHANNEL_SEED_COUNT: i64 = 36;
+const PAYMENT_ROUTE_RULE_SEED_COUNT: i64 = 36;
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CommerceExperienceSeedIntegrityReport {
+    pub complete: bool,
+    pub issues: Vec<CommerceExperienceSeedIntegrityIssue>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CommerceExperienceSeedIntegrityIssue {
+    pub code: String,
+    pub message: String,
+    pub expected_count: i64,
+    pub actual_count: i64,
+}
 
 pub async fn upsert_sqlite_commerce_experience_seed(
     pool: &SqlitePool,
 ) -> Result<(), CommerceServiceError> {
-    upsert_sqlite_seed_product(
-        pool,
-        MEMBERSHIP_PRODUCT_ID,
-        "membership",
-        "Membership",
-        "SDKWork membership catalog",
-        "Reusable SDKWork commerce membership product.",
-        "commerce-membership",
-    )
-    .await?;
-    upsert_sqlite_seed_product(
-        pool,
-        RECHARGE_PRODUCT_ID,
-        "points-recharge",
-        "Points recharge",
-        "SDKWork points recharge catalog",
-        "Reusable SDKWork commerce points recharge packages.",
-        "commerce-recharge",
-    )
-    .await?;
+    upsert_sqlite_seed_products(pool).await?;
+    upsert_sqlite_benefit_definitions(pool).await?;
     upsert_sqlite_membership_plans(pool).await?;
+    upsert_sqlite_membership_plan_versions(pool).await?;
+    upsert_sqlite_membership_plan_benefits(pool).await?;
     upsert_sqlite_membership_package_groups(pool).await?;
     upsert_sqlite_membership_packages(pool).await?;
     upsert_sqlite_recharge_packages(pool).await?;
-    upsert_sqlite_payment_methods(pool).await?;
+    upsert_sqlite_payment_center_seed(pool).await?;
     Ok(())
 }
 
 pub async fn upsert_postgres_commerce_experience_seed(
     pool: &PgPool,
 ) -> Result<(), CommerceServiceError> {
+    upsert_postgres_seed_products(pool).await?;
+    upsert_postgres_benefit_definitions(pool).await?;
+    upsert_postgres_membership_plans(pool).await?;
+    upsert_postgres_membership_plan_versions(pool).await?;
+    upsert_postgres_membership_plan_benefits(pool).await?;
+    upsert_postgres_membership_package_groups(pool).await?;
+    upsert_postgres_membership_packages(pool).await?;
+    upsert_postgres_recharge_packages(pool).await?;
+    upsert_postgres_payment_center_seed(pool).await?;
+    Ok(())
+}
+
+pub async fn repair_sqlite_commerce_experience_seed(
+    pool: &SqlitePool,
+) -> Result<(), CommerceServiceError> {
+    let report = sqlite_commerce_experience_seed_integrity_report(pool).await?;
+    repair_sqlite_commerce_experience_seed_from_report(pool, &report).await
+}
+
+pub async fn repair_sqlite_commerce_experience_seed_from_report(
+    pool: &SqlitePool,
+    report: &CommerceExperienceSeedIntegrityReport,
+) -> Result<(), CommerceServiceError> {
+    if report.complete {
+        return Ok(());
+    }
+    let mut upsert_products = false;
+    let mut upsert_membership_core = false;
+    let mut upsert_membership_groups = false;
+    let mut upsert_membership_packages = false;
+    let mut upsert_recharge_packages = false;
+    let mut upsert_payment_methods = false;
+    let mut upsert_payment_providers = false;
+    let mut upsert_payment_provider_accounts = false;
+    let mut upsert_payment_channels = false;
+    let mut upsert_payment_route_rules = false;
+    let mut fallback_full_seed = false;
+
+    for issue in &report.issues {
+        match issue.code.as_str() {
+            "missing_seed_product" => {
+                upsert_products = true;
+            }
+            "missing_membership_plan" => {
+                upsert_membership_core = true;
+            }
+            "missing_membership_package_group" => {
+                upsert_membership_groups = true;
+            }
+            "missing_membership_package"
+            | "incomplete_membership_package_group"
+            | "missing_membership_sku"
+            | "orphan_membership_package_plan"
+            | "orphan_membership_package_group"
+            | "orphan_membership_package_sku"
+            | "invalid_membership_sku_product" => {
+                upsert_products = true;
+                upsert_membership_core = true;
+                upsert_membership_groups = true;
+                upsert_membership_packages = true;
+            }
+            "missing_recharge_package"
+            | "missing_recharge_sku"
+            | "orphan_recharge_package_sku"
+            | "invalid_recharge_sku_product" => {
+                upsert_products = true;
+                upsert_recharge_packages = true;
+            }
+            "missing_payment_method" => {
+                upsert_payment_methods = true;
+            }
+            "missing_payment_provider" => {
+                upsert_payment_providers = true;
+            }
+            "missing_payment_provider_account" => {
+                upsert_payment_provider_accounts = true;
+            }
+            "missing_payment_channel" => {
+                upsert_payment_channels = true;
+            }
+            "missing_payment_route_rule" => {
+                upsert_payment_route_rules = true;
+            }
+            _ => {
+                fallback_full_seed = true;
+            }
+        }
+    }
+
+    if fallback_full_seed {
+        upsert_sqlite_commerce_experience_seed(pool).await?;
+        return Ok(());
+    }
+
+    if upsert_products {
+        upsert_sqlite_seed_products(pool).await?;
+    }
+    if upsert_membership_core {
+        upsert_sqlite_benefit_definitions(pool).await?;
+        upsert_sqlite_membership_plans(pool).await?;
+        upsert_sqlite_membership_plan_versions(pool).await?;
+        upsert_sqlite_membership_plan_benefits(pool).await?;
+    }
+    if upsert_membership_groups {
+        upsert_sqlite_membership_package_groups(pool).await?;
+    }
+    if upsert_membership_packages {
+        upsert_sqlite_membership_packages(pool).await?;
+    }
+    if upsert_recharge_packages {
+        upsert_sqlite_recharge_packages(pool).await?;
+    }
+    if upsert_payment_methods {
+        upsert_sqlite_payment_methods(pool).await?;
+    }
+    if upsert_payment_providers {
+        upsert_sqlite_payment_providers(pool).await?;
+    }
+    if upsert_payment_provider_accounts {
+        upsert_sqlite_payment_provider_accounts(pool).await?;
+    }
+    if upsert_payment_channels {
+        upsert_sqlite_payment_channels(pool).await?;
+    }
+    if upsert_payment_route_rules {
+        upsert_sqlite_payment_route_rules(pool).await?;
+    }
+
+    if !sqlite_commerce_experience_seed_complete(pool).await? {
+        upsert_sqlite_commerce_experience_seed(pool).await?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_seed_products(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    upsert_sqlite_seed_product(
+        pool,
+        MEMBERSHIP_PRODUCT_ID,
+        "membership",
+        "Membership",
+        "SDKWork membership catalog",
+        "Reusable SDKWork commerce membership product.",
+        "commerce-membership",
+    )
+    .await?;
+    upsert_sqlite_seed_product(
+        pool,
+        RECHARGE_PRODUCT_ID,
+        "points-recharge",
+        "Points recharge",
+        "SDKWork points recharge catalog",
+        "Reusable SDKWork commerce points recharge packages.",
+        "commerce-recharge",
+    )
+    .await?;
+    Ok(())
+}
+
+async fn upsert_postgres_seed_products(pool: &PgPool) -> Result<(), CommerceServiceError> {
     upsert_postgres_seed_product(
         pool,
         MEMBERSHIP_PRODUCT_ID,
@@ -66,112 +230,65 @@ pub async fn upsert_postgres_commerce_experience_seed(
         "commerce-recharge",
     )
     .await?;
-    upsert_postgres_membership_plans(pool).await?;
-    upsert_postgres_membership_package_groups(pool).await?;
-    upsert_postgres_membership_packages(pool).await?;
-    upsert_postgres_recharge_packages(pool).await?;
+    Ok(())
+}
+
+pub async fn upsert_sqlite_payment_center_seed(
+    pool: &SqlitePool,
+) -> Result<(), CommerceServiceError> {
+    upsert_sqlite_payment_methods(pool).await?;
+    upsert_sqlite_payment_providers(pool).await?;
+    upsert_sqlite_payment_provider_accounts(pool).await?;
+    upsert_sqlite_payment_channels(pool).await?;
+    upsert_sqlite_payment_route_rules(pool).await?;
+    Ok(())
+}
+
+pub async fn upsert_postgres_payment_center_seed(
+    pool: &PgPool,
+) -> Result<(), CommerceServiceError> {
     upsert_postgres_payment_methods(pool).await?;
+    upsert_postgres_payment_providers(pool).await?;
+    upsert_postgres_payment_provider_accounts(pool).await?;
+    upsert_postgres_payment_channels(pool).await?;
+    upsert_postgres_payment_route_rules(pool).await?;
     Ok(())
 }
 
 pub async fn sqlite_commerce_experience_seed_complete(
     pool: &SqlitePool,
 ) -> Result<bool, CommerceServiceError> {
-    let product_count = sqlite_count(pool, COMPLETE_PRODUCT_COUNT_SQL).await?;
-    if product_count != 2 {
-        return Ok(false);
-    }
+    Ok(sqlite_commerce_experience_seed_integrity_report(pool)
+        .await?
+        .complete)
+}
 
-    let membership_plan_count = sqlite_count(pool, COMPLETE_MEMBERSHIP_PLAN_COUNT_SQL).await?;
-    if membership_plan_count != 4 {
-        return Ok(false);
+pub async fn sqlite_commerce_experience_seed_integrity_report(
+    pool: &SqlitePool,
+) -> Result<CommerceExperienceSeedIntegrityReport, CommerceServiceError> {
+    let mut issues = Vec::new();
+    for check in COMMERCE_EXPERIENCE_SEED_INTEGRITY_CHECKS {
+        let actual_count = sqlite_count(pool, check.statement).await?;
+        if actual_count != check.expected_count {
+            issues.push(check.issue(actual_count));
+        }
     }
-
-    let membership_package_group_count =
-        sqlite_count(pool, COMPLETE_MEMBERSHIP_PACKAGE_GROUP_COUNT_SQL).await?;
-    if membership_package_group_count != 4 {
-        return Ok(false);
-    }
-
-    let membership_package_count =
-        sqlite_count(pool, COMPLETE_MEMBERSHIP_PACKAGE_COUNT_SQL).await?;
-    if membership_package_count != 16 {
-        return Ok(false);
-    }
-
-    let complete_group_count =
-        sqlite_count(pool, COMPLETE_MEMBERSHIP_GROUP_PACKAGE_COUNT_SQL).await?;
-    if complete_group_count != 4 {
-        return Ok(false);
-    }
-
-    let membership_sku_count = sqlite_count(pool, COMPLETE_MEMBERSHIP_SKU_COUNT_SQL).await?;
-    if membership_sku_count != 16 {
-        return Ok(false);
-    }
-
-    let recharge_package_count = sqlite_count(pool, COMPLETE_RECHARGE_PACKAGE_COUNT_SQL).await?;
-    if recharge_package_count != 4 {
-        return Ok(false);
-    }
-
-    let recharge_sku_count = sqlite_count(pool, COMPLETE_RECHARGE_SKU_COUNT_SQL).await?;
-    if recharge_sku_count != 4 {
-        return Ok(false);
-    }
-
-    let payment_method_count = sqlite_count(pool, COMPLETE_PAYMENT_METHOD_COUNT_SQL).await?;
-    Ok(payment_method_count == 3)
+    Ok(CommerceExperienceSeedIntegrityReport {
+        complete: issues.is_empty(),
+        issues,
+    })
 }
 
 pub async fn postgres_commerce_experience_seed_complete(
     pool: &PgPool,
 ) -> Result<bool, CommerceServiceError> {
-    let product_count = postgres_count(pool, COMPLETE_PRODUCT_COUNT_SQL).await?;
-    if product_count != 2 {
-        return Ok(false);
+    for check in COMMERCE_EXPERIENCE_SEED_INTEGRITY_CHECKS {
+        let actual_count = postgres_count(pool, check.statement).await?;
+        if actual_count != check.expected_count {
+            return Ok(false);
+        }
     }
-
-    let membership_plan_count = postgres_count(pool, COMPLETE_MEMBERSHIP_PLAN_COUNT_SQL).await?;
-    if membership_plan_count != 4 {
-        return Ok(false);
-    }
-
-    let membership_package_group_count =
-        postgres_count(pool, COMPLETE_MEMBERSHIP_PACKAGE_GROUP_COUNT_SQL).await?;
-    if membership_package_group_count != 4 {
-        return Ok(false);
-    }
-
-    let membership_package_count =
-        postgres_count(pool, COMPLETE_MEMBERSHIP_PACKAGE_COUNT_SQL).await?;
-    if membership_package_count != 16 {
-        return Ok(false);
-    }
-
-    let complete_group_count =
-        postgres_count(pool, COMPLETE_MEMBERSHIP_GROUP_PACKAGE_COUNT_SQL).await?;
-    if complete_group_count != 4 {
-        return Ok(false);
-    }
-
-    let membership_sku_count = postgres_count(pool, COMPLETE_MEMBERSHIP_SKU_COUNT_SQL).await?;
-    if membership_sku_count != 16 {
-        return Ok(false);
-    }
-
-    let recharge_package_count = postgres_count(pool, COMPLETE_RECHARGE_PACKAGE_COUNT_SQL).await?;
-    if recharge_package_count != 4 {
-        return Ok(false);
-    }
-
-    let recharge_sku_count = postgres_count(pool, COMPLETE_RECHARGE_SKU_COUNT_SQL).await?;
-    if recharge_sku_count != 4 {
-        return Ok(false);
-    }
-
-    let payment_method_count = postgres_count(pool, COMPLETE_PAYMENT_METHOD_COUNT_SQL).await?;
-    Ok(payment_method_count == 3)
+    Ok(true)
 }
 
 async fn upsert_sqlite_seed_product(
@@ -260,34 +377,103 @@ async fn upsert_postgres_seed_product(
     Ok(())
 }
 
-async fn upsert_sqlite_membership_plans(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
-    for plan in commerce_membership_plan_seeds() {
+async fn upsert_sqlite_benefit_definitions(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    for benefit in commerce_benefit_definition_seeds() {
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_plan
-                (id, tenant_id, organization_id, plan_no, name, plan_code, rank, duration_days, benefits_json, visible_surfaces, status, created_at, updated_at)
+            INSERT INTO benefit_definition
+                (id, tenant_id, organization_id, benefit_code, name, benefit_type,
+                 value_unit, measurement_type, description, status, created_at, updated_at)
             VALUES
-                (?, '0', '0', ?, ?, ?, ?, ?, ?, '["membership","console","playground","api"]', 'active', ?, ?)
-            ON CONFLICT(tenant_id, plan_no) DO UPDATE SET
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, 'active', ?, ?)
+            ON CONFLICT(tenant_id, organization_id, benefit_code) DO UPDATE SET
                 id = excluded.id,
-                organization_id = excluded.organization_id,
                 name = excluded.name,
+                benefit_type = excluded.benefit_type,
+                value_unit = excluded.value_unit,
+                measurement_type = excluded.measurement_type,
+                description = excluded.description,
+                status = excluded.status,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(benefit.id)
+        .bind(benefit.benefit_code)
+        .bind(benefit.name)
+        .bind(benefit.benefit_type)
+        .bind(benefit.value_unit)
+        .bind(benefit.measurement_type)
+        .bind(benefit.description)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert benefit definition", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_benefit_definitions(pool: &PgPool) -> Result<(), CommerceServiceError> {
+    for benefit in commerce_benefit_definition_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO benefit_definition
+                (id, tenant_id, organization_id, benefit_code, name, benefit_type,
+                 value_unit, measurement_type, description, status, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, 'active', $8, $9)
+            ON CONFLICT(tenant_id, organization_id, benefit_code) DO UPDATE SET
+                id = excluded.id,
+                name = excluded.name,
+                benefit_type = excluded.benefit_type,
+                value_unit = excluded.value_unit,
+                measurement_type = excluded.measurement_type,
+                description = excluded.description,
+                status = excluded.status,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(benefit.id)
+        .bind(benefit.benefit_code)
+        .bind(benefit.name)
+        .bind(benefit.benefit_type)
+        .bind(benefit.value_unit)
+        .bind(benefit.measurement_type)
+        .bind(benefit.description)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert benefit definition", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_membership_plans(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    for plan in membership_plan_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO membership_plan
+                (id, tenant_id, organization_id, plan_no, plan_code, name, rank, description,
+                 status, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, ?, 'active', ?, ?)
+            ON CONFLICT(tenant_id, plan_no) DO UPDATE SET
+                organization_id = excluded.organization_id,
                 plan_code = excluded.plan_code,
+                name = excluded.name,
                 rank = excluded.rank,
-                duration_days = excluded.duration_days,
-                benefits_json = excluded.benefits_json,
-                visible_surfaces = excluded.visible_surfaces,
+                description = excluded.description,
                 status = excluded.status,
                 updated_at = excluded.updated_at
             "#,
         )
         .bind(plan_id_for(plan.plan_no))
         .bind(plan.plan_no)
+        .bind(plan.plan_code)
         .bind(plan.name)
-        .bind(plan.plan_no)
         .bind(plan.rank)
-        .bind(plan.validity_days)
-        .bind(membership_plan_benefit_json(&plan))
+        .bind(plan.description)
         .bind(SEED_TIMESTAMP)
         .bind(SEED_TIMESTAMP)
         .execute(pool)
@@ -298,33 +484,30 @@ async fn upsert_sqlite_membership_plans(pool: &SqlitePool) -> Result<(), Commerc
 }
 
 async fn upsert_postgres_membership_plans(pool: &PgPool) -> Result<(), CommerceServiceError> {
-    for plan in commerce_membership_plan_seeds() {
+    for plan in membership_plan_seeds() {
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_plan
-                (id, tenant_id, organization_id, plan_no, name, plan_code, rank, duration_days, benefits_json, visible_surfaces, status, created_at, updated_at)
+            INSERT INTO membership_plan
+                (id, tenant_id, organization_id, plan_no, plan_code, name, rank, description,
+                 status, created_at, updated_at)
             VALUES
-                ($1, '0', '0', $2, $3, $4, $5, $6, $7, '["membership","console","playground","api"]', 'active', $8, $9)
+                ($1, '0', '0', $2, $3, $4, $5, $6, 'active', $7, $8)
             ON CONFLICT(tenant_id, plan_no) DO UPDATE SET
-                id = excluded.id,
                 organization_id = excluded.organization_id,
-                name = excluded.name,
                 plan_code = excluded.plan_code,
+                name = excluded.name,
                 rank = excluded.rank,
-                duration_days = excluded.duration_days,
-                benefits_json = excluded.benefits_json,
-                visible_surfaces = excluded.visible_surfaces,
+                description = excluded.description,
                 status = excluded.status,
                 updated_at = excluded.updated_at
             "#,
         )
         .bind(plan_id_for(plan.plan_no))
         .bind(plan.plan_no)
+        .bind(plan.plan_code)
         .bind(plan.name)
-        .bind(plan.plan_no)
         .bind(plan.rank)
-        .bind(plan.validity_days)
-        .bind(membership_plan_benefit_json(&plan))
+        .bind(plan.description)
         .bind(SEED_TIMESTAMP)
         .bind(SEED_TIMESTAMP)
         .execute(pool)
@@ -334,25 +517,180 @@ async fn upsert_postgres_membership_plans(pool: &PgPool) -> Result<(), CommerceS
     Ok(())
 }
 
+async fn upsert_sqlite_membership_plan_versions(
+    pool: &SqlitePool,
+) -> Result<(), CommerceServiceError> {
+    for version in membership_plan_version_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO membership_plan_version
+                (id, tenant_id, organization_id, plan_id, version_no, title, description,
+                 lifecycle_status, effective_from, effective_to, published_at, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, NULL, ?, ?, NULL, ?, ?, ?)
+            ON CONFLICT(tenant_id, plan_id, version_no) DO UPDATE SET
+                title = excluded.title,
+                lifecycle_status = excluded.lifecycle_status,
+                effective_from = excluded.effective_from,
+                published_at = excluded.published_at,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(version.id)
+        .bind(plan_id_for(version.plan_no))
+        .bind(version.version_no)
+        .bind(version.title)
+        .bind(version.lifecycle_status)
+        .bind(version.effective_from)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert membership plan version", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_membership_plan_versions(
+    pool: &PgPool,
+) -> Result<(), CommerceServiceError> {
+    for version in membership_plan_version_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO membership_plan_version
+                (id, tenant_id, organization_id, plan_id, version_no, title, description,
+                 lifecycle_status, effective_from, effective_to, published_at, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, NULL, $5, $6, NULL, $7, $8, $9)
+            ON CONFLICT(tenant_id, plan_id, version_no) DO UPDATE SET
+                title = excluded.title,
+                lifecycle_status = excluded.lifecycle_status,
+                effective_from = excluded.effective_from,
+                published_at = excluded.published_at,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(version.id)
+        .bind(plan_id_for(version.plan_no))
+        .bind(version.version_no)
+        .bind(version.title)
+        .bind(version.lifecycle_status)
+        .bind(version.effective_from)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert membership plan version", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_membership_plan_benefits(
+    pool: &SqlitePool,
+) -> Result<(), CommerceServiceError> {
+    for benefit in membership_plan_benefit_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO membership_plan_benefit
+                (id, tenant_id, organization_id, plan_id, plan_version_id, benefit_id,
+                 benefit_code, grant_quantity, grant_period, reset_policy, usage_policy,
+                 sort_weight, status, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active', ?, ?)
+            ON CONFLICT(tenant_id, plan_version_id, benefit_id) DO UPDATE SET
+                benefit_code = excluded.benefit_code,
+                grant_quantity = excluded.grant_quantity,
+                grant_period = excluded.grant_period,
+                reset_policy = excluded.reset_policy,
+                usage_policy = excluded.usage_policy,
+                sort_weight = excluded.sort_weight,
+                status = excluded.status,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(benefit.id)
+        .bind(plan_id_for(benefit.plan_no))
+        .bind(plan_version_id_for(benefit.plan_no))
+        .bind(benefit_definition_id_for(benefit.benefit_code))
+        .bind(benefit.benefit_code)
+        .bind(benefit.grant_quantity)
+        .bind(benefit.grant_period)
+        .bind(benefit.reset_policy)
+        .bind(benefit.usage_policy)
+        .bind(benefit.sort_weight)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert membership plan benefit", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_membership_plan_benefits(
+    pool: &PgPool,
+) -> Result<(), CommerceServiceError> {
+    for benefit in membership_plan_benefit_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO membership_plan_benefit
+                (id, tenant_id, organization_id, plan_id, plan_version_id, benefit_id,
+                 benefit_code, grant_quantity, grant_period, reset_policy, usage_policy,
+                 sort_weight, status, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, $10, 'active', $11, $12)
+            ON CONFLICT(tenant_id, plan_version_id, benefit_id) DO UPDATE SET
+                benefit_code = excluded.benefit_code,
+                grant_quantity = excluded.grant_quantity,
+                grant_period = excluded.grant_period,
+                reset_policy = excluded.reset_policy,
+                usage_policy = excluded.usage_policy,
+                sort_weight = excluded.sort_weight,
+                status = excluded.status,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(benefit.id)
+        .bind(plan_id_for(benefit.plan_no))
+        .bind(plan_version_id_for(benefit.plan_no))
+        .bind(benefit_definition_id_for(benefit.benefit_code))
+        .bind(benefit.benefit_code)
+        .bind(benefit.grant_quantity)
+        .bind(benefit.grant_period)
+        .bind(benefit.reset_policy)
+        .bind(benefit.usage_policy)
+        .bind(benefit.sort_weight)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert membership plan benefit", error))?;
+    }
+    Ok(())
+}
+
 async fn upsert_sqlite_membership_package_groups(
     pool: &SqlitePool,
 ) -> Result<(), CommerceServiceError> {
-    for group in commerce_membership_package_group_seeds() {
+    for group in membership_package_group_seeds() {
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_package_group
-                (id, tenant_id, organization_id, external_id, group_no, plan_id, name, description, billing_cycle, duration_days, sort_weight, status, created_at, updated_at)
+            INSERT INTO membership_package_group
+                (id, tenant_id, organization_id, external_id, group_no, name, description,
+                 billing_cycle, duration_days, display_channel, sort_weight, status, created_at, updated_at)
             VALUES
-                (?, '0', '0', ?, ?, NULL, ?, ?, ?, ?, ?, 'active', ?, ?)
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, 'app', ?, 'active', ?, ?)
             ON CONFLICT(tenant_id, group_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
                 external_id = excluded.external_id,
-                plan_id = excluded.plan_id,
                 name = excluded.name,
                 description = excluded.description,
                 billing_cycle = excluded.billing_cycle,
                 duration_days = excluded.duration_days,
+                display_channel = excluded.display_channel,
                 sort_weight = excluded.sort_weight,
                 status = excluded.status,
                 updated_at = excluded.updated_at
@@ -378,22 +716,23 @@ async fn upsert_sqlite_membership_package_groups(
 async fn upsert_postgres_membership_package_groups(
     pool: &PgPool,
 ) -> Result<(), CommerceServiceError> {
-    for group in commerce_membership_package_group_seeds() {
+    for group in membership_package_group_seeds() {
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_package_group
-                (id, tenant_id, organization_id, external_id, group_no, plan_id, name, description, billing_cycle, duration_days, sort_weight, status, created_at, updated_at)
+            INSERT INTO membership_package_group
+                (id, tenant_id, organization_id, external_id, group_no, name, description,
+                 billing_cycle, duration_days, display_channel, sort_weight, status, created_at, updated_at)
             VALUES
-                ($1, '0', '0', $2, $3, NULL, $4, $5, $6, $7, $8, 'active', $9, $10)
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, 'app', $8, 'active', $9, $10)
             ON CONFLICT(tenant_id, group_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
                 external_id = excluded.external_id,
-                plan_id = excluded.plan_id,
                 name = excluded.name,
                 description = excluded.description,
                 billing_cycle = excluded.billing_cycle,
                 duration_days = excluded.duration_days,
+                display_channel = excluded.display_channel,
                 sort_weight = excluded.sort_weight,
                 status = excluded.status,
                 updated_at = excluded.updated_at
@@ -417,12 +756,16 @@ async fn upsert_postgres_membership_package_groups(
 }
 
 async fn upsert_sqlite_membership_packages(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
-    for package in commerce_membership_package_seeds() {
+    for package in membership_package_seeds() {
         upsert_sqlite_membership_package_sku(pool, &package).await?;
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_package
-                (id, tenant_id, organization_id, external_id, package_no, package_group_id, plan_id, sku_id, name, description, price_amount, original_price_amount, currency_code, point_amount, duration_days, recurrence_cycle, sort_weight, recommended, tags_json, status, starts_at, ends_at, created_at, updated_at)
+            INSERT INTO membership_package
+                (id, tenant_id, organization_id, external_id, package_no, package_group_id,
+                 plan_id, plan_version_id, sku_id, name, description, price_amount,
+                 original_price_amount, currency_code, point_amount, duration_days,
+                 recurrence_cycle, sort_weight, recommended, status, starts_at, ends_at,
+                 created_at, updated_at)
             VALUES
                 (?, '0', '0', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active', NULL, NULL, ?, ?)
             ON CONFLICT(tenant_id, package_no) DO UPDATE SET
@@ -431,6 +774,7 @@ async fn upsert_sqlite_membership_packages(pool: &SqlitePool) -> Result<(), Comm
                 external_id = excluded.external_id,
                 package_group_id = excluded.package_group_id,
                 plan_id = excluded.plan_id,
+                plan_version_id = excluded.plan_version_id,
                 sku_id = excluded.sku_id,
                 name = excluded.name,
                 description = excluded.description,
@@ -442,7 +786,6 @@ async fn upsert_sqlite_membership_packages(pool: &SqlitePool) -> Result<(), Comm
                 recurrence_cycle = excluded.recurrence_cycle,
                 sort_weight = excluded.sort_weight,
                 recommended = excluded.recommended,
-                tags_json = excluded.tags_json,
                 status = excluded.status,
                 starts_at = excluded.starts_at,
                 ends_at = excluded.ends_at,
@@ -454,6 +797,7 @@ async fn upsert_sqlite_membership_packages(pool: &SqlitePool) -> Result<(), Comm
         .bind(package_no_for(package.package_no))
         .bind(package_group_id_for(package.package_group_no))
         .bind(plan_id_for(package.plan_no))
+        .bind(plan_version_id_for(package.plan_no))
         .bind(package.sku_id)
         .bind(package.name)
         .bind(package.description)
@@ -465,7 +809,6 @@ async fn upsert_sqlite_membership_packages(pool: &SqlitePool) -> Result<(), Comm
         .bind(recurrence_cycle_for(package.package_group_no))
         .bind(package.sort_weight)
         .bind(i64::from(package.recommended))
-        .bind(seed_tags_json(&package.tags))
         .bind(SEED_TIMESTAMP)
         .bind(SEED_TIMESTAMP)
         .execute(pool)
@@ -476,20 +819,26 @@ async fn upsert_sqlite_membership_packages(pool: &SqlitePool) -> Result<(), Comm
 }
 
 async fn upsert_postgres_membership_packages(pool: &PgPool) -> Result<(), CommerceServiceError> {
-    for package in commerce_membership_package_seeds() {
+    for package in membership_package_seeds() {
         upsert_postgres_membership_package_sku(pool, &package).await?;
         sqlx::query(
             r#"
-            INSERT INTO commerce_membership_package
-                (id, tenant_id, organization_id, external_id, package_no, package_group_id, plan_id, sku_id, name, description, price_amount, original_price_amount, currency_code, point_amount, duration_days, recurrence_cycle, sort_weight, recommended, tags_json, status, starts_at, ends_at, created_at, updated_at)
+            INSERT INTO membership_package
+                (id, tenant_id, organization_id, external_id, package_no, package_group_id,
+                 plan_id, plan_version_id, sku_id, name, description, price_amount,
+                 original_price_amount, currency_code, point_amount, duration_days,
+                 recurrence_cycle, sort_weight, recommended, status, starts_at, ends_at,
+                 created_at, updated_at)
             VALUES
-                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 'active', NULL, NULL, $18, $19)
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, $10,
+                 $11, $12, $13, $14, $15, $16, $17, 'active', NULL, NULL, $18, $19)
             ON CONFLICT(tenant_id, package_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
                 external_id = excluded.external_id,
                 package_group_id = excluded.package_group_id,
                 plan_id = excluded.plan_id,
+                plan_version_id = excluded.plan_version_id,
                 sku_id = excluded.sku_id,
                 name = excluded.name,
                 description = excluded.description,
@@ -501,7 +850,6 @@ async fn upsert_postgres_membership_packages(pool: &PgPool) -> Result<(), Commer
                 recurrence_cycle = excluded.recurrence_cycle,
                 sort_weight = excluded.sort_weight,
                 recommended = excluded.recommended,
-                tags_json = excluded.tags_json,
                 status = excluded.status,
                 starts_at = excluded.starts_at,
                 ends_at = excluded.ends_at,
@@ -513,6 +861,7 @@ async fn upsert_postgres_membership_packages(pool: &PgPool) -> Result<(), Commer
         .bind(package_no_for(package.package_no))
         .bind(package_group_id_for(package.package_group_no))
         .bind(plan_id_for(package.plan_no))
+        .bind(plan_version_id_for(package.plan_no))
         .bind(package.sku_id)
         .bind(package.name)
         .bind(package.description)
@@ -524,7 +873,6 @@ async fn upsert_postgres_membership_packages(pool: &PgPool) -> Result<(), Commer
         .bind(recurrence_cycle_for(package.package_group_no))
         .bind(package.sort_weight)
         .bind(i64::from(package.recommended))
-        .bind(seed_tags_json(&package.tags))
         .bind(SEED_TIMESTAMP)
         .bind(SEED_TIMESTAMP)
         .execute(pool)
@@ -808,7 +1156,6 @@ async fn upsert_sqlite_payment_methods(pool: &SqlitePool) -> Result<(), Commerce
                 id = excluded.id,
                 display_name = excluded.display_name,
                 provider = excluded.provider,
-                status = excluded.status,
                 sort_weight = excluded.sort_weight,
                 request_no = excluded.request_no,
                 idempotency_key = excluded.idempotency_key,
@@ -843,7 +1190,6 @@ async fn upsert_postgres_payment_methods(pool: &PgPool) -> Result<(), CommerceSe
                 id = excluded.id,
                 display_name = excluded.display_name,
                 provider = excluded.provider,
-                status = excluded.status,
                 sort_weight = excluded.sort_weight,
                 request_no = excluded.request_no,
                 idempotency_key = excluded.idempotency_key,
@@ -866,33 +1212,314 @@ async fn upsert_postgres_payment_methods(pool: &PgPool) -> Result<(), CommerceSe
     Ok(())
 }
 
-fn membership_plan_benefit_json(plan: &CommerceMembershipPlanSeed) -> String {
-    serde_json::json!({
-        "planNo": plan.plan_no,
-        "planRank": plan.rank,
-        "requiredPoints": plan.required_points,
-        "badge": plan.badge,
-        "description": plan.description,
-        "items": plan
-            .benefits
-            .iter()
-            .map(membership_benefit_json)
-            .collect::<Vec<_>>(),
-    })
-    .to_string()
+async fn upsert_sqlite_payment_providers(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    for provider in commerce_payment_provider_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_provider
+                (id, tenant_id, organization_id, provider_code, display_name, provider_type, supported_countries, supported_currencies, supported_methods, status, sort_order, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, 'active', ?, ?, ?)
+            ON CONFLICT(tenant_id, organization_id, provider_code) DO UPDATE SET
+                id = excluded.id,
+                display_name = excluded.display_name,
+                provider_type = excluded.provider_type,
+                supported_countries = excluded.supported_countries,
+                supported_currencies = excluded.supported_currencies,
+                supported_methods = excluded.supported_methods,
+                sort_order = excluded.sort_order,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(provider.id)
+        .bind(provider.provider_code)
+        .bind(provider.display_name)
+        .bind(provider.provider_type)
+        .bind(seed_string_array_json(&provider.supported_countries))
+        .bind(seed_string_array_json(&provider.supported_currencies))
+        .bind(seed_string_array_json(&provider.supported_methods))
+        .bind(provider.sort_order)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment provider", error))?;
+    }
+    Ok(())
 }
 
-fn membership_benefit_json(benefit: &CommerceMembershipBenefitSeed) -> serde_json::Value {
-    serde_json::json!({
-        "id": benefit.id,
-        "benefitKey": benefit.benefit_key,
-        "name": benefit.name,
-        "description": benefit.description,
-        "type": benefit.benefit_type,
-        "usageLimit": benefit.usage_limit,
-        "claimed": false,
-        "usedCount": 0,
-    })
+async fn upsert_postgres_payment_providers(pool: &PgPool) -> Result<(), CommerceServiceError> {
+    for provider in commerce_payment_provider_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_provider
+                (id, tenant_id, organization_id, provider_code, display_name, provider_type, supported_countries, supported_currencies, supported_methods, status, sort_order, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, 'active', $8, $9, $10)
+            ON CONFLICT(tenant_id, organization_id, provider_code) DO UPDATE SET
+                id = excluded.id,
+                display_name = excluded.display_name,
+                provider_type = excluded.provider_type,
+                supported_countries = excluded.supported_countries,
+                supported_currencies = excluded.supported_currencies,
+                supported_methods = excluded.supported_methods,
+                sort_order = excluded.sort_order,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(provider.id)
+        .bind(provider.provider_code)
+        .bind(provider.display_name)
+        .bind(provider.provider_type)
+        .bind(seed_string_array_json(&provider.supported_countries))
+        .bind(seed_string_array_json(&provider.supported_currencies))
+        .bind(seed_string_array_json(&provider.supported_methods))
+        .bind(provider.sort_order)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment provider", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_payment_provider_accounts(
+    pool: &SqlitePool,
+) -> Result<(), CommerceServiceError> {
+    for account in commerce_payment_provider_account_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_provider_account
+                (id, tenant_id, organization_id, account_no, provider_code, merchant_id, environment, country_code, settlement_currency, secret_ref, webhook_secret_ref, certificate_ref, status, rotated_at, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)
+            ON CONFLICT(tenant_id, account_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                provider_code = excluded.provider_code,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(account.id)
+        .bind(account.account_no)
+        .bind(account.provider_code)
+        .bind(account.merchant_id)
+        .bind(account.environment)
+        .bind(account.country_code)
+        .bind(account.settlement_currency)
+        .bind(account.secret_ref)
+        .bind(account.webhook_secret_ref)
+        .bind(account.certificate_ref)
+        .bind(account.status)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment provider account", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_payment_provider_accounts(
+    pool: &PgPool,
+) -> Result<(), CommerceServiceError> {
+    for account in commerce_payment_provider_account_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_provider_account
+                (id, tenant_id, organization_id, account_no, provider_code, merchant_id, environment, country_code, settlement_currency, secret_ref, webhook_secret_ref, certificate_ref, status, rotated_at, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NULL, $12, $13)
+            ON CONFLICT(tenant_id, account_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                provider_code = excluded.provider_code,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(account.id)
+        .bind(account.account_no)
+        .bind(account.provider_code)
+        .bind(account.merchant_id)
+        .bind(account.environment)
+        .bind(account.country_code)
+        .bind(account.settlement_currency)
+        .bind(account.secret_ref)
+        .bind(account.webhook_secret_ref)
+        .bind(account.certificate_ref)
+        .bind(account.status)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment provider account", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_payment_channels(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    for channel in commerce_payment_channel_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_channel
+                (id, tenant_id, organization_id, channel_no, provider_account_id, method_id, scene_code, currency_code, country_code, status, priority, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(tenant_id, channel_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                provider_account_id = excluded.provider_account_id,
+                method_id = excluded.method_id,
+                scene_code = excluded.scene_code,
+                currency_code = excluded.currency_code,
+                country_code = excluded.country_code,
+                priority = excluded.priority,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(channel.id)
+        .bind(channel.channel_no)
+        .bind(channel.provider_account_id)
+        .bind(channel.method_id)
+        .bind(channel.scene_code)
+        .bind(channel.currency_code)
+        .bind(channel.country_code)
+        .bind(channel.status)
+        .bind(channel.priority)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment channel", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_payment_channels(pool: &PgPool) -> Result<(), CommerceServiceError> {
+    for channel in commerce_payment_channel_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_channel
+                (id, tenant_id, organization_id, channel_no, provider_account_id, method_id, scene_code, currency_code, country_code, status, priority, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            ON CONFLICT(tenant_id, channel_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                provider_account_id = excluded.provider_account_id,
+                method_id = excluded.method_id,
+                scene_code = excluded.scene_code,
+                currency_code = excluded.currency_code,
+                country_code = excluded.country_code,
+                priority = excluded.priority,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(channel.id)
+        .bind(channel.channel_no)
+        .bind(channel.provider_account_id)
+        .bind(channel.method_id)
+        .bind(channel.scene_code)
+        .bind(channel.currency_code)
+        .bind(channel.country_code)
+        .bind(channel.status)
+        .bind(channel.priority)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment channel", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_payment_route_rules(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    for rule in commerce_payment_route_rule_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_route_rule
+                (id, tenant_id, organization_id, rule_no, priority, purchase_type, country_code, currency_code, client_platform, amount_min, amount_max, user_segment, risk_level, channel_id, status, starts_at, ends_at, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, ?, ?, NULL, NULL, ?, ?)
+            ON CONFLICT(tenant_id, rule_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                priority = excluded.priority,
+                purchase_type = excluded.purchase_type,
+                country_code = excluded.country_code,
+                currency_code = excluded.currency_code,
+                client_platform = excluded.client_platform,
+                amount_min = excluded.amount_min,
+                amount_max = excluded.amount_max,
+                user_segment = excluded.user_segment,
+                risk_level = excluded.risk_level,
+                channel_id = excluded.channel_id,
+                starts_at = excluded.starts_at,
+                ends_at = excluded.ends_at,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(rule.id)
+        .bind(rule.rule_no)
+        .bind(rule.priority)
+        .bind(rule.purchase_type)
+        .bind(rule.country_code)
+        .bind(rule.currency_code)
+        .bind(rule.client_platform)
+        .bind(rule.channel_id)
+        .bind(rule.status)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment route rule", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_payment_route_rules(pool: &PgPool) -> Result<(), CommerceServiceError> {
+    for rule in commerce_payment_route_rule_seeds() {
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_payment_route_rule
+                (id, tenant_id, organization_id, rule_no, priority, purchase_type, country_code, currency_code, client_platform, amount_min, amount_max, user_segment, risk_level, channel_id, status, starts_at, ends_at, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, NULL, NULL, NULL, NULL, $8, $9, NULL, NULL, $10, $11)
+            ON CONFLICT(tenant_id, rule_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                priority = excluded.priority,
+                purchase_type = excluded.purchase_type,
+                country_code = excluded.country_code,
+                currency_code = excluded.currency_code,
+                client_platform = excluded.client_platform,
+                amount_min = excluded.amount_min,
+                amount_max = excluded.amount_max,
+                user_segment = excluded.user_segment,
+                risk_level = excluded.risk_level,
+                channel_id = excluded.channel_id,
+                starts_at = excluded.starts_at,
+                ends_at = excluded.ends_at,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(rule.id)
+        .bind(rule.rule_no)
+        .bind(rule.priority)
+        .bind(rule.purchase_type)
+        .bind(rule.country_code)
+        .bind(rule.currency_code)
+        .bind(rule.client_platform)
+        .bind(rule.channel_id)
+        .bind(rule.status)
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert payment route rule", error))?;
+    }
+    Ok(())
 }
 
 fn membership_sku_spec_json(package: &CommerceMembershipPackageSeed) -> String {
@@ -930,23 +1557,42 @@ fn package_group_id_for(package_group_no: &str) -> &'static str {
     match group_code(package_group_no) {
         "month" => "seed-membership-package-group-month",
         "year" => "seed-membership-package-group-year",
-        "day" => "seed-membership-package-group-day",
-        "week" => "seed-membership-package-group-week",
         _ => "seed-membership-package-group-unknown",
     }
 }
 
 fn plan_id_for(plan_no: &str) -> &'static str {
     match plan_no {
-        "basic" => "seed-membership-plan-basic",
+        "free" => "seed-membership-plan-free",
         "pro" => "seed-membership-plan-pro",
-        "premium" => "seed-membership-plan-premium",
+        "max" => "seed-membership-plan-max",
+        "vip" => "seed-membership-plan-vip",
         _ => "seed-membership-plan-free",
     }
 }
 
+fn plan_version_id_for(plan_no: &str) -> &'static str {
+    match plan_no {
+        "free" => "seed-membership-plan-version-free-v1",
+        "pro" => "seed-membership-plan-version-pro-v1",
+        "max" => "seed-membership-plan-version-max-v1",
+        "vip" => "seed-membership-plan-version-vip-v1",
+        _ => "seed-membership-plan-version-free-v1",
+    }
+}
+
+fn benefit_definition_id_for(benefit_code: &str) -> &'static str {
+    match benefit_code {
+        "ai_quota" => "seed-benefit-ai-quota",
+        "priority_speed_up" => "seed-benefit-priority-speed-up",
+        "member_discount" => "seed-benefit-member-discount",
+        "monthly_coupon_grant" => "seed-benefit-monthly-coupon-grant",
+        _ => "seed-benefit-ai-quota",
+    }
+}
+
 fn group_seed_for(group_no: &str) -> Option<CommerceMembershipPackageGroupSeed> {
-    commerce_membership_package_group_seeds()
+    membership_package_group_seeds()
         .into_iter()
         .find(|group| group.package_group_no == group_no)
 }
@@ -970,14 +1616,12 @@ fn sku_no_for(sku_no: &str) -> String {
 fn recurrence_cycle_for(group_no: &str) -> &str {
     match group_code(group_no) {
         "year" => "year",
-        "week" => "week",
-        "day" => "day",
         _ => "month",
     }
 }
 
-fn seed_tags_json(tags: &[&str]) -> String {
-    serde_json::to_string(tags).unwrap_or_else(|_| "[]".to_owned())
+fn seed_string_array_json(values: &[&str]) -> String {
+    serde_json::to_string(values).unwrap_or_else(|_| "[]".to_owned())
 }
 
 fn payment_method_request_no(method: &CommercePaymentMethodSeed) -> String {
@@ -1006,6 +1650,142 @@ async fn postgres_count(pool: &PgPool, statement: &str) -> Result<i64, CommerceS
         .map_err(|error| storage_error("failed to count commerce seed rows", error))
 }
 
+struct SeedIntegrityCheck {
+    code: &'static str,
+    message: &'static str,
+    expected_count: i64,
+    statement: &'static str,
+}
+
+impl SeedIntegrityCheck {
+    fn issue(&self, actual_count: i64) -> CommerceExperienceSeedIntegrityIssue {
+        CommerceExperienceSeedIntegrityIssue {
+            code: self.code.to_owned(),
+            message: self.message.to_owned(),
+            expected_count: self.expected_count,
+            actual_count,
+        }
+    }
+}
+
+const COMMERCE_EXPERIENCE_SEED_INTEGRITY_CHECKS: &[SeedIntegrityCheck] = &[
+    SeedIntegrityCheck {
+        code: "missing_seed_product",
+        message: "expected active membership and points recharge seed products",
+        expected_count: 2,
+        statement: COMPLETE_PRODUCT_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_membership_plan",
+        message: "expected four active membership plans",
+        expected_count: 4,
+        statement: COMPLETE_MEMBERSHIP_PLAN_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_membership_package_group",
+        message: "expected two active membership package groups",
+        expected_count: 2,
+        statement: COMPLETE_MEMBERSHIP_PACKAGE_GROUP_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_membership_package",
+        message: "expected six active membership packages",
+        expected_count: 6,
+        statement: COMPLETE_MEMBERSHIP_PACKAGE_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "incomplete_membership_package_group",
+        message: "expected each seeded membership package group to contain three packages",
+        expected_count: 2,
+        statement: COMPLETE_MEMBERSHIP_GROUP_PACKAGE_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_membership_sku",
+        message: "expected six active membership package SKUs",
+        expected_count: 6,
+        statement: COMPLETE_MEMBERSHIP_SKU_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_recharge_package",
+        message: "expected four active points recharge packages",
+        expected_count: 4,
+        statement: COMPLETE_RECHARGE_PACKAGE_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_recharge_sku",
+        message: "expected four active points recharge SKUs",
+        expected_count: 4,
+        statement: COMPLETE_RECHARGE_SKU_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_payment_method",
+        message: "expected standard inactive or active payment methods",
+        expected_count: PAYMENT_METHOD_SEED_COUNT,
+        statement: COMPLETE_PAYMENT_METHOD_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_payment_provider",
+        message: "expected standard inactive or active payment providers",
+        expected_count: PAYMENT_PROVIDER_SEED_COUNT,
+        statement: COMPLETE_PAYMENT_PROVIDER_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_payment_provider_account",
+        message: "expected standard inactive or active payment provider accounts",
+        expected_count: PAYMENT_PROVIDER_ACCOUNT_SEED_COUNT,
+        statement: COMPLETE_PAYMENT_PROVIDER_ACCOUNT_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_payment_channel",
+        message: "expected standard inactive or active payment channels",
+        expected_count: PAYMENT_CHANNEL_SEED_COUNT,
+        statement: COMPLETE_PAYMENT_CHANNEL_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_payment_route_rule",
+        message: "expected standard inactive or active payment route rules",
+        expected_count: PAYMENT_ROUTE_RULE_SEED_COUNT,
+        statement: COMPLETE_PAYMENT_ROUTE_RULE_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "orphan_membership_package_plan",
+        message: "expected every membership package to reference an active seeded membership plan",
+        expected_count: 0,
+        statement: ORPHAN_MEMBERSHIP_PACKAGE_PLAN_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "orphan_membership_package_group",
+        message: "expected every membership package to reference an active seeded package group",
+        expected_count: 0,
+        statement: ORPHAN_MEMBERSHIP_PACKAGE_GROUP_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "orphan_membership_package_sku",
+        message: "expected every membership package to reference an active membership SKU",
+        expected_count: 0,
+        statement: ORPHAN_MEMBERSHIP_PACKAGE_SKU_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "invalid_membership_sku_product",
+        message: "expected every membership package SKU to belong to the membership seed product",
+        expected_count: 0,
+        statement: INVALID_MEMBERSHIP_SKU_PRODUCT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "orphan_recharge_package_sku",
+        message:
+            "expected every points recharge package to reference an active points recharge SKU",
+        expected_count: 0,
+        statement: ORPHAN_RECHARGE_PACKAGE_SKU_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "invalid_recharge_sku_product",
+        message: "expected every points recharge SKU to belong to the points recharge seed product",
+        expected_count: 0,
+        statement: INVALID_RECHARGE_SKU_PRODUCT_SQL,
+    },
+];
+
 const COMPLETE_PRODUCT_COUNT_SQL: &str = r#"
 SELECT COUNT(1)
 FROM commerce_product_spu
@@ -1017,29 +1797,29 @@ WHERE tenant_id = '0'
 
 const COMPLETE_MEMBERSHIP_PLAN_COUNT_SQL: &str = r#"
 SELECT COUNT(1)
-FROM commerce_membership_plan
+FROM membership_plan
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND plan_no IN ('free', 'basic', 'pro', 'premium')
+  AND plan_no IN ('free', 'pro', 'max', 'vip')
   AND status = 'active'
 "#;
 
 const COMPLETE_MEMBERSHIP_PACKAGE_GROUP_COUNT_SQL: &str = r#"
 SELECT COUNT(1)
-FROM commerce_membership_package_group
+FROM membership_package_group
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND external_id IN (1, 2, 3, 4)
-  AND group_no IN ('membership-month', 'membership-year', 'membership-day', 'membership-week')
+  AND external_id IN (1, 2)
+  AND group_no IN ('membership-month', 'membership-year')
   AND status = 'active'
 "#;
 
 const COMPLETE_MEMBERSHIP_PACKAGE_COUNT_SQL: &str = r#"
 SELECT COUNT(1)
-FROM commerce_membership_package
+FROM membership_package
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND external_id IN (101, 102, 103, 104, 201, 202, 203, 204, 301, 302, 303, 304, 401, 402, 403, 404)
+  AND external_id IN (301, 302, 303, 401, 402, 403)
   AND package_no LIKE 'membership-%'
   AND status = 'active'
 "#;
@@ -1048,12 +1828,12 @@ const COMPLETE_MEMBERSHIP_GROUP_PACKAGE_COUNT_SQL: &str = r#"
 SELECT COUNT(1)
 FROM (
     SELECT package_group_id, COUNT(1) AS package_count
-    FROM commerce_membership_package
+    FROM membership_package
     WHERE tenant_id = '0'
       AND organization_id = '0'
       AND status = 'active'
     GROUP BY package_group_id
-    HAVING COUNT(1) = 4
+    HAVING COUNT(1) = 3
 ) seeded_groups
 "#;
 
@@ -1091,8 +1871,134 @@ SELECT COUNT(1)
 FROM commerce_payment_method
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND method_key IN ('wechat', 'alipay', 'stripe')
-  AND status = 'active'
+  AND method_key IN ('wechat_pay', 'alipay', 'paypal', 'card', 'apple_pay', 'google_pay', 'wallet_balance')
+  AND status IN ('active', 'inactive', 'disabled')
+"#;
+
+const COMPLETE_PAYMENT_PROVIDER_COUNT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_payment_provider
+WHERE tenant_id = '0'
+  AND organization_id = '0'
+  AND provider_code IN ('wechat_pay', 'alipay', 'paypal', 'stripe', 'apple_pay', 'google_pay')
+  AND status IN ('active', 'inactive', 'disabled')
+"#;
+
+const COMPLETE_PAYMENT_PROVIDER_ACCOUNT_COUNT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_payment_provider_account
+WHERE tenant_id = '0'
+  AND organization_id = '0'
+  AND account_no IN ('seed-wechat-pay-sandbox', 'seed-alipay-sandbox', 'seed-paypal-sandbox', 'seed-stripe-sandbox', 'seed-apple-pay-sandbox', 'seed-google-pay-sandbox')
+  AND status IN ('active', 'inactive', 'disabled')
+"#;
+
+const COMPLETE_PAYMENT_CHANNEL_COUNT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_payment_channel
+WHERE tenant_id = '0'
+  AND organization_id = '0'
+  AND id LIKE 'seed-payment-channel-%'
+  AND channel_no LIKE 'seed-%'
+  AND status IN ('active', 'inactive', 'disabled')
+"#;
+
+const COMPLETE_PAYMENT_ROUTE_RULE_COUNT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_payment_route_rule
+WHERE tenant_id = '0'
+  AND organization_id = '0'
+  AND id LIKE 'seed-payment-route-rule-%'
+  AND rule_no LIKE 'route-seed-%'
+  AND status IN ('active', 'inactive', 'disabled')
+"#;
+
+const ORPHAN_MEMBERSHIP_PACKAGE_PLAN_SQL: &str = r#"
+SELECT COUNT(1)
+FROM membership_package package
+LEFT JOIN membership_plan plan
+  ON plan.id = package.plan_id
+ AND plan.tenant_id = package.tenant_id
+ AND plan.organization_id = package.organization_id
+ AND plan.status = 'active'
+WHERE package.tenant_id = '0'
+  AND package.organization_id = '0'
+  AND package.package_no LIKE 'membership-%'
+  AND package.status = 'active'
+  AND plan.id IS NULL
+"#;
+
+const ORPHAN_MEMBERSHIP_PACKAGE_GROUP_SQL: &str = r#"
+SELECT COUNT(1)
+FROM membership_package package
+LEFT JOIN membership_package_group package_group
+  ON package_group.id = package.package_group_id
+ AND package_group.tenant_id = package.tenant_id
+ AND package_group.organization_id = package.organization_id
+ AND package_group.status = 'active'
+WHERE package.tenant_id = '0'
+  AND package.organization_id = '0'
+  AND package.package_no LIKE 'membership-%'
+  AND package.status = 'active'
+  AND package_group.id IS NULL
+"#;
+
+const ORPHAN_MEMBERSHIP_PACKAGE_SKU_SQL: &str = r#"
+SELECT COUNT(1)
+FROM membership_package package
+LEFT JOIN commerce_product_sku sku
+  ON sku.id = package.sku_id
+ AND sku.tenant_id = package.tenant_id
+ AND sku.organization_id = package.organization_id
+ AND sku.sales_status = 'active'
+WHERE package.tenant_id = '0'
+  AND package.organization_id = '0'
+  AND package.package_no LIKE 'membership-%'
+  AND package.status = 'active'
+  AND sku.id IS NULL
+"#;
+
+const INVALID_MEMBERSHIP_SKU_PRODUCT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM membership_package package
+JOIN commerce_product_sku sku
+  ON sku.id = package.sku_id
+ AND sku.tenant_id = package.tenant_id
+ AND sku.organization_id = package.organization_id
+WHERE package.tenant_id = '0'
+  AND package.organization_id = '0'
+  AND package.package_no LIKE 'membership-%'
+  AND package.status = 'active'
+  AND sku.spu_id <> 'seed-product-membership'
+"#;
+
+const ORPHAN_RECHARGE_PACKAGE_SKU_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_recharge_package package
+LEFT JOIN commerce_product_sku sku
+  ON sku.id = package.sku_id
+ AND sku.tenant_id = package.tenant_id
+ AND sku.organization_id = package.organization_id
+ AND sku.sales_status = 'active'
+WHERE package.tenant_id = '0'
+  AND package.organization_id = '0'
+  AND package.package_no IN ('points-990', 'points-1990', 'points-4990', 'points-9990')
+  AND package.status = 'active'
+  AND sku.id IS NULL
+"#;
+
+const INVALID_RECHARGE_SKU_PRODUCT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_recharge_package package
+JOIN commerce_product_sku sku
+  ON sku.id = package.sku_id
+ AND sku.tenant_id = package.tenant_id
+ AND sku.organization_id = package.organization_id
+WHERE package.tenant_id = '0'
+  AND package.organization_id = '0'
+  AND package.package_no IN ('points-990', 'points-1990', 'points-4990', 'points-9990')
+  AND package.status = 'active'
+  AND sku.spu_id <> 'seed-product-points-recharge'
 "#;
 
 fn storage_error(context: &str, error: sqlx::Error) -> CommerceServiceError {

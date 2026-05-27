@@ -228,50 +228,6 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<CommerceReportsRefundsListResult>() {})
     }
 
-    /** Coupons Campaigns List */
-    suspend fun couponsCampaignsList(page: Int? = null, pageSize: Int? = null, status: String? = null): CouponsCampaignsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/campaigns"), query))
-        return client.convertValue(raw, object : TypeReference<CouponsCampaignsListResult>() {})
-    }
-
-    /** Coupons Codes List */
-    suspend fun couponsCodesList(page: Int? = null, pageSize: Int? = null, status: String? = null): CouponsCodesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/codes"), query))
-        return client.convertValue(raw, object : TypeReference<CouponsCodesListResult>() {})
-    }
-
-    /** Coupons Redemptions List */
-    suspend fun couponsRedemptionsList(page: Int? = null, pageSize: Int? = null, status: String? = null): CouponsRedemptionsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/redemptions"), query))
-        return client.convertValue(raw, object : TypeReference<CouponsRedemptionsListResult>() {})
-    }
-
-    /** Coupons Templates List */
-    suspend fun couponsTemplatesList(page: Int? = null, pageSize: Int? = null, status: String? = null): CouponsTemplatesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/templates"), query))
-        return client.convertValue(raw, object : TypeReference<CouponsTemplatesListResult>() {})
-    }
-
     /** Fulfillments List */
     suspend fun fulfillmentsList(page: Int? = null, pageSize: Int? = null, status: String? = null): FulfillmentsListResult? {
         val query = buildQueryString(listOf(

@@ -8,7 +8,7 @@ public class OpenAiTool {
     public OpenAiFunctionDefinition getFunction() {
         return this.function;
     }
-    
+
     public void setFunction(OpenAiFunctionDefinition function) {
         this.function = function;
     }
@@ -16,7 +16,7 @@ public class OpenAiTool {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

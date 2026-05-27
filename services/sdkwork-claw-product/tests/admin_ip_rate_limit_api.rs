@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -27,9 +29,7 @@ async fn admin_ip_rate_limit_route_creates_and_lists_ip_rules() {
                 .method("POST")
                 .uri("/backend/v3/api/router/rate_limits/ip")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"ruleName":"\u4e2d\u6587 crawler guard","targetIp":"192.168.1.99/24","rps":10,"rpm":300,"blockDuration":"10m"}"#,
                 ))
@@ -56,9 +56,7 @@ async fn admin_ip_rate_limit_route_creates_and_lists_ip_rules() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/router/rate_limits/ip")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -89,9 +87,7 @@ async fn admin_ip_rate_limit_route_rejects_invalid_ip_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/router/rate_limits/ip")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"ruleName":"Invalid","targetIp":"not-an-ip","rps":10,"rpm":300}"#,
                 ))

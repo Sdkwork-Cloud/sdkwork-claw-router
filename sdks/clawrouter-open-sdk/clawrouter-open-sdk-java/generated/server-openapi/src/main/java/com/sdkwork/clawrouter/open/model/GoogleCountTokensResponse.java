@@ -8,7 +8,7 @@ public class GoogleCountTokensResponse {
     public Integer getCachedContentTokenCount() {
         return this.cachedContentTokenCount;
     }
-    
+
     public void setCachedContentTokenCount(Integer cachedContentTokenCount) {
         this.cachedContentTokenCount = cachedContentTokenCount;
     }
@@ -16,7 +16,7 @@ public class GoogleCountTokensResponse {
     public Integer getTotalTokens() {
         return this.totalTokens;
     }
-    
+
     public void setTotalTokens(Integer totalTokens) {
         this.totalTokens = totalTokens;
     }

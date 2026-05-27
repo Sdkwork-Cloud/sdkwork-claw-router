@@ -9,7 +9,7 @@ public class AnthropicTool {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -17,7 +17,7 @@ public class AnthropicTool {
     public ProviderJsonSchema getInputSchema() {
         return this.inputSchema;
     }
-    
+
     public void setInputSchema(ProviderJsonSchema inputSchema) {
         this.inputSchema = inputSchema;
     }
@@ -25,7 +25,7 @@ public class AnthropicTool {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

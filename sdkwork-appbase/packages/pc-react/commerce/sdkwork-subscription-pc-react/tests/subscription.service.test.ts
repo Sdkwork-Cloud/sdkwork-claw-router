@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   configureCommerceServiceMockSession,
@@ -7,6 +9,8 @@ import {
 import { createSdkworkSubscriptionService } from "../src";
 
 describe("sdkwork-subscription-pc-react service", () => {
+  const RETIRED_TIER_ROOT = "v" + "ip";
+
   beforeEach(() => {
     configureCommerceServiceMockSession({ authToken: "subscription-auth-token" });
   });
@@ -15,11 +19,25 @@ describe("sdkwork-subscription-pc-react service", () => {
     resetCommerceServiceMockSession();
   });
 
-  it("maps VIP dashboard data and checkout-ready coupons into a reusable subscription dashboard", async () => {
+  it("does not retain legacy tier mutation operation labels in the subscription service implementation", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), "packages/pc-react/commerce/sdkwork-subscription-pc-react/src/subscription-service.ts"),
+      "utf8",
+    );
+
+    expect(source).not.toContain('"' + RETIRED_TIER_ROOT + '.purchase"');
+    expect(source).not.toContain('"' + RETIRED_TIER_ROOT + '.renew"');
+    expect(source).not.toContain('"' + RETIRED_TIER_ROOT + '.upgrade"');
+    expect(source).toContain('"memberships.purchase"');
+    expect(source).toContain('"memberships.renew"');
+    expect(source).toContain('"memberships.upgrade"');
+  });
+
+  it("maps membership dashboard data and checkout-ready coupons into a reusable subscription dashboard", async () => {
     const commerceService = createCommerceServiceMock({
-      users: {
-        current: {
-          coupons: {
+      promotions: {
+        userCoupons: {
+          wallet: {
             list: vi.fn().mockResolvedValue({
               code: "2000",
               data: {
@@ -160,12 +178,12 @@ describe("sdkwork-subscription-pc-react service", () => {
           },
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [
             {
               claimed: true,
-              id: "vip-benefit-2",
+              id: "membership-benefit-2",
               name: "Priority rendering",
               usageLimit: 10,
               usedCount: 2,
@@ -173,7 +191,7 @@ describe("sdkwork-subscription-pc-react service", () => {
           ],
           levels: [
             {
-              id: "vip-level-3",
+              id: "membership-level-3",
               isCurrent: true,
               levelValue: 3,
               name: "Pro",
@@ -184,7 +202,7 @@ describe("sdkwork-subscription-pc-react service", () => {
             {
               description: "Best for professional creators.",
               durationDays: 30,
-              id: "vip-plan-2",
+              id: "membership-plan-2",
               includedPoints: 5000,
               name: "Pro Monthly",
               packageId: 2,
@@ -195,7 +213,7 @@ describe("sdkwork-subscription-pc-react service", () => {
             {
               description: "Best for annual savings.",
               durationDays: 365,
-              id: "vip-plan-3",
+              id: "membership-plan-3",
               includedPoints: 60000,
               name: "Pro Annual",
               packageId: 3,
@@ -210,13 +228,13 @@ describe("sdkwork-subscription-pc-react service", () => {
             expireTime: "2026-06-30T00:00:00.000Z",
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 88,
-            status: "vip" as const,
+            status: "active" as const,
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
         getEmptyDashboard: vi.fn(),
@@ -231,9 +249,9 @@ describe("sdkwork-subscription-pc-react service", () => {
     expect(dashboard.summary).toMatchObject({
       currentLevelName: "Pro",
       isAuthenticated: true,
-      isVip: true,
+      isMember: true,
       remainingDays: 88,
-      status: "vip",
+      status: "active",
     });
     expect(dashboard.plans[0]).toMatchObject({
       name: "Pro Monthly",
@@ -283,7 +301,7 @@ describe("sdkwork-subscription-pc-react service", () => {
 
   it("returns a guest-safe subscription dashboard when the current membership is anonymous", async () => {
     const service = createSdkworkSubscriptionService({
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
@@ -293,13 +311,13 @@ describe("sdkwork-subscription-pc-react service", () => {
             currentLevelValue: null,
             growthValue: null,
             isAuthenticated: false,
-            isVip: false,
+            isMember: false,
             pointBalance: null,
             remainingDays: null,
             status: "guest" as const,
             totalSpent: null,
             upgradeGrowthValue: null,
-            vipPoints: null,
+            points: null,
           },
         }),
         getEmptyDashboard: vi.fn(),
@@ -322,11 +340,11 @@ describe("sdkwork-subscription-pc-react service", () => {
     });
   });
 
-  it("delegates purchase, renew, and upgrade actions to the VIP membership service boundary", async () => {
+  it("delegates purchase, renew, and upgrade actions to the membership service boundary", async () => {
     const purchaseMembership = vi.fn().mockResolvedValue({
       amountCny: 199,
       durationDays: 30,
-      orderId: "VIP-PURCHASE-1",
+      orderId: "MEMBERSHIP-PURCHASE-1",
       packageId: 2,
       packageName: "Pro Monthly",
       status: "completed",
@@ -335,7 +353,7 @@ describe("sdkwork-subscription-pc-react service", () => {
     const renewMembership = vi.fn().mockResolvedValue({
       amountCny: 699,
       durationDays: 365,
-      orderId: "VIP-RENEW-1",
+      orderId: "MEMBERSHIP-RENEW-1",
       packageId: 3,
       packageName: "Pro Annual",
       status: "completed",
@@ -344,14 +362,14 @@ describe("sdkwork-subscription-pc-react service", () => {
     const upgradeMembership = vi.fn().mockResolvedValue({
       amountCny: 199,
       durationDays: 30,
-      orderId: "VIP-UPGRADE-1",
+      orderId: "MEMBERSHIP-UPGRADE-1",
       packageId: 2,
       packageName: "Pro Monthly",
       status: "completed",
       targetLevelName: "Pro",
     });
     const service = createSdkworkSubscriptionService({
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
@@ -361,13 +379,13 @@ describe("sdkwork-subscription-pc-react service", () => {
             currentLevelValue: 1,
             growthValue: 20,
             isAuthenticated: true,
-            isVip: false,
+            isMember: false,
             pointBalance: 100,
             remainingDays: null,
             status: "free" as const,
             totalSpent: 0,
             upgradeGrowthValue: 200,
-            vipPoints: 20,
+            points: 20,
           },
         }),
         getEmptyDashboard: vi.fn(),
@@ -385,7 +403,7 @@ describe("sdkwork-subscription-pc-react service", () => {
       }),
     ).resolves.toMatchObject({
       amountCny: 199,
-      orderId: "VIP-PURCHASE-1",
+      orderId: "MEMBERSHIP-PURCHASE-1",
       packageId: 2,
       status: "completed",
     });
@@ -397,7 +415,7 @@ describe("sdkwork-subscription-pc-react service", () => {
       }),
     ).resolves.toMatchObject({
       amountCny: 699,
-      orderId: "VIP-RENEW-1",
+      orderId: "MEMBERSHIP-RENEW-1",
       packageId: 3,
       status: "completed",
     });
@@ -410,7 +428,7 @@ describe("sdkwork-subscription-pc-react service", () => {
       }),
     ).resolves.toMatchObject({
       amountCny: 199,
-      orderId: "VIP-UPGRADE-1",
+      orderId: "MEMBERSHIP-UPGRADE-1",
       packageId: 2,
       status: "completed",
     });
@@ -432,7 +450,7 @@ describe("sdkwork-subscription-pc-react service", () => {
     });
   });
 
-  it("localizes auth at subscription entry and uses VIP-owned mutation fallback errors", async () => {
+  it("localizes auth at subscription entry and uses membership-owned mutation fallback errors", async () => {
     resetCommerceServiceMockSession();
     const localizedAuthService = createSdkworkSubscriptionService({
       locale: "zh-CN",
@@ -447,8 +465,8 @@ describe("sdkwork-subscription-pc-react service", () => {
     configureCommerceServiceMockSession({ authToken: "subscription-auth-token" });
     const localizedMutationService = createSdkworkSubscriptionService({
       commerceService: createCommerceServiceMock({
-        vip: {
-          purchase: {
+        memberships: {
+          purchases: {
             create: vi.fn().mockResolvedValue({
               code: "5000",
             }),

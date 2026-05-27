@@ -158,7 +158,9 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Provider Accounts List
   description: Standard appbase commerce API for payments.providerAccounts.list; no legacy billing compatibility route is exposed.
-  read_sources: *paymentReadSources
+  read_sources:
+  - commerce_payment_provider_account
+  - ops_audit_log
   query_parameters:
   - name: provider_code
     schema: *paymentProviderCodeSchema
@@ -255,7 +257,6 @@ frontend_operations:
   summary: Payments Provider Accounts Create
   description: Standard appbase commerce API for payments.providerAccounts.create; no legacy billing compatibility route is exposed.
   read_sources: *paymentReadSources
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_payment_provider_account

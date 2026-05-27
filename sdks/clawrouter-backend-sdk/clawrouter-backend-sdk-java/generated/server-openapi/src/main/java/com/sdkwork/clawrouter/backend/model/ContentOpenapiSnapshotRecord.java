@@ -29,7 +29,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getApiSurface() {
         return this.apiSurface;
     }
-    
+
     public void setApiSurface(String apiSurface) {
         this.apiSurface = apiSurface;
     }
@@ -37,7 +37,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getApiSystem() {
         return this.apiSystem;
     }
-    
+
     public void setApiSystem(String apiSystem) {
         this.apiSystem = apiSystem;
     }
@@ -45,7 +45,7 @@ public class ContentOpenapiSnapshotRecord {
     public Map<String, String> getCategoryTree() {
         return this.categoryTree;
     }
-    
+
     public void setCategoryTree(Map<String, String> categoryTree) {
         this.categoryTree = categoryTree;
     }
@@ -53,7 +53,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -61,7 +61,7 @@ public class ContentOpenapiSnapshotRecord {
     public Integer getEndpointCount() {
         return this.endpointCount;
     }
-    
+
     public void setEndpointCount(Integer endpointCount) {
         this.endpointCount = endpointCount;
     }
@@ -69,7 +69,7 @@ public class ContentOpenapiSnapshotRecord {
     public Map<String, String> getExampleManifest() {
         return this.exampleManifest;
     }
-    
+
     public void setExampleManifest(Map<String, String> exampleManifest) {
         this.exampleManifest = exampleManifest;
     }
@@ -77,7 +77,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -85,7 +85,7 @@ public class ContentOpenapiSnapshotRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -93,7 +93,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getOpenapiHash() {
         return this.openapiHash;
     }
-    
+
     public void setOpenapiHash(String openapiHash) {
         this.openapiHash = openapiHash;
     }
@@ -101,7 +101,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -109,7 +109,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -117,7 +117,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getRebuildVersion() {
         return this.rebuildVersion;
     }
-    
+
     public void setRebuildVersion(String rebuildVersion) {
         this.rebuildVersion = rebuildVersion;
     }
@@ -125,7 +125,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getSourceId() {
         return this.sourceId;
     }
-    
+
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
@@ -133,7 +133,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getSourceRef() {
         return this.sourceRef;
     }
-    
+
     public void setSourceRef(String sourceRef) {
         this.sourceRef = sourceRef;
     }
@@ -141,7 +141,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -149,7 +149,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -157,7 +157,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -165,7 +165,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -173,7 +173,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -181,7 +181,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -189,7 +189,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -197,7 +197,7 @@ public class ContentOpenapiSnapshotRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -17,7 +17,7 @@ public class ListBatchesItem {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -25,7 +25,7 @@ public class ListBatchesItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -33,7 +33,7 @@ public class ListBatchesItem {
     public String getEndpoint() {
         return this.endpoint;
     }
-    
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -41,7 +41,7 @@ public class ListBatchesItem {
     public String getErrorFileId() {
         return this.errorFileId;
     }
-    
+
     public void setErrorFileId(String errorFileId) {
         this.errorFileId = errorFileId;
     }
@@ -49,7 +49,7 @@ public class ListBatchesItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -57,7 +57,7 @@ public class ListBatchesItem {
     public String getInputFileId() {
         return this.inputFileId;
     }
-    
+
     public void setInputFileId(String inputFileId) {
         this.inputFileId = inputFileId;
     }
@@ -65,7 +65,7 @@ public class ListBatchesItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -73,7 +73,7 @@ public class ListBatchesItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -81,7 +81,7 @@ public class ListBatchesItem {
     public String getOutputFileId() {
         return this.outputFileId;
     }
-    
+
     public void setOutputFileId(String outputFileId) {
         this.outputFileId = outputFileId;
     }
@@ -89,7 +89,7 @@ public class ListBatchesItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

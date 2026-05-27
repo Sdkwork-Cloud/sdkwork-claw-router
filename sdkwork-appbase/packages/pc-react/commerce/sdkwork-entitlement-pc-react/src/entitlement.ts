@@ -118,7 +118,7 @@ export interface SdkworkEntitlementInventorySummary {
   featuredOfferCount: number;
   isAuthenticated: boolean;
   subscriptionPlanCount: number;
-  vipRemainingDays: number | null;
+  membershipRemainingDays: number | null;
 }
 
 export interface SdkworkEntitlementDashboardData {
@@ -585,7 +585,7 @@ export function createEmptySdkworkEntitlementDashboard(
       featuredOfferCount: 0,
       isAuthenticated: false,
       subscriptionPlanCount: 0,
-      vipRemainingDays: null,
+      membershipRemainingDays: null,
     },
     topAction: null,
   };
@@ -602,7 +602,7 @@ export function createEntitlementWorkspaceManifest({
     "@sdkwork/offer-pc-react",
     "@sdkwork/points-pc-react",
     "@sdkwork/subscription-pc-react",
-    "@sdkwork/vip-pc-react",
+    "@sdkwork/membership-pc-react",
     "@sdkwork/wallet-pc-react",
   ],
   routePath = "/entitlements",

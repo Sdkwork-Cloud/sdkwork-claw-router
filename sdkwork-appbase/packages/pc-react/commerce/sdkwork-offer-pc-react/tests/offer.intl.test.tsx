@@ -25,7 +25,7 @@ function createOfferService() {
         currentLevelName: "Guest",
         expiringSoonCoupons: 0,
         isAuthenticated: false,
-        vipRemainingDays: null,
+        membershipRemainingDays: null,
       },
     }),
     getDashboard: vi.fn().mockResolvedValue({
@@ -77,7 +77,7 @@ function createOfferService() {
         currentLevelName: "Pro",
         expiringSoonCoupons: 1,
         isAuthenticated: true,
-        vipRemainingDays: 18,
+        membershipRemainingDays: 18,
       },
     }),
   };

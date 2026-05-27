@@ -8,17 +8,21 @@ import java.util.Map;
 
 public class PlatformApi {
     private final HttpClient client;
-    
+
     public PlatformApi(HttpClient client) {
         this.client = client;
     }
 
     /** Get apps */
-    public AppsStoreListResult appsStoreList(Integer page, Integer pageSize, String q, String status, String startTime, String endTime) throws Exception {
+    public AppsStoreListResult appsStoreList(Integer page, Integer pageSize, String q, String category, String platformType, List<String> platformTypes, String sort, String status, String startTime, String endTime) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             new QueryParameterSpec("q", q, "form", true, false, null),
+            new QueryParameterSpec("category", category, "form", true, false, null),
+            new QueryParameterSpec("platform_type", platformType, "form", true, false, null),
+            new QueryParameterSpec("platform_types", platformTypes, "form", false, false, null),
+            new QueryParameterSpec("sort", sort, "form", true, false, null),
             new QueryParameterSpec("status", status, "form", true, false, null),
             new QueryParameterSpec("start_time", startTime, "form", true, false, null),
             new QueryParameterSpec("end_time", endTime, "form", true, false, null)

@@ -12,8 +12,13 @@ namespace Sdkwork.ClawRouter.Backend.Api
         public static EcosystemApi? Ecosystem { get; set; }
         public static IamApi? Iam { get; set; }
         public static IntegrationApi? Integration { get; set; }
+        public static McpApi? Mcp { get; set; }
+        public static MessagingApi? Messaging { get; set; }
         public static OpenPlatformApi? OpenPlatform { get; set; }
         public static PlatformApi? Platform { get; set; }
         public static SystemApi? System { get; set; }
+        public static PromptsApi? Prompts { get; set; }
+        public static ServiceProvidersApi? ServiceProviders { get; set; }
+        public static StorageApi? Storage { get; set; }
     }
 }

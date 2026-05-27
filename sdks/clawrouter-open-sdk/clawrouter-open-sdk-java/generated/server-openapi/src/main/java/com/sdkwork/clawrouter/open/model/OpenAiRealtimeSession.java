@@ -14,7 +14,7 @@ public class OpenAiRealtimeSession {
     public OpenAiRealtimeClientSecretValue getClientSecret() {
         return this.clientSecret;
     }
-    
+
     public void setClientSecret(OpenAiRealtimeClientSecretValue clientSecret) {
         this.clientSecret = clientSecret;
     }
@@ -22,7 +22,7 @@ public class OpenAiRealtimeSession {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -30,7 +30,7 @@ public class OpenAiRealtimeSession {
     public String getInstructions() {
         return this.instructions;
     }
-    
+
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -38,7 +38,7 @@ public class OpenAiRealtimeSession {
     public List<String> getModalities() {
         return this.modalities;
     }
-    
+
     public void setModalities(List<String> modalities) {
         this.modalities = modalities;
     }
@@ -46,7 +46,7 @@ public class OpenAiRealtimeSession {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -54,7 +54,7 @@ public class OpenAiRealtimeSession {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -62,7 +62,7 @@ public class OpenAiRealtimeSession {
     public String getVoice() {
         return this.voice;
     }
-    
+
     public void setVoice(String voice) {
         this.voice = voice;
     }

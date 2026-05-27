@@ -7,7 +7,7 @@ public class AdminUserMutationResponse {
     public AdminUserItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminUserItem item) {
         this.item = item;
     }

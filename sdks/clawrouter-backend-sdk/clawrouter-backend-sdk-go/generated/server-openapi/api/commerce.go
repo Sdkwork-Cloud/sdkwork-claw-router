@@ -307,66 +307,6 @@ func (a *CommerceApi) ReportsRefundsList(page *int, pageSize *int, status *strin
     return decodeResult[sdktypes.CommerceReportsRefundsListResult](raw)
 }
 
-// Coupons Campaigns List
-func (a *CommerceApi) CouponsCampaignsList(page *int, pageSize *int, status *string) (sdktypes.CouponsCampaignsListResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/coupons/campaigns"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.CouponsCampaignsListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CouponsCampaignsListResult](raw)
-}
-
-// Coupons Codes List
-func (a *CommerceApi) CouponsCodesList(page *int, pageSize *int, status *string) (sdktypes.CouponsCodesListResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/coupons/codes"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.CouponsCodesListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CouponsCodesListResult](raw)
-}
-
-// Coupons Redemptions List
-func (a *CommerceApi) CouponsRedemptionsList(page *int, pageSize *int, status *string) (sdktypes.CouponsRedemptionsListResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/coupons/redemptions"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.CouponsRedemptionsListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CouponsRedemptionsListResult](raw)
-}
-
-// Coupons Templates List
-func (a *CommerceApi) CouponsTemplatesList(page *int, pageSize *int, status *string) (sdktypes.CouponsTemplatesListResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/coupons/templates"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.CouponsTemplatesListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CouponsTemplatesListResult](raw)
-}
-
 // Fulfillments List
 func (a *CommerceApi) FulfillmentsList(page *int, pageSize *int, status *string) (sdktypes.FulfillmentsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{

@@ -15,7 +15,7 @@ public class IamPolicyRecord {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -23,7 +23,7 @@ public class IamPolicyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -31,7 +31,7 @@ public class IamPolicyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -39,7 +39,7 @@ public class IamPolicyRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -47,7 +47,7 @@ public class IamPolicyRecord {
     public Map<String, String> getPolicyJson() {
         return this.policyJson;
     }
-    
+
     public void setPolicyJson(Map<String, String> policyJson) {
         this.policyJson = policyJson;
     }
@@ -55,7 +55,7 @@ public class IamPolicyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -63,7 +63,7 @@ public class IamPolicyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -71,7 +71,7 @@ public class IamPolicyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }

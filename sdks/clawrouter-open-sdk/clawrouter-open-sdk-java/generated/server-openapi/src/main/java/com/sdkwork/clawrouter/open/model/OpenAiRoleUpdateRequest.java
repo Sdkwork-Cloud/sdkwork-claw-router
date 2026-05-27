@@ -10,7 +10,7 @@ public class OpenAiRoleUpdateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -18,7 +18,7 @@ public class OpenAiRoleUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -26,7 +26,7 @@ public class OpenAiRoleUpdateRequest {
     public List<String> getPermissions() {
         return this.permissions;
     }
-    
+
     public void setPermissions(List<String> permissions) {
         this.permissions = permissions;
     }

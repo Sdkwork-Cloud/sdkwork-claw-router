@@ -8,7 +8,7 @@ public class OpenAiChatImageUrl {
     public String getDetail() {
         return this.detail;
     }
-    
+
     public void setDetail(String detail) {
         this.detail = detail;
     }
@@ -16,7 +16,7 @@ public class OpenAiChatImageUrl {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

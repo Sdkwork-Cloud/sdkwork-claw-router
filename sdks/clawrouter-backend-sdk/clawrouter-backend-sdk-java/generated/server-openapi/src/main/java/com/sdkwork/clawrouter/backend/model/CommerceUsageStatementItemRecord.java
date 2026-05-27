@@ -34,7 +34,7 @@ public class CommerceUsageStatementItemRecord {
     public String getAssetCount() {
         return this.assetCount;
     }
-    
+
     public void setAssetCount(String assetCount) {
         this.assetCount = assetCount;
     }
@@ -42,7 +42,7 @@ public class CommerceUsageStatementItemRecord {
     public Map<String, String> getBreakdownPayload() {
         return this.breakdownPayload;
     }
-    
+
     public void setBreakdownPayload(Map<String, String> breakdownPayload) {
         this.breakdownPayload = breakdownPayload;
     }
@@ -50,7 +50,7 @@ public class CommerceUsageStatementItemRecord {
     public String getCostAmount() {
         return this.costAmount;
     }
-    
+
     public void setCostAmount(String costAmount) {
         this.costAmount = costAmount;
     }
@@ -58,7 +58,7 @@ public class CommerceUsageStatementItemRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -66,7 +66,7 @@ public class CommerceUsageStatementItemRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -74,7 +74,7 @@ public class CommerceUsageStatementItemRecord {
     public String getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -82,7 +82,7 @@ public class CommerceUsageStatementItemRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -90,7 +90,7 @@ public class CommerceUsageStatementItemRecord {
     public String getItemType() {
         return this.itemType;
     }
-    
+
     public void setItemType(String itemType) {
         this.itemType = itemType;
     }
@@ -98,7 +98,7 @@ public class CommerceUsageStatementItemRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -106,7 +106,7 @@ public class CommerceUsageStatementItemRecord {
     public String getModality() {
         return this.modality;
     }
-    
+
     public void setModality(String modality) {
         this.modality = modality;
     }
@@ -114,7 +114,7 @@ public class CommerceUsageStatementItemRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -122,7 +122,7 @@ public class CommerceUsageStatementItemRecord {
     public Map<String, String> getModelList() {
         return this.modelList;
     }
-    
+
     public void setModelList(Map<String, String> modelList) {
         this.modelList = modelList;
     }
@@ -130,7 +130,7 @@ public class CommerceUsageStatementItemRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -138,7 +138,7 @@ public class CommerceUsageStatementItemRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -146,7 +146,7 @@ public class CommerceUsageStatementItemRecord {
     public String getRebuildVersion() {
         return this.rebuildVersion;
     }
-    
+
     public void setRebuildVersion(String rebuildVersion) {
         this.rebuildVersion = rebuildVersion;
     }
@@ -154,7 +154,7 @@ public class CommerceUsageStatementItemRecord {
     public String getRequestCount() {
         return this.requestCount;
     }
-    
+
     public void setRequestCount(String requestCount) {
         this.requestCount = requestCount;
     }
@@ -162,7 +162,7 @@ public class CommerceUsageStatementItemRecord {
     public String getSourceId() {
         return this.sourceId;
     }
-    
+
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
@@ -170,7 +170,7 @@ public class CommerceUsageStatementItemRecord {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -178,7 +178,7 @@ public class CommerceUsageStatementItemRecord {
     public Map<String, String> getSourceUsageFactIds() {
         return this.sourceUsageFactIds;
     }
-    
+
     public void setSourceUsageFactIds(Map<String, String> sourceUsageFactIds) {
         this.sourceUsageFactIds = sourceUsageFactIds;
     }
@@ -186,7 +186,7 @@ public class CommerceUsageStatementItemRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -194,7 +194,7 @@ public class CommerceUsageStatementItemRecord {
     public String getStatementId() {
         return this.statementId;
     }
-    
+
     public void setStatementId(String statementId) {
         this.statementId = statementId;
     }
@@ -202,7 +202,7 @@ public class CommerceUsageStatementItemRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -210,7 +210,7 @@ public class CommerceUsageStatementItemRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -218,7 +218,7 @@ public class CommerceUsageStatementItemRecord {
     public String getTokenCount() {
         return this.tokenCount;
     }
-    
+
     public void setTokenCount(String tokenCount) {
         this.tokenCount = tokenCount;
     }
@@ -226,7 +226,7 @@ public class CommerceUsageStatementItemRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -234,7 +234,7 @@ public class CommerceUsageStatementItemRecord {
     public String getUsageText() {
         return this.usageText;
     }
-    
+
     public void setUsageText(String usageText) {
         this.usageText = usageText;
     }
@@ -242,7 +242,7 @@ public class CommerceUsageStatementItemRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

@@ -20,7 +20,7 @@ public class ModelRankingsSource {
     public Integer getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
-    
+
     public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
@@ -28,7 +28,7 @@ public class ModelRankingsSource {
     public String getGeneratedAt() {
         return this.generatedAt;
     }
-    
+
     public void setGeneratedAt(String generatedAt) {
         this.generatedAt = generatedAt;
     }
@@ -36,7 +36,7 @@ public class ModelRankingsSource {
     public String getNextRefreshAt() {
         return this.nextRefreshAt;
     }
-    
+
     public void setNextRefreshAt(String nextRefreshAt) {
         this.nextRefreshAt = nextRefreshAt;
     }
@@ -44,7 +44,7 @@ public class ModelRankingsSource {
     public String getObservedAt() {
         return this.observedAt;
     }
-    
+
     public void setObservedAt(String observedAt) {
         this.observedAt = observedAt;
     }
@@ -52,7 +52,7 @@ public class ModelRankingsSource {
     public String getRankScope() {
         return this.rankScope;
     }
-    
+
     public void setRankScope(String rankScope) {
         this.rankScope = rankScope;
     }
@@ -60,7 +60,7 @@ public class ModelRankingsSource {
     public Integer getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
-    
+
     public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
@@ -68,7 +68,7 @@ public class ModelRankingsSource {
     public String getSnapshotDate() {
         return this.snapshotDate;
     }
-    
+
     public void setSnapshotDate(String snapshotDate) {
         this.snapshotDate = snapshotDate;
     }
@@ -76,7 +76,7 @@ public class ModelRankingsSource {
     public String getSnapshotPeriod() {
         return this.snapshotPeriod;
     }
-    
+
     public void setSnapshotPeriod(String snapshotPeriod) {
         this.snapshotPeriod = snapshotPeriod;
     }
@@ -84,7 +84,7 @@ public class ModelRankingsSource {
     public String getSourceDescription() {
         return this.sourceDescription;
     }
-    
+
     public void setSourceDescription(String sourceDescription) {
         this.sourceDescription = sourceDescription;
     }
@@ -92,7 +92,7 @@ public class ModelRankingsSource {
     public String getSourceLabel() {
         return this.sourceLabel;
     }
-    
+
     public void setSourceLabel(String sourceLabel) {
         this.sourceLabel = sourceLabel;
     }
@@ -100,7 +100,7 @@ public class ModelRankingsSource {
     public List<String> getSourceTables() {
         return this.sourceTables;
     }
-    
+
     public void setSourceTables(List<String> sourceTables) {
         this.sourceTables = sourceTables;
     }
@@ -108,7 +108,7 @@ public class ModelRankingsSource {
     public String getWindowEnd() {
         return this.windowEnd;
     }
-    
+
     public void setWindowEnd(String windowEnd) {
         this.windowEnd = windowEnd;
     }
@@ -116,7 +116,7 @@ public class ModelRankingsSource {
     public String getWindowStart() {
         return this.windowStart;
     }
-    
+
     public void setWindowStart(String windowStart) {
         this.windowStart = windowStart;
     }

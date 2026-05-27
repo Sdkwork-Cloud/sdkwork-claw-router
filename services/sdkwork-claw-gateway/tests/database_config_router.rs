@@ -5,6 +5,8 @@ use axum::routing::post;
 use axum::{Json, Router};
 use sdkwork_claw_config::{ProviderRelayConfig, ProviderSecretMapConfig};
 use sdkwork_claw_product::application::UsageSettlementWorkerConfig;
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqlitePricingCatalogLoader;
+use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_test_support::seeded_sqlite_catalog;
 use serde_json::json;
 use sqlx::{Row, SqlitePool};
@@ -57,11 +59,13 @@ async fn database_config_router_loads_sqlite_catalog_for_openai_models() {
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let response_status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, response_status, "{body_text}");
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("list", payload["object"]);
     let openai_mini = payload["data"]
@@ -125,11 +129,13 @@ async fn database_config_router_uses_provider_relay_config_for_chat_completions(
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let response_status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, response_status, "{body_text}");
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("chatcmpl-upstream", payload["id"]);
     assert_eq!("pong", payload["choices"][0]["message"]["content"]);
@@ -140,7 +146,7 @@ async fn database_config_router_uses_provider_relay_config_for_chat_completions(
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
     assert_eq!("ping", captured[0].body["messages"][0]["content"]);
 }
 
@@ -222,10 +228,7 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         trace.get::<String, _>("api_key_group_snapshot")
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
-    assert_eq!(
-        "openai/global/gpt-4o-mini",
-        trace.get::<String, _>("provider_model")
-    );
+    assert_eq!("gpt-4o-mini", trace.get::<String, _>("provider_model"));
     assert_eq!(200_i64, trace.get::<i64, _>("http_status"));
     assert_eq!(0_i64, trace.get::<i64, _>("streaming"));
     assert_eq!(1_i64, trace.get::<i64, _>("prompt_tokens"));
@@ -262,8 +265,11 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
     assert_eq!(1_i64, usage.get::<i64, _>("prompt_tokens"));
     assert_eq!(1_i64, usage.get::<i64, _>("completion_tokens"));
     assert_eq!(2_i64, usage.get::<i64, _>("total_tokens"));
-    assert_eq!("0.990000", usage.get::<String, _>("customer_charge_amount"));
-    assert_eq!("0.550000", usage.get::<String, _>("cost_amount"));
+    assert_eq!(
+        "0.000000990000",
+        usage.get::<String, _>("customer_charge_amount")
+    );
+    assert_eq!("0.000000550000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -355,7 +361,7 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
     }));
     assert!(captured
         .iter()
-        .all(|request| request.body["model"] == "openai/global/gpt-4o-mini"));
+        .all(|request| request.body["model"] == "gpt-4o-mini"));
     drop(captured);
 
     let read_pool = catalog.open_pool().await.unwrap();
@@ -377,10 +383,7 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
     );
     assert_eq!(3001_i64, trace.get::<i64, _>("channel_id"));
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
-    assert_eq!(
-        "openai/global/gpt-4o-mini",
-        trace.get::<String, _>("provider_model")
-    );
+    assert_eq!("gpt-4o-mini", trace.get::<String, _>("provider_model"));
     assert_eq!(200_i64, trace.get::<i64, _>("http_status"));
     assert_eq!(0_i64, trace.get::<i64, _>("streaming"));
     assert_eq!(2_i64, trace.get::<i64, _>("prompt_tokens"));
@@ -409,8 +412,11 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
     assert_eq!(2_i64, usage.get::<i64, _>("prompt_tokens"));
     assert_eq!(3_i64, usage.get::<i64, _>("completion_tokens"));
     assert_eq!(5_i64, usage.get::<i64, _>("total_tokens"));
-    assert_eq!("2.772000", usage.get::<String, _>("customer_charge_amount"));
-    assert_eq!("1.540000", usage.get::<String, _>("cost_amount"));
+    assert_eq!(
+        "0.000002772000",
+        usage.get::<String, _>("customer_charge_amount")
+    );
+    assert_eq!("0.000001540000", usage.get::<String, _>("cost_amount"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
 
     let trace_count: i64 =
@@ -450,7 +456,7 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
     let provider = Router::new()
         .route(
             "/v1/chat/completions",
-            post(capture_provider_chat_completion),
+            post(capture_provider_chat_completion_billable_usage),
         )
         .with_state(Arc::clone(&captured));
     let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
@@ -572,6 +578,8 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
                 .uri("/v1/chat/completions")
                 .header("authorization", catalog.gateway_authorization_header())
                 .header("content-type", "application/json")
+                .header("x-request-id", "req-gateway-stream-usage-1")
+                .header("x-trace-id", "trace-gateway-stream-usage-1")
                 .body(Body::from(
                     r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}],"stream":true}"#,
                 ))
@@ -601,7 +609,7 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
     assert_eq!(true, captured[0].body["stream"]);
 
     let read_pool = catalog.open_pool().await.unwrap();
@@ -609,9 +617,10 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
         r#"
         SELECT request_id, streaming, prompt_tokens, completion_tokens, total_tokens
         FROM ai_request_trace
-        WHERE request_id LIKE 'openai-chat-%'
+        WHERE request_id = ?
         "#,
     )
+    .bind("req-gateway-stream-usage-1")
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -621,6 +630,7 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
     );
     let trace = trace.unwrap();
     let request_id = trace.get::<String, _>("request_id");
+    assert_eq!("req-gateway-stream-usage-1", request_id);
     assert_eq!(1_i64, trace.get::<i64, _>("streaming"));
     assert_eq!(1_i64, trace.get::<i64, _>("prompt_tokens"));
     assert_eq!(1_i64, trace.get::<i64, _>("completion_tokens"));
@@ -646,8 +656,11 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
     assert_eq!(1_i64, usage.get::<i64, _>("prompt_tokens"));
     assert_eq!(1_i64, usage.get::<i64, _>("completion_tokens"));
     assert_eq!(2_i64, usage.get::<i64, _>("total_tokens"));
-    assert_eq!("0.990000", usage.get::<String, _>("customer_charge_amount"));
-    assert_eq!("0.550000", usage.get::<String, _>("cost_amount"));
+    assert_eq!(
+        "0.000000990000",
+        usage.get::<String, _>("customer_charge_amount")
+    );
+    assert_eq!("0.000000550000", usage.get::<String, _>("cost_amount"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
     read_pool.close().await;
 }
@@ -708,7 +721,7 @@ async fn database_config_router_uses_provider_relay_config_for_responses() {
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
     assert_eq!("ping", captured[0].body["input"]);
 }
 
@@ -770,10 +783,7 @@ async fn database_config_router_uses_provider_relay_config_for_embeddings() {
         Some("Bearer sk-upstream-provider-secret".to_owned()),
         captured[0].authorization
     );
-    assert_eq!(
-        "openai/global/text-embedding-3-small",
-        captured[0].body["model"]
-    );
+    assert_eq!("text-embedding-3-small", captured[0].body["model"]);
     assert_eq!("ping", captured[0].body["input"][0]);
 }
 
@@ -846,7 +856,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_chat_r
         Some("Bearer sk-provider-token-from-secret-map".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
 }
 
 #[tokio::test]
@@ -917,8 +927,99 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_stream
         Some("Bearer sk-provider-token-from-secret-map".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
     assert_eq!(true, captured[0].body["stream"]);
+}
+
+#[tokio::test]
+async fn database_config_router_keeps_account_pool_route_after_streaming_chat_success_snapshot_reload(
+) {
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route(
+            "/v1/chat/completions",
+            post(capture_provider_chat_completion_stream_requires_native_model),
+        )
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+
+    let catalog = seeded_sqlite_catalog().await.unwrap();
+    let pool = catalog.open_pool().await.unwrap();
+    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
+        .bind(format!("http://{addr}"))
+        .execute(&pool)
+        .await
+        .unwrap();
+    pool.close().await;
+
+    let secret_ref = "vault://providers/openrouter/account/main";
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                json!({secret_ref: "sk-provider-token-from-secret-map"}).to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    for request_no in 1..=2 {
+        let response = router
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/v1/chat/completions")
+                    .header("authorization", catalog.gateway_authorization_header())
+                    .header("content-type", "application/json")
+                    .header("x-request-id", format!("req-gateway-stream-repeat-{request_no}"))
+                    .header("x-trace-id", format!("trace-gateway-stream-repeat-{request_no}"))
+                    .body(Body::from(
+                        r#"{"model":"openai/global/gpt-4o-mini","messages":[{"role":"user","content":"ping"}],"stream":true}"#,
+                    ))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(StatusCode::OK, response.status(), "request {request_no}");
+        let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap();
+        let body = String::from_utf8(body.to_vec()).unwrap();
+        assert!(body.contains("chatcmpl-upstream-stream"));
+        assert!(body.contains("data: [DONE]"));
+
+        let read_pool = catalog.open_pool().await.unwrap();
+        let snapshot = SqlitePricingCatalogLoader::new(read_pool.clone())
+            .load_snapshot()
+            .await
+            .unwrap();
+        assert!(
+            snapshot
+                .list_provider_account_pool_routes()
+                .iter()
+                .any(|route| route.channel_id == 3001),
+            "catalog reload after request {request_no} must keep the account-pool route callable"
+        );
+        read_pool.close().await;
+    }
+
+    let captured = captured.lock().unwrap();
+    assert_eq!(2, captured.len());
+    assert!(captured.iter().all(|request| {
+        request.authorization.as_deref() == Some("Bearer sk-provider-token-from-secret-map")
+            && request.body["model"] == "gpt-4o-mini"
+            && request.body["stream"] == true
+    }));
 }
 
 #[tokio::test]
@@ -985,7 +1086,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_respon
         Some("Bearer sk-provider-token-from-secret-map".to_owned()),
         captured[0].authorization
     );
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+    assert_eq!("gpt-4o-mini", captured[0].body["model"]);
 }
 
 #[tokio::test]
@@ -1054,10 +1155,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_embedd
         Some("Bearer sk-provider-token-from-secret-map".to_owned()),
         captured[0].authorization
     );
-    assert_eq!(
-        "openai/global/text-embedding-3-small",
-        captured[0].body["model"]
-    );
+    assert_eq!("text-embedding-3-small", captured[0].body["model"]);
 }
 
 async fn wait_for_usage_settlement_success(pool: &SqlitePool, request_id: &str) {
@@ -1074,7 +1172,40 @@ async fn wait_for_usage_settlement_success(pool: &SqlitePool, request_id: &str) 
         }
         sleep(Duration::from_millis(100)).await;
     }
-    panic!("usage settlement worker did not settle request_id={request_id}");
+    let usage = sqlx::query(
+        "SELECT settlement_status, customer_charge_amount, total_tokens FROM ai_usage_fact WHERE request_id = ? LIMIT 1",
+    )
+    .bind(request_id)
+    .fetch_optional(pool)
+    .await
+    .unwrap()
+    .map(|row| {
+        format!(
+            "status={}, amount={}, tokens={}",
+            row.get::<i64, _>("settlement_status"),
+            row.get::<String, _>("customer_charge_amount"),
+            row.get::<i64, _>("total_tokens")
+        )
+    });
+    let settlement = sqlx::query(
+        "SELECT settlement_status, points, failure_code, failure_message FROM commerce_usage_settlement WHERE request_id = ? LIMIT 1",
+    )
+    .bind(request_id)
+    .fetch_optional(pool)
+    .await
+    .unwrap()
+    .map(|row| {
+        format!(
+            "status={}, points={}, failure_code={:?}, failure_message={:?}",
+            row.get::<i64, _>("settlement_status"),
+            row.get::<i64, _>("points"),
+            row.get::<Option<String>, _>("failure_code"),
+            row.get::<Option<String>, _>("failure_message")
+        )
+    });
+    panic!(
+        "usage settlement worker did not settle request_id={request_id}; usage={usage:?}; settlement={settlement:?}"
+    );
 }
 
 async fn scalar_i64(pool: &SqlitePool, sql: &str) -> i64 {
@@ -1112,6 +1243,36 @@ async fn capture_provider_chat_completion(
                 }
             ],
             "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2}
+        })),
+    )
+}
+
+async fn capture_provider_chat_completion_billable_usage(
+    State(captured): State<Arc<Mutex<Vec<CapturedProviderRequest>>>>,
+    headers: HeaderMap,
+    Json(body): Json<serde_json::Value>,
+) -> (StatusCode, Json<serde_json::Value>) {
+    captured.lock().unwrap().push(CapturedProviderRequest {
+        authorization: headers
+            .get("authorization")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        body,
+    });
+    (
+        StatusCode::OK,
+        Json(json!({
+            "id": "chatcmpl-upstream-billable",
+            "object": "chat.completion",
+            "model": "openai/global/gpt-4o-mini",
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {"role": "assistant", "content": "pong"},
+                    "finish_reason": "stop"
+                }
+            ],
+            "usage": {"prompt_tokens": 1_000_000, "completion_tokens": 1_000_000, "total_tokens": 2_000_000}
         })),
     )
 }
@@ -1187,6 +1348,41 @@ async fn capture_provider_chat_completion_stream(
     )
 }
 
+async fn capture_provider_chat_completion_stream_requires_native_model(
+    State(captured): State<Arc<Mutex<Vec<CapturedProviderRequest>>>>,
+    headers: HeaderMap,
+    Json(body): Json<serde_json::Value>,
+) -> (
+    StatusCode,
+    [(axum::http::HeaderName, &'static str); 1],
+    Body,
+) {
+    let model = body["model"].as_str().unwrap_or("").to_owned();
+    captured.lock().unwrap().push(CapturedProviderRequest {
+        authorization: headers
+            .get("authorization")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        body,
+    });
+    if model != "gpt-4o-mini" {
+        return (
+            StatusCode::BAD_REQUEST,
+            [(axum::http::header::CONTENT_TYPE, "application/json")],
+            Body::from(format!(
+                r#"{{"error":{{"code":"group:model_route_miss","message":"当前模型暂不可用: {model}","type":"new_api_error"}}}}"#
+            )),
+        );
+    }
+    (
+        StatusCode::OK,
+        [(axum::http::header::CONTENT_TYPE, "text/event-stream")],
+        Body::from(
+            "data: {\"id\":\"chatcmpl-upstream-stream\",\"choices\":[{\"delta\":{\"content\":\"pong\"}}]}\n\ndata: {\"id\":\"chatcmpl-upstream-stream\",\"choices\":[],\"usage\":{\"prompt_tokens\":1,\"completion_tokens\":1,\"total_tokens\":2}}\n\ndata: [DONE]\n\n",
+        ),
+    )
+}
+
 async fn capture_provider_response(
     State(captured): State<Arc<Mutex<Vec<CapturedProviderRequest>>>>,
     headers: HeaderMap,
@@ -1211,7 +1407,8 @@ async fn capture_provider_response(
                     "role": "assistant",
                     "content": [{"type": "output_text", "text": "pong"}]
                 }
-            ]
+            ],
+            "usage": {"input_tokens": 1, "output_tokens": 1, "total_tokens": 2}
         })),
     )
 }

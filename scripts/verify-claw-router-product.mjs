@@ -377,8 +377,8 @@ function buildVerificationPlan(settings, env = process.env) {
   });
   plan.push({
     label: 'portal playground chat runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/playground-chat-runtime.test.ts'],
+    command: pnpmCommand(),
+    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'playground-chat-runtime.test.ts'],
     env,
   });
   plan.push({
@@ -389,8 +389,8 @@ function buildVerificationPlan(settings, env = process.env) {
   });
   plan.push({
     label: 'portal commerce business runtime tests',
-    command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/commerce-business-runtime.test.ts'],
+    command: pnpmCommand(),
+    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'commerce-business-runtime.test.ts'],
     env,
   });
   plan.push({

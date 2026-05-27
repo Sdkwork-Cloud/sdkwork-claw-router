@@ -293,62 +293,6 @@ class CommerceApi {
     })();
   }
 
-  /// Coupons Campaigns List
-  Future<CouponsCampaignsListResult?> couponsCampaignsList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/coupons/campaigns'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CouponsCampaignsListResult.fromJson(map);
-    })();
-  }
-
-  /// Coupons Codes List
-  Future<CouponsCodesListResult?> couponsCodesList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/coupons/codes'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CouponsCodesListResult.fromJson(map);
-    })();
-  }
-
-  /// Coupons Redemptions List
-  Future<CouponsRedemptionsListResult?> couponsRedemptionsList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/coupons/redemptions'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CouponsRedemptionsListResult.fromJson(map);
-    })();
-  }
-
-  /// Coupons Templates List
-  Future<CouponsTemplatesListResult?> couponsTemplatesList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/coupons/templates'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : CouponsTemplatesListResult.fromJson(map);
-    })();
-  }
-
   /// Fulfillments List
   Future<FulfillmentsListResult?> fulfillmentsList([int? page, int? pageSize, String? status]) async {
     final query = buildQueryString([

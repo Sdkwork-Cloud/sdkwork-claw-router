@@ -22,6 +22,10 @@ export function createIamSdkAdapters(input: CreateIamSdkAdaptersInput): IamSdkAd
 export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
   const source = toRecord(client);
   const auth = toRecord(source.auth);
+  const openPlatform = toRecord(source.openPlatform);
+  const qrAuthSessions = toRecord(openPlatform.qrAuth?.sessions);
+  const system = toRecord(source.system);
+  const systemIam = toRecord(system.iam);
   const iam = toRecord(source.iam);
   const user = toRecord(source.user);
 
@@ -57,16 +61,6 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
           (body: Record<string, unknown>) => auth.register?.(body),
         ),
       },
-      verificationPolicy: {
-        retrieve: selectMethod(
-          auth.verificationPolicy?.retrieve,
-          async () => {
-            const runtimeSettings = await auth.runtimeSettings?.retrieve?.();
-            const data = unwrapRecord(runtimeSettings);
-            return data.verificationPolicy ?? data.verification_policy;
-          },
-        ),
-      },
       sessions: {
         create: selectMethod(
           auth.sessions?.create,
@@ -100,6 +94,48 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
           auth.verificationCodes?.verify,
           (body: Record<string, unknown>) => auth.verifySmsCode?.(body) ?? auth.createVerifySmsCode?.(body),
         ),
+      },
+    },
+    openPlatform: {
+      qrAuth: {
+        sessions: {
+          create: selectMethod(
+            qrAuthSessions.create,
+            (body: Record<string, unknown>) => qrAuthSessions.create?.(body),
+          ),
+          retrieve: selectMethod(
+            qrAuthSessions.retrieve,
+            (sessionKey: string) => qrAuthSessions.retrieve?.(sessionKey),
+          ),
+          scans: {
+            create: selectMethod(
+              qrAuthSessions.scans?.create,
+              (sessionKey: string, body?: Record<string, unknown>) => qrAuthSessions.scans?.create?.(sessionKey, body),
+            ),
+          },
+          passwords: {
+            create: selectMethod(
+              qrAuthSessions.passwords?.create,
+              (sessionKey: string, body: Record<string, unknown>) => qrAuthSessions.passwords?.create?.(sessionKey, body),
+            ),
+          },
+        },
+      },
+    },
+    system: {
+      iam: {
+        runtime: {
+          retrieve: selectMethod(
+            systemIam.runtime?.retrieve,
+            (params?: Record<string, unknown>) => systemIam.runtime?.retrieve?.(params),
+          ),
+        },
+        verificationPolicy: {
+          retrieve: selectMethod(
+            systemIam.verificationPolicy?.retrieve,
+            () => systemIam.verificationPolicy?.retrieve?.(),
+          ),
+        },
       },
     },
     iam: {
@@ -267,15 +303,6 @@ function selectMethod(
 
 function toRecord(value: unknown): AnyRecord {
   return value && typeof value === "object" ? value as AnyRecord : {};
-}
-
-function unwrapRecord(value: unknown): AnyRecord {
-  const record = toRecord(value);
-  if ("data" in record && record.data && typeof record.data === "object") {
-    return record.data as AnyRecord;
-  }
-
-  return record;
 }
 
 function callCreate(resource: AnyRecord, body: Record<string, unknown>): unknown {

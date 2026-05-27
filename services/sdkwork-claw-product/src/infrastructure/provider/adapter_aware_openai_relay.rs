@@ -4,8 +4,12 @@ use sdkwork_claw_provider_adapter_contract::{
 };
 use sdkwork_claw_provider_adapter_http::ProviderAdapterHttpError;
 use serde_json::{json, Value};
+use std::sync::Arc;
 
-use crate::domain::{DomainError, ProviderAuthProfile, ProviderAuthType};
+use crate::domain::{DomainError, DomainResult, ProviderAuthProfile, ProviderAuthType};
+use crate::ports::ProviderSecretResolver;
+
+pub(crate) type ProviderSecretResolverRef = Arc<dyn ProviderSecretResolver + Send + Sync>;
 
 #[derive(Debug, Clone, Copy)]
 pub(crate) struct OpenAiAdapterEndpoint {
@@ -37,8 +41,16 @@ pub(crate) struct OpenAiAdapterInvocationParts {
 pub(crate) fn build_openai_adapter_invocation(
     endpoint: OpenAiAdapterEndpoint,
     parts: OpenAiAdapterInvocationParts,
-) -> AdapterInvocationRequest {
-    AdapterInvocationRequest {
+    secret_resolver: Option<&ProviderSecretResolverRef>,
+) -> DomainResult<AdapterInvocationRequest> {
+    let auth_profile = provider_auth_profile_json(&parts.provider_auth_profile);
+    let secret = adapter_secret(
+        parts.provider_secret_ref,
+        &parts.provider_auth_profile,
+        secret_resolver,
+    )?;
+
+    Ok(AdapterInvocationRequest {
         invocation: AdapterInvocationMetadata {
             id: format!(
                 "{}-{}-{}-{}",
@@ -69,12 +81,12 @@ pub(crate) fn build_openai_adapter_invocation(
             channel_id: parts.provider_channel_id,
             provider_model: parts.provider_model,
             base_url: parts.provider_base_url,
-            auth_profile: provider_auth_profile_json(&parts.provider_auth_profile),
+            auth_profile,
             timeout_ms: parts.provider_timeout_ms,
         },
-        secret: adapter_secret(parts.provider_secret_ref),
+        secret,
         body: parts.request_body,
-    }
+    })
 }
 
 pub(crate) fn adapter_http_error(error: ProviderAdapterHttpError) -> DomainError {
@@ -88,20 +100,69 @@ pub(crate) fn adapter_http_error(error: ProviderAdapterHttpError) -> DomainError
     ))
 }
 
-fn adapter_secret(secret_ref: Option<String>) -> AdapterSecret {
-    secret_ref
-        .filter(|secret_ref| !secret_ref.trim().is_empty())
-        .map(|secret_ref| AdapterSecret::AdapterResolved { secret_ref })
-        .unwrap_or(AdapterSecret::None)
+fn adapter_secret(
+    secret_ref: Option<String>,
+    profile: &ProviderAuthProfile,
+    secret_resolver: Option<&ProviderSecretResolverRef>,
+) -> DomainResult<AdapterSecret> {
+    let Some(secret_ref) = secret_ref.filter(|secret_ref| !secret_ref.trim().is_empty()) else {
+        return Ok(AdapterSecret::None);
+    };
+    let Some(secret_resolver) = secret_resolver else {
+        return Err(DomainError::new(
+            "provider secret resolver is required for provider adapter invocation",
+        ));
+    };
+    let secret_value = secret_resolver.resolve_secret_value(&secret_ref)?;
+    Ok(AdapterSecret::GatewayResolved(provider_secret_json(
+        profile,
+        secret_value,
+    )?))
 }
 
 fn provider_auth_profile_json(profile: &ProviderAuthProfile) -> Value {
-    let auth_type = match profile.auth_type {
+    let auth_type = provider_auth_type_code(profile.auth_type);
+    json!({
+        "type": auth_type,
+        "name": profile.name,
+        "defaultHeaders": provider_default_headers_json(profile),
+    })
+}
+
+fn provider_secret_json(
+    profile: &ProviderAuthProfile,
+    secret_value: String,
+) -> DomainResult<Value> {
+    let auth_type = provider_auth_type_code(profile.auth_type);
+    let auth_name = match profile.auth_type {
+        ProviderAuthType::Bearer => None,
+        ProviderAuthType::Header | ProviderAuthType::Query => Some(
+            profile
+                .name
+                .clone()
+                .ok_or_else(|| DomainError::new("provider account auth name is required"))?,
+        ),
+    };
+    Ok(json!({
+        "auth": {
+            "type": auth_type,
+            "name": auth_name,
+            "value": secret_value,
+        },
+        "defaultHeaders": provider_default_headers_json(profile),
+    }))
+}
+
+fn provider_auth_type_code(auth_type: ProviderAuthType) -> &'static str {
+    match auth_type {
         ProviderAuthType::Bearer => "bearer",
         ProviderAuthType::Header => "header",
         ProviderAuthType::Query => "query",
-    };
-    let default_headers = profile
+    }
+}
+
+fn provider_default_headers_json(profile: &ProviderAuthProfile) -> Vec<Value> {
+    profile
         .default_headers
         .iter()
         .map(|header| {
@@ -110,11 +171,5 @@ fn provider_auth_profile_json(profile: &ProviderAuthProfile) -> Value {
                 "value": header.value,
             })
         })
-        .collect::<Vec<_>>();
-
-    json!({
-        "type": auth_type,
-        "name": profile.name,
-        "defaultHeaders": default_headers,
-    })
+        .collect::<Vec<_>>()
 }

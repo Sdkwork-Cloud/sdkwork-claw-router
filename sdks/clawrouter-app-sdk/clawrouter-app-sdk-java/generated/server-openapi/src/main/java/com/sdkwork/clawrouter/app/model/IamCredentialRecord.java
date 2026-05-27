@@ -15,7 +15,7 @@ public class IamCredentialRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -23,7 +23,7 @@ public class IamCredentialRecord {
     public String getCredentialHash() {
         return this.credentialHash;
     }
-    
+
     public void setCredentialHash(String credentialHash) {
         this.credentialHash = credentialHash;
     }
@@ -31,7 +31,7 @@ public class IamCredentialRecord {
     public String getCredentialType() {
         return this.credentialType;
     }
-    
+
     public void setCredentialType(String credentialType) {
         this.credentialType = credentialType;
     }
@@ -39,7 +39,7 @@ public class IamCredentialRecord {
     public String getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -47,7 +47,7 @@ public class IamCredentialRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -55,7 +55,7 @@ public class IamCredentialRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -63,7 +63,7 @@ public class IamCredentialRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -71,7 +71,7 @@ public class IamCredentialRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -79,7 +79,7 @@ public class IamCredentialRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

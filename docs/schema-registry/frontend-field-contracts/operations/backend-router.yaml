@@ -122,7 +122,6 @@ frontend_operations:
   - iam_gateway_api_key_group
   - ai_pricing_plan_binding
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAccessGroupCreateRequest
     required:
@@ -195,7 +194,6 @@ frontend_operations:
   - iam_gateway_api_key_group
   - ai_pricing_plan_binding
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAccessGroupUpdateRequest
     required: []
@@ -275,6 +273,225 @@ frontend_operations:
     properties:
       deleted:
         type: boolean
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchAssignableChannels
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/channels
+  read_sources:
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  query_parameters: []
+  openapi_exposed: false
+  response_schema:
+    name: AdminChannelsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminChannelItem
+          type: object
+          additionalProperties: true
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchGroupChannelBindings
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/access_groups/{groupId}/channel_bindings
+  read_sources:
+  - iam_gateway_api_key_group
+  - iam_api_key_group_channel
+  - integration_channel
+  - integration_channel_model
+  - integration_provider
+  query_parameters: []
+  response_schema:
+    name: AdminAccessGroupChannelBindingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminAccessGroupChannelBindingItem
+          type: object
+          additionalProperties: false
+          required: &id009
+          - id
+          - groupId
+          - channelId
+          - channelName
+          - providerCode
+          - providerName
+          - channelCode
+          - models
+          - capabilities
+          - modelScope
+          - priority
+          - weight
+          - status
+          - healthStatus
+          properties: &id010
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            groupId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            providerName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            models:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            capabilities:
+              type: array
+              maxItems: 32
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            modelScope:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            priority:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            weight:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+            healthStatus:
+              type: string
+              enum:
+              - active
+              - error
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: replaceGroupChannelBindings
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/router/access_groups/{groupId}/channel_bindings
+  read_sources:
+  - iam_gateway_api_key_group
+  - iam_api_key_group_channel
+  - integration_channel
+  - integration_channel_model
+  - integration_provider
+  write_tables:
+  - iam_api_key_group_channel
+  - ops_audit_log
+  - ops_config_snapshot
+  request_schema:
+    name: AdminAccessGroupChannelBindingsReplaceRequest
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminAccessGroupChannelBindingInput
+          type: object
+          additionalProperties: false
+          required:
+          - channelId
+          properties:
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            priority:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            weight:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+            modelScope:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            capabilities:
+              type: array
+              maxItems: 32
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+  response_schema:
+    name: AdminAccessGroupChannelBindingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminAccessGroupChannelBindingItem
+          type: object
+          additionalProperties: false
+          required: *id009
+          properties: *id010
 - route: /admin/monitor
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
   operation: fetchNodes
@@ -522,7 +739,6 @@ frontend_operations:
   write_tables:
   - iam_gateway_risk_rule
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminIpLimitCreateRequest
     required:
@@ -606,7 +822,6 @@ frontend_operations:
   write_tables:
   - ai_quota_policy
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminTokenLimitCreateRequest
     required:
@@ -690,7 +905,6 @@ frontend_operations:
   write_tables:
   - ai_quota_policy
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminModelLimitCreateRequest
     required:
@@ -796,7 +1010,6 @@ frontend_operations:
   write_tables:
   - iam_gateway_risk_rule
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminFirewallRuleCreateRequest
     required:

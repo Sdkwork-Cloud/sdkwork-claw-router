@@ -13,7 +13,7 @@ public class OpenAiProjectRateLimit {
     public Integer getBatch1DayMaxInputTokens() {
         return this.batch1DayMaxInputTokens;
     }
-    
+
     public void setBatch1DayMaxInputTokens(Integer batch1DayMaxInputTokens) {
         this.batch1DayMaxInputTokens = batch1DayMaxInputTokens;
     }
@@ -21,7 +21,7 @@ public class OpenAiProjectRateLimit {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -29,7 +29,7 @@ public class OpenAiProjectRateLimit {
     public Integer getMaxImagesPer1Minute() {
         return this.maxImagesPer1Minute;
     }
-    
+
     public void setMaxImagesPer1Minute(Integer maxImagesPer1Minute) {
         this.maxImagesPer1Minute = maxImagesPer1Minute;
     }
@@ -37,7 +37,7 @@ public class OpenAiProjectRateLimit {
     public Integer getMaxRequestsPer1Minute() {
         return this.maxRequestsPer1Minute;
     }
-    
+
     public void setMaxRequestsPer1Minute(Integer maxRequestsPer1Minute) {
         this.maxRequestsPer1Minute = maxRequestsPer1Minute;
     }
@@ -45,7 +45,7 @@ public class OpenAiProjectRateLimit {
     public Integer getMaxTokensPer1Minute() {
         return this.maxTokensPer1Minute;
     }
-    
+
     public void setMaxTokensPer1Minute(Integer maxTokensPer1Minute) {
         this.maxTokensPer1Minute = maxTokensPer1Minute;
     }
@@ -53,7 +53,7 @@ public class OpenAiProjectRateLimit {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -61,7 +61,7 @@ public class OpenAiProjectRateLimit {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

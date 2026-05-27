@@ -24,6 +24,15 @@ CONSOLE_COMMERCE = (
     / "src"
 )
 
+CONSOLE_WALLET = (
+    ROOT
+    / "apps"
+    / "sdkwork-claw-router-portal"
+    / "packages"
+    / "sdkwork-claw-router-console-wallet"
+    / "src"
+)
+
 @unittest.skip("Retired legacy billing aggregate; split commerce tests now cover the active commerce flows.")
 class BillingRuntimeStandardTest(unittest.TestCase):
     def test_billing_backend_money_uses_exact_decimal_strings(self) -> None:
@@ -316,7 +325,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertNotIn(hardcoded_copy, services)
 
-    def test_console_redeem_standalone_fake_entry_is_removed_in_favor_of_billing_contract(self) -> None:
+    def test_console_redeem_standalone_fake_entry_is_removed_in_favor_of_promotion_contract(self) -> None:
         portal_package = (
             ROOT
             / "apps"
@@ -336,7 +345,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             / "sdkwork-claw-router-portal"
             / "pnpm-lock.yaml"
         ).read_text(encoding="utf-8")
-        billing_service = (CONSOLE_COMMERCE / "commerceService.ts").read_text(encoding="utf-8")
+        wallet_service = (CONSOLE_WALLET / "walletService.ts").read_text(encoding="utf-8")
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
@@ -356,22 +365,13 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             path.read_text(encoding="utf-8") for path in standalone_source_files
         )
 
-        self.assertIn("getClawRouterCommerceService().coupons.redeem.create", billing_service)
-        self.assertIn("getClawRouterCommerceService().users.current.coupons.list", billing_service)
-        commerce_runtime = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-commons"
-            / "src"
-            / "commerce-runtime.ts"
-        ).read_text(encoding="utf-8")
-        self.assertIn("billing().coupons.redeem.create", commerce_runtime)
-        self.assertIn("billing().users.current.coupons.list", commerce_runtime)
-        self.assertNotIn("getClawRouterAppSdkClient().coupon.", billing_service)
-        self.assertNotIn("getClawRouterAppSdkClient().coupons.", billing_service)
-        self.assertIn("route: /console/commerce", contract)
+        self.assertIn("appPromotionUserCouponsList", wallet_service)
+        self.assertIn("getClawRouterAppSdkClient().system.promotions.userCoupons.wallet.list(params)", wallet_service)
+        self.assertIn("appPromotionCodeRedemptionsCreate", wallet_service)
+        self.assertIn("getClawRouterAppSdkClient().system.promotions.codes.redemptions.create", wallet_service)
+        self.assertNotIn("getClawRouterAppSdkClient().coupon.", wallet_service)
+        self.assertNotIn("getClawRouterAppSdkClient().coupons.", wallet_service)
+        self.assertIn("route: /console/wallet", contract)
         self.assertIn("operation: redeemCode", contract)
         self.assertIn("operation: fetchRedeemHistory", contract)
 
@@ -532,62 +532,57 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("formatCurrency = (amount: number)", finance_view)
         self.assertNotIn("t.amount > 0", finance_view)
 
-    def test_console_billing_uses_precise_app_sdk_response_contracts(self) -> None:
+    def test_console_promotion_uses_precise_app_sdk_response_contracts(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
         )
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
             encoding="utf-8"
         )
-        billing_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
+        system_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "system.ts").read_text(
             encoding="utf-8"
         )
-        billing_service = (CONSOLE_COMMERCE / "commerceService.ts").read_text(encoding="utf-8")
+        wallet_service = (CONSOLE_WALLET / "walletService.ts").read_text(encoding="utf-8")
 
         for schema_name in [
-            "CommerceCouponWalletListResponse",
-            "CommercePaymentAttemptsResponse",
-            "RedeemCodeResponse",
+            "PromotionUserCouponWalletListResponse",
+            "PromotionCodeRedemptionRequest",
+            "PromotionOperationResponse",
         ]:
             self.assertIn(f"name: {schema_name}", contract)
             self.assertIn(f'"{schema_name}"', openapi)
 
-        self.assertIn('"UsersCurrentCouponsListResult"', openapi)
-        self.assertIn('"PaymentsRecordsListResult"', openapi)
-        self.assertIn('"CouponsRedeemCreateResult"', openapi)
-        self.assertIn('"$ref": "#/components/schemas/CommerceCouponWalletListResponse"', openapi)
-        self.assertIn('"$ref": "#/components/schemas/CommercePaymentAttemptsResponse"', openapi)
-        self.assertIn('"$ref": "#/components/schemas/RedeemCodeResponse"', openapi)
+        self.assertIn('"PromotionsUserCouponsWalletListResult"', openapi)
+        self.assertIn('"PromotionsCodesRedemptionsCreateResult"', openapi)
+        self.assertIn('"$ref": "#/components/schemas/PromotionUserCouponWalletListResponse"', openapi)
+        self.assertIn('"$ref": "#/components/schemas/PromotionCodeRedemptionRequest"', openapi)
+        self.assertIn('"$ref": "#/components/schemas/PromotionOperationResponse"', openapi)
 
         self.assertIn(
-            "async list(): Promise<UsersCurrentCouponsListResult>",
-            billing_api,
+            "async list(params?: SystemPromotionsUserCouponsWalletListParams): Promise<PromotionsUserCouponsWalletListResult>",
+            system_api,
         )
-        self.assertIn("get<UsersCurrentCouponsListResult>", billing_api)
-        self.assertIn("async create(body: RedeemCodeRequest, params: BillingCouponsRedeemCreateParams): Promise<CouponsRedeemCreateResult>", billing_api)
-        self.assertIn("post<CouponsRedeemCreateResult>", billing_api)
-        self.assertIn(
-            "async list(): Promise<PaymentsRecordsListResult>",
-            billing_api,
-        )
-        self.assertIn("get<PaymentsRecordsListResult>", billing_api)
-        self.assertNotIn("fetchRedeemHistory(params?: QueryParams): Promise<PlusApiResult>", billing_api)
-        self.assertNotIn("redeemCode(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
-        self.assertNotIn("fetchRechargeHistory(params?: QueryParams): Promise<PlusApiResult>", billing_api)
+        self.assertIn("get<PromotionsUserCouponsWalletListResult>", system_api)
+        self.assertIn("async create(body: PromotionCodeRedemptionRequest, params: SystemPromotionsCodesRedemptionsCreateParams): Promise<PromotionsCodesRedemptionsCreateResult>", system_api)
+        self.assertIn("post<PromotionsCodesRedemptionsCreateResult>", system_api)
+        self.assertNotIn("fetchRedeemHistory(params?: QueryParams): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("redeemCode(body?: OperationRequest): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("fetchRechargeHistory(params?: QueryParams): Promise<PlusApiResult>", system_api)
 
         result_checks = {
-            "users-current-coupons-list-result.ts": "data?: CommerceCouponWalletListResponse;",
-            "payments-records-list-result.ts": "data?: CommercePaymentAttemptsResponse;",
-            "coupons-redeem-create-result.ts": "data?: RedeemCodeResponse;",
+            "promotions-user-coupons-wallet-list-result.ts": "data?: PromotionUserCouponWalletListResponse;",
+            "promotions-codes-redemptions-create-result.ts": "data?: PromotionOperationResponse;",
+            "promotion-code-redemption-request.ts": "code: string;",
         }
         for file_name, expected in result_checks.items():
             result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / file_name
             self.assertTrue(result_path.exists(), file_name)
             self.assertIn(expected, result_path.read_text(encoding="utf-8"))
 
-        self.assertIn("getClawRouterCommerceService().users.current.coupons.list()", billing_service)
-        self.assertIn("getClawRouterCommerceService().payments.records.list()", billing_service)
-        self.assertIn("getClawRouterCommerceService().coupons.redeem.create", billing_service)
+        self.assertIn("appPromotionUserCouponsList", wallet_service)
+        self.assertIn("getClawRouterAppSdkClient().system.promotions.userCoupons.wallet.list(params)", wallet_service)
+        self.assertIn("appPromotionCodeRedemptionsCreate", wallet_service)
+        self.assertIn("getClawRouterAppSdkClient().system.promotions.codes.redemptions.create", wallet_service)
 
 
 if __name__ == "__main__":

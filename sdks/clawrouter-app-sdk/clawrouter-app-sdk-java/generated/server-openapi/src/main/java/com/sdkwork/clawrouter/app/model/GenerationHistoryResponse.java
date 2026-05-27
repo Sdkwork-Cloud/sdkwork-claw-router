@@ -8,7 +8,7 @@ public class GenerationHistoryResponse {
     public List<GenerationHistoryItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<GenerationHistoryItem> items) {
         this.items = items;
     }

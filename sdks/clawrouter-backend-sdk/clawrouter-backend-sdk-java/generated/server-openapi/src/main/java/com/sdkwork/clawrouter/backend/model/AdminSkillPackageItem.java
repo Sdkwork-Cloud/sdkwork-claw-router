@@ -22,7 +22,7 @@ public class AdminSkillPackageItem {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -30,7 +30,7 @@ public class AdminSkillPackageItem {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -38,7 +38,7 @@ public class AdminSkillPackageItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -46,7 +46,7 @@ public class AdminSkillPackageItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -54,7 +54,7 @@ public class AdminSkillPackageItem {
     public Boolean getEnabled() {
         return this.enabled;
     }
-    
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -62,7 +62,7 @@ public class AdminSkillPackageItem {
     public Boolean getFeatured() {
         return this.featured;
     }
-    
+
     public void setFeatured(Boolean featured) {
         this.featured = featured;
     }
@@ -70,7 +70,7 @@ public class AdminSkillPackageItem {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -78,7 +78,7 @@ public class AdminSkillPackageItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -86,7 +86,7 @@ public class AdminSkillPackageItem {
     public String getLatestPublishedAt() {
         return this.latestPublishedAt;
     }
-    
+
     public void setLatestPublishedAt(String latestPublishedAt) {
         this.latestPublishedAt = latestPublishedAt;
     }
@@ -94,7 +94,7 @@ public class AdminSkillPackageItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -102,7 +102,7 @@ public class AdminSkillPackageItem {
     public String getPackageKey() {
         return this.packageKey;
     }
-    
+
     public void setPackageKey(String packageKey) {
         this.packageKey = packageKey;
     }
@@ -110,7 +110,7 @@ public class AdminSkillPackageItem {
     public Integer getSortWeight() {
         return this.sortWeight;
     }
-    
+
     public void setSortWeight(Integer sortWeight) {
         this.sortWeight = sortWeight;
     }
@@ -118,7 +118,7 @@ public class AdminSkillPackageItem {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -126,7 +126,7 @@ public class AdminSkillPackageItem {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -134,7 +134,7 @@ public class AdminSkillPackageItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }

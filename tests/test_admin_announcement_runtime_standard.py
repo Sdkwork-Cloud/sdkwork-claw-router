@@ -1,4 +1,4 @@
-﻿import unittest
+import unittest
 import json
 from pathlib import Path
 
@@ -26,12 +26,12 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
             add_announcement["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminAnnouncementMutationResponse", add_announcement["response_schema"]["name"])
-        self.assertTrue(add_announcement["request_id_header"])
+        self.assertFalse(add_announcement["request_id_header"])
 
         self.assertEqual("AdminAnnouncementUpdateRequest", update_announcement["request_schema"]["name"])
         self.assertNotIn("required", update_announcement["request_schema"]["schema"])
         self.assertEqual("AdminAnnouncementMutationResponse", update_announcement["response_schema"]["name"])
-        self.assertTrue(update_announcement["request_id_header"])
+        self.assertFalse(update_announcement["request_id_header"])
 
     def test_admin_announcement_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
         service = (

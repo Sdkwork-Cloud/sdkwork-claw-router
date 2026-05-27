@@ -28,7 +28,7 @@ export const DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG: SdkworkAuthRuntimeConfig =
   loginMethods: ['password'],
   oauthLoginEnabled: false,
   oauthProviders: [],
-  qrLoginEnabled: false,
+  qrLoginEnabled: true,
   qrLoginType: 'sdkwork_app',
   recoveryMethods: ['email', 'phone'],
   registerMethods: ['email', 'phone'],

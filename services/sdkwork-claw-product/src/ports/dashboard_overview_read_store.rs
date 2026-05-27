@@ -134,6 +134,8 @@ pub struct DashboardConfigurationDomain {
     pub id: String,
     pub name: String,
     pub domain: String,
+    pub ip: String,
+    pub status: String,
     pub remark: String,
 }
 

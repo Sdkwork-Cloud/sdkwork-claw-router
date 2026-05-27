@@ -11,7 +11,7 @@ public class ForumCommunityLink {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -19,7 +19,7 @@ public class ForumCommunityLink {
     public String getLabel() {
         return this.label;
     }
-    
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -27,7 +27,7 @@ public class ForumCommunityLink {
     public String getQrCodeUrl() {
         return this.qrCodeUrl;
     }
-    
+
     public void setQrCodeUrl(String qrCodeUrl) {
         this.qrCodeUrl = qrCodeUrl;
     }
@@ -35,7 +35,7 @@ public class ForumCommunityLink {
     public String getTone() {
         return this.tone;
     }
-    
+
     public void setTone(String tone) {
         this.tone = tone;
     }
@@ -43,7 +43,7 @@ public class ForumCommunityLink {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

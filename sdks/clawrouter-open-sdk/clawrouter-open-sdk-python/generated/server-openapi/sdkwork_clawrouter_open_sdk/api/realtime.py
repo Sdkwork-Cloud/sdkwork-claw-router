@@ -74,9 +74,10 @@ def serialize_path_primitive(value: Any) -> str:
 
 
 
+
 class RealtimeApi:
     """realtime API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

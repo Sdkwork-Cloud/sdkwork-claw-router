@@ -11,7 +11,6 @@ export interface AgentsAgentSessionsListParams {
 
 export interface AgentsAgentSessionsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class AgentsAgentSessionsApi {
@@ -22,12 +21,12 @@ export class AgentsAgentSessionsApi {
   }
 
 
-/** Retrieve agent session */
+/** Retrieve Playground agent session */
   async retrieve(sessionId: string): Promise<AgentSessionsRetrieveResult> {
     return this.client.get<AgentSessionsRetrieveResult>(appApiPath(`/agents/sessions/${serializePathParameter(sessionId, { name: 'sessionId', style: 'simple', explode: false })}`));
   }
 
-/** List agent sessions */
+/** List Playground agent sessions */
   async list(agentId: string, params?: AgentsAgentSessionsListParams): Promise<AgentSessionsListResult> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
@@ -36,12 +35,11 @@ export class AgentsAgentSessionsApi {
     return this.client.get<AgentSessionsListResult>(appendQueryString(appApiPath(`/agents/${serializePathParameter(agentId, { name: 'agentId', style: 'simple', explode: false })}/sessions`), query));
   }
 
-/** Create agent session */
+/** Create Playground agent session */
   async create(agentId: string, body: AgentSessionCreateRequest, params: AgentsAgentSessionsCreateParams): Promise<AgentSessionsCreateResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -56,12 +54,10 @@ export interface AgentsAgentRunStepsListParams {
 
 export interface AgentsAgentRunStepsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface AgentsAgentRunStepsSubmitParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class AgentsAgentRunStepsApi {
@@ -72,7 +68,7 @@ export class AgentsAgentRunStepsApi {
   }
 
 
-/** List agent run steps */
+/** List Playground agent run steps */
   async list(runId: string, params?: AgentsAgentRunStepsListParams): Promise<AgentRunStepsListResult> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
@@ -81,24 +77,22 @@ export class AgentsAgentRunStepsApi {
     return this.client.get<AgentRunStepsListResult>(appendQueryString(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/steps`), query));
   }
 
-/** Create agent run step */
+/** Create Playground agent run step */
   async create(runId: string, body: AgentRunStepCreateRequest, params: AgentsAgentRunStepsCreateParams): Promise<AgentRunStepsCreateResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
     return this.client.post<AgentRunStepsCreateResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/steps`), body, undefined, requestHeaders, 'application/json');
   }
 
-/** Complete agent run step */
+/** Complete Playground agent run step */
   async submit(runId: string, stepId: string, body: AgentRunStepCompleteRequest, params: AgentsAgentRunStepsSubmitParams): Promise<AgentRunStepsSubmitResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -108,7 +102,6 @@ export class AgentsAgentRunStepsApi {
 
 export interface AgentsAgentRunsSubmitParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export interface AgentsAgentRunsListParams {
@@ -118,7 +111,6 @@ export interface AgentsAgentRunsListParams {
 
 export interface AgentsAgentRunsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class AgentsAgentRunsApi {
@@ -129,24 +121,23 @@ export class AgentsAgentRunsApi {
   }
 
 
-/** Retrieve agent run */
+/** Retrieve Playground agent run */
   async retrieve(runId: string): Promise<AgentRunsRetrieveResult> {
     return this.client.get<AgentRunsRetrieveResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}`));
   }
 
-/** Complete agent run */
+/** Complete Playground agent run */
   async submit(runId: string, body: AgentRunCompleteRequest, params: AgentsAgentRunsSubmitParams): Promise<AgentRunsSubmitResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
     return this.client.post<AgentRunsSubmitResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/complete`), body, undefined, requestHeaders, 'application/json');
   }
 
-/** List agent session runs */
+/** List Playground agent runs */
   async list(sessionId: string, params?: AgentsAgentRunsListParams): Promise<AgentRunsListResult> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
@@ -155,12 +146,11 @@ export class AgentsAgentRunsApi {
     return this.client.get<AgentRunsListResult>(appendQueryString(appApiPath(`/agents/sessions/${serializePathParameter(sessionId, { name: 'sessionId', style: 'simple', explode: false })}/runs`), query));
   }
 
-/** Create agent run */
+/** Create Playground agent run */
   async create(sessionId: string, body: AgentRunCreateRequest, params: AgentsAgentRunsCreateParams): Promise<AgentRunsCreateResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
@@ -176,7 +166,6 @@ export interface AgentsAgentDefinitionsListParams {
 
 export interface AgentsAgentDefinitionsCreateParams {
   idempotencyKey: string;
-  xRequestId?: string;
 }
 
 export class AgentsAgentDefinitionsApi {
@@ -187,7 +176,7 @@ export class AgentsAgentDefinitionsApi {
   }
 
 
-/** List user agents */
+/** List Playground agent definitions */
   async list(params?: AgentsAgentDefinitionsListParams): Promise<AgentDefinitionsListResult> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
@@ -197,19 +186,18 @@ export class AgentsAgentDefinitionsApi {
     return this.client.get<AgentDefinitionsListResult>(appendQueryString(appApiPath(`/agents`), query));
   }
 
-/** Create user agent */
+/** Create Playground agent definition */
   async create(body: AgentCreateRequest, params: AgentsAgentDefinitionsCreateParams): Promise<AgentDefinitionsCreateResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
       },
       {}
     );
     return this.client.post<AgentDefinitionsCreateResult>(appApiPath(`/agents`), body, undefined, requestHeaders, 'application/json');
   }
 
-/** Retrieve user agent */
+/** Retrieve Playground agent definition */
   async retrieve(agentId: string): Promise<AgentDefinitionsRetrieveResult> {
     return this.client.get<AgentDefinitionsRetrieveResult>(appApiPath(`/agents/${serializePathParameter(agentId, { name: 'agentId', style: 'simple', explode: false })}`));
   }

@@ -186,6 +186,23 @@ async fn sqlite_routing_request_traces_expose_safe_audit_metadata_without_payloa
     assert_eq!("2026-05-03 10:00:00.345", traces[0].ended_at);
 }
 
+#[tokio::test]
+async fn sqlite_routing_request_traces_tolerate_missing_latency() {
+    let pool = sqlite_pool().await;
+    create_routing_usage_tables(&pool).await;
+    insert_trace(&pool, "req-missing-latency", None, "2026-05-03 10:00:00").await;
+
+    let store = SqliteAppRoutingReadStore::new(pool);
+    let traces = store
+        .load_routing_request_traces(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, traces.len());
+    assert_eq!("req-missing-latency", traces[0].request_id);
+    assert_eq!("0ms", traces[0].duration);
+}
+
 async fn sqlite_pool() -> SqlitePool {
     SqlitePoolOptions::new()
         .max_connections(1)

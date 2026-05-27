@@ -8,7 +8,7 @@ public class GoogleThinkingConfig {
     public Boolean getIncludeThoughts() {
         return this.includeThoughts;
     }
-    
+
     public void setIncludeThoughts(Boolean includeThoughts) {
         this.includeThoughts = includeThoughts;
     }
@@ -16,7 +16,7 @@ public class GoogleThinkingConfig {
     public Integer getThinkingBudget() {
         return this.thinkingBudget;
     }
-    
+
     public void setThinkingBudget(Integer thinkingBudget) {
         this.thinkingBudget = thinkingBudget;
     }

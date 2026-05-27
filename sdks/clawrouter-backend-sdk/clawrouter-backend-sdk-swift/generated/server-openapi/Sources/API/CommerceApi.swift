@@ -209,46 +209,6 @@ public class CommerceApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/refunds"), query), responseType: CommerceReportsRefundsListResult.self)
     }
 
-    /// Coupons Campaigns List
-    public func couponsCampaignsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> CouponsCampaignsListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/campaigns"), query), responseType: CouponsCampaignsListResult.self)
-    }
-
-    /// Coupons Codes List
-    public func couponsCodesList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> CouponsCodesListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/codes"), query), responseType: CouponsCodesListResult.self)
-    }
-
-    /// Coupons Redemptions List
-    public func couponsRedemptionsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> CouponsRedemptionsListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/redemptions"), query), responseType: CouponsRedemptionsListResult.self)
-    }
-
-    /// Coupons Templates List
-    public func couponsTemplatesList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> CouponsTemplatesListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/coupons/templates"), query), responseType: CouponsTemplatesListResult.self)
-    }
-
     /// Fulfillments List
     public func fulfillmentsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> FulfillmentsListResult? {
         let query = buildQueryString([

@@ -8,7 +8,7 @@ public class AdminAgentListResponse {
     public List<AdminAgentItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminAgentItem> items) {
         this.items = items;
     }

@@ -41,12 +41,14 @@ class AiRequestTraceRecord:
     provider_error_code: Optional[str] = None
     provider_id: Optional[str] = None
     provider_model: Optional[str] = None
+    provider_native_model: Optional[str] = None
     reasoning_effort: Optional[str] = None
     request_bytes: Optional[str] = None
     request_id: Optional[str] = None
     request_path: Optional[str] = None
     request_payload_hash: Optional[str] = None
     requested_model: Optional[str] = None
+    requested_model_catalog_key: Optional[str] = None
     response_bytes: Optional[str] = None
     response_payload_hash: Optional[str] = None
     retention_until: Optional[str] = None

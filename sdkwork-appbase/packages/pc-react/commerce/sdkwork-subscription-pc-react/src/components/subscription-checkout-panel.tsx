@@ -3,7 +3,7 @@ import {
   Button,
   StatusNotice,
 } from "@sdkwork/ui-pc-react";
-import type { SdkworkVipPlan } from "@sdkwork/vip-pc-react";
+import type { SdkworkMembershipPlan } from "@sdkwork/membership-pc-react";
 import type {
   SdkworkSubscriptionAction,
   SdkworkSubscriptionCheckoutEstimate,
@@ -33,7 +33,7 @@ export interface SdkworkSubscriptionCheckoutPanelProps {
   onSubmit: () => void;
   paymentMethods: SdkworkSubscriptionPaymentMethodOption[];
   selectedCouponId: string | null;
-  selectedPlan: SdkworkVipPlan | null;
+  selectedPlan: SdkworkMembershipPlan | null;
 }
 
 export function SdkworkSubscriptionCheckoutPanel({

@@ -62,6 +62,7 @@ pub trait ProviderVerificationDeliverySender {
 pub struct ConfiguredVerificationCodeSender {
     config_store: Arc<dyn VerificationDeliveryConfigStore + Send + Sync>,
     provider_senders: BTreeMap<String, Arc<dyn ProviderVerificationDeliverySender + Send + Sync>>,
+    default_provider_sender: Option<Arc<dyn ProviderVerificationDeliverySender + Send + Sync>>,
     tenant_id: i64,
     organization_id: i64,
 }
@@ -71,6 +72,7 @@ impl ConfiguredVerificationCodeSender {
         Self {
             config_store,
             provider_senders: BTreeMap::new(),
+            default_provider_sender: None,
             tenant_id: 1,
             organization_id: 1,
         }
@@ -91,6 +93,14 @@ impl ConfiguredVerificationCodeSender {
         if !provider_code.is_empty() {
             self.provider_senders.insert(provider_code, sender);
         }
+        self
+    }
+
+    pub fn with_default_provider_sender(
+        mut self,
+        sender: Arc<dyn ProviderVerificationDeliverySender + Send + Sync>,
+    ) -> Self {
+        self.default_provider_sender = Some(sender);
         self
     }
 }
@@ -117,12 +127,17 @@ impl VerificationCodeSender for ConfiguredVerificationCodeSender {
                     ))
                 })?;
             let provider_code = normalize_token(&config.provider_code);
-            let provider_sender = self.provider_senders.get(&provider_code).ok_or_else(|| {
-                DomainError::new(format!(
-                    "verification code delivery sender is not registered for provider {}",
-                    config.provider_code
-                ))
-            })?;
+            let provider_sender = self
+                .provider_senders
+                .get(&provider_code)
+                .cloned()
+                .or_else(|| self.default_provider_sender.clone())
+                .ok_or_else(|| {
+                    DomainError::new(format!(
+                        "verification code delivery sender is not registered for provider {}",
+                        config.provider_code
+                    ))
+                })?;
             let provider_receipt = provider_sender
                 .send_with_config(ProviderVerificationDeliveryRequest {
                     config: config.clone(),

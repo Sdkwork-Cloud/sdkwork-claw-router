@@ -16,7 +16,7 @@ public class AdminSkillCategoryCreateRequest {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -24,7 +24,7 @@ public class AdminSkillCategoryCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -32,7 +32,7 @@ public class AdminSkillCategoryCreateRequest {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -40,7 +40,7 @@ public class AdminSkillCategoryCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -48,7 +48,7 @@ public class AdminSkillCategoryCreateRequest {
     public String getParentId() {
         return this.parentId;
     }
-    
+
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
@@ -56,7 +56,7 @@ public class AdminSkillCategoryCreateRequest {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -64,7 +64,7 @@ public class AdminSkillCategoryCreateRequest {
     public Integer getSortWeight() {
         return this.sortWeight;
     }
-    
+
     public void setSortWeight(Integer sortWeight) {
         this.sortWeight = sortWeight;
     }
@@ -72,7 +72,7 @@ public class AdminSkillCategoryCreateRequest {
     public Integer getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -80,7 +80,7 @@ public class AdminSkillCategoryCreateRequest {
     public Integer getType() {
         return this.type;
     }
-    
+
     public void setType(Integer type) {
         this.type = type;
     }
@@ -88,7 +88,7 @@ public class AdminSkillCategoryCreateRequest {
     public Boolean getVisible() {
         return this.visible;
     }
-    
+
     public void setVisible(Boolean visible) {
         this.visible = visible;
     }

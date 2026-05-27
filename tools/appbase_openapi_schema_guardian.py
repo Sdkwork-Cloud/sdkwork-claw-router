@@ -66,7 +66,7 @@ class AppbaseOpenApiSchemaGuardian:
             if manifest_operation is None:
                 messages.append(f"{label} is missing from API contract manifest: {method} {path}")
                 continue
-            messages.extend(self._validate_manifest_operation(label, manifest_operation, method, path))
+            messages.extend(self._validate_manifest_operation(label, manifest_operation, method, path, operation_id))
             spec = specs.get(surface, {})
             operation = self._operation_spec(spec, method, path)
             messages.extend(self._validate_openapi_operation(label, spec, method, path, operation_id, operation))
@@ -92,12 +92,14 @@ class AppbaseOpenApiSchemaGuardian:
         operation: dict[str, Any],
         method: str,
         path: str,
+        operation_id: str,
     ) -> list[str]:
         messages: list[str] = []
         if operation.get("openapi_exposed", True) is False:
             messages.append(f"{label} must be openapi_exposed")
-        if self._string(operation.get("sdk_domain")) != "commerce":
-            messages.append(f"{label} manifest sdk_domain must be commerce")
+        expected_domain = self._expected_sdk_domain(operation_id)
+        if self._string(operation.get("sdk_domain")) != expected_domain:
+            messages.append(f"{label} manifest sdk_domain must be {expected_domain}")
         if method == "GET" and not isinstance(operation.get("query_parameters"), list):
             messages.append(f"{label} GET manifest must explicitly declare query_parameters")
         if method in self.BODY_METHODS:
@@ -134,8 +136,9 @@ class AppbaseOpenApiSchemaGuardian:
                     messages.append(f"{label} OpenAPI tags must be non-empty")
             elif not isinstance(value, str) or not value.strip():
                 messages.append(f"{label} OpenAPI {field} must be non-empty")
-        if self._string(operation.get("x-sdkwork-domain")) != "commerce":
-            messages.append(f"{label} OpenAPI x-sdkwork-domain must be commerce")
+        expected_domain = self._expected_sdk_domain(operation_id)
+        if self._string(operation.get("x-sdkwork-domain")) != expected_domain:
+            messages.append(f"{label} OpenAPI x-sdkwork-domain must be {expected_domain}")
         if not self._string(operation.get("x-sdkwork-resource")):
             messages.append(f"{label} OpenAPI x-sdkwork-resource must be non-empty")
 
@@ -446,6 +449,11 @@ class AppbaseOpenApiSchemaGuardian:
             if self._source_declares_method(source, method_name):
                 return []
         return [f"{label} generated SDK method is missing: {method_name}"]
+
+    def _expected_sdk_domain(self, operation_id: str) -> str:
+        if operation_id.startswith("promotions."):
+            return "promotion"
+        return "commerce"
 
     def _validate_sdk_types(
         self,

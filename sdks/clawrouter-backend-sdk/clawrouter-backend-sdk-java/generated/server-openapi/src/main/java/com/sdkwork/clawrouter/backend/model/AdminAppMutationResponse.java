@@ -7,7 +7,7 @@ public class AdminAppMutationResponse {
     public AdminAppItemResponse getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminAppItemResponse item) {
         this.item = item;
     }

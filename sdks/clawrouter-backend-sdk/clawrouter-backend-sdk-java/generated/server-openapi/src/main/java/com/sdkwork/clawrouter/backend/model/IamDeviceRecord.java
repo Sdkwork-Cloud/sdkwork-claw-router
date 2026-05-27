@@ -14,7 +14,7 @@ public class IamDeviceRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -22,7 +22,7 @@ public class IamDeviceRecord {
     public String getDeviceFingerprint() {
         return this.deviceFingerprint;
     }
-    
+
     public void setDeviceFingerprint(String deviceFingerprint) {
         this.deviceFingerprint = deviceFingerprint;
     }
@@ -30,7 +30,7 @@ public class IamDeviceRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -38,7 +38,7 @@ public class IamDeviceRecord {
     public String getLastSeenAt() {
         return this.lastSeenAt;
     }
-    
+
     public void setLastSeenAt(String lastSeenAt) {
         this.lastSeenAt = lastSeenAt;
     }
@@ -46,7 +46,7 @@ public class IamDeviceRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -54,7 +54,7 @@ public class IamDeviceRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -62,7 +62,7 @@ public class IamDeviceRecord {
     public Boolean getTrusted() {
         return this.trusted;
     }
-    
+
     public void setTrusted(Boolean trusted) {
         this.trusted = trusted;
     }
@@ -70,7 +70,7 @@ public class IamDeviceRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

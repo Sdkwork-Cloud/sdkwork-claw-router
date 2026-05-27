@@ -10,7 +10,7 @@ public class DashboardAnnouncement {
     public Integer getId() {
         return this.id;
     }
-    
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -18,7 +18,7 @@ public class DashboardAnnouncement {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -26,7 +26,7 @@ public class DashboardAnnouncement {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -34,7 +34,7 @@ public class DashboardAnnouncement {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

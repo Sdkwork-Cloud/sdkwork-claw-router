@@ -12,7 +12,7 @@ public class ModelRankingRefreshTriggerRequest {
     public Integer getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
-    
+
     public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
@@ -20,7 +20,7 @@ public class ModelRankingRefreshTriggerRequest {
     public Integer getLimit() {
         return this.limit;
     }
-    
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -28,7 +28,7 @@ public class ModelRankingRefreshTriggerRequest {
     public Integer getLookbackDays() {
         return this.lookbackDays;
     }
-    
+
     public void setLookbackDays(Integer lookbackDays) {
         this.lookbackDays = lookbackDays;
     }
@@ -36,7 +36,7 @@ public class ModelRankingRefreshTriggerRequest {
     public String getRankScope() {
         return this.rankScope;
     }
-    
+
     public void setRankScope(String rankScope) {
         this.rankScope = rankScope;
     }
@@ -44,7 +44,7 @@ public class ModelRankingRefreshTriggerRequest {
     public Integer getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
-    
+
     public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
@@ -52,7 +52,7 @@ public class ModelRankingRefreshTriggerRequest {
     public String getSnapshotPeriod() {
         return this.snapshotPeriod;
     }
-    
+
     public void setSnapshotPeriod(String snapshotPeriod) {
         this.snapshotPeriod = snapshotPeriod;
     }

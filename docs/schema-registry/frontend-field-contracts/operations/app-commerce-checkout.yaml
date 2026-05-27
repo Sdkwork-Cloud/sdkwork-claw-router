@@ -20,10 +20,9 @@ frontend_operations:
   - commerce_user_address
   - commerce_product_sku
   - commerce_inventory_reservation
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
   - commerce_order
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_checkout_session
@@ -99,8 +98,8 @@ frontend_operations:
   - commerce_user_address
   - commerce_product_sku
   - commerce_inventory_reservation
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
   - commerce_order
   query_parameters: []
   response_schema:
@@ -152,10 +151,9 @@ frontend_operations:
   - commerce_user_address
   - commerce_product_sku
   - commerce_inventory_reservation
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
   - commerce_order
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_checkout_quote
@@ -184,10 +182,9 @@ frontend_operations:
   - commerce_user_address
   - commerce_product_sku
   - commerce_inventory_reservation
-  - commerce_coupon
-  - commerce_coupon_redemption
+  - promotion_user_coupon
+  - promotion_discount_application
   - commerce_order
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_order

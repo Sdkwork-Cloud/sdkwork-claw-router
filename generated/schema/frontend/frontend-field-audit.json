@@ -818,6 +818,74 @@
     },
     {
       "data_sources": [
+        "iam_api_key_group_channel",
+        "integration_provider",
+        "integration_channel",
+        "integration_channel_model"
+      ],
+      "fields": [
+        "id",
+        "groupId",
+        "channelId",
+        "channelName",
+        "providerCode",
+        "providerName",
+        "channelCode",
+        "models",
+        "capabilities",
+        "modelScope",
+        "priority",
+        "weight",
+        "status",
+        "healthStatus"
+      ],
+      "file_targets": [],
+      "interface": "GroupChannelBindingData",
+      "route": "/admin/group",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_api_key_group_channel",
+        "integration_channel"
+      ],
+      "fields": [
+        "channelId",
+        "priority",
+        "weight",
+        "status",
+        "modelScope",
+        "capabilities"
+      ],
+      "file_targets": [],
+      "interface": "GroupChannelBindingInput",
+      "route": "/admin/group",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts"
+    },
+    {
+      "data_sources": [
+        "integration_provider",
+        "integration_channel",
+        "integration_channel_model"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "providerCode",
+        "providerName",
+        "channelCode",
+        "models",
+        "capabilities",
+        "status",
+        "healthStatus"
+      ],
+      "file_targets": [],
+      "interface": "GroupChannelOption",
+      "route": "/admin/group",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts"
+    },
+    {
+      "data_sources": [
         "iam_gateway_api_key_group",
         "ai_pricing_plan"
       ],
@@ -891,22 +959,207 @@
       ],
       "file_targets": [],
       "interface": "ReferralStat",
-      "route": "/admin/marketing",
+      "route": "/admin/marketing/referrals",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_mcp_server",
+        "ai_mcp_server_revision",
+        "ai_mcp_tool",
+        "ai_mcp_binding"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "serverId",
+        "serverRevisionId",
+        "toolId",
+        "ownerType",
+        "ownerId",
+        "allowedTools",
+        "deniedTools",
+        "policyJson",
+        "priority",
+        "enabled",
+        "status",
+        "snapshotJson",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminMcpBinding",
+      "route": "/admin/mcp",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_mcp_server",
+        "plus_category"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "serverKey",
+        "name",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "transport",
+        "visibility",
+        "ownerUserId",
+        "latestRevisionId",
+        "publishedRevisionId",
+        "healthStatus",
+        "lastCheckedAt",
+        "lastErrorMasked",
+        "status",
+        "tags",
+        "publishedAt",
+        "deprecatedAt",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminMcpServer",
+      "route": "/admin/mcp",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_mcp_server",
+        "ai_mcp_server_revision"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "serverId",
+        "revisionNo",
+        "transport",
+        "endpointUrl",
+        "command",
+        "argsJson",
+        "envSchema",
+        "authType",
+        "secretRef",
+        "timeoutMs",
+        "retryPolicy",
+        "configHash",
+        "lifecycleStatus",
+        "status",
+        "createdBy",
+        "publishedAt",
+        "deprecatedAt",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminMcpServerRevision",
+      "route": "/admin/mcp",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_mcp_server",
+        "ai_mcp_server_revision",
+        "ai_mcp_tool"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "serverId",
+        "serverRevisionId",
+        "toolKey",
+        "name",
+        "description",
+        "inputSchema",
+        "outputSchema",
+        "riskLevel",
+        "requiresApproval",
+        "enabled",
+        "status",
+        "rateLimitPolicy",
+        "schemaHash",
+        "discoveredAt",
+        "lastInvokedAt",
+        "sortWeight",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminMcpTool",
+      "route": "/admin/mcp",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_plan",
+        "commerce_membership_entitlement"
+      ],
+      "fields": [
+        "membershipId",
+        "planId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminEntitlementsListParams",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership"
+      ],
+      "fields": [
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminMemberStatusInput",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_plan"
+      ],
+      "fields": [
+        "userId",
+        "planId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminMembersListParams",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
     },
     {
       "data_sources": [
         "commerce_membership_package_group",
         "commerce_membership_package",
         "commerce_membership_plan",
+        "commerce_membership_entitlement",
         "commerce_product_sku"
       ],
       "fields": [
         "groups",
         "groups.id",
+        "groups.code",
         "groups.name",
         "groups.description",
         "groups.planId",
+        "groups.billingCycle",
+        "groups.durationDays",
+        "groups.sortWeight",
         "groups.status",
         "groups.packageCount",
         "packages",
@@ -929,6 +1182,16 @@
         "plans.rank",
         "plans.status",
         "plans.benefitCount",
+        "plans.benefits",
+        "plans.benefits.id",
+        "plans.benefits.name",
+        "plans.benefits.benefitKey",
+        "plans.benefits.type",
+        "plans.benefits.description",
+        "plans.benefits.icon",
+        "plans.benefits.usageLimit",
+        "plans.benefits.usedCount",
+        "plans.benefits.claimed",
         "plans.updatedAt"
       ],
       "file_targets": [],
@@ -943,14 +1206,36 @@
       ],
       "fields": [
         "id",
+        "code",
         "name",
         "description",
         "planId",
+        "billingCycle",
+        "durationDays",
+        "sortWeight",
         "status",
         "packageCount"
       ],
       "file_targets": [],
       "interface": "MembershipsAdminPackageGroup",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package_group"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "description",
+        "billingCycle",
+        "durationDays",
+        "sortWeight",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageGroupMutationInput",
       "route": "/admin/memberships",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
     },
@@ -981,13 +1266,83 @@
     },
     {
       "data_sources": [
+        "commerce_membership_package",
+        "commerce_membership_package_group",
+        "commerce_membership_plan",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "code",
+        "packageGroupId",
+        "planId",
+        "name",
+        "priceAmount",
+        "currencyCode",
+        "durationDays",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageMutationInput",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package",
+        "commerce_membership_package_group",
         "commerce_membership_plan"
+      ],
+      "fields": [
+        "packageGroupId",
+        "planId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackagesListParams",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan",
+        "commerce_membership_entitlement"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "benefitKey",
+        "type",
+        "description",
+        "icon",
+        "usageLimit",
+        "usedCount",
+        "claimed"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanBenefitInput",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan",
+        "commerce_membership_entitlement"
       ],
       "fields": [
         "code",
         "name",
         "rank",
-        "status"
+        "status",
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.benefitKey",
+        "benefits.type",
+        "benefits.description",
+        "benefits.icon",
+        "benefits.usageLimit",
+        "benefits.usedCount",
+        "benefits.claimed"
       ],
       "file_targets": [],
       "interface": "MembershipsAdminPlanCreateInput",
@@ -996,7 +1351,8 @@
     },
     {
       "data_sources": [
-        "commerce_membership_plan"
+        "commerce_membership_plan",
+        "commerce_membership_entitlement"
       ],
       "fields": [
         "id",
@@ -1006,10 +1362,46 @@
         "rank",
         "status",
         "benefitCount",
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.benefitKey",
+        "benefits.type",
+        "benefits.description",
+        "benefits.icon",
+        "benefits.usageLimit",
+        "benefits.usedCount",
+        "benefits.claimed",
         "updatedAt"
       ],
       "file_targets": [],
       "interface": "MembershipsAdminPlanItem",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan",
+        "commerce_membership_entitlement"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "rank",
+        "status",
+        "benefits",
+        "benefits.id",
+        "benefits.name",
+        "benefits.benefitKey",
+        "benefits.type",
+        "benefits.description",
+        "benefits.icon",
+        "benefits.usageLimit",
+        "benefits.usedCount",
+        "benefits.claimed"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanMutationInput",
       "route": "/admin/memberships",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
     },
@@ -1401,6 +1793,97 @@
     },
     {
       "data_sources": [
+        "ai_prompt",
+        "plus_category"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "promptKey",
+        "name",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "promptType",
+        "visibility",
+        "ownerUserId",
+        "latestVersionId",
+        "publishedVersionId",
+        "status",
+        "tags",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminPrompt",
+      "route": "/admin/prompts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_prompt",
+        "ai_prompt_version",
+        "ai_prompt_binding"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "promptId",
+        "promptVersionId",
+        "ownerType",
+        "ownerId",
+        "bindingRole",
+        "priority",
+        "enabled",
+        "policyJson",
+        "snapshotJson",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminPromptBinding",
+      "route": "/admin/prompts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_prompt",
+        "ai_prompt_version"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "tenantId",
+        "organizationId",
+        "promptId",
+        "versionNo",
+        "title",
+        "content",
+        "variableSchema",
+        "outputSchema",
+        "modelConstraints",
+        "safetyPolicy",
+        "examplesJson",
+        "checksumHash",
+        "lifecycleStatus",
+        "reviewStatus",
+        "reviewComment",
+        "createdBy",
+        "publishedAt",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminPromptVersion",
+      "route": "/admin/prompts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts"
+    },
+    {
+      "data_sources": [
         "iam_gateway_risk_rule"
       ],
       "fields": [
@@ -1571,62 +2054,185 @@
     },
     {
       "data_sources": [
-        "open_platform_account"
-      ],
-      "fields": [
-        "key",
-        "name",
-        "provider",
-        "type",
-        "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef"
-      ],
-      "file_targets": [],
-      "interface": "ServiceProviderAccountCreateInput",
-      "route": "/admin/service-providers/accounts",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
-    },
-    {
-      "data_sources": [
-        "open_platform_account"
+        "ops_gateway_instance"
       ],
       "fields": [
         "id",
-        "key",
         "name",
-        "provider",
-        "type",
+        "domain",
+        "ip",
+        "remark",
         "status",
-        "qrDefault",
-        "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef",
-        "createdAt",
+        "healthStatus",
         "updatedAt"
       ],
       "file_targets": [],
-      "interface": "ServiceProviderAccountItem",
-      "route": "/admin/service-providers/accounts",
+      "interface": "ServiceNode",
+      "route": "/admin/service-nodes",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_gateway_instance"
+      ],
+      "fields": [
+        "deleted"
+      ],
+      "file_targets": [],
+      "interface": "ServiceNodeDeleteOutcome",
+      "route": "/admin/service-nodes",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_gateway_instance"
+      ],
+      "fields": [
+        "name",
+        "domain",
+        "ip",
+        "remark",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ServiceNodeInput",
+      "route": "/admin/service-nodes",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_gateway_instance"
+      ],
+      "fields": [
+        "search",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ServiceNodeListParams",
+      "route": "/admin/service-nodes",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts"
+    },
+    {
+      "data_sources": [
+        "analytics_service_provider_daily",
+        "commerce_service_provider_exposure_snapshot"
+      ],
+      "fields": [
+        "id",
+        "status",
+        "incomeAmount",
+        "expenseAmount",
+        "marginAmount",
+        "requestCount",
+        "activeDownstreamCount",
+        "riskProviderCount"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderDashboardItem",
+      "route": "/admin/service-providers/dashboard",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
     },
     {
       "data_sources": [
-        "open_platform_provider",
-        "open_platform_account"
+        "integration_service_provider_price_plan",
+        "integration_service_provider_price_rule"
       ],
       "fields": [
-        "providerId",
-        "providerCode",
-        "providerName",
-        "providerStatus",
-        "account"
+        "id",
+        "planCode",
+        "catalogKey",
+        "model",
+        "billingMeterCode",
+        "tokenKind",
+        "unitPrice",
+        "currency",
+        "priority"
       ],
       "file_targets": [],
-      "interface": "ServiceProviderAccountRow",
-      "route": "/admin/service-providers/accounts",
+      "interface": "ServiceProviderPricingRuleItem",
+      "route": "/admin/service-providers/pricing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
+    },
+    {
+      "data_sources": [
+        "integration_service_provider_edge",
+        "integration_service_provider_closure"
+      ],
+      "fields": [
+        "id",
+        "edgeNo",
+        "sellerProviderId",
+        "buyerProviderId",
+        "edgeType",
+        "settlementMode",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderRelationItem",
+      "route": "/admin/service-providers/relations",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
+    },
+    {
+      "data_sources": [
+        "integration_service_provider",
+        "analytics_service_provider_daily"
+      ],
+      "fields": [
+        "id",
+        "providerNo",
+        "displayName",
+        "providerType",
+        "status",
+        "riskLevel",
+        "incomeAmount",
+        "expenseAmount",
+        "marginAmount"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderResourceItem",
+      "route": "/admin/service-providers/providers",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_usage_service_provider_statement",
+        "commerce_usage_service_provider_statement_item"
+      ],
+      "fields": [
+        "id",
+        "statementNo",
+        "sellerProviderId",
+        "buyerProviderId",
+        "period",
+        "receivableAmount",
+        "payableAmount",
+        "currency",
+        "statementStatus"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderStatementItem",
+      "route": "/admin/service-providers/statements",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_service_provider_chain",
+        "ai_usage_service_provider_edge"
+      ],
+      "fields": [
+        "id",
+        "usageFactId",
+        "sellerProviderId",
+        "buyerProviderId",
+        "billingMeterCode",
+        "tokenKind",
+        "billableQuantity",
+        "chargeAmount",
+        "currency"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderUsageEdgeItem",
+      "route": "/admin/service-providers/usage",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
     },
     {
@@ -2290,9 +2896,9 @@
         "key",
         "name",
         "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef"
+        "appSecret",
+        "token",
+        "encodingAesKey"
       ],
       "file_targets": [],
       "interface": "WechatMiniProgramInput",
@@ -2311,9 +2917,9 @@
         "qrDefault",
         "defaultEntryId",
         "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef",
+        "hasAppSecret",
+        "hasToken",
+        "hasEncodingAesKey",
         "createdAt",
         "updatedAt"
       ],
@@ -2332,9 +2938,9 @@
         "qrDefault",
         "defaultEntryId",
         "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef"
+        "appSecret",
+        "token",
+        "encodingAesKey"
       ],
       "file_targets": [],
       "interface": "WechatMiniProgramUpdateInput",
@@ -2349,9 +2955,9 @@
         "key",
         "name",
         "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef"
+        "appSecret",
+        "token",
+        "encodingAesKey"
       ],
       "file_targets": [],
       "interface": "WechatOfficialAccountInput",
@@ -2370,9 +2976,9 @@
         "qrDefault",
         "defaultEntryId",
         "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef",
+        "hasAppSecret",
+        "hasToken",
+        "hasEncodingAesKey",
         "createdAt",
         "updatedAt"
       ],
@@ -2391,9 +2997,9 @@
         "qrDefault",
         "defaultEntryId",
         "appId",
-        "tokenRef",
-        "secretRef",
-        "aesKeyRef"
+        "appSecret",
+        "token",
+        "encodingAesKey"
       ],
       "file_targets": [],
       "interface": "WechatOfficialAccountUpdateInput",
@@ -2651,11 +3257,233 @@
         "status",
         "marketStatus",
         "appType",
+        "categoryId",
         "page",
         "pageSize"
       ],
       "file_targets": [],
       "interface": "AdminAppListInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
+        "items",
+        "items.id",
+        "items.uuid",
+        "items.userId",
+        "items.name",
+        "items.description",
+        "items.version",
+        "items.icon",
+        "items.iconUrl",
+        "items.resourceList",
+        "items.projectId",
+        "items.accessUrl",
+        "items.config",
+        "items.appKey",
+        "items.status",
+        "items.marketStatus",
+        "items.appType",
+        "items.platforms",
+        "items.installPlatforms",
+        "items.installSkill",
+        "items.installConfig",
+        "items.releaseNotes",
+        "items.packageName",
+        "items.bundleId",
+        "items.storeUrl",
+        "items.downloadUrl",
+        "items.createdAt",
+        "items.updatedAt",
+        "total",
+        "page",
+        "pageSize",
+        "hasNextPage"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppPage",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "templateNo",
+        "templateCode",
+        "templateName",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "templateType",
+        "runtime",
+        "framework",
+        "language",
+        "iconUrl",
+        "coverUrl",
+        "visibility",
+        "publishStatus",
+        "featured",
+        "sortWeight",
+        "sourceAppId",
+        "gitRepoUrl",
+        "gitRef",
+        "gitSubPath",
+        "currentVersionId",
+        "appConfigSchema",
+        "defaultAppConfig",
+        "variableSchema",
+        "dependencyManifest",
+        "capabilityManifest",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplate",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "templateNo",
+        "templateCode",
+        "templateName",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "templateType",
+        "runtime",
+        "framework",
+        "language",
+        "iconUrl",
+        "coverUrl",
+        "visibility",
+        "publishStatus",
+        "featured",
+        "sortWeight",
+        "sourceAppId",
+        "gitRepoUrl",
+        "gitRef",
+        "gitSubPath",
+        "appConfigSchema",
+        "defaultAppConfig",
+        "variableSchema",
+        "dependencyManifest",
+        "capabilityManifest"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplateCreateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "searchQuery",
+        "publishStatus",
+        "templateType",
+        "runtime",
+        "categoryId",
+        "page",
+        "pageSize"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplateListInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "items",
+        "items.id",
+        "items.uuid",
+        "items.templateNo",
+        "items.templateCode",
+        "items.templateName",
+        "items.description",
+        "items.categoryId",
+        "items.categoryCode",
+        "items.templateType",
+        "items.runtime",
+        "items.framework",
+        "items.language",
+        "items.iconUrl",
+        "items.coverUrl",
+        "items.visibility",
+        "items.publishStatus",
+        "items.featured",
+        "items.sortWeight",
+        "items.sourceAppId",
+        "items.gitRepoUrl",
+        "items.gitRef",
+        "items.gitSubPath",
+        "items.currentVersionId",
+        "items.appConfigSchema",
+        "items.defaultAppConfig",
+        "items.variableSchema",
+        "items.dependencyManifest",
+        "items.capabilityManifest",
+        "items.createdAt",
+        "items.updatedAt",
+        "total",
+        "page",
+        "pageSize",
+        "hasNextPage"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplatePage",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "templateName",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "templateType",
+        "runtime",
+        "framework",
+        "language",
+        "iconUrl",
+        "coverUrl",
+        "visibility",
+        "publishStatus",
+        "featured",
+        "sortWeight",
+        "sourceAppId",
+        "gitRepoUrl",
+        "gitRef",
+        "gitSubPath",
+        "appConfigSchema",
+        "defaultAppConfig",
+        "variableSchema",
+        "dependencyManifest",
+        "capabilityManifest"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplateUpdateInput",
       "route": "/admin/app",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
     },
@@ -2699,10 +3527,29 @@
         "studio_catalog_artifact"
       ],
       "fields": [
+        "items",
+        "total",
+        "page",
+        "pageSize",
+        "hasNextPage"
+      ],
+      "file_targets": [],
+      "interface": "AppCatalogPage",
+      "route": "/apps",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_app",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
         "searchQuery",
         "platformTypes",
         "categories",
-        "sortBy"
+        "sortBy",
+        "page",
+        "pageSize"
       ],
       "file_targets": [],
       "interface": "AppFilters",
@@ -2781,137 +3628,6 @@
     },
     {
       "data_sources": [
-        "ai_agent",
-        "ai_agent_tool_binding",
-        "ai_agent_mcp_server",
-        "ai_agent_memory"
-      ],
-      "fields": [
-        "memoryEnabled",
-        "mcpServerCount",
-        "skillBindingCount"
-      ],
-      "file_targets": [],
-      "interface": "AgentCapabilities",
-      "route": "/console/agents",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_agent",
-        "ai_agent_version",
-        "ai_agent_tool_binding",
-        "ai_agent_mcp_server",
-        "ai_agent_memory"
-      ],
-      "fields": [
-        "id",
-        "ownerUserId",
-        "code",
-        "name",
-        "description",
-        "visibility",
-        "status",
-        "avatarUrl",
-        "templateSource",
-        "createdAt",
-        "updatedAt",
-        "defaultVersion",
-        "defaultVersion.id",
-        "defaultVersion.versionNo",
-        "defaultVersion.releaseStatus",
-        "defaultVersion.model",
-        "defaultVersion.systemPrompt",
-        "defaultVersion.toolPolicy",
-        "defaultVersion.memoryPolicy",
-        "defaultVersion.mcpPolicy",
-        "defaultVersion.skillPolicy",
-        "defaultVersion.runtimePolicy",
-        "defaultVersion.createdAt",
-        "defaultVersion.updatedAt",
-        "capabilities",
-        "capabilities.memoryEnabled",
-        "capabilities.mcpServerCount",
-        "capabilities.skillBindingCount"
-      ],
-      "file_targets": [],
-      "interface": "AgentDefinition",
-      "route": "/console/agents",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_agent"
-      ],
-      "fields": [
-        "page",
-        "pageSize",
-        "q"
-      ],
-      "file_targets": [],
-      "interface": "AgentListQuery",
-      "route": "/console/agents",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_agent_version"
-      ],
-      "fields": [],
-      "file_targets": [],
-      "interface": "AgentPolicyDocument",
-      "route": "/console/agents",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_agent_version"
-      ],
-      "fields": [
-        "id",
-        "versionNo",
-        "releaseStatus",
-        "model",
-        "systemPrompt",
-        "toolPolicy",
-        "memoryPolicy",
-        "mcpPolicy",
-        "skillPolicy",
-        "runtimePolicy",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "AgentVersion",
-      "route": "/console/agents",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_agent",
-        "ai_agent_version",
-        "ai_agent_tool_binding",
-        "ai_agent_mcp_server",
-        "ai_agent_memory"
-      ],
-      "fields": [
-        "name",
-        "code",
-        "description",
-        "model",
-        "systemPrompt",
-        "memoryEnabled",
-        "mcpServers",
-        "skills",
-        "executionMode"
-      ],
-      "file_targets": [],
-      "interface": "CreateAgentInput",
-      "route": "/console/agents",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
-    },
-    {
-      "data_sources": [
         "iam_gateway_api_key",
         "iam_gateway_api_key_group",
         "iam_gateway_api_key_group_metric_snapshot",
@@ -2935,7 +3651,8 @@
         "ipLimit",
         "created",
         "expires",
-        "status"
+        "status",
+        "defaultForRuntime"
       ],
       "file_targets": [],
       "interface": "ApiKey",
@@ -2972,7 +3689,8 @@
         "isUnlimitedQuota",
         "modalities",
         "ipLimit",
-        "expires"
+        "expires",
+        "defaultForRuntime"
       ],
       "file_targets": [],
       "interface": "CreateApiKeyInput",
@@ -3000,6 +3718,7 @@
         "key.created",
         "key.expires",
         "key.status",
+        "key.defaultForRuntime",
         "rawKey"
       ],
       "file_targets": [],
@@ -3048,6 +3767,23 @@
       ],
       "file_targets": [],
       "interface": "Announcement",
+      "route": "/console/dashboard",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_gateway_instance"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "domain",
+        "ip",
+        "status",
+        "remark"
+      ],
+      "file_targets": [],
+      "interface": "ConfigurationDomain",
       "route": "/console/dashboard",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts"
     },
@@ -3110,23 +3846,267 @@
     },
     {
       "data_sources": [
+        "commerce_membership",
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_account",
+        "commerce_account_ledger_entry",
+        "commerce_membership_entitlement_usage",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "success",
+        "requestNo",
+        "status",
+        "rewardPoints"
+      ],
+      "file_targets": [],
+      "interface": "MembershipActionResult",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan",
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "quotaAmount",
+        "quotaPeriod",
+        "resetPolicy",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipBenefit",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_account",
+        "commerce_account_ledger_entry",
+        "commerce_membership_entitlement_usage"
+      ],
+      "fields": [
+        "available",
+        "claimedToday",
+        "rewardPoints",
+        "status",
+        "nextAvailableAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipDailyRewardStatus",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_product_sku",
+        "commerce_membership_plan",
         "commerce_membership_package",
+        "commerce_membership_package_group",
+        "commerce_membership",
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage",
+        "commerce_account",
+        "commerce_account_ledger_entry"
+      ],
+      "fields": [
+        "summary",
+        "packageGroups",
+        "packageGroups.id",
+        "packageGroups.groupNo",
+        "packageGroups.name",
+        "packageGroups.description",
+        "packageGroups.status",
+        "packageGroups.sortOrder",
+        "packageGroups.packages",
+        "packageGroups.packages.id",
+        "packageGroups.packages.packageNo",
+        "packageGroups.packages.packageGroupId",
+        "packageGroups.packages.planId",
+        "packageGroups.packages.planName",
+        "packageGroups.packages.skuId",
+        "packageGroups.packages.priceAmount",
+        "packageGroups.packages.currencyCode",
+        "packageGroups.packages.durationDays",
+        "packageGroups.packages.recurrenceCycle",
+        "packageGroups.packages.status",
+        "packageGroups.packages.isPurchasable",
+        "benefits",
+        "benefits.code",
+        "benefits.name",
+        "benefits.quotaAmount",
+        "benefits.quotaPeriod",
+        "benefits.resetPolicy",
+        "benefits.status",
+        "pointsBalance",
+        "pointsBalance.balance",
+        "pointsBalance.status",
+        "pointsBalance.updatedAt",
+        "pointsHistory",
+        "pointsHistory.id",
+        "pointsHistory.title",
+        "pointsHistory.amount",
+        "pointsHistory.occurredAt",
+        "pointsHistory.status",
+        "dailyReward",
+        "dailyReward.available",
+        "dailyReward.claimedToday",
+        "dailyReward.rewardPoints",
+        "dailyReward.status",
+        "dailyReward.nextAvailableAt",
+        "privilegeUsage",
+        "privilegeUsage.speedUpAvailable",
+        "privilegeUsage.speedUpRemaining",
+        "privilegeUsage.items",
+        "privilegeUsage.items.code",
+        "privilegeUsage.items.name",
+        "privilegeUsage.items.used",
+        "privilegeUsage.items.quota",
+        "privilegeUsage.items.remaining",
+        "privilegeUsage.items.status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipOverview",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package",
+        "commerce_membership_package_group",
         "commerce_membership_plan",
         "commerce_product_sku"
       ],
       "fields": [
         "id",
         "packageNo",
+        "packageGroupId",
         "planId",
+        "planName",
         "skuId",
         "priceAmount",
         "currencyCode",
         "durationDays",
         "recurrenceCycle",
-        "status"
+        "status",
+        "isPurchasable"
       ],
       "file_targets": [],
       "interface": "MembershipPackage",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package_group",
+        "commerce_membership_package",
+        "commerce_membership_plan",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "id",
+        "groupNo",
+        "name",
+        "description",
+        "status",
+        "sortOrder",
+        "packages",
+        "packages.id",
+        "packages.packageNo",
+        "packages.packageGroupId",
+        "packages.planId",
+        "packages.planName",
+        "packages.skuId",
+        "packages.priceAmount",
+        "packages.currencyCode",
+        "packages.durationDays",
+        "packages.recurrenceCycle",
+        "packages.status",
+        "packages.isPurchasable"
+      ],
+      "file_targets": [],
+      "interface": "MembershipPackageGroup",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_account",
+        "commerce_account_ledger_entry",
+        "commerce_membership"
+      ],
+      "fields": [
+        "balance",
+        "status",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipPointsBalance",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_account",
+        "commerce_account_ledger_entry",
+        "commerce_membership"
+      ],
+      "fields": [
+        "id",
+        "title",
+        "amount",
+        "occurredAt",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipPointsHistoryItem",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage"
+      ],
+      "fields": [
+        "speedUpAvailable",
+        "speedUpRemaining",
+        "items",
+        "items.code",
+        "items.name",
+        "items.used",
+        "items.quota",
+        "items.remaining",
+        "items.status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipPrivilegeUsage",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "used",
+        "quota",
+        "remaining",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipPrivilegeUsageItem",
       "route": "/console/memberships",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
     },
@@ -3139,6 +4119,7 @@
       "fields": [
         "membershipNo",
         "planId",
+        "planName",
         "status",
         "startsAt",
         "expiresAt"
@@ -3150,26 +4131,30 @@
     },
     {
       "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider_account",
-        "integration_proxy",
-        "ops_config_snapshot"
+        "commerce_billing_history"
       ],
       "fields": [
         "id",
-        "providerFamily",
-        "integrationType",
-        "name",
-        "description",
-        "url",
-        "status"
+        "historyNo",
+        "type",
+        "direction",
+        "assetType",
+        "amount",
+        "currencyCode",
+        "pointsDelta",
+        "status",
+        "title",
+        "referenceNo",
+        "sourceType",
+        "sourceId",
+        "relatedOrderNo",
+        "paymentMethod",
+        "occurredAt"
       ],
       "file_targets": [],
-      "interface": "ProviderConfig",
-      "route": "/console/providers",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts"
+      "interface": "BillingHistoryItem",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts"
     },
     {
       "data_sources": [
@@ -3187,271 +4172,6 @@
       "interface": "RechargePackage",
       "route": "/console/recharge",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_routing_rule"
-      ],
-      "fields": [
-        "id",
-        "sourceModel",
-        "targetModel"
-      ],
-      "file_targets": [],
-      "interface": "MappingRule",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_request_trace",
-        "ai_routing_decision_log",
-        "ai_usage_fact"
-      ],
-      "fields": [
-        "id",
-        "time",
-        "model",
-        "channel",
-        "status",
-        "duration",
-        "tokens",
-        "traceId",
-        "requestId",
-        "requestPath",
-        "httpMethod",
-        "requestPayloadHash",
-        "responsePayloadHash",
-        "requestBytes",
-        "responseBytes",
-        "providerErrorCode",
-        "errorType",
-        "errorMessageMasked",
-        "startedAt",
-        "endedAt",
-        "streaming"
-      ],
-      "file_targets": [],
-      "interface": "RequestTrace",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "iam_gateway_api_key",
-        "ai_usage_fact"
-      ],
-      "fields": [
-        "id",
-        "name",
-        "displayKey",
-        "copyableKey",
-        "status",
-        "totalUsage",
-        "createdAt"
-      ],
-      "file_targets": [],
-      "interface": "RoutingApiKey",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider_account",
-        "ops_config_snapshot",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "name",
-        "vendor",
-        "protocol",
-        "accessType",
-        "baseUrl",
-        "secretRef",
-        "models",
-        "capabilities",
-        "timeoutMs",
-        "retryPolicy",
-        "circuitBreakerPolicy",
-        "weight",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "RoutingChannelMutationInput",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "integration_channel",
-        "integration_provider_account",
-        "ops_config_snapshot",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "channelId",
-        "success",
-        "status",
-        "latency",
-        "item"
-      ],
-      "file_targets": [],
-      "interface": "RoutingChannelTestResult",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider_account",
-        "ops_config_snapshot",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "name",
-        "vendor",
-        "protocol",
-        "accessType",
-        "baseUrl",
-        "secretRef",
-        "models",
-        "capabilities",
-        "timeoutMs",
-        "retryPolicy",
-        "circuitBreakerPolicy",
-        "weight",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "RoutingChannelUpdateInput",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_request_trace",
-        "ai_routing_decision_log",
-        "ai_usage_fact"
-      ],
-      "fields": [
-        "m",
-        "req",
-        "sr",
-        "tok",
-        "lat"
-      ],
-      "file_targets": [],
-      "interface": "RoutingModelStats",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_routing_policy",
-        "ai_routing_profile",
-        "ai_routing_rule"
-      ],
-      "fields": [
-        "strategy",
-        "mappingRules",
-        "mappingRules.id",
-        "mappingRules.sourceModel",
-        "mappingRules.targetModel"
-      ],
-      "file_targets": [],
-      "interface": "RoutingStrategySnapshot",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_request_trace"
-      ],
-      "fields": [
-        "time",
-        "requests",
-        "latency"
-      ],
-      "file_targets": [],
-      "interface": "RoutingUsageData",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts"
-    },
-    {
-      "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider_account"
-      ],
-      "fields": [
-        "id",
-        "name",
-        "vendor",
-        "provider",
-        "providerCode",
-        "protocol",
-        "accessType",
-        "baseUrl",
-        "apiKey",
-        "models",
-        "capabilities",
-        "isMultimodal",
-        "timeoutMs",
-        "retryPolicy",
-        "retryPolicy.maxAttempts",
-        "retryPolicy.retryableStatusCodes",
-        "retryPolicy.backoffMs",
-        "circuitBreakerPolicy",
-        "circuitBreakerPolicy.failureThreshold",
-        "weight",
-        "status",
-        "latency",
-        "rpm",
-        "balance",
-        "errors"
-      ],
-      "file_targets": [],
-      "interface": "Channel",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts"
-    },
-    {
-      "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider_account"
-      ],
-      "fields": [
-        "failureThreshold"
-      ],
-      "file_targets": [],
-      "interface": "RoutingCircuitBreakerPolicy",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts"
-    },
-    {
-      "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider_account"
-      ],
-      "fields": [
-        "maxAttempts",
-        "retryableStatusCodes",
-        "backoffMs"
-      ],
-      "file_targets": [],
-      "interface": "RoutingRetryPolicy",
-      "route": "/console/routing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts"
     },
     {
       "data_sources": [
@@ -3549,7 +4269,8 @@
       "data_sources": [
         "ai_request_trace",
         "ai_usage_fact",
-        "ai_routing_decision_log"
+        "ai_routing_decision_log",
+        "iam_gateway_api_key_group"
       ],
       "fields": [
         "id",
@@ -3559,6 +4280,13 @@
         "group",
         "type",
         "model",
+        "providerNativeModel",
+        "requestedModelCatalogKey",
+        "status",
+        "httpStatus",
+        "errorCode",
+        "errorType",
+        "errorMessage",
         "totalTime",
         "ttft",
         "isStream",
@@ -3607,9 +4335,7 @@
     },
     {
       "data_sources": [
-        "commerce_account_ledger_entry",
-        "commerce_order",
-        "commerce_payment_attempt"
+        "commerce_billing_history"
       ],
       "fields": [
         "id",
@@ -3624,9 +4350,7 @@
     },
     {
       "data_sources": [
-        "commerce_account_ledger_entry",
-        "commerce_order",
-        "commerce_payment_attempt"
+        "commerce_billing_history"
       ],
       "fields": [
         "orderNo",
@@ -3639,11 +4363,7 @@
     },
     {
       "data_sources": [
-        "commerce_coupon_template",
-        "commerce_coupon",
-        "commerce_account_ledger_entry",
-        "commerce_order",
-        "commerce_payment_attempt"
+        "commerce_billing_history"
       ],
       "fields": [
         "code"
@@ -4154,6 +4874,42 @@
     },
     {
       "data_sources": [
+        "iam_gateway_api_key_group"
+      ],
+      "fields": [
+        "key",
+        "label",
+        "modelCount"
+      ],
+      "file_targets": [],
+      "interface": "ModelCatalogGroup",
+      "route": "/models",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model_vendor_region",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "iam_gateway_api_key_group",
+        "iam_api_key_group_channel"
+      ],
+      "fields": [
+        "models",
+        "groups",
+        "groups.key",
+        "groups.label",
+        "groups.modelCount"
+      ],
+      "file_targets": [],
+      "interface": "ModelCatalogResult",
+      "route": "/models",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts"
+    },
+    {
+      "data_sources": [
         "ai_model_vendor",
         "ai_model_vendor_region",
         "ai_model",
@@ -4552,9 +5308,9 @@
     },
     {
       "data_sources": [
-        "commerce_coupon_template",
-        "commerce_coupon",
-        "commerce_coupon_redemption",
+        "promotion_offer",
+        "promotion_user_coupon",
+        "promotion_discount_application",
         "commerce_membership",
         "commerce_membership_entitlement"
       ],
@@ -4590,7 +5346,7 @@
     }
   ],
   "summary": {
-    "interface_count": 196,
-    "source_file_count": 51
+    "interface_count": 222,
+    "source_file_count": 50
   }
 }

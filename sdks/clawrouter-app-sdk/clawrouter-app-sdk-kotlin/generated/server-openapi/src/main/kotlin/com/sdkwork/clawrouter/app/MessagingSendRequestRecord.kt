@@ -1,0 +1,30 @@
+package com.sdkwork.clawrouter.app
+
+data class MessagingSendRequestRecord(
+    val acceptedAt: String? = null,
+    val appId: String? = null,
+    val createdAt: String? = null,
+    val deliveredAt: String? = null,
+    val expiresAt: String? = null,
+    val failedAt: String? = null,
+    val id: String? = null,
+    val legalHold: Boolean? = null,
+    val metadata: Map<String, String>? = null,
+    val organizationId: String? = null,
+    val payloadHash: String? = null,
+    val requestId: String? = null,
+    val resolvedProviderAccountId: String? = null,
+    val resolvedRouteRuleId: String? = null,
+    val resolvedSenderIdentityId: String? = null,
+    val retentionUntil: String? = null,
+    val scheduledAt: String? = null,
+    val sentAt: String? = null,
+    val status: String? = null,
+    val targetMasked: String? = null,
+    val templateVariantId: String? = null,
+    val templateVersionId: String? = null,
+    val tenantId: String? = null,
+    val traceId: String? = null,
+    val userId: String? = null,
+    val uuid: String? = null
+)

@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AlertCircle, CheckCircle2, CreditCard, Gift, Loader2 } from 'lucide-react';
+import { AlertCircle, CheckCircle2, CreditCard, Gift, Loader2, ReceiptText, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { RechargeService, type RechargePackage } from './rechargeService';
+import { RechargeService, type BillingHistoryItem, type BillingHistoryTab, type RechargePackage } from './rechargeService';
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
-type RechargeOption = {
+export type RechargeOption = {
   amount: string;
   bonus: number;
   id: string;
@@ -19,16 +19,13 @@ export interface RechargePanelProps {
   showTabs?: boolean;
 }
 
-const referenceRechargeOptions: RechargeOption[] = [
-  { id: 'reference-usd-10', amount: '10.00', bonus: 0, points: 100 },
-  { id: 'reference-usd-50', amount: '50.00', bonus: 0, points: 500 },
-  { id: 'reference-usd-100', amount: '100.00', bonus: 0, points: 1000 },
-  { id: 'reference-usd-200', amount: '200.00', bonus: 0, points: 2000 },
-  { id: 'reference-usd-500', amount: '500.00', bonus: 0, points: 5000 },
-  { id: 'reference-usd-1000', amount: '1000.00', bonus: 0, points: 10000 },
-  { id: 'reference-usd-2000', amount: '2000.00', bonus: 0, points: 20000 },
-  { id: 'reference-usd-5000', amount: '5000.00', bonus: 0, points: 50000 },
-];
+export interface RechargePackageSelectorProps {
+  className?: string;
+  disabled?: boolean;
+  onSelectionChange: (option: RechargeOption | null) => void;
+  selectedOptionId: string;
+  variant?: 'console' | 'vip';
+}
 
 function getRechargeErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
   if (error instanceof Error) {
@@ -45,21 +42,24 @@ function getRechargeErrorMessage(error: unknown, fallback: string, t: Translatio
 
 export function RechargeView() {
   return (
-    <div className="min-h-[calc(100vh-72px)] w-full bg-[#121212] px-4 py-5 text-slate-100 sm:px-6 lg:px-8">
-      <RechargePanel />
+    <div className="min-h-[calc(100vh-72px)] w-full bg-[#121212] p-[5px] text-slate-100">
+      <div className="mx-auto w-full max-w-[960px] space-y-6">
+        <RechargePanel />
+        <RechargeRecordsTabs />
+      </div>
     </div>
   );
 }
 
-export function RechargePanel({ embedded = false, showTabs = true }: RechargePanelProps) {
+export function RechargePackageSelector({
+  className = '',
+  disabled = false,
+  onSelectionChange,
+  selectedOptionId,
+  variant = 'console',
+}: RechargePackageSelectorProps) {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const [packages, setPackages] = useState<RechargePackage[]>([]);
-  const [selectedOptionId, setSelectedOptionId] = useState('');
-  const [customAmount, setCustomAmount] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMsg, setSuccessMsg] = useState('');
-  const [submitError, setSubmitError] = useState<string | null>(null);
   const [packagesLoading, setPackagesLoading] = useState(true);
   const [packagesLoadError, setPackagesLoadError] = useState<string | null>(null);
 
@@ -92,15 +92,155 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
   }, [loadRechargePackages]);
 
   const rechargeOptions = useMemo<RechargeOption[]>(() => {
-    if (packages.length === 0) {
-      return referenceRechargeOptions;
-    }
     return packages.map(mapRechargePackageToOption);
   }, [packages]);
 
-  const selectedOption = selectedOptionId
-    ? rechargeOptions.find(option => option.id === selectedOptionId)
-    : undefined;
+  useEffect(() => {
+    if (!selectedOptionId || packagesLoading) {
+      return;
+    }
+    if (!rechargeOptions.some(option => option.id === selectedOptionId)) {
+      onSelectionChange(null);
+    }
+  }, [onSelectionChange, packagesLoading, rechargeOptions, selectedOptionId]);
+
+  const optionGridClassName = variant === 'vip'
+    ? 'grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4'
+    : 'grid grid-cols-2 gap-3 sm:grid-cols-4';
+  const amountPrefix = variant === 'vip' ? '¥' : '$';
+
+  return (
+    <div
+      data-business-state={packagesLoadError ? 'error' : packages.length === 0 && !packagesLoading ? 'empty' : undefined}
+      data-console-recharge-options="server-configured"
+      className={className}
+    >
+      <div className="mb-4 flex min-h-6 items-center justify-between gap-3">
+        <h2 className="text-left text-base font-semibold text-white">
+          {variant === 'vip'
+            ? t('vip.pointsPurchase.packageTitle', 'Choose a credit package')
+            : t('console.recharge.amountTitle', '选择充值金额 (USD)')}
+        </h2>
+        {packagesLoading ? (
+          <span className="inline-flex items-center gap-1.5 text-xs text-slate-400">
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            {t('console.recharge.syncingPackages', '正在同步套餐')}
+          </span>
+        ) : null}
+      </div>
+
+      {packagesLoading ? (
+        <RechargePackageSelectorState
+          title={t('console.recharge.loadingPackages', 'Loading recharge packages...')}
+        />
+      ) : packagesLoadError ? (
+        <RechargePackageSelectorState
+          actionLabel={t('console.recharge.retryPackages', 'Retry')}
+          kind="error"
+          onAction={() => { void loadRechargePackages(); }}
+          title={packagesLoadError}
+        />
+      ) : rechargeOptions.length === 0 ? (
+        <RechargePackageSelectorState
+          title={t('console.recharge.emptyPackages', 'No recharge packages are configured.')}
+        />
+      ) : (
+        <div className={optionGridClassName}>
+          {rechargeOptions.map(option => {
+            const isSelected = selectedOptionId === option.id;
+            const pointsLabel = option.points.toLocaleString('en-US');
+            return (
+              <button
+                key={option.id}
+                type="button"
+                disabled={disabled}
+                onClick={() => onSelectionChange(option)}
+                className={`relative flex min-h-[104px] flex-col items-start justify-between rounded-md border px-3 py-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${
+                  isSelected
+                    ? 'border-[#1677ff] bg-[#142b45] text-white'
+                    : variant === 'vip'
+                      ? 'border-transparent bg-[#363b44] text-slate-100 hover:border-white/40 hover:bg-[#3c414b]'
+                      : 'border-[#383838] bg-[#262626] text-slate-100 hover:border-[#1677ff]/70 hover:bg-[#2b2b2b]'
+                }`}
+              >
+                {isSelected ? (
+                  <CheckCircle2 className="absolute right-2 top-2 h-4 w-4 text-[#1677ff]" />
+                ) : null}
+                <span className="pr-6 text-xl font-semibold leading-none">
+                  {amountPrefix}{formatDisplayAmount(option.amount)}
+                </span>
+                <span className="mt-3 text-xs font-medium leading-5 text-slate-400">
+                  {t('console.recharge.pointsIncluded', '得 {{points}} 积分', { points: pointsLabel })}
+                </span>
+                {option.bonus > 0 ? (
+                  <span className="mt-1 text-[11px] font-semibold leading-4 text-emerald-300">
+                    {t('console.recharge.bonusIncluded', '+{{bonus}} bonus', { bonus: option.bonus.toLocaleString('en-US') })}
+                  </span>
+                ) : null}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function RechargePackageSelectorState({
+  actionLabel,
+  kind = 'empty',
+  onAction,
+  title,
+}: {
+  actionLabel?: string;
+  kind?: 'empty' | 'error';
+  onAction?: () => void;
+  title: string;
+}) {
+  const iconClassName = kind === 'error' ? 'text-red-300' : 'text-slate-400';
+  return (
+    <div className={`flex min-h-[164px] flex-col items-start justify-center gap-3 rounded-md border px-4 py-5 text-left text-sm ${
+      kind === 'error'
+        ? 'border-red-500/25 bg-red-500/10 text-red-100'
+        : 'border-[#383838] bg-[#262626] text-slate-300'
+    }`}
+    >
+      <AlertCircle className={`h-5 w-5 ${iconClassName}`} />
+      <p className="font-semibold leading-6">{title}</p>
+      {actionLabel && onAction ? (
+        <button
+          type="button"
+          onClick={onAction}
+          className="inline-flex h-9 items-center gap-2 rounded-md border border-white/15 px-3 text-xs font-semibold text-white transition-colors hover:bg-white/10"
+        >
+          <RefreshCw className="h-3.5 w-3.5" />
+          {actionLabel}
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+export function RechargePanel({ embedded = false, showTabs = true }: RechargePanelProps) {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [selectedOptionId, setSelectedOptionId] = useState('');
+  const [selectedOption, setSelectedOption] = useState<RechargeOption | null>(null);
+  const [customAmount, setCustomAmount] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMsg, setSuccessMsg] = useState('');
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleOptionChange = useCallback((option: RechargeOption | null) => {
+    setSelectedOption(option);
+    setSelectedOptionId(option?.id ?? '');
+    if (option) {
+      setCustomAmount('');
+    }
+    setSuccessMsg('');
+    setSubmitError(null);
+  }, []);
+
   const customSelectionAmount = normalizeCustomAmount(customAmount);
   const currentSelectionAmount = selectedOption?.amount || customSelectionAmount;
   const currentSelectionCents = moneyCents(currentSelectionAmount);
@@ -111,6 +251,7 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
 
   const handleCustomChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOptionId('');
+    setSelectedOption(null);
     setCustomAmount(sanitizeMoneyInput(event.target.value));
     setSuccessMsg('');
     setSubmitError(null);
@@ -142,7 +283,6 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
 
   return (
     <section
-      data-business-state={packagesLoadError ? 'error' : undefined}
       data-console-recharge-reference-panel
       className={`${embedded ? 'w-full' : 'mx-auto w-full max-w-[760px]'} overflow-hidden rounded-lg border border-[#303030] bg-[#1f1f1f] shadow-[0_18px_44px_rgba(0,0,0,0.24)]`}
     >
@@ -168,57 +308,11 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
       ) : null}
 
       <div className={`space-y-6 ${showTabs ? 'p-5 sm:p-6' : 'p-4 sm:p-5'}`}>
-        <div className="space-y-4">
-          <div className="flex min-h-6 items-center justify-between gap-3">
-            <h2 className="text-base font-semibold text-white">
-              {t('console.recharge.amountTitle', '选择充值金额 (USD)')}
-            </h2>
-            {packagesLoading ? (
-              <span className="inline-flex items-center gap-1.5 text-xs text-slate-400">
-                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                {t('console.recharge.syncingPackages', '正在同步套餐')}
-              </span>
-            ) : null}
-          </div>
-
-          {packagesLoadError ? (
-            <div className="flex items-start gap-2 rounded-md border border-amber-500/25 bg-amber-500/10 px-3 py-2 text-xs text-amber-200">
-              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-              <span>{t('console.recharge.defaultPackagesActive', '充值套餐同步失败，已展示默认金额。')}</span>
-            </div>
-          ) : null}
-
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {rechargeOptions.map(option => {
-              const isSelected = selectedOptionId === option.id;
-              return (
-                <button
-                  key={option.id}
-                  type="button"
-                  onClick={() => {
-                    setSelectedOptionId(option.id);
-                    setCustomAmount('');
-                    setSuccessMsg('');
-                    setSubmitError(null);
-                  }}
-                  className={`relative flex min-h-[92px] flex-col items-center justify-center rounded-md border px-2 py-4 text-center transition-colors ${
-                    isSelected
-                      ? 'border-[#1677ff] bg-[#142b45] text-white'
-                      : 'border-[#383838] bg-[#262626] text-slate-100 hover:border-[#1677ff]/70 hover:bg-[#2b2b2b]'
-                  }`}
-                >
-                  {isSelected ? (
-                    <CheckCircle2 className="absolute right-2 top-2 h-4 w-4 text-[#1677ff]" />
-                  ) : null}
-                  <span className="text-xl font-semibold leading-none">${formatDisplayAmount(option.amount)}</span>
-                  <span className="mt-2 text-xs font-medium text-slate-400">
-                    {t('console.recharge.pointsIncluded', '得 {{points}} 积分', { points: option.points.toLocaleString('en-US') })}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        <RechargePackageSelector
+          disabled={isSubmitting}
+          onSelectionChange={handleOptionChange}
+          selectedOptionId={selectedOptionId}
+        />
 
         <div className="space-y-3">
           <label htmlFor={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'} className="block text-base font-semibold text-white">
@@ -278,6 +372,212 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
       </div>
     </section>
   );
+}
+
+const rechargeRecordTabs: Array<{ key: BillingHistoryTab; labelKey: string; fallback: string }> = [
+  { key: 'all', labelKey: 'console.recharge.records.tabs.all', fallback: 'All' },
+  { key: 'redeem', labelKey: 'console.recharge.records.tabs.redeem', fallback: 'Redeem records' },
+  { key: 'recharge', labelKey: 'console.recharge.records.tabs.recharge', fallback: 'Recharge records' },
+];
+
+export interface RechargeRecordsTabsProps {
+  defaultTab?: BillingHistoryTab;
+  refreshSignal?: number;
+}
+
+export function RechargeRecordsTabs({ defaultTab = 'all', refreshSignal = 0 }: RechargeRecordsTabsProps) {
+  const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState<BillingHistoryTab>(defaultTab);
+  const [records, setRecords] = useState<BillingHistoryItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  const loadRecords = useCallback(async (isActive: () => boolean = () => true) => {
+    setIsLoading(true);
+    setLoadError(null);
+    try {
+      const data = await RechargeService.fetchBillingHistory(
+        activeTab === 'all' ? {} : { type: activeTab },
+      );
+      if (isActive()) {
+        setRecords(data);
+      }
+    } catch (error) {
+      if (isActive()) {
+        setRecords([]);
+        setLoadError(getRechargeErrorMessage(error, t('console.recharge.records.errors.loadFallback', 'Billing history loading failed.'), t));
+      }
+    } finally {
+      if (isActive()) {
+        setIsLoading(false);
+      }
+    }
+  }, [activeTab, t]);
+
+  useEffect(() => {
+    let active = true;
+    void loadRecords(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadRecords, refreshSignal]);
+
+  return (
+    <section className="mx-auto w-full overflow-hidden rounded-lg border border-[#303030] bg-[#1f1f1f] text-slate-100 shadow-[0_18px_44px_rgba(0,0,0,0.22)]">
+      <div className="flex flex-col gap-3 border-b border-[#333333] bg-[#202020] p-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-2">
+          <ReceiptText className="h-4 w-4 text-[#1677ff]" />
+          <h2 className="text-sm font-semibold text-white">
+            {t('console.recharge.records.title', 'Billing history')}
+          </h2>
+        </div>
+        <button
+          type="button"
+          onClick={() => { void loadRecords(); }}
+          disabled={isLoading}
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-[#3a3a3a] px-3 text-xs font-semibold text-slate-300 transition-colors hover:border-[#1677ff]/70 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <RefreshCw className={`h-3.5 w-3.5 ${isLoading ? 'animate-spin' : ''}`} />
+          {t('console.recharge.records.refresh', 'Refresh')}
+        </button>
+      </div>
+
+      <div className="grid grid-cols-3 border-b border-[#333333] bg-[#202020]">
+        {rechargeRecordTabs.map(tab => {
+          const selected = activeTab === tab.key;
+          return (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setActiveTab(tab.key)}
+              className={`min-h-11 border-b-2 px-2 text-xs font-semibold transition-colors sm:text-sm ${
+                selected
+                  ? 'border-[#1677ff] bg-white/[0.03] text-white'
+                  : 'border-transparent text-slate-400 hover:bg-white/[0.02] hover:text-slate-100'
+              }`}
+            >
+              {t(tab.labelKey, tab.fallback)}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="min-h-[280px] overflow-x-auto">
+        <table className="w-full table-fixed text-left text-xs">
+          <thead className="border-b border-[#333333] bg-[#1a1a1a] text-slate-400">
+            <tr>
+              <th className="w-[110px] px-4 py-3 font-medium">{t('console.recharge.records.table.type', 'Type')}</th>
+              <th className="w-[180px] px-4 py-3 font-medium">{t('console.recharge.records.table.title', 'Title')}</th>
+              <th className="w-[150px] px-4 py-3 font-medium">{t('console.recharge.records.table.amount', 'Amount')}</th>
+              <th className="w-[160px] px-4 py-3 font-medium">{t('console.recharge.records.table.reference', 'Reference')}</th>
+              <th className="w-[120px] px-4 py-3 font-medium">{t('console.recharge.records.table.status', 'Status')}</th>
+              <th className="w-[210px] px-4 py-3 font-medium">{t('console.recharge.records.table.time', 'Time')}</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[#303030] text-slate-300">
+            {isLoading ? (
+              <RechargeRecordsStateRow
+                colSpan={6}
+                title={t('console.recharge.records.loading', 'Loading billing history...')}
+              />
+            ) : loadError ? (
+              <RechargeRecordsStateRow
+                colSpan={6}
+                title={t('console.recharge.records.loadFailed', 'Billing history loading failed')}
+                description={loadError}
+              />
+            ) : records.length > 0 ? (
+              records.map(record => (
+                <tr key={record.id} className="hover:bg-white/[0.02]">
+                  <td className="px-4 py-3">
+                    <span className="inline-flex rounded border border-[#3a3a3a] px-2 py-0.5 text-[11px] font-semibold text-slate-200">
+                      {billingTypeLabel(record.type, t)}
+                    </span>
+                  </td>
+                  <td className="truncate px-4 py-3 font-medium text-white" title={record.title}>{record.title}</td>
+                  <td className="px-4 py-3">
+                    <div className="font-semibold text-emerald-300">{formatPointsDelta(record.pointsDelta)}</div>
+                    <div className="mt-1 text-[11px] text-slate-500">{formatBillingAmount(record)}</div>
+                  </td>
+                  <td className="truncate px-4 py-3 font-mono text-slate-300" title={billingReference(record)}>{billingReference(record)}</td>
+                  <td className="px-4 py-3">
+                    <span className={`inline-flex rounded px-2 py-0.5 text-[11px] font-semibold ${billingStatusClass(record.status)}`}>
+                      {billingStatusLabel(record.status, t)}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-slate-400">{record.occurredAt}</td>
+                </tr>
+              ))
+            ) : (
+              <RechargeRecordsStateRow
+                colSpan={6}
+                title={t('console.recharge.records.empty', 'No billing history')}
+                description={t('console.recharge.records.emptyHint', 'Recharge and redeem records will appear here.')}
+              />
+            )}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function RechargeRecordsStateRow({ colSpan, title, description }: { colSpan: number; title: string; description?: string }) {
+  return (
+    <tr>
+      <td colSpan={colSpan} className="px-4 py-12 text-center">
+        <div className="mx-auto max-w-sm space-y-1">
+          <div className="text-sm font-semibold text-slate-200">{title}</div>
+          {description ? <div className="text-xs text-slate-500">{description}</div> : null}
+        </div>
+      </td>
+    </tr>
+  );
+}
+
+function billingTypeLabel(type: BillingHistoryItem['type'], t: TranslationFunction): string {
+  return type === 'recharge'
+    ? t('console.recharge.records.type.recharge', 'Recharge')
+    : t('console.recharge.records.type.redeem', 'Redeem');
+}
+
+function billingStatusLabel(status: string, t: TranslationFunction): string {
+  const normalized = status.trim().toLowerCase();
+  if (normalized === 'success' || normalized === 'succeeded' || normalized === 'posted' || normalized === 'redeemed') {
+    return t('console.recharge.records.status.success', 'Success');
+  }
+  if (normalized === 'pending' || normalized === 'processing' || normalized === 'created') {
+    return t('console.recharge.records.status.pending', 'Pending');
+  }
+  if (normalized === 'failed' || normalized === 'closed' || normalized === 'cancelled' || normalized === 'canceled') {
+    return t('console.recharge.records.status.failed', 'Failed');
+  }
+  return status;
+}
+
+function billingStatusClass(status: string): string {
+  const normalized = status.trim().toLowerCase();
+  if (normalized === 'success' || normalized === 'succeeded' || normalized === 'posted' || normalized === 'redeemed') {
+    return 'border border-emerald-500/20 bg-emerald-500/10 text-emerald-300';
+  }
+  if (normalized === 'pending' || normalized === 'processing' || normalized === 'created') {
+    return 'border border-amber-500/20 bg-amber-500/10 text-amber-300';
+  }
+  return 'border border-red-500/20 bg-red-500/10 text-red-300';
+}
+
+function formatPointsDelta(pointsDelta: number): string {
+  const sign = pointsDelta > 0 ? '+' : '';
+  return `${sign}${pointsDelta.toLocaleString('en-US')} pts`;
+}
+
+function formatBillingAmount(record: BillingHistoryItem): string {
+  const currency = record.currencyCode || 'USD';
+  return `${record.amount} ${currency}`;
+}
+
+function billingReference(record: BillingHistoryItem): string {
+  return record.relatedOrderNo || record.referenceNo || record.sourceId || record.historyNo;
 }
 
 function mapRechargePackageToOption(pkg: RechargePackage): RechargeOption {

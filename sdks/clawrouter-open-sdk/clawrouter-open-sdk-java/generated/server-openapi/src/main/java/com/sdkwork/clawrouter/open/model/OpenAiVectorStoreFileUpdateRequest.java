@@ -8,7 +8,7 @@ public class OpenAiVectorStoreFileUpdateRequest {
     public Map<String, String> getAttributes() {
         return this.attributes;
     }
-    
+
     public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }

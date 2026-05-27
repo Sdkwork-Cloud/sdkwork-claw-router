@@ -35,9 +35,47 @@ pub struct AdminAccessGroupItem {
     pub deleted_at: Option<String>,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAccessGroupChannelBindingItem {
+    pub id: i64,
+    pub uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub group_id: i64,
+    pub channel_id: i64,
+    pub channel_name: String,
+    pub provider_code: String,
+    pub provider_name: String,
+    pub channel_code: String,
+    pub models: Vec<String>,
+    pub capabilities: Vec<String>,
+    pub model_scope: Vec<String>,
+    pub priority: i64,
+    pub weight: i64,
+    pub status: String,
+    pub health_status: String,
+    pub deleted_at: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAccessGroupChannelBindingInput {
+    pub channel_id: i64,
+    pub priority: i64,
+    pub weight: i64,
+    pub status: String,
+    pub model_scope: Vec<String>,
+    pub capabilities: Vec<String>,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ListAdminAccessGroupsQuery {
     pub subject: AdminAccessGroupSubject,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ListAdminAccessGroupChannelBindingsQuery {
+    pub subject: AdminAccessGroupSubject,
+    pub group_id: i64,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -87,6 +125,18 @@ pub struct DeleteAdminAccessGroupCommand {
     pub requested_at: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ReplaceAdminAccessGroupChannelBindingsCommand {
+    pub subject: AdminAccessGroupSubject,
+    pub group_id: i64,
+    pub binding_uuids: Vec<String>,
+    pub audit_log_uuid: String,
+    pub config_snapshot_uuid: String,
+    pub items: Vec<AdminAccessGroupChannelBindingInput>,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
 pub trait AdminAccessGroupStore {
     fn list_access_groups<'a>(
         &'a self,
@@ -107,4 +157,14 @@ pub trait AdminAccessGroupStore {
         &'a self,
         command: DeleteAdminAccessGroupCommand,
     ) -> AdminAccessGroupCommandFuture<'a, bool>;
+
+    fn list_channel_bindings<'a>(
+        &'a self,
+        query: ListAdminAccessGroupChannelBindingsQuery,
+    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupChannelBindingItem>>;
+
+    fn replace_channel_bindings<'a>(
+        &'a self,
+        command: ReplaceAdminAccessGroupChannelBindingsCommand,
+    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupChannelBindingItem>>;
 }

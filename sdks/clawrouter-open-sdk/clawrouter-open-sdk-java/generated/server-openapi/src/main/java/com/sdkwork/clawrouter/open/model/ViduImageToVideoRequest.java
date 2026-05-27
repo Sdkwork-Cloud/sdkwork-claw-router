@@ -17,7 +17,7 @@ public class ViduImageToVideoRequest {
     public String getAspectRatio() {
         return this.aspectRatio;
     }
-    
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -25,7 +25,7 @@ public class ViduImageToVideoRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -33,7 +33,7 @@ public class ViduImageToVideoRequest {
     public Integer getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
@@ -41,7 +41,7 @@ public class ViduImageToVideoRequest {
     public List<String> getImages() {
         return this.images;
     }
-    
+
     public void setImages(List<String> images) {
         this.images = images;
     }
@@ -49,7 +49,7 @@ public class ViduImageToVideoRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -57,7 +57,7 @@ public class ViduImageToVideoRequest {
     public String getMovementAmplitude() {
         return this.movementAmplitude;
     }
-    
+
     public void setMovementAmplitude(String movementAmplitude) {
         this.movementAmplitude = movementAmplitude;
     }
@@ -65,7 +65,7 @@ public class ViduImageToVideoRequest {
     public String getPayload() {
         return this.payload;
     }
-    
+
     public void setPayload(String payload) {
         this.payload = payload;
     }
@@ -73,7 +73,7 @@ public class ViduImageToVideoRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -81,7 +81,7 @@ public class ViduImageToVideoRequest {
     public String getResolution() {
         return this.resolution;
     }
-    
+
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
@@ -89,7 +89,7 @@ public class ViduImageToVideoRequest {
     public Integer getSeed() {
         return this.seed;
     }
-    
+
     public void setSeed(Integer seed) {
         this.seed = seed;
     }

@@ -25,7 +25,7 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertIsNone(fetch_channels.get("request_schema"))
 
         self.assertEqual("AdminChannelCreateRequest", add_channel["request_schema"]["name"])
-        self.assertEqual(["name", "vendor", "secretRef", "models"], add_channel["request_schema"]["schema"]["required"])
+        self.assertEqual(["name", "vendor", "apiKey", "models"], add_channel["request_schema"]["schema"]["required"])
         self.assertIn("retryPolicy", add_channel["request_schema"]["schema"]["properties"])
         self.assertIn("timeoutMs", add_channel["request_schema"]["schema"]["properties"])
         retry_policy = add_channel["request_schema"]["schema"]["properties"]["retryPolicy"]
@@ -180,14 +180,23 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("Partial<\n  Omit<ChannelItem", service)
         self.assertNotIn("Partial<ChannelItem>", view)
         self.assertIn("createChannelInputFromForm", view)
+        self.assertIn("createChannelCopyDraft", view)
+        self.assertIn("createChannelEditDraft", view)
         self.assertIn("createChannelUpdateInputFromForm", view)
         self.assertIn("createChannelStatusUpdateInput", view)
         self.assertIn("ChannelService.addChannel(createChannelInputFromForm(channel))", view)
         self.assertIn("ChannelService.updateChannel(editingChannel.id, createChannelUpdateInputFromForm(channel))", view)
         self.assertIn("createChannelStatusUpdateInput(channel.status === 'active' ? 'disabled' : 'active')", view)
         self.assertIn("export function createChannelInputFromForm", form)
+        self.assertIn("export function createChannelCopyDraft", form)
+        self.assertIn("export function createChannelEditDraft", form)
         self.assertIn("export function createChannelUpdateInputFromForm", form)
         self.assertIn("export function createChannelStatusUpdateInput", form)
+        self.assertIn("type ModalMode = 'create' | 'copy' | 'edit'", view)
+        self.assertIn("const openCopyCreateModal = (channel: ChannelItem)", view)
+        self.assertIn("setChannelFormDraft(createChannelCopyDraft(channel))", view)
+        self.assertIn("admin.channel.actions.copyCreateChannel", view)
+        self.assertIn("admin.channel.modals.copyChannelTitle", view)
         self.assertNotIn("Date.now()", view)
         self.assertNotIn("Math.random()", view)
         self.assertNotIn("Date.now()", form)
@@ -230,18 +239,20 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
             self.assertIn(token, form)
             self.assertIn(token.replace("export function ", ""), runtime_test)
 
-        self.assertIn("type ProviderSecretFormValues", view)
-        self.assertIn("onSubmit: (secret: ProviderSecretFormValues) => Promise<void>;", view)
-        self.assertIn("ProviderSecretService.addProviderSecret(createProviderSecretInputFromForm(secret))", view)
-        self.assertIn(
+        self.assertIn("ProviderSecretService.fetchProviderSecrets()", view)
+        self.assertIn("function CredentialDetailsModal", view)
+        self.assertIn("findCredentialForChannel", view)
+        self.assertNotIn("function ProviderSecretModal", view)
+        self.assertNotIn("secretModalMode", view)
+        self.assertNotIn("ProviderSecretService.addProviderSecret(createProviderSecretInputFromForm(secret))", view)
+        self.assertNotIn(
             "ProviderSecretService.updateProviderSecret(editingSecret.id, createProviderSecretUpdateInputFromForm(secret))",
             view,
         )
-        self.assertIn(
+        self.assertNotIn(
             "ProviderSecretService.updateProviderSecret(secret.id, createProviderSecretStatusUpdateInput(nextStatus))",
             view,
         )
-        self.assertNotIn("ProviderSecretService.updateProviderSecret(secret.id, { status: nextStatus })", view)
 
     def test_admin_channel_model_picker_uses_runtime_model_ids(self) -> None:
         source_dir = (
@@ -290,12 +301,12 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("readRequiredApiItem(result, 'Channel test response is missing channel data', ['item'])", service)
         self.assertNotIn("emptyTestChannelRequest", service)
         self.assertNotIn("TestChannelRequest", service)
-        self.assertNotIn("secretRef: readOptionalString(item, 'secretRef')", service.split("function normalizeChannel", 1)[1])
+        self.assertIn("secretRef: readOptionalString(item, 'secretRef')", service.split("function normalizeChannel", 1)[1])
 
         self.assertIn("const handleTestChannel = async (id: string)", ui)
         self.assertIn("await ChannelService.testChannel(id)", ui)
         self.assertIn("result.item", ui)
-        self.assertIn("title=\"Test channel\"", ui)
+        self.assertIn("title={t('admin.channel.actions.testChannel')}", ui)
         self.assertIn("<Network className=\"w-4 h-4\" />", ui)
 
         self.assertIn("operation: testChannel", contract)
@@ -335,7 +346,6 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("ConfirmDialog", ui)
         self.assertIn("deleteConfirmation", ui)
         self.assertIn("openDeleteChannelConfirmation", ui)
-        self.assertIn("openDeleteProviderSecretConfirmation", ui)
         self.assertIn("executeConfirmedDelete", ui)
         self.assertIn("onConfirm={() => void executeConfirmedDelete()}", ui)
         self.assertIn("onCancel={closeDeleteConfirmation}", ui)

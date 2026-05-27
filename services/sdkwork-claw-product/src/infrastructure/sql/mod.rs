@@ -14,9 +14,13 @@ pub mod rows;
 pub(crate) mod skills_seed;
 pub(crate) mod sql_admin_analytics;
 pub(crate) mod sql_admin_auth_settings;
+pub(crate) mod sql_admin_messaging;
+pub(crate) mod sql_admin_service_provider;
+pub(crate) mod sql_admin_storage;
 pub(crate) mod sql_hash;
 pub(crate) mod sql_model_rankings;
 pub(crate) mod sql_site_settings;
 pub mod sqlite;
+pub(crate) mod verification_delivery_queue;
 
 pub use queries::PricingCatalogSql;

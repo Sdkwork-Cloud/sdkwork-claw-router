@@ -7,7 +7,7 @@ public class AgentsApi {
         self.client = client
     }
 
-    /// List user agents
+    /// List Playground agent definitions
     public func agentDefinitionsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil) async throws -> AgentDefinitionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -17,7 +17,7 @@ public class AgentsApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents"), query), responseType: AgentDefinitionsListResult.self)
     }
 
-    /// Create user agent
+    /// Create Playground agent definition
     public func agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentDefinitionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
@@ -29,12 +29,12 @@ public class AgentsApi {
         return try await client.post(ApiPaths.appPath("/agents"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentDefinitionsCreateResult.self)
     }
 
-    /// Retrieve agent run
+    /// Retrieve Playground agent run
     public func agentRunsRetrieve(runId: String) async throws -> AgentRunsRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))"), responseType: AgentRunsRetrieveResult.self)
     }
 
-    /// Complete agent run
+    /// Complete Playground agent run
     public func agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunsSubmitResult? {
         let requestHeaders = buildRequestHeaders(
             [
@@ -46,7 +46,7 @@ public class AgentsApi {
         return try await client.post(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/complete"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunsSubmitResult.self)
     }
 
-    /// List agent run steps
+    /// List Playground agent run steps
     public func agentRunStepsList(runId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentRunStepsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -55,7 +55,7 @@ public class AgentsApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/steps"), query), responseType: AgentRunStepsListResult.self)
     }
 
-    /// Create agent run step
+    /// Create Playground agent run step
     public func agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunStepsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
@@ -67,7 +67,7 @@ public class AgentsApi {
         return try await client.post(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/steps"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunStepsCreateResult.self)
     }
 
-    /// Complete agent run step
+    /// Complete Playground agent run step
     public func agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunStepsSubmitResult? {
         let requestHeaders = buildRequestHeaders(
             [
@@ -79,12 +79,12 @@ public class AgentsApi {
         return try await client.post(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/steps/\(serializePathParameter(stepId, PathParameterSpec(name: "stepId", style: "simple", explode: false)))/complete"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunStepsSubmitResult.self)
     }
 
-    /// Retrieve agent session
+    /// Retrieve Playground agent session
     public func agentSessionsRetrieve(sessionId: String) async throws -> AgentSessionsRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/agents/sessions/\(serializePathParameter(sessionId, PathParameterSpec(name: "sessionId", style: "simple", explode: false)))"), responseType: AgentSessionsRetrieveResult.self)
     }
 
-    /// List agent session runs
+    /// List Playground agent runs
     public func agentRunsList(sessionId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentRunsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -93,7 +93,7 @@ public class AgentsApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/sessions/\(serializePathParameter(sessionId, PathParameterSpec(name: "sessionId", style: "simple", explode: false)))/runs"), query), responseType: AgentRunsListResult.self)
     }
 
-    /// Create agent run
+    /// Create Playground agent run
     public func agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
@@ -105,12 +105,12 @@ public class AgentsApi {
         return try await client.post(ApiPaths.appPath("/agents/sessions/\(serializePathParameter(sessionId, PathParameterSpec(name: "sessionId", style: "simple", explode: false)))/runs"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunsCreateResult.self)
     }
 
-    /// Retrieve user agent
+    /// Retrieve Playground agent definition
     public func agentDefinitionsRetrieve(agentId: String) async throws -> AgentDefinitionsRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))"), responseType: AgentDefinitionsRetrieveResult.self)
     }
 
-    /// List agent sessions
+    /// List Playground agent sessions
     public func agentSessionsList(agentId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentSessionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -119,7 +119,7 @@ public class AgentsApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))/sessions"), query), responseType: AgentSessionsListResult.self)
     }
 
-    /// Create agent session
+    /// Create Playground agent session
     public func agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentSessionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [

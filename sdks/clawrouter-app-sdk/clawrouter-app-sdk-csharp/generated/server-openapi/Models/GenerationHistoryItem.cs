@@ -14,6 +14,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public List<string>? Images { get; set; }
         public string? ModelCatalogKey { get; set; }
         public string? ModelInfo { get; set; }
+        public string? OutputText { get; set; }
         public string? Prompt { get; set; }
         public string? Status { get; set; }
         public string? Type { get; set; }

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { ShieldAlert, Plus, Search, Globe, Key, Database, X, Lock, Gauge, Trash2, Loader2, AlertTriangle } from 'lucide-react';
+import { Plus, Search, Globe, Key, Database, X, Lock, Gauge, Trash2, Loader2, AlertTriangle } from 'lucide-react';
 import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { RateLimitService, IpLimitRule, TokenLimitRule, ModelLimitRule, FirewallRule } from './ratelimitService';
 import {
@@ -62,12 +62,6 @@ export function RateLimitAdmin() {
       <div className="flex min-h-0 flex-1 overflow-hidden">
       {/* Internal Sidebar */}
       <div className="w-64 border-r border-slate-200 dark:border-white/10 flex flex-col bg-slate-50 dark:bg-[#121212] shrink-0">
-        <div className="p-5 border-b border-slate-200 dark:border-white/10">
-          <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <ShieldAlert className="w-5 h-5 text-red-500" />
-            {t("admin.ratelimit.index.text.1q9or2q", "限流与安全风控")}</h2>
-          <p className="text-xs text-slate-500 mt-1">{t("admin.ratelimit.index.text.1s2axdq", "全局流量控制及访问频率防护规则")}</p>
-        </div>
         <div className="flex-1 py-4 flex flex-col gap-1 px-3 overflow-y-auto">
           {RATELIMIT_TABS.map(tab => (
             <button

@@ -7,8 +7,8 @@ This specification defines the next iteration of the admin Membership Center in
 
 The implementation must complete the admin-facing CRUD and status-management
 workflows that are already backed by the generated backend SDK and the standard
-appbase commerce membership APIs. It must not create a parallel VIP, billing, or
-membership compatibility system.
+appbase commerce membership APIs. It must not create a parallel member-center, billing, or
+compatibility system.
 
 The user confirmed this scope on 2026-05-23:
 
@@ -46,7 +46,7 @@ membership business surface:
 - Do not hand-edit generated SDK output.
 - Do not add raw `fetch`, `axios`, `XMLHttpRequest`, string-built backend URLs,
   manual auth headers, or backend-local SDK forks in the portal.
-- Do not add `/vip`, `/billing/vip`, or legacy billing compatibility routes.
+- Do not add `/memberships`, `/billing/memberships`, or legacy billing compatibility routes.
 - Do not change the visual language of the admin console. The work should use
   the existing table, button, badge, modal/drawer, loading, error, and empty-state
   patterns already used by the portal.
@@ -186,7 +186,7 @@ Responsibilities:
 
 ### Membership Package Groups Page
 
-The package group page manages `commerce_membership_package_group`.
+The package group page manages `membership_package_group`.
 
 Capabilities:
 
@@ -212,7 +212,7 @@ loaded, package count can be derived by also loading packages and grouping by
 
 ### Membership Packages Page
 
-The package page manages `commerce_membership_package`.
+The package page manages `membership_package`.
 
 Capabilities:
 
@@ -241,7 +241,7 @@ positive duration.
 
 ### Membership Plans Page
 
-The plan page manages `commerce_membership_plan`.
+The plan page manages `membership_plan`.
 
 Capabilities:
 
@@ -274,7 +274,7 @@ benefits, it should send an empty benefits array intentionally.
 
 ### Membership Members Page
 
-The members page manages status changes for `commerce_membership`.
+The members page manages status changes for `membership_subscription`.
 
 Capabilities:
 
@@ -298,7 +298,7 @@ purchase and fulfillment flows.
 ### Membership Entitlements Page
 
 The entitlements page is a read-only audit page for
-`commerce_membership_entitlement`.
+`entitlement_grant`.
 
 Capabilities:
 
@@ -505,11 +505,11 @@ The existing complete checks can delegate to the diagnostic check and return
 
 | Area | Data source | Admin behavior | Initialization check |
 | --- | --- | --- | --- |
-| Membership plans | `commerce_membership_plan` | list/create/edit/disable | required seeded plans active |
-| Package groups | `commerce_membership_package_group` | list/create/edit/disable | required seeded groups active |
-| Packages | `commerce_membership_package`, `commerce_product_sku` | list/create/edit/disable | required packages, plan/group/sku links |
-| Members | `commerce_membership` | list/status update | purchase-created data, no seed requirement |
-| Entitlements | `commerce_membership_entitlement` | read-only list/filter | purchase-created data, no seed requirement |
+| Membership plans | `membership_plan` | list/create/edit/disable | required seeded plans active |
+| Package groups | `membership_package_group` | list/create/edit/disable | required seeded groups active |
+| Packages | `membership_package`, `commerce_product_sku` | list/create/edit/disable | required packages, plan/group/sku links |
+| Members | `membership_subscription` | list/status update | purchase-created data, no seed requirement |
+| Entitlements | `entitlement_grant` | read-only list/filter | purchase-created data, no seed requirement |
 | Recharge packages | `commerce_recharge_package`, `commerce_product_sku` | list/create/edit/disable | required packages and SKU links |
 | Payment methods | `commerce_payment_method` | not edited here | required seed methods active |
 
@@ -553,8 +553,8 @@ Rust SQLx tests should verify:
 Expected verification commands:
 
 ```powershell
-node --test admin-membership-recharge-runtime.test.ts admin-vip-entitlement-runtime.test.ts vip-runtime.test.ts
-cargo test -p sdkwork_commerce_membership_sqlx --test membership_sqlx_standard
+node --test admin-membership-recharge-runtime.test.ts admin-membership-entitlement-runtime.test.ts membership-runtime.test.ts
+cargo test -p sdkwork_membership_subscription_sqlx --test membership_sqlx_standard
 pnpm --dir apps/sdkwork-claw-router-portal typecheck
 python -B -m tools.schema_quality_gate
 ```

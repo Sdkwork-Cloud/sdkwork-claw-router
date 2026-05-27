@@ -15,7 +15,7 @@ public class OpenAiUpload {
     public Integer getBytes() {
         return this.bytes;
     }
-    
+
     public void setBytes(Integer bytes) {
         this.bytes = bytes;
     }
@@ -23,7 +23,7 @@ public class OpenAiUpload {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -31,7 +31,7 @@ public class OpenAiUpload {
     public Integer getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(Integer expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -39,7 +39,7 @@ public class OpenAiUpload {
     public OpenAiFile getFile() {
         return this.file;
     }
-    
+
     public void setFile(OpenAiFile file) {
         this.file = file;
     }
@@ -47,7 +47,7 @@ public class OpenAiUpload {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -55,7 +55,7 @@ public class OpenAiUpload {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,7 +63,7 @@ public class OpenAiUpload {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -71,7 +71,7 @@ public class OpenAiUpload {
     public String getPurpose() {
         return this.purpose;
     }
-    
+
     public void setPurpose(String purpose) {
         this.purpose = purpose;
     }
@@ -79,7 +79,7 @@ public class OpenAiUpload {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

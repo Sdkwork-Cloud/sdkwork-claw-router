@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class FilesAnthropicApi {
     private final HttpClient client;
-    
+
     public FilesAnthropicApi(HttpClient client) {
         this.client = client;
     }

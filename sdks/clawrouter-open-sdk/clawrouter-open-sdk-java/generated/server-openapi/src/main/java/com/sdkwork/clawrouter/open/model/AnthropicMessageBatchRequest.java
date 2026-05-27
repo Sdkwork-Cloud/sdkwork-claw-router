@@ -8,7 +8,7 @@ public class AnthropicMessageBatchRequest {
     public String getCustomId() {
         return this.customId;
     }
-    
+
     public void setCustomId(String customId) {
         this.customId = customId;
     }
@@ -16,7 +16,7 @@ public class AnthropicMessageBatchRequest {
     public AnthropicMessageCreateRequest getParams() {
         return this.params;
     }
-    
+
     public void setParams(AnthropicMessageCreateRequest params) {
         this.params = params;
     }

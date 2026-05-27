@@ -18,7 +18,7 @@ export type ModelPricing = {
   reason?: string;
 };
 
-export type ModelGroupKey = 'default' | 'vip' | 'enterprise' | 'beta';
+export type ModelGroupKey = string;
 export type ModelCategoryKey = 'Recommended' | 'Open Source' | 'Proprietary' | 'Free' | 'New';
 
 export type Model = {

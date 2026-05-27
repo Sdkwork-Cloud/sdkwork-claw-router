@@ -349,16 +349,16 @@ export function createSdkworkWalletService(
         pointsToCashRatePayload,
         rechargePackagesPayload,
       ] = await Promise.all([
-        commerceService.account.summary.retrieve(),
-        commerceService.account.points.history.list({
+        commerceService.accounts.current.summary.retrieve(),
+        commerceService.wallet.ledgerEntries.points.list({
               pageNum: 1,
               pageSize,
               sortDirection: "desc",
               sortField: "createdAt",
         }),
-        commerceService.account.points.retrieve(),
-        commerceService.account.points.exchangeRate.retrieve(),
-        commerceService.account.points.recharges.packages.list(),
+        commerceService.wallet.accounts.points.retrieve(),
+        commerceService.wallet.exchangeRate.retrieve(),
+        commerceService.recharges.packages.list(),
       ]);
       const summary = unwrapSdkworkCommerceResponse<RemoteAccountSummary | null>(summaryPayload);
       const historyPage = unwrapSdkworkCommerceResponse<{ content?: RemoteHistoryItem[] }>(historyPagePayload);
@@ -378,7 +378,7 @@ export function createSdkworkWalletService(
     async rechargePoints(input) {
       requireSdkworkCommerceSession("Please sign in to manage wallet balances.");
       const result = unwrapSdkworkCommerceResponse<RemoteRechargeResult>(
-        await getCommerceService().account.points.recharges.create({
+        await getCommerceService().recharges.orders.create({
           paymentMethod: toSdkworkCommerceOptionalString(input.paymentMethod),
           points: input.points,
           remarks: toSdkworkCommerceOptionalString(input.remarks),
@@ -423,7 +423,7 @@ export function createSdkworkWalletService(
       }
 
       const result = unwrapSdkworkCommerceResponse<RemoteWithdrawResult>(
-        await getCommerceService().wallet.withdrawals.create({
+        await getCommerceService().wallet.withdrawalTransfers.create({
           accountName,
           accountNo,
           amount: input.amountCny,

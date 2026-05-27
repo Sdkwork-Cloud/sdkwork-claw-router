@@ -1,8 +1,8 @@
 use crate::domain::{DomainError, DomainResult};
 use std::ops::Add;
 
-const SCALE: u32 = 9;
-const SCALE_FACTOR: i128 = 1_000_000_000;
+const SCALE: u32 = 12;
+const SCALE_FACTOR: i128 = 1_000_000_000_000;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct DecimalValue {
@@ -45,9 +45,17 @@ impl DecimalValue {
     }
 
     pub fn multiply(self, multiplier: Self) -> Self {
-        Self {
-            scaled: self.scaled * multiplier.scaled / SCALE_FACTOR,
-        }
+        self.checked_multiply(multiplier)
+            .expect("decimal multiplication overflow")
+    }
+
+    pub fn checked_multiply(self, multiplier: Self) -> DomainResult<Self> {
+        let scaled = self
+            .scaled
+            .checked_mul(multiplier.scaled)
+            .map(|value| value / SCALE_FACTOR)
+            .ok_or_else(|| DomainError::new("decimal multiplication overflow"))?;
+        decimal_from_scaled(scaled, "decimal multiplication overflow")
     }
 
     pub fn multiply_i64(self, quantity: i64) -> DomainResult<Self> {
@@ -58,13 +66,49 @@ impl DecimalValue {
             .scaled
             .checked_mul(quantity as i128)
             .ok_or_else(|| DomainError::new("decimal multiplication overflow"))?;
-        Ok(Self { scaled })
+        decimal_from_scaled(scaled, "decimal multiplication overflow")
+    }
+
+    pub fn divide_i64(self, divisor: i64) -> DomainResult<Self> {
+        if divisor <= 0 {
+            return Err(DomainError::new("decimal divisor must be positive"));
+        }
+        Ok(Self {
+            scaled: self.scaled / divisor as i128,
+        })
+    }
+
+    pub fn checked_divide(self, divisor: Self) -> DomainResult<Self> {
+        if divisor <= Self::ZERO {
+            return Err(DomainError::new("decimal divisor must be positive"));
+        }
+        let scaled = self
+            .scaled
+            .checked_mul(SCALE_FACTOR)
+            .and_then(|value| value.checked_div(divisor.scaled))
+            .ok_or_else(|| DomainError::new("decimal division overflow"))?;
+        decimal_from_scaled(scaled, "decimal division overflow")
     }
 
     pub fn subtract(self, amount: Self) -> Self {
-        Self {
-            scaled: self.scaled - amount.scaled,
-        }
+        self.checked_subtract(amount)
+            .expect("decimal subtraction overflow")
+    }
+
+    pub fn checked_add(self, amount: Self) -> DomainResult<Self> {
+        let scaled = self
+            .scaled
+            .checked_add(amount.scaled)
+            .ok_or_else(|| DomainError::new("decimal addition overflow"))?;
+        decimal_from_scaled(scaled, "decimal addition overflow")
+    }
+
+    pub fn checked_subtract(self, amount: Self) -> DomainResult<Self> {
+        let scaled = self
+            .scaled
+            .checked_sub(amount.scaled)
+            .ok_or_else(|| DomainError::new("decimal subtraction overflow"))?;
+        decimal_from_scaled(scaled, "decimal subtraction overflow")
     }
 
     pub fn is_zero(self) -> bool {
@@ -90,9 +134,7 @@ impl Add for DecimalValue {
     type Output = Self;
 
     fn add(self, amount: Self) -> Self::Output {
-        Self {
-            scaled: self.scaled + amount.scaled,
-        }
+        self.checked_add(amount).expect("decimal addition overflow")
     }
 }
 
@@ -125,23 +167,28 @@ impl Money {
     }
 
     pub fn multiply(&self, multiplier: DecimalValue) -> Self {
-        Self {
+        self.checked_multiply(multiplier)
+            .expect("money multiplication overflow")
+    }
+
+    pub fn checked_multiply(&self, multiplier: DecimalValue) -> DomainResult<Self> {
+        Ok(Self {
             currency: self.currency.clone(),
-            unit_price: self.unit_price.multiply(multiplier),
-        }
+            unit_price: self.unit_price.checked_multiply(multiplier)?,
+        })
     }
 
     pub fn add(&self, amount: &Self) -> DomainResult<Self> {
         self.ensure_same_currency(amount)?;
         Ok(Self {
             currency: self.currency.clone(),
-            unit_price: self.unit_price + amount.unit_price,
+            unit_price: self.unit_price.checked_add(amount.unit_price)?,
         })
     }
 
     pub fn subtract(&self, amount: &Self) -> DomainResult<DecimalValue> {
         self.ensure_same_currency(amount)?;
-        Ok(self.unit_price.subtract(amount.unit_price))
+        self.unit_price.checked_subtract(amount.unit_price)
     }
 
     pub fn to_fixed_string(&self, digits: u32) -> String {
@@ -178,4 +225,11 @@ fn parse_fraction(value: &str, original: &str) -> DomainResult<i128> {
         padded.push('0');
     }
     parse_digits(&padded, original)
+}
+
+fn decimal_from_scaled(scaled: i128, overflow_message: &str) -> DomainResult<DecimalValue> {
+    if scaled == i128::MIN {
+        return Err(DomainError::new(overflow_message));
+    }
+    Ok(DecimalValue { scaled })
 }

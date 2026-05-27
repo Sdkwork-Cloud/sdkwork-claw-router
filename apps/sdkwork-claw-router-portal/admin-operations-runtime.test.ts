@@ -13,6 +13,7 @@ import { MonitorService } from "./packages/sdkwork-claw-router-admin-monitor/src
 import { createModelInputFromForm, updateModelInputFromForm } from "./packages/sdkwork-claw-router-admin-model/src/modelForm.ts";
 import { ModelService, type Model } from "./packages/sdkwork-claw-router-admin-model/src/modelService.ts";
 import { RecordService } from "./packages/sdkwork-claw-router-admin-record/src/recordService.ts";
+import { ServiceNodeService } from "./packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts";
 import { SiteSettingsService } from "./packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts";
 
 const originalFetch = globalThis.fetch;
@@ -88,6 +89,76 @@ function readAdminFinanceSource(): string {
   );
 }
 
+function readAdminPaymentsSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-payments/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminWalletSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-wallet/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminCatalogSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-catalog/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminMarketingSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-marketing/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminOrdersSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-orders/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminInventorySource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-inventory/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminMessagingSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-messaging/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminServiceProviderSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-service-provider/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminServiceNodesSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-service-nodes/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminServiceNodesServiceSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts", import.meta.url),
+    "utf8",
+  );
+}
+
 function readAdminDashboardSource(): string {
   return readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-dashboard/src/index.tsx", import.meta.url),
@@ -110,18 +181,85 @@ function readAdminAnalyticsServiceSource(): string {
 }
 
 function readI18nSource(): string {
-  return readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
-    "utf8",
-  );
+  return [
+    "./packages/sdkwork-claw-router-i18n/src/index.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/index.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/site-settings.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/analytics-record.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/service-nodes.ts",
+  ].map((path) => readFileSync(new URL(path, import.meta.url), "utf8")).join("\n");
 }
 
 function readAdminLayoutSource(): string {
   return readFileSync(new URL("./src/AdminLayout.tsx", import.meta.url), "utf8");
 }
 
+function readAdminModuleRegistrySource(): string {
+  return readFileSync(new URL("./src/adminModuleRegistry.ts", import.meta.url), "utf8");
+}
+
+function readAdminResourceCenterSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-commons/src/components/AdminResourceCenter.tsx", import.meta.url), "utf8");
+}
+
+function readAdminStoragePageShellSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-file-platform/src/components/StoragePageShell.tsx", import.meta.url), "utf8");
+}
+
+function readAdminCoursePageShellSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-courses/src/components/CoursePageShell.tsx", import.meta.url), "utf8");
+}
+
+function readAdminMembershipPageShellSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipAdminPageShell.tsx", import.meta.url), "utf8");
+}
+
+function readAdminAuthSettingsSource(): string {
+  return readFileSync(new URL("./src/auth/ClawRouterAuthSettingsPage.tsx", import.meta.url), "utf8");
+}
+
+function readAdminDriveSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-file-platform/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminCourseEntrySource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-courses/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminMembershipsSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-memberships/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminRateLimitSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-ratelimit/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminGroupSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminWechatOfficialSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-wechat-official-account/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminWechatMiniSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-admin-wechat-mini-program/src/index.tsx", import.meta.url), "utf8");
+}
+
+function readAdminAppCenterSource(): string {
+  return readFileSync(new URL("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx", import.meta.url), "utf8");
+}
+
 function readAppSource(): string {
   return readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
+}
+
+function assertAdminResourceCenterHasNoPageHeaderProps(source: string, label: string): void {
+  const match = source.match(/<AdminResourceCenter(?:<[^>]+>)?[\s\S]*?\/>/);
+  assert.ok(match, `${label} must render AdminResourceCenter`);
+  const resourceCenterUsage = match[0];
+  assert.doesNotMatch(resourceCenterUsage, /\n\s+(?:title|description|icon)=\{/, `${label} must not pass duplicate page header props`);
 }
 
 function readAdminAnalyticsContractSource(): string {
@@ -243,8 +381,92 @@ function emptyAdminAnalyticsFixture(overrides: Record<string, unknown> = {}): Re
   });
 }
 
-test("admin site settings uses generated backend SDK and is reachable from admin navigation", async () => {
+test("admin routed pages use compact 5px chrome and avoid duplicate page title headers", () => {
   const adminLayoutSource = readAdminLayoutSource();
+  const resourceCenterSource = readAdminResourceCenterSource();
+  const storageShellSource = readAdminStoragePageShellSource();
+  const courseShellSource = readAdminCoursePageShellSource();
+  const membershipShellSource = readAdminMembershipPageShellSource();
+  const authSettingsSource = readAdminAuthSettingsSource();
+  const driveSource = readAdminDriveSource();
+  const courseEntrySource = readAdminCourseEntrySource();
+  const membershipsSource = readAdminMembershipsSource();
+  const recordSource = readAdminRecordSource();
+  const rateLimitSource = readAdminRateLimitSource();
+  const groupSource = readAdminGroupSource();
+  const monitorSource = readAdminMonitorSource();
+  const financeSource = readAdminFinanceSource();
+  const paymentsSource = readAdminPaymentsSource();
+  const walletSource = readAdminWalletSource();
+  const catalogSource = readAdminCatalogSource();
+  const marketingSource = readAdminMarketingSource();
+  const ordersSource = readAdminOrdersSource();
+  const inventorySource = readAdminInventorySource();
+  const messagingSource = readAdminMessagingSource();
+  const serviceProviderSource = readAdminServiceProviderSource();
+  const wechatOfficialSource = readAdminWechatOfficialSource();
+  const wechatMiniSource = readAdminWechatMiniSource();
+  const appCenterSource = readAdminAppCenterSource();
+  const announcementSource = readFileSync(new URL("./packages/sdkwork-claw-router-admin-announcement/src/index.tsx", import.meta.url), "utf8");
+
+  assert.match(adminLayoutSource, /className="[^"]*flex[^"]*min-h-0[^"]*flex-1[^"]*flex-col[^"]*p-\[5px\][^"]*"/);
+  assert.doesNotMatch(adminLayoutSource, /className="[^"]*(?:p-6|md:p-8|lg:p-8)[^"]*"/);
+
+  assert.doesNotMatch(resourceCenterSource, /<h2[^>]*>\s*\{icon\}\s*\{title\}\s*<\/h2>/);
+  assert.doesNotMatch(resourceCenterSource, /<p[^>]*>\{description\}<\/p>/);
+  assert.doesNotMatch(resourceCenterSource, /<h3[^>]*>\{activeSection\.title\}<\/h3>/);
+  assert.doesNotMatch(resourceCenterSource, /\{activeSection\.description\}/);
+  const resourceCenterProps = resourceCenterSource.match(/export interface AdminResourceCenterProps[\s\S]*?\n}/)?.[0] ?? "";
+  assert.ok(resourceCenterProps, "AdminResourceCenterProps must be declared");
+  assert.doesNotMatch(resourceCenterProps, /\n\s+(?:title|description|icon):/, "AdminResourceCenterProps must not expose page header props");
+
+  for (const [label, source] of [
+    ["finance admin", financeSource],
+    ["payments admin", paymentsSource],
+    ["wallet admin", walletSource],
+    ["catalog admin", catalogSource],
+    ["marketing admin", marketingSource],
+    ["orders admin", ordersSource],
+    ["inventory admin", inventorySource],
+    ["messaging admin", messagingSource],
+    ["service provider admin", serviceProviderSource],
+  ] as const) {
+    assertAdminResourceCenterHasNoPageHeaderProps(source, label);
+  }
+
+  for (const source of [storageShellSource, courseShellSource, membershipShellSource]) {
+    assert.doesNotMatch(source, /<h3[^>]*>\{title\}<\/h3>/);
+    assert.doesNotMatch(source, /\{description\}/);
+    assert.doesNotMatch(source, /\n\s+(?:title|description): string/);
+  }
+
+  assert.doesNotMatch(authSettingsSource, /<h2[\s\S]*admin\.authSettings\.title/);
+  assert.doesNotMatch(authSettingsSource, /admin\.authSettings\.description/);
+  assert.doesNotMatch(driveSource, /<h1[\s\S]*admin\.filePlatform\.drive\.title/);
+  assert.doesNotMatch(driveSource, /admin\.filePlatform\.drive\.desc/);
+  assert.doesNotMatch(announcementSource, /<h2[\s\S]*admin\.announcement\.title/);
+  assert.doesNotMatch(announcementSource, /admin\.announcement\.subtitle/);
+  assert.doesNotMatch(courseEntrySource, /<h2[\s\S]*admin\.courses\.title/);
+  assert.doesNotMatch(courseEntrySource, /admin\.courses\.subtitle/);
+  assert.doesNotMatch(membershipsSource, /<h2[\s\S]*admin\.commerce\.memberships\.title/);
+  assert.doesNotMatch(membershipsSource, /admin\.commerce\.memberships\.desc/);
+  assert.doesNotMatch(recordSource, /<h1[\s\S]*admin\.record\.index\.text\.1trrvl5/);
+  assert.doesNotMatch(recordSource, /admin\.record\.index\.text\.knx8o5/);
+  assert.doesNotMatch(rateLimitSource, /<h2[\s\S]*admin\.ratelimit\.index\.text\.1q9or2q/);
+  assert.doesNotMatch(rateLimitSource, /admin\.ratelimit\.index\.text\.1s2axdq/);
+  assert.doesNotMatch(groupSource, /flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden/);
+  assert.doesNotMatch(monitorSource, /flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden/);
+  assert.doesNotMatch(messagingSource, /h-\[calc\(100vh-/);
+  assert.doesNotMatch(wechatOfficialSource, /admin\.openPlatform\.wechatOfficial\.title/);
+  assert.doesNotMatch(wechatOfficialSource, /admin\.openPlatform\.wechatOfficial\.subtitle/);
+  assert.doesNotMatch(wechatMiniSource, /admin\.openPlatform\.wechatMini\.title/);
+  assert.doesNotMatch(wechatMiniSource, /admin\.openPlatform\.wechatMini\.subtitle/);
+  assert.doesNotMatch(appCenterSource, /<h2[\s\S]*admin\.app\.title/);
+  assert.doesNotMatch(appCenterSource, /admin\.app\.subtitle/);
+});
+
+test("admin site settings uses generated backend SDK and is reachable from admin navigation", async () => {
+  const adminModuleRegistrySource = readAdminModuleRegistrySource();
   const appSource = readAppSource();
   const i18nSource = readI18nSource();
   const contractSource = readFrontendContractSource();
@@ -254,7 +476,7 @@ test("admin site settings uses generated backend SDK and is reachable from admin
     "admin.menu.ops.system",
     "admin.menu.siteSettings",
   ]) {
-    assert.ok(adminLayoutSource.includes(marker), `missing admin site navigation marker: ${marker}`);
+    assert.ok(adminModuleRegistrySource.includes(marker), `missing admin site navigation marker: ${marker}`);
   }
 
   assert.ok(appSource.includes("ClawRouterSiteSettingsPage"), "App routes must lazy-load the site settings page");
@@ -327,8 +549,8 @@ test("admin site settings uses generated backend SDK and is reachable from admin
 
 test("admin open platform account management is reachable from admin navigation", () => {
   const appSource = readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
-  const adminLayoutSource = readAdminLayoutSource();
-  const i18nSource = readFileSync(new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url), "utf8");
+  const adminModuleRegistrySource = readAdminModuleRegistrySource();
+  const i18nSource = readI18nSource();
   const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as {
     dependencies: Record<string, string>;
   };
@@ -338,11 +560,11 @@ test("admin open platform account management is reachable from admin navigation"
   assert.match(appSource, /const WechatOfficialAccountAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-claw-router-admin-wechat-official-account'\), 'WechatOfficialAccountAdmin'\);/);
   assert.match(appSource, /const WechatMiniProgramAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-claw-router-admin-wechat-mini-program'\), 'WechatMiniProgramAdmin'\);/);
   assert.match(appSource, /<Route path="open-platform" element=\{<Navigate to="\/admin\/open-platform\/official-accounts\/accounts" replace \/>} \/>/);
-  assert.match(adminLayoutSource, /path:\s*'\/admin\/open-platform\/official-accounts\/accounts'/);
-  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.openPlatformOfficialAccountAccounts'/);
-  assert.match(adminLayoutSource, /path:\s*'\/admin\/open-platform\/mini-programs\/accounts'/);
-  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
-  assert.doesNotMatch(adminLayoutSource, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/open-platform\/official-accounts\/accounts'/);
+  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.openPlatformOfficialAccountAccounts'/);
+  assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/open-platform\/mini-programs\/accounts'/);
+  assert.match(adminModuleRegistrySource, /labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
+  assert.doesNotMatch(adminModuleRegistrySource, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
   assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"WeChat Official Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"WeChat Mini Programs"/);
 });
@@ -574,7 +796,7 @@ test("admin analytics service derives missing visualization dimensions only from
 
 test("admin analytics package is routed as a compact statistics workspace", () => {
   const appSource = readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
-  const layoutSource = readFileSync(new URL("./src/AdminLayout.tsx", import.meta.url), "utf8");
+  const moduleRegistrySource = readAdminModuleRegistrySource();
   const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as { dependencies: Record<string, string> };
   const source = readAdminAnalyticsSource();
   const serviceSource = readAdminAnalyticsServiceSource();
@@ -582,8 +804,8 @@ test("admin analytics package is routed as a compact statistics workspace", () =
   assert.equal(packageJson.dependencies["sdkwork-claw-router-admin-analytics"], "workspace:*");
   assert.match(appSource, /import\('sdkwork-claw-router-admin-analytics'\)/);
   assert.match(appSource, /<Route path="analytics" element=\{<AnalyticsAdmin \/>}/);
-  assert.match(layoutSource, /path:\s*'\/admin\/analytics'/);
-  assert.match(layoutSource, /labelKey:\s*'admin\.menu\.analytics'/);
+  assert.match(moduleRegistrySource, /path:\s*'\/admin\/analytics'/);
+  assert.match(moduleRegistrySource, /labelKey:\s*'admin\.menu\.analytics'/);
   assert.match(source, /AdminAnalyticsService\.fetchOverview/);
   assert.match(source, /data-admin-analytics-sidebar/);
   assert.match(source, /data-admin-analytics-table/);
@@ -1030,10 +1252,10 @@ test("admin finance uses standard commerce management resources without legacy b
   assert.match(source, /AdminResourceCenter/);
   assert.match(source, /backendInvoicesTitlesList\(DEFAULT_PAGE_PARAMS\)/);
   assert.match(source, /backendCommerceReportsOrderRevenueList\(DEFAULT_PAGE_PARAMS\)/);
-  assert.match(source, /backendCouponsRedemptionsList\(DEFAULT_PAGE_PARAMS\)/);
   assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.invoices\.titles\.list/);
   assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.commerceReports\.orderRevenue\.list/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.coupons\.redemptions\.list/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.commerceReports\.refunds\.list/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.audit\.commerceEvents\.list/);
   assert.doesNotMatch(serviceSource, /billing\/finance/);
 
   await withBackendSdkFetch(
@@ -1125,6 +1347,272 @@ test("admin monitor service reads nodes alerts and performance through backend S
       assert.equal(alerts[0].severity, "critical");
       assert.equal(alerts[0].status, "resolved");
       assert.equal(performance[0].memory, 64);
+    },
+  );
+});
+
+test("admin service node management is independently routed under operations and declared in contracts", () => {
+  const appSource = readAppSource();
+  const moduleRegistrySource = readAdminModuleRegistrySource();
+  const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as {
+    dependencies: Record<string, string>;
+  };
+  const i18nSource = readI18nSource();
+  const contractSource = readFrontendContractSource();
+  const tableRegistrySource = readClawRouterTablesRegistrySource();
+  const serviceNodesSource = readAdminServiceNodesSource();
+  const serviceNodesServiceSource = readAdminServiceNodesServiceSource();
+
+  assert.equal(packageJson.dependencies["sdkwork-claw-router-admin-service-nodes"], "workspace:*");
+  assert.match(appSource, /const ServiceNodesAdmin = lazyRoute\(\(\) => import\('sdkwork-claw-router-admin-service-nodes'\), 'ServiceNodesAdmin'\);/);
+  assert.match(appSource, /<Route path="service-nodes" element=\{<ServiceNodesAdmin \/>} \/>/);
+  assert.match(moduleRegistrySource, /pathPrefixes:\s*\[[^\]]*'\/admin\/service-nodes'/);
+  assert.match(moduleRegistrySource, /groupBlock\('admin\.menu\.ops\.infrastructure'[\s\S]*path:\s*'\/admin\/service-nodes'[\s\S]*labelKey:\s*'admin\.menu\.serviceNodes'/);
+  assert.equal(i18nSource.match(/"admin\.menu\.serviceNodes"\s*:/g)?.length, 2);
+  assert.equal(i18nSource.match(/"admin\.serviceNodes\.actions\.search"\s*:/g)?.length, 2);
+  assert.equal(i18nSource.match(/"admin\.serviceNodes\.metrics\.total"\s*:/g)?.length, 2);
+  assert.equal(i18nSource.match(/"admin\.serviceNodes\.states\.emptyDesc"\s*:/g)?.length, 2);
+  assert.match(contractSource, /operation_id: serviceNodes\.list/);
+  assert.match(contractSource, /operation_id: serviceNodes\.create/);
+  assert.match(contractSource, /operation_id: serviceNodes\.update/);
+  assert.match(contractSource, /operation_id: serviceNodes\.status\.update/);
+  assert.match(contractSource, /operation_id: serviceNodes\.delete/);
+  assert.match(
+    tableRegistrySource,
+    /table: ops_gateway_instance[\s\S]*?frontend_routes:\r?\n(?:\s+- [^\r\n]+\r?\n)*\s+- \/admin\/service-nodes/,
+  );
+  assert.match(serviceNodesSource, /AdminTableShell/);
+  assert.match(serviceNodesSource, /data-admin-service-nodes-table-viewport/);
+  assert.match(serviceNodesSource, /ServiceNodeService\.fetchNodes/);
+  assert.match(serviceNodesSource, /ServiceNodeService\.createNode/);
+  assert.match(serviceNodesSource, /ServiceNodeService\.updateNodeStatus/);
+  assert.match(serviceNodesSource, /ServiceNodeService\.deleteNode/);
+  assert.match(serviceNodesSource, /placeholder=\{t\('admin\.serviceNodes\.search\.placeholder'/);
+  assert.match(serviceNodesSource, /admin\.serviceNodes\.actions\.search/);
+  assert.match(serviceNodesSource, /max-h-\[calc\(100vh-2rem\)\]/);
+  assert.match(serviceNodesSource, /overflow-y-auto/);
+  assert.doesNotMatch(serviceNodesServiceSource, /\bfetch\(|axios|XMLHttpRequest|Authorization/);
+  assert.match(serviceNodesServiceSource, /getClawRouterBackendSdkClient\(\)\.system\.serviceNodes\./);
+});
+
+test("admin service node service performs full CRUD through generated backend SDK paths", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      const parsed = new URL(url, "http://localhost");
+      if (method === "GET" && parsed.pathname === "/backend/v3/api/system/service_nodes") {
+        assert.equal(parsed.searchParams.get("q"), "shanghai");
+        assert.equal(parsed.searchParams.get("status"), "enabled");
+        return {
+          items: [
+            {
+              id: "node-1",
+              name: "edge-shanghai-01",
+              domain: "edge-shanghai.example.com",
+              ip: "10.0.0.10",
+              remark: "Shanghai relay node",
+              status: "enabled",
+              healthStatus: "online",
+              updatedAt: "2026-05-26T08:00:00Z",
+            },
+          ],
+        };
+      }
+      if (method === "POST" && parsed.pathname === "/backend/v3/api/system/service_nodes") {
+        assert.match(String(init?.body ?? ""), /"name":"edge-beijing-01"/);
+        assert.match(String(init?.body ?? ""), /"domain":"edge-beijing\.example\.com"/);
+        assert.match(String(init?.body ?? ""), /"ip":"10\.0\.1\.10"/);
+        return {
+          item: {
+            id: "node-2",
+            name: "edge-beijing-01",
+            domain: "edge-beijing.example.com",
+            ip: "10.0.1.10",
+            remark: "Beijing relay node",
+            status: "enabled",
+            healthStatus: "unknown",
+            updatedAt: "2026-05-26T08:10:00Z",
+          },
+        };
+      }
+      if (method === "PUT" && parsed.pathname === "/backend/v3/api/system/service_nodes/node-1") {
+        assert.match(String(init?.body ?? ""), /"remark":"Primary Shanghai relay"/);
+        return {
+          item: {
+            id: "node-1",
+            name: "edge-shanghai-01",
+            domain: "edge-shanghai.example.com",
+            ip: "10.0.0.10",
+            remark: "Primary Shanghai relay",
+            status: "enabled",
+            healthStatus: "online",
+            updatedAt: "2026-05-26T08:20:00Z",
+          },
+        };
+      }
+      if (method === "PUT" && parsed.pathname === "/backend/v3/api/system/service_nodes/node-1/status") {
+        assert.match(String(init?.body ?? ""), /"status":"disabled"/);
+        return {
+          item: {
+            id: "node-1",
+            name: "edge-shanghai-01",
+            domain: "edge-shanghai.example.com",
+            ip: "10.0.0.10",
+            remark: "Primary Shanghai relay",
+            status: "disabled",
+            healthStatus: "offline",
+            updatedAt: "2026-05-26T08:30:00Z",
+          },
+        };
+      }
+      if (method === "DELETE" && parsed.pathname === "/backend/v3/api/system/service_nodes/node-1") {
+        return { deleted: true };
+      }
+      throw new Error(`unexpected service node SDK request: ${method} ${url}`);
+    },
+    async (captured) => {
+      const nodes = await ServiceNodeService.fetchNodes({ search: "shanghai", status: "enabled" });
+      const created = await ServiceNodeService.createNode({
+        name: "edge-beijing-01",
+        domain: "edge-beijing.example.com",
+        ip: "10.0.1.10",
+        remark: "Beijing relay node",
+        status: "enabled",
+      });
+      const updated = await ServiceNodeService.updateNode("node-1", {
+        remark: "Primary Shanghai relay",
+      });
+      const disabled = await ServiceNodeService.updateNodeStatus("node-1", "disabled");
+      const deleted = await ServiceNodeService.deleteNode("node-1");
+
+      assert.deepEqual(captured.map((request) => [request.method, request.url]), [
+        ["GET", "/backend/v3/api/system/service_nodes?q=shanghai&status=enabled"],
+        ["POST", "/backend/v3/api/system/service_nodes"],
+        ["PUT", "/backend/v3/api/system/service_nodes/node-1"],
+        ["PUT", "/backend/v3/api/system/service_nodes/node-1/status"],
+        ["DELETE", "/backend/v3/api/system/service_nodes/node-1"],
+      ]);
+      assert.equal(nodes[0].domain, "edge-shanghai.example.com");
+      assert.equal(nodes[0].healthStatus, "online");
+      assert.equal(created.id, "node-2");
+      assert.equal(updated.remark, "Primary Shanghai relay");
+      assert.equal(disabled.status, "disabled");
+      assert.equal(deleted.deleted, true);
+    },
+  );
+});
+
+test("admin service node service validates commands before generated SDK calls", async () => {
+  await withBackendSdkFetch(
+    () => {
+      throw new Error("backend SDK must not be called for invalid service node commands");
+    },
+    async (captured) => {
+      await assert.rejects(() => ServiceNodeService.fetchNodes({ search: "x".repeat(129) }), /search must be visible text and at most 128 characters/);
+      await assert.rejects(() => ServiceNodeService.fetchNodes({ search: "bad\nterm" }), /search must be visible text and at most 128 characters/);
+      await assert.rejects(() => ServiceNodeService.createNode({ name: "", domain: "edge.example.com", ip: "10.0.0.1", remark: "" }), /name is required/);
+      await assert.rejects(() => ServiceNodeService.createNode({ name: "edge", domain: "bad domain", ip: "10.0.0.1", remark: "" }), /domain must be a hostname or URL host/);
+      await assert.rejects(() => ServiceNodeService.createNode({ name: "edge", domain: "localhost", ip: "10.0.0.1", remark: "" }), /domain must be a hostname or URL host/);
+      await assert.rejects(() => ServiceNodeService.createNode({ name: "edge", domain: "edge.example.com", ip: "", remark: "" }), /ip is required/);
+      await assert.rejects(() => ServiceNodeService.createNode({ name: "edge", domain: "edge.example.com", ip: "999.0.0.1", remark: "" }), /ip must be a valid IPv4 or IPv6 address/);
+      await assert.rejects(() => ServiceNodeService.createNode({ name: "edge\ninvalid", domain: "edge.example.com", ip: "10.0.0.1", remark: "" }), /name must be visible text and at most 128 characters/);
+      await assert.rejects(() => ServiceNodeService.updateNode("", { remark: "x" }), /node id is required/);
+      await assert.rejects(() => ServiceNodeService.updateNode("node-1", { status: "disabled" }), /status must be changed through updateNodeStatus/);
+      await assert.rejects(() => ServiceNodeService.updateNodeStatus("node-1", "paused" as never), /Unsupported service node status/);
+      await assert.rejects(() => ServiceNodeService.deleteNode(""), /node id is required/);
+      assert.equal(captured.length, 0);
+    },
+  );
+});
+
+test("admin service node service supports localized names and search terms through generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      const parsed = new URL(url, "http://localhost");
+      if (method === "GET" && parsed.pathname === "/backend/v3/api/system/service_nodes") {
+        assert.equal(parsed.searchParams.get("q"), "上海边缘");
+        return {
+          items: [
+            {
+              id: "node-cn-1",
+              name: "上海边缘节点",
+              domain: "edge-shanghai.example.com",
+              ip: "2001:db8::1",
+              remark: "华东主节点",
+              status: "enabled",
+              healthStatus: "online",
+              updatedAt: "2026-05-26T08:45:00Z",
+            },
+          ],
+        };
+      }
+      if (method === "POST" && parsed.pathname === "/backend/v3/api/system/service_nodes") {
+        const body = JSON.parse(String(init?.body ?? "{}")) as Record<string, unknown>;
+        assert.equal(body.name, "上海边缘节点");
+        assert.equal(body.domain, "edge-shanghai.example.com");
+        assert.equal(body.ip, "2001:db8::1");
+        assert.equal(body.remark, "华东主节点");
+        return {
+          item: {
+            id: "node-cn-2",
+            name: "上海边缘节点",
+            domain: "edge-shanghai.example.com",
+            ip: "2001:db8::1",
+            remark: "华东主节点",
+            status: "enabled",
+            healthStatus: "unknown",
+            updatedAt: "2026-05-26T08:50:00Z",
+          },
+        };
+      }
+      throw new Error(`unexpected service node SDK request: ${method} ${url}`);
+    },
+    async (captured) => {
+      const nodes = await ServiceNodeService.fetchNodes({ search: " 上海边缘 " });
+      const created = await ServiceNodeService.createNode({
+        name: " 上海边缘节点 ",
+        domain: "https://EDGE-SHANGHAI.EXAMPLE.COM/admin",
+        ip: "2001:db8::1",
+        remark: " 华东主节点 ",
+        status: "enabled",
+      });
+
+      assert.deepEqual(captured.map((request) => [request.method, new URL(request.url, "http://localhost").pathname]), [
+        ["GET", "/backend/v3/api/system/service_nodes"],
+        ["POST", "/backend/v3/api/system/service_nodes"],
+      ]);
+      assert.equal(nodes[0].name, "上海边缘节点");
+      assert.equal(created.name, "上海边缘节点");
+    },
+  );
+});
+
+test("admin service node service supports clearing optional remarks through generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      const parsed = new URL(url, "http://localhost");
+      if (method === "PUT" && parsed.pathname === "/backend/v3/api/system/service_nodes/node-1") {
+        assert.equal(String(init?.body ?? ""), "{\"remark\":\"\"}");
+        return {
+          item: {
+            id: "node-1",
+            name: "edge-shanghai-01",
+            domain: "edge-shanghai.example.com",
+            ip: "10.0.0.10",
+            remark: "",
+            status: "enabled",
+            healthStatus: "online",
+            updatedAt: "2026-05-26T08:40:00Z",
+          },
+        };
+      }
+      throw new Error(`unexpected service node SDK request: ${method} ${url}`);
+    },
+    async () => {
+      const updated = await ServiceNodeService.updateNode("node-1", { remark: "" });
+      assert.equal(updated.remark, "");
     },
   );
 });

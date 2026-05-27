@@ -277,7 +277,7 @@ export function createSubscriptionWorkspaceManifest({
   packageNames = [
     "@sdkwork/subscription-pc-react",
     "@sdkwork/coupon-pc-react",
-    "@sdkwork/vip-pc-react",
+    "@sdkwork/membership-pc-react",
     "@sdkwork/wallet-pc-react",
   ],
   routePath = "/subscription",

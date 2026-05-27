@@ -1,21 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Activity, Calendar, ChevronDown, FileText, Filter, Image as ImageIcon, MessageSquare, Music, PieChart, TrendingUp, Video, Zap } from 'lucide-react';
+import { Activity, Calendar, ChevronDown, FileText, Filter, Image as ImageIcon, MessageSquare, Music, PieChart, Sparkles, TrendingUp, Video, Zap } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip as RechartsTooltip, XAxis, YAxis } from 'recharts';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import {
   decimalNumber,
   formatDecimalAmount,
-  sumDecimalStrings,
 } from 'sdkwork-claw-router-commons/runtime';
 import { SettlementsService, type Bill, type SettlementChartData } from './settlementsService';
 import {
-  buildSettlementSummary,
+  buildSettlementDisplayData,
   buildSettlementYearOptions,
   getDefaultSettlementYear,
 } from './settlementViewModel';
 
 import { useTranslation } from 'react-i18next';
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
+const COLLAPSED_SETTLEMENT_BILL_ID = '__collapsed_settlement_bill__';
 
 function getSettlementLoadErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
   if (!(error instanceof Error) || !error.message) {
@@ -69,7 +69,12 @@ export function SettlementsView() {
     };
   }, [loadSettlementDashboard]);
 
-  const chartDataForRendering = chartData.map(item => ({
+  const settlementDisplayData = buildSettlementDisplayData({
+    selectedYear,
+    chartData,
+    bills: settlementBills,
+  });
+  const chartDataForRendering = settlementDisplayData.chartData.map(item => ({
     ...item,
     text: decimalNumber(item.text),
     image: decimalNumber(item.image),
@@ -83,39 +88,16 @@ export function SettlementsView() {
     { amount: formatDecimalAmount(val, 6) },
   );
   const yearOptions = buildSettlementYearOptions({ selectedYear, bills: settlementBills });
-  const annualTotalCost = sumDecimalStrings(settlementBills.map(bill => bill.totalCost), 6);
-  const settlementSummary = {
-    ...buildSettlementSummary({
-      selectedYear,
-      chartData,
-      bills: settlementBills,
-    }),
-    annualTotalCost,
-  };
-  const hasSettlementData = chartData.length > 0 || settlementBills.length > 0;
+  const settlementSummary = settlementDisplayData.summary;
+  const billsForRendering = settlementDisplayData.bills;
+  const activeExpandedBill = expandedBill ?? (
+    settlementDisplayData.isUsingDefaultVisuals
+      ? billsForRendering[0]?.id ?? null
+      : null
+  );
 
   return (
-    <div className="theme-aware-dark-surface p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#1e1e1e]">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <FileText className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-white tracking-tight">{t("console.settlements.settlementsview.text.fqxisc", "账单与多模态结算")}</h1>
-        </div>
-
-        <div className="flex items-center gap-2 bg-[#252525] border border-white/5 rounded-lg px-3 py-1.5 shadow-sm">
-          <Filter className="w-4 h-4 text-slate-400" />
-          <select
-            value={selectedYear}
-            onChange={(e) => setSelectedYear(e.target.value)}
-            className="bg-transparent text-sm text-slate-300 focus:outline-none cursor-pointer"
-          >
-            {yearOptions.map(year => (
-              <option key={year} value={year}>{year}{t("console.settlements.settlementsview.text.12ywuzu", "年度账单")}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-
+    <div className="theme-aware-dark-surface w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 p-[5px] dark:bg-[#1e1e1e]">
       {loading ? (
         <BusinessStatePanel
           kind="loading"
@@ -131,19 +113,37 @@ export function SettlementsView() {
           onRetry={() => void loadSettlementDashboard()}
           className="rounded-2xl border border-white/5 bg-[#252525]"
         />
-      ) : !hasSettlementData ? (
-        <BusinessStatePanel
-          kind="empty"
-          title={t('console.settlements.states.emptyTitle', '暂无账单报表数据')}
-          description={t('console.settlements.states.emptyDescription', '当前年份还没有结算图表或账单记录。')}
-          onRetry={() => void loadSettlementDashboard()}
-          className="rounded-2xl border border-white/5 bg-[#252525]"
-        />
       ) : (
         <>
+          {settlementDisplayData.isUsingDefaultVisuals && (
+            <div className="flex flex-col gap-3 rounded-2xl border border-amber-400/15 bg-amber-400/[0.06] px-4 py-3 text-sm text-amber-100 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex min-w-0 items-start gap-3">
+                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber-300/20 bg-amber-300/10">
+                  <Sparkles className="h-4 w-4 text-amber-200" />
+                </div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-amber-50">
+                    {t('console.settlements.states.defaultVisualTitle', 'Default settlement view')}
+                  </div>
+                  <div className="mt-0.5 text-xs leading-5 text-amber-100/75">
+                    {t('console.settlements.states.defaultVisualDescription', 'No settlement records were returned for this year, so the dashboard is showing its default visual layout with zero real spend.')}
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => void loadSettlementDashboard()}
+                className="inline-flex h-8 shrink-0 items-center justify-center rounded-lg border border-amber-300/20 bg-amber-300/10 px-3 text-xs font-semibold text-amber-50 transition-colors hover:bg-amber-300/15"
+              >
+                {t('common.action.refresh', 'Refresh')}
+              </button>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="flex flex-col gap-6 lg:col-span-1">
               <SettlementStatCard
+                action={<SettlementYearSelect selectedYear={selectedYear} yearOptions={yearOptions} onChange={setSelectedYear} t={t} />}
                 icon={<Zap className="w-32 h-32 text-amber-500" />}
                 label={t("console.settlements.settlementsview.text.75sy32", "今年累计账单总计")}
                 value={formatCurrency(settlementSummary.annualTotalCost)}
@@ -199,13 +199,13 @@ export function SettlementsView() {
               <span className="text-xs text-slate-500 font-medium bg-white/5 px-2 py-1 rounded">{t("console.settlements.settlementsview.text.ogoiqg", "所有消耗均以积分结算")}</span>
             </div>
 
-            {settlementBills.map((bill) => {
-              const isExpanded = expandedBill === bill.id;
+            {billsForRendering.map((bill) => {
+              const isExpanded = activeExpandedBill === bill.id;
               return (
                 <div key={bill.id} className="bg-[#252525] border border-white/5 rounded-2xl overflow-hidden shadow-sm transition-all hover:border-white/10">
                   <div
                     className="p-5 sm:p-6 flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center cursor-pointer hover:bg-white/[0.02]"
-                    onClick={() => setExpandedBill(isExpanded ? null : bill.id)}
+                    onClick={() => setExpandedBill(isExpanded ? COLLAPSED_SETTLEMENT_BILL_ID : bill.id)}
                   >
                     <div className="flex items-start gap-4 flex-1">
                       <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20">
@@ -266,12 +266,14 @@ export function SettlementsView() {
 }
 
 function SettlementStatCard({
+  action,
   footer,
   icon,
   label,
   value,
   valueClassName = 'text-white',
 }: {
+  action?: React.ReactNode;
   footer: React.ReactNode;
   icon: React.ReactNode;
   label: string;
@@ -282,11 +284,43 @@ function SettlementStatCard({
     <div className="bg-[#252525] border border-white/5 rounded-2xl p-6 relative overflow-hidden shadow-sm flex flex-col justify-center min-h-[160px] group">
       <div className="absolute -right-6 -top-6 p-6 opacity-10 group-hover:opacity-20 transition-opacity">{icon}</div>
       <div className="relative z-10">
-        <p className="text-sm font-medium text-slate-400 mb-1 flex items-center gap-2">{label}</p>
+        <div className="mb-2 flex items-start justify-between gap-3">
+          <p className="flex min-w-0 items-center gap-2 text-sm font-medium text-slate-400">{label}</p>
+          {action ? <div className="shrink-0">{action}</div> : null}
+        </div>
         <div className={`text-4xl font-bold mb-2 tracking-tight flex items-center gap-2 ${valueClassName}`}>{value}</div>
         <div className="flex items-center gap-1.5 text-xs text-slate-400">{footer}</div>
       </div>
     </div>
+  );
+}
+
+function SettlementYearSelect({
+  onChange,
+  selectedYear,
+  t,
+  yearOptions,
+}: {
+  onChange: (year: string) => void;
+  selectedYear: string;
+  t: TranslationFunction;
+  yearOptions: string[];
+}) {
+  return (
+    <label className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 text-xs font-medium text-slate-300 shadow-sm">
+      <Filter className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
+      <span className="sr-only">{t("console.settlements.settlementsview.text.12ywuzu", "年度账单")}</span>
+      <select
+        aria-label={t("console.settlements.settlementsview.text.12ywuzu", "年度账单")}
+        value={selectedYear}
+        onChange={(event) => onChange(event.target.value)}
+        className="max-w-[5rem] cursor-pointer bg-transparent text-xs font-semibold text-slate-200 outline-none"
+      >
+        {yearOptions.map(year => (
+          <option key={year} value={year} className="bg-[#252525] text-slate-100">{year}</option>
+        ))}
+      </select>
+    </label>
   );
 }
 

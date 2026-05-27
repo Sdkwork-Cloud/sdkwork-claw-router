@@ -107,19 +107,9 @@ export function AnalyticsAdmin() {
 
   return (
     <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
-      <div className="flex flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
+      <div className="flex flex-col gap-3 rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <BarChart3 className="h-5 w-5 text-blue-500" />
-              <h2 className="truncate text-xl font-semibold tracking-normal text-slate-900 dark:text-white">
-                {t('admin.analytics.title', 'Analytics')}
-              </h2>
-            </div>
-            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-              {t('admin.analytics.subtitle', 'User, model, token, point, request, and modality usage statistics.')}
-            </p>
-          </div>
+          <div />
           <div className="flex flex-wrap items-center gap-2">
             <div className="flex rounded-lg border border-slate-200 bg-slate-50 p-1 dark:border-white/10 dark:bg-[#111]">
               {TIME_RANGES.map((range) => (

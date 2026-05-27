@@ -1,0 +1,31 @@
+package com.sdkwork.clawrouter.app
+
+data class PromotionOfferPresentationRecord(
+    val brandName: String? = null,
+    val coverAssetId: String? = null,
+    val createdAt: String? = null,
+    val createdBy: String? = null,
+    val customerActionJson: Map<String, String>? = null,
+    val displayName: String? = null,
+    val fieldSchemaJson: Map<String, String>? = null,
+    val locale: String? = null,
+    val logoAssetId: String? = null,
+    val merchantDisplayName: String? = null,
+    val offerId: String? = null,
+    val offerVersionId: String? = null,
+    val organizationId: String? = null,
+    val paramSchemaJson: Map<String, String>? = null,
+    val presentationNo: String? = null,
+    val primaryColor: String? = null,
+    val recognitionHash: String? = null,
+    val recognitionType: String? = null,
+    val secondaryColor: String? = null,
+    val status: String? = null,
+    val styleSnapshotJson: Map<String, String>? = null,
+    val surfaceType: String? = null,
+    val tenantId: String? = null,
+    val termsJson: Map<String, String>? = null,
+    val updatedAt: String? = null,
+    val updatedBy: String? = null,
+    val verifyMethod: String? = null
+)

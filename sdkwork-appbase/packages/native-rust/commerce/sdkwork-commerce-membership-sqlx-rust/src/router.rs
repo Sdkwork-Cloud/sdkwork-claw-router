@@ -2,15 +2,17 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use axum::extract::{Path, Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::extract::{Extension, Path, Query, State};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use sdkwork_commerce_core::CommerceServiceError;
+use sdkwork_iam_core::IamAppContext;
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, SqlitePool};
 
+use crate::request_identity::with_request_identity;
 use crate::{
     AppMembershipBenefitItem, AppMembershipCommandFuture, AppMembershipDailyRewardResponse,
     AppMembershipDailyRewardStatusResponse, AppMembershipEntityIdGenerator,
@@ -24,9 +26,8 @@ use crate::{
 
 const MAX_PAYMENT_METHOD_LEN: usize = 50;
 const PAYMENT_EXPIRE_SECONDS: i64 = 1_800;
-const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
-const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
-const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
+
+use crate::subject::numeric_runtime_subject_from_extension;
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -277,64 +278,69 @@ fn app_membership_router_with_state(
     entity_id_generator: Arc<dyn AppMembershipEntityIdGenerator + Send + Sync>,
     require_subject: bool,
 ) -> Router {
-    Router::new()
-        .route("/app/v3/api/memberships/current", get(fetch_info))
-        .route("/app/v3/api/memberships/current/status", get(fetch_status))
-        .route("/app/v3/api/memberships/plans", get(fetch_plans))
-        .route("/app/v3/api/memberships/benefits", get(fetch_benefits))
-        .route(
-            "/app/v3/api/memberships/package_groups",
-            get(fetch_package_groups),
-        )
-        .route(
-            "/app/v3/api/memberships/package_groups/{packageGroupId}",
-            get(fetch_package_group),
-        )
-        .route(
-            "/app/v3/api/memberships/package_groups/{packageGroupId}/packages",
-            get(fetch_package_group_packages),
-        )
-        .route("/app/v3/api/memberships/packages", get(fetch_packages))
-        .route(
-            "/app/v3/api/memberships/packages/{packageId}",
-            get(fetch_package),
-        )
-        .route("/app/v3/api/memberships/purchases", post(purchase))
-        .route("/app/v3/api/memberships/purchases/renew", post(renew))
-        .route("/app/v3/api/memberships/purchases/upgrade", post(upgrade))
-        .route(
-            "/app/v3/api/memberships/points/balance",
-            get(fetch_points_balance),
-        )
-        .route(
-            "/app/v3/api/memberships/points/history",
-            get(fetch_points_history),
-        )
-        .route(
-            "/app/v3/api/memberships/points/daily_rewards",
-            post(claim_daily_reward),
-        )
-        .route(
-            "/app/v3/api/memberships/points/daily_rewards/status",
-            get(fetch_daily_reward_status),
-        )
-        .route(
-            "/app/v3/api/memberships/privileges/usage",
-            get(fetch_privilege_usage),
-        )
-        .route(
-            "/app/v3/api/memberships/privileges/speed_ups",
-            post(create_speed_up),
-        )
-        .with_state(AppMembershipState {
-            store,
-            entity_id_generator,
-            require_subject,
-        })
+    with_request_identity(
+        Router::new()
+            .route("/app/v3/api/memberships/current", get(fetch_info))
+            .route("/app/v3/api/memberships/current/status", get(fetch_status))
+            .route("/app/v3/api/memberships/plans", get(fetch_plans))
+            .route("/app/v3/api/memberships/benefits", get(fetch_benefits))
+            .route(
+                "/app/v3/api/memberships/package_groups",
+                get(fetch_package_groups),
+            )
+            .route(
+                "/app/v3/api/memberships/package_groups/{packageGroupId}",
+                get(fetch_package_group),
+            )
+            .route(
+                "/app/v3/api/memberships/package_groups/{packageGroupId}/packages",
+                get(fetch_package_group_packages),
+            )
+            .route("/app/v3/api/memberships/packages", get(fetch_packages))
+            .route(
+                "/app/v3/api/memberships/packages/{packageId}",
+                get(fetch_package),
+            )
+            .route("/app/v3/api/memberships/purchases", post(purchase))
+            .route("/app/v3/api/memberships/purchases/renew", post(renew))
+            .route("/app/v3/api/memberships/purchases/upgrade", post(upgrade))
+            .route(
+                "/app/v3/api/memberships/points/balance",
+                get(fetch_points_balance),
+            )
+            .route(
+                "/app/v3/api/memberships/points/history",
+                get(fetch_points_history),
+            )
+            .route(
+                "/app/v3/api/memberships/points/daily_rewards",
+                post(claim_daily_reward),
+            )
+            .route(
+                "/app/v3/api/memberships/points/daily_rewards/status",
+                get(fetch_daily_reward_status),
+            )
+            .route(
+                "/app/v3/api/memberships/privileges/usage",
+                get(fetch_privilege_usage),
+            )
+            .route(
+                "/app/v3/api/memberships/privileges/speed_ups",
+                post(create_speed_up),
+            )
+            .with_state(AppMembershipState {
+                store,
+                entity_id_generator,
+                require_subject,
+            }),
+    )
 }
 
-async fn fetch_info(State(state): State<AppMembershipState>, headers: HeaderMap) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+async fn fetch_info(
+    State(state): State<AppMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
+) -> Response {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -346,8 +352,11 @@ async fn fetch_info(State(state): State<AppMembershipState>, headers: HeaderMap)
     }
 }
 
-async fn fetch_status(State(state): State<AppMembershipState>, headers: HeaderMap) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+async fn fetch_status(
+    State(state): State<AppMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
+) -> Response {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -370,10 +379,10 @@ async fn fetch_plans(State(state): State<AppMembershipState>) -> Response {
 
 async fn fetch_benefits(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Query(query): Query<MembershipBenefitQuery>,
 ) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -462,9 +471,9 @@ async fn fetch_package(
 
 async fn fetch_points_balance(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -479,9 +488,9 @@ async fn fetch_points_balance(
 async fn fetch_points_history(
     State(state): State<AppMembershipState>,
     Query(query): Query<MembershipPointsHistoryQuery>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -506,9 +515,9 @@ async fn fetch_points_history(
 
 async fn fetch_daily_reward_status(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -522,9 +531,9 @@ async fn fetch_daily_reward_status(
 
 async fn fetch_privilege_usage(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match resolve_membership_subject(&state, &headers) {
+    let subject = match resolve_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -539,35 +548,35 @@ async fn fetch_privilege_usage(
 
 async fn purchase(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Json(request): Json<SubmitMembershipPurchaseRequest>,
 ) -> Response {
-    submit_purchase(state, headers, request, "purchase").await
+    submit_purchase(state, runtime_context, request, "purchase").await
 }
 
 async fn renew(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Json(request): Json<SubmitMembershipPurchaseRequest>,
 ) -> Response {
-    submit_purchase(state, headers, request, "renew").await
+    submit_purchase(state, runtime_context, request, "renew").await
 }
 
 async fn upgrade(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Json(request): Json<SubmitMembershipPurchaseRequest>,
 ) -> Response {
-    submit_purchase(state, headers, request, "upgrade").await
+    submit_purchase(state, runtime_context, request, "upgrade").await
 }
 
 async fn submit_purchase(
     state: AppMembershipState,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     request: SubmitMembershipPurchaseRequest,
     action: &str,
 ) -> Response {
-    let subject = match resolve_required_membership_subject(&state, &headers) {
+    let subject = match resolve_required_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -598,9 +607,9 @@ async fn submit_purchase(
 
 async fn claim_daily_reward(
     State(state): State<AppMembershipState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match resolve_required_membership_subject(&state, &headers) {
+    let subject = match resolve_required_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -617,8 +626,11 @@ async fn claim_daily_reward(
     }
 }
 
-async fn create_speed_up(State(state): State<AppMembershipState>, headers: HeaderMap) -> Response {
-    let subject = match resolve_required_membership_subject(&state, &headers) {
+async fn create_speed_up(
+    State(state): State<AppMembershipState>,
+    runtime_context: Option<Extension<IamAppContext>>,
+) -> Response {
+    let subject = match resolve_required_membership_subject(&state, runtime_context) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -637,9 +649,9 @@ async fn create_speed_up(State(state): State<AppMembershipState>, headers: Heade
 
 fn resolve_membership_subject(
     state: &AppMembershipState,
-    headers: &HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Result<Option<AppMembershipSubject>, Response> {
-    match app_membership_subject_from_headers(headers) {
+    match app_membership_subject_from_extension(runtime_context) {
         Ok(subject) => Ok(Some(subject)),
         Err(error) if state.require_subject => Err(unauthorized_response(error)),
         Err(_) => Ok(None),
@@ -648,9 +660,9 @@ fn resolve_membership_subject(
 
 fn resolve_required_membership_subject(
     state: &AppMembershipState,
-    headers: &HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Result<AppMembershipSubject, Response> {
-    match resolve_membership_subject(state, headers)? {
+    match resolve_membership_subject(state, runtime_context)? {
         Some(subject) => Ok(subject),
         None => Err(unauthorized_response(
             "trusted request subject is required for membership command".to_owned(),
@@ -658,30 +670,15 @@ fn resolve_required_membership_subject(
     }
 }
 
-pub fn app_membership_subject_from_headers(
-    headers: &HeaderMap,
+fn app_membership_subject_from_extension(
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Result<AppMembershipSubject, String> {
+    let subject = numeric_runtime_subject_from_extension(runtime_context)?;
     Ok(AppMembershipSubject {
-        tenant_id: required_positive_i64_header(headers, X_SDKWORK_TENANT_ID)?,
-        organization_id: required_positive_i64_header(headers, X_SDKWORK_ORGANIZATION_ID)?,
-        user_id: required_positive_i64_header(headers, X_SDKWORK_USER_ID)?,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        user_id: subject.user_id,
     })
-}
-
-fn required_positive_i64_header(headers: &HeaderMap, name: &'static str) -> Result<i64, String> {
-    let value = headers
-        .get(name)
-        .ok_or_else(|| format!("{name} header is required"))?
-        .to_str()
-        .map(str::trim)
-        .map_err(|_| format!("{name} header value is invalid"))?;
-    let parsed = value
-        .parse::<i64>()
-        .map_err(|_| format!("{name} header must be a positive integer"))?;
-    if parsed <= 0 {
-        return Err(format!("{name} header must be a positive integer"));
-    }
-    Ok(parsed)
 }
 
 fn validate_purchase_request(

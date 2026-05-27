@@ -44,6 +44,8 @@ type SettlementUsageBucket = 'text' | 'image' | 'video' | 'audio' | 'music';
 
 const MIN_SETTLEMENT_DASHBOARD_YEAR = 2000;
 const MAX_SETTLEMENT_DASHBOARD_YEAR = 2100;
+const SETTLEMENT_LEDGER_PAGE_SIZE = 200;
+const SETTLEMENT_INVOICE_PAGE_SIZE = 100;
 
 export class SettlementsService {
   static async fetchDashboardData(params?: { year?: string | number }): Promise<{
@@ -52,8 +54,8 @@ export class SettlementsService {
   }> {
     const query = toSettlementDashboardQueryParams(params);
     const [ledgerResult, invoiceResult] = await Promise.all([
-      appWalletLedgerEntriesList({ page: 1, pageSize: 500 }),
-      appInvoicesList({ page: 1, pageSize: 100 }),
+      appWalletLedgerEntriesList({ page: 1, pageSize: SETTLEMENT_LEDGER_PAGE_SIZE }),
+      appInvoicesList({ page: 1, pageSize: SETTLEMENT_INVOICE_PAGE_SIZE }),
     ]);
     const ledgerEntries = readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')
       .map((item) => readRequiredRecord(item, 'Settlement ledger entry is required'));
@@ -97,7 +99,7 @@ export async function appInvoicesCreate(body: Parameters<AppCommerce['invoices']
   return getClawRouterAppSdkClient().commerce.invoices.create(body, createRequestParams('app-invoice-create'));
 }
 
-async function appWalletLedgerEntriesList(params?: Parameters<AppCommerce['wallet']['ledgerEntries']['list']>[0]) {
+export async function appWalletLedgerEntriesList(params?: Parameters<AppCommerce['wallet']['ledgerEntries']['list']>[0]) {
   return getClawRouterAppSdkClient().commerce.wallet.ledgerEntries.list(params);
 }
 

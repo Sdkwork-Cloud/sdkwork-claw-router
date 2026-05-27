@@ -9,7 +9,7 @@ public class IamPasswordResetRequestResponse {
     public String getDebugCode() {
         return this.debugCode;
     }
-    
+
     public void setDebugCode(String debugCode) {
         this.debugCode = debugCode;
     }
@@ -17,7 +17,7 @@ public class IamPasswordResetRequestResponse {
     public String getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -25,7 +25,7 @@ public class IamPasswordResetRequestResponse {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }

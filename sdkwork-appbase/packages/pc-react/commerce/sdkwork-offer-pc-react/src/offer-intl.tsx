@@ -24,7 +24,7 @@ export interface SdkworkOfferIntlValue {
   formatFilterLabel: (filter: SdkworkOfferFilter) => string;
   formatOfferSavings: (value: number | null | undefined) => string;
   formatPoints: (value: number | null | undefined) => string;
-  formatVipTerm: (days: number | null | undefined) => string;
+  formatMembershipTerm: (days: number | null | undefined) => string;
   locale: string;
 }
 
@@ -77,7 +77,7 @@ function createSdkworkOfferIntlValue(
     formatPoints(value) {
       return formatSdkworkPoints(value ?? 0, resolvedLocale);
     },
-    formatVipTerm(days) {
+    formatMembershipTerm(days) {
       if (days === null || days === undefined) {
         return copy.inventory.noActiveTerm;
       }

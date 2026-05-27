@@ -282,8 +282,8 @@ x_response_entities:
         - inactive
         - disabled
         - exhausted
-  commerce_coupon_wallet_item:
-    name: CommerceCouponWalletItem
+  promotion_coupon_wallet_item:
+    name: PromotionCouponWalletItem
     type: object
     additionalProperties: false
     required:
@@ -297,7 +297,7 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
-        description: Stable appbase commerce_coupon id for the issued coupon.
+        description: Stable appbase promotion_user_coupon id for the issued coupon.
       code:
         type: string
         minLength: 1

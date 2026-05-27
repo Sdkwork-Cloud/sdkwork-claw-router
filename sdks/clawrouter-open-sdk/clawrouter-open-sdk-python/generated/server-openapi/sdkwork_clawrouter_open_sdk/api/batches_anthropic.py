@@ -184,9 +184,10 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
 
 
+
 class BatchesAnthropicApi:
     """batches_anthropic API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

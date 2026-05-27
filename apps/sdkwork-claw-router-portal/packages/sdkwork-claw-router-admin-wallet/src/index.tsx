@@ -4,13 +4,12 @@ import { CreditCard, Wallet } from 'lucide-react';
 import { AdminResourceCenter, type AdminResourceSection } from 'sdkwork-claw-router-commons';
 import {
   backendRechargesOrdersList,
-  backendRechargesPackagesList,
   backendWalletAccountsList,
   backendWalletExchangeRulesList,
   backendWalletLedgerEntriesList,
 } from './walletService';
 
-type WalletAdminTab = 'rechargePackages' | 'rechargeOrders' | 'walletAccounts' | 'walletLedger' | 'exchangeRules';
+type WalletAdminTab = 'rechargeOrders' | 'walletAccounts' | 'walletLedger' | 'exchangeRules';
 type WalletAdminGroup = string;
 
 const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
@@ -22,8 +21,7 @@ type WalletAdminProps = {
 
 function resolveWalletSectionId(sectionId?: string): WalletAdminTab {
   if (
-    sectionId === 'rechargePackages'
-    || sectionId === 'rechargeOrders'
+    sectionId === 'rechargeOrders'
     || sectionId === 'walletAccounts'
     || sectionId === 'walletLedger'
     || sectionId === 'exchangeRules'
@@ -35,22 +33,6 @@ function resolveWalletSectionId(sectionId?: string): WalletAdminTab {
 
 function buildWalletSections(t: ReturnType<typeof useTranslation>['t']): AdminResourceSection<WalletAdminTab, WalletAdminGroup>[] {
   return [
-    {
-      id: 'rechargePackages',
-      title: t('admin.commerce.wallet.rechargePackages.title', 'Recharge Packages'),
-      description: t('admin.commerce.wallet.rechargePackages.desc', 'Point or wallet recharge package definitions.'),
-      icon: <CreditCard className="h-4 w-4" />,
-      group: t('admin.commerce.wallet.group.recharge', 'Recharge') as WalletAdminGroup,
-      load: () => backendRechargesPackagesList(DEFAULT_PAGE_PARAMS),
-      columns: [
-        { key: 'package_no', label: t('admin.col.package', 'Package') },
-        { key: 'price_amount', label: t('admin.col.price', 'Price'), align: 'right' },
-        { key: 'currency_code', label: t('admin.col.currency', 'Currency') },
-        { key: 'grant_amount', label: t('admin.col.grant', 'Grant'), align: 'right' },
-        { key: 'status', label: t('admin.col.status', 'Status') },
-      ],
-      searchFields: ['package_no', 'currency_code', 'status'],
-    },
     {
       id: 'rechargeOrders',
       title: t('admin.commerce.wallet.rechargeOrders.title', 'Recharge Orders'),
@@ -127,15 +109,12 @@ export function WalletAdmin({ sectionId }: WalletAdminProps = {}) {
   return (
     <AdminResourceCenter
       activeSectionId={activeSectionId}
-      description={t('admin.commerce.wallet.desc', 'Recharge packages, recharge orders, wallet accounts, ledger entries, and exchange rules.')}
       emptyTitle={t('admin.commerce.wallet.empty', 'No wallet records')}
       errorTitle={t('admin.commerce.wallet.error', 'Wallet data could not be loaded')}
-      icon={<Wallet className="h-5 w-5 text-emerald-500" />}
       loadingTitle={t('admin.commerce.wallet.loading', 'Loading wallet records...')}
       sections={sections}
       showSectionNavigation={false}
       tableViewportDataAttribute="admin-wallet-table-viewport"
-      title={t('admin.commerce.wallet.title', 'Wallet')}
     />
   );
 }

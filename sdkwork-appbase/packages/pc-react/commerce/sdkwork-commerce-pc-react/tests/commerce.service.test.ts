@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { createSdkworkCommerceService } from "../src";
 
 describe("sdkwork-commerce-pc-react service", () => {
-  it("composes wallet, points, VIP, and order summaries into one commercial hub snapshot", async () => {
+  it("composes wallet, points, membership, and order summaries into one commercial hub snapshot", async () => {
     const service = createSdkworkCommerceService({
       couponService: {
         getDashboard: vi.fn().mockResolvedValue({
@@ -217,8 +217,8 @@ describe("sdkwork-commerce-pc-react service", () => {
               level: 3,
               name: "Pro",
               remainingDays: 18,
-              status: "vip",
-              vipPoints: 3200,
+              status: "active",
+              points: 3200,
             },
             earnedThisMonth: 1200,
             isAuthenticated: true,
@@ -239,12 +239,12 @@ describe("sdkwork-commerce-pc-react service", () => {
           ],
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [
             {
               claimed: true,
-              id: "vip-benefit-2",
+              id: "membership-benefit-2",
               name: "Priority rendering",
             },
           ],
@@ -252,7 +252,7 @@ describe("sdkwork-commerce-pc-react service", () => {
           plans: [
             {
               durationDays: 365,
-              id: "vip-plan-3",
+              id: "membership-plan-3",
               includedPoints: 60000,
               name: "Pro Annual",
               originalPriceCny: 999,
@@ -263,7 +263,7 @@ describe("sdkwork-commerce-pc-react service", () => {
             },
             {
               durationDays: 30,
-              id: "vip-plan-2",
+              id: "membership-plan-2",
               includedPoints: 5000,
               name: "Pro Monthly",
               originalPriceCny: 239,
@@ -278,13 +278,13 @@ describe("sdkwork-commerce-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 18,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
       },
@@ -559,7 +559,7 @@ describe("sdkwork-commerce-pc-react service", () => {
           transactions: [],
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
@@ -569,13 +569,13 @@ describe("sdkwork-commerce-pc-react service", () => {
             currentLevelValue: 0,
             growthValue: 0,
             isAuthenticated: true,
-            isVip: false,
+            isMember: false,
             pointBalance: 0,
             remainingDays: null,
             status: "guest",
             totalSpent: 0,
             upgradeGrowthValue: 0,
-            vipPoints: 0,
+            points: 0,
           },
         }),
       },

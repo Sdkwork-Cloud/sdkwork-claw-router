@@ -20,7 +20,7 @@ export function createUserCenterLocalApiRoutes(
   const openPlatformQrAuthSessionsPath = `${normalizedBasePath}/open_platform/qr_auth/sessions`;
   const userProfilePath = `${normalizedBasePath}/iam/users/current`;
   const userSettingsPath = userProfilePath;
-  const vipInfoPath = `${normalizedBasePath}/memberships/current`;
+  const membershipPath = `${normalizedBasePath}/memberships/current`;
   const accountSummaryPath = `${normalizedBasePath}/accounts/current/summary`;
   const tenantRootPath = `${normalizedBasePath}/iam/tenants/current`;
   const authConfigPath = `${authBasePath}/config`;
@@ -68,7 +68,7 @@ export function createUserCenterLocalApiRoutes(
     authVerifyCheck: authVerifyCheckPath,
     authVerifySend: authVerifySendPath,
     health: `${normalizedBasePath}/health`,
-    membership: vipInfoPath,
+    membership: membershipPath,
     preferences: userSettingsPath,
     profile: userProfilePath,
     sessionBootstrap: authSessionExchangePath,
@@ -79,6 +79,5 @@ export function createUserCenterLocalApiRoutes(
     tenantRoot: tenantRootPath,
     userProfile: userProfilePath,
     userSettings: userSettingsPath,
-    vipInfo: vipInfoPath,
   };
 }

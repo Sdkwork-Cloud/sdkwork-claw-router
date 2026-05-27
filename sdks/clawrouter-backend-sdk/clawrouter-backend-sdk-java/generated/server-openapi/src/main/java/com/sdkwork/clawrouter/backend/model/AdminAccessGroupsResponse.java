@@ -8,7 +8,7 @@ public class AdminAccessGroupsResponse {
     public List<AdminAccessGroupItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminAccessGroupItem> items) {
         this.items = items;
     }

@@ -1,5 +1,10 @@
+use std::collections::{BTreeMap, BTreeSet};
+
 use crate::application::{PricingResolver, ResolveModelPriceQuery};
-use crate::domain::{BillingMeter, DomainResult, ModelPrice, ModelVendor, PriceSide};
+use crate::domain::{
+    AiModel, ApiKeyGroup, BillingMeter, DomainResult, ModelPrice, ModelVendor, PriceSide,
+    ProviderAccountPoolGroupBinding,
+};
 use crate::ports::PricingCatalog;
 
 const MODEL_GROUP_DEFAULT: &str = "default";
@@ -47,6 +52,14 @@ impl ListModelCatalogQuery {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ModelCatalogPage {
     pub items: Vec<ModelCatalogItem>,
+    pub groups: Vec<ModelCatalogGroup>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ModelCatalogGroup {
+    pub key: String,
+    pub label: String,
+    pub model_count: usize,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -126,7 +139,7 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
             .limit
             .unwrap_or(MAX_MODEL_CATALOG_LIMIT)
             .min(MAX_MODEL_CATALOG_LIMIT);
-        let models = self
+        let all_items = self
             .catalog
             .list_models(None)
             .into_iter()
@@ -163,7 +176,7 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                         reason: "api key context is required for customer price".to_owned(),
                     });
 
-                let groups = derive_model_groups(&model);
+                let groups = configured_model_groups(self.catalog, &model);
                 let categories =
                     derive_model_categories(&model, &vendor, &official_reference_prices);
 
@@ -213,6 +226,10 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                     price_availability,
                 }
             })
+            .collect::<Vec<_>>();
+        let group_catalog = configured_model_group_catalog(self.catalog, &all_items);
+        let models = all_items
+            .into_iter()
             .filter(|item| {
                 model_matches_filter(
                     item,
@@ -227,7 +244,10 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
             .take(limit)
             .collect();
 
-        Ok(ModelCatalogPage { items: models })
+        Ok(ModelCatalogPage {
+            items: models,
+            groups: group_catalog,
+        })
     }
 
     fn provider_codes(&self, model: &str) -> Vec<String> {
@@ -285,23 +305,261 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
     }
 }
 
-fn derive_model_groups(model: &crate::domain::AiModel) -> Vec<String> {
-    let mut groups = Vec::new();
-    if model_is_public_default(model) {
-        groups.push(MODEL_GROUP_DEFAULT.to_owned());
+fn configured_model_group_catalog<C: PricingCatalog>(
+    catalog: &C,
+    items: &[ModelCatalogItem],
+) -> Vec<ModelCatalogGroup> {
+    let mut model_counts_by_group = BTreeMap::new();
+    for item in items {
+        let mut counted_groups = BTreeSet::new();
+        for group in &item.groups {
+            let normalized = normalize_semantic_token(group);
+            if !normalized.is_empty() && counted_groups.insert(normalized.clone()) {
+                *model_counts_by_group.entry(normalized).or_insert(0) += 1;
+            }
+        }
     }
-    if model_is_enterprise(model) {
-        groups.push(MODEL_GROUP_ENTERPRISE.to_owned());
-    }
-    if model_is_vip(model) {
-        groups.push(MODEL_GROUP_VIP.to_owned());
-    }
-    if model_is_beta(model) {
-        groups.push(MODEL_GROUP_BETA.to_owned());
-    }
-    groups.sort_by_key(|group| model_group_sort_key(group));
-    groups.dedup();
+
+    let mut groups = catalog
+        .list_api_key_groups()
+        .into_iter()
+        .filter_map(|group| {
+            let key = configured_group_code(&group)?;
+            let label = group.display_name();
+            let model_count = model_counts_by_group
+                .get(&normalize_semantic_token(&key))
+                .copied()
+                .unwrap_or(0);
+            Some(ModelCatalogGroup {
+                key,
+                label,
+                model_count,
+            })
+        })
+        .collect::<Vec<_>>();
+
+    groups.sort_by(|left, right| {
+        group_has_models_sort_key(right)
+            .cmp(&group_has_models_sort_key(left))
+            .then_with(|| model_group_sort_key(&left.key).cmp(&model_group_sort_key(&right.key)))
+            .then_with(|| {
+                normalize_semantic_token(&left.key).cmp(&normalize_semantic_token(&right.key))
+            })
+    });
+    groups.dedup_by(|left, right| {
+        normalize_semantic_token(&left.key) == normalize_semantic_token(&right.key)
+    });
     groups
+}
+
+fn group_has_models_sort_key(group: &ModelCatalogGroup) -> usize {
+    usize::from(group.model_count > 0)
+}
+
+fn configured_model_groups<C: PricingCatalog>(catalog: &C, model: &AiModel) -> Vec<String> {
+    let groups_by_id = catalog
+        .list_api_key_groups()
+        .into_iter()
+        .filter_map(|group| configured_group_code(&group).map(|code| (group.id, code)))
+        .collect::<BTreeMap<_, _>>();
+    if groups_by_id.is_empty() {
+        return Vec::new();
+    }
+
+    let account_pool_routes = catalog.list_provider_account_pool_routes();
+    let any_group_bindings = account_pool_routes
+        .iter()
+        .any(|route| !route.group_bindings.is_empty());
+    let mut selected_group_ids = BTreeSet::new();
+    if any_group_bindings {
+        let model_scope_keys = [model.catalog_key.as_str(), model.model.as_str()];
+        let model_capability_codes = model_group_capability_codes(model);
+        for route in account_pool_routes {
+            for binding in route.group_bindings {
+                if groups_by_id.contains_key(&binding.group_id)
+                    && binding_matches_model_scope(&binding, &model_scope_keys)
+                    && binding_matches_model_capability(&binding, &model_capability_codes)
+                {
+                    selected_group_ids.insert(binding.group_id);
+                }
+            }
+        }
+    } else {
+        selected_group_ids.extend(groups_by_id.keys().copied());
+    }
+
+    let mut groups = selected_group_ids
+        .into_iter()
+        .filter_map(|group_id| groups_by_id.get(&group_id).cloned())
+        .collect::<Vec<_>>();
+    groups.sort_by(|left, right| {
+        model_group_sort_key(left)
+            .cmp(&model_group_sort_key(right))
+            .then_with(|| normalize_semantic_token(left).cmp(&normalize_semantic_token(right)))
+    });
+    groups
+        .dedup_by(|left, right| normalize_semantic_token(left) == normalize_semantic_token(right));
+    groups
+}
+
+fn configured_group_code(group: &ApiKeyGroup) -> Option<String> {
+    let code = group.code.trim();
+    if !code.is_empty() {
+        return Some(code.to_owned());
+    }
+    let name = group.name.trim();
+    if name.is_empty() {
+        None
+    } else {
+        Some(name.to_owned())
+    }
+}
+
+fn binding_matches_model_scope(
+    binding: &ProviderAccountPoolGroupBinding,
+    model_scope_keys: &[&str],
+) -> bool {
+    if binding.model_scope.is_empty() {
+        return true;
+    }
+    if model_scope_keys.is_empty() {
+        return false;
+    }
+    binding.model_scope.iter().any(|scope| {
+        model_scope_keys
+            .iter()
+            .any(|key| model_scope_value_matches_key(scope, key))
+    })
+}
+
+fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
+    let scope = normalize_model_scope_value(scope);
+    let key = normalize_model_scope_value(key);
+    if scope.is_empty() || key.is_empty() {
+        return false;
+    }
+    if scope == "*" || scope == "all" {
+        return true;
+    }
+    if scope == key {
+        return true;
+    }
+    if let Some(prefix) = scope.strip_suffix("/*") {
+        return !prefix.is_empty()
+            && (key == prefix
+                || key
+                    .strip_prefix(prefix)
+                    .is_some_and(|tail| tail.starts_with('/')));
+    }
+
+    let scope_parts = scope
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    let key_parts = key
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    if key_parts.len() < 3 {
+        return false;
+    }
+    let vendor = key_parts[0];
+    let region = key_parts[1];
+    let native_model_parts = &key_parts[2..];
+    let native_model = native_model_parts.join("/");
+    match scope_parts.as_slice() {
+        [scope_value] => {
+            *scope_value == vendor
+                || *scope_value == native_model.as_str()
+                || native_model_parts
+                    .last()
+                    .is_some_and(|model| *scope_value == *model)
+        }
+        [scope_vendor, scope_region] => {
+            (*scope_vendor == vendor && *scope_region == region) || scope == native_model
+        }
+        [scope_vendor, scope_region, scope_model @ ..] => {
+            (*scope_vendor == vendor
+                && *scope_region == region
+                && scope_model == native_model_parts)
+                || scope == native_model
+        }
+        [] => false,
+    }
+}
+
+fn normalize_model_scope_value(value: &str) -> String {
+    value.trim().trim_matches('/').to_ascii_lowercase()
+}
+
+fn binding_matches_model_capability(
+    binding: &ProviderAccountPoolGroupBinding,
+    model_capability_codes: &BTreeSet<String>,
+) -> bool {
+    if binding.capabilities.is_empty() {
+        return true;
+    }
+    let mut binding_codes = BTreeSet::new();
+    for capability in &binding.capabilities {
+        add_model_group_capability_code(&mut binding_codes, &normalize_semantic_token(capability));
+    }
+    binding_codes
+        .iter()
+        .any(|capability| model_capability_codes.contains(capability))
+}
+
+fn model_group_capability_codes(model: &AiModel) -> BTreeSet<String> {
+    let mut codes = BTreeSet::new();
+    for capability in &model.capabilities {
+        add_model_group_capability_code(&mut codes, &normalize_semantic_token(capability));
+    }
+    for modality in normalized_model_modalities(model) {
+        add_model_group_capability_code(&mut codes, &modality);
+    }
+    codes
+}
+
+fn add_model_group_capability_code(codes: &mut BTreeSet<String>, value: &str) {
+    let value = value.trim();
+    if value.is_empty() {
+        return;
+    }
+    match value {
+        "text" | "chat" | "llm" => {
+            codes.insert("text".to_owned());
+            codes.insert("chat".to_owned());
+            codes.insert("llm".to_owned());
+        }
+        "speech" | "voice" | "audio" => {
+            codes.insert("speech".to_owned());
+            codes.insert("voice".to_owned());
+            codes.insert("audio".to_owned());
+        }
+        "embedding" | "embeddings" => {
+            codes.insert("embedding".to_owned());
+            codes.insert("embeddings".to_owned());
+            codes.insert("llm".to_owned());
+        }
+        "rerank" | "ranking" => {
+            codes.insert("rerank".to_owned());
+            codes.insert("ranking".to_owned());
+            codes.insert("llm".to_owned());
+        }
+        "function_calling" | "function_call" | "tool_calling" | "tools" => {
+            codes.insert("function_calling".to_owned());
+            codes.insert("function_call".to_owned());
+            codes.insert("tool_calling".to_owned());
+            codes.insert("tools".to_owned());
+        }
+        "json" | "json_mode" | "json_schema" => {
+            codes.insert("json".to_owned());
+            codes.insert("json_mode".to_owned());
+            codes.insert("json_schema".to_owned());
+        }
+        _ => {
+            codes.insert(value.to_owned());
+        }
+    }
 }
 
 fn derive_model_categories(
@@ -309,9 +567,8 @@ fn derive_model_categories(
     vendor: &ModelVendor,
     reference_prices: &[ModelCatalogReferencePriceView],
 ) -> Vec<String> {
-    let groups = derive_model_groups(model);
     let mut categories = Vec::new();
-    if groups.iter().any(|group| group == MODEL_GROUP_DEFAULT) {
+    if model_is_public_default(model) {
         categories.push(MODEL_CATEGORY_RECOMMENDED.to_owned());
     }
     if is_open_source_vendor(vendor, &model.vendor_code) {
@@ -322,7 +579,7 @@ fn derive_model_categories(
     if model_is_free(reference_prices) {
         categories.push(MODEL_CATEGORY_FREE.to_owned());
     }
-    if groups.iter().any(|group| group == MODEL_GROUP_BETA) {
+    if model_is_beta(model) {
         categories.push(MODEL_CATEGORY_NEW.to_owned());
     }
     categories.sort_by_key(|category| model_category_sort_key(category));
@@ -334,40 +591,8 @@ fn model_is_public_default(model: &crate::domain::AiModel) -> bool {
     model.shelf_state.unwrap_or(1) == 1 && model.routing_state.unwrap_or(1) == 1
 }
 
-fn model_is_enterprise(model: &crate::domain::AiModel) -> bool {
-    model.supports_tools
-        || model.supports_json_schema
-        || model.context_tokens.unwrap_or_default() >= 128_000
-        || has_multimodal_io(model)
-        || has_any_normalized(
-            &model.capabilities,
-            &["tools", "json_schema", "function_calling", "long_context"],
-        )
-}
-
-fn model_is_vip(model: &crate::domain::AiModel) -> bool {
-    model.context_tokens.unwrap_or_default() >= 1_000_000
-        || has_any_normalized(
-            &model.capabilities,
-            &["reasoning", "video", "audio", "music"],
-        )
-}
-
 fn model_is_beta(model: &crate::domain::AiModel) -> bool {
     model.release_stage.unwrap_or(1) == 2
-}
-
-fn has_multimodal_io(model: &crate::domain::AiModel) -> bool {
-    normalized_model_modalities(model)
-        .into_iter()
-        .any(|modality| modality != "text" && modality != "chat" && modality != "llm")
-}
-
-fn has_any_normalized(values: &[String], needles: &[&str]) -> bool {
-    values
-        .iter()
-        .map(|value| normalize_semantic_token(value))
-        .any(|value| needles.iter().any(|needle| value == *needle))
 }
 
 fn is_open_source_vendor(vendor: &ModelVendor, vendor_code: &str) -> bool {

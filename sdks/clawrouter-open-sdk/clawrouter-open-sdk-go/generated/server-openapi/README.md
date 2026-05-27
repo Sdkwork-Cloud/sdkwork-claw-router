@@ -24,7 +24,7 @@ func main() {
     cfg := sdkhttp.NewDefaultConfig("https://api.sdkwork.com")
     client := github.com/sdkwork/clawrouter-open-sdk.NewSdkworkAiClientWithConfig(cfg)
     client.SetApiKey("your-api-key")
-    
+
     // Use the SDK
     result, err := client.Models.List()
     if err != nil {
@@ -56,7 +56,7 @@ client.SetAuthToken("your-auth-token")
 client.SetAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.

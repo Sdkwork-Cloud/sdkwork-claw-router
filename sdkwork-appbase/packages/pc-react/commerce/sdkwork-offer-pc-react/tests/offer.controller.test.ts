@@ -67,7 +67,7 @@ describe("sdkwork-offer-pc-react controller", () => {
         claimableCoupons: 1,
         currentLevelName: "Pro",
         isAuthenticated: true,
-        vipRemainingDays: 18,
+        membershipRemainingDays: 18,
       },
     };
     const secondDashboard = {
@@ -101,7 +101,7 @@ describe("sdkwork-offer-pc-react controller", () => {
           claimableCoupons: 0,
           currentLevelName: "Guest",
           isAuthenticated: false,
-          vipRemainingDays: null,
+          membershipRemainingDays: null,
         },
       }),
     };
@@ -151,7 +151,7 @@ describe("sdkwork-offer-pc-react controller", () => {
             claimableCoupons: 0,
             currentLevelName: "Guest",
             isAuthenticated: false,
-            vipRemainingDays: null,
+            membershipRemainingDays: null,
           },
         }),
       },

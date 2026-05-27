@@ -24,7 +24,7 @@ public class SkillCatalogItem {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -32,7 +32,7 @@ public class SkillCatalogItem {
     public String getClawhubImage() {
         return this.clawhubImage;
     }
-    
+
     public void setClawhubImage(String clawhubImage) {
         this.clawhubImage = clawhubImage;
     }
@@ -40,7 +40,7 @@ public class SkillCatalogItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -48,7 +48,7 @@ public class SkillCatalogItem {
     public String getDeveloper() {
         return this.developer;
     }
-    
+
     public void setDeveloper(String developer) {
         this.developer = developer;
     }
@@ -56,7 +56,7 @@ public class SkillCatalogItem {
     public String getDownloads() {
         return this.downloads;
     }
-    
+
     public void setDownloads(String downloads) {
         this.downloads = downloads;
     }
@@ -64,7 +64,7 @@ public class SkillCatalogItem {
     public List<String> getFeatures() {
         return this.features;
     }
-    
+
     public void setFeatures(List<String> features) {
         this.features = features;
     }
@@ -72,7 +72,7 @@ public class SkillCatalogItem {
     public List<String> getFrameworks() {
         return this.frameworks;
     }
-    
+
     public void setFrameworks(List<String> frameworks) {
         this.frameworks = frameworks;
     }
@@ -80,7 +80,7 @@ public class SkillCatalogItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -88,7 +88,7 @@ public class SkillCatalogItem {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -96,7 +96,7 @@ public class SkillCatalogItem {
     public String getLastUpdated() {
         return this.lastUpdated;
     }
-    
+
     public void setLastUpdated(String lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
@@ -104,7 +104,7 @@ public class SkillCatalogItem {
     public String getLicense() {
         return this.license;
     }
-    
+
     public void setLicense(String license) {
         this.license = license;
     }
@@ -112,7 +112,7 @@ public class SkillCatalogItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -120,7 +120,7 @@ public class SkillCatalogItem {
     public List<SkillPackageItem> getPackages() {
         return this.packages;
     }
-    
+
     public void setPackages(List<SkillPackageItem> packages) {
         this.packages = packages;
     }
@@ -128,7 +128,7 @@ public class SkillCatalogItem {
     public Double getRating() {
         return this.rating;
     }
-    
+
     public void setRating(Double rating) {
         this.rating = rating;
     }
@@ -136,7 +136,7 @@ public class SkillCatalogItem {
     public List<String> getScreenshots() {
         return this.screenshots;
     }
-    
+
     public void setScreenshots(List<String> screenshots) {
         this.screenshots = screenshots;
     }
@@ -144,7 +144,7 @@ public class SkillCatalogItem {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -152,7 +152,7 @@ public class SkillCatalogItem {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

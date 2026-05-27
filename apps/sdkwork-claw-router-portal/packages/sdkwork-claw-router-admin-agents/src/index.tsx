@@ -110,14 +110,6 @@ export function AdminAgentsView() {
     setPageSize('25');
   };
 
-  const totals = useMemo(() => {
-    const activeCount = agents.filter((agent) => agent.status === 'active').length;
-    const memoryCount = agents.filter((agent) => agent.capabilities.memoryEnabled).length;
-    const mcpCount = agents.reduce((sum, agent) => sum + agent.capabilities.mcpServerCount, 0);
-    const skillCount = agents.reduce((sum, agent) => sum + agent.capabilities.skillBindingCount, 0);
-    return { activeCount, memoryCount, mcpCount, skillCount };
-  }, [agents]);
-
   const agentCategories = useMemo<AdminAgentCategory[]>(() => [
     {
       id: '',
@@ -183,33 +175,6 @@ export function AdminAgentsView() {
 
   return (
     <div className="flex h-full w-full min-w-0 flex-col gap-4 overflow-hidden">
-      <div className="flex shrink-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
-            <Bot className="h-6 w-6 text-emerald-500" />
-            {t('admin.agents.title')}
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm text-slate-500 dark:text-slate-400">
-            {t('admin.agents.subtitle')}
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => { void loadAgents(); }}
-          className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300"
-        >
-          <RefreshCw className="h-4 w-4" />
-          {t('common.actions.refresh')}
-        </button>
-      </div>
-
-      <div className="grid shrink-0 grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
-        <MetricCard icon={<Bot className="h-5 w-5" />} label={t('admin.agents.metrics.total')} value={agents.length.toLocaleString()} tone="emerald" />
-        <MetricCard icon={<ServerCog className="h-5 w-5" />} label={t('admin.agents.metrics.active')} value={totals.activeCount.toLocaleString()} tone="blue" />
-        <MetricCard icon={<Database className="h-5 w-5" />} label={t('admin.agents.metrics.memory')} value={totals.memoryCount.toLocaleString()} tone="amber" />
-        <MetricCard icon={<UserRound className="h-5 w-5" />} label={t('admin.agents.metrics.extensions')} value={`${totals.mcpCount.toLocaleString()} / ${totals.skillCount.toLocaleString()}`} tone="slate" />
-      </div>
-
       <div data-admin-agent-layout className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
         <AdminAgentCategoryTree
           categories={agentCategories}
@@ -409,24 +374,6 @@ export function AdminAgentsView() {
         error={detailError}
         onClose={closeDetails}
       />
-    </div>
-  );
-}
-
-function MetricCard({ icon, label, value, tone }: { icon: ReactNode; label: string; value: string; tone: 'emerald' | 'blue' | 'amber' | 'slate' }) {
-  const toneClass = {
-    emerald: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300',
-    blue: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300',
-    amber: 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300',
-    slate: 'bg-slate-100 text-slate-600 dark:bg-white/10 dark:text-slate-300',
-  }[tone];
-  return (
-    <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-[#171717]">
-      <div>
-        <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</div>
-        <div className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{value}</div>
-      </div>
-      <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${toneClass}`}>{icon}</div>
     </div>
   );
 }

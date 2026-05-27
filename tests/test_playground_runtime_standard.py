@@ -1,3 +1,4 @@
+import re
 import unittest
 from pathlib import Path
 import yaml
@@ -151,6 +152,39 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertEqual(expected_domains[operation], operation_contracts[operation].get("sdk_domain"))
                 self.assertNotEqual("app_shell", operation_contracts[operation].get("operation_scope"))
 
+        agent_run_create_schema = operation_contracts["createAgentRun"]["request_schema"]
+        self.assertNotIn("requestId", agent_run_create_schema.get("required", []))
+        self.assertNotIn("requestId", agent_run_create_schema.get("properties", {}))
+        self.assertIn(
+            "The server generates the run request id.",
+            operation_contracts["createAgentRun"].get("description", ""),
+        )
+        runtime_invocation_create_schema = operation_contracts["createRuntimeInvocation"]["request_schema"]
+        self.assertNotIn("requestId", runtime_invocation_create_schema.get("required", []))
+        self.assertNotIn("requestId", runtime_invocation_create_schema.get("properties", {}))
+        self.assertIn(
+            "The server generates the runtime request id.",
+            operation_contracts["createRuntimeInvocation"].get("description", ""),
+        )
+
+        runtime_operations_source = (
+            PLAYGROUND_ROOT / "appRuntimeApiOperations.ts"
+        ).read_text(encoding="utf-8")
+        agent_run_create_body = re.search(
+            r"export interface AgentRunCreateBody \{(?P<body>.*?)\n\}",
+            runtime_operations_source,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(agent_run_create_body)
+        self.assertNotIn("requestId", agent_run_create_body.group("body"))
+        runtime_invocation_create_body = re.search(
+            r"export interface RuntimeInvocationCreateBody \{(?P<body>.*?)\n\}",
+            runtime_operations_source,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(runtime_invocation_create_body)
+        self.assertNotIn("requestId", runtime_invocation_create_body.group("body"))
+
         service_contracts = {
             entry["operation"]: entry
             for entry in contract["frontend_operations"]
@@ -179,30 +213,38 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         page_source = (PLAYGROUND_ROOT / "pages" / "Playground.tsx").read_text(encoding="utf-8")
         input_source = (PLAYGROUND_ROOT / "components" / "GenerationChatInput.tsx").read_text(encoding="utf-8")
 
-        self.assertIn("export interface PlaygroundHistoryItem", type_source)
+        self.assertIn("SdkworkGenerationHistoryItem", type_source)
+        self.assertIn("export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem", type_source)
         self.assertIn("export type PlaygroundPreviewSetter", type_source)
         self.assertIn("export interface PlaygroundModelOption", type_source)
         self.assertIn("export interface PlaygroundAssetViewProps", type_source)
+        self.assertNotIn("export interface PlaygroundHistoryItem", type_source)
         self.assertIn("export type { PlaygroundHistoryItem, PlaygroundMedia", service_source)
         self.assertIn("from '../playgroundTypes'", page_source)
         for shared_type in [
-            "PlaygroundGenerationArtifact",
             "PlaygroundHistoryItem",
-            "PlaygroundMedia",
             "PlaygroundModelBucket",
             "PlaygroundModelGroup",
         ]:
             with self.subTest(shared_type=shared_type):
                 self.assertIn(shared_type, page_source)
+        for shared_type in [
+            "PlaygroundGenerationArtifact",
+            "PlaygroundMedia",
+        ]:
+            with self.subTest(shared_type=shared_type):
+                self.assertIn(shared_type, type_source)
         self.assertIn("const MODEL_BUCKETS: PlaygroundModelBucket[]", service_source)
-        self.assertIn("export type PlaygroundModelBucket = 'llms' | 'images' | 'videos' | 'audios' | 'music' | 'sfx'", type_source)
+        self.assertIn("export type PlaygroundModelBucket = SdkworkGenerationModelBucket", type_source)
         self.assertIn("const MODEL_BUCKETS: PlaygroundModelBucket[] = ['llms', 'images', 'videos', 'audios', 'music', 'sfx']", service_source)
         self.assertIn("listModelCatalog()", service_source)
         self.assertNotIn("getClawRouterAppSdkClient().ai.models.list()", service_source)
         self.assertIn("return 'llms';", page_source)
         self.assertIn("return 'llms';", input_source)
-        self.assertIn("return 'audios';", page_source)
-        self.assertIn("return 'audios';", input_source)
+        self.assertIn("getSdkworkGenerationModelBucket", page_source)
+        self.assertIn("getSdkworkGenerationModelBucket", input_source)
+        self.assertNotIn("case 'audio': return 'audios'", page_source)
+        self.assertNotIn("case 'audio': return 'audios'", input_source)
         self.assertNotIn("'agents'", type_source)
         self.assertNotIn("agents:", type_source)
         self.assertNotIn("ai.playground.models", service_source)
@@ -270,7 +312,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn('export * from "./pages/GenerationPage.tsx";', appbase_generation_react_source)
         self.assertNotIn("@sdkwork/core-pc-react", appbase_generation_service_source)
 
-        self.assertIn("from '@sdkwork/generation-pc-react'", service_source)
+        self.assertIn("from '@sdkwork/generation-pc-react/generation-service'", service_source)
         self.assertIn("createSdkworkGenerationService", service_source)
         self.assertIn("type SdkworkGenerationRun", service_source)
         self.assertIn("type SdkworkGenerationWorkspaceData", service_source)
@@ -348,6 +390,50 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("unknown as", source)
                 self.assertIn("Playground", source)
 
+    def test_playground_chat_deep_link_route_is_a_first_class_schema_route(self) -> None:
+        contract = yaml.safe_load(
+            (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
+                encoding="utf-8"
+            )
+        )
+        classification = yaml.safe_load(
+            (ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml").read_text(
+                encoding="utf-8"
+            )
+        )
+        schema_manifest = yaml.safe_load(
+            (ROOT / "generated" / "schema" / "manifest" / "schema-manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+        route_contracts = {
+            entry["route"]: entry
+            for entry in contract["routes"]
+            if isinstance(entry, dict) and isinstance(entry.get("route"), str)
+        }
+        classifications = {
+            entry["route"]: entry
+            for entry in classification["routes"]
+            if isinstance(entry, dict) and isinstance(entry.get("route"), str)
+        }
+
+        self.assertIn("/c/:conversationId", route_contracts)
+        self.assertIn("/c/:conversationId", schema_manifest["routes"])
+        self.assertIn("/c/:conversationId", classifications)
+
+        deep_link_route = route_contracts["/c/:conversationId"]
+        for required_table in ["ai_chat_conversation", "ai_chat_turn", "ai_runtime_invocation", "ai_model"]:
+            with self.subTest(required_table=required_table):
+                self.assertIn(required_table, deep_link_route["required_tables"])
+
+        deep_link_classification = classifications["/c/:conversationId"]
+        self.assertEqual("sdkwork-claw-router-playground", deep_link_classification["package"])
+        self.assertEqual("sdk_backed_business_runtime", deep_link_classification["delivery_kind"])
+        self.assertEqual("app", deep_link_classification["api_surface"])
+        self.assertIn("/playground", deep_link_classification["operation_routes"])
+        self.assertIn("/chat", deep_link_classification["operation_routes"])
+
     def test_playground_generation_controls_are_product_ready_not_read_only_placeholders(self) -> None:
         checked_sources = [
             PLAYGROUND_ROOT / "pages" / "Playground.tsx",
@@ -372,7 +458,6 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
-
         for forbidden in [
             "ReadOnlyPlayground",
             "readOnlyReason",
@@ -399,6 +484,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         checked_sources = [
             PLAYGROUND_ROOT / "pages" / "Playground.tsx",
             PLAYGROUND_ROOT / "components" / "GenerationChatInput.tsx",
+            PLAYGROUND_ROOT / "components" / "ImageGenerationModePopup.tsx",
+            PLAYGROUND_ROOT / "components" / "VideoGenerationModePopup.tsx",
             PLAYGROUND_ROOT / "components" / "views" / "AgentView.tsx",
         ]
 
@@ -427,6 +514,10 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertIn(canonical_name, combined_source)
 
         for mojibake_token in ["鏅", "鐢", "鉁", "\ufffd"]:
+            with self.subTest(mojibake_token=mojibake_token):
+                self.assertNotIn(mojibake_token, combined_source)
+
+        for mojibake_token in ["鐢", "姣", "瑙", "闊", "鏅", "楂", "璁"]:
             with self.subTest(mojibake_token=mojibake_token):
                 self.assertNotIn(mojibake_token, combined_source)
 
@@ -461,7 +552,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("menuPlacement=\"top\"", generation_input_source)
         self.assertIn("variant=\"flat\"", generation_input_source)
         self.assertIn("compact", generation_input_source)
-        self.assertIn("min-h-[200px]", generation_input_source)
+        self.assertIn("min-h-[112px]", generation_input_source)
         self.assertNotIn("activeVendorCode", generation_input_source)
         self.assertNotIn("onMouseEnter", generation_input_source)
         self.assertNotIn("findModelById", generation_input_source)
@@ -484,9 +575,6 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         chat_message_bubble_source = (
             PLAYGROUND_ROOT / "components" / "chat" / "ChatMessageBubble.tsx"
-        ).read_text(encoding="utf-8")
-        chat_api_key_source = (
-            PLAYGROUND_ROOT / "components" / "chat" / "ChatApiKeySwitcher.tsx"
         ).read_text(encoding="utf-8")
         chat_types_source = (
             PLAYGROUND_ROOT / "components" / "chat" / "chatTypes.ts"
@@ -512,18 +600,17 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("<SimpleChatInput", chat_page_source)
         self.assertNotIn("<ChatApiKeySwitcher", chat_page_source)
         self.assertIn("PlaygroundService.fetchModelGroups()", chat_page_source)
-        self.assertIn("ApiKeyService.fetchKeys()", chat_page_source)
-        self.assertIn("setSelectedApiKeyId((current) => (", chat_page_source)
-        self.assertIn("const enabledKeys = keys.filter((key) => key.status === 'enabled');", chat_page_source)
-        self.assertIn("enabledKeys.some((key) => key.id === current) ? current : enabledKeys[0]?.id ?? ''", chat_page_source)
+        self.assertNotIn("ApiKeyService", chat_page_source)
+        self.assertNotIn("selectedApiKeyId", chat_page_source)
+        self.assertNotIn("ChatApiKeyOption", chat_page_source)
         self.assertNotIn("GenerationChatInput", chat_page_source)
 
         self.assertIn("import { SimpleChatInput } from './SimpleChatInput';", chat_page_source)
         self.assertIn("export function SimpleChatInput", simple_chat_input_source)
         self.assertIn("bucket=\"llms\"", simple_chat_input_source)
         self.assertIn("PlaygroundModelPicker", simple_chat_input_source)
-        self.assertIn("w-full max-w-[128px]", simple_chat_input_source)
-        self.assertIn("w-full max-w-[136px]", simple_chat_input_source)
+        self.assertIn("w-fit min-w-0 max-w-full flex-[0_1_auto]", simple_chat_input_source)
+        self.assertNotIn("w-full max-w-[136px]", simple_chat_input_source)
         self.assertNotIn("max-w-[168px]", simple_chat_input_source)
         self.assertNotIn("max-w-[176px]", simple_chat_input_source)
         self.assertNotIn("max-w-[220px]", simple_chat_input_source)
@@ -537,8 +624,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("onCompositionEnd", simple_chat_input_source)
         self.assertIn("textareaRef", simple_chat_input_source)
         self.assertIn("variant=\"flat\"", simple_chat_input_source)
-        self.assertIn("<ChatApiKeySwitcher", simple_chat_input_source)
-        self.assertIn("apiKeys={apiKeys}", simple_chat_input_source)
+        self.assertNotIn("<ChatApiKeySwitcher", simple_chat_input_source)
+        self.assertNotIn("apiKeys", simple_chat_input_source)
+        self.assertNotIn("selectedApiKey", simple_chat_input_source)
         self.assertNotIn("MessageSquare", simple_chat_input_source)
         self.assertNotIn("selectedVendorName", simple_chat_input_source)
         self.assertNotIn("playground.chat.vendor", simple_chat_input_source)
@@ -549,25 +637,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export function ChatMessageBubble", chat_message_bubble_source)
         self.assertIn("export interface ChatMessage", chat_types_source)
         self.assertIn("export interface SimpleChatInputSubmit", chat_types_source)
-
-        self.assertIn("export function ChatApiKeySwitcher", chat_api_key_source)
-        self.assertIn("showApiKeyMenu", chat_api_key_source)
-        self.assertIn("setShowApiKeyMenu", chat_api_key_source)
-        self.assertIn("selectedApiKey?.displayName", chat_api_key_source)
-        self.assertIn("apiKey.displayName", chat_api_key_source)
-        self.assertIn("whitespace-nowrap", chat_api_key_source)
-        self.assertIn("max-w-[136px]", chat_api_key_source)
-        self.assertIn("apiKeys.length === 0", chat_api_key_source)
-        self.assertIn("disabled?: boolean", chat_api_key_source)
-        self.assertIn("disabled:cursor-not-allowed", chat_api_key_source)
-        self.assertIn("/console/api-keys", chat_api_key_source)
-        self.assertIn("playground.chat.apiKey.empty", chat_api_key_source)
-        self.assertNotIn("{apiKey.group}", chat_api_key_source)
-        self.assertNotIn("apiKey.maskedKey", chat_api_key_source)
-        self.assertNotIn("sm:w-[260px]", chat_api_key_source)
-        self.assertNotIn("border border-white/5", chat_api_key_source)
-        self.assertNotIn("<select", chat_api_key_source)
-        self.assertNotIn("fetch(", chat_api_key_source)
+        self.assertNotIn("ChatApiKeyOption", chat_types_source)
+        self.assertNotIn("selectedApiKeyId", chat_types_source)
+        self.assertFalse((PLAYGROUND_ROOT / "components" / "chat" / "ChatApiKeySwitcher.tsx").exists())
 
         model_picker_source = (
             PLAYGROUND_ROOT / "components" / "PlaygroundModelPicker.tsx"
@@ -594,15 +666,30 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         generation_service_source = (
             PLAYGROUND_ROOT / "playgroundGenerationService.ts"
         ).read_text(encoding="utf-8")
-        i18n_source = (
+        playground_i18n_root = (
             ROOT
             / "apps"
             / "sdkwork-claw-router-portal"
             / "packages"
             / "sdkwork-claw-router-i18n"
             / "src"
-            / "index.ts"
+            / "resources"
+            / "playground"
+        )
+        i18n_source = "\n".join(
+            path.read_text(encoding="utf-8")
+            for path in playground_i18n_root.glob("*.ts")
+        )
+        image_mode_popup_source = (
+            PLAYGROUND_ROOT / "components" / "ImageGenerationModePopup.tsx"
         ).read_text(encoding="utf-8")
+        video_mode_popup_source = (
+            PLAYGROUND_ROOT / "components" / "VideoGenerationModePopup.tsx"
+        ).read_text(encoding="utf-8")
+        mode_popup_base_source = (
+            PLAYGROUND_ROOT / "components" / "GenerationModePopupBase.tsx"
+        ).read_text(encoding="utf-8")
+        mode_popup_sources = image_mode_popup_source + "\n" + video_mode_popup_source + "\n" + mode_popup_base_source
 
         self.assertIn("export function AssetGenerationPanel", panel_source)
         self.assertIn("function GenerationBottomActionBar", panel_source)
@@ -610,23 +697,31 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("sticky bottom-0", panel_source)
         self.assertIn("playground.generationCost.unavailable", panel_source)
         self.assertIn("playground.generationCost.points", panel_source)
-        self.assertIn("estimatePlaygroundGenerationCredits", panel_source)
+        self.assertIn("estimateSdkworkGenerationCredits", panel_source)
+        self.assertIn("findFirstSdkworkGenerationModelForModality", panel_source)
+        self.assertIn("findSdkworkGenerationModelById", panel_source)
+        self.assertIn("getSdkworkGenerationDurationOptions", panel_source)
+        self.assertNotIn("function estimatePlaygroundGenerationCredits", panel_source)
+        self.assertNotIn("function selectReferencePrice", panel_source)
+        self.assertNotIn("function estimateMeterQuantity", panel_source)
+        self.assertNotIn("function metersForModality", panel_source)
         self.assertNotIn("function GenerationActionBar", panel_source)
         self.assertIn("function ReferenceImageUploader", panel_source)
-        self.assertIn("function ImageGenerationBottomControls", panel_source)
-        self.assertIn("function GenerationPopover", panel_source)
+        self.assertIn("ImageGenerationModePopup", panel_source)
+        self.assertIn("VideoGenerationModePopup", panel_source)
+        self.assertIn("GenerationModePopupBase", mode_popup_base_source)
         self.assertIn('accept="image/*"', panel_source)
         self.assertIn("referenceImageUrl", panel_source)
-        self.assertIn("referenceImageName", panel_source)
+        self.assertIn("referenceImage.metadata.name", panel_source)
         self.assertIn("readReferenceImageDataUrl", panel_source)
         self.assertIn("dataUrl: referenceImageDataUrl", panel_source)
         self.assertIn("URL.createObjectURL", panel_source)
         self.assertIn("URL.revokeObjectURL", panel_source)
-        self.assertIn("aspectRatio", panel_source)
+        self.assertIn("aspectRatio", mode_popup_sources)
         self.assertIn("playground.referenceAssets", panel_source)
-        self.assertIn("playground.action.ratio", panel_source)
+        self.assertIn("valueKey: 'aspectRatio'", image_mode_popup_source)
         self.assertIn("playground.generationOutput.images", panel_source)
-        self.assertIn("ImageGenerationBottomControls", panel_source)
+        self.assertIn("ImageGenerationModePopup", panel_source)
         self.assertIn("config={config}", panel_source)
         self.assertIn("const outputLabel = generationOutputLabel", panel_source)
         self.assertIn("playground.generationOutput.images", panel_source)
@@ -640,20 +735,22 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("outputLabel", panel_source)
         self.assertNotIn("t('playground.generationCost.estimated')", panel_source)
         self.assertNotIn("mb-3 flex min-w-0 items-start", panel_source)
-        self.assertIn("findModelById(modelGroups, selectedModelId)", panel_source)
-        self.assertIn("generationConfig: createGenerationConfig(config)", panel_source)
+        self.assertIn("findSdkworkGenerationModelById(modelGroups, selectedModelId)", panel_source)
+        self.assertIn("generationConfig: serializeSdkworkGenerationAssetConfig(config, modality)", panel_source)
+        self.assertNotIn("function createGenerationConfig", panel_source)
         self.assertIn("referenceImages:", panel_source)
         self.assertIn("const targetType = inputModality === 'agent' ? undefined : inputModality;", page_source)
-        self.assertIn("input.targetType === undefined", page_source)
-        self.assertIn("? 'text'", page_source)
-        self.assertIn("if (type === 'text')", page_source)
+        self.assertIn("targetType === undefined ? 'llms' : toModelBucket(targetType)", page_source)
+        self.assertIn("const isText = previewItem?.type === 'text'", page_source)
+        self.assertIn("previewKind === 'text'", page_source)
         self.assertIn("targetType,", page_source)
         self.assertIn("generationConfig,", page_source)
         self.assertIn("referenceImages,", page_source)
         self.assertIn("const requestedTargetType = input.targetType;", generation_service_source)
         self.assertIn("resolveGenerationResultTargetType(requestedTargetType, completedGenerationOutput.artifacts)", generation_service_source)
         self.assertIn("return artifacts[0]?.modality;", generation_service_source)
-        self.assertIn("targetType === undefined ? 'text' : mapHistoryType(targetType)", generation_service_source)
+        self.assertIn("mapSdkworkGenerationModalityToHistoryType(targetType)", generation_service_source)
+        self.assertNotIn("function mapHistoryType", generation_service_source)
         self.assertIn("targetType: requestedTargetType", generation_service_source)
         self.assertIn("generationConfig: input.generationConfig", generation_service_source)
         self.assertIn("referenceImages: input.referenceImages", generation_service_source)
@@ -665,7 +762,17 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("dataUrl?: string", type_source)
         self.assertIn("url?: string", type_source)
         self.assertIn("assetId?: string", type_source)
-        self.assertIn("type: 'text' | 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx'", type_source)
+        self.assertIn("export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem", type_source)
+        self.assertIn("SdkworkGenerationHistoryType", (
+            ROOT
+            / "sdkwork-appbase"
+            / "packages"
+            / "pc-react"
+            / "content"
+            / "sdkwork-generation-pc-react"
+            / "src"
+            / "generation-history.ts"
+        ).read_text(encoding="utf-8"))
         self.assertIn("targetType?: PlaygroundGenerationTargetType", type_source)
         self.assertIn("officialReferencePrices", type_source)
         self.assertIn("priceAvailability", type_source)
@@ -734,18 +841,30 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         types_source = (PLAYGROUND_ROOT / "playgroundTypes.ts").read_text(encoding="utf-8")
 
-        for source in [contract_source, types_source]:
-            with self.subTest(source="contract"):
-                self.assertIn("targetType", source)
-                self.assertIn("generationConfig", source)
-                self.assertIn("referenceImages", source)
-                self.assertIn("imageCount", source)
-                self.assertIn("aspectRatio", source)
-                self.assertIn("durationSeconds", source)
-                self.assertIn("quality", source)
-                self.assertIn("dataUrl", source)
-                self.assertIn("url", source)
-                self.assertIn("assetId", source)
+        for field in [
+            "targetType",
+            "generationConfig",
+            "referenceImages",
+            "imageCount",
+            "aspectRatio",
+            "durationSeconds",
+            "dataUrl",
+            "url",
+            "assetId",
+        ]:
+            with self.subTest(source="contract", field=field):
+                self.assertIn(field, contract_source)
+        for field in [
+            "targetType",
+            "generationConfig",
+            "referenceImages",
+            "dataUrl",
+            "url",
+            "assetId",
+        ]:
+            with self.subTest(source="types", field=field):
+                self.assertIn(field, types_source)
+        self.assertIn("SdkworkGenerationSerializedAssetConfig", types_source)
 
         self.assertIn("targetType", generation_service_source)
         self.assertIn("generationConfig: input.generationConfig", generation_service_source)
@@ -858,7 +977,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "packages"
             / "sdkwork-claw-router-i18n"
             / "src"
-            / "index.ts"
+            / "resources"
+            / "playground"
+            / "chat.ts"
         ).read_text(encoding="utf-8")
 
         for key in [
@@ -955,10 +1076,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("usageJson: usage", chat_service_source)
         self.assertIn("usage: { ...usage }", chat_service_source)
         self.assertIn("metadata: {", chat_service_source)
-        self.assertIn("routeKeyId: readOptionalInteger(input.selectedApiKeyId)", chat_service_source)
-        self.assertIn("const routeKeyId = readOptionalInteger(input.selectedApiKeyId)", chat_service_source)
-        self.assertIn("...(routeKeyId ? { routeKeyId } : {})", chat_service_source)
-        self.assertIn("function readOptionalInteger", chat_service_source)
+        self.assertNotIn("routeKeyId", chat_service_source)
+        self.assertNotIn("readOptionalInteger", chat_service_source)
+        self.assertNotIn("input.selectedApiKeyId", chat_service_source)
         self.assertIn("latestCompletionId: conversation.id", chat_service_source)
         self.assertIn("toRuntimeMessages(input.messages, input.prompt)", chat_service_source)
         self.assertIn("message.status === 'sent' || message.status === 'complete'", chat_service_source)
@@ -970,10 +1090,11 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("export interface ChatSessionSummary", chat_types_source)
         self.assertIn("export interface ChatSendResult", chat_types_source)
-        self.assertIn("copyableKey: ApiKey['copyableKey'];", chat_types_source)
-        self.assertIn("groupName: ApiKey['groupName'];", chat_types_source)
-        self.assertIn("selectedApiKeyId: string", chat_types_source)
-        self.assertIn("selectedApiKeyId?: string", chat_types_source)
+        self.assertNotIn("ChatApiKeyOption", chat_types_source)
+        self.assertNotIn("copyableKey: ApiKey", chat_types_source)
+        self.assertNotIn("groupName: ApiKey", chat_types_source)
+        self.assertNotIn("selectedApiKeyId", chat_types_source)
+        self.assertNotIn("apiKey?:", chat_types_source)
         self.assertIn("sessionId?: string", chat_types_source)
 
         self.assertIn("ChatService.fetchSessions", chat_page_source)
@@ -989,8 +1110,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("selectedChatModel", chat_page_source)
         self.assertIn("latestCompletionId", chat_page_source)
         self.assertIn("setSelectedSessionId(sessionId)", chat_page_source)
-        self.assertIn("copyableKey: key.copyableKey", chat_page_source)
-        self.assertIn("groupName: key.groupName", chat_page_source)
+        self.assertNotIn("copyableKey: key.copyableKey", chat_page_source)
+        self.assertNotIn("groupName: key.groupName", chat_page_source)
         self.assertIn("createChatUserMessage(input.prompt)", chat_page_source)
         self.assertIn("const handleSubmit = async (input: SimpleChatInputSubmit): Promise<boolean> =>", chat_page_source)
         self.assertIn("return true;", chat_page_source)
@@ -998,12 +1119,12 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("const failedMessages = [", chat_page_source)
         self.assertIn("streamedAssistantContent || errorMessage", chat_page_source)
         self.assertIn("setMessageError(errorMessage)", chat_page_source)
-        self.assertIn("selectedApiKeyIdRef", chat_page_source)
-        self.assertIn("selectedApiKeySnapshotId !== selectedApiKeyIdRef.current", chat_page_source)
+        self.assertNotIn("selectedApiKeyIdRef", chat_page_source)
+        self.assertNotIn("selectedApiKeySnapshotId", chat_page_source)
         self.assertIn("const priorSessions = sessionsRef.current", chat_page_source)
-        self.assertIn("const activeSessions = selectedApiKeySnapshotId === selectedApiKeyIdRef.current", chat_page_source)
+        self.assertIn("const activeSessions = sessionChanged ? priorSessions : sessionsRef.current", chat_page_source)
         self.assertIn("selectedSessionIdRef", chat_page_source)
-        self.assertIn("selectedSessionIdSnapshot !== selectedSessionIdRef.current", chat_page_source)
+        self.assertIn("const sessionChanged = Boolean(sessionId) && sessionId !== selectedSessionIdRef.current", chat_page_source)
         self.assertIn("isNewChatDraftRef", chat_page_source)
         self.assertIn("setIsNewChatDraft(true)", chat_page_source)
         self.assertIn("if (isNewChatDraftRef.current) {", chat_page_source)
@@ -1012,8 +1133,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("setLoadingMessages(false)", chat_page_source)
         self.assertIn("setMessageError(null)", chat_page_source)
         self.assertIn("resetActiveConversationView()", chat_page_source)
-        self.assertIn("resetActiveConversationView({ clearSessions: true })", chat_page_source)
-        self.assertIn("if (apiKeyId === selectedApiKeyIdRef.current) {", chat_page_source)
+        self.assertNotIn("resetActiveConversationView({ clearSessions: true })", chat_page_source)
+        self.assertNotIn("apiKeyId", chat_page_source)
         self.assertIn("disabled={submitting}", chat_page_source)
         self.assertNotIn("createLocalAssistantMessage", chat_page_source)
 
@@ -1034,9 +1155,6 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         simple_chat_input_source = (
             PLAYGROUND_ROOT / "components" / "chat" / "SimpleChatInput.tsx"
         ).read_text(encoding="utf-8")
-        chat_api_key_source = (
-            PLAYGROUND_ROOT / "components" / "chat" / "ChatApiKeySwitcher.tsx"
-        ).read_text(encoding="utf-8")
         model_picker_source = (
             PLAYGROUND_ROOT / "components" / "PlaygroundModelPicker.tsx"
         ).read_text(encoding="utf-8")
@@ -1056,28 +1174,22 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("const realSelectedModel", simple_chat_input_source)
-        self.assertIn("const hasRealModel = Boolean(realSelectedModel)", simple_chat_input_source)
-        self.assertIn("const selectedApiKey = apiKeys.find((apiKey) => apiKey.id === selectedApiKeyId) || apiKeys[0]", simple_chat_input_source)
-        self.assertIn("selectedApiKey?.copyableKey", simple_chat_input_source)
+        self.assertIn("const modelSelection = useMemo(", simple_chat_input_source)
+        self.assertIn("const displaySelectedModel = modelSelection.displayModel", simple_chat_input_source)
+        self.assertIn("const submitModel = modelSelection.submitModel", simple_chat_input_source)
+        self.assertIn("const hasSubmittableModel = Boolean(submitModel)", simple_chat_input_source)
+        self.assertNotIn("selectedApiKey", simple_chat_input_source)
+        self.assertNotIn("apiKeys", simple_chat_input_source)
         self.assertIn("!loadingHistory", simple_chat_input_source)
         self.assertIn("const submitted = await onSubmit({", simple_chat_input_source)
         self.assertIn("if (submitted) {", simple_chat_input_source)
         self.assertIn("disabled={submitting}", simple_chat_input_source)
-        self.assertIn("w-full max-w-[128px]", simple_chat_input_source)
-        self.assertIn("w-full max-w-[136px]", simple_chat_input_source)
+        self.assertIn("w-fit min-w-0 max-w-full flex-[0_1_auto]", simple_chat_input_source)
+        self.assertNotIn("w-full max-w-[136px]", simple_chat_input_source)
         self.assertNotIn("max-w-[168px]", simple_chat_input_source)
         self.assertNotIn("max-w-[176px]", simple_chat_input_source)
         self.assertNotIn("selectedModel.id && selectedApiKeyId", simple_chat_input_source)
-
-        self.assertIn("usePopoverDismiss", chat_api_key_source)
-        self.assertIn("apiKey.displayName", chat_api_key_source)
-        self.assertIn("apiKey.groupName", chat_api_key_source)
-        self.assertIn("disabled?: boolean", chat_api_key_source)
-        self.assertNotIn("KeyRound", chat_api_key_source)
-        self.assertNotIn("apiKey.maskedKey", chat_api_key_source)
-        self.assertNotIn("{apiKey.group}", chat_api_key_source)
-        self.assertIn("max-w-[136px]", chat_api_key_source)
+        self.assertFalse((PLAYGROUND_ROOT / "components" / "chat" / "ChatApiKeySwitcher.tsx").exists())
 
         self.assertIn("usePopoverDismiss", model_picker_source)
         self.assertIn("disabled?: boolean", model_picker_source)

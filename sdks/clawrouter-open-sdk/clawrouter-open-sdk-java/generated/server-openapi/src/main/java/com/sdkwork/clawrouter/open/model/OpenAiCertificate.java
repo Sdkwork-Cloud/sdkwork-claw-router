@@ -13,7 +13,7 @@ public class OpenAiCertificate {
     public Boolean getActive() {
         return this.active;
     }
-    
+
     public void setActive(Boolean active) {
         this.active = active;
     }
@@ -21,7 +21,7 @@ public class OpenAiCertificate {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -29,7 +29,7 @@ public class OpenAiCertificate {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -37,7 +37,7 @@ public class OpenAiCertificate {
     public Integer getExpiresAt() {
         return this.expiresAt;
     }
-    
+
     public void setExpiresAt(Integer expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -45,7 +45,7 @@ public class OpenAiCertificate {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -53,7 +53,7 @@ public class OpenAiCertificate {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -61,7 +61,7 @@ public class OpenAiCertificate {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

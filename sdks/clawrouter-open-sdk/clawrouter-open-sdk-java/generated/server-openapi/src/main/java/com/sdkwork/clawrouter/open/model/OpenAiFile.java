@@ -14,7 +14,7 @@ public class OpenAiFile {
     public Integer getBytes() {
         return this.bytes;
     }
-    
+
     public void setBytes(Integer bytes) {
         this.bytes = bytes;
     }
@@ -22,7 +22,7 @@ public class OpenAiFile {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -30,7 +30,7 @@ public class OpenAiFile {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -38,7 +38,7 @@ public class OpenAiFile {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -46,7 +46,7 @@ public class OpenAiFile {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -54,7 +54,7 @@ public class OpenAiFile {
     public String getPurpose() {
         return this.purpose;
     }
-    
+
     public void setPurpose(String purpose) {
         this.purpose = purpose;
     }
@@ -62,7 +62,7 @@ public class OpenAiFile {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -70,7 +70,7 @@ public class OpenAiFile {
     public String getStatusDetails() {
         return this.statusDetails;
     }
-    
+
     public void setStatusDetails(String statusDetails) {
         this.statusDetails = statusDetails;
     }

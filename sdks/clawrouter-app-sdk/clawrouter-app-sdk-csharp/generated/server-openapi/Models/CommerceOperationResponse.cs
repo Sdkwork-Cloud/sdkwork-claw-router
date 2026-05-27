@@ -6,6 +6,9 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class CommerceOperationResponse
     {
+        public string? PaymentId { get; set; }
+        public string? QrCodeImageUrl { get; set; }
+        public string? QrCodePayload { get; set; }
         public string? RequestNo { get; set; }
         public string? Status { get; set; }
         public bool? Success { get; set; }

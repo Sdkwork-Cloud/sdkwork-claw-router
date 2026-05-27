@@ -34,7 +34,7 @@ public class IamUserLoginEventRecord {
     public String getAuthMethod() {
         return this.authMethod;
     }
-    
+
     public void setAuthMethod(String authMethod) {
         this.authMethod = authMethod;
     }
@@ -42,7 +42,7 @@ public class IamUserLoginEventRecord {
     public String getAuthProvider() {
         return this.authProvider;
     }
-    
+
     public void setAuthProvider(String authProvider) {
         this.authProvider = authProvider;
     }
@@ -50,7 +50,7 @@ public class IamUserLoginEventRecord {
     public String getClientIpHash() {
         return this.clientIpHash;
     }
-    
+
     public void setClientIpHash(String clientIpHash) {
         this.clientIpHash = clientIpHash;
     }
@@ -58,7 +58,7 @@ public class IamUserLoginEventRecord {
     public String getClientIpMasked() {
         return this.clientIpMasked;
     }
-    
+
     public void setClientIpMasked(String clientIpMasked) {
         this.clientIpMasked = clientIpMasked;
     }
@@ -66,7 +66,7 @@ public class IamUserLoginEventRecord {
     public String getClientIpRegion() {
         return this.clientIpRegion;
     }
-    
+
     public void setClientIpRegion(String clientIpRegion) {
         this.clientIpRegion = clientIpRegion;
     }
@@ -74,7 +74,7 @@ public class IamUserLoginEventRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -82,7 +82,7 @@ public class IamUserLoginEventRecord {
     public String getDeviceFingerprintHash() {
         return this.deviceFingerprintHash;
     }
-    
+
     public void setDeviceFingerprintHash(String deviceFingerprintHash) {
         this.deviceFingerprintHash = deviceFingerprintHash;
     }
@@ -90,7 +90,7 @@ public class IamUserLoginEventRecord {
     public String getDeviceLabel() {
         return this.deviceLabel;
     }
-    
+
     public void setDeviceLabel(String deviceLabel) {
         this.deviceLabel = deviceLabel;
     }
@@ -98,7 +98,7 @@ public class IamUserLoginEventRecord {
     public String getFailureReasonCode() {
         return this.failureReasonCode;
     }
-    
+
     public void setFailureReasonCode(String failureReasonCode) {
         this.failureReasonCode = failureReasonCode;
     }
@@ -106,7 +106,7 @@ public class IamUserLoginEventRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -114,7 +114,7 @@ public class IamUserLoginEventRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -122,7 +122,7 @@ public class IamUserLoginEventRecord {
     public String getLoginResult() {
         return this.loginResult;
     }
-    
+
     public void setLoginResult(String loginResult) {
         this.loginResult = loginResult;
     }
@@ -130,7 +130,7 @@ public class IamUserLoginEventRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -138,7 +138,7 @@ public class IamUserLoginEventRecord {
     public Boolean getMfaVerified() {
         return this.mfaVerified;
     }
-    
+
     public void setMfaVerified(Boolean mfaVerified) {
         this.mfaVerified = mfaVerified;
     }
@@ -146,7 +146,7 @@ public class IamUserLoginEventRecord {
     public String getOccurredAt() {
         return this.occurredAt;
     }
-    
+
     public void setOccurredAt(String occurredAt) {
         this.occurredAt = occurredAt;
     }
@@ -154,7 +154,7 @@ public class IamUserLoginEventRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -162,7 +162,7 @@ public class IamUserLoginEventRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -170,7 +170,7 @@ public class IamUserLoginEventRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -178,7 +178,7 @@ public class IamUserLoginEventRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -186,7 +186,7 @@ public class IamUserLoginEventRecord {
     public String getRiskLevel() {
         return this.riskLevel;
     }
-    
+
     public void setRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
     }
@@ -194,7 +194,7 @@ public class IamUserLoginEventRecord {
     public String getSessionIdHash() {
         return this.sessionIdHash;
     }
-    
+
     public void setSessionIdHash(String sessionIdHash) {
         this.sessionIdHash = sessionIdHash;
     }
@@ -202,7 +202,7 @@ public class IamUserLoginEventRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -210,7 +210,7 @@ public class IamUserLoginEventRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -218,7 +218,7 @@ public class IamUserLoginEventRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -226,7 +226,7 @@ public class IamUserLoginEventRecord {
     public String getUserAgentHash() {
         return this.userAgentHash;
     }
-    
+
     public void setUserAgentHash(String userAgentHash) {
         this.userAgentHash = userAgentHash;
     }
@@ -234,7 +234,7 @@ public class IamUserLoginEventRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -242,7 +242,7 @@ public class IamUserLoginEventRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

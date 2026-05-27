@@ -7,7 +7,7 @@ public class OpenAiFineTuningGraderValidateRequest {
     public String getGrader() {
         return this.grader;
     }
-    
+
     public void setGrader(String grader) {
         this.grader = grader;
     }

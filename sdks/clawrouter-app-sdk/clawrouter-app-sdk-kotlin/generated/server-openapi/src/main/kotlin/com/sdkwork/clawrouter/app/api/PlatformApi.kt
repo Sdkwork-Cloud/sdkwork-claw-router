@@ -9,11 +9,15 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class PlatformApi(private val client: HttpClient) {
 
     /** Get apps */
-    suspend fun appsStoreList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): AppsStoreListResult? {
+    suspend fun appsStoreList(page: Int? = null, pageSize: Int? = null, q: String? = null, category: String? = null, platformType: String? = null, platformTypes: List<String>? = null, sort: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): AppsStoreListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             QueryParameterSpec("q", q, "form", true, false, null),
+            QueryParameterSpec("category", category, "form", true, false, null),
+            QueryParameterSpec("platform_type", platformType, "form", true, false, null),
+            QueryParameterSpec("platform_types", platformTypes, "form", false, false, null),
+            QueryParameterSpec("sort", sort, "form", true, false, null),
             QueryParameterSpec("status", status, "form", true, false, null),
             QueryParameterSpec("start_time", startTime, "form", true, false, null),
             QueryParameterSpec("end_time", endTime, "form", true, false, null)

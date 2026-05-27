@@ -424,9 +424,12 @@ export function buildWorkspaceCommandPlan(settings, {
       command: cargoCommand(platform),
       args: ['run', '-p', 'sdkwork-claw-app-api'],
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind, {
-        startupInstallMode: 'skip',
-      }),
+      env: {
+        ...serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind, {
+          startupInstallMode: 'skip',
+        }),
+        SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
+      },
       shell: false,
       windowsHide: platform === 'win32',
     },

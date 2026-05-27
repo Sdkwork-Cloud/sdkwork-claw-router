@@ -10,7 +10,7 @@ public class OpenAiCompletionTokensDetails {
     public Integer getAcceptedPredictionTokens() {
         return this.acceptedPredictionTokens;
     }
-    
+
     public void setAcceptedPredictionTokens(Integer acceptedPredictionTokens) {
         this.acceptedPredictionTokens = acceptedPredictionTokens;
     }
@@ -18,7 +18,7 @@ public class OpenAiCompletionTokensDetails {
     public Integer getAudioTokens() {
         return this.audioTokens;
     }
-    
+
     public void setAudioTokens(Integer audioTokens) {
         this.audioTokens = audioTokens;
     }
@@ -26,7 +26,7 @@ public class OpenAiCompletionTokensDetails {
     public Integer getReasoningTokens() {
         return this.reasoningTokens;
     }
-    
+
     public void setReasoningTokens(Integer reasoningTokens) {
         this.reasoningTokens = reasoningTokens;
     }
@@ -34,7 +34,7 @@ public class OpenAiCompletionTokensDetails {
     public Integer getRejectedPredictionTokens() {
         return this.rejectedPredictionTokens;
     }
-    
+
     public void setRejectedPredictionTokens(Integer rejectedPredictionTokens) {
         this.rejectedPredictionTokens = rejectedPredictionTokens;
     }

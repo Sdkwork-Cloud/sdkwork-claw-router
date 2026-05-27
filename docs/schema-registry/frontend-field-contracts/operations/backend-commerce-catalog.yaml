@@ -126,7 +126,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Create product category
   description: Creates one appbase commerce product category with stable category number and category tree placement.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_category
@@ -183,7 +182,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Update product category
   description: Updates mutable category metadata and category tree placement.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_category
@@ -203,7 +201,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Delete product category
   description: Deletes or archives a category after backend referential checks.
-  request_id_header: true
   read_sources:
   - commerce_product_category
   - commerce_product_spu
@@ -440,7 +437,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Create product SPU
   description: Creates one standard product SPU for physical goods, virtual goods, memberships, recharges, subscriptions, or services.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_spu
@@ -519,7 +515,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Update product SPU
   description: Updates product SPU metadata, category binding, visibility, and lifecycle status.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_spu
@@ -720,7 +715,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Create product SKU
   description: Creates one purchasable SKU variant under a product SPU.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_sku
@@ -811,7 +805,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Update product SKU
   description: Updates SKU fulfillment, price summary, lifecycle status, and attribute values.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_sku
@@ -947,7 +940,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Create product attribute
   description: Creates one product attribute definition for SPU or SKU structured attributes.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_product_attribute
@@ -1139,7 +1131,6 @@ frontend_operations:
   sdk_domain: commerce
   summary: Create product price list
   description: Creates one product price list header for market, currency, channel, or segment-specific pricing.
-  request_id_header: true
   idempotency_required: true
   read_sources:
   - commerce_price_list

@@ -8,7 +8,7 @@ public class AnthropicMessageParam {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -16,7 +16,7 @@ public class AnthropicMessageParam {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

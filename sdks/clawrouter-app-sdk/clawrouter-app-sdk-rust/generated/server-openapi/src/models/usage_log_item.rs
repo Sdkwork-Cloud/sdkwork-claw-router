@@ -19,11 +19,27 @@ pub struct UsageLogItem {
     #[serde(rename = "cacheReadTokens")]
     pub cache_read_tokens: i64,
 
-    /// Cost field on usage log item.
+    /// Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and falls back to cost_amount only for legacy rows.
     pub cost: String,
 
-    /// Group field on usage log item.
+    /// Error code field on usage log item.
+    #[serde(rename = "errorCode")]
+    pub error_code: String,
+
+    /// Error message field on usage log item.
+    #[serde(rename = "errorMessage")]
+    pub error_message: String,
+
+    /// Error type field on usage log item.
+    #[serde(rename = "errorType")]
+    pub error_type: String,
+
+    /// Maintained API key group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model.
     pub group: String,
+
+    /// Http status field on usage log item.
+    #[serde(rename = "httpStatus")]
+    pub http_status: i64,
 
     /// Id field on usage log item.
     pub id: String,
@@ -39,7 +55,7 @@ pub struct UsageLogItem {
     #[serde(rename = "isStream")]
     pub is_stream: bool,
 
-    /// Model field on usage log item.
+    /// Provider native model id used in the upstream provider request, kept as the visible model value for usage tables.
     pub model: String,
 
     /// Multiplier field on usage log item.
@@ -52,6 +68,10 @@ pub struct UsageLogItem {
     /// Path field on usage log item.
     pub path: String,
 
+    /// Provider native model id, for example gpt-5.5.
+    #[serde(rename = "providerNativeModel")]
+    pub provider_native_model: String,
+
     /// Reasoning effort field on usage log item.
     #[serde(rename = "reasoningEffort")]
     pub reasoning_effort: String,
@@ -59,6 +79,13 @@ pub struct UsageLogItem {
     /// Request id field on usage log item.
     #[serde(rename = "requestId")]
     pub request_id: String,
+
+    /// Routed catalog model identity in vendor/region/model form, for example openai/global/gpt-5.5.
+    #[serde(rename = "requestedModelCatalogKey")]
+    pub requested_model_catalog_key: String,
+
+    /// Status field on usage log item.
+    pub status: String,
 
     /// Time field on usage log item.
     pub time: String,

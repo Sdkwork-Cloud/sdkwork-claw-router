@@ -11,6 +11,7 @@ public class GenerationHistoryItem {
     private List<String> images;
     private String modelCatalogKey;
     private String modelInfo;
+    private String outputText;
     private String prompt;
     private String status;
     private String type;
@@ -80,6 +81,14 @@ public class GenerationHistoryItem {
 
     public void setModelInfo(String modelInfo) {
         this.modelInfo = modelInfo;
+    }
+
+    public String getOutputText() {
+        return this.outputText;
+    }
+
+    public void setOutputText(String outputText) {
+        this.outputText = outputText;
     }
 
     public String getPrompt() {

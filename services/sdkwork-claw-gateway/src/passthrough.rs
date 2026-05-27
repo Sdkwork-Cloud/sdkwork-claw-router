@@ -23,14 +23,21 @@ use sdkwork_claw_config::{
     ProviderRelayConfig,
 };
 use sdkwork_claw_product::application::{
-    ApiKeySecretHasher, AuthenticatedApiKeyContext, ProviderRouteSelector,
-    SelectProviderAccountPoolRouteQuery,
+    ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ProviderRouteSelector,
+    ResolveModelPriceQuery, SelectProviderAccountPoolRouteQuery,
 };
-use sdkwork_claw_product::domain::{ProviderAccountPoolRoute, RoutingCapability};
-use sdkwork_claw_product::ports::{PricingCatalog, ProviderSecretResolver};
+use sdkwork_claw_product::domain::{
+    provider_native_model_id, BillingMeter, DecimalValue, DomainError, DomainResult,
+    ProviderAccountPoolRoute, RoutingCapability,
+};
+use sdkwork_claw_product::ports::{
+    GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
+    ProviderSecretResolver,
+};
 use sdkwork_claw_provider_adapter_contract::{
     AdapterInvocationMetadata, AdapterInvocationRequest, AdapterInvocationResponse,
     AdapterInvocationShape, AdapterProviderContext, AdapterSecret, AdapterSubject,
+    AdapterUsageLine,
 };
 use sdkwork_claw_provider_adapter_http::{ProviderAdapterHttpClient, ProviderAdapterHttpError};
 use sdkwork_claw_provider_adapter_registry::{
@@ -40,6 +47,20 @@ use sdkwork_claw_provider_adapter_registry::{
 use serde_json::json;
 use serde_json::Value;
 use std::sync::Arc;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
+
+const ADAPTER_USAGE_TYPE_BASE: i64 = 10_000;
+const TOKEN_BILLING_UNIT_SIZE_DECIMAL: &str = "1000000";
+const USAGE_AMOUNT_DECIMAL_DIGITS: u32 = 12;
+const MODALITY_TEXT: i64 = 1;
+const MODALITY_IMAGE: i64 = 2;
+const MODALITY_AUDIO: i64 = 3;
+const MODALITY_MUSIC: i64 = 4;
+const MODALITY_VIDEO: i64 = 5;
+const MODALITY_EMBEDDING: i64 = 6;
+const MODALITY_RERANK: i64 = 7;
 
 #[derive(Clone)]
 struct ProviderPassthroughRuntime {
@@ -64,6 +85,7 @@ const PROVIDER_NATIVE_PASSTHROUGH_PROVIDERS: &[&str] = &[
     "alicloud",
     "aliyun",
     "suno",
+    "elevenlabs",
     "midjourney",
     "kling",
     "vidu",
@@ -117,6 +139,7 @@ pub fn authenticated_gateway_passthrough_router_with_adapter_config<C>(
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     adapter_config: Option<ProviderAdapterConfig>,
+    usage_recorder: Option<UsageRecorder>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -127,6 +150,7 @@ where
         catalog,
         api_key_hasher,
         secret_resolver: None,
+        usage_recorder,
     };
     let openai_router = if state.runtime.has_openai_target() {
         authenticated_openai_passthrough_router::<C>(state.clone())
@@ -142,6 +166,7 @@ pub fn authenticated_provider_native_passthrough_router_with_adapter_config<C>(
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     adapter_config: Option<ProviderAdapterConfig>,
     secret_resolver: Option<Arc<dyn ProviderSecretResolver + Send + Sync>>,
+    usage_recorder: Option<UsageRecorder>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -154,6 +179,7 @@ where
         catalog,
         api_key_hasher,
         secret_resolver,
+        usage_recorder,
     })
 }
 
@@ -161,11 +187,17 @@ pub fn route_scoped_openai_passthrough_router<C>(
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     secret_resolver: Arc<dyn ProviderSecretResolver + Send + Sync>,
+    usage_recorder: Option<UsageRecorder>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    crate::route_scoped_openai_passthrough::router(catalog, api_key_hasher, secret_resolver)
+    crate::route_scoped_openai_passthrough::router(
+        catalog,
+        api_key_hasher,
+        secret_resolver,
+        usage_recorder,
+    )
 }
 
 fn openai_passthrough_placeholder_router() -> Router<()> {
@@ -214,6 +246,7 @@ where
         catalog,
         api_key_hasher,
         secret_resolver: None,
+        usage_recorder: None,
     };
     if state.runtime.has_openai_target() {
         apply_stored_chat_completion_passthrough_routes(
@@ -306,10 +339,21 @@ where
                     secret_resolver.as_ref(),
                     request,
                     &context,
+                    state.usage_recorder.as_ref(),
                 )
                 .await
         }
-        None => state.runtime.forward(request, Some(&context)).await,
+        None => {
+            state
+                .runtime
+                .forward_authenticated(
+                    state.catalog.as_ref(),
+                    request,
+                    &context,
+                    state.usage_recorder.as_ref(),
+                )
+                .await
+        }
     };
     match result {
         Ok(response) => response,
@@ -371,6 +415,7 @@ struct AuthenticatedProviderPassthroughState<C> {
     catalog: Arc<C>,
     api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     secret_resolver: Option<Arc<dyn ProviderSecretResolver + Send + Sync>>,
+    usage_recorder: Option<UsageRecorder>,
 }
 
 impl<C> Clone for AuthenticatedProviderPassthroughState<C> {
@@ -380,6 +425,7 @@ impl<C> Clone for AuthenticatedProviderPassthroughState<C> {
             catalog: Arc::clone(&self.catalog),
             api_key_hasher: Arc::clone(&self.api_key_hasher),
             secret_resolver: self.secret_resolver.clone(),
+            usage_recorder: self.usage_recorder.clone(),
         }
     }
 }
@@ -478,8 +524,8 @@ impl ProviderPassthroughRuntime {
             if let ProviderInvocationMode::InternalHttpAdapter(route) =
                 adapter.registry.resolve_standard_path(&lookup).mode
             {
-                return self
-                    .forward_to_adapter(
+                let (_, response) = self
+                    .invoke_adapter(
                         request,
                         context,
                         target,
@@ -489,7 +535,60 @@ impl ProviderPassthroughRuntime {
                         0,
                         None,
                     )
-                    .await;
+                    .await?;
+                return adapter_invocation_response(response);
+            }
+        }
+        let upstream_uri = build_provider_passthrough_uri(target, request.uri())?;
+        self.forward_to_target(request, target, upstream_uri).await
+    }
+
+    async fn forward_authenticated<C>(
+        &self,
+        catalog: &C,
+        request: Request,
+        context: &AuthenticatedApiKeyContext,
+        usage_recorder: Option<&UsageRecorder>,
+    ) -> Result<Response, String>
+    where
+        C: PricingCatalog + Send + Sync + 'static,
+    {
+        let target = self
+            .target_for_path(request.uri().path())
+            .ok_or_else(|| "provider passthrough target is not configured".to_owned())?;
+        let standard_path = standard_path_from_passthrough_uri(request.uri())?;
+        if let Some(adapter) = &self.adapter {
+            let lookup = ProviderAdapterLookup {
+                provider_code: target.provider(),
+                method: request.method().as_str(),
+                standard_path: standard_path.as_str(),
+                capability: None,
+                endpoint_key: None,
+            };
+            if let ProviderInvocationMode::InternalHttpAdapter(route) =
+                adapter.registry.resolve_standard_path(&lookup).mode
+            {
+                let (invocation, response) = self
+                    .invoke_adapter(
+                        request,
+                        Some(context),
+                        target,
+                        adapter,
+                        route,
+                        standard_path,
+                        0,
+                        None,
+                    )
+                    .await?;
+                record_adapter_usage_lines(
+                    catalog,
+                    usage_recorder,
+                    context,
+                    &invocation,
+                    &response,
+                )
+                .await?;
+                return adapter_invocation_response(response);
             }
         }
         let upstream_uri = build_provider_passthrough_uri(target, request.uri())?;
@@ -502,12 +601,15 @@ impl ProviderPassthroughRuntime {
         secret_resolver: &(dyn ProviderSecretResolver + Send + Sync),
         request: Request,
         context: &AuthenticatedApiKeyContext,
+        usage_recorder: Option<&UsageRecorder>,
     ) -> Result<Response, String>
     where
         C: PricingCatalog + Send + Sync + 'static,
     {
         if self.target_for_path(request.uri().path()).is_some() {
-            return self.forward(request, Some(context)).await;
+            return self
+                .forward_authenticated(catalog, request, context, usage_recorder)
+                .await;
         }
 
         let adapter = self
@@ -533,17 +635,27 @@ impl ProviderPassthroughRuntime {
             });
         match final_resolution.mode {
             ProviderInvocationMode::InternalHttpAdapter(route) => {
-                self.forward_to_adapter(
-                    request,
-                    Some(context),
-                    &target,
-                    adapter,
-                    route,
-                    standard_path,
-                    account_route.channel_id,
-                    account_route.timeout_ms,
+                let (invocation, response) = self
+                    .invoke_adapter(
+                        request,
+                        Some(context),
+                        &target,
+                        adapter,
+                        route,
+                        standard_path,
+                        account_route.channel_id,
+                        account_route.timeout_ms,
+                    )
+                    .await?;
+                record_adapter_usage_lines(
+                    catalog,
+                    usage_recorder,
+                    context,
+                    &invocation,
+                    &response,
                 )
-                .await
+                .await?;
+                adapter_invocation_response(response)
             }
             ProviderInvocationMode::DirectHttp => {
                 let upstream_uri = build_provider_passthrough_uri(&target, request.uri())?;
@@ -578,7 +690,7 @@ impl ProviderPassthroughRuntime {
             .await
     }
 
-    async fn forward_to_adapter(
+    async fn invoke_adapter(
         &self,
         request: Request,
         context: Option<&AuthenticatedApiKeyContext>,
@@ -588,7 +700,7 @@ impl ProviderPassthroughRuntime {
         standard_path: String,
         channel_id: i64,
         timeout_ms: Option<u64>,
-    ) -> Result<Response, String> {
+    ) -> Result<(AdapterInvocationRequest, AdapterInvocationResponse), String> {
         let (parts, body) = request.into_parts();
         let body = body
             .collect()
@@ -608,10 +720,10 @@ impl ProviderPassthroughRuntime {
         );
         let response = adapter
             .client
-            .invoke(&route, invocation)
+            .invoke(&route, invocation.clone())
             .await
             .map_err(provider_adapter_http_error)?;
-        adapter_invocation_response(response)
+        Ok((invocation, response))
     }
 
     fn target_for_path(&self, path: &str) -> Option<&ProviderPassthroughTarget> {
@@ -627,6 +739,492 @@ impl ProviderPassthroughRuntime {
             .iter()
             .any(|target| target.provider() == "openai")
     }
+}
+
+async fn record_adapter_usage_lines<C>(
+    catalog: &C,
+    usage_recorder: Option<&UsageRecorder>,
+    context: &AuthenticatedApiKeyContext,
+    invocation: &AdapterInvocationRequest,
+    response: &AdapterInvocationResponse,
+) -> Result<(), String>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let Some(usage_recorder) = usage_recorder else {
+        return Ok(());
+    };
+    if !(200..=299).contains(&response.status_code) || response.usage.usage_lines.is_empty() {
+        return Ok(());
+    }
+    let commands = response
+        .usage
+        .usage_lines
+        .iter()
+        .enumerate()
+        .map(|(line_index, usage_line)| {
+            adapter_usage_line_command(
+                catalog, context, invocation, response, usage_line, line_index,
+            )
+            .map_err(|error| {
+                format!(
+                    "provider adapter usage recording failed for meter {}: {error}",
+                    usage_line.meter_code
+                )
+            })
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+    for command in commands {
+        let meter_code = command.billing_meter_code.clone();
+        usage_recorder
+            .record_gateway_usage(command)
+            .await
+            .map_err(|error| {
+                format!("provider adapter usage recording failed for meter {meter_code}: {error}")
+            })?;
+    }
+    Ok(())
+}
+
+fn adapter_usage_line_command<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    invocation: &AdapterInvocationRequest,
+    response: &AdapterInvocationResponse,
+    usage_line: &AdapterUsageLine,
+    line_index: usize,
+) -> DomainResult<GatewayUsageRecordCommand>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let meter_code = usage_line.meter_code.trim();
+    if meter_code.is_empty() {
+        return Err(DomainError::new(
+            "adapter usage line meter_code is required",
+        ));
+    }
+    let billing_meter = BillingMeter::from_code(meter_code);
+    if billing_meter == BillingMeter::Unknown {
+        return Err(DomainError::new(format!(
+            "adapter usage line meter_code is not supported: {meter_code}"
+        )));
+    }
+
+    let quantity = GatewayUsageQuantity::for_meter(
+        billing_meter.clone(),
+        usage_line.billable_quantity.as_str(),
+    )?;
+    let requested_model_catalog_key = adapter_requested_model_catalog_key(invocation, usage_line);
+    let provider_native_model = usage_line
+        .provider_native_model
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .unwrap_or_else(|| provider_native_model_id(&invocation.provider.provider_model));
+    let requested_model = provider_native_model_id(&requested_model_catalog_key);
+    let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
+        api_key_id: context.api_key_id,
+        model: requested_model_catalog_key.clone(),
+        billing_meter: billing_meter.clone(),
+        provider_code: Some(invocation.provider.provider_code.clone()),
+        channel_id: Some(invocation.provider.channel_id),
+    })?;
+    let official_reference_amount = adapter_meter_amount(
+        price.official_reference.unit_price.unit_price,
+        quantity.billable_quantity.as_str(),
+        &billing_meter,
+    )?;
+    let upstream_cost_amount = match price.upstream_cost.as_ref() {
+        Some(upstream) => adapter_meter_amount(
+            upstream.unit_price.unit_price,
+            quantity.billable_quantity.as_str(),
+            &billing_meter,
+        )?,
+        None => DecimalValue::ZERO,
+    };
+    let customer_charge_amount = adapter_meter_amount(
+        price.customer_charge.unit_price,
+        quantity.billable_quantity.as_str(),
+        &billing_meter,
+    )?;
+    let token_counts = adapter_token_counts(&billing_meter, quantity.billable_quantity.as_str())?;
+    let pricing_snapshot = adapter_usage_pricing_snapshot(
+        invocation,
+        usage_line,
+        line_index,
+        &requested_model_catalog_key,
+        &requested_model,
+        &provider_native_model,
+        &billing_meter,
+        &price,
+    );
+
+    Ok(GatewayUsageRecordCommand {
+        request_id: invocation
+            .invocation
+            .request_id
+            .clone()
+            .unwrap_or_else(|| generated_adapter_request_id(context.api_key_id)),
+        trace_id: invocation.invocation.trace_id.clone(),
+        tenant_id: context.tenant_id,
+        organization_id: context.organization_id,
+        user_id: context.user_id,
+        api_key_id: context.api_key_id,
+        api_key_name_snapshot: context.api_key_name_snapshot.clone(),
+        api_key_group_id: context.group_id,
+        api_key_group_snapshot: context.group_code.clone(),
+        catalog_key: requested_model_catalog_key.clone(),
+        requested_model,
+        requested_model_catalog_key,
+        provider_code: invocation.provider.provider_code.clone(),
+        channel_id: invocation.provider.channel_id,
+        provider_model: provider_native_model.clone(),
+        provider_native_model,
+        request_path: invocation.invocation.standard_path.clone(),
+        http_method: invocation.invocation.method.clone(),
+        http_status: response.status_code,
+        streaming: invocation.invocation.stream,
+        modality: adapter_modality_for_usage_line(invocation, &billing_meter),
+        usage_type: adapter_usage_type_for_line(&billing_meter, line_index),
+        billing_meter_code: billing_meter.code().to_owned(),
+        billable_quantity: quantity.billable_quantity,
+        prompt_tokens: token_counts.prompt_tokens,
+        completion_tokens: token_counts.completion_tokens,
+        cached_tokens: token_counts.cached_tokens,
+        total_tokens: token_counts.total_tokens,
+        request_count: quantity.request_count,
+        result_count: quantity.result_count,
+        item_count: quantity.item_count,
+        character_count: quantity.character_count,
+        image_count: quantity.image_count,
+        audio_seconds: quantity.audio_seconds,
+        video_seconds: quantity.video_seconds,
+        latency_ms: None,
+        ttft_ms: None,
+        provider_error_code: None,
+        error_type: None,
+        error_message_masked: None,
+        base_input_unit_price: price.customer_charge_before_rate.to_fixed_string(6),
+        base_output_unit_price: "0.000000".to_owned(),
+        cache_read_unit_price: "0.000000".to_owned(),
+        rate_multiplier: price.rate_multiplier.to_fixed_string(6),
+        reference_multiplier: price.reference_multiplier.to_fixed_string(6),
+        official_reference_amount: official_reference_amount
+            .to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
+        customer_charge_amount: customer_charge_amount.to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
+        upstream_cost_amount: upstream_cost_amount.to_fixed_string(USAGE_AMOUNT_DECIMAL_DIGITS),
+        currency: price.customer_charge.currency,
+        pricing_plan_code: price.pricing_plan_code,
+        pricing_snapshot,
+    })
+}
+
+fn adapter_requested_model_catalog_key(
+    invocation: &AdapterInvocationRequest,
+    usage_line: &AdapterUsageLine,
+) -> String {
+    if let Some(catalog_key) = usage_line
+        .requested_model_catalog_key
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+    {
+        return catalog_key.to_owned();
+    }
+    let provider_model = invocation.provider.provider_model.trim();
+    if provider_model
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .count()
+        >= 2
+    {
+        return provider_model.to_owned();
+    }
+    format!(
+        "{}/global/{}",
+        invocation.provider.provider_code.trim(),
+        provider_model
+    )
+}
+
+fn adapter_meter_amount(
+    unit_price: DecimalValue,
+    billable_quantity: &str,
+    billing_meter: &BillingMeter,
+) -> DomainResult<DecimalValue> {
+    let amount = unit_price.checked_multiply(DecimalValue::parse(billable_quantity)?)?;
+    if adapter_meter_uses_million_token_unit(billing_meter) {
+        amount.checked_divide(DecimalValue::parse(TOKEN_BILLING_UNIT_SIZE_DECIMAL)?)
+    } else {
+        Ok(amount)
+    }
+}
+
+fn adapter_meter_uses_million_token_unit(billing_meter: &BillingMeter) -> bool {
+    matches!(
+        billing_meter,
+        BillingMeter::LlmInputToken
+            | BillingMeter::LlmOutputToken
+            | BillingMeter::LlmReasoningToken
+            | BillingMeter::LlmCacheWriteToken
+            | BillingMeter::LlmCacheReadToken
+            | BillingMeter::EmbeddingInputToken
+            | BillingMeter::AudioInputToken
+            | BillingMeter::AudioOutputToken
+            | BillingMeter::ImageInputToken
+            | BillingMeter::ImageOutputToken
+            | BillingMeter::VideoInputToken
+            | BillingMeter::VideoOutputToken
+    )
+}
+
+#[derive(Debug, Clone, Copy)]
+struct AdapterTokenCounts {
+    prompt_tokens: i64,
+    completion_tokens: i64,
+    cached_tokens: i64,
+    total_tokens: i64,
+}
+
+fn adapter_token_counts(
+    billing_meter: &BillingMeter,
+    billable_quantity: &str,
+) -> DomainResult<AdapterTokenCounts> {
+    if !adapter_meter_uses_million_token_unit(billing_meter) {
+        return Ok(AdapterTokenCounts {
+            prompt_tokens: 0,
+            completion_tokens: 0,
+            cached_tokens: 0,
+            total_tokens: 0,
+        });
+    }
+    let tokens = billable_quantity.trim().parse::<i64>().map_err(|_| {
+        DomainError::new(format!(
+            "token usage line quantity must be an integer: {billable_quantity}"
+        ))
+    })?;
+    match billing_meter {
+        BillingMeter::LlmInputToken
+        | BillingMeter::EmbeddingInputToken
+        | BillingMeter::AudioInputToken
+        | BillingMeter::ImageInputToken
+        | BillingMeter::VideoInputToken => Ok(AdapterTokenCounts {
+            prompt_tokens: tokens,
+            completion_tokens: 0,
+            cached_tokens: 0,
+            total_tokens: tokens,
+        }),
+        BillingMeter::LlmCacheWriteToken | BillingMeter::LlmCacheReadToken => {
+            Ok(AdapterTokenCounts {
+                prompt_tokens: 0,
+                completion_tokens: 0,
+                cached_tokens: tokens,
+                total_tokens: tokens,
+            })
+        }
+        _ => Ok(AdapterTokenCounts {
+            prompt_tokens: 0,
+            completion_tokens: tokens,
+            cached_tokens: 0,
+            total_tokens: tokens,
+        }),
+    }
+}
+
+fn adapter_modality_for_usage_line(
+    invocation: &AdapterInvocationRequest,
+    billing_meter: &BillingMeter,
+) -> i64 {
+    match billing_meter {
+        BillingMeter::ApiRequest
+        | BillingMeter::ApiResult
+        | BillingMeter::ApiItem
+        | BillingMeter::ToolCall
+        | BillingMeter::WebSearchCall
+        | BillingMeter::FileSearchCall
+        | BillingMeter::CodeInterpreterSession
+        | BillingMeter::ContainerSession => adapter_modality_from_invocation(invocation)
+            .unwrap_or_else(|| adapter_modality_for_meter(billing_meter)),
+        _ => adapter_modality_for_meter(billing_meter),
+    }
+}
+
+fn adapter_modality_from_invocation(invocation: &AdapterInvocationRequest) -> Option<i64> {
+    let value = format!(
+        "{} {}",
+        invocation.invocation.endpoint_key, invocation.invocation.standard_path
+    )
+    .to_ascii_lowercase();
+    if value.contains("embedding") || value.contains("embeddings") {
+        return Some(MODALITY_EMBEDDING);
+    }
+    if value.contains("rerank") || value.contains("ranking") {
+        return Some(MODALITY_RERANK);
+    }
+    if value.contains("video") || value.contains("vidu") || value.contains("kling") {
+        return Some(MODALITY_VIDEO);
+    }
+    if value.contains("image") || value.contains("images") {
+        return Some(MODALITY_IMAGE);
+    }
+    if value.contains("music") || value.contains("sfx") || value.contains("sound") {
+        return Some(MODALITY_MUSIC);
+    }
+    if value.contains("audio")
+        || value.contains("speech")
+        || value.contains("voice")
+        || value.contains("transcription")
+    {
+        return Some(MODALITY_AUDIO);
+    }
+    None
+}
+
+fn adapter_modality_for_meter(billing_meter: &BillingMeter) -> i64 {
+    match billing_meter {
+        BillingMeter::EmbeddingInputToken | BillingMeter::EmbeddingImage => MODALITY_EMBEDDING,
+        BillingMeter::ImageInputToken
+        | BillingMeter::ImageOutputToken
+        | BillingMeter::ImageResult
+        | BillingMeter::ImagePixel
+        | BillingMeter::ImageMegapixel => MODALITY_IMAGE,
+        BillingMeter::AudioInputToken
+        | BillingMeter::AudioOutputToken
+        | BillingMeter::AudioInputSecond
+        | BillingMeter::AudioOutputSecond
+        | BillingMeter::AudioInputMinute
+        | BillingMeter::AudioOutputMinute
+        | BillingMeter::TtsInputCharacter
+        | BillingMeter::SpeechCharacter
+        | BillingMeter::SttAudioMinute => MODALITY_AUDIO,
+        BillingMeter::MusicOutputSecond | BillingMeter::SfxResult => MODALITY_MUSIC,
+        BillingMeter::VideoInputToken
+        | BillingMeter::VideoOutputToken
+        | BillingMeter::VideoInputSecond
+        | BillingMeter::VideoOutputSecond
+        | BillingMeter::VideoResult => MODALITY_VIDEO,
+        BillingMeter::RerankSearch | BillingMeter::RerankDocument => MODALITY_RERANK,
+        _ => MODALITY_TEXT,
+    }
+}
+
+fn adapter_usage_type_for_line(billing_meter: &BillingMeter, line_index: usize) -> i64 {
+    ADAPTER_USAGE_TYPE_BASE + adapter_billing_meter_ordinal(billing_meter) * 100 + line_index as i64
+}
+
+fn adapter_billing_meter_ordinal(billing_meter: &BillingMeter) -> i64 {
+    match billing_meter {
+        BillingMeter::LlmInputToken => 1,
+        BillingMeter::LlmOutputToken => 2,
+        BillingMeter::LlmReasoningToken => 3,
+        BillingMeter::LlmCacheWriteToken => 4,
+        BillingMeter::LlmCacheReadToken => 5,
+        BillingMeter::LlmCacheStorageTokenHour => 6,
+        BillingMeter::EmbeddingInputToken => 7,
+        BillingMeter::EmbeddingImage => 8,
+        BillingMeter::ImageInputToken => 9,
+        BillingMeter::ImageOutputToken => 10,
+        BillingMeter::ImageResult => 11,
+        BillingMeter::ImagePixel => 12,
+        BillingMeter::ImageMegapixel => 13,
+        BillingMeter::AudioInputToken => 14,
+        BillingMeter::AudioOutputToken => 15,
+        BillingMeter::AudioInputSecond => 16,
+        BillingMeter::AudioOutputSecond => 17,
+        BillingMeter::AudioInputMinute => 18,
+        BillingMeter::AudioOutputMinute => 19,
+        BillingMeter::TtsInputCharacter => 20,
+        BillingMeter::SpeechCharacter => 21,
+        BillingMeter::SttAudioMinute => 22,
+        BillingMeter::VideoInputToken => 23,
+        BillingMeter::VideoOutputToken => 24,
+        BillingMeter::VideoInputSecond => 25,
+        BillingMeter::VideoOutputSecond => 26,
+        BillingMeter::VideoResult => 27,
+        BillingMeter::MusicOutputSecond => 28,
+        BillingMeter::SfxResult => 29,
+        BillingMeter::RerankSearch => 30,
+        BillingMeter::RerankDocument => 31,
+        BillingMeter::ApiRequest => 32,
+        BillingMeter::ApiResult => 33,
+        BillingMeter::ApiItem => 34,
+        BillingMeter::ToolCall => 35,
+        BillingMeter::WebSearchCall => 36,
+        BillingMeter::FileSearchCall => 37,
+        BillingMeter::CodeInterpreterSession => 38,
+        BillingMeter::ContainerSession => 39,
+        BillingMeter::StorageGbDay => 40,
+        BillingMeter::BandwidthGb => 41,
+        BillingMeter::Unknown => 99,
+    }
+}
+
+fn adapter_usage_pricing_snapshot(
+    invocation: &AdapterInvocationRequest,
+    usage_line: &AdapterUsageLine,
+    line_index: usize,
+    requested_model_catalog_key: &str,
+    requested_model: &str,
+    provider_native_model: &str,
+    billing_meter: &BillingMeter,
+    price: &sdkwork_claw_product::application::ResolvedModelPrice,
+) -> String {
+    json!({
+        "source": "provider_adapter_usage_line",
+        "lineIndex": line_index,
+        "meter": {
+            "code": billing_meter.code(),
+            "billableUnit": usage_line.billable_unit.as_deref(),
+            "estimated": usage_line.estimated
+        },
+        "model": {
+            "catalogKey": requested_model_catalog_key,
+            "requestedCatalogKey": requested_model_catalog_key,
+            "model": requested_model,
+            "providerNativeModel": provider_native_model
+        },
+        "provider": {
+            "code": invocation.provider.provider_code.as_str(),
+            "channelId": invocation.provider.channel_id
+        },
+        "pricingPlan": {
+            "code": price.pricing_plan_code.as_str()
+        },
+        "group": {
+            "code": price.group_code.as_str()
+        },
+        "multipliers": {
+            "rate": price.rate_multiplier.to_fixed_string(6),
+            "reference": price.reference_multiplier.to_fixed_string(6)
+        },
+        "unitPrice": {
+            "officialReference": price.official_reference.unit_price.to_fixed_string(6),
+            "customerBeforeRate": price.customer_charge_before_rate.to_fixed_string(6),
+            "customerCharge": price.customer_charge.to_fixed_string(6),
+            "upstreamCost": price
+                .upstream_cost
+                .as_ref()
+                .map(|upstream| upstream.unit_price.to_fixed_string(6))
+                .unwrap_or_else(|| "0.000000".to_owned()),
+            "currency": price.customer_charge.currency.as_str()
+        },
+        "adapter": {
+            "invocationId": invocation.invocation.id.as_str(),
+            "endpointKey": invocation.invocation.endpoint_key.as_str(),
+            "standardPath": invocation.invocation.standard_path.as_str(),
+            "usageSnapshot": usage_line.pricing_snapshot.as_ref()
+        }
+    })
+    .to_string()
+}
+
+fn generated_adapter_request_id(api_key_id: i64) -> String {
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_nanos())
+        .unwrap_or_default();
+    format!("adapter-{api_key_id}-{nanos}")
 }
 
 fn build_openai_passthrough_uri(
@@ -992,9 +1590,103 @@ fn is_standard_path_namespace(value: &str) -> bool {
             | "anthropic"
             | "volcengine"
             | "suno"
+            | "elevenlabs"
             | "midjourney"
             | "kling"
             | "vidu"
             | "nano-banana"
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn adapter_meter_amount_charges_token_meters_per_million_and_duration_directly() {
+        let token_amount = adapter_meter_amount(
+            DecimalValue::parse("2.000000").unwrap(),
+            "500000",
+            &BillingMeter::LlmInputToken,
+        )
+        .unwrap();
+        assert_eq!("1.000000000000", token_amount.to_fixed_string(12));
+
+        let duration_amount = adapter_meter_amount(
+            DecimalValue::parse("0.100000").unwrap(),
+            "8.000000000000",
+            &BillingMeter::VideoOutputSecond,
+        )
+        .unwrap();
+        assert_eq!("0.800000000000", duration_amount.to_fixed_string(12));
+    }
+
+    #[test]
+    fn adapter_token_counts_preserve_input_output_and_cache_dimensions() {
+        let input = adapter_token_counts(&BillingMeter::LlmInputToken, "12").unwrap();
+        assert_eq!(12, input.prompt_tokens);
+        assert_eq!(0, input.completion_tokens);
+        assert_eq!(0, input.cached_tokens);
+        assert_eq!(12, input.total_tokens);
+
+        let output = adapter_token_counts(&BillingMeter::LlmOutputToken, "7").unwrap();
+        assert_eq!(0, output.prompt_tokens);
+        assert_eq!(7, output.completion_tokens);
+        assert_eq!(0, output.cached_tokens);
+        assert_eq!(7, output.total_tokens);
+
+        let cache = adapter_token_counts(&BillingMeter::LlmCacheReadToken, "5").unwrap();
+        assert_eq!(0, cache.prompt_tokens);
+        assert_eq!(0, cache.completion_tokens);
+        assert_eq!(5, cache.cached_tokens);
+        assert_eq!(5, cache.total_tokens);
+    }
+
+    #[test]
+    fn adapter_generic_api_usage_infers_modality_from_endpoint() {
+        let invocation =
+            test_adapter_invocation("video.start_end2video", "/vidu/ent/v2/start-end2video");
+
+        assert_eq!(
+            MODALITY_VIDEO,
+            adapter_modality_for_usage_line(&invocation, &BillingMeter::ApiRequest)
+        );
+    }
+
+    fn test_adapter_invocation(
+        endpoint_key: &str,
+        standard_path: &str,
+    ) -> AdapterInvocationRequest {
+        AdapterInvocationRequest {
+            invocation: AdapterInvocationMetadata {
+                id: "test-invocation".to_owned(),
+                endpoint_key: endpoint_key.to_owned(),
+                method: "POST".to_owned(),
+                standard_path: standard_path.to_owned(),
+                shape: AdapterInvocationShape::SyncJson,
+                stream: false,
+                request_id: Some("req-test".to_owned()),
+                trace_id: Some("trace-test".to_owned()),
+            },
+            subject: AdapterSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+                api_key_id: 100,
+                group_id: 10,
+                group_code: "standard-group".to_owned(),
+                pricing_plan_code: "standard".to_owned(),
+            },
+            provider: AdapterProviderContext {
+                provider_code: "tencent-cloud".to_owned(),
+                channel_id: 9301,
+                provider_model: "vidu2.0".to_owned(),
+                base_url: None,
+                auth_profile: json!({"type": "bearer"}),
+                timeout_ms: None,
+            },
+            secret: AdapterSecret::None,
+            body: Value::Null,
+        }
+    }
 }

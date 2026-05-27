@@ -70,7 +70,12 @@ export function SdkEndpointView({ endpoint, sdkData, language, sdkConfig, spec }
         const result = await generateSdkReferenceDocumentation({
           spec,
           language: normalizedLanguage,
-          config: sdkConfig,
+          config: {
+            ...sdkConfig,
+            endpointPath: endpoint.path,
+            endpointMethod: endpoint.method,
+            operationId: endpoint.openApiOperation?.operationId,
+          },
         });
         if (!cancelled) {
           setGeneratedDocs(result);
@@ -90,7 +95,14 @@ export function SdkEndpointView({ endpoint, sdkData, language, sdkConfig, spec }
     return () => {
       cancelled = true;
     };
-  }, [spec, normalizedLanguage, sdkConfig]);
+  }, [
+    spec,
+    normalizedLanguage,
+    sdkConfig,
+    endpoint.path,
+    endpoint.method,
+    endpoint.openApiOperation?.operationId,
+  ]);
 
   const codeDefinition = generatedDocs?.methodDefinition || localDocumentation.codeDefinition;
   const exampleUsage = generatedDocs?.usageExample || localDocumentation.exampleUsage;

@@ -10,7 +10,7 @@ public class OpenAiRealtimeCallCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -18,7 +18,7 @@ public class OpenAiRealtimeCallCreateRequest {
     public String getSdp() {
         return this.sdp;
     }
-    
+
     public void setSdp(String sdp) {
         this.sdp = sdp;
     }
@@ -26,7 +26,7 @@ public class OpenAiRealtimeCallCreateRequest {
     public String getSession() {
         return this.session;
     }
-    
+
     public void setSession(String session) {
         this.session = session;
     }

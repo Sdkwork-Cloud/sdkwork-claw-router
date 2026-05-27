@@ -32,7 +32,7 @@ public class ContentForumCommentRecord {
     public String getAuthorId() {
         return this.authorId;
     }
-    
+
     public void setAuthorId(String authorId) {
         this.authorId = authorId;
     }
@@ -40,7 +40,7 @@ public class ContentForumCommentRecord {
     public Map<String, String> getAuthorSnapshot() {
         return this.authorSnapshot;
     }
-    
+
     public void setAuthorSnapshot(Map<String, String> authorSnapshot) {
         this.authorSnapshot = authorSnapshot;
     }
@@ -48,7 +48,7 @@ public class ContentForumCommentRecord {
     public String getBody() {
         return this.body;
     }
-    
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -56,7 +56,7 @@ public class ContentForumCommentRecord {
     public String getCourseId() {
         return this.courseId;
     }
-    
+
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
@@ -64,7 +64,7 @@ public class ContentForumCommentRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -72,7 +72,7 @@ public class ContentForumCommentRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -80,7 +80,7 @@ public class ContentForumCommentRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -88,7 +88,7 @@ public class ContentForumCommentRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -96,7 +96,7 @@ public class ContentForumCommentRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -104,7 +104,7 @@ public class ContentForumCommentRecord {
     public String getLikeCount() {
         return this.likeCount;
     }
-    
+
     public void setLikeCount(String likeCount) {
         this.likeCount = likeCount;
     }
@@ -112,7 +112,7 @@ public class ContentForumCommentRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -120,7 +120,7 @@ public class ContentForumCommentRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -128,7 +128,7 @@ public class ContentForumCommentRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -136,7 +136,7 @@ public class ContentForumCommentRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -144,7 +144,7 @@ public class ContentForumCommentRecord {
     public String getParentId() {
         return this.parentId;
     }
-    
+
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
@@ -152,7 +152,7 @@ public class ContentForumCommentRecord {
     public String getPostId() {
         return this.postId;
     }
-    
+
     public void setPostId(String postId) {
         this.postId = postId;
     }
@@ -160,7 +160,7 @@ public class ContentForumCommentRecord {
     public String getRootId() {
         return this.rootId;
     }
-    
+
     public void setRootId(String rootId) {
         this.rootId = rootId;
     }
@@ -168,7 +168,7 @@ public class ContentForumCommentRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -176,7 +176,7 @@ public class ContentForumCommentRecord {
     public String getTargetId() {
         return this.targetId;
     }
-    
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -184,7 +184,7 @@ public class ContentForumCommentRecord {
     public String getTargetType() {
         return this.targetType;
     }
-    
+
     public void setTargetType(String targetType) {
         this.targetType = targetType;
     }
@@ -192,7 +192,7 @@ public class ContentForumCommentRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -200,7 +200,7 @@ public class ContentForumCommentRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -208,7 +208,7 @@ public class ContentForumCommentRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -216,7 +216,7 @@ public class ContentForumCommentRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -224,7 +224,7 @@ public class ContentForumCommentRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

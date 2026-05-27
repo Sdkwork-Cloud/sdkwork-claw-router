@@ -10,7 +10,7 @@ public class OpenAiEvalRunResultCounts {
     public Integer getErrored() {
         return this.errored;
     }
-    
+
     public void setErrored(Integer errored) {
         this.errored = errored;
     }
@@ -18,7 +18,7 @@ public class OpenAiEvalRunResultCounts {
     public Integer getFailed() {
         return this.failed;
     }
-    
+
     public void setFailed(Integer failed) {
         this.failed = failed;
     }
@@ -26,7 +26,7 @@ public class OpenAiEvalRunResultCounts {
     public Integer getPassed() {
         return this.passed;
     }
-    
+
     public void setPassed(Integer passed) {
         this.passed = passed;
     }
@@ -34,7 +34,7 @@ public class OpenAiEvalRunResultCounts {
     public Integer getTotal() {
         return this.total;
     }
-    
+
     public void setTotal(Integer total) {
         this.total = total;
     }

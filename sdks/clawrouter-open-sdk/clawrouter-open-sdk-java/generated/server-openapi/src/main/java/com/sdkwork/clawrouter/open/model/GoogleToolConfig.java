@@ -7,7 +7,7 @@ public class GoogleToolConfig {
     public GoogleFunctionCallingConfig getFunctionCallingConfig() {
         return this.functionCallingConfig;
     }
-    
+
     public void setFunctionCallingConfig(GoogleFunctionCallingConfig functionCallingConfig) {
         this.functionCallingConfig = functionCallingConfig;
     }

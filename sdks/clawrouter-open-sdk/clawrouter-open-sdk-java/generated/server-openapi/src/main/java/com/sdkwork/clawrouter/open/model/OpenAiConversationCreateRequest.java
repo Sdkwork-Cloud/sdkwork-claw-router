@@ -10,7 +10,7 @@ public class OpenAiConversationCreateRequest {
     public List<OpenAiConversationItemCreateRequest> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<OpenAiConversationItemCreateRequest> items) {
         this.items = items;
     }
@@ -18,7 +18,7 @@ public class OpenAiConversationCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }

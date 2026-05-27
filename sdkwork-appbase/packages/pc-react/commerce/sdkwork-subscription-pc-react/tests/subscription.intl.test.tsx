@@ -13,7 +13,7 @@ function createSubscriptionDashboard() {
     benefits: [
       {
         claimed: true,
-        id: "vip-benefit-2",
+        id: "membership-benefit-2",
         name: "Priority rendering",
         usageLimit: 10,
         usedCount: 2,
@@ -52,7 +52,7 @@ function createSubscriptionDashboard() {
     ],
     levels: [
       {
-        id: "vip-level-3",
+        id: "membership-level-3",
         isCurrent: true,
         levelValue: 3,
         name: "Pro",
@@ -63,7 +63,7 @@ function createSubscriptionDashboard() {
       {
         description: "Best for professional creators.",
         durationDays: 30,
-        id: "vip-plan-2",
+        id: "membership-plan-2",
         includedPoints: 5000,
         name: "Pro Monthly",
         originalPriceCny: null,
@@ -78,13 +78,13 @@ function createSubscriptionDashboard() {
       currentLevelValue: 3,
       growthValue: 180,
       isAuthenticated: true,
-      isVip: true,
+      isMember: true,
       pointBalance: 2400,
       remainingDays: 88,
-      status: "vip" as const,
+      status: "active" as const,
       totalSpent: 399,
       upgradeGrowthValue: 500,
-      vipPoints: 3200,
+      points: 3200,
     },
   };
 }
@@ -130,13 +130,13 @@ function createEmptyDashboard() {
       currentLevelValue: null,
       growthValue: null,
       isAuthenticated: false,
-      isVip: false,
+      isMember: false,
       pointBalance: null,
       remainingDays: null,
       status: "guest" as const,
       totalSpent: null,
       upgradeGrowthValue: null,
-      vipPoints: null,
+      points: null,
     },
   };
 }

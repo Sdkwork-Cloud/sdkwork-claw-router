@@ -19,7 +19,7 @@ public class AdminAgentItem {
     public String getAvatarUrl() {
         return this.avatarUrl;
     }
-    
+
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
     }
@@ -27,7 +27,7 @@ public class AdminAgentItem {
     public AdminAgentCapabilities getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(AdminAgentCapabilities capabilities) {
         this.capabilities = capabilities;
     }
@@ -35,7 +35,7 @@ public class AdminAgentItem {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -43,7 +43,7 @@ public class AdminAgentItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -51,7 +51,7 @@ public class AdminAgentItem {
     public AdminAgentVersionItem getDefaultVersion() {
         return this.defaultVersion;
     }
-    
+
     public void setDefaultVersion(AdminAgentVersionItem defaultVersion) {
         this.defaultVersion = defaultVersion;
     }
@@ -59,7 +59,7 @@ public class AdminAgentItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -67,7 +67,7 @@ public class AdminAgentItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -75,7 +75,7 @@ public class AdminAgentItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -83,7 +83,7 @@ public class AdminAgentItem {
     public Integer getOwnerUserId() {
         return this.ownerUserId;
     }
-    
+
     public void setOwnerUserId(Integer ownerUserId) {
         this.ownerUserId = ownerUserId;
     }
@@ -91,7 +91,7 @@ public class AdminAgentItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -99,7 +99,7 @@ public class AdminAgentItem {
     public String getTemplateSource() {
         return this.templateSource;
     }
-    
+
     public void setTemplateSource(String templateSource) {
         this.templateSource = templateSource;
     }
@@ -107,7 +107,7 @@ public class AdminAgentItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -115,7 +115,7 @@ public class AdminAgentItem {
     public String getVisibility() {
         return this.visibility;
     }
-    
+
     public void setVisibility(String visibility) {
         this.visibility = visibility;
     }

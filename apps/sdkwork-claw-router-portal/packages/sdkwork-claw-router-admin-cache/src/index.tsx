@@ -180,19 +180,9 @@ export function CacheAdmin() {
 
   return (
     <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
-      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
+      <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <Database className="h-5 w-5 text-emerald-500" />
-              <h2 className="truncate text-xl font-semibold tracking-normal text-slate-900 dark:text-white">
-                {t('admin.cache.title', 'Cache Management')}
-              </h2>
-            </div>
-            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-              {t('admin.cache.subtitle', 'Manage runtime cache instances, namespaces, refreshes, and deletion operations.')}
-            </p>
-          </div>
+          <div />
           <button
             type="button"
             disabled={loading || operationBusy !== null}

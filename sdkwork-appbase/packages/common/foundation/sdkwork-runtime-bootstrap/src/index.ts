@@ -33,7 +33,6 @@ export interface CreateSdkworkRuntimeBootstrapInput<
   clients: SdkworkRuntimeClients<TAppClient, TBackendClient>;
   config: TConfig;
   localeProvider?: () => string | undefined;
-  requestIdProvider?: () => string | undefined;
   tokenStore?: SdkworkTokenStore;
   validateAppClient?: (client: TAppClient) => void;
   validateBackendClient?: (client: NonNullable<TBackendClient>) => void;
@@ -56,9 +55,8 @@ export const SDKWORK_API_PREFIXES = {
 
 export const SDKWORK_RUNTIME_HEADERS = {
   acceptLanguage: "Accept-Language",
-  accessToken: "Sdkwork-Access-Token",
+  accessToken: "Access-Token",
   authorization: "Authorization",
-  requestId: "X-Request-Id",
 } as const;
 
 const AUTHORIZATION_SCHEME = "Bearer";
@@ -87,7 +85,6 @@ export function createSdkworkRuntimeBootstrap<
     getRequestHeaders: async () => {
       const token = await input.tokenStore?.get();
       const headers: Record<string, string> = {};
-      const requestId = input.requestIdProvider?.();
       const locale = input.localeProvider?.();
 
       if (locale) {
@@ -100,10 +97,6 @@ export function createSdkworkRuntimeBootstrap<
 
       if (token?.accessToken) {
         headers[SDKWORK_RUNTIME_HEADERS.accessToken] = token.accessToken;
-      }
-
-      if (requestId) {
-        headers[SDKWORK_RUNTIME_HEADERS.requestId] = requestId;
       }
 
       return headers;

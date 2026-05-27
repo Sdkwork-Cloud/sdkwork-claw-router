@@ -10,7 +10,7 @@ public class UpdateSettingsRequest {
     public String getLanguage() {
         return this.language;
     }
-    
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -18,7 +18,7 @@ public class UpdateSettingsRequest {
     public SettingsNotifications getNotifications() {
         return this.notifications;
     }
-    
+
     public void setNotifications(SettingsNotifications notifications) {
         this.notifications = notifications;
     }
@@ -26,7 +26,7 @@ public class UpdateSettingsRequest {
     public String getTimezone() {
         return this.timezone;
     }
-    
+
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
@@ -34,7 +34,7 @@ public class UpdateSettingsRequest {
     public String getWebhookUrl() {
         return this.webhookUrl;
     }
-    
+
     public void setWebhookUrl(String webhookUrl) {
         this.webhookUrl = webhookUrl;
     }

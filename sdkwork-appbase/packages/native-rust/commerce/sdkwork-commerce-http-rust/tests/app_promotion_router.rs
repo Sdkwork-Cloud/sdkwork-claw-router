@@ -4,6 +4,7 @@ use http_body_util::BodyExt;
 use sdkwork_commerce_http::{
     app_account_wallet_router_with_sqlite_pool, app_promotion_router_with_sqlite_pool,
 };
+use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
 use sqlx::SqlitePool;
 use tower::ServiceExt;
 
@@ -18,27 +19,93 @@ async fn migrated_pool() -> SqlitePool {
     pool
 }
 
-async fn seed_redeem_template(pool: &SqlitePool) {
+async fn seed_promotion_codes(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO commerce_coupon_template
-            (id, tenant_id, organization_id, template_no, title, discount_type,
-             discount_value, minimum_amount, total_quantity, claimed_quantity,
-             redeemed_quantity, status, starts_at, expires_at, created_at, updated_at)
+        INSERT INTO promotion_offer
+            (id, tenant_id, organization_id, offer_no, offer_code, name, offer_type,
+             audience_scope, combinability, priority, status, current_offer_version_id, starts_at, ends_at,
+             created_at, updated_at)
         VALUES
-            ('template-welcome', 'tenant-1', 'org-1', 'WELCOME', 'Welcome points',
-             'fixed_amount', '5.00', '0', 100, 0, 0, 'active',
+            ('offer-welcome', 'tenant-1', 'org-1', 'offer-welcome', 'welcome_points',
+             'Welcome points', 'coupon', 'new_user', 'exclusive', 100, 'active',
+             'offer-version-welcome-v1',
              '2026-01-01 00:00:00', '2099-01-01 00:00:00',
              '2026-05-20 00:00:00', '2026-05-20 00:00:00'),
-            ('template-other-org', 'tenant-1', 'org-2', 'WELCOME-OTHER', 'Other org points',
-             'fixed_amount', '9.00', '0', 100, 0, 0, 'active',
+            ('offer-other-org', 'tenant-1', 'org-2', 'offer-other-org', 'other_org_points',
+             'Other org points', 'coupon', 'new_user', 'exclusive', 90, 'active',
+             'offer-version-other-org-v1',
              '2026-01-01 00:00:00', '2099-01-01 00:00:00',
              '2026-05-20 00:00:00', '2026-05-20 00:00:00')
         "#,
     )
     .execute(pool)
     .await
-    .expect("seed redeem template");
+    .expect("seed promotion offers");
+
+    sqlx::query(
+        r#"
+        INSERT INTO promotion_offer_version
+            (id, tenant_id, organization_id, offer_id, version_no, lifecycle_status,
+             discount_type, discount_value, minimum_amount, maximum_discount_amount,
+             currency_code, rule_json, stack_rule_json, published_at, created_at, updated_at)
+        VALUES
+            ('offer-version-welcome-v1', 'tenant-1', 'org-1', 'offer-welcome', 'v1',
+             'published', 'fixed_amount', '5.00', '0', NULL, 'CNY',
+             '{}', NULL, '2026-05-20 00:00:00',
+             '2026-05-20 00:00:00', '2026-05-20 00:00:00'),
+            ('offer-version-other-org-v1', 'tenant-1', 'org-2', 'offer-other-org', 'v1',
+             'published', 'fixed_amount', '9.00', '0', NULL, 'CNY',
+             '{}', NULL, '2026-05-20 00:00:00',
+             '2026-05-20 00:00:00', '2026-05-20 00:00:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .expect("seed promotion offer versions");
+
+    sqlx::query(
+        r#"
+        INSERT INTO promotion_coupon_stock
+            (id, tenant_id, organization_id, stock_no, name, offer_id, offer_version_id,
+             stock_type, total_quantity, available_quantity, claimed_quantity,
+             redeemed_quantity, locked_quantity, status, starts_at, expires_at,
+             created_at, updated_at)
+        VALUES
+            ('stock-welcome', 'tenant-1', 'org-1', 'stock-welcome', 'Welcome stock', 'offer-welcome',
+             'offer-version-welcome-v1', 'limited', 100, 100, 0, 0, 0, 'active',
+             '2026-01-01 00:00:00', '2099-01-01 00:00:00',
+             '2026-05-20 00:00:00', '2026-05-20 00:00:00'),
+            ('stock-other-org', 'tenant-1', 'org-2', 'stock-other-org', 'Other org stock', 'offer-other-org',
+             'offer-version-other-org-v1', 'limited', 100, 100, 0, 0, 0, 'active',
+             '2026-01-01 00:00:00', '2099-01-01 00:00:00',
+             '2026-05-20 00:00:00', '2026-05-20 00:00:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .expect("seed promotion coupon stocks");
+
+    sqlx::query(
+        r#"
+        INSERT INTO promotion_code
+            (id, tenant_id, organization_id, code_no, stock_id, offer_id, offer_version_id, promotion_code,
+             code_type, max_claims, claimed_quantity, status, starts_at, expires_at,
+             created_at, updated_at)
+        VALUES
+            ('code-welcome', 'tenant-1', 'org-1', 'code-welcome', 'stock-welcome',
+             'offer-welcome', 'offer-version-welcome-v1', 'WELCOME', 'public', 100, 0, 'active',
+             '2026-01-01 00:00:00', '2099-01-01 00:00:00',
+             '2026-05-20 00:00:00', '2026-05-20 00:00:00'),
+            ('code-other-org', 'tenant-1', 'org-2', 'code-other-org', 'stock-other-org',
+             'offer-other-org', 'offer-version-other-org-v1', 'WELCOME-OTHER', 'public', 100, 0, 'active',
+             '2026-01-01 00:00:00', '2099-01-01 00:00:00',
+             '2026-05-20 00:00:00', '2026-05-20 00:00:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .expect("seed promotion codes");
 }
 
 async fn seed_token_account(pool: &SqlitePool) {
@@ -112,13 +179,43 @@ fn subject_request(method: &str, uri: &str, body: Body) -> Request<Body> {
         .method(method)
         .uri(uri)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "tenant-1")
-        .header("x-sdkwork-organization-id", "org-1")
-        .header("x-sdkwork-user-id", "user-1")
+        .extension(standard_context())
         .header("Idempotency-Key", "redeem-idem-1")
         .header("Sdkwork-Request-No", "redeem-request-1")
         .body(body)
         .expect("request")
+}
+
+fn subject_request_with_request_id_header_only(
+    method: &str,
+    uri: &str,
+    idempotency_key: &str,
+    body: Body,
+) -> Request<Body> {
+    Request::builder()
+        .method(method)
+        .uri(uri)
+        .header("content-type", "application/json")
+        .extension(standard_context())
+        .header("Idempotency-Key", idempotency_key)
+        .header("X-Request-Id", "123e4567-e89b-12d3-a456-426614174000")
+        .body(body)
+        .expect("request")
+}
+
+fn standard_context() -> IamAppContext {
+    IamAppContext::new(
+        "tenant-1",
+        Some("org-1"),
+        "user-1",
+        "session-1",
+        "app-1",
+        Environment::Test,
+        DeploymentMode::Local,
+        AuthLevel::Password,
+        vec!["tenant:tenant-1".to_owned()],
+        vec!["commerce:write".to_owned()],
+    )
 }
 
 async fn response_json(response: axum::response::Response) -> serde_json::Value {
@@ -159,14 +256,14 @@ async fn app_account_wallet_router_exposes_account_summary_from_appbase_store() 
 #[tokio::test]
 async fn app_promotion_router_redeems_code_and_exposes_points_and_coupon_history() {
     let pool = migrated_pool().await;
-    seed_redeem_template(&pool).await;
+    seed_promotion_codes(&pool).await;
     let app = app_promotion_router_with_sqlite_pool(pool);
 
     let response = app
         .clone()
         .oneshot(subject_request(
             "POST",
-            "/app/v3/api/coupons/redemptions",
+            "/app/v3/api/promotions/codes/redemptions",
             Body::from(r#"{"code":"WELCOME"}"#),
         ))
         .await
@@ -175,7 +272,7 @@ async fn app_promotion_router_redeems_code_and_exposes_points_and_coupon_history
     assert_eq!(response.status(), StatusCode::OK);
     let payload = response_json(response).await;
     assert_eq!("2000", payload["code"]);
-    assert_eq!("Redeem code applied", payload["data"]["message"]);
+    assert_eq!("Promotion code redeemed", payload["data"]["message"]);
     assert_eq!("5.00", payload["data"]["amount"]);
     assert_eq!(50, payload["data"]["creditedPoints"]);
     assert_eq!(50, payload["data"]["balance"]);
@@ -214,7 +311,11 @@ async fn app_promotion_router_redeems_code_and_exposes_points_and_coupon_history
     assert_eq!(50, payload["data"][0]["balanceAfter"]);
 
     let response = app
-        .oneshot(subject_request("GET", "/app/v3/api/coupons", Body::empty()))
+        .oneshot(subject_request(
+            "GET",
+            "/app/v3/api/promotions/user_coupons",
+            Body::empty(),
+        ))
         .await
         .expect("coupon history response");
     assert_eq!(response.status(), StatusCode::OK);
@@ -226,7 +327,41 @@ async fn app_promotion_router_redeems_code_and_exposes_points_and_coupon_history
 }
 
 #[tokio::test]
-async fn app_promotion_router_requires_subject_headers_for_points_reads() {
+async fn app_promotion_router_does_not_use_frontend_request_id_as_business_request_no() {
+    let pool = migrated_pool().await;
+    seed_promotion_codes(&pool).await;
+    let inspect_pool = pool.clone();
+    let app = app_promotion_router_with_sqlite_pool(pool);
+
+    let response = app
+        .oneshot(subject_request_with_request_id_header_only(
+            "POST",
+            "/app/v3/api/promotions/codes/redemptions",
+            "redeem-idem-header-only",
+            Body::from(r#"{"code":"WELCOME"}"#),
+        ))
+        .await
+        .expect("redeem response");
+
+    assert_eq!(response.status(), StatusCode::OK);
+    let request_no: String = sqlx::query_scalar(
+        r#"
+        SELECT request_no
+        FROM promotion_user_coupon
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND idempotency_key = 'redeem-idem-header-only'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("coupon request_no");
+    assert_ne!("123e4567-e89b-12d3-a456-426614174000", request_no);
+    assert!(request_no.starts_with("promotion-code-redemption-user-1-WELCOME-"));
+}
+
+#[tokio::test]
+async fn app_promotion_router_requires_authenticated_runtime_context_for_points_reads() {
     let pool = migrated_pool().await;
     let app = app_promotion_router_with_sqlite_pool(pool);
 

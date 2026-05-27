@@ -7,7 +7,7 @@ public class OpenAiOrganizationGroupUserCreateRequest {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

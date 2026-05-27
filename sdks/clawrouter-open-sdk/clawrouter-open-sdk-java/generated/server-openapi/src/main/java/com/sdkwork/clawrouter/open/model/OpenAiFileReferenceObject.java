@@ -11,7 +11,7 @@ public class OpenAiFileReferenceObject {
     public String getFileData() {
         return this.fileData;
     }
-    
+
     public void setFileData(String fileData) {
         this.fileData = fileData;
     }
@@ -19,7 +19,7 @@ public class OpenAiFileReferenceObject {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -27,7 +27,7 @@ public class OpenAiFileReferenceObject {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -35,7 +35,7 @@ public class OpenAiFileReferenceObject {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -43,7 +43,7 @@ public class OpenAiFileReferenceObject {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

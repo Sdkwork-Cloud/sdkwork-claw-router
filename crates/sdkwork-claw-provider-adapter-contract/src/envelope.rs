@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 use crate::endpoint::AdapterInvocationShape;
-use crate::usage::AdapterUsage;
+use crate::usage::{AdapterUsage, AdapterUsageLine};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
@@ -125,6 +125,11 @@ impl AdapterInvocationResponse {
 
     pub fn with_billing_units(mut self, billing_units: i64) -> Self {
         self.usage.billing_units = Some(billing_units);
+        self
+    }
+
+    pub fn with_usage_line(mut self, usage_line: AdapterUsageLine) -> Self {
+        self.usage.usage_lines.push(usage_line);
         self
     }
 }

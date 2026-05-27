@@ -14,7 +14,7 @@ public class GatewayTrace {
     public String getChannel() {
         return this.channel;
     }
-    
+
     public void setChannel(String channel) {
         this.channel = channel;
     }
@@ -22,7 +22,7 @@ public class GatewayTrace {
     public String getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(String duration) {
         this.duration = duration;
     }
@@ -30,7 +30,7 @@ public class GatewayTrace {
     public String getEndpoint() {
         return this.endpoint;
     }
-    
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -38,7 +38,7 @@ public class GatewayTrace {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -46,7 +46,7 @@ public class GatewayTrace {
     public String getIp() {
         return this.ip;
     }
-    
+
     public void setIp(String ip) {
         this.ip = ip;
     }
@@ -54,7 +54,7 @@ public class GatewayTrace {
     public String getMethod() {
         return this.method;
     }
-    
+
     public void setMethod(String method) {
         this.method = method;
     }
@@ -62,7 +62,7 @@ public class GatewayTrace {
     public Integer getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -70,7 +70,7 @@ public class GatewayTrace {
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }

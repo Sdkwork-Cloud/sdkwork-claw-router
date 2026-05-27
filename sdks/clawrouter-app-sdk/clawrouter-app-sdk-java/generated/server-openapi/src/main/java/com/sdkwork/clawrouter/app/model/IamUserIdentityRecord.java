@@ -13,7 +13,7 @@ public class IamUserIdentityRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -21,7 +21,7 @@ public class IamUserIdentityRecord {
     public String getEmail() {
         return this.email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -29,7 +29,7 @@ public class IamUserIdentityRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -37,7 +37,7 @@ public class IamUserIdentityRecord {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -45,7 +45,7 @@ public class IamUserIdentityRecord {
     public String getSubject() {
         return this.subject;
     }
-    
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -53,7 +53,7 @@ public class IamUserIdentityRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -61,7 +61,7 @@ public class IamUserIdentityRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

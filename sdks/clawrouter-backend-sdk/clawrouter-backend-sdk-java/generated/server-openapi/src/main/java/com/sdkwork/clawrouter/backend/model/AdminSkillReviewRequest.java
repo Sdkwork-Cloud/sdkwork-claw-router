@@ -8,7 +8,7 @@ public class AdminSkillReviewRequest {
     public String getComment() {
         return this.comment;
     }
-    
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -16,7 +16,7 @@ public class AdminSkillReviewRequest {
     public String getReviewComment() {
         return this.reviewComment;
     }
-    
+
     public void setReviewComment(String reviewComment) {
         this.reviewComment = reviewComment;
     }

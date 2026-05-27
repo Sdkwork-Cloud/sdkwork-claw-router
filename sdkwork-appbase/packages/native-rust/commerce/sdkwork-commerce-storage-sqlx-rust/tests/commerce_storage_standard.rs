@@ -22,15 +22,31 @@ use sdkwork_commerce_storage_sqlx::{
 fn exposes_first_slice_commerce_table_catalog() {
     let tables = commerce_database_tables();
 
-    assert_eq!(tables.len(), 39);
+    assert_eq!(tables.len(), 53);
     assert!(tables.contains(&"commerce_idempotency_key"));
     assert!(tables.contains(&"commerce_account"));
     assert!(tables.contains(&"commerce_account_ledger_entry"));
     assert!(tables.contains(&"commerce_billing_prehold"));
-    assert!(tables.contains(&"commerce_coupon_template"));
-    assert!(tables.contains(&"commerce_coupon_issue_batch"));
-    assert!(tables.contains(&"commerce_coupon"));
-    assert!(tables.contains(&"commerce_coupon_redemption"));
+    assert!(tables.contains(&"commerce_billing_history"));
+    assert!(tables.contains(&"benefit_definition"));
+    assert!(tables.contains(&"entitlement_grant"));
+    assert!(tables.contains(&"entitlement_account"));
+    assert!(tables.contains(&"entitlement_ledger_entry"));
+    assert!(tables.contains(&"membership_plan"));
+    assert!(tables.contains(&"membership_plan_version"));
+    assert!(tables.contains(&"membership_plan_benefit"));
+    assert!(tables.contains(&"membership_package_group"));
+    assert!(tables.contains(&"membership_package"));
+    assert!(tables.contains(&"membership_subscription"));
+    assert!(tables.contains(&"membership_period"));
+    assert!(tables.contains(&"promotion_offer"));
+    assert!(tables.contains(&"promotion_offer_version"));
+    assert!(tables.contains(&"promotion_coupon_stock"));
+    assert!(tables.contains(&"promotion_code"));
+    assert!(tables.contains(&"promotion_user_coupon"));
+    assert!(tables.contains(&"promotion_coupon_ledger_entry"));
+    assert!(tables.contains(&"promotion_discount_application"));
+    assert!(tables.contains(&"promotion_discount_allocation"));
     assert!(tables.contains(&"commerce_product_category"));
     assert!(tables.contains(&"commerce_product_attribute"));
     assert!(tables.contains(&"commerce_product_attribute_value"));
@@ -51,20 +67,42 @@ fn exposes_first_slice_commerce_table_catalog() {
     assert!(tables.contains(&"commerce_payment_attempt"));
     assert!(tables.contains(&"commerce_payment_webhook_event"));
     assert!(tables.contains(&"commerce_payment_method"));
+    assert!(tables.contains(&"commerce_payment_provider"));
+    assert!(tables.contains(&"commerce_payment_provider_account"));
+    assert!(tables.contains(&"commerce_payment_channel"));
+    assert!(tables.contains(&"commerce_payment_route_rule"));
     assert!(tables.contains(&"commerce_refund"));
     assert!(tables.contains(&"commerce_exchange_rule"));
-    assert!(tables.contains(&"commerce_membership_plan"));
-    assert!(tables.contains(&"commerce_membership_package_group"));
-    assert!(tables.contains(&"commerce_membership_package"));
-    assert!(tables.contains(&"commerce_membership"));
-    assert!(tables.contains(&"commerce_membership_entitlement"));
-    assert!(tables.contains(&"commerce_membership_entitlement_usage"));
     assert!(tables.contains(&"commerce_invoice_title"));
     assert!(tables.contains(&"commerce_invoice"));
     assert!(tables.contains(&"commerce_invoice_item"));
 
+    for legacy_table in [
+        "commerce_coupon_template",
+        "commerce_coupon_issue_batch",
+        "commerce_coupon",
+        "commerce_coupon_redemption",
+        "commerce_membership_plan",
+        "commerce_membership_package_group",
+        "commerce_membership_package",
+        "commerce_membership",
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage",
+    ] {
+        assert!(
+            !tables.contains(&legacy_table),
+            "legacy commerce storage table must be removed: {legacy_table}",
+        );
+    }
+
     for table in tables {
-        assert!(table.starts_with("commerce_"));
+        assert!(
+            table.starts_with("commerce_")
+                || table.starts_with("benefit_")
+                || table.starts_with("entitlement_")
+                || table.starts_with("membership_")
+                || table.starts_with("promotion_")
+        );
         assert!(!table.contains("__"));
         assert!(!table.starts_with("plus_"));
     }
@@ -77,14 +115,17 @@ fn first_slice_migrations_are_domain_ordered() {
         vec![
             "0001_core_idempotency.sql",
             "0002_account_ledger.sql",
-            "0003_promotion_coupon.sql",
-            "0004_catalog.sql",
-            "0005_inventory.sql",
-            "0006_order.sql",
-            "0007_payment_refund.sql",
-            "0008_exchange.sql",
-            "0009_membership.sql",
-            "0010_invoice.sql",
+            "0003_benefit.sql",
+            "0004_entitlement.sql",
+            "0005_membership.sql",
+            "0006_promotion.sql",
+            "0007_catalog.sql",
+            "0008_inventory.sql",
+            "0009_order.sql",
+            "0010_payment_refund.sql",
+            "0011_exchange.sql",
+            "0012_invoice.sql",
+            "0013_billing_history.sql",
         ],
     );
 }
@@ -107,12 +148,74 @@ fn initial_migration_declares_first_slice_tables_and_columns() {
     assert!(sql.contains("idempotency_key"));
     assert!(sql.contains("balance_after"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_billing_prehold"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon_template"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon_issue_batch"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon_redemption"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_billing_history"));
+    assert!(sql.contains("history_no"));
+    assert!(sql.contains("history_type"));
+    assert!(sql.contains("direction"));
+    assert!(sql.contains("asset_type"));
+    assert!(sql.contains("points_delta"));
+    assert!(sql.contains("source_type"));
+    assert!(sql.contains("source_id"));
+    assert!(sql.contains("related_order_no"));
+    assert!(sql.contains("payment_method"));
+    assert!(sql.contains("occurred_at"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS benefit_definition"));
+    assert!(sql.contains("benefit_code"));
+    assert!(sql.contains("value_unit"));
+    assert!(sql.contains("measurement_type"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS entitlement_grant"));
+    assert!(sql.contains("grant_no"));
+    assert!(sql.contains("subject_type"));
+    assert!(sql.contains("subject_id"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS entitlement_account"));
+    assert!(sql.contains("total_granted"));
+    assert!(sql.contains("total_used"));
+    assert!(sql.contains("balance"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS entitlement_ledger_entry"));
+    assert!(sql.contains("ledger_no"));
+    assert!(sql.contains("balance_after"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_plan"));
+    assert!(sql.contains("plan_code"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_plan_version"));
+    assert!(sql.contains("version_no"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_plan_benefit"));
+    assert!(sql.contains("benefit_id"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_package_group"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_package"));
+    assert!(sql.contains("billing_cycle"));
+    assert!(sql.contains("duration_days"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_subscription"));
+    assert!(sql.contains("subscription_no"));
+    assert!(sql.contains("current_period_id"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS membership_period"));
+    assert!(sql.contains("period_no"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_offer"));
+    assert!(sql.contains("offer_no"));
+    assert!(sql.contains("offer_code"));
+    assert!(sql.contains("current_offer_version_id TEXT NOT NULL"));
+    assert!(!sql.contains("current_version_id TEXT"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_offer_version"));
+    assert!(sql.contains("discount_type"));
+    assert!(sql.contains("rule_json"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_coupon_stock"));
+    assert!(sql.contains("stock_no"));
+    assert!(sql.contains("name TEXT NOT NULL"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_code"));
+    assert!(sql.contains("promotion_code"));
+    assert!(sql.contains("offer_version_id TEXT NOT NULL"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_user_coupon"));
+    assert!(sql.contains("coupon_no"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_coupon_ledger_entry"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_discount_application"));
+    assert!(sql.contains("application_no"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS promotion_discount_allocation"));
     assert!(sql.contains("UNIQUE (tenant_id, coupon_code)"));
-    assert!(sql.contains("UNIQUE (tenant_id, batch_no)"));
+    assert!(sql.contains("UNIQUE (tenant_id, offer_no)"));
+    assert!(sql.contains("UNIQUE (tenant_id, stock_no)"));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon_template"));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon_issue_batch"));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon ("));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_coupon_redemption"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_category"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_attribute"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_attribute_value"));
@@ -149,31 +252,28 @@ fn initial_migration_declares_first_slice_tables_and_columns() {
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_attempt"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_webhook_event"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_method"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_provider"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_provider_account"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_channel"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_payment_route_rule"));
     assert!(sql.contains("UNIQUE (tenant_id, provider, out_trade_no)"));
     assert!(sql.contains("UNIQUE (tenant_id, provider, event_id)"));
     assert!(sql.contains("UNIQUE (tenant_id, provider, nonce)"));
     assert!(sql.contains("UNIQUE (tenant_id, organization_id, method_key)"));
+    assert!(sql.contains("UNIQUE (tenant_id, organization_id, provider_code)"));
+    assert!(sql.contains("UNIQUE (tenant_id, account_no)"));
+    assert!(sql.contains("UNIQUE (tenant_id, channel_no)"));
+    assert!(sql.contains("UNIQUE (tenant_id, rule_no)"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_refund"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_exchange_rule"));
     assert!(sql.contains("source_asset_type"));
     assert!(sql.contains("target_asset_type"));
     assert!(sql.contains("rate"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_plan"));
-    assert!(sql.contains("plan_code"));
     assert!(!sql.contains("level_code"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_package_group"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_package"));
-    assert!(sql.contains("billing_cycle"));
-    assert!(sql.contains("duration_days"));
-    assert!(sql.contains("tags_json"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_entitlement"));
-    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_entitlement_usage"));
-    assert!(sql.contains("membership_no"));
-    assert!(sql.contains("plan_id"));
-    assert!(sql.contains("package_no"));
-    assert!(sql.contains("sku_id"));
-    assert!(sql.contains("recurrence_cycle"));
+    assert!(!sql.contains("benefits_json"));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_plan"));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_entitlement"));
+    assert!(!sql.contains("CREATE TABLE IF NOT EXISTS commerce_membership_entitlement_usage"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_invoice_title"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_invoice"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_invoice_item"));
@@ -196,10 +296,14 @@ fn initial_migration_declares_standard_query_indexes() {
         "idx_commerce_account_ledger_idempotency_key",
         "idx_commerce_billing_prehold_request_no",
         "idx_commerce_billing_prehold_status_expires_at",
-        "idx_commerce_coupon_owner_status_expires_at",
-        "idx_commerce_coupon_template_status",
-        "idx_commerce_coupon_issue_batch_status",
-        "idx_commerce_coupon_redemption_order",
+        "idx_commerce_billing_history_owner_occurred_at",
+        "idx_commerce_billing_history_owner_type_occurred_at",
+        "idx_commerce_billing_history_source",
+        "idx_benefit_definition_code_status",
+        "idx_entitlement_grant_subject_status",
+        "idx_entitlement_grant_source",
+        "idx_entitlement_account_subject_status",
+        "idx_entitlement_ledger_entry_account_occurred_at",
         "idx_commerce_product_category_parent_status",
         "idx_commerce_product_attribute_status",
         "idx_commerce_product_spu_category_status",
@@ -222,19 +326,31 @@ fn initial_migration_declares_standard_query_indexes() {
         "idx_commerce_payment_webhook_event_provider_nonce",
         "idx_commerce_payment_webhook_event_status_processed_at",
         "idx_commerce_payment_method_status",
+        "idx_commerce_payment_provider_status",
+        "idx_commerce_payment_provider_account_provider",
+        "idx_commerce_payment_channel_route",
+        "idx_commerce_payment_route_rule_match",
         "idx_commerce_refund_payment",
         "idx_commerce_exchange_rule_pair_status",
-        "idx_commerce_membership_plan_status",
-        "idx_commerce_membership_package_group_status",
-        "idx_commerce_membership_package_group_cycle",
-        "idx_commerce_membership_package_status",
-        "idx_commerce_membership_package_group_plan",
-        "idx_commerce_membership_package_external_id",
-        "idx_commerce_membership_package_recommended",
-        "idx_commerce_membership_owner_status",
-        "idx_commerce_membership_order_payment",
-        "idx_commerce_membership_entitlement_membership",
-        "idx_commerce_membership_entitlement_usage_usage_no",
+        "idx_membership_plan_status",
+        "idx_membership_plan_code",
+        "idx_membership_plan_version_plan_status",
+        "idx_membership_plan_benefit_plan_version",
+        "idx_membership_package_group_status",
+        "idx_membership_package_status",
+        "idx_membership_package_group_plan",
+        "idx_membership_subscription_subject_status",
+        "idx_membership_period_subscription_range",
+        "idx_promotion_offer_status",
+        "idx_promotion_offer_code",
+        "idx_promotion_offer_current_version",
+        "idx_promotion_offer_version_offer_status",
+        "idx_promotion_coupon_stock_offer_status",
+        "idx_promotion_code_code",
+        "idx_promotion_code_stock_status",
+        "idx_promotion_user_coupon_subject_status",
+        "idx_promotion_discount_application_order",
+        "idx_promotion_discount_allocation_application_item",
         "idx_commerce_invoice_order_payment",
         "idx_commerce_invoice_owner_status",
     ];
@@ -260,6 +376,9 @@ fn repository_bindings_cover_first_slice_storage_boundaries() {
         vec![
             "idempotency.repository",
             "account.repository",
+            "benefit.repository",
+            "entitlement.repository",
+            "membership.repository",
             "promotion.repository",
             "catalog.repository",
             "inventory.repository",
@@ -268,8 +387,8 @@ fn repository_bindings_cover_first_slice_storage_boundaries() {
             "order.repository",
             "payment.repository",
             "exchange.repository",
-            "membership.repository",
             "invoice.repository",
+            "billing.repository",
         ],
     );
 
@@ -280,6 +399,68 @@ fn repository_bindings_cover_first_slice_storage_boundaries() {
     assert_eq!(idempotency.domain, "core");
     assert_eq!(idempotency.tables, vec!["commerce_idempotency_key"]);
     assert!(idempotency.requires_transaction);
+
+    let benefit = bindings
+        .iter()
+        .find(|binding| binding.repository_name == "benefit.repository")
+        .unwrap();
+    assert_eq!(benefit.domain, "benefit");
+    assert_eq!(benefit.tables, vec!["benefit_definition"]);
+    assert!(benefit.requires_transaction);
+
+    let entitlement = bindings
+        .iter()
+        .find(|binding| binding.repository_name == "entitlement.repository")
+        .unwrap();
+    assert_eq!(entitlement.domain, "entitlement");
+    assert_eq!(
+        entitlement.tables,
+        vec![
+            "entitlement_grant",
+            "entitlement_account",
+            "entitlement_ledger_entry",
+        ],
+    );
+    assert!(entitlement.requires_transaction);
+
+    let membership = bindings
+        .iter()
+        .find(|binding| binding.repository_name == "membership.repository")
+        .unwrap();
+    assert_eq!(membership.domain, "membership");
+    assert_eq!(
+        membership.tables,
+        vec![
+            "membership_plan",
+            "membership_plan_version",
+            "membership_plan_benefit",
+            "membership_package_group",
+            "membership_package",
+            "membership_subscription",
+            "membership_period",
+        ],
+    );
+    assert!(membership.requires_transaction);
+
+    let promotion = bindings
+        .iter()
+        .find(|binding| binding.repository_name == "promotion.repository")
+        .unwrap();
+    assert_eq!(promotion.domain, "promotion");
+    assert_eq!(
+        promotion.tables,
+        vec![
+            "promotion_offer",
+            "promotion_offer_version",
+            "promotion_coupon_stock",
+            "promotion_code",
+            "promotion_user_coupon",
+            "promotion_coupon_ledger_entry",
+            "promotion_discount_application",
+            "promotion_discount_allocation",
+        ],
+    );
+    assert!(promotion.requires_transaction);
 
     let catalog = bindings
         .iter()
@@ -342,6 +523,10 @@ fn repository_bindings_cover_first_slice_storage_boundaries() {
             "commerce_payment_attempt",
             "commerce_payment_webhook_event",
             "commerce_payment_method",
+            "commerce_payment_provider",
+            "commerce_payment_provider_account",
+            "commerce_payment_channel",
+            "commerce_payment_route_rule",
             "commerce_refund",
         ],
     );
@@ -354,6 +539,14 @@ fn repository_bindings_cover_first_slice_storage_boundaries() {
     assert_eq!(exchange.domain, "exchange");
     assert_eq!(exchange.tables, vec!["commerce_exchange_rule"]);
     assert!(exchange.requires_transaction);
+
+    let billing = bindings
+        .iter()
+        .find(|binding| binding.repository_name == "billing.repository")
+        .unwrap();
+    assert_eq!(billing.domain, "billing");
+    assert_eq!(billing.tables, vec!["commerce_billing_history"]);
+    assert!(billing.requires_transaction);
 }
 
 #[test]
@@ -534,6 +727,9 @@ fn business_repository_sql_catalogs_cover_every_first_slice_business_repository(
             .collect::<Vec<_>>(),
         vec![
             "account.repository",
+            "benefit.repository",
+            "entitlement.repository",
+            "membership.repository",
             "promotion.repository",
             "catalog.repository",
             "inventory.repository",
@@ -542,8 +738,8 @@ fn business_repository_sql_catalogs_cover_every_first_slice_business_repository(
             "order.repository",
             "payment.repository",
             "exchange.repository",
-            "membership.repository",
             "invoice.repository",
+            "billing.repository",
         ],
     );
 
@@ -591,6 +787,154 @@ fn business_repository_sql_catalogs_standardize_operation_names_and_tables() {
             ("account.release_prehold", "commerce_billing_prehold", true),
         ],
     );
+
+    let billing = catalogs
+        .iter()
+        .find(|catalog| catalog.repository_name == "billing.repository")
+        .unwrap();
+    assert_eq!(
+        billing
+            .operations
+            .iter()
+            .map(|operation| (operation.name, operation.table, operation.is_write))
+            .collect::<Vec<_>>(),
+        vec![
+            ("billing.list_history", "commerce_billing_history", false),
+            ("billing.append_history", "commerce_billing_history", true),
+        ],
+    );
+
+    let benefit = catalogs
+        .iter()
+        .find(|catalog| catalog.repository_name == "benefit.repository")
+        .unwrap();
+    assert_eq!(
+        benefit
+            .operations
+            .iter()
+            .map(|operation| (operation.name, operation.table, operation.is_write))
+            .collect::<Vec<_>>(),
+        vec![
+            ("benefit.list_definitions", "benefit_definition", false),
+            ("benefit.upsert_definition", "benefit_definition", true),
+            ("benefit.archive_definition", "benefit_definition", true),
+        ],
+    );
+
+    let entitlement = catalogs
+        .iter()
+        .find(|catalog| catalog.repository_name == "entitlement.repository")
+        .unwrap();
+    assert!(entitlement.operations.iter().any(|operation| {
+        operation.name == "entitlement.create_grant"
+            && operation.table == "entitlement_grant"
+            && operation.is_write
+    }));
+    assert!(entitlement.operations.iter().any(|operation| {
+        operation.name == "entitlement.find_account"
+            && operation.table == "entitlement_account"
+            && operation.is_read
+    }));
+    assert!(entitlement.operations.iter().any(|operation| {
+        operation.name == "entitlement.append_ledger_entry"
+            && operation.table == "entitlement_ledger_entry"
+            && operation.is_write
+    }));
+
+    let membership = catalogs
+        .iter()
+        .find(|catalog| catalog.repository_name == "membership.repository")
+        .unwrap();
+    assert_eq!(
+        membership.tables,
+        vec![
+            "membership_plan",
+            "membership_plan_version",
+            "membership_plan_benefit",
+            "membership_package_group",
+            "membership_package",
+            "membership_subscription",
+            "membership_period",
+        ],
+    );
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.list_plans"
+            && operation.table == "membership_plan"
+            && operation.is_read
+    }));
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.publish_plan_version"
+            && operation.table == "membership_plan_version"
+            && operation.is_write
+    }));
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.upsert_plan_benefit"
+            && operation.table == "membership_plan_benefit"
+            && operation.is_write
+    }));
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.list_package_groups"
+            && operation.table == "membership_package_group"
+            && operation.is_read
+    }));
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.upsert_package"
+            && operation.table == "membership_package"
+            && operation.is_write
+    }));
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.activate_subscription"
+            && operation.table == "membership_subscription"
+            && operation.is_write
+    }));
+    assert!(membership.operations.iter().any(|operation| {
+        operation.name == "membership.append_period"
+            && operation.table == "membership_period"
+            && operation.is_write
+    }));
+
+    let promotion = catalogs
+        .iter()
+        .find(|catalog| catalog.repository_name == "promotion.repository")
+        .unwrap();
+    assert_eq!(
+        promotion.tables,
+        vec![
+            "promotion_offer",
+            "promotion_offer_version",
+            "promotion_coupon_stock",
+            "promotion_code",
+            "promotion_user_coupon",
+            "promotion_coupon_ledger_entry",
+            "promotion_discount_application",
+            "promotion_discount_allocation",
+        ],
+    );
+    assert!(promotion.operations.iter().any(|operation| {
+        operation.name == "promotion.list_offers"
+            && operation.table == "promotion_offer"
+            && operation.is_read
+    }));
+    assert!(promotion.operations.iter().any(|operation| {
+        operation.name == "promotion.publish_offer_version"
+            && operation.table == "promotion_offer_version"
+            && operation.is_write
+    }));
+    assert!(promotion.operations.iter().any(|operation| {
+        operation.name == "promotion.create_coupon_stock"
+            && operation.table == "promotion_coupon_stock"
+            && operation.is_write
+    }));
+    assert!(promotion.operations.iter().any(|operation| {
+        operation.name == "promotion.issue_user_coupon"
+            && operation.table == "promotion_user_coupon"
+            && operation.is_write
+    }));
+    assert!(promotion.operations.iter().any(|operation| {
+        operation.name == "promotion.apply_discount"
+            && operation.table == "promotion_discount_application"
+            && operation.is_write
+    }));
 
     let order = catalogs
         .iter()
@@ -718,6 +1062,46 @@ fn business_repository_sql_catalogs_standardize_operation_names_and_tables() {
             && operation.is_write
     }));
     assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.list_providers"
+            && operation.table == "commerce_payment_provider"
+            && operation.is_read
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.upsert_provider"
+            && operation.table == "commerce_payment_provider"
+            && operation.is_write
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.list_provider_accounts"
+            && operation.table == "commerce_payment_provider_account"
+            && operation.is_read
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.upsert_provider_account"
+            && operation.table == "commerce_payment_provider_account"
+            && operation.is_write
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.list_channels"
+            && operation.table == "commerce_payment_channel"
+            && operation.is_read
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.upsert_channel"
+            && operation.table == "commerce_payment_channel"
+            && operation.is_write
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.list_route_rules"
+            && operation.table == "commerce_payment_route_rule"
+            && operation.is_read
+    }));
+    assert!(payment.operations.iter().any(|operation| {
+        operation.name == "payment.upsert_route_rule"
+            && operation.table == "commerce_payment_route_rule"
+            && operation.is_write
+    }));
+    assert!(payment.operations.iter().any(|operation| {
         operation.name == "payment.find_webhook_event"
             && operation.table == "commerce_payment_webhook_event"
             && operation.is_read
@@ -759,47 +1143,6 @@ fn business_repository_sql_catalogs_standardize_operation_names_and_tables() {
             ("exchange.upsert_rule", "commerce_exchange_rule", true),
         ],
     );
-
-    let membership = catalogs
-        .iter()
-        .find(|catalog| catalog.repository_name == "membership.repository")
-        .unwrap();
-    assert_eq!(
-        membership.tables,
-        vec![
-            "commerce_membership_plan",
-            "commerce_membership_package_group",
-            "commerce_membership_package",
-            "commerce_membership",
-            "commerce_membership_entitlement",
-            "commerce_membership_entitlement_usage",
-        ],
-    );
-    assert!(membership.operations.iter().any(|operation| {
-        operation.name == "membership.list_membership_package_groups"
-            && operation.table == "commerce_membership_package_group"
-            && operation.is_read
-    }));
-    assert!(membership.operations.iter().any(|operation| {
-        operation.name == "membership.upsert_membership_package_group"
-            && operation.table == "commerce_membership_package_group"
-            && operation.is_write
-    }));
-    assert!(membership.operations.iter().any(|operation| {
-        operation.name == "membership.list_membership_packages"
-            && operation.table == "commerce_membership_package"
-            && operation.is_read
-    }));
-    assert!(membership.operations.iter().any(|operation| {
-        operation.name == "membership.find_membership_package"
-            && operation.table == "commerce_membership_package"
-            && operation.is_read
-    }));
-    assert!(membership.operations.iter().any(|operation| {
-        operation.name == "membership.upsert_membership_package"
-            && operation.table == "commerce_membership_package"
-            && operation.is_write
-    }));
 }
 
 #[test]
@@ -1269,16 +1612,10 @@ fn migration_runner_preflight_returns_remaining_pending_migrations_for_prefix_st
     let preflight = commerce_migration_runner_preflight(&contract, &applied).unwrap();
 
     assert_eq!(preflight.applied_count, 2);
-    assert_eq!(preflight.pending_count, 8);
+    assert_eq!(preflight.pending_count, commerce_migration_plan().len() - 2);
     assert!(preflight.requires_execution);
-    assert_eq!(
-        preflight.pending_migrations[0].name,
-        "0003_promotion_coupon.sql"
-    );
-    assert_eq!(
-        preflight.next_migration.unwrap().name,
-        "0003_promotion_coupon.sql",
-    );
+    assert_eq!(preflight.pending_migrations[0].name, "0003_benefit.sql");
+    assert_eq!(preflight.next_migration.unwrap().name, "0003_benefit.sql",);
 }
 
 #[test]
@@ -1293,7 +1630,7 @@ fn migration_runner_preflight_returns_no_pending_migrations_when_plan_is_applied
 
     let preflight = commerce_migration_runner_preflight(&contract, &applied).unwrap();
 
-    assert_eq!(preflight.applied_count, 10);
+    assert_eq!(preflight.applied_count, commerce_migration_plan().len());
     assert_eq!(preflight.pending_count, 0);
     assert!(!preflight.requires_execution);
     assert!(preflight.pending_migrations.is_empty());
@@ -1339,9 +1676,12 @@ fn migration_runner_execution_plan_builds_ordered_steps_for_empty_database() {
     assert_eq!(plan.runner_name, "commerce.database.migration-runner");
     assert_eq!(plan.schema_version_table, "commerce_schema_migration");
     assert_eq!(plan.applied_count, 0);
-    assert_eq!(plan.pending_count, 10);
+    assert_eq!(plan.pending_count, commerce_migration_plan().len());
     assert!(plan.requires_execution);
-    assert_eq!(plan.steps.len(), 25);
+    assert_eq!(
+        plan.steps.len(),
+        4 + (commerce_migration_plan().len() * 2) + 1
+    );
     assert_eq!(plan.steps[0].kind, "ensure_lock_table");
     assert_eq!(plan.steps[0].statement.operation, "ensure_lock_table");
     assert_eq!(plan.steps[1].kind, "acquire_lock");
@@ -1388,17 +1728,14 @@ fn migration_runner_execution_plan_only_applies_pending_migrations() {
     let plan = commerce_migration_runner_execution_plan(&contract, &applied).unwrap();
 
     assert_eq!(plan.applied_count, 2);
-    assert_eq!(plan.pending_count, 8);
+    assert_eq!(plan.pending_count, commerce_migration_plan().len() - 2);
     assert!(plan.requires_execution);
-    assert_eq!(plan.steps.len(), 21);
     assert_eq!(
-        plan.steps[4].migration_name,
-        Some("0003_promotion_coupon.sql")
+        plan.steps.len(),
+        4 + ((commerce_migration_plan().len() - 2) * 2) + 1
     );
-    assert_eq!(
-        plan.steps[5].migration_name,
-        Some("0003_promotion_coupon.sql")
-    );
+    assert_eq!(plan.steps[4].migration_name, Some("0003_benefit.sql"));
+    assert_eq!(plan.steps[5].migration_name, Some("0003_benefit.sql"));
     assert!(plan
         .steps
         .iter()
@@ -1418,7 +1755,7 @@ fn migration_runner_execution_plan_is_noop_after_all_migrations_are_applied() {
 
     let plan = commerce_migration_runner_execution_plan(&contract, &applied).unwrap();
 
-    assert_eq!(plan.applied_count, 10);
+    assert_eq!(plan.applied_count, commerce_migration_plan().len());
     assert_eq!(plan.pending_count, 0);
     assert!(!plan.requires_execution);
     assert_eq!(plan.steps.len(), 5);
@@ -1530,15 +1867,18 @@ fn migration_runner_execution_result_summarizes_successful_plan_execution() {
 
     assert_eq!(result.runner_name, "commerce.database.migration-runner");
     assert_eq!(result.schema_version_table, "commerce_schema_migration");
-    assert_eq!(result.executed_steps, 25);
-    assert_eq!(result.applied_migrations, 10);
-    assert_eq!(result.recorded_migrations, 10);
+    assert_eq!(result.executed_steps, plan.steps.len());
+    assert_eq!(result.applied_migrations, commerce_migration_plan().len());
+    assert_eq!(result.recorded_migrations, commerce_migration_plan().len());
     assert!(result.success);
     assert_eq!(result.completed_at, "2026-05-17T00:00:00Z");
     assert_eq!(result.step_results.len(), plan.steps.len());
     assert!(result.step_results.iter().all(|step| step.success));
     assert_eq!(result.applied_records[0].name, "0001_core_idempotency.sql",);
-    assert_eq!(result.applied_records.len(), 10);
+    assert_eq!(
+        result.applied_records.len(),
+        commerce_migration_plan().len()
+    );
 }
 
 #[test]
@@ -1618,8 +1958,14 @@ fn migration_runner_final_state_marks_schema_current_after_empty_database_execut
         "commerce_schema_migration"
     );
     assert_eq!(final_state.applied_count_before, 0);
-    assert_eq!(final_state.newly_applied_count, 10);
-    assert_eq!(final_state.applied_count_after, 10);
+    assert_eq!(
+        final_state.newly_applied_count,
+        commerce_migration_plan().len()
+    );
+    assert_eq!(
+        final_state.applied_count_after,
+        commerce_migration_plan().len()
+    );
     assert_eq!(final_state.pending_count_after, 0);
     assert!(final_state.schema_is_current);
     assert_eq!(final_state.applied_migrations, result.applied_records);
@@ -1643,15 +1989,18 @@ fn migration_runner_final_state_appends_new_records_after_prefix_state() {
     let final_state = commerce_migration_runner_final_state(&contract, &before, &result).unwrap();
 
     assert_eq!(final_state.applied_count_before, 2);
-    assert_eq!(final_state.newly_applied_count, 8);
-    assert_eq!(final_state.applied_count_after, 10);
+    assert_eq!(
+        final_state.newly_applied_count,
+        commerce_migration_plan().len() - 2
+    );
+    assert_eq!(
+        final_state.applied_count_after,
+        commerce_migration_plan().len()
+    );
     assert_eq!(final_state.pending_count_after, 0);
     assert!(final_state.schema_is_current);
     assert_eq!(&final_state.applied_migrations[..2], before.as_slice());
-    assert_eq!(
-        final_state.applied_migrations[2].name,
-        "0003_promotion_coupon.sql"
-    );
+    assert_eq!(final_state.applied_migrations[2].name, "0003_benefit.sql");
 }
 
 #[test]
@@ -1744,7 +2093,10 @@ fn migration_runner_failure_recovery_resumes_from_failed_migration() {
     assert_eq!(recovery.applied_count_before, 0);
     assert_eq!(recovery.safely_recorded_count, 0);
     assert_eq!(recovery.applied_count_after, 0);
-    assert_eq!(recovery.pending_count_after, 10);
+    assert_eq!(
+        recovery.pending_count_after,
+        commerce_migration_plan().len()
+    );
     assert_eq!(
         recovery.resume_migration.as_ref().unwrap().name,
         "0001_core_idempotency.sql"
@@ -1824,13 +2176,13 @@ fn migration_runner_failure_recovery_preserves_successfully_recorded_prefix() {
     let recovery = commerce_migration_runner_failure_recovery(&contract, &[], &result).unwrap();
 
     assert_eq!(recovery.failed_step_index, 8);
-    assert_eq!(
-        recovery.failed_migration_name,
-        Some("0003_promotion_coupon.sql")
-    );
+    assert_eq!(recovery.failed_migration_name, Some("0003_benefit.sql"));
     assert_eq!(recovery.safely_recorded_count, 2);
     assert_eq!(recovery.applied_count_after, 2);
-    assert_eq!(recovery.pending_count_after, 8);
+    assert_eq!(
+        recovery.pending_count_after,
+        commerce_migration_plan().len() - 2
+    );
     assert_eq!(
         recovery.applied_migrations[0].name,
         "0001_core_idempotency.sql"
@@ -1841,7 +2193,7 @@ fn migration_runner_failure_recovery_preserves_successfully_recorded_prefix() {
     );
     assert_eq!(
         recovery.resume_migration.as_ref().unwrap().name,
-        "0003_promotion_coupon.sql"
+        "0003_benefit.sql"
     );
 }
 
@@ -1897,11 +2249,11 @@ fn migration_runner_failure_recovery_rejects_recorded_failed_migration() {
 fn storage_capability_manifest_is_complete_for_first_slice_runtime_bootstrap() {
     let manifest = commerce_storage_capability_manifest();
 
-    assert_eq!(manifest.tables.len(), 39);
-    assert_eq!(manifest.indexes.len(), 48);
-    assert_eq!(manifest.migration_plan.len(), 10);
-    assert_eq!(manifest.repository_bindings.len(), 12);
-    assert_eq!(manifest.business_repositories.len(), 11);
+    assert_eq!(manifest.tables.len(), 53);
+    assert_eq!(manifest.indexes.len(), 64);
+    assert_eq!(manifest.migration_plan.len(), 13);
+    assert_eq!(manifest.repository_bindings.len(), 15);
+    assert_eq!(manifest.business_repositories.len(), 14);
     assert!(manifest
         .transaction_boundary
         .covered_repositories
@@ -1943,14 +2295,17 @@ fn migration_plan_exposes_host_consumable_order_and_sql_sources() {
         vec![
             "core",
             "account",
+            "benefit",
+            "entitlement",
+            "membership",
             "promotion",
             "catalog",
             "inventory",
             "order",
             "payment",
             "exchange",
-            "membership",
             "invoice",
+            "billing",
         ],
     );
 }
@@ -1981,6 +2336,7 @@ fn migration_plan_covers_first_slice_tables_by_domain() {
             "commerce_account",
             "commerce_account_ledger_entry",
             "commerce_billing_prehold",
+            "commerce_billing_history",
         ],
     );
     assert_eq!(
@@ -1988,6 +2344,60 @@ fn migration_plan_covers_first_slice_tables_by_domain() {
         "migrations/0001_commerce_foundation.sql"
     );
     assert_eq!(account.sql, commerce_initial_migration_sql());
+
+    let benefit = plan
+        .iter()
+        .find(|migration| migration.domain == "benefit")
+        .unwrap();
+    assert_eq!(benefit.required_tables, vec!["benefit_definition"]);
+
+    let entitlement = plan
+        .iter()
+        .find(|migration| migration.domain == "entitlement")
+        .unwrap();
+    assert_eq!(
+        entitlement.required_tables,
+        vec![
+            "entitlement_grant",
+            "entitlement_account",
+            "entitlement_ledger_entry",
+        ],
+    );
+
+    let membership = plan
+        .iter()
+        .find(|migration| migration.domain == "membership")
+        .unwrap();
+    assert_eq!(
+        membership.required_tables,
+        vec![
+            "membership_plan",
+            "membership_plan_version",
+            "membership_plan_benefit",
+            "membership_package_group",
+            "membership_package",
+            "membership_subscription",
+            "membership_period",
+        ],
+    );
+
+    let promotion = plan
+        .iter()
+        .find(|migration| migration.domain == "promotion")
+        .unwrap();
+    assert_eq!(
+        promotion.required_tables,
+        vec![
+            "promotion_offer",
+            "promotion_offer_version",
+            "promotion_coupon_stock",
+            "promotion_code",
+            "promotion_user_coupon",
+            "promotion_coupon_ledger_entry",
+            "promotion_discount_application",
+            "promotion_discount_allocation",
+        ],
+    );
 }
 
 #[test]

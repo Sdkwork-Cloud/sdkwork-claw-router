@@ -2,8 +2,8 @@ use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
 
-use axum::extract::{Path, Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::extract::{Extension, Path, Query, State};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
@@ -16,12 +16,12 @@ use sdkwork_commerce_storage_sqlx::{
     PostgresCommerceExchangeStore, PostgresCommercePaymentRecordStore, SqliteCommerceExchangeStore,
     SqliteCommercePaymentRecordStore,
 };
+use sdkwork_iam_core::IamAppContext;
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, SqlitePool};
 
-const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
-const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
-const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
+use crate::subject::app_runtime_subject_from_extension;
+use crate::with_request_identity;
 const MAX_ASSET_TYPE_LEN: usize = 32;
 const POINTS_ASSET_TYPE: &str = "POINTS";
 const CASH_ASSET_TYPE: &str = "CASH";
@@ -231,35 +231,40 @@ pub fn app_commerce_foundation_router_with_store(
 }
 
 fn app_commerce_foundation_router_with_state(state: AppCommerceFoundationState) -> Router {
-    Router::new()
-        .route(
-            "/app/v3/api/wallet/exchange_rate",
-            get(points_exchange_rate),
-        )
-        .route(
-            "/app/v3/api/wallet/points/exchanges/rules",
-            get(points_exchange_rules),
-        )
-        .route("/app/v3/api/coupons/claims", post(unavailable_command))
-        .route(
-            "/app/v3/api/payments/intents/{paymentIntentId}/attempts",
-            post(unavailable_command_with_path),
-        )
-        .route(
-            "/app/v3/api/payments/attempts/{paymentAttemptId}",
-            get(payment_record),
-        )
-        .with_state(state)
+    with_request_identity(
+        Router::new()
+            .route(
+                "/app/v3/api/wallet/exchange_rate",
+                get(points_exchange_rate),
+            )
+            .route(
+                "/app/v3/api/wallet/points/exchanges/rules",
+                get(points_exchange_rules),
+            )
+            .route(
+                "/app/v3/api/promotions/user_coupon_claims",
+                post(unavailable_command),
+            )
+            .route(
+                "/app/v3/api/payments/intents/{paymentIntentId}/attempts",
+                post(unavailable_command_with_path),
+            )
+            .route(
+                "/app/v3/api/payments/attempts/{paymentAttemptId}",
+                get(payment_record),
+            )
+            .with_state(state),
+    )
 }
 
 async fn points_exchange_rate(
     State(state): State<AppCommerceFoundationState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
     let Some(store) = state.store.as_ref() else {
         return unavailable_read().await;
     };
-    let subject = match resolve_subject(&headers, state.require_subject) {
+    let subject = match resolve_subject(runtime_context, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -286,12 +291,12 @@ async fn points_exchange_rate(
 async fn points_exchange_rules(
     State(state): State<AppCommerceFoundationState>,
     Query(params): Query<ExchangeRulesQueryRequest>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
     let Some(store) = state.store.as_ref() else {
         return empty_list().await;
     };
-    let subject = match resolve_subject(&headers, state.require_subject) {
+    let subject = match resolve_subject(runtime_context, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -325,12 +330,12 @@ async fn points_exchange_rules(
 async fn payment_record(
     State(state): State<AppCommerceFoundationState>,
     Path(payment_id): Path<String>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
     let Some(store) = state.store.as_ref() else {
         return unavailable_read().await;
     };
-    let subject = match resolve_subject(&headers, state.require_subject) {
+    let subject = match resolve_subject(runtime_context, state.require_subject) {
         Ok(Some(subject)) => subject,
         Ok(None) => return unavailable_read().await,
         Err(response) => return response,
@@ -388,42 +393,18 @@ async fn unavailable_command() -> Response {
 }
 
 fn resolve_subject(
-    headers: &HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     required: bool,
 ) -> Result<Option<AppCommerceSubject>, Response> {
-    let tenant_id = required_text_header(headers, X_SDKWORK_TENANT_ID);
-    let user_id = required_text_header(headers, X_SDKWORK_USER_ID);
-    match (tenant_id, user_id) {
-        (Ok(tenant_id), Ok(user_id)) => Ok(Some(AppCommerceSubject {
-            tenant_id,
-            organization_id: optional_text_header(headers, X_SDKWORK_ORGANIZATION_ID),
-            user_id,
+    match app_runtime_subject_from_extension(runtime_context) {
+        Ok(subject) => Ok(Some(AppCommerceSubject {
+            tenant_id: subject.tenant_id,
+            organization_id: subject.organization_id,
+            user_id: subject.user_id,
         })),
-        (Err(response), _) | (_, Err(response)) if required => Err(response),
-        _ => Ok(None),
+        Err(message) if required => Err(unauthorized_response(message)),
+        Err(_) => Ok(None),
     }
-}
-
-fn required_text_header(headers: &HeaderMap, name: &'static str) -> Result<String, Response> {
-    let value = headers
-        .get(name)
-        .ok_or_else(|| unauthorized_response(format!("{name} header is required")))?
-        .to_str()
-        .map(str::trim)
-        .map_err(|_| unauthorized_response(format!("{name} header value is invalid")))?;
-    if value.is_empty() {
-        return Err(unauthorized_response(format!("{name} header is required")));
-    }
-    Ok(value.to_owned())
-}
-
-fn optional_text_header(headers: &HeaderMap, name: &'static str) -> Option<String> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .map(str::to_owned)
 }
 
 fn normalize_optional_asset_type(value: Option<&str>) -> Result<Option<String>, String> {

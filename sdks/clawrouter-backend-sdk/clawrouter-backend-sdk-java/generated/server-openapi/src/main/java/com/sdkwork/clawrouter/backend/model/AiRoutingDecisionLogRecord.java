@@ -36,7 +36,7 @@ public class AiRoutingDecisionLogRecord {
     public String getApiKeyId() {
         return this.apiKeyId;
     }
-    
+
     public void setApiKeyId(String apiKeyId) {
         this.apiKeyId = apiKeyId;
     }
@@ -44,7 +44,7 @@ public class AiRoutingDecisionLogRecord {
     public Map<String, String> getCandidateSnapshot() {
         return this.candidateSnapshot;
     }
-    
+
     public void setCandidateSnapshot(Map<String, String> candidateSnapshot) {
         this.candidateSnapshot = candidateSnapshot;
     }
@@ -52,7 +52,7 @@ public class AiRoutingDecisionLogRecord {
     public String getCapability() {
         return this.capability;
     }
-    
+
     public void setCapability(String capability) {
         this.capability = capability;
     }
@@ -60,7 +60,7 @@ public class AiRoutingDecisionLogRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -68,7 +68,7 @@ public class AiRoutingDecisionLogRecord {
     public Integer getDecisionLatencyMs() {
         return this.decisionLatencyMs;
     }
-    
+
     public void setDecisionLatencyMs(Integer decisionLatencyMs) {
         this.decisionLatencyMs = decisionLatencyMs;
     }
@@ -76,7 +76,7 @@ public class AiRoutingDecisionLogRecord {
     public String getDecisionMode() {
         return this.decisionMode;
     }
-    
+
     public void setDecisionMode(String decisionMode) {
         this.decisionMode = decisionMode;
     }
@@ -84,7 +84,7 @@ public class AiRoutingDecisionLogRecord {
     public Map<String, String> getDecisionReason() {
         return this.decisionReason;
     }
-    
+
     public void setDecisionReason(Map<String, String> decisionReason) {
         this.decisionReason = decisionReason;
     }
@@ -92,7 +92,7 @@ public class AiRoutingDecisionLogRecord {
     public Map<String, String> getFallbackChain() {
         return this.fallbackChain;
     }
-    
+
     public void setFallbackChain(Map<String, String> fallbackChain) {
         this.fallbackChain = fallbackChain;
     }
@@ -100,7 +100,7 @@ public class AiRoutingDecisionLogRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -108,7 +108,7 @@ public class AiRoutingDecisionLogRecord {
     public String getLegacyApiKeyId() {
         return this.legacyApiKeyId;
     }
-    
+
     public void setLegacyApiKeyId(String legacyApiKeyId) {
         this.legacyApiKeyId = legacyApiKeyId;
     }
@@ -116,7 +116,7 @@ public class AiRoutingDecisionLogRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -124,7 +124,7 @@ public class AiRoutingDecisionLogRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -132,7 +132,7 @@ public class AiRoutingDecisionLogRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -140,7 +140,7 @@ public class AiRoutingDecisionLogRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -148,7 +148,7 @@ public class AiRoutingDecisionLogRecord {
     public String getPolicyId() {
         return this.policyId;
     }
-    
+
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
@@ -156,7 +156,7 @@ public class AiRoutingDecisionLogRecord {
     public String getProfileId() {
         return this.profileId;
     }
-    
+
     public void setProfileId(String profileId) {
         this.profileId = profileId;
     }
@@ -164,7 +164,7 @@ public class AiRoutingDecisionLogRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -172,7 +172,7 @@ public class AiRoutingDecisionLogRecord {
     public String getRequestedModel() {
         return this.requestedModel;
     }
-    
+
     public void setRequestedModel(String requestedModel) {
         this.requestedModel = requestedModel;
     }
@@ -180,7 +180,7 @@ public class AiRoutingDecisionLogRecord {
     public String getResolvedModel() {
         return this.resolvedModel;
     }
-    
+
     public void setResolvedModel(String resolvedModel) {
         this.resolvedModel = resolvedModel;
     }
@@ -188,7 +188,7 @@ public class AiRoutingDecisionLogRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -196,7 +196,7 @@ public class AiRoutingDecisionLogRecord {
     public String getRuleId() {
         return this.ruleId;
     }
-    
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -204,7 +204,7 @@ public class AiRoutingDecisionLogRecord {
     public String getSelectedAccountId() {
         return this.selectedAccountId;
     }
-    
+
     public void setSelectedAccountId(String selectedAccountId) {
         this.selectedAccountId = selectedAccountId;
     }
@@ -212,7 +212,7 @@ public class AiRoutingDecisionLogRecord {
     public String getSelectedChannelId() {
         return this.selectedChannelId;
     }
-    
+
     public void setSelectedChannelId(String selectedChannelId) {
         this.selectedChannelId = selectedChannelId;
     }
@@ -220,7 +220,7 @@ public class AiRoutingDecisionLogRecord {
     public String getSelectedProviderId() {
         return this.selectedProviderId;
     }
-    
+
     public void setSelectedProviderId(String selectedProviderId) {
         this.selectedProviderId = selectedProviderId;
     }
@@ -228,7 +228,7 @@ public class AiRoutingDecisionLogRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -236,7 +236,7 @@ public class AiRoutingDecisionLogRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -244,7 +244,7 @@ public class AiRoutingDecisionLogRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -252,7 +252,7 @@ public class AiRoutingDecisionLogRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -260,7 +260,7 @@ public class AiRoutingDecisionLogRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

@@ -16,7 +16,7 @@ public class DashboardOverviewResponse {
     public List<DashboardAnnouncement> getAnnouncements() {
         return this.announcements;
     }
-    
+
     public void setAnnouncements(List<DashboardAnnouncement> announcements) {
         this.announcements = announcements;
     }
@@ -24,7 +24,7 @@ public class DashboardOverviewResponse {
     public List<DashboardChartPoint> getChartData() {
         return this.chartData;
     }
-    
+
     public void setChartData(List<DashboardChartPoint> chartData) {
         this.chartData = chartData;
     }
@@ -32,7 +32,7 @@ public class DashboardOverviewResponse {
     public List<DashboardConfigurationDomain> getConfigurationDomains() {
         return this.configurationDomains;
     }
-    
+
     public void setConfigurationDomains(List<DashboardConfigurationDomain> configurationDomains) {
         this.configurationDomains = configurationDomains;
     }
@@ -40,7 +40,7 @@ public class DashboardOverviewResponse {
     public List<DashboardSparklinePoint> getMultimodalSparkline() {
         return this.multimodalSparkline;
     }
-    
+
     public void setMultimodalSparkline(List<DashboardSparklinePoint> multimodalSparkline) {
         this.multimodalSparkline = multimodalSparkline;
     }
@@ -48,7 +48,7 @@ public class DashboardOverviewResponse {
     public List<DashboardSparklinePoint> getPerformanceSparkline() {
         return this.performanceSparkline;
     }
-    
+
     public void setPerformanceSparkline(List<DashboardSparklinePoint> performanceSparkline) {
         this.performanceSparkline = performanceSparkline;
     }
@@ -56,7 +56,7 @@ public class DashboardOverviewResponse {
     public List<DashboardSparklinePoint> getRequestSparkline() {
         return this.requestSparkline;
     }
-    
+
     public void setRequestSparkline(List<DashboardSparklinePoint> requestSparkline) {
         this.requestSparkline = requestSparkline;
     }
@@ -64,7 +64,7 @@ public class DashboardOverviewResponse {
     public DashboardOverviewSummary getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(DashboardOverviewSummary summary) {
         this.summary = summary;
     }
@@ -72,7 +72,7 @@ public class DashboardOverviewResponse {
     public List<DashboardTopModel> getTopModels() {
         return this.topModels;
     }
-    
+
     public void setTopModels(List<DashboardTopModel> topModels) {
         this.topModels = topModels;
     }
@@ -80,7 +80,7 @@ public class DashboardOverviewResponse {
     public List<String> getWarnings() {
         return this.warnings;
     }
-    
+
     public void setWarnings(List<String> warnings) {
         this.warnings = warnings;
     }

@@ -32,7 +32,7 @@ public class AiAgentMcpServerRecord {
     public Map<String, String> getConnectionConfig() {
         return this.connectionConfig;
     }
-    
+
     public void setConnectionConfig(Map<String, String> connectionConfig) {
         this.connectionConfig = connectionConfig;
     }
@@ -40,7 +40,7 @@ public class AiAgentMcpServerRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -48,7 +48,7 @@ public class AiAgentMcpServerRecord {
     public String getCredentialRef() {
         return this.credentialRef;
     }
-    
+
     public void setCredentialRef(String credentialRef) {
         this.credentialRef = credentialRef;
     }
@@ -56,7 +56,7 @@ public class AiAgentMcpServerRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -64,7 +64,7 @@ public class AiAgentMcpServerRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -72,7 +72,7 @@ public class AiAgentMcpServerRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -80,7 +80,7 @@ public class AiAgentMcpServerRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -88,7 +88,7 @@ public class AiAgentMcpServerRecord {
     public String getHealthStatus() {
         return this.healthStatus;
     }
-    
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -96,7 +96,7 @@ public class AiAgentMcpServerRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -104,7 +104,7 @@ public class AiAgentMcpServerRecord {
     public String getLastCheckedAt() {
         return this.lastCheckedAt;
     }
-    
+
     public void setLastCheckedAt(String lastCheckedAt) {
         this.lastCheckedAt = lastCheckedAt;
     }
@@ -112,7 +112,7 @@ public class AiAgentMcpServerRecord {
     public String getLastErrorMasked() {
         return this.lastErrorMasked;
     }
-    
+
     public void setLastErrorMasked(String lastErrorMasked) {
         this.lastErrorMasked = lastErrorMasked;
     }
@@ -120,7 +120,7 @@ public class AiAgentMcpServerRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -128,7 +128,7 @@ public class AiAgentMcpServerRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -136,7 +136,7 @@ public class AiAgentMcpServerRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -144,7 +144,7 @@ public class AiAgentMcpServerRecord {
     public Map<String, String> getPermissionPolicy() {
         return this.permissionPolicy;
     }
-    
+
     public void setPermissionPolicy(Map<String, String> permissionPolicy) {
         this.permissionPolicy = permissionPolicy;
     }
@@ -152,7 +152,7 @@ public class AiAgentMcpServerRecord {
     public Map<String, String> getPromptCatalog() {
         return this.promptCatalog;
     }
-    
+
     public void setPromptCatalog(Map<String, String> promptCatalog) {
         this.promptCatalog = promptCatalog;
     }
@@ -160,7 +160,7 @@ public class AiAgentMcpServerRecord {
     public Map<String, String> getResourceCatalog() {
         return this.resourceCatalog;
     }
-    
+
     public void setResourceCatalog(Map<String, String> resourceCatalog) {
         this.resourceCatalog = resourceCatalog;
     }
@@ -168,7 +168,7 @@ public class AiAgentMcpServerRecord {
     public String getServerCode() {
         return this.serverCode;
     }
-    
+
     public void setServerCode(String serverCode) {
         this.serverCode = serverCode;
     }
@@ -176,7 +176,7 @@ public class AiAgentMcpServerRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -184,7 +184,7 @@ public class AiAgentMcpServerRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -192,7 +192,7 @@ public class AiAgentMcpServerRecord {
     public Map<String, String> getToolCatalog() {
         return this.toolCatalog;
     }
-    
+
     public void setToolCatalog(Map<String, String> toolCatalog) {
         this.toolCatalog = toolCatalog;
     }
@@ -200,7 +200,7 @@ public class AiAgentMcpServerRecord {
     public String getTransportType() {
         return this.transportType;
     }
-    
+
     public void setTransportType(String transportType) {
         this.transportType = transportType;
     }
@@ -208,7 +208,7 @@ public class AiAgentMcpServerRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -216,7 +216,7 @@ public class AiAgentMcpServerRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -224,7 +224,7 @@ public class AiAgentMcpServerRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

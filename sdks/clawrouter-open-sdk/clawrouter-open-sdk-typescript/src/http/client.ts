@@ -12,7 +12,7 @@ type HttpRequestOptions = RequestOptions & {
 
 export class HttpClient extends BaseHttpClient {
   private static readonly API_KEY_HEADER: string = 'Authorization';
-  private static readonly ACCESS_TOKEN_HEADER: string = 'Sdkwork-Access-Token';
+  private static readonly ACCESS_TOKEN_HEADER: string = 'Access-Token';
   private static readonly API_KEY_USE_BEARER = true;
 
   constructor(config: SdkworkAiConfig) {

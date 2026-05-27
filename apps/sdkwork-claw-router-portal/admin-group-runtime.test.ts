@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -129,7 +129,7 @@ test("admin group create modal uses backend enums and does not expose ignored co
   for (const field of ["description", "allowAllClients", "fallbackGroup"]) {
     assert.doesNotMatch(source, new RegExp(`name="${field}"`), `${field} is not supported by the backend command`);
   }
-  for (const unsupportedControl of ["仅允许 OAuth 账号", "仅允许隐私保护已设置的账号"]) {
+  for (const unsupportedControl of ["OAuth account only", "privacy protected account only"]) {
     assert.doesNotMatch(source, new RegExp(unsupportedControl), `${unsupportedControl} is not supported by the backend command`);
   }
 });
@@ -167,7 +167,133 @@ test("admin group table actions are wired to real supported workflows", () => {
   assert.match(source, /value=\{statusFilter\}/);
   assert.match(source, /value=\{typeFilter\}/);
   assert.match(source, /setSortDirection/);
-  assert.doesNotMatch(source, /专属倍率/);
+  assert.doesNotMatch(source, /涓撳睘鍊嶇巼/);
+});
+
+test("admin group page exposes channel account binding management", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-group-channel-bindings-drawer",
+    "openChannelBindingModal",
+    "GroupService.fetchAssignableChannels",
+    "GroupService.fetchGroupChannelBindings",
+    "GroupService.replaceGroupChannelBindings",
+    "admin.group.channelBindings.action",
+    "admin.group.channelBindings.title",
+  ]) {
+    assert.ok(source.includes(expected), `missing group channel binding UI marker: ${expected}`);
+  }
+  assert.doesNotMatch(source, /secretRef/i);
+});
+
+test("admin group channel binding drawer manages only current group accounts by default", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-group-channel-bindings-drawer",
+    "data-admin-group-channel-bindings-toolbar",
+    "data-admin-group-channel-binding-search",
+    "data-admin-group-channel-binding-add",
+    "data-admin-group-channel-binding-remove",
+    "data-admin-group-channel-picker-modal",
+    "openChannelBindingPicker",
+    "addSelectedChannelBindings",
+    "removeChannelBindingDraft",
+    "visibleBindingRows",
+    "pickerChannelOptions",
+    "w-[90vw]",
+    "h-full",
+  ]) {
+    assert.ok(source.includes(expected), `missing current-group binding management marker: ${expected}`);
+  }
+
+  assert.match(source, /fixed inset-0 z-50 flex justify-start/);
+  assert.match(source, /<aside\s+data-admin-group-channel-bindings-drawer/);
+  assert.doesNotMatch(source, /data-admin-group-channel-bindings-modal/);
+  assert.doesNotMatch(source, /orderedChannelOptions\.map/);
+  assert.doesNotMatch(source, /toggleChannelBinding/);
+  assert.doesNotMatch(source, /columns\.enabled/);
+});
+
+test("admin group channel picker shows already added accounts without allowing duplicates", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const messages = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/group-user.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "pickerChannelOptions",
+    "addableChannelCount",
+    "isChannelAlreadyBound",
+    "data-admin-group-channel-picker-bound",
+    "admin.group.channelBindings.alreadyAdded",
+  ]) {
+    assert.ok(source.includes(expected) || messages.includes(expected), `missing picker duplicate guard marker: ${expected}`);
+  }
+
+  assert.match(source, /const isAlreadyBound = isChannelAlreadyBound\(channel\.id\);/);
+  assert.match(source, /disabled=\{isAlreadyBound\}/);
+  assert.match(source, /checked=\{isAlreadyBound \|\| Boolean\(pickerSelection\[channel\.id\]\)\}/);
+  assert.match(source, /Object\.entries\(pickerSelection\)\s*\.filter\(\(\[channelId, selected\]\) => selected && !isChannelAlreadyBound\(channelId\)\)/s);
+  assert.doesNotMatch(source, /\.filter\(channel => !bindingDraft\[channel\.id\]\)/);
+});
+
+test("admin group channel picker paginates channel choices in a wider dialog", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const messages = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/group-user.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "CHANNEL_PICKER_PAGE_SIZE",
+    "pickerPage",
+    "pickerTotalPages",
+    "paginatedPickerChannelOptions",
+    "data-admin-group-channel-picker-pagination",
+    "admin.group.channelBindings.pagination",
+  ]) {
+    assert.ok(source.includes(expected) || messages.includes(expected), `missing picker pagination marker: ${expected}`);
+  }
+
+  assert.match(source, /w-\[92vw\]\s+max-w-7xl/);
+  assert.match(source, /setPickerPage\(1\)/);
+  assert.match(source, /Math\.ceil\(pickerChannelOptions\.length \/ CHANNEL_PICKER_PAGE_SIZE\)/);
+  assert.match(source, /pickerChannelOptions\.slice\(\s*\(pickerPage - 1\) \* CHANNEL_PICKER_PAGE_SIZE,\s*pickerPage \* CHANNEL_PICKER_PAGE_SIZE,\s*\)/s);
+  assert.match(source, /paginatedPickerChannelOptions\.map\(channel =>/);
+});
+
+test("admin group channel picker keeps search controls inside the modal header", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-group-channel-picker-header",
+    "data-admin-group-channel-picker-search",
+    "data-admin-group-channel-picker-selected-count",
+  ]) {
+    assert.ok(source.includes(expected), `missing picker header search marker: ${expected}`);
+  }
+
+  const pickerSource = source.slice(source.indexOf("data-admin-group-channel-picker-modal"));
+  assert.match(source, /data-admin-group-channel-picker-header[\s\S]*data-admin-group-channel-picker-search[\s\S]*data-admin-group-channel-picker-selected-count[\s\S]*closeChannelBindingPicker/);
+  assert.doesNotMatch(pickerSource, /flex shrink-0 flex-col gap-3 border-b border-slate-200 p-5 dark:border-white\/10 md:flex-row md:items-center md:justify-between/);
 });
 
 test("admin group page keeps existing rows visible when a refresh reports a load error", () => {
@@ -319,8 +445,103 @@ test("admin group service calls generated backend SDK paths and normalizes group
         capacity: { total: 100 },
         status: "active",
       });
-      assert.equal(captured[1].headers["x-request-id"]?.startsWith("admin-group-create-"), true);
-      assert.equal(captured[2].headers["x-request-id"]?.startsWith("admin-group-update-"), true);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
+    },
+  );
+});
+
+test("admin group service manages channel bindings through generated backend SDK paths", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/iam/access_groups/group-1/channel_bindings" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "binding-1",
+              groupId: "group-1",
+              channelId: "3001",
+              channelName: "OpenAI primary",
+              providerCode: "openai",
+              providerName: "OpenAI",
+              channelCode: "openai-primary",
+              models: ["openai/global/gpt-4o-mini"],
+              capabilities: ["llm"],
+              modelScope: ["openai/global/gpt-4o-mini"],
+              priority: "5",
+              weight: "80",
+              status: "active",
+              healthStatus: "active",
+              secretRef: "vault://providers/openai/main",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/iam/access_groups/group-1/channel_bindings" && method === "PUT") {
+        return {
+          items: [
+            {
+              id: "binding-1",
+              groupId: "group-1",
+              channelId: "3001",
+              channelName: "OpenAI primary",
+              providerCode: "openai",
+              providerName: "OpenAI",
+              channelCode: "openai-primary",
+              models: ["openai/global/gpt-4o-mini"],
+              capabilities: ["llm"],
+              modelScope: [],
+              priority: 10,
+              weight: 60,
+              status: "disabled",
+              healthStatus: "active",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const bindings = await GroupService.fetchGroupChannelBindings("group-1");
+      const replaced = await GroupService.replaceGroupChannelBindings("group-1", [
+        {
+          channelId: "3001",
+          priority: 10,
+          weight: 60,
+          status: "disabled",
+          modelScope: [],
+          capabilities: ["llm"],
+        },
+      ]);
+
+      assert.equal(bindings[0].channelId, "3001");
+      assert.equal(bindings[0].priority, 5);
+      assert.equal("secretRef" in bindings[0], false);
+      assert.equal(replaced[0].status, "disabled");
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/iam/access_groups/group-1/channel_bindings",
+          "PUT /backend/v3/api/iam/access_groups/group-1/channel_bindings",
+        ],
+      );
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        items: [
+          {
+            channelId: "3001",
+            priority: 10,
+            weight: 60,
+            status: "disabled",
+            modelScope: [],
+            capabilities: ["llm"],
+          },
+        ],
+      });
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
     },
   );
 });

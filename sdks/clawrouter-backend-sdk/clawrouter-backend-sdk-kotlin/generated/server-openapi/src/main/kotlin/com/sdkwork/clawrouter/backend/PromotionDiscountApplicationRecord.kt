@@ -1,0 +1,32 @@
+package com.sdkwork.clawrouter.backend
+
+data class PromotionDiscountApplicationRecord(
+    val applicationNo: String? = null,
+    val appliedAt: String? = null,
+    val budgetAccountId: String? = null,
+    val createdAt: String? = null,
+    val currencyCode: String? = null,
+    val failureCode: String? = null,
+    val failureMessage: String? = null,
+    val idempotencyKey: String? = null,
+    val offerId: String? = null,
+    val offerVersionId: String? = null,
+    val orderId: String? = null,
+    val orderNo: String? = null,
+    val organizationId: String? = null,
+    val paymentId: String? = null,
+    val releasedAt: String? = null,
+    val requestNo: String? = null,
+    val reservationExpiresAt: String? = null,
+    val reservedAt: String? = null,
+    val rolledBackAt: String? = null,
+    val ruleSnapshotJson: Map<String, String>? = null,
+    val settledAt: String? = null,
+    val status: String? = null,
+    val stockId: String? = null,
+    val subjectId: String? = null,
+    val subjectType: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val userCouponId: String? = null
+)

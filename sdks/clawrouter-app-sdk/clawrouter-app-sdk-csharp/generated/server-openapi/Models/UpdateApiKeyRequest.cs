@@ -6,6 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class UpdateApiKeyRequest
     {
+        public bool? DefaultForRuntime { get; set; }
         public string? Expires { get; set; }
         public string? Group { get; set; }
         public string? IpLimit { get; set; }

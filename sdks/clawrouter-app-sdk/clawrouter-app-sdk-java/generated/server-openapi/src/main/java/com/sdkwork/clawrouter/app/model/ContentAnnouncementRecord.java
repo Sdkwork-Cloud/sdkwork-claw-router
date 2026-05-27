@@ -28,7 +28,7 @@ public class ContentAnnouncementRecord {
     public String getAnnouncementType() {
         return this.announcementType;
     }
-    
+
     public void setAnnouncementType(String announcementType) {
         this.announcementType = announcementType;
     }
@@ -36,7 +36,7 @@ public class ContentAnnouncementRecord {
     public Map<String, String> getAudienceFilter() {
         return this.audienceFilter;
     }
-    
+
     public void setAudienceFilter(Map<String, String> audienceFilter) {
         this.audienceFilter = audienceFilter;
     }
@@ -44,7 +44,7 @@ public class ContentAnnouncementRecord {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -52,7 +52,7 @@ public class ContentAnnouncementRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -60,7 +60,7 @@ public class ContentAnnouncementRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -68,7 +68,7 @@ public class ContentAnnouncementRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -76,7 +76,7 @@ public class ContentAnnouncementRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -84,7 +84,7 @@ public class ContentAnnouncementRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -92,7 +92,7 @@ public class ContentAnnouncementRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -100,7 +100,7 @@ public class ContentAnnouncementRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -108,7 +108,7 @@ public class ContentAnnouncementRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -116,7 +116,7 @@ public class ContentAnnouncementRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -124,7 +124,7 @@ public class ContentAnnouncementRecord {
     public Boolean getPinned() {
         return this.pinned;
     }
-    
+
     public void setPinned(Boolean pinned) {
         this.pinned = pinned;
     }
@@ -132,7 +132,7 @@ public class ContentAnnouncementRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -140,7 +140,7 @@ public class ContentAnnouncementRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -148,7 +148,7 @@ public class ContentAnnouncementRecord {
     public String getTargetScope() {
         return this.targetScope;
     }
-    
+
     public void setTargetScope(String targetScope) {
         this.targetScope = targetScope;
     }
@@ -156,7 +156,7 @@ public class ContentAnnouncementRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -164,7 +164,7 @@ public class ContentAnnouncementRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -172,7 +172,7 @@ public class ContentAnnouncementRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -180,7 +180,7 @@ public class ContentAnnouncementRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -188,7 +188,7 @@ public class ContentAnnouncementRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

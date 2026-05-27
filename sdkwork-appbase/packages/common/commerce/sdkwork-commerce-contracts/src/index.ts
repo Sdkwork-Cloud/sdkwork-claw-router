@@ -14,10 +14,12 @@ export type CommerceSdkNamespace =
   | "refunds"
   | "fulfillments"
   | "shipments"
+  | "entitlements"
   | "memberships"
+  | "billing"
   | "recharges"
   | "wallet"
-  | "coupons"
+  | "promotions"
   | "invoices"
   | "inventory"
   | "commerceReports"
@@ -69,24 +71,33 @@ export const SDKWORK_COMMERCE_TABLES = {
   refund: "commerce_refund",
   refundItem: "commerce_refund_item",
   refundAttempt: "commerce_refund_attempt",
-  membershipPlan: "commerce_membership_plan",
-  membershipPackage: "commerce_membership_package",
-  membership: "commerce_membership",
-  membershipEntitlement: "commerce_membership_entitlement",
-  membershipEntitlementUsage: "commerce_membership_entitlement_usage",
+  benefitDefinition: "benefit_definition",
+  entitlementGrant: "entitlement_grant",
+  entitlementAccount: "entitlement_account",
+  entitlementLedgerEntry: "entitlement_ledger_entry",
+  membershipPlan: "membership_plan",
+  membershipPlanVersion: "membership_plan_version",
+  membershipPlanBenefit: "membership_plan_benefit",
+  membershipPackageGroup: "membership_package_group",
+  membershipPackage: "membership_package",
+  membershipSubscription: "membership_subscription",
+  membershipPeriod: "membership_period",
   rechargePackage: "commerce_recharge_package",
   rechargeOrder: "commerce_recharge_order",
+  billingHistory: "commerce_billing_history",
   account: "commerce_account",
   accountHold: "commerce_account_hold",
   accountLedgerEntry: "commerce_account_ledger_entry",
   exchangeRule: "commerce_exchange_rule",
   exchangeTransaction: "commerce_exchange_transaction",
-  couponTemplate: "commerce_coupon_template",
-  couponCampaign: "commerce_coupon_campaign",
-  couponCode: "commerce_coupon_code",
-  couponClaim: "commerce_coupon_claim",
-  couponRedemption: "commerce_coupon_redemption",
-  couponRedemptionEvent: "commerce_coupon_redemption_event",
+  promotionOffer: "promotion_offer",
+  promotionOfferVersion: "promotion_offer_version",
+  promotionCouponStock: "promotion_coupon_stock",
+  promotionCode: "promotion_code",
+  promotionUserCoupon: "promotion_user_coupon",
+  promotionCouponLedgerEntry: "promotion_coupon_ledger_entry",
+  promotionDiscountApplication: "promotion_discount_application",
+  promotionDiscountAllocation: "promotion_discount_allocation",
   invoiceTitle: "commerce_invoice_title",
   invoice: "commerce_invoice",
   invoiceItem: "commerce_invoice_item",
@@ -154,10 +165,12 @@ export const SDKWORK_COMMERCE_STANDARD = {
     "refunds",
     "fulfillments",
     "shipments",
+    "entitlements",
     "memberships",
+    "billing",
     "recharges",
     "wallet",
-    "coupons",
+    "promotions",
     "invoices",
     "inventory",
     "commerceReports",
@@ -359,9 +372,13 @@ export const SDKWORK_COMMERCE_API_ROUTES = {
     },
     orders: {
       create: operation("POST", `${app}/recharges/orders`, "recharges.orders.create"),
-      list: operation("GET", `${app}/recharges/orders`, "recharges.orders.list", ["page", "page_size", "cursor"]),
       retrieve: operation("GET", `${app}/recharges/orders/{orderId}`, "recharges.orders.retrieve"),
       cancel: operation("POST", `${app}/recharges/orders/{orderId}/cancellations`, "recharges.orders.cancel"),
+    },
+  },
+  billing: {
+    history: {
+      list: operation("GET", `${app}/billing/history`, "billing.history.list", ["page", "page_size", "type", "status", "cursor"]),
     },
   },
   wallet: {
@@ -441,29 +458,33 @@ export const SDKWORK_COMMERCE_API_ROUTES = {
       retrieve: operation("GET", `${app}/wallet/transactions/{transactionId}`, "wallet.transactions.retrieve"),
     },
   },
-  coupons: {
-    list: operation("GET", `${app}/coupons`, "coupons.list", ["status", "page", "page_size"]),
-    retrieve: operation("GET", `${app}/coupons/{couponId}`, "coupons.retrieve"),
-    claims: {
-      create: operation("POST", `${app}/coupons/claims`, "coupons.claims.create"),
-    },
-    codeClaims: {
-      create: operation("POST", `${app}/coupons/code_claims`, "coupons.codeClaims.create"),
-    },
-    redemptions: {
-      create: operation("POST", `${app}/coupons/redemptions`, "coupons.redemptions.create"),
-      rollback: operation("POST", `${app}/coupons/redemptions/{couponRedemptionId}/rollback`, "coupons.redemptions.rollback"),
-      reversals: {
-        create: operation("POST", `${app}/coupons/redemptions/reversals`, "coupons.redemptions.reversals.create"),
+  promotions: {
+    userCoupons: {
+      list: operation("GET", `${app}/promotions/user_coupons`, "promotions.userCoupons.list", ["status", "page", "page_size"]),
+      retrieve: operation("GET", `${app}/promotions/user_coupons/{userCouponId}`, "promotions.userCoupons.retrieve"),
+      claims: {
+        create: operation("POST", `${app}/promotions/user_coupon_claims`, "promotions.userCoupons.claims.create"),
+      },
+      wallet: {
+        list: operation("GET", `${app}/promotions/user_coupons/wallet`, "promotions.userCoupons.wallet.list", ["status", "page", "page_size"]),
+        retrieve: operation("GET", `${app}/promotions/user_coupons/wallet/{userCouponId}`, "promotions.userCoupons.wallet.retrieve"),
       },
     },
-    wallet: {
-      list: operation("GET", `${app}/coupons/wallet`, "coupons.wallet.list", ["status", "page", "page_size"]),
-      retrieve: operation("GET", `${app}/coupons/wallet/{couponId}`, "coupons.wallet.retrieve"),
+    offers: {
+      list: operation("GET", `${app}/promotions/offers`, "promotions.offers.list", ["status", "page", "page_size", "cursor"]),
+      retrieve: operation("GET", `${app}/promotions/offers/{offerId}`, "promotions.offers.retrieve"),
     },
-    templates: {
-      list: operation("GET", `${app}/coupons/templates`, "coupons.templates.list", ["status"]),
-      retrieve: operation("GET", `${app}/coupons/templates/{templateId}`, "coupons.templates.retrieve"),
+    codes: {
+      redemptions: {
+        create: operation("POST", `${app}/promotions/codes/redemptions`, "promotions.codes.redemptions.create"),
+      },
+    },
+    discountApplications: {
+      create: operation("POST", `${app}/promotions/discount_applications`, "promotions.discountApplications.create"),
+      rollback: operation("POST", `${app}/promotions/discount_applications/{applicationId}/rollback`, "promotions.discountApplications.rollback"),
+      reversals: {
+        create: operation("POST", `${app}/promotions/discount_applications/reversals`, "promotions.discountApplications.reversals.create"),
+      },
     },
   },
   invoices: {
@@ -612,6 +633,17 @@ export const SDKWORK_COMMERCE_API_ROUTES = {
         list: operation("GET", `${backend}/shipments/{shipmentId}/tracking_events`, "shipments.trackingEvents.list"),
       },
     },
+    entitlements: {
+      grants: {
+        list: operation("GET", `${backend}/entitlements/grants`, "entitlements.grants.list", ["subject_type", "subject_id", "benefit_id", "source_type", "source_id", "status", "page", "page_size"]),
+      },
+      accounts: {
+        list: operation("GET", `${backend}/entitlements/accounts`, "entitlements.accounts.list", ["subject_type", "subject_id", "benefit_id", "status", "page", "page_size"]),
+      },
+      ledgerEntries: {
+        list: operation("GET", `${backend}/entitlements/ledger_entries`, "entitlements.ledgerEntries.list", ["account_id", "subject_type", "subject_id", "benefit_id", "source_type", "source_id", "direction", "page", "page_size"]),
+      },
+    },
     memberships: {
       plans: {
         list: operation("GET", `${backend}/memberships/plans`, "memberships.plans.list", ["status"]),
@@ -627,9 +659,6 @@ export const SDKWORK_COMMERCE_API_ROUTES = {
       members: {
         list: operation("GET", `${backend}/memberships/members`, "memberships.members.list", ["user_id", "plan_id", "status", "page", "page_size"]),
         update: operation("PATCH", `${backend}/memberships/members/{membershipId}`, "memberships.members.update"),
-      },
-      entitlements: {
-        list: operation("GET", `${backend}/memberships/entitlements`, "memberships.entitlements.list", ["plan_id", "membership_id", "status"]),
       },
     },
     recharges: {
@@ -662,25 +691,28 @@ export const SDKWORK_COMMERCE_API_ROUTES = {
         update: operation("PUT", `${backend}/wallet/exchange_rules`, "wallet.exchangeRules.update"),
       },
     },
-    coupons: {
-      templates: {
-        list: operation("GET", `${backend}/coupons/templates`, "coupons.templates.list", ["status", "page", "page_size", "cursor"]),
-        create: operation("POST", `${backend}/coupons/templates`, "coupons.templates.create"),
-        update: operation("PATCH", `${backend}/coupons/templates/{couponTemplateId}`, "coupons.templates.update"),
-        delete: operation("DELETE", `${backend}/coupons/templates/{couponTemplateId}`, "coupons.templates.delete"),
+    promotions: {
+      offers: {
+        list: operation("GET", `${backend}/promotions/offers`, "promotions.offers.management.list", ["status", "page", "page_size", "cursor"]),
+        create: operation("POST", `${backend}/promotions/offers`, "promotions.offers.create"),
+        update: operation("PATCH", `${backend}/promotions/offers/{offerId}`, "promotions.offers.update"),
       },
-      campaigns: {
-        list: operation("GET", `${backend}/coupons/campaigns`, "coupons.campaigns.list", ["status", "page", "page_size"]),
-        create: operation("POST", `${backend}/coupons/campaigns`, "coupons.campaigns.create"),
+      couponStocks: {
+        list: operation("GET", `${backend}/promotions/coupon_stocks`, "promotions.couponStocks.list", ["offer_id", "status", "page", "page_size"]),
+        create: operation("POST", `${backend}/promotions/coupon_stocks`, "promotions.couponStocks.create"),
       },
       codes: {
-        list: operation("GET", `${backend}/coupons/codes`, "coupons.codes.list", ["template_id", "campaign_id", "status", "page", "page_size"]),
-        status: {
-          update: operation("PATCH", `${backend}/coupons/codes/{codeId}/status`, "coupons.codes.status.update"),
-        },
+        list: operation("GET", `${backend}/promotions/codes`, "promotions.codes.list", ["stock_id", "offer_id", "status", "page", "page_size"]),
+        create: operation("POST", `${backend}/promotions/codes`, "promotions.codes.create"),
       },
-      redemptions: {
-        list: operation("GET", `${backend}/coupons/redemptions`, "coupons.redemptions.list", ["user_id", "status", "page", "page_size", "cursor"]),
+      userCoupons: {
+        list: operation("GET", `${backend}/promotions/user_coupons`, "promotions.userCoupons.management.list", ["user_id", "status", "page", "page_size", "cursor"]),
+      },
+      discountApplications: {
+        list: operation("GET", `${backend}/promotions/discount_applications`, "promotions.discountApplications.list", ["order_id", "status", "page", "page_size", "cursor"]),
+      },
+      discountAllocations: {
+        list: operation("GET", `${backend}/promotions/discount_allocations`, "promotions.discountAllocations.list", ["application_id", "order_item_id", "page", "page_size"]),
       },
     },
     invoices: {
@@ -753,7 +785,7 @@ export const SDKWORK_COMMERCE_DOMAIN_MODELS = [
   model("checkoutQuote", ["checkout"], ["id", "tenant_id", "organization_id", "checkout_session_id", "quote_no", "original_amount", "discount_amount", "payable_amount", "currency_code", "expires_at", "created_at"]),
   model("order", ["orders"], ["id", "tenant_id", "organization_id", "order_no", "owner_user_id", "purchase_type", "status", "currency_code", "payable_amount", "paid_amount", "refunded_amount", "payment_intent_id", "idempotency_key", "created_at", "updated_at"]),
   model("orderItem", ["orders"], ["id", "tenant_id", "organization_id", "order_id", "order_item_no", "spu_id", "sku_id", "purchase_type", "fulfillment_type", "quantity", "payable_amount", "created_at", "updated_at"]),
-  model("orderAmountBreakdown", ["orders", "coupons", "refunds"], ["id", "tenant_id", "organization_id", "order_id", "order_item_id", "allocation_type", "source_type", "source_id", "amount", "currency_code", "created_at"]),
+  model("orderAmountBreakdown", ["orders", "promotions", "refunds"], ["id", "tenant_id", "organization_id", "order_id", "order_item_id", "allocation_type", "source_type", "source_id", "amount", "currency_code", "created_at"]),
   model("orderEvent", ["orders", "audit"], ["id", "tenant_id", "organization_id", "event_no", "order_id", "event_type", "from_status", "to_status", "actor_type", "actor_id", "idempotency_key", "created_at"]),
   model("orderCancellation", ["orders"], ["id", "tenant_id", "organization_id", "cancellation_no", "order_id", "status", "reason_code", "idempotency_key", "created_at", "updated_at"]),
   model("fulfillmentOrder", ["fulfillments"], ["id", "tenant_id", "organization_id", "fulfillment_no", "order_id", "fulfillment_type", "status", "created_at", "updated_at"]),
@@ -774,31 +806,40 @@ export const SDKWORK_COMMERCE_DOMAIN_MODELS = [
   model("refund", ["refunds"], ["id", "tenant_id", "organization_id", "refund_no", "order_id", "payment_intent_id", "amount", "currency_code", "status", "idempotency_key", "created_at", "updated_at"]),
   model("refundItem", ["refunds"], ["id", "tenant_id", "organization_id", "refund_id", "order_item_id", "quantity", "amount", "currency_code", "created_at", "updated_at"]),
   model("refundAttempt", ["refunds", "payments"], ["id", "tenant_id", "organization_id", "refund_attempt_no", "refund_id", "provider_account_id", "amount", "currency_code", "status", "created_at", "updated_at"]),
-  model("membershipPlan", ["memberships"], ["id", "tenant_id", "organization_id", "plan_no", "name", "level_code", "status", "sort_order", "created_at", "updated_at"]),
-  model("membershipPackage", ["memberships", "catalog"], ["id", "tenant_id", "organization_id", "package_no", "plan_id", "sku_id", "duration_days", "price_amount", "currency_code", "status", "created_at", "updated_at"]),
-  model("membership", ["memberships"], ["id", "tenant_id", "organization_id", "membership_no", "owner_user_id", "plan_id", "source_order_id", "status", "starts_at", "expires_at", "created_at", "updated_at"]),
-  model("membershipEntitlement", ["memberships"], ["id", "tenant_id", "organization_id", "entitlement_no", "plan_id", "code", "quota", "status", "created_at", "updated_at"]),
-  model("membershipEntitlementUsage", ["memberships"], ["id", "tenant_id", "organization_id", "membership_id", "entitlement_id", "period_key", "used_count", "created_at", "updated_at"]),
+  model("benefitDefinition", ["entitlements"], ["id", "tenant_id", "organization_id", "benefit_code", "name", "benefit_type", "unit_code", "status", "created_at", "updated_at"]),
+  model("entitlementGrant", ["entitlements"], ["id", "tenant_id", "organization_id", "grant_no", "subject_type", "subject_id", "benefit_id", "source_type", "source_id", "status", "created_at", "updated_at"]),
+  model("entitlementAccount", ["entitlements"], ["id", "tenant_id", "organization_id", "account_no", "subject_type", "subject_id", "benefit_id", "available_amount", "frozen_amount", "status", "created_at", "updated_at"]),
+  model("entitlementLedgerEntry", ["entitlements"], ["id", "tenant_id", "organization_id", "ledger_no", "account_id", "direction", "quantity_delta", "balance_after", "source_type", "source_id", "created_at"]),
+  model("membershipPlan", ["memberships"], ["id", "tenant_id", "organization_id", "plan_no", "plan_code", "name", "level_code", "status", "sort_order", "created_at", "updated_at"]),
+  model("membershipPlanVersion", ["memberships"], ["id", "tenant_id", "organization_id", "plan_id", "version_no", "lifecycle_status", "published_at", "created_at", "updated_at"]),
+  model("membershipPlanBenefit", ["memberships"], ["id", "tenant_id", "organization_id", "plan_id", "plan_version_id", "benefit_id", "benefit_value", "cycle_type", "status", "created_at", "updated_at"]),
+  model("membershipPackageGroup", ["memberships"], ["id", "tenant_id", "organization_id", "group_no", "group_code", "name", "status", "sort_order", "created_at", "updated_at"]),
+  model("membershipPackage", ["memberships", "catalog"], ["id", "tenant_id", "organization_id", "package_no", "group_id", "plan_id", "plan_version_id", "sku_id", "duration_days", "price_amount", "currency_code", "status", "created_at", "updated_at"]),
+  model("membershipSubscription", ["memberships"], ["id", "tenant_id", "organization_id", "subscription_no", "subject_type", "subject_id", "plan_id", "status", "starts_at", "expires_at", "created_at", "updated_at"]),
+  model("membershipPeriod", ["memberships"], ["id", "tenant_id", "organization_id", "period_no", "subscription_id", "plan_id", "starts_at", "ends_at", "status", "created_at", "updated_at"]),
   model("rechargePackage", ["recharges", "catalog"], ["id", "tenant_id", "organization_id", "package_no", "sku_id", "asset_type", "amount", "bonus_amount", "price_amount", "currency_code", "status", "created_at", "updated_at"]),
   model("rechargeOrder", ["recharges", "orders", "payments"], ["id", "tenant_id", "organization_id", "order_no", "owner_user_id", "package_id", "asset_type", "amount", "pay_amount", "currency_code", "status", "idempotency_key", "created_at", "updated_at"]),
+  model("billingHistory", ["billing"], ["id", "tenant_id", "organization_id", "owner_user_id", "history_no", "history_type", "direction", "asset_type", "amount", "currency_code", "points_delta", "status", "title", "reference_no", "source_type", "source_id", "related_order_no", "payment_method", "occurred_at", "created_at", "updated_at"]),
   model("account", ["accounts", "wallet"], ["id", "tenant_id", "organization_id", "account_no", "owner_user_id", "asset_type", "currency_code", "available_amount", "frozen_amount", "version", "status", "created_at", "updated_at"]),
   model("accountHold", ["wallet"], ["id", "tenant_id", "organization_id", "hold_no", "account_id", "owner_user_id", "asset_type", "amount", "status", "expires_at", "idempotency_key", "created_at", "updated_at"]),
   model("accountLedgerEntry", ["wallet", "accounts", "recharges"], ["id", "tenant_id", "organization_id", "ledger_entry_no", "account_id", "owner_user_id", "asset_type", "direction", "amount", "balance_after", "source_type", "source_id", "idempotency_key", "created_at"]),
   model("exchangeRule", ["wallet"], ["id", "tenant_id", "organization_id", "source_asset_type", "target_asset_type", "rate_numerator", "rate_denominator", "status", "starts_at", "ends_at", "created_at", "updated_at"]),
   model("exchangeTransaction", ["wallet"], ["id", "tenant_id", "organization_id", "exchange_no", "owner_user_id", "source_account_id", "target_account_id", "source_amount", "target_amount", "status", "idempotency_key", "created_at", "updated_at"]),
-  model("couponTemplate", ["coupons"], ["id", "tenant_id", "organization_id", "template_no", "name", "discount_type", "discount_value", "status", "created_at", "updated_at"]),
-  model("couponCampaign", ["coupons"], ["id", "tenant_id", "organization_id", "campaign_no", "template_id", "name", "status", "starts_at", "ends_at", "created_at", "updated_at"]),
-  model("couponCode", ["coupons"], ["id", "tenant_id", "organization_id", "campaign_id", "template_id", "code", "owner_user_id", "status", "created_at", "updated_at"]),
-  model("couponClaim", ["coupons"], ["id", "tenant_id", "organization_id", "claim_no", "owner_user_id", "coupon_code_id", "status", "idempotency_key", "created_at", "updated_at"]),
-  model("couponRedemption", ["coupons", "orders"], ["id", "tenant_id", "organization_id", "redemption_no", "owner_user_id", "coupon_code_id", "order_id", "discount_amount", "currency_code", "status", "idempotency_key", "created_at", "updated_at"]),
-  model("couponRedemptionEvent", ["coupons", "audit"], ["id", "tenant_id", "organization_id", "redemption_id", "event_type", "payload_json", "created_at"]),
+  model("promotionOffer", ["promotions"], ["id", "tenant_id", "organization_id", "offer_no", "offer_code", "name", "offer_type", "status", "starts_at", "ends_at", "created_at", "updated_at"]),
+  model("promotionOfferVersion", ["promotions"], ["id", "tenant_id", "organization_id", "offer_id", "version_no", "discount_type", "discount_value", "lifecycle_status", "created_at", "updated_at"]),
+  model("promotionCouponStock", ["promotions"], ["id", "tenant_id", "organization_id", "stock_no", "offer_id", "offer_version_id", "total_quantity", "available_quantity", "status", "created_at", "updated_at"]),
+  model("promotionCode", ["promotions"], ["id", "tenant_id", "organization_id", "code_no", "stock_id", "offer_id", "promotion_code", "status", "created_at", "updated_at"]),
+  model("promotionUserCoupon", ["promotions"], ["id", "tenant_id", "organization_id", "coupon_no", "stock_id", "offer_id", "subject_type", "subject_id", "status", "claimed_at", "redeemed_at", "created_at", "updated_at"]),
+  model("promotionCouponLedgerEntry", ["promotions", "audit"], ["id", "tenant_id", "organization_id", "ledger_no", "user_coupon_id", "stock_id", "offer_id", "direction", "quantity_delta", "balance_after", "source_type", "source_id", "created_at"]),
+  model("promotionDiscountApplication", ["promotions", "orders"], ["id", "tenant_id", "organization_id", "application_no", "order_id", "user_coupon_id", "discount_amount", "currency_code", "status", "created_at", "updated_at"]),
+  model("promotionDiscountAllocation", ["promotions", "orders"], ["id", "tenant_id", "organization_id", "allocation_no", "application_id", "order_id", "order_item_id", "discount_amount", "currency_code", "created_at"]),
   model("invoiceTitle", ["invoices"], ["id", "tenant_id", "organization_id", "owner_user_id", "title_type", "name", "tax_no", "status", "created_at", "updated_at"]),
   model("invoice", ["invoices"], ["id", "tenant_id", "organization_id", "invoice_no", "owner_user_id", "order_id", "amount", "currency_code", "status", "created_at", "updated_at"]),
   model("invoiceItem", ["invoices"], ["id", "tenant_id", "organization_id", "invoice_id", "order_item_id", "amount", "currency_code", "created_at", "updated_at"]),
   model("invoiceEvent", ["invoices", "audit"], ["id", "tenant_id", "organization_id", "invoice_id", "event_type", "from_status", "to_status", "created_at"]),
   model("invoiceProviderAttempt", ["invoices"], ["id", "tenant_id", "organization_id", "invoice_id", "provider_code", "status", "created_at", "updated_at"]),
   model("usageStatement", ["commerceReports"], ["id", "tenant_id", "organization_id", "statement_no", "owner_user_id", "period_start", "period_end", "total_credit", "total_debit", "closing_balance", "status", "created_at", "updated_at"]),
-  model("idempotencyKey", ["checkout", "orders", "payments", "refunds", "wallet", "coupons", "invoices"], ["id", "tenant_id", "organization_id", "scope", "operation_id", "idempotency_key", "request_hash", "response_json", "status", "expires_at", "created_at", "updated_at"]),
+  model("idempotencyKey", ["checkout", "orders", "payments", "refunds", "wallet", "promotions", "invoices"], ["id", "tenant_id", "organization_id", "scope", "operation_id", "idempotency_key", "request_hash", "response_json", "status", "expires_at", "created_at", "updated_at"]),
   model("auditLog", ["audit"], ["id", "tenant_id", "organization_id", "audit_no", "actor_type", "actor_id", "operation_id", "source_type", "source_id", "created_at"]),
   model("outboxEvent", ["audit"], ["id", "tenant_id", "organization_id", "event_no", "aggregate_type", "aggregate_id", "event_type", "payload_json", "published_at", "created_at"]),
 ] as const satisfies readonly CommerceDomainModelContract[];
@@ -815,10 +856,12 @@ export const SDKWORK_COMMERCE_CAPABILITIES = [
   capability("refunds", ["refund", "refundItem", "refundAttempt", "idempotencyKey"], operationsForRoot("refunds")),
   capability("fulfillments", ["fulfillmentOrder", "fulfillmentItem", "digitalDelivery"], operationsForRoot("fulfillments")),
   capability("shipments", ["shipment", "shipmentTrackingEvent"], operationsForRoot("shipments")),
-  capability("memberships", ["membershipPlan", "membershipPackage", "membership", "membershipEntitlement", "membershipEntitlementUsage"], operationsForRoot("memberships")),
+  capability("entitlements", ["benefitDefinition", "entitlementGrant", "entitlementAccount", "entitlementLedgerEntry"], operationsForRoot("entitlements")),
+  capability("memberships", ["membershipPlan", "membershipPlanVersion", "membershipPlanBenefit", "membershipPackageGroup", "membershipPackage", "membershipSubscription", "membershipPeriod"], operationsForRoot("memberships")),
+  capability("billing", ["billingHistory"], operationsForRoot("billing")),
   capability("recharges", ["rechargePackage", "rechargeOrder", "accountLedgerEntry"], operationsForRoot("recharges")),
   capability("wallet", ["account", "accountHold", "accountLedgerEntry", "exchangeRule", "exchangeTransaction", "idempotencyKey"], operationsForRoot("wallet")),
-  capability("coupons", ["couponTemplate", "couponCampaign", "couponCode", "couponClaim", "couponRedemption", "couponRedemptionEvent"], operationsForRoot("coupons")),
+  capability("promotions", ["promotionOffer", "promotionOfferVersion", "promotionCouponStock", "promotionCode", "promotionUserCoupon", "promotionCouponLedgerEntry", "promotionDiscountApplication", "promotionDiscountAllocation", "idempotencyKey"], operationsForRoot("promotions")),
   capability("invoices", ["invoiceTitle", "invoice", "invoiceItem", "invoiceEvent", "invoiceProviderAttempt", "idempotencyKey"], operationsForRoot("invoices")),
   capability("commerceReports", ["usageStatement", "paymentReconciliationRun"], operationsForRoot("commerceReports")),
   capability("reports", ["usageStatement", "paymentReconciliationRun"], operationsForRoot("reports")),

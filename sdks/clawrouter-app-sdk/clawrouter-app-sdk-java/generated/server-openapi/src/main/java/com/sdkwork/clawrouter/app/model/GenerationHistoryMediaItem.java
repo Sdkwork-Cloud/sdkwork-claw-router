@@ -8,7 +8,7 @@ public class GenerationHistoryMediaItem {
     public String getThumb() {
         return this.thumb;
     }
-    
+
     public void setThumb(String thumb) {
         this.thumb = thumb;
     }
@@ -16,7 +16,7 @@ public class GenerationHistoryMediaItem {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

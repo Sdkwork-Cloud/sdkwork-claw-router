@@ -17,23 +17,27 @@ describe("sdkwork-wallet-pc-react service", () => {
 
   it("maps account, points history, and recharge packages into a wallet-owned overview", async () => {
     const commerceService = createCommerceServiceMock({
-      account: {
-        summary: {
-          retrieve: vi.fn().mockResolvedValue({
-            code: "2000",
-            data: {
-              cashAvailable: 88.5,
-              cashFrozen: 10,
-              hasPayPassword: true,
-              pointsAvailable: 1200,
-              pointsFrozen: 30,
-              tokenAvailable: 42,
-              tokenFrozen: 0,
-            },
-          }),
+      accounts: {
+        current: {
+          summary: {
+            retrieve: vi.fn().mockResolvedValue({
+              code: "2000",
+              data: {
+                cashAvailable: 88.5,
+                cashFrozen: 10,
+                hasPayPassword: true,
+                pointsAvailable: 1200,
+                pointsFrozen: 30,
+                tokenAvailable: 42,
+                tokenFrozen: 0,
+              },
+            }),
+          },
         },
-        points: {
-          history: {
+      },
+      wallet: {
+        ledgerEntries: {
+          points: {
             list: vi.fn().mockResolvedValue({
               code: "2000",
               data: {
@@ -68,53 +72,57 @@ describe("sdkwork-wallet-pc-react service", () => {
               },
             }),
           },
-          retrieve: vi.fn().mockResolvedValue({
-            code: "2000",
-            data: {
-              availablePoints: 1200,
-              experience: 18,
-              frozenPoints: 30,
-              level: 2,
-              levelName: "Silver",
-              status: "ACTIVE",
-              statusName: "Active",
-              tokenBalance: 42,
-              totalEarned: 9600,
-              totalPoints: 1230,
-              totalSpent: 8370,
-            },
-          }),
-          exchangeRate: {
+        },
+        accounts: {
+          points: {
             retrieve: vi.fn().mockResolvedValue({
               code: "2000",
-              data: 200,
+              data: {
+                availablePoints: 1200,
+                experience: 18,
+                frozenPoints: 30,
+                level: 2,
+                levelName: "Silver",
+                status: "ACTIVE",
+                statusName: "Active",
+                tokenBalance: 42,
+                totalEarned: 9600,
+                totalPoints: 1230,
+                totalSpent: 8370,
+              },
             }),
           },
-          recharges: {
-            packages: {
-              list: vi.fn().mockResolvedValue({
-                code: "2000",
-                data: [
-                  {
-                    description: "Starter recharge",
-                    id: 101,
-                    name: "Starter 1.2K",
-                    pointAmount: 1200,
-                    price: 6,
-                    sortWeight: 10,
-                  },
-                  {
-                    description: "Growth recharge",
-                    id: 202,
-                    name: "Growth 5K",
-                    pointAmount: 5000,
-                    price: 24,
-                    sortWeight: 20,
-                  },
-                ],
-              }),
-            },
-          },
+        },
+        exchangeRate: {
+          retrieve: vi.fn().mockResolvedValue({
+            code: "2000",
+            data: 200,
+          }),
+        },
+      },
+      recharges: {
+        packages: {
+          list: vi.fn().mockResolvedValue({
+            code: "2000",
+            data: [
+              {
+                description: "Starter recharge",
+                id: 101,
+                name: "Starter 1.2K",
+                pointAmount: 1200,
+                price: 6,
+                sortWeight: 10,
+              },
+              {
+                description: "Growth recharge",
+                id: 202,
+                name: "Growth 5K",
+                pointAmount: 5000,
+                price: 24,
+                sortWeight: 20,
+              },
+            ],
+          }),
         },
       },
     });
@@ -189,15 +197,13 @@ describe("sdkwork-wallet-pc-react service", () => {
       },
     });
     const commerceService = createCommerceServiceMock({
-      account: {
-        points: {
-          recharges: {
-            create: rechargePoints,
-          },
+      recharges: {
+        orders: {
+          create: rechargePoints,
         },
       },
       wallet: {
-        withdrawals: {
+        withdrawalTransfers: {
           create: withdraw,
         },
       },
@@ -262,7 +268,7 @@ describe("sdkwork-wallet-pc-react service", () => {
     const service = createSdkworkWalletService({
       commerceService: createCommerceServiceMock({
         wallet: {
-          withdrawals: {
+          withdrawalTransfers: {
             create: withdraw,
           },
         },

@@ -22,7 +22,8 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_API_ROUTES.auth.sessions.create.path).toBe("/app/v3/api/auth/sessions");
     expect(SDKWORK_IAM_API_ROUTES.auth.registrations.create.path).toBe("/app/v3/api/auth/registrations");
     expect(SDKWORK_IAM_API_ROUTES.auth.sessions.current.retrieve.path).toBe("/app/v3/api/auth/sessions/current");
-    expect(SDKWORK_IAM_API_ROUTES.auth.verificationPolicy.retrieve.path).toBe("/app/v3/api/auth/verification_policy");
+    expect(SDKWORK_IAM_API_ROUTES.system.iam.runtime.retrieve.path).toBe("/app/v3/api/system/iam/runtime");
+    expect(SDKWORK_IAM_API_ROUTES.system.iam.verificationPolicy.retrieve.path).toBe("/app/v3/api/system/iam/verification_policy");
     expect(SDKWORK_IAM_API_ROUTES.iam.users.current.retrieve.path).toBe("/app/v3/api/iam/users/current");
     expect(SDKWORK_IAM_API_ROUTES.iam.users.list.path).toBe("/backend/v3/api/iam/users");
   });
@@ -51,7 +52,10 @@ describe("SDKWork IAM standard contracts", () => {
     expect(operationIds).toContain("sessions.create");
     expect(operationIds).toContain("registrations.create");
     expect(operationIds).toContain("sessions.current.retrieve");
-    expect(operationIds).toContain("verificationPolicy.retrieve");
+    expect(operationIds).toContain("iam.runtime.retrieve");
+    expect(operationIds).toContain("iam.verificationPolicy.retrieve");
+    expect(operationIds).not.toContain("runtimeSettings.retrieve");
+    expect(operationIds).not.toContain("verificationPolicy.retrieve");
     expect(operationIds).toContain("verificationCodes.create");
     expect(operationIds).toContain("passwordResetRequests.create");
     expect(operationIds).toContain("apiKeys.list");
@@ -62,9 +66,10 @@ describe("SDKWork IAM standard contracts", () => {
     expect(operationIds).not.toContain("loginQrCodes.create");
     expect(operationIds).not.toContain("loginQrCodes.retrieve");
 
-    for (const operationId of operationIds) {
+    for (const operation of Object.values(SDKWORK_IAM_OPERATION_IDS)) {
+      const operationId = operation.operationId;
       expect(operationId).toMatch(/^[a-z][a-zA-Z0-9]*(\.[a-z][a-zA-Z0-9]*)+$/);
-      expect(operationId).not.toMatch(/(^auth\.|^iam\.)/);
+      expect(operationId).not.toMatch(new RegExp(`^${operation.tag}\\.`));
       expect(operationId).not.toMatch(/[_\-/{}:\s]/);
     }
   });
@@ -74,7 +79,7 @@ describe("SDKWork IAM standard contracts", () => {
       header: "Authorization",
       scheme: "Bearer",
     });
-    expect(SDKWORK_IAM_HEADERS.accessToken).toBe("Sdkwork-Access-Token");
+    expect(SDKWORK_IAM_HEADERS.accessToken).toBe("Access-Token");
   });
 
   it("keeps OpenAPI query parameter wire names stable and prevents SDK alias feedback loops", () => {
@@ -205,12 +210,13 @@ describe("SDKWork IAM standard contracts", () => {
     }
 
     expect(SDKWORK_IAM_CAPABILITIES.find((capability) => capability.name === "accountIdentity")).toMatchObject({
-      sdkNamespaces: ["auth", "iam"],
+      sdkNamespaces: ["auth", "iam", "system"],
       operations: expect.arrayContaining([
+        "iam.runtime.retrieve",
+        "iam.verificationPolicy.retrieve",
         "passwordResetRequests.create",
         "passwordResets.create",
         "registrations.create",
-        "verificationPolicy.retrieve",
         "verificationCodes.create",
         "verificationCodes.verify",
         "users.current.retrieve",

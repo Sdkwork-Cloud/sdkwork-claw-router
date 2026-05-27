@@ -1,12 +1,12 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_config::AppSessionConfig;
+use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_http::verify_app_session_token;
 use sdkwork_claw_product::application::{
     default_desktop_cache_manager, EntityUuidGenerator, Pbkdf2Sha256PasswordHasher,
     RuntimeCacheManager,
 };
-use sdkwork_claw_product::domain::DomainResult;
+use sdkwork_claw_product::domain::{DomainError, DomainResult};
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAdminOpenPlatformStore, SqliteAppAuthStore, SqliteAppSessionEventStore,
 };
@@ -27,6 +27,7 @@ use tower::ServiceExt;
 
 const APP_AUTH_SESSION_PATH: &str = "/app/v3/api/auth/sessions";
 const APP_SESSION_SECRET: &str = "app-auth-session-secret-0123456789";
+const TRUSTED_SUBJECT_SECRET: &str = "app-auth-trusted-subject-secret-0123456789";
 
 #[tokio::test]
 async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_and_records_standard_events(
@@ -142,7 +143,10 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("login-request-1", audit_request_id);
+    assert_server_request_id(
+        &audit_request_id,
+        "66666666-6666-4333-8444-555555555555",
+    );
 }
 
 #[tokio::test]
@@ -170,7 +174,7 @@ async fn app_auth_sessions_current_retrieve_returns_active_persisted_session() {
                 .method("GET")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -220,7 +224,7 @@ async fn app_auth_sessions_current_delete_revokes_active_session() {
                 .method("DELETE")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -254,7 +258,7 @@ async fn app_auth_sessions_current_delete_revokes_active_session() {
                 .method("GET")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -290,7 +294,7 @@ async fn app_auth_sessions_refresh_rotates_tokens_for_active_session() {
                 .uri("/app/v3/api/auth/sessions/refresh")
                 .header("content-type", "application/json")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::from(
                     json!({
                         "refreshToken": refresh_token
@@ -334,7 +338,7 @@ async fn app_auth_sessions_refresh_rotates_tokens_for_active_session() {
                 .method("GET")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -355,7 +359,7 @@ async fn app_auth_sessions_refresh_rotates_tokens_for_active_session() {
                     ),
                 )
                 .header(
-                    "Sdkwork-Access-Token",
+                    "Access-Token",
                     refresh_payload["data"]["accessToken"].as_str().unwrap(),
                 )
                 .body(Body::empty())
@@ -393,7 +397,7 @@ async fn app_auth_sessions_current_update_rotates_session_to_active_member_organ
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("content-type", "application/json")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::from(
                     json!({
                         "organizationCode": "workspace",
@@ -444,7 +448,7 @@ async fn app_auth_sessions_current_update_rotates_session_to_active_member_organ
                 .method("GET")
                 .uri("/app/v3/api/auth/sessions/current")
                 .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
+                .header("Access-Token", access_token)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -465,7 +469,7 @@ async fn app_auth_sessions_current_update_rotates_session_to_active_member_organ
                     ),
                 )
                 .header(
-                    "Sdkwork-Access-Token",
+                    "Access-Token",
                     update_payload["data"]["accessToken"].as_str().unwrap(),
                 )
                 .body(Body::empty())
@@ -676,7 +680,7 @@ async fn app_auth_open_platform_qr_auth_fallback_scan_and_password_login_complet
                     "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/passwords"
                 ))
                 .header("content-type", "application/json")
-                .header("X-Request-Id", "qr-password-login-1")
+                .header("X-Request-Id", "77777777-7777-4333-8444-555555555555")
                 .body(Body::from(
                     json!({
                         "username": "alice@example.com",
@@ -1370,7 +1374,7 @@ async fn app_auth_open_platform_qr_auth_registers_new_user_after_scan() {
                     "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/passwords"
                 ))
                 .header("content-type", "application/json")
-                .header("X-Request-Id", "qr-register-1")
+                .header("X-Request-Id", "88888888-8888-4333-8444-555555555555")
                 .body(Body::from(
                     json!({
                         "username": "qr-new-user",
@@ -1410,12 +1414,57 @@ async fn app_auth_open_platform_qr_auth_registers_new_user_after_scan() {
 }
 
 #[tokio::test]
+async fn app_auth_runtime_settings_enable_qr_login_by_default() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    let router = app_auth_router_with_settings(pool, AdminAuthSettings::default());
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/system/iam/runtime")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!(true, payload["data"]["qrLoginEnabled"]);
+}
+
+#[tokio::test]
 async fn app_auth_runtime_settings_expose_default_qr_login_type_without_provider_secrets() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
     let mut settings = qr_login_settings();
     settings.qr_login_type = "mini".to_owned();
     let router = app_auth_router_with_settings(pool, settings);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/system/iam/runtime")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("mini", payload["data"]["qrLoginType"]);
+    assert!(payload["data"].get("wechat").is_none());
+}
+
+#[tokio::test]
+async fn app_auth_runtime_settings_do_not_expose_legacy_auth_settings_path() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    let router = app_auth_router_with_settings(pool, qr_login_settings());
 
     let response = router
         .oneshot(
@@ -1428,10 +1477,7 @@ async fn app_auth_runtime_settings_expose_default_qr_login_type_without_provider
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
-    let payload = response_json(response).await;
-    assert_eq!("mini", payload["data"]["qrLoginType"]);
-    assert!(payload["data"].get("wechat").is_none());
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
 }
 
 #[tokio::test]
@@ -1598,6 +1644,33 @@ async fn app_auth_verification_codes_create_fails_closed_when_production_sender_
 }
 
 #[tokio::test]
+async fn app_auth_verification_codes_create_returns_too_many_requests_when_sender_rate_limits() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router_with_sender_and_settings(
+        pool,
+        Arc::new(RateLimitedVerificationCodeSender),
+        false,
+        email_code_login_settings(),
+    );
+
+    let response = router
+        .oneshot(verification_code_request("alice@example.com"))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::TOO_MANY_REQUESTS, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("4290", payload["code"]);
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("verification code delivery is rate limited"));
+    assert!(!payload.to_string().contains("debugCode"));
+}
+
+#[tokio::test]
 async fn app_auth_registrations_create_requires_verification_code() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
@@ -1651,6 +1724,7 @@ fn app_auth_router_with_cache(
         Arc::new(SqliteAppAuthStore::new(pool.clone())),
         Arc::new(SqliteAppSessionEventStore::new(pool)),
         Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
+        trusted_subject_config(),
         app_session_config(),
         Arc::new(Pbkdf2Sha256PasswordHasher),
         cache_manager,
@@ -1666,6 +1740,7 @@ fn app_auth_router_with_sender(
         Arc::new(SqliteAppAuthStore::new(pool.clone())),
         Arc::new(SqliteAppSessionEventStore::new(pool)),
         Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
+        trusted_subject_config(),
         app_session_config(),
         Arc::new(Pbkdf2Sha256PasswordHasher),
         sender,
@@ -1704,6 +1779,7 @@ fn app_auth_router_with_open_platform_and_uuid_generator(
         Some(Arc::new(SqliteAdminOpenPlatformStore::new(pool.clone()))),
         Arc::new(SqliteAppSessionEventStore::new(pool)),
         entity_uuid_generator,
+        trusted_subject_config(),
         app_session_config(),
         Arc::new(Pbkdf2Sha256PasswordHasher),
         default_desktop_cache_manager(),
@@ -1723,6 +1799,7 @@ fn app_auth_router_with_sender_and_settings(
         Some(Arc::new(TestAdminAuthSettingsStore::new(settings))),
         Arc::new(SqliteAppSessionEventStore::new(pool)),
         Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
+        trusted_subject_config(),
         app_session_config(),
         Arc::new(Pbkdf2Sha256PasswordHasher),
         None,
@@ -1825,6 +1902,21 @@ impl VerificationCodeSender for RecordingVerificationCodeSender {
     }
 }
 
+struct RateLimitedVerificationCodeSender;
+
+impl VerificationCodeSender for RateLimitedVerificationCodeSender {
+    fn send_verification_code<'a>(
+        &'a self,
+        _request: VerificationCodeDeliveryRequest,
+    ) -> VerificationCodeDeliveryFuture<'a, VerificationCodeDeliveryReceipt> {
+        Box::pin(async {
+            Err(DomainError::conflict(
+                "verification code delivery is rate limited",
+            ))
+        })
+    }
+}
+
 fn verification_code_request(target: &str) -> Request<Body> {
     Request::builder()
         .method("POST")
@@ -1846,7 +1938,7 @@ fn login_request(username: &str, password: &str) -> Request<Body> {
         .method("POST")
         .uri(APP_AUTH_SESSION_PATH)
         .header("content-type", "application/json")
-        .header("X-Request-Id", "login-request-1")
+        .header("X-Request-Id", "66666666-6666-4333-8444-555555555555")
         .body(Body::from(
             json!({
                 "grantType": "password",
@@ -1858,8 +1950,34 @@ fn login_request(username: &str, password: &str) -> Request<Body> {
         .unwrap()
 }
 
+fn assert_server_request_id(value: &str, client_header_value: &str) {
+    let bytes = value.as_bytes();
+    assert_eq!(36, bytes.len(), "request id must be a canonical UUID");
+    assert_ne!(
+        client_header_value, value,
+        "server-generated request id must ignore client X-Request-Id"
+    );
+    assert_eq!(b'-', bytes[8]);
+    assert_eq!(b'-', bytes[13]);
+    assert_eq!(b'-', bytes[18]);
+    assert_eq!(b'-', bytes[23]);
+    assert_eq!(b'4', bytes[14], "generated request id must be UUID v4");
+    assert!(
+        matches!(bytes[19], b'8' | b'9' | b'a' | b'b'),
+        "generated request id must use RFC 4122 variant"
+    );
+    assert!(bytes.iter().enumerate().all(|(index, byte)| {
+        matches!(index, 8 | 13 | 18 | 23) && *byte == b'-'
+            || !matches!(index, 8 | 13 | 18 | 23) && byte.is_ascii_hexdigit()
+    }));
+}
+
 fn app_session_config() -> AppSessionConfig {
     AppSessionConfig::from_signing_secret(APP_SESSION_SECRET).unwrap()
+}
+
+fn trusted_subject_config() -> TrustedSubjectConfig {
+    TrustedSubjectConfig::from_signing_secret(TRUSTED_SUBJECT_SECRET).unwrap()
 }
 
 async fn create_pool() -> SqlitePool {

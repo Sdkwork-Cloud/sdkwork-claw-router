@@ -12,7 +12,7 @@ public class GoogleGenerateContentResponse {
     public List<GoogleCandidate> getCandidates() {
         return this.candidates;
     }
-    
+
     public void setCandidates(List<GoogleCandidate> candidates) {
         this.candidates = candidates;
     }
@@ -20,7 +20,7 @@ public class GoogleGenerateContentResponse {
     public String getModelVersion() {
         return this.modelVersion;
     }
-    
+
     public void setModelVersion(String modelVersion) {
         this.modelVersion = modelVersion;
     }
@@ -28,7 +28,7 @@ public class GoogleGenerateContentResponse {
     public GooglePromptFeedback getPromptFeedback() {
         return this.promptFeedback;
     }
-    
+
     public void setPromptFeedback(GooglePromptFeedback promptFeedback) {
         this.promptFeedback = promptFeedback;
     }
@@ -36,7 +36,7 @@ public class GoogleGenerateContentResponse {
     public String getResponseId() {
         return this.responseId;
     }
-    
+
     public void setResponseId(String responseId) {
         this.responseId = responseId;
     }
@@ -44,7 +44,7 @@ public class GoogleGenerateContentResponse {
     public GoogleUsageMetadata getUsageMetadata() {
         return this.usageMetadata;
     }
-    
+
     public void setUsageMetadata(GoogleUsageMetadata usageMetadata) {
         this.usageMetadata = usageMetadata;
     }

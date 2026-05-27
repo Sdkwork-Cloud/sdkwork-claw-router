@@ -8,7 +8,7 @@ import type {
 
 export const USER_CENTER_PROTECTED_TOKEN_PREFERENCE = [
   "auth-token",
-  "Sdkwork-Access-Token",
+  "Access-Token",
   "session-token",
 ] as const satisfies readonly UserCenterProtectedTokenName[];
 
@@ -74,7 +74,7 @@ export function createUserCenterCanonicalServerOperations(
       bridgeConfig.localApi.authSession,
       "auth.getSession",
       "Get the current login session snapshot for the active principal.",
-      createPublicOperationAuth(["auth-token", "Sdkwork-Access-Token", "session-token"]),
+      createPublicOperationAuth(["auth-token", "Access-Token", "session-token"]),
     ),
     createOperation(
       bridgeConfig,
@@ -213,20 +213,20 @@ export function createUserCenterCanonicalServerOperations(
     ),
     createOperation(
       bridgeConfig,
-      "vipInfoGet",
+      "membershipCurrentGet",
       "GET",
-      bridgeConfig.localApi.vipInfo,
-      "vip.info.get",
-      "Get the current user's VIP or membership projection.",
+      bridgeConfig.localApi.membership,
+      "membership.current.get",
+      "Get the current user's membership projection.",
       secureOperationAuth,
     ),
     createOperation(
       bridgeConfig,
-      "vipInfoUpdate",
+      "membershipCurrentUpdate",
       "PATCH",
-      bridgeConfig.localApi.vipInfo,
-      "vip.info.update",
-      "Update the current user's VIP or membership projection for local authority mode.",
+      bridgeConfig.localApi.membership,
+      "membership.current.update",
+      "Update the current user's membership projection for local authority mode.",
       secureOperationAuth,
     ),
     createOperation(

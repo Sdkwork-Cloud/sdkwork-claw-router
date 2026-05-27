@@ -17,7 +17,7 @@ describe("sdkwork-subscription-pc-react plan grid", () => {
           benefits={[
             {
               claimed: true,
-              id: "vip-benefit-2",
+              id: "membership-benefit-2",
               name: "Priority rendering",
               usageLimit: 10,
               usedCount: 2,
@@ -28,7 +28,7 @@ describe("sdkwork-subscription-pc-react plan grid", () => {
             {
               description: "Best for professional creators.",
               durationDays: 30,
-              id: "vip-plan-2",
+              id: "membership-plan-2",
               includedPoints: 5000,
               name: "Pro Monthly",
               originalPriceCny: null,
@@ -44,13 +44,13 @@ describe("sdkwork-subscription-pc-react plan grid", () => {
             currentLevelValue: 1,
             growthValue: 20,
             isAuthenticated: true,
-            isVip: false,
+            isMember: false,
             pointBalance: 100,
             remainingDays: null,
             status: "free" as const,
             totalSpent: 0,
             upgradeGrowthValue: 200,
-            vipPoints: 20,
+            points: 20,
           }}
         />
       </SdkworkThemeProvider>,

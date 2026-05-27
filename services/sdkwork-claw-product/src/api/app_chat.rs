@@ -424,7 +424,11 @@ fn build_create_turn_command(
         input_message_uuid: generate_entity_uuid(state)?,
         output_item_uuid: generate_entity_uuid(state)?,
         output_message_uuid: generate_entity_uuid(state)?,
-        message: normalize_required_text(request.message.as_deref(), "message", MAX_MESSAGE_LEN)?,
+        message: normalize_required_message_text(
+            request.message.as_deref(),
+            "message",
+            MAX_MESSAGE_LEN,
+        )?,
         mode: normalize_optional_text(request.mode.as_deref(), "mode", MAX_MODE_LEN)?,
         agent_id: normalize_optional_id(request.agent_id.as_deref(), "agentId")?,
         agent_session_id: normalize_optional_id(
@@ -466,7 +470,11 @@ fn build_complete_turn_response_command(
         output_message_uuid: generate_entity_uuid(state)?,
         output_part_uuid: generate_entity_uuid(state)?,
         usage_link_uuid: generate_entity_uuid(state)?,
-        message: normalize_required_text(request.message.as_deref(), "message", MAX_MESSAGE_LEN)?,
+        message: normalize_required_message_text(
+            request.message.as_deref(),
+            "message",
+            MAX_MESSAGE_LEN,
+        )?,
         status,
         model: normalize_optional_text(request.model.as_deref(), "model", MAX_MODEL_LEN)?,
         provider: normalize_optional_text(
@@ -523,12 +531,21 @@ fn normalize_page(query: AppChatListQuery) -> Result<(i64, i64), String> {
     Ok((page, page_size))
 }
 
-fn normalize_required_text(
+fn normalize_required_message_text(
     value: Option<&str>,
     field: &str,
     max_len: usize,
 ) -> Result<String, String> {
-    normalize_optional_text(value, field, max_len)?.ok_or_else(|| format!("{field} is required"))
+    let Some(value) = value else {
+        return Err(format!("{field} is required"));
+    };
+    if value.trim().is_empty() {
+        return Err(format!("{field} is required"));
+    }
+    if value.chars().count() > max_len {
+        return Err(format!("{field} must be at most {max_len} characters"));
+    }
+    Ok(value.to_owned())
 }
 
 fn normalize_optional_text(

@@ -10,7 +10,7 @@ public class OpenAiPromptReference {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -18,7 +18,7 @@ public class OpenAiPromptReference {
     public Map<String, String> getVariables() {
         return this.variables;
     }
-    
+
     public void setVariables(Map<String, String> variables) {
         this.variables = variables;
     }
@@ -26,7 +26,7 @@ public class OpenAiPromptReference {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

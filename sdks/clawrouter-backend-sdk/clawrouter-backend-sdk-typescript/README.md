@@ -38,7 +38,7 @@ Choose exactly one mode for the same client instance.
 ```typescript
 const client = new SdkworkBackendClient({ baseUrl: 'http://localhost:18081' });
 client.setApiKey('your-api-key');
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -49,7 +49,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -77,9 +77,14 @@ const client = new SdkworkBackendClient({
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.mcp` - mcp API
+- `client.messaging` - messaging API
 - `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.prompts` - prompts API
+- `client.serviceProviders` - service_providers API
+- `client.oss` - oss API
 
 ## Usage Examples
 
@@ -140,6 +145,37 @@ const result = await client.iam.accessGroups.list();
 const result = await client.integration.channels.list();
 ```
 
+### mcp
+
+```typescript
+// List MCP servers
+const params = {
+  page: 1,
+  page_size: 2,
+  q: 'q',
+  transport: 'transport',
+  visibility: 'visibility',
+  status: 'status',
+  category_id: 'category_id',
+};
+const result = await client.mcp.servers.list(params);
+```
+
+### messaging
+
+```typescript
+// Messaging provider accounts list
+const params = {
+  page: 1,
+  page_size: 2,
+  q: 'q',
+  status: 'status',
+  channel: 'sms',
+  provider_code: 'provider_code',
+};
+const result = await client.messaging.providerAccounts.list(params);
+```
+
 ### open_platform
 
 ```typescript
@@ -162,6 +198,45 @@ const result = await client.platform.apps.categories.list();
 ```typescript
 // Retrieve IAM auth runtime settings
 const result = await client.system.auth.settings.retrieve();
+```
+
+### prompts
+
+```typescript
+// List admin prompts
+const params = {
+  page: 1,
+  page_size: 2,
+  q: 'q',
+  prompt_type: 'prompt_type',
+  visibility: 'visibility',
+  status: 'status',
+  category_id: 'category_id',
+};
+const result = await client.prompts.definitions.list(params);
+```
+
+### service_providers
+
+```typescript
+// Service Provider Adjustments List
+const params = {
+  page: 1,
+  page_size: 2,
+  status: 'status',
+  provider_id: 'provider_id',
+  seller_provider_id: 'seller_provider_id',
+  buyer_provider_id: 'buyer_provider_id',
+  edge_id: 'edge_id',
+};
+const result = await client.serviceProviders.adjustments.list(params);
+```
+
+### oss
+
+```typescript
+// List storage providers
+const result = await client.oss.providers.list();
 ```
 
 ## Error Handling

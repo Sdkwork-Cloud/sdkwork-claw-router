@@ -11,7 +11,7 @@ public class OpenAiEmbeddingList {
     public List<OpenAiEmbedding> getData() {
         return this.data;
     }
-    
+
     public void setData(List<OpenAiEmbedding> data) {
         this.data = data;
     }
@@ -19,7 +19,7 @@ public class OpenAiEmbeddingList {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -27,7 +27,7 @@ public class OpenAiEmbeddingList {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -35,7 +35,7 @@ public class OpenAiEmbeddingList {
     public OpenAiEmbeddingUsage getUsage() {
         return this.usage;
     }
-    
+
     public void setUsage(OpenAiEmbeddingUsage usage) {
         this.usage = usage;
     }

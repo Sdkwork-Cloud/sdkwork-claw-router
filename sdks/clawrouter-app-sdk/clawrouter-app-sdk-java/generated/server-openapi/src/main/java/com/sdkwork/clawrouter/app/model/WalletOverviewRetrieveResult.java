@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 
 public class WalletOverviewRetrieveResult {
     private String code;
-    private CommerceWalletOverviewResponse data;
+    private CommerceStandardResourceResponse data;
     private String msg;
 
     public String getCode() {
@@ -14,11 +14,11 @@ public class WalletOverviewRetrieveResult {
         this.code = code;
     }
 
-    public CommerceWalletOverviewResponse getData() {
+    public CommerceStandardResourceResponse getData() {
         return this.data;
     }
 
-    public void setData(CommerceWalletOverviewResponse data) {
+    public void setData(CommerceStandardResourceResponse data) {
         this.data = data;
     }
 

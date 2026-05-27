@@ -40,6 +40,7 @@ frontend_operations:
           - created
           - expires
           - status
+          - defaultForRuntime
           properties: &id003
             id:
               type: string
@@ -103,6 +104,9 @@ frontend_operations:
               enum:
               - enabled
               - disabled
+            defaultForRuntime:
+              type: boolean
+              description: Whether this key is the current console default for backend runtime API key selection.
           description: API key metadata with masked key material and authenticated owner copyable key material.
       groups:
         type: array
@@ -210,6 +214,9 @@ frontend_operations:
         type: string
         maxLength: 32
         description: Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
+      defaultForRuntime:
+        type: boolean
+        description: Create this key as the default backend runtime API key.
   response_schema:
     name: CreateApiKeyResponse
     required:
@@ -245,7 +252,6 @@ frontend_operations:
   - iam_gateway_access_policy
   - ai_quota_policy
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: UpdateApiKeyRequest
     type: object
@@ -287,6 +293,9 @@ frontend_operations:
         type: string
         maxLength: 32
         description: Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
+      defaultForRuntime:
+        type: boolean
+        description: Marks this API key as the default backend runtime API key for Playground and app runtime calls.
   response_schema:
     name: UpdateApiKeyResponse
     required:
@@ -439,7 +448,6 @@ frontend_operations:
   api_method: POST
   api_path: /app/v3/api/auth/sessions
   openapi_exposed: false
-  request_id_header: true
   read_sources:
   - iam_user
   - iam_session

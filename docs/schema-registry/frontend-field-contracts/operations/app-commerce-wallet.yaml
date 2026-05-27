@@ -129,8 +129,8 @@ frontend_operations:
         format: int64
         minimum: 1
         maximum: 200
-- route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+- route: /console/settlements
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
   operation: appWalletLedgerEntriesList
   operation_id: wallet.ledgerEntries.list
   kind: read
@@ -141,12 +141,7 @@ frontend_operations:
   summary: Wallet Ledger Entries List
   description: Standard appbase commerce API for wallet.ledgerEntries.list; no legacy billing compatibility route is exposed.
   read_sources:
-  - commerce_account
   - commerce_account_ledger_entry
-  - commerce_account_hold
-  - commerce_exchange_rule
-  - commerce_order
-  - commerce_payment_attempt
   query_parameters:
   - name: page
     schema:
@@ -164,26 +159,6 @@ frontend_operations:
       type: string
       maxLength: 32
   response_schema: *id001
-- route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
-  operation: appWalletLedgerEntriesRetrieve
-  operation_id: wallet.ledgerEntries.retrieve
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/wallet/ledger_entries/{ledgerEntryId}
-  sdk_domain: commerce
-  summary: Wallet Ledger Entries Retrieve
-  description: Standard appbase commerce API for wallet.ledgerEntries.retrieve; no legacy billing compatibility route is exposed.
-  read_sources:
-  - commerce_account
-  - commerce_account_ledger_entry
-  - commerce_account_hold
-  - commerce_exchange_rule
-  - commerce_order
-  - commerce_payment_attempt
-  query_parameters: []
-  response_schema: *id002
 - route: /console/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
   operation: appWalletTokensRetrieve
@@ -268,22 +243,6 @@ frontend_operations:
   read_sources:
   - commerce_account_ledger_entry
   - commerce_invoice
-  write_tables: []
-  file_targets: []
-  openapi_exposed: false
-- route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
-  operation: fetchRechargeHistory
-  operation_id: console.rechargeHistory.list
-  operation_scope: app_shell
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/wallet/ledger_entries
-  read_sources:
-  - commerce_account_ledger_entry
-  - commerce_order
-  - commerce_payment_attempt
   write_tables: []
   file_targets: []
   openapi_exposed: false

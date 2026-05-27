@@ -9,3 +9,6 @@ class CommerceOperationResponse:
     request_no: str
     status: str
     success: bool
+    payment_id: Optional[str] = None
+    qr_code_image_url: Optional[str] = None
+    qr_code_payload: Optional[str] = None

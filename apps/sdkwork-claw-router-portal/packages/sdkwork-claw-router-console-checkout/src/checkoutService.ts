@@ -35,6 +35,7 @@ export class CheckoutService {
 }
 
 type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type AppSystem = ReturnType<typeof getClawRouterAppSdkClient>['system'];
 
 export async function appAddressesList(params?: Parameters<AppCommerce['addresses']['list']>[0]) {
   return getClawRouterAppSdkClient().commerce.addresses.list(params);
@@ -182,6 +183,46 @@ export async function appFulfillmentsRetrieve(fulfillmentId: string) {
 
 export async function appShipmentsRetrieve(shipmentId: string) {
   return getClawRouterAppSdkClient().commerce.shipments.retrieve(shipmentId);
+}
+
+export async function appPromotionDiscountApplicationsCreate(
+  body: Parameters<AppSystem['promotions']['discountApplications']['create']>[0],
+) {
+  return getClawRouterAppSdkClient().system.promotions.discountApplications.create(
+    body,
+    createRequestParams('app-promotion-discount-application-create'),
+  );
+}
+
+export async function appPromotionDiscountApplicationsSettle(
+  applicationId: string,
+  body: Parameters<AppSystem['promotions']['discountApplications']['settle']>[1],
+) {
+  return getClawRouterAppSdkClient().system.promotions.discountApplications.settle(
+    applicationId,
+    body,
+    createRequestParams('app-promotion-discount-application-settle'),
+  );
+}
+
+export async function appPromotionDiscountApplicationsRelease(
+  applicationId: string,
+  body: Parameters<AppSystem['promotions']['discountApplications']['release']>[1],
+) {
+  return getClawRouterAppSdkClient().system.promotions.discountApplications.release(
+    applicationId,
+    body,
+    createRequestParams('app-promotion-discount-application-release'),
+  );
+}
+
+export async function appPromotionDiscountApplicationReversalsCreate(
+  body: Parameters<AppSystem['promotions']['discountApplications']['reversals']['create']>[0],
+) {
+  return getClawRouterAppSdkClient().system.promotions.discountApplications.reversals.create(
+    body,
+    createRequestParams('app-promotion-discount-application-reversal-create'),
+  );
 }
 
 function requiredText(value: string, fieldName: string): string {

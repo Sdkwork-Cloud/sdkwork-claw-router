@@ -182,7 +182,7 @@ describe("sdkwork-billing-pc-react service", () => {
             currentLevelName: "Pro",
             expiringSoonCoupons: 0,
             isAuthenticated: true,
-            vipRemainingDays: 18,
+            membershipRemainingDays: 18,
           },
         }),
         getEmptyDashboard: vi.fn().mockReturnValue({
@@ -201,7 +201,7 @@ describe("sdkwork-billing-pc-react service", () => {
             currentLevelName: "Guest",
             expiringSoonCoupons: 0,
             isAuthenticated: false,
-            vipRemainingDays: null,
+            membershipRemainingDays: null,
           },
         }),
       },
@@ -285,7 +285,7 @@ describe("sdkwork-billing-pc-react service", () => {
           plans: [
             {
               durationDays: 365,
-              id: "vip-plan-3",
+              id: "membership-plan-3",
               includedPoints: 60000,
               name: "Pro Annual",
               packageId: 3,
@@ -299,13 +299,13 @@ describe("sdkwork-billing-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 18,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
       },
@@ -390,21 +390,21 @@ describe("sdkwork-billing-pc-react service", () => {
 
     const service = createSdkworkBillingService({
       commerceService: createCommerceServiceMock({
-        settlements: {
-          dashboard: {
+        billing: {
+          history: {
             list: vi.fn().mockResolvedValue({
-            code: "2000",
-            data: {
-              content: [
-                {
-                  costAmount: 12,
-                  id: "usage-zh-1",
-                  usageAt: "2026-04-15T07:00:00.000Z",
-                },
-              ],
-            },
-          }),
-        },
+              code: "2000",
+              data: {
+                content: [
+                  {
+                    costAmount: 12,
+                    id: "usage-zh-1",
+                    usageAt: "2026-04-15T07:00:00.000Z",
+                  },
+                ],
+              },
+            }),
+          },
         },
       }),
       invoiceService: {
@@ -444,7 +444,7 @@ describe("sdkwork-billing-pc-react service", () => {
             currentLevelName: "",
             expiringSoonCoupons: 0,
             isAuthenticated: true,
-            vipRemainingDays: null,
+            membershipRemainingDays: null,
           },
         }),
         getEmptyDashboard: vi.fn().mockReturnValue({
@@ -463,7 +463,7 @@ describe("sdkwork-billing-pc-react service", () => {
             currentLevelName: "",
             expiringSoonCoupons: 0,
             isAuthenticated: false,
-            vipRemainingDays: null,
+            membershipRemainingDays: null,
           },
         }),
       },
@@ -503,13 +503,13 @@ describe("sdkwork-billing-pc-react service", () => {
             currentLevelValue: null,
             growthValue: null,
             isAuthenticated: true,
-            isVip: false,
+            isMember: false,
             pointBalance: 0,
             remainingDays: null,
             status: "free",
             totalSpent: null,
             upgradeGrowthValue: null,
-            vipPoints: null,
+            points: null,
           },
         }),
       },

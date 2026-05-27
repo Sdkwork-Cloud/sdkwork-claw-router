@@ -11,7 +11,7 @@ describe("sdkwork-subscription-pc-react selected plan card", () => {
           selectedPlan={{
             description: "Best for professional creators.",
             durationDays: 30,
-            id: "vip-plan-2",
+            id: "membership-plan-2",
             includedPoints: 5000,
             name: "Pro Monthly",
             originalPriceCny: null,

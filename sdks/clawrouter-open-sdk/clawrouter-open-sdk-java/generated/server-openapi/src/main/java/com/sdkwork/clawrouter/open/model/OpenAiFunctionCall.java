@@ -8,7 +8,7 @@ public class OpenAiFunctionCall {
     public String getArguments() {
         return this.arguments;
     }
-    
+
     public void setArguments(String arguments) {
         this.arguments = arguments;
     }
@@ -16,7 +16,7 @@ public class OpenAiFunctionCall {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

@@ -16,7 +16,7 @@ public class PlusFeedsRecord {
     public Map<String, String> getAuthor() {
         return this.author;
     }
-    
+
     public void setAuthor(Map<String, String> author) {
         this.author = author;
     }
@@ -24,7 +24,7 @@ public class PlusFeedsRecord {
     public Map<String, String> getCoverImages() {
         return this.coverImages;
     }
-    
+
     public void setCoverImages(Map<String, String> coverImages) {
         this.coverImages = coverImages;
     }
@@ -32,7 +32,7 @@ public class PlusFeedsRecord {
     public String getPublishTime() {
         return this.publishTime;
     }
-    
+
     public void setPublishTime(String publishTime) {
         this.publishTime = publishTime;
     }
@@ -40,7 +40,7 @@ public class PlusFeedsRecord {
     public Map<String, String> getResourceList() {
         return this.resourceList;
     }
-    
+
     public void setResourceList(Map<String, String> resourceList) {
         this.resourceList = resourceList;
     }
@@ -48,7 +48,7 @@ public class PlusFeedsRecord {
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -56,7 +56,7 @@ public class PlusFeedsRecord {
     public String getSourceUrl() {
         return this.sourceUrl;
     }
-    
+
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
@@ -64,7 +64,7 @@ public class PlusFeedsRecord {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -72,7 +72,7 @@ public class PlusFeedsRecord {
     public Map<String, String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
@@ -80,7 +80,7 @@ public class PlusFeedsRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

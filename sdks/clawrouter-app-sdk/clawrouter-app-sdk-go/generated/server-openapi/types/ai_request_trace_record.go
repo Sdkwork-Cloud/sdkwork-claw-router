@@ -37,12 +37,14 @@ type AiRequestTraceRecord struct {
 	ProviderErrorCode string `json:"provider_error_code"`
 	ProviderId string `json:"provider_id"`
 	ProviderModel string `json:"provider_model"`
+	ProviderNativeModel string `json:"provider_native_model"`
 	ReasoningEffort string `json:"reasoning_effort"`
 	RequestBytes string `json:"request_bytes"`
 	RequestId string `json:"request_id"`
 	RequestPath string `json:"request_path"`
 	RequestPayloadHash string `json:"request_payload_hash"`
 	RequestedModel string `json:"requested_model"`
+	RequestedModelCatalogKey string `json:"requested_model_catalog_key"`
 	ResponseBytes string `json:"response_bytes"`
 	ResponsePayloadHash string `json:"response_payload_hash"`
 	RetentionUntil string `json:"retention_until"`

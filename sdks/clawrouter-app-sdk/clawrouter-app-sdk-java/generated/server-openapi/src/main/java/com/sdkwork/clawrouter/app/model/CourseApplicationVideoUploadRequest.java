@@ -8,7 +8,7 @@ public class CourseApplicationVideoUploadRequest {
     public String getFile() {
         return this.file;
     }
-    
+
     public void setFile(String file) {
         this.file = file;
     }
@@ -16,7 +16,7 @@ public class CourseApplicationVideoUploadRequest {
     public String getFileName() {
         return this.fileName;
     }
-    
+
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }

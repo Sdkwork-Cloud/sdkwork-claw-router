@@ -14,7 +14,7 @@ public class NanoBananaImageGenerationRequest {
     public String getAspectRatio() {
         return this.aspectRatio;
     }
-    
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -22,7 +22,7 @@ public class NanoBananaImageGenerationRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -30,7 +30,7 @@ public class NanoBananaImageGenerationRequest {
     public List<String> getImages() {
         return this.images;
     }
-    
+
     public void setImages(List<String> images) {
         this.images = images;
     }
@@ -38,7 +38,7 @@ public class NanoBananaImageGenerationRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -46,7 +46,7 @@ public class NanoBananaImageGenerationRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -54,7 +54,7 @@ public class NanoBananaImageGenerationRequest {
     public Integer getSeed() {
         return this.seed;
     }
-    
+
     public void setSeed(Integer seed) {
         this.seed = seed;
     }
@@ -62,7 +62,7 @@ public class NanoBananaImageGenerationRequest {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }

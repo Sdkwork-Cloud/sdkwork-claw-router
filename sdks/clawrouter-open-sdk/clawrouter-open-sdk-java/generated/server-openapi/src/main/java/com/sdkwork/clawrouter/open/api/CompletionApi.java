@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class CompletionApi {
     private final HttpClient client;
-    
+
     public CompletionApi(HttpClient client) {
         this.client = client;
     }

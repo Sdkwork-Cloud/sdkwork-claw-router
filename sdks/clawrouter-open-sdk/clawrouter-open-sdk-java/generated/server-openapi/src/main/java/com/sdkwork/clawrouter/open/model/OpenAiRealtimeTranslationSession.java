@@ -11,7 +11,7 @@ public class OpenAiRealtimeTranslationSession {
     public OpenAiRealtimeClientSecretValue getClientSecret() {
         return this.clientSecret;
     }
-    
+
     public void setClientSecret(OpenAiRealtimeClientSecretValue clientSecret) {
         this.clientSecret = clientSecret;
     }
@@ -19,7 +19,7 @@ public class OpenAiRealtimeTranslationSession {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -27,7 +27,7 @@ public class OpenAiRealtimeTranslationSession {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -35,7 +35,7 @@ public class OpenAiRealtimeTranslationSession {
     public String getSourceLanguage() {
         return this.sourceLanguage;
     }
-    
+
     public void setSourceLanguage(String sourceLanguage) {
         this.sourceLanguage = sourceLanguage;
     }
@@ -43,7 +43,7 @@ public class OpenAiRealtimeTranslationSession {
     public String getTargetLanguage() {
         return this.targetLanguage;
     }
-    
+
     public void setTargetLanguage(String targetLanguage) {
         this.targetLanguage = targetLanguage;
     }

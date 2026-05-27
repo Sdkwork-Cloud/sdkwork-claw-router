@@ -10,9 +10,14 @@ public class SdkworkBackendClient {
     public let ecosystem: EcosystemApi
     public let iam: IamApi
     public let integration: IntegrationApi
+    public let mcp: McpApi
+    public let messaging: MessagingApi
     public let openPlatform: OpenPlatformApi
     public let platform: PlatformApi
     public let system: SystemApi
+    public let prompts: PromptsApi
+    public let serviceProviders: ServiceProvidersApi
+    public let storage: StorageApi
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
@@ -23,9 +28,14 @@ public class SdkworkBackendClient {
         self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.integration = IntegrationApi(client: httpClient)
+        self.mcp = McpApi(client: httpClient)
+        self.messaging = MessagingApi(client: httpClient)
         self.openPlatform = OpenPlatformApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
         self.system = SystemApi(client: httpClient)
+        self.prompts = PromptsApi(client: httpClient)
+        self.serviceProviders = ServiceProvidersApi(client: httpClient)
+        self.storage = StorageApi(client: httpClient)
     }
 
     public init(config: SdkConfig) {
@@ -37,9 +47,14 @@ public class SdkworkBackendClient {
         self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.integration = IntegrationApi(client: httpClient)
+        self.mcp = McpApi(client: httpClient)
+        self.messaging = MessagingApi(client: httpClient)
         self.openPlatform = OpenPlatformApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
         self.system = SystemApi(client: httpClient)
+        self.prompts = PromptsApi(client: httpClient)
+        self.serviceProviders = ServiceProvidersApi(client: httpClient)
+        self.storage = StorageApi(client: httpClient)
     }
 
     public func setApiKey(_ apiKey: String) -> SdkworkBackendClient {

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class BatchesAnthropicApi {
     private final HttpClient client;
-    
+
     public BatchesAnthropicApi(HttpClient client) {
         this.client = client;
     }

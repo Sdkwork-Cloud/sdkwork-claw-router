@@ -8,8 +8,9 @@ use sdkwork_claw_provider_adapter_registry::{
 
 use super::adapter_aware_openai_relay::{
     adapter_http_error, build_openai_adapter_invocation, OpenAiAdapterEndpoint,
-    OpenAiAdapterInvocationParts,
+    OpenAiAdapterInvocationParts, ProviderSecretResolverRef,
 };
+use crate::domain::DomainResult;
 use crate::ports::{
     ResponsesRelay, ResponsesRelayFuture, ResponsesRelayRequest, ResponsesRelayResponse,
 };
@@ -27,6 +28,7 @@ pub struct AdapterAwareResponsesRelay {
     direct_relay: Arc<dyn ResponsesRelay + Send + Sync>,
     adapter_registry: Arc<ProviderAdapterRegistry>,
     adapter_client: ProviderAdapterHttpClient,
+    provider_secret_resolver: Option<ProviderSecretResolverRef>,
 }
 
 impl AdapterAwareResponsesRelay {
@@ -39,7 +41,13 @@ impl AdapterAwareResponsesRelay {
             direct_relay,
             adapter_registry,
             adapter_client,
+            provider_secret_resolver: None,
         }
+    }
+
+    pub fn with_secret_resolver(mut self, resolver: ProviderSecretResolverRef) -> Self {
+        self.provider_secret_resolver = Some(resolver);
+        self
     }
 }
 
@@ -59,7 +67,10 @@ impl ResponsesRelay for AdapterAwareResponsesRelay {
                     self.direct_relay.create_response(request).await
                 }
                 ProviderInvocationMode::InternalHttpAdapter(route) => {
-                    let invocation = responses_adapter_invocation(request);
+                    let invocation = responses_adapter_invocation(
+                        request,
+                        self.provider_secret_resolver.as_ref(),
+                    )?;
                     let response = self
                         .adapter_client
                         .invoke(&route, invocation)
@@ -75,7 +86,10 @@ impl ResponsesRelay for AdapterAwareResponsesRelay {
     }
 }
 
-fn responses_adapter_invocation(request: ResponsesRelayRequest) -> AdapterInvocationRequest {
+fn responses_adapter_invocation(
+    request: ResponsesRelayRequest,
+    secret_resolver: Option<&ProviderSecretResolverRef>,
+) -> DomainResult<AdapterInvocationRequest> {
     build_openai_adapter_invocation(
         RESPONSES_ENDPOINT,
         OpenAiAdapterInvocationParts {
@@ -95,5 +109,6 @@ fn responses_adapter_invocation(request: ResponsesRelayRequest) -> AdapterInvoca
             provider_timeout_ms: request.provider_timeout_ms,
             request_body: request.request_body,
         },
+        secret_resolver,
     )
 }

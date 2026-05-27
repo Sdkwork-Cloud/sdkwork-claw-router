@@ -11,18 +11,20 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::ports::{
-    AdminAppCategoryItem, AdminAppItem, AdminAppStore, AdminAppSubject,
-    CreateAdminAppCategoryCommand, CreateAdminAppCommand, DeleteAdminAppCategoryCommand,
-    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppCategoriesQuery, ListAdminAppsQuery,
-    SetAdminAppStatusCommand, UpdateAdminAppCategoryCommand, UpdateAdminAppCommand,
+    AdminAppCategoryItem, AdminAppItem, AdminAppPage, AdminAppStore, AdminAppSubject,
+    AdminAppTemplateItem, AdminAppTemplatePage, CreateAdminAppCategoryCommand,
+    CreateAdminAppCommand, CreateAdminAppTemplateCommand, DeleteAdminAppCategoryCommand,
+    DeleteAdminAppCommand, DeleteAdminAppTemplateCommand, GetAdminAppQuery,
+    GetAdminAppTemplateQuery, ListAdminAppCategoriesQuery, ListAdminAppTemplatesQuery,
+    ListAdminAppsQuery, SetAdminAppStatusCommand, SetAdminAppTemplatePublishStatusCommand,
+    UpdateAdminAppCategoryCommand, UpdateAdminAppCommand, UpdateAdminAppTemplateCommand,
 };
 
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MAX_PAGE_SIZE: i64 = 200;
 const MAX_NAME_LEN: usize = 255;
 const MAX_APP_KEY_LEN: usize = 128;
@@ -35,6 +37,13 @@ const MAX_CATEGORY_NAME_LEN: usize = 255;
 const MAX_CATEGORY_CODE_LEN: usize = 128;
 const MAX_CATEGORY_ICON_LEN: usize = 255;
 const MAX_CATEGORY_PATH_LEN: usize = 1024;
+const MAX_TEMPLATE_NO_LEN: usize = 64;
+const MAX_TEMPLATE_CODE_LEN: usize = 128;
+const MAX_TEMPLATE_NAME_LEN: usize = 255;
+const MAX_TEMPLATE_KIND_LEN: usize = 128;
+const MAX_TEMPLATE_GIT_REPO_URL_LEN: usize = 1024;
+const MAX_TEMPLATE_GIT_REF_LEN: usize = 128;
+const MAX_TEMPLATE_GIT_SUB_PATH_LEN: usize = 1024;
 const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
 const DEFAULT_JSON_BODY_MAX_BYTES: usize =
     sdkwork_claw_config::RequestLimitsConfig::DEFAULT_ADMIN_APP_JSON_BODY_MAX_BYTES;
@@ -53,6 +62,7 @@ struct ListAppsRequest {
     status: Option<String>,
     market_status: Option<String>,
     app_type: Option<String>,
+    category_id: Option<i64>,
     page_no: Option<i64>,
     page_size: Option<i64>,
 }
@@ -63,6 +73,30 @@ struct ListAppsQuery {
     status: Option<String>,
     market_status: Option<String>,
     app_type: Option<String>,
+    category_id: Option<i64>,
+    page: Option<i64>,
+    page_size: Option<i64>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct ListTemplatesRequest {
+    keyword: Option<String>,
+    publish_status: Option<String>,
+    template_type: Option<String>,
+    runtime: Option<String>,
+    category_id: Option<i64>,
+    page_no: Option<i64>,
+    page_size: Option<i64>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+struct ListTemplatesQuery {
+    q: Option<String>,
+    publish_status: Option<String>,
+    template_type: Option<String>,
+    runtime: Option<String>,
+    category_id: Option<i64>,
     page: Option<i64>,
     page_size: Option<i64>,
 }
@@ -96,6 +130,36 @@ struct CreateAppRequest {
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
+struct CreateTemplateRequest {
+    template_no: Option<String>,
+    template_code: Option<String>,
+    template_name: Option<String>,
+    description: Option<String>,
+    category_id: Option<Value>,
+    category_code: Option<String>,
+    template_type: Option<String>,
+    runtime: Option<String>,
+    framework: Option<String>,
+    language: Option<String>,
+    icon_url: Option<String>,
+    cover_url: Option<String>,
+    visibility: Option<String>,
+    publish_status: Option<String>,
+    featured: Option<bool>,
+    sort_weight: Option<i32>,
+    source_app_id: Option<Value>,
+    git_repo_url: Option<String>,
+    git_ref: Option<String>,
+    git_sub_path: Option<String>,
+    app_config_schema: Option<Value>,
+    default_app_config: Option<Value>,
+    variable_schema: Option<Value>,
+    dependency_manifest: Option<Value>,
+    capability_manifest: Option<Value>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
 struct UpdateAppRequest {
     user_id: Option<Value>,
     name: Option<String>,
@@ -117,6 +181,34 @@ struct UpdateAppRequest {
     bundle_id: Option<Value>,
     store_url: Option<Value>,
     download_url: Option<Value>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct UpdateTemplateRequest {
+    template_name: Option<String>,
+    description: Option<Value>,
+    category_id: Option<Value>,
+    category_code: Option<Value>,
+    template_type: Option<Value>,
+    runtime: Option<Value>,
+    framework: Option<Value>,
+    language: Option<Value>,
+    icon_url: Option<Value>,
+    cover_url: Option<Value>,
+    visibility: Option<String>,
+    publish_status: Option<String>,
+    featured: Option<bool>,
+    sort_weight: Option<i32>,
+    source_app_id: Option<Value>,
+    git_repo_url: Option<Value>,
+    git_ref: Option<Value>,
+    git_sub_path: Option<Value>,
+    app_config_schema: Option<Value>,
+    default_app_config: Option<Value>,
+    variable_schema: Option<Value>,
+    dependency_manifest: Option<Value>,
+    capability_manifest: Option<Value>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -151,6 +243,16 @@ struct UpdateCategoryRequest {
 #[serde(rename_all = "camelCase")]
 struct AdminAppListResponse<T> {
     items: Vec<T>,
+    total: i64,
+    page: i64,
+    page_size: i64,
+    has_next_page: bool,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAppItemsResponse<T> {
+    items: Vec<T>,
 }
 
 #[derive(Debug, Serialize)]
@@ -162,6 +264,12 @@ struct AdminAppItemEnvelope<T> {
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct AdminAppDeleteResponse {
+    deleted: bool,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAppTemplateDeleteResponse {
     deleted: bool,
 }
 
@@ -237,6 +345,55 @@ struct AdminAppItemResponse {
     updated_at: String,
 }
 
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAppTemplateItemResponse {
+    id: String,
+    uuid: String,
+    template_no: String,
+    template_code: String,
+    template_name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    description: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    category_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    category_code: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    template_type: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    runtime: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    framework: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    language: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    icon_url: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    cover_url: Option<String>,
+    visibility: String,
+    publish_status: String,
+    featured: bool,
+    sort_weight: i32,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    source_app_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    git_repo_url: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    git_ref: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    git_sub_path: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    current_version_id: Option<String>,
+    app_config_schema: Value,
+    default_app_config: Value,
+    variable_schema: Value,
+    dependency_manifest: Value,
+    capability_manifest: Value,
+    created_at: String,
+    updated_at: String,
+}
+
 enum AdminAppCommandBuildError {
     BadRequest(String),
     System(DomainError),
@@ -255,6 +412,21 @@ impl From<ListAppsQuery> for ListAppsRequest {
             status: value.status,
             market_status: value.market_status,
             app_type: value.app_type,
+            category_id: value.category_id,
+            page_no: value.page,
+            page_size: value.page_size,
+        }
+    }
+}
+
+impl From<ListTemplatesQuery> for ListTemplatesRequest {
+    fn from(value: ListTemplatesQuery) -> Self {
+        Self {
+            keyword: value.q,
+            publish_status: value.publish_status,
+            template_type: value.template_type,
+            runtime: value.runtime,
+            category_id: value.category_id,
             page_no: value.page,
             page_size: value.page_size,
         }
@@ -289,6 +461,32 @@ pub fn admin_app_router_with_store_and_json_body_limit(
                 .delete(delete_category),
         )
         .route("/backend/v3/api/platform/apps/list", post(fetch_apps))
+        .route(
+            "/backend/v3/api/platform/apps/templates/list",
+            post(fetch_templates),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/templates",
+            get(fetch_templates_from_query).post(create_template),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/templates/{template_id}",
+            get(fetch_template)
+                .put(update_template)
+                .delete(delete_template),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/templates/{template_id}/publish",
+            post(publish_template),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/templates/{template_id}/offline",
+            post(offline_template),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/templates/{template_id}/unpublish",
+            post(offline_template),
+        )
         .route(
             "/backend/v3/api/platform/apps",
             get(fetch_apps_from_query).post(create_app),
@@ -334,7 +532,7 @@ async fn fetch_categories(State(state): State<AdminAppState>, headers: HeaderMap
         .list_categories(ListAdminAppCategoriesQuery { subject })
         .await
     {
-        Ok(items) => Json(PlusApiResult::success(AdminAppListResponse {
+        Ok(items) => Json(PlusApiResult::success(AdminAppItemsResponse {
             items: items.into_iter().map(to_category_response).collect(),
         }))
         .into_response(),
@@ -456,10 +654,7 @@ async fn fetch_apps(
     };
 
     match state.store.list_apps(query).await {
-        Ok(items) => Json(PlusApiResult::success(AdminAppListResponse {
-            items: items.into_iter().map(to_app_response).collect(),
-        }))
-        .into_response(),
+        Ok(page) => Json(PlusApiResult::success(to_app_list_response(page))).into_response(),
         Err(error) => admin_app_system_response("app read model is unavailable", error),
     }
 }
@@ -479,10 +674,7 @@ async fn fetch_apps_from_query(
     };
 
     match state.store.list_apps(query).await {
-        Ok(items) => Json(PlusApiResult::success(AdminAppListResponse {
-            items: items.into_iter().map(to_app_response).collect(),
-        }))
-        .into_response(),
+        Ok(page) => Json(PlusApiResult::success(to_app_list_response(page))).into_response(),
         Err(error) => admin_app_system_response("app read model is unavailable", error),
     }
 }
@@ -515,6 +707,85 @@ async fn fetch_app(
     }
 }
 
+async fn fetch_templates(
+    State(state): State<AdminAppState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_optional_json_body::<ListTemplatesRequest>(
+        &body,
+        "app template list",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let query = match normalize_template_list_query(subject, request) {
+        Ok(query) => query,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.store.list_app_templates(query).await {
+        Ok(page) => Json(PlusApiResult::success(to_template_list_response(page))).into_response(),
+        Err(error) => admin_app_system_response("app template read model is unavailable", error),
+    }
+}
+
+async fn fetch_templates_from_query(
+    State(state): State<AdminAppState>,
+    headers: HeaderMap,
+    Query(query): Query<ListTemplatesQuery>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let query = match normalize_template_list_query(subject, query.into()) {
+        Ok(query) => query,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.store.list_app_templates(query).await {
+        Ok(page) => Json(PlusApiResult::success(to_template_list_response(page))).into_response(),
+        Err(error) => admin_app_system_response("app template read model is unavailable", error),
+    }
+}
+
+async fn fetch_template(
+    State(state): State<AdminAppState>,
+    Path(template_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let template_id = match normalize_id(&template_id, "templateId") {
+        Ok(template_id) => template_id,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state
+        .store
+        .get_app_template(GetAdminAppTemplateQuery {
+            subject,
+            template_id,
+        })
+        .await
+    {
+        Ok(Some(item)) => Json(PlusApiResult::success(AdminAppItemEnvelope {
+            item: to_template_response(item),
+        }))
+        .into_response(),
+        Ok(None) => not_found_response("app template was not found"),
+        Err(error) => admin_app_system_response("app template read model is unavailable", error),
+    }
+}
+
 async fn create_app(
     State(state): State<AdminAppState>,
     headers: HeaderMap,
@@ -540,6 +811,37 @@ async fn create_app(
         .into_response(),
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => admin_app_system_response("app command store is unavailable", error),
+    }
+}
+
+async fn create_template(
+    State(state): State<AdminAppState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<CreateTemplateRequest>(
+        &body,
+        "app template",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_create_template_command(state.clone(), &headers, subject, request) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.create_app_template(command).await {
+        Ok(item) => Json(PlusApiResult::success(AdminAppItemEnvelope {
+            item: to_template_response(item),
+        }))
+        .into_response(),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => admin_app_system_response("app template command store is unavailable", error),
     }
 }
 
@@ -571,6 +873,41 @@ async fn update_app(
         Ok(None) => not_found_response("app was not found"),
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => admin_app_system_response("app update store is unavailable", error),
+    }
+}
+
+async fn update_template(
+    State(state): State<AdminAppState>,
+    Path(template_id): Path<String>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<UpdateTemplateRequest>(
+        &body,
+        "app template update",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_update_template_command(state.clone(), &headers, subject, template_id, request)
+        {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+    match state.store.update_app_template(command).await {
+        Ok(Some(item)) => Json(PlusApiResult::success(AdminAppItemEnvelope {
+            item: to_template_response(item),
+        }))
+        .into_response(),
+        Ok(None) => not_found_response("app template was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => admin_app_system_response("app template update store is unavailable", error),
     }
 }
 
@@ -606,6 +943,53 @@ async fn offline_app(
     set_app_status_response(state, headers, app_id, None, Some("OFFLINE")).await
 }
 
+async fn publish_template(
+    State(state): State<AdminAppState>,
+    Path(template_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    set_template_publish_status_response(state, headers, template_id, "PUBLISHED").await
+}
+
+async fn offline_template(
+    State(state): State<AdminAppState>,
+    Path(template_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    set_template_publish_status_response(state, headers, template_id, "OFFLINE").await
+}
+
+async fn set_template_publish_status_response(
+    state: AdminAppState,
+    headers: HeaderMap,
+    template_id: String,
+    publish_status: &str,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let command = match build_set_template_publish_status_command(
+        state.clone(),
+        &headers,
+        subject,
+        template_id,
+        publish_status,
+    ) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.set_app_template_publish_status(command).await {
+        Ok(Some(item)) => Json(PlusApiResult::success(AdminAppItemEnvelope {
+            item: to_template_response(item),
+        }))
+        .into_response(),
+        Ok(None) => not_found_response("app template was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => admin_app_system_response("app template status store is unavailable", error),
+    }
+}
+
 async fn set_app_status_response(
     state: AdminAppState,
     headers: HeaderMap,
@@ -636,6 +1020,30 @@ async fn set_app_status_response(
         Ok(None) => not_found_response("app was not found"),
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => admin_app_system_response("app status store is unavailable", error),
+    }
+}
+
+async fn delete_template(
+    State(state): State<AdminAppState>,
+    Path(template_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let command = match build_delete_template_command(state.clone(), &headers, subject, template_id)
+    {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.delete_app_template(command).await {
+        Ok(deleted) => Json(PlusApiResult::success(AdminAppTemplateDeleteResponse {
+            deleted,
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(&error.to_string()),
+        Err(error) => admin_app_system_response("app template delete store is unavailable", error),
     }
 }
 
@@ -734,6 +1142,8 @@ fn normalize_list_query(
             "appType",
             MAX_APP_TYPE_LEN,
         )?,
+        category_id: normalize_optional_positive(request.category_id, "categoryId")
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
         page_no: normalize_optional_positive(request.page_no, "pageNo")
             .map_err(AdminAppCommandBuildError::BadRequest)?,
         page_size: normalize_optional_page_size(request.page_size)
@@ -741,9 +1151,63 @@ fn normalize_list_query(
     })
 }
 
+fn normalize_template_list_query(
+    subject: AdminAppSubject,
+    request: ListTemplatesRequest,
+) -> Result<ListAdminAppTemplatesQuery, AdminAppCommandBuildError> {
+    Ok(ListAdminAppTemplatesQuery {
+        subject,
+        keyword: normalize_optional_text(request.keyword.as_deref(), "keyword", 128)?,
+        publish_status: request
+            .publish_status
+            .as_deref()
+            .map(normalize_template_publish_status)
+            .transpose()
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+        template_type: normalize_optional_code(
+            request.template_type.as_deref(),
+            "templateType",
+            MAX_TEMPLATE_KIND_LEN,
+        )?,
+        runtime: normalize_optional_code(
+            request.runtime.as_deref(),
+            "runtime",
+            MAX_TEMPLATE_KIND_LEN,
+        )?,
+        category_id: normalize_optional_positive(request.category_id, "categoryId")
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+        page_no: normalize_optional_positive(request.page_no, "pageNo")
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+        page_size: normalize_optional_page_size(request.page_size)
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+    })
+}
+
+fn to_app_list_response(page: AdminAppPage) -> AdminAppListResponse<AdminAppItemResponse> {
+    AdminAppListResponse {
+        items: page.items.into_iter().map(to_app_response).collect(),
+        total: page.total,
+        page: page.page,
+        page_size: page.page_size,
+        has_next_page: page.has_next_page,
+    }
+}
+
+fn to_template_list_response(
+    page: AdminAppTemplatePage,
+) -> AdminAppListResponse<AdminAppTemplateItemResponse> {
+    AdminAppListResponse {
+        items: page.items.into_iter().map(to_template_response).collect(),
+        total: page.total,
+        page: page.page,
+        page_size: page.page_size,
+        has_next_page: page.has_next_page,
+    }
+}
+
 fn build_create_app_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     request: CreateAppRequest,
 ) -> Result<CreateAdminAppCommand, AdminAppCommandBuildError> {
@@ -832,14 +1296,125 @@ fn build_create_app_command(
         )?,
         store_url: normalize_optional_url(request.store_url.as_deref(), "storeUrl")?,
         download_url: normalize_optional_url(request.download_url.as_deref(), "downloadUrl")?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_create_template_command(
+    state: AdminAppState,
+    _headers: &HeaderMap,
+    subject: AdminAppSubject,
+    request: CreateTemplateRequest,
+) -> Result<CreateAdminAppTemplateCommand, AdminAppCommandBuildError> {
+    let template_code = normalize_code_required(
+        request.template_code.as_deref(),
+        "templateCode",
+        MAX_TEMPLATE_CODE_LEN,
+    )?;
+    let template_no = request
+        .template_no
+        .as_deref()
+        .map(|value| normalize_code(value, "templateNo", MAX_TEMPLATE_NO_LEN))
+        .transpose()?
+        .unwrap_or_else(|| template_code.clone());
+    Ok(CreateAdminAppTemplateCommand {
+        subject,
+        template_uuid: generate_entity_uuid(&state)?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        template_no,
+        template_code,
+        template_name: normalize_required_text(
+            request.template_name.as_deref(),
+            "templateName",
+            MAX_TEMPLATE_NAME_LEN,
+        )?,
+        description: normalize_optional_text(
+            request.description.as_deref(),
+            "description",
+            MAX_DESCRIPTION_LEN,
+        )?,
+        category_id: request
+            .category_id
+            .as_ref()
+            .map(|value| normalize_value_id(value, "categoryId"))
+            .transpose()?,
+        category_code: normalize_optional_code(
+            request.category_code.as_deref(),
+            "categoryCode",
+            MAX_CATEGORY_CODE_LEN,
+        )?,
+        template_type: normalize_optional_code(
+            request.template_type.as_deref(),
+            "templateType",
+            MAX_TEMPLATE_KIND_LEN,
+        )?,
+        runtime: normalize_optional_code(
+            request.runtime.as_deref(),
+            "runtime",
+            MAX_TEMPLATE_KIND_LEN,
+        )?,
+        framework: normalize_optional_code(
+            request.framework.as_deref(),
+            "framework",
+            MAX_TEMPLATE_KIND_LEN,
+        )?,
+        language: normalize_optional_code(
+            request.language.as_deref(),
+            "language",
+            MAX_TEMPLATE_KIND_LEN,
+        )?,
+        icon_url: normalize_optional_url(request.icon_url.as_deref(), "iconUrl")?,
+        cover_url: normalize_optional_url(request.cover_url.as_deref(), "coverUrl")?,
+        visibility: request
+            .visibility
+            .as_deref()
+            .map(normalize_template_visibility)
+            .transpose()
+            .map_err(AdminAppCommandBuildError::BadRequest)?
+            .unwrap_or_else(|| "TENANT".to_owned()),
+        publish_status: request
+            .publish_status
+            .as_deref()
+            .map(normalize_template_publish_status)
+            .transpose()
+            .map_err(AdminAppCommandBuildError::BadRequest)?
+            .unwrap_or_else(|| "DRAFT".to_owned()),
+        featured: request.featured.unwrap_or(false),
+        sort_weight: request.sort_weight.unwrap_or_default(),
+        source_app_id: request
+            .source_app_id
+            .as_ref()
+            .map(|value| normalize_value_id(value, "sourceAppId"))
+            .transpose()?,
+        git_repo_url: normalize_optional_git_repo_url(
+            request.git_repo_url.as_deref(),
+            "gitRepoUrl",
+        )?,
+        git_ref: normalize_optional_git_ref(request.git_ref.as_deref(), "gitRef")?,
+        git_sub_path: normalize_optional_git_sub_path(
+            request.git_sub_path.as_deref(),
+            "gitSubPath",
+        )?,
+        app_config_schema: normalize_object_value(request.app_config_schema, "appConfigSchema")?,
+        default_app_config: normalize_object_value(request.default_app_config, "defaultAppConfig")?,
+        variable_schema: normalize_object_value(request.variable_schema, "variableSchema")?,
+        dependency_manifest: normalize_array_value(
+            request.dependency_manifest,
+            "dependencyManifest",
+        )?,
+        capability_manifest: normalize_array_value(
+            request.capability_manifest,
+            "capabilityManifest",
+        )?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_category_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     request: CreateCategoryRequest,
 ) -> Result<CreateAdminAppCategoryCommand, AdminAppCommandBuildError> {
@@ -865,14 +1440,14 @@ fn build_create_category_command(
         visible: request.visible.unwrap_or(true),
         status: normalize_category_status(request.status.unwrap_or(1))?,
         category_type: APP_STORE_CATEGORY_TYPE,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_app_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     app_id: String,
     request: UpdateAppRequest,
@@ -960,14 +1535,140 @@ fn build_update_app_command(
             .as_ref()
             .map(|value| normalize_nullable_url_value(value, "downloadUrl"))
             .transpose()?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_template_command(
+    state: AdminAppState,
+    _headers: &HeaderMap,
+    subject: AdminAppSubject,
+    template_id: String,
+    request: UpdateTemplateRequest,
+) -> Result<UpdateAdminAppTemplateCommand, AdminAppCommandBuildError> {
+    Ok(UpdateAdminAppTemplateCommand {
+        subject,
+        template_id: normalize_id(&template_id, "templateId")?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        template_name: request
+            .template_name
+            .as_deref()
+            .map(|value| {
+                normalize_required_text(Some(value), "templateName", MAX_TEMPLATE_NAME_LEN)
+            })
+            .transpose()?,
+        description: request
+            .description
+            .as_ref()
+            .map(|value| normalize_nullable_text_value(value, "description", MAX_DESCRIPTION_LEN))
+            .transpose()?,
+        category_id: request
+            .category_id
+            .as_ref()
+            .map(|value| normalize_nullable_value_id(value, "categoryId"))
+            .transpose()?,
+        category_code: request
+            .category_code
+            .as_ref()
+            .map(|value| {
+                normalize_nullable_code_value(value, "categoryCode", MAX_CATEGORY_CODE_LEN)
+            })
+            .transpose()?,
+        template_type: request
+            .template_type
+            .as_ref()
+            .map(|value| {
+                normalize_nullable_code_value(value, "templateType", MAX_TEMPLATE_KIND_LEN)
+            })
+            .transpose()?,
+        runtime: request
+            .runtime
+            .as_ref()
+            .map(|value| normalize_nullable_code_value(value, "runtime", MAX_TEMPLATE_KIND_LEN))
+            .transpose()?,
+        framework: request
+            .framework
+            .as_ref()
+            .map(|value| normalize_nullable_code_value(value, "framework", MAX_TEMPLATE_KIND_LEN))
+            .transpose()?,
+        language: request
+            .language
+            .as_ref()
+            .map(|value| normalize_nullable_code_value(value, "language", MAX_TEMPLATE_KIND_LEN))
+            .transpose()?,
+        icon_url: request
+            .icon_url
+            .as_ref()
+            .map(|value| normalize_nullable_url_value(value, "iconUrl"))
+            .transpose()?,
+        cover_url: request
+            .cover_url
+            .as_ref()
+            .map(|value| normalize_nullable_url_value(value, "coverUrl"))
+            .transpose()?,
+        visibility: request
+            .visibility
+            .as_deref()
+            .map(normalize_template_visibility)
+            .transpose()
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+        publish_status: request
+            .publish_status
+            .as_deref()
+            .map(normalize_template_publish_status)
+            .transpose()
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+        featured: request.featured,
+        sort_weight: request.sort_weight,
+        source_app_id: request
+            .source_app_id
+            .as_ref()
+            .map(|value| normalize_nullable_value_id(value, "sourceAppId"))
+            .transpose()?,
+        git_repo_url: request
+            .git_repo_url
+            .as_ref()
+            .map(|value| normalize_nullable_git_repo_url_value(value, "gitRepoUrl"))
+            .transpose()?,
+        git_ref: request
+            .git_ref
+            .as_ref()
+            .map(|value| normalize_nullable_git_ref_value(value, "gitRef"))
+            .transpose()?,
+        git_sub_path: request
+            .git_sub_path
+            .as_ref()
+            .map(|value| normalize_nullable_git_sub_path_value(value, "gitSubPath"))
+            .transpose()?,
+        app_config_schema: request
+            .app_config_schema
+            .map(|value| normalize_object_value(Some(value), "appConfigSchema"))
+            .transpose()?,
+        default_app_config: request
+            .default_app_config
+            .map(|value| normalize_object_value(Some(value), "defaultAppConfig"))
+            .transpose()?,
+        variable_schema: request
+            .variable_schema
+            .map(|value| normalize_object_value(Some(value), "variableSchema"))
+            .transpose()?,
+        dependency_manifest: request
+            .dependency_manifest
+            .map(|value| normalize_array_value(Some(value), "dependencyManifest"))
+            .transpose()?,
+        capability_manifest: request
+            .capability_manifest
+            .map(|value| normalize_array_value(Some(value), "capabilityManifest"))
+            .transpose()?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_category_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     category_id: String,
     request: UpdateCategoryRequest,
@@ -1016,14 +1717,14 @@ fn build_update_category_command(
             .transpose()?,
         visible: request.visible,
         status: request.status.map(normalize_category_status).transpose()?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_set_status_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     app_id: String,
     status: Option<&str>,
@@ -1035,14 +1736,32 @@ fn build_set_status_command(
         status: status.map(str::to_owned),
         market_status: market_status.map(str::to_owned),
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_set_template_publish_status_command(
+    state: AdminAppState,
+    _headers: &HeaderMap,
+    subject: AdminAppSubject,
+    template_id: String,
+    publish_status: &str,
+) -> Result<SetAdminAppTemplatePublishStatusCommand, AdminAppCommandBuildError> {
+    Ok(SetAdminAppTemplatePublishStatusCommand {
+        subject,
+        template_id: normalize_id(&template_id, "templateId")?,
+        publish_status: normalize_template_publish_status(publish_status)
+            .map_err(AdminAppCommandBuildError::BadRequest)?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_app_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     app_id: String,
 ) -> Result<DeleteAdminAppCommand, AdminAppCommandBuildError> {
@@ -1050,14 +1769,29 @@ fn build_delete_app_command(
         subject,
         app_id: normalize_id(&app_id, "appId")?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_delete_template_command(
+    state: AdminAppState,
+    _headers: &HeaderMap,
+    subject: AdminAppSubject,
+    template_id: String,
+) -> Result<DeleteAdminAppTemplateCommand, AdminAppCommandBuildError> {
+    Ok(DeleteAdminAppTemplateCommand {
+        subject,
+        template_id: normalize_id(&template_id, "templateId")?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_category_command(
     state: AdminAppState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminAppSubject,
     category_id: String,
 ) -> Result<DeleteAdminAppCategoryCommand, AdminAppCommandBuildError> {
@@ -1065,7 +1799,7 @@ fn build_delete_category_command(
         subject,
         category_id: normalize_id(&category_id, "categoryId")?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -1113,6 +1847,41 @@ fn to_app_response(item: AdminAppItem) -> AdminAppItemResponse {
         bundle_id: item.bundle_id,
         store_url: item.store_url,
         download_url: item.download_url,
+        created_at: item.created_at,
+        updated_at: item.updated_at,
+    }
+}
+
+fn to_template_response(item: AdminAppTemplateItem) -> AdminAppTemplateItemResponse {
+    AdminAppTemplateItemResponse {
+        id: item.id.to_string(),
+        uuid: item.uuid,
+        template_no: item.template_no,
+        template_code: item.template_code,
+        template_name: item.template_name,
+        description: item.description,
+        category_id: item.category_id.map(|value| value.to_string()),
+        category_code: item.category_code,
+        template_type: item.template_type,
+        runtime: item.runtime,
+        framework: item.framework,
+        language: item.language,
+        icon_url: item.icon_url,
+        cover_url: item.cover_url,
+        visibility: item.visibility,
+        publish_status: item.publish_status,
+        featured: item.featured,
+        sort_weight: item.sort_weight,
+        source_app_id: item.source_app_id.map(|value| value.to_string()),
+        git_repo_url: item.git_repo_url,
+        git_ref: item.git_ref,
+        git_sub_path: item.git_sub_path,
+        current_version_id: item.current_version_id.map(|value| value.to_string()),
+        app_config_schema: item.app_config_schema,
+        default_app_config: item.default_app_config,
+        variable_schema: item.variable_schema,
+        dependency_manifest: item.dependency_manifest,
+        capability_manifest: item.capability_manifest,
         created_at: item.created_at,
         updated_at: item.updated_at,
     }
@@ -1230,6 +1999,152 @@ fn normalize_nullable_url_value(
     normalize_nullable_text_value(value, field, MAX_URL_LEN)
 }
 
+fn normalize_optional_git_repo_url(
+    value: Option<&str>,
+    field: &str,
+) -> Result<Option<String>, AdminAppCommandBuildError> {
+    let Some(value) = normalize_optional_text(value, field, MAX_TEMPLATE_GIT_REPO_URL_LEN)? else {
+        return Ok(None);
+    };
+    validate_git_repo_url(&value, field)?;
+    Ok(Some(value))
+}
+
+fn normalize_nullable_git_repo_url_value(
+    value: &Value,
+    field: &str,
+) -> Result<Option<String>, AdminAppCommandBuildError> {
+    if value.is_null() {
+        return Ok(None);
+    }
+    let Some(value) = value.as_str() else {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a string or null"
+        )));
+    };
+    normalize_optional_git_repo_url(Some(value), field)
+}
+
+fn normalize_optional_git_ref(
+    value: Option<&str>,
+    field: &str,
+) -> Result<Option<String>, AdminAppCommandBuildError> {
+    let Some(value) = normalize_optional_text(value, field, MAX_TEMPLATE_GIT_REF_LEN)? else {
+        return Ok(None);
+    };
+    validate_git_ref(&value, field)?;
+    Ok(Some(value))
+}
+
+fn normalize_nullable_git_ref_value(
+    value: &Value,
+    field: &str,
+) -> Result<Option<String>, AdminAppCommandBuildError> {
+    if value.is_null() {
+        return Ok(None);
+    }
+    let Some(value) = value.as_str() else {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a string or null"
+        )));
+    };
+    normalize_optional_git_ref(Some(value), field)
+}
+
+fn normalize_optional_git_sub_path(
+    value: Option<&str>,
+    field: &str,
+) -> Result<Option<String>, AdminAppCommandBuildError> {
+    let Some(value) = normalize_optional_text(value, field, MAX_TEMPLATE_GIT_SUB_PATH_LEN)? else {
+        return Ok(None);
+    };
+    if value == "." {
+        return Ok(None);
+    }
+    validate_git_sub_path(&value, field)?;
+    Ok(Some(value))
+}
+
+fn normalize_nullable_git_sub_path_value(
+    value: &Value,
+    field: &str,
+) -> Result<Option<String>, AdminAppCommandBuildError> {
+    if value.is_null() {
+        return Ok(None);
+    }
+    let Some(value) = value.as_str() else {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a string or null"
+        )));
+    };
+    normalize_optional_git_sub_path(Some(value), field)
+}
+
+fn validate_git_repo_url(value: &str, field: &str) -> Result<(), AdminAppCommandBuildError> {
+    if value
+        .chars()
+        .any(|ch| ch.is_control() || ch.is_whitespace())
+    {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must not contain whitespace or control characters"
+        )));
+    }
+    let is_supported_url = value.starts_with("https://")
+        || value.starts_with("http://")
+        || value.starts_with("ssh://")
+        || value.starts_with("git://");
+    let is_scp_like = value.starts_with("git@")
+        && value
+            .split_once(':')
+            .is_some_and(|(host, path)| host.len() > 4 && !path.is_empty());
+    if !is_supported_url && !is_scp_like {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be an http(s), ssh, git, or git@host:path repository URL"
+        )));
+    }
+    Ok(())
+}
+
+fn validate_git_ref(value: &str, field: &str) -> Result<(), AdminAppCommandBuildError> {
+    if value
+        .chars()
+        .any(|ch| ch.is_control() || ch.is_whitespace())
+    {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must not contain whitespace or control characters"
+        )));
+    }
+    if value.contains('\\') || value.contains("..") || value.ends_with('/') || value.ends_with('.')
+    {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a valid branch, tag, or commit reference"
+        )));
+    }
+    Ok(())
+}
+
+fn validate_git_sub_path(value: &str, field: &str) -> Result<(), AdminAppCommandBuildError> {
+    if value.starts_with('/') || value.contains('\\') {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a relative repository path"
+        )));
+    }
+    if value.chars().any(|ch| ch.is_control()) {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must not contain control characters"
+        )));
+    }
+    if value
+        .split('/')
+        .any(|segment| segment.is_empty() || segment == "." || segment == "..")
+    {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must not contain empty, dot, or parent path segments"
+        )));
+    }
+    Ok(())
+}
+
 fn normalize_optional_code(
     value: Option<&str>,
     field: &str,
@@ -1238,6 +2153,14 @@ fn normalize_optional_code(
     value
         .map(|value| normalize_code(value, field, max_len))
         .transpose()
+}
+
+fn normalize_code_required(
+    value: Option<&str>,
+    field: &str,
+    max_len: usize,
+) -> Result<String, AdminAppCommandBuildError> {
+    normalize_code(value.unwrap_or_default(), field, max_len)
 }
 
 fn normalize_nullable_code_value(
@@ -1256,6 +2179,32 @@ fn normalize_nullable_code_value(
     normalize_code(value, field, max_len).map(Some)
 }
 
+fn normalize_object_value(
+    value: Option<Value>,
+    field: &str,
+) -> Result<Value, AdminAppCommandBuildError> {
+    match value {
+        Some(value) if value.is_object() => Ok(value),
+        Some(_) => Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a JSON object"
+        ))),
+        None => Ok(Value::Object(Default::default())),
+    }
+}
+
+fn normalize_array_value(
+    value: Option<Value>,
+    field: &str,
+) -> Result<Value, AdminAppCommandBuildError> {
+    match value {
+        Some(value) if value.is_array() => Ok(value),
+        Some(_) => Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must be a JSON array"
+        ))),
+        None => Ok(Value::Array(Vec::new())),
+    }
+}
+
 fn normalize_code(
     value: &str,
     field: &str,
@@ -1271,6 +2220,24 @@ fn normalize_code(
         )));
     }
     Ok(value)
+}
+
+fn normalize_template_visibility(value: &str) -> Result<String, String> {
+    match value.trim() {
+        "PRIVATE" => Ok("PRIVATE".to_owned()),
+        "TENANT" => Ok("TENANT".to_owned()),
+        "PUBLIC" => Ok("PUBLIC".to_owned()),
+        _ => Err("visibility must be PRIVATE, TENANT, or PUBLIC".to_owned()),
+    }
+}
+
+fn normalize_template_publish_status(value: &str) -> Result<String, String> {
+    match value.trim() {
+        "DRAFT" => Ok("DRAFT".to_owned()),
+        "PUBLISHED" => Ok("PUBLISHED".to_owned()),
+        "OFFLINE" => Ok("OFFLINE".to_owned()),
+        _ => Err("publishStatus must be DRAFT, PUBLISHED, or OFFLINE".to_owned()),
+    }
 }
 
 fn normalize_app_key(value: &str) -> Result<String, AdminAppCommandBuildError> {
@@ -1396,24 +2363,13 @@ fn generate_entity_uuid(state: &AdminAppState) -> Result<String, AdminAppCommand
         .map_err(AdminAppCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminAppState,
-) -> Result<String, AdminAppCommandBuildError> {
-    let generated = || generate_entity_uuid(state);
-    let Some(raw) = headers.get(REQUEST_ID_HEADER) else {
-        return generated();
-    };
-    let value = raw.to_str().unwrap_or_default().trim();
-    if value.is_empty() {
-        return generated();
+fn request_id_error(error: RequestIdError) -> AdminAppCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AdminAppCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AdminAppCommandBuildError::System(DomainError::new(message))
+        }
     }
-    if value.chars().count() > MAX_REQUEST_ID_LEN {
-        return Err(AdminAppCommandBuildError::BadRequest(format!(
-            "{REQUEST_ID_HEADER} must be at most {MAX_REQUEST_ID_LEN} characters"
-        )));
-    }
-    Ok(value.to_owned())
 }
 
 fn current_timestamp_string() -> String {
@@ -1485,6 +2441,7 @@ mod tests {
             status: Some("ACTIVE".to_owned()),
             market_status: Some("PUBLISHED".to_owned()),
             app_type: Some("console".to_owned()),
+            category_id: Some(2001),
             page: Some(2),
             page_size: Some(50),
         }
@@ -1496,6 +2453,7 @@ mod tests {
         assert_eq!(Some("ACTIVE".to_owned()), query.status);
         assert_eq!(Some("PUBLISHED".to_owned()), query.market_status);
         assert_eq!(Some("console".to_owned()), query.app_type);
+        assert_eq!(Some(2001), query.category_id);
         assert_eq!(Some(2), query.page_no);
         assert_eq!(Some(50), query.page_size);
     }

@@ -92,7 +92,7 @@ test("billing capability is split into wallet, recharge, and checkout business p
   }
 });
 
-test("wallet redeem code uses the generated app SDK coupon redemption path", async () => {
+test("wallet redeem code uses the generated app SDK promotion code redemption path", async () => {
   await withBillingSdkResponse(
     { code: "2000", msg: "Redeemed", data: { amount: "12.5", message: "Redeemed" } },
     async (captured) => {
@@ -104,11 +104,13 @@ test("wallet redeem code uses the generated app SDK coupon redemption path", asy
         success: true,
       });
       assert.equal(captured.length, 1);
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/coupons/redemptions");
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/promotions/codes/redemptions");
       assert.equal(captured[0]?.method, "POST");
-      assert.match(captured[0]?.body ?? "", /coupon-redemption/);
-      assert.match(captured[0]?.body ?? "", /console-wallet/);
-      assert.match(captured[0]?.body ?? "", /GIFT-2026/);
+      assert.match(captured[0]?.body ?? "", /promotion-code-redemption/);
+      const body = JSON.parse(captured[0]?.body ?? "{}");
+      assert.equal(body.code, "GIFT-2026");
+      assert.equal(body.source, "console-wallet");
+      assert.equal(body.metadata, undefined);
     },
   );
 });
@@ -154,19 +156,26 @@ test("wallet redeem code fails closed when app SDK returns invalid optional amou
   );
 });
 
-test("wallet recharge history uses the generated app SDK wallet ledger path", async () => {
+test("wallet recharge history uses the generated app SDK billing history path", async () => {
   await withBillingSdkResponse(
     {
       code: "2000",
       data: {
         items: [
           {
-            id: "ledger-1",
-            orderNo: "recharge-order-1",
-            method: "wechat",
+            id: "billing-history-1",
+            historyNo: "BH-recharge-1",
+            type: "recharge",
+            direction: "credit",
+            assetType: "points",
+            title: "Recharge",
+            referenceNo: "RC1",
+            relatedOrderNo: "RC1",
+            paymentMethod: "wechat",
             amount: "99.9",
-            date: "2026-05-21T00:00:00Z",
-            status: "posted",
+            pointsDelta: 999,
+            occurredAt: "2026-05-21T00:00:00Z",
+            status: "success",
           },
         ],
       },
@@ -178,33 +187,34 @@ test("wallet recharge history uses the generated app SDK wallet ledger path", as
         {
           amount: "99.90",
           date: "2026-05-21T00:00:00Z",
-          id: "ledger-1",
+          id: "billing-history-1",
           method: "wechat",
-          orderNo: "recharge-order-1",
+          orderNo: "RC1",
           status: "success",
         },
       ]);
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/wallet/ledger_entries");
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/billing/history");
       assert.equal(captured[0]?.method, "GET");
       assert.match(captured[0]?.url ?? "", /page=1/);
       assert.match(captured[0]?.url ?? "", /page_size=100/);
-      assert.match(captured[0]?.url ?? "", /status=posted/);
+      assert.match(captured[0]?.url ?? "", /type=recharge/);
     },
   );
 });
 
-test("wallet recharge history fails closed when ledger rows omit stable ids", async () => {
+test("wallet recharge history fails closed when billing history rows omit stable ids", async () => {
   await withBillingSdkResponse(
     {
       code: "2000",
       data: {
         items: [
           {
-            orderNo: "recharge-order-1",
-            method: "wechat",
+            historyNo: "BH-recharge-1",
+            type: "recharge",
+            paymentMethod: "wechat",
             amount: "99.90",
-            date: "2026-05-21T00:00:00Z",
-            status: "posted",
+            occurredAt: "2026-05-21T00:00:00Z",
+            status: "success",
           },
         ],
       },
@@ -213,6 +223,32 @@ test("wallet recharge history fails closed when ledger rows omit stable ids", as
       await assert.rejects(
         () => WalletService.fetchRechargeHistory(),
         /Recharge history id is required/,
+      );
+    },
+  );
+});
+
+test("wallet redeem history fails closed when billing history rows omit stable ids", async () => {
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            historyNo: "BH-redeem-1",
+            type: "redeem",
+            referenceNo: "GIFT-2026",
+            amount: "12.50",
+            occurredAt: "2026-05-21T00:00:00Z",
+            status: "redeemed",
+          },
+        ],
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => WalletService.fetchRedeemHistory(),
+        /Redeem history id is required/,
       );
     },
   );
@@ -250,9 +286,14 @@ test("recharge package list and order creation use standard recharge paths", asy
       assert.deepEqual(result, { orderNo: "recharge-order-1", success: true });
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/orders");
       assert.equal(captured[0]?.method, "POST");
-      assert.match(captured[0]?.body ?? "", /console-recharge/);
-      assert.match(captured[0]?.body ?? "", /wechat/);
-      assert.match(captured[0]?.body ?? "", /pkg-100/);
+      const body = JSON.parse(captured[0]?.body ?? "{}");
+      assert.equal(body.clientRequestNo.startsWith("recharge-"), true);
+      assert.deepEqual(body.metadata, {
+        amount: "99.90",
+        packageId: "pkg-100",
+        paymentMethod: "wechat",
+        source: "console-recharge",
+      });
     },
   );
 });
@@ -261,19 +302,46 @@ test("console recharge page matches the product recharge reference layout", () =
   const rechargeViewSource = readPortalFile(
     "./packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx",
   );
+  const walletViewSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-wallet/src/WalletView.tsx",
+  );
+  const rechargeServiceSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+  );
+  const walletServiceSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-wallet/src/walletService.ts",
+  );
 
   assert.match(rechargeViewSource, /data-console-recharge-reference-panel/);
+  assert.match(rechargeViewSource, /data-console-recharge-options="server-configured"/);
+  assert.match(rechargeViewSource, /export function RechargePackageSelector/);
+  assert.match(rechargeViewSource, /RechargeRecordsTabs/);
+  assert.match(walletViewSource, /RechargeRecordsTabs/);
+  assert.doesNotMatch(walletViewSource, /RedeemHistoryTable/);
+  assert.doesNotMatch(walletViewSource, /BusinessStateTableRow/);
+  assert.doesNotMatch(walletViewSource, /redeemHistory/);
+  assert.doesNotMatch(walletViewSource, /loadHistory/);
+  assert.match(rechargeServiceSource, /appBillingHistoryList/);
+  assert.match(walletServiceSource, /RechargeService\.fetchBillingHistory/);
+  assert.match(walletServiceSource, /appPromotionCodeRedemptionsCreate/);
+  assert.doesNotMatch(walletServiceSource, /commerce\.coupons/);
+  assert.doesNotMatch(walletServiceSource, /appCoupons/);
+  assert.doesNotMatch(walletServiceSource, /appWalletLedgerEntriesList\(\{ page: 1, pageSize: 100/);
+  assert.doesNotMatch(walletServiceSource, /commerce\.recharges\.orders\.list/);
   assert.match(rechargeViewSource, /console\.recharge\.tabs\.redeem/);
   assert.match(rechargeViewSource, /console\.recharge\.tabs\.online/);
+  assert.match(rechargeViewSource, /console\.recharge\.records\.tabs\.all/);
+  assert.match(rechargeViewSource, /console\.recharge\.records\.tabs\.redeem/);
+  assert.match(rechargeViewSource, /console\.recharge\.records\.tabs\.recharge/);
   assert.match(rechargeViewSource, /选择充值金额 \(USD\)/);
   assert.match(rechargeViewSource, /自定义金额/);
   assert.match(rechargeViewSource, /获得积分:/);
   assert.match(rechargeViewSource, /实际支付金额:/);
   assert.match(rechargeViewSource, /去支付/);
 
-  for (const amount of ["10", "50", "100", "200", "500", "1000", "2000", "5000"]) {
-    assert.match(rechargeViewSource, new RegExp(`amount: '${amount}\\.00'`));
-  }
+  assert.match(rechargeServiceSource, /RechargeService\.fetchPackages/);
+  assert.doesNotMatch(rechargeViewSource, /referenceRechargeOptions/);
+  assert.doesNotMatch(rechargeViewSource, /return referenceRechargeOptions/);
 
   for (const retiredLayoutToken of [
     "AccountService",
@@ -285,6 +353,23 @@ test("console recharge page matches the product recharge reference layout", () =
   ]) {
     assert.doesNotMatch(rechargeViewSource, new RegExp(escapeRegExp(retiredLayoutToken)));
   }
+});
+
+test("vip points purchase uses the shared server configured recharge options", () => {
+  const rechargeViewSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx",
+  );
+  const vipViewSource = readPortalFile(
+    "./packages/sdkwork-claw-router-vip/src/VipView.tsx",
+  );
+
+  assert.match(rechargeViewSource, /export function RechargePackageSelector/);
+  assert.match(vipViewSource, /RechargePackageSelector/);
+  assert.match(vipViewSource, /data-vip-points-purchase/);
+  assert.match(vipViewSource, /onCheckoutCreated/);
+  assert.doesNotMatch(vipViewSource, /RechargeService\.fetchPackages/);
+  assert.doesNotMatch(vipViewSource, /rechargePackages\.map/);
+  assert.doesNotMatch(vipViewSource, /createPointsCheckout\(firstPackage/);
 });
 
 test("recharge order creation validates amount and method before calling app SDK", async () => {

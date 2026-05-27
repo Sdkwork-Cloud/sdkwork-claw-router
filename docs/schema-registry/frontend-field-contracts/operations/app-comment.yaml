@@ -353,7 +353,6 @@ frontend_operations:
   - plus_comments
   write_tables:
   - plus_comments
-  request_id_header: true
   request_schema:
     name: ForumCreateCommentRequest
     type: object
@@ -398,7 +397,6 @@ frontend_operations:
   - plus_comments
   write_tables:
   - plus_comments
-  request_id_header: true
   request_schema:
     name: ForumReplyCommentRequest
     type: object
@@ -444,7 +442,6 @@ frontend_operations:
   write_tables:
   - plus_content_vote
   - plus_comments
-  request_id_header: true
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
@@ -474,7 +471,6 @@ frontend_operations:
   - plus_comments
   write_tables:
   - plus_comments
-  request_id_header: true
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id

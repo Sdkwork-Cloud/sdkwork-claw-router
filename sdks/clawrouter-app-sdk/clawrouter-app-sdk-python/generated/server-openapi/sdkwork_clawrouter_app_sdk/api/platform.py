@@ -208,12 +208,16 @@ class PlatformAppsStoreApi:
         self.categories = PlatformAppsStoreCategoriesApi(client)
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> AppsStoreListResult:
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, category: Optional[str] = None, platform_type: Optional[str] = None, platform_types: Optional[List[str]] = None, sort: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> AppsStoreListResult:
         """Get apps"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'category', 'value': category, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'platform_type', 'value': platform_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'platform_types', 'value': platform_types, 'style': 'form', 'explode': False, 'allow_reserved': False},
+            {'name': 'sort', 'value': sort, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'start_time', 'value': start_time, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'end_time', 'value': end_time, 'style': 'form', 'explode': True, 'allow_reserved': False},

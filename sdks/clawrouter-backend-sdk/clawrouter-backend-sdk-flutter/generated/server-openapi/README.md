@@ -33,7 +33,7 @@ Choose exactly one mode for the same client instance.
 ```dart
 final client = SdkworkBackendClient.withBaseUrl(baseUrl: 'http://localhost:18081');
 client.setApiKey('your-api-key');
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -44,7 +44,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -67,9 +67,14 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.mcp` - mcp API
+- `client.messaging` - messaging API
 - `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.prompts` - prompts API
+- `client.serviceProviders` - service_providers API
+- `client.storage` - storage API
 
 ## Usage Examples
 
@@ -130,6 +135,37 @@ final result = await client.integration.channelsList();
 print(result);
 ```
 
+### mcp
+```dart
+// List MCP servers
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+  'q': 'q',
+  'transport': 'transport',
+  'visibility': 'visibility',
+  'status': 'status',
+  'category_id': '1',
+};
+final result = await client.mcp.serversList(params);
+print(result);
+```
+
+### messaging
+```dart
+// Messaging provider accounts list
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+  'q': 'q',
+  'status': 'status',
+  'channel': 'sms',
+  'provider_code': 'ok',
+};
+final result = await client.messaging.providerAccountsList(params);
+print(result);
+```
+
 ### open_platform
 ```dart
 // List open platform providers
@@ -151,6 +187,45 @@ print(result);
 ```dart
 // Retrieve IAM auth runtime settings
 final result = await client.system.authSettingsRetrieve();
+print(result);
+```
+
+### prompts
+```dart
+// List admin prompts
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+  'q': 'q',
+  'prompt_type': 'prompt-type',
+  'visibility': 'visibility',
+  'status': 'status',
+  'category_id': '1',
+};
+final result = await client.prompts.definitionsList(params);
+print(result);
+```
+
+### service_providers
+```dart
+// Service Provider Adjustments List
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+  'status': 'status',
+  'provider_id': '1',
+  'seller_provider_id': '1',
+  'buyer_provider_id': '1',
+  'edge_id': '1',
+};
+final result = await client.serviceProviders.adjustmentsList(params);
+print(result);
+```
+
+### storage
+```dart
+// List storage providers
+final result = await client.storage.ossProvidersList();
 print(result);
 ```
 

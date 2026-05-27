@@ -98,7 +98,7 @@ describe("sdkwork-points-pc-react service", () => {
           transactionId: "PTX-1",
         }),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
@@ -106,7 +106,7 @@ describe("sdkwork-points-pc-react service", () => {
             {
               description: "For personal work",
               durationDays: 30,
-              id: "vip-package-1",
+              id: "membership-package-1",
               includedPoints: 2000,
               levelName: "Plus",
               name: "Plus Monthly",
@@ -119,7 +119,7 @@ describe("sdkwork-points-pc-react service", () => {
             {
               description: "Best for teams",
               durationDays: 30,
-              id: "vip-package-2",
+              id: "membership-package-2",
               includedPoints: 5000,
               levelName: "Pro",
               name: "Pro Monthly",
@@ -135,13 +135,13 @@ describe("sdkwork-points-pc-react service", () => {
             currentLevelValue: 3,
             growthValue: 180,
             isAuthenticated: true,
-            isVip: true,
+            isMember: true,
             pointBalance: 2400,
             remainingDays: 57,
-            status: "vip",
+            status: "active",
             totalSpent: 399,
             upgradeGrowthValue: 500,
-            vipPoints: 3200,
+            points: 3200,
           },
         }),
         purchaseMembership: vi.fn(),
@@ -154,7 +154,7 @@ describe("sdkwork-points-pc-react service", () => {
       balancePoints: 2400,
       currentPlan: {
         name: "Pro",
-        status: "vip",
+        status: "active",
       },
       earnedThisMonth: 1200,
       isAuthenticated: true,
@@ -208,7 +208,7 @@ describe("sdkwork-points-pc-react service", () => {
         },
         rechargePoints: vi.fn(),
       },
-      vipService: {
+      membershipService: {
         getDashboard: vi.fn().mockResolvedValue({
           benefits: [],
           levels: [],
@@ -218,13 +218,13 @@ describe("sdkwork-points-pc-react service", () => {
             currentLevelValue: null,
             growthValue: null,
             isAuthenticated: false,
-            isVip: false,
+            isMember: false,
             pointBalance: null,
             remainingDays: null,
             status: "guest",
             totalSpent: null,
             upgradeGrowthValue: null,
-            vipPoints: null,
+            points: null,
           },
         }),
         purchaseMembership: vi.fn(),
@@ -240,7 +240,7 @@ describe("sdkwork-points-pc-react service", () => {
     expect(dashboard.plans).toEqual([]);
   });
 
-  it("recharges points through wallet and upgrades membership through the VIP service", async () => {
+  it("recharges points through wallet and upgrades membership through the membership service", async () => {
     const walletService = {
       getOverview: vi.fn().mockResolvedValue({
         account: {
@@ -273,7 +273,7 @@ describe("sdkwork-points-pc-react service", () => {
         transactionId: "PTX-2",
       }),
     };
-    const vipService = {
+    const membershipService = {
       getDashboard: vi.fn().mockResolvedValue({
         benefits: [],
         levels: [],
@@ -283,13 +283,13 @@ describe("sdkwork-points-pc-react service", () => {
           currentLevelValue: null,
           growthValue: null,
           isAuthenticated: true,
-          isVip: false,
+          isMember: false,
           pointBalance: null,
           remainingDays: null,
           status: "free",
           totalSpent: null,
           upgradeGrowthValue: null,
-          vipPoints: null,
+          points: null,
         },
       }),
       purchaseMembership: vi.fn().mockResolvedValue({
@@ -303,7 +303,7 @@ describe("sdkwork-points-pc-react service", () => {
       }),
     };
     const service = createSdkworkPointsService({
-      vipService,
+      membershipService,
       walletService,
     });
 
@@ -336,13 +336,13 @@ describe("sdkwork-points-pc-react service", () => {
       points: 2400,
       remarks: "Workspace top-up",
     });
-    expect(vipService.purchaseMembership).toHaveBeenCalledWith({
+    expect(membershipService.purchaseMembership).toHaveBeenCalledWith({
       packageId: 2,
       paymentMethod: "ALIPAY",
     });
   });
 
-  it("propagates one injected commerce service into default wallet and VIP services", async () => {
+  it("propagates one injected commerce service into default wallet and membership services", async () => {
     const rechargePackages = vi.fn().mockResolvedValue({
       code: "2000",
       data: [
@@ -355,7 +355,7 @@ describe("sdkwork-points-pc-react service", () => {
         },
       ],
     });
-    const vipPackages = vi.fn().mockResolvedValue({
+    const membershipPackages = vi.fn().mockResolvedValue({
       code: "2000",
       data: [
         {
@@ -364,29 +364,33 @@ describe("sdkwork-points-pc-react service", () => {
           pointAmount: 5000,
           price: 59,
           recommended: true,
-          vipDurationDays: 30,
+          durationDays: 30,
         },
       ],
     });
     const commerceService = createCommerceServiceMock({
-      account: {
-        summary: {
-          retrieve: vi.fn().mockResolvedValue({
+      accounts: {
+        current: {
+          summary: {
+            retrieve: vi.fn().mockResolvedValue({
             code: "2000",
             data: {
               cashAvailable: 20,
               pointsAvailable: 1200,
             },
           }),
-        },
-        points: {
-          exchangeRate: {
-            retrieve: vi.fn().mockResolvedValue({
-              code: "2000",
-              data: 100,
-            }),
           },
-          history: {
+        },
+      },
+      wallet: {
+        exchangeRate: {
+          retrieve: vi.fn().mockResolvedValue({
+            code: "2000",
+            data: 100,
+          }),
+        },
+        ledgerEntries: {
+          points: {
             list: vi.fn().mockResolvedValue({
               code: "2000",
               data: {
@@ -394,11 +398,9 @@ describe("sdkwork-points-pc-react service", () => {
               },
             }),
           },
-          recharges: {
-            packages: {
-              list: rechargePackages,
-            },
-          },
+        },
+        accounts: {
+          points: {
           retrieve: vi.fn().mockResolvedValue({
             code: "2000",
             data: {
@@ -408,44 +410,50 @@ describe("sdkwork-points-pc-react service", () => {
               totalSpent: 0,
             },
           }),
+          },
         },
       },
-      vip: {
+      recharges: {
+        packages: {
+          list: rechargePackages,
+        },
+      },
+      memberships: {
         benefits: {
           list: vi.fn().mockResolvedValue({
             code: "2000",
             data: [],
           }),
         },
-        info: {
+        current: {
           retrieve: vi.fn().mockResolvedValue({
             code: "2000",
             data: {
               remainingDays: 15,
-              vipLevel: 3,
-              vipLevelName: "Pro",
-              vipStatus: "ACTIVE",
+              planRank: 3,
+              planName: "Pro",
+              membershipStatus: "ACTIVE",
             },
           }),
+          status: {
+            retrieve: vi.fn().mockResolvedValue({
+              code: "2000",
+              data: {
+                isMember: true,
+                pointBalance: 1200,
+                planRank: 3,
+              },
+            }),
+          },
         },
-        levels: {
+        plans: {
           list: vi.fn().mockResolvedValue({
             code: "2000",
             data: [],
           }),
         },
         packages: {
-          list: vipPackages,
-        },
-        status: {
-          retrieve: vi.fn().mockResolvedValue({
-            code: "2000",
-            data: {
-              isVip: true,
-              pointBalance: 1200,
-              vipLevel: 3,
-            },
-          }),
+          list: membershipPackages,
         },
       },
     });
@@ -459,7 +467,7 @@ describe("sdkwork-points-pc-react service", () => {
       balancePoints: 1200,
       currentPlan: {
         name: "Pro",
-        status: "vip",
+        status: "active",
       },
       isAuthenticated: true,
     });
@@ -470,14 +478,14 @@ describe("sdkwork-points-pc-react service", () => {
       packageId: 3,
     });
     expect(rechargePackages).toHaveBeenCalledOnce();
-    expect(vipPackages).toHaveBeenCalledOnce();
+    expect(membershipPackages).toHaveBeenCalledOnce();
   });
 
-  it("passes locale into the default VIP mutation boundary used by plan upgrades", async () => {
+  it("passes locale into the default membership mutation boundary used by plan upgrades", async () => {
     const service = createSdkworkPointsService({
       commerceService: createCommerceServiceMock({
-        vip: {
-          purchase: {
+        memberships: {
+          purchases: {
             create: vi.fn().mockResolvedValue({
               code: "5000",
             }),

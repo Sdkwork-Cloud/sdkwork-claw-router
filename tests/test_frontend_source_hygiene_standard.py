@@ -232,8 +232,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
         self.assertIn("toSettlementDashboardQueryParams", service)
         self.assertIn("const query = toSettlementDashboardQueryParams(params)", service)
-        self.assertIn("appWalletLedgerEntriesList({ page: 1, pageSize: 500 })", service)
-        self.assertIn("appInvoicesList({ page: 1, pageSize: 100 })", service)
+        self.assertIn("const SETTLEMENT_LEDGER_PAGE_SIZE = 200;", service)
+        self.assertIn("const SETTLEMENT_INVOICE_PAGE_SIZE = 100;", service)
+        self.assertIn("appWalletLedgerEntriesList({ page: 1, pageSize: SETTLEMENT_LEDGER_PAGE_SIZE })", service)
+        self.assertIn("appInvoicesList({ page: 1, pageSize: SETTLEMENT_INVOICE_PAGE_SIZE })", service)
         self.assertIn("buildSettlementDashboard(query.year, ledgerEntries, invoices)", service)
         self.assertIn("readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')", service)
         self.assertIn("readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')", service)
@@ -434,6 +436,18 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch referral stats')\n      .map(normalizeReferralStat)",
+                "backendPromotionOffersList",
+                "backendPromotionCouponStocksList",
+                "backendPromotionCodesList",
+                "backendPromotionCodeRedemptionsList",
+                "backendPromotionUserCouponsList",
+                "backendPromotionCouponLedgerEntriesList",
+                "return readRequiredPromotionItems(result, 'Promotion offer records are required')",
+                "return readRequiredPromotionItems(result, 'Promotion coupon stock records are required')",
+                "return readRequiredPromotionItems(result, 'Promotion code records are required')",
+                "return readRequiredPromotionItems(result, 'Promotion code redemption records are required')",
+                "return readRequiredPromotionItems(result, 'Promotion user coupon records are required')",
+                "readRequiredString(item, 'id', 'Promotion record id is required')",
                 "readRequiredRecord(value, 'Referral stat record is required')",
                 "readRequiredString(item, 'id', 'Referral stat id is required')",
                 "readRequiredString(item, 'inviter', 'Referral inviter is required')",
@@ -441,22 +455,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredString(item, 'total_revenue', 'Referral revenue is required')",
                 "readRequiredString(item, 'bonus_awarded', 'Referral bonus is required')",
                 "readRequiredString(item, 'link', 'Referral link is required')",
-            ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-routing" / "src" / "routingService.ts": [
-                "return readRequiredApiItems(result, 'console.routing.states.requestTraces.loadErrorFallback')\n      .map(normalizeRequestTrace)",
-                "return readRequiredApiItems(result, 'console.routing.states.channels.loadErrorFallback')\n      .map(normalizeRoutingChannel)",
-                "return readRequiredApiItems(result, 'console.routing.states.apiKeys.loadErrorFallback')\n      .map(normalizeRoutingApiKey)",
-                "chartData: readRequiredApiItems(data, 'console.routing.states.usage.loadErrorFallback', ['chartData'])\n        .map(normalizeRoutingUsageData)",
-                "mappingRules: readRequiredApiItems(item, 'Routing strategy mapping rules are required', ['mappingRules'])\n      .map(normalizeMappingRule)",
-                "readRequiredRecord(value, 'Routing channel record is required')",
-                "readRequiredRecord(value, 'Routing API key record is required')",
-                "readRequiredRecord(value, 'Request trace record is required')",
-                "readRequiredRecord(value, 'Routing mapping rule record is required')",
-                "const displayKey = readRequiredFirstString(",
-                "'Routing API key value is required'",
-                "readRequiredFirstStringArray(item, ['models', 'modelList', 'model_list'], 'Routing channel models are required')",
-                "readRequiredNonNegativeMetric(item, 'tokens', 'Request trace tokens are required')",
-                "throw new Error(strategy ? `Unsupported routing strategy: ${strategy}` : 'Routing strategy is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch channels')\n      .map(normalizeChannel)",
@@ -479,41 +477,26 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(status ? `Unsupported user status: ${status}` : 'User status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-finance" / "src" / "financeService.ts": [
-                "backendCouponsTemplatesList",
-                "backendCouponsCampaignsList",
-                "backendCouponsCodesList",
-                "backendCouponsRedemptionsList",
-                "readRequiredString(item, 'id', 'Coupon id is required')",
-                "readRequiredString(item, 'id', 'Coupon batch id is required')",
-                "readRequiredString(item, 'id', 'Promo code id is required')",
-                "readRequiredString(item, 'id', 'Redemption record id is required')",
                 "backendCommerceReportsPaymentReconciliationRetrieve",
                 "backendCommerceReportsOrderRevenueList",
                 "backendCommerceReportsRefundsList",
                 "backendAuditCommerceEventsList",
-                "readRequiredStableIdItems(result, 'Coupon records are required'",
-                "readRequiredStableIdItems(result, 'Coupon batch records are required'",
-                "readRequiredStableIdItems(result, 'Promo code records are required'",
-                "readRequiredStableIdItems(result, 'Redemption records are required'",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-wallet" / "src" / "walletService.ts": [
-                "backendRechargesPackagesList",
                 "backendRechargesOrdersList",
                 "readRequiredApiItems(result, listMessage)",
                 "readRequiredString(item, 'id', 'Recharge record id is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-wallet" / "src" / "walletService.ts": [
-                "readRequiredRecord(value, 'Redeem history record is required')",
-                "firstRequiredString(item, ['code', 'couponCode', 'coupon_code', 'templateCode', 'template_code'], 'Redeem history code is required')",
-                "'Redeem history amount must be a money string'",
-                "firstRequiredString(item, ['date', 'redeemedAt', 'redeemed_at', 'createdAt', 'created_at'], 'Redeem history date is required')",
+                "RechargeService.fetchBillingHistory({ type: 'redeem' })",
+                "RechargeService.fetchBillingHistory({ type: 'recharge' })",
+                "code: item.referenceNo || item.relatedOrderNo || item.sourceId || item.historyNo",
+                "orderNo: item.relatedOrderNo || item.referenceNo || item.sourceId || item.historyNo",
+                "method: item.paymentMethod || item.sourceType || 'billing'",
+                "amount: formatMoneyString(item.amount)",
+                "date: item.occurredAt",
                 "throw new Error(`Unsupported billing status: ${status}`)",
                 "readOptionalMoneyString(data, 'amount', 'Redeem amount must be a money string')",
-                "readRequiredRecord(value, 'Recharge history record is required')",
-                "firstRequiredString(item, ['orderNo', 'order_no', 'sourceId', 'source_id', 'requestNo', 'request_no'], 'Recharge history order number is required')",
-                "readFirstString(item, ['method', 'paymentMethod', 'payment_method', 'sourceType', 'source_type']) || 'wallet'",
-                "'Recharge history amount must be a money string'",
-                "firstRequiredString(item, ['date', 'createdAt', 'created_at'], 'Recharge history date is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-checkout" / "src" / "checkoutService.ts": [
                 "const safeOrderNo = requiredText(orderNo, 'orderNo')",
@@ -530,6 +513,16 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-recharge" / "src" / "rechargeService.ts": [
                 "readRequiredRecord(value, 'Recharge package record is required')",
+                "appBillingHistoryList({",
+                "...(type ? { type_: type } : {})",
+                "readRequiredApiItems(result, 'console.recharge.records.errors.loadFallback')",
+                "readRequiredRecord(value, 'Billing history record is required')",
+                "firstRequiredString(item, ['type', 'historyType', 'history_type'], 'Billing history type is required')",
+                "throw new Error(`Unsupported billing history type: ${type}`)",
+                "firstRequiredString(item, ['id'], missingIdMessage)",
+                "firstRequiredString(item, ['historyNo', 'history_no'], 'Billing history number is required')",
+                "'Billing history amount must be a money string'",
+                "firstRequiredString(item, ['occurredAt', 'occurred_at', 'createdAt', 'created_at'], 'Billing history occurrence time is required')",
                 "throw new Error('Recharge order number is required')",
                 "'Recharge package money amount must be a money string'",
                 "bonus: readOptionalNonNegativeNumber(item, 'bonus')",
@@ -638,12 +631,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readNotificationType(value.type)",
                 "readNotificationRead(value.read)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-providers" / "src" / "providerService.ts": [
-                "readRequiredRecord(value, 'Provider record is required')",
-                "readRequiredString(item, 'id', 'Provider id is required')",
-                "throw new Error(type ? `Unsupported provider family: ${type}` : 'Provider family is required')",
-                "throw new Error(\n    integrationType\n      ? `Unsupported integration provider type: ${integrationType}`\n      : 'Integration provider type is required',\n  )",
-            ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "settlementsService.ts": [
                 "readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')",
                 "readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')",
@@ -681,13 +668,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "count: readNumber(item, 'count')",
                 "total_invited: readNumber(item, 'total_invited')",
                 "return 'available';",
-            ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-routing" / "src" / "routingService.ts": [
-                ".filter(isRecord)",
-                "readRecordArray(data, 'chartData')",
-                "readRecordArray(item, 'mappingRules')",
-                "models: readFirstStringArray(item, ['models', 'modelList', 'model_list'], ['default-model'])",
-                "return 'latency';",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
                 ".filter(isRecord)",
@@ -809,10 +789,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 ".filter(isMessage)",
                 "function isMessage(",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-providers" / "src" / "providerService.ts": [
-                ".filter(isRecord)",
-                "return 'opencode';",
-            ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "settlementsService.ts": [
                 ".filter(isRecord)",
                 "readRecordArray(data, 'chartData')",
@@ -858,9 +834,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-ratelimit" / "src" / "ratelimitService.ts": [
                 "requiredSafePathSegment(id, 'firewallRuleId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-routing" / "src" / "routingService.ts": [
-                "requiredSafePathSegment(channelId, 'channelId')",
-            ],
         }
         forbidden_fragments = {
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
@@ -886,12 +859,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-ratelimit" / "src" / "ratelimitService.ts": [
                 ".firewall.remove(id)",
-            ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-routing" / "src" / "routingService.ts": [
-                "router.updateChannel(requiredText(channelId, 'channelId')",
-                "router.deleteChannel(requiredText(channelId, 'channelId'))",
-                "router.setChannelStatus(requiredText(channelId, 'channelId')",
-                "const normalizedChannelId = requiredText(channelId, 'channelId')",
             ],
         }
 
@@ -939,8 +906,31 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "function requiredSafePathSegment",
                 "function pruneUndefined",
                 "SAFE_PATH_SEGMENT_PATTERN =",
-            ):
-                self.assertNotIn(forbidden, source, f"{relative} must import shared SDK request boundary primitive instead of reimplementing {forbidden}")
+                ):
+                    self.assertNotIn(forbidden, source, f"{relative} must import shared SDK request boundary primitive instead of reimplementing {forbidden}")
+
+    def test_portal_services_do_not_keep_unused_sdk_request_param_imports(self) -> None:
+        violations: list[str] = []
+        import_name = "createRequestParams"
+        import_block = re.compile(
+            r"import\s*\{(?P<body>[^}]*\bcreateRequestParams\b[^}]*)\}\s*from\s*['\"]sdkwork-claw-router-commons/runtime['\"]",
+            re.DOTALL,
+        )
+
+        for source in self._portal_sources():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            if not import_block.search(content):
+                continue
+            usage_count = len(re.findall(rf"\b{import_name}\b", content))
+            if usage_count <= 1:
+                violations.append(f"{relative}: imports {import_name} but does not use it")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Portal SDK services must not keep stale request-id/idempotency helper imports after generated SDK migration.",
+        )
 
     def test_portal_and_generated_sdk_do_not_reintroduce_legacy_operation_signatures(self) -> None:
         removed_portal_tokens = [
@@ -1005,8 +995,26 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
         legacy_number_path_id = re.compile(r"\basync\s+[A-Za-z0-9_]+\([^)]*:\s*string\s*\|\s*number", re.DOTALL)
 
-        for sdk_name in ["clawrouter-app-sdk", "clawrouter-backend-sdk"]:
-            api_dir = ROOT / "sdks" / sdk_name / "src" / "api"
+        sdk_api_dirs = {
+            "clawrouter-app-sdk": ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "src"
+            / "api",
+            "clawrouter-backend-sdk": ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "api",
+        }
+
+        for sdk_name, api_dir in sdk_api_dirs.items():
+            self.assertTrue(
+                api_dir.exists(),
+                f"{sdk_name} generated TypeScript API directory must exist so SDK signatures are actually scanned.",
+            )
             for source in sorted(api_dir.glob("*.ts")):
                 if source.name in {"base.ts", "index.ts", "paths.ts"}:
                     continue

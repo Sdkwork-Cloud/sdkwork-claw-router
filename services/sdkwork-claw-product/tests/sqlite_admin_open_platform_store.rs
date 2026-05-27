@@ -1,3 +1,7 @@
+use std::sync::Arc;
+
+use sdkwork_claw_product::application::ApiKeySecretCodec;
+use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminOpenPlatformStore;
 use sdkwork_claw_product::ports::{
     AdminOpenPlatformStore, AdminOpenPlatformSubject, CreateAdminOpenPlatformAccountCommand,
@@ -20,7 +24,10 @@ async fn sqlite_admin_open_platform_store_manages_accounts_entries_pay_bindings_
     create_schema(&pool).await;
     seed_dictionary(&pool).await;
 
-    let store = SqliteAdminOpenPlatformStore::new(pool.clone());
+    let codec =
+        Arc::new(RingAeadApiKeySecretCodec::new("open-platform-test-secret-codec-pepper").unwrap());
+    let store =
+        SqliteAdminOpenPlatformStore::with_api_key_secret_codec(pool.clone(), codec.clone());
     let subject = subject();
 
     let providers = store
@@ -55,8 +62,11 @@ async fn sqlite_admin_open_platform_store_manages_accounts_entries_pay_bindings_
             account_type: "official_account".to_owned(),
             app_id: Some("wx123".to_owned()),
             secret_ref: Some("vault://open-platform/wechat/main/app-secret".to_owned()),
+            secret_material: Some("wx-secret-value".to_owned()),
             token_ref: Some("vault://open-platform/wechat/main/token".to_owned()),
+            token_material: Some("wechat-token".to_owned()),
             aes_key_ref: Some("vault://open-platform/wechat/main/aes-key".to_owned()),
+            aes_key_material: Some("wechat-encoding-aes-key".to_owned()),
             request_id: "req-account-create".to_owned(),
             requested_at: "2026-05-21 10:00:00".to_owned(),
         })
@@ -65,6 +75,27 @@ async fn sqlite_admin_open_platform_store_manages_accounts_entries_pay_bindings_
     assert_eq!(1, account.id);
     assert_eq!("wechat.oa.main", account.key);
     assert!(!account.qr_default);
+    let metadata = load_account_metadata(&pool, account.id).await;
+    assert!(!metadata.contains("wx-secret-value"));
+    assert!(!metadata.contains("wechat-token"));
+    assert!(!metadata.contains("wechat-encoding-aes-key"));
+    let metadata: serde_json::Value = serde_json::from_str(&metadata).unwrap();
+    assert_eq!(
+        "encrypted-open-platform-account-metadata",
+        metadata["credentialMaterial"]["storage"]
+    );
+    assert_eq!(
+        "wx-secret-value",
+        decode_open_platform_material(codec.as_ref(), &metadata, "appSecret")
+    );
+    assert_eq!(
+        "wechat-token",
+        decode_open_platform_material(codec.as_ref(), &metadata, "token")
+    );
+    assert_eq!(
+        "wechat-encoding-aes-key",
+        decode_open_platform_material(codec.as_ref(), &metadata, "encodingAesKey")
+    );
 
     let entry = store
         .create_entry(CreateAdminOpenPlatformEntryCommand {
@@ -90,9 +121,14 @@ async fn sqlite_admin_open_platform_store_manages_accounts_entries_pay_bindings_
             audit_log_uuid: "audit-account-default".to_owned(),
             name: None,
             app_id: None,
-            secret_ref: None,
+            secret_ref: Some(Some(
+                "vault://open-platform/wechat/main/app-secret-rotated".to_owned(),
+            )),
+            secret_material: Some("rotated-secret".to_owned()),
             token_ref: None,
+            token_material: None,
             aes_key_ref: None,
+            aes_key_material: None,
             default_entry_id: Some(Some(entry.id)),
             qr_default: Some(true),
             status: None,
@@ -104,6 +140,18 @@ async fn sqlite_admin_open_platform_store_manages_accounts_entries_pay_bindings_
         .unwrap();
     assert_eq!(Some(entry.id), account.default_entry_id);
     assert!(account.qr_default);
+    let metadata = load_account_metadata(&pool, account.id).await;
+    assert!(!metadata.contains("rotated-secret"));
+    assert!(!metadata.contains("wechat-token"));
+    let metadata: serde_json::Value = serde_json::from_str(&metadata).unwrap();
+    assert_eq!(
+        "rotated-secret",
+        decode_open_platform_material(codec.as_ref(), &metadata, "appSecret")
+    );
+    assert_eq!(
+        "wechat-token",
+        decode_open_platform_material(codec.as_ref(), &metadata, "token")
+    );
 
     let binding = store
         .create_pay_binding(CreateAdminOpenPlatformPayBindingCommand {
@@ -227,6 +275,25 @@ fn subject() -> AdminOpenPlatformSubject {
         operator_id: 30,
         operator_type: 1,
     }
+}
+
+async fn load_account_metadata(pool: &sqlx::SqlitePool, account_id: i64) -> String {
+    sqlx::query_scalar("SELECT metadata FROM open_platform_account WHERE id = ?")
+        .bind(account_id)
+        .fetch_one(pool)
+        .await
+        .unwrap()
+}
+
+fn decode_open_platform_material(
+    codec: &dyn ApiKeySecretCodec,
+    metadata: &serde_json::Value,
+    material_key: &str,
+) -> String {
+    let ciphertext = metadata["credentialMaterial"][material_key]["ciphertext"]
+        .as_str()
+        .unwrap();
+    codec.decode_secret(ciphertext).unwrap()
 }
 
 async fn create_schema(pool: &sqlx::SqlitePool) {

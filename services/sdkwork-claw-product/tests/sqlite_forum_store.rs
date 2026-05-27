@@ -1,26 +1,16 @@
-use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallOptions, DatabaseInstaller,
-};
+#[path = "common/installed_sqlite.rs"]
+mod installed_sqlite_common;
+
+use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteForumStore;
 use sdkwork_claw_product::ports::{
     CreateForumCommentCommand, CreateForumFeedCommand, ForumCommentCommandStore,
     ForumCommentReadStore, ForumFeedCommandStore, ForumFeedQuery, ForumFeedReadStore, ForumSubject,
 };
-use sqlx::sqlite::SqlitePoolOptions;
 
 #[tokio::test]
 async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = repair_sqlite_pool().await;
 
     let store = SqliteForumStore::new(pool.clone());
     let subject = owner_subject();
@@ -165,17 +155,7 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
 
 #[tokio::test]
 async fn sqlite_forum_store_scopes_comments_to_the_current_forum_subject() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = SqliteForumStore::new(pool);
     let tenant_a = owner_subject();
@@ -184,7 +164,7 @@ async fn sqlite_forum_store_scopes_comments_to_the_current_forum_subject() {
         organization_id: tenant_a.organization_id,
         user_id: tenant_a.user_id + 1,
     };
-    let content_id = 42;
+    let content_id = 9_900_042;
 
     let tenant_a_comment = store
         .create_comment(
@@ -258,17 +238,7 @@ async fn sqlite_forum_store_scopes_comments_to_the_current_forum_subject() {
 
 #[tokio::test]
 async fn sqlite_forum_store_does_not_apply_feed_side_effects_across_tenants() {
-    let pool = SqlitePoolOptions::new()
-        .max_connections(1)
-        .connect("sqlite::memory:")
-        .await
-        .unwrap();
-    DatabaseInstaller::for_sqlite(pool.clone())
-        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
-        .unwrap()
-        .ensure_installed()
-        .await
-        .unwrap();
+    let pool = schema_sqlite_pool().await;
 
     let store = SqliteForumStore::new(pool.clone());
     let owner = owner_subject();

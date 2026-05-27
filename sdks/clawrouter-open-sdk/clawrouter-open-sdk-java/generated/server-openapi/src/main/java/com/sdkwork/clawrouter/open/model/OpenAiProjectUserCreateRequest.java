@@ -8,7 +8,7 @@ public class OpenAiProjectUserCreateRequest {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -16,7 +16,7 @@ public class OpenAiProjectUserCreateRequest {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

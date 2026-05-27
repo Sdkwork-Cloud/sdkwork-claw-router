@@ -39,6 +39,11 @@ pub struct GenerationHistoryItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub model_info: Option<String>,
 
+    /// Output text field on generation history item.
+    #[serde(rename = "outputText")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub output_text: Option<String>,
+
     /// Prompt field on generation history item.
     pub prompt: String,
 

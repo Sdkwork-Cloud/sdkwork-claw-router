@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import type { Model, ModelGroupKey } from '../data/models';
 import {
   MODEL_CATEGORIES,
-  MODEL_GROUPS,
   createDefaultModelCatalogFilters,
   deriveModelCatalogCardView,
   deriveModelCatalogFilterOptions,
@@ -14,13 +13,14 @@ import {
   filterModelsForCatalog,
   filterProvidersForCatalog,
   modelCatalogCategoryLabelKey,
+  modelCatalogGroupLabelKey,
   resetModelCatalogFilters,
   resolveDisplayedProvidersForCatalog,
   resolveProviderShowMoreStateForCatalog,
   type ModelCatalogFilters,
   type ModelCatalogPricingCell,
 } from '../modelCatalog';
-import { ModelService } from '../modelService';
+import { ModelService, type ModelCatalogGroup } from '../modelService';
 import { FilterSidebar, CollapsibleSection, FilterCheckbox } from 'sdkwork-claw-router-commons';
 
 import { ModalityIcon } from '../components/ModalityIcon';
@@ -33,6 +33,7 @@ export function Models() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showAllProviders, setShowAllProviders] = useState(false);
   const [catalogModels, setCatalogModels] = useState<Model[]>([]);
+  const [catalogGroups, setCatalogGroups] = useState<ModelCatalogGroup[]>([]);
 
   const updateFilters = (updates: Partial<ModelCatalogFilters>) => {
     setFilters(prev => ({ ...prev, ...updates }));
@@ -65,8 +66,8 @@ export function Models() {
   };
 
   const filterOptions = useMemo(() => {
-    return deriveModelCatalogFilterOptions(catalogModels);
-  }, [catalogModels]);
+    return deriveModelCatalogFilterOptions(catalogModels, catalogGroups);
+  }, [catalogGroups, catalogModels]);
 
   const filteredProviders = useMemo(() => {
     return filterProvidersForCatalog(filterOptions.providers, filters.providerSearchQuery);
@@ -95,7 +96,7 @@ export function Models() {
   useEffect(() => {
     let cancelled = false;
 
-    ModelService.fetchModels({
+    ModelService.fetchModelCatalog({
       vendorCodes: selectedProviderCodes,
       modalities: filters.selectedModalities,
       capabilities: filters.selectedCapabilities,
@@ -104,14 +105,16 @@ export function Models() {
       searchQuery: filters.searchQuery,
       limit: 1000,
     })
-      .then((models) => {
+      .then((catalog) => {
         if (!cancelled) {
-          setCatalogModels(models);
+          setCatalogModels(catalog.models);
+          setCatalogGroups(catalog.groups);
         }
       })
       .catch(() => {
         if (!cancelled) {
           setCatalogModels([]);
+          setCatalogGroups([]);
         }
       });
 
@@ -152,11 +155,11 @@ export function Models() {
 
         <CollapsibleSection title={t('models.groups', 'Groups')} icon={Users}>
           <div className="space-y-2">
-            {MODEL_GROUPS.map(group => (
+            {filterOptions.groups.map(group => (
               <FilterCheckbox
                 key={group.key}
                 checked={filters.selectedGroups.includes(group.key)}
-                label={t(`models.group.${group.key}`, group.label)}
+                label={t(modelCatalogGroupLabelKey(group.key), group.label)}
                 onClick={() => toggleGroupFilter(group.key)}
                 activeColorClass="bg-purple-500 border-purple-500"
               />

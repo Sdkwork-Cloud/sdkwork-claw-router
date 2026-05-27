@@ -13,7 +13,7 @@ public class OpenAiSpeechCreateRequest {
     public String getInput() {
         return this.input;
     }
-    
+
     public void setInput(String input) {
         this.input = input;
     }
@@ -21,7 +21,7 @@ public class OpenAiSpeechCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -29,7 +29,7 @@ public class OpenAiSpeechCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -37,7 +37,7 @@ public class OpenAiSpeechCreateRequest {
     public String getResponseFormat() {
         return this.responseFormat;
     }
-    
+
     public void setResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
     }
@@ -45,7 +45,7 @@ public class OpenAiSpeechCreateRequest {
     public Double getSpeed() {
         return this.speed;
     }
-    
+
     public void setSpeed(Double speed) {
         this.speed = speed;
     }
@@ -53,7 +53,7 @@ public class OpenAiSpeechCreateRequest {
     public String getVoice() {
         return this.voice;
     }
-    
+
     public void setVoice(String voice) {
         this.voice = voice;
     }

@@ -39,7 +39,7 @@ Choose exactly one mode for the same client instance.
 var config = new SdkConfig("http://localhost:18081");
 var client = new SdkworkBackendClient(config);
 client.SetApiKey("your-api-key");
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -51,7 +51,7 @@ client.SetAuthToken("your-auth-token");
 client.SetAccessToken("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
@@ -75,9 +75,14 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
+- `client.Mcp` - mcp API
+- `client.Messaging` - messaging API
 - `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
 - `client.System` - system API
+- `client.Prompts` - prompts API
+- `client.ServiceProviders` - service_providers API
+- `client.Storage` - storage API
 
 ## Usage Examples
 
@@ -146,6 +151,41 @@ var result = await client.Integration.ChannelsListAsync();
 Console.WriteLine(result);
 ```
 
+### mcp
+
+```csharp
+// List MCP servers
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+    ["q"] = "q",
+    ["transport"] = "transport",
+    ["visibility"] = "visibility",
+    ["status"] = "status",
+    ["category_id"] = "1",
+};
+var result = await client.Mcp.ServersListAsync(query);
+Console.WriteLine(result);
+```
+
+### messaging
+
+```csharp
+// Messaging provider accounts list
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+    ["q"] = "q",
+    ["status"] = "status",
+    ["channel"] = "sms",
+    ["provider_code"] = "ok",
+};
+var result = await client.Messaging.ProviderAccountsListAsync(query);
+Console.WriteLine(result);
+```
+
 ### open_platform
 
 ```csharp
@@ -171,6 +211,50 @@ Console.WriteLine(result);
 ```csharp
 // Retrieve IAM auth runtime settings
 var result = await client.System.AuthSettingsRetrieveAsync();
+Console.WriteLine(result);
+```
+
+### prompts
+
+```csharp
+// List admin prompts
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+    ["q"] = "q",
+    ["prompt_type"] = "prompt-type",
+    ["visibility"] = "visibility",
+    ["status"] = "status",
+    ["category_id"] = "1",
+};
+var result = await client.Prompts.DefinitionsListAsync(query);
+Console.WriteLine(result);
+```
+
+### service_providers
+
+```csharp
+// Service Provider Adjustments List
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+    ["status"] = "status",
+    ["provider_id"] = "1",
+    ["seller_provider_id"] = "1",
+    ["buyer_provider_id"] = "1",
+    ["edge_id"] = "1",
+};
+var result = await client.ServiceProviders.AdjustmentsListAsync(query);
+Console.WriteLine(result);
+```
+
+### storage
+
+```csharp
+// List storage providers
+var result = await client.Storage.OssProvidersListAsync();
 Console.WriteLine(result);
 ```
 

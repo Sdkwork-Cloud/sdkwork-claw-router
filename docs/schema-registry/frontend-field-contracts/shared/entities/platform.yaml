@@ -463,6 +463,7 @@ x_response_entities:
     - created
     - expires
     - status
+    - defaultForRuntime
     properties:
       id:
         type: string
@@ -526,6 +527,9 @@ x_response_entities:
         enum:
         - enabled
         - disabled
+      defaultForRuntime:
+        type: boolean
+        description: Whether this key is the current console default for backend runtime API key selection.
   app_api_key_group:
     name: AppApiKeyGroup
     type: object
@@ -593,6 +597,9 @@ x_response_entities:
         type: string
         maxLength: 32
         description: Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
+      defaultForRuntime:
+        type: boolean
+        description: Marks this API key as the default backend runtime API key for Playground and app runtime calls.
   app_release_item: &id003
     name: AppReleaseItem
     type: object

@@ -1,3 +1,5 @@
+mod common;
+use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -35,9 +37,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/categories")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"Prompt Engineering","code":"prompt-engineering","description":"Prompt and instruction skills","icon":"https://cdn.example.test/icons/prompt.png","sortWeight":90}"#,
                 ))
@@ -66,9 +66,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                 .method("PUT")
                 .uri("/backend/v3/api/ecosystem/skills/categories/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"name":"Prompt Engineering Pro","sortWeight":95,"visible":false}"#,
                 ))
@@ -93,9 +91,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                 .method("POST")
                 .uri("/backend/v3/api/skill")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill")
                 .body(Body::from(
                     r#"{"skillKey":"prompt-optimizer","name":"Prompt Optimizer","summary":"Improves prompts","description":"Optimizes prompts before model execution","categoryId":"1","provider":"SDKWork","version":"1.0.0","runtime":"wasm","entrypoint":"prompt_optimizer:start","manifestUrl":"https://cdn.example.test/skills/prompt/manifest.json","repositoryUrl":"https://github.com/sdkwork/prompt-optimizer","documentationUrl":"https://docs.example.test/prompt-optimizer","licenseName":"Apache-2.0","sourceType":"COMMUNITY","visibility":"PUBLIC","tags":["prompt","wasm","wasm"],"capabilities":["prompt","analysis"],"configSchema":{"type":"object"},"defaultConfig":{"mode":"balanced"},"featured":true,"recommendWeight":80}"#,
@@ -133,9 +129,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                 .method("PUT")
                 .uri("/backend/v3/api/skill/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"summary":"Polishes prompts","version":"1.0.1","capabilities":["prompt","analysis","workflow"],"featured":false,"recommendWeight":60}"#,
                 ))
@@ -203,9 +197,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                     .method("POST")
                     .uri(path)
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::from(r#"{"comment":"reviewed"}"#))
                     .unwrap(),
             )
@@ -231,9 +223,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"keyword":"prompt","marketStatus":"OFFLINE"}"#,
                 ))
@@ -253,9 +243,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/skill/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -272,9 +260,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/ecosystem/skills/categories/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -320,9 +306,7 @@ async fn admin_skill_route_manages_skill_packages() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/package")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill-package")
                 .body(Body::from(
                     r#"{"packageKey":"agent-productivity","name":"Agent Productivity Pack","summary":"Productivity skill bundle","description":"Curated agent productivity skills","icon":"https://cdn.example.test/package/icon.png","coverImage":"https://cdn.example.test/package/cover.png","enabled":true,"featured":true,"sortWeight":100,"tags":["agent","productivity","agent"]}"#,
@@ -352,9 +336,7 @@ async fn admin_skill_route_manages_skill_packages() {
                 .method("PUT")
                 .uri("/backend/v3/api/skill/package/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"summary":"Updated package","featured":false,"sortWeight":80,"tags":["workflow","quality"]}"#,
                 ))
@@ -380,9 +362,7 @@ async fn admin_skill_route_manages_skill_packages() {
                     .method("POST")
                     .uri(path)
                     .header("content-type", "application/json")
-                    .header("x-sdkwork-tenant-id", "10")
-                    .header("x-sdkwork-organization-id", "20")
-                    .header("x-sdkwork-user-id", "30")
+                    .internal_trusted_subject(10, 20, 30)
                     .body(Body::empty())
                     .unwrap(),
             )
@@ -400,9 +380,7 @@ async fn admin_skill_route_manages_skill_packages() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/package/list")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(r#"{"keyword":"productivity","enabled":true}"#))
                 .unwrap(),
         )
@@ -419,9 +397,7 @@ async fn admin_skill_route_manages_skill_packages() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/skill/package/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -440,9 +416,7 @@ async fn admin_skill_route_manages_skill_packages() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/skill/package/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -481,9 +455,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .method("POST")
                 .uri("/backend/v3/api/skill")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"skillKey":"asset-ready-skill","name":"Asset Ready Skill"}"#,
                 ))
@@ -500,9 +472,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/1/assets")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill-asset")
                 .body(Body::from(
                     r#"{"assetType":1,"assetUrl":"https://cdn.example.test/skills/asset-ready/cover.png","thumbnailUrl":"https://cdn.example.test/skills/asset-ready/thumb.png","title":"Skill cover","altText":"Skill marketplace cover","mimeType":"image/png","width":1200,"height":720,"fileSize":182000,"sortOrder":10,"publishedAt":"2026-05-09T00:00:00Z"}"#,
@@ -531,9 +501,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .method("PUT")
                 .uri("/backend/v3/api/skill/1/assets/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"title":"Updated cover","sortOrder":20,"thumbnailUrl":null}"#,
                 ))
@@ -559,9 +527,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/skill/1/assets")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -584,9 +550,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/1/artifacts")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill-artifact")
                 .body(Body::from(
                     r#"{"artifactType":1,"version":"1.0.0","platformType":"agent","osName":"runtime","artifactRef":"builtin://sdkwork.skills.asset_ready@1.0.0","artifactUrl":"data/skills/artifacts/asset-ready-1.0.0.json","artifactSizeBytes":2048,"runtime":"builtin","frameworks":["Rust service","OpenAI-compatible","Rust service"],"licenseName":"SDKWork Commercial","checksumHash":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","releaseNotes":"Initial release.","publishedAt":"2026-05-09T00:00:00Z"}"#,
@@ -620,9 +584,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .method("PUT")
                 .uri("/backend/v3/api/skill/1/artifacts/1")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"version":"1.0.1","artifactSizeBytes":4096,"frameworks":["Rust service","React portal"],"checksumHash":null}"#,
                 ))
@@ -648,9 +610,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
             Request::builder()
                 .method("GET")
                 .uri("/backend/v3/api/skill/1/artifacts")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -672,9 +632,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/skill/1/assets/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -692,9 +650,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
             Request::builder()
                 .method("DELETE")
                 .uri("/backend/v3/api/skill/1/artifacts/1")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -713,9 +669,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .method("POST")
                 .uri("/backend/v3/api/skill/1/artifacts")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"version":"2.0.0","artifactRef":"builtin://sdkwork.skills.asset_ready@2.0.0","checksumHash":"SHA256:bad"}"#,
                 ))
@@ -782,9 +736,7 @@ async fn admin_skill_route_rejects_invalid_payload_without_calling_store() {
                 .method("POST")
                 .uri("/backend/v3/api/skill")
                 .header("content-type", "application/json")
-                .header("x-sdkwork-tenant-id", "10")
-                .header("x-sdkwork-organization-id", "20")
-                .header("x-sdkwork-user-id", "30")
+                .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
                     r#"{"skillKey":"not ok","name":"","sourceType":"bad","visibility":"PUBLIC"}"#,
                 ))

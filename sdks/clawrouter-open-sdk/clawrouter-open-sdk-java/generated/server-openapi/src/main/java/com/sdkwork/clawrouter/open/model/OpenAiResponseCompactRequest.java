@@ -11,7 +11,7 @@ public class OpenAiResponseCompactRequest {
     public String getInput() {
         return this.input;
     }
-    
+
     public void setInput(String input) {
         this.input = input;
     }
@@ -19,7 +19,7 @@ public class OpenAiResponseCompactRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -27,7 +27,7 @@ public class OpenAiResponseCompactRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -35,7 +35,7 @@ public class OpenAiResponseCompactRequest {
     public String getPreviousResponseId() {
         return this.previousResponseId;
     }
-    
+
     public void setPreviousResponseId(String previousResponseId) {
         this.previousResponseId = previousResponseId;
     }

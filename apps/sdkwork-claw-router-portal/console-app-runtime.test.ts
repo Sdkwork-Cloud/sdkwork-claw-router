@@ -29,6 +29,34 @@ type CapturedSdkRequest = {
   body?: unknown;
 };
 
+type QueuedSdkHttpResponse = {
+  __sdkHttpResponse: true;
+  body: unknown;
+  contentType?: string;
+  status: number;
+};
+
+function sdkHttpResponse(
+  status: number,
+  body: unknown,
+  contentType = "application/json",
+): QueuedSdkHttpResponse {
+  return {
+    __sdkHttpResponse: true,
+    body,
+    contentType,
+    status,
+  };
+}
+
+function isQueuedSdkHttpResponse(value: unknown): value is QueuedSdkHttpResponse {
+  return Boolean(
+    value
+      && typeof value === "object"
+      && (value as QueuedSdkHttpResponse).__sdkHttpResponse === true,
+  );
+}
+
 async function withAppSdkResponse<T>(
   responseBody: unknown,
   fn: (captured: CapturedSdkRequest[]) => Promise<T>,
@@ -100,6 +128,15 @@ async function withAppSdkResponses<T>(
     const responseBody = responses.shift();
     if (responseBody === undefined) {
       throw new Error(`Unexpected SDK request: ${init?.method ?? "GET"} ${url}`);
+    }
+    if (isQueuedSdkHttpResponse(responseBody)) {
+      return new Response(
+        typeof responseBody.body === "string" ? responseBody.body : JSON.stringify(responseBody.body),
+        {
+          status: responseBody.status,
+          headers: { "content-type": responseBody.contentType ?? "application/json" },
+        },
+      );
     }
     if (typeof responseBody === "string") {
       return new Response(responseBody, {
@@ -232,6 +269,79 @@ function createChatRuntimeInvocationResponse() {
         chatItemId: "message-user-1",
         createdAt: "2026-05-17T08:00:00Z",
       },
+    },
+  };
+}
+
+function createChatRuntimeInvocationResponseFor(model: string, provider: string) {
+  const response = createChatRuntimeInvocationResponse();
+  return {
+    ...response,
+    data: {
+      item: {
+        ...response.data.item,
+        model,
+        provider,
+      },
+    },
+  };
+}
+
+function createCompletedChatRuntimeInvocationResponseFor(model: string, provider: string, outputText: string) {
+  return {
+    code: "2000",
+    data: {
+      item: {
+        ...createChatRuntimeInvocationResponseFor(model, provider).data.item,
+        completedAt: "2026-05-17T08:00:04Z",
+        responseJson: { outputText },
+        status: "completed",
+      },
+    },
+  };
+}
+
+function createCompletedChatTurnResponseFor(model: string, provider: string, content: string) {
+  return {
+    code: "2000",
+    data: {
+      turn: {
+        id: "turn-1",
+        conversationId: "conversation-1",
+        turnNo: 1,
+        role: "user",
+        mode: "chat",
+        status: "completed",
+        userMessageId: "message-user-1",
+        assistantMessageId: "message-assistant-1",
+        createdAt: "2026-05-17T08:00:00Z",
+        updatedAt: "2026-05-17T08:00:04Z",
+      },
+      messages: [
+        {
+          id: "message-user-1",
+          conversationId: "conversation-1",
+          turnId: "turn-1",
+          role: "user",
+          direction: "input",
+          content: "Say hello",
+          status: "completed",
+          createdAt: "2026-05-17T08:00:00Z",
+        },
+        {
+          id: "message-assistant-1",
+          conversationId: "conversation-1",
+          turnId: "turn-1",
+          role: "assistant",
+          direction: "output",
+          content,
+          status: "completed",
+          model,
+          provider,
+          runtimeInvocationId: "runtime-invocation-1",
+          createdAt: "2026-05-17T08:00:04Z",
+        },
+      ],
     },
   };
 }
@@ -399,6 +509,33 @@ function createAgentRuntimeInvocationResponse() {
   };
 }
 
+function createAgentRuntimeInvocationResponseFor(model: string, provider?: string) {
+  const response = createAgentRuntimeInvocationResponse();
+  return {
+    ...response,
+    data: {
+      item: {
+        ...response.data.item,
+        model,
+        provider,
+      },
+    },
+  };
+}
+
+function createCompletedAgentRuntimeInvocationResponseFor(model: string, provider?: string) {
+  return {
+    code: "2000",
+    data: {
+      item: {
+        ...createAgentRuntimeInvocationResponseFor(model, provider).data.item,
+        completedAt: "2026-05-17T08:00:03Z",
+        status: "completed",
+      },
+    },
+  };
+}
+
 function createAgentRunStepResponse() {
   return {
     code: "2000",
@@ -462,6 +599,35 @@ function createFailedAgentRunResponse() {
         executionMode: "interactive",
         totalSteps: 1,
         completedAt: "2026-05-17T08:00:01Z",
+        createdAt: "2026-05-17T08:00:00Z",
+      },
+    },
+  };
+}
+
+function createCompletedAgentRunResponseFor(inputMessage: string, outputMessage: string, model: string) {
+  return {
+    code: "2000",
+    data: {
+      item: {
+        id: "agent-run-1",
+        sessionId: "agent-session-1",
+        agentId: "101",
+        agentVersionId: "201",
+        requestId: "request-1",
+        status: "completed",
+        sourceSurface: "playground",
+        inputMessage,
+        outputMessage,
+        runtime: "openai_compatible",
+        model,
+        executionMode: "interactive",
+        totalSteps: 1,
+        inputTokens: 0,
+        outputTokens: 0,
+        cachedTokens: 0,
+        totalTokens: 0,
+        completedAt: "2026-05-17T08:00:03Z",
         createdAt: "2026-05-17T08:00:00Z",
       },
     },
@@ -1226,6 +1392,7 @@ test("playground service creates agent generation runs through standard Agent an
       assert.equal(captured[1].body.agentVersionId, "201");
       assert.equal(captured[2].body.agentId, "101");
       assert.equal(captured[2].body.agentVersionId, "201");
+      assert.equal(Object.hasOwn(captured[2].body, "requestId"), false);
       assert.equal(captured[3].body.streaming, true);
       assert.equal(captured[4].body.runtimeInvocationId, "runtime-invocation-1");
       assert.deepEqual(captured[6].body.responseJson, {
@@ -1252,6 +1419,142 @@ test("playground service creates agent generation runs through standard Agent an
     },
     { authenticated: true },
   );
+});
+
+test("playground generation sends image, responses, Claude, and Gemini models through Runtime SDK invocations", async () => {
+  const scenarios = [
+    {
+      name: "OpenAI image generation",
+      prompt: "Create a launch poster",
+      selectedModel: "openai/global/gpt-image-2",
+      targetType: "image" as const,
+      expectedProvider: "openai",
+      generationConfig: {
+        imageCount: 2,
+        imageMode: { aspectRatio: "16:9", count: 2, quality: "2k" },
+      },
+      referenceImages: [
+        {
+          name: "sketch.png",
+          mimeType: "image/png",
+          sizeBytes: 128,
+          dataUrl: "data:image/png;base64,c2tldGNo",
+        },
+      ],
+      expectedRequestJson: {
+        generationConfig: {
+          imageCount: 2,
+          imageMode: { aspectRatio: "16:9", count: 2, quality: "2k" },
+        },
+        prompt: "Create a launch poster",
+        referenceImages: [
+          {
+            name: "sketch.png",
+            mimeType: "image/png",
+            sizeBytes: 128,
+            dataUrl: "data:image/png;base64,c2tldGNo",
+          },
+        ],
+        selectedModel: "openai/global/gpt-image-2",
+        targetType: "image",
+      },
+    },
+    {
+      name: "OpenAI responses generation",
+      prompt: "Inspect the repository",
+      selectedModel: "openai/global/codex-mini-latest",
+      targetType: undefined,
+      expectedProvider: "openai",
+      generationConfig: undefined,
+      referenceImages: undefined,
+      expectedRequestJson: {
+        prompt: "Inspect the repository",
+        selectedModel: "openai/global/codex-mini-latest",
+      },
+    },
+    {
+      name: "Claude messages generation",
+      prompt: "Write a patch plan",
+      selectedModel: "anthropic/global/claude-sonnet-4-5",
+      targetType: undefined,
+      expectedProvider: "anthropic",
+      generationConfig: undefined,
+      referenceImages: undefined,
+      expectedRequestJson: {
+        prompt: "Write a patch plan",
+        selectedModel: "anthropic/global/claude-sonnet-4-5",
+      },
+    },
+    {
+      name: "Google Gemini generation",
+      prompt: "Summarize this request",
+      selectedModel: "google/global/gemini-2.5-flash",
+      targetType: undefined,
+      expectedProvider: "google",
+      generationConfig: { temperature: 0.2 },
+      referenceImages: undefined,
+      expectedRequestJson: {
+        generationConfig: { temperature: 0.2 },
+        prompt: "Summarize this request",
+        selectedModel: "google/global/gemini-2.5-flash",
+      },
+    },
+  ];
+
+  for (const scenario of scenarios) {
+    await withAppSdkResponses(
+      [
+        createPlaygroundAgentListResponse(),
+        createPlaygroundAgentSessionResponse(),
+        createPlaygroundAgentRunResponse(),
+        createAgentRuntimeInvocationResponseFor(scenario.selectedModel, scenario.expectedProvider),
+        createAgentRunStepResponse(),
+        [
+          `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"message.delta","eventSource":"runtime","textDelta":"${scenario.name} ready","createdAt":"2026-05-17T08:00:01Z"}`,
+          "data: [DONE]",
+          "",
+        ].join("\n"),
+        createCompletedAgentRuntimeInvocationResponseFor(
+          scenario.selectedModel,
+          scenario.expectedProvider,
+        ),
+        createCompletedAgentRunStepResponse(),
+        createCompletedAgentRunResponseFor(
+          scenario.prompt,
+          `${scenario.name} ready`,
+          scenario.selectedModel,
+        ),
+      ],
+      async (captured) => {
+        await PlaygroundService.runAgentGeneration({
+          generationConfig: scenario.generationConfig,
+          prompt: scenario.prompt,
+          referenceImages: scenario.referenceImages,
+          selectedModel: scenario.selectedModel,
+          targetType: scenario.targetType,
+        });
+
+        const sessionBody = captured[1].body as Record<string, unknown>;
+        const runBody = captured[2].body as Record<string, unknown>;
+        const invocationBody = captured[3].body as Record<string, unknown>;
+        const stepBody = captured[4].body as Record<string, unknown>;
+
+        assert.equal(captured[3].url, "/app/v3/api/runtime/invocations");
+        assert.equal(sessionBody.defaultModel, scenario.selectedModel);
+        assert.equal(runBody.model, scenario.selectedModel);
+        assert.equal(runBody.runtime, "openai_compatible");
+        assert.equal(invocationBody.endpoint, "agent.stream");
+        assert.equal(invocationBody.model, scenario.selectedModel);
+        assert.equal(invocationBody.provider, scenario.expectedProvider);
+        assert.equal(invocationBody.runtime, "openai_compatible");
+        assert.equal(invocationBody.streaming, true);
+        assert.deepEqual(invocationBody.requestJson, scenario.expectedRequestJson);
+        assert.equal(stepBody.model, scenario.selectedModel);
+        assert.equal(stepBody.toolName, "openai_compatible");
+      },
+      { authenticated: true },
+    );
+  }
 });
 
 test("playground generation agent normalizes media assets from Runtime SSE into reusable Generation results", async () => {
@@ -3379,6 +3682,180 @@ test("playground chat SSE reads provider-compatible payload-only runtime deltas"
   );
 });
 
+test("playground chat sends responses, Claude messages, and Gemini models through Runtime SDK invocations", async () => {
+  const scenarios = [
+    {
+      prompt: "Inspect the repository",
+      selectedModel: {
+        ...createChatTestModel(),
+        id: "openai/global/codex-mini-latest",
+        catalogKey: "openai/global/codex-mini-latest",
+        model: "codex-mini-latest",
+        name: "Codex Mini Latest",
+        displayName: "Codex Mini Latest",
+        desc: "OpenAI Codex Responses model",
+        vendorCode: "openai",
+        vendorName: "OpenAI",
+        apiFormat: "openai_responses",
+      },
+      expectedProvider: "openai",
+    },
+    {
+      prompt: "Write a patch",
+      selectedModel: {
+        ...createChatTestModel(),
+        id: "anthropic/global/claude-sonnet-4-5",
+        catalogKey: "anthropic/global/claude-sonnet-4-5",
+        model: "claude-sonnet-4-5",
+        name: "Claude Sonnet 4.5",
+        displayName: "Claude Sonnet 4.5",
+        desc: "Anthropic Claude messages model",
+        vendorCode: "anthropic",
+        vendorName: "Anthropic",
+        apiFormat: "anthropic_messages",
+      },
+      expectedProvider: "anthropic",
+    },
+    {
+      prompt: "Summarize the issue",
+      selectedModel: {
+        ...createChatTestModel(),
+        id: "google/global/gemini-2.5-flash",
+        catalogKey: "google/global/gemini-2.5-flash",
+        model: "gemini-2.5-flash",
+        name: "Gemini 2.5 Flash",
+        displayName: "Gemini 2.5 Flash",
+        desc: "Google Gemini model",
+        vendorCode: "google",
+        vendorName: "Google",
+        apiFormat: "google_gemini",
+      },
+      expectedProvider: "google",
+    },
+  ];
+
+  for (const scenario of scenarios) {
+    const modelCatalogKey = scenario.selectedModel.catalogKey;
+    await withAppSdkResponses(
+      [
+        createChatConversationResponse(),
+        createChatTurnResponse(),
+        createChatRuntimeInvocationResponseFor(modelCatalogKey, scenario.expectedProvider),
+        [
+          'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"message.delta","eventSource":"runtime","textDelta":"Gateway ready","createdAt":"2026-05-17T08:00:01Z"}',
+          "data: [DONE]",
+          "",
+        ].join("\n"),
+        createCompletedChatRuntimeInvocationResponseFor(
+          modelCatalogKey,
+          scenario.expectedProvider,
+          "Gateway ready",
+        ),
+        createCompletedChatTurnResponseFor(
+          modelCatalogKey,
+          scenario.expectedProvider,
+          "Gateway ready",
+        ),
+      ],
+      async (captured) => {
+        const result = await ChatService.sendMessage({
+          messages: [],
+          prompt: scenario.prompt,
+          selectedModel: scenario.selectedModel,
+        });
+
+        const conversationBody = captured[0].body as Record<string, unknown>;
+        const turnBody = captured[1].body as Record<string, unknown>;
+        const invocationBody = captured[2].body as Record<string, unknown>;
+        const requestJson = invocationBody.requestJson as Record<string, unknown>;
+
+        assert.equal(captured[2].url, "/app/v3/api/runtime/invocations");
+        assert.equal(conversationBody.defaultModel, modelCatalogKey);
+        assert.equal(conversationBody.defaultProvider, scenario.expectedProvider);
+        assert.equal(turnBody.model, modelCatalogKey);
+        assert.equal(turnBody.provider, scenario.expectedProvider);
+        assert.equal(invocationBody.endpoint, "chat.stream");
+        assert.equal(invocationBody.model, modelCatalogKey);
+        assert.equal(invocationBody.provider, scenario.expectedProvider);
+        assert.equal(invocationBody.runtime, "openai_compatible");
+        assert.equal(invocationBody.streaming, true);
+        assert.deepEqual(requestJson.messages, [{ role: "user", content: scenario.prompt }]);
+        assert.equal(requestJson.prompt, scenario.prompt);
+        assert.equal(requestJson.selectedModel, modelCatalogKey);
+        assert.equal(captured[3].headers?.accept, "text/event-stream");
+        assert.equal(captured[4].body.responseJson.outputText, "Gateway ready");
+        assert.equal(captured[5].body.model, modelCatalogKey);
+        assert.equal(captured[5].body.provider, scenario.expectedProvider);
+        assert.equal(result.assistantMessage.content, "Gateway ready");
+      },
+      { authenticated: true },
+    );
+  }
+});
+
+test("playground chat sends completed conversation history with the next prompt", async () => {
+  await withAppSdkResponses(
+    [
+      createChatConversationResponse(),
+      createChatTurnResponse(),
+      createChatRuntimeInvocationResponse(),
+      [
+        'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"message.delta","eventSource":"runtime","textDelta":"Second answer","createdAt":"2026-05-17T08:00:01Z"}',
+        "data: [DONE]",
+        "",
+      ].join("\n"),
+      createCompletedChatRuntimeInvocationResponseFor("gpt-4.1-mini", "openai", "Second answer"),
+      createCompletedChatTurnResponseFor("gpt-4.1-mini", "openai", "Second answer"),
+    ],
+    async (captured) => {
+      await ChatService.sendMessage({
+        messages: [
+          {
+            id: "message-user-previous",
+            role: "user",
+            content: "First question",
+            createdAt: "2026-05-17T07:59:00Z",
+            status: "sent",
+          },
+          {
+            id: "message-assistant-previous",
+            role: "assistant",
+            content: "First answer",
+            createdAt: "2026-05-17T07:59:05Z",
+            status: "complete",
+          },
+          {
+            id: "message-assistant-failed",
+            role: "assistant",
+            content: "Provider route unavailable",
+            createdAt: "2026-05-17T07:59:10Z",
+            status: "failed",
+          },
+          {
+            id: "message-assistant-pending",
+            role: "assistant",
+            content: "Partial response",
+            createdAt: "2026-05-17T07:59:15Z",
+            status: "responding",
+          },
+        ],
+        prompt: "Second question",
+        selectedModel: createChatTestModel(),
+        sessionId: "conversation-1",
+      });
+
+      const requestJson = captured[2].body.requestJson as Record<string, unknown>;
+      assert.deepEqual(requestJson.messages, [
+        { role: "user", content: "First question" },
+        { role: "assistant", content: "First answer" },
+        { role: "user", content: "Second question" },
+      ]);
+      assert.equal(requestJson.prompt, "Second question");
+    },
+    { authenticated: true },
+  );
+});
+
 test("playground chat SSE propagates Runtime usage into invocation and turn response completion", async () => {
   await withAppSdkResponses(
     [
@@ -3865,6 +4342,180 @@ test("playground chat SSE stream errors fail the runtime invocation", async () =
   );
 });
 
+test("playground chat SSE HTTP errors surface backend and upstream messages", async () => {
+  const upstreamMessage = "用户额度不足, 剩余额度: ＄-0.170132";
+  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 403 for model=openai/global/gpt-5.5: ${JSON.stringify({
+    error: {
+      code: "insufficient_user_quota",
+      message: upstreamMessage,
+      type: "new_api_error",
+    },
+  })}`;
+
+  await withAppSdkResponses(
+    [
+      createChatConversationResponse(),
+      createChatTurnResponse(),
+      createChatRuntimeInvocationResponseFor("openai/global/gpt-5.5", "openai"),
+      sdkHttpResponse(403, {
+        code: "5000",
+        msg: gatewayMessage,
+      }),
+      createFailedRuntimeInvocationResponse(),
+      createFailedChatTurnCompletionResponse(`${upstreamMessage} (insufficient_user_quota)`),
+    ],
+    async (captured) => {
+      await assert.rejects(
+        () => ChatService.sendMessage({
+          messages: [],
+          prompt: "Say hello",
+          selectedModel: {
+            ...createChatTestModel(),
+            catalogKey: "openai/global/gpt-5.5",
+            model: "gpt-5.5",
+            name: "GPT-5.5",
+          },
+        }),
+        /用户额度不足.*insufficient_user_quota/,
+      );
+
+      assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
+        "POST /app/v3/api/chat/conversations",
+        "POST /app/v3/api/chat/conversations/conversation-1/turns",
+        "POST /app/v3/api/runtime/invocations",
+        "GET /app/v3/api/runtime/invocations/runtime-invocation-1/events/stream",
+        "POST /app/v3/api/runtime/invocations/runtime-invocation-1/complete",
+        "POST /app/v3/api/chat/conversations/conversation-1/turns/turn-1/response",
+      ]);
+      assert.equal(captured[4].body.status, "failed");
+      assert.equal(captured[4].body.errorCode, "runtime_stream_failed");
+      assert.match(captured[4].body.errorMessageMasked, /用户额度不足/);
+      assert.match(captured[4].body.errorMessageMasked, /insufficient_user_quota/);
+      assert.equal(captured[5].body.status, "failed");
+      assert.match(captured[5].body.message, /用户额度不足/);
+      assert.match(captured[5].body.message, /insufficient_user_quota/);
+    },
+    { authenticated: true },
+  );
+});
+
+test("playground chat preserves the stream failure message when terminal failure recording fails", async () => {
+  const upstreamMessage = "Quota exhausted for the selected provider account";
+  const expectedMessage = `${upstreamMessage} (insufficient_user_quota; HTTP 403; model=openai/global/gpt-5.5)`;
+  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 403 for model=openai/global/gpt-5.5: ${JSON.stringify({
+    error: {
+      code: "insufficient_user_quota",
+      message: upstreamMessage,
+      type: "new_api_error",
+    },
+  })}`;
+
+  await withAppSdkResponses(
+    [
+      createChatConversationResponse(),
+      createChatTurnResponse(),
+      createChatRuntimeInvocationResponseFor("openai/global/gpt-5.5", "openai"),
+      sdkHttpResponse(403, {
+        code: "5000",
+        msg: gatewayMessage,
+      }),
+      sdkHttpResponse(500, {
+        code: "5000",
+        msg: "failed to mark runtime invocation failed",
+      }),
+      sdkHttpResponse(500, {
+        code: "5000",
+        msg: "failed to mark runtime invocation failed",
+      }),
+      sdkHttpResponse(500, {
+        code: "5000",
+        msg: "failed to mark runtime invocation failed",
+      }),
+      createFailedChatTurnCompletionResponse(expectedMessage),
+    ],
+    async (captured) => {
+      await assert.rejects(
+        () => ChatService.sendMessage({
+          messages: [],
+          prompt: "Say hello",
+          selectedModel: {
+            ...createChatTestModel(),
+            catalogKey: "openai/global/gpt-5.5",
+            model: "gpt-5.5",
+            name: "GPT-5.5",
+          },
+        }),
+        /Quota exhausted.*insufficient_user_quota/,
+      );
+
+      assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
+        "POST /app/v3/api/chat/conversations",
+        "POST /app/v3/api/chat/conversations/conversation-1/turns",
+        "POST /app/v3/api/runtime/invocations",
+        "GET /app/v3/api/runtime/invocations/runtime-invocation-1/events/stream",
+        "POST /app/v3/api/runtime/invocations/runtime-invocation-1/complete",
+        "POST /app/v3/api/runtime/invocations/runtime-invocation-1/complete",
+        "POST /app/v3/api/runtime/invocations/runtime-invocation-1/complete",
+        "POST /app/v3/api/chat/conversations/conversation-1/turns/turn-1/response",
+      ]);
+      assert.equal(captured[4].body.errorMessageMasked, expectedMessage);
+      assert.equal(captured[7].body.message, expectedMessage);
+    },
+    { authenticated: true },
+  );
+});
+
+test("playground chat exposes failed session metadata after a runtime stream error", async () => {
+  const upstreamMessage = "Provider route unavailable for requested model";
+  const expectedMessage = `${upstreamMessage} (provider_route_not_available; HTTP 503; model=openai/global/gpt-5.5)`;
+  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 503 for model=openai/global/gpt-5.5: ${JSON.stringify({
+    error: {
+      code: "provider_route_not_available",
+      message: upstreamMessage,
+      type: "server_error",
+    },
+  })}`;
+
+  await withAppSdkResponses(
+    [
+      createChatConversationResponse(),
+      createChatTurnResponse(),
+      createChatRuntimeInvocationResponseFor("openai/global/gpt-5.5", "openai"),
+      sdkHttpResponse(503, {
+        code: "5000",
+        msg: gatewayMessage,
+      }),
+      createFailedRuntimeInvocationResponse(),
+      createFailedChatTurnCompletionResponse(expectedMessage),
+    ],
+    async () => {
+      let caught: unknown;
+      try {
+        await ChatService.sendMessage({
+          messages: [],
+          prompt: "Say hello",
+          selectedModel: {
+            ...createChatTestModel(),
+            catalogKey: "openai/global/gpt-5.5",
+            model: "gpt-5.5",
+            name: "GPT-5.5",
+          },
+        });
+      } catch (error) {
+        caught = error;
+      }
+
+      assert(caught instanceof Error);
+      assert.equal(caught.message, expectedMessage);
+      const failedSession = (caught as { session?: { id?: string; preview?: string; title?: string } }).session;
+      assert.equal(failedSession?.id, "conversation-1");
+      assert.equal(failedSession?.preview, expectedMessage);
+      assert.equal(failedSession?.title, "Say hello");
+    },
+    { authenticated: true },
+  );
+});
+
 test("playground agent SSE stream errors fail the runtime invocation and run", async () => {
   await withAppSdkResponses(
     [
@@ -4304,6 +4955,78 @@ test("playground service derives vendor grouped models from the standard app mod
       assert.equal(openai.images[0].vendorCode, "openai");
       assert.equal(openai.images[0].versionLabel, "GEN");
       assert.equal(Object.hasOwn(openai, "agents"), false);
+    },
+  );
+});
+
+test("playground chat keeps catalog models visible regardless of provider route availability", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            catalogKey: "openai/global/gpt-5.5",
+            model: "gpt-5.5",
+            displayName: "GPT-5.5",
+            description: "Catalog-only model without a callable route.",
+            vendorCode: "openai",
+            vendor: "openai",
+            regionCode: "global",
+            modalities: ["text"],
+            inputModalities: ["text"],
+            outputModalities: ["text"],
+            capabilities: ["chat"],
+            groups: ["default"],
+            categories: ["Recommended"],
+            apiFormat: "openai_compatible",
+            contextTokens: 128000,
+            maxOutputTokens: 16000,
+            supportsStreaming: true,
+            supportsTools: true,
+            supportsJsonSchema: false,
+            providerCodes: [],
+            officialReferencePrices: [],
+            priceAvailability: { status: "reference", reason: "Public reference price only." },
+          },
+          {
+            catalogKey: "openai/global/gpt-4o-mini",
+            model: "gpt-4o-mini",
+            displayName: "GPT-4o mini",
+            description: "Callable routed chat model.",
+            vendorCode: "openai",
+            vendor: "openai",
+            regionCode: "global",
+            modalities: ["text"],
+            inputModalities: ["text"],
+            outputModalities: ["text"],
+            capabilities: ["chat"],
+            groups: ["default"],
+            categories: ["Recommended"],
+            apiFormat: "openai_compatible",
+            contextTokens: 128000,
+            maxOutputTokens: 16000,
+            supportsStreaming: true,
+            supportsTools: true,
+            supportsJsonSchema: false,
+            providerCodes: ["openrouter"],
+            officialReferencePrices: [],
+            priceAvailability: { status: "reference", reason: "Public reference price only." },
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const result = await PlaygroundService.fetchModelGroups();
+
+      assert.equal(captured[0].url, "/app/v3/api/ai/models");
+      const visibleCatalogKeys = result
+        .flatMap((group) => group.llms.map((model) => model.catalogKey))
+        .sort();
+      assert.deepEqual(visibleCatalogKeys, [
+        "openai/global/gpt-4o-mini",
+        "openai/global/gpt-5.5",
+      ]);
     },
   );
 });

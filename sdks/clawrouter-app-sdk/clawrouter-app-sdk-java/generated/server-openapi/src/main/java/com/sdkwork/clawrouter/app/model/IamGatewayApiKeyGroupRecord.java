@@ -35,7 +35,7 @@ public class IamGatewayApiKeyGroupRecord {
     public Map<String, String> getAllowedOrigin() {
         return this.allowedOrigin;
     }
-    
+
     public void setAllowedOrigin(Map<String, String> allowedOrigin) {
         this.allowedOrigin = allowedOrigin;
     }
@@ -43,7 +43,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getBillingType() {
         return this.billingType;
     }
-    
+
     public void setBillingType(String billingType) {
         this.billingType = billingType;
     }
@@ -51,7 +51,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getCapacityLimit() {
         return this.capacityLimit;
     }
-    
+
     public void setCapacityLimit(String capacityLimit) {
         this.capacityLimit = capacityLimit;
     }
@@ -59,7 +59,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -67,7 +67,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -75,7 +75,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -83,7 +83,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getDefaultPolicyId() {
         return this.defaultPolicyId;
     }
-    
+
     public void setDefaultPolicyId(String defaultPolicyId) {
         this.defaultPolicyId = defaultPolicyId;
     }
@@ -91,7 +91,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getDefaultQuotaPolicyId() {
         return this.defaultQuotaPolicyId;
     }
-    
+
     public void setDefaultQuotaPolicyId(String defaultQuotaPolicyId) {
         this.defaultQuotaPolicyId = defaultQuotaPolicyId;
     }
@@ -99,7 +99,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -107,7 +107,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -115,7 +115,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -123,7 +123,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -131,7 +131,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getGroupType() {
         return this.groupType;
     }
-    
+
     public void setGroupType(String groupType) {
         this.groupType = groupType;
     }
@@ -139,7 +139,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -147,7 +147,7 @@ public class IamGatewayApiKeyGroupRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -155,7 +155,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -163,7 +163,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getOfficialPriceMultiplier() {
         return this.officialPriceMultiplier;
     }
-    
+
     public void setOfficialPriceMultiplier(String officialPriceMultiplier) {
         this.officialPriceMultiplier = officialPriceMultiplier;
     }
@@ -171,7 +171,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -179,7 +179,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getPriceReferenceMode() {
         return this.priceReferenceMode;
     }
-    
+
     public void setPriceReferenceMode(String priceReferenceMode) {
         this.priceReferenceMode = priceReferenceMode;
     }
@@ -187,7 +187,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getPricingPlanCode() {
         return this.pricingPlanCode;
     }
-    
+
     public void setPricingPlanCode(String pricingPlanCode) {
         this.pricingPlanCode = pricingPlanCode;
     }
@@ -195,7 +195,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getPricingPlanId() {
         return this.pricingPlanId;
     }
-    
+
     public void setPricingPlanId(String pricingPlanId) {
         this.pricingPlanId = pricingPlanId;
     }
@@ -203,7 +203,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -211,7 +211,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getRateMultiplier() {
         return this.rateMultiplier;
     }
-    
+
     public void setRateMultiplier(String rateMultiplier) {
         this.rateMultiplier = rateMultiplier;
     }
@@ -219,7 +219,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -227,7 +227,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -235,7 +235,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -243,7 +243,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -251,7 +251,7 @@ public class IamGatewayApiKeyGroupRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

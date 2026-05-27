@@ -15,7 +15,7 @@ public class IamOrganizationMemberRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -23,7 +23,7 @@ public class IamOrganizationMemberRecord {
     public String getJoinedAt() {
         return this.joinedAt;
     }
-    
+
     public void setJoinedAt(String joinedAt) {
         this.joinedAt = joinedAt;
     }
@@ -31,7 +31,7 @@ public class IamOrganizationMemberRecord {
     public String getLeftAt() {
         return this.leftAt;
     }
-    
+
     public void setLeftAt(String leftAt) {
         this.leftAt = leftAt;
     }
@@ -39,7 +39,7 @@ public class IamOrganizationMemberRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -47,7 +47,7 @@ public class IamOrganizationMemberRecord {
     public String getRemark() {
         return this.remark;
     }
-    
+
     public void setRemark(String remark) {
         this.remark = remark;
     }
@@ -55,7 +55,7 @@ public class IamOrganizationMemberRecord {
     public String getRoleCode() {
         return this.roleCode;
     }
-    
+
     public void setRoleCode(String roleCode) {
         this.roleCode = roleCode;
     }
@@ -63,7 +63,7 @@ public class IamOrganizationMemberRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -71,7 +71,7 @@ public class IamOrganizationMemberRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -79,7 +79,7 @@ public class IamOrganizationMemberRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }

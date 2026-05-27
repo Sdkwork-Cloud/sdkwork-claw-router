@@ -1,8 +1,9 @@
 use crate::{
     AccountLedgerQuery, AccountSummary, AccountSummaryQuery, AppendLedgerEntryCommand,
-    AppendLedgerEntryOutcome, LedgerEntryDraft, WalletAccountItem, WalletAccountListQuery,
-    WalletOperation, WalletOperationQuery, WalletOverview, WalletTransactionDetailQuery,
-    WalletTransactionItem, WalletTransactionListQuery,
+    AppendLedgerEntryOutcome, BillingHistoryItem, BillingHistoryListQuery, LedgerEntryDraft,
+    WalletAccountItem, WalletAccountListQuery, WalletOperation, WalletOperationQuery,
+    WalletOverview, WalletTransactionDetailQuery, WalletTransactionItem,
+    WalletTransactionListQuery,
 };
 use sdkwork_commerce_core::CommerceRequestHash;
 use sdkwork_commerce_core::CommerceServiceError;
@@ -56,7 +57,15 @@ pub trait AccountLedgerWritePort {
     ) -> Result<AppendLedgerEntryOutcome, CommerceServiceError>;
 }
 
+pub trait BillingHistoryReadPort {
+    fn list_billing_history(
+        &self,
+        query: &BillingHistoryListQuery,
+    ) -> Result<Vec<BillingHistoryItem>, CommerceServiceError>;
+}
+
 pub const ACCOUNT_REPOSITORY_PORT: &str = "account.repository";
 pub const ACCOUNT_WALLET_READ_PORT: &str = "account.wallet.read";
 pub const ACCOUNT_LEDGER_WRITE_PORT: &str = "account.ledger.write";
+pub const BILLING_HISTORY_READ_PORT: &str = "billing.history.read";
 pub const IDEMPOTENCY_REPOSITORY_PORT: &str = "idempotency.repository";

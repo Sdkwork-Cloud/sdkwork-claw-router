@@ -18,7 +18,7 @@ public class ListFineTuningJobsItem {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -26,7 +26,7 @@ public class ListFineTuningJobsItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -34,7 +34,7 @@ public class ListFineTuningJobsItem {
     public String getFineTunedModel() {
         return this.fineTunedModel;
     }
-    
+
     public void setFineTunedModel(String fineTunedModel) {
         this.fineTunedModel = fineTunedModel;
     }
@@ -42,7 +42,7 @@ public class ListFineTuningJobsItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -50,7 +50,7 @@ public class ListFineTuningJobsItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -58,7 +58,7 @@ public class ListFineTuningJobsItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -66,7 +66,7 @@ public class ListFineTuningJobsItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -74,7 +74,7 @@ public class ListFineTuningJobsItem {
     public List<String> getResultFiles() {
         return this.resultFiles;
     }
-    
+
     public void setResultFiles(List<String> resultFiles) {
         this.resultFiles = resultFiles;
     }
@@ -82,7 +82,7 @@ public class ListFineTuningJobsItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -90,7 +90,7 @@ public class ListFineTuningJobsItem {
     public String getTrainingFile() {
         return this.trainingFile;
     }
-    
+
     public void setTrainingFile(String trainingFile) {
         this.trainingFile = trainingFile;
     }

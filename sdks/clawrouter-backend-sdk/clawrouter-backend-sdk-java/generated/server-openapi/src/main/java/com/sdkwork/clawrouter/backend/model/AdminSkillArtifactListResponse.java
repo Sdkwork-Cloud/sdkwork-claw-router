@@ -8,7 +8,7 @@ public class AdminSkillArtifactListResponse {
     public List<AdminSkillArtifactItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminSkillArtifactItem> items) {
         this.items = items;
     }

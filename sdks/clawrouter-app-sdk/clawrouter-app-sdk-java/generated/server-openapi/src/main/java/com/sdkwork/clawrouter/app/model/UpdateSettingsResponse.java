@@ -7,7 +7,7 @@ public class UpdateSettingsResponse {
     public Boolean getSuccess() {
         return this.success;
     }
-    
+
     public void setSuccess(Boolean success) {
         this.success = success;
     }

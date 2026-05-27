@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, type RefObject } from 'react';
 import { Loader2, MessageSquareText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { ChatMarkdownMessage } from './ChatMarkdownMessage';
 import { ChatMessageBubble } from './ChatMessageBubble';
 import type { ChatMessage } from './chatTypes';
 
@@ -9,19 +10,27 @@ export function ChatMessageList({
   loading = false,
   error = null,
   bottomPaddingPx = 224,
+  scrollContainerRef,
 }: {
   messages: ChatMessage[];
   loading?: boolean;
   error?: string | null;
   bottomPaddingPx?: number;
+  scrollContainerRef?: RefObject<HTMLDivElement | null>;
 }) {
   const { t } = useTranslation();
   const bottomRef = useRef<HTMLDivElement>(null);
   const bottomPaddingStyle = { paddingBottom: `${Math.max(bottomPaddingPx, 224)}px` };
+  const shouldShowErrorBanner = Boolean(error && !hasFailedAssistantError(messages, error));
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const scroller = scrollContainerRef?.current;
+    if (scroller) {
+      scroller.scrollTop = scroller.scrollHeight;
+      return;
+    }
     bottomRef.current?.scrollIntoView({ block: 'end' });
-  }, [loading, messages, error]);
+  }, [loading, messages, error, scrollContainerRef]);
 
   if (loading && messages.length === 0) {
     return (
@@ -40,7 +49,11 @@ export function ChatMessageList({
         </div>
         <h2 className="text-xl font-semibold text-white">{t('playground.chat.emptyTitle')}</h2>
         <p className="mt-2 max-w-md text-sm leading-6 text-slate-400">{t('playground.chat.emptyDescription')}</p>
-        {error && <p className="mt-3 max-w-md text-xs leading-5 text-red-300">{error}</p>}
+        {error && (
+          <div className="mt-3 max-w-md text-xs leading-5 text-red-300">
+            <ChatMarkdownMessage content={error} tone="danger" />
+          </div>
+        )}
       </div>
     );
   }
@@ -52,9 +65,9 @@ export function ChatMessageList({
           {t('playground.chat.messagesLoading')}
         </div>
       )}
-      {error && (
-        <div className="rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-200">
-          {error}
+      {shouldShowErrorBanner && (
+        <div className="min-w-0 rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-200">
+          <ChatMarkdownMessage content={error || ''} tone="danger" />
         </div>
       )}
       {messages.map((message) => (
@@ -63,4 +76,19 @@ export function ChatMessageList({
       <div ref={bottomRef} />
     </div>
   );
+}
+
+function hasFailedAssistantError(messages: ChatMessage[], error: string | null): boolean {
+  const normalizedError = error?.trim();
+  if (!normalizedError) {
+    return false;
+  }
+  return messages.some((message) => {
+    const isFailedAssistant = message.role === 'assistant' && message.status === 'failed';
+    if (!isFailedAssistant) {
+      return false;
+    }
+    const failedText = message.errorMessage || message.content;
+    return failedText.includes(normalizedError);
+  });
 }

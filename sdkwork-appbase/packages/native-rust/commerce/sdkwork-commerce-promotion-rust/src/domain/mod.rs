@@ -1,52 +1,54 @@
-use sdkwork_commerce_core::{CommerceMoney, CommerceServiceError};
+use sdkwork_commerce_core::{CommerceMoney, CommerceServiceError, PromotionCouponStatus};
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub enum CouponDiscount {
+pub enum PromotionDiscount {
     FixedAmount(CommerceMoney),
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CouponTemplateDraft {
-    pub discount: CouponDiscount,
-    pub template_id: String,
+pub struct PromotionOfferDraft {
+    pub offer_code: String,
+    pub offer_no: String,
+    pub offer_type: String,
     pub tenant_id: String,
-    pub title: String,
+    pub name: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub enum CouponStatus {
-    Draft,
-    Active,
-    Redeemed,
-    Expired,
-    Disabled,
+pub struct PromotionOfferVersionDraft {
+    pub discount: PromotionDiscount,
+    pub offer_id: String,
+    pub tenant_id: String,
+    pub version_no: i32,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CouponTransition {
-    from: CouponStatus,
-    to: CouponStatus,
+pub struct PromotionUserCouponTransition {
+    from: PromotionCouponStatus,
+    to: PromotionCouponStatus,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CouponClaimDraft {
+pub struct PromotionUserCouponClaimDraft {
     pub idempotency_key: String,
-    pub owner_user_id: String,
-    pub template_id: String,
+    pub offer_id: String,
+    pub subject_id: String,
+    pub subject_type: String,
     pub tenant_id: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CouponRedemptionDraft {
-    pub coupon_id: String,
+pub struct PromotionDiscountApplicationDraft {
     pub idempotency_key: String,
     pub order_id: String,
-    pub owner_user_id: String,
+    pub subject_id: String,
+    pub subject_type: String,
     pub tenant_id: String,
+    pub user_coupon_id: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct CurrentUserCouponItem {
+pub struct PromotionUserCouponItem {
     pub id: String,
     pub code: String,
     pub amount: CommerceMoney,
@@ -80,18 +82,18 @@ pub struct AppCommerceExchangeRuleItem {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct RedeemCodeOutcome {
+pub struct PromotionCodeRedemptionOutcome {
     pub message: String,
     pub amount: CommerceMoney,
     pub credited_points: i64,
     pub balance: i64,
 }
 
-impl CouponDiscount {
+impl PromotionDiscount {
     pub fn fixed_amount(amount: CommerceMoney) -> Result<Self, CommerceServiceError> {
         if amount.as_str() == "0" || amount.as_str() == "0.0" || amount.as_str() == "0.00" {
             return Err(CommerceServiceError::validation(
-                "coupon fixed discount must be greater than zero",
+                "promotion fixed discount must be greater than zero",
             ));
         }
 
@@ -99,91 +101,125 @@ impl CouponDiscount {
     }
 }
 
-impl CouponTemplateDraft {
+impl PromotionOfferDraft {
     pub fn new(
         tenant_id: &str,
-        template_id: &str,
-        title: &str,
-        discount: CouponDiscount,
+        offer_no: &str,
+        offer_code: &str,
+        name: &str,
+        offer_type: &str,
     ) -> Result<Self, CommerceServiceError> {
         crate::validation::require_non_empty("tenant_id", tenant_id)?;
-        crate::validation::require_non_empty("template_id", template_id)?;
-        crate::validation::require_non_empty("title", title)?;
+        crate::validation::require_non_empty("offer_no", offer_no)?;
+        crate::validation::require_non_empty("offer_code", offer_code)?;
+        crate::validation::require_non_empty("name", name)?;
+        crate::validation::require_non_empty("offer_type", offer_type)?;
 
         Ok(Self {
-            discount,
-            template_id: template_id.to_string(),
-            tenant_id: tenant_id.to_string(),
-            title: title.to_string(),
+            offer_code: offer_code.trim().to_string(),
+            offer_no: offer_no.trim().to_string(),
+            offer_type: offer_type.trim().to_string(),
+            tenant_id: tenant_id.trim().to_string(),
+            name: name.trim().to_string(),
         })
     }
 }
 
-impl CouponTransition {
-    pub fn new(from: CouponStatus, to: CouponStatus) -> Self {
+impl PromotionOfferVersionDraft {
+    pub fn new(
+        tenant_id: &str,
+        offer_id: &str,
+        version_no: i32,
+        discount: PromotionDiscount,
+    ) -> Result<Self, CommerceServiceError> {
+        crate::validation::require_non_empty("tenant_id", tenant_id)?;
+        crate::validation::require_non_empty("offer_id", offer_id)?;
+        if version_no <= 0 {
+            return Err(CommerceServiceError::validation(
+                "promotion offer version_no must be greater than zero",
+            ));
+        }
+
+        Ok(Self {
+            discount,
+            offer_id: offer_id.trim().to_string(),
+            tenant_id: tenant_id.trim().to_string(),
+            version_no,
+        })
+    }
+}
+
+impl PromotionUserCouponTransition {
+    pub fn new(from: PromotionCouponStatus, to: PromotionCouponStatus) -> Self {
         Self { from, to }
     }
 
     pub fn validate(&self) -> Result<(), CommerceServiceError> {
         match (&self.from, &self.to) {
-            (CouponStatus::Draft, CouponStatus::Active)
-            | (CouponStatus::Active, CouponStatus::Redeemed)
-            | (CouponStatus::Active, CouponStatus::Expired)
-            | (CouponStatus::Active, CouponStatus::Disabled)
-            | (CouponStatus::Draft, CouponStatus::Disabled) => Ok(()),
+            (PromotionCouponStatus::Draft, PromotionCouponStatus::Active)
+            | (PromotionCouponStatus::Active, PromotionCouponStatus::Redeemed)
+            | (PromotionCouponStatus::Active, PromotionCouponStatus::Expired)
+            | (PromotionCouponStatus::Active, PromotionCouponStatus::Disabled)
+            | (PromotionCouponStatus::Draft, PromotionCouponStatus::Disabled) => Ok(()),
             _ => Err(CommerceServiceError::invalid_state(
-                "invalid coupon status transition",
+                "invalid promotion user coupon status transition",
             )),
         }
     }
 }
 
-impl CouponClaimDraft {
+impl PromotionUserCouponClaimDraft {
     pub fn new(
         tenant_id: &str,
-        template_id: &str,
-        owner_user_id: &str,
+        offer_id: &str,
+        subject_type: &str,
+        subject_id: &str,
         idempotency_key: &str,
     ) -> Result<Self, CommerceServiceError> {
         crate::validation::require_non_empty("tenant_id", tenant_id)?;
-        crate::validation::require_non_empty("template_id", template_id)?;
-        crate::validation::require_non_empty("owner_user_id", owner_user_id)?;
+        crate::validation::require_non_empty("offer_id", offer_id)?;
+        crate::validation::require_non_empty("subject_type", subject_type)?;
+        crate::validation::require_non_empty("subject_id", subject_id)?;
         crate::validation::require_non_empty("idempotency_key", idempotency_key)?;
 
         Ok(Self {
-            idempotency_key: idempotency_key.to_string(),
-            owner_user_id: owner_user_id.to_string(),
-            template_id: template_id.to_string(),
-            tenant_id: tenant_id.to_string(),
+            idempotency_key: idempotency_key.trim().to_string(),
+            offer_id: offer_id.trim().to_string(),
+            subject_id: subject_id.trim().to_string(),
+            subject_type: subject_type.trim().to_string(),
+            tenant_id: tenant_id.trim().to_string(),
         })
     }
 }
 
-impl CouponRedemptionDraft {
+impl PromotionDiscountApplicationDraft {
     pub fn new(
         tenant_id: &str,
-        coupon_id: &str,
+        user_coupon_id: &str,
         order_id: &str,
-        owner_user_id: &str,
+        subject_type: &str,
+        subject_id: &str,
         idempotency_key: &str,
     ) -> Result<Self, CommerceServiceError> {
         crate::validation::require_non_empty("tenant_id", tenant_id)?;
-        crate::validation::require_non_empty("coupon_id", coupon_id)?;
+        crate::validation::require_non_empty("user_coupon_id", user_coupon_id)?;
         crate::validation::require_non_empty("order_id", order_id)?;
-        crate::validation::require_non_empty("owner_user_id", owner_user_id)?;
+        crate::validation::require_non_empty("subject_type", subject_type)?;
+        crate::validation::require_non_empty("subject_id", subject_id)?;
         crate::validation::require_non_empty("idempotency_key", idempotency_key)?;
 
         Ok(Self {
-            coupon_id: coupon_id.to_string(),
-            idempotency_key: idempotency_key.to_string(),
-            order_id: order_id.to_string(),
-            owner_user_id: owner_user_id.to_string(),
-            tenant_id: tenant_id.to_string(),
+            idempotency_key: idempotency_key.trim().to_string(),
+            order_id: order_id.trim().to_string(),
+            subject_id: subject_id.trim().to_string(),
+            subject_type: subject_type.trim().to_string(),
+            tenant_id: tenant_id.trim().to_string(),
+            user_coupon_id: user_coupon_id.trim().to_string(),
         })
     }
 }
 
-impl CurrentUserCouponItem {
+impl PromotionUserCouponItem {
     pub fn new(
         id: &str,
         code: &str,
@@ -275,7 +311,7 @@ impl AppCommerceExchangeRuleItem {
     }
 }
 
-impl RedeemCodeOutcome {
+impl PromotionCodeRedemptionOutcome {
     pub fn new(
         message: &str,
         amount: &str,
@@ -285,7 +321,7 @@ impl RedeemCodeOutcome {
         require_non_empty_service("message", message)?;
         if credited_points < 0 || balance < 0 {
             return Err(CommerceServiceError::validation(
-                "redeem code outcome points must not be negative",
+                "promotion code redemption outcome points must not be negative",
             ));
         }
 

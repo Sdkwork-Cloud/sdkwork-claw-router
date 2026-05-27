@@ -68,8 +68,8 @@ export interface SdkworkCommerceMessages {
     paymentMethods: string;
     title: string;
     totalOrders: string;
-    vipSpending: string;
-    vipTerm: string;
+    membershipSpending: string;
+    membershipTerm: string;
   };
   page: {
     errorTitle: string;
@@ -215,15 +215,15 @@ const EN_US_MESSAGES: SdkworkCommerceMessages = {
     bestOfferSavings: "Best offer savings",
     claimedBenefits: "Claimed benefits",
     currentLevel: "Level",
-    description: "Unify wallet balance, VIP growth, point spending, invoice lifecycle, payment attempts, and pending orders into one reusable Sdkwork-style business console.",
+    description: "Unify wallet balance, membership growth, point spending, invoice lifecycle, payment attempts, and pending orders into one reusable Sdkwork-style business console.",
     eyebrow: "Commercial System",
     featuredOffers: "Featured offers",
     invoiceQueue: "Invoice queue",
     paymentMethods: "Payment methods",
     title: "Commerce Hub",
     totalOrders: "Total orders",
-    vipSpending: "VIP spending",
-    vipTerm: "VIP term",
+    membershipSpending: "Membership spending",
+    membershipTerm: "Membership term",
   },
   page: {
     errorTitle: "Commerce hub error",
@@ -324,15 +324,15 @@ const ZH_CN_MESSAGES: SdkworkCommerceMessages = {
     bestOfferSavings: "\u6700\u4f73\u65b9\u6848\u8282\u7701",
     claimedBenefits: "\u5df2\u9886\u53d6\u6743\u76ca",
     currentLevel: "\u7b49\u7ea7",
-    description: "\u628a\u94b1\u5305\u4f59\u989d\u3001VIP \u6210\u957f\u3001\u79ef\u5206\u6d88\u8017\u3001\u53d1\u7968\u751f\u547d\u5468\u671f\u3001\u652f\u4ed8\u5c1d\u8bd5\u548c\u5f85\u5904\u7406\u8ba2\u5355\u7edf\u4e00\u5728\u4e00\u5957 Sdkwork \u98ce\u683c\u7684\u5546\u4e1a\u5316\u63a7\u5236\u53f0\u4e2d\u3002",
+    description: "\u628a\u94b1\u5305\u4f59\u989d\u3001\u4f1a\u5458\u6210\u957f\u3001\u79ef\u5206\u6d88\u8017\u3001\u53d1\u7968\u751f\u547d\u5468\u671f\u3001\u652f\u4ed8\u5c1d\u8bd5\u548c\u5f85\u5904\u7406\u8ba2\u5355\u7edf\u4e00\u5728\u4e00\u5957 Sdkwork \u98ce\u683c\u7684\u5546\u4e1a\u5316\u63a7\u5236\u53f0\u4e2d\u3002",
     eyebrow: "\u5546\u4e1a\u7cfb\u7edf",
     featuredOffers: "\u7cbe\u9009\u65b9\u6848",
     invoiceQueue: "\u53d1\u7968\u961f\u5217",
     paymentMethods: "\u652f\u4ed8\u65b9\u5f0f",
     title: "\u5546\u4e1a\u4e2d\u67a2",
     totalOrders: "\u8ba2\u5355\u603b\u6570",
-    vipSpending: "VIP \u652f\u51fa",
-    vipTerm: "VIP \u671f\u9650",
+    membershipSpending: "\u4f1a\u5458\u652f\u51fa",
+    membershipTerm: "\u4f1a\u5458\u671f\u9650",
   },
   page: {
     errorTitle: "\u5546\u4e1a\u4e2d\u67a2\u5f02\u5e38",

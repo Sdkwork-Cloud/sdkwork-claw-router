@@ -14,7 +14,7 @@ public class OpenAiRealtimeCall {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -22,7 +22,7 @@ public class OpenAiRealtimeCall {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -30,7 +30,7 @@ public class OpenAiRealtimeCall {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -38,7 +38,7 @@ public class OpenAiRealtimeCall {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -46,7 +46,7 @@ public class OpenAiRealtimeCall {
     public String getSdp() {
         return this.sdp;
     }
-    
+
     public void setSdp(String sdp) {
         this.sdp = sdp;
     }
@@ -54,7 +54,7 @@ public class OpenAiRealtimeCall {
     public String getSession() {
         return this.session;
     }
-    
+
     public void setSession(String session) {
         this.session = session;
     }
@@ -62,7 +62,7 @@ public class OpenAiRealtimeCall {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

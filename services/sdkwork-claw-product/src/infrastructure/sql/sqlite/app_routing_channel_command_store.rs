@@ -847,10 +847,10 @@ async fn replace_channel_models(
         .bind(requested_at)
         .bind(requested_at)
         .bind(channel_id)
-        .bind(catalog_key)
-        .bind(official_model)
-        .bind(vendor_code)
-        .bind(catalog_key)
+        .bind(&catalog_key)
+        .bind(&official_model)
+        .bind(&vendor_code)
+        .bind(&official_model)
         .bind(capability)
         .execute(&mut **tx)
         .await
@@ -1212,23 +1212,15 @@ async fn load_models_for_channels_tx(
     Ok(models)
 }
 
-fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(&str, &str, &str)> {
+fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(String, String, String)> {
     let value = catalog_key.trim();
-    let mut parts = value.split('/');
-    let (Some(vendor_code), Some(region_code), Some(model_id), None) =
-        (parts.next(), parts.next(), parts.next(), parts.next())
-    else {
-        return Err(DomainError::new(format!(
-            "routing channel model must be a catalog key in vendorCode/regionCode/modelId format: {value}"
-        )));
-    };
-    if vendor_code.trim().is_empty() || region_code.trim().is_empty() || model_id.trim().is_empty()
-    {
+    let parts = value.split('/').map(str::trim).collect::<Vec<_>>();
+    if parts.len() < 3 || parts.iter().any(|part| part.is_empty()) {
         return Err(DomainError::new(format!(
             "routing channel model must be a catalog key in vendorCode/regionCode/modelId format: {value}"
         )));
     }
-    Ok((value, vendor_code, model_id))
+    Ok((value.to_owned(), parts[0].to_owned(), parts[2..].join("/")))
 }
 
 fn row_to_channel(

@@ -10,7 +10,7 @@ public class IamPasswordResetCreateRequest {
     public String getAccount() {
         return this.account;
     }
-    
+
     public void setAccount(String account) {
         this.account = account;
     }
@@ -18,7 +18,7 @@ public class IamPasswordResetCreateRequest {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -26,7 +26,7 @@ public class IamPasswordResetCreateRequest {
     public String getConfirmPassword() {
         return this.confirmPassword;
     }
-    
+
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
@@ -34,7 +34,7 @@ public class IamPasswordResetCreateRequest {
     public String getNewPassword() {
         return this.newPassword;
     }
-    
+
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }

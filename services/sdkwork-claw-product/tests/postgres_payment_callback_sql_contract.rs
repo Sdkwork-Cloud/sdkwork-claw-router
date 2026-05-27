@@ -88,10 +88,14 @@ fn payment_callback_webhook_event_queries_lock_and_scope_idempotency_by_provider
 #[test]
 fn payment_callback_success_updates_appbase_payment_order_and_ledger_tables() {
     for expected in [
-        "UPDATE commerce_payment_attempt SET status = $1, paid_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> $1",
-        "UPDATE commerce_payment_intent SET status = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> $1",
+        "UPDATE commerce_payment_attempt SET status = $1, paid_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status = $3",
+        "UPDATE commerce_payment_intent SET status = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status = $3",
         "UPDATE commerce_order SET status = $1, paid_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status IN ($3, 'pending')",
-        "UPDATE commerce_account SET available_amount = $1, version = version + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $2",
+        "payment callback cannot transition terminal payment to success",
+        "payment callback payment is no longer pending",
+        "payment callback payment intent is no longer pending",
+        "UPDATE commerce_account SET available_amount = (COALESCE(available_amount::numeric, 0) + $1::numeric)::text, version = version + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND COALESCE(available_amount::numeric, 0) <= $3::numeric",
+        "payment callback account points update was not applied atomically",
         "INSERT INTO commerce_account_ledger_entry",
         "'commerce_payment_attempt'",
     ] {

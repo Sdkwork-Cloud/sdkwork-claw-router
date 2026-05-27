@@ -23,7 +23,7 @@ public class ModelRankingRefreshStatus {
     public Integer getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
-    
+
     public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
@@ -31,7 +31,7 @@ public class ModelRankingRefreshStatus {
     public String getGeneratedAt() {
         return this.generatedAt;
     }
-    
+
     public void setGeneratedAt(String generatedAt) {
         this.generatedAt = generatedAt;
     }
@@ -39,7 +39,7 @@ public class ModelRankingRefreshStatus {
     public Integer getGeneratedCount() {
         return this.generatedCount;
     }
-    
+
     public void setGeneratedCount(Integer generatedCount) {
         this.generatedCount = generatedCount;
     }
@@ -47,7 +47,7 @@ public class ModelRankingRefreshStatus {
     public ModelRankingRefreshLatestJob getLatestJob() {
         return this.latestJob;
     }
-    
+
     public void setLatestJob(ModelRankingRefreshLatestJob latestJob) {
         this.latestJob = latestJob;
     }
@@ -55,7 +55,7 @@ public class ModelRankingRefreshStatus {
     public String getNextRefreshAt() {
         return this.nextRefreshAt;
     }
-    
+
     public void setNextRefreshAt(String nextRefreshAt) {
         this.nextRefreshAt = nextRefreshAt;
     }
@@ -63,7 +63,7 @@ public class ModelRankingRefreshStatus {
     public Integer getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(Integer organizationId) {
         this.organizationId = organizationId;
     }
@@ -71,7 +71,7 @@ public class ModelRankingRefreshStatus {
     public String getRankScope() {
         return this.rankScope;
     }
-    
+
     public void setRankScope(String rankScope) {
         this.rankScope = rankScope;
     }
@@ -79,7 +79,7 @@ public class ModelRankingRefreshStatus {
     public Integer getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
-    
+
     public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
@@ -87,7 +87,7 @@ public class ModelRankingRefreshStatus {
     public String getSnapshotDate() {
         return this.snapshotDate;
     }
-    
+
     public void setSnapshotDate(String snapshotDate) {
         this.snapshotDate = snapshotDate;
     }
@@ -95,7 +95,7 @@ public class ModelRankingRefreshStatus {
     public String getSnapshotPeriod() {
         return this.snapshotPeriod;
     }
-    
+
     public void setSnapshotPeriod(String snapshotPeriod) {
         this.snapshotPeriod = snapshotPeriod;
     }
@@ -103,7 +103,7 @@ public class ModelRankingRefreshStatus {
     public Integer getSourceCount() {
         return this.sourceCount;
     }
-    
+
     public void setSourceCount(Integer sourceCount) {
         this.sourceCount = sourceCount;
     }
@@ -111,7 +111,7 @@ public class ModelRankingRefreshStatus {
     public List<String> getSourceTables() {
         return this.sourceTables;
     }
-    
+
     public void setSourceTables(List<String> sourceTables) {
         this.sourceTables = sourceTables;
     }
@@ -119,7 +119,7 @@ public class ModelRankingRefreshStatus {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -127,7 +127,7 @@ public class ModelRankingRefreshStatus {
     public Integer getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(Integer tenantId) {
         this.tenantId = tenantId;
     }
@@ -135,7 +135,7 @@ public class ModelRankingRefreshStatus {
     public String getWindowEnd() {
         return this.windowEnd;
     }
-    
+
     public void setWindowEnd(String windowEnd) {
         this.windowEnd = windowEnd;
     }
@@ -143,7 +143,7 @@ public class ModelRankingRefreshStatus {
     public String getWindowStart() {
         return this.windowStart;
     }
-    
+
     public void setWindowStart(String windowStart) {
         this.windowStart = windowStart;
     }

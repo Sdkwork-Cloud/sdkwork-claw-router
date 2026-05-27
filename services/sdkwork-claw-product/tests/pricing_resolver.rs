@@ -107,6 +107,15 @@ fn resolves_customer_price_from_api_key_group_plan_and_official_reference() {
         "0.198000",
         resolved.customer_charge.unit_price.to_fixed_string(6)
     );
+    assert_eq!("1.000000", resolved.rate_multiplier.to_fixed_string(6));
+    assert_eq!("1.320000", resolved.reference_multiplier.to_fixed_string(6));
+    assert_eq!(
+        "0.198000",
+        resolved
+            .customer_charge_before_rate
+            .unit_price
+            .to_fixed_string(6)
+    );
     assert_eq!(
         "0.088000",
         resolved.gross_margin_per_unit.unwrap().to_fixed_string(6)
@@ -316,6 +325,14 @@ fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_mul
         "0.270000",
         resolved.customer_charge.unit_price.to_fixed_string(6)
     );
+    assert_eq!("0.900000", resolved.rate_multiplier.to_fixed_string(6));
+    assert_eq!(
+        "0.300000",
+        resolved
+            .customer_charge_before_rate
+            .unit_price
+            .to_fixed_string(6)
+    );
     assert_eq!(
         "0.160000",
         resolved.gross_margin_per_unit.unwrap().to_fixed_string(6)
@@ -369,4 +386,47 @@ fn missing_price_returns_a_domain_error_instead_of_fake_success() {
         .unwrap_err();
 
     assert!(error.to_string().contains("official reference price"));
+}
+
+#[test]
+fn pricing_resolver_returns_domain_error_when_decimal_math_overflows() {
+    let mut catalog = catalog_with_openai_model();
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::OfficialReference,
+            BillingMeter::ApiResult,
+            Money::usd("0.010000").unwrap(),
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini"),
+    );
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::CustomerCharge,
+            BillingMeter::ApiResult,
+            Money::usd("170141183460469231731687.303715").unwrap(),
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini")
+        .for_pricing_plan("standard"),
+    );
+    catalog.update_group_rate_multiplier(10, DecimalValue::parse("2.000000").unwrap());
+    let resolver = PricingResolver::new(&catalog);
+
+    let error = resolver
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "openai/global/gpt-4o-mini".to_owned(),
+            billing_meter: BillingMeter::ApiResult,
+            provider_code: None,
+            channel_id: None,
+        })
+        .unwrap_err();
+
+    assert!(
+        error
+            .to_string()
+            .contains("decimal multiplication overflow"),
+        "{error}"
+    );
 }

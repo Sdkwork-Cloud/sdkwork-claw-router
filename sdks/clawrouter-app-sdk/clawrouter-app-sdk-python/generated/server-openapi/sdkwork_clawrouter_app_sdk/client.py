@@ -1,17 +1,19 @@
 from .http_client import HttpClient, SdkConfig
+from .api.commerce import CommerceApi
 from .api.agents import AgentsApi
 from .api.ai import AiApi
 from .api.auth import AuthApi
-from .api.billing import BillingApi
 from .api.chat import ChatApi
 from .api.content import ContentApi
 from .api.ecosystem import EcosystemApi
 from .api.iam import IamApi
 from .api.memory import MemoryApi
 from .api.notification import NotificationApi
+from .api.open_platform import OpenPlatformApi
 from .api.platform import PlatformApi
-from .api.runtime import RuntimeApi
 from .api.system import SystemApi
+from .api.runtime import RuntimeApi
+from .api.sdk_reference import SdkReferenceApi
 
 
 class SdkworkAppClient:
@@ -19,34 +21,38 @@ class SdkworkAppClient:
 
     def __init__(self, config: SdkConfig):
         self._client = HttpClient(config)
+        self.commerce: CommerceApi
         self.agents: AgentsApi
         self.ai: AiApi
         self.auth: AuthApi
-        self.billing: BillingApi
         self.chat: ChatApi
         self.content: ContentApi
         self.ecosystem: EcosystemApi
         self.iam: IamApi
         self.memory: MemoryApi
         self.notification: NotificationApi
+        self.open_platform: OpenPlatformApi
         self.platform: PlatformApi
-        self.runtime: RuntimeApi
         self.system: SystemApi
+        self.runtime: RuntimeApi
+        self.sdk_reference: SdkReferenceApi
 
         # Initialize API modules
+        self.commerce = CommerceApi(self._client)
         self.agents = AgentsApi(self._client)
         self.ai = AiApi(self._client)
         self.auth = AuthApi(self._client)
-        self.billing = BillingApi(self._client)
         self.chat = ChatApi(self._client)
         self.content = ContentApi(self._client)
         self.ecosystem = EcosystemApi(self._client)
         self.iam = IamApi(self._client)
         self.memory = MemoryApi(self._client)
         self.notification = NotificationApi(self._client)
+        self.open_platform = OpenPlatformApi(self._client)
         self.platform = PlatformApi(self._client)
-        self.runtime = RuntimeApi(self._client)
         self.system = SystemApi(self._client)
+        self.runtime = RuntimeApi(self._client)
+        self.sdk_reference = SdkReferenceApi(self._client)
 
     def set_api_key(self, api_key: str) -> 'SdkworkAppClient':
         """Set API key for authentication."""

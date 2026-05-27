@@ -13,7 +13,7 @@
 3. 物理表结构、字段类型、枚举、唯一约束、索引和生命周期都以 Java Entity 为准。
 4. app 端 API 走 `spring-ai-plus-app-api` 的 `/app/v3/api/*` 标准路径。
 5. backend 管理端 API 走 `spring-ai-plus-backend-api` 的 `/backend/v3/api/*` 标准路径。
-6. `commerce_*` 只能保存用量结算、账单投影、导出和对账证据，不替代 `plus_order`、`plus_payment`、`plus_refund`、`plus_invoice`、`plus_account`、`plus_coupon`、`plus_vip_*`。
+6. `commerce_*` 只能保存用量结算、账单投影、导出和对账证据，不替代 `plus_order`、`plus_payment`、`plus_refund`、`plus_invoice`、`plus_account`、`plus_vip_*`；卡券营销事实统一进入 `promotion_*`。
 
 ## 2. 禁止同义主表
 
@@ -26,7 +26,7 @@
 | `commerce_refund` | 会绕开退款状态机和支付单关联 | `plus_refund` |
 | `commerce_invoice` | 会造成发票和账单投影混淆 | `plus_invoice`、`plus_invoice_item`、`plus_invoice_record` |
 | `commerce_account`、`router_account` | 会造成余额双写和资金风险 | `plus_account`、`plus_account_history` |
-| `commerce_coupon` | 会造成优惠券核销状态双写 | `plus_coupon`、`plus_coupon_template`、`plus_user_coupon` |
+| 非 `promotion_` 命名的卡券主表 | 会造成优惠券核销状态双写 | `promotion_offer`、`promotion_coupon_stock`、`promotion_code`、`promotion_user_coupon`、`promotion_discount_application` |
 | `commerce_vip` | 会造成会员权益和充值包双主数据 | `plus_vip_*` |
 
 ## 3. Java 实体覆盖
@@ -79,9 +79,10 @@
 
 | 表 | Java Entity | API |
 | --- | --- | --- |
-| `plus_coupon` | `com.sdkwork.spring.ai.plus.entity.coupon.PlusCoupon` | `/app/v3/api/coupons`、`/backend/v3/api/coupon` |
-| `plus_coupon_template` | `com.sdkwork.spring.ai.plus.entity.coupon.PlusCouponTemplate` | `/backend/v3/api/coupon/template` |
-| `plus_user_coupon` | `com.sdkwork.spring.ai.plus.entity.coupon.PlusUserCoupon` | `/backend/v3/api/user/coupon` |
+| `promotion_offer` | `sdkwork-appbase` promotion offer model | `/app/v3/api/promotions/offers`、`/backend/v3/api/promotions/offers` |
+| `promotion_coupon_stock` | `sdkwork-appbase` promotion stock model | `/backend/v3/api/promotions/coupon_stocks` |
+| `promotion_code`、`promotion_user_coupon` | `sdkwork-appbase` promotion code and wallet models | `/app/v3/api/promotions/codes/redemptions`、`/app/v3/api/promotions/user_coupons/wallet` |
+| `promotion_discount_application` | `sdkwork-appbase` promotion checkout application model | `/app/v3/api/promotions/discount_applications`、`/backend/v3/api/promotions/discount_applications` |
 | `plus_vip_recharge` | `com.sdkwork.spring.ai.plus.entity.vip.PlusVipRecharge` | `/backend/v3/api/vip/recharge` |
 | `plus_vip_recharge_pack` | `com.sdkwork.spring.ai.plus.entity.vip.PlusVipRechargePack` | `/backend/v3/api/vip/recharge/pack` |
 | `plus_vip_recharge_method` | `com.sdkwork.spring.ai.plus.entity.vip.PlusVipRechargeMethod` | `/app/v3/api/vip/purchase`、`/backend/v3/api/vip/recharge` |
@@ -108,5 +109,5 @@ Claw Router 可以新增和维护以下标准表：
 1. `rg "@Table\\(name = \"plus_" spring-ai-plus-business-entity/src/main/java` 已检索。
 2. 若 Java 已存在实体，schema registry 只能添加 `profile: legacy_compatible`、`compliance_level: L0`、`generated_by_this_project: false`、`compatibility_rule: keep_physical_structure_identical`。
 3. 若 Java 不存在实体，必须说明为什么不能扩展现有 Java 服务，并明确该表只是投影、审计、导出、对账或网关专属事实。
-4. 新表名不得使用 `commerce_order`、`commerce_payment`、`commerce_refund`、`commerce_invoice`、`commerce_account`、`commerce_coupon`、`commerce_vip` 等同义主表名称。
+4. 新表名不得使用 `commerce_order`、`commerce_payment`、`commerce_refund`、`commerce_invoice`、`commerce_account`、`commerce_vip` 等同义主表名称；卡券营销只能使用 `promotion_*`。
 5. app/backend API 必须记录真实 Java 路径，不能新增与 Java 标准路径冲突的自由切换阻断点。

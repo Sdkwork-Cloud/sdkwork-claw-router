@@ -12,6 +12,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
 use crate::domain::{DecimalValue, DomainError};
@@ -25,7 +26,6 @@ use crate::ports::{
 const HASH_ALG_HMAC_SHA256: &str = "HMAC_SHA256";
 const SECRET_VERSION: i64 = 1;
 const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const MAX_USERNAME_LEN: usize = 168;
 const MAX_EMAIL_LEN: usize = 255;
 const MAX_GROUP_LEN: usize = 64;
@@ -192,9 +192,9 @@ async fn create_user(
         Err(message) => return bad_request(message),
     };
     let requested_at = current_timestamp_string();
-    let request_id = match normalize_request_id(&headers, &state) {
+    let request_id = match server_request_id() {
         Ok(value) => value,
-        Err(error) => return command_build_error_response(error),
+        Err(response) => return response,
     };
     let command = match build_create_user_command(
         &state,
@@ -248,9 +248,9 @@ async fn update_user(
         Err(message) => return bad_request(message),
     };
     let requested_at = current_timestamp_string();
-    let request_id = match normalize_request_id(&headers, &state) {
+    let request_id = match server_request_id() {
         Ok(value) => value,
-        Err(error) => return command_build_error_response(error),
+        Err(response) => return response,
     };
     let audit_log_uuid = match state.secret_generator.generate_entity_uuid() {
         Ok(value) => value,
@@ -308,9 +308,9 @@ async fn adjust_balance(
         Err(message) => return bad_request(message),
     };
     let requested_at = current_timestamp_string();
-    let request_id = match normalize_request_id(&headers, &state) {
+    let request_id = match server_request_id() {
         Ok(value) => value,
-        Err(error) => return command_build_error_response(error),
+        Err(response) => return response,
     };
     let account_uuid = match state.secret_generator.generate_entity_uuid() {
         Ok(value) => value,
@@ -379,9 +379,9 @@ async fn create_api_key(
         Err(error) => return command_build_error_response(error),
     };
     let requested_at = current_timestamp_string();
-    let request_id = match normalize_request_id(&headers, &state) {
+    let request_id = match server_request_id() {
         Ok(value) => value,
-        Err(error) => return command_build_error_response(error),
+        Err(response) => return response,
     };
     let idempotency_key = match normalize_idempotency_key(&headers, &state) {
         Ok(value) => value,
@@ -430,9 +430,9 @@ async fn delete_api_key(
         Err(message) => return bad_request(message),
     };
     let requested_at = current_timestamp_string();
-    let request_id = match normalize_request_id(&headers, &state) {
+    let request_id = match server_request_id() {
         Ok(value) => value,
-        Err(error) => return command_build_error_response(error),
+        Err(response) => return response,
     };
     let audit_log_uuid = match state.secret_generator.generate_entity_uuid() {
         Ok(value) => value,
@@ -653,14 +653,11 @@ fn positive_path_id(value: i64, field: &str) -> Result<i64, String> {
     }
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminUserState,
-) -> Result<String, DomainError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        return validate_request_token(value, REQUEST_ID_HEADER);
-    }
-    state.secret_generator.generate_entity_uuid()
+fn server_request_id() -> Result<String, Response> {
+    generate_server_request_id().map_err(|error| match error {
+        RequestIdError::Invalid(message) => bad_request(message),
+        RequestIdError::System(message) => command_build_error_response(DomainError::new(message)),
+    })
 }
 
 fn normalize_idempotency_key(

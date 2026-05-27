@@ -10,7 +10,7 @@ public class OpenAiResponseInputTokenCount {
     public Integer getInputTokens() {
         return this.inputTokens;
     }
-    
+
     public void setInputTokens(Integer inputTokens) {
         this.inputTokens = inputTokens;
     }
@@ -18,7 +18,7 @@ public class OpenAiResponseInputTokenCount {
     public OpenAiResponseInputTokensDetails getInputTokensDetails() {
         return this.inputTokensDetails;
     }
-    
+
     public void setInputTokensDetails(OpenAiResponseInputTokensDetails inputTokensDetails) {
         this.inputTokensDetails = inputTokensDetails;
     }
@@ -26,7 +26,7 @@ public class OpenAiResponseInputTokenCount {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -34,7 +34,7 @@ public class OpenAiResponseInputTokenCount {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

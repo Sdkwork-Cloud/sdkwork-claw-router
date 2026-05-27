@@ -1,5 +1,6 @@
 use sdkwork_claw_product::application::{
-    ListModelCatalogQuery, ModelCatalogQueryService, PriceAvailability,
+    ListModelCatalogQuery, ModelCatalogQueryService, PriceAvailability, PricingResolver,
+    ResolveModelPriceQuery,
 };
 use sdkwork_claw_product::domain::{BillingMeter, PriceSide};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqlitePricingCatalogLoader;
@@ -82,6 +83,20 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
             .as_ref()
             .map(|policy| policy.max_attempts)
     );
+    let openrouter_pool = snapshot
+        .list_provider_account_pool_routes()
+        .into_iter()
+        .find(|route| route.provider_code == "openrouter")
+        .unwrap();
+    assert_eq!(1, openrouter_pool.group_bindings.len());
+    assert_eq!(10, openrouter_pool.group_bindings[0].group_id);
+    assert_eq!(1, openrouter_pool.group_bindings[0].priority);
+    assert_eq!(100, openrouter_pool.group_bindings[0].weight);
+    assert_eq!(
+        vec!["openai/global/gpt-4o-mini"],
+        openrouter_pool.group_bindings[0].model_scope
+    );
+    assert_eq!(vec!["llm"], openrouter_pool.group_bindings[0].capabilities);
 
     let api_key = snapshot.find_api_key(100).unwrap();
     assert_eq!("Production Key", api_key.name);
@@ -172,6 +187,116 @@ async fn sqlite_loader_redacts_copyable_key_material_when_secret_codec_is_absent
 
     assert_eq!("sk-test********ABCD", api_key.key_display_masked);
     assert_eq!(None, api_key.copyable_key);
+}
+
+#[tokio::test]
+async fn sqlite_loader_defaults_empty_api_key_group_pricing_plan_for_runtime_billing_subject() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query("UPDATE iam_gateway_api_key_group SET pricing_plan_code = '' WHERE id = 10")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+
+    let group = snapshot.find_api_key_group(10).unwrap();
+    assert_eq!("standard", group.pricing_plan_code);
+}
+
+#[tokio::test]
+async fn sqlite_loader_supplies_standard_pricing_plan_when_runtime_plan_table_is_empty() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query("DELETE FROM ai_pricing_plan")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+
+    assert!(
+        snapshot.find_pricing_plan("standard").is_some(),
+        "runtime catalog must provide a standard pricing plan fallback for seeded/default API key groups"
+    );
+
+    let price = PricingResolver::new(&snapshot)
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "openai/global/gpt-4o-mini".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("openrouter".to_owned()),
+            channel_id: Some(3001),
+        })
+        .expect("default standard plan must allow route pricing to resolve");
+
+    assert_eq!("standard", price.pricing_plan_code);
+    assert_eq!("standard-group", price.group_code);
+}
+
+#[tokio::test]
+async fn sqlite_loader_keeps_channel_base_url_routes_when_provider_registry_row_is_absent() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query("DELETE FROM integration_provider WHERE provider_code = 'openrouter'")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+
+    let model_route = snapshot
+        .list_provider_routes("openai/gpt-4o-mini")
+        .into_iter()
+        .find(|route| route.provider_code == "openrouter")
+        .expect("channel base_url plus account secret_ref must be enough for model route loading");
+    assert_eq!(
+        Some("http://provider-proxy.internal/openrouter"),
+        model_route.base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter/account/main"),
+        model_route.secret_ref.as_deref()
+    );
+
+    let account_pool_route = snapshot
+        .list_provider_account_pool_routes()
+        .into_iter()
+        .find(|route| route.provider_code == "openrouter")
+        .expect("channel base_url plus account secret_ref must be enough for account-pool route loading");
+    assert_eq!(
+        Some("http://provider-proxy.internal/openrouter"),
+        account_pool_route.base_url.as_deref()
+    );
+    assert_eq!(1, account_pool_route.group_bindings.len());
+    assert_eq!(10, account_pool_route.group_bindings[0].group_id);
 }
 
 #[tokio::test]
@@ -321,6 +446,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE integration_channel (
             id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
             provider_code TEXT NOT NULL,
             base_url TEXT,
             timeout_ms INTEGER,
@@ -410,6 +537,21 @@ async fn create_schema(pool: &SqlitePool) {
             status INTEGER NOT NULL,
             deleted_at TEXT,
             updated_at TEXT
+        )"#,
+        r#"CREATE TABLE iam_api_key_group_channel (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            group_id INTEGER NOT NULL,
+            channel_id INTEGER NOT NULL,
+            priority INTEGER,
+            weight INTEGER,
+            model_scope TEXT,
+            capabilities TEXT,
+            effective_from TEXT,
+            effective_to TEXT,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
         )"#,
         r#"CREATE TABLE iam_gateway_api_key (
             id INTEGER PRIMARY KEY,
@@ -502,6 +644,7 @@ async fn seed_catalog(pool: &SqlitePool) {
         "INSERT INTO ai_routing_rule (id, tenant_id, organization_id, profile_id, rule_code, priority, match_expression, target_model, candidate_channels, fallback_chain, constraints, status) VALUES (9102, 10, 20, 9101, 'standard-group-gpt-4o-mini', 1, '{\"catalogKey\":\"openai/global/gpt-4o-mini\"}', 'openai/global/gpt-4o-mini', '[{\"channel_id\":3001,\"weight\":100}]', '[]', '{}', 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO iam_gateway_api_key_group (id, name, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 'Standard Group', 'standard-group', 'standard', '1.000000', '1.100000', 1)",
+        "INSERT INTO iam_api_key_group_channel (id, tenant_id, organization_id, group_id, channel_id, priority, weight, model_scope, capabilities, status) VALUES (600, 10, 20, 10, 3001, 1, 100, '[\"openai/global/gpt-4o-mini\"]', '[\"llm\"]', 1)",
         "INSERT INTO iam_gateway_access_policy (id, allowed_capabilities, ip_allowlist, status) VALUES (700, '[\"text\",\"image\"]', '[\"192.168.1.1\",\"10.0.0.0/24\"]', 1)",
         "INSERT INTO ai_quota_policy (id, quota_limit, status) VALUES (900, '1000.000000', 1)",
         "INSERT INTO iam_gateway_api_key_group_metric_snapshot (id, group_id, capacity_used, capacity_limit, usage_amount_total, snapshot_at, status) VALUES (800, 10, '37.500000', '1000.000000', '37.500000', '2026-04-29 00:00:00', 1)",

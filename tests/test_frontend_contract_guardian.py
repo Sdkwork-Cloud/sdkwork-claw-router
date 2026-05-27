@@ -431,6 +431,47 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertNotIn("route /vip requires table commerce_vip_package", result.messages)
             self.assertNotIn("route /vip requires table commerce_vip_package_group", result.messages)
 
+    def test_accepts_sdkwork_file_platform_required_tables_without_router_schema_ownership(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/admin/storage/providers" element={<StorageAdmin />} />')
+            self.write_manifest(
+                root,
+                {
+                    "routes": {"/admin/storage/providers": {"tables": ["ops_audit_log"]}},
+                    "tables": [
+                        {
+                            "table": "ops_audit_log",
+                            "columns": [{"name": "id"}],
+                        }
+                    ],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /admin/storage/providers
+                    required_tables:
+                      - object_provider
+                      - object_bucket
+                      - storage_default_bucket_policy
+                      - storage_quota_policy
+                      - storage_usage_counter
+                      - storage_usage_ledger
+                      - storage_usage_snapshot
+                      - storage_reconciliation_run
+                      - storage_gc_job
+                      - ops_audit_log
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertNotIn("route /admin/storage/providers requires table object_provider", result.messages)
+            self.assertNotIn("route /admin/storage/providers requires table object_bucket", result.messages)
+            self.assertNotIn("route /admin/storage/providers requires table storage_usage_counter", result.messages)
+
     def test_accepts_required_physical_columns_for_legacy_tables(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -37,7 +37,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -45,7 +45,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -53,7 +53,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getDirectInvitedCount() {
         return this.directInvitedCount;
     }
-    
+
     public void setDirectInvitedCount(String directInvitedCount) {
         this.directInvitedCount = directInvitedCount;
     }
@@ -61,7 +61,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -69,7 +69,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getInvitationCode() {
         return this.invitationCode;
     }
-    
+
     public void setInvitationCode(String invitationCode) {
         this.invitationCode = invitationCode;
     }
@@ -77,7 +77,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getInvitationCodeId() {
         return this.invitationCodeId;
     }
-    
+
     public void setInvitationCodeId(String invitationCodeId) {
         this.invitationCodeId = invitationCodeId;
     }
@@ -85,7 +85,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getInviteLink() {
         return this.inviteLink;
     }
-    
+
     public void setInviteLink(String inviteLink) {
         this.inviteLink = inviteLink;
     }
@@ -93,7 +93,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getInviterEmailSnapshot() {
         return this.inviterEmailSnapshot;
     }
-    
+
     public void setInviterEmailSnapshot(String inviterEmailSnapshot) {
         this.inviterEmailSnapshot = inviterEmailSnapshot;
     }
@@ -101,7 +101,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getInviterNameSnapshot() {
         return this.inviterNameSnapshot;
     }
-    
+
     public void setInviterNameSnapshot(String inviterNameSnapshot) {
         this.inviterNameSnapshot = inviterNameSnapshot;
     }
@@ -109,7 +109,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getInviterUserId() {
         return this.inviterUserId;
     }
-    
+
     public void setInviterUserId(String inviterUserId) {
         this.inviterUserId = inviterUserId;
     }
@@ -117,7 +117,7 @@ public class OpsReferralStatSnapshotRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -125,7 +125,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -133,7 +133,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getPaidInviteeCount() {
         return this.paidInviteeCount;
     }
-    
+
     public void setPaidInviteeCount(String paidInviteeCount) {
         this.paidInviteeCount = paidInviteeCount;
     }
@@ -141,7 +141,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getPeriodEnd() {
         return this.periodEnd;
     }
-    
+
     public void setPeriodEnd(String periodEnd) {
         this.periodEnd = periodEnd;
     }
@@ -149,7 +149,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getPeriodStart() {
         return this.periodStart;
     }
-    
+
     public void setPeriodStart(String periodStart) {
         this.periodStart = periodStart;
     }
@@ -157,7 +157,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getRebuildVersion() {
         return this.rebuildVersion;
     }
-    
+
     public void setRebuildVersion(String rebuildVersion) {
         this.rebuildVersion = rebuildVersion;
     }
@@ -165,7 +165,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getRewardAwardedAmount() {
         return this.rewardAwardedAmount;
     }
-    
+
     public void setRewardAwardedAmount(String rewardAwardedAmount) {
         this.rewardAwardedAmount = rewardAwardedAmount;
     }
@@ -173,7 +173,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getRewardPendingAmount() {
         return this.rewardPendingAmount;
     }
-    
+
     public void setRewardPendingAmount(String rewardPendingAmount) {
         this.rewardPendingAmount = rewardPendingAmount;
     }
@@ -181,7 +181,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getSecondaryInvitedCount() {
         return this.secondaryInvitedCount;
     }
-    
+
     public void setSecondaryInvitedCount(String secondaryInvitedCount) {
         this.secondaryInvitedCount = secondaryInvitedCount;
     }
@@ -189,7 +189,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getSnapshotAt() {
         return this.snapshotAt;
     }
-    
+
     public void setSnapshotAt(String snapshotAt) {
         this.snapshotAt = snapshotAt;
     }
@@ -197,7 +197,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getSnapshotPeriod() {
         return this.snapshotPeriod;
     }
-    
+
     public void setSnapshotPeriod(String snapshotPeriod) {
         this.snapshotPeriod = snapshotPeriod;
     }
@@ -205,7 +205,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getSourceId() {
         return this.sourceId;
     }
-    
+
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
@@ -213,7 +213,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -221,7 +221,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getSourceVersion() {
         return this.sourceVersion;
     }
-    
+
     public void setSourceVersion(String sourceVersion) {
         this.sourceVersion = sourceVersion;
     }
@@ -229,7 +229,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -237,7 +237,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -245,7 +245,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getTotalInvitedCount() {
         return this.totalInvitedCount;
     }
-    
+
     public void setTotalInvitedCount(String totalInvitedCount) {
         this.totalInvitedCount = totalInvitedCount;
     }
@@ -253,7 +253,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getTotalRevenueAmount() {
         return this.totalRevenueAmount;
     }
-    
+
     public void setTotalRevenueAmount(String totalRevenueAmount) {
         this.totalRevenueAmount = totalRevenueAmount;
     }
@@ -261,7 +261,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -269,7 +269,7 @@ public class OpsReferralStatSnapshotRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

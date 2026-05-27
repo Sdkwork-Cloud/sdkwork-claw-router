@@ -11,6 +11,10 @@ pub struct AppApiKeyItem {
     /// Created field on app api key item.
     pub created: String,
 
+    /// Whether this key is the current console default for backend runtime API key selection.
+    #[serde(rename = "defaultForRuntime")]
+    pub default_for_runtime: bool,
+
     /// Expires field on app api key item.
     pub expires: String,
 

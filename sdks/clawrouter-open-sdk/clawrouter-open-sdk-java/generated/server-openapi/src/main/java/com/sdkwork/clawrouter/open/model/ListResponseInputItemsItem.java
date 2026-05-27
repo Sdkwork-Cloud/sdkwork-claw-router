@@ -19,7 +19,7 @@ public class ListResponseInputItemsItem {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -27,7 +27,7 @@ public class ListResponseInputItemsItem {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -35,7 +35,7 @@ public class ListResponseInputItemsItem {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -43,7 +43,7 @@ public class ListResponseInputItemsItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,7 +51,7 @@ public class ListResponseInputItemsItem {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -59,7 +59,7 @@ public class ListResponseInputItemsItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -67,7 +67,7 @@ public class ListResponseInputItemsItem {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -75,7 +75,7 @@ public class ListResponseInputItemsItem {
     public List<String> getOutput() {
         return this.output;
     }
-    
+
     public void setOutput(List<String> output) {
         this.output = output;
     }
@@ -83,7 +83,7 @@ public class ListResponseInputItemsItem {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -91,7 +91,7 @@ public class ListResponseInputItemsItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -99,7 +99,7 @@ public class ListResponseInputItemsItem {
     public OpenAiTokenUsage getUsage() {
         return this.usage;
     }
-    
+
     public void setUsage(OpenAiTokenUsage usage) {
         this.usage = usage;
     }

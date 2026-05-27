@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult};
+use crate::models::{AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppTemplateCreateRequest, AdminAppTemplateUpdateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsTemplatesCreateResult, AppsTemplatesDeleteResult, AppsTemplatesListResult, AppsTemplatesPublishResult, AppsTemplatesRetrieveResult, AppsTemplatesUnpublishResult, AppsTemplatesUpdateResult, AppsUnpublishResult, AppsUpdateResult};
 
 #[derive(Clone)]
 pub struct PlatformApi {
@@ -17,12 +17,13 @@ impl PlatformApi {
     }
 
     /// List apps
-    pub async fn apps_list(&self, q: Option<&str>, status: Option<&str>, market_status: Option<&str>, app_type: Option<&str>, page: Option<i64>, page_size: Option<i64>, x_request_id: Option<&str>) -> Result<AppsListResult, SdkworkError> {
+    pub async fn apps_list(&self, q: Option<&str>, status: Option<&str>, market_status: Option<&str>, app_type: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>, x_request_id: Option<&str>) -> Result<AppsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("status", status, "form", true, false, None),
             QueryParameterSpec::new("market_status", market_status, "form", true, false, None),
             QueryParameterSpec::new("app_type", app_type, "form", true, false, None),
+            QueryParameterSpec::new("category_id", category_id, "form", true, false, None),
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
         ]);
@@ -88,6 +89,99 @@ impl PlatformApi {
             &[],
         );
         self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List app templates
+    pub async fn apps_templates_list(&self, q: Option<&str>, publish_status: Option<&str>, template_type: Option<&str>, runtime: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>, x_request_id: Option<&str>) -> Result<AppsTemplatesListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("q", q, "form", true, false, None),
+            QueryParameterSpec::new("publish_status", publish_status, "form", true, false, None),
+            QueryParameterSpec::new("template_type", template_type, "form", true, false, None),
+            QueryParameterSpec::new("runtime", runtime, "form", true, false, None),
+            QueryParameterSpec::new("category_id", category_id, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/platform/apps/templates".to_string()), &query);
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.get(&path, None, headers.as_ref()).await
+    }
+
+    /// Create app template
+    pub async fn apps_templates_create(&self, body: &AdminAppTemplateCreateRequest, x_request_id: Option<&str>) -> Result<AppsTemplatesCreateResult, SdkworkError> {
+        let path = backend_path(&"/platform/apps/templates".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete app template
+    pub async fn apps_templates_delete(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/templates/{}", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.delete(&path, None, headers.as_ref()).await
+    }
+
+    /// List app template
+    pub async fn apps_templates_retrieve(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesRetrieveResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/templates/{}", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.get(&path, None, headers.as_ref()).await
+    }
+
+    /// Update app template
+    pub async fn apps_templates_update(&self, template_id: &str, body: &AdminAppTemplateUpdateRequest, x_request_id: Option<&str>) -> Result<AppsTemplatesUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/templates/{}", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Publish app template
+    pub async fn apps_templates_publish(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesPublishResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/templates/{}/publish", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+    }
+
+    /// Offline app template
+    pub async fn apps_templates_unpublish(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesUnpublishResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/templates/{}/unpublish", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
     }
 
     /// Delete app

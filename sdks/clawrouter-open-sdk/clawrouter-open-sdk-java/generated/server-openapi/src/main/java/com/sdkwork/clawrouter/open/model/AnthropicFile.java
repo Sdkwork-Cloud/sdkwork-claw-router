@@ -13,7 +13,7 @@ public class AnthropicFile {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -21,7 +21,7 @@ public class AnthropicFile {
     public Boolean getDownloadable() {
         return this.downloadable;
     }
-    
+
     public void setDownloadable(Boolean downloadable) {
         this.downloadable = downloadable;
     }
@@ -29,7 +29,7 @@ public class AnthropicFile {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -37,7 +37,7 @@ public class AnthropicFile {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -45,7 +45,7 @@ public class AnthropicFile {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -53,7 +53,7 @@ public class AnthropicFile {
     public Integer getSizeBytes() {
         return this.sizeBytes;
     }
-    
+
     public void setSizeBytes(Integer sizeBytes) {
         this.sizeBytes = sizeBytes;
     }
@@ -61,7 +61,7 @@ public class AnthropicFile {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

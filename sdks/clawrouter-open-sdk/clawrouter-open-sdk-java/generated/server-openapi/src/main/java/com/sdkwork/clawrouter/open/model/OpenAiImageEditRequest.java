@@ -10,7 +10,7 @@ public class OpenAiImageEditRequest {
     public OpenAiImageReferenceInputList getImage() {
         return this.image;
     }
-    
+
     public void setImage(OpenAiImageReferenceInputList image) {
         this.image = image;
     }
@@ -18,7 +18,7 @@ public class OpenAiImageEditRequest {
     public OpenAiImageReferenceInput getMask() {
         return this.mask;
     }
-    
+
     public void setMask(OpenAiImageReferenceInput mask) {
         this.mask = mask;
     }
@@ -26,7 +26,7 @@ public class OpenAiImageEditRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -34,7 +34,7 @@ public class OpenAiImageEditRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }

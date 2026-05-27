@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -25,7 +25,7 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
             add_ip_limit["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminRateLimitMutationResponse", add_ip_limit["response_schema"]["name"])
-        self.assertTrue(add_ip_limit["request_id_header"])
+        self.assertFalse(add_ip_limit["request_id_header"])
 
         self.assertEqual("AdminTokenLimitCreateRequest", add_token_limit["request_schema"]["name"])
         self.assertEqual(
@@ -33,7 +33,7 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
             add_token_limit["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminRateLimitMutationResponse", add_token_limit["response_schema"]["name"])
-        self.assertTrue(add_token_limit["request_id_header"])
+        self.assertFalse(add_token_limit["request_id_header"])
 
         self.assertEqual("AdminModelLimitCreateRequest", add_model_limit["request_schema"]["name"])
         self.assertEqual(
@@ -41,12 +41,12 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
             add_model_limit["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminRateLimitMutationResponse", add_model_limit["response_schema"]["name"])
-        self.assertTrue(add_model_limit["request_id_header"])
+        self.assertFalse(add_model_limit["request_id_header"])
 
         self.assertEqual("AdminFirewallRuleCreateRequest", add_firewall["request_schema"]["name"])
         self.assertEqual(["type", "value", "reason"], add_firewall["request_schema"]["schema"]["required"])
         self.assertEqual("AdminFirewallMutationResponse", add_firewall["response_schema"]["name"])
-        self.assertTrue(add_firewall["request_id_header"])
+        self.assertFalse(add_firewall["request_id_header"])
 
     def test_admin_ratelimit_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
         service = (

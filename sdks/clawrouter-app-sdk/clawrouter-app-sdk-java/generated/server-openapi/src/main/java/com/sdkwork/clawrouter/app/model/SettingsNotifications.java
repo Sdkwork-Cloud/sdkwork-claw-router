@@ -9,7 +9,7 @@ public class SettingsNotifications {
     public Boolean getApiMonitor() {
         return this.apiMonitor;
     }
-    
+
     public void setApiMonitor(Boolean apiMonitor) {
         this.apiMonitor = apiMonitor;
     }
@@ -17,7 +17,7 @@ public class SettingsNotifications {
     public Boolean getBillReminder() {
         return this.billReminder;
     }
-    
+
     public void setBillReminder(Boolean billReminder) {
         this.billReminder = billReminder;
     }
@@ -25,7 +25,7 @@ public class SettingsNotifications {
     public Boolean getQuotaWarning() {
         return this.quotaWarning;
     }
-    
+
     public void setQuotaWarning(Boolean quotaWarning) {
         this.quotaWarning = quotaWarning;
     }

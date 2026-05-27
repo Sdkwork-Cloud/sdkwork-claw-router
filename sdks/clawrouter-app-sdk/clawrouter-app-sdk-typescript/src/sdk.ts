@@ -14,9 +14,9 @@ import { MemoryApi, createMemoryApi } from './api/memory';
 import { NotificationApi, createNotificationApi } from './api/notification';
 import { OpenPlatformApi, createOpenPlatformApi } from './api/open-platform';
 import { PlatformApi, createPlatformApi } from './api/platform';
+import { SystemApi, createSystemApi } from './api/system';
 import { RuntimeApi, createRuntimeApi } from './api/runtime';
 import { SdkReferenceApi, createSdkReferenceApi } from './api/sdk-reference';
-import { SystemApi, createSystemApi } from './api/system';
 
 export class SdkworkAppClient {
   private httpClient: HttpClient;
@@ -33,9 +33,9 @@ export class SdkworkAppClient {
   public readonly notification: NotificationApi;
   public readonly openPlatform: OpenPlatformApi;
   public readonly platform: PlatformApi;
+  public readonly system: SystemApi;
   public readonly runtime: RuntimeApi;
   public readonly sdkReference: SdkReferenceApi;
-  public readonly system: SystemApi;
 
   constructor(config: SdkworkAppConfig) {
     this.httpClient = createHttpClient(config);
@@ -63,11 +63,11 @@ export class SdkworkAppClient {
 
     this.platform = createPlatformApi(this.httpClient);
 
+    this.system = createSystemApi(this.httpClient);
+
     this.runtime = createRuntimeApi(this.httpClient);
 
     this.sdkReference = createSdkReferenceApi(this.httpClient);
-
-    this.system = createSystemApi(this.httpClient);
   }
 
   setApiKey(apiKey: string): this {

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class EcosystemApi {
     private final HttpClient client;
-    
+
     public EcosystemApi(HttpClient client) {
         this.client = client;
     }

@@ -82,18 +82,7 @@ export function GatewayView() {
   const summary = useMemo(() => summarizeTraces(traces), [traces]);
 
   return (
-    <div className="p-6 lg:p-8 w-full mx-auto space-y-6 lg:space-y-8 animate-in fade-in duration-500">
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            {t('console.gateway.title', '网关日志')}
-          </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-            {t('console.gateway.subtitle', '查看网关流量的请求追踪和路由可观测性。')}
-          </p>
-        </div>
-      </div>
-
+    <div className="min-h-[calc(100vh-72px)] w-full mx-auto space-y-6 bg-slate-50 p-[5px] animate-in fade-in duration-500 dark:bg-[#121212] lg:space-y-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 p-2 rounded-xl shadow-sm">
         <SummaryItem icon={<AlignLeft className="w-4 h-4 text-blue-500" />} label={t('console.gateway.summary.traceRows', '追踪行数')} value={summary.total.toString()} />
         <SummaryItem icon={<Activity className="w-4 h-4 text-emerald-500" />} label={t('console.gateway.summary.successful', '成功请求')} value={summary.success.toString()} />

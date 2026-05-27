@@ -18,8 +18,8 @@ const pcCommerceServiceFiles = [
   "pc-react/commerce/sdkwork-payment-pc-react/src/payment-service.ts",
   "pc-react/commerce/sdkwork-pricing-pc-react/src/pricing-service.ts",
   "pc-react/commerce/sdkwork-subscription-pc-react/src/subscription-service.ts",
-  "pc-react/commerce/sdkwork-vip-admin-pc-react/src/vip-admin-service.ts",
-  "pc-react/commerce/sdkwork-vip-pc-react/src/vip-service.ts",
+  "pc-react/commerce/sdkwork-membership-admin-pc-react/src/membership-admin-service.ts",
+  "pc-react/commerce/sdkwork-membership-pc-react/src/membership-service.ts",
   "pc-react/commerce/sdkwork-wallet-pc-react/src/wallet-service.ts",
 ] as const;
 
@@ -44,11 +44,11 @@ const pcCommerceRuntimeFiles = [
   "pc-react/commerce/sdkwork-pricing-pc-react/src/pages/PricingPage.tsx",
   "pc-react/commerce/sdkwork-pricing-pc-react/src/pricing-copy.ts",
   "pc-react/commerce/sdkwork-subscription-pc-react/src/subscription-intl.tsx",
-  "pc-react/commerce/sdkwork-vip-pc-react/src/components/vip-membership-hero.tsx",
-  "pc-react/commerce/sdkwork-vip-pc-react/src/pages/VipPage.tsx",
-  "pc-react/commerce/sdkwork-vip-pc-react/src/vip-copy.ts",
-  "pc-react/commerce/sdkwork-vip-purchase-pc-react/src/components/vip-purchase-header-entry.tsx",
-  "pc-react/commerce/sdkwork-vip-purchase-pc-react/src/components/vip-purchase-menu.tsx",
+  "pc-react/commerce/sdkwork-membership-pc-react/src/components/membership-hero.tsx",
+  "pc-react/commerce/sdkwork-membership-pc-react/src/pages/MembershipPage.tsx",
+  "pc-react/commerce/sdkwork-membership-pc-react/src/membership-copy.ts",
+  "pc-react/commerce/sdkwork-membership-purchase-pc-react/src/components/membership-purchase-header-entry.tsx",
+  "pc-react/commerce/sdkwork-membership-purchase-pc-react/src/components/membership-purchase-menu.tsx",
   "pc-react/commerce/test-utils/commerce-service-mock.ts",
 ] as const;
 
@@ -69,8 +69,8 @@ const pcCommercePackageManifests = [
   "pc-react/commerce/sdkwork-payment-pc-react/package.json",
   "pc-react/commerce/sdkwork-pricing-pc-react/package.json",
   "pc-react/commerce/sdkwork-subscription-pc-react/package.json",
-  "pc-react/commerce/sdkwork-vip-admin-pc-react/package.json",
-  "pc-react/commerce/sdkwork-vip-pc-react/package.json",
+  "pc-react/commerce/sdkwork-membership-admin-pc-react/package.json",
+  "pc-react/commerce/sdkwork-membership-pc-react/package.json",
   "pc-react/commerce/sdkwork-wallet-pc-react/package.json",
 ] as const;
 
@@ -135,7 +135,42 @@ function listTypedCommerceTestFiles(): string[] {
   return files.sort();
 }
 
+function listMembershipGovernanceFiles(): string[] {
+  const files: string[] = [];
+  const allowedExtensions = new Set([".json", ".md", ".ts", ".tsx"]);
+  const roots = [
+    "common/commerce",
+    "pc-react/commerce",
+    "pc-react/foundation/sdkwork-appbase-pc-react",
+  ] as const;
+
+  function hasAllowedExtension(fileName: string): boolean {
+    return Array.from(allowedExtensions).some((extension) => fileName.endsWith(extension));
+  }
+
+  function walk(relativeDirectory: string): void {
+    for (const entry of readdirSync(resolve(packagesRoot, relativeDirectory), { withFileTypes: true })) {
+      const relativePath = `${relativeDirectory}/${entry.name}`;
+      if (entry.isDirectory()) {
+        if (entry.name !== "tests" && entry.name !== "node_modules") {
+          walk(relativePath);
+        }
+      } else if (hasAllowedExtension(entry.name)) {
+        files.push(relativePath);
+      }
+    }
+  }
+
+  for (const root of roots) {
+    walk(root);
+  }
+
+  return files.sort();
+}
+
 describe("SDKWork PC commerce service boundaries", () => {
+  const RETIRED_TIER_ROOT = "v" + "ip";
+
   it("does not keep retired app-client defaults, core-pc session reads, or adapter bypasses in commerce PC services", () => {
     for (const relativePath of pcCommerceServiceFiles) {
       const source = readFileSync(resolve(packagesRoot, relativePath), "utf8");
@@ -178,22 +213,22 @@ describe("SDKWork PC commerce service boundaries", () => {
     }
   });
 
-  it("uses VIP package vocabulary instead of public VIP pack aliases in PC commerce services", () => {
-    const retiredVipNames = [
-      blockedVocabularyPattern("Vip", "Pack"),
-      blockedVocabularyPattern("vip", "Packs"),
-      blockedVocabularyPattern("purchaseVip", "Pack"),
-      blockedVocabularyPattern("vip", "PackCatalog"),
+  it("uses membership package vocabulary instead of public membership pack aliases in PC commerce services", () => {
+    const retiredMembershipNames = [
+      blockedVocabularyPattern("Membership", "Pack"),
+      blockedVocabularyPattern(RETIRED_TIER_ROOT, "Packs"),
+      blockedVocabularyPattern("purchaseMembership", "Pack"),
+      blockedVocabularyPattern(RETIRED_TIER_ROOT, "PackCatalog"),
       blockedVocabularyPattern("target", "LevelId"),
-      blockedVocabularyPattern("noVip", "PackPublished"),
-      blockedVocabularyPattern("formatVip", "PackSummary"),
-      new RegExp("\\bvip-p" + "ack-", "i"),
+      blockedVocabularyPattern("noMembership", "PackPublished"),
+      blockedVocabularyPattern("formatMembership", "PackSummary"),
+      new RegExp("\\bmembership-p" + "ack-", "i"),
     ];
 
     for (const relativePath of pcCommerceRuntimeFiles) {
       const source = readFileSync(resolve(packagesRoot, relativePath), "utf8");
 
-      for (const pattern of retiredVipNames) {
+      for (const pattern of retiredMembershipNames) {
         expect(source, relativePath).not.toMatch(pattern);
       }
       expect(source, relativePath).not.toMatch(/\bany\[\]/);
@@ -233,28 +268,29 @@ describe("SDKWork PC commerce service boundaries", () => {
     }
   });
 
-  it("keeps wallet and VIP package purchase responsibilities separated", () => {
+  it("keeps wallet and membership package purchase responsibilities separated", () => {
     const walletSource = readFileSync(
       resolve(packagesRoot, "pc-react/commerce/sdkwork-wallet-pc-react/src/wallet-service.ts"),
       "utf8",
     );
-    const vipSource = readFileSync(
-      resolve(packagesRoot, "pc-react/commerce/sdkwork-vip-pc-react/src/vip-service.ts"),
+    const membershipSource = readFileSync(
+      resolve(packagesRoot, "pc-react/commerce/sdkwork-membership-pc-react/src/membership-service.ts"),
       "utf8",
     );
 
-    expect(walletSource).not.toContain("vip.packages");
-    expect(walletSource).not.toContain("vip.purchase");
-    expect(walletSource).not.toContain("vip.info");
-    expect(walletSource).not.toContain("vip.status");
-    expect(walletSource).not.toMatch(blockedVocabularyPattern("purchaseVip", "Package"));
-    expect(walletSource).not.toMatch(/\bvipPackages\b/);
-    expect(vipSource).toContain("commerceService.vip.packages.list");
-    expect(vipSource).toContain("commerceService.vip.purchase.create");
-    expect(vipSource).not.toContain("@sdkwork/wallet-pc-react");
+    expect(walletSource).not.toContain(RETIRED_TIER_ROOT + ".packages");
+    expect(walletSource).not.toContain(RETIRED_TIER_ROOT + ".purchase");
+    expect(walletSource).not.toContain(RETIRED_TIER_ROOT + ".info");
+    expect(walletSource).not.toContain(RETIRED_TIER_ROOT + ".status");
+    expect(walletSource).not.toMatch(blockedVocabularyPattern("purchaseMembership", "Package"));
+    expect(walletSource).not.toMatch(/\bmembershipPackages\b/);
+    expect(membershipSource).toContain("commerceService.memberships.packages.list");
+    expect(membershipSource).toContain("commerceService.memberships.purchases.create");
+    expect(membershipSource).not.toContain("commerceService." + RETIRED_TIER_ROOT);
+    expect(membershipSource).not.toContain("@sdkwork/wallet-pc-react");
   });
 
-  it("keeps wallet UI free of VIP purchase navigation and membership ownership labels", () => {
+  it("keeps wallet UI free of membership purchase navigation and membership ownership labels", () => {
     const walletUiFiles = [
       "pc-react/commerce/sdkwork-wallet-pc-react/src/components/wallet-balance-panel.tsx",
       "pc-react/commerce/sdkwork-wallet-pc-react/src/components/wallet-header-entry.tsx",
@@ -265,9 +301,9 @@ describe("SDKWork PC commerce service boundaries", () => {
     for (const relativePath of walletUiFiles) {
       const source = readFileSync(resolve(packagesRoot, relativePath), "utf8");
 
-      expect(source, relativePath).not.toContain('"/vip"');
+      expect(source, relativePath).not.toContain('"/memberships"');
       expect(source, relativePath).not.toContain("manageMembership");
-      expect(source, relativePath).not.toContain("vipCenterLabel");
+      expect(source, relativePath).not.toContain(RETIRED_TIER_ROOT + "CenterLabel");
       expect(source, relativePath).not.toMatch(/\bVIP center\b/i);
       expect(source, relativePath).not.toMatch(/\bmembership\b/i);
     }
@@ -325,6 +361,38 @@ describe("SDKWork PC commerce service boundaries", () => {
       const source = readFileSync(resolve(packagesRoot, relativePath), "utf8");
 
       expect(source, relativePath).toContain('"@sdkwork/commerce-service"');
+    }
+  });
+
+  it("uses membership package identifiers instead of membership package identifiers in PC commerce package manifests", () => {
+    for (const relativePath of listPcCommercePackageManifests()) {
+      const source = readFileSync(resolve(packagesRoot, relativePath), "utf8");
+
+      expect(source, relativePath).not.toContain("@sdkwork/memberships");
+      expect(source, relativePath).not.toContain("sdkwork-" + RETIRED_TIER_ROOT);
+      expect(source, relativePath).not.toMatch(new RegExp(`"capability":\\s*"${RETIRED_TIER_ROOT}`));
+    }
+
+    const membershipPackageNames = listPcCommercePackageManifests()
+      .map((relativePath) => JSON.parse(readFileSync(resolve(packagesRoot, relativePath), "utf8")).name as string)
+      .filter((packageName) => packageName.includes("membership"));
+
+    expect(membershipPackageNames).toEqual(expect.arrayContaining([
+      "@sdkwork/membership-admin-pc-react",
+      "@sdkwork/membership-pc-react",
+      "@sdkwork/membership-purchase-pc-react",
+    ]));
+  });
+
+  it("keeps membership appbase surfaces free of retired tier vocabulary", () => {
+    const retiredTierBrandPattern = new RegExp("\\b" + "V" + "IP" + "\\b");
+    const retiredTierTechnicalPattern = new RegExp("\\b" + "v" + "ip" + "\\b", "i");
+
+    for (const relativePath of listMembershipGovernanceFiles()) {
+      const source = readFileSync(resolve(packagesRoot, relativePath), "utf8");
+
+      expect(source, relativePath).not.toMatch(retiredTierBrandPattern);
+      expect(source, relativePath).not.toMatch(retiredTierTechnicalPattern);
     }
   });
 

@@ -15,7 +15,7 @@ public class ViduTextToVideoRequest {
     public String getAspectRatio() {
         return this.aspectRatio;
     }
-    
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -23,7 +23,7 @@ public class ViduTextToVideoRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -31,7 +31,7 @@ public class ViduTextToVideoRequest {
     public Integer getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
@@ -39,7 +39,7 @@ public class ViduTextToVideoRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -47,7 +47,7 @@ public class ViduTextToVideoRequest {
     public String getMovementAmplitude() {
         return this.movementAmplitude;
     }
-    
+
     public void setMovementAmplitude(String movementAmplitude) {
         this.movementAmplitude = movementAmplitude;
     }
@@ -55,7 +55,7 @@ public class ViduTextToVideoRequest {
     public String getPayload() {
         return this.payload;
     }
-    
+
     public void setPayload(String payload) {
         this.payload = payload;
     }
@@ -63,7 +63,7 @@ public class ViduTextToVideoRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -71,7 +71,7 @@ public class ViduTextToVideoRequest {
     public String getResolution() {
         return this.resolution;
     }
-    
+
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
@@ -79,7 +79,7 @@ public class ViduTextToVideoRequest {
     public Integer getSeed() {
         return this.seed;
     }
-    
+
     public void setSeed(Integer seed) {
         this.seed = seed;
     }

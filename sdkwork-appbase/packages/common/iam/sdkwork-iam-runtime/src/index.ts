@@ -40,7 +40,6 @@ export interface CreateIamRuntimeInput {
   config: IamRuntimeConfig;
   contextStore?: IamContextStore;
   localeProvider?: () => string | undefined;
-  requestIdProvider?: () => string | undefined;
   tokenStore: IamTokenStore;
 }
 
@@ -49,7 +48,6 @@ export function createIamRuntime(input: CreateIamRuntimeInput): IamRuntime {
     clients: input.clients,
     config: input.config,
     localeProvider: input.localeProvider,
-    requestIdProvider: input.requestIdProvider,
     tokenStore: input.tokenStore,
     validateAppClient: assertIamAppSdkClient,
     validateBackendClient: assertIamBackendSdkClient,

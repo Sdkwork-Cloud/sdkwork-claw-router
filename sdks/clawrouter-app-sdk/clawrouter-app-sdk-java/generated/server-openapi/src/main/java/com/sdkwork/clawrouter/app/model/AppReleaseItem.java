@@ -14,7 +14,7 @@ public class AppReleaseItem {
     public String getDownloadUrl() {
         return this.downloadUrl;
     }
-    
+
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
     }
@@ -22,7 +22,7 @@ public class AppReleaseItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -30,7 +30,7 @@ public class AppReleaseItem {
     public String getOs() {
         return this.os;
     }
-    
+
     public void setOs(String os) {
         this.os = os;
     }
@@ -38,7 +38,7 @@ public class AppReleaseItem {
     public String getPlatformType() {
         return this.platformType;
     }
-    
+
     public void setPlatformType(String platformType) {
         this.platformType = platformType;
     }
@@ -46,7 +46,7 @@ public class AppReleaseItem {
     public String getReleaseDate() {
         return this.releaseDate;
     }
-    
+
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
@@ -54,7 +54,7 @@ public class AppReleaseItem {
     public String getSize() {
         return this.size;
     }
-    
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -62,7 +62,7 @@ public class AppReleaseItem {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -70,7 +70,7 @@ public class AppReleaseItem {
     public String getWhatsNew() {
         return this.whatsNew;
     }
-    
+
     public void setWhatsNew(String whatsNew) {
         this.whatsNew = whatsNew;
     }

@@ -146,7 +146,7 @@ function mapCouponScopeTokenToSourceKinds(token: string | undefined): SdkworkChe
 
   const sourceKinds = new Set<SdkworkCheckoutSourceKind>();
 
-  if (includesSourceToken(normalized, ["subscription", "membership", "vip", "\u4f1a\u5458"])) {
+  if (includesSourceToken(normalized, ["subscription", "membership", "membership tier", "\u4f1a\u5458"])) {
     sourceKinds.add("subscription");
   }
 

@@ -39,17 +39,17 @@ export const USER_CENTER_STANDARD_ENTITY_NAMES = [
   "IamUser",
   "IamTenant",
   "IamAccount",
-  "IamVipMembership",
+  "IamMembership",
   "IamOrganizationMember",
   "IamMemberRelation",
 ] as const satisfies readonly UserCenterStandardEntityName[];
 export const USER_CENTER_DEFAULT_ROUTES: UserCenterRoutes = {
   authBasePath: "/auth",
+  membershipRoutePath: "/memberships",
   userRoutePath: "/user",
-  vipRoutePath: "/vip",
 };
 export const USER_CENTER_STANDARD_AUTHORIZATION_HEADER_NAME = "Authorization";
-export const USER_CENTER_STANDARD_ACCESS_TOKEN_HEADER_NAME = "Sdkwork-Access-Token";
+export const USER_CENTER_STANDARD_ACCESS_TOKEN_HEADER_NAME = "Access-Token";
 export const USER_CENTER_STANDARD_REFRESH_TOKEN_HEADER_NAME = "Refresh-Token";
 export const USER_CENTER_STANDARD_AUTHORIZATION_SCHEME = "Bearer";
 export const USER_CENTER_STANDARD_HANDSHAKE_MODE: UserCenterHandshakeMode =
@@ -76,10 +76,10 @@ export const USER_CENTER_DEFAULT_HANDSHAKE_FRESHNESS_WINDOW_MS = 30_000;
 const DEFAULT_ENTITY_TABLE_SUFFIX: Record<UserCenterStandardEntityName, string> = {
   IamAccount: "account",
   IamMemberRelation: "member_relation",
+  IamMembership: "membership",
   IamOrganizationMember: "organization_member",
   IamTenant: "tenant",
   IamUser: "user",
-  IamVipMembership: "vip_membership",
 };
 const USER_CENTER_ALLOWED_INTERNAL_MODES = [
   "local-native",
@@ -413,9 +413,9 @@ export function normalizeUserCenterRoutes(
       routes?.userRoutePath,
       USER_CENTER_DEFAULT_ROUTES.userRoutePath,
     ),
-    vipRoutePath: normalizeUserCenterPath(
-      routes?.vipRoutePath,
-      USER_CENTER_DEFAULT_ROUTES.vipRoutePath,
+    membershipRoutePath: normalizeUserCenterPath(
+      routes?.membershipRoutePath,
+      USER_CENTER_DEFAULT_ROUTES.membershipRoutePath,
     ),
   };
 }
@@ -630,9 +630,9 @@ export function normalizeUserCenterAuthProfile(options: {
     ? "upstream-app-api-token-bridge"
     : options.mode === "external-hub"
     ? "upstream-external-token-bridge"
-    : "auth-Sdkwork-Access-Token";
+    : "dual-token";
   const authMode = options.auth?.mode ?? defaultMode;
-  const validationStrategy = options.auth?.validationStrategy ?? "auth-Sdkwork-Access-Token";
+  const validationStrategy = options.auth?.validationStrategy ?? "dual-token";
   const secretResolverKind =
     options.auth?.secretResolution?.resolverKind ?? resolveDefaultSecretResolverKind(authMode);
   const tokenHeaders = normalizeUserCenterTokenHeaders(

@@ -9,7 +9,7 @@ public class GooglePromptFeedback {
     public String getBlockReason() {
         return this.blockReason;
     }
-    
+
     public void setBlockReason(String blockReason) {
         this.blockReason = blockReason;
     }
@@ -17,7 +17,7 @@ public class GooglePromptFeedback {
     public List<GoogleSafetyRating> getSafetyRatings() {
         return this.safetyRatings;
     }
-    
+
     public void setSafetyRatings(List<GoogleSafetyRating> safetyRatings) {
         this.safetyRatings = safetyRatings;
     }

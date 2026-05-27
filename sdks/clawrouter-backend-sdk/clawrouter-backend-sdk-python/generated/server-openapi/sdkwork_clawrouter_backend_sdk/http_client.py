@@ -4,7 +4,7 @@ from sdkwork.common.core.types import SdkConfig as CommonSdkConfig
 from sdkwork.common.http import BaseHttpClient
 
 SdkConfig = CommonSdkConfig
-API_KEY_HEADER = 'Sdkwork-Access-Token'
+API_KEY_HEADER = 'Access-Token'
 API_KEY_USE_BEARER = False
 
 
@@ -15,7 +15,7 @@ class HttpClient(BaseHttpClient):
     Auth headers:
     - api_key -> Authorization: Bearer {api_key}
     - auth_token -> Authorization: Bearer {auth_token}
-    - access_token -> Sdkwork-Access-Token: {access_token}
+    - access_token -> Access-Token: {access_token}
     """
 
     def _update_auth_headers(self) -> None:
@@ -23,7 +23,7 @@ class HttpClient(BaseHttpClient):
             return
 
         self._session.headers.pop('Authorization', None)
-        self._session.headers.pop('Sdkwork-Access-Token', None)
+        self._session.headers.pop('Access-Token', None)
         self._session.headers.pop('X-API-Key', None)
 
         if self._api_key:
@@ -31,7 +31,7 @@ class HttpClient(BaseHttpClient):
         if self._auth_token:
             self._session.headers['Authorization'] = f'Bearer {self._auth_token}'
         if self._access_token:
-            self._session.headers['Sdkwork-Access-Token'] = self._access_token
+            self._session.headers['Access-Token'] = self._access_token
 
     def set_api_key(self, api_key: str) -> 'HttpClient':
         self._api_key = api_key
@@ -49,7 +49,7 @@ class HttpClient(BaseHttpClient):
 
     def set_access_token(self, token: str) -> 'HttpClient':
         self._access_token = token
-        if API_KEY_HEADER.lower() != 'sdkwork-access-token':
+        if API_KEY_HEADER.lower() != 'access-token':
             self._api_key = None
         self._update_auth_headers()
         return self

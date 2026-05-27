@@ -17,7 +17,7 @@ public class OpenAiEvalRun {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -25,7 +25,7 @@ public class OpenAiEvalRun {
     public String getDataSource() {
         return this.dataSource;
     }
-    
+
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
     }
@@ -33,7 +33,7 @@ public class OpenAiEvalRun {
     public String getEvalId() {
         return this.evalId;
     }
-    
+
     public void setEvalId(String evalId) {
         this.evalId = evalId;
     }
@@ -41,7 +41,7 @@ public class OpenAiEvalRun {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -49,7 +49,7 @@ public class OpenAiEvalRun {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -57,7 +57,7 @@ public class OpenAiEvalRun {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -65,7 +65,7 @@ public class OpenAiEvalRun {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -73,7 +73,7 @@ public class OpenAiEvalRun {
     public String getReportUrl() {
         return this.reportUrl;
     }
-    
+
     public void setReportUrl(String reportUrl) {
         this.reportUrl = reportUrl;
     }
@@ -81,7 +81,7 @@ public class OpenAiEvalRun {
     public OpenAiEvalRunResultCounts getResultCounts() {
         return this.resultCounts;
     }
-    
+
     public void setResultCounts(OpenAiEvalRunResultCounts resultCounts) {
         this.resultCounts = resultCounts;
     }
@@ -89,7 +89,7 @@ public class OpenAiEvalRun {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

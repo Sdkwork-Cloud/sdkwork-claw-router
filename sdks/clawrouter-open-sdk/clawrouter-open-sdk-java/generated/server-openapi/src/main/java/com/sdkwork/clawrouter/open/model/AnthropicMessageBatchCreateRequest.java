@@ -8,7 +8,7 @@ public class AnthropicMessageBatchCreateRequest {
     public List<AnthropicMessageBatchRequest> getRequests() {
         return this.requests;
     }
-    
+
     public void setRequests(List<AnthropicMessageBatchRequest> requests) {
         this.requests = requests;
     }

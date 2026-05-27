@@ -18,7 +18,7 @@ public class DashboardOverviewSummary {
     public Integer getAudioRequests() {
         return this.audioRequests;
     }
-    
+
     public void setAudioRequests(Integer audioRequests) {
         this.audioRequests = audioRequests;
     }
@@ -26,7 +26,7 @@ public class DashboardOverviewSummary {
     public Double getAvailableCredits() {
         return this.availableCredits;
     }
-    
+
     public void setAvailableCredits(Double availableCredits) {
         this.availableCredits = availableCredits;
     }
@@ -34,7 +34,7 @@ public class DashboardOverviewSummary {
     public Integer getErrorCount() {
         return this.errorCount;
     }
-    
+
     public void setErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
     }
@@ -42,7 +42,7 @@ public class DashboardOverviewSummary {
     public Integer getImageRequests() {
         return this.imageRequests;
     }
-    
+
     public void setImageRequests(Integer imageRequests) {
         this.imageRequests = imageRequests;
     }
@@ -50,7 +50,7 @@ public class DashboardOverviewSummary {
     public Integer getMusicRequests() {
         return this.musicRequests;
     }
-    
+
     public void setMusicRequests(Integer musicRequests) {
         this.musicRequests = musicRequests;
     }
@@ -58,7 +58,7 @@ public class DashboardOverviewSummary {
     public Integer getRequestCount() {
         return this.requestCount;
     }
-    
+
     public void setRequestCount(Integer requestCount) {
         this.requestCount = requestCount;
     }
@@ -66,7 +66,7 @@ public class DashboardOverviewSummary {
     public Double getRpm() {
         return this.rpm;
     }
-    
+
     public void setRpm(Double rpm) {
         this.rpm = rpm;
     }
@@ -74,7 +74,7 @@ public class DashboardOverviewSummary {
     public Integer getTotalRequestCount() {
         return this.totalRequestCount;
     }
-    
+
     public void setTotalRequestCount(Integer totalRequestCount) {
         this.totalRequestCount = totalRequestCount;
     }
@@ -82,7 +82,7 @@ public class DashboardOverviewSummary {
     public Double getTotalUsedCredits() {
         return this.totalUsedCredits;
     }
-    
+
     public void setTotalUsedCredits(Double totalUsedCredits) {
         this.totalUsedCredits = totalUsedCredits;
     }
@@ -90,7 +90,7 @@ public class DashboardOverviewSummary {
     public Double getTpm() {
         return this.tpm;
     }
-    
+
     public void setTpm(Double tpm) {
         this.tpm = tpm;
     }
@@ -98,7 +98,7 @@ public class DashboardOverviewSummary {
     public Double getUsedCredits() {
         return this.usedCredits;
     }
-    
+
     public void setUsedCredits(Double usedCredits) {
         this.usedCredits = usedCredits;
     }
@@ -106,7 +106,7 @@ public class DashboardOverviewSummary {
     public Integer getVideoRequests() {
         return this.videoRequests;
     }
-    
+
     public void setVideoRequests(Integer videoRequests) {
         this.videoRequests = videoRequests;
     }

@@ -14,7 +14,7 @@ public class DashboardTopModel {
     public Double getCost() {
         return this.cost;
     }
-    
+
     public void setCost(Double cost) {
         this.cost = cost;
     }
@@ -22,7 +22,7 @@ public class DashboardTopModel {
     public Boolean getIsUp() {
         return this.isUp;
     }
-    
+
     public void setIsUp(Boolean isUp) {
         this.isUp = isUp;
     }
@@ -30,7 +30,7 @@ public class DashboardTopModel {
     public String getModality() {
         return this.modality;
     }
-    
+
     public void setModality(String modality) {
         this.modality = modality;
     }
@@ -38,7 +38,7 @@ public class DashboardTopModel {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -46,7 +46,7 @@ public class DashboardTopModel {
     public Integer getRank() {
         return this.rank;
     }
-    
+
     public void setRank(Integer rank) {
         this.rank = rank;
     }
@@ -54,7 +54,7 @@ public class DashboardTopModel {
     public Integer getRequests() {
         return this.requests;
     }
-    
+
     public void setRequests(Integer requests) {
         this.requests = requests;
     }
@@ -62,7 +62,7 @@ public class DashboardTopModel {
     public String getSupplier() {
         return this.supplier;
     }
-    
+
     public void setSupplier(String supplier) {
         this.supplier = supplier;
     }
@@ -70,7 +70,7 @@ public class DashboardTopModel {
     public String getTrend() {
         return this.trend;
     }
-    
+
     public void setTrend(String trend) {
         this.trend = trend;
     }

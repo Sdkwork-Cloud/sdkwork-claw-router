@@ -2,19 +2,20 @@ use std::fmt;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Body;
-use axum::extract::State;
-use axum::http::{HeaderMap, HeaderValue, Request, StatusCode, Uri};
+use axum::extract::{FromRequestParts, OptionalFromRequestParts, State};
+use axum::http::{request::Parts, Extensions, HeaderMap, HeaderValue, Request, StatusCode, Uri};
 use axum::middleware::Next;
 use axum::response::{IntoResponse, Response};
 use axum::Json;
 use hmac::{Hmac, Mac};
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
 use sdkwork_claw_security::redact_secret;
+use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
 use serde::Serialize;
 use sha2::Sha256;
 
 const AUTHORIZATION: &str = "authorization";
-const SDKWORK_ACCESS_TOKEN: &str = "sdkwork-access-token";
+const ACCESS_TOKEN: &str = "Access-Token";
 const X_API_KEY: &str = "x-api-key";
 const X_GOOG_API_KEY: &str = "x-goog-api-key";
 const X_SDKWORK_API_KEY_ID: &str = "x-sdkwork-api-key-id";
@@ -69,9 +70,7 @@ pub struct TrustedRequestSubject {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum TrustedRequestSubjectError {
-    MissingHeader(&'static str),
-    InvalidHeaderValue(&'static str),
-    InvalidPositiveInteger(&'static str),
+    MissingExtension,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -175,11 +174,15 @@ impl fmt::Display for ApiKeyIdentityError {
 impl std::error::Error for ApiKeyIdentityError {}
 
 impl TrustedRequestSubject {
-    pub fn from_headers(headers: &HeaderMap) -> Result<Self, TrustedRequestSubjectError> {
-        let tenant_id = required_positive_i64_header(headers, X_SDKWORK_TENANT_ID)?;
-        let organization_id = required_positive_i64_header(headers, X_SDKWORK_ORGANIZATION_ID)?;
-        let user_id = required_positive_i64_header(headers, X_SDKWORK_USER_ID)?;
+    pub fn from_extensions(extensions: &Extensions) -> Option<Self> {
+        extensions.get::<Self>().copied()
+    }
 
+    pub fn from_headers(headers: &HeaderMap) -> Result<Self, TrustedSubjectBoundaryError> {
+        let tenant_id = required_signed_positive_i64_header(headers, X_SDKWORK_TENANT_ID)?;
+        let organization_id =
+            required_signed_positive_i64_header(headers, X_SDKWORK_ORGANIZATION_ID)?;
+        let user_id = required_signed_positive_i64_header(headers, X_SDKWORK_USER_ID)?;
         Ok(Self {
             tenant_id,
             organization_id,
@@ -190,14 +193,45 @@ impl TrustedRequestSubject {
     }
 }
 
+impl<S> FromRequestParts<S> for TrustedRequestSubject
+where
+    S: Send + Sync,
+{
+    type Rejection = Response;
+
+    async fn from_request_parts(parts: &mut Parts, _state: &S) -> Result<Self, Self::Rejection> {
+        Self::from_extensions(&parts.extensions).ok_or_else(|| {
+            (
+                StatusCode::UNAUTHORIZED,
+                Json(BoundaryErrorEnvelope {
+                    code: "4010",
+                    msg: TrustedRequestSubjectError::MissingExtension.to_string(),
+                    data: None,
+                }),
+            )
+                .into_response()
+        })
+    }
+}
+
+impl<S> OptionalFromRequestParts<S> for TrustedRequestSubject
+where
+    S: Send + Sync,
+{
+    type Rejection = std::convert::Infallible;
+
+    async fn from_request_parts(
+        parts: &mut Parts,
+        _state: &S,
+    ) -> Result<Option<Self>, Self::Rejection> {
+        Ok(Self::from_extensions(&parts.extensions))
+    }
+}
+
 impl fmt::Display for TrustedRequestSubjectError {
     fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::MissingHeader(name) => write!(formatter, "{name} header is required"),
-            Self::InvalidHeaderValue(name) => write!(formatter, "{name} header value is invalid"),
-            Self::InvalidPositiveInteger(name) => {
-                write!(formatter, "{name} header must be a positive integer")
-            }
+            Self::MissingExtension => write!(formatter, "trusted request subject is required"),
         }
     }
 }
@@ -231,6 +265,29 @@ impl fmt::Debug for AppSubjectBoundaryConfig {
     }
 }
 
+pub fn attach_trusted_request_subject(request: &mut Request<Body>, subject: TrustedRequestSubject) {
+    insert_internal_trusted_subject_headers(request.headers_mut(), subject);
+    request
+        .extensions_mut()
+        .insert(iam_app_context_from_trusted_subject(subject));
+    request.extensions_mut().insert(subject);
+}
+
+fn iam_app_context_from_trusted_subject(subject: TrustedRequestSubject) -> IamAppContext {
+    IamAppContext::new(
+        subject.tenant_id.to_string(),
+        Some(&subject.organization_id.to_string()),
+        subject.user_id.to_string(),
+        format!("claw-subject-{}", subject.user_id),
+        "sdkwork-claw-router",
+        Environment::Prod,
+        DeploymentMode::Private,
+        AuthLevel::Password,
+        vec!["app".to_owned()],
+        vec!["app".to_owned()],
+    )
+}
+
 pub async fn app_request_subject_boundary(
     State(config): State<AppSubjectBoundaryConfig>,
     mut request: Request<Body>,
@@ -256,14 +313,17 @@ pub async fn app_request_subject_boundary(
                 .into_response();
         }
     };
-    match inject_verified_app_request_subject(
+    match verified_app_request_subject(
         request.headers_mut(),
         &method,
         &path_and_query,
         &config,
         now_unix_seconds,
     ) {
-        Ok(()) => next.run(request).await,
+        Ok(subject) => {
+            attach_trusted_request_subject(&mut request, subject);
+            next.run(request).await
+        }
         Err(message) => unauthorized_boundary_response(message),
     }
 }
@@ -280,13 +340,15 @@ pub async fn optional_app_request_subject_boundary(
         .map(|value| value.as_str().to_owned())
         .unwrap_or_else(|| request.uri().path().to_owned());
     if let Ok(now_unix_seconds) = current_unix_seconds() {
-        inject_optional_app_request_subject(
+        if let Some(subject) = optional_app_request_subject(
             request.headers_mut(),
             &method,
             &path_and_query,
             &config,
             now_unix_seconds,
-        );
+        ) {
+            attach_trusted_request_subject(&mut request, subject);
+        }
     } else {
         remove_internal_trusted_subject_headers(request.headers_mut());
         remove_signed_subject_headers(request.headers_mut());
@@ -295,26 +357,23 @@ pub async fn optional_app_request_subject_boundary(
     next.run(request).await
 }
 
-pub fn inject_verified_app_request_subject(
+pub fn verified_app_request_subject(
     headers: &mut HeaderMap,
     method: &str,
     path_and_query: &str,
     config: &AppSubjectBoundaryConfig,
     now_unix_seconds: i64,
-) -> Result<(), String> {
-    inject_verified_trusted_request_subject(
+) -> Result<TrustedRequestSubject, String> {
+    if let Some(subject) = verified_signed_trusted_request_subject(
         headers,
         method,
         path_and_query,
         config.trusted_subject(),
         now_unix_seconds,
     )
-    .map_err(|error| error.to_string())?;
-    if TrustedRequestSubject::from_headers(headers).is_ok() {
-        return Ok(());
-    }
-    if !has_dual_app_session_token_headers(headers) {
-        return Ok(());
+    .map_err(|error| error.to_string())?
+    {
+        return Ok(subject);
     }
     let subject =
         match verify_dual_app_session_headers(headers, config.app_session(), now_unix_seconds) {
@@ -325,42 +384,44 @@ pub fn inject_verified_app_request_subject(
             }
         };
     remove_app_session_token_headers(headers);
-    insert_internal_trusted_subject_headers(headers, subject);
-    Ok(())
+    remove_internal_trusted_subject_headers(headers);
+    Ok(subject)
 }
 
-pub fn inject_optional_app_request_subject(
+pub fn optional_app_request_subject(
     headers: &mut HeaderMap,
     method: &str,
     path_and_query: &str,
     config: &AppSubjectBoundaryConfig,
     now_unix_seconds: i64,
-) {
-    match inject_verified_trusted_request_subject(
+) -> Option<TrustedRequestSubject> {
+    match verified_signed_trusted_request_subject(
         headers,
         method,
         path_and_query,
         config.trusted_subject(),
         now_unix_seconds,
     ) {
-        Ok(()) if TrustedRequestSubject::from_headers(headers).is_ok() => return,
-        Ok(()) => {}
+        Ok(Some(subject)) => return Some(subject),
+        Ok(None) => {}
         Err(_) => {
             remove_internal_trusted_subject_headers(headers);
             remove_signed_subject_headers(headers);
         }
     }
 
-    if !has_dual_app_session_token_headers(headers) {
-        return;
+    if !has_any_app_session_token_header(headers) {
+        return None;
     };
     match verify_dual_app_session_headers(headers, config.app_session(), now_unix_seconds) {
         Ok(subject) => {
             remove_app_session_token_headers(headers);
-            insert_internal_trusted_subject_headers(headers, subject);
+            remove_internal_trusted_subject_headers(headers);
+            Some(subject)
         }
         Err(_) => {
             remove_app_session_token_headers(headers);
+            None
         }
     }
 }
@@ -390,28 +451,34 @@ pub async fn trusted_request_subject_boundary(
                 .into_response();
         }
     };
-    match inject_verified_trusted_request_subject(
+    match verified_signed_trusted_request_subject(
         request.headers_mut(),
         &method,
         &path_and_query,
         &config,
         now_unix_seconds,
     ) {
-        Ok(()) => next.run(request).await,
+        Ok(Some(subject)) => {
+            attach_trusted_request_subject(&mut request, subject);
+            next.run(request).await
+        }
+        Ok(None) => {
+            unauthorized_boundary_response("trusted request subject is required".to_owned())
+        }
         Err(error) => unauthorized_boundary_response(error.to_string()),
     }
 }
 
-pub fn inject_verified_trusted_request_subject(
+pub fn verified_signed_trusted_request_subject(
     headers: &mut HeaderMap,
     method: &str,
     path_and_query: &str,
     config: &TrustedSubjectConfig,
     now_unix_seconds: i64,
-) -> Result<(), TrustedSubjectBoundaryError> {
+) -> Result<Option<TrustedRequestSubject>, TrustedSubjectBoundaryError> {
     remove_internal_trusted_subject_headers(headers);
     if !has_any_signed_subject_header(headers) {
-        return Ok(());
+        return Ok(None);
     }
 
     let tenant_id = required_signed_positive_i64_header(headers, X_SDKWORK_SUBJECT_TENANT_ID)?;
@@ -438,8 +505,8 @@ pub fn inject_verified_trusted_request_subject(
         path_and_query,
         &signature,
     )?;
-    insert_internal_trusted_subject_headers(headers, subject);
-    Ok(())
+    remove_internal_trusted_subject_headers(headers);
+    Ok(Some(subject))
 }
 
 pub fn sign_trusted_request_subject(
@@ -494,11 +561,11 @@ pub fn verify_dual_app_session_headers(
         verify_app_session_authorization_header(config, authorization, now_unix_seconds)?;
 
     let access_token = headers
-        .get(SDKWORK_ACCESS_TOKEN)
+        .get(ACCESS_TOKEN)
         .ok_or(AppSessionTokenError::MissingAccessToken)?
         .to_str()
         .map(str::trim)
-        .map_err(|_| AppSessionTokenError::InvalidHeaderValue(SDKWORK_ACCESS_TOKEN))?;
+        .map_err(|_| AppSessionTokenError::InvalidHeaderValue(ACCESS_TOKEN))?;
     if access_token.is_empty() {
         return Err(AppSessionTokenError::MissingAccessToken);
     }
@@ -572,7 +639,7 @@ impl fmt::Display for AppSessionTokenError {
         match self {
             Self::MissingBearerToken => write!(formatter, "app session bearer token is required"),
             Self::MissingAccessToken => {
-                write!(formatter, "{SDKWORK_ACCESS_TOKEN} header is required")
+                write!(formatter, "{ACCESS_TOKEN} header is required")
             }
             Self::InvalidAuthorizationScheme => {
                 write!(
@@ -637,13 +704,34 @@ fn remove_internal_trusted_subject_headers(headers: &mut HeaderMap) {
     headers.remove(X_SDKWORK_USER_ID);
 }
 
-fn has_dual_app_session_token_headers(headers: &HeaderMap) -> bool {
-    headers.contains_key(AUTHORIZATION) && headers.contains_key(SDKWORK_ACCESS_TOKEN)
+fn insert_internal_trusted_subject_headers(
+    headers: &mut HeaderMap,
+    subject: TrustedRequestSubject,
+) {
+    headers.insert(
+        X_SDKWORK_TENANT_ID,
+        HeaderValue::from_str(&subject.tenant_id.to_string())
+            .expect("trusted subject tenant id header value must be valid"),
+    );
+    headers.insert(
+        X_SDKWORK_ORGANIZATION_ID,
+        HeaderValue::from_str(&subject.organization_id.to_string())
+            .expect("trusted subject organization id header value must be valid"),
+    );
+    headers.insert(
+        X_SDKWORK_USER_ID,
+        HeaderValue::from_str(&subject.user_id.to_string())
+            .expect("trusted subject user id header value must be valid"),
+    );
+}
+
+fn has_any_app_session_token_header(headers: &HeaderMap) -> bool {
+    headers.contains_key(AUTHORIZATION) || headers.contains_key(ACCESS_TOKEN)
 }
 
 fn remove_app_session_token_headers(headers: &mut HeaderMap) {
     headers.remove(AUTHORIZATION);
-    headers.remove(SDKWORK_ACCESS_TOKEN);
+    headers.remove(ACCESS_TOKEN);
 }
 
 fn has_any_signed_subject_header(headers: &HeaderMap) -> bool {
@@ -846,46 +934,6 @@ fn trusted_subject_payload(
         method.to_ascii_uppercase(),
         path_and_query
     )
-}
-
-fn insert_internal_trusted_subject_headers(
-    headers: &mut HeaderMap,
-    subject: TrustedRequestSubject,
-) {
-    headers.insert(
-        X_SDKWORK_TENANT_ID,
-        HeaderValue::from_str(&subject.tenant_id.to_string())
-            .expect("tenant id header value must be valid"),
-    );
-    headers.insert(
-        X_SDKWORK_ORGANIZATION_ID,
-        HeaderValue::from_str(&subject.organization_id.to_string())
-            .expect("organization id header value must be valid"),
-    );
-    headers.insert(
-        X_SDKWORK_USER_ID,
-        HeaderValue::from_str(&subject.user_id.to_string())
-            .expect("user id header value must be valid"),
-    );
-}
-
-fn required_positive_i64_header(
-    headers: &HeaderMap,
-    name: &'static str,
-) -> Result<i64, TrustedRequestSubjectError> {
-    let value = headers
-        .get(name)
-        .ok_or(TrustedRequestSubjectError::MissingHeader(name))?
-        .to_str()
-        .map_err(|_| TrustedRequestSubjectError::InvalidHeaderValue(name))?
-        .trim();
-    let parsed = value
-        .parse::<i64>()
-        .map_err(|_| TrustedRequestSubjectError::InvalidPositiveInteger(name))?;
-    if parsed <= 0 {
-        return Err(TrustedRequestSubjectError::InvalidPositiveInteger(name));
-    }
-    Ok(parsed)
 }
 
 fn parse_api_key_id(headers: &HeaderMap) -> Result<Option<i64>, ApiKeyIdentityError> {

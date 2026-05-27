@@ -15,7 +15,7 @@ Composable application preset, capability registry, and package selection surfac
 
 - `@sdkwork/ui-pc-react` for shared UI primitives and patterns
 - Appbase capability packages for shell, routing, workspace, command, and search composition
-- Commerce capability packages are registered as independent modules rather than bundled into wallet or VIP
+- Commerce capability packages are registered as independent modules rather than bundled into wallet or membership
 
 ## Ownership
 

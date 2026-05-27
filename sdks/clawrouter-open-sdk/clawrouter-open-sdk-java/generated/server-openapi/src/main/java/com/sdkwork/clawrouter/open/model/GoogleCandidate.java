@@ -13,7 +13,7 @@ public class GoogleCandidate {
     public GoogleCitationMetadata getCitationMetadata() {
         return this.citationMetadata;
     }
-    
+
     public void setCitationMetadata(GoogleCitationMetadata citationMetadata) {
         this.citationMetadata = citationMetadata;
     }
@@ -21,7 +21,7 @@ public class GoogleCandidate {
     public GoogleContent getContent() {
         return this.content;
     }
-    
+
     public void setContent(GoogleContent content) {
         this.content = content;
     }
@@ -29,7 +29,7 @@ public class GoogleCandidate {
     public String getFinishReason() {
         return this.finishReason;
     }
-    
+
     public void setFinishReason(String finishReason) {
         this.finishReason = finishReason;
     }
@@ -37,7 +37,7 @@ public class GoogleCandidate {
     public Integer getIndex() {
         return this.index;
     }
-    
+
     public void setIndex(Integer index) {
         this.index = index;
     }
@@ -45,7 +45,7 @@ public class GoogleCandidate {
     public List<GoogleSafetyRating> getSafetyRatings() {
         return this.safetyRatings;
     }
-    
+
     public void setSafetyRatings(List<GoogleSafetyRating> safetyRatings) {
         this.safetyRatings = safetyRatings;
     }
@@ -53,7 +53,7 @@ public class GoogleCandidate {
     public Integer getTokenCount() {
         return this.tokenCount;
     }
-    
+
     public void setTokenCount(Integer tokenCount) {
         this.tokenCount = tokenCount;
     }

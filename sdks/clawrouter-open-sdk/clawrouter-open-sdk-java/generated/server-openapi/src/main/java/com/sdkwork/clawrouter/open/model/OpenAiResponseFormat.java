@@ -8,7 +8,7 @@ public class OpenAiResponseFormat {
     public OpenAiJsonSchemaFormat getJsonSchema() {
         return this.jsonSchema;
     }
-    
+
     public void setJsonSchema(OpenAiJsonSchemaFormat jsonSchema) {
         this.jsonSchema = jsonSchema;
     }
@@ -16,7 +16,7 @@ public class OpenAiResponseFormat {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

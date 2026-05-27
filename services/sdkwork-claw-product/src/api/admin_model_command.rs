@@ -11,6 +11,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -22,8 +23,6 @@ use crate::ports::{
     ListAdminModelVendorsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
 };
 
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MAX_VENDOR_CODE_LEN: usize = 64;
 const MAX_NAME_LEN: usize = 128;
 const MAX_COLOR_LEN: usize = 64;
@@ -594,7 +593,7 @@ impl Default for AdminModelCatalogSyncRequest {
 
 fn build_create_vendor_command(
     state: AdminModelCommandState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminModelSubject,
     request: AdminModelVendorCreateRequest,
 ) -> Result<CreateAdminModelVendorCommand, AdminModelCommandBuildError> {
@@ -609,14 +608,14 @@ fn build_create_vendor_command(
         status: request.status,
         color: request.color,
         description: request.description,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_model_command(
     state: AdminModelCommandState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminModelSubject,
     request: AdminAiModelCreateRequest,
 ) -> Result<CreateAdminAiModelCommand, AdminModelCommandBuildError> {
@@ -659,14 +658,14 @@ fn build_create_model_command(
         shelf_state: request.shelf_state,
         routing_state: request.routing_state,
         replacement_model: request.replacement_model,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_model_command(
     state: AdminModelCommandState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminModelSubject,
     model_id: String,
     request: AdminAiModelUpdateRequest,
@@ -711,14 +710,14 @@ fn build_update_model_command(
         shelf_state: request.shelf_state,
         routing_state: request.routing_state,
         replacement_model: request.replacement_model,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_sync_catalog_command(
     state: AdminModelCommandState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminModelSubject,
     request: AdminModelCatalogSyncRequest,
 ) -> Result<SyncAdminModelCatalogCommand, AdminModelCommandBuildError> {
@@ -732,14 +731,14 @@ fn build_sync_catalog_command(
         force: request.force.unwrap_or(false),
         catalog_root: normalize_optional_catalog_root(request.catalog_root.as_deref())?,
         catalog_version: normalize_optional_catalog_version(request.catalog_version.as_deref())?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_model_command(
     state: AdminModelCommandState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminModelSubject,
     model_id: String,
 ) -> Result<DeleteAdminAiModelCommand, AdminModelCommandBuildError> {
@@ -747,7 +746,7 @@ fn build_delete_model_command(
         subject,
         audit_log_uuid: generate_entity_uuid(&state)?,
         model_id: normalize_model_id(&model_id)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -1754,29 +1753,13 @@ fn generate_entity_uuid(
         .map_err(AdminModelCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminModelCommandState,
-) -> Result<String, AdminModelCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(AdminModelCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> AdminModelCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AdminModelCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AdminModelCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_vendor_response(item: AdminModelVendorItem) -> AdminModelVendorItemResponse {

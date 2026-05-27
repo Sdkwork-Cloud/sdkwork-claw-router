@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ResponsesGoogleApi {
     private final HttpClient client;
-    
+
     public ResponsesGoogleApi(HttpClient client) {
         this.client = client;
     }

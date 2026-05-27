@@ -68,7 +68,7 @@ public class AiModelPricingRecord {
     public String getBillingMeterCode() {
         return this.billingMeterCode;
     }
-    
+
     public void setBillingMeterCode(String billingMeterCode) {
         this.billingMeterCode = billingMeterCode;
     }
@@ -76,7 +76,7 @@ public class AiModelPricingRecord {
     public String getBillingMeterId() {
         return this.billingMeterId;
     }
-    
+
     public void setBillingMeterId(String billingMeterId) {
         this.billingMeterId = billingMeterId;
     }
@@ -84,7 +84,7 @@ public class AiModelPricingRecord {
     public String getBillingMode() {
         return this.billingMode;
     }
-    
+
     public void setBillingMode(String billingMode) {
         this.billingMode = billingMode;
     }
@@ -92,7 +92,7 @@ public class AiModelPricingRecord {
     public String getBillingType() {
         return this.billingType;
     }
-    
+
     public void setBillingType(String billingType) {
         this.billingType = billingType;
     }
@@ -100,7 +100,7 @@ public class AiModelPricingRecord {
     public String getCatalogKey() {
         return this.catalogKey;
     }
-    
+
     public void setCatalogKey(String catalogKey) {
         this.catalogKey = catalogKey;
     }
@@ -108,7 +108,7 @@ public class AiModelPricingRecord {
     public String getChannelId() {
         return this.channelId;
     }
-    
+
     public void setChannelId(String channelId) {
         this.channelId = channelId;
     }
@@ -116,7 +116,7 @@ public class AiModelPricingRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -124,7 +124,7 @@ public class AiModelPricingRecord {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -132,7 +132,7 @@ public class AiModelPricingRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -140,7 +140,7 @@ public class AiModelPricingRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -148,7 +148,7 @@ public class AiModelPricingRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -156,7 +156,7 @@ public class AiModelPricingRecord {
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
-    
+
     public void setEffectiveFrom(String effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
     }
@@ -164,7 +164,7 @@ public class AiModelPricingRecord {
     public String getEffectiveTo() {
         return this.effectiveTo;
     }
-    
+
     public void setEffectiveTo(String effectiveTo) {
         this.effectiveTo = effectiveTo;
     }
@@ -172,7 +172,7 @@ public class AiModelPricingRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -180,7 +180,7 @@ public class AiModelPricingRecord {
     public String getImportSnapshotId() {
         return this.importSnapshotId;
     }
-    
+
     public void setImportSnapshotId(String importSnapshotId) {
         this.importSnapshotId = importSnapshotId;
     }
@@ -188,7 +188,7 @@ public class AiModelPricingRecord {
     public String getIncludedQuantity() {
         return this.includedQuantity;
     }
-    
+
     public void setIncludedQuantity(String includedQuantity) {
         this.includedQuantity = includedQuantity;
     }
@@ -196,7 +196,7 @@ public class AiModelPricingRecord {
     public String getMarkupAmount() {
         return this.markupAmount;
     }
-    
+
     public void setMarkupAmount(String markupAmount) {
         this.markupAmount = markupAmount;
     }
@@ -204,7 +204,7 @@ public class AiModelPricingRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -212,7 +212,7 @@ public class AiModelPricingRecord {
     public String getMeteringMode() {
         return this.meteringMode;
     }
-    
+
     public void setMeteringMode(String meteringMode) {
         this.meteringMode = meteringMode;
     }
@@ -220,7 +220,7 @@ public class AiModelPricingRecord {
     public String getMinChargeAmount() {
         return this.minChargeAmount;
     }
-    
+
     public void setMinChargeAmount(String minChargeAmount) {
         this.minChargeAmount = minChargeAmount;
     }
@@ -228,7 +228,7 @@ public class AiModelPricingRecord {
     public String getMinimumQuantity() {
         return this.minimumQuantity;
     }
-    
+
     public void setMinimumQuantity(String minimumQuantity) {
         this.minimumQuantity = minimumQuantity;
     }
@@ -236,7 +236,7 @@ public class AiModelPricingRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -244,7 +244,7 @@ public class AiModelPricingRecord {
     public String getModelId() {
         return this.modelId;
     }
-    
+
     public void setModelId(String modelId) {
         this.modelId = modelId;
     }
@@ -252,7 +252,7 @@ public class AiModelPricingRecord {
     public String getObservedAt() {
         return this.observedAt;
     }
-    
+
     public void setObservedAt(String observedAt) {
         this.observedAt = observedAt;
     }
@@ -260,7 +260,7 @@ public class AiModelPricingRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -268,7 +268,7 @@ public class AiModelPricingRecord {
     public String getPlatformCode() {
         return this.platformCode;
     }
-    
+
     public void setPlatformCode(String platformCode) {
         this.platformCode = platformCode;
     }
@@ -276,7 +276,7 @@ public class AiModelPricingRecord {
     public String getPriceItemType() {
         return this.priceItemType;
     }
-    
+
     public void setPriceItemType(String priceItemType) {
         this.priceItemType = priceItemType;
     }
@@ -284,7 +284,7 @@ public class AiModelPricingRecord {
     public String getPriceOrigin() {
         return this.priceOrigin;
     }
-    
+
     public void setPriceOrigin(String priceOrigin) {
         this.priceOrigin = priceOrigin;
     }
@@ -292,7 +292,7 @@ public class AiModelPricingRecord {
     public String getPriceSide() {
         return this.priceSide;
     }
-    
+
     public void setPriceSide(String priceSide) {
         this.priceSide = priceSide;
     }
@@ -300,7 +300,7 @@ public class AiModelPricingRecord {
     public String getPriceVersion() {
         return this.priceVersion;
     }
-    
+
     public void setPriceVersion(String priceVersion) {
         this.priceVersion = priceVersion;
     }
@@ -308,7 +308,7 @@ public class AiModelPricingRecord {
     public String getPricingFormulaMode() {
         return this.pricingFormulaMode;
     }
-    
+
     public void setPricingFormulaMode(String pricingFormulaMode) {
         this.pricingFormulaMode = pricingFormulaMode;
     }
@@ -316,7 +316,7 @@ public class AiModelPricingRecord {
     public String getPricingPlanCode() {
         return this.pricingPlanCode;
     }
-    
+
     public void setPricingPlanCode(String pricingPlanCode) {
         this.pricingPlanCode = pricingPlanCode;
     }
@@ -324,7 +324,7 @@ public class AiModelPricingRecord {
     public String getPricingPlanId() {
         return this.pricingPlanId;
     }
-    
+
     public void setPricingPlanId(String pricingPlanId) {
         this.pricingPlanId = pricingPlanId;
     }
@@ -332,7 +332,7 @@ public class AiModelPricingRecord {
     public String getPricingScope() {
         return this.pricingScope;
     }
-    
+
     public void setPricingScope(String pricingScope) {
         this.pricingScope = pricingScope;
     }
@@ -340,7 +340,7 @@ public class AiModelPricingRecord {
     public String getPricingScopeId() {
         return this.pricingScopeId;
     }
-    
+
     public void setPricingScopeId(String pricingScopeId) {
         this.pricingScopeId = pricingScopeId;
     }
@@ -348,7 +348,7 @@ public class AiModelPricingRecord {
     public Integer getPriority() {
         return this.priority;
     }
-    
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -356,7 +356,7 @@ public class AiModelPricingRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -364,7 +364,7 @@ public class AiModelPricingRecord {
     public String getProviderModel() {
         return this.providerModel;
     }
-    
+
     public void setProviderModel(String providerModel) {
         this.providerModel = providerModel;
     }
@@ -372,7 +372,7 @@ public class AiModelPricingRecord {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -380,7 +380,7 @@ public class AiModelPricingRecord {
     public String getQuantityFormula() {
         return this.quantityFormula;
     }
-    
+
     public void setQuantityFormula(String quantityFormula) {
         this.quantityFormula = quantityFormula;
     }
@@ -388,7 +388,7 @@ public class AiModelPricingRecord {
     public String getQuantitySource() {
         return this.quantitySource;
     }
-    
+
     public void setQuantitySource(String quantitySource) {
         this.quantitySource = quantitySource;
     }
@@ -396,7 +396,7 @@ public class AiModelPricingRecord {
     public String getQuantityStep() {
         return this.quantityStep;
     }
-    
+
     public void setQuantityStep(String quantityStep) {
         this.quantityStep = quantityStep;
     }
@@ -404,7 +404,7 @@ public class AiModelPricingRecord {
     public String getReferenceMultiplier() {
         return this.referenceMultiplier;
     }
-    
+
     public void setReferenceMultiplier(String referenceMultiplier) {
         this.referenceMultiplier = referenceMultiplier;
     }
@@ -412,7 +412,7 @@ public class AiModelPricingRecord {
     public String getReferencePriceId() {
         return this.referencePriceId;
     }
-    
+
     public void setReferencePriceId(String referencePriceId) {
         this.referencePriceId = referencePriceId;
     }
@@ -420,7 +420,7 @@ public class AiModelPricingRecord {
     public String getReferencePriceSide() {
         return this.referencePriceSide;
     }
-    
+
     public void setReferencePriceSide(String referencePriceSide) {
         this.referencePriceSide = referencePriceSide;
     }
@@ -428,7 +428,7 @@ public class AiModelPricingRecord {
     public String getRegionCode() {
         return this.regionCode;
     }
-    
+
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
     }
@@ -436,7 +436,7 @@ public class AiModelPricingRecord {
     public String getResultSelector() {
         return this.resultSelector;
     }
-    
+
     public void setResultSelector(String resultSelector) {
         this.resultSelector = resultSelector;
     }
@@ -444,7 +444,7 @@ public class AiModelPricingRecord {
     public String getRoundingMode() {
         return this.roundingMode;
     }
-    
+
     public void setRoundingMode(String roundingMode) {
         this.roundingMode = roundingMode;
     }
@@ -452,7 +452,7 @@ public class AiModelPricingRecord {
     public String getServiceTier() {
         return this.serviceTier;
     }
-    
+
     public void setServiceTier(String serviceTier) {
         this.serviceTier = serviceTier;
     }
@@ -460,7 +460,7 @@ public class AiModelPricingRecord {
     public String getSourceHash() {
         return this.sourceHash;
     }
-    
+
     public void setSourceHash(String sourceHash) {
         this.sourceHash = sourceHash;
     }
@@ -468,7 +468,7 @@ public class AiModelPricingRecord {
     public String getSourcePriceId() {
         return this.sourcePriceId;
     }
-    
+
     public void setSourcePriceId(String sourcePriceId) {
         this.sourcePriceId = sourcePriceId;
     }
@@ -476,7 +476,7 @@ public class AiModelPricingRecord {
     public String getSourceUrl() {
         return this.sourceUrl;
     }
-    
+
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
     }
@@ -484,7 +484,7 @@ public class AiModelPricingRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -492,7 +492,7 @@ public class AiModelPricingRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -500,7 +500,7 @@ public class AiModelPricingRecord {
     public String getUnit() {
         return this.unit;
     }
-    
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -508,7 +508,7 @@ public class AiModelPricingRecord {
     public String getUnitPrice() {
         return this.unitPrice;
     }
-    
+
     public void setUnitPrice(String unitPrice) {
         this.unitPrice = unitPrice;
     }
@@ -516,7 +516,7 @@ public class AiModelPricingRecord {
     public String getUnitSize() {
         return this.unitSize;
     }
-    
+
     public void setUnitSize(String unitSize) {
         this.unitSize = unitSize;
     }
@@ -524,7 +524,7 @@ public class AiModelPricingRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -532,7 +532,7 @@ public class AiModelPricingRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -540,7 +540,7 @@ public class AiModelPricingRecord {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -548,7 +548,7 @@ public class AiModelPricingRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

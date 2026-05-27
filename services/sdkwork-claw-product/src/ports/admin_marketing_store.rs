@@ -1,4 +1,4 @@
-use std::future::Future;
+﻿use std::future::Future;
 use std::pin::Pin;
 
 use serde::Serialize;
@@ -17,22 +17,22 @@ pub struct AdminMarketingSubject {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub struct ListAdminCouponsQuery {
+pub struct ListPromotionOffersQuery {
     pub subject: AdminMarketingSubject,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub struct ListAdminCouponBatchesQuery {
+pub struct ListPromotionCouponStocksQuery {
     pub subject: AdminMarketingSubject,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub struct ListAdminPromoCodesQuery {
+pub struct ListPromotionCodesQuery {
     pub subject: AdminMarketingSubject,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub struct ListAdminRedemptionRecordsQuery {
+pub struct ListPromotionCodeRedemptionsQuery {
     pub subject: AdminMarketingSubject,
 }
 
@@ -89,12 +89,12 @@ pub enum AdminRechargePackageStatus {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct CreateAdminCouponCommand {
+pub struct CreatePromotionOfferCommand {
     pub subject: AdminMarketingSubject,
-    pub coupon_uuid: String,
+    pub offer_uuid: String,
     pub audit_log_uuid: String,
     pub name: String,
-    pub coupon_type: String,
+    pub discount_type: String,
     pub value: String,
     pub amount_cents: i64,
     pub discount_value: Option<String>,
@@ -104,21 +104,21 @@ pub struct CreateAdminCouponCommand {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct DeleteAdminCouponCommand {
+pub struct DeletePromotionOfferCommand {
     pub subject: AdminMarketingSubject,
-    pub coupon_id: String,
+    pub offer_id: String,
     pub audit_log_uuid: String,
     pub request_id: String,
     pub requested_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct UpdateAdminCouponCommand {
+pub struct UpdatePromotionOfferCommand {
     pub subject: AdminMarketingSubject,
-    pub coupon_id: String,
+    pub offer_id: String,
     pub audit_log_uuid: String,
     pub name: String,
-    pub coupon_type: String,
+    pub discount_type: String,
     pub value: String,
     pub amount_cents: i64,
     pub discount_value: Option<String>,
@@ -128,22 +128,22 @@ pub struct UpdateAdminCouponCommand {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct GenerateAdminCouponBatchCommand {
+pub struct GeneratePromotionCouponStockCommand {
     pub subject: AdminMarketingSubject,
-    pub batch_uuid: String,
+    pub stock_uuid: String,
     pub audit_log_uuid: String,
-    pub coupon_id: String,
+    pub offer_id: String,
     pub name: String,
-    pub count: i64,
-    pub prefix: String,
+    pub total_quantity: i64,
+    pub code_prefix: String,
     pub request_id: String,
     pub requested_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct UpdateAdminPromoCodeStatusCommand {
+pub struct UpdatePromotionCodeStatusCommand {
     pub subject: AdminMarketingSubject,
-    pub promo_code_id: String,
+    pub code_id: String,
     pub status: String,
     pub audit_log_uuid: String,
     pub request_id: String,
@@ -189,32 +189,32 @@ pub struct DeleteAdminRechargePackageCommand {
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct AdminCouponItem {
+pub struct PromotionOfferItem {
     pub id: String,
     pub name: String,
     #[serde(rename = "type")]
-    pub coupon_type: String,
+    pub discount_type: String,
     pub value: String,
     pub status: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct AdminCouponBatchItem {
+pub struct PromotionCouponStockItem {
     pub id: String,
-    pub coupon_id: String,
+    pub offer_id: String,
     pub name: String,
-    pub count: i64,
-    pub prefix: String,
+    pub total_quantity: i64,
+    pub code_prefix: String,
     pub created_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct AdminPromoCodeItem {
+pub struct PromotionCodeItem {
     pub id: String,
-    pub batch_id: String,
-    pub code: String,
+    pub stock_id: String,
+    pub promotion_code: String,
     pub status: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub used_by: Option<String>,
@@ -224,13 +224,13 @@ pub struct AdminPromoCodeItem {
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct AdminRedemptionRecordItem {
+pub struct PromotionCodeRedemptionItem {
     pub id: String,
-    pub user_id: String,
+    pub owner_user_id: String,
     pub user: String,
-    pub code: String,
+    pub submitted_code: String,
     pub amount: String,
-    pub time: String,
+    pub occurred_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
@@ -289,50 +289,50 @@ pub struct AdminReferralStatItem {
 }
 
 pub trait AdminMarketingStore {
-    fn list_coupons<'a>(
+    fn list_promotion_offers<'a>(
         &'a self,
-        query: ListAdminCouponsQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminCouponItem>>;
+        query: ListPromotionOffersQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionOfferItem>>;
 
-    fn create_coupon<'a>(
+    fn create_promotion_offer<'a>(
         &'a self,
-        command: CreateAdminCouponCommand,
-    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem>;
+        command: CreatePromotionOfferCommand,
+    ) -> AdminMarketingCommandFuture<'a, PromotionOfferItem>;
 
-    fn delete_coupon<'a>(
+    fn delete_promotion_offer<'a>(
         &'a self,
-        command: DeleteAdminCouponCommand,
+        command: DeletePromotionOfferCommand,
     ) -> AdminMarketingCommandFuture<'a, bool>;
 
-    fn update_coupon<'a>(
+    fn update_promotion_offer<'a>(
         &'a self,
-        command: UpdateAdminCouponCommand,
-    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem>;
+        command: UpdatePromotionOfferCommand,
+    ) -> AdminMarketingCommandFuture<'a, PromotionOfferItem>;
 
-    fn list_batches<'a>(
+    fn list_promotion_coupon_stocks<'a>(
         &'a self,
-        query: ListAdminCouponBatchesQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminCouponBatchItem>>;
+        query: ListPromotionCouponStocksQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCouponStockItem>>;
 
-    fn generate_batch<'a>(
+    fn generate_promotion_coupon_stock<'a>(
         &'a self,
-        command: GenerateAdminCouponBatchCommand,
-    ) -> AdminMarketingCommandFuture<'a, (AdminCouponBatchItem, Vec<AdminPromoCodeItem>)>;
+        command: GeneratePromotionCouponStockCommand,
+    ) -> AdminMarketingCommandFuture<'a, (PromotionCouponStockItem, Vec<PromotionCodeItem>)>;
 
-    fn list_promo_codes<'a>(
+    fn list_promotion_codes<'a>(
         &'a self,
-        query: ListAdminPromoCodesQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminPromoCodeItem>>;
+        query: ListPromotionCodesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCodeItem>>;
 
-    fn update_promo_code_status<'a>(
+    fn update_promotion_code_status<'a>(
         &'a self,
-        command: UpdateAdminPromoCodeStatusCommand,
+        command: UpdatePromotionCodeStatusCommand,
     ) -> AdminMarketingCommandFuture<'a, bool>;
 
-    fn list_redemption_records<'a>(
+    fn list_promotion_code_redemptions<'a>(
         &'a self,
-        query: ListAdminRedemptionRecordsQuery,
-    ) -> AdminMarketingCommandFuture<'a, Vec<AdminRedemptionRecordItem>>;
+        query: ListPromotionCodeRedemptionsQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<PromotionCodeRedemptionItem>>;
 
     fn list_recharge_records<'a>(
         &'a self,

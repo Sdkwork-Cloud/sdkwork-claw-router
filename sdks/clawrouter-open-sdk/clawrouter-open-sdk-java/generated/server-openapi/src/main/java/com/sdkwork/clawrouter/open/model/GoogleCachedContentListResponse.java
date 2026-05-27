@@ -9,7 +9,7 @@ public class GoogleCachedContentListResponse {
     public List<GoogleCachedContent> getCachedContents() {
         return this.cachedContents;
     }
-    
+
     public void setCachedContents(List<GoogleCachedContent> cachedContents) {
         this.cachedContents = cachedContents;
     }
@@ -17,7 +17,7 @@ public class GoogleCachedContentListResponse {
     public String getNextPageToken() {
         return this.nextPageToken;
     }
-    
+
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
     }

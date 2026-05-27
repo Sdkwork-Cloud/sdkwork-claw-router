@@ -11,7 +11,7 @@ public class ForumOverviewSource {
     public String getObservedAt() {
         return this.observedAt;
     }
-    
+
     public void setObservedAt(String observedAt) {
         this.observedAt = observedAt;
     }
@@ -19,7 +19,7 @@ public class ForumOverviewSource {
     public String getSourceDescription() {
         return this.sourceDescription;
     }
-    
+
     public void setSourceDescription(String sourceDescription) {
         this.sourceDescription = sourceDescription;
     }
@@ -27,7 +27,7 @@ public class ForumOverviewSource {
     public String getSourceLabel() {
         return this.sourceLabel;
     }
-    
+
     public void setSourceLabel(String sourceLabel) {
         this.sourceLabel = sourceLabel;
     }
@@ -35,7 +35,7 @@ public class ForumOverviewSource {
     public List<String> getSourceTables() {
         return this.sourceTables;
     }
-    
+
     public void setSourceTables(List<String> sourceTables) {
         this.sourceTables = sourceTables;
     }

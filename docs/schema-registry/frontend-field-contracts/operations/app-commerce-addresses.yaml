@@ -89,7 +89,6 @@ frontend_operations:
   description: Standard appbase commerce API for addresses.create; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_user_address
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_user_address
@@ -156,7 +155,6 @@ frontend_operations:
   description: Standard appbase commerce API for addresses.update; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_user_address
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_user_address
@@ -176,7 +174,6 @@ frontend_operations:
   description: Standard appbase commerce API for addresses.delete; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_user_address
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_user_address
@@ -195,7 +192,6 @@ frontend_operations:
   description: Standard appbase commerce API for addresses.defaultSelection.create; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_user_address
-  request_id_header: true
   idempotency_required: true
   write_tables:
   - commerce_user_address

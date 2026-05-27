@@ -34,7 +34,7 @@ Choose exactly one mode for the same client instance.
 ```rust
 let client = SdkworkBackendClient::new(SdkworkConfig::new("http://localhost:18081"))?;
 client.set_api_key("your-api-key");
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -45,7 +45,7 @@ client.set_auth_token("your-auth-token");
 client.set_access_token("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
@@ -66,9 +66,14 @@ client.set_header("X-Custom-Header", "value");
 - `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.integration()` - integration API
+- `client.mcp()` - mcp API
+- `client.messaging()` - messaging API
 - `client.open_platform()` - open_platform API
 - `client.platform()` - platform API
 - `client.system()` - system API
+- `client.prompts()` - prompts API
+- `client.service_providers()` - service_providers API
+- `client.storage()` - storage API
 
 ## Usage Examples
 
@@ -136,6 +141,39 @@ let result = client.integration().channels_list().await?;
 println!("{result:?}");
 ```
 
+### mcp
+
+```rust
+use std::collections::HashMap;
+// List MCP servers
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("q".to_string(), serde_json::json!("q"));
+query.insert("transport".to_string(), serde_json::json!("transport"));
+query.insert("visibility".to_string(), serde_json::json!("visibility"));
+query.insert("status".to_string(), serde_json::json!("status"));
+query.insert("category_id".to_string(), serde_json::json!("1"));
+let result = client.mcp().servers_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### messaging
+
+```rust
+use std::collections::HashMap;
+// Messaging provider accounts list
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("q".to_string(), serde_json::json!("q"));
+query.insert("status".to_string(), serde_json::json!("status"));
+query.insert("channel".to_string(), serde_json::json!("sms"));
+query.insert("provider_code".to_string(), serde_json::json!("ok"));
+let result = client.messaging().provider_accounts_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
 ### open_platform
 
 ```rust
@@ -160,6 +198,48 @@ println!("{result:?}");
 ```rust
 // Retrieve IAM auth runtime settings
 let result = client.system().auth_settings_retrieve().await?;
+println!("{result:?}");
+```
+
+### prompts
+
+```rust
+use std::collections::HashMap;
+// List admin prompts
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("q".to_string(), serde_json::json!("q"));
+query.insert("prompt_type".to_string(), serde_json::json!("prompt-type"));
+query.insert("visibility".to_string(), serde_json::json!("visibility"));
+query.insert("status".to_string(), serde_json::json!("status"));
+query.insert("category_id".to_string(), serde_json::json!("1"));
+let result = client.prompts().definitions_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### service_providers
+
+```rust
+use std::collections::HashMap;
+// Service Provider Adjustments List
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("status".to_string(), serde_json::json!("status"));
+query.insert("provider_id".to_string(), serde_json::json!("1"));
+query.insert("seller_provider_id".to_string(), serde_json::json!("1"));
+query.insert("buyer_provider_id".to_string(), serde_json::json!("1"));
+query.insert("edge_id".to_string(), serde_json::json!("1"));
+let result = client.service_providers().adjustments_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### storage
+
+```rust
+// List storage providers
+let result = client.storage().oss_providers_list().await?;
 println!("{result:?}");
 ```
 

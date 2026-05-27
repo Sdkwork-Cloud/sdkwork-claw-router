@@ -31,7 +31,7 @@ public class CourseItem {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -39,7 +39,7 @@ public class CourseItem {
     public String getCategoryLabel() {
         return this.categoryLabel;
     }
-    
+
     public void setCategoryLabel(String categoryLabel) {
         this.categoryLabel = categoryLabel;
     }
@@ -47,7 +47,7 @@ public class CourseItem {
     public Integer getCommentCount() {
         return this.commentCount;
     }
-    
+
     public void setCommentCount(Integer commentCount) {
         this.commentCount = commentCount;
     }
@@ -55,7 +55,7 @@ public class CourseItem {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -63,7 +63,7 @@ public class CourseItem {
     public Integer getContentId() {
         return this.contentId;
     }
-    
+
     public void setContentId(Integer contentId) {
         this.contentId = contentId;
     }
@@ -71,7 +71,7 @@ public class CourseItem {
     public String getCourseCode() {
         return this.courseCode;
     }
-    
+
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
@@ -79,7 +79,7 @@ public class CourseItem {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -87,7 +87,7 @@ public class CourseItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -95,7 +95,7 @@ public class CourseItem {
     public String getDurationText() {
         return this.durationText;
     }
-    
+
     public void setDurationText(String durationText) {
         this.durationText = durationText;
     }
@@ -103,7 +103,7 @@ public class CourseItem {
     public CourseEngagement getEngagement() {
         return this.engagement;
     }
-    
+
     public void setEngagement(CourseEngagement engagement) {
         this.engagement = engagement;
     }
@@ -111,7 +111,7 @@ public class CourseItem {
     public String getExternalBvid() {
         return this.externalBvid;
     }
-    
+
     public void setExternalBvid(String externalBvid) {
         this.externalBvid = externalBvid;
     }
@@ -119,7 +119,7 @@ public class CourseItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -127,7 +127,7 @@ public class CourseItem {
     public CourseInstructor getInstructor() {
         return this.instructor;
     }
-    
+
     public void setInstructor(CourseInstructor instructor) {
         this.instructor = instructor;
     }
@@ -135,7 +135,7 @@ public class CourseItem {
     public Boolean getIsCollection() {
         return this.isCollection;
     }
-    
+
     public void setIsCollection(Boolean isCollection) {
         this.isCollection = isCollection;
     }
@@ -143,7 +143,7 @@ public class CourseItem {
     public Integer getLessonsCount() {
         return this.lessonsCount;
     }
-    
+
     public void setLessonsCount(Integer lessonsCount) {
         this.lessonsCount = lessonsCount;
     }
@@ -151,7 +151,7 @@ public class CourseItem {
     public Integer getLevel() {
         return this.level;
     }
-    
+
     public void setLevel(Integer level) {
         this.level = level;
     }
@@ -159,7 +159,7 @@ public class CourseItem {
     public String getLevelLabel() {
         return this.levelLabel;
     }
-    
+
     public void setLevelLabel(String levelLabel) {
         this.levelLabel = levelLabel;
     }
@@ -167,7 +167,7 @@ public class CourseItem {
     public String getPriceAmount() {
         return this.priceAmount;
     }
-    
+
     public void setPriceAmount(String priceAmount) {
         this.priceAmount = priceAmount;
     }
@@ -175,7 +175,7 @@ public class CourseItem {
     public String getPublishedAt() {
         return this.publishedAt;
     }
-    
+
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
@@ -183,7 +183,7 @@ public class CourseItem {
     public Double getRatingScore() {
         return this.ratingScore;
     }
-    
+
     public void setRatingScore(Double ratingScore) {
         this.ratingScore = ratingScore;
     }
@@ -191,7 +191,7 @@ public class CourseItem {
     public Integer getStudentsCount() {
         return this.studentsCount;
     }
-    
+
     public void setStudentsCount(Integer studentsCount) {
         this.studentsCount = studentsCount;
     }
@@ -199,7 +199,7 @@ public class CourseItem {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -207,7 +207,7 @@ public class CourseItem {
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
-    
+
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
@@ -215,7 +215,7 @@ public class CourseItem {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }

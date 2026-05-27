@@ -207,6 +207,74 @@ class SchemaGuardianTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_rejects_external_delivery_tables_under_notification_domain(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: notification_template_binding
+                    domain: notification
+                    columns:
+                      channel: string(32)
+                      provider_account_id: int64
+                  - table: ops_notification_message
+                    domain: ops
+                    profile: notification
+                    columns:
+                      message_code: string(128)
+                """,
+            )
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "external messaging table must use messaging_* prefix and messaging domain: notification_template_binding",
+                result.messages,
+            )
+            self.assertNotIn(
+                "external messaging table must use messaging_* prefix and messaging domain: ops_notification_message",
+                result.messages,
+            )
+
+    def test_requires_messaging_tables_for_external_sms_email_delivery_standard(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: messaging_template
+                    domain: messaging
+                    columns:
+                      template_code: string(128)
+                      channel: string(32)
+                      scene_code: string(128)
+                  - table: messaging_send_request
+                    domain: messaging
+                    columns:
+                      request_no: string(128)
+                      channel: string(32)
+                      target_hash: string(128)
+                """,
+            )
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn("messaging standard table is required: messaging_provider_capability", result.messages)
+            self.assertIn("messaging standard table is required: messaging_sender_identity", result.messages)
+            self.assertIn("messaging standard table is required: messaging_route_rule", result.messages)
+            self.assertIn("messaging standard table is required: messaging_send_attempt", result.messages)
+
     def test_rejects_skills_hub_studio_skill_tables(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

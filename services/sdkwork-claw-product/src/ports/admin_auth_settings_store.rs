@@ -90,7 +90,7 @@ impl Default for AdminAuthSettings {
             oauth_login_enabled: false,
             oauth_providers: Vec::new(),
             oauth_region: "mainland".to_owned(),
-            qr_login_enabled: false,
+            qr_login_enabled: true,
             qr_login_type: "web".to_owned(),
             recovery_methods: vec!["email".to_owned(), "phone".to_owned()],
             register_methods: vec!["email".to_owned(), "phone".to_owned()],

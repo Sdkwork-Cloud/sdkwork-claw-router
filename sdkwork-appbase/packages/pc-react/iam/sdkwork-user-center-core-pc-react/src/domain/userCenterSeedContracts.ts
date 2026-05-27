@@ -59,7 +59,7 @@ export function createUserCenterSeedContractCatalog(): UserCenterSeedContractCat
         createSeedField("defaultProfile", "The canonical owner profile scaffold.", true),
         createSeedField(
           "defaultMembership",
-          "The canonical membership or VIP seed scaffold.",
+          "The canonical membership seed scaffold.",
           true,
         ),
         createSeedField(

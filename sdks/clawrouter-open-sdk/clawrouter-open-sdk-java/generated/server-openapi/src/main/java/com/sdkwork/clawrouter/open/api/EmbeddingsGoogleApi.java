@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class EmbeddingsGoogleApi {
     private final HttpClient client;
-    
+
     public EmbeddingsGoogleApi(HttpClient client) {
         this.client = client;
     }

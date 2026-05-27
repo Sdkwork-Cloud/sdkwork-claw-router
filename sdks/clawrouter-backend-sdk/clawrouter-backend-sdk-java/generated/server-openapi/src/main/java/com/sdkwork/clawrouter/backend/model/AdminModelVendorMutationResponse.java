@@ -7,7 +7,7 @@ public class AdminModelVendorMutationResponse {
     public AdminModelVendorItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminModelVendorItem item) {
         this.item = item;
     }

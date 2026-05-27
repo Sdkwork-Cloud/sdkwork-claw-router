@@ -20,6 +20,7 @@ class GenerationHistoryItem:
     duration_seconds: Optional[int] = None
     model_catalog_key: Optional[str] = None
     model_info: Optional[str] = None
+    output_text: Optional[str] = None
     status: Optional[str] = None
     updated_at: Optional[str] = None
     url: Optional[str] = None

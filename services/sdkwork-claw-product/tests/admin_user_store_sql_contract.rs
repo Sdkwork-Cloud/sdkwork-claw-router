@@ -35,3 +35,25 @@ fn admin_user_store_has_no_legacy_plus_account_dependency() {
         }
     }
 }
+
+#[test]
+fn admin_user_balance_adjustment_uses_account_version_guard() {
+    for source in [SQLITE_ADMIN_USER_STORE, POSTGRES_ADMIN_USER_STORE] {
+        assert!(
+            source.contains("COALESCE(version, 0) AS version"),
+            "admin user balance adjustment must load account version for optimistic locking"
+        );
+        assert!(
+            source.contains("AND version = ?") || source.contains("AND version = $4"),
+            "admin user balance adjustment must guard balance update with account version"
+        );
+        assert!(
+            source.contains("rows_affected() != 1"),
+            "admin user balance adjustment must verify exactly one account row was updated"
+        );
+        assert!(
+            source.contains("admin user balance update was not applied atomically"),
+            "admin user balance adjustment must return a conflict when the version guard fails"
+        );
+    }
+}

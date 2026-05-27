@@ -12,7 +12,7 @@ public class ForumCommentPage {
     public List<ForumCommentItem> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<ForumCommentItem> content) {
         this.content = content;
     }
@@ -20,7 +20,7 @@ public class ForumCommentPage {
     public List<ForumCommentItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<ForumCommentItem> items) {
         this.items = items;
     }
@@ -28,7 +28,7 @@ public class ForumCommentPage {
     public Integer getPage() {
         return this.page;
     }
-    
+
     public void setPage(Integer page) {
         this.page = page;
     }
@@ -36,7 +36,7 @@ public class ForumCommentPage {
     public Integer getSize() {
         return this.size;
     }
-    
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -44,7 +44,7 @@ public class ForumCommentPage {
     public Integer getTotalElements() {
         return this.totalElements;
     }
-    
+
     public void setTotalElements(Integer totalElements) {
         this.totalElements = totalElements;
     }

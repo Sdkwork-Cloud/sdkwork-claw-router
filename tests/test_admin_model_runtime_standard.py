@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -32,12 +32,12 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         )
         self.assertEqual(32, sync_properties["vendorCodes"]["maxItems"])
         self.assertEqual("AdminModelCatalogSyncResponse", sync_models["response_schema"]["name"])
-        self.assertTrue(sync_models["request_id_header"])
+        self.assertFalse(sync_models["request_id_header"])
 
         self.assertEqual("AdminModelVendorCreateRequest", add_vendor["request_schema"]["name"])
         self.assertEqual(["name"], add_vendor["request_schema"]["schema"]["required"])
         self.assertEqual("AdminModelVendorMutationResponse", add_vendor["response_schema"]["name"])
-        self.assertTrue(add_vendor["request_id_header"])
+        self.assertFalse(add_vendor["request_id_header"])
 
         self.assertEqual("AdminAiModelCreateRequest", add_model["request_schema"]["name"])
         self.assertEqual(
@@ -45,7 +45,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             add_model["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminAiModelMutationResponse", add_model["response_schema"]["name"])
-        self.assertTrue(add_model["request_id_header"])
+        self.assertFalse(add_model["request_id_header"])
 
     def test_admin_model_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
         service = (

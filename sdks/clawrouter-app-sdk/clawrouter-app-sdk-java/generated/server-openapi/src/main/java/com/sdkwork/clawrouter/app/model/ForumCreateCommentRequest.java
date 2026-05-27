@@ -10,7 +10,7 @@ public class ForumCreateCommentRequest {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -18,7 +18,7 @@ public class ForumCreateCommentRequest {
     public Integer getContentId() {
         return this.contentId;
     }
-    
+
     public void setContentId(Integer contentId) {
         this.contentId = contentId;
     }
@@ -26,7 +26,7 @@ public class ForumCreateCommentRequest {
     public String getContentType() {
         return this.contentType;
     }
-    
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -34,7 +34,7 @@ public class ForumCreateCommentRequest {
     public String getDeviceInfo() {
         return this.deviceInfo;
     }
-    
+
     public void setDeviceInfo(String deviceInfo) {
         this.deviceInfo = deviceInfo;
     }

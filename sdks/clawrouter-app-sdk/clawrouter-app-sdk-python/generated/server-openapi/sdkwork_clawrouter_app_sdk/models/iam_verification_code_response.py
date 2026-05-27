@@ -7,5 +7,5 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class IamVerificationCodeResponse:
     """Iam verification code response schema exposed by Claw Router."""
     code_id: Optional[str] = None
-    debug_code: Optional[str] = None
+    delivery_request_id: Optional[str] = None
     expires_at: Optional[str] = None

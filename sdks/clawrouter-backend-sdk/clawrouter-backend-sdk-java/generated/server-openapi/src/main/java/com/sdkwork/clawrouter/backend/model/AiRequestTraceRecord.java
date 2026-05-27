@@ -38,12 +38,14 @@ public class AiRequestTraceRecord {
     private String providerErrorCode;
     private String providerId;
     private String providerModel;
+    private String providerNativeModel;
     private String reasoningEffort;
     private String requestBytes;
     private String requestId;
     private String requestPath;
     private String requestPayloadHash;
     private String requestedModel;
+    private String requestedModelCatalogKey;
     private String responseBytes;
     private String responsePayloadHash;
     private String retentionUntil;
@@ -61,7 +63,7 @@ public class AiRequestTraceRecord {
     public String getApiKeyGroupId() {
         return this.apiKeyGroupId;
     }
-    
+
     public void setApiKeyGroupId(String apiKeyGroupId) {
         this.apiKeyGroupId = apiKeyGroupId;
     }
@@ -69,7 +71,7 @@ public class AiRequestTraceRecord {
     public String getApiKeyGroupSnapshot() {
         return this.apiKeyGroupSnapshot;
     }
-    
+
     public void setApiKeyGroupSnapshot(String apiKeyGroupSnapshot) {
         this.apiKeyGroupSnapshot = apiKeyGroupSnapshot;
     }
@@ -77,7 +79,7 @@ public class AiRequestTraceRecord {
     public String getApiKeyId() {
         return this.apiKeyId;
     }
-    
+
     public void setApiKeyId(String apiKeyId) {
         this.apiKeyId = apiKeyId;
     }
@@ -85,7 +87,7 @@ public class AiRequestTraceRecord {
     public String getApiKeyNameSnapshot() {
         return this.apiKeyNameSnapshot;
     }
-    
+
     public void setApiKeyNameSnapshot(String apiKeyNameSnapshot) {
         this.apiKeyNameSnapshot = apiKeyNameSnapshot;
     }
@@ -93,7 +95,7 @@ public class AiRequestTraceRecord {
     public Integer getAttemptNo() {
         return this.attemptNo;
     }
-    
+
     public void setAttemptNo(Integer attemptNo) {
         this.attemptNo = attemptNo;
     }
@@ -101,7 +103,7 @@ public class AiRequestTraceRecord {
     public String getCachedTokens() {
         return this.cachedTokens;
     }
-    
+
     public void setCachedTokens(String cachedTokens) {
         this.cachedTokens = cachedTokens;
     }
@@ -109,7 +111,7 @@ public class AiRequestTraceRecord {
     public String getChannelId() {
         return this.channelId;
     }
-    
+
     public void setChannelId(String channelId) {
         this.channelId = channelId;
     }
@@ -117,7 +119,7 @@ public class AiRequestTraceRecord {
     public String getChannelNameSnapshot() {
         return this.channelNameSnapshot;
     }
-    
+
     public void setChannelNameSnapshot(String channelNameSnapshot) {
         this.channelNameSnapshot = channelNameSnapshot;
     }
@@ -125,7 +127,7 @@ public class AiRequestTraceRecord {
     public String getClientIpHash() {
         return this.clientIpHash;
     }
-    
+
     public void setClientIpHash(String clientIpHash) {
         this.clientIpHash = clientIpHash;
     }
@@ -133,7 +135,7 @@ public class AiRequestTraceRecord {
     public String getClientIpMasked() {
         return this.clientIpMasked;
     }
-    
+
     public void setClientIpMasked(String clientIpMasked) {
         this.clientIpMasked = clientIpMasked;
     }
@@ -141,7 +143,7 @@ public class AiRequestTraceRecord {
     public String getClientIpRegion() {
         return this.clientIpRegion;
     }
-    
+
     public void setClientIpRegion(String clientIpRegion) {
         this.clientIpRegion = clientIpRegion;
     }
@@ -149,7 +151,7 @@ public class AiRequestTraceRecord {
     public String getCompletionTokens() {
         return this.completionTokens;
     }
-    
+
     public void setCompletionTokens(String completionTokens) {
         this.completionTokens = completionTokens;
     }
@@ -157,7 +159,7 @@ public class AiRequestTraceRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -165,7 +167,7 @@ public class AiRequestTraceRecord {
     public String getDecisionLogId() {
         return this.decisionLogId;
     }
-    
+
     public void setDecisionLogId(String decisionLogId) {
         this.decisionLogId = decisionLogId;
     }
@@ -173,7 +175,7 @@ public class AiRequestTraceRecord {
     public String getEndedAt() {
         return this.endedAt;
     }
-    
+
     public void setEndedAt(String endedAt) {
         this.endedAt = endedAt;
     }
@@ -181,7 +183,7 @@ public class AiRequestTraceRecord {
     public String getEndpoint() {
         return this.endpoint;
     }
-    
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -189,7 +191,7 @@ public class AiRequestTraceRecord {
     public String getErrorMessageMasked() {
         return this.errorMessageMasked;
     }
-    
+
     public void setErrorMessageMasked(String errorMessageMasked) {
         this.errorMessageMasked = errorMessageMasked;
     }
@@ -197,7 +199,7 @@ public class AiRequestTraceRecord {
     public String getErrorType() {
         return this.errorType;
     }
-    
+
     public void setErrorType(String errorType) {
         this.errorType = errorType;
     }
@@ -205,7 +207,7 @@ public class AiRequestTraceRecord {
     public String getHttpMethod() {
         return this.httpMethod;
     }
-    
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -213,7 +215,7 @@ public class AiRequestTraceRecord {
     public Integer getHttpStatus() {
         return this.httpStatus;
     }
-    
+
     public void setHttpStatus(Integer httpStatus) {
         this.httpStatus = httpStatus;
     }
@@ -221,7 +223,7 @@ public class AiRequestTraceRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -229,7 +231,7 @@ public class AiRequestTraceRecord {
     public Integer getLatencyMs() {
         return this.latencyMs;
     }
-    
+
     public void setLatencyMs(Integer latencyMs) {
         this.latencyMs = latencyMs;
     }
@@ -237,7 +239,7 @@ public class AiRequestTraceRecord {
     public String getLegacyApiKeyId() {
         return this.legacyApiKeyId;
     }
-    
+
     public void setLegacyApiKeyId(String legacyApiKeyId) {
         this.legacyApiKeyId = legacyApiKeyId;
     }
@@ -245,7 +247,7 @@ public class AiRequestTraceRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
     }
@@ -253,7 +255,7 @@ public class AiRequestTraceRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -261,7 +263,7 @@ public class AiRequestTraceRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -269,7 +271,7 @@ public class AiRequestTraceRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -277,7 +279,7 @@ public class AiRequestTraceRecord {
     public String getOwnerNameSnapshot() {
         return this.ownerNameSnapshot;
     }
-    
+
     public void setOwnerNameSnapshot(String ownerNameSnapshot) {
         this.ownerNameSnapshot = ownerNameSnapshot;
     }
@@ -285,7 +287,7 @@ public class AiRequestTraceRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -293,7 +295,7 @@ public class AiRequestTraceRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -301,7 +303,7 @@ public class AiRequestTraceRecord {
     public String getPromptTokens() {
         return this.promptTokens;
     }
-    
+
     public void setPromptTokens(String promptTokens) {
         this.promptTokens = promptTokens;
     }
@@ -309,7 +311,7 @@ public class AiRequestTraceRecord {
     public String getProviderAccountId() {
         return this.providerAccountId;
     }
-    
+
     public void setProviderAccountId(String providerAccountId) {
         this.providerAccountId = providerAccountId;
     }
@@ -317,7 +319,7 @@ public class AiRequestTraceRecord {
     public String getProviderErrorCode() {
         return this.providerErrorCode;
     }
-    
+
     public void setProviderErrorCode(String providerErrorCode) {
         this.providerErrorCode = providerErrorCode;
     }
@@ -325,7 +327,7 @@ public class AiRequestTraceRecord {
     public String getProviderId() {
         return this.providerId;
     }
-    
+
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
@@ -333,15 +335,23 @@ public class AiRequestTraceRecord {
     public String getProviderModel() {
         return this.providerModel;
     }
-    
+
     public void setProviderModel(String providerModel) {
         this.providerModel = providerModel;
+    }
+
+    public String getProviderNativeModel() {
+        return this.providerNativeModel;
+    }
+
+    public void setProviderNativeModel(String providerNativeModel) {
+        this.providerNativeModel = providerNativeModel;
     }
 
     public String getReasoningEffort() {
         return this.reasoningEffort;
     }
-    
+
     public void setReasoningEffort(String reasoningEffort) {
         this.reasoningEffort = reasoningEffort;
     }
@@ -349,7 +359,7 @@ public class AiRequestTraceRecord {
     public String getRequestBytes() {
         return this.requestBytes;
     }
-    
+
     public void setRequestBytes(String requestBytes) {
         this.requestBytes = requestBytes;
     }
@@ -357,7 +367,7 @@ public class AiRequestTraceRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -365,7 +375,7 @@ public class AiRequestTraceRecord {
     public String getRequestPath() {
         return this.requestPath;
     }
-    
+
     public void setRequestPath(String requestPath) {
         this.requestPath = requestPath;
     }
@@ -373,7 +383,7 @@ public class AiRequestTraceRecord {
     public String getRequestPayloadHash() {
         return this.requestPayloadHash;
     }
-    
+
     public void setRequestPayloadHash(String requestPayloadHash) {
         this.requestPayloadHash = requestPayloadHash;
     }
@@ -381,15 +391,23 @@ public class AiRequestTraceRecord {
     public String getRequestedModel() {
         return this.requestedModel;
     }
-    
+
     public void setRequestedModel(String requestedModel) {
         this.requestedModel = requestedModel;
+    }
+
+    public String getRequestedModelCatalogKey() {
+        return this.requestedModelCatalogKey;
+    }
+
+    public void setRequestedModelCatalogKey(String requestedModelCatalogKey) {
+        this.requestedModelCatalogKey = requestedModelCatalogKey;
     }
 
     public String getResponseBytes() {
         return this.responseBytes;
     }
-    
+
     public void setResponseBytes(String responseBytes) {
         this.responseBytes = responseBytes;
     }
@@ -397,7 +415,7 @@ public class AiRequestTraceRecord {
     public String getResponsePayloadHash() {
         return this.responsePayloadHash;
     }
-    
+
     public void setResponsePayloadHash(String responsePayloadHash) {
         this.responsePayloadHash = responsePayloadHash;
     }
@@ -405,7 +423,7 @@ public class AiRequestTraceRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
     }
@@ -413,7 +431,7 @@ public class AiRequestTraceRecord {
     public String getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
@@ -421,7 +439,7 @@ public class AiRequestTraceRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -429,7 +447,7 @@ public class AiRequestTraceRecord {
     public Boolean getStreaming() {
         return this.streaming;
     }
-    
+
     public void setStreaming(Boolean streaming) {
         this.streaming = streaming;
     }
@@ -437,7 +455,7 @@ public class AiRequestTraceRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -445,7 +463,7 @@ public class AiRequestTraceRecord {
     public String getTotalTokens() {
         return this.totalTokens;
     }
-    
+
     public void setTotalTokens(String totalTokens) {
         this.totalTokens = totalTokens;
     }
@@ -453,7 +471,7 @@ public class AiRequestTraceRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -461,7 +479,7 @@ public class AiRequestTraceRecord {
     public Integer getTtftMs() {
         return this.ttftMs;
     }
-    
+
     public void setTtftMs(Integer ttftMs) {
         this.ttftMs = ttftMs;
     }
@@ -469,7 +487,7 @@ public class AiRequestTraceRecord {
     public String getUserAgentHash() {
         return this.userAgentHash;
     }
-    
+
     public void setUserAgentHash(String userAgentHash) {
         this.userAgentHash = userAgentHash;
     }
@@ -477,7 +495,7 @@ public class AiRequestTraceRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -485,7 +503,7 @@ public class AiRequestTraceRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

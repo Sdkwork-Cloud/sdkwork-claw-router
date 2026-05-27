@@ -8,7 +8,7 @@ public class GoogleExecutableCode {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -16,7 +16,7 @@ public class GoogleExecutableCode {
     public String getLanguage() {
         return this.language;
     }
-    
+
     public void setLanguage(String language) {
         this.language = language;
     }

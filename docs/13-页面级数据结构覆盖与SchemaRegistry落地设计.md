@@ -61,7 +61,7 @@
 | `/console/usage` 多模态计费 | 结果数、条目数、字符数、音频秒数、视频秒数、统一计费数量 | `ai_billing_meter`、`ai_usage_fact` | 所有模态最终都落 `billing_meter_code + billable_quantity + billable_unit`，原始 token/秒数/个数作为明细字段保留 |
 | `/console/gateway` | endpoint、method、status、duration、channel | `ai_request_trace`、`ops_gateway_instance` | 运行状态与请求事实分离 |
 | `/console/routing` | 渠道账号、模型映射、策略、HA、fallback、请求数据 | `integration_*`、`ai_routing_*`、`ai_request_trace`、`ai_usage_fact` | Provider secret 不落库；策略发布有快照和 outbox |
-| `/console/commerce` | 兑换码、充值、充值历史 | `commerce_coupon*`、`commerce_recharge_package`、`commerce_order`、`commerce_payment_*` | 交易事实复用 `sdkwork-appbase` commerce 标准表 |
+| `/console/commerce` | 兑换码、充值、充值历史 | `promotion_code`、`promotion_user_coupon`、`promotion_discount_application`、`commerce_recharge_package`、`commerce_order`、`commerce_payment_*` | 兑换码和卡券核销复用 `sdkwork-appbase` promotion 标准表 |
 | `/console/checkout` | 支付确认、支付状态 | `plus_order`、`plus_payment` | 支付状态以支付服务事实为准 |
 | `/console/settlements` | 账期账单、分项、导出 | `commerce_usage_statement`、`commerce_usage_statement_item`、`commerce_billing_export` | 账单是投影，不替代 `plus_invoice` |
 | `/console/account` | 账户资料、余额、发票、安全、登录日志 | `plus_user`、`plus_account`、`plus_invoice*`、`iam_user_security_setting`、`iam_user_login_event`、`ops_audit_log` | PII 不复制到扩展表；登录明细进入 IAM 登录事件，不混入后台操作审计 |
@@ -81,7 +81,7 @@
 | `/admin/model` | 模型厂家、模型族、模型、接入供应商、计量表、官方价、供应商价、销售价、上下文、调用量 | `ai_model_vendor`、`ai_model_family`、`ai_model`、`ai_billing_meter`、`ai_model_pricing`、`ai_pricing_plan`、`ai_pricing_rule`、`ai_pricing_tier`、`integration_provider`、`ai_model_rank_snapshot` | 新价格表不使用 float/double；`BillingMeter` 覆盖 token、请求、结果、个数、秒数、字符、存储和流量；`price_side` 区分官方参考价、供应商上游成本价、客户销售价 |
 | `/admin/channel` | 渠道账号、协议、认证、模型厂家、模型白名单/映射、权重 | `ai_model_vendor`、`integration_provider`、`integration_channel`、`integration_provider_account`、`integration_channel_model`、`integration_proxy` | Secret 只存 `secret_ref`；模型映射保存 `vendor_code` |
 | `/admin/announcement` | 公告发布、草稿、目标人群 | `content_announcement` | 发布、撤回写审计 |
-| `/admin/marketing` | 优惠券、批次、兑换、充值记录、邀请统计 | `plus_coupon*`、`plus_user_coupon`、`plus_vip_recharge*`、`plus_invitation*`、`plus_partner` | 营销事实沿用 `plus_*` |
+| `/admin/marketing` | 优惠券、批次、兑换、充值记录、邀请统计 | `promotion_offer`、`promotion_offer_version`、`promotion_coupon_stock`、`promotion_code`、`promotion_user_coupon`、`promotion_discount_application`、`promotion_coupon_ledger_entry`、`promotion_external_binding`、`plus_vip_recharge*`、`plus_invitation*`、`plus_partner` | 卡券营销事实统一进入 `promotion_*` |
 | `/admin/finance` | 交易流水、账单、充值、退款、消费 | `plus_account_history`、`plus_payment`、`plus_refund`、`commerce_usage_statement` | 财务事实以 `plus_account_history`、支付退款表为准 |
 | `/admin/record` | 请求日志、计费明细、价格快照、IP | `ai_request_trace`、`ai_usage_fact`、`ai_routing_decision_log` | 请求事实可按 request_id 回放 |
 | `/admin/ratelimit` | IP、Token、模型限流、防火墙 | `ai_quota_policy`、`ai_rate_limit_bucket`、`iam_gateway_risk_rule`、`iam_gateway_access_policy` | 黑白名单和限流策略可版本化 |

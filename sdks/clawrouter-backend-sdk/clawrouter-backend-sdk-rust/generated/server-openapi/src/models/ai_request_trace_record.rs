@@ -143,6 +143,10 @@ pub struct AiRequestTraceRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_model: Option<String>,
 
+    /// Provider native model field on ai request trace record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_native_model: Option<String>,
+
     /// Reasoning effort field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub reasoning_effort: Option<String>,
@@ -166,6 +170,10 @@ pub struct AiRequestTraceRecord {
     /// Requested model field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub requested_model: Option<String>,
+
+    /// Requested model catalog key field on ai request trace record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub requested_model_catalog_key: Option<String>,
 
     /// Response bytes field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -45,6 +45,8 @@ fn usage_settlement_upserts_bridge_and_returns_ids_without_double_debit() {
     for expected in [
         "INSERT INTO commerce_usage_settlement",
         "ON CONFLICT (tenant_id, organization_id, usage_fact_id) DO UPDATE SET",
+        "WHERE commerce_usage_settlement.settlement_status <> $19",
+        ".bind(USAGE_SETTLEMENT_SUCCESS)",
         "RETURNING id",
         "INSERT INTO commerce_account_ledger_entry",
         "business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at",
@@ -55,6 +57,42 @@ fn usage_settlement_upserts_bridge_and_returns_ids_without_double_debit() {
     ] {
         assert_sql_contains(POSTGRES_USAGE_SETTLEMENT_STORE, expected);
     }
+}
+
+#[test]
+fn usage_settlement_debits_account_with_atomic_balance_guard() {
+    for expected in [
+        "UPDATE commerce_account",
+        "version = version + 1",
+        "AND COALESCE(available_amount::numeric, 0) >= $3::numeric",
+        "usage settlement account points update was not applied atomically",
+    ] {
+        assert_sql_contains(POSTGRES_USAGE_SETTLEMENT_STORE, expected);
+    }
+}
+
+#[test]
+fn usage_settlement_rounds_points_after_batch_aggregation_without_float_casts() {
+    for expected in [
+        "fn charge_points_from_scaled",
+        "MIN_BILLABLE_POINT_SCALED",
+        "DECIMAL_SCALE - 1",
+        "fn allocate_candidate_points",
+        "fn settlement_batch_no",
+    ] {
+        assert!(
+            POSTGRES_USAGE_SETTLEMENT_STORE.contains(expected),
+            "Postgres usage settlement store must keep aggregated point rounding helper `{expected}`"
+        );
+    }
+    assert!(
+        !POSTGRES_USAGE_SETTLEMENT_STORE.contains("parse::<f64>"),
+        "Postgres usage settlement must not parse financial or id fields through f64"
+    );
+    assert!(
+        !POSTGRES_USAGE_SETTLEMENT_STORE.contains("DECIMAL_SCALE / 2"),
+        "Postgres usage settlement must not round customer charges to the nearest point"
+    );
 }
 
 #[test]

@@ -9,7 +9,7 @@ public class AnthropicDeleteResponse {
     public Boolean getDeleted() {
         return this.deleted;
     }
-    
+
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
@@ -17,7 +17,7 @@ public class AnthropicDeleteResponse {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -25,7 +25,7 @@ public class AnthropicDeleteResponse {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

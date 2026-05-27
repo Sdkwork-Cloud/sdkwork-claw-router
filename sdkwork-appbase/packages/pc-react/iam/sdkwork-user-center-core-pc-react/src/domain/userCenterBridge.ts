@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   UserCenterAuthProfileInput,
   UserCenterBridgeConfig,
   UserCenterBridgeConfigInput,
@@ -28,7 +28,7 @@ export const USER_CENTER_SOURCE_PACKAGE_NAME = "@sdkwork/user-center-core-pc-rea
 function normalizeModeScopedAuthInput(
   auth: UserCenterAuthProfileInput | undefined,
   mode:
-    | "auth-Sdkwork-Access-Token"
+    | "dual-token"
     | "upstream-app-api-token-bridge"
     | "upstream-external-token-bridge",
 ): UserCenterAuthProfileInput | undefined {
@@ -106,7 +106,7 @@ export function createUserCenterBridgeConfig(
     "external-hub",
   );
   const builtinLocalAuth = normalizeUserCenterAuthProfile({
-    auth: normalizeModeScopedAuthInput(input.auth, "auth-Sdkwork-Access-Token"),
+    auth: normalizeModeScopedAuthInput(input.auth, "dual-token"),
     mode: "local-native",
     namespace,
     provider: builtinLocalProvider,

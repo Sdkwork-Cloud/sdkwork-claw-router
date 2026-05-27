@@ -8,7 +8,7 @@ public class AdminMonitorNodesResponse {
     public List<AdminMonitorNodeItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminMonitorNodeItem> items) {
         this.items = items;
     }

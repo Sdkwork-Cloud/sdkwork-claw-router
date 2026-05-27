@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
-import { Plus, Search, Trash2, Edit, ChevronDown, RefreshCw, ArrowUpDown, Settings, LayoutGrid, X } from 'lucide-react';
-import { GroupService, GroupData } from './groupService';
+import { Plus, Search, Trash2, Edit, ChevronDown, ChevronLeft, ChevronRight, RefreshCw, ArrowUpDown, Settings, LayoutGrid, X, Link2, Save } from 'lucide-react';
+import { GroupService, type GroupChannelBindingData, type GroupChannelBindingInput, type GroupChannelOption, type GroupData } from './groupService';
 import { createGroupInputFromForm, createGroupUpdateInputFromForm } from './groupForm';
 
 import { useTranslation } from 'react-i18next';
+
+const CHANNEL_PICKER_PAGE_SIZE = 12;
+
 export function GroupAdmin() {
   const { t } = useTranslation();
   const [groups, setGroups] = useState<GroupData[]>([]);
@@ -20,6 +23,18 @@ export function GroupAdmin() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<GroupData | null>(null);
   const [deletingGroupId, setDeletingGroupId] = useState<string | null>(null);
+  const [channelBindingTarget, setChannelBindingTarget] = useState<GroupData | null>(null);
+  const [channelBindings, setChannelBindings] = useState<GroupChannelBindingData[]>([]);
+  const [channelOptions, setChannelOptions] = useState<GroupChannelOption[]>([]);
+  const [bindingDraft, setBindingDraft] = useState<Record<string, GroupChannelBindingInput>>({});
+  const [bindingLoading, setBindingLoading] = useState(false);
+  const [bindingSaving, setBindingSaving] = useState(false);
+  const [bindingError, setBindingError] = useState<string | null>(null);
+  const [bindingSearchQuery, setBindingSearchQuery] = useState('');
+  const [isChannelPickerOpen, setIsChannelPickerOpen] = useState(false);
+  const [pickerSearchQuery, setPickerSearchQuery] = useState('');
+  const [pickerSelection, setPickerSelection] = useState<Record<string, boolean>>({});
+  const [pickerPage, setPickerPage] = useState(1);
   const groupSelectClassName = 'w-full rounded-lg border border-slate-300 bg-white pl-3 pr-10 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white dark:focus:border-emerald-500 appearance-none cursor-pointer';
   const groupOptionClassName = 'bg-white text-slate-900 dark:bg-[#202020] dark:text-white';
 
@@ -114,8 +129,214 @@ export function GroupAdmin() {
     }
   };
 
+  const openChannelBindingModal = async (group: GroupData) => {
+    setChannelBindingTarget(group);
+    setBindingLoading(true);
+    setBindingSaving(false);
+    setBindingError(null);
+    setChannelBindings([]);
+    setChannelOptions([]);
+    setBindingDraft({});
+    setBindingSearchQuery('');
+    setIsChannelPickerOpen(false);
+    setPickerSearchQuery('');
+    setPickerSelection({});
+    try {
+      const [channels, bindings] = await Promise.all([
+        GroupService.fetchAssignableChannels(),
+        GroupService.fetchGroupChannelBindings(group.id),
+      ]);
+      setChannelOptions(channels);
+      setChannelBindings(bindings);
+      setBindingDraft(bindingsToDraft(bindings));
+    } catch (error) {
+      setBindingError(error instanceof Error ? error.message : t('admin.group.channelBindings.errors.load'));
+    } finally {
+      setBindingLoading(false);
+    }
+  };
+
+  const closeChannelBindingModal = () => {
+    if (bindingSaving) {
+      return;
+    }
+    setChannelBindingTarget(null);
+    setChannelBindings([]);
+    setChannelOptions([]);
+    setBindingDraft({});
+    setBindingError(null);
+    setBindingSearchQuery('');
+    setIsChannelPickerOpen(false);
+    setPickerSearchQuery('');
+    setPickerSelection({});
+    setPickerPage(1);
+  };
+
+  const openChannelBindingPicker = () => {
+    setPickerSearchQuery('');
+    setPickerSelection({});
+    setPickerPage(1);
+    setIsChannelPickerOpen(true);
+  };
+
+  const closeChannelBindingPicker = () => {
+    setIsChannelPickerOpen(false);
+    setPickerSearchQuery('');
+    setPickerSelection({});
+    setPickerPage(1);
+  };
+
+  const isChannelAlreadyBound = (channelId: string) => Boolean(bindingDraft[channelId]);
+
+  const togglePickerSelection = (channelId: string) => {
+    if (isChannelAlreadyBound(channelId)) {
+      return;
+    }
+    setPickerSelection(current => ({ ...current, [channelId]: !current[channelId] }));
+  };
+
+  const addSelectedChannelBindings = () => {
+    const selectedIds = Object.entries(pickerSelection)
+      .filter(([channelId, selected]) => selected && !isChannelAlreadyBound(channelId))
+      .map(([channelId]) => channelId);
+
+    if (selectedIds.length === 0) {
+      return;
+    }
+
+    setBindingDraft(current => {
+      const next = { ...current };
+      for (const channelId of selectedIds) {
+        if (next[channelId]) {
+          continue;
+        }
+        const channel = channelOptions.find(option => option.id === channelId);
+        if (!channel) {
+          continue;
+        }
+        next[channel.id] = {
+          channelId: channel.id,
+          priority: 100,
+          weight: 100,
+          status: 'active',
+          modelScope: [],
+          capabilities: channel.capabilities,
+        };
+      }
+      return next;
+    });
+    closeChannelBindingPicker();
+  };
+
+  const removeChannelBindingDraft = (channelId: string) => {
+    setBindingDraft(current => {
+      if (!current[channelId]) {
+        return current;
+      }
+      const next = { ...current };
+      delete next[channelId];
+      return next;
+    });
+  };
+
+  const updateChannelBindingDraft = (channelId: string, patch: Partial<GroupChannelBindingInput>) => {
+    setBindingDraft(current => {
+      const existing = current[channelId];
+      if (!existing) {
+        return current;
+      }
+      return { ...current, [channelId]: { ...existing, ...patch } };
+    });
+  };
+
+  const saveChannelBindings = async () => {
+    if (!channelBindingTarget) {
+      return;
+    }
+    setBindingSaving(true);
+    setBindingError(null);
+    try {
+      const saved = await GroupService.replaceGroupChannelBindings(
+        channelBindingTarget.id,
+        Object.values(bindingDraft).sort((left, right) => {
+          const priority = (left.priority ?? 100) - (right.priority ?? 100);
+          return priority !== 0 ? priority : (right.weight ?? 100) - (left.weight ?? 100);
+        }),
+      );
+      setChannelBindings(saved);
+      setBindingDraft(bindingsToDraft(saved));
+      closeChannelBindingModal();
+    } catch (error) {
+      setBindingError(error instanceof Error ? error.message : t('admin.group.channelBindings.errors.save'));
+    } finally {
+      setBindingSaving(false);
+    }
+  };
+
+  const selectedBindingCount = Object.keys(bindingDraft).length;
+  const selectedPickerCount = Object.entries(pickerSelection)
+    .filter(([channelId, selected]) => selected && !isChannelAlreadyBound(channelId))
+    .length;
+  const channelOptionById = new Map(channelOptions.map(channel => [channel.id, channel]));
+  const bindingByChannelId = new Map(channelBindings.map(binding => [binding.channelId, binding]));
+  const visibleBindingRows = Object.values(bindingDraft)
+    .map(draft => {
+      const persisted = bindingByChannelId.get(draft.channelId);
+      const option = channelOptionById.get(draft.channelId);
+      return {
+        channelId: draft.channelId,
+        channelName: persisted?.channelName ?? option?.name ?? draft.channelId,
+        providerCode: persisted?.providerCode ?? option?.providerCode ?? 'unknown',
+        providerName: persisted?.providerName ?? option?.providerName ?? 'unknown',
+        channelCode: persisted?.channelCode ?? option?.channelCode ?? draft.channelId,
+        models: persisted?.models ?? option?.models ?? [],
+        capabilities: draft.capabilities ?? persisted?.capabilities ?? option?.capabilities ?? [],
+        modelScope: draft.modelScope ?? persisted?.modelScope ?? [],
+        priority: draft.priority ?? persisted?.priority ?? 100,
+        weight: draft.weight ?? persisted?.weight ?? 100,
+        status: draft.status ?? persisted?.status ?? 'active',
+        healthStatus: persisted?.healthStatus ?? option?.healthStatus ?? 'active',
+      };
+    })
+    .filter(row => matchesChannelSearch(bindingSearchQuery, [
+      row.channelName,
+      row.channelCode,
+      row.providerName,
+      row.providerCode,
+      ...row.models,
+      ...row.capabilities,
+    ]))
+    .sort((left, right) => {
+      const priority = left.priority - right.priority;
+      return priority !== 0 ? priority : right.weight - left.weight;
+    });
+  const pickerChannelOptions = channelOptions
+    .filter(channel => matchesChannelSearch(pickerSearchQuery, [
+      channel.name,
+      channel.channelCode,
+      channel.providerName,
+      channel.providerCode,
+      ...channel.models,
+      ...channel.capabilities,
+    ]))
+    .sort((left, right) => `${left.providerName} ${left.name}`.localeCompare(`${right.providerName} ${right.name}`));
+  const addableChannelCount = pickerChannelOptions.filter(channel => !isChannelAlreadyBound(channel.id)).length;
+  const pickerTotalPages = Math.max(1, Math.ceil(pickerChannelOptions.length / CHANNEL_PICKER_PAGE_SIZE));
+  const paginatedPickerChannelOptions = pickerChannelOptions.slice(
+    (pickerPage - 1) * CHANNEL_PICKER_PAGE_SIZE,
+    pickerPage * CHANNEL_PICKER_PAGE_SIZE,
+  );
+  const pickerStartIndex = pickerChannelOptions.length === 0
+    ? 0
+    : (pickerPage - 1) * CHANNEL_PICKER_PAGE_SIZE + 1;
+  const pickerEndIndex = Math.min(pickerChannelOptions.length, pickerPage * CHANNEL_PICKER_PAGE_SIZE);
+
+  useEffect(() => {
+    setPickerPage(current => Math.min(Math.max(current, 1), pickerTotalPages));
+  }, [pickerTotalPages]);
+
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       <div className="flex shrink-0 flex-col xl:flex-row justify-between items-start xl:items-center gap-4">
         <div className="flex flex-wrap items-center gap-3 w-full xl:w-auto">
           <div className="relative">
@@ -264,6 +485,9 @@ export function GroupAdmin() {
                       <button onClick={() => openEditModal(group)} className="flex flex-col items-center gap-1 hover:text-blue-500 transition-colors">
                         <Edit className="w-4 h-4" /> <span>{t("admin.group.index.text.qreyeg", "编辑")}</span>
                       </button>
+                      <button onClick={() => { void openChannelBindingModal(group); }} className="flex flex-col items-center gap-1 hover:text-emerald-500 transition-colors">
+                        <Link2 className="w-4 h-4" /> <span>{t('admin.group.channelBindings.action')}</span>
+                      </button>
                       <button onClick={() => setDeleteTarget(group)} className="flex flex-col items-center gap-1 hover:text-red-500 transition-colors">
                         <Trash2 className="w-4 h-4" /> <span>{t("admin.group.index.text.1t2vi4h", "删除")}</span>
                       </button>
@@ -355,6 +579,346 @@ export function GroupAdmin() {
           </div>
         </div>
       )}
+      {channelBindingTarget && (
+        <div className="fixed inset-0 z-50 flex justify-start bg-slate-900/50 backdrop-blur-sm">
+          <aside data-admin-group-channel-bindings-drawer className="flex h-full w-[90vw] max-w-[90vw] flex-col overflow-hidden border-r border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
+            <div className="flex items-start justify-between gap-4 border-b border-slate-200 p-5 dark:border-white/10">
+              <div className="min-w-0">
+                <h3 className="truncate text-lg font-bold text-slate-900 dark:text-white">
+                  {t('admin.group.channelBindings.title')}
+                </h3>
+                <p className="mt-1 truncate text-sm text-slate-500 dark:text-slate-400">
+                  {channelBindingTarget.name} · {t('admin.group.channelBindings.selectedCount', { count: selectedBindingCount })} · {t('admin.group.channelBindings.persistedCount', { count: channelBindings.length })}
+                </p>
+              </div>
+              <button onClick={closeChannelBindingModal} disabled={bindingSaving} className="text-slate-400 transition-colors hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-60 dark:hover:text-slate-200">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {bindingError && (
+              <div className="border-b border-amber-200 bg-amber-50 px-5 py-3 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-200">
+                {bindingError}
+              </div>
+            )}
+
+            <div data-admin-group-channel-bindings-toolbar className="flex shrink-0 flex-col gap-3 border-b border-slate-200 p-5 dark:border-white/10 md:flex-row md:items-center md:justify-between">
+              <div className="relative w-full md:max-w-sm">
+                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                <input
+                  data-admin-group-channel-binding-search
+                  type="text"
+                  value={bindingSearchQuery}
+                  onChange={event => setBindingSearchQuery(event.currentTarget.value)}
+                  placeholder={t('admin.group.channelBindings.searchPlaceholder')}
+                  className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-4 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
+                />
+              </div>
+              <button
+                data-admin-group-channel-binding-add
+                type="button"
+                onClick={openChannelBindingPicker}
+                disabled={bindingLoading || bindingSaving}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-emerald-500 dark:hover:bg-emerald-400"
+              >
+                <Plus className="h-4 w-4" />
+                {t('admin.group.channelBindings.add')}
+              </button>
+            </div>
+
+            <div className="min-h-0 flex-1 overflow-auto">
+              {bindingLoading ? (
+                <div className="flex min-h-[240px] items-center justify-center text-sm text-slate-500 dark:text-slate-400">
+                  {t('admin.group.channelBindings.loading')}
+                </div>
+              ) : visibleBindingRows.length === 0 ? (
+                <div className="flex min-h-[280px] flex-col items-center justify-center gap-2 px-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                  <div className="font-medium text-slate-700 dark:text-slate-200">
+                    {selectedBindingCount === 0 ? t('admin.group.channelBindings.emptyBound') : t('admin.group.channelBindings.emptySearch')}
+                  </div>
+                  <div className="max-w-md text-xs leading-5">
+                    {selectedBindingCount === 0 ? t('admin.group.channelBindings.emptyBoundDescription') : t('admin.group.channelBindings.emptySearchDescription')}
+                  </div>
+                </div>
+              ) : (
+                <table className="w-full min-w-[1180px] text-left text-sm text-slate-600 dark:text-slate-400">
+                  <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                    <tr>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.channel')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.provider')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.models')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.modelScope')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.priority')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.weight')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.status')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.health')}</th>
+                      <th className="px-5 py-3 text-right">{t('admin.group.channelBindings.columns.actions')}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                    {visibleBindingRows.map(row => {
+                      const draft = bindingDraft[row.channelId];
+                      return (
+                        <tr key={row.channelId} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                          <td className="max-w-[240px] px-5 py-3 align-middle">
+                            <div className="min-w-0 whitespace-nowrap">
+                              <div className="truncate font-medium text-slate-900 dark:text-white">{row.channelName}</div>
+                              <div className="truncate text-xs text-slate-500">{row.channelCode}</div>
+                            </div>
+                          </td>
+                          <td className="max-w-[180px] px-5 py-3 align-middle">
+                            <div className="min-w-0 whitespace-nowrap">
+                              <div className="truncate text-slate-700 dark:text-slate-200">{row.providerName}</div>
+                              <div className="truncate text-xs text-slate-500">{row.providerCode}</div>
+                            </div>
+                          </td>
+                          <td className="max-w-[260px] px-5 py-3 align-middle">
+                            <div className="truncate whitespace-nowrap text-xs text-slate-500" title={row.models.join(', ')}>
+                              {row.models.length > 0 ? row.models.join(', ') : t('admin.group.channelBindings.noModels')}
+                            </div>
+                            <div className="mt-1 truncate whitespace-nowrap text-[11px] text-slate-400" title={row.capabilities.join(', ')}>
+                              {row.capabilities.join(', ')}
+                            </div>
+                          </td>
+                          <td className="px-5 py-3 align-middle">
+                            <input
+                              type="text"
+                              value={draft?.modelScope?.join(', ') ?? ''}
+                              onChange={event => updateChannelBindingDraft(row.channelId, { modelScope: stringListInputValue(event.currentTarget.value) })}
+                              placeholder={t('admin.group.channelBindings.allModels')}
+                              className="w-52 rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
+                            />
+                          </td>
+                          <td className="px-5 py-3 align-middle">
+                            <input
+                              type="number"
+                              min="0"
+                              step="1"
+                              value={draft?.priority ?? row.priority}
+                              onChange={event => updateChannelBindingDraft(row.channelId, { priority: numericInputValue(event.currentTarget.value) })}
+                              className="w-20 rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
+                            />
+                          </td>
+                          <td className="px-5 py-3 align-middle">
+                            <input
+                              type="number"
+                              min="0"
+                              step="1"
+                              value={draft?.weight ?? row.weight}
+                              onChange={event => updateChannelBindingDraft(row.channelId, { weight: numericInputValue(event.currentTarget.value) })}
+                              className="w-20 rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
+                            />
+                          </td>
+                          <td className="px-5 py-3 align-middle">
+                            <select
+                              value={draft?.status ?? row.status}
+                              onChange={event => updateChannelBindingDraft(row.channelId, { status: event.currentTarget.value as GroupChannelBindingInput['status'] })}
+                              className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
+                            >
+                              <option value="active">{t('admin.group.channelBindings.status.active')}</option>
+                              <option value="disabled">{t('admin.group.channelBindings.status.disabled')}</option>
+                            </select>
+                          </td>
+                          <td className="px-5 py-3 align-middle">
+                            <span className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${row.healthStatus === 'error' ? 'bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-300' : 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300'}`}>
+                              {row.healthStatus === 'error' ? t('admin.group.channelBindings.health.error') : t('admin.group.channelBindings.health.active')}
+                            </span>
+                          </td>
+                          <td className="px-5 py-3 align-middle text-right">
+                            <button
+                              data-admin-group-channel-binding-remove
+                              type="button"
+                              onClick={() => removeChannelBindingDraft(row.channelId)}
+                              className="inline-flex items-center justify-center rounded-lg border border-red-200 bg-red-50 p-2 text-red-600 transition-colors hover:bg-red-100 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300 dark:hover:bg-red-500/20"
+                              aria-label={t('admin.group.channelBindings.remove')}
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              )}
+            </div>
+
+            <div className="flex shrink-0 justify-end gap-3 border-t border-slate-200 p-5 dark:border-white/10">
+              <button type="button" onClick={closeChannelBindingModal} disabled={bindingSaving} className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5">
+                {t('admin.group.channelBindings.cancel')}
+              </button>
+              <button type="button" onClick={() => { void saveChannelBindings(); }} disabled={bindingSaving || bindingLoading} className="inline-flex items-center gap-2 rounded-xl border border-transparent bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-emerald-500 dark:hover:bg-emerald-400">
+                <Save className="h-4 w-4" />
+                {bindingSaving ? t('admin.group.channelBindings.saving') : t('admin.group.channelBindings.save')}
+              </button>
+            </div>
+          </aside>
+          <button
+            type="button"
+            aria-label={t('common.actions.closeDrawer')}
+            className="flex-1 cursor-default"
+            onClick={closeChannelBindingModal}
+            disabled={bindingSaving}
+          />
+          {isChannelPickerOpen && (
+            <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm">
+              <div data-admin-group-channel-picker-modal className="flex h-[86vh] max-h-[86vh] w-[92vw] max-w-7xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
+                <div data-admin-group-channel-picker-header className="flex shrink-0 flex-col gap-4 border-b border-slate-200 p-5 dark:border-white/10 lg:flex-row lg:items-center lg:justify-between">
+                  <div className="min-w-0 lg:max-w-[280px]">
+                    <h3 className="truncate text-lg font-bold text-slate-900 dark:text-white">
+                      {t('admin.group.channelBindings.pickerTitle')}
+                    </h3>
+                    <p className="mt-1 truncate text-sm text-slate-500 dark:text-slate-400">
+                      {t('admin.group.channelBindings.pickerSubtitle', { count: addableChannelCount, total: pickerChannelOptions.length })}
+                    </p>
+                  </div>
+                  <div className="relative w-full min-w-0 lg:max-w-xl">
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input
+                      data-admin-group-channel-picker-search
+                      type="text"
+                      value={pickerSearchQuery}
+                      onChange={event => {
+                        setPickerSearchQuery(event.currentTarget.value);
+                        setPickerPage(1);
+                      }}
+                      placeholder={t('admin.group.channelBindings.pickerSearchPlaceholder')}
+                      className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-4 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
+                    />
+                  </div>
+                  <div className="flex shrink-0 items-center justify-between gap-3 lg:justify-end">
+                    <div data-admin-group-channel-picker-selected-count className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:bg-white/10 dark:text-slate-300">
+                      {t('admin.group.channelBindings.selectedInPicker', { count: selectedPickerCount })}
+                    </div>
+                    <button onClick={closeChannelBindingPicker} className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-white/10 dark:hover:text-slate-200">
+                      <X className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="min-h-0 flex-1 overflow-auto">
+                  {pickerChannelOptions.length === 0 ? (
+                    <div className="flex min-h-[240px] flex-col items-center justify-center gap-2 px-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                      <div className="font-medium text-slate-700 dark:text-slate-200">{t('admin.group.channelBindings.pickerEmpty')}</div>
+                      <div className="max-w-md text-xs leading-5">{t('admin.group.channelBindings.pickerEmptyDescription')}</div>
+                    </div>
+                  ) : (
+                    <table className="w-full min-w-[860px] text-left text-sm text-slate-600 dark:text-slate-400">
+                      <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                        <tr>
+                          <th className="w-12 px-5 py-3"></th>
+                          <th className="px-5 py-3">{t('admin.group.channelBindings.columns.channel')}</th>
+                          <th className="px-5 py-3">{t('admin.group.channelBindings.columns.provider')}</th>
+                          <th className="px-5 py-3">{t('admin.group.channelBindings.columns.models')}</th>
+                          <th className="px-5 py-3">{t('admin.group.channelBindings.columns.status')}</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                        {paginatedPickerChannelOptions.map(channel => {
+                          const isAlreadyBound = isChannelAlreadyBound(channel.id);
+                          return (
+                            <tr key={channel.id} className={`hover:bg-slate-50 dark:hover:bg-white/5 ${isAlreadyBound ? 'bg-slate-50/70 text-slate-400 dark:bg-white/[0.02] dark:text-slate-500' : ''}`}>
+                              <td className="px-5 py-3 align-middle">
+                                <input
+                                  type="checkbox"
+                                  checked={isAlreadyBound || Boolean(pickerSelection[channel.id])}
+                                  disabled={isAlreadyBound}
+                                  onChange={() => togglePickerSelection(channel.id)}
+                                  className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 disabled:cursor-not-allowed disabled:opacity-60"
+                                />
+                              </td>
+                              <td className="max-w-[260px] px-5 py-3 align-middle">
+                                <div className="flex min-w-0 items-center gap-2 whitespace-nowrap">
+                                  <div className="min-w-0">
+                                    <div className={`truncate font-medium ${isAlreadyBound ? 'text-slate-500 dark:text-slate-400' : 'text-slate-900 dark:text-white'}`}>{channel.name}</div>
+                                    <div className="truncate text-xs text-slate-500">{channel.channelCode}</div>
+                                  </div>
+                                  {isAlreadyBound && (
+                                    <span data-admin-group-channel-picker-bound className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300">
+                                      {t('admin.group.channelBindings.alreadyAdded')}
+                                    </span>
+                                  )}
+                                </div>
+                              </td>
+                              <td className="max-w-[200px] px-5 py-3 align-middle">
+                                <div className="min-w-0 whitespace-nowrap">
+                                  <div className={`truncate ${isAlreadyBound ? 'text-slate-500 dark:text-slate-400' : 'text-slate-700 dark:text-slate-200'}`}>{channel.providerName}</div>
+                                  <div className="truncate text-xs text-slate-500">{channel.providerCode}</div>
+                                </div>
+                              </td>
+                              <td className="max-w-[320px] px-5 py-3 align-middle">
+                                <div className="truncate whitespace-nowrap text-xs text-slate-500" title={channel.models.join(', ')}>
+                                  {channel.models.length > 0 ? channel.models.join(', ') : t('admin.group.channelBindings.noModels')}
+                                </div>
+                                <div className="mt-1 truncate whitespace-nowrap text-[11px] text-slate-400" title={channel.capabilities.join(', ')}>
+                                  {channel.capabilities.join(', ')}
+                                </div>
+                              </td>
+                              <td className="px-5 py-3 align-middle">
+                                <span className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${channel.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300' : 'bg-slate-100 text-slate-600 dark:bg-white/10 dark:text-slate-300'}`}>
+                                  {channel.status === 'active' ? t('admin.group.channelBindings.status.active') : t('admin.group.channelBindings.status.disabled')}
+                                </span>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
+
+                <div className="flex shrink-0 flex-col gap-3 border-t border-slate-200 p-5 dark:border-white/10 lg:flex-row lg:items-center lg:justify-between">
+                  <div data-admin-group-channel-picker-pagination className="flex flex-col gap-2 text-xs text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center">
+                    <span>
+                      {t('admin.group.channelBindings.pagination', {
+                        end: pickerEndIndex,
+                        page: pickerPage,
+                        start: pickerStartIndex,
+                        total: pickerChannelOptions.length,
+                        totalPages: pickerTotalPages,
+                      })}
+                    </span>
+                    <div className="inline-flex items-center overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#202020]">
+                      <button
+                        type="button"
+                        aria-label={t('common.actions.previousPage')}
+                        title={t('common.actions.previousPage')}
+                        onClick={() => setPickerPage(current => Math.max(1, current - 1))}
+                        disabled={pickerPage <= 1}
+                        className="inline-flex h-8 w-8 items-center justify-center text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                      </button>
+                      <span className="border-x border-slate-200 px-3 text-xs font-medium text-slate-700 dark:border-white/10 dark:text-slate-200">
+                        {pickerPage} / {pickerTotalPages}
+                      </span>
+                      <button
+                        type="button"
+                        aria-label={t('common.actions.nextPage')}
+                        title={t('common.actions.nextPage')}
+                        onClick={() => setPickerPage(current => Math.min(pickerTotalPages, current + 1))}
+                        disabled={pickerPage >= pickerTotalPages}
+                        className="inline-flex h-8 w-8 items-center justify-center text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex justify-end gap-3">
+                    <button type="button" onClick={closeChannelBindingPicker} className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5">
+                      {t('admin.group.channelBindings.cancel')}
+                    </button>
+                    <button type="button" onClick={addSelectedChannelBindings} disabled={selectedPickerCount === 0} className="inline-flex items-center gap-2 rounded-xl border border-transparent bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-emerald-500 dark:hover:bg-emerald-400">
+                      <Plus className="h-4 w-4" />
+                      {t('admin.group.channelBindings.addSelected', { count: selectedPickerCount })}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
       {deleteTarget && (
         <ConfirmDialog
           title="Delete access group?"
@@ -373,6 +937,46 @@ export function GroupAdmin() {
 
 function displayGroupType(type: GroupData['type'], t: ReturnType<typeof useTranslation>['t']): string {
   return type === 'dedicated' ? t("admin.group.index.text.1wiizn8", "专属") : t("admin.group.index.text.q3pv0x", "公开");
+}
+
+function bindingsToDraft(bindings: GroupChannelBindingData[]): Record<string, GroupChannelBindingInput> {
+  return Object.fromEntries(
+    bindings.map(binding => [
+      binding.channelId,
+      {
+        channelId: binding.channelId,
+        priority: binding.priority,
+        weight: binding.weight,
+        status: binding.status,
+        modelScope: binding.modelScope,
+        capabilities: binding.capabilities,
+      },
+    ]),
+  );
+}
+
+function numericInputValue(value: string): number {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed >= 0 ? Math.trunc(parsed) : 0;
+}
+
+function stringListInputValue(value: string): string[] {
+  return Array.from(
+    new Set(
+      value
+        .split(/[,，\n]/)
+        .map(item => item.trim())
+        .filter(Boolean),
+    ),
+  );
+}
+
+function matchesChannelSearch(query: string, values: string[]): boolean {
+  const normalizedQuery = query.trim().toLowerCase();
+  if (!normalizedQuery) {
+    return true;
+  }
+  return values.some(value => value.toLowerCase().includes(normalizedQuery));
 }
 
 function displayGroupStatus(status: GroupData['status'], t: ReturnType<typeof useTranslation>['t']): string {

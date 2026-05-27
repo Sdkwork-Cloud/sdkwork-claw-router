@@ -39,3 +39,15 @@ frontend_models:
   data_sources:
   - ai_model_rank_snapshot
   - ai_usage_fact
+- route: /console/dashboard
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  interface: ConfigurationDomain
+  fields:
+  - id
+  - name
+  - domain
+  - ip
+  - status
+  - remark
+  data_sources:
+  - ops_gateway_instance

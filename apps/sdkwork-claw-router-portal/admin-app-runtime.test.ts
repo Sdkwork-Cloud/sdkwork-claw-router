@@ -8,8 +8,10 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-common
 import {
   AdminAppService,
   createAdminAppInputFromForm,
+  createAdminAppTemplateInputFromForm,
   createAppCategoryInputFromForm,
   updateAdminAppInputFromForm,
+  updateAdminAppTemplateInputFromForm,
   updateAppCategoryInputFromForm,
 } from "./packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts";
 
@@ -116,6 +118,42 @@ function sampleCategory(overrides: Record<string, unknown> = {}) {
     visible: true,
     status: 1,
     type: 999999,
+    ...overrides,
+  };
+}
+
+function sampleTemplate(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "7101",
+    uuid: "app-template-browser-smoke",
+    templateNo: "TPL-BROWSER-SMOKE",
+    templateCode: "browser-smoke-template",
+    templateName: "Browser Smoke Template",
+    description: "Production smoke validates app template management.",
+    categoryId: "2001",
+    categoryCode: "productivity",
+    templateType: "dashboard",
+    runtime: "web",
+    framework: "react",
+    language: "typescript",
+    iconUrl: "/templates/browser-smoke.svg",
+    coverUrl: "/templates/browser-smoke-cover.png",
+    visibility: "TENANT",
+    publishStatus: "DRAFT",
+    featured: true,
+    sortWeight: 25,
+    sourceAppId: "8101",
+    gitRepoUrl: "https://github.com/sdkwork/app-templates.git",
+    gitRef: "main",
+    gitSubPath: "apps/browser-smoke",
+    currentVersionId: null,
+    appConfigSchema: { type: "object" },
+    defaultAppConfig: { theme: "light" },
+    variableSchema: { required: ["tenantId"] },
+    dependencyManifest: [{ name: "@sdkwork/runtime" }],
+    capabilityManifest: [{ capability: "dashboard" }],
+    createdAt: "2026-05-26T00:00:00Z",
+    updatedAt: "2026-05-26T00:00:00Z",
     ...overrides,
   };
 }
@@ -235,18 +273,95 @@ test("admin app category form helpers create normalized backend DTOs", () => {
   });
 });
 
+test("admin app template form helpers create normalized backend DTOs", () => {
+  const createForm = new FormData();
+  createForm.set("templateCode", " browser-smoke-template ");
+  createForm.set("templateName", " Browser Smoke Template ");
+  createForm.set("description", " Template for browser smoke apps ");
+  createForm.set("categoryId", "2001");
+  createForm.set("categoryCode", " productivity ");
+  createForm.set("templateType", " dashboard ");
+  createForm.set("runtime", " web ");
+  createForm.set("framework", " react ");
+  createForm.set("language", " typescript ");
+  createForm.set("iconUrl", " /templates/browser-smoke.svg ");
+  createForm.set("coverUrl", " /templates/browser-smoke-cover.png ");
+  createForm.set("visibility", "TENANT");
+  createForm.set("publishStatus", "DRAFT");
+  createForm.set("featured", "true");
+  createForm.set("sortWeight", "25");
+  createForm.set("sourceAppId", "8101");
+  createForm.set("gitRepoUrl", " https://github.com/sdkwork/app-templates.git ");
+  createForm.set("gitRef", " main ");
+  createForm.set("gitSubPath", " apps/browser-smoke ");
+  createForm.set("appConfigSchema", '{"type":"object"}');
+  createForm.set("defaultAppConfig", '{"theme":"light"}');
+  createForm.set("variableSchema", '{"required":["tenantId"]}');
+  createForm.set("dependencyManifest", '[{"name":"@sdkwork/runtime"}]');
+  createForm.set("capabilityManifest", '[{"capability":"dashboard"}]');
+
+  assert.deepEqual(createAdminAppTemplateInputFromForm(createForm), {
+    templateCode: "browser-smoke-template",
+    templateName: "Browser Smoke Template",
+    description: "Template for browser smoke apps",
+    categoryId: "2001",
+    categoryCode: "productivity",
+    templateType: "dashboard",
+    runtime: "web",
+    framework: "react",
+    language: "typescript",
+    iconUrl: "/templates/browser-smoke.svg",
+    coverUrl: "/templates/browser-smoke-cover.png",
+    visibility: "TENANT",
+    publishStatus: "DRAFT",
+    featured: true,
+    sortWeight: 25,
+    sourceAppId: "8101",
+    gitRepoUrl: "https://github.com/sdkwork/app-templates.git",
+    gitRef: "main",
+    gitSubPath: "apps/browser-smoke",
+    appConfigSchema: { type: "object" },
+    defaultAppConfig: { theme: "light" },
+    variableSchema: { required: ["tenantId"] },
+    dependencyManifest: [{ name: "@sdkwork/runtime" }],
+    capabilityManifest: [{ capability: "dashboard" }],
+  });
+
+  const updateForm = new FormData();
+  updateForm.set("templateName", " Browser Smoke Template Pro ");
+  updateForm.set("description", " ");
+  updateForm.set("framework", " react-router ");
+  updateForm.set("featured", "false");
+  updateForm.set("sortWeight", "30");
+  updateForm.set("gitRepoUrl", " git@github.com:sdkwork/app-templates.git ");
+  updateForm.set("gitRef", " release/2026.05 ");
+  updateForm.set("gitSubPath", " apps/browser-smoke-pro ");
+  updateForm.set("defaultAppConfig", '{"theme":"dark"}');
+
+  assert.deepEqual(updateAdminAppTemplateInputFromForm(updateForm), {
+    templateName: "Browser Smoke Template Pro",
+    description: null,
+    framework: "react-router",
+    featured: false,
+    sortWeight: 30,
+    gitRepoUrl: "git@github.com:sdkwork/app-templates.git",
+    gitRef: "release/2026.05",
+    gitSubPath: "apps/browser-smoke-pro",
+    defaultAppConfig: { theme: "dark" },
+  });
+});
+
 test("admin app management page localizes visible copy", () => {
   const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/app-center.ts");
 
   for (const key of [
-    "admin.app.title",
-    "admin.app.subtitle",
     "admin.app.actions.addChildCategory",
     "admin.app.actions.create",
     "admin.app.actions.createCategory",
     "admin.app.actions.deleteCategory",
     "admin.app.actions.editCategory",
+    "admin.app.actions.createTemplate",
     "admin.app.boolean.no",
     "admin.app.boolean.yes",
     "admin.app.filters.searchPlaceholder",
@@ -256,7 +371,9 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.metrics.active",
     "admin.app.metrics.published",
     "admin.app.metrics.draft",
+    "admin.app.metrics.templates",
     "admin.app.table.app",
+    "admin.app.table.template",
     "admin.app.table.delivery",
     "admin.app.table.lifecycle",
     "admin.app.table.endpoints",
@@ -270,6 +387,11 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.modals.category.createTitle",
     "admin.app.modals.category.description",
     "admin.app.modals.category.editTitle",
+    "admin.app.modals.template.createTitle",
+    "admin.app.modals.template.description",
+    "admin.app.modals.template.editTitle",
+    "admin.app.tabs.apps",
+    "admin.app.tabs.templates",
     "admin.app.fields.name",
     "admin.app.fields.appKey",
     "admin.app.fields.version",
@@ -298,12 +420,36 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.fields.sortWeight",
     "admin.app.fields.status",
     "admin.app.fields.visible",
+    "admin.app.fields.templateCode",
+    "admin.app.fields.templateName",
+    "admin.app.fields.templateType",
+    "admin.app.fields.runtime",
+    "admin.app.fields.framework",
+    "admin.app.fields.language",
+    "admin.app.fields.visibility",
+    "admin.app.fields.publishStatus",
+    "admin.app.fields.featured",
+    "admin.app.fields.sourceAppId",
+    "admin.app.fields.gitRepoUrl",
+    "admin.app.fields.gitRef",
+    "admin.app.fields.gitSubPath",
+    "admin.app.fields.coverUrl",
+    "admin.app.fields.appConfigSchema",
+    "admin.app.fields.defaultAppConfig",
+    "admin.app.fields.variableSchema",
+    "admin.app.fields.dependencyManifest",
+    "admin.app.fields.capabilityManifest",
     "admin.app.confirm.deleteTitle",
     "admin.app.confirm.deleteDescription",
     "admin.app.confirm.deleteConfirm",
     "admin.app.confirm.deleteCategory.title",
     "admin.app.confirm.deleteCategory.description",
+    "admin.app.confirm.deleteTemplate.title",
+    "admin.app.confirm.deleteTemplate.description",
     "admin.app.errors.loadFallback",
+    "admin.app.errors.templateLoadFallback",
+    "admin.app.errors.templateSaveFallback",
+    "admin.app.errors.templateDeleteFallback",
     "admin.app.errors.saveFallback",
     "admin.app.errors.deleteFallback",
     "admin.app.errors.actionFallback",
@@ -321,6 +467,8 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.tree.selected",
     "admin.app.tree.title",
     "admin.app.tree.total",
+    "admin.app.template.state.loading",
+    "admin.app.template.state.empty",
   ]) {
     const escaped = key.replaceAll(".", "\\.");
     assert.match(pageSource, new RegExp(escaped), `${key} must be consumed by AppAdmin`);
@@ -382,9 +530,60 @@ test("admin app management page renders a category tree beside the app list", ()
   }
 });
 
+test("admin app management page exposes app template management", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
+  const serviceSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/app-center.ts");
+
+  for (const expected of [
+    "data-admin-app-tabs",
+    "data-admin-app-template-table",
+    "data-admin-app-template-modal",
+    "TemplateModal",
+    "AdminAppService.fetchAppTemplates",
+    "AdminAppService.fetchAppTemplate",
+    "AdminAppService.createAppTemplate",
+    "AdminAppService.updateAppTemplate",
+    "AdminAppService.publishAppTemplate",
+    "AdminAppService.offlineAppTemplate",
+    "AdminAppService.deleteAppTemplate",
+    "gitRepoUrl",
+    "gitRef",
+    "gitSubPath",
+  ]) {
+    assert.ok(pageSource.includes(expected), `missing admin app template management marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "getClawRouterBackendSdkClient().platform.apps.templates.list",
+    "getClawRouterBackendSdkClient().platform.apps.templates.retrieve",
+    "getClawRouterBackendSdkClient().platform.apps.templates.create",
+    "getClawRouterBackendSdkClient().platform.apps.templates.update",
+    "getClawRouterBackendSdkClient().platform.apps.templates.publish",
+    "getClawRouterBackendSdkClient().platform.apps.templates.unpublish",
+    "getClawRouterBackendSdkClient().platform.apps.templates.delete",
+  ]) {
+    assert.ok(serviceSource.includes(expected), `missing generated backend SDK template call: ${expected}`);
+  }
+
+  for (const key of [
+    "admin.app.tabs.templates",
+    "admin.app.actions.createTemplate",
+    "admin.app.modals.template.createTitle",
+    "admin.app.modals.template.editTitle",
+    "admin.app.template.state.empty",
+    "admin.app.fields.gitRepoUrl",
+    "admin.app.fields.gitRef",
+    "admin.app.fields.gitSubPath",
+  ]) {
+    const escaped = key.replaceAll(".", "\\.");
+    assert.match(i18nSource, new RegExp(`"${escaped}"`), `${key} must exist in i18n resources`);
+  }
+});
+
 test("admin app management page uses bottom pagination instead of a fixed first-page fetch", () => {
   const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/app-center.ts");
 
   for (const expected of [
     "data-admin-app-pagination",
@@ -396,7 +595,7 @@ test("admin app management page uses bottom pagination instead of a fixed first-
     "setPage(1)",
     "setPage((current) => Math.max(1, current - 1))",
     "setPage((current) => current + 1)",
-    "hasNextPage={apps.length >= pageSize}",
+    "hasNextPage={activeTab === 'templates' ? templatePageInfo.hasNextPage : pageInfo.hasNextPage}",
   ]) {
     assert.ok(pageSource.includes(expected), `missing admin app pagination marker: ${expected}`);
   }
@@ -431,7 +630,7 @@ test("admin app management table fills the available admin viewport", () => {
     "data-admin-app-table-viewport",
     "data-admin-app-pagination",
     "flex h-full min-h-0 w-full min-w-0 flex-col gap-4 overflow-hidden",
-    "flex shrink-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between",
+    "flex shrink-0 justify-end",
     "grid shrink-0 grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4",
     "data-admin-app-layout className=\"grid min-h-0 flex-1 grid-rows-[minmax(0,240px)_minmax(0,1fr)] gap-4 overflow-hidden xl:grid-cols-[320px_minmax(0,1fr)] xl:grid-rows-[minmax(0,1fr)]\"",
     "className=\"border-b border-slate-200 p-3 dark:border-white/10\"",
@@ -457,7 +656,7 @@ test("admin layout lets document own vertical page scrolling", () => {
     "flex flex-1 pt-16",
     "w-64 min-h-0 bg-white dark:bg-[#121212] border-r border-slate-200 dark:border-white/10 flex flex-col overflow-hidden",
     "flex-1 flex flex-col bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative",
-    "flex flex-1 flex-col p-6 md:p-8",
+    "flex min-h-0 flex-1 flex-col p-[5px]",
   ]) {
     assert.ok(layoutSource.includes(expected), `missing document-scrolled admin layout marker: ${expected}`);
   }
@@ -479,7 +678,7 @@ test("admin layout lets document own vertical page scrolling", () => {
 
 test("public app center empty state is localized", () => {
   const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppCenter.tsx");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/public/apps.ts");
 
   for (const key of [
     "apps.category",
@@ -579,8 +778,14 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/platform/apps?q=browser&status=ACTIVE&market_status=PUBLISHED&app_type=web&page=1&page_size=20" && method === "GET") {
-        return { items: [sampleApp()] };
+      if (url === "/backend/v3/api/platform/apps?q=browser&status=ACTIVE&market_status=PUBLISHED&app_type=web&category_id=2001&page=1&page_size=20" && method === "GET") {
+        return {
+          items: [sampleApp()],
+          total: 1,
+          page: 1,
+          pageSize: 20,
+          hasNextPage: false,
+        };
       }
       if (url === "/backend/v3/api/platform/apps/8101" && method === "GET") {
         return { item: sampleApp({ marketStatus: "PUBLISHED" }) };
@@ -614,6 +819,7 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
         status: "ACTIVE",
         marketStatus: "PUBLISHED",
         appType: "web",
+        categoryId: "2001",
         page: 1,
         pageSize: 20,
       });
@@ -633,7 +839,11 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
       const enabled = await AdminAppService.enableApp("8101");
       const deleted = await AdminAppService.deleteApp("8101");
 
-      assert.equal(apps[0].uuid, "app-browser-smoke-admin");
+      assert.equal(apps.items[0].uuid, "app-browser-smoke-admin");
+      assert.equal(apps.total, 1);
+      assert.equal(apps.page, 1);
+      assert.equal(apps.pageSize, 20);
+      assert.equal(apps.hasNextPage, false);
       assert.equal(app.marketStatus, "PUBLISHED");
       assert.equal(created.id, "9001");
       assert.equal(updated.name, "Browser Smoke Admin App Pro");
@@ -644,7 +854,7 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
       assert.equal(deleted, true);
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /backend/v3/api/platform/apps?q=browser&status=ACTIVE&market_status=PUBLISHED&app_type=web&page=1&page_size=20",
+        "GET /backend/v3/api/platform/apps?q=browser&status=ACTIVE&market_status=PUBLISHED&app_type=web&category_id=2001&page=1&page_size=20",
         "GET /backend/v3/api/platform/apps/8101",
         "POST /backend/v3/api/platform/apps",
         "PUT /backend/v3/api/platform/apps/8101",
@@ -670,8 +880,8 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
         releaseNotes: [],
       });
       assert.deepEqual(JSON.parse(captured[3].body), { name: "Browser Smoke Admin App Pro" });
-      for (const request of captured.filter((item) => item.headers["x-request-id"] !== undefined)) {
-        assert.match(request.headers["x-request-id"], /^admin-app-/);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
       }
     },
   );
@@ -736,8 +946,128 @@ test("admin app service calls generated backend SDK paths for app categories", a
         name: "Productivity Pro",
         sortWeight: 25,
       });
-      for (const request of captured.filter((item) => item.headers["x-request-id"] !== undefined)) {
-        assert.match(request.headers["x-request-id"], /^admin-app-category-/);
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
+    },
+  );
+});
+
+test("admin app service calls generated backend SDK paths for app templates", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/platform/apps/templates?q=browser&publish_status=DRAFT&template_type=dashboard&runtime=web&category_id=2001&page=1&page_size=20" && method === "GET") {
+        return {
+          items: [sampleTemplate()],
+          total: 1,
+          page: 1,
+          pageSize: 20,
+          hasNextPage: false,
+        };
+      }
+      if (url === "/backend/v3/api/platform/apps/templates" && method === "POST") {
+        return { item: sampleTemplate({ id: "7102", templateName: "Created Template" }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/templates/7101" && method === "GET") {
+        return { item: sampleTemplate({ publishStatus: "DRAFT" }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/templates/7101" && method === "PUT") {
+        return { item: sampleTemplate({ templateName: "Browser Smoke Template Pro" }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/templates/7101/publish" && method === "POST") {
+        return { item: sampleTemplate({ publishStatus: "PUBLISHED" }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/templates/7101/unpublish" && method === "POST") {
+        return { item: sampleTemplate({ publishStatus: "OFFLINE" }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/templates/7101" && method === "DELETE") {
+        return { deleted: true };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async (captured) => {
+      const templates = await AdminAppService.fetchAppTemplates({
+        searchQuery: "browser",
+        publishStatus: "DRAFT",
+        templateType: "dashboard",
+        runtime: "web",
+        categoryId: "2001",
+        page: 1,
+        pageSize: 20,
+      });
+      const created = await AdminAppService.createAppTemplate({
+        templateCode: "created-template",
+        templateName: "Created Template",
+        visibility: "TENANT",
+        publishStatus: "DRAFT",
+        appConfigSchema: { type: "object" },
+        defaultAppConfig: {},
+        variableSchema: {},
+        dependencyManifest: [],
+        capabilityManifest: [],
+        gitRepoUrl: "https://github.com/sdkwork/app-templates.git",
+        gitRef: "main",
+        gitSubPath: "apps/browser-smoke",
+      });
+      const template = await AdminAppService.fetchAppTemplate("7101");
+      const updated = await AdminAppService.updateAppTemplate("7101", {
+        templateName: "Browser Smoke Template Pro",
+        gitRepoUrl: "git@github.com:sdkwork/app-templates.git",
+        gitRef: "release/2026.05",
+        gitSubPath: "apps/browser-smoke-pro",
+      });
+      const published = await AdminAppService.publishAppTemplate("7101");
+      const offline = await AdminAppService.offlineAppTemplate("7101");
+      const deleted = await AdminAppService.deleteAppTemplate("7101");
+
+      assert.equal(templates.items[0].templateCode, "browser-smoke-template");
+      assert.equal(templates.total, 1);
+      assert.equal(created.id, "7102");
+      assert.equal(template.templateCode, "browser-smoke-template");
+      assert.equal(template.gitRepoUrl, "https://github.com/sdkwork/app-templates.git");
+      assert.equal(template.gitRef, "main");
+      assert.equal(template.gitSubPath, "apps/browser-smoke");
+      assert.equal(updated.templateName, "Browser Smoke Template Pro");
+      assert.equal(updated.gitRepoUrl, "https://github.com/sdkwork/app-templates.git");
+      assert.equal(published.publishStatus, "PUBLISHED");
+      assert.equal(offline.publishStatus, "OFFLINE");
+      assert.equal(deleted, true);
+
+      assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
+        "GET /backend/v3/api/platform/apps/templates?q=browser&publish_status=DRAFT&template_type=dashboard&runtime=web&category_id=2001&page=1&page_size=20",
+        "POST /backend/v3/api/platform/apps/templates",
+        "GET /backend/v3/api/platform/apps/templates/7101",
+        "PUT /backend/v3/api/platform/apps/templates/7101",
+        "POST /backend/v3/api/platform/apps/templates/7101/publish",
+        "POST /backend/v3/api/platform/apps/templates/7101/unpublish",
+        "DELETE /backend/v3/api/platform/apps/templates/7101",
+      ]);
+      assert.equal(captured[0].body, "");
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        templateCode: "created-template",
+        templateName: "Created Template",
+        visibility: "TENANT",
+        publishStatus: "DRAFT",
+        featured: false,
+        sortWeight: 0,
+        appConfigSchema: { type: "object" },
+        defaultAppConfig: {},
+        variableSchema: {},
+        dependencyManifest: [],
+        capabilityManifest: [],
+        gitRepoUrl: "https://github.com/sdkwork/app-templates.git",
+        gitRef: "main",
+        gitSubPath: "apps/browser-smoke",
+      });
+      assert.deepEqual(JSON.parse(captured[3].body), {
+        templateName: "Browser Smoke Template Pro",
+        gitRepoUrl: "git@github.com:sdkwork/app-templates.git",
+        gitRef: "release/2026.05",
+        gitSubPath: "apps/browser-smoke-pro",
+      });
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
       }
     },
   );

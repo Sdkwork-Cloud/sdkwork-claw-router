@@ -44,7 +44,7 @@ public class IamGatewayApiKeyRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -52,7 +52,7 @@ public class IamGatewayApiKeyRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -60,7 +60,7 @@ public class IamGatewayApiKeyRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -68,7 +68,7 @@ public class IamGatewayApiKeyRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -76,7 +76,7 @@ public class IamGatewayApiKeyRecord {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -84,7 +84,7 @@ public class IamGatewayApiKeyRecord {
     public String getExpireAt() {
         return this.expireAt;
     }
-    
+
     public void setExpireAt(String expireAt) {
         this.expireAt = expireAt;
     }
@@ -92,7 +92,7 @@ public class IamGatewayApiKeyRecord {
     public String getGroupId() {
         return this.groupId;
     }
-    
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -100,7 +100,7 @@ public class IamGatewayApiKeyRecord {
     public String getHashAlg() {
         return this.hashAlg;
     }
-    
+
     public void setHashAlg(String hashAlg) {
         this.hashAlg = hashAlg;
     }
@@ -108,7 +108,7 @@ public class IamGatewayApiKeyRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -116,7 +116,7 @@ public class IamGatewayApiKeyRecord {
     public String getIdempotencyKey() {
         return this.idempotencyKey;
     }
-    
+
     public void setIdempotencyKey(String idempotencyKey) {
         this.idempotencyKey = idempotencyKey;
     }
@@ -124,7 +124,7 @@ public class IamGatewayApiKeyRecord {
     public String getKeyDisplayMasked() {
         return this.keyDisplayMasked;
     }
-    
+
     public void setKeyDisplayMasked(String keyDisplayMasked) {
         this.keyDisplayMasked = keyDisplayMasked;
     }
@@ -132,7 +132,7 @@ public class IamGatewayApiKeyRecord {
     public String getKeyHash() {
         return this.keyHash;
     }
-    
+
     public void setKeyHash(String keyHash) {
         this.keyHash = keyHash;
     }
@@ -140,7 +140,7 @@ public class IamGatewayApiKeyRecord {
     public String getKeyPrefix() {
         return this.keyPrefix;
     }
-    
+
     public void setKeyPrefix(String keyPrefix) {
         this.keyPrefix = keyPrefix;
     }
@@ -148,7 +148,7 @@ public class IamGatewayApiKeyRecord {
     public String getLastRevealedAt() {
         return this.lastRevealedAt;
     }
-    
+
     public void setLastRevealedAt(String lastRevealedAt) {
         this.lastRevealedAt = lastRevealedAt;
     }
@@ -156,7 +156,7 @@ public class IamGatewayApiKeyRecord {
     public String getLastUsedAt() {
         return this.lastUsedAt;
     }
-    
+
     public void setLastUsedAt(String lastUsedAt) {
         this.lastUsedAt = lastUsedAt;
     }
@@ -164,7 +164,7 @@ public class IamGatewayApiKeyRecord {
     public String getLastUsedIpHash() {
         return this.lastUsedIpHash;
     }
-    
+
     public void setLastUsedIpHash(String lastUsedIpHash) {
         this.lastUsedIpHash = lastUsedIpHash;
     }
@@ -172,7 +172,7 @@ public class IamGatewayApiKeyRecord {
     public String getLastUsedIpMasked() {
         return this.lastUsedIpMasked;
     }
-    
+
     public void setLastUsedIpMasked(String lastUsedIpMasked) {
         this.lastUsedIpMasked = lastUsedIpMasked;
     }
@@ -180,7 +180,7 @@ public class IamGatewayApiKeyRecord {
     public String getLastUsedIpRegion() {
         return this.lastUsedIpRegion;
     }
-    
+
     public void setLastUsedIpRegion(String lastUsedIpRegion) {
         this.lastUsedIpRegion = lastUsedIpRegion;
     }
@@ -188,7 +188,7 @@ public class IamGatewayApiKeyRecord {
     public String getLegacyApiKeyId() {
         return this.legacyApiKeyId;
     }
-    
+
     public void setLegacyApiKeyId(String legacyApiKeyId) {
         this.legacyApiKeyId = legacyApiKeyId;
     }
@@ -196,7 +196,7 @@ public class IamGatewayApiKeyRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -204,7 +204,7 @@ public class IamGatewayApiKeyRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -212,7 +212,7 @@ public class IamGatewayApiKeyRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -220,7 +220,7 @@ public class IamGatewayApiKeyRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -228,7 +228,7 @@ public class IamGatewayApiKeyRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -236,7 +236,7 @@ public class IamGatewayApiKeyRecord {
     public String getPolicyId() {
         return this.policyId;
     }
-    
+
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
@@ -244,7 +244,7 @@ public class IamGatewayApiKeyRecord {
     public String getQuotaPolicyId() {
         return this.quotaPolicyId;
     }
-    
+
     public void setQuotaPolicyId(String quotaPolicyId) {
         this.quotaPolicyId = quotaPolicyId;
     }
@@ -252,7 +252,7 @@ public class IamGatewayApiKeyRecord {
     public String getRateLimitPolicyId() {
         return this.rateLimitPolicyId;
     }
-    
+
     public void setRateLimitPolicyId(String rateLimitPolicyId) {
         this.rateLimitPolicyId = rateLimitPolicyId;
     }
@@ -260,7 +260,7 @@ public class IamGatewayApiKeyRecord {
     public String getRevokedAt() {
         return this.revokedAt;
     }
-    
+
     public void setRevokedAt(String revokedAt) {
         this.revokedAt = revokedAt;
     }
@@ -268,7 +268,7 @@ public class IamGatewayApiKeyRecord {
     public String getRevokedBy() {
         return this.revokedBy;
     }
-    
+
     public void setRevokedBy(String revokedBy) {
         this.revokedBy = revokedBy;
     }
@@ -276,7 +276,7 @@ public class IamGatewayApiKeyRecord {
     public String getRotatedFromKeyId() {
         return this.rotatedFromKeyId;
     }
-    
+
     public void setRotatedFromKeyId(String rotatedFromKeyId) {
         this.rotatedFromKeyId = rotatedFromKeyId;
     }
@@ -284,7 +284,7 @@ public class IamGatewayApiKeyRecord {
     public String getSecretVersion() {
         return this.secretVersion;
     }
-    
+
     public void setSecretVersion(String secretVersion) {
         this.secretVersion = secretVersion;
     }
@@ -292,7 +292,7 @@ public class IamGatewayApiKeyRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -300,7 +300,7 @@ public class IamGatewayApiKeyRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -308,7 +308,7 @@ public class IamGatewayApiKeyRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -316,7 +316,7 @@ public class IamGatewayApiKeyRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -324,7 +324,7 @@ public class IamGatewayApiKeyRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -332,7 +332,7 @@ public class IamGatewayApiKeyRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

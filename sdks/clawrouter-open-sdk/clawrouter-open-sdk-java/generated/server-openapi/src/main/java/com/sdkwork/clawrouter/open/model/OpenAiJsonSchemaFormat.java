@@ -10,7 +10,7 @@ public class OpenAiJsonSchemaFormat {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -18,7 +18,7 @@ public class OpenAiJsonSchemaFormat {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -26,7 +26,7 @@ public class OpenAiJsonSchemaFormat {
     public OpenAiJsonSchema getSchema() {
         return this.schema;
     }
-    
+
     public void setSchema(OpenAiJsonSchema schema) {
         this.schema = schema;
     }
@@ -34,7 +34,7 @@ public class OpenAiJsonSchemaFormat {
     public Boolean getStrict() {
         return this.strict;
     }
-    
+
     public void setStrict(Boolean strict) {
         this.strict = strict;
     }

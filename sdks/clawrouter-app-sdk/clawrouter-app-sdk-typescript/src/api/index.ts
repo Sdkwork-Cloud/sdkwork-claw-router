@@ -12,6 +12,6 @@ export * from './memory';
 export * from './notification';
 export * from './open-platform';
 export * from './platform';
+export * from './system';
 export * from './runtime';
 export * from './sdk-reference';
-export * from './system';

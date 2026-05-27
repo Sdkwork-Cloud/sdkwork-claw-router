@@ -206,6 +206,6 @@ fn route_paths_use_lower_snake_case_and_operation_ids_use_dotted_lower_camel_cas
 fn dual_token_headers_match_java_saas_security_contract() {
     assert_eq!(
         required_dual_token_headers(),
-        ["Authorization", "Sdkwork-Access-Token"]
+        ["Authorization", "Access-Token"]
     );
 }

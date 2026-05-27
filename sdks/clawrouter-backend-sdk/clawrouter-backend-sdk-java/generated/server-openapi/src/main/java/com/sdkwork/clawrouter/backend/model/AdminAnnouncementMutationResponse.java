@@ -7,7 +7,7 @@ public class AdminAnnouncementMutationResponse {
     public AdminAnnouncementItem getItem() {
         return this.item;
     }
-    
+
     public void setItem(AdminAnnouncementItem item) {
         this.item = item;
     }

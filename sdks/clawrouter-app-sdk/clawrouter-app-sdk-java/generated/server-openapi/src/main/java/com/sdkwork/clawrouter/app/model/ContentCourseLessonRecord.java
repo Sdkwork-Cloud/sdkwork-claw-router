@@ -32,7 +32,7 @@ public class ContentCourseLessonRecord {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -40,7 +40,7 @@ public class ContentCourseLessonRecord {
     public String getCourseId() {
         return this.courseId;
     }
-    
+
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
@@ -48,7 +48,7 @@ public class ContentCourseLessonRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -56,7 +56,7 @@ public class ContentCourseLessonRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -64,7 +64,7 @@ public class ContentCourseLessonRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -72,7 +72,7 @@ public class ContentCourseLessonRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -80,7 +80,7 @@ public class ContentCourseLessonRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -88,7 +88,7 @@ public class ContentCourseLessonRecord {
     public String getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -96,7 +96,7 @@ public class ContentCourseLessonRecord {
     public String getDurationText() {
         return this.durationText;
     }
-    
+
     public void setDurationText(String durationText) {
         this.durationText = durationText;
     }
@@ -104,7 +104,7 @@ public class ContentCourseLessonRecord {
     public String getExternalBvid() {
         return this.externalBvid;
     }
-    
+
     public void setExternalBvid(String externalBvid) {
         this.externalBvid = externalBvid;
     }
@@ -112,7 +112,7 @@ public class ContentCourseLessonRecord {
     public Boolean getFreePreview() {
         return this.freePreview;
     }
-    
+
     public void setFreePreview(Boolean freePreview) {
         this.freePreview = freePreview;
     }
@@ -120,7 +120,7 @@ public class ContentCourseLessonRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -128,7 +128,7 @@ public class ContentCourseLessonRecord {
     public Integer getLessonNo() {
         return this.lessonNo;
     }
-    
+
     public void setLessonNo(Integer lessonNo) {
         this.lessonNo = lessonNo;
     }
@@ -136,7 +136,7 @@ public class ContentCourseLessonRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -144,7 +144,7 @@ public class ContentCourseLessonRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -152,7 +152,7 @@ public class ContentCourseLessonRecord {
     public String getSectionId() {
         return this.sectionId;
     }
-    
+
     public void setSectionId(String sectionId) {
         this.sectionId = sectionId;
     }
@@ -160,7 +160,7 @@ public class ContentCourseLessonRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -168,7 +168,7 @@ public class ContentCourseLessonRecord {
     public String getSourceProvider() {
         return this.sourceProvider;
     }
-    
+
     public void setSourceProvider(String sourceProvider) {
         this.sourceProvider = sourceProvider;
     }
@@ -176,7 +176,7 @@ public class ContentCourseLessonRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -184,7 +184,7 @@ public class ContentCourseLessonRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -192,7 +192,7 @@ public class ContentCourseLessonRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -200,7 +200,7 @@ public class ContentCourseLessonRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -208,7 +208,7 @@ public class ContentCourseLessonRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -216,7 +216,7 @@ public class ContentCourseLessonRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -224,7 +224,7 @@ public class ContentCourseLessonRecord {
     public String getVideoUrl() {
         return this.videoUrl;
     }
-    
+
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
     }

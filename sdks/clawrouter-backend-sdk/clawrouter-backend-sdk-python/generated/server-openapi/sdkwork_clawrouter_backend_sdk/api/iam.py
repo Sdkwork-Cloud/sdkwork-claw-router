@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult
+from ..models import AccessGroupsChannelBindingsListResult, AccessGroupsChannelBindingsUpdateResult, AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupChannelBindingsReplaceRequest, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -142,6 +142,7 @@ class IamAccessGroupsApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.channel_bindings = IamAccessGroupsChannelBindingsApi(client)
 
 
     def list(self) -> AccessGroupsListResult:
@@ -171,6 +172,27 @@ class IamAccessGroupsApi:
             {}
         )
         return self._client.patch(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class IamAccessGroupsChannelBindingsApi:
+    """iam iam.access_groups.channel_bindings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, group_id: str) -> AccessGroupsChannelBindingsListResult:
+        """List group channel bindings"""
+        return self._client.get(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}/channel_bindings")
+
+    def update(self, group_id: str, body: AdminAccessGroupChannelBindingsReplaceRequest, x_request_id: Optional[str] = None) -> AccessGroupsChannelBindingsUpdateResult:
+        """Replace group channel bindings"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}/channel_bindings", json=body, headers=request_headers)
 
 class IamApiKeysApi:
     """iam iam.api_keys API client."""

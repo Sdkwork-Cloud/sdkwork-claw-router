@@ -7,7 +7,7 @@ public class GoogleEmbedContentResponse {
     public GoogleContentEmbedding getEmbedding() {
         return this.embedding;
     }
-    
+
     public void setEmbedding(GoogleContentEmbedding embedding) {
         this.embedding = embedding;
     }

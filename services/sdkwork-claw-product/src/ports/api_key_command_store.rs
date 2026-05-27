@@ -34,6 +34,7 @@ pub struct CreateGatewayApiKeyCommand {
     pub allowed_capabilities: Vec<String>,
     pub ip_allowlist: Vec<String>,
     pub quota_limit: Option<DecimalValue>,
+    pub default_for_runtime: bool,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -55,6 +56,7 @@ pub struct UpdateGatewayApiKeyCommand {
     pub quota_policy_uuid: String,
     pub quota_limit: Option<Option<DecimalValue>>,
     pub expire_at: Option<Option<String>>,
+    pub default_for_runtime: Option<bool>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]

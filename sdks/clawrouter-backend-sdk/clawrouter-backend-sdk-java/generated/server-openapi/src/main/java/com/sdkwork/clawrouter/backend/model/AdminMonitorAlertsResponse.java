@@ -8,7 +8,7 @@ public class AdminMonitorAlertsResponse {
     public List<AdminMonitorAlertItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminMonitorAlertItem> items) {
         this.items = items;
     }

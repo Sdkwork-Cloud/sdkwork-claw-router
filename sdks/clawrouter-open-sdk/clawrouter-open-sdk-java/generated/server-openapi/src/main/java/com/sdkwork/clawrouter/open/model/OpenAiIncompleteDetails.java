@@ -7,7 +7,7 @@ public class OpenAiIncompleteDetails {
     public String getReason() {
         return this.reason;
     }
-    
+
     public void setReason(String reason) {
         this.reason = reason;
     }

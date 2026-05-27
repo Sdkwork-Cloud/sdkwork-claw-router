@@ -8,7 +8,7 @@ public class AdminApiKeyCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -16,7 +16,7 @@ public class AdminApiKeyCreateRequest {
     public Integer getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(Integer userId) {
         this.userId = userId;
     }

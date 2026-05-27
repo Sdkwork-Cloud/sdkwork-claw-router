@@ -255,6 +255,48 @@ pub(crate) fn query_matches_app(
     haystack.contains(&keyword)
 }
 
+pub(crate) fn query_matches_app_catalog_filters(
+    item: &AppStoreItem,
+    raw: &RawAppStoreRecord,
+    keyword: Option<&str>,
+    category: Option<&str>,
+    platform_types: &[String],
+) -> bool {
+    query_matches_app(item, raw, keyword)
+        && app_category_matches(item, category)
+        && app_platform_type_matches(item, platform_types)
+}
+
+pub(crate) fn sort_app_catalog_entries(
+    entries: &mut [(AppStoreItem, RawAppStoreRecord)],
+    sort: Option<&str>,
+) {
+    match sort.unwrap_or("newest_desc") {
+        "popular_desc" => entries.sort_by(|(left_item, left_raw), (right_item, right_raw)| {
+            right_raw
+                .download_count
+                .cmp(&left_raw.download_count)
+                .then_with(|| compare_newest_release(right_item, left_item))
+                .then_with(|| left_item.name.cmp(&right_item.name))
+                .then_with(|| left_raw.id.cmp(&right_raw.id))
+        }),
+        "rating_desc" => entries.sort_by(|(left_item, left_raw), (right_item, right_raw)| {
+            right_item
+                .rating
+                .partial_cmp(&left_item.rating)
+                .unwrap_or(std::cmp::Ordering::Equal)
+                .then_with(|| compare_newest_release(right_item, left_item))
+                .then_with(|| left_item.name.cmp(&right_item.name))
+                .then_with(|| left_raw.id.cmp(&right_raw.id))
+        }),
+        _ => entries.sort_by(|(left_item, left_raw), (right_item, right_raw)| {
+            compare_newest_release(right_item, left_item)
+                .then_with(|| right_raw.id.cmp(&left_raw.id))
+                .then_with(|| left_item.name.cmp(&right_item.name))
+        }),
+    }
+}
+
 pub(crate) fn query_matches_skill(item: &AppSkillItem, keyword: Option<&str>) -> bool {
     let Some(keyword) = normalized_keyword(keyword) else {
         return true;
@@ -321,6 +363,39 @@ fn merge_json_object(
             }
         }
     }
+}
+
+fn app_category_matches(item: &AppStoreItem, category: Option<&str>) -> bool {
+    let Some(category) = normalized_keyword(category) else {
+        return true;
+    };
+    normalize_text(&item.category).to_lowercase() == category
+}
+
+fn app_platform_type_matches(item: &AppStoreItem, platform_types: &[String]) -> bool {
+    let platform_types = platform_types
+        .iter()
+        .filter_map(|value| normalized_keyword(Some(value)))
+        .collect::<Vec<_>>();
+    if platform_types.is_empty() {
+        return true;
+    }
+    item.releases.iter().any(|release| {
+        platform_types.contains(&normalize_text(&release.platform_type).to_lowercase())
+    })
+}
+
+fn compare_newest_release(left: &AppStoreItem, right: &AppStoreItem) -> std::cmp::Ordering {
+    newest_release_date(left).cmp(&newest_release_date(right))
+}
+
+fn newest_release_date(item: &AppStoreItem) -> String {
+    item.releases
+        .iter()
+        .map(|release| release.release_date.as_str())
+        .max()
+        .unwrap_or_default()
+        .to_owned()
 }
 
 fn build_app_releases(

@@ -120,15 +120,15 @@ const pcReactDomains = [
     packages: [
       makePackage("sdkwork-wallet-pc-react", "Wallet balances, recharge actions, and payment method surfaces.", ["sdkwork-points"]),
       makePackage("sdkwork-points-pc-react", "Points, credits, quota balances, and consumption history.", ["sdkwork-points", "sdkwork-router-portal-credits"]),
-      makePackage("sdkwork-vip-pc-react", "Membership tiers, entitlements, and upgrade flows.", ["sdkwork-react-vip"]),
-      makePackage("sdkwork-vip-purchase-pc-react", "VIP purchase header entry, package chooser, and reusable membership purchase menu.", ["sdkwork-react-vip"]),
-      makePackage("sdkwork-vip-admin-pc-react", "Admin VIP management for levels, packages, memberships, and entitlements.", ["sdkwork-react-vip"]),
+      makePackage("sdkwork-membership-pc-react", "Membership tiers, entitlements, and upgrade flows."),
+      makePackage("sdkwork-membership-purchase-pc-react", "Membership purchase header entry, package chooser, and reusable membership purchase menu."),
+      makePackage("sdkwork-membership-admin-pc-react", "Admin membership management for levels, packages, memberships, and entitlements."),
       makePackage("sdkwork-entitlement-pc-react", "Commercial access policy, paywall evaluation, and reusable entitlement center surfaces.", ["sdkwork-studio", "sdkwork-react-trade"]),
       makePackage("sdkwork-coupon-pc-react", "Coupon discovery, redemption, points exchange, and checkout-ready discount inventory.", ["sdkwork-studio", "sdkwork-react-trade"]),
       makePackage("sdkwork-offer-pc-react", "Shared commercial offer cards, featured pricing opportunities, and reusable routing into coupon, points, and subscription workspaces.", ["sdkwork-studio", "sdkwork-react-trade"]),
       makePackage("sdkwork-pricing-pc-react", "Price books, plan comparison, bundle strategy, and reusable pricing-center surfaces.", ["sdkwork-studio", "sdkwork-center", "sdkwork-react-trade"]),
       makePackage("sdkwork-checkout-pc-react", "Checkout orchestration, payment-method selection, invoice posture, and reusable transaction-session surfaces.", ["sdkwork-studio", "sdkwork-model-purchase", "sdkwork-react-trade"]),
-      makePackage("sdkwork-subscription-pc-react", "Subscription checkout, coupon application, and premium membership selection.", ["sdkwork-studio", "sdkwork-react-vip"]),
+      makePackage("sdkwork-subscription-pc-react", "Subscription checkout, coupon application, and premium membership selection.", ["sdkwork-studio"]),
       makePackage("sdkwork-order-pc-react", "Orders, billing details, and transaction histories.", ["sdkwork-router-portal-billing"]),
       makePackage("sdkwork-payment-pc-react", "Payment orchestration, payment methods, status tracking, and QR-aware payment center surfaces.", ["sdkwork-studio", "sdkwork-react-trade"]),
       makePackage("sdkwork-invoice-pc-react", "Invoice applications, billing documents, and tax-ready history surfaces.", ["sdkwork-studio", "sdkwork-router-portal-billing"]),
@@ -215,6 +215,13 @@ const nativeRustDomains = [
       makePackage("sdkwork-iam-tauri-rust", "Tauri host adapter contract for the Rust IAM local/private module.", []),
     ],
   },
+  {
+    domain: "studio",
+    summary: "Rust local/private Studio foundation for app templates and shared catalog projections.",
+    packages: [
+      makePackage("sdkwork-studio-storage-sqlx-rust", "Rust Studio SQL storage contract for app templates, template versions, usage audit, and shared catalog target projections.", []),
+    ],
+  },
 ];
 
 const mobileReactDomains = plannedArchitectureDomains.map((domain) => {
@@ -296,7 +303,7 @@ export const rootPackageDirectoriesToRemove = [
   "sdkwork-trade-pc-react",
   "sdkwork-updator-pc-react",
   "sdkwork-user-pc-react",
-  "sdkwork-vip-pc-react",
+  "sdkwork-membership-pc-react",
 ];
 
 export function toWorkspacePackageName(directory) {

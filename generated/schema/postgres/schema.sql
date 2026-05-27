@@ -369,6 +369,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_plus_agent_skill_package_key ON plus_agent_
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_user ON plus_agent_skill_package (user_id);
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_category ON plus_agent_skill_package (category_id);
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_market ON plus_agent_skill_package (enabled, featured, sort_weight);
+CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_seed_scope ON plus_agent_skill_package (tenant_id, organization_id, data_scope, id, uuid, package_key, name, sort_weight, enabled, featured);
 
 CREATE TABLE IF NOT EXISTS plus_agent_skill (
     id BIGINT PRIMARY KEY,
@@ -428,6 +429,8 @@ CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_category ON plus_agent_skill (ca
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package ON plus_agent_skill (package_id);
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_market ON plus_agent_skill (market_status, visibility, review_status, enabled);
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_featured ON plus_agent_skill (featured, recommend_weight);
+CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_seed_scope ON plus_agent_skill (tenant_id, organization_id, data_scope);
+CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_official_seed ON plus_agent_skill (tenant_id, organization_id, data_scope, source_type, provider, market_status, visibility, review_status, builtin, is_builtin, enabled);
 
 CREATE TABLE IF NOT EXISTS plus_user_agent_skill (
     id BIGINT PRIMARY KEY,
@@ -697,6 +700,33 @@ CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_provider_status ON iam_
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_tenant_status_updated ON iam_gateway_api_key_group (tenant_id, organization_id, status, updated_at, id);
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_pricing ON iam_gateway_api_key_group (tenant_id, organization_id, pricing_plan_id, status, updated_at, id);
 
+CREATE TABLE IF NOT EXISTS iam_api_key_group_channel (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    group_id BIGINT NOT NULL,
+    channel_id BIGINT NOT NULL,
+    priority INTEGER,
+    weight INTEGER,
+    model_scope JSONB,
+    capabilities JSONB,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_api_key_group_channel ON iam_api_key_group_channel (tenant_id, organization_id, group_id, channel_id);
+CREATE INDEX IF NOT EXISTS idx_iam_api_key_group_channel_group ON iam_api_key_group_channel (tenant_id, organization_id, group_id, status, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_iam_api_key_group_channel_channel ON iam_api_key_group_channel (tenant_id, organization_id, channel_id, status, id);
+
 CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group_metric_snapshot (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -895,6 +925,105 @@ CREATE TABLE IF NOT EXISTS iam_user_login_event (
 CREATE INDEX IF NOT EXISTS idx_iam_user_login_event_user_occurred ON iam_user_login_event (tenant_id, organization_id, user_id, occurred_at, id);
 CREATE INDEX IF NOT EXISTS idx_iam_user_login_event_result_occurred ON iam_user_login_event (tenant_id, organization_id, login_result, occurred_at, id);
 
+CREATE TABLE IF NOT EXISTS iam_verification_scene_policy (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scene_code VARCHAR(128) NOT NULL,
+    scene_name VARCHAR(128),
+    allowed_channels JSONB NOT NULL DEFAULT '[]'::jsonb,
+    default_channel VARCHAR(32),
+    code_length INTEGER NOT NULL DEFAULT 6,
+    code_charset VARCHAR(64) NOT NULL DEFAULT 'digits',
+    ttl_seconds INTEGER NOT NULL DEFAULT 300,
+    resend_interval_seconds INTEGER NOT NULL DEFAULT 60,
+    max_send_per_hour INTEGER NOT NULL DEFAULT 5,
+    max_verify_attempts INTEGER NOT NULL DEFAULT 5,
+    target_binding_required BOOLEAN NOT NULL DEFAULT TRUE,
+    template_code VARCHAR(128) NOT NULL,
+    risk_policy JSONB NOT NULL DEFAULT '{}'::jsonb,
+    rollout_policy JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_verification_scene_policy_scene ON iam_verification_scene_policy (tenant_id, organization_id, scene_code);
+CREATE INDEX IF NOT EXISTS idx_iam_verification_scene_policy_status ON iam_verification_scene_policy (tenant_id, organization_id, status, scene_code);
+
+CREATE TABLE IF NOT EXISTS iam_verification_challenge (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    code_id VARCHAR(128) NOT NULL,
+    scene_code VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    target_type VARCHAR(32) NOT NULL,
+    target_hash VARCHAR(128) NOT NULL,
+    target_masked VARCHAR(128),
+    user_id BIGINT,
+    code_hash VARCHAR(256) NOT NULL,
+    hash_algorithm VARCHAR(64) NOT NULL,
+    salt_ref VARCHAR(256),
+    delivery_request_id BIGINT,
+    policy_snapshot JSONB NOT NULL DEFAULT '{}'::jsonb,
+    expires_at TIMESTAMPTZ NOT NULL,
+    verified_at TIMESTAMPTZ,
+    consumed_at TIMESTAMPTZ,
+    challenge_status VARCHAR(32) NOT NULL,
+    verify_attempts INTEGER NOT NULL DEFAULT 0,
+    locked_until TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_verification_challenge_code_id ON iam_verification_challenge (tenant_id, organization_id, code_id);
+CREATE INDEX IF NOT EXISTS idx_iam_verification_challenge_target_scene ON iam_verification_challenge (tenant_id, organization_id, target_type, target_hash, scene_code, created_at);
+CREATE INDEX IF NOT EXISTS idx_iam_verification_challenge_delivery ON iam_verification_challenge (tenant_id, organization_id, delivery_request_id);
+CREATE INDEX IF NOT EXISTS idx_iam_verification_challenge_expiry ON iam_verification_challenge (tenant_id, organization_id, challenge_status, expires_at);
+
+CREATE TABLE IF NOT EXISTS iam_verification_attempt (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    challenge_id BIGINT NOT NULL,
+    scene_code VARCHAR(128) NOT NULL,
+    target_type VARCHAR(32) NOT NULL,
+    target_hash VARCHAR(128) NOT NULL,
+    result VARCHAR(32) NOT NULL,
+    failure_reason VARCHAR(128),
+    ip_hash VARCHAR(128),
+    device_hash VARCHAR(128),
+    risk_snapshot JSONB NOT NULL DEFAULT '{}'::jsonb,
+    occurred_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_challenge ON iam_verification_attempt (tenant_id, organization_id, challenge_id, occurred_at);
+CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_target ON iam_verification_attempt (tenant_id, organization_id, target_type, target_hash, occurred_at);
+
 CREATE TABLE IF NOT EXISTS integration_provider (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -1012,6 +1141,406 @@ CREATE TABLE IF NOT EXISTS integration_provider_account (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_account_tenant_code ON integration_provider_account (tenant_id, organization_id, provider_code, account_code);
+
+CREATE TABLE IF NOT EXISTS messaging_provider_capability (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_code VARCHAR(64) NOT NULL,
+    provider_account_id BIGINT NOT NULL DEFAULT 0,
+    channel VARCHAR(32) NOT NULL,
+    delivery_purpose VARCHAR(64) NOT NULL,
+    country_code VARCHAR(16) NOT NULL DEFAULT '*',
+    locale VARCHAR(32) NOT NULL DEFAULT '*',
+    supports_template_sync BOOLEAN NOT NULL DEFAULT FALSE,
+    supports_delivery_receipt BOOLEAN NOT NULL DEFAULT FALSE,
+    supports_test_send BOOLEAN NOT NULL DEFAULT FALSE,
+    supports_batch_send BOOLEAN NOT NULL DEFAULT FALSE,
+    supports_webhook BOOLEAN NOT NULL DEFAULT FALSE,
+    sandbox_supported BOOLEAN NOT NULL DEFAULT FALSE,
+    capability_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    rate_limit_policy JSONB NOT NULL DEFAULT '{}'::jsonb,
+    health_status VARCHAR(32) NOT NULL DEFAULT 'unknown',
+    last_verified_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_provider_capability_scope ON messaging_provider_capability (tenant_id, organization_id, provider_code, provider_account_id, channel, delivery_purpose, country_code, locale);
+CREATE INDEX IF NOT EXISTS idx_messaging_provider_capability_channel ON messaging_provider_capability (tenant_id, organization_id, channel, delivery_purpose, status);
+
+CREATE TABLE IF NOT EXISTS messaging_sender_identity (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_account_id BIGINT NOT NULL,
+    provider_code VARCHAR(64) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    identity_code VARCHAR(128) NOT NULL,
+    display_name VARCHAR(128),
+    from_email VARCHAR(256),
+    from_name VARCHAR(128),
+    reply_to VARCHAR(256),
+    domain_name VARCHAR(256),
+    sign_name VARCHAR(128),
+    sender_id VARCHAR(128),
+    country_code VARCHAR(16),
+    approval_status VARCHAR(32) NOT NULL DEFAULT 'draft',
+    verified_at TIMESTAMPTZ,
+    approval_payload JSONB NOT NULL DEFAULT '{}'::jsonb,
+    rejection_reason VARCHAR(512)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_sender_identity_code ON messaging_sender_identity (tenant_id, organization_id, provider_account_id, identity_code);
+CREATE INDEX IF NOT EXISTS idx_messaging_sender_identity_channel_status ON messaging_sender_identity (tenant_id, organization_id, channel, approval_status, status);
+
+CREATE TABLE IF NOT EXISTS messaging_template (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_code VARCHAR(128) NOT NULL,
+    scene_code VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    delivery_purpose VARCHAR(64) NOT NULL,
+    category VARCHAR(64) NOT NULL,
+    owner_app_id VARCHAR(128),
+    template_name VARCHAR(128) NOT NULL,
+    description VARCHAR(512),
+    current_version_id BIGINT,
+    publish_status VARCHAR(32) NOT NULL DEFAULT 'draft'
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_code ON messaging_template (tenant_id, organization_id, template_code);
+CREATE INDEX IF NOT EXISTS idx_messaging_template_scene_channel ON messaging_template (tenant_id, organization_id, scene_code, channel, delivery_purpose, status);
+
+CREATE TABLE IF NOT EXISTS messaging_template_version (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_id BIGINT NOT NULL,
+    version_no INTEGER NOT NULL,
+    subject_template VARCHAR(512),
+    text_template TEXT,
+    html_template TEXT,
+    variable_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    render_engine VARCHAR(32) NOT NULL DEFAULT 'handlebars',
+    content_hash VARCHAR(128) NOT NULL,
+    review_status VARCHAR(32) NOT NULL DEFAULT 'draft',
+    published_at TIMESTAMPTZ,
+    retired_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_version_no ON messaging_template_version (tenant_id, organization_id, template_id, version_no);
+CREATE INDEX IF NOT EXISTS idx_messaging_template_version_status ON messaging_template_version (tenant_id, organization_id, template_id, review_status, published_at);
+
+CREATE TABLE IF NOT EXISTS messaging_template_variant (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_version_id BIGINT NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    locale VARCHAR(32) NOT NULL DEFAULT 'default',
+    content_format VARCHAR(32) NOT NULL,
+    body_template TEXT NOT NULL,
+    length_limit INTEGER,
+    provider_payload_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    render_options JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_variant_locale ON messaging_template_variant (tenant_id, organization_id, template_version_id, channel, locale, content_format);
+CREATE INDEX IF NOT EXISTS idx_messaging_template_variant_channel ON messaging_template_variant (tenant_id, organization_id, channel, locale, status);
+
+CREATE TABLE IF NOT EXISTS messaging_template_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    template_variant_id BIGINT NOT NULL,
+    provider_account_id BIGINT NOT NULL,
+    provider_code VARCHAR(64) NOT NULL,
+    provider_template_code VARCHAR(128) NOT NULL,
+    approval_status VARCHAR(32) NOT NULL DEFAULT 'draft',
+    provider_template_version VARCHAR(64),
+    last_synced_at TIMESTAMPTZ,
+    sync_payload_hash VARCHAR(128),
+    rejection_reason VARCHAR(512),
+    provider_payload JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_binding_provider ON messaging_template_binding (tenant_id, organization_id, template_variant_id, provider_account_id);
+CREATE INDEX IF NOT EXISTS idx_messaging_template_binding_code ON messaging_template_binding (tenant_id, organization_id, provider_code, provider_template_code, approval_status);
+
+CREATE TABLE IF NOT EXISTS messaging_route_rule (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    rule_code VARCHAR(128) NOT NULL,
+    app_id VARCHAR(128),
+    scene_code VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    delivery_purpose VARCHAR(64) NOT NULL,
+    locale VARCHAR(32) NOT NULL DEFAULT '*',
+    country_code VARCHAR(16) NOT NULL DEFAULT '*',
+    user_segment VARCHAR(128) NOT NULL DEFAULT '*',
+    priority INTEGER NOT NULL DEFAULT 100,
+    weight INTEGER NOT NULL DEFAULT 100,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ,
+    failover_policy JSONB NOT NULL DEFAULT '{}'::jsonb,
+    selection_policy JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_route_rule_code ON messaging_route_rule (tenant_id, organization_id, rule_code);
+CREATE INDEX IF NOT EXISTS idx_messaging_route_rule_lookup ON messaging_route_rule (tenant_id, organization_id, scene_code, channel, delivery_purpose, country_code, locale, user_segment, priority, status);
+
+CREATE TABLE IF NOT EXISTS messaging_route_rule_target (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    route_rule_id BIGINT NOT NULL,
+    provider_account_id BIGINT NOT NULL,
+    provider_code VARCHAR(64) NOT NULL,
+    sender_identity_id BIGINT,
+    template_binding_id BIGINT,
+    target_order INTEGER NOT NULL DEFAULT 1,
+    weight INTEGER NOT NULL DEFAULT 100,
+    circuit_breaker_policy JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_route_rule_target_order ON messaging_route_rule_target (tenant_id, organization_id, route_rule_id, target_order);
+CREATE INDEX IF NOT EXISTS idx_messaging_route_rule_target_provider ON messaging_route_rule_target (tenant_id, organization_id, provider_account_id, status);
+
+CREATE TABLE IF NOT EXISTS messaging_send_request (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128) NOT NULL,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    request_no VARCHAR(128) NOT NULL,
+    idempotency_key VARCHAR(128) NOT NULL,
+    app_id VARCHAR(128),
+    scene_code VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    delivery_purpose VARCHAR(64) NOT NULL,
+    target_type VARCHAR(32) NOT NULL,
+    target_hash VARCHAR(128) NOT NULL,
+    target_masked VARCHAR(128),
+    template_version_id BIGINT,
+    template_variant_id BIGINT,
+    resolved_route_rule_id BIGINT,
+    resolved_provider_account_id BIGINT,
+    resolved_sender_identity_id BIGINT,
+    render_hash VARCHAR(128) NOT NULL,
+    request_payload_redacted JSONB NOT NULL DEFAULT '{}'::jsonb,
+    dry_run BOOLEAN NOT NULL DEFAULT FALSE,
+    delivery_status VARCHAR(32) NOT NULL,
+    scheduled_at TIMESTAMPTZ,
+    accepted_at TIMESTAMPTZ,
+    sent_at TIMESTAMPTZ,
+    delivered_at TIMESTAMPTZ,
+    failed_at TIMESTAMPTZ,
+    expires_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_send_request_no ON messaging_send_request (tenant_id, organization_id, request_no);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_send_request_idempotency ON messaging_send_request (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_messaging_send_request_scene_status ON messaging_send_request (tenant_id, organization_id, scene_code, channel, delivery_status, created_at);
+CREATE INDEX IF NOT EXISTS idx_messaging_send_request_target ON messaging_send_request (tenant_id, organization_id, target_type, target_hash, created_at);
+
+CREATE TABLE IF NOT EXISTS messaging_send_attempt (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    send_request_id BIGINT NOT NULL,
+    attempt_no INTEGER NOT NULL,
+    provider_code VARCHAR(64) NOT NULL,
+    provider_account_id BIGINT NOT NULL,
+    provider_request_id VARCHAR(256),
+    provider_message_id VARCHAR(256),
+    http_status INTEGER,
+    provider_status VARCHAR(64),
+    latency_ms INTEGER,
+    failure_code VARCHAR(128),
+    failure_message_masked VARCHAR(512),
+    retry_after_at TIMESTAMPTZ,
+    attempted_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_send_attempt_no ON messaging_send_attempt (tenant_id, organization_id, send_request_id, attempt_no);
+CREATE INDEX IF NOT EXISTS idx_messaging_send_attempt_provider_message ON messaging_send_attempt (tenant_id, organization_id, provider_code, provider_message_id);
+CREATE INDEX IF NOT EXISTS idx_messaging_send_attempt_status ON messaging_send_attempt (tenant_id, organization_id, provider_status, attempted_at);
+
+CREATE TABLE IF NOT EXISTS messaging_delivery_event (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128) NOT NULL,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    send_request_id BIGINT NOT NULL,
+    send_attempt_id BIGINT,
+    provider_code VARCHAR(64) NOT NULL,
+    provider_event_id VARCHAR(256) NOT NULL,
+    provider_message_id VARCHAR(256),
+    event_type VARCHAR(64) NOT NULL,
+    event_at TIMESTAMPTZ NOT NULL,
+    payload_redacted JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_delivery_event_provider ON messaging_delivery_event (tenant_id, organization_id, provider_code, provider_event_id);
+CREATE INDEX IF NOT EXISTS idx_messaging_delivery_event_request ON messaging_delivery_event (tenant_id, organization_id, send_request_id, event_at);
+CREATE INDEX IF NOT EXISTS idx_messaging_delivery_event_message ON messaging_delivery_event (tenant_id, organization_id, provider_message_id, event_type);
+
+CREATE TABLE IF NOT EXISTS messaging_suppression (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel VARCHAR(32) NOT NULL,
+    target_hash VARCHAR(128) NOT NULL,
+    target_masked VARCHAR(128),
+    reason_code VARCHAR(128) NOT NULL,
+    scope_type VARCHAR(64) NOT NULL DEFAULT 'tenant',
+    scope_id VARCHAR(128) NOT NULL DEFAULT '*',
+    starts_at TIMESTAMPTZ NOT NULL,
+    ends_at TIMESTAMPTZ,
+    source VARCHAR(64) NOT NULL,
+    note VARCHAR(512)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_suppression_scope_target ON messaging_suppression (tenant_id, organization_id, channel, target_hash, scope_type, scope_id, reason_code);
+CREATE INDEX IF NOT EXISTS idx_messaging_suppression_active ON messaging_suppression (tenant_id, organization_id, channel, status, starts_at, ends_at);
+
+CREATE TABLE IF NOT EXISTS messaging_rate_limit_bucket (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scene_code VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    target_hash VARCHAR(128) NOT NULL DEFAULT '*',
+    ip_hash VARCHAR(128) NOT NULL DEFAULT '*',
+    device_hash VARCHAR(128) NOT NULL DEFAULT '*',
+    window_start TIMESTAMPTZ NOT NULL,
+    window_seconds INTEGER NOT NULL,
+    send_count INTEGER NOT NULL DEFAULT 0,
+    verify_count INTEGER NOT NULL DEFAULT 0,
+    reject_count INTEGER NOT NULL DEFAULT 0,
+    last_event_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_rate_limit_bucket_scope ON messaging_rate_limit_bucket (tenant_id, organization_id, scene_code, channel, target_hash, ip_hash, device_hash, window_start, window_seconds);
+CREATE INDEX IF NOT EXISTS idx_messaging_rate_limit_bucket_window ON messaging_rate_limit_bucket (tenant_id, organization_id, scene_code, channel, window_start);
 
 CREATE TABLE IF NOT EXISTS open_platform_provider (
     id BIGSERIAL PRIMARY KEY,
@@ -2087,7 +2616,9 @@ CREATE TABLE IF NOT EXISTS ai_request_trace (
     channel_name_snapshot VARCHAR(128),
     provider_account_id BIGINT,
     requested_model VARCHAR(128),
+    requested_model_catalog_key VARCHAR(256),
     provider_model VARCHAR(128),
+    provider_native_model VARCHAR(256),
     endpoint VARCHAR(256),
     request_path VARCHAR(256),
     http_method VARCHAR(16),
@@ -2145,7 +2676,9 @@ CREATE TABLE IF NOT EXISTS ai_usage_fact (
     owner_id BIGINT,
     owner_name_snapshot VARCHAR(128),
     catalog_key VARCHAR(256) NOT NULL,
+    requested_model_catalog_key VARCHAR(256),
     model VARCHAR(128),
+    provider_native_model VARCHAR(256),
     provider_id BIGINT,
     channel_id BIGINT,
     provider_account_id BIGINT,
@@ -2243,6 +2776,231 @@ CREATE TABLE IF NOT EXISTS ai_quota_policy (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_quota_policy_tenant_subject ON ai_quota_policy (tenant_id, organization_id, subject_type, subject_id, quota_period, quota_unit);
 CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_subject_ref ON ai_quota_policy (tenant_id, organization_id, subject_type, subject_ref_hash, status);
 CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_model_group ON ai_quota_policy (tenant_id, organization_id, model, group_id, status);
+
+CREATE TABLE IF NOT EXISTS ai_prompt (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    prompt_key VARCHAR(128) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    category_id BIGINT,
+    category_code VARCHAR(128),
+    prompt_type VARCHAR(64) NOT NULL,
+    visibility VARCHAR(64) NOT NULL,
+    owner_user_id BIGINT,
+    latest_version_id BIGINT,
+    published_version_id BIGINT,
+    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_prompt_key ON ai_prompt (tenant_id, organization_id, prompt_key);
+CREATE INDEX IF NOT EXISTS idx_ai_prompt_category ON ai_prompt (tenant_id, organization_id, category_id, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_prompt_type ON ai_prompt (tenant_id, organization_id, prompt_type, status, updated_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_prompt_version (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    prompt_id BIGINT NOT NULL,
+    version_no VARCHAR(64) NOT NULL,
+    title VARCHAR(255),
+    content TEXT NOT NULL,
+    variable_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    output_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    model_constraints JSONB NOT NULL DEFAULT '{}'::jsonb,
+    safety_policy JSONB NOT NULL DEFAULT '{}'::jsonb,
+    examples_json JSONB NOT NULL DEFAULT '[]'::jsonb,
+    checksum_hash VARCHAR(128),
+    lifecycle_status VARCHAR(64) NOT NULL,
+    review_status VARCHAR(64),
+    review_comment TEXT,
+    created_by BIGINT,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_prompt_version_no ON ai_prompt_version (tenant_id, organization_id, prompt_id, version_no);
+CREATE INDEX IF NOT EXISTS idx_ai_prompt_version_prompt ON ai_prompt_version (tenant_id, organization_id, prompt_id, lifecycle_status, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_prompt_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    prompt_id BIGINT NOT NULL,
+    prompt_version_id BIGINT,
+    owner_type VARCHAR(64) NOT NULL,
+    owner_id BIGINT NOT NULL,
+    binding_role VARCHAR(64) NOT NULL,
+    priority INTEGER NOT NULL DEFAULT 0,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    policy_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+    snapshot_json JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_prompt_binding_owner ON ai_prompt_binding (tenant_id, organization_id, owner_type, owner_id, binding_role, priority, id);
+CREATE INDEX IF NOT EXISTS idx_ai_prompt_binding_prompt ON ai_prompt_binding (tenant_id, organization_id, prompt_id, prompt_version_id, enabled, id);
+
+CREATE TABLE IF NOT EXISTS ai_mcp_server (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    server_key VARCHAR(128) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    category_id BIGINT,
+    category_code VARCHAR(128),
+    transport VARCHAR(64) NOT NULL,
+    visibility VARCHAR(64) NOT NULL,
+    owner_user_id BIGINT,
+    latest_revision_id BIGINT,
+    published_revision_id BIGINT,
+    health_status VARCHAR(64) NOT NULL DEFAULT 'unchecked',
+    last_checked_at TIMESTAMPTZ,
+    last_error_masked TEXT,
+    tags JSONB NOT NULL DEFAULT '[]'::jsonb,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_mcp_server_key ON ai_mcp_server (tenant_id, organization_id, server_key);
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_server_category ON ai_mcp_server (tenant_id, organization_id, category_id, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_server_health ON ai_mcp_server (tenant_id, organization_id, health_status, status, updated_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_mcp_server_revision (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    server_id BIGINT NOT NULL,
+    revision_no VARCHAR(64) NOT NULL,
+    transport VARCHAR(64) NOT NULL,
+    endpoint_url VARCHAR(1024),
+    command VARCHAR(1024),
+    args_json JSONB NOT NULL DEFAULT '[]'::jsonb,
+    env_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    auth_type VARCHAR(64) NOT NULL DEFAULT 'none',
+    secret_ref VARCHAR(512),
+    timeout_ms INTEGER NOT NULL DEFAULT 30000,
+    retry_policy JSONB NOT NULL DEFAULT '{}'::jsonb,
+    config_hash VARCHAR(128),
+    lifecycle_status VARCHAR(64) NOT NULL,
+    created_by BIGINT,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_mcp_server_revision_no ON ai_mcp_server_revision (tenant_id, organization_id, server_id, revision_no);
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_server_revision_server ON ai_mcp_server_revision (tenant_id, organization_id, server_id, lifecycle_status, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_mcp_tool (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    server_id BIGINT NOT NULL,
+    server_revision_id BIGINT,
+    tool_key VARCHAR(128) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    input_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    output_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+    risk_level VARCHAR(64) NOT NULL DEFAULT 'low',
+    requires_approval BOOLEAN NOT NULL DEFAULT FALSE,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    rate_limit_policy JSONB NOT NULL DEFAULT '{}'::jsonb,
+    schema_hash VARCHAR(128),
+    discovered_at TIMESTAMPTZ,
+    last_invoked_at TIMESTAMPTZ,
+    sort_weight INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_mcp_tool_key ON ai_mcp_tool (tenant_id, organization_id, server_id, tool_key);
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_tool_server ON ai_mcp_tool (tenant_id, organization_id, server_id, enabled, sort_weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_tool_risk ON ai_mcp_tool (tenant_id, organization_id, risk_level, requires_approval, enabled, id);
+
+CREATE TABLE IF NOT EXISTS ai_mcp_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    server_id BIGINT NOT NULL,
+    server_revision_id BIGINT,
+    tool_id BIGINT,
+    owner_type VARCHAR(64) NOT NULL,
+    owner_id BIGINT NOT NULL,
+    allowed_tools JSONB NOT NULL DEFAULT '[]'::jsonb,
+    denied_tools JSONB NOT NULL DEFAULT '[]'::jsonb,
+    policy_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+    priority INTEGER NOT NULL DEFAULT 0,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    snapshot_json JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_binding_owner ON ai_mcp_binding (tenant_id, organization_id, owner_type, owner_id, priority, id);
+CREATE INDEX IF NOT EXISTS idx_ai_mcp_binding_server ON ai_mcp_binding (tenant_id, organization_id, server_id, server_revision_id, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_agent (
     id BIGSERIAL PRIMARY KEY,
@@ -3548,6 +4306,8 @@ CREATE TABLE IF NOT EXISTS studio_catalog_asset (
 
 CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_target ON studio_catalog_asset (tenant_id, organization_id, target_type, target_id, asset_type, sort_order, id);
 CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_artifact ON studio_catalog_asset (tenant_id, organization_id, artifact_id, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_seed_source ON studio_catalog_asset (tenant_id, organization_id, status);
+CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_seed_kind ON studio_catalog_asset (tenant_id, organization_id, target_type);
 
 CREATE TABLE IF NOT EXISTS studio_catalog_artifact (
     id BIGSERIAL PRIMARY KEY,
@@ -3581,6 +4341,120 @@ CREATE TABLE IF NOT EXISTS studio_catalog_artifact (
 
 CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_target ON studio_catalog_artifact (tenant_id, organization_id, target_type, target_id, status, published_at, id);
 CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_catalog_artifact_version ON studio_catalog_artifact (tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name);
+CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_seed_source ON studio_catalog_artifact (tenant_id, organization_id, status);
+CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_seed_kind ON studio_catalog_artifact (tenant_id, organization_id, target_type);
+
+CREATE TABLE IF NOT EXISTS studio_app_template (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB,
+    template_no VARCHAR(64),
+    template_code VARCHAR(128),
+    template_name VARCHAR(255),
+    description TEXT,
+    category_id BIGINT,
+    category_code VARCHAR(128),
+    template_type VARCHAR(64),
+    runtime VARCHAR(128),
+    framework VARCHAR(128),
+    language VARCHAR(64),
+    icon_url VARCHAR(1024),
+    cover_url VARCHAR(1024),
+    visibility INTEGER,
+    publish_status INTEGER,
+    featured BOOLEAN,
+    sort_weight INTEGER,
+    owner_user_id BIGINT,
+    source_app_id BIGINT,
+    git_repo_url VARCHAR(1024),
+    git_ref VARCHAR(128),
+    git_sub_path VARCHAR(1024),
+    current_version_id BIGINT,
+    app_config_schema JSONB,
+    default_app_config JSONB,
+    variable_schema JSONB,
+    dependency_manifest JSONB,
+    capability_manifest JSONB,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_no ON studio_app_template (tenant_id, template_no);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_code ON studio_app_template (tenant_id, organization_id, template_code);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_scope_status ON studio_app_template (tenant_id, organization_id, visibility, publish_status, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_category ON studio_app_template (tenant_id, organization_id, category_id, publish_status, sort_weight, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_type_runtime ON studio_app_template (tenant_id, organization_id, template_type, runtime, framework, status, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_git_source ON studio_app_template (tenant_id, organization_id, git_repo_url, git_sub_path, status, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_featured ON studio_app_template (tenant_id, organization_id, featured, sort_weight, id);
+
+CREATE TABLE IF NOT EXISTS studio_app_template_version (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB,
+    template_id BIGINT,
+    version_no VARCHAR(64),
+    artifact_id BIGINT,
+    changelog TEXT,
+    file_manifest JSONB,
+    dependency_manifest JSONB,
+    capability_manifest JSONB,
+    variable_schema JSONB,
+    app_config_schema JSONB,
+    default_app_config JSONB,
+    publish_status INTEGER,
+    published_at TIMESTAMPTZ,
+    deprecated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_version_no ON studio_app_template_version (tenant_id, organization_id, template_id, version_no);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_version_template ON studio_app_template_version (tenant_id, organization_id, template_id, publish_status, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_version_artifact ON studio_app_template_version (tenant_id, organization_id, artifact_id, status, id);
+
+CREATE TABLE IF NOT EXISTS studio_app_template_usage (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB,
+    template_id BIGINT,
+    template_version_id BIGINT,
+    target_app_id BIGINT,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    usage_type INTEGER,
+    input_snapshot JSONB,
+    output_snapshot JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_template ON studio_app_template_usage (tenant_id, organization_id, template_id, template_version_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_target ON studio_app_template_usage (tenant_id, organization_id, target_app_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_user ON studio_app_template_usage (tenant_id, organization_id, user_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_request ON studio_app_template_usage (tenant_id, organization_id, request_id, id);
 
 CREATE TABLE IF NOT EXISTS content_announcement (
     id BIGSERIAL PRIMARY KEY,
@@ -4260,3 +5134,1252 @@ CREATE TABLE IF NOT EXISTS ops_metric_snapshot (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_metric_snapshot ON ops_metric_snapshot (metric_scope, metric_name, metric_period, period_start, dimension_key, dimension_value);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_no VARCHAR(64) NOT NULL,
+    display_name VARCHAR(128) NOT NULL,
+    provider_type VARCHAR(64),
+    owner_tenant_id BIGINT,
+    owner_organization_id BIGINT,
+    owner_user_id BIGINT,
+    default_currency VARCHAR(10),
+    default_timezone VARCHAR(64),
+    risk_level INTEGER,
+    suspended_reason_code VARCHAR(128),
+    activated_at TIMESTAMPTZ,
+    suspended_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_no ON integration_service_provider (tenant_id, organization_id, provider_no);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_status ON integration_service_provider (tenant_id, organization_id, status, risk_level, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_edge (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    edge_no VARCHAR(64) NOT NULL,
+    seller_provider_id BIGINT NOT NULL,
+    buyer_provider_id BIGINT NOT NULL,
+    edge_type VARCHAR(64),
+    contract_no VARCHAR(128),
+    settlement_mode VARCHAR(32),
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ,
+    contract_snapshot JSONB
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_edge_no ON integration_service_provider_edge (tenant_id, organization_id, edge_no);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_edge_seller ON integration_service_provider_edge (tenant_id, organization_id, seller_provider_id, status, effective_from, id);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_edge_buyer ON integration_service_provider_edge (tenant_id, organization_id, buyer_provider_id, status, effective_from, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_closure (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    ancestor_provider_id BIGINT NOT NULL,
+    descendant_provider_id BIGINT NOT NULL,
+    depth INTEGER,
+    path VARCHAR(2048),
+    direct_edge_id BIGINT,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_closure_pair ON integration_service_provider_closure (tenant_id, organization_id, ancestor_provider_id, descendant_provider_id, effective_from);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_closure_desc ON integration_service_provider_closure (tenant_id, organization_id, descendant_provider_id, depth, status, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_member (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    service_provider_id BIGINT NOT NULL,
+    member_user_id BIGINT NOT NULL,
+    role_code VARCHAR(64),
+    permission_policy_id BIGINT,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_member_user ON integration_service_provider_member (tenant_id, organization_id, service_provider_id, member_user_id, role_code);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_member_user ON integration_service_provider_member (tenant_id, organization_id, member_user_id, status, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_subject_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    service_provider_id BIGINT NOT NULL,
+    subject_type VARCHAR(64) NOT NULL,
+    subject_id BIGINT NOT NULL,
+    subject_code VARCHAR(128),
+    binding_priority INTEGER,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_subject_binding ON integration_service_provider_subject_binding (tenant_id, organization_id, subject_type, subject_id, effective_from);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_subject_provider ON integration_service_provider_subject_binding (tenant_id, organization_id, service_provider_id, status, binding_priority, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_contract (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    contract_no VARCHAR(128) NOT NULL,
+    edge_id BIGINT NOT NULL,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    contract_type VARCHAR(64),
+    current_version_id BIGINT,
+    signed_at TIMESTAMPTZ,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ,
+    contract_file_ref VARCHAR(512)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_contract_no ON integration_service_provider_contract (tenant_id, organization_id, contract_no);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_contract_edge ON integration_service_provider_contract (tenant_id, organization_id, edge_id, status, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_contract_version (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    contract_id BIGINT NOT NULL,
+    version_no INTEGER NOT NULL,
+    version_hash VARCHAR(128),
+    contract_payload JSONB,
+    approval_status VARCHAR(32),
+    requested_by BIGINT,
+    approved_by BIGINT,
+    approved_at TIMESTAMPTZ,
+    published_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_contract_version ON integration_service_provider_contract_version (tenant_id, organization_id, contract_id, version_no);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_finance_profile (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    service_provider_id BIGINT NOT NULL,
+    settlement_mode VARCHAR(32),
+    billing_cycle VARCHAR(32),
+    settlement_day INTEGER,
+    credit_limit_amount NUMERIC(38, 12),
+    warning_threshold_amount NUMERIC(38, 12),
+    suspend_threshold_amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    invoice_title_id BIGINT,
+    tax_profile_ref VARCHAR(256),
+    payment_terms_days INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_finance_profile ON integration_service_provider_finance_profile (tenant_id, organization_id, service_provider_id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_account_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    service_provider_id BIGINT NOT NULL,
+    commerce_account_id VARCHAR(128) NOT NULL,
+    account_role VARCHAR(64),
+    asset_type VARCHAR(32),
+    currency VARCHAR(10)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_account_binding ON integration_service_provider_account_binding (tenant_id, organization_id, service_provider_id, account_role, asset_type, currency);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_price_plan (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    edge_id BIGINT NOT NULL,
+    plan_code VARCHAR(64) NOT NULL,
+    plan_name VARCHAR(128),
+    base_amount_source VARCHAR(64),
+    pricing_mode VARCHAR(64),
+    default_multiplier NUMERIC(38, 12),
+    default_markup_amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    fallback_mode VARCHAR(32),
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_price_plan_edge_code ON integration_service_provider_price_plan (tenant_id, organization_id, edge_id, plan_code);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_price_plan_buyer ON integration_service_provider_price_plan (tenant_id, organization_id, buyer_provider_id, status, effective_from, id);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_price_rule (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    edge_id BIGINT NOT NULL,
+    price_plan_id BIGINT NOT NULL,
+    catalog_key VARCHAR(256),
+    model VARCHAR(128),
+    provider_code VARCHAR(64),
+    channel_id BIGINT,
+    billing_meter_code VARCHAR(64),
+    token_kind VARCHAR(64),
+    unit_price NUMERIC(38, 12),
+    unit_size NUMERIC(38, 12),
+    minimum_charge NUMERIC(38, 12),
+    rounding_mode VARCHAR(32),
+    priority INTEGER,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_price_rule_lookup ON integration_service_provider_price_rule (tenant_id, organization_id, edge_id, catalog_key, billing_meter_code, token_kind, status, priority);
+CREATE INDEX IF NOT EXISTS idx_integration_service_provider_price_rule_model ON integration_service_provider_price_rule (tenant_id, organization_id, buyer_provider_id, model, billing_meter_code, token_kind, status);
+
+CREATE TABLE IF NOT EXISTS integration_service_provider_price_change_request (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    change_no VARCHAR(128) NOT NULL,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    change_type VARCHAR(64),
+    draft_payload JSONB,
+    before_hash VARCHAR(128),
+    after_hash VARCHAR(128),
+    approval_status VARCHAR(32),
+    requested_by BIGINT,
+    approved_by BIGINT,
+    effective_from TIMESTAMPTZ,
+    published_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_price_change_no ON integration_service_provider_price_change_request (tenant_id, organization_id, change_no);
+
+CREATE TABLE IF NOT EXISTS object_provider (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(32) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_code VARCHAR(96) NOT NULL,
+    provider_type VARCHAR(64) NOT NULL,
+    endpoint_url VARCHAR(512),
+    region VARCHAR(64),
+    credential_ref VARCHAR(256) NOT NULL,
+    path_style_enabled BOOLEAN NOT NULL DEFAULT FALSE,
+    supports_multipart BOOLEAN NOT NULL DEFAULT TRUE,
+    supports_lifecycle BOOLEAN NOT NULL DEFAULT FALSE,
+    supports_object_lock BOOLEAN NOT NULL DEFAULT FALSE,
+    health_status VARCHAR(64) NOT NULL DEFAULT 'unknown',
+    last_health_check_at TIMESTAMPTZ,
+    idempotency_key VARCHAR(128),
+    request_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_object_provider_tenant_code ON object_provider (tenant_id, organization_id, provider_code);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_object_provider_idempotency ON object_provider (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_object_provider_tenant_status ON object_provider (tenant_id, organization_id, status, id);
+
+CREATE TABLE IF NOT EXISTS object_bucket (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(32) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_id BIGINT NOT NULL,
+    bucket_name VARCHAR(128) NOT NULL,
+    bucket_region VARCHAR(64),
+    logical_scope VARCHAR(64) NOT NULL,
+    data_residency_region VARCHAR(64),
+    object_key_prefix VARCHAR(512) NOT NULL DEFAULT '',
+    default_storage_class VARCHAR(64) NOT NULL DEFAULT 'STANDARD',
+    default_encryption_mode VARCHAR(64) NOT NULL DEFAULT 'sse_s3',
+    kms_key_ref VARCHAR(256),
+    versioning_enabled BOOLEAN NOT NULL DEFAULT FALSE,
+    object_lock_enabled BOOLEAN NOT NULL DEFAULT FALSE,
+    lifecycle_enabled BOOLEAN NOT NULL DEFAULT FALSE,
+    public_access_blocked BOOLEAN NOT NULL DEFAULT TRUE,
+    idempotency_key VARCHAR(128),
+    request_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_object_bucket_provider_name ON object_bucket (tenant_id, organization_id, provider_id, bucket_name);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_object_bucket_idempotency ON object_bucket (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_object_bucket_scope_status ON object_bucket (tenant_id, organization_id, logical_scope, status, id);
+
+CREATE TABLE IF NOT EXISTS storage_default_bucket_policy (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(32) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    logical_scope VARCHAR(64) NOT NULL,
+    bucket_id BIGINT NOT NULL,
+    bucket_logical_scope VARCHAR(64) NOT NULL,
+    updated_by BIGINT NOT NULL,
+    reason VARCHAR(512),
+    request_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_default_bucket_policy_scope ON storage_default_bucket_policy (tenant_id, organization_id, logical_scope);
+CREATE INDEX IF NOT EXISTS idx_storage_default_bucket_policy_bucket ON storage_default_bucket_policy (tenant_id, organization_id, bucket_id, status, id);
+
+CREATE TABLE IF NOT EXISTS storage_quota_policy (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(32) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scope_type VARCHAR(64) NOT NULL,
+    scope_id VARCHAR(128) NOT NULL,
+    quota_limit_bytes BIGINT NOT NULL,
+    single_file_limit_bytes BIGINT,
+    enforcement VARCHAR(64),
+    idempotency_key VARCHAR(128),
+    request_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_quota_policy_scope ON storage_quota_policy (tenant_id, organization_id, scope_type, scope_id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_quota_policy_idempotency ON storage_quota_policy (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_storage_quota_policy_tenant_status ON storage_quota_policy (tenant_id, organization_id, status, id);
+
+CREATE TABLE IF NOT EXISTS storage_quota_reservation (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scope_type VARCHAR(64) NOT NULL,
+    scope_id VARCHAR(128) NOT NULL,
+    reservation_no VARCHAR(128) NOT NULL,
+    upload_session_id BIGINT,
+    reserved_bytes BIGINT NOT NULL DEFAULT 0,
+    expires_at TIMESTAMPTZ,
+    released_at TIMESTAMPTZ,
+    idempotency_key VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_quota_reservation_no ON storage_quota_reservation (tenant_id, organization_id, reservation_no);
+CREATE INDEX IF NOT EXISTS idx_storage_quota_reservation_scope_status ON storage_quota_reservation (tenant_id, organization_id, scope_type, scope_id, status, id);
+
+CREATE TABLE IF NOT EXISTS storage_usage_counter (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scope_type VARCHAR(64) NOT NULL,
+    scope_id VARCHAR(128) NOT NULL,
+    space_id VARCHAR(128),
+    app_id VARCHAR(128),
+    business_domain VARCHAR(128),
+    used_logical_bytes BIGINT NOT NULL DEFAULT 0,
+    used_physical_bytes BIGINT NOT NULL DEFAULT 0,
+    reserved_bytes BIGINT NOT NULL DEFAULT 0,
+    retained_bytes BIGINT NOT NULL DEFAULT 0,
+    trash_bytes BIGINT NOT NULL DEFAULT 0,
+    file_count BIGINT NOT NULL DEFAULT 0,
+    last_ledger_id BIGINT NOT NULL DEFAULT 0
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_usage_counter_scope ON storage_usage_counter (tenant_id, organization_id, scope_type, scope_id);
+CREATE INDEX IF NOT EXISTS idx_storage_usage_counter_tenant_updated ON storage_usage_counter (tenant_id, organization_id, updated_at, id);
+
+CREATE TABLE IF NOT EXISTS storage_usage_ledger (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scope_type VARCHAR(64) NOT NULL,
+    scope_id VARCHAR(128) NOT NULL,
+    space_id VARCHAR(128),
+    app_id VARCHAR(128),
+    business_domain VARCHAR(128),
+    usage_event_type VARCHAR(128) NOT NULL,
+    delta_logical_bytes BIGINT NOT NULL DEFAULT 0,
+    delta_physical_bytes BIGINT NOT NULL DEFAULT 0,
+    delta_reserved_bytes BIGINT NOT NULL DEFAULT 0,
+    delta_file_count BIGINT NOT NULL DEFAULT 0,
+    reason VARCHAR(512),
+    idempotency_key VARCHAR(128),
+    occurred_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_usage_ledger_idempotency ON storage_usage_ledger (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_storage_usage_ledger_scope_time ON storage_usage_ledger (tenant_id, organization_id, scope_type, scope_id, occurred_at, id);
+
+CREATE TABLE IF NOT EXISTS storage_usage_snapshot (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    user_id BIGINT,
+    scope_type VARCHAR(64) NOT NULL,
+    scope_id VARCHAR(128) NOT NULL,
+    space_id VARCHAR(128),
+    app_id VARCHAR(128),
+    business_domain VARCHAR(128),
+    snapshot_type VARCHAR(64) NOT NULL,
+    snapshot_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    used_logical_bytes BIGINT NOT NULL DEFAULT 0,
+    used_physical_bytes BIGINT NOT NULL DEFAULT 0,
+    reserved_bytes BIGINT NOT NULL DEFAULT 0,
+    retained_bytes BIGINT NOT NULL DEFAULT 0,
+    trash_bytes BIGINT NOT NULL DEFAULT 0,
+    file_count BIGINT NOT NULL DEFAULT 0
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_usage_snapshot_scope_time ON storage_usage_snapshot (tenant_id, organization_id, scope_type, scope_id, snapshot_type, snapshot_at);
+CREATE INDEX IF NOT EXISTS idx_storage_usage_snapshot_scope ON storage_usage_snapshot (tenant_id, organization_id, scope_type, scope_id, id);
+
+CREATE TABLE IF NOT EXISTS storage_reconciliation_run (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_id BIGINT,
+    bucket_id BIGINT,
+    run_type VARCHAR(64) NOT NULL,
+    check_mode VARCHAR(64),
+    dry_run BOOLEAN NOT NULL DEFAULT TRUE,
+    started_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    completed_at TIMESTAMPTZ,
+    scanned_object_count BIGINT NOT NULL DEFAULT 0,
+    missing_object_count BIGINT NOT NULL DEFAULT 0,
+    orphan_object_count BIGINT NOT NULL DEFAULT 0,
+    checksum_mismatch_count BIGINT NOT NULL DEFAULT 0,
+    requested_by BIGINT NOT NULL,
+    idempotency_key VARCHAR(128) NOT NULL,
+    request_id VARCHAR(128),
+    summary_json JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_reconciliation_run_idempotency ON storage_reconciliation_run (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_storage_reconciliation_run_status ON storage_reconciliation_run (tenant_id, organization_id, status, started_at, id);
+
+CREATE TABLE IF NOT EXISTS storage_reconciliation_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    run_id BIGINT NOT NULL,
+    bucket_id BIGINT,
+    object_blob_id BIGINT,
+    object_key VARCHAR(1024) NOT NULL,
+    issue_type VARCHAR(64) NOT NULL,
+    expected_hash VARCHAR(128),
+    actual_hash VARCHAR(128),
+    expected_size_bytes BIGINT,
+    actual_size_bytes BIGINT,
+    repair_status VARCHAR(64),
+    repair_payload JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_storage_reconciliation_item_run ON storage_reconciliation_item (tenant_id, organization_id, run_id, issue_type, id);
+
+CREATE TABLE IF NOT EXISTS storage_gc_job (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    job_type VARCHAR(64) NOT NULL,
+    dry_run BOOLEAN NOT NULL DEFAULT TRUE,
+    requested_by BIGINT NOT NULL,
+    idempotency_key VARCHAR(128) NOT NULL,
+    cursor_token VARCHAR(512),
+    candidate_count BIGINT NOT NULL DEFAULT 0,
+    deleted_object_count BIGINT NOT NULL DEFAULT 0,
+    released_bytes BIGINT NOT NULL DEFAULT 0,
+    started_at TIMESTAMPTZ,
+    completed_at TIMESTAMPTZ,
+    request_id VARCHAR(128),
+    criteria_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+    result_json JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_gc_job_idempotency ON storage_gc_job (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_storage_gc_job_status ON storage_gc_job (tenant_id, organization_id, status, created_at, id);
+
+CREATE TABLE IF NOT EXISTS object_blob (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_id BIGINT,
+    bucket_id BIGINT NOT NULL,
+    object_key VARCHAR(1024) NOT NULL,
+    version_id VARCHAR(256),
+    storage_etag VARCHAR(256),
+    content_sha256 VARCHAR(128) NOT NULL,
+    content_type VARCHAR(256),
+    original_filename VARCHAR(512),
+    size_bytes BIGINT NOT NULL DEFAULT 0,
+    physical_size_bytes BIGINT NOT NULL DEFAULT 0,
+    storage_class VARCHAR(64),
+    encryption_mode VARCHAR(64),
+    kms_key_ref VARCHAR(256),
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    last_verified_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_object_blob_bucket_key_version ON object_blob (tenant_id, organization_id, bucket_id, object_key, version_id);
+CREATE INDEX IF NOT EXISTS idx_object_blob_owner_status ON object_blob (tenant_id, organization_id, owner_type, owner_id, status, id);
+CREATE INDEX IF NOT EXISTS idx_object_blob_bucket_status ON object_blob (tenant_id, organization_id, bucket_id, status, id);
+
+CREATE TABLE IF NOT EXISTS object_tag (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    object_blob_id BIGINT NOT NULL,
+    tag_key VARCHAR(128) NOT NULL,
+    tag_value VARCHAR(512) NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_object_tag_blob_key ON object_tag (tenant_id, organization_id, object_blob_id, tag_key);
+CREATE INDEX IF NOT EXISTS idx_object_tag_key_value ON object_tag (tenant_id, organization_id, tag_key, tag_value, id);
+
+CREATE TABLE IF NOT EXISTS upload_session (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    upload_session_no VARCHAR(128) NOT NULL,
+    provider_id BIGINT,
+    bucket_id BIGINT NOT NULL,
+    logical_scope VARCHAR(64),
+    object_key VARCHAR(1024) NOT NULL,
+    upload_mode VARCHAR(64) NOT NULL,
+    s3_upload_id VARCHAR(512),
+    content_type VARCHAR(256),
+    original_filename VARCHAR(512),
+    expected_size_bytes BIGINT NOT NULL DEFAULT 0,
+    expected_sha256 VARCHAR(128),
+    part_size_bytes BIGINT NOT NULL DEFAULT 0,
+    part_count INTEGER NOT NULL DEFAULT 0,
+    completed_part_count INTEGER NOT NULL DEFAULT 0,
+    completed_bytes BIGINT NOT NULL DEFAULT 0,
+    expires_at TIMESTAMPTZ,
+    completed_at TIMESTAMPTZ,
+    aborted_at TIMESTAMPTZ,
+    idempotency_key VARCHAR(128),
+    request_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_session_no ON upload_session (tenant_id, organization_id, upload_session_no);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_session_idempotency ON upload_session (tenant_id, organization_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_upload_session_owner_status ON upload_session (tenant_id, organization_id, owner_type, owner_id, status, id);
+
+CREATE TABLE IF NOT EXISTS upload_part (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    upload_session_id BIGINT NOT NULL,
+    part_number INTEGER NOT NULL,
+    part_etag VARCHAR(256),
+    part_sha256 VARCHAR(128),
+    size_bytes BIGINT NOT NULL DEFAULT 0,
+    presigned_url_expires_at TIMESTAMPTZ,
+    uploaded_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_part_session_part ON upload_part (tenant_id, organization_id, upload_session_id, part_number);
+
+CREATE TABLE IF NOT EXISTS upload_presign_grant (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    upload_session_id BIGINT NOT NULL,
+    upload_part_id BIGINT,
+    provider_id BIGINT,
+    bucket_id BIGINT,
+    method VARCHAR(16) NOT NULL,
+    object_key VARCHAR(1024) NOT NULL,
+    canonical_headers JSONB,
+    signed_headers JSONB,
+    expires_at TIMESTAMPTZ NOT NULL,
+    consumed_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_upload_presign_grant_session ON upload_presign_grant (tenant_id, organization_id, upload_session_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS upload_completion_attempt (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    upload_session_id BIGINT NOT NULL,
+    object_blob_id BIGINT,
+    attempt_no INTEGER NOT NULL,
+    completion_status VARCHAR(64) NOT NULL,
+    provider_request_id VARCHAR(256),
+    error_code VARCHAR(128),
+    error_message_masked VARCHAR(1024)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_completion_attempt_no ON upload_completion_attempt (tenant_id, organization_id, upload_session_id, attempt_no);
+
+CREATE TABLE IF NOT EXISTS ai_usage_service_provider_chain (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    usage_fact_id BIGINT NOT NULL,
+    leaf_provider_id BIGINT,
+    root_provider_id BIGINT,
+    chain_depth INTEGER,
+    chain_path_snapshot JSONB,
+    chain_hash VARCHAR(128),
+    resolved_subject_type VARCHAR(64),
+    resolved_subject_id BIGINT,
+    occurred_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_usage_service_provider_chain_usage ON ai_usage_service_provider_chain (tenant_id, organization_id, usage_fact_id);
+CREATE INDEX IF NOT EXISTS idx_ai_usage_service_provider_chain_leaf_time ON ai_usage_service_provider_chain (tenant_id, organization_id, leaf_provider_id, occurred_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_usage_service_provider_edge (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    usage_fact_id BIGINT NOT NULL,
+    chain_id BIGINT,
+    edge_id BIGINT NOT NULL,
+    edge_depth INTEGER,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    amount_role VARCHAR(64),
+    pricing_plan_id BIGINT,
+    pricing_rule_id BIGINT,
+    billing_meter_code VARCHAR(64),
+    token_kind VARCHAR(64),
+    billable_quantity NUMERIC(38, 12),
+    unit_price NUMERIC(38, 12),
+    unit_size NUMERIC(38, 12),
+    charge_amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    fx_rate_snapshot NUMERIC(38, 12),
+    settlement_currency VARCHAR(10),
+    converted_charge_amount NUMERIC(38, 12),
+    seller_snapshot JSONB,
+    buyer_snapshot JSONB,
+    price_snapshot JSONB,
+    occurred_at TIMESTAMPTZ,
+    settlement_status INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_usage_service_provider_edge_usage_depth ON ai_usage_service_provider_edge (tenant_id, organization_id, usage_fact_id, edge_depth, amount_role);
+CREATE INDEX IF NOT EXISTS idx_ai_usage_service_provider_edge_seller_time ON ai_usage_service_provider_edge (tenant_id, organization_id, seller_provider_id, occurred_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_usage_service_provider_edge_buyer_time ON ai_usage_service_provider_edge (tenant_id, organization_id, buyer_provider_id, occurred_at, id);
+
+CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_settlement (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    settlement_no VARCHAR(128),
+    usage_edge_id BIGINT,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    buyer_account_id VARCHAR(128),
+    seller_account_id VARCHAR(128),
+    buyer_ledger_entry_id VARCHAR(128),
+    seller_ledger_entry_id VARCHAR(128),
+    settlement_mode VARCHAR(32),
+    direction VARCHAR(16),
+    amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    settlement_status INTEGER,
+    settled_at TIMESTAMPTZ,
+    failure_code VARCHAR(128),
+    failure_message VARCHAR(512)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_settlement_edge ON commerce_usage_service_provider_settlement (tenant_id, organization_id, usage_edge_id, direction);
+CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_settlement_status ON commerce_usage_service_provider_settlement (tenant_id, organization_id, settlement_status, created_at, id);
+
+CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_statement (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    source_type VARCHAR(128),
+    source_id BIGINT,
+    source_version BIGINT,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rebuild_version BIGINT NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    statement_no VARCHAR(128),
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    period VARCHAR(32),
+    period_start TIMESTAMPTZ,
+    period_end TIMESTAMPTZ,
+    total_requests BIGINT,
+    total_tokens BIGINT,
+    receivable_amount NUMERIC(38, 12),
+    payable_amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    statement_status INTEGER,
+    payment_status INTEGER,
+    invoice_id BIGINT,
+    generated_at TIMESTAMPTZ,
+    due_at TIMESTAMPTZ,
+    paid_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_statement_edge_period ON commerce_usage_service_provider_statement (tenant_id, organization_id, seller_provider_id, buyer_provider_id, period);
+CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_statement_status ON commerce_usage_service_provider_statement (tenant_id, organization_id, statement_status, period_end, id);
+
+CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_statement_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    source_type VARCHAR(128),
+    source_id BIGINT,
+    source_version BIGINT,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rebuild_version BIGINT NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    statement_id BIGINT,
+    usage_edge_id BIGINT,
+    billing_meter_code VARCHAR(64),
+    token_kind VARCHAR(64),
+    model VARCHAR(128),
+    request_count BIGINT,
+    token_count BIGINT,
+    quantity NUMERIC(38, 12),
+    amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    source_usage_fact_ids JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_statement_item_statement ON commerce_usage_service_provider_statement_item (tenant_id, organization_id, statement_id, billing_meter_code, token_kind);
+
+CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_adjustment (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    adjustment_no VARCHAR(128),
+    usage_edge_id BIGINT,
+    statement_id BIGINT,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    adjustment_type VARCHAR(64),
+    amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    reason_code VARCHAR(128),
+    reason_message VARCHAR(512),
+    approval_status VARCHAR(32),
+    approved_by BIGINT,
+    settled_ledger_entry_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_adjustment_no ON commerce_usage_service_provider_adjustment (tenant_id, organization_id, adjustment_no);
+CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_adjustment_edge ON commerce_usage_service_provider_adjustment (tenant_id, organization_id, usage_edge_id, status, id);
+
+CREATE TABLE IF NOT EXISTS integration_provider_invoice_import (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    import_no VARCHAR(128),
+    provider_code VARCHAR(64),
+    provider_account_id BIGINT,
+    period_start TIMESTAMPTZ,
+    period_end TIMESTAMPTZ,
+    currency VARCHAR(10),
+    total_amount NUMERIC(38, 12),
+    source_file_ref VARCHAR(512),
+    source_hash VARCHAR(128),
+    import_status INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_invoice_import_no ON integration_provider_invoice_import (tenant_id, organization_id, import_no);
+CREATE INDEX IF NOT EXISTS idx_integration_provider_invoice_import_provider_period ON integration_provider_invoice_import (tenant_id, organization_id, provider_code, period_start, period_end, id);
+
+CREATE TABLE IF NOT EXISTS integration_provider_invoice_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    import_id BIGINT,
+    provider_request_id VARCHAR(256),
+    provider_usage_id VARCHAR(256),
+    model VARCHAR(128),
+    billing_meter_code VARCHAR(64),
+    quantity NUMERIC(38, 12),
+    amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    raw_payload_hash VARCHAR(128),
+    match_status INTEGER
+);
+
+CREATE INDEX IF NOT EXISTS idx_integration_provider_invoice_item_import ON integration_provider_invoice_item (tenant_id, organization_id, import_id, match_status, id);
+CREATE INDEX IF NOT EXISTS idx_integration_provider_invoice_item_request ON integration_provider_invoice_item (tenant_id, organization_id, provider_request_id, id);
+
+CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_reconciliation_run (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    run_no VARCHAR(128),
+    scope_type VARCHAR(64),
+    scope_id VARCHAR(128),
+    period_start TIMESTAMPTZ,
+    period_end TIMESTAMPTZ,
+    matched_count BIGINT,
+    mismatch_count BIGINT,
+    missing_internal_count BIGINT,
+    missing_external_count BIGINT,
+    total_internal_amount NUMERIC(38, 12),
+    total_external_amount NUMERIC(38, 12),
+    difference_amount NUMERIC(38, 12)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_reconciliation_run_no ON commerce_usage_service_provider_reconciliation_run (tenant_id, organization_id, run_no);
+CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_reconciliation_run_period ON commerce_usage_service_provider_reconciliation_run (tenant_id, organization_id, scope_type, period_start, period_end, id);
+
+CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_reconciliation_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    run_id BIGINT,
+    usage_edge_id BIGINT,
+    usage_fact_id BIGINT,
+    provider_invoice_item_id BIGINT,
+    statement_item_id BIGINT,
+    match_status VARCHAR(64),
+    internal_amount NUMERIC(38, 12),
+    external_amount NUMERIC(38, 12),
+    difference_amount NUMERIC(38, 12),
+    reason_code VARCHAR(128),
+    resolution_status VARCHAR(64)
+);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_reconciliation_item_run ON commerce_usage_service_provider_reconciliation_item (tenant_id, organization_id, run_id, match_status, id);
+
+CREATE TABLE IF NOT EXISTS commerce_service_provider_exposure_snapshot (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    source_type VARCHAR(128),
+    source_id BIGINT,
+    source_version BIGINT,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rebuild_version BIGINT NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    service_provider_id BIGINT,
+    balance_amount NUMERIC(38, 12),
+    frozen_amount NUMERIC(38, 12),
+    credit_limit_amount NUMERIC(38, 12),
+    used_credit_amount NUMERIC(38, 12),
+    exposure_amount NUMERIC(38, 12),
+    pending_settlement_amount NUMERIC(38, 12),
+    overdue_amount NUMERIC(38, 12),
+    currency VARCHAR(10),
+    risk_status VARCHAR(64),
+    calculated_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_service_provider_exposure_snapshot_provider ON commerce_service_provider_exposure_snapshot (tenant_id, organization_id, service_provider_id, currency);
+
+CREATE TABLE IF NOT EXISTS analytics_service_provider_daily (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    source_type VARCHAR(128),
+    source_id BIGINT,
+    source_version BIGINT,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rebuild_version BIGINT NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_id BIGINT,
+    ancestor_provider_id BIGINT,
+    report_date DATE,
+    currency VARCHAR(10),
+    request_count BIGINT,
+    success_count BIGINT,
+    failure_count BIGINT,
+    token_count BIGINT,
+    income_amount NUMERIC(38, 12),
+    expense_amount NUMERIC(38, 12),
+    margin_amount NUMERIC(38, 12),
+    upstream_cost_amount NUMERIC(38, 12)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_analytics_service_provider_daily ON analytics_service_provider_daily (tenant_id, organization_id, provider_id, ancestor_provider_id, report_date, currency);
+
+CREATE TABLE IF NOT EXISTS analytics_service_provider_edge_daily (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    source_type VARCHAR(128),
+    source_id BIGINT,
+    source_version BIGINT,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rebuild_version BIGINT NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    edge_id BIGINT,
+    seller_provider_id BIGINT,
+    buyer_provider_id BIGINT,
+    report_date DATE,
+    model VARCHAR(128),
+    catalog_key VARCHAR(256),
+    billing_meter_code VARCHAR(64),
+    token_kind VARCHAR(64),
+    currency VARCHAR(10),
+    request_count BIGINT,
+    token_count BIGINT,
+    income_amount NUMERIC(38, 12),
+    expense_amount NUMERIC(38, 12),
+    margin_amount NUMERIC(38, 12)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_analytics_service_provider_edge_daily ON analytics_service_provider_edge_daily (tenant_id, organization_id, edge_id, report_date, model, billing_meter_code, token_kind, currency);

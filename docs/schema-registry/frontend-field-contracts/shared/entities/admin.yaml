@@ -474,18 +474,27 @@ x_response_entities:
         enum:
         - active
         - disabled
-  admin_coupon_item:
-    name: AdminCouponItem
+  promotion_offer_record:
+    name: PromotionOfferRecord
     type: object
     additionalProperties: false
     required:
-    - id
+    - offer_no
+    - offer_code
     - name
-    - type
-    - value
+    - offer_type
+    - audience_scope
+    - combinability
     - status
+    - tenant_id
+    - created_at
+    - updated_at
     properties:
-      id:
+      offer_no:
+        type: string
+        minLength: 1
+        maxLength: 128
+      offer_code:
         type: string
         minLength: 1
         maxLength: 128
@@ -493,37 +502,85 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
-      type:
+      offer_type:
         type: string
-        enum:
-        - amount
-        - discount
-      value:
+        minLength: 1
+        maxLength: 64
+      audience_scope:
+        type: string
+        minLength: 1
+        maxLength: 64
+      combinability:
         type: string
         minLength: 1
         maxLength: 64
       status:
         type: string
-        enum:
-        - active
-        - inactive
-  admin_coupon_batch_item:
-    name: AdminCouponBatchItem
-    type: object
-    additionalProperties: false
-    required:
-    - id
-    - couponId
-    - name
-    - count
-    - prefix
-    - createdAt
-    properties:
-      id:
+        minLength: 1
+        maxLength: 64
+      tenant_id:
         type: string
         minLength: 1
         maxLength: 128
-      couponId:
+      organization_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      current_offer_version_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      description:
+        type: string
+        nullable: true
+        maxLength: 1024
+      starts_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      ends_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      created_by:
+        type: string
+        nullable: true
+        maxLength: 128
+      updated_by:
+        type: string
+        nullable: true
+        maxLength: 128
+      created_at:
+        type: string
+        minLength: 1
+        maxLength: 64
+      updated_at:
+        type: string
+        minLength: 1
+        maxLength: 64
+  promotion_coupon_stock_record:
+    name: PromotionCouponStockRecord
+    type: object
+    additionalProperties: false
+    required:
+    - stock_no
+    - name
+    - title
+    - offer_id
+    - offer_version_id
+    - stock_type
+    - code_mode
+    - issue_channel
+    - currency_code
+    - activation_status
+    - can_resend
+    - overspend_policy
+    - status
+    - tenant_id
+    - created_at
+    - updated_at
+    properties:
+      stock_no:
         type: string
         minLength: 1
         maxLength: 128
@@ -531,52 +588,238 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
-      count:
-        type: integer
-        minimum: 0
-        maximum: 1000000
-      prefix:
+      title:
         type: string
         minLength: 1
+        maxLength: 128
+      offer_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      offer_version_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      stock_type:
+        type: string
+        minLength: 1
+        maxLength: 64
+      code_mode:
+        type: string
+        minLength: 1
+        maxLength: 64
+      issue_channel:
+        type: string
+        minLength: 1
+        maxLength: 64
+      currency_code:
+        type: string
+        pattern: ^[A-Z]{3}$
+      activation_status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      can_resend:
+        type: boolean
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      tenant_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      organization_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      code_prefix:
+        type: string
+        nullable: true
         maxLength: 32
-      createdAt:
+      total_quantity:
+        type: string
+        nullable: true
+        maxLength: 32
+      starts_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      expires_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      cancel_until:
+        type: string
+        nullable: true
+        maxLength: 64
+      per_subject_limit:
+        type: string
+        nullable: true
+        maxLength: 32
+      max_claims_per_subject:
+        type: integer
+        nullable: true
+        format: int64
+        minimum: 0
+      max_claims_per_natural_person:
+        type: integer
+        nullable: true
+        format: int64
+        minimum: 0
+      budget_account_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      budget_warning_threshold_bps:
+        type: integer
+        nullable: true
+        minimum: 0
+        maximum: 10000
+      budget_stop_threshold_bps:
+        type: integer
+        nullable: true
+        minimum: 0
+        maximum: 10000
+      overspend_policy:
         type: string
         minLength: 1
         maxLength: 64
-  admin_promo_code_item:
-    name: AdminPromoCodeItem
+      stock_creator_merchant_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      created_by:
+        type: string
+        nullable: true
+        maxLength: 128
+      updated_by:
+        type: string
+        nullable: true
+        maxLength: 128
+      created_at:
+        type: string
+        minLength: 1
+        maxLength: 64
+      updated_at:
+        type: string
+        minLength: 1
+        maxLength: 64
+  promotion_code_record:
+    name: PromotionCodeRecord
     type: object
     additionalProperties: false
     required:
-    - id
-    - batchId
-    - code
+    - code_no
+    - offer_id
+    - offer_version_id
+    - stock_id
+    - code_type
+    - promotion_code_hash
+    - activation_status
+    - can_resend
+    - currency_code
     - status
+    - tenant_id
+    - created_at
+    - updated_at
     properties:
-      id:
+      code_no:
         type: string
         minLength: 1
         maxLength: 128
-      batchId:
+      offer_id:
         type: string
         minLength: 1
         maxLength: 128
-      code:
+      offer_version_id:
         type: string
         minLength: 1
         maxLength: 128
+      stock_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      code_type:
+        type: string
+        minLength: 1
+        maxLength: 64
+      promotion_code_hash:
+        type: string
+        minLength: 1
+        maxLength: 256
+      promotion_code_last4:
+        type: string
+        nullable: true
+        maxLength: 8
+      claim_code_hash:
+        type: string
+        nullable: true
+        maxLength: 256
+      claim_code_suffix:
+        type: string
+        nullable: true
+        maxLength: 16
+      channel_code:
+        type: string
+        nullable: true
+        maxLength: 64
+      activation_status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      can_resend:
+        type: boolean
+      currency_code:
+        type: string
+        pattern: ^[A-Z]{3}$
       status:
         type: string
-        enum:
-        - available
-        - claimed
-        - used
-        - voided
-      usedBy:
+        minLength: 1
+        maxLength: 64
+      tenant_id:
         type: string
-        maxLength: 254
-      usedAt:
+        minLength: 1
+        maxLength: 128
+      organization_id:
         type: string
+        nullable: true
+        maxLength: 128
+      starts_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      expires_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      activated_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      canceled_at:
+        type: string
+        nullable: true
+        maxLength: 64
+      cancel_until:
+        type: string
+        nullable: true
+        maxLength: 64
+      created_by:
+        type: string
+        nullable: true
+        maxLength: 128
+      updated_by:
+        type: string
+        nullable: true
+        maxLength: 128
+      created_at:
+        type: string
+        minLength: 1
+        maxLength: 64
+      updated_at:
+        type: string
+        minLength: 1
         maxLength: 64
   admin_model_vendor_item:
     name: AdminModelVendorItem
@@ -3043,38 +3286,115 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 64
-  admin_redemption_record_item:
-    name: AdminRedemptionRecordItem
+  promotion_code_redemption_record:
+    name: PromotionCodeRedemptionRecord
     type: object
     additionalProperties: false
     required:
-    - id
-    - userId
-    - user
-    - code
-    - amount
-    - time
+    - redemption_no
+    - request_no
+    - idempotency_key
+    - offer_id
+    - offer_version_id
+    - stock_id
+    - subject_type
+    - subject_id
+    - submitted_code_hash
+    - currency_code
+    - result_status
+    - redemption_channel
+    - occurred_at
+    - tenant_id
+    - created_at
     properties:
-      id:
+      redemption_no:
         type: string
         minLength: 1
         maxLength: 128
-      userId:
+      request_no:
         type: string
         minLength: 1
         maxLength: 128
-      user:
+      idempotency_key:
         type: string
         minLength: 1
         maxLength: 128
-      code:
+      offer_id:
         type: string
         minLength: 1
         maxLength: 128
-      amount:
+      offer_version_id:
         type: string
-        pattern: ^\$?\d+(?:\.\d{1,2})?$
-      time:
+        minLength: 1
+        maxLength: 128
+      stock_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      code_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      user_coupon_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      subject_type:
+        type: string
+        minLength: 1
+        maxLength: 64
+      subject_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      owner_user_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      submitted_code_hash:
+        type: string
+        minLength: 1
+        maxLength: 256
+      submitted_code_suffix:
+        type: string
+        nullable: true
+        maxLength: 16
+      currency_code:
+        type: string
+        pattern: ^[A-Z]{3}$
+      result_status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      failure_code:
+        type: string
+        nullable: true
+        maxLength: 64
+      failure_message:
+        type: string
+        nullable: true
+        maxLength: 512
+      redemption_channel:
+        type: string
+        minLength: 1
+        maxLength: 64
+      redemption_scene:
+        type: string
+        nullable: true
+        maxLength: 64
+      occurred_at:
+        type: string
+        minLength: 1
+        maxLength: 64
+      tenant_id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      organization_id:
+        type: string
+        nullable: true
+        maxLength: 128
+      created_at:
         type: string
         minLength: 1
         maxLength: 64

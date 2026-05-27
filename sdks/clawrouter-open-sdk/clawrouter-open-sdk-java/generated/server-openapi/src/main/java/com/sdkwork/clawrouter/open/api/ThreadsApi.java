@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ThreadsApi {
     private final HttpClient client;
-    
+
     public ThreadsApi(HttpClient client) {
         this.client = client;
     }

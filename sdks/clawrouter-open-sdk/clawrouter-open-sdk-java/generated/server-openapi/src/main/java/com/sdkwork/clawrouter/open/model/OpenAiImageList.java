@@ -10,7 +10,7 @@ public class OpenAiImageList {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -18,7 +18,7 @@ public class OpenAiImageList {
     public List<OpenAiImage> getData() {
         return this.data;
     }
-    
+
     public void setData(List<OpenAiImage> data) {
         this.data = data;
     }
@@ -26,7 +26,7 @@ public class OpenAiImageList {
     public OpenAiTokenUsage getUsage() {
         return this.usage;
     }
-    
+
     public void setUsage(OpenAiTokenUsage usage) {
         this.usage = usage;
     }

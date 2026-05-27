@@ -70,7 +70,7 @@ describe("sdkwork runtime bootstrap", () => {
     ).toThrow(/backend SDK client is missing standard methods/);
   });
 
-  it("builds standard request headers without exposing refresh tokens to normal requests", async () => {
+  it("builds standard request headers without exposing refresh tokens or client request ids", async () => {
     const runtime = createSdkworkRuntimeBootstrap({
       clients: {
         app: {},
@@ -81,7 +81,6 @@ describe("sdkwork runtime bootstrap", () => {
         environment: "prod",
       },
       localeProvider: () => "zh-CN",
-      requestIdProvider: () => "req-001",
       tokenStore: {
         get: async () => ({
           accessToken: "access-token",
@@ -94,8 +93,7 @@ describe("sdkwork runtime bootstrap", () => {
     await expect(runtime.getRequestHeaders()).resolves.toEqual({
       "Accept-Language": "zh-CN",
       Authorization: "Bearer auth-token",
-      "Sdkwork-Access-Token": "access-token",
-      "X-Request-Id": "req-001",
+      "Access-Token": "access-token",
     });
   });
 

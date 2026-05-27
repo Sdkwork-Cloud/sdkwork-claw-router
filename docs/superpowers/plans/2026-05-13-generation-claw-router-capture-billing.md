@@ -25,12 +25,12 @@
 
 ```java
 @Test
-void testVipCanCaptureAndSyncAssetsWhenRequested() {
+void testMembershipCanCaptureAndSyncAssetsWhenRequested() {
     var service = new DefaultGenerationOutputPersistenceDecisionService();
     var decision = service.decide(GenerationOutputPersistenceRequest.builder()
             .requestedPreference(GenerationStoragePreference.ASSET)
             .providerUrlExpires(true)
-            .entitlement(GenerationEntitlement.vip())
+            .entitlement(GenerationEntitlement.membership())
             .build());
     assertTrue(decision.isCaptureRequired());
     assertTrue(decision.isAssetSyncAllowed());
@@ -50,7 +50,7 @@ Implement immutable Lombok DTOs and rules:
 - `TEMPORARY` captures only when provider URL expires or source is base64.
 - `PERMANENT` always captures but does not create PlusFile asset.
 - `ASSET` captures and syncs asset only when entitlement allows asset sync.
-- Non-VIP can be limited to `TEMPORARY` or `PERMANENT` but cannot force `ASSET`.
+- Non-member can be limited to `TEMPORARY` or `PERMANENT` but cannot force `ASSET`.
 
 - [ ] **Step 4: Run test to verify GREEN**
 

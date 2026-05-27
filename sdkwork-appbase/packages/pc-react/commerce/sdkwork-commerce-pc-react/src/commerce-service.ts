@@ -45,10 +45,10 @@ import {
   type SdkworkPointsTransaction,
 } from "@sdkwork/points-pc-react";
 import {
-  createSdkworkVipService,
-  type SdkworkVipDashboardData,
-  type SdkworkVipService,
-} from "@sdkwork/vip-pc-react";
+  createSdkworkMembershipService,
+  type SdkworkMembershipDashboardData,
+  type SdkworkMembershipService,
+} from "@sdkwork/membership-pc-react";
 import {
   createSdkworkWalletService,
   type SdkworkWalletOverview,
@@ -74,7 +74,7 @@ export interface SdkworkCommerceSummary {
   pendingPaymentOrders: number;
   totalOrders: number;
   totalSpentCny: number | null;
-  vipRemainingDays: number | null;
+  membershipRemainingDays: number | null;
 }
 
 export interface SdkworkCommerceAnalyticsSummary {
@@ -160,7 +160,7 @@ export interface CreateSdkworkCommerceServiceOptions {
   orderService?: Pick<SdkworkOrderService, "getDashboard">;
   paymentService?: Pick<SdkworkPaymentService, "getDashboard">;
   pointsService?: Pick<SdkworkPointsService, "getDashboard">;
-  vipService?: Pick<SdkworkVipService, "getDashboard">;
+  membershipService?: Pick<SdkworkMembershipService, "getDashboard">;
   walletService?: Pick<SdkworkWalletService, "getOverview">;
 }
 
@@ -211,7 +211,7 @@ function createEmptySnapshot(
       pendingPaymentOrders: 0,
       totalOrders: 0,
       totalSpentCny: null,
-      vipRemainingDays: null,
+      membershipRemainingDays: null,
     },
   };
 }
@@ -241,7 +241,7 @@ function formatTrendLabel(value: string, locale: string): string {
 function createSummary(
   walletOverview: SdkworkWalletOverview,
   couponDashboard: SdkworkCouponDashboardData,
-  vipDashboard: SdkworkVipDashboardData,
+  membershipDashboard: SdkworkMembershipDashboardData,
   offerDashboard: SdkworkOfferDashboardData,
   visibleFeaturedOffersCount: number,
   orderDashboard: SdkworkOrderDashboardData,
@@ -256,9 +256,9 @@ function createSummary(
     availablePaymentMethods: paymentDashboard.methods.filter((method) => method.available).length,
     bestOfferSavingsCny: offerDashboard.digest.highlightedSavingsCny,
     claimableCoupons: couponDashboard.catalogDigest.claimableCoupons,
-    claimedBenefits: vipDashboard.benefits.filter((benefit) => benefit.claimed).length,
+    claimedBenefits: membershipDashboard.benefits.filter((benefit) => benefit.claimed).length,
     currentLevelName:
-      vipDashboard.summary.currentLevelName
+      membershipDashboard.summary.currentLevelName
       || guestLabel,
     expiringSoonCoupons: couponDashboard.userDigest.expiringSoonCoupons,
     featuredOffers: visibleFeaturedOffersCount,
@@ -267,8 +267,8 @@ function createSummary(
     isAuthenticated: walletOverview.isAuthenticated,
     pendingPaymentOrders: orderDashboard.statistics.pendingPayment,
     totalOrders: orderDashboard.statistics.totalOrders,
-    totalSpentCny: vipDashboard.summary.totalSpent,
-    vipRemainingDays: vipDashboard.summary.remainingDays,
+    totalSpentCny: membershipDashboard.summary.totalSpent,
+    membershipRemainingDays: membershipDashboard.summary.remainingDays,
   };
 }
 
@@ -472,12 +472,12 @@ export function createSdkworkCommerceService(
   const pointsService = options.pointsService ?? createSdkworkPointsService({
     commerceService: options.commerceService,
   });
-  const vipService = options.vipService ?? createSdkworkVipService(childServiceOptions);
+  const membershipService = options.membershipService ?? createSdkworkMembershipService(childServiceOptions);
   const offerService = options.offerService ?? createSdkworkOfferService({
     ...childServiceOptions,
     couponService,
     pointsService,
-    vipService,
+    membershipService,
     walletService,
   });
   const invoiceService = options.invoiceService ?? createSdkworkInvoiceService(childServiceOptions);
@@ -495,10 +495,10 @@ export function createSdkworkCommerceService(
         return createEmptySnapshot(offerService, copy.common.guest);
       }
 
-      const [couponDashboard, pointsDashboard, vipDashboard, invoiceDashboard, orderDashboard, paymentDashboard] = await Promise.all([
+      const [couponDashboard, pointsDashboard, membershipDashboard, invoiceDashboard, orderDashboard, paymentDashboard] = await Promise.all([
         couponService.getDashboard(),
         pointsService.getDashboard(),
-        vipService.getDashboard(),
+        membershipService.getDashboard(),
         invoiceService.getDashboard(),
         orderService.getDashboard(),
         paymentService.getDashboard(),
@@ -506,7 +506,7 @@ export function createSdkworkCommerceService(
       const offerDashboard = composeSdkworkOfferDashboard({
         couponDashboard,
         pointsDashboard,
-        vipDashboard,
+        membershipDashboard,
         walletOverview,
       });
       const visibleFeaturedOffers = offerDashboard.featuredOffers
@@ -515,7 +515,7 @@ export function createSdkworkCommerceService(
       const summary = createSummary(
         walletOverview,
         couponDashboard,
-        vipDashboard,
+        membershipDashboard,
         offerDashboard,
         visibleFeaturedOffers.length,
         orderDashboard,

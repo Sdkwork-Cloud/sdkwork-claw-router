@@ -8,7 +8,7 @@ public class OpenAiRealtimeCallMultipartRequest {
     public String getSdp() {
         return this.sdp;
     }
-    
+
     public void setSdp(String sdp) {
         this.sdp = sdp;
     }
@@ -16,7 +16,7 @@ public class OpenAiRealtimeCallMultipartRequest {
     public String getSession() {
         return this.session;
     }
-    
+
     public void setSession(String session) {
         this.session = session;
     }

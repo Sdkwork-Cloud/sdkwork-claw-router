@@ -7,7 +7,7 @@ public class DashboardSparklinePoint {
     public Double getValue() {
         return this.value;
     }
-    
+
     public void setValue(Double value) {
         this.value = value;
     }

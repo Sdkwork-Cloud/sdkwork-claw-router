@@ -5,9 +5,13 @@ frontend_models:
   interface: MembershipsAdminPackageGroup
   fields:
   - id
+  - code
   - name
   - description
   - planId
+  - billingCycle
+  - durationDays
+  - sortWeight
   - status
   - packageCount
   data_sources:
@@ -35,6 +39,22 @@ frontend_models:
   - commerce_product_sku
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPlanBenefitInput
+  fields:
+  - id
+  - name
+  - benefitKey
+  - type
+  - description
+  - icon
+  - usageLimit
+  - usedCount
+  - claimed
+  data_sources:
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPlanItem
   fields:
   - id
@@ -44,9 +64,41 @@ frontend_models:
   - rank
   - status
   - benefitCount
+  - benefits
+  - benefits.id
+  - benefits.name
+  - benefits.benefitKey
+  - benefits.type
+  - benefits.description
+  - benefits.icon
+  - benefits.usageLimit
+  - benefits.usedCount
+  - benefits.claimed
   - updatedAt
   data_sources:
   - commerce_membership_plan
+  - commerce_membership_entitlement
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPlanMutationInput
+  fields:
+  - code
+  - name
+  - rank
+  - status
+  - benefits
+  - benefits.id
+  - benefits.name
+  - benefits.benefitKey
+  - benefits.type
+  - benefits.description
+  - benefits.icon
+  - benefits.usageLimit
+  - benefits.usedCount
+  - benefits.claimed
+  data_sources:
+  - commerce_membership_plan
+  - commerce_membership_entitlement
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPlanCreateInput
@@ -55,8 +107,88 @@ frontend_models:
   - name
   - rank
   - status
+  - benefits
+  - benefits.id
+  - benefits.name
+  - benefits.benefitKey
+  - benefits.type
+  - benefits.description
+  - benefits.icon
+  - benefits.usageLimit
+  - benefits.usedCount
+  - benefits.claimed
   data_sources:
   - commerce_membership_plan
+  - commerce_membership_entitlement
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPackageGroupMutationInput
+  fields:
+  - code
+  - name
+  - description
+  - billingCycle
+  - durationDays
+  - sortWeight
+  - status
+  data_sources:
+  - commerce_membership_package_group
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPackageMutationInput
+  fields:
+  - code
+  - packageGroupId
+  - planId
+  - name
+  - priceAmount
+  - currencyCode
+  - durationDays
+  - status
+  data_sources:
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership_plan
+  - commerce_product_sku
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminMembersListParams
+  fields:
+  - userId
+  - planId
+  - status
+  data_sources:
+  - commerce_membership
+  - commerce_membership_plan
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminEntitlementsListParams
+  fields:
+  - membershipId
+  - planId
+  - status
+  data_sources:
+  - commerce_membership
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPackagesListParams
+  fields:
+  - packageGroupId
+  - planId
+  - status
+  data_sources:
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership_plan
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminMemberStatusInput
+  fields:
+  - status
+  data_sources:
+  - commerce_membership
 - route: /admin/memberships/recharge-packages
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminRechargePackageItem
@@ -90,9 +222,13 @@ frontend_models:
   fields:
   - groups
   - groups.id
+  - groups.code
   - groups.name
   - groups.description
   - groups.planId
+  - groups.billingCycle
+  - groups.durationDays
+  - groups.sortWeight
   - groups.status
   - groups.packageCount
   - packages
@@ -115,9 +251,20 @@ frontend_models:
   - plans.rank
   - plans.status
   - plans.benefitCount
+  - plans.benefits
+  - plans.benefits.id
+  - plans.benefits.name
+  - plans.benefits.benefitKey
+  - plans.benefits.type
+  - plans.benefits.description
+  - plans.benefits.icon
+  - plans.benefits.usageLimit
+  - plans.benefits.usedCount
+  - plans.benefits.claimed
   - plans.updatedAt
   data_sources:
   - commerce_membership_package_group
   - commerce_membership_package
   - commerce_membership_plan
+  - commerce_membership_entitlement
   - commerce_product_sku

@@ -38,7 +38,7 @@ public class AdminSkillUpdateRequest {
     public Boolean getBuiltin() {
         return this.builtin;
     }
-    
+
     public void setBuiltin(Boolean builtin) {
         this.builtin = builtin;
     }
@@ -46,7 +46,7 @@ public class AdminSkillUpdateRequest {
     public List<String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
     }
@@ -54,7 +54,7 @@ public class AdminSkillUpdateRequest {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -62,7 +62,7 @@ public class AdminSkillUpdateRequest {
     public Map<String, String> getConfigSchema() {
         return this.configSchema;
     }
-    
+
     public void setConfigSchema(Map<String, String> configSchema) {
         this.configSchema = configSchema;
     }
@@ -70,7 +70,7 @@ public class AdminSkillUpdateRequest {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -78,7 +78,7 @@ public class AdminSkillUpdateRequest {
     public String getCurrency() {
         return this.currency;
     }
-    
+
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -86,7 +86,7 @@ public class AdminSkillUpdateRequest {
     public Map<String, String> getDefaultConfig() {
         return this.defaultConfig;
     }
-    
+
     public void setDefaultConfig(Map<String, String> defaultConfig) {
         this.defaultConfig = defaultConfig;
     }
@@ -94,7 +94,7 @@ public class AdminSkillUpdateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -102,7 +102,7 @@ public class AdminSkillUpdateRequest {
     public String getDocumentationUrl() {
         return this.documentationUrl;
     }
-    
+
     public void setDocumentationUrl(String documentationUrl) {
         this.documentationUrl = documentationUrl;
     }
@@ -110,7 +110,7 @@ public class AdminSkillUpdateRequest {
     public String getEntrypoint() {
         return this.entrypoint;
     }
-    
+
     public void setEntrypoint(String entrypoint) {
         this.entrypoint = entrypoint;
     }
@@ -118,7 +118,7 @@ public class AdminSkillUpdateRequest {
     public Boolean getFeatured() {
         return this.featured;
     }
-    
+
     public void setFeatured(Boolean featured) {
         this.featured = featured;
     }
@@ -126,7 +126,7 @@ public class AdminSkillUpdateRequest {
     public String getHomepageUrl() {
         return this.homepageUrl;
     }
-    
+
     public void setHomepageUrl(String homepageUrl) {
         this.homepageUrl = homepageUrl;
     }
@@ -134,7 +134,7 @@ public class AdminSkillUpdateRequest {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -142,7 +142,7 @@ public class AdminSkillUpdateRequest {
     public Boolean getIsBuiltin() {
         return this.isBuiltin;
     }
-    
+
     public void setIsBuiltin(Boolean isBuiltin) {
         this.isBuiltin = isBuiltin;
     }
@@ -150,7 +150,7 @@ public class AdminSkillUpdateRequest {
     public String getLicenseName() {
         return this.licenseName;
     }
-    
+
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
     }
@@ -158,7 +158,7 @@ public class AdminSkillUpdateRequest {
     public String getManifestUrl() {
         return this.manifestUrl;
     }
-    
+
     public void setManifestUrl(String manifestUrl) {
         this.manifestUrl = manifestUrl;
     }
@@ -166,7 +166,7 @@ public class AdminSkillUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -174,7 +174,7 @@ public class AdminSkillUpdateRequest {
     public String getPackageId() {
         return this.packageId;
     }
-    
+
     public void setPackageId(String packageId) {
         this.packageId = packageId;
     }
@@ -182,7 +182,7 @@ public class AdminSkillUpdateRequest {
     public String getPrice() {
         return this.price;
     }
-    
+
     public void setPrice(String price) {
         this.price = price;
     }
@@ -190,7 +190,7 @@ public class AdminSkillUpdateRequest {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -198,7 +198,7 @@ public class AdminSkillUpdateRequest {
     public Integer getRecommendWeight() {
         return this.recommendWeight;
     }
-    
+
     public void setRecommendWeight(Integer recommendWeight) {
         this.recommendWeight = recommendWeight;
     }
@@ -206,7 +206,7 @@ public class AdminSkillUpdateRequest {
     public String getRepositoryUrl() {
         return this.repositoryUrl;
     }
-    
+
     public void setRepositoryUrl(String repositoryUrl) {
         this.repositoryUrl = repositoryUrl;
     }
@@ -214,7 +214,7 @@ public class AdminSkillUpdateRequest {
     public String getRuntime() {
         return this.runtime;
     }
-    
+
     public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
@@ -222,7 +222,7 @@ public class AdminSkillUpdateRequest {
     public String getSkillKey() {
         return this.skillKey;
     }
-    
+
     public void setSkillKey(String skillKey) {
         this.skillKey = skillKey;
     }
@@ -230,7 +230,7 @@ public class AdminSkillUpdateRequest {
     public String getSourceType() {
         return this.sourceType;
     }
-    
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
@@ -238,7 +238,7 @@ public class AdminSkillUpdateRequest {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -246,7 +246,7 @@ public class AdminSkillUpdateRequest {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
@@ -254,7 +254,7 @@ public class AdminSkillUpdateRequest {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -262,7 +262,7 @@ public class AdminSkillUpdateRequest {
     public String getVersionName() {
         return this.versionName;
     }
-    
+
     public void setVersionName(String versionName) {
         this.versionName = versionName;
     }
@@ -270,7 +270,7 @@ public class AdminSkillUpdateRequest {
     public String getVisibility() {
         return this.visibility;
     }
-    
+
     public void setVisibility(String visibility) {
         this.visibility = visibility;
     }

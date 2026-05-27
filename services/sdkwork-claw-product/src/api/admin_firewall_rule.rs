@@ -12,6 +12,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -22,8 +23,6 @@ use crate::ports::{
 
 const MAX_VALUE_LEN: usize = 256;
 const MAX_REASON_LEN: usize = 512;
-const MAX_REQUEST_ID_LEN: usize = 128;
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const RULE_TYPE_DENY: i32 = 21;
 const RULE_TYPE_ALLOW: i32 = 22;
 const TARGET_TYPE_IP: i32 = 1;
@@ -537,7 +536,7 @@ fn mask_email(value: &str) -> String {
 
 fn build_create_command(
     state: AdminFirewallRuleState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminFirewallRuleSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminFirewallRuleCommand, FirewallCommandBuildError> {
@@ -558,14 +557,14 @@ fn build_create_command(
         value: request.value,
         value_masked: request.value_masked,
         reason: request.reason,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_command(
     state: AdminFirewallRuleState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminFirewallRuleSubject,
     rule_id: i64,
 ) -> Result<DeleteAdminFirewallRuleCommand, FirewallCommandBuildError> {
@@ -574,7 +573,7 @@ fn build_delete_command(
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         rule_id,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -588,29 +587,13 @@ fn generate_entity_uuid(
         .map_err(FirewallCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminFirewallRuleState,
-) -> Result<String, FirewallCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(FirewallCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> FirewallCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => FirewallCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            FirewallCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {

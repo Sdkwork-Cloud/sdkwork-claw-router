@@ -1,4 +1,4 @@
-﻿import unittest
+import unittest
 from pathlib import Path
 
 from tools.api_contract_manifest import ApiContractManifestGenerator
@@ -21,17 +21,17 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertEqual("AdminUserCreateRequest", add_user["request_schema"]["name"])
         self.assertEqual(["email"], add_user["request_schema"]["schema"]["required"])
         self.assertEqual("AdminUserMutationResponse", add_user["response_schema"]["name"])
-        self.assertTrue(add_user["request_id_header"])
+        self.assertFalse(add_user["request_id_header"])
 
         self.assertEqual("AdminUserBalanceAdjustmentRequest", update_balance["request_schema"]["name"])
         self.assertEqual(["amount", "type"], update_balance["request_schema"]["schema"]["required"])
         self.assertEqual("AdminUserMutationResponse", update_balance["response_schema"]["name"])
-        self.assertTrue(update_balance["request_id_header"])
+        self.assertFalse(update_balance["request_id_header"])
 
         self.assertEqual("AdminUserUpdateRequest", update_user["request_schema"]["name"])
         self.assertEqual(["id"], update_user["request_schema"]["schema"]["required"])
         self.assertEqual("AdminUserMutationResponse", update_user["response_schema"]["name"])
-        self.assertTrue(update_user["request_id_header"])
+        self.assertFalse(update_user["request_id_header"])
 
         self.assertEqual("AdminApiKeyCreateRequest", create_api_key["request_schema"]["name"])
         self.assertEqual(["userId", "name"], create_api_key["request_schema"]["schema"]["required"])

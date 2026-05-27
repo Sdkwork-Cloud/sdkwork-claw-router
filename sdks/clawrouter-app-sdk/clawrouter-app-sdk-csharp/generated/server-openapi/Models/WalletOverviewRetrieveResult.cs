@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class WalletOverviewRetrieveResult
     {
         public string? Code { get; set; }
-        public CommerceWalletOverviewResponse? Data { get; set; }
+        public CommerceStandardResourceResponse? Data { get; set; }
         public string? Msg { get; set; }
     }
 }

@@ -7,7 +7,6 @@ import type {
   SkillsCatalogResponse as SdkSkillsCatalogResponse,
 } from '@sdkwork/clawrouter-app-sdk';
 import {
-  createRequestParams,
   ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
@@ -125,7 +124,6 @@ export const skillService = {
     const result = await getClawRouterAppSdkClient().ecosystem.skills.enable(
       requiredSafePathSegment(skillId, 'skillId'),
       skillConfigRequest(config),
-      createRequestParams('skill-enable'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to enable skill');
     return readInstalledSkillResult(result, 'Enabled skill response is missing data');
@@ -134,7 +132,6 @@ export const skillService = {
   async disableSkill(skillId: string): Promise<InstalledSkill> {
     const result = await getClawRouterAppSdkClient().ecosystem.skills.disable(
       requiredSafePathSegment(skillId, 'skillId'),
-      createRequestParams('skill-disable'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to disable skill');
     return readInstalledSkillResult(result, 'Disabled skill response is missing data');
@@ -144,7 +141,6 @@ export const skillService = {
     const result = await getClawRouterAppSdkClient().ecosystem.skills.config.update(
       requiredSafePathSegment(skillId, 'skillId'),
       skillConfigRequest(config),
-      createRequestParams('skill-config'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to update skill config');
     return readInstalledSkillResult(result, 'Updated skill response is missing data');

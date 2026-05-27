@@ -194,7 +194,7 @@ async function loadUsageRecordsFromCommerceService(
   options: LoadSdkworkBillingUsageRecordsOptions = {},
 ): Promise<SdkworkBillingUsageRecord[]> {
   const payload = unwrapSdkworkCommerceResponse<RemoteUsageListEnvelope | RemoteUsageRecord[] | null>(
-    await commerceService.settlements.dashboard.list({
+    await commerceService.billing.history.list({
       referenceDate:
         typeof options.referenceDate === "string"
           ? options.referenceDate

@@ -11,7 +11,7 @@ public class OpenAiVideoCharacterCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -19,7 +19,7 @@ public class OpenAiVideoCharacterCreateRequest {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -27,7 +27,7 @@ public class OpenAiVideoCharacterCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -35,7 +35,7 @@ public class OpenAiVideoCharacterCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

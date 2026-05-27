@@ -84,9 +84,9 @@ describe("sdkwork-appbase-pc-react", () => {
     expect(registry.packagesByDomain.commerce.map((item) => item.packageName)).toEqual([
       "@sdkwork/wallet-pc-react",
       "@sdkwork/points-pc-react",
-      "@sdkwork/vip-pc-react",
-      "@sdkwork/vip-purchase-pc-react",
-      "@sdkwork/vip-admin-pc-react",
+      "@sdkwork/membership-pc-react",
+      "@sdkwork/membership-purchase-pc-react",
+      "@sdkwork/membership-admin-pc-react",
       "@sdkwork/entitlement-pc-react",
       "@sdkwork/coupon-pc-react",
       "@sdkwork/offer-pc-react",
@@ -332,9 +332,9 @@ describe("sdkwork-appbase-pc-react", () => {
     expect(commercePackages).toEqual([
       "@sdkwork/wallet-pc-react",
       "@sdkwork/points-pc-react",
-      "@sdkwork/vip-pc-react",
-      "@sdkwork/vip-purchase-pc-react",
-      "@sdkwork/vip-admin-pc-react",
+      "@sdkwork/membership-pc-react",
+      "@sdkwork/membership-purchase-pc-react",
+      "@sdkwork/membership-admin-pc-react",
       "@sdkwork/entitlement-pc-react",
       "@sdkwork/coupon-pc-react",
       "@sdkwork/offer-pc-react",
@@ -347,7 +347,7 @@ describe("sdkwork-appbase-pc-react", () => {
       "@sdkwork/billing-pc-react",
       "@sdkwork/commerce-pc-react",
     ]);
-    expect(commercePackages).toContain("@sdkwork/vip-admin-pc-react");
-    expect(commercePackages).toContain("@sdkwork/vip-purchase-pc-react");
+    expect(commercePackages).toContain("@sdkwork/membership-admin-pc-react");
+    expect(commercePackages).toContain("@sdkwork/membership-purchase-pc-react");
   });
 });

@@ -1,4 +1,5 @@
 import type {
+  ChannelItem,
   ChannelCreateInput,
   ChannelUpdateInput,
   ProviderSecretInput,
@@ -29,6 +30,32 @@ export type ProviderSecretFormValues = {
   secretRef: string;
   status: string;
 };
+
+export function createChannelEditDraft(channel: ChannelItem): ChannelFormValues {
+  return {
+    name: channel.name,
+    vendor: channel.vendor,
+    protocol: channel.protocol,
+    accessType: channel.accessType,
+    baseUrl: channel.baseUrl ?? '',
+    apiKey: '',
+    expiresAt: channel.expiresAt ?? '',
+    capabilities: [...channel.capabilities],
+    models: [...channel.models],
+    circuitBreakerEnabled: Boolean(channel.circuitBreakerPolicy),
+    circuitBreakerFailureThreshold: channel.circuitBreakerPolicy?.failureThreshold ?? '',
+    weight: channel.weight,
+    status: channel.status,
+  };
+}
+
+export function createChannelCopyDraft(channel: ChannelItem): ChannelFormValues {
+  const draft = createChannelEditDraft(channel);
+  return {
+    ...draft,
+    status: channel.status === 'active' ? 'active' : 'disabled',
+  };
+}
 
 const CHANNEL_CAPABILITIES = ['llm', 'image', 'audio', 'music', 'sfx', 'video'] as const;
 

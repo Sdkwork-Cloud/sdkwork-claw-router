@@ -8,7 +8,7 @@ public class AdminAppConfig {
     public AdminAppPortalConfig getPortal() {
         return this.portal;
     }
-    
+
     public void setPortal(AdminAppPortalConfig portal) {
         this.portal = portal;
     }
@@ -16,7 +16,7 @@ public class AdminAppConfig {
     public AdminAppConfigStandard getStandard() {
         return this.standard;
     }
-    
+
     public void setStandard(AdminAppConfigStandard standard) {
         this.standard = standard;
     }

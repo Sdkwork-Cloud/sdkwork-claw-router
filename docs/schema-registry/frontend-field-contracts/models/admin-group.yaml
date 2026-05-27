@@ -46,3 +46,56 @@ frontend_models:
   data_sources:
   - iam_gateway_api_key_group
   - ai_pricing_plan
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupChannelBindingData
+  fields:
+  - id
+  - groupId
+  - channelId
+  - channelName
+  - providerCode
+  - providerName
+  - channelCode
+  - models
+  - capabilities
+  - modelScope
+  - priority
+  - weight
+  - status
+  - healthStatus
+  data_sources:
+  - iam_api_key_group_channel
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupChannelBindingInput
+  fields:
+  - channelId
+  - priority
+  - weight
+  - status
+  - modelScope
+  - capabilities
+  data_sources:
+  - iam_api_key_group_channel
+  - integration_channel
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupChannelOption
+  fields:
+  - id
+  - name
+  - providerCode
+  - providerName
+  - channelCode
+  - models
+  - capabilities
+  - status
+  - healthStatus
+  data_sources:
+  - integration_provider
+  - integration_channel
+  - integration_channel_model

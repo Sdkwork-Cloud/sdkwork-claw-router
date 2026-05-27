@@ -194,31 +194,22 @@ export function AnnouncementAdmin() {
   };
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
-      <div className="flex shrink-0 flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
-        <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-            <Megaphone className="w-6 h-6 text-amber-500" />
-            {t('admin.announcement.title')}
-          </h2>
-          <p className="text-sm text-slate-500">{t('admin.announcement.subtitle')}</p>
-        </div>
-        <div className="flex gap-3 w-full sm:w-auto">
-          <div className="relative">
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
+      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-admin-announcement-toolbar>
+          <div className="relative w-full sm:w-72" data-admin-announcement-search>
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
               placeholder={t('admin.announcement.searchPlaceholder')}
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-amber-500 w-full sm:w-64 text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
+              className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-amber-500 w-full text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
             />
           </div>
-          <button onClick={() => openModal()} className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0">
+          <button data-admin-announcement-primary-action onClick={() => openModal()} className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex w-full items-center justify-center gap-2 flex-shrink-0 sm:w-auto">
             <Plus className="w-4 h-4" />
             <span className="hidden sm:inline">{t('common.actions.newAnnouncement')}</span>
           </button>
-        </div>
       </div>
 
       {error && (

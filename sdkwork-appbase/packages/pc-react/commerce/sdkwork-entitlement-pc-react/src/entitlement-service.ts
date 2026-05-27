@@ -31,7 +31,7 @@ export interface SdkworkSubscriptionDashboardData {
   plans: Array<unknown>;
 }
 
-export interface SdkworkVipDashboardData {
+export interface SdkworkMembershipDashboardData {
   summary: {
     currentLevelName?: string | null;
     currentLevelValue: number | null;
@@ -55,8 +55,8 @@ export interface SdkworkSubscriptionService {
   getDashboard(): Promise<SdkworkSubscriptionDashboardData>;
 }
 
-export interface SdkworkVipService {
-  getDashboard(): Promise<SdkworkVipDashboardData>;
+export interface SdkworkMembershipService {
+  getDashboard(): Promise<SdkworkMembershipDashboardData>;
 }
 
 export interface SdkworkWalletService {
@@ -68,7 +68,7 @@ export interface SdkworkEntitlementDashboardSources {
   offerDashboard: SdkworkOfferDashboardData;
   pointsDashboard: SdkworkPointsDashboardData;
   subscriptionDashboard: SdkworkSubscriptionDashboardData;
-  vipDashboard: SdkworkVipDashboardData;
+  membershipDashboard: SdkworkMembershipDashboardData;
   walletOverview: SdkworkWalletOverview;
 }
 
@@ -79,7 +79,7 @@ export interface CreateSdkworkEntitlementServiceOptions {
   offerService?: Pick<SdkworkOfferService, "getDashboard">;
   pointsService?: Pick<SdkworkPointsService, "getDashboard">;
   subscriptionService?: Pick<SdkworkSubscriptionService, "getDashboard">;
-  vipService?: Pick<SdkworkVipService, "getDashboard">;
+  membershipService?: Pick<SdkworkMembershipService, "getDashboard">;
   walletService?: Pick<SdkworkWalletService, "getOverview">;
 }
 
@@ -98,7 +98,7 @@ function createDefaultWalletService(): SdkworkWalletService {
   };
 }
 
-function createDefaultVipService(): SdkworkVipService {
+function createDefaultMembershipService(): SdkworkMembershipService {
   return {
     async getDashboard() {
       return {
@@ -148,10 +148,10 @@ function createDefaultSubscriptionService(): SdkworkSubscriptionService {
 }
 
 function resolveCurrentLevelName(
-  sources: Pick<SdkworkEntitlementDashboardSources, "offerDashboard" | "vipDashboard">,
+  sources: Pick<SdkworkEntitlementDashboardSources, "offerDashboard" | "membershipDashboard">,
   guestLabel: string,
 ): string {
-  return sources.vipDashboard.summary.currentLevelName
+  return sources.membershipDashboard.summary.currentLevelName
     || sources.offerDashboard.inventory.currentLevelName
     || guestLabel;
 }
@@ -166,7 +166,7 @@ export function composeSdkworkEntitlementDashboard(
     messages: options.messages,
   };
   const availablePoints = sources.pointsDashboard.summary.balancePoints;
-  const currentLevelValue = sources.vipDashboard.summary.currentLevelValue;
+  const currentLevelValue = sources.membershipDashboard.summary.currentLevelValue;
   const decisions = sortSdkworkEntitlementDecisions(
     sources.descriptors.map((descriptor) =>
       evaluateSdkworkEntitlementDecision(descriptor, {
@@ -187,7 +187,7 @@ export function composeSdkworkEntitlementDashboard(
       featuredOfferCount: sources.offerDashboard.featuredOffers.length,
       isAuthenticated: sources.walletOverview.isAuthenticated,
       subscriptionPlanCount: sources.subscriptionDashboard.plans.length,
-      vipRemainingDays: sources.vipDashboard.summary.remainingDays ?? null,
+      membershipRemainingDays: sources.membershipDashboard.summary.remainingDays ?? null,
     },
     topAction: selectTopSdkworkEntitlementAction(decisions),
   };
@@ -197,7 +197,7 @@ export function createSdkworkEntitlementService(
   options: CreateSdkworkEntitlementServiceOptions = {},
 ): SdkworkEntitlementService {
   const walletService = options.walletService ?? createDefaultWalletService();
-  const vipService = options.vipService ?? createDefaultVipService();
+  const membershipService = options.membershipService ?? createDefaultMembershipService();
   const pointsService = options.pointsService ?? createDefaultPointsService();
   const offerService = options.offerService ?? createDefaultOfferService();
   const subscriptionService = options.subscriptionService ?? createDefaultSubscriptionService();
@@ -234,8 +234,8 @@ export function createSdkworkEntitlementService(
         };
       }
 
-      const [vipDashboard, pointsDashboard, offerDashboard, subscriptionDashboard] = await Promise.all([
-        vipService.getDashboard(),
+      const [membershipDashboard, pointsDashboard, offerDashboard, subscriptionDashboard] = await Promise.all([
+        membershipService.getDashboard(),
         pointsService.getDashboard(),
         offerService.getDashboard(),
         subscriptionService.getDashboard(),
@@ -246,7 +246,7 @@ export function createSdkworkEntitlementService(
         offerDashboard,
         pointsDashboard,
         subscriptionDashboard,
-        vipDashboard,
+        membershipDashboard,
         walletOverview,
       }, serviceOptions);
     },

@@ -117,13 +117,14 @@ CLAWROUTER_GENERATED_SDK_IMPORT_RE = re.compile(
 )
 
 COMMERCE_RETIRED_API_PATH_RE = re.compile(
-    r"/(?:app|backend)/v3/api/billing(?:/[\w{}\-/.-]*)?"
+    r"/(?:app|backend)/v3/api/billing(?!/history\b)(?:/[\w{}\-/.-]*)?"
+    r"|/(?:app|backend)/v3/api/coupons(?:/[\w{}\-/.-]*)?"
     r"|/app/v3/api/payments/checkout(?:/[\w{}\-/.-]*)?"
     r"|/app/v3/api/router/settlements/dashboard"
     r"|/backend/v3/api/wallet/ledger(?!_entries)(?:/[\w{}\-/.-]*)?"
     r"|/backend/v3/api/commerce/reports(?:/[\w{}\-/.-]*)?"
 )
-COMMERCE_BILLING_TABLE_RE = re.compile(r"\bcommerce_billing_[A-Za-z0-9_]*\b")
+COMMERCE_BILLING_TABLE_RE = re.compile(r"\bcommerce_billing_(?!history\b)[A-Za-z0-9_]*\b")
 COMMERCE_RETIRED_FRONTEND_ARTIFACT_RE = re.compile(
     r"@sdkwork/commerce-(?:contracts|sdk-ports|service)"
     r"|commerce-runtime\.ts"
@@ -158,7 +159,7 @@ COMMERCE_RETIRED_OPERATION_ID_RE = re.compile(
     r"(?m)^\s*operation_id:\s*['\"]?("
     r"account\.[A-Za-z0-9_.-]*"
     r"|couponBatches\.[A-Za-z0-9_.-]*"
-    r"|couponCodes\.[A-Za-z0-9_.-]*"
+    r"|promotionCodes\.[A-Za-z0-9_.-]*"
     r"|exchangeRules\.[A-Za-z0-9_.-]*"
     r"|finance\.[A-Za-z0-9_.-]*"
     r"|payments\.(?:checkout|records)\.[A-Za-z0-9_.-]*"
@@ -168,7 +169,7 @@ COMMERCE_RETIRED_OPERATION_ID_RE = re.compile(
     r"|users\.(?:balanceAdjustments|coupons|current\.coupons)\.[A-Za-z0-9_.-]*"
     r"|vip\.[A-Za-z0-9_.-]*"
     r"|wallet\.(?:ledger|operations|topups|transactions|withdrawals)\.[A-Za-z0-9_.-]*"
-    r"|coupons\.(?:catalog|redeem|usage|usageReversals)\.[A-Za-z0-9_.-]*"
+    r"|coupons\.[A-Za-z0-9_.-]*"
     r")['\"]?"
 )
 

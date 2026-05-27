@@ -279,6 +279,7 @@ async fn service_router_surface_openapi_documents_include_appbase_commerce_contr
             "/app/v3/api/recharges/orders",
             "recharges.orders.create",
         ),
+        ("get", "/app/v3/api/billing/history", "billing.history.list"),
         (
             "get",
             "/app/v3/api/wallet/overview",

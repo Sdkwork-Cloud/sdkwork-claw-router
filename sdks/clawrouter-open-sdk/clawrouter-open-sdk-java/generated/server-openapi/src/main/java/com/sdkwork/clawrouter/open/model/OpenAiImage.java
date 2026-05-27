@@ -10,7 +10,7 @@ public class OpenAiImage {
     public String getB64Json() {
         return this.b64Json;
     }
-    
+
     public void setB64Json(String b64Json) {
         this.b64Json = b64Json;
     }
@@ -18,7 +18,7 @@ public class OpenAiImage {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }
@@ -26,7 +26,7 @@ public class OpenAiImage {
     public String getRevisedPrompt() {
         return this.revisedPrompt;
     }
-    
+
     public void setRevisedPrompt(String revisedPrompt) {
         this.revisedPrompt = revisedPrompt;
     }
@@ -34,7 +34,7 @@ public class OpenAiImage {
     public String getUrl() {
         return this.url;
     }
-    
+
     public void setUrl(String url) {
         this.url = url;
     }

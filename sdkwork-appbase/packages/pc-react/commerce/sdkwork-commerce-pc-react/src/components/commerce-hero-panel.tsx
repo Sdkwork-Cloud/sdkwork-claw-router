@@ -30,7 +30,7 @@ export function SdkworkCommerceHeroPanel({
     formatCurrency,
     formatPendingIssuance,
     formatPoints,
-    formatVipTerm,
+    formatMembershipTerm,
   } = useSdkworkCommerceIntl();
   const primaryHeroTextStyle = createSdkworkCommerceHeroTextStyle();
   const mutedHeroTextStyle = createSdkworkCommerceHeroTextStyle("muted");
@@ -215,9 +215,9 @@ export function SdkworkCommerceHeroPanel({
               <TrendingUp className="h-5 w-5" />
             </div>
             <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sdk-color-text-muted)]">{copy.hero.vipTerm}</div>
+              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sdk-color-text-muted)]">{copy.hero.membershipTerm}</div>
               <div className="mt-1 text-lg font-semibold text-[var(--sdk-color-text-primary)]">
-                {formatVipTerm(summary.vipRemainingDays)}
+                {formatMembershipTerm(summary.membershipRemainingDays)}
               </div>
             </div>
           </div>
@@ -259,7 +259,7 @@ export function SdkworkCommerceHeroPanel({
             borderWeight: 18,
           })}
         >
-          <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sdk-color-text-muted)]">{copy.hero.vipSpending}</div>
+          <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sdk-color-text-muted)]">{copy.hero.membershipSpending}</div>
           <div className="mt-3 text-lg font-semibold text-[var(--sdk-color-text-primary)]">
             {formatCurrency(summary.totalSpentCny)}
           </div>

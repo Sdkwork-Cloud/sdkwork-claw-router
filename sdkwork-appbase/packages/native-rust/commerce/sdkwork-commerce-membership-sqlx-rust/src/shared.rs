@@ -18,7 +18,7 @@ pub(crate) fn normalize_payment_method(method: &str) -> String {
 pub(crate) fn method_alias(method: &str) -> &str {
     match method {
         "card" => "stripe",
-        "wechatpay" => "wechat",
+        "wechat" | "wechatpay" => "wechat_pay",
         _ => method,
     }
 }
@@ -26,27 +26,27 @@ pub(crate) fn method_alias(method: &str) -> &str {
 pub(crate) fn plan_rank_from_code(plan_no: &str) -> i64 {
     match plan_no.trim().to_ascii_lowercase().as_str() {
         "free" => 0,
-        "basic" => 1,
-        "pro" | "advanced" => 2,
-        "premium" | "ultimate" => 3,
+        "pro" => 1,
+        "max" => 2,
+        "vip" => 3,
         _ => 0,
     }
 }
 
 pub(crate) fn plan_code_from_rank(rank: i64) -> &'static str {
     match rank {
-        1 => "basic",
-        2 => "pro",
-        3 => "premium",
+        1 => "pro",
+        2 => "max",
+        3 => "vip",
         _ => "free",
     }
 }
 
 pub(crate) fn default_plan_name(rank: i64) -> &'static str {
     match rank {
-        1 => "Basic member",
-        2 => "Advanced member",
-        3 => "Premium member",
+        1 => "Pro member",
+        2 => "Max member",
+        3 => "VIP member",
         _ => "Free",
     }
 }
@@ -133,53 +133,6 @@ pub(crate) fn build_package_group_from_packages(
     }
 }
 
-pub(crate) fn parse_membership_plan_benefit_json(
-    benefit_json: &str,
-) -> (
-    i64,
-    Option<i64>,
-    Option<String>,
-    Option<String>,
-    Vec<AppMembershipBenefitItem>,
-) {
-    let Ok(value) = serde_json::from_str::<Value>(benefit_json) else {
-        return (0, None, None, None, Vec::new());
-    };
-    let rank = integer_field(&value, "planRank", 0);
-    let required_points = optional_integer_field(&value, "requiredPoints");
-    let badge = string_field(&value, "badge");
-    let description = string_field(&value, "description");
-    let benefits = value
-        .get("items")
-        .and_then(Value::as_array)
-        .map(|items| {
-            items
-                .iter()
-                .enumerate()
-                .map(|(index, item)| benefit_from_value(item, (index + 1) as i64))
-                .collect()
-        })
-        .unwrap_or_default();
-    (rank, required_points, badge, description, benefits)
-}
-
-pub(crate) fn benefit_from_value(value: &Value, fallback_id: i64) -> AppMembershipBenefitItem {
-    AppMembershipBenefitItem {
-        id: optional_integer_field(value, "id").unwrap_or(fallback_id),
-        name: string_field(value, "name").unwrap_or_else(|| "Membership benefit".to_owned()),
-        benefit_key: string_field(value, "benefitKey"),
-        r#type: string_field(value, "type"),
-        description: string_field(value, "description"),
-        icon: string_field(value, "icon"),
-        claimed: value
-            .get("claimed")
-            .and_then(Value::as_bool)
-            .unwrap_or(false),
-        usage_limit: optional_integer_field(value, "usageLimit"),
-        used_count: optional_integer_field(value, "usedCount"),
-    }
-}
-
 #[allow(dead_code)]
 pub(crate) fn default_free_plan() -> AppMembershipPlanItem {
     AppMembershipPlanItem {
@@ -228,25 +181,11 @@ pub(crate) fn privilege_usage_from_benefits(
 ) -> AppMembershipPrivilegeUsageResponse {
     AppMembershipPrivilegeUsageResponse {
         speed_up_used: 0,
-        speed_up_limit: benefit_limit(
-            benefits,
-            &["top_priority", "high_priority", "normal_priority"],
-        ),
+        speed_up_limit: benefit_limit(benefits, &["priority_speed_up"]),
         priority_queue_used: 0,
-        priority_queue_limit: benefit_limit(
-            benefits,
-            &["top_priority", "high_priority", "normal_priority"],
-        ),
+        priority_queue_limit: benefit_limit(benefits, &["priority_speed_up"]),
         exclusive_model_used: 0,
-        exclusive_model_limit: benefit_limit(
-            benefits,
-            &[
-                "frontier_models",
-                "advanced_models",
-                "standard_models",
-                "basic_models",
-            ],
-        ),
+        exclusive_model_limit: benefit_limit(benefits, &["ai_quota"]),
     }
 }
 
@@ -284,31 +223,6 @@ pub(crate) fn parse_points_amount(value: &str) -> i64 {
         return 0;
     };
     integer_part.parse::<i64>().unwrap_or(0)
-}
-
-fn string_field(value: &Value, key: &str) -> Option<String> {
-    value
-        .get(key)
-        .and_then(Value::as_str)
-        .map(str::trim)
-        .filter(|item| !item.is_empty())
-        .map(str::to_owned)
-}
-
-fn optional_integer_field(value: &Value, key: &str) -> Option<i64> {
-    value.get(key).and_then(|item| {
-        item.as_i64()
-            .or_else(|| item.as_u64().and_then(|value| i64::try_from(value).ok()))
-            .or_else(|| item.as_f64().map(|value| value as i64))
-            .or_else(|| {
-                item.as_str()
-                    .and_then(|text| text.trim().parse::<i64>().ok())
-            })
-    })
-}
-
-fn integer_field(value: &Value, key: &str, fallback: i64) -> i64 {
-    optional_integer_field(value, key).unwrap_or(fallback)
 }
 
 fn string_array_from_json(value: &str) -> Vec<String> {

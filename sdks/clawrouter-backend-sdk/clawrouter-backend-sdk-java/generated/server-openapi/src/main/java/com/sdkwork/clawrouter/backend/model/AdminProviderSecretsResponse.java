@@ -8,7 +8,7 @@ public class AdminProviderSecretsResponse {
     public List<AdminProviderSecretItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminProviderSecretItem> items) {
         this.items = items;
     }

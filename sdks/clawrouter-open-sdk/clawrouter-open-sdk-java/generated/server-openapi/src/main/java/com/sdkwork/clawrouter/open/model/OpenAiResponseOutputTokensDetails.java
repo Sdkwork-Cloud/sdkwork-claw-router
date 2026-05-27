@@ -7,7 +7,7 @@ public class OpenAiResponseOutputTokensDetails {
     public Integer getReasoningTokens() {
         return this.reasoningTokens;
     }
-    
+
     public void setReasoningTokens(Integer reasoningTokens) {
         this.reasoningTokens = reasoningTokens;
     }

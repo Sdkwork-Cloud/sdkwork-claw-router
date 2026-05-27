@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
-  BarChart3,
+  AlertTriangle,
   Calendar,
   ChevronDown,
   ChevronRight,
+  CheckCircle2,
   Cpu,
   Layers,
   RefreshCw,
@@ -13,12 +14,12 @@ import {
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import {
   formatDecimalAmount,
-  sumDecimalStrings,
 } from 'sdkwork-claw-router-commons/runtime';
 import { useTranslation } from 'react-i18next';
 import { UsageService, UsageLog } from './usageService';
 
 const DEFAULT_PAGE_SIZE = 10;
+const SPEND_DECIMAL_DIGITS = 9;
 
 type UsageLogStatus = 'all' | 'success' | 'error';
 
@@ -41,6 +42,35 @@ const defaultUsageLogQuery: UsageLogQueryState = {
 };
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
+
+function padDateTimePart(value: number): string {
+  return String(value).padStart(2, '0');
+}
+
+export function formatUsageLogLocalTime(value: string): string {
+  const normalized = value.trim();
+  if (!normalized) {
+    return '-';
+  }
+
+  const date = new Date(normalized);
+  if (Number.isNaN(date.getTime())) {
+    return normalized;
+  }
+
+  const datePart = [
+    date.getFullYear(),
+    padDateTimePart(date.getMonth() + 1),
+    padDateTimePart(date.getDate()),
+  ].join('-');
+  const timePart = [
+    padDateTimePart(date.getHours()),
+    padDateTimePart(date.getMinutes()),
+    padDateTimePart(date.getSeconds()),
+  ].join(':');
+
+  return `${datePart} ${timePart}`;
+}
 
 function getUsageLoadErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
   if (error instanceof Error) {
@@ -94,8 +124,6 @@ export function UsageView() {
   const pageCount = Math.max(1, Math.ceil(totalLogs / pageSize));
   const visibleStart = usageLogs.length > 0 ? (page - 1) * pageSize + 1 : 0;
   const visibleEnd = usageLogs.length > 0 ? visibleStart + usageLogs.length - 1 : 0;
-  const loadedCostTotal = sumDecimalStrings(usageLogs.map(log => log.cost), 6);
-  const loadedTokenTotal = usageLogs.reduce((sum, log) => sum + log.inputTokens + log.outputTokens, 0);
 
   const loadUsageLogs = useCallback(async (isActive: () => boolean = () => true) => {
     setLoading(true);
@@ -105,7 +133,7 @@ export function UsageView() {
       if (isActive()) {
         setUsageLogs(data.logs);
         setTotalLogs(data.total);
-        setExpandedIds(data.logs.length > 0 ? [data.logs[0].id] : []);
+        setExpandedIds([]);
       }
     } catch (error) {
       if (isActive()) {
@@ -171,39 +199,15 @@ export function UsageView() {
   };
 
   return (
-    <div className="p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
-      <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/5">
-        <div className="flex items-center gap-2">
-          <BarChart3 className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t('console.usage.title', 'API usage logs')}</h1>
-        </div>
-
-        <div className="flex flex-col lg:flex-row lg:items-center gap-3">
-          <div className="flex items-center gap-3 bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-lg p-1.5 shadow-sm text-sm">
-            <div className="px-3 py-1 flex items-center gap-1.5 border-r border-slate-200 dark:border-white/10">
-              <span className="text-slate-500 dark:text-slate-400">{t('console.usage.loadedCost', 'Loaded cost')}</span>
-              <span className="font-bold text-rose-500 flex items-center"><Zap className="w-3.5 h-3.5 mr-0.5" /> {loadedCostTotal}</span>
-            </div>
-            <div className="px-3 py-1 flex items-center gap-1.5 border-r border-slate-200 dark:border-white/10">
-              <span className="text-slate-500 dark:text-slate-400">{t('console.usage.rows', 'Rows')}</span>
-              <span className="font-bold text-slate-800 dark:text-white">{usageLogs.length}/{totalLogs}</span>
-            </div>
-            <div className="px-3 py-1 flex items-center gap-1.5">
-              <span className="text-slate-500 dark:text-slate-400">{t('console.usage.tokens', 'Tokens')}</span>
-              <span className="font-bold text-slate-800 dark:text-white">{loadedTokenTotal}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl p-3 shadow-sm flex flex-col md:flex-row flex-wrap items-center gap-3">
+    <div className="w-full mx-auto box-border h-[calc(100vh-72px)] overflow-hidden flex flex-col gap-6 animate-in fade-in duration-500 bg-slate-50 p-[5px] dark:bg-[#121212]">
+      <div className="shrink-0 bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl p-3 shadow-sm flex flex-col md:flex-row flex-wrap items-center gap-3">
         <div className="relative w-full md:w-auto flex-1 min-w-[180px]">
           <Calendar className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
             value={draftQuery.startTime}
             onChange={(event) => updateDraftQuery({ startTime: event.target.value })}
-            placeholder={t('console.usage.startTimePlaceholder', 'Start time, for example 2026-04-21T00:00:00Z')}
+            placeholder={t('console.usage.startTimePlaceholder', 'Start time, for example 2026-04-21 00:00:00')}
             className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-lobster-500 focus:ring-1 focus:ring-lobster-500/20 text-slate-800 dark:text-white transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-sm md:shadow-none"
           />
         </div>
@@ -214,7 +218,7 @@ export function UsageView() {
             type="text"
             value={draftQuery.endTime}
             onChange={(event) => updateDraftQuery({ endTime: event.target.value })}
-            placeholder={t('console.usage.endTimePlaceholder', 'End time, for example 2026-04-21T23:59:59Z')}
+            placeholder={t('console.usage.endTimePlaceholder', 'End time, for example 2026-04-21 23:59:59')}
             className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-lobster-500 focus:ring-1 focus:ring-lobster-500/20 text-slate-800 dark:text-white transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-sm md:shadow-none"
           />
         </div>
@@ -270,12 +274,12 @@ export function UsageView() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl shadow-sm overflow-hidden flex flex-col w-full min-h-[500px]">
+      <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-0 w-full">
         {loading ? (
           <BusinessStatePanel
             kind="loading"
             title={t('console.usage.loading', '正在加载使用日志...')}
-            className="min-h-[500px] border-0 bg-transparent"
+            className="flex-1 min-h-0 border-0 bg-transparent"
           />
         ) : loadError ? (
           <BusinessStatePanel
@@ -283,7 +287,7 @@ export function UsageView() {
             title={t('console.usage.loadErrorTitle', '使用日志加载失败')}
             description={loadError}
             onRetry={() => void loadUsageLogs()}
-            className="min-h-[500px] border-0 bg-transparent"
+            className="flex-1 min-h-0 border-0 bg-transparent"
           />
         ) : usageLogs.length === 0 ? (
           <BusinessStatePanel
@@ -291,22 +295,23 @@ export function UsageView() {
             title={t('console.usage.emptyTitle', '未找到使用日志')}
             description={t('console.usage.emptyDescription', 'The usage logs API returned an empty page for the current query.')}
             onRetry={() => void loadUsageLogs()}
-            className="min-h-[500px] border-0 bg-transparent"
+            className="flex-1 min-h-0 border-0 bg-transparent"
           />
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm whitespace-nowrap min-w-[1200px]">
-              <thead className="bg-slate-50 dark:bg-[#1e1e1e]/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/5 select-none text-xs">
+          <div className="flex-1 min-h-0 overflow-auto custom-scrollbar">
+            <table className="w-full text-left text-sm whitespace-nowrap min-w-[1320px]">
+              <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#1e1e1e] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/5 select-none text-xs">
                 <tr>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.time', 'Time')}</th>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.key', 'Key')}</th>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.group', 'Group')}</th>
+                  <th className="px-4 py-3.5 font-medium">{t('console.usage.table.status', 'Status')}</th>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.type', 'Type')}</th>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.model', 'Model')}</th>
                   <th className="px-4 py-3.5 font-medium text-center">{t('console.usage.table.latency', 'Latency')}</th>
                   <th className="px-4 py-3.5 font-medium text-right">{t('console.usage.table.input', 'Input')}</th>
                   <th className="px-4 py-3.5 font-medium text-right">{t('console.usage.table.output', 'Output')}</th>
-                  <th className="px-4 py-3.5 font-medium text-right">{t('console.usage.table.cost', 'Cost')}</th>
+                  <th className="px-4 py-3.5 font-medium text-right">{t('console.usage.table.cost', 'Spend')}</th>
                   <th className="px-4 py-3.5 font-medium text-center">{t('console.usage.table.ip', 'IP')}</th>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.details', '详情')}</th>
                 </tr>
@@ -314,6 +319,8 @@ export function UsageView() {
               <tbody className="divide-y divide-slate-100 dark:divide-white/5 text-slate-700 dark:text-slate-300 relative text-xs">
                 {usageLogs.map((log) => {
                   const expanded = expandedIds.includes(log.id);
+                  const displayModel = log.providerNativeModel || log.model;
+                  const modelTooltip = log.requestedModelCatalogKey || displayModel;
                   return (
                     <React.Fragment key={log.id}>
                       <tr
@@ -328,7 +335,7 @@ export function UsageView() {
                           <span className="p-0.5 rounded-md hover:bg-slate-200 dark:hover:bg-white/10 transition-colors">
                             {expanded ? <ChevronDown className="w-4 h-4 text-blue-600 dark:text-blue-500" /> : <ChevronRight className="w-4 h-4 text-slate-400" />}
                           </span>
-                          {log.time}
+                          {formatUsageLogLocalTime(log.time)}
                         </td>
                         <td className="px-4 py-3.5">
                           <span className="font-mono text-[11px] px-2 py-0.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded">
@@ -336,8 +343,24 @@ export function UsageView() {
                           </span>
                         </td>
                         <td className="px-4 py-3.5">
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20">
+                          <span
+                            title={log.group}
+                            className="inline-block max-w-[160px] truncate text-[10px] px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20"
+                          >
                             {log.group}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3.5">
+                          <span
+                            className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border ${
+                              log.status === 'error'
+                                ? 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-500/20'
+                                : 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20'
+                            }`}
+                          >
+                            {log.status === 'error' ? <AlertTriangle className="w-3 h-3" /> : <CheckCircle2 className="w-3 h-3" />}
+                            {log.status === 'error' ? t('console.usage.status.error', 'Error') : t('console.usage.status.success', 'Success')}
+                            {log.httpStatus > 0 && <span className="font-mono">{log.httpStatus}</span>}
                           </span>
                         </td>
                         <td className="px-4 py-3.5">
@@ -345,9 +368,12 @@ export function UsageView() {
                             {log.type}
                           </span>
                         </td>
-                        <td className="px-4 py-3.5 font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                        <td
+                          title={modelTooltip}
+                          className="px-4 py-3.5 font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1.5"
+                        >
                           <Cpu className="w-3.5 h-3.5 opacity-70" />
-                          {log.model}
+                          <span className="inline-block max-w-[220px] truncate">{displayModel}</span>
                         </td>
                         <td className="px-4 py-3.5 text-center">
                           <div className="flex items-center justify-center gap-1.5">
@@ -369,7 +395,7 @@ export function UsageView() {
                         </td>
                         <td className="px-4 py-3.5 text-right font-mono font-medium text-rose-600 dark:text-rose-500 flex items-center justify-end gap-1 min-h-[48px] align-top pt-4 justify-self-end w-full text-xs">
                           <Zap className="w-3.5 h-3.5 text-amber-500" />
-                          {formatDecimalAmount(log.cost, 6)}
+                          {formatDecimalAmount(log.cost, SPEND_DECIMAL_DIGITS)}
                         </td>
                         <td className="px-4 py-3.5 text-center align-top pt-4">
                           <span className="font-mono text-xs text-slate-500 border-b border-dashed border-slate-300 dark:border-white/20">
@@ -391,7 +417,7 @@ export function UsageView() {
 
                       {expanded && (
                         <tr className="bg-slate-50 dark:bg-[#1e1e1e]">
-                          <td colSpan={11} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
+                          <td colSpan={12} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
                             <div className="py-5 px-6 flex gap-6 text-xs">
                               <div className="flex flex-col gap-3 text-slate-500 text-right font-medium min-w-[100px] shrink-0">
                                 <div>{t('console.usage.detail.requestId', 'Request ID')}</div>
@@ -400,6 +426,7 @@ export function UsageView() {
                                 <div className="mt-7">{t('console.usage.detail.formula', 'Formula')}</div>
                                 <div className="mt-[72px]">{t('console.usage.detail.reasoning', 'Reasoning')}</div>
                                 <div>{t('console.usage.detail.path', 'Path')}</div>
+                                {log.status === 'error' && <div>{t('console.usage.detail.error', 'Error')}</div>}
                               </div>
 
                               <div className="flex flex-col gap-3 text-slate-700 dark:text-slate-300">
@@ -426,13 +453,23 @@ export function UsageView() {
                                     <Zap className="w-3 h-3 inline-block text-rose-500/80 -mt-0.5" />
                                     {` ${formatDecimalAmount(log.baseOutputPrice, 6)}) * ${t('console.usage.metric.multiplier', 'multiplier')} ${formatDecimalAmount(log.multiplier, 6)} = `}
                                     <Zap className="w-3 h-3 inline-block text-rose-500 -mt-0.5" />
-                                    <span className="font-bold text-rose-600 dark:text-rose-500 ml-1">{formatDecimalAmount(log.cost, 6)}</span>
+                                    <span className="font-bold text-rose-600 dark:text-rose-500 ml-1">{formatDecimalAmount(log.cost, SPEND_DECIMAL_DIGITS)}</span>
                                   </div>
                                   <div className="text-slate-400 dark:text-slate-500 mt-1 italic">{t('console.usage.detail.reference', 'Reference only; the ledger is the source of truth.')}</div>
                                 </div>
 
                                 <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.reasoningEffort}</div>
                                 <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.path}</div>
+                                {log.status === 'error' && (
+                                  <div className="max-w-[760px] rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-rose-700 dark:border-rose-500/20 dark:bg-rose-500/10 dark:text-rose-300">
+                                    <div className="font-mono text-[11px]">
+                                      {[log.errorType, log.errorCode, log.httpStatus > 0 ? `HTTP ${log.httpStatus}` : ''].filter(Boolean).join(' / ') || t('console.usage.status.error', 'Error')}
+                                    </div>
+                                    {log.errorMessage && (
+                                      <div className="mt-1 whitespace-normal break-words leading-relaxed">{log.errorMessage}</div>
+                                    )}
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </td>
@@ -446,7 +483,7 @@ export function UsageView() {
           </div>
         )}
 
-        <div className="p-4 border-t border-slate-200 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs mt-auto bg-slate-50 dark:bg-[#1e1e1e]/50">
+        <div className="shrink-0 p-4 border-t border-slate-200 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs bg-slate-50 dark:bg-[#1e1e1e]/50">
           <div className="text-slate-500">
             {t('console.usage.pagination.showing', 'Showing {{start}} - {{end}} of {{total}}', {
               start: visibleStart,

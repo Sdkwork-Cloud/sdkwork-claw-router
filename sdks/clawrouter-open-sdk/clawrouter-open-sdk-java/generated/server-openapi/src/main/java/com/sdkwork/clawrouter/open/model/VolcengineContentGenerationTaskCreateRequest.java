@@ -12,7 +12,7 @@ public class VolcengineContentGenerationTaskCreateRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -20,7 +20,7 @@ public class VolcengineContentGenerationTaskCreateRequest {
     public List<VolcengineContentPart> getContent() {
         return this.content;
     }
-    
+
     public void setContent(List<VolcengineContentPart> content) {
         this.content = content;
     }
@@ -28,7 +28,7 @@ public class VolcengineContentGenerationTaskCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -36,7 +36,7 @@ public class VolcengineContentGenerationTaskCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }

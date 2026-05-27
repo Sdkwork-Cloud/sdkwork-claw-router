@@ -384,7 +384,8 @@ async fn import_models(
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let model_catalog_key = model_base_catalog_key(&model.vendor_code, &model.model_id);
+            let model_catalog_key =
+                model_catalog_key(&model.vendor_code, &model.region_code, &model.model_id);
             let vendor_id = vendor_ids.get(&model.vendor_code).copied();
             let family_id = family_ids
                 .get(&(
@@ -436,7 +437,7 @@ async fn import_models(
             )
             .bind(stable_uuid(
                 "sdk-model",
-                &[&model.vendor_code, &model.model_id],
+                &[&model.vendor_code, &model.region_code, &model.model_id],
             ))
             .bind(SYSTEM_TENANT_ID)
             .bind(SYSTEM_ORGANIZATION_ID)
@@ -506,7 +507,8 @@ async fn import_capabilities(
 ) -> Result<(), sqlx::Error> {
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let model_catalog_key = model_base_catalog_key(&model.vendor_code, &model.model_id);
+            let model_catalog_key =
+                model_catalog_key(&model.vendor_code, &model.region_code, &model.model_id);
             let model_id = model_ids.get(&model_catalog_key).copied();
             let capabilities = if model.capabilities.is_empty() {
                 vec![model.primary_capability.clone()]
@@ -542,7 +544,7 @@ async fn import_capabilities(
                 )
                 .bind(stable_uuid(
                     "sdk-cap",
-                    &[&model.vendor_code, &model.model_id, capability],
+                    &[&model.vendor_code, &model.region_code, &model.model_id, capability],
                 ))
                 .bind(SYSTEM_TENANT_ID)
                 .bind(SYSTEM_ORGANIZATION_ID)
@@ -582,8 +584,11 @@ async fn import_pricing(
                 &pricing.model_id,
             );
             for (index, price) in pricing.prices.iter().enumerate() {
-                let model_catalog_key =
-                    model_base_catalog_key(&pricing.vendor_code, &pricing.model_id);
+                let model_catalog_key = model_catalog_key(
+                    &pricing.vendor_code,
+                    &pricing.region_code,
+                    &pricing.model_id,
+                );
                 let model_id = model_ids.get(&model_catalog_key).copied();
                 let meter_id: Option<i64> = sqlx::query_scalar(
                     "SELECT id FROM ai_billing_meter WHERE tenant_id = 0 AND organization_id = 0 AND meter_code = $1",
@@ -682,7 +687,11 @@ async fn import_rankings(
         .flat_map(|vendor| {
             vendor.models.iter().map(|model| {
                 (
-                    model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id),
+                    model_catalog_key(
+                        &vendor.vendor.vendor_code,
+                        &vendor.vendor.region_code,
+                        &model.model_id,
+                    ),
                     model,
                 )
             })
@@ -696,8 +705,11 @@ async fn import_rankings(
                     &vendor.vendor.region_code,
                     &item.model_id,
                 );
-                let model_lookup_key =
-                    model_base_catalog_key(&vendor.vendor.vendor_code, &item.model_id);
+                let model_lookup_key = model_catalog_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    &item.model_id,
+                );
                 let Some(model) = model_map.get(&model_lookup_key) else {
                     continue;
                 };
@@ -783,8 +795,11 @@ async fn update_family_defaults(
     for vendor in &catalog.vendors {
         for family in &vendor.families {
             if let Some(default_model) = &family.default_model {
-                let default_catalog_key =
-                    model_base_catalog_key(&vendor.vendor.vendor_code, default_model);
+                let default_catalog_key = model_catalog_key(
+                    &vendor.vendor.vendor_code,
+                    &vendor.vendor.region_code,
+                    default_model,
+                );
                 sqlx::query(
                     r#"
                     UPDATE ai_model_family

@@ -16,7 +16,7 @@ public class KlingVideoGenerationRequest {
     public String getAspectRatio() {
         return this.aspectRatio;
     }
-    
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -24,7 +24,7 @@ public class KlingVideoGenerationRequest {
     public String getCallbackUrl() {
         return this.callbackUrl;
     }
-    
+
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
@@ -32,7 +32,7 @@ public class KlingVideoGenerationRequest {
     public Double getCfgScale() {
         return this.cfgScale;
     }
-    
+
     public void setCfgScale(Double cfgScale) {
         this.cfgScale = cfgScale;
     }
@@ -40,7 +40,7 @@ public class KlingVideoGenerationRequest {
     public Integer getDuration() {
         return this.duration;
     }
-    
+
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
@@ -48,7 +48,7 @@ public class KlingVideoGenerationRequest {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -56,7 +56,7 @@ public class KlingVideoGenerationRequest {
     public String getImageTail() {
         return this.imageTail;
     }
-    
+
     public void setImageTail(String imageTail) {
         this.imageTail = imageTail;
     }
@@ -64,7 +64,7 @@ public class KlingVideoGenerationRequest {
     public String getMode() {
         return this.mode;
     }
-    
+
     public void setMode(String mode) {
         this.mode = mode;
     }
@@ -72,7 +72,7 @@ public class KlingVideoGenerationRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -80,7 +80,7 @@ public class KlingVideoGenerationRequest {
     public String getNegativePrompt() {
         return this.negativePrompt;
     }
-    
+
     public void setNegativePrompt(String negativePrompt) {
         this.negativePrompt = negativePrompt;
     }
@@ -88,7 +88,7 @@ public class KlingVideoGenerationRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }

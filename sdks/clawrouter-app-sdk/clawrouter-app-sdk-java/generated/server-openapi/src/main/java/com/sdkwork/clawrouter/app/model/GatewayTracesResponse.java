@@ -8,7 +8,7 @@ public class GatewayTracesResponse {
     public List<GatewayTrace> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<GatewayTrace> items) {
         this.items = items;
     }

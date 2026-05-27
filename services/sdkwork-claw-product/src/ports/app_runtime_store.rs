@@ -243,6 +243,26 @@ pub trait AppRuntimeStore {
         page_size: i64,
     ) -> AppRuntimeFuture<'a, AppRuntimeEventList>;
 
+    fn list_events_after<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+        after_event_no: i64,
+        limit: i64,
+    ) -> AppRuntimeFuture<'a, AppRuntimeEventList>;
+
+    fn has_terminal_event<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+    ) -> AppRuntimeFuture<'a, bool>;
+
+    fn get_terminal_event<'a>(
+        &'a self,
+        subject: AppRuntimeSubject,
+        invocation_id: String,
+    ) -> AppRuntimeFuture<'a, Option<AppRuntimeEventItem>>;
+
     fn create_event<'a>(
         &'a self,
         command: CreateAppRuntimeEventCommand,

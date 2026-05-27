@@ -9,7 +9,7 @@ public class GoogleSafetyRating {
     public Boolean getBlocked() {
         return this.blocked;
     }
-    
+
     public void setBlocked(Boolean blocked) {
         this.blocked = blocked;
     }
@@ -17,7 +17,7 @@ public class GoogleSafetyRating {
     public String getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -25,7 +25,7 @@ public class GoogleSafetyRating {
     public String getProbability() {
         return this.probability;
     }
-    
+
     public void setProbability(String probability) {
         this.probability = probability;
     }

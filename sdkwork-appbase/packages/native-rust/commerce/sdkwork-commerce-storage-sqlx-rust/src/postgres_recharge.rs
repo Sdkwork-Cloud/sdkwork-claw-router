@@ -19,13 +19,24 @@ LEFT JOIN commerce_product_sku s
 LEFT JOIN commerce_product_spu pr
     ON pr.id = s.spu_id
    AND pr.sales_status = 'active'
-WHERE p.tenant_id = CAST($1 AS TEXT)
-  AND (p.organization_id = CAST($2 AS TEXT) OR p.organization_id IS NULL)
+WHERE (
+        (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT))
+        OR (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL)
+        OR (p.tenant_id = '0' AND (p.organization_id = '0' OR p.organization_id IS NULL))
+      )
   AND p.status = 'active'
   AND (p.valid_from IS NULL OR p.valid_from <= $3)
   AND (p.valid_to IS NULL OR p.valid_to >= $3)
-GROUP BY p.id, p.price_amount, p.bonus_points, p.sort_weight
-ORDER BY COALESCE(p.sort_weight, 0) ASC, p.price_amount ASC, p.id ASC
+GROUP BY p.id, p.tenant_id, p.organization_id, p.price_amount, p.bonus_points, p.sort_weight
+ORDER BY
+    CASE
+        WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
+    COALESCE(p.sort_weight, 0) ASC,
+    p.price_amount ASC,
+    p.id ASC
 LIMIT 100
 "#;
 
@@ -35,24 +46,44 @@ SELECT
     CAST(price_amount AS TEXT) AS price,
     CAST(COALESCE(bonus_points, 0) AS TEXT) AS bonus
 FROM commerce_recharge_package
-WHERE tenant_id = CAST($1 AS TEXT)
-  AND (organization_id = CAST($2 AS TEXT) OR organization_id IS NULL)
+WHERE (
+        (tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT))
+        OR (tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL)
+        OR (tenant_id = '0' AND (organization_id = '0' OR organization_id IS NULL))
+      )
   AND status = 'active'
   AND CAST(price_amount AS TEXT) IN ($3, $4, $5)
   AND (valid_from IS NULL OR valid_from <= $6)
   AND (valid_to IS NULL OR valid_to >= $6)
-ORDER BY COALESCE(sort_weight, 0) ASC, id ASC
+ORDER BY
+    CASE
+        WHEN tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
+    COALESCE(sort_weight, 0) ASC,
+    id ASC
 LIMIT 1
 "#;
 
 const LOAD_RECHARGE_METHOD: &str = r#"
 SELECT method_key
 FROM commerce_payment_method
-WHERE tenant_id = CAST($1 AS TEXT)
-  AND (organization_id = CAST($2 AS TEXT) OR organization_id IS NULL)
+WHERE (
+        (tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT))
+        OR (tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL)
+        OR (tenant_id = '0' AND (organization_id = '0' OR organization_id IS NULL))
+      )
   AND status = 'active'
   AND (LOWER(method_key) = $3 OR LOWER(method_key) = $4)
-ORDER BY COALESCE(sort_weight, 0) ASC, id ASC
+ORDER BY
+    CASE
+        WHEN tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
+    COALESCE(sort_weight, 0) ASC,
+    id ASC
 LIMIT 1
 "#;
 
@@ -62,14 +93,29 @@ SELECT
     COALESCE(NULLIF(s.name, ''), NULLIF(s.title, ''), NULLIF(pr.title, ''), 'Points recharge') AS product_name
 FROM commerce_product_sku s
 JOIN commerce_product_spu pr ON pr.id = s.spu_id
-WHERE s.tenant_id = CAST($1 AS TEXT)
-  AND (s.organization_id = CAST($2 AS TEXT) OR s.organization_id IS NULL)
-  AND pr.tenant_id = CAST($1 AS TEXT)
-  AND (pr.organization_id = CAST($2 AS TEXT) OR pr.organization_id IS NULL)
+WHERE (
+        (
+            s.tenant_id = CAST($1 AS TEXT)
+            AND (s.organization_id = CAST($2 AS TEXT) OR s.organization_id IS NULL)
+            AND pr.tenant_id = CAST($1 AS TEXT)
+            AND (pr.organization_id = CAST($2 AS TEXT) OR pr.organization_id IS NULL)
+        )
+        OR (
+            s.tenant_id = '0'
+            AND (s.organization_id = '0' OR s.organization_id IS NULL)
+            AND pr.tenant_id = '0'
+            AND (pr.organization_id = '0' OR pr.organization_id IS NULL)
+        )
+      )
   AND s.sales_status = 'active'
   AND pr.sales_status = 'active'
 ORDER BY
     CASE WHEN CAST(s.price_amount AS TEXT) IN ($3, $4, $5) THEN 0 ELSE 1 END,
+    CASE
+        WHEN s.tenant_id = CAST($1 AS TEXT) AND s.organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN s.tenant_id = CAST($1 AS TEXT) AND s.organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
     pr.id ASC,
     s.id ASC
 LIMIT 1
@@ -158,8 +204,8 @@ impl PostgresCommerceRechargeStore {
         rows.iter()
             .map(|row| {
                 let rmb = commerce_money_cell(row, "rmb", "recharge package rmb")?;
-                let bonus = integer_cell(row, "bonus").max(0);
-                let points = recharge_base_points(rmb.as_str())? + bonus;
+                let bonus = required_non_negative_integer_cell(row, "bonus")?;
+                let points = checked_points_add(recharge_base_points(rmb.as_str())?, bonus)?;
                 RechargePackageItem::new(&string_cell(row, "id"), rmb, bonus, points)
             })
             .collect()
@@ -179,7 +225,7 @@ impl PostgresCommerceRechargeStore {
         let product = load_recharge_product_sku(&mut tx, &command).await?;
         let base_points = recharge_base_points(command.amount.as_str())?;
         let bonus_points = pack.as_ref().map(|item| item.bonus_points).unwrap_or(0);
-        let credited_points = base_points + bonus_points;
+        let credited_points = checked_points_add(base_points, bonus_points)?;
         let product_name = pack
             .as_ref()
             .map(|item| item.name.clone())
@@ -189,6 +235,7 @@ impl PostgresCommerceRechargeStore {
         insert_order_item(&mut tx, &command, &product, &product_name).await?;
         insert_order_amount_breakdown(&mut tx, &command).await?;
         insert_payment(&mut tx, &command, &method, credited_points).await?;
+        insert_recharge_billing_history(&mut tx, &command, &method, credited_points).await?;
         tx.commit()
             .await
             .map_err(|error| store_error("failed to commit recharge transaction", error))?;
@@ -257,7 +304,7 @@ async fn load_recharge_pack(
     row.map(|row| {
         Ok(RechargePack {
             name: string_cell(&row, "name"),
-            bonus_points: integer_cell(&row, "bonus").max(0),
+            bonus_points: required_non_negative_integer_cell(&row, "bonus")?,
         })
     })
     .transpose()
@@ -413,6 +460,46 @@ async fn insert_payment(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to insert recharge payment attempt", error))?;
+    Ok(())
+}
+
+async fn insert_recharge_billing_history(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CreatePointsRechargeOrderCommand,
+    method: &RechargeMethod,
+    credited_points: i64,
+) -> Result<(), CommerceServiceError> {
+    sqlx::query(
+        r#"
+        INSERT INTO commerce_billing_history
+            (id, tenant_id, organization_id, owner_user_id, history_no, history_type,
+             direction, asset_type, amount, currency_code, points_delta, status,
+             title, reference_no, source_type, source_id, related_order_id,
+             related_order_no, payment_method, occurred_at, metadata_json, created_at, updated_at)
+        VALUES
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, 'recharge',
+             'credit', 'points', $6, 'CNY', $7, 'pending',
+             'Recharge', $8, 'commerce_order', $9, $10,
+             $11, $12, $13, NULL, $13, $13)
+        ON CONFLICT (tenant_id, source_type, source_id) DO NOTHING
+        "#,
+    )
+    .bind(format!("billing-history-{}", command.order_id))
+    .bind(&command.tenant_id)
+    .bind(command.organization_id.as_deref())
+    .bind(&command.owner_user_id)
+    .bind(format!("BH-{}", command.order_no))
+    .bind(command.amount.as_str())
+    .bind(credited_points)
+    .bind(&command.order_no)
+    .bind(&command.order_id)
+    .bind(&command.order_id)
+    .bind(&command.order_no)
+    .bind(&method.method_key)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert recharge billing history", error))?;
     Ok(())
 }
 
@@ -573,7 +660,10 @@ fn recharge_base_points(amount: &str) -> Result<i64, CommerceServiceError> {
             "recharge amount must be greater than zero",
         ));
     }
-    Ok(((cents + 5) / 10).max(1))
+    let rounded_cents = cents
+        .checked_add(5)
+        .ok_or_else(|| CommerceServiceError::storage("recharge points rounding overflow"))?;
+    Ok((rounded_cents / 10).max(1))
 }
 
 fn checkout_points(value: &str) -> Result<i64, CommerceServiceError> {
@@ -696,8 +786,12 @@ fn missing_checkout_status_error(source: &str) -> CommerceServiceError {
     }
 }
 
-fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
-    row.try_get::<Option<i64>, _>(column)
+fn required_non_negative_integer_cell(
+    row: &sqlx::postgres::PgRow,
+    column: &str,
+) -> Result<i64, CommerceServiceError> {
+    let value = row
+        .try_get::<Option<i64>, _>(column)
         .ok()
         .flatten()
         .or_else(|| {
@@ -707,12 +801,20 @@ fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
                 .map(i64::from)
         })
         .or_else(|| {
-            string_cell(row, column)
-                .parse::<f64>()
-                .ok()
-                .map(|value| value as i64)
+            optional_string_cell(row, column).and_then(|value| value.trim().parse::<i64>().ok())
         })
-        .unwrap_or(0)
+        .ok_or_else(|| CommerceServiceError::storage(format!("invalid integer column {column}")))?;
+    if value < 0 {
+        return Err(CommerceServiceError::storage(format!(
+            "integer column {column} must not be negative"
+        )));
+    }
+    Ok(value)
+}
+
+fn checked_points_add(left: i64, right: i64) -> Result<i64, CommerceServiceError> {
+    left.checked_add(right)
+        .ok_or_else(|| CommerceServiceError::storage("recharge credited points overflow"))
 }
 
 struct DecimalSqlMatchKeys {
@@ -777,6 +879,29 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
     let month = month_prime + if month_prime < 10 { 3 } else { -9 };
     let year = year + if month <= 2 { 1 } else { 0 };
     (year, month, day)
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn postgres_recharge_points_math_rejects_overflow() {
+        let error = super::recharge_base_points("92233720368547758.03")
+            .expect_err("rounding overflow must fail");
+        assert_eq!("storage", error.code());
+
+        let error =
+            super::checked_points_add(i64::MAX, 1).expect_err("credited points overflow must fail");
+        assert_eq!("storage", error.code());
+    }
+
+    #[test]
+    fn postgres_recharge_integer_cells_never_parse_through_f64() {
+        let source = include_str!("postgres_recharge.rs");
+        let forbidden = ["parse", "::<", "f64"].join("");
+
+        assert!(!source.contains(&forbidden));
+        assert!(source.contains("required_non_negative_integer_cell"));
+    }
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> CommerceServiceError {

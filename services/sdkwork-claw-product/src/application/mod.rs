@@ -7,6 +7,7 @@ mod model_rankings_service;
 mod password_hash;
 mod pricing_resolver;
 mod provider_route_selector;
+mod runtime_stream_bus;
 mod usage_settlement_worker;
 
 pub use crate::ports::ModelRankingRefreshRunStatus;
@@ -27,8 +28,9 @@ pub use cache_runtime::{
     DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
 };
 pub use model_catalog_query::{
-    ListModelCatalogQuery, ModelCatalogItem, ModelCatalogPage, ModelCatalogPriceView,
-    ModelCatalogQueryService, ModelCatalogReferencePriceView, PriceAvailability,
+    ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,
+    ModelCatalogPriceView, ModelCatalogQueryService, ModelCatalogReferencePriceView,
+    PriceAvailability,
 };
 pub use model_ranking_refresh_worker::{
     ModelRankingRefreshWorker, ModelRankingRefreshWorkerConfig,
@@ -44,4 +46,5 @@ pub use provider_route_selector::{
     SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery,
     SelectedProviderAccountPoolRoute, SelectedProviderRoute, SelectedProviderRoutePlan,
 };
+pub use runtime_stream_bus::{InMemoryRuntimeStreamBus, RuntimeStreamBus, RuntimeStreamBusFuture};
 pub use usage_settlement_worker::{UsageSettlementWorker, UsageSettlementWorkerConfig};

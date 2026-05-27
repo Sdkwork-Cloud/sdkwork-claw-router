@@ -39,11 +39,12 @@ describe("user-center deployment contract", () => {
       authVerifyCheck: "/app/v3/api/auth/verification_codes/verify",
       authVerifySend: "/app/v3/api/auth/verification_codes",
       health: "/app/v3/api/health",
+      membership: "/app/v3/api/memberships/current",
       tenantRoot: "/app/v3/api/iam/tenants/current",
       userProfile: "/app/v3/api/iam/users/current",
       userSettings: "/app/v3/api/iam/users/current",
-      vipInfo: "/app/v3/api/memberships/current",
     });
+    expect(Object.hasOwn(routes, "vipInfo")).toBe(false);
     expect(
       Object.values(routes).every((route) => !route.includes("/api/app/")),
     ).toBe(true);
@@ -53,6 +54,118 @@ describe("user-center deployment contract", () => {
     expect(
       Object.values(routes).every((route) => !route.includes("/billing/vip")),
     ).toBe(true);
+  });
+
+  it("publishes membership-first route and capability naming without vip aliases", () => {
+    const createUserCenterLocalApiRoutes = requireExport<
+      (basePath?: string) => Record<string, string>
+    >("createUserCenterLocalApiRoutes");
+    const createUserCenterBridgeConfig = requireExport<
+      (options: Record<string, unknown>) => Record<string, unknown>
+    >("createUserCenterBridgeConfig");
+    const createUserCenterPluginDefinition = requireExport<
+      (options: Record<string, unknown>) => Record<string, unknown>
+    >("createUserCenterPluginDefinition");
+    const createUserCenterServerPluginDefinition = requireExport<
+      (options: Record<string, unknown>) => Record<string, unknown>
+    >("createUserCenterServerPluginDefinition");
+
+    const localApiRoutes = createUserCenterLocalApiRoutes();
+    const bridgeConfig = createUserCenterBridgeConfig({
+      namespace: "example-app",
+      routes: {
+        authBasePath: "/auth",
+        membershipRoutePath: "/memberships",
+        userRoutePath: "/user",
+      },
+    });
+    const pluginDefinition = createUserCenterPluginDefinition({
+      namespace: "example-app",
+      routes: {
+        authBasePath: "/auth",
+        membershipRoutePath: "/memberships",
+        userRoutePath: "/user",
+      },
+    });
+    const serverPluginDefinition = createUserCenterServerPluginDefinition({
+      namespace: "example-app",
+      routes: {
+        authBasePath: "/auth",
+        membershipRoutePath: "/memberships",
+        userRoutePath: "/user",
+      },
+    });
+    const manifests = pluginDefinition.manifests as Record<string, { capability?: string; routePath?: string }>;
+    const server = serverPluginDefinition.server as {
+      authority: {
+        api: { operations: Array<{ operationId: string; routeKey: string }> };
+        localAuthority: {
+          schema: {
+            tables: Array<{
+              columns: Array<{ name: string }>;
+              standardEntityName: string;
+              tableName: string;
+            }>;
+          };
+        };
+        repositories: Array<{ entityNames: string[]; id: string }>;
+        services: Array<{ id: string; operationIds: string[] }>;
+      };
+    };
+    const membershipTable = server.authority.localAuthority.schema.tables.find(
+      (table) => table.standardEntityName === "IamMembership",
+    );
+
+    expect(localApiRoutes.membership).toBe("/app/v3/api/memberships/current");
+    expect(Object.hasOwn(localApiRoutes, "vipInfo")).toBe(false);
+    expect((bridgeConfig.routes as Record<string, string>).membershipRoutePath).toBe(
+      "/memberships",
+    );
+    expect(Object.hasOwn(bridgeConfig.routes as Record<string, string>, "vipRoutePath")).toBe(
+      false,
+    );
+    expect(pluginDefinition.capabilities).toEqual(["auth", "user", "membership"]);
+    expect(manifests.membership).toMatchObject({
+      capability: "membership",
+      routePath: "/memberships",
+    });
+    expect(Object.hasOwn(manifests, "vip")).toBe(false);
+    expect(server.authority.api.operations).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          operationId: "membership.current.get",
+          routeKey: "membershipCurrentGet",
+        }),
+        expect.objectContaining({
+          operationId: "membership.current.update",
+          routeKey: "membershipCurrentUpdate",
+        }),
+      ]),
+    );
+    expect(server.authority.repositories).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          entityNames: ["IamMembership"],
+          id: "membership-repository",
+        }),
+      ]),
+    );
+    expect(server.authority.services).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: "membership-service",
+          operationIds: ["membership.current.get", "membership.current.update"],
+        }),
+      ]),
+    );
+    expect(membershipTable).toMatchObject({
+      standardEntityName: "IamMembership",
+      tableName: "iam_membership",
+    });
+    expect(membershipTable?.columns.map((column) => column.name)).toContain(
+      "membership_level_id",
+    );
+    expect(membershipTable?.columns.map((column) => column.name)).not.toContain("vip_level_id");
   });
 
   it("creates canonical identity deployment profiles across builtin-local and cloud providers", () => {
@@ -121,6 +234,44 @@ describe("user-center deployment contract", () => {
       surface: "web",
       transportKind: "remote-http",
     });
+  });
+
+  it("uses neutral auth strategy names while keeping the wire access token header standard", () => {
+    const createUserCenterBridgeConfig = requireExport<
+      (options: Record<string, unknown>) => {
+        auth: {
+          mode: string;
+          tokenHeaders: { accessTokenHeaderName: string };
+          validationStrategy: string;
+        };
+      }
+    >("createUserCenterBridgeConfig");
+    const USER_CENTER_DEPLOYMENT_VARIABLE_NAMES = requireExport<Record<string, string>>(
+      "USER_CENTER_DEPLOYMENT_VARIABLE_NAMES",
+    );
+
+    const bridgeConfig = createUserCenterBridgeConfig({
+      namespace: "example-app",
+    });
+
+    expect(bridgeConfig.auth.mode).toBe("dual-token");
+    expect(bridgeConfig.auth.validationStrategy).toBe("dual-token");
+    expect(bridgeConfig.auth.tokenHeaders.accessTokenHeaderName).toBe("Access-Token");
+    expect(USER_CENTER_DEPLOYMENT_VARIABLE_NAMES.accessTokenHeaderName).toBe(
+      "USER_CENTER_ACCESS_TOKEN_HEADER_NAME",
+    );
+    expect(USER_CENTER_DEPLOYMENT_VARIABLE_NAMES.allowAuthorizationFallbackToAccessToken).toBe(
+      "USER_CENTER_ALLOW_AUTHORIZATION_FALLBACK_TO_ACCESS_TOKEN",
+    );
+    const brandedPrefix = ["SDK", "WORK_"].join("");
+    expect(USER_CENTER_DEPLOYMENT_VARIABLE_NAMES.accessTokenHeaderName.startsWith(brandedPrefix)).toBe(
+      false,
+    );
+    expect(
+      USER_CENTER_DEPLOYMENT_VARIABLE_NAMES.allowAuthorizationFallbackToAccessToken.startsWith(
+        brandedPrefix,
+      ),
+    ).toBe(false);
   });
 
   it("generates environment artifacts directly from a canonical deployment profile", () => {

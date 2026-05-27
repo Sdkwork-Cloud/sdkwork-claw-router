@@ -71,62 +71,366 @@ CREATE TABLE IF NOT EXISTS commerce_billing_prehold (
   UNIQUE (tenant_id, prehold_no)
 );
 
-CREATE TABLE IF NOT EXISTS commerce_coupon_template (
+CREATE TABLE IF NOT EXISTS commerce_billing_history (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
   organization_id TEXT,
-  template_no TEXT NOT NULL,
+  owner_user_id TEXT NOT NULL,
+  history_no TEXT NOT NULL,
+  history_type TEXT NOT NULL,
+  direction TEXT NOT NULL,
+  asset_type TEXT NOT NULL,
+  amount TEXT NOT NULL DEFAULT '0',
+  currency_code TEXT,
+  points_delta INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
   title TEXT NOT NULL,
+  reference_no TEXT,
+  source_type TEXT NOT NULL,
+  source_id TEXT NOT NULL,
+  related_order_id TEXT,
+  related_order_no TEXT,
+  payment_method TEXT,
+  occurred_at TEXT NOT NULL,
+  metadata_json TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, history_no),
+  UNIQUE (tenant_id, source_type, source_id)
+);
+
+CREATE TABLE IF NOT EXISTS benefit_definition (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  benefit_code TEXT NOT NULL,
+  name TEXT NOT NULL,
+  benefit_type TEXT NOT NULL,
+  value_unit TEXT NOT NULL,
+  measurement_type TEXT NOT NULL,
+  description TEXT,
+  status TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, organization_id, benefit_code)
+);
+
+CREATE TABLE IF NOT EXISTS entitlement_grant (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  grant_no TEXT NOT NULL,
+  benefit_id TEXT NOT NULL,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  source_type TEXT NOT NULL,
+  source_id TEXT NOT NULL,
+  grant_policy TEXT NOT NULL,
+  granted_quantity TEXT NOT NULL,
+  status TEXT NOT NULL,
+  starts_at TEXT,
+  expires_at TEXT,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, grant_no),
+  UNIQUE (tenant_id, source_type, source_id, benefit_id, subject_type, subject_id)
+);
+
+CREATE TABLE IF NOT EXISTS entitlement_account (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  account_no TEXT NOT NULL,
+  benefit_id TEXT NOT NULL,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  total_granted TEXT NOT NULL DEFAULT '0',
+  total_used TEXT NOT NULL DEFAULT '0',
+  balance TEXT NOT NULL DEFAULT '0',
+  status TEXT NOT NULL,
+  expires_at TEXT,
+  version INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, account_no),
+  UNIQUE (tenant_id, subject_type, subject_id, benefit_id)
+);
+
+CREATE TABLE IF NOT EXISTS entitlement_ledger_entry (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  ledger_no TEXT NOT NULL,
+  account_id TEXT NOT NULL,
+  grant_id TEXT,
+  benefit_id TEXT NOT NULL,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  direction TEXT NOT NULL,
+  amount TEXT NOT NULL,
+  balance_after TEXT NOT NULL,
+  business_type TEXT NOT NULL,
+  source_type TEXT NOT NULL,
+  source_id TEXT NOT NULL,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  occurred_at TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  UNIQUE (tenant_id, ledger_no),
+  UNIQUE (tenant_id, request_no)
+);
+
+CREATE TABLE IF NOT EXISTS membership_plan (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  plan_no TEXT NOT NULL,
+  plan_code TEXT NOT NULL,
+  name TEXT NOT NULL,
+  rank INTEGER NOT NULL DEFAULT 0,
+  description TEXT,
+  status TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, plan_no),
+  UNIQUE (tenant_id, organization_id, plan_code)
+);
+
+CREATE TABLE IF NOT EXISTS membership_plan_version (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  plan_id TEXT NOT NULL,
+  version_no TEXT NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT,
+  lifecycle_status TEXT NOT NULL,
+  effective_from TEXT,
+  effective_to TEXT,
+  published_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, plan_id, version_no)
+);
+
+CREATE TABLE IF NOT EXISTS membership_plan_benefit (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  plan_id TEXT NOT NULL,
+  plan_version_id TEXT NOT NULL,
+  benefit_id TEXT NOT NULL,
+  benefit_code TEXT NOT NULL,
+  grant_quantity TEXT NOT NULL,
+  grant_period TEXT,
+  reset_policy TEXT,
+  usage_policy TEXT,
+  sort_weight INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, plan_version_id, benefit_id)
+);
+
+CREATE TABLE IF NOT EXISTS membership_package_group (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  external_id INTEGER NOT NULL,
+  group_no TEXT NOT NULL,
+  name TEXT NOT NULL,
+  description TEXT,
+  billing_cycle TEXT NOT NULL,
+  duration_days INTEGER NOT NULL,
+  display_channel TEXT NOT NULL,
+  sort_weight INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, organization_id, external_id),
+  UNIQUE (tenant_id, group_no)
+);
+
+CREATE TABLE IF NOT EXISTS membership_package (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  external_id INTEGER NOT NULL,
+  package_no TEXT NOT NULL,
+  package_group_id TEXT NOT NULL,
+  plan_id TEXT NOT NULL,
+  plan_version_id TEXT NOT NULL,
+  sku_id TEXT,
+  name TEXT NOT NULL,
+  description TEXT,
+  price_amount TEXT NOT NULL,
+  original_price_amount TEXT,
+  currency_code TEXT NOT NULL,
+  point_amount INTEGER NOT NULL DEFAULT 0,
+  duration_days INTEGER NOT NULL,
+  recurrence_cycle TEXT NOT NULL,
+  sort_weight INTEGER NOT NULL DEFAULT 0,
+  recommended INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
+  starts_at TEXT,
+  ends_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, organization_id, external_id),
+  UNIQUE (tenant_id, package_no)
+);
+
+CREATE TABLE IF NOT EXISTS membership_subscription (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  subscription_no TEXT NOT NULL,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  owner_user_id TEXT,
+  plan_id TEXT NOT NULL,
+  plan_version_id TEXT NOT NULL,
+  package_id TEXT,
+  current_period_id TEXT,
+  source_order_id TEXT,
+  source_payment_intent_id TEXT,
+  status TEXT NOT NULL,
+  starts_at TEXT NOT NULL,
+  expires_at TEXT NOT NULL,
+  grace_until TEXT,
+  cancel_at_period_end INTEGER NOT NULL DEFAULT 0,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, subscription_no),
+  UNIQUE (tenant_id, source_order_id, source_payment_intent_id)
+);
+
+CREATE TABLE IF NOT EXISTS membership_period (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  period_no TEXT NOT NULL,
+  subscription_id TEXT NOT NULL,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  plan_id TEXT NOT NULL,
+  plan_version_id TEXT NOT NULL,
+  starts_at TEXT NOT NULL,
+  ends_at TEXT NOT NULL,
+  status TEXT NOT NULL,
+  source_order_id TEXT,
+  source_payment_intent_id TEXT,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, period_no)
+);
+
+CREATE TABLE IF NOT EXISTS promotion_offer (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  offer_no TEXT NOT NULL,
+  offer_code TEXT NOT NULL,
+  name TEXT NOT NULL,
+  offer_type TEXT NOT NULL,
+  audience_scope TEXT NOT NULL,
+  combinability TEXT NOT NULL,
+  priority INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
+  current_offer_version_id TEXT NOT NULL,
+  starts_at TEXT,
+  ends_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, offer_no),
+  UNIQUE (tenant_id, organization_id, offer_code)
+);
+
+CREATE TABLE IF NOT EXISTS promotion_offer_version (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  offer_id TEXT NOT NULL,
+  version_no TEXT NOT NULL,
+  lifecycle_status TEXT NOT NULL,
   discount_type TEXT NOT NULL,
   discount_value TEXT NOT NULL,
   minimum_amount TEXT NOT NULL DEFAULT '0',
+  maximum_discount_amount TEXT,
+  currency_code TEXT,
+  rule_json TEXT NOT NULL,
+  stack_rule_json TEXT,
+  published_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, offer_id, version_no)
+);
+
+CREATE TABLE IF NOT EXISTS promotion_coupon_stock (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  stock_no TEXT NOT NULL,
+  name TEXT NOT NULL,
+  offer_id TEXT NOT NULL,
+  offer_version_id TEXT NOT NULL,
+  stock_type TEXT NOT NULL,
   total_quantity INTEGER,
+  available_quantity INTEGER NOT NULL DEFAULT 0,
   claimed_quantity INTEGER NOT NULL DEFAULT 0,
   redeemed_quantity INTEGER NOT NULL DEFAULT 0,
+  locked_quantity INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL,
   starts_at TEXT,
   expires_at TEXT,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, template_no)
+  UNIQUE (tenant_id, stock_no)
 );
 
-CREATE TABLE IF NOT EXISTS commerce_coupon_issue_batch (
+CREATE TABLE IF NOT EXISTS promotion_code (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
   organization_id TEXT,
-  coupon_template_id TEXT NOT NULL,
-  batch_no TEXT NOT NULL,
-  campaign_code TEXT,
-  title TEXT NOT NULL,
-  code_prefix TEXT NOT NULL,
-  code_pattern TEXT NOT NULL,
-  requested_quantity INTEGER NOT NULL,
-  generated_quantity INTEGER NOT NULL DEFAULT 0,
-  available_quantity INTEGER NOT NULL DEFAULT 0,
+  code_no TEXT NOT NULL,
+  stock_id TEXT NOT NULL,
+  offer_id TEXT NOT NULL,
+  offer_version_id TEXT NOT NULL,
+  promotion_code TEXT NOT NULL,
+  code_type TEXT NOT NULL,
+  max_claims INTEGER NOT NULL DEFAULT 1,
   claimed_quantity INTEGER NOT NULL DEFAULT 0,
-  redeemed_quantity INTEGER NOT NULL DEFAULT 0,
-  disabled_quantity INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL,
-  generation_status TEXT NOT NULL,
-  audience_filter TEXT,
-  generated_at TEXT,
-  created_by TEXT,
+  starts_at TEXT,
+  expires_at TEXT,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, batch_no)
+  UNIQUE (tenant_id, code_no),
+  UNIQUE (tenant_id, promotion_code)
 );
 
-CREATE TABLE IF NOT EXISTS commerce_coupon (
+CREATE TABLE IF NOT EXISTS promotion_user_coupon (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
   organization_id TEXT,
-  template_id TEXT NOT NULL,
-  issue_batch_id TEXT,
+  coupon_no TEXT NOT NULL,
+  stock_id TEXT NOT NULL,
+  code_id TEXT,
+  offer_id TEXT NOT NULL,
+  offer_version_id TEXT NOT NULL,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
   owner_user_id TEXT,
   coupon_code TEXT NOT NULL,
   status TEXT NOT NULL,
   claimed_at TEXT,
+  valid_from TEXT,
   expires_at TEXT,
   redeemed_at TEXT,
   disabled_at TEXT,
@@ -134,25 +438,70 @@ CREATE TABLE IF NOT EXISTS commerce_coupon (
   idempotency_key TEXT NOT NULL,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, coupon_no),
   UNIQUE (tenant_id, coupon_code)
 );
 
-CREATE TABLE IF NOT EXISTS commerce_coupon_redemption (
+CREATE TABLE IF NOT EXISTS promotion_coupon_ledger_entry (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
   organization_id TEXT,
-  coupon_id TEXT NOT NULL,
+  ledger_no TEXT NOT NULL,
+  user_coupon_id TEXT,
+  stock_id TEXT NOT NULL,
+  offer_id TEXT NOT NULL,
+  subject_type TEXT,
+  subject_id TEXT,
+  direction TEXT NOT NULL,
+  quantity_delta INTEGER NOT NULL,
+  balance_after INTEGER NOT NULL,
+  business_type TEXT NOT NULL,
+  source_type TEXT NOT NULL,
+  source_id TEXT NOT NULL,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  occurred_at TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  UNIQUE (tenant_id, ledger_no),
+  UNIQUE (tenant_id, request_no)
+);
+
+CREATE TABLE IF NOT EXISTS promotion_discount_application (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  application_no TEXT NOT NULL,
+  offer_id TEXT NOT NULL,
+  offer_version_id TEXT NOT NULL,
+  user_coupon_id TEXT,
   order_id TEXT NOT NULL,
-  owner_user_id TEXT NOT NULL,
+  order_no TEXT,
+  subject_type TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
   discount_amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
   status TEXT NOT NULL,
   request_no TEXT NOT NULL,
   idempotency_key TEXT NOT NULL,
-  redeemed_at TEXT NOT NULL,
+  applied_at TEXT NOT NULL,
   rolled_back_at TEXT,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, coupon_id, order_id)
+  UNIQUE (tenant_id, application_no),
+  UNIQUE (tenant_id, order_id, user_coupon_id)
+);
+
+CREATE TABLE IF NOT EXISTS promotion_discount_allocation (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  application_id TEXT NOT NULL,
+  order_id TEXT NOT NULL,
+  order_item_id TEXT,
+  sku_id TEXT,
+  allocation_amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  UNIQUE (tenant_id, application_id, order_item_id)
 );
 
 CREATE TABLE IF NOT EXISTS commerce_product_category (
@@ -478,6 +827,83 @@ CREATE TABLE IF NOT EXISTS commerce_payment_method (
   UNIQUE (tenant_id, organization_id, method_key)
 );
 
+CREATE TABLE IF NOT EXISTS commerce_payment_provider (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  provider_code TEXT NOT NULL,
+  display_name TEXT NOT NULL,
+  provider_type TEXT NOT NULL,
+  supported_countries TEXT,
+  supported_currencies TEXT,
+  supported_methods TEXT,
+  status TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, organization_id, provider_code)
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_provider_account (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  account_no TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  merchant_id TEXT NOT NULL,
+  environment TEXT NOT NULL,
+  country_code TEXT NOT NULL,
+  settlement_currency TEXT NOT NULL,
+  secret_ref TEXT NOT NULL,
+  webhook_secret_ref TEXT,
+  certificate_ref TEXT,
+  status TEXT NOT NULL,
+  rotated_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, account_no)
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_channel (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  channel_no TEXT NOT NULL,
+  provider_account_id TEXT NOT NULL,
+  method_id TEXT NOT NULL,
+  scene_code TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  country_code TEXT NOT NULL,
+  status TEXT NOT NULL,
+  priority INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, channel_no)
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_route_rule (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  rule_no TEXT NOT NULL,
+  priority INTEGER NOT NULL DEFAULT 0,
+  purchase_type TEXT,
+  country_code TEXT,
+  currency_code TEXT,
+  client_platform TEXT,
+  amount_min TEXT,
+  amount_max TEXT,
+  user_segment TEXT,
+  risk_level TEXT,
+  channel_id TEXT NOT NULL,
+  status TEXT NOT NULL,
+  starts_at TEXT,
+  ends_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, rule_no)
+);
+
 CREATE TABLE IF NOT EXISTS commerce_refund (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
@@ -507,131 +933,6 @@ CREATE TABLE IF NOT EXISTS commerce_exchange_rule (
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
   UNIQUE (tenant_id, organization_id, source_asset_type, target_asset_type)
-);
-
-CREATE TABLE IF NOT EXISTS commerce_membership_plan (
-  id TEXT PRIMARY KEY,
-  tenant_id TEXT NOT NULL,
-  organization_id TEXT,
-  plan_no TEXT NOT NULL,
-  name TEXT NOT NULL,
-  plan_code TEXT NOT NULL,
-  rank INTEGER NOT NULL DEFAULT 0,
-  duration_days INTEGER NOT NULL DEFAULT 0,
-  benefits_json TEXT NOT NULL,
-  visible_surfaces TEXT NOT NULL,
-  status TEXT NOT NULL,
-  created_at TEXT NOT NULL,
-  updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, plan_no)
-);
-
-CREATE TABLE IF NOT EXISTS commerce_membership_package_group (
-  id TEXT PRIMARY KEY,
-  tenant_id TEXT NOT NULL,
-  organization_id TEXT,
-  external_id INTEGER NOT NULL,
-  group_no TEXT NOT NULL,
-  plan_id TEXT,
-  name TEXT NOT NULL,
-  description TEXT,
-  billing_cycle TEXT NOT NULL,
-  duration_days INTEGER NOT NULL,
-  sort_weight INTEGER NOT NULL DEFAULT 0,
-  status TEXT NOT NULL,
-  created_at TEXT NOT NULL,
-  updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, organization_id, external_id),
-  UNIQUE (tenant_id, group_no)
-);
-
-CREATE TABLE IF NOT EXISTS commerce_membership_package (
-  id TEXT PRIMARY KEY,
-  tenant_id TEXT NOT NULL,
-  organization_id TEXT,
-  external_id INTEGER NOT NULL,
-  package_no TEXT NOT NULL,
-  package_group_id TEXT NOT NULL,
-  plan_id TEXT NOT NULL,
-  sku_id TEXT,
-  name TEXT NOT NULL,
-  description TEXT,
-  price_amount TEXT NOT NULL,
-  original_price_amount TEXT,
-  currency_code TEXT NOT NULL,
-  point_amount INTEGER NOT NULL DEFAULT 0,
-  duration_days INTEGER NOT NULL,
-  recurrence_cycle TEXT NOT NULL,
-  sort_weight INTEGER NOT NULL DEFAULT 0,
-  recommended INTEGER NOT NULL DEFAULT 0,
-  tags_json TEXT NOT NULL DEFAULT '[]',
-  status TEXT NOT NULL,
-  starts_at TEXT,
-  ends_at TEXT,
-  created_at TEXT NOT NULL,
-  updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, organization_id, external_id),
-  UNIQUE (tenant_id, package_no)
-);
-
-CREATE TABLE IF NOT EXISTS commerce_membership (
-  id TEXT PRIMARY KEY,
-  tenant_id TEXT NOT NULL,
-  organization_id TEXT,
-  membership_no TEXT NOT NULL,
-  owner_user_id TEXT NOT NULL,
-  plan_id TEXT NOT NULL,
-  source_order_id TEXT NOT NULL,
-  source_payment_intent_id TEXT NOT NULL,
-  status TEXT NOT NULL,
-  starts_at TEXT NOT NULL,
-  expires_at TEXT NOT NULL,
-  grace_until TEXT,
-  request_no TEXT NOT NULL,
-  idempotency_key TEXT NOT NULL,
-  created_at TEXT NOT NULL,
-  updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, membership_no),
-  UNIQUE (tenant_id, source_order_id, source_payment_intent_id)
-);
-
-CREATE TABLE IF NOT EXISTS commerce_membership_entitlement (
-  id TEXT PRIMARY KEY,
-  tenant_id TEXT NOT NULL,
-  organization_id TEXT,
-  membership_id TEXT NOT NULL,
-  entitlement_code TEXT NOT NULL,
-  plan_id TEXT,
-  name TEXT NOT NULL DEFAULT '',
-  quota_amount TEXT NOT NULL DEFAULT '0',
-  quota_period TEXT,
-  reset_policy TEXT,
-  granted_quantity INTEGER NOT NULL,
-  used_quantity INTEGER NOT NULL DEFAULT 0,
-  expires_at TEXT,
-  status TEXT NOT NULL DEFAULT 'active',
-  created_at TEXT NOT NULL,
-  updated_at TEXT NOT NULL,
-  UNIQUE (tenant_id, membership_id, entitlement_code)
-);
-
-CREATE TABLE IF NOT EXISTS commerce_membership_entitlement_usage (
-  id TEXT PRIMARY KEY,
-  tenant_id TEXT NOT NULL,
-  organization_id TEXT,
-  membership_id TEXT NOT NULL,
-  entitlement_id TEXT NOT NULL,
-  owner_user_id TEXT,
-  entitlement_code TEXT NOT NULL,
-  usage_no TEXT NOT NULL,
-  used_amount TEXT NOT NULL,
-  balance_after TEXT,
-  idempotency_key TEXT NOT NULL,
-  source_type TEXT,
-  source_id TEXT,
-  occurred_at TEXT NOT NULL,
-  created_at TEXT NOT NULL,
-  UNIQUE (tenant_id, usage_no)
 );
 
 CREATE TABLE IF NOT EXISTS commerce_invoice_title (
@@ -694,17 +995,29 @@ CREATE INDEX IF NOT EXISTS idx_commerce_billing_prehold_request_no
 CREATE INDEX IF NOT EXISTS idx_commerce_billing_prehold_status_expires_at
   ON commerce_billing_prehold (tenant_id, status, expires_at);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_coupon_owner_status_expires_at
-  ON commerce_coupon (tenant_id, owner_user_id, status, expires_at);
+CREATE INDEX IF NOT EXISTS idx_commerce_billing_history_owner_occurred_at
+  ON commerce_billing_history (tenant_id, owner_user_id, occurred_at);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_coupon_template_status
-  ON commerce_coupon_template (tenant_id, status, starts_at, expires_at);
+CREATE INDEX IF NOT EXISTS idx_commerce_billing_history_owner_type_occurred_at
+  ON commerce_billing_history (tenant_id, owner_user_id, history_type, occurred_at);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_coupon_issue_batch_status
-  ON commerce_coupon_issue_batch (tenant_id, status, created_at);
+CREATE INDEX IF NOT EXISTS idx_commerce_billing_history_source
+  ON commerce_billing_history (tenant_id, source_type, source_id);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_coupon_redemption_order
-  ON commerce_coupon_redemption (tenant_id, order_id, status);
+CREATE INDEX IF NOT EXISTS idx_benefit_definition_code_status
+  ON benefit_definition (tenant_id, organization_id, benefit_code, status);
+
+CREATE INDEX IF NOT EXISTS idx_entitlement_grant_subject_status
+  ON entitlement_grant (tenant_id, subject_type, subject_id, status, expires_at);
+
+CREATE INDEX IF NOT EXISTS idx_entitlement_grant_source
+  ON entitlement_grant (tenant_id, source_type, source_id);
+
+CREATE INDEX IF NOT EXISTS idx_entitlement_account_subject_status
+  ON entitlement_account (tenant_id, subject_type, subject_id, status, expires_at);
+
+CREATE INDEX IF NOT EXISTS idx_entitlement_ledger_entry_account_occurred_at
+  ON entitlement_ledger_entry (tenant_id, account_id, occurred_at);
 
 CREATE INDEX IF NOT EXISTS idx_commerce_product_category_parent_status
   ON commerce_product_category (tenant_id, organization_id, parent_category_id, status);
@@ -772,44 +1085,80 @@ CREATE INDEX IF NOT EXISTS idx_commerce_payment_webhook_event_status_processed_a
 CREATE INDEX IF NOT EXISTS idx_commerce_payment_method_status
   ON commerce_payment_method (tenant_id, organization_id, status, sort_weight);
 
+CREATE INDEX IF NOT EXISTS idx_commerce_payment_provider_status
+  ON commerce_payment_provider (tenant_id, organization_id, status, sort_order);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_payment_provider_account_provider
+  ON commerce_payment_provider_account (tenant_id, organization_id, provider_code, status);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_payment_channel_route
+  ON commerce_payment_channel (tenant_id, organization_id, method_id, scene_code, currency_code, country_code, status);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_payment_route_rule_match
+  ON commerce_payment_route_rule (tenant_id, organization_id, status, purchase_type, country_code, currency_code, client_platform, priority);
+
 CREATE INDEX IF NOT EXISTS idx_commerce_refund_payment
   ON commerce_refund (tenant_id, payment_attempt_id);
 
 CREATE INDEX IF NOT EXISTS idx_commerce_exchange_rule_pair_status
   ON commerce_exchange_rule (tenant_id, organization_id, source_asset_type, target_asset_type, status);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_plan_status
-  ON commerce_membership_plan (tenant_id, organization_id, status);
+CREATE INDEX IF NOT EXISTS idx_membership_plan_status
+  ON membership_plan (tenant_id, organization_id, status, rank);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_package_group_status
-  ON commerce_membership_package_group (tenant_id, organization_id, status, sort_weight);
+CREATE INDEX IF NOT EXISTS idx_membership_plan_code
+  ON membership_plan (tenant_id, organization_id, plan_code);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_package_group_cycle
-  ON commerce_membership_package_group (tenant_id, organization_id, billing_cycle, status);
+CREATE INDEX IF NOT EXISTS idx_membership_plan_version_plan_status
+  ON membership_plan_version (tenant_id, plan_id, lifecycle_status);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_package_status
-  ON commerce_membership_package (tenant_id, organization_id, status, sort_weight);
+CREATE INDEX IF NOT EXISTS idx_membership_plan_benefit_plan_version
+  ON membership_plan_benefit (tenant_id, plan_version_id, benefit_id, status);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_package_group_plan
-  ON commerce_membership_package (tenant_id, package_group_id, plan_id, status);
+CREATE INDEX IF NOT EXISTS idx_membership_package_group_status
+  ON membership_package_group (tenant_id, organization_id, status, sort_weight);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_package_external_id
-  ON commerce_membership_package (tenant_id, organization_id, external_id);
+CREATE INDEX IF NOT EXISTS idx_membership_package_status
+  ON membership_package (tenant_id, organization_id, status, sort_weight);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_package_recommended
-  ON commerce_membership_package (tenant_id, organization_id, recommended, status, sort_weight);
+CREATE INDEX IF NOT EXISTS idx_membership_package_group_plan
+  ON membership_package (tenant_id, package_group_id, plan_id, status);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_owner_status
-  ON commerce_membership (tenant_id, owner_user_id, status, expires_at);
+CREATE INDEX IF NOT EXISTS idx_membership_subscription_subject_status
+  ON membership_subscription (tenant_id, subject_type, subject_id, status, expires_at);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_order_payment
-  ON commerce_membership (tenant_id, source_order_id, source_payment_intent_id);
+CREATE INDEX IF NOT EXISTS idx_membership_period_subscription_range
+  ON membership_period (tenant_id, subscription_id, starts_at, ends_at);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_entitlement_membership
-  ON commerce_membership_entitlement (tenant_id, membership_id, entitlement_code);
+CREATE INDEX IF NOT EXISTS idx_promotion_offer_status
+  ON promotion_offer (tenant_id, organization_id, status, starts_at, ends_at);
 
-CREATE INDEX IF NOT EXISTS idx_commerce_membership_entitlement_usage_usage_no
-  ON commerce_membership_entitlement_usage (tenant_id, usage_no);
+CREATE INDEX IF NOT EXISTS idx_promotion_offer_code
+  ON promotion_offer (tenant_id, organization_id, offer_code);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_offer_current_version
+  ON promotion_offer (tenant_id, current_offer_version_id);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_offer_version_offer_status
+  ON promotion_offer_version (tenant_id, offer_id, lifecycle_status);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_coupon_stock_offer_status
+  ON promotion_coupon_stock (tenant_id, offer_id, status, expires_at);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_code_code
+  ON promotion_code (tenant_id, promotion_code);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_code_stock_status
+  ON promotion_code (tenant_id, stock_id, status, expires_at);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_user_coupon_subject_status
+  ON promotion_user_coupon (tenant_id, subject_type, subject_id, status, expires_at);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_discount_application_order
+  ON promotion_discount_application (tenant_id, order_id, status);
+
+CREATE INDEX IF NOT EXISTS idx_promotion_discount_allocation_application_item
+  ON promotion_discount_allocation (tenant_id, application_id, order_item_id);
 
 CREATE INDEX IF NOT EXISTS idx_commerce_invoice_order_payment
   ON commerce_invoice (tenant_id, order_id, payment_id);

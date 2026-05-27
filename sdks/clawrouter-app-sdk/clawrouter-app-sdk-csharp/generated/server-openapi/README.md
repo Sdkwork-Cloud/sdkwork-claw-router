@@ -39,7 +39,7 @@ Choose exactly one mode for the same client instance.
 var config = new SdkConfig("http://localhost:18082");
 var client = new SdkworkAppClient(config);
 client.SetApiKey("your-api-key");
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -51,7 +51,7 @@ client.SetAuthToken("your-auth-token");
 client.SetAccessToken("your-access-token");
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
@@ -68,26 +68,36 @@ client.SetHeader("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.Commerce` - commerce API
 - `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Auth` - auth API
-- `client.Billing` - billing API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Memory` - memory API
 - `client.Notification` - notification API
+- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
-- `client.Runtime` - runtime API
 - `client.System` - system API
+- `client.Runtime` - runtime API
+- `client.SdkReference` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```csharp
+// Accounts Current Summary Retrieve
+var result = await client.Commerce.AccountsCurrentSummaryRetrieveAsync();
+Console.WriteLine(result);
+```
 
 ### agents
 
 ```csharp
-// List user agents
+// List Playground agent definitions
 var query = new Dictionary<string, object>
 {
     ["page"] = 1,
@@ -111,14 +121,6 @@ Console.WriteLine(result);
 ```csharp
 // Retrieve current IAM session
 var result = await client.Auth.SessionsCurrentRetrieveAsync();
-Console.WriteLine(result);
-```
-
-### billing
-
-```csharp
-// Retrieve account points
-var result = await client.Billing.AccountPointsRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -187,11 +189,31 @@ var result = await client.Notification.NotificationsListAsync(query);
 Console.WriteLine(result);
 ```
 
+### open_platform
+
+```csharp
+// Create open platform QR auth session
+var body = new OpenPlatformQrAuthSessionCreateRequest
+{
+    Purpose = "login",
+};
+var result = await client.OpenPlatform.QrAuthSessionsCreateAsync(body);
+Console.WriteLine(result);
+```
+
 ### platform
 
 ```csharp
 // Get categories
 var result = await client.Platform.AppsStoreCategoriesListAsync();
+Console.WriteLine(result);
+```
+
+### system
+
+```csharp
+// Retrieve public IAM verification policy
+var result = await client.System.IamVerificationPolicyRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -213,16 +235,17 @@ var result = await client.Runtime.InvocationsListAsync(query);
 Console.WriteLine(result);
 ```
 
-### system
+### sdk_reference
 
 ```csharp
-// Retrieve public site runtime branding settings
-var query = new Dictionary<string, object>
+// Generate SDK archive
+var body = new SdkReferenceArchiveGenerateRequest
 {
-    ["tenant_code"] = "ok",
-    ["organization_code"] = "ok",
+    Config = new Dictionary<string, object>(),
+    Language = "language",
+    Spec = new Dictionary<string, object>(),
 };
-var result = await client.System.SiteRuntimeRetrieveAsync(query);
+var result = await client.SdkReference.ArchivesCreateAsync(body);
 Console.WriteLine(result);
 ```
 

@@ -11,6 +11,7 @@ use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
@@ -28,8 +29,6 @@ use crate::ports::{
     UpdateAdminSkillPackageCommand,
 };
 
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
-const MAX_REQUEST_ID_LEN: usize = 128;
 const MAX_PAGE_SIZE: i64 = 200;
 const MAX_NAME_LEN: usize = 255;
 const MAX_KEY_LEN: usize = 128;
@@ -1889,7 +1888,7 @@ impl Default for ReviewSkillRequest {
 
 fn build_create_category_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     request: CreateCategoryRequest,
 ) -> Result<CreateAdminSkillCategoryCommand, AdminSkillCommandBuildError> {
@@ -1919,14 +1918,14 @@ fn build_create_category_command(
         visible: request.visible.unwrap_or(true),
         status: request.status.unwrap_or(1),
         category_type: request.category_type.unwrap_or(CATEGORY_TYPE_SKILLS),
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_category_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     category_id: i64,
     request: UpdateCategoryRequest,
@@ -1991,7 +1990,7 @@ fn build_update_category_command(
         visible: request.visible,
         status: request.status,
         category_type,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     };
 
@@ -2015,7 +2014,7 @@ fn build_update_category_command(
 
 fn build_delete_category_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     category_id: i64,
 ) -> Result<DeleteAdminSkillCategoryCommand, AdminSkillCommandBuildError> {
@@ -2023,7 +2022,7 @@ fn build_delete_category_command(
         subject,
         category_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -2120,7 +2119,7 @@ fn empty_package_list_query(subject: AdminSkillSubject) -> ListAdminSkillPackage
 
 fn build_create_package_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     request: CreatePackageRequest,
 ) -> Result<CreateAdminSkillPackageCommand, AdminSkillCommandBuildError> {
@@ -2154,14 +2153,14 @@ fn build_create_package_command(
         featured: request.featured.unwrap_or(false),
         sort_weight: request.sort_weight.unwrap_or(0),
         tags: normalize_string_array(request.tags, "tags")?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_package_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     package_id: i64,
     request: UpdatePackageRequest,
@@ -2208,7 +2207,7 @@ fn build_update_package_command(
             .tags
             .map(|values| normalize_string_array(Some(values), "tags"))
             .transpose()?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     };
 
@@ -2233,7 +2232,7 @@ fn build_update_package_command(
 
 fn build_set_package_enabled_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     package_id: i64,
     enabled: bool,
@@ -2243,14 +2242,14 @@ fn build_set_package_enabled_command(
         package_id,
         enabled,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_package_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     package_id: i64,
 ) -> Result<DeleteAdminSkillPackageCommand, AdminSkillCommandBuildError> {
@@ -2258,14 +2257,14 @@ fn build_delete_package_command(
         subject,
         package_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_skill_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     request: CreateSkillRequest,
 ) -> Result<CreateAdminSkillCommand, AdminSkillCommandBuildError> {
@@ -2368,14 +2367,14 @@ fn build_create_skill_command(
         capabilities: normalize_string_array(request.capabilities, "capabilities")?,
         config_schema: normalize_object(request.config_schema, "configSchema")?,
         default_config: normalize_object(request.default_config, "defaultConfig")?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_skill_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     request: UpdateSkillRequest,
@@ -2498,7 +2497,7 @@ fn build_update_skill_command(
             .default_config
             .map(|value| normalize_object(Some(value), "defaultConfig"))
             .transpose()?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     };
 
@@ -2542,7 +2541,7 @@ fn build_update_skill_command(
 
 fn build_set_enabled_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     enabled: bool,
@@ -2552,14 +2551,14 @@ fn build_set_enabled_command(
         skill_id,
         enabled,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_set_market_status_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     market_status: &str,
@@ -2571,14 +2570,14 @@ fn build_set_market_status_command(
         market_status: market_status.to_owned(),
         publish,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_review_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     review_status: &str,
@@ -2596,14 +2595,14 @@ fn build_review_command(
         review_status: review_status.to_owned(),
         review_comment,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_delete_skill_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
 ) -> Result<DeleteAdminSkillCommand, AdminSkillCommandBuildError> {
@@ -2611,14 +2610,14 @@ fn build_delete_skill_command(
         subject,
         skill_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_asset_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     request: CreateSkillAssetRequest,
@@ -2660,14 +2659,14 @@ fn build_create_asset_command(
             "publishedAt",
             MAX_VERSION_LEN,
         )?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_asset_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     asset_id: i64,
@@ -2715,7 +2714,7 @@ fn build_update_asset_command(
             "publishedAt",
             MAX_VERSION_LEN,
         )?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     };
     if command.artifact_id.is_none()
@@ -2742,7 +2741,7 @@ fn build_update_asset_command(
 
 fn build_delete_asset_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     asset_id: i64,
@@ -2752,14 +2751,14 @@ fn build_delete_asset_command(
         skill_id,
         asset_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_create_artifact_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     request: CreateSkillArtifactRequest,
@@ -2828,14 +2827,14 @@ fn build_create_artifact_command(
             "deprecatedAt",
             MAX_VERSION_LEN,
         )?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
 
 fn build_update_artifact_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     artifact_id: i64,
@@ -2905,7 +2904,7 @@ fn build_update_artifact_command(
             "deprecatedAt",
             MAX_VERSION_LEN,
         )?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     };
     if command.artifact_type.is_none()
@@ -2933,7 +2932,7 @@ fn build_update_artifact_command(
 
 fn build_delete_artifact_command(
     state: AdminSkillState,
-    headers: &HeaderMap,
+    _headers: &HeaderMap,
     subject: AdminSkillSubject,
     skill_id: i64,
     artifact_id: i64,
@@ -2943,7 +2942,7 @@ fn build_delete_artifact_command(
         skill_id,
         artifact_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: normalize_request_id(headers, &state)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
 }
@@ -3507,29 +3506,13 @@ fn generate_entity_uuid(state: &AdminSkillState) -> Result<String, AdminSkillCom
         .map_err(AdminSkillCommandBuildError::System)
 }
 
-fn normalize_request_id(
-    headers: &HeaderMap,
-    state: &AdminSkillState,
-) -> Result<String, AdminSkillCommandBuildError> {
-    if let Some(value) = header_value(headers, REQUEST_ID_HEADER) {
-        if value.chars().count() > MAX_REQUEST_ID_LEN
-            || !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte))
-        {
-            return Err(AdminSkillCommandBuildError::BadRequest(format!(
-                "{REQUEST_ID_HEADER} must be visible ASCII and at most {MAX_REQUEST_ID_LEN} characters"
-            )));
+fn request_id_error(error: RequestIdError) -> AdminSkillCommandBuildError {
+    match error {
+        RequestIdError::Invalid(message) => AdminSkillCommandBuildError::BadRequest(message),
+        RequestIdError::System(message) => {
+            AdminSkillCommandBuildError::System(DomainError::new(message))
         }
-        return Ok(value.to_owned());
     }
-    generate_entity_uuid(state)
-}
-
-fn header_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
 }
 
 fn to_category_response(item: AdminSkillCategoryItem) -> AdminSkillCategoryItemResponse {

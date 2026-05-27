@@ -7,7 +7,7 @@ public class AdminDeleteResponse {
     public Boolean getDeleted() {
         return this.deleted;
     }
-    
+
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }

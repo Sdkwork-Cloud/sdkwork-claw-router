@@ -17,15 +17,15 @@ import {
   type SdkworkUserCoupon,
 } from "@sdkwork/coupon-pc-react";
 import {
-  createSdkworkVipService,
-  type SdkworkVipBenefit,
-  type SdkworkVipDashboardData,
-  type SdkworkVipLevel,
-  type SdkworkVipPlan,
-  type SdkworkVipPurchaseResult,
-  type SdkworkVipService,
-  type SdkworkVipSummary,
-} from "@sdkwork/vip-pc-react";
+  createSdkworkMembershipService,
+  type SdkworkMembershipBenefit,
+  type SdkworkMembershipDashboardData,
+  type SdkworkMembershipLevel,
+  type SdkworkMembershipPlan,
+  type SdkworkMembershipPurchaseResult,
+  type SdkworkMembershipService,
+  type SdkworkMembershipSummary,
+} from "@sdkwork/membership-pc-react";
 import {
   createDefaultSdkworkSubscriptionPaymentMethodOptions,
   estimateSdkworkSubscriptionCheckout,
@@ -47,13 +47,13 @@ export interface SdkworkSubscriptionCoupon extends SdkworkUserCoupon {
 }
 
 export interface SdkworkSubscriptionDashboardData {
-  benefits: SdkworkVipBenefit[];
+  benefits: SdkworkMembershipBenefit[];
   checkout: SdkworkSubscriptionCheckoutEstimate;
   coupons: SdkworkSubscriptionCoupon[];
-  levels: SdkworkVipLevel[];
+  levels: SdkworkMembershipLevel[];
   paymentMethods: SdkworkSubscriptionPaymentMethodOption[];
-  plans: SdkworkVipPlan[];
-  summary: SdkworkVipSummary;
+  plans: SdkworkMembershipPlan[];
+  summary: SdkworkMembershipSummary;
 }
 
 export interface SdkworkSubscriptionMutationInput {
@@ -62,14 +62,14 @@ export interface SdkworkSubscriptionMutationInput {
   paymentMethod?: SdkworkSubscriptionPaymentMethod;
 }
 
-export type SdkworkSubscriptionPurchaseResult = SdkworkVipPurchaseResult;
+export type SdkworkSubscriptionPurchaseResult = SdkworkMembershipPurchaseResult;
 
 export interface CreateSdkworkSubscriptionServiceOptions {
   commerceService?: SdkworkCommerceService;
   locale?: string | null;
   messages?: SdkworkSubscriptionMessagesOverrides;
   paymentService?: Partial<Pick<SdkworkPaymentService, "getDashboard" | "getEmptyDashboard">>;
-  vipService?: Partial<SdkworkVipService>;
+  membershipService?: Partial<SdkworkMembershipService>;
 }
 
 export interface SdkworkSubscriptionService {
@@ -96,17 +96,17 @@ function normalizeSdkworkSubscriptionCoupon(
   };
 }
 
-function resolveDefaultAction(summary: SdkworkVipSummary): SdkworkSubscriptionAction {
-  return summary.isVip ? "upgrade" : "purchase";
+function resolveDefaultAction(summary: SdkworkMembershipSummary): SdkworkSubscriptionAction {
+  return summary.isMember ? "upgrade" : "purchase";
 }
 
-function resolveDefaultPlan(plans: readonly SdkworkVipPlan[]): SdkworkVipPlan | null {
+function resolveDefaultPlan(plans: readonly SdkworkMembershipPlan[]): SdkworkMembershipPlan | null {
   return plans.find((plan) => plan.recommended) ?? plans[0] ?? null;
 }
 
 function resolveBestCoupon(
   coupons: readonly SdkworkSubscriptionCoupon[],
-  plan: SdkworkVipPlan | null,
+  plan: SdkworkMembershipPlan | null,
   action: SdkworkSubscriptionAction,
 ): SdkworkSubscriptionCoupon | null {
   if (!plan) {
@@ -231,17 +231,17 @@ function resolvePaymentMethods(
 }
 
 function createDashboard(
-  vipDashboard: SdkworkVipDashboardData,
+  membershipDashboard: SdkworkMembershipDashboardData,
   coupons: readonly SdkworkSubscriptionCoupon[],
   paymentMethods: readonly SdkworkSubscriptionPaymentMethodOption[],
 ): SdkworkSubscriptionDashboardData {
-  const action = resolveDefaultAction(vipDashboard.summary);
-  const plan = resolveDefaultPlan(vipDashboard.plans);
+  const action = resolveDefaultAction(membershipDashboard.summary);
+  const plan = resolveDefaultPlan(membershipDashboard.plans);
   const coupon = resolveBestCoupon(coupons, plan, action);
   const selectedPaymentMethod = resolveSdkworkSubscriptionPaymentMethodOption(paymentMethods, null);
 
   return {
-    benefits: vipDashboard.benefits,
+    benefits: membershipDashboard.benefits,
     checkout: estimateSdkworkSubscriptionCheckout({
       action,
       coupon,
@@ -250,27 +250,27 @@ function createDashboard(
       plan,
     }),
     coupons: [...coupons],
-    levels: vipDashboard.levels,
+    levels: membershipDashboard.levels,
     paymentMethods: [...paymentMethods],
-    plans: vipDashboard.plans,
-    summary: vipDashboard.summary,
+    plans: membershipDashboard.plans,
+    summary: membershipDashboard.summary,
   };
 }
 
-function createEmptyDashboard(vipService: Pick<SdkworkVipService, "getEmptyDashboard">): SdkworkSubscriptionDashboardData {
-  return createDashboard(vipService.getEmptyDashboard(), [], createDefaultSdkworkSubscriptionPaymentMethodOptions());
+function createEmptyDashboard(membershipService: Pick<SdkworkMembershipService, "getEmptyDashboard">): SdkworkSubscriptionDashboardData {
+  return createDashboard(membershipService.getEmptyDashboard(), [], createDefaultSdkworkSubscriptionPaymentMethodOptions());
 }
 
-async function runVipMutation(
-  vipService: SdkworkVipService,
-  name: "vip.purchase" | "vip.renew" | "vip.upgrade",
+async function runMembershipMutation(
+  membershipService: SdkworkMembershipService,
+  name: "memberships.purchase" | "memberships.renew" | "memberships.upgrade",
   payload: SdkworkSubscriptionMutationInput,
 ): Promise<SdkworkSubscriptionPurchaseResult> {
-  return name === "vip.purchase"
-    ? vipService.purchaseMembership(payload)
-    : name === "vip.renew"
-      ? vipService.renewMembership(payload)
-      : vipService.upgradeMembership(payload);
+  return name === "memberships.purchase"
+    ? membershipService.purchaseMembership(payload)
+    : name === "memberships.renew"
+      ? membershipService.renewMembership(payload)
+      : membershipService.upgradeMembership(payload);
 }
 
 export function createSdkworkSubscriptionService(
@@ -278,15 +278,15 @@ export function createSdkworkSubscriptionService(
 ): SdkworkSubscriptionService {
   const copy = createSdkworkSubscriptionMessages(options.locale, options.messages);
   const getCommerceService = () => options.commerceService ?? getSdkworkCommerceService();
-  const vipService: SdkworkVipService = options.vipService
+  const membershipService: SdkworkMembershipService = options.membershipService
     ? {
-        ...createSdkworkVipService({
+        ...createSdkworkMembershipService({
           commerceService: options.commerceService,
           locale: options.locale,
         }),
-        ...options.vipService,
+        ...options.membershipService,
       }
-    : createSdkworkVipService({
+    : createSdkworkMembershipService({
         commerceService: options.commerceService,
         locale: options.locale,
       });
@@ -299,16 +299,16 @@ export function createSdkworkSubscriptionService(
 
   return {
     async getDashboard() {
-      const vipDashboard = await vipService.getDashboard();
-      if (!vipDashboard.summary.isAuthenticated) {
-        return createDashboard(vipDashboard, [], createDefaultSdkworkSubscriptionPaymentMethodOptions());
+      const membershipDashboard = await membershipService.getDashboard();
+      if (!membershipDashboard.summary.isAuthenticated) {
+        return createDashboard(membershipDashboard, [], createDefaultSdkworkSubscriptionPaymentMethodOptions());
       }
 
       const [couponPagePayload, paymentDashboard] = await Promise.all([
-        getCommerceService().users.current.coupons.list({
-            page: 1,
-            page_size: 20,
-            status: "available",
+        getCommerceService().promotions.userCoupons.wallet.list({
+          page: 1,
+          page_size: 20,
+          status: "available",
         }),
         paymentService.getDashboard(),
       ]);
@@ -321,26 +321,26 @@ export function createSdkworkSubscriptionService(
       ) as SdkworkSubscriptionCoupon[];
       const paymentMethods = resolvePaymentMethods(paymentDashboard.methods);
 
-      return createDashboard(vipDashboard, coupons, paymentMethods);
+      return createDashboard(membershipDashboard, coupons, paymentMethods);
     },
 
     getEmptyDashboard() {
-      return createEmptyDashboard(vipService);
+      return createEmptyDashboard(membershipService);
     },
 
     async purchaseSubscription(input) {
       requireSdkworkCommerceSession(copy.service.signInRequired);
-      return runVipMutation(vipService, "vip.purchase", input);
+      return runMembershipMutation(membershipService, "memberships.purchase", input);
     },
 
     async renewSubscription(input) {
       requireSdkworkCommerceSession(copy.service.signInRequired);
-      return runVipMutation(vipService, "vip.renew", input);
+      return runMembershipMutation(membershipService, "memberships.renew", input);
     },
 
     async upgradeSubscription(input) {
       requireSdkworkCommerceSession(copy.service.signInRequired);
-      return runVipMutation(vipService, "vip.upgrade", input);
+      return runMembershipMutation(membershipService, "memberships.upgrade", input);
     },
   };
 }

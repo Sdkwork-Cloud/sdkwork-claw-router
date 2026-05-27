@@ -17,6 +17,145 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
     return &SystemApi{client: client}
 }
 
+// Promotion Code Redemption Create
+func (a *SystemApi) PromotionsCodesRedemptionsCreate(body sdktypes.PromotionCodeRedemptionRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsCodesRedemptionsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath("/promotions/codes/redemptions"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PromotionsCodesRedemptionsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCodesRedemptionsCreateResult](raw)
+}
+
+// Promotion Discount Application Create
+func (a *SystemApi) PromotionsDiscountApplicationsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath("/promotions/discount_applications"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountApplicationsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountApplicationsCreateResult](raw)
+}
+
+// Promotion Discount Application Reversal Create
+func (a *SystemApi) PromotionsDiscountApplicationsReversalsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsReversalsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath("/promotions/discount_applications/reversals"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountApplicationsReversalsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountApplicationsReversalsCreateResult](raw)
+}
+
+// Promotion Discount Application Release
+func (a *SystemApi) PromotionsDiscountApplicationsRelease(applicationId string, body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsReleaseResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/promotions/discount_applications/%s/releases", SerializePathParameter(applicationId, PathParameterSpec{Name: "applicationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountApplicationsReleaseResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountApplicationsReleaseResult](raw)
+}
+
+// Promotion Discount Application Settle
+func (a *SystemApi) PromotionsDiscountApplicationsSettle(applicationId string, body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsSettleResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/promotions/discount_applications/%s/settlements", SerializePathParameter(applicationId, PathParameterSpec{Name: "applicationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountApplicationsSettleResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountApplicationsSettleResult](raw)
+}
+
+// Promotion User Coupon Claim Create
+func (a *SystemApi) PromotionsUserCouponsClaimsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsUserCouponsClaimsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath("/promotions/user_coupon_claims"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PromotionsUserCouponsClaimsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsUserCouponsClaimsCreateResult](raw)
+}
+
+// Promotion User Coupons Wallet List
+func (a *SystemApi) PromotionsUserCouponsWalletList(status *string) (sdktypes.PromotionsUserCouponsWalletListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/promotions/user_coupons"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsUserCouponsWalletListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsUserCouponsWalletListResult](raw)
+}
+
+// Retrieve public IAM runtime settings
+func (a *SystemApi) IamRuntimeRetrieve(tenantCode *string, organizationCode *string) (sdktypes.IamRuntimeRetrieveResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "tenant_code", Value: func() interface{} { if tenantCode == nil { return nil }; return *tenantCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "organization_code", Value: func() interface{} { if organizationCode == nil { return nil }; return *organizationCode }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/system/iam/runtime"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.IamRuntimeRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.IamRuntimeRetrieveResult](raw)
+}
+
+// Retrieve public IAM verification policy
+func (a *SystemApi) IamVerificationPolicyRetrieve() (sdktypes.IamVerificationPolicyRetrieveResult, error) {
+    raw, err := a.client.Get(AppApiPath("/system/iam/verification_policy"), nil, nil)
+    if err != nil {
+        var zero sdktypes.IamVerificationPolicyRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.IamVerificationPolicyRetrieveResult](raw)
+}
+
 // Retrieve public site runtime branding settings
 func (a *SystemApi) SiteRuntimeRetrieve(tenantCode *string, organizationCode *string) (sdktypes.SiteRuntimeRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -31,7 +170,110 @@ func (a *SystemApi) SiteRuntimeRetrieve(tenantCode *string, organizationCode *st
     return decodeResult[sdktypes.SiteRuntimeRetrieveResult](raw)
 }
 
+type PathParameterSpec struct {
+    Name    string
+    Style   string
+    Explode bool
+}
 
+func SerializePathParameter(value interface{}, spec PathParameterSpec) string {
+    if value == nil {
+        return ""
+    }
+    style := spec.Style
+    if style == "" {
+        style = "simple"
+    }
+
+    switch typed := value.(type) {
+    case []string:
+        return SerializePathArray(spec.Name, stringSliceToInterface(typed), style, spec.Explode)
+    case []int:
+        return SerializePathArray(spec.Name, intSliceToInterface(typed), style, spec.Explode)
+    case []interface{}:
+        return SerializePathArray(spec.Name, typed, style, spec.Explode)
+    case map[string]string:
+        return SerializePathObject(spec.Name, stringMapToInterface(typed), style, spec.Explode)
+    case map[string]int:
+        return SerializePathObject(spec.Name, intMapToInterface(typed), style, spec.Explode)
+    case map[string]interface{}:
+        return SerializePathObject(spec.Name, typed, style, spec.Explode)
+    default:
+        return PathPrefix(spec.Name, style) + url.PathEscape(fmt.Sprint(value))
+    }
+}
+
+func SerializePathArray(name string, values []interface{}, style string, explode bool) string {
+    serialized := make([]string, 0, len(values))
+    for _, item := range values {
+        if item != nil {
+            serialized = append(serialized, url.PathEscape(fmt.Sprint(item)))
+        }
+    }
+    if len(serialized) == 0 {
+        return PathPrefix(name, style)
+    }
+    if style == "matrix" {
+        if explode {
+            parts := make([]string, 0, len(serialized))
+            for _, item := range serialized {
+                parts = append(parts, ";"+name+"="+item)
+            }
+            return strings.Join(parts, "")
+        }
+        return ";" + name + "=" + strings.Join(serialized, ",")
+    }
+    separator := ","
+    if explode {
+        separator = "."
+    }
+    return PathPrefix(name, style) + strings.Join(serialized, separator)
+}
+
+func SerializePathObject(name string, values map[string]interface{}, style string, explode bool) string {
+    entries := make([]string, 0, len(values)*2)
+    exploded := make([]string, 0, len(values))
+    for key, value := range values {
+        if value == nil {
+            continue
+        }
+        escapedKey := url.PathEscape(key)
+        escapedValue := url.PathEscape(fmt.Sprint(value))
+        if explode {
+            if style == "matrix" {
+                exploded = append(exploded, ";"+escapedKey+"="+escapedValue)
+            } else {
+                exploded = append(exploded, escapedKey+"="+escapedValue)
+            }
+        } else {
+            entries = append(entries, escapedKey, escapedValue)
+        }
+    }
+    if style == "matrix" {
+        if explode {
+            return strings.Join(exploded, "")
+        }
+        return ";" + name + "=" + strings.Join(entries, ",")
+    }
+    if explode {
+        separator := ","
+        if style == "label" {
+            separator = "."
+        }
+        return PathPrefix(name, style) + strings.Join(exploded, separator)
+    }
+    return PathPrefix(name, style) + strings.Join(entries, ",")
+}
+
+func PathPrefix(name string, style string) string {
+    if style == "label" {
+        return "."
+    }
+    if style == "matrix" {
+        return ";" + name
+    }
+    return ""
+}
 type QueryParameterSpec struct {
     Name          string
     Value         interface{}
@@ -154,7 +396,92 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
+type ParameterSpec struct {
+    Value       interface{}
+    Style       string
+    Explode     bool
+    ContentType string
+}
 
+func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
+    requestHeaders := map[string]string{}
+    for name, parameter := range headers {
+        if serialized, ok := SerializeParameterValue(parameter); ok {
+            requestHeaders[name] = serialized
+        }
+    }
+
+    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
+        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
+            requestHeaders["Cookie"] = existing + "; " + cookieHeader
+        } else {
+            requestHeaders["Cookie"] = cookieHeader
+        }
+    }
+
+    if len(requestHeaders) == 0 {
+        return nil
+    }
+    return requestHeaders
+}
+
+func BuildCookieHeader(cookies map[string]ParameterSpec) string {
+    pairs := make([]string, 0, len(cookies))
+    for name, parameter := range cookies {
+        if serialized, ok := SerializeParameterValue(parameter); ok {
+            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
+        }
+    }
+    return strings.Join(pairs, "; ")
+}
+
+func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
+    value := parameter.Value
+    if value == nil {
+        return "", false
+    }
+    if parameter.ContentType != "" {
+        encoded, _ := json.Marshal(value)
+        return string(encoded), true
+    }
+    switch typed := value.(type) {
+    case string:
+        return typed, true
+    case fmt.Stringer:
+        return typed.String(), true
+    case []string:
+        return strings.Join(typed, ","), true
+    case []int:
+        values := make([]string, 0, len(typed))
+        for _, item := range typed {
+            values = append(values, fmt.Sprint(item))
+        }
+        return strings.Join(values, ","), true
+    case map[string]string:
+        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
+    case map[string]int:
+        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
+    case map[string]interface{}:
+        return SerializeHeaderObject(typed, parameter.Explode), true
+    default:
+        return fmt.Sprint(value), true
+    }
+}
+
+func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
+    serialized := make([]string, 0, len(values)*2)
+    for key, value := range values {
+        if value == nil {
+            continue
+        }
+        if explode {
+            serialized = append(serialized, key+"="+fmt.Sprint(value))
+        } else {
+            serialized = append(serialized, key, fmt.Sprint(value))
+        }
+    }
+    return strings.Join(serialized, ",")
+}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

@@ -93,6 +93,14 @@ test('root package exposes pnpm product entrypoints', () => {
     'node scripts/smoke-edge-dev-server.mjs',
   );
   assert.equal(
+    rootPackage.scripts['fmt:rust'],
+    'node scripts/cargo-fmt-workspace.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['fmt:rust:check'],
+    'node scripts/cargo-fmt-workspace.mjs --check',
+  );
+  assert.equal(
     rootPackage.scripts['verify:fast'],
     'node scripts/verify-claw-router-product.mjs --fast',
   );
@@ -271,6 +279,12 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     '-p',
     'sdkwork-claw-installer',
   ]);
+});
+
+test('workspace rust formatter uses per-package cargo-fmt to avoid Windows argument limits', () => {
+  const formatter = readFileSync(path.join(workspaceRoot, 'scripts', 'cargo-fmt-workspace.mjs'), 'utf8');
+  assert.match(formatter, /function resolveCargoFmtCommand/u);
+  assert.doesNotMatch(formatter, /runInherited\('cargo', args\)/u);
 });
 
 test('rust test process cleanup scopes Windows stops to repository-local targets', async () => {
@@ -918,6 +932,10 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(plan.steps[4].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
   assert.equal(plan.steps[4].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
   assert.equal(plan.steps[4].env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'false');
+  assert.equal(
+    plan.steps[4].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL,
+    'http://127.0.0.1:19080',
+  );
   assert.deepEqual(plan.steps[5].args, [
     '--dir',
     'apps/sdkwork-claw-router-portal',
@@ -3866,18 +3884,6 @@ test('Rust edge SDK archive tool API is constrained to generated SDK packages', 
 });
 
 test('API router product chain is covered from portal services through SDK and Rust edge', () => {
-  const routingServiceSource = readFileSync(
-    path.join(
-      workspaceRoot,
-      'apps',
-      'sdkwork-claw-router-portal',
-      'packages',
-      'sdkwork-claw-router-console-routing',
-      'src',
-      'routingService.ts',
-    ),
-    'utf8',
-  );
   const modelServiceSource = readFileSync(
     path.join(
       workspaceRoot,
@@ -3914,27 +3920,6 @@ test('API router product chain is covered from portal services through SDK and R
     ),
     'utf8',
   );
-  const routingComponentsSource = [
-    'ApiKeysTab.tsx',
-    'ChannelsTab.tsx',
-    'RequestDataTab.tsx',
-    'StrategyTab.tsx',
-    'UsageTab.tsx',
-  ].map((fileName) =>
-    readFileSync(
-      path.join(
-        workspaceRoot,
-        'apps',
-        'sdkwork-claw-router-portal',
-        'packages',
-        'sdkwork-claw-router-console-routing',
-        'src',
-        'components',
-        fileName,
-      ),
-      'utf8',
-    ),
-  ).join('\n');
   const appSdkRouterSource = readFileSync(
     path.join(
       workspaceRoot,
@@ -4004,7 +3989,7 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(workspaceRoot, 'services', 'sdkwork-claw-gateway', 'tests', 'openai_chat_route.rs'),
     'utf8',
   );
-  const appAiServiceSurface = `${routingServiceSource}\n${modelServiceSource}\n${playgroundServiceSource}\n${appRuntimeApiOperationsSource}`;
+  const appAiServiceSurface = `${modelServiceSource}\n${playgroundServiceSource}\n${appRuntimeApiOperationsSource}`;
 
   const requiredAppRouterOperations = [
     {
@@ -4213,14 +4198,16 @@ test('API router product chain is covered from portal services through SDK and R
     }
   };
 
-  for (const operation of requiredAppRouterOperations) {
+  const requiredPortalAppRouterOperations = requiredAppRouterOperations.filter(
+    (operation) => operation.frontendService !== 'RoutingService',
+  );
+
+  for (const operation of requiredPortalAppRouterOperations) {
     const manifestOperation = manifest.operations.find((entry) =>
       entry.source === (
         operation.operation === 'fetchModels'
           ? 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts'
-          : operation.frontendService === 'PlaygroundService'
-            ? 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts'
-          : 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts'
+          : 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts'
       )
       && entry.operation === operation.operation
       && entry.api_path === operation.manifestPath
@@ -4233,9 +4220,7 @@ test('API router product chain is covered from portal services through SDK and R
       manifestOperation.route,
       operation.operation === 'fetchModels'
         ? '/models'
-        : operation.frontendService === 'PlaygroundService'
-          ? '/playground'
-          : '/console/routing',
+        : '/playground',
     );
     assert.equal(manifestOperation.sdk_api_prefix, '/app/v3/api');
     assert.ok(
@@ -4296,22 +4281,6 @@ test('API router product chain is covered from portal services through SDK and R
   assert.equal(openapi.paths['/app/v3/api/ai/models']?.get?.operationId, 'models.list');
   assert.ok(appModelsSource.includes('/app/v3/api/ai/models'));
   assert.ok(!appModelsSource.includes(removedPlaygroundModelsPath));
-
-  for (const componentCall of [
-    'RoutingService.fetchChannels',
-    'RoutingService.createChannel',
-    'RoutingService.updateChannel',
-    'RoutingService.deleteChannel',
-    'RoutingService.setChannelStatus',
-    'RoutingService.testChannel',
-    'RoutingService.fetchApiKeys',
-    'RoutingService.fetchRequestTraces',
-    'RoutingService.fetchStrategy',
-    'RoutingService.updateStrategy',
-    'RoutingService.fetchUsageData',
-  ]) {
-    assert.ok(routingComponentsSource.includes(componentCall), `${componentCall} must be wired into console routing UI`);
-  }
 
   assert.ok(appApiSource.includes('app_routing_router_with_read_store'));
   assert.ok(appApiSource.includes('app_routing_strategy_router_with_store'));
@@ -5945,7 +5914,6 @@ test('portal channel test commands must require returned channel entities', () =
   const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'packages');
   const serviceFiles = [
     'sdkwork-claw-router-admin-channel/src/channelService.ts',
-    'sdkwork-claw-router-console-routing/src/routingService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -5979,14 +5947,6 @@ test('portal mutable entity services must require backend stable ids', () => {
       file: path.join('sdkwork-claw-router-admin-channel', 'src', 'channelService.ts'),
       requiredMessages: ['Channel id is required', 'Provider credential id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
-    },
-    {
-      file: path.join('sdkwork-claw-router-console-routing', 'src', 'routingService.ts'),
-      requiredMessages: ['Routing channel id is required'],
-      forbidden: [
-        /id:\s*readFirstString\([^)]*providerCode/u,
-        /id:\s*readFirstString\([^)]*channelCode[^)]*,\s*providerCode/u,
-      ],
     },
     {
       file: path.join('sdkwork-claw-router-admin-user', 'src', 'userService.ts'),
@@ -6024,16 +5984,6 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-finance', 'src', 'financeService.ts'),
-      requiredMessages: [
-        'Coupon id is required',
-        'Coupon batch id is required',
-        'Promo code id is required',
-        'Redemption record id is required',
-      ],
-      forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
-    },
-    {
       file: path.join('sdkwork-claw-router-admin-monitor', 'src', 'monitorService.ts'),
       requiredMessages: ['System node id is required', 'Alert id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
@@ -6051,11 +6001,6 @@ test('portal mutable entity services must require backend stable ids', () => {
     {
       file: path.join('sdkwork-claw-router-admin-wallet', 'src', 'walletService.ts'),
       requiredMessages: ['Recharge record id is required'],
-      forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
-    },
-    {
-      file: path.join('sdkwork-claw-router-console-providers', 'src', 'providerService.ts'),
-      requiredMessages: ['Provider id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
@@ -6078,9 +6023,6 @@ test('portal mutable entity services must require backend stable ids', () => {
         source.includes(`readRequiredString(item, 'id', '${message}')`)
           || source.includes(`readRequiredNumber(item, 'id', '${message}')`)
           || source.includes(`readRequiredString(item, 'vendorId', '${message}')`)
-          || source.includes(`readRequiredString(item, 'couponId', '${message}')`)
-          || source.includes(`readRequiredString(item, 'batchId', '${message}')`)
-          || source.includes(`firstRequiredString(item, ['id', 'couponId', 'coupon_id', 'redemptionNo', 'redemption_no'], '${message}')`)
           || source.includes(`firstRequiredString(item, ['id', 'transactionNo', 'transaction_no', 'requestNo', 'request_no'], '${message}')`)
           || source.includes(`readRequiredAnyString(item, ['id', 'uuid', 'channelCode', 'channel_code'], '${message}')`),
         `${service.file} must fail closed with "${message}" when backend omits a stable id`,
@@ -6221,9 +6163,7 @@ test('portal workspace packages declare ESM module metadata', () => {
     'sdkwork-claw-router-console-gateway',
     'sdkwork-claw-router-console-memberships',
     'sdkwork-claw-router-console-messages',
-    'sdkwork-claw-router-console-providers',
     'sdkwork-claw-router-console-recharge',
-    'sdkwork-claw-router-console-routing',
     'sdkwork-claw-router-console-settings',
     'sdkwork-claw-router-console-settlements',
     'sdkwork-claw-router-console-usage',
@@ -7001,7 +6941,7 @@ test('verification plan includes portal playground chat runtime tests before bro
   assert.ok(playgroundChatRuntimeIndex < rustTestsIndex, 'playground chat runtime tests must run before broad Rust tests');
   assert.ok(playgroundChatRuntimeIndex < pythonTestsIndex, 'playground chat runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/playground-chat-runtime.test.ts',
+    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx playground-chat-runtime.test.ts`,
   ));
 });
 
@@ -7135,8 +7075,8 @@ test('production browser smoke keeps current-user playground CORS compatible wit
   );
 
   assert.ok(smokeSource.includes('apiPlaygroundCorsHeaders'));
-  assert.ok(smokeSource.includes('sdkwork-access-token'));
-  assert.ok(smokeSource.includes('authorization, content-type, sdkwork-access-token, x-browser-smoke'));
+  assert.ok(smokeSource.includes('access-token'));
+  assert.ok(smokeSource.includes('authorization, content-type, access-token, x-browser-smoke'));
 });
 
 test('verification plan includes portal api key runtime tests before broad suites', async () => {
@@ -7183,7 +7123,7 @@ test('verification plan includes portal commerce business runtime tests before b
   assert.ok(commerceBusinessRuntimeIndex < rustTestsIndex, 'commerce business runtime tests must run before broad Rust tests');
   assert.ok(commerceBusinessRuntimeIndex < pythonTestsIndex, 'commerce business runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/commerce-business-runtime.test.ts',
+    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx commerce-business-runtime.test.ts`,
   ));
 });
 

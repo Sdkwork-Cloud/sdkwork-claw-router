@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace Sdkwork.ClawRouter.App.Models
+{
+    public class CommerceRefundItemRecord
+    {
+        public string? CreatedAt { get; set; }
+        public string? OrderItemId { get; set; }
+        public string? OrganizationId { get; set; }
+        public string? RefundAmount { get; set; }
+        public string? RefundId { get; set; }
+        public string? TenantId { get; set; }
+    }
+}

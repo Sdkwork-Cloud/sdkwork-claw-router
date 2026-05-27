@@ -26,7 +26,7 @@ public class ContentCourseSectionRecord {
     public String getCourseId() {
         return this.courseId;
     }
-    
+
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
@@ -34,7 +34,7 @@ public class ContentCourseSectionRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -42,7 +42,7 @@ public class ContentCourseSectionRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -50,7 +50,7 @@ public class ContentCourseSectionRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -58,7 +58,7 @@ public class ContentCourseSectionRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -66,7 +66,7 @@ public class ContentCourseSectionRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -74,7 +74,7 @@ public class ContentCourseSectionRecord {
     public String getDurationSeconds() {
         return this.durationSeconds;
     }
-    
+
     public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -82,7 +82,7 @@ public class ContentCourseSectionRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -90,7 +90,7 @@ public class ContentCourseSectionRecord {
     public Integer getLessonCount() {
         return this.lessonCount;
     }
-    
+
     public void setLessonCount(Integer lessonCount) {
         this.lessonCount = lessonCount;
     }
@@ -98,7 +98,7 @@ public class ContentCourseSectionRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -106,7 +106,7 @@ public class ContentCourseSectionRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -114,7 +114,7 @@ public class ContentCourseSectionRecord {
     public Integer getSectionNo() {
         return this.sectionNo;
     }
-    
+
     public void setSectionNo(Integer sectionNo) {
         this.sectionNo = sectionNo;
     }
@@ -122,7 +122,7 @@ public class ContentCourseSectionRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -130,7 +130,7 @@ public class ContentCourseSectionRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -138,7 +138,7 @@ public class ContentCourseSectionRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -146,7 +146,7 @@ public class ContentCourseSectionRecord {
     public String getTitle() {
         return this.title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -154,7 +154,7 @@ public class ContentCourseSectionRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -162,7 +162,7 @@ public class ContentCourseSectionRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -170,7 +170,7 @@ public class ContentCourseSectionRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

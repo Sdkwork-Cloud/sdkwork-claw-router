@@ -16,11 +16,48 @@ export interface RechargePackage {
   points: number;
 }
 
+export type BillingHistoryType = 'redeem' | 'recharge';
+export type BillingHistoryTab = 'all' | BillingHistoryType;
+
+export interface BillingHistoryItem {
+  id: string;
+  historyNo: string;
+  type: BillingHistoryType;
+  direction: string;
+  assetType: string;
+  amount: string;
+  currencyCode?: string;
+  pointsDelta: number;
+  status: string;
+  title: string;
+  referenceNo?: string;
+  sourceType?: string;
+  sourceId?: string;
+  relatedOrderNo?: string;
+  paymentMethod?: string;
+  occurredAt: string;
+}
+
 export class RechargeService {
   static async fetchPackages(): Promise<RechargePackage[]> {
     const result = await appRechargesPackagesList({ page: 1, pageSize: 100, status: 'active' });
     return readRequiredApiItems(result, 'console.recharge.errors.packagesFallback')
       .map(normalizeRechargePackage);
+  }
+
+  static async fetchBillingHistory(params: { type?: BillingHistoryType } = {}): Promise<BillingHistoryItem[]> {
+    const result = await appBillingHistoryList({
+      page: 1,
+      pageSize: 100,
+      ...(params.type ? { type: params.type } : {}),
+    });
+    const missingIdMessage = params.type === 'recharge'
+      ? 'Recharge history id is required'
+      : params.type === 'redeem'
+        ? 'Redeem history id is required'
+        : 'Billing history id is required';
+    return readRequiredApiItems(result, 'console.recharge.records.errors.loadFallback')
+      .map(item => normalizeBillingHistoryItem(item, missingIdMessage));
   }
 
   static async submitRecharge(
@@ -84,6 +121,16 @@ export async function appRechargesOrdersCreate(body: Parameters<AppCommerce['rec
   );
 }
 
+type BillingHistorySdkParams = Parameters<AppCommerce['billing']['history']['list']>[0];
+
+export async function appBillingHistoryList(params?: BillingHistorySdkParams & { type?: BillingHistoryType }) {
+  const { type, ...rest } = params ?? {};
+  return getClawRouterAppSdkClient().commerce.billing.history.list({
+    ...rest,
+    ...(type ? { type_: type } : {}),
+  });
+}
+
 export async function fetchRechargePackages(): Promise<RechargePackage[]> {
   return RechargeService.fetchPackages();
 }
@@ -104,6 +151,32 @@ function normalizeRechargePackage(value: unknown): RechargePackage {
     ),
     bonus: readOptionalNonNegativeNumber(item, 'bonus'),
     points: readOptionalNonNegativeNumber(item, 'points'),
+  };
+}
+
+function normalizeBillingHistoryItem(value: unknown, missingIdMessage: string): BillingHistoryItem {
+  const item = readRequiredRecord(value, 'Billing history record is required');
+  const type = firstRequiredString(item, ['type', 'historyType', 'history_type'], 'Billing history type is required');
+  if (type !== 'redeem' && type !== 'recharge') {
+    throw new Error(`Unsupported billing history type: ${type}`);
+  }
+  return {
+    id: firstRequiredString(item, ['id'], missingIdMessage),
+    historyNo: firstRequiredString(item, ['historyNo', 'history_no'], 'Billing history number is required'),
+    type,
+    direction: readFirstOptionalString(item, ['direction']) || 'credit',
+    assetType: readFirstOptionalString(item, ['assetType', 'asset_type']) || 'points',
+    amount: firstBillingMoneyString(item, ['amount'], 'Billing history amount is required', 'Billing history amount must be a money string'),
+    currencyCode: readFirstOptionalString(item, ['currencyCode', 'currency_code']),
+    pointsDelta: firstOptionalNumber(item, ['pointsDelta', 'points_delta']) ?? 0,
+    status: firstRequiredString(item, ['status'], 'Billing history status is required'),
+    title: readFirstOptionalString(item, ['title']) || (type === 'recharge' ? 'Recharge' : 'Redeem'),
+    referenceNo: readFirstOptionalString(item, ['referenceNo', 'reference_no']),
+    sourceType: readFirstOptionalString(item, ['sourceType', 'source_type']),
+    sourceId: readFirstOptionalString(item, ['sourceId', 'source_id']),
+    relatedOrderNo: readFirstOptionalString(item, ['relatedOrderNo', 'related_order_no']),
+    paymentMethod: readFirstOptionalString(item, ['paymentMethod', 'payment_method']),
+    occurredAt: firstRequiredString(item, ['occurredAt', 'occurred_at', 'createdAt', 'created_at'], 'Billing history occurrence time is required'),
   };
 }
 
@@ -152,6 +225,27 @@ function readFirstString(item: ApiRecord, keys: readonly string[]): string {
   return '';
 }
 
+function readFirstOptionalString(item: ApiRecord, keys: readonly string[]): string | undefined {
+  const value = readFirstString(item, keys);
+  return value || undefined;
+}
+
+function firstOptionalNumber(item: ApiRecord, keys: readonly string[]): number | undefined {
+  for (const key of keys) {
+    const value = item[key];
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      return value;
+    }
+    if (typeof value === 'string' && value.trim()) {
+      const number = Number(value.trim());
+      if (Number.isFinite(number)) {
+        return number;
+      }
+    }
+  }
+  return undefined;
+}
+
 function readOptionalNonNegativeNumber(item: ApiRecord, key: string): number {
   const value = item[key];
   if (value === undefined || value === null || value === '') {
@@ -162,6 +256,22 @@ function readOptionalNonNegativeNumber(item: ApiRecord, key: string): number {
     throw new Error(`${key} must be a non-negative number`);
   }
   return number;
+}
+
+function firstBillingMoneyString(
+  item: ApiRecord,
+  keys: readonly string[],
+  missingMessage: string,
+  invalidMessage: string,
+): string {
+  const value = readFirstString(item, keys);
+  if (!value) {
+    throw new Error(missingMessage);
+  }
+  if (!/^-?\d+(?:\.\d{1,2})?$/.test(value)) {
+    throw new Error(invalidMessage);
+  }
+  return formatSignedMoneyString(value);
 }
 
 function firstMoneyString(
@@ -191,4 +301,11 @@ function moneyAmount(value: string, fieldName: string): string {
 function formatMoneyString(value: string): string {
   const [whole, fraction = ''] = value.split('.');
   return `${whole}.${fraction.padEnd(2, '0').slice(0, 2)}`;
+}
+
+function formatSignedMoneyString(value: string): string {
+  const sign = value.startsWith('-') ? '-' : '';
+  const unsigned = sign ? value.slice(1) : value;
+  const [whole, fraction = ''] = unsigned.split('.');
+  return `${sign}${whole}.${fraction.padEnd(2, '0').slice(0, 2)}`;
 }

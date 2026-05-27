@@ -10,8 +10,8 @@ use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
 use crate::application::{
-    ListModelCatalogQuery, ModelCatalogItem, ModelCatalogPage, ModelCatalogQueryService,
-    PriceAvailability,
+    ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,
+    ModelCatalogQueryService, PriceAvailability,
 };
 use crate::domain::BillingMeter;
 use crate::ports::PricingCatalog;
@@ -46,6 +46,7 @@ struct AppModelCatalogQuery {
 #[serde(rename_all = "camelCase")]
 struct AppModelCatalogResponse {
     items: Vec<AppModelCatalogItemResponse>,
+    groups: Vec<AppModelCatalogGroupResponse>,
 }
 
 #[derive(Debug, Serialize)]
@@ -59,6 +60,14 @@ struct AppModelVendorCatalogResponse {
 struct AppModelVendorOptionResponse {
     label: String,
     code: String,
+    model_count: usize,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AppModelCatalogGroupResponse {
+    key: String,
+    label: String,
     model_count: usize,
 }
 
@@ -181,6 +190,15 @@ where
 fn to_response(page: ModelCatalogPage) -> AppModelCatalogResponse {
     AppModelCatalogResponse {
         items: page.items.into_iter().map(to_item_response).collect(),
+        groups: page.groups.into_iter().map(to_group_response).collect(),
+    }
+}
+
+fn to_group_response(group: ModelCatalogGroup) -> AppModelCatalogGroupResponse {
+    AppModelCatalogGroupResponse {
+        key: group.key,
+        label: group.label,
+        model_count: group.model_count,
     }
 }
 

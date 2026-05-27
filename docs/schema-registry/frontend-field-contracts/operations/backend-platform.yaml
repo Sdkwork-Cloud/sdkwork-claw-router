@@ -282,7 +282,6 @@ frontend_operations:
   write_tables:
   - open_platform_account
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: OpenPlatformAccountCreateRequest
     required:
@@ -310,18 +309,18 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 128
-      secretRef:
+      appSecret:
         type: string
         nullable: true
-        maxLength: 256
-      tokenRef:
+        maxLength: 4096
+      token:
         type: string
         nullable: true
-        maxLength: 256
-      aesKeyRef:
+        maxLength: 4096
+      encodingAesKey:
         type: string
         nullable: true
-        maxLength: 256
+        maxLength: 4096
   response_schema: &id004
     name: OpenPlatformAccountResponse
     required:
@@ -355,7 +354,6 @@ frontend_operations:
   write_tables:
   - open_platform_account
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: OpenPlatformAccountUpdateRequest
     required: []
@@ -368,18 +366,18 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 128
-      secretRef:
+      appSecret:
         type: string
         nullable: true
-        maxLength: 256
-      tokenRef:
+        maxLength: 4096
+      token:
         type: string
         nullable: true
-        maxLength: 256
-      aesKeyRef:
+        maxLength: 4096
+      encodingAesKey:
         type: string
         nullable: true
-        maxLength: 256
+        maxLength: 4096
       defaultEntryId:
         type: string
         nullable: true
@@ -404,7 +402,6 @@ frontend_operations:
   write_tables:
   - open_platform_account
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema: *id004
 - route: /admin/open-platform
@@ -486,7 +483,6 @@ frontend_operations:
   write_tables:
   - open_platform_entry
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: OpenPlatformEntryCreateRequest
     required:
@@ -528,7 +524,6 @@ frontend_operations:
   - open_platform_entry
   - open_platform_account
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: OpenPlatformEntryUpdateRequest
     required: []
@@ -565,7 +560,6 @@ frontend_operations:
   - open_platform_entry
   - open_platform_account
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema: *id008
 - route: /admin/open-platform
@@ -653,7 +647,6 @@ frontend_operations:
   write_tables:
   - open_platform_pay_binding
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: OpenPlatformPayBindingCreateRequest
     required:
@@ -696,7 +689,6 @@ frontend_operations:
   write_tables:
   - open_platform_pay_binding
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema: *id012
 - route: /admin/app
@@ -711,7 +703,6 @@ frontend_operations:
   - plus_category
   - studio_catalog_asset
   - studio_catalog_artifact
-  request_id_header: true
   query_parameters:
   - name: q
     schema:
@@ -735,6 +726,11 @@ frontend_operations:
       type: string
       maxLength: 64
       pattern: ^[A-Za-z0-9._:-]+$
+  - name: category_id
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
   - name: page
     schema:
       type: integer
@@ -750,6 +746,10 @@ frontend_operations:
     name: AdminAppListResponse
     required:
     - items
+    - total
+    - page
+    - pageSize
+    - hasNextPage
     properties:
       items:
         type: array
@@ -912,6 +912,21 @@ frontend_operations:
               minLength: 1
               maxLength: 64
         description: PlusApp snapshots returned by the backend management API.
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+      hasNextPage:
+        type: boolean
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: fetchAppCategories
@@ -997,7 +1012,6 @@ frontend_operations:
   write_tables:
   - plus_category
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAppCategoryCreateRequest
     required:
@@ -1065,7 +1079,6 @@ frontend_operations:
   write_tables:
   - plus_category
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAppCategoryUpdateRequest
     required: []
@@ -1136,7 +1149,6 @@ frontend_operations:
   write_tables:
   - plus_category
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema:
     name: AdminAppCategoryDeleteResponse
@@ -1146,6 +1158,574 @@ frontend_operations:
       deleted:
         type: boolean
         description: Whether the app store category was deleted.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: fetchAppTemplates
+  operation_id: apps.templates.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/platform/apps/templates
+  read_sources:
+  - studio_app_template
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  query_parameters:
+  - name: q
+    schema:
+      type: string
+      maxLength: 128
+  - name: publish_status
+    schema:
+      type: string
+      enum:
+      - DRAFT
+      - PUBLISHED
+      - OFFLINE
+  - name: template_type
+    schema:
+      type: string
+      maxLength: 64
+      pattern: ^[A-Za-z0-9._:-]+$
+  - name: runtime
+    schema:
+      type: string
+      maxLength: 64
+      pattern: ^[A-Za-z0-9._:-]+$
+  - name: category_id
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: AdminAppTemplateListResponse
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    - hasNextPage
+    properties:
+      items:
+        type: array
+        maxItems: 200
+        items:
+          name: AdminAppTemplateItemResponse
+          type: object
+          additionalProperties: false
+          required: &id019
+          - id
+          - uuid
+          - templateNo
+          - templateCode
+          - templateName
+          - visibility
+          - publishStatus
+          - featured
+          - sortWeight
+          - appConfigSchema
+          - defaultAppConfig
+          - variableSchema
+          - dependencyManifest
+          - capabilityManifest
+          - createdAt
+          - updatedAt
+          properties: &id020
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            uuid:
+              type: string
+              minLength: 1
+              maxLength: 128
+            templateNo:
+              type: string
+              minLength: 1
+              maxLength: 64
+            templateCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[A-Za-z0-9._:-]+$
+            templateName:
+              type: string
+              minLength: 1
+              maxLength: 255
+            description:
+              type: string
+              nullable: true
+              maxLength: 4000
+            categoryId:
+              type: string
+              nullable: true
+              maxLength: 128
+            categoryCode:
+              type: string
+              nullable: true
+              maxLength: 128
+              pattern: ^[A-Za-z0-9._:-]+$
+            templateType:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._:-]+$
+            runtime:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._:-]+$
+            framework:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._:-]+$
+            language:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._:-]+$
+            iconUrl:
+              type: string
+              nullable: true
+              maxLength: 1024
+            coverUrl:
+              type: string
+              nullable: true
+              maxLength: 1024
+            visibility:
+              type: string
+              enum:
+              - PRIVATE
+              - TENANT
+              - PUBLIC
+            publishStatus:
+              type: string
+              enum:
+              - DRAFT
+              - PUBLISHED
+              - OFFLINE
+            featured:
+              type: boolean
+            sortWeight:
+              type: integer
+              format: int32
+              minimum: -1000000
+              maximum: 1000000
+            sourceAppId:
+              type: string
+              nullable: true
+              maxLength: 128
+            gitRepoUrl:
+              type: string
+              nullable: true
+              maxLength: 1024
+              description: Git repository URL for app template source. Supports one repository with one or many template directories.
+            gitRef:
+              type: string
+              nullable: true
+              maxLength: 128
+              description: Optional branch, tag, or commit reference for the template source.
+            gitSubPath:
+              type: string
+              nullable: true
+              maxLength: 1024
+              description: Relative directory inside the Git repository. Empty means repository root.
+            currentVersionId:
+              type: string
+              nullable: true
+              maxLength: 128
+            appConfigSchema:
+              type: object
+              additionalProperties: true
+            defaultAppConfig:
+              type: object
+              additionalProperties: true
+            variableSchema:
+              type: object
+              additionalProperties: true
+            dependencyManifest:
+              type: array
+              maxItems: 256
+              items:
+                type: object
+                additionalProperties: true
+            capabilityManifest:
+              type: array
+              maxItems: 256
+              items:
+                type: object
+                additionalProperties: true
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+        description: App template snapshots returned by the backend management API.
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+      hasNextPage:
+        type: boolean
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: createAppTemplate
+  operation_id: apps.templates.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/templates
+  read_sources:
+  - studio_app_template
+  write_tables:
+  - studio_app_template
+  - ops_audit_log
+  request_schema:
+    name: AdminAppTemplateCreateRequest
+    required:
+    - templateCode
+    - templateName
+    properties: &id021
+      templateNo:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      templateCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:-]+$
+      templateName:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 4000
+      categoryId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      categoryCode:
+        type: string
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:-]+$
+      templateType:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      runtime:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      framework:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      language:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      iconUrl:
+        type: string
+        maxLength: 1024
+      coverUrl:
+        type: string
+        maxLength: 1024
+      visibility:
+        type: string
+        enum:
+        - PRIVATE
+        - TENANT
+        - PUBLIC
+      publishStatus:
+        type: string
+        enum:
+        - DRAFT
+        - PUBLISHED
+        - OFFLINE
+      featured:
+        type: boolean
+      sortWeight:
+        type: integer
+        format: int32
+        minimum: -1000000
+        maximum: 1000000
+      sourceAppId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      gitRepoUrl:
+        type: string
+        nullable: true
+        maxLength: 1024
+        description: Git repository URL for app template source. Supports one repository with one or many template directories.
+      gitRef:
+        type: string
+        nullable: true
+        maxLength: 128
+        description: Optional branch, tag, or commit reference for the template source.
+      gitSubPath:
+        type: string
+        nullable: true
+        maxLength: 1024
+        description: Relative directory inside the Git repository. Empty means repository root.
+      appConfigSchema:
+        type: object
+        additionalProperties: true
+      defaultAppConfig:
+        type: object
+        additionalProperties: true
+      variableSchema:
+        type: object
+        additionalProperties: true
+      dependencyManifest:
+        type: array
+        maxItems: 256
+        items:
+          type: object
+          additionalProperties: true
+      capabilityManifest:
+        type: array
+        maxItems: 256
+        items:
+          type: object
+          additionalProperties: true
+  response_schema: &id022
+    name: AdminAppTemplateMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppTemplateItemResponse
+        type: object
+        additionalProperties: false
+        required: *id019
+        properties: *id020
+        description: Persisted app template snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: fetchAppTemplate
+  operation_id: apps.templates.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/platform/apps/templates/{templateId}
+  read_sources:
+  - studio_app_template
+  query_parameters: []
+  response_schema: *id022
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: updateAppTemplate
+  operation_id: apps.templates.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/platform/apps/templates/{templateId}
+  read_sources:
+  - studio_app_template
+  write_tables:
+  - studio_app_template
+  - ops_audit_log
+  request_schema:
+    name: AdminAppTemplateUpdateRequest
+    required: []
+    properties:
+      templateName:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        nullable: true
+        maxLength: 4000
+      categoryId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      categoryCode:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:-]+$
+      templateType:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      runtime:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      framework:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      language:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      iconUrl:
+        type: string
+        nullable: true
+        maxLength: 1024
+      coverUrl:
+        type: string
+        nullable: true
+        maxLength: 1024
+      visibility:
+        type: string
+        enum:
+        - PRIVATE
+        - TENANT
+        - PUBLIC
+      publishStatus:
+        type: string
+        enum:
+        - DRAFT
+        - PUBLISHED
+        - OFFLINE
+      featured:
+        type: boolean
+      sortWeight:
+        type: integer
+        format: int32
+        minimum: -1000000
+        maximum: 1000000
+      sourceAppId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      gitRepoUrl:
+        type: string
+        nullable: true
+        maxLength: 1024
+        description: Git repository URL for app template source. Supports one repository with one or many template directories.
+      gitRef:
+        type: string
+        nullable: true
+        maxLength: 128
+        description: Optional branch, tag, or commit reference for the template source.
+      gitSubPath:
+        type: string
+        nullable: true
+        maxLength: 1024
+        description: Relative directory inside the Git repository. Empty means repository root.
+      appConfigSchema:
+        type: object
+        additionalProperties: true
+      defaultAppConfig:
+        type: object
+        additionalProperties: true
+      variableSchema:
+        type: object
+        additionalProperties: true
+      dependencyManifest:
+        type: array
+        maxItems: 256
+        items:
+          type: object
+          additionalProperties: true
+      capabilityManifest:
+        type: array
+        maxItems: 256
+        items:
+          type: object
+          additionalProperties: true
+  response_schema: *id022
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: deleteAppTemplate
+  operation_id: apps.templates.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/platform/apps/templates/{templateId}
+  read_sources:
+  - studio_app_template
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  write_tables:
+  - studio_app_template
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  - ops_audit_log
+  request_body_required: false
+  response_schema:
+    name: AdminAppTemplateDeleteResponse
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+        description: Whether the app template was soft-deleted and detached from catalog projections.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: publishAppTemplate
+  operation_id: apps.templates.publish
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/templates/{templateId}/publish
+  description: Sets app template publishStatus to PUBLISHED.
+  read_sources:
+  - studio_app_template
+  write_tables:
+  - studio_app_template
+  - ops_audit_log
+  request_body_required: false
+  response_schema: *id022
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: offlineAppTemplate
+  operation_id: apps.templates.unpublish
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/templates/{templateId}/unpublish
+  description: Sets app template publishStatus to OFFLINE.
+  read_sources:
+  - studio_app_template
+  write_tables:
+  - studio_app_template
+  - ops_audit_log
+  request_body_required: false
+  response_schema: *id022
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: createApp
@@ -1161,7 +1741,6 @@ frontend_operations:
   write_tables:
   - plus_app
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAppCreateRequest
     required:
@@ -1276,7 +1855,6 @@ frontend_operations:
   - plus_category
   - studio_catalog_asset
   - studio_catalog_artifact
-  request_id_header: true
   query_parameters: []
   response_schema:
     name: AdminAppMutationResponse
@@ -1305,7 +1883,6 @@ frontend_operations:
   write_tables:
   - plus_app
   - ops_audit_log
-  request_id_header: true
   request_schema:
     name: AdminAppUpdateRequest
     required: []
@@ -1422,7 +1999,6 @@ frontend_operations:
   - studio_catalog_asset
   - studio_catalog_artifact
   - ops_audit_log
-  request_id_header: true
   response_schema:
     name: AdminAppDeleteResponse
     required:
@@ -1444,7 +2020,6 @@ frontend_operations:
   write_tables:
   - plus_app
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema:
     name: AdminAppMutationResponse
@@ -1471,7 +2046,6 @@ frontend_operations:
   write_tables:
   - plus_app
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema:
     name: AdminAppMutationResponse
@@ -1498,7 +2072,6 @@ frontend_operations:
   write_tables:
   - plus_app
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema:
     name: AdminAppMutationResponse
@@ -1525,7 +2098,6 @@ frontend_operations:
   write_tables:
   - plus_app
   - ops_audit_log
-  request_id_header: true
   request_body_required: false
   response_schema:
     name: AdminAppMutationResponse

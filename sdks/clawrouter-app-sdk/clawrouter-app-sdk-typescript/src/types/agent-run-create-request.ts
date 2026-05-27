@@ -16,8 +16,6 @@ export interface AgentRunCreateRequest {
   metadata?: Record<string, JsonValue>;
   /** Model field on agent run create request. */
   model?: string;
-  /** Request id field on agent run create request. */
-  requestId: string;
   /** Runtime field on agent run create request. */
   runtime?: string;
   /** Source surface field on agent run create request. */

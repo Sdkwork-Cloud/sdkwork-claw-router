@@ -14,7 +14,7 @@ public class OpenAiChatMessage {
     public String getContent() {
         return this.content;
     }
-    
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -22,7 +22,7 @@ public class OpenAiChatMessage {
     public OpenAiFunctionCall getFunctionCall() {
         return this.functionCall;
     }
-    
+
     public void setFunctionCall(OpenAiFunctionCall functionCall) {
         this.functionCall = functionCall;
     }
@@ -30,7 +30,7 @@ public class OpenAiChatMessage {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -38,7 +38,7 @@ public class OpenAiChatMessage {
     public String getRefusal() {
         return this.refusal;
     }
-    
+
     public void setRefusal(String refusal) {
         this.refusal = refusal;
     }
@@ -46,7 +46,7 @@ public class OpenAiChatMessage {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -54,7 +54,7 @@ public class OpenAiChatMessage {
     public String getToolCallId() {
         return this.toolCallId;
     }
-    
+
     public void setToolCallId(String toolCallId) {
         this.toolCallId = toolCallId;
     }
@@ -62,7 +62,7 @@ public class OpenAiChatMessage {
     public List<OpenAiToolCall> getToolCalls() {
         return this.toolCalls;
     }
-    
+
     public void setToolCalls(List<OpenAiToolCall> toolCalls) {
         this.toolCalls = toolCalls;
     }

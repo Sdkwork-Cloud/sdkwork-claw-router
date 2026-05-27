@@ -8,7 +8,7 @@ public class AdminChannelsResponse {
     public List<AdminChannelItem> getItems() {
         return this.items;
     }
-    
+
     public void setItems(List<AdminChannelItem> items) {
         this.items = items;
     }

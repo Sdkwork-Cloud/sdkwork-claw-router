@@ -11,7 +11,7 @@ public class OpenAiVideoCharacterMultipartRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -19,7 +19,7 @@ public class OpenAiVideoCharacterMultipartRequest {
     public String getFile() {
         return this.file;
     }
-    
+
     public void setFile(String file) {
         this.file = file;
     }
@@ -27,7 +27,7 @@ public class OpenAiVideoCharacterMultipartRequest {
     public String getImage() {
         return this.image;
     }
-    
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -35,7 +35,7 @@ public class OpenAiVideoCharacterMultipartRequest {
     public String getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
@@ -43,7 +43,7 @@ public class OpenAiVideoCharacterMultipartRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }

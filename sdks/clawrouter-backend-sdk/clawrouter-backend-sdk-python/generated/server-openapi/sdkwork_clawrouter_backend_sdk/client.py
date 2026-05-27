@@ -6,9 +6,14 @@ from .api.content import ContentApi
 from .api.ecosystem import EcosystemApi
 from .api.iam import IamApi
 from .api.integration import IntegrationApi
+from .api.mcp import McpApi
+from .api.messaging import MessagingApi
 from .api.open_platform import OpenPlatformApi
 from .api.platform import PlatformApi
 from .api.system import SystemApi
+from .api.prompts import PromptsApi
+from .api.service_providers import ServiceProvidersApi
+from .api.storage import StorageApi
 
 
 class SdkworkBackendClient:
@@ -23,9 +28,14 @@ class SdkworkBackendClient:
         self.ecosystem: EcosystemApi
         self.iam: IamApi
         self.integration: IntegrationApi
+        self.mcp: McpApi
+        self.messaging: MessagingApi
         self.open_platform: OpenPlatformApi
         self.platform: PlatformApi
         self.system: SystemApi
+        self.prompts: PromptsApi
+        self.service_providers: ServiceProvidersApi
+        self.storage: StorageApi
 
         # Initialize API modules
         self.agents = AgentsApi(self._client)
@@ -35,9 +45,14 @@ class SdkworkBackendClient:
         self.ecosystem = EcosystemApi(self._client)
         self.iam = IamApi(self._client)
         self.integration = IntegrationApi(self._client)
+        self.mcp = McpApi(self._client)
+        self.messaging = MessagingApi(self._client)
         self.open_platform = OpenPlatformApi(self._client)
         self.platform = PlatformApi(self._client)
         self.system = SystemApi(self._client)
+        self.prompts = PromptsApi(self._client)
+        self.service_providers = ServiceProvidersApi(self._client)
+        self.storage = StorageApi(self._client)
 
     def set_api_key(self, api_key: str) -> 'SdkworkBackendClient':
         """Set API key for authentication."""

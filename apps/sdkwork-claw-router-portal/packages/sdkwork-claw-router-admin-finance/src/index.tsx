@@ -1,16 +1,12 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BadgePercent, BarChart3, FileText, ShieldCheck } from 'lucide-react';
+import { BarChart3, FileText, ShieldCheck } from 'lucide-react';
 import { AdminResourceCenter, type AdminResourceSection } from 'sdkwork-claw-router-commons';
 import {
   backendAuditCommerceEventsList,
   backendCommerceReportsOrderRevenueList,
   backendCommerceReportsPaymentReconciliationRetrieve,
   backendCommerceReportsRefundsList,
-  backendCouponsCampaignsList,
-  backendCouponsCodesList,
-  backendCouponsRedemptionsList,
-  backendCouponsTemplatesList,
   backendInvoicesList,
   backendInvoicesTitlesList,
 } from './financeService';
@@ -18,10 +14,6 @@ import {
 type FinanceAdminTab =
   | 'invoiceTitles'
   | 'invoices'
-  | 'couponTemplates'
-  | 'couponCampaigns'
-  | 'couponCodes'
-  | 'couponRedemptions'
   | 'paymentReconciliationReport'
   | 'orderRevenueReport'
   | 'refundsReport'
@@ -30,32 +22,15 @@ type FinanceAdminGroup = string;
 
 const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
 const DEFAULT_FINANCE_SECTION_ID: FinanceAdminTab = 'orderRevenueReport';
-const DEFAULT_MARKETING_COUPON_SECTION_ID: FinanceAdminTab = 'couponTemplates';
 
 type FinanceAdminProps = {
   sectionId?: string;
-  surface?: 'finance' | 'marketing';
 };
 
-function resolveFinanceSectionId(sectionId: string | undefined, surface: FinanceAdminProps['surface'] = 'finance'): FinanceAdminTab {
-  if (surface === 'marketing') {
-    if (
-      sectionId === 'couponTemplates'
-      || sectionId === 'couponCampaigns'
-      || sectionId === 'couponCodes'
-      || sectionId === 'couponRedemptions'
-    ) {
-      return sectionId;
-    }
-    return DEFAULT_MARKETING_COUPON_SECTION_ID;
-  }
+function resolveFinanceSectionId(sectionId: string | undefined): FinanceAdminTab {
   if (
     sectionId === 'invoiceTitles'
     || sectionId === 'invoices'
-    || sectionId === 'couponTemplates'
-    || sectionId === 'couponCampaigns'
-    || sectionId === 'couponCodes'
-    || sectionId === 'couponRedemptions'
     || sectionId === 'paymentReconciliationReport'
     || sectionId === 'orderRevenueReport'
     || sectionId === 'refundsReport'
@@ -100,70 +75,6 @@ function buildFinanceSections(t: ReturnType<typeof useTranslation>['t']): AdminR
         { key: 'created_at', label: t('admin.col.created', 'Created') },
       ],
       searchFields: ['invoice_no', 'order_id', 'title_id', 'currency_code', 'status'],
-    },
-    {
-      id: 'couponTemplates',
-      title: t('admin.commerce.finance.couponTemplates.title', 'Coupon Templates'),
-      description: t('admin.commerce.finance.couponTemplates.desc', 'Coupon template rules for discount, threshold, validity, and applicable product scope.'),
-      icon: <BadgePercent className="h-4 w-4" />,
-      group: t('admin.commerce.finance.group.coupons', 'Coupons'),
-      load: () => backendCouponsTemplatesList(DEFAULT_PAGE_PARAMS),
-      columns: [
-        { key: 'template_no', label: t('admin.col.template', 'Template') },
-        { key: 'coupon_type', label: t('admin.col.couponType', 'Type') },
-        { key: 'discount_value', label: t('admin.col.value', 'Value'), align: 'right' },
-        { key: 'status', label: t('admin.col.status', 'Status') },
-        { key: 'updated_at', label: t('admin.col.updated', 'Updated') },
-      ],
-      searchFields: ['template_no', 'coupon_type', 'status'],
-    },
-    {
-      id: 'couponCampaigns',
-      title: t('admin.commerce.finance.couponCampaigns.title', 'Coupon Campaigns'),
-      description: t('admin.commerce.finance.couponCampaigns.desc', 'Coupon issuance campaigns, channel limits, and campaign lifecycle.'),
-      icon: <BadgePercent className="h-4 w-4" />,
-      group: t('admin.commerce.finance.group.coupons', 'Coupons'),
-      load: () => backendCouponsCampaignsList(DEFAULT_PAGE_PARAMS),
-      columns: [
-        { key: 'campaign_no', label: t('admin.col.campaign', 'Campaign') },
-        { key: 'template_id', label: t('admin.col.template', 'Template') },
-        { key: 'channel_code', label: t('admin.col.channel', 'Channel') },
-        { key: 'status', label: t('admin.col.status', 'Status') },
-        { key: 'starts_at', label: t('admin.col.starts', 'Starts') },
-      ],
-      searchFields: ['campaign_no', 'template_id', 'channel_code', 'status'],
-    },
-    {
-      id: 'couponCodes',
-      title: t('admin.commerce.finance.couponCodes.title', 'Coupon Codes'),
-      description: t('admin.commerce.finance.couponCodes.desc', 'Issued coupon codes and per-user claim state.'),
-      icon: <BadgePercent className="h-4 w-4" />,
-      group: t('admin.commerce.finance.group.coupons', 'Coupons'),
-      load: () => backendCouponsCodesList(DEFAULT_PAGE_PARAMS),
-      columns: [
-        { key: 'coupon_code', label: t('admin.col.code', 'Code') },
-        { key: 'campaign_id', label: t('admin.col.campaign', 'Campaign') },
-        { key: 'owner_user_id', label: t('admin.col.user', 'User') },
-        { key: 'status', label: t('admin.col.status', 'Status') },
-        { key: 'expires_at', label: t('admin.col.expires', 'Expires') },
-      ],
-      searchFields: ['coupon_code', 'campaign_id', 'owner_user_id', 'status'],
-    },
-    {
-      id: 'couponRedemptions',
-      title: t('admin.commerce.finance.couponRedemptions.title', 'Coupon Redemptions'),
-      description: t('admin.commerce.finance.couponRedemptions.desc', 'Coupon redemption records bound to checkout sessions and orders.'),
-      icon: <BadgePercent className="h-4 w-4" />,
-      group: t('admin.commerce.finance.group.coupons', 'Coupons'),
-      load: () => backendCouponsRedemptionsList(DEFAULT_PAGE_PARAMS),
-      columns: [
-        { key: 'redemption_no', label: t('admin.col.redemption', 'Redemption') },
-        { key: 'coupon_id', label: t('admin.col.coupon', 'Coupon') },
-        { key: 'order_id', label: t('admin.col.order', 'Order') },
-        { key: 'discount_amount', label: t('admin.col.discount', 'Discount'), align: 'right' },
-        { key: 'status', label: t('admin.col.status', 'Status') },
-      ],
-      searchFields: ['redemption_no', 'coupon_id', 'order_id', 'status'],
     },
     {
       id: 'paymentReconciliationReport',
@@ -229,36 +140,20 @@ function buildFinanceSections(t: ReturnType<typeof useTranslation>['t']): AdminR
   ];
 }
 
-export function FinanceAdmin({ sectionId, surface = 'finance' }: FinanceAdminProps = {}) {
+export function FinanceAdmin({ sectionId }: FinanceAdminProps = {}) {
   const { t } = useTranslation();
   const sections = useMemo(() => buildFinanceSections(t), [t]);
-  const isMarketingSurface = surface === 'marketing';
-  const activeSectionId = resolveFinanceSectionId(sectionId, surface);
+  const activeSectionId = resolveFinanceSectionId(sectionId);
 
   return (
     <AdminResourceCenter
       activeSectionId={activeSectionId}
-      description={isMarketingSurface
-        ? t('admin.commerce.marketing.coupons.desc', 'Coupon templates, campaigns, issued codes, and redemption records for growth campaigns.')
-        : t('admin.commerce.finance.desc', 'Invoices, revenue reports, reconciliation reports, and commerce audit events.')}
-      emptyTitle={isMarketingSurface
-        ? t('admin.commerce.marketing.coupons.empty', 'No coupon records')
-        : t('admin.commerce.finance.empty', 'No finance records')}
-      errorTitle={isMarketingSurface
-        ? t('admin.commerce.marketing.coupons.error', 'Coupon data could not be loaded')
-        : t('admin.commerce.finance.error', 'Finance data could not be loaded')}
-      icon={isMarketingSurface
-        ? <BadgePercent className="h-5 w-5 text-pink-500" />
-        : <FileText className="h-5 w-5 text-violet-500" />}
-      loadingTitle={isMarketingSurface
-        ? t('admin.commerce.marketing.coupons.loading', 'Loading coupon records...')
-        : t('admin.commerce.finance.loading', 'Loading finance records...')}
+      emptyTitle={t('admin.commerce.finance.empty', 'No finance records')}
+      errorTitle={t('admin.commerce.finance.error', 'Finance data could not be loaded')}
+      loadingTitle={t('admin.commerce.finance.loading', 'Loading finance records...')}
       sections={sections}
       showSectionNavigation={false}
       tableViewportDataAttribute="admin-finance-table-viewport"
-      title={isMarketingSurface
-        ? t('admin.commerce.marketing.coupons.title', 'Coupons')
-        : t('admin.commerce.finance.title', 'Finance')}
     />
   );
 }

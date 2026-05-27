@@ -9,7 +9,7 @@ public class DeleteResult {
     public Boolean getDeleted() {
         return this.deleted;
     }
-    
+
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
@@ -17,7 +17,7 @@ public class DeleteResult {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -25,7 +25,7 @@ public class DeleteResult {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }

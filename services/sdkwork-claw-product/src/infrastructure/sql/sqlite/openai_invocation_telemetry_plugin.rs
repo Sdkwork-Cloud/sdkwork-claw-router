@@ -357,10 +357,7 @@ async fn insert_snapshot(
 }
 
 fn request_id(context: &OpenAiInvocationContext) -> String {
-    context
-        .request_id
-        .clone()
-        .unwrap_or_else(|| format!("openai-runtime-{}", context.api_key_context.api_key_id))
+    context.request_id.clone()
 }
 
 fn snapshot_uuid(

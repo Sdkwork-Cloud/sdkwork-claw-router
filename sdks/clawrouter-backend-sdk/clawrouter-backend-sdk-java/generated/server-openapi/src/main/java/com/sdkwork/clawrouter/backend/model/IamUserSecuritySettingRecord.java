@@ -30,7 +30,7 @@ public class IamUserSecuritySettingRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -38,7 +38,7 @@ public class IamUserSecuritySettingRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -46,7 +46,7 @@ public class IamUserSecuritySettingRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -54,7 +54,7 @@ public class IamUserSecuritySettingRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -62,7 +62,7 @@ public class IamUserSecuritySettingRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -70,7 +70,7 @@ public class IamUserSecuritySettingRecord {
     public String getLastLoginAt() {
         return this.lastLoginAt;
     }
-    
+
     public void setLastLoginAt(String lastLoginAt) {
         this.lastLoginAt = lastLoginAt;
     }
@@ -78,7 +78,7 @@ public class IamUserSecuritySettingRecord {
     public String getLastLoginIpHash() {
         return this.lastLoginIpHash;
     }
-    
+
     public void setLastLoginIpHash(String lastLoginIpHash) {
         this.lastLoginIpHash = lastLoginIpHash;
     }
@@ -86,7 +86,7 @@ public class IamUserSecuritySettingRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -94,7 +94,7 @@ public class IamUserSecuritySettingRecord {
     public Boolean getMfaEnabled() {
         return this.mfaEnabled;
     }
-    
+
     public void setMfaEnabled(Boolean mfaEnabled) {
         this.mfaEnabled = mfaEnabled;
     }
@@ -102,7 +102,7 @@ public class IamUserSecuritySettingRecord {
     public String getMfaMethod() {
         return this.mfaMethod;
     }
-    
+
     public void setMfaMethod(String mfaMethod) {
         this.mfaMethod = mfaMethod;
     }
@@ -110,7 +110,7 @@ public class IamUserSecuritySettingRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -118,7 +118,7 @@ public class IamUserSecuritySettingRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -126,7 +126,7 @@ public class IamUserSecuritySettingRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -134,7 +134,7 @@ public class IamUserSecuritySettingRecord {
     public String getPasswordLastChangedAt() {
         return this.passwordLastChangedAt;
     }
-    
+
     public void setPasswordLastChangedAt(String passwordLastChangedAt) {
         this.passwordLastChangedAt = passwordLastChangedAt;
     }
@@ -142,7 +142,7 @@ public class IamUserSecuritySettingRecord {
     public String getSecurityLevel() {
         return this.securityLevel;
     }
-    
+
     public void setSecurityLevel(String securityLevel) {
         this.securityLevel = securityLevel;
     }
@@ -150,7 +150,7 @@ public class IamUserSecuritySettingRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -158,7 +158,7 @@ public class IamUserSecuritySettingRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -166,7 +166,7 @@ public class IamUserSecuritySettingRecord {
     public Map<String, String> getThirdPartyBoundSnapshot() {
         return this.thirdPartyBoundSnapshot;
     }
-    
+
     public void setThirdPartyBoundSnapshot(Map<String, String> thirdPartyBoundSnapshot) {
         this.thirdPartyBoundSnapshot = thirdPartyBoundSnapshot;
     }
@@ -174,7 +174,7 @@ public class IamUserSecuritySettingRecord {
     public Integer getTrustedDeviceCount() {
         return this.trustedDeviceCount;
     }
-    
+
     public void setTrustedDeviceCount(Integer trustedDeviceCount) {
         this.trustedDeviceCount = trustedDeviceCount;
     }
@@ -182,7 +182,7 @@ public class IamUserSecuritySettingRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -190,7 +190,7 @@ public class IamUserSecuritySettingRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -198,7 +198,7 @@ public class IamUserSecuritySettingRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -206,7 +206,7 @@ public class IamUserSecuritySettingRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

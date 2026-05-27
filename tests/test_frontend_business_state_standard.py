@@ -55,16 +55,6 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
         )
         core_table_components = [
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-routing"
-            / "src"
-            / "components"
-            / "ChannelsTab.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-routing"
-            / "src"
-            / "components"
-            / "ApiKeysTab.tsx",
-            PORTAL_PACKAGES
             / "sdkwork-claw-router-admin-user"
             / "src"
             / "index.tsx",
@@ -111,10 +101,6 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-providers"
-            / "src"
-            / "ProvidersView.tsx",
-            PORTAL_PACKAGES
             / "sdkwork-claw-router-console-settings"
             / "src"
             / "SettingsView.tsx",
@@ -130,11 +116,6 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "sdkwork-claw-router-console-recharge"
             / "src"
             / "RechargeView.tsx",
-            PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-routing"
-            / "src"
-            / "components"
-            / "StrategyTab.tsx",
         ]
         marketing_components = [
             PORTAL_PACKAGES

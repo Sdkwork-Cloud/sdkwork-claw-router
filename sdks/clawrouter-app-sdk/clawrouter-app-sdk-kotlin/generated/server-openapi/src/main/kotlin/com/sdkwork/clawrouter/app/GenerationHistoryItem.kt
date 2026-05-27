@@ -9,6 +9,7 @@ data class GenerationHistoryItem(
     val images: List<String>? = null,
     val modelCatalogKey: String? = null,
     val modelInfo: String? = null,
+    val outputText: String? = null,
     val prompt: String? = null,
     val status: String? = null,
     val type: String? = null,

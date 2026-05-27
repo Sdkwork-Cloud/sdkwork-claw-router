@@ -239,7 +239,7 @@ fn build_payment_callback_command(
         signature.as_deref(),
         request_timestamp,
     )?;
-    let nonce = callback_header(headers, &["x-sdkwork-nonce", "x-request-id"])
+    let nonce = callback_header(headers, &["x-sdkwork-nonce"])
         .unwrap_or_else(|| take_prefix(&payload_digest, 32));
     let event_id =
         callback_header(headers, &["x-sdkwork-event-id", "x-event-id"]).unwrap_or_else(|| {

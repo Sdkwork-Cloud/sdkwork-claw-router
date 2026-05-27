@@ -2,8 +2,8 @@ use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
 
-use axum::extract::{Path, Query, State};
-use axum::http::{HeaderMap, StatusCode};
+use axum::extract::{Extension, Path, Query, State};
+use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -15,12 +15,12 @@ use sdkwork_commerce_account::{
 };
 use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceServiceError};
 use sdkwork_commerce_storage_sqlx::{PostgresCommerceAccountStore, SqliteCommerceAccountStore};
+use sdkwork_iam_core::IamAppContext;
 use serde::{Deserialize, Serialize};
 use sqlx::{PgPool, SqlitePool};
 
-const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
-const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
-const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
+use crate::subject::app_runtime_subject_from_extension;
+use crate::with_request_identity;
 
 pub type AppbaseWalletFuture<'a, T> =
     Pin<Box<dyn Future<Output = Result<T, CommerceServiceError>> + Send + 'a>>;
@@ -60,13 +60,6 @@ pub trait AppbaseAccountWalletStore: Send + Sync {
 #[derive(Clone)]
 struct AppAccountWalletState {
     store: Arc<dyn AppbaseAccountWalletStore>,
-}
-
-#[derive(Debug, Clone)]
-struct AppWalletSubject {
-    tenant_id: String,
-    organization_id: Option<String>,
-    user_id: String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -314,32 +307,34 @@ pub fn app_account_wallet_router_with_postgres_pool(pool: PgPool) -> Router {
 }
 
 pub fn app_account_wallet_router_with_store(store: Arc<dyn AppbaseAccountWalletStore>) -> Router {
-    Router::new()
-        .route(
-            "/app/v3/api/accounts/current/summary",
-            get(fetch_account_summary),
-        )
-        .route("/app/v3/api/wallet/overview", get(fetch_wallet_overview))
-        .route("/app/v3/api/wallet/accounts", get(fetch_wallet_accounts))
-        .route(
-            "/app/v3/api/wallet/ledger_entries",
-            get(fetch_wallet_transactions),
-        )
-        .route(
-            "/app/v3/api/wallet/ledger_entries/{ledgerEntryId}",
-            get(fetch_wallet_transaction),
-        )
-        .route("/app/v3/api/wallet/tokens", get(fetch_token_balance))
-        .with_state(AppAccountWalletState { store })
+    with_request_identity(
+        Router::new()
+            .route(
+                "/app/v3/api/accounts/current/summary",
+                get(fetch_account_summary),
+            )
+            .route("/app/v3/api/wallet/overview", get(fetch_wallet_overview))
+            .route("/app/v3/api/wallet/accounts", get(fetch_wallet_accounts))
+            .route(
+                "/app/v3/api/wallet/ledger_entries",
+                get(fetch_wallet_transactions),
+            )
+            .route(
+                "/app/v3/api/wallet/ledger_entries/{ledgerEntryId}",
+                get(fetch_wallet_transaction),
+            )
+            .route("/app/v3/api/wallet/tokens", get(fetch_token_balance))
+            .with_state(AppAccountWalletState { store }),
+    )
 }
 
 async fn fetch_account_summary(
     State(state): State<AppAccountWalletState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match app_wallet_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let query = match AccountSummaryQuery::new(
         &subject.tenant_id,
@@ -358,12 +353,12 @@ async fn fetch_account_summary(
 
 async fn fetch_wallet_overview(
     State(state): State<AppAccountWalletState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Query(query): Query<WalletAccountQueryParams>,
 ) -> Response {
-    let subject = match app_wallet_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let asset_type = match parse_optional_asset_type(query.asset_type.as_deref()) {
         Ok(asset_type) => asset_type,
@@ -387,12 +382,12 @@ async fn fetch_wallet_overview(
 
 async fn fetch_wallet_accounts(
     State(state): State<AppAccountWalletState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Query(query): Query<WalletAccountQueryParams>,
 ) -> Response {
-    let subject = match app_wallet_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let asset_type = match parse_optional_asset_type(query.asset_type.as_deref()) {
         Ok(asset_type) => asset_type,
@@ -419,12 +414,12 @@ async fn fetch_wallet_accounts(
 
 async fn fetch_wallet_transactions(
     State(state): State<AppAccountWalletState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Query(query): Query<WalletTransactionQueryParams>,
 ) -> Response {
-    let subject = match app_wallet_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let asset_type = match parse_optional_asset_type(query.asset_type.as_deref()) {
         Ok(asset_type) => asset_type,
@@ -459,12 +454,12 @@ async fn fetch_wallet_transactions(
 
 async fn fetch_wallet_transaction(
     State(state): State<AppAccountWalletState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
     Path(transaction_id): Path<String>,
 ) -> Response {
-    let subject = match app_wallet_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let query = match WalletTransactionDetailQuery::new(
         &subject.tenant_id,
@@ -487,11 +482,11 @@ async fn fetch_wallet_transaction(
 
 async fn fetch_token_balance(
     State(state): State<AppAccountWalletState>,
-    headers: HeaderMap,
+    runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match app_wallet_subject_from_headers(&headers) {
+    let subject = match app_runtime_subject_from_extension(runtime_context) {
         Ok(subject) => subject,
-        Err(response) => return response,
+        Err(message) => return unauthorized_response(message),
     };
     let query = match WalletAccountListQuery::new(
         &subject.tenant_id,
@@ -510,36 +505,6 @@ async fn fetch_token_balance(
         },
         Err(error) => wallet_system_response("token balance read model is unavailable", error),
     }
-}
-
-fn app_wallet_subject_from_headers(headers: &HeaderMap) -> Result<AppWalletSubject, Response> {
-    Ok(AppWalletSubject {
-        tenant_id: required_text_header(headers, X_SDKWORK_TENANT_ID)?,
-        organization_id: optional_text_header(headers, X_SDKWORK_ORGANIZATION_ID),
-        user_id: required_text_header(headers, X_SDKWORK_USER_ID)?,
-    })
-}
-
-fn required_text_header(headers: &HeaderMap, name: &'static str) -> Result<String, Response> {
-    let value = headers
-        .get(name)
-        .ok_or_else(|| unauthorized_response(format!("{name} header is required")))?
-        .to_str()
-        .map(str::trim)
-        .map_err(|_| unauthorized_response(format!("{name} header value is invalid")))?;
-    if value.is_empty() {
-        return Err(unauthorized_response(format!("{name} header is required")));
-    }
-    Ok(value.to_owned())
-}
-
-fn optional_text_header(headers: &HeaderMap, name: &'static str) -> Option<String> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .map(str::to_owned)
 }
 
 fn parse_optional_asset_type(
@@ -742,6 +707,7 @@ mod tests {
         CommerceAccountAssetType, CommerceLedgerDirection, CommerceMoney, CommerceRequestHash,
     };
     use sdkwork_commerce_storage_sqlx::SqliteCommerceAccountStore;
+    use sdkwork_iam_core::{AuthLevel, DeploymentMode, Environment, IamAppContext};
     use sqlx::SqlitePool;
     use tower::ServiceExt;
 
@@ -783,6 +749,21 @@ mod tests {
             .expect("append ledger");
     }
 
+    fn standard_context() -> IamAppContext {
+        IamAppContext::new(
+            "tenant-1",
+            Some("org-1"),
+            "user-1",
+            "session-1",
+            "app-1",
+            Environment::Test,
+            DeploymentMode::Local,
+            AuthLevel::Password,
+            vec!["tenant:tenant-1".to_owned()],
+            vec!["commerce:read".to_owned()],
+        )
+    }
+
     #[tokio::test]
     async fn wallet_router_lists_accounts_from_sqlite_store() {
         let pool = migrated_pool().await;
@@ -793,9 +774,7 @@ mod tests {
             .oneshot(
                 Request::builder()
                     .uri("/app/v3/api/wallet/accounts")
-                    .header("x-sdkwork-tenant-id", "tenant-1")
-                    .header("x-sdkwork-organization-id", "org-1")
-                    .header("x-sdkwork-user-id", "user-1")
+                    .extension(standard_context())
                     .body(Body::empty())
                     .expect("request"),
             )
@@ -819,9 +798,7 @@ mod tests {
             .oneshot(
                 Request::builder()
                     .uri("/app/v3/api/wallet/ledger_entries?page=1&page_size=50")
-                    .header("x-sdkwork-tenant-id", "tenant-1")
-                    .header("x-sdkwork-organization-id", "org-1")
-                    .header("x-sdkwork-user-id", "user-1")
+                    .extension(standard_context())
                     .body(Body::empty())
                     .expect("request"),
             )
@@ -855,9 +832,7 @@ mod tests {
                     Request::builder()
                         .method(method)
                         .uri(path)
-                        .header("x-sdkwork-tenant-id", "tenant-1")
-                        .header("x-sdkwork-organization-id", "org-1")
-                        .header("x-sdkwork-user-id", "user-1")
+                        .extension(standard_context())
                         .body(Body::empty())
                         .expect("request"),
                 )
@@ -869,7 +844,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn wallet_router_requires_subject_headers() {
+    async fn wallet_router_requires_authenticated_runtime_context() {
         let pool = migrated_pool().await;
         let app = app_account_wallet_router_with_sqlite_pool(pool);
 

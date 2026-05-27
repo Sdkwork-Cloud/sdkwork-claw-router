@@ -1,3 +1,4 @@
+use std::collections::BTreeMap;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -14,6 +15,7 @@ use sdkwork_claw_product::domain::{
     RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::provider::ProviderSecretMapResolver;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::{EmbeddingsRelay, EmbeddingsRelayRequest};
 use sdkwork_claw_provider_adapter_contract::{
@@ -54,6 +56,31 @@ struct FakeAdapterServer {
     calls: Arc<Mutex<Vec<AdapterInvocationRequest>>>,
 }
 
+fn provider_secret_resolver(
+    secret_ref: &str,
+    secret_value: &str,
+) -> Arc<ProviderSecretMapResolver> {
+    let mut secrets = BTreeMap::new();
+    secrets.insert(secret_ref.to_owned(), secret_value.to_owned());
+    Arc::new(ProviderSecretMapResolver::from_managed_secrets(secrets))
+}
+
+fn assert_gateway_resolved_secret(secret: &AdapterSecret, expected_value: &str) {
+    let AdapterSecret::GatewayResolved(payload) = secret else {
+        panic!("expected gateway resolved adapter secret, got {secret:?}");
+    };
+    assert_eq!("bearer", payload["auth"]["type"]);
+    assert_eq!(expected_value, payload["auth"]["value"]);
+    assert_eq!(serde_json::Value::Null, payload["auth"]["name"]);
+    assert!(payload["defaultHeaders"]
+        .as_array()
+        .expect("defaultHeaders must be an array")
+        .is_empty());
+    assert!(!serde_json::to_string(secret)
+        .unwrap()
+        .contains("vault://providers/openrouter/account/embedding"));
+}
+
 #[tokio::test]
 async fn openai_embeddings_registry_hit_calls_internal_adapter_without_direct_relay() {
     let fake_adapter = spawn_fake_adapter_server().await;
@@ -68,7 +95,11 @@ async fn openai_embeddings_registry_hit_calls_internal_adapter_without_direct_re
                 fake_adapter.base_url.as_str(),
             )])),
             sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient::new("test-token"),
-        );
+        )
+        .with_secret_resolver(provider_secret_resolver(
+            "vault://providers/openrouter/account/embedding",
+            "sk-openrouter-embedding",
+        ));
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
@@ -107,14 +138,10 @@ async fn openai_embeddings_registry_hit_calls_internal_adapter_without_direct_re
     assert_eq!("openrouter", adapter_call.provider.provider_code);
     assert_eq!(3001, adapter_call.provider.channel_id);
     assert_eq!(
-        "openai/global/text-embedding-3-small",
+        "text-embedding-3-small",
         adapter_call.provider.provider_model
     );
-    assert!(matches!(
-        &adapter_call.secret,
-        AdapterSecret::AdapterResolved { secret_ref }
-            if secret_ref == "vault://providers/openrouter/account/embedding"
-    ));
+    assert_gateway_resolved_secret(&adapter_call.secret, "sk-openrouter-embedding");
     drop(adapter_calls);
     let payload = response_json(response).await;
     assert_eq!("list", payload["object"]);

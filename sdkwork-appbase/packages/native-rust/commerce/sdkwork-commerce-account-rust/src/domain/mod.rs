@@ -123,6 +123,30 @@ pub struct WalletTransactionItem {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
+pub struct BillingHistoryItem {
+    pub id: String,
+    pub tenant_id: String,
+    pub organization_id: Option<String>,
+    pub owner_user_id: String,
+    pub history_no: String,
+    pub history_type: String,
+    pub direction: String,
+    pub asset_type: String,
+    pub amount: CommerceMoney,
+    pub currency_code: Option<String>,
+    pub points_delta: i64,
+    pub status: String,
+    pub title: String,
+    pub reference_no: Option<String>,
+    pub source_type: String,
+    pub source_id: String,
+    pub related_order_id: Option<String>,
+    pub related_order_no: Option<String>,
+    pub payment_method: Option<String>,
+    pub occurred_at: String,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct WalletOperation {
     pub request_no: String,
     pub transactions: Vec<WalletTransactionItem>,
@@ -330,6 +354,68 @@ impl WalletTransactionItem {
             request_no: request_no.to_string(),
             idempotency_key: idempotency_key.to_string(),
             created_at: created_at.to_string(),
+        })
+    }
+}
+
+impl BillingHistoryItem {
+    #[allow(clippy::too_many_arguments)]
+    pub fn new(
+        id: &str,
+        tenant_id: &str,
+        organization_id: Option<&str>,
+        owner_user_id: &str,
+        history_no: &str,
+        history_type: &str,
+        direction: &str,
+        asset_type: &str,
+        amount: &str,
+        currency_code: Option<&str>,
+        points_delta: i64,
+        status: &str,
+        title: &str,
+        reference_no: Option<&str>,
+        source_type: &str,
+        source_id: &str,
+        related_order_id: Option<&str>,
+        related_order_no: Option<&str>,
+        payment_method: Option<&str>,
+        occurred_at: &str,
+    ) -> Result<Self, CommerceServiceError> {
+        require_non_empty_service("id", id)?;
+        require_non_empty_service("tenant_id", tenant_id)?;
+        require_non_empty_service("owner_user_id", owner_user_id)?;
+        require_non_empty_service("history_no", history_no)?;
+        require_non_empty_service("history_type", history_type)?;
+        require_non_empty_service("direction", direction)?;
+        require_non_empty_service("asset_type", asset_type)?;
+        require_non_empty_service("status", status)?;
+        require_non_empty_service("title", title)?;
+        require_non_empty_service("source_type", source_type)?;
+        require_non_empty_service("source_id", source_id)?;
+        require_non_empty_service("occurred_at", occurred_at)?;
+
+        Ok(Self {
+            id: id.to_string(),
+            tenant_id: tenant_id.to_string(),
+            organization_id: normalize_optional_text(organization_id),
+            owner_user_id: owner_user_id.to_string(),
+            history_no: history_no.to_string(),
+            history_type: history_type.to_string(),
+            direction: direction.to_string(),
+            asset_type: asset_type.to_string(),
+            amount: CommerceMoney::new(amount).map_err(CommerceServiceError::validation)?,
+            currency_code: normalize_optional_text(currency_code),
+            points_delta,
+            status: status.to_string(),
+            title: title.to_string(),
+            reference_no: normalize_optional_text(reference_no),
+            source_type: source_type.to_string(),
+            source_id: source_id.to_string(),
+            related_order_id: normalize_optional_text(related_order_id),
+            related_order_no: normalize_optional_text(related_order_no),
+            payment_method: normalize_optional_text(payment_method),
+            occurred_at: occurred_at.to_string(),
         })
     }
 }

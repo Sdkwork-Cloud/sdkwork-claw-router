@@ -52,11 +52,13 @@ type AiUsageFactRecord struct {
 	PromptTokens string `json:"prompt_tokens"`
 	ProviderAccountId string `json:"provider_account_id"`
 	ProviderId string `json:"provider_id"`
+	ProviderNativeModel string `json:"provider_native_model"`
 	RateMultiplier string `json:"rate_multiplier"`
 	ReasoningEffort string `json:"reasoning_effort"`
 	ReferenceMultiplier string `json:"reference_multiplier"`
 	RequestCount string `json:"request_count"`
 	RequestId string `json:"request_id"`
+	RequestedModelCatalogKey string `json:"requested_model_catalog_key"`
 	ResultCount string `json:"result_count"`
 	RetentionUntil string `json:"retention_until"`
 	SettlementId string `json:"settlement_id"`

@@ -195,7 +195,8 @@ export async function runStrictGenerateCommand(options) {
     throw new Error(`Strict ClawRouter SDK generation only supports TypeScript, got: ${language}`);
   }
 
-  const spec = await loadOpenApiSpec(input);
+  const authoritySpec = await loadOpenApiSpec(input);
+  const spec = prepareStrictTypeScriptGenerationSpec(authoritySpec, options);
   const outputPath = path.resolve(output);
   const apiSpecPath = isRemoteInput(input) ? input : path.resolve(input);
   const resolvedVersion = await resolveSdkVersion({
@@ -419,6 +420,97 @@ export function applyStrictTypeScriptContractFiles(files, spec) {
         ).replace(/\n{3,}/g, '\n\n'),
       };
     });
+}
+
+export function prepareStrictTypeScriptGenerationSpec(spec, options = {}) {
+  if (options.standardProfile !== 'sdkwork-v3') {
+    return spec;
+  }
+  if (!spec || typeof spec !== 'object' || Array.isArray(spec)) {
+    return spec;
+  }
+  const cloned = JSON.parse(JSON.stringify(spec));
+  const paths = cloned.paths;
+  if (!paths || typeof paths !== 'object' || Array.isArray(paths)) {
+    return cloned;
+  }
+  const sdkDomains = new Set();
+  for (const pathItem of Object.values(paths)) {
+    if (!pathItem || typeof pathItem !== 'object' || Array.isArray(pathItem)) {
+      continue;
+    }
+    for (const [method, operation] of Object.entries(pathItem)) {
+      if (!isHttpOperation(method, operation)) {
+        continue;
+      }
+      const sdkDomain = normalizeSdkworkDomain(operation['x-sdk-domain'] || operation['x-sdkwork-domain']);
+      if (!usesSdkDomainAsTypeScriptSurface(sdkDomain)) {
+        continue;
+      }
+      operation.tags = [sdkDomain];
+      operation.operationId = stripSdkDomainOperationIdPrefix(operation.operationId, sdkDomain);
+      sdkDomains.add(sdkDomain);
+    }
+  }
+  if (sdkDomains.size > 0) {
+    cloned.tags = mergeSdkDomainTags(cloned.tags, sdkDomains);
+  }
+  return cloned;
+}
+
+function usesSdkDomainAsTypeScriptSurface(sdkDomain) {
+  return sdkDomain === 'oss';
+}
+
+function stripSdkDomainOperationIdPrefix(operationId, sdkDomain) {
+  if (typeof operationId !== 'string' || !operationId.trim()) {
+    return operationId;
+  }
+  const normalizedOperationId = operationId.trim();
+  const prefix = `${sdkDomain}.`;
+  if (!normalizedOperationId.startsWith(prefix)) {
+    return normalizedOperationId;
+  }
+  const stripped = normalizedOperationId.slice(prefix.length);
+  return stripped.includes('.') ? stripped : normalizedOperationId;
+}
+
+function isHttpOperation(method, value) {
+  return typeof method === 'string'
+    && ['get', 'put', 'post', 'delete', 'patch', 'options', 'head', 'trace'].includes(method.toLowerCase())
+    && value
+    && typeof value === 'object'
+    && !Array.isArray(value);
+}
+
+function normalizeSdkworkDomain(value) {
+  if (typeof value !== 'string') {
+    return '';
+  }
+  const normalized = value.trim();
+  if (!/^[a-z][A-Za-z0-9]*$/.test(normalized)) {
+    return '';
+  }
+  return normalized;
+}
+
+function mergeSdkDomainTags(tags, sdkDomains) {
+  const result = Array.isArray(tags)
+    ? tags
+        .filter((tag) => tag && typeof tag === 'object' && !Array.isArray(tag))
+        .map((tag) => ({ ...tag }))
+    : [];
+  const existingNames = new Set(
+    result
+      .map((tag) => (typeof tag.name === 'string' ? tag.name : ''))
+      .filter(Boolean),
+  );
+  for (const domain of Array.from(sdkDomains).sort()) {
+    if (!existingNames.has(domain)) {
+      result.push({ name: domain, description: `${toPascalCase(domain)} SDK domain.` });
+    }
+  }
+  return result;
 }
 
 function standardizeProjectRuntimeGeneratedContent(normalizedPath, content, file, spec) {

@@ -10,7 +10,7 @@ public class OpenAiAudioTranslationMultipartRequest {
     public String getFile() {
         return this.file;
     }
-    
+
     public void setFile(String file) {
         this.file = file;
     }
@@ -18,7 +18,7 @@ public class OpenAiAudioTranslationMultipartRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -26,7 +26,7 @@ public class OpenAiAudioTranslationMultipartRequest {
     public String getPrompt() {
         return this.prompt;
     }
-    
+
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
@@ -34,7 +34,7 @@ public class OpenAiAudioTranslationMultipartRequest {
     public String getResponseFormat() {
         return this.responseFormat;
     }
-    
+
     public void setResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
     }

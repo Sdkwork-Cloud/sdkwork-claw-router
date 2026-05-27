@@ -65,6 +65,30 @@ func (a *IamApi) AccessGroupsUpdate(groupId string, body sdktypes.AdminAccessGro
     return decodeResult[sdktypes.AccessGroupsUpdateResult](raw)
 }
 
+// List group channel bindings
+func (a *IamApi) AccessGroupsChannelBindingsList(groupId string) (sdktypes.AccessGroupsChannelBindingsListResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s/channel_bindings", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.AccessGroupsChannelBindingsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AccessGroupsChannelBindingsListResult](raw)
+}
+
+// Replace group channel bindings
+func (a *IamApi) AccessGroupsChannelBindingsUpdate(groupId string, body sdktypes.AdminAccessGroupChannelBindingsReplaceRequest, xRequestId *string) (sdktypes.AccessGroupsChannelBindingsUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s/channel_bindings", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AccessGroupsChannelBindingsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AccessGroupsChannelBindingsUpdateResult](raw)
+}
+
 // List API key map
 func (a *IamApi) ApiKeysList() (sdktypes.ApiKeysListResult, error) {
     raw, err := a.client.Get(BackendApiPath("/iam/api_keys"), nil, nil)

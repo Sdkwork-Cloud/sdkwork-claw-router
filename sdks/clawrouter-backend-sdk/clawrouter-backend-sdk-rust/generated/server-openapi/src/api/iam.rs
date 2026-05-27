@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult};
+use crate::models::{AccessGroupsChannelBindingsListResult, AccessGroupsChannelBindingsUpdateResult, AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupChannelBindingsReplaceRequest, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -49,6 +49,24 @@ impl IamApi {
             &[],
         );
         self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List group channel bindings
+    pub async fn access_groups_channel_bindings_list(&self, group_id: &str) -> Result<AccessGroupsChannelBindingsListResult, SdkworkError> {
+        let path = backend_path(&format!("/iam/access_groups/{}/channel_bindings", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
+        self.client.get(&path, None, None).await
+    }
+
+    /// Replace group channel bindings
+    pub async fn access_groups_channel_bindings_update(&self, group_id: &str, body: &AdminAccessGroupChannelBindingsReplaceRequest, x_request_id: Option<&str>) -> Result<AccessGroupsChannelBindingsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/iam/access_groups/{}/channel_bindings", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// List API key map

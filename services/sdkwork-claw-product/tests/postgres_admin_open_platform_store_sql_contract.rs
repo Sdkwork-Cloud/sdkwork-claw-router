@@ -25,7 +25,7 @@ fn postgres_open_platform_store_uses_standard_tables_and_subject_scope() {
         "WHERE tenant_id = $1",
         "AND organization_id = $2",
         "AND deleted_at IS NULL",
-        "WHERE id = $10 AND tenant_id = $11 AND organization_id = $12 AND deleted_at IS NULL",
+        "WHERE id = $11 AND tenant_id = $12 AND organization_id = $13 AND deleted_at IS NULL",
     ] {
         assert_sql_contains(POSTGRES_ADMIN_OPEN_PLATFORM_STORE, expected);
     }

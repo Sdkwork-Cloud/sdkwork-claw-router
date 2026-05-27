@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List apps
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsListResult?> AppsListAsync(string? q = null, string? status = null, string? marketStatus = null, string? appType = null, int? page = null, int? pageSize = null, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsListResult?> AppsListAsync(string? q = null, string? status = null, string? marketStatus = null, string? appType = null, int? categoryId = null, int? page = null, int? pageSize = null, string? xRequestId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -26,6 +26,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("status", status, "form", true, false, null),
                 new QueryParameterSpec("market_status", marketStatus, "form", true, false, null),
                 new QueryParameterSpec("app_type", appType, "form", true, false, null),
+                new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
                 new QueryParameterSpec("page", page, "form", true, false, null),
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             });
@@ -105,6 +106,121 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// List app templates
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult?> AppsTemplatesListAsync(string? q = null, string? publishStatus = null, string? templateType = null, string? runtime = null, int? categoryId = null, int? page = null, int? pageSize = null, string? xRequestId = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("q", q, "form", true, false, null),
+                new QueryParameterSpec("publish_status", publishStatus, "form", true, false, null),
+                new QueryParameterSpec("template_type", templateType, "form", true, false, null),
+                new QueryParameterSpec("runtime", runtime, "form", true, false, null),
+                new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            });
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/platform/apps/templates"), queryString), null, requestHeaders);
+        }
+
+        /// <summary>
+        /// Create app template
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesCreateResult?> AppsTemplatesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppTemplateCreateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesCreateResult>(ApiPaths.BackendPath("/platform/apps/templates"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Delete app template
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesDeleteResult?> AppsTemplatesDeleteAsync(string templateId, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesDeleteResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), null, requestHeaders);
+        }
+
+        /// <summary>
+        /// List app template
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesRetrieveResult?> AppsTemplatesRetrieveAsync(string templateId, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesRetrieveResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), null, requestHeaders);
+        }
+
+        /// <summary>
+        /// Update app template
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUpdateResult?> AppsTemplatesUpdateAsync(string templateId, Sdkwork.ClawRouter.Backend.Models.AdminAppTemplateUpdateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Publish app template
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesPublishResult?> AppsTemplatesPublishAsync(string templateId, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesPublishResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/publish"), null, null, requestHeaders);
+        }
+
+        /// <summary>
+        /// Offline app template
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUnpublishResult?> AppsTemplatesUnpublishAsync(string templateId, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUnpublishResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/unpublish"), null, null, requestHeaders);
         }
 
         /// <summary>

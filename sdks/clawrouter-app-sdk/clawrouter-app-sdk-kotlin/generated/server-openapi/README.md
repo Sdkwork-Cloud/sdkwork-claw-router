@@ -45,7 +45,7 @@ Choose exactly one mode for the same client instance.
 val config = SdkConfig(baseUrl = "http://localhost:18082")
 val client = SdkworkAppClient(config)
 client.setApiKey("your-api-key")
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -57,7 +57,7 @@ client.setAuthToken("your-auth-token")
 client.setAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -71,26 +71,36 @@ val client = SdkworkAppClient(config)
 
 ## API Modules
 
+- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
-- `client.billing` - billing API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.runtime` - runtime API
 - `client.system` - system API
+- `client.runtime` - runtime API
+- `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```kotlin
+// Accounts Current Summary Retrieve
+val result = client.commerce.accountsCurrentSummaryRetrieve()
+println(result)
+```
 
 ### agents
 
 ```kotlin
-// List user agents
+// List Playground agent definitions
 val params = linkedMapOf<String, Any>(
     "page" to 1,
     "page_size" to 2,
@@ -113,14 +123,6 @@ println(result)
 ```kotlin
 // Retrieve current IAM session
 val result = client.auth.sessionsCurrentRetrieve()
-println(result)
-```
-
-### billing
-
-```kotlin
-// Retrieve account points
-val result = client.billing.accountPointsRetrieve()
 println(result)
 ```
 
@@ -186,11 +188,30 @@ val result = client.notification.notificationsList(params)
 println(result)
 ```
 
+### open_platform
+
+```kotlin
+// Create open platform QR auth session
+val body = OpenPlatformQrAuthSessionCreateRequest(
+    purpose = "login"
+)
+val result = client.openPlatform.qrAuthSessionsCreate(body)
+println(result)
+```
+
 ### platform
 
 ```kotlin
 // Get categories
 val result = client.platform.appsStoreCategoriesList()
+println(result)
+```
+
+### system
+
+```kotlin
+// Retrieve public IAM verification policy
+val result = client.system.iamVerificationPolicyRetrieve()
 println(result)
 ```
 
@@ -211,15 +232,31 @@ val result = client.runtime.invocationsList(params)
 println(result)
 ```
 
-### system
+### sdk_reference
 
 ```kotlin
-// Retrieve public site runtime branding settings
-val params = linkedMapOf<String, Any>(
-    "tenant_code" to "ok",
-    "organization_code" to "ok"
+// Generate SDK archive
+val body = SdkReferenceArchiveGenerateRequest(
+    config = linkedMapOf<String, Any>(
+    "apiPrefix" to "apiprefix",
+    "apiSpecPath" to "apispecpath",
+    "author" to "author",
+    "baseUrl" to "baseurl",
+    "description" to "description",
+    "language" to "language",
+    "license" to "license",
+    "name" to "name",
+    "outputPath" to "outputpath",
+    "packageName" to "name",
+    "sdkType" to "app",
+    "version" to "version"
+),
+    language = "language",
+    spec = linkedMapOf<String, Any>(
+    "value" to "value"
 )
-val result = client.system.siteRuntimeRetrieve(params)
+)
+val result = client.sdkReference.archivesCreate(body)
 println(result)
 ```
 

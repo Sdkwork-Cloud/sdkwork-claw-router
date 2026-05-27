@@ -3,9 +3,10 @@ use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
-    AdminAccessGroupCommandFuture, AdminAccessGroupItem, AdminAccessGroupStore,
-    CreateAdminAccessGroupCommand, DeleteAdminAccessGroupCommand, ListAdminAccessGroupsQuery,
-    UpdateAdminAccessGroupCommand,
+    AdminAccessGroupChannelBindingItem, AdminAccessGroupCommandFuture, AdminAccessGroupItem,
+    AdminAccessGroupStore, CreateAdminAccessGroupCommand, DeleteAdminAccessGroupCommand,
+    ListAdminAccessGroupChannelBindingsQuery, ListAdminAccessGroupsQuery,
+    ReplaceAdminAccessGroupChannelBindingsCommand, UpdateAdminAccessGroupCommand,
 };
 
 const ACCESS_GROUP_TARGET_TYPE: i32 = 41;
@@ -279,6 +280,286 @@ impl AdminAccessGroupStore for PostgresAdminAccessGroupStore {
             Ok(deleted)
         })
     }
+
+    fn list_channel_bindings<'a>(
+        &'a self,
+        query: ListAdminAccessGroupChannelBindingsQuery,
+    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupChannelBindingItem>> {
+        Box::pin(async move { list_channel_bindings(&self.pool, query).await })
+    }
+
+    fn replace_channel_bindings<'a>(
+        &'a self,
+        command: ReplaceAdminAccessGroupChannelBindingsCommand,
+    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupChannelBindingItem>> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error(
+                    "failed to begin access group channel binding transaction",
+                    error,
+                )
+            })?;
+            let items = replace_channel_bindings(&mut tx, &command).await?;
+            insert_config_snapshot(
+                &mut tx,
+                &command.config_snapshot_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                "replace_access_group_channel_bindings",
+                command.group_id,
+                serde_json::json!({
+                    "action": "replace_access_group_channel_bindings",
+                    "accessGroupId": command.group_id,
+                    "channelIds": items.iter().map(|item| item.channel_id).collect::<Vec<_>>()
+                }),
+                &command.requested_at,
+            )
+            .await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "replace_access_group_channel_bindings",
+                command.group_id,
+                serde_json::json!({
+                    "action": "replace_access_group_channel_bindings",
+                    "accessGroupId": command.group_id,
+                    "channelIds": items.iter().map(|item| item.channel_id).collect::<Vec<_>>()
+                }),
+            )
+            .await?;
+            tx.commit().await.map_err(|error| {
+                store_error(
+                    "failed to commit access group channel binding transaction",
+                    error,
+                )
+            })?;
+            Ok(items)
+        })
+    }
+}
+
+async fn list_channel_bindings(
+    pool: &PgPool,
+    query: ListAdminAccessGroupChannelBindingsQuery,
+) -> DomainResult<Vec<AdminAccessGroupChannelBindingItem>> {
+    let rows = sqlx::query(channel_binding_select_sql())
+        .bind(query.subject.tenant_id)
+        .bind(query.subject.organization_id)
+        .bind(query.group_id)
+        .fetch_all(pool)
+        .await
+        .map_err(|error| store_error("failed to list access group channel bindings", error))?;
+    rows.into_iter()
+        .map(channel_binding_item_from_row)
+        .collect()
+}
+
+async fn replace_channel_bindings(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &ReplaceAdminAccessGroupChannelBindingsCommand,
+) -> DomainResult<Vec<AdminAccessGroupChannelBindingItem>> {
+    ensure_group_exists(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        command.group_id,
+    )
+    .await?;
+
+    let channel_ids = command
+        .items
+        .iter()
+        .map(|item| item.channel_id)
+        .collect::<Vec<_>>();
+    for channel_id in &channel_ids {
+        ensure_channel_exists(
+            tx,
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            *channel_id,
+        )
+        .await?;
+    }
+
+    if channel_ids.is_empty() {
+        sqlx::query(
+            r#"
+            UPDATE iam_api_key_group_channel
+            SET status = 0,
+                deleted_at = $1::timestamptz,
+                deleted_by = $2,
+                updated_at = $3::timestamptz,
+                version = COALESCE(version, 0) + 1
+            WHERE tenant_id = $4
+              AND organization_id = $5
+              AND group_id = $6
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(&command.requested_at)
+        .bind(command.subject.operator_id)
+        .bind(&command.requested_at)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(command.group_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to clear access group channel bindings", error))?;
+    } else {
+        sqlx::query(
+            r#"
+            UPDATE iam_api_key_group_channel
+            SET status = 0,
+                deleted_at = $1::timestamptz,
+                deleted_by = $2,
+                updated_at = $3::timestamptz,
+                version = COALESCE(version, 0) + 1
+            WHERE tenant_id = $4
+              AND organization_id = $5
+              AND group_id = $6
+              AND deleted_at IS NULL
+              AND NOT (channel_id = ANY($7::bigint[]))
+            "#,
+        )
+        .bind(&command.requested_at)
+        .bind(command.subject.operator_id)
+        .bind(&command.requested_at)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(command.group_id)
+        .bind(&channel_ids)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| {
+            store_error(
+                "failed to remove stale access group channel bindings",
+                error,
+            )
+        })?;
+    }
+
+    for (index, item) in command.items.iter().enumerate() {
+        let binding_uuid = command
+            .binding_uuids
+            .get(index)
+            .cloned()
+            .unwrap_or_else(|| format!("group-channel-{}-{}", command.group_id, item.channel_id));
+        sqlx::query(
+            r#"
+            INSERT INTO iam_api_key_group_channel
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_id, channel_id, priority, weight, model_scope, capabilities, metadata)
+            VALUES
+                ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11::jsonb, $12::jsonb, '{}'::jsonb)
+            ON CONFLICT(tenant_id, organization_id, group_id, channel_id)
+            DO UPDATE SET
+                status = excluded.status,
+                updated_at = excluded.updated_at,
+                deleted_at = NULL,
+                deleted_by = NULL,
+                version = COALESCE(iam_api_key_group_channel.version, 0) + 1,
+                priority = excluded.priority,
+                weight = excluded.weight,
+                model_scope = excluded.model_scope,
+                capabilities = excluded.capabilities
+            "#,
+        )
+        .bind(binding_uuid)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(status_code(&item.status))
+        .bind(&command.requested_at)
+        .bind(&command.requested_at)
+        .bind(command.group_id)
+        .bind(item.channel_id)
+        .bind(item.priority)
+        .bind(item.weight)
+        .bind(serde_json::to_string(&item.model_scope).unwrap_or_else(|_| "[]".to_owned()))
+        .bind(serde_json::to_string(&item.capabilities).unwrap_or_else(|_| "[]".to_owned()))
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to upsert access group channel binding", error))?;
+    }
+
+    let rows = sqlx::query(channel_binding_select_sql())
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(command.group_id)
+        .fetch_all(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to reload access group channel bindings", error))?;
+    rows.into_iter()
+        .map(channel_binding_item_from_row)
+        .collect()
+}
+
+async fn ensure_group_exists(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    group_id: i64,
+) -> DomainResult<()> {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_gateway_api_key_group
+        WHERE id = $1
+          AND tenant_id = $2
+          AND organization_id = $3
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(group_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load access group for channel binding", error))?;
+    if exists == 0 {
+        return Err(DomainError::not_found("access group was not found"));
+    }
+    Ok(())
+}
+
+async fn ensure_channel_exists(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    channel_id: i64,
+) -> DomainResult<()> {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM integration_channel
+        WHERE id = $1
+          AND tenant_id = $2
+          AND organization_id = $3
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(channel_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| {
+        store_error(
+            "failed to load integration channel for access group binding",
+            error,
+        )
+    })?;
+    if exists == 0 {
+        return Err(DomainError::not_found(format!(
+            "integration channel was not found: {channel_id}"
+        )));
+    }
+    Ok(())
 }
 
 async fn list_access_groups(
@@ -767,6 +1048,87 @@ fn access_group_select_sql(predicate: &str) -> String {
     )
 }
 
+fn channel_binding_select_sql() -> &'static str {
+    r#"
+        SELECT
+            b.id,
+            b.uuid,
+            b.tenant_id,
+            b.organization_id,
+            b.group_id,
+            b.channel_id,
+            COALESCE(c.name, c.channel_code, '') AS channel_name,
+            COALESCE(c.provider_code, '') AS provider_code,
+            COALESCE(p.display_name, p.provider_code, c.provider_code, '') AS provider_name,
+            COALESCE(c.channel_code, '') AS channel_code,
+            COALESCE(
+                (
+                    SELECT jsonb_agg(cm.catalog_key ORDER BY cm.id)
+                    FROM integration_channel_model cm
+                    WHERE cm.channel_id = c.id
+                      AND cm.tenant_id = c.tenant_id
+                      AND cm.organization_id = c.organization_id
+                      AND cm.deleted_at IS NULL
+                      AND cm.status = 1
+                ),
+                '[]'::jsonb
+            )::text AS models_json,
+            COALESCE(b.capabilities, '[]'::jsonb)::text AS capabilities_json,
+            COALESCE(b.model_scope, '[]'::jsonb)::text AS model_scope_json,
+            COALESCE(b.priority, c.priority, 100) AS priority,
+            COALESCE(b.weight, c.weight, 100) AS weight,
+            b.status,
+            COALESCE(c.health_status, 1) AS health_status,
+            b.deleted_at::text AS deleted_at
+        FROM iam_api_key_group_channel b
+        JOIN integration_channel c
+          ON c.id = b.channel_id
+         AND c.tenant_id = b.tenant_id
+         AND c.organization_id = b.organization_id
+         AND c.deleted_at IS NULL
+        LEFT JOIN integration_provider p
+          ON p.provider_code = c.provider_code
+         AND p.deleted_at IS NULL
+         AND (
+             (p.tenant_id = c.tenant_id AND p.organization_id = c.organization_id)
+             OR (p.tenant_id = 0 AND p.organization_id = 0)
+             OR (p.tenant_id IS NULL AND p.organization_id IS NULL)
+         )
+        WHERE b.tenant_id = $1
+          AND b.organization_id = $2
+          AND b.group_id = $3
+          AND b.deleted_at IS NULL
+        ORDER BY b.priority ASC, b.weight DESC, b.id ASC
+        "#
+}
+
+fn channel_binding_item_from_row(
+    row: sqlx::postgres::PgRow,
+) -> DomainResult<AdminAccessGroupChannelBindingItem> {
+    Ok(AdminAccessGroupChannelBindingItem {
+        id: row.try_get("id").map_err(row_error)?,
+        uuid: row.try_get("uuid").map_err(row_error)?,
+        tenant_id: row.try_get("tenant_id").map_err(row_error)?,
+        organization_id: row.try_get("organization_id").map_err(row_error)?,
+        group_id: row.try_get("group_id").map_err(row_error)?,
+        channel_id: row.try_get("channel_id").map_err(row_error)?,
+        channel_name: row.try_get("channel_name").map_err(row_error)?,
+        provider_code: row.try_get("provider_code").map_err(row_error)?,
+        provider_name: row.try_get("provider_name").map_err(row_error)?,
+        channel_code: row.try_get("channel_code").map_err(row_error)?,
+        models: json_string_array_cell(&row, "models_json")?,
+        capabilities: json_string_array_cell(&row, "capabilities_json")?,
+        model_scope: json_string_array_cell(&row, "model_scope_json")?,
+        priority: optional_integer_cell(&row, "priority").unwrap_or(100),
+        weight: optional_integer_cell(&row, "weight").unwrap_or(100),
+        status: status_label(required_integer_cell(&row, "status", "status")?)?,
+        health_status: channel_health_status_label(
+            optional_integer_cell(&row, "health_status").unwrap_or(1),
+        )?,
+        deleted_at: row.try_get("deleted_at").ok().flatten(),
+    })
+}
+
 fn item_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAccessGroupItem> {
     Ok(AdminAccessGroupItem {
         id: row.try_get("id").map_err(row_error)?,
@@ -850,6 +1212,16 @@ fn status_label(value: i64) -> DomainResult<String> {
     .map(str::to_owned)
 }
 
+fn channel_health_status_label(value: i64) -> DomainResult<String> {
+    match value {
+        1 => Ok("active".to_owned()),
+        2 => Ok("error".to_owned()),
+        value => Err(DomainError::new(format!(
+            "invalid admin access group channel health_status from database row: {value}"
+        ))),
+    }
+}
+
 fn decimal_string(value: f64) -> String {
     format!("{value:.6}")
 }
@@ -866,6 +1238,16 @@ fn decimal_cell(row: &sqlx::postgres::PgRow, column: &str) -> f64 {
         .flatten()
         .and_then(|value| value.parse::<f64>().ok())
         .unwrap_or(0.0)
+}
+
+fn json_string_array_cell(row: &sqlx::postgres::PgRow, column: &str) -> DomainResult<Vec<String>> {
+    let value = row
+        .try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .unwrap_or_else(|| "[]".to_owned());
+    serde_json::from_str::<Vec<String>>(&value)
+        .map_err(|error| DomainError::new(format!("invalid {column} JSON array: {error}")))
 }
 
 fn optional_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<i64> {

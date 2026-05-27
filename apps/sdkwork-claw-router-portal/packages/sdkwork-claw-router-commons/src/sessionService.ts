@@ -9,7 +9,6 @@ import {
   resetClawRouterSdkClients,
   type ClawRouterAppSdkClientOptions,
 } from './sdk-clients.ts';
-import { createRequestParams } from './request-id.ts';
 
 export async function createAppSession(
   options: ClawRouterAppSdkClientOptions = {},
@@ -18,7 +17,6 @@ export async function createAppSession(
     {
       grantType: 'session_bridge',
     },
-    createRequestParams('app-session'),
   );
   const stored = storeAppSessionFromResult(result);
   resetClawRouterSdkClients();

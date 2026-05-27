@@ -12,7 +12,7 @@ public class AdminModelVendorItem {
     public String getColor() {
         return this.color;
     }
-    
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -20,7 +20,7 @@ public class AdminModelVendorItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -28,7 +28,7 @@ public class AdminModelVendorItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -36,7 +36,7 @@ public class AdminModelVendorItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,7 +44,7 @@ public class AdminModelVendorItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -52,7 +52,7 @@ public class AdminModelVendorItem {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }

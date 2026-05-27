@@ -37,7 +37,7 @@ Choose exactly one mode for the same client instance.
 let config = SdkConfig(baseUrl: "http://localhost:18082")
 let client = SdkworkAppClient(config: config)
 client.setApiKey("your-api-key")
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -49,7 +49,7 @@ client.setAuthToken("your-auth-token")
 client.setAccessToken("your-access-token")
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -66,26 +66,36 @@ client.setHeader("X-Custom-Header", value: "value")
 
 ## API Modules
 
+- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
-- `client.billing` - billing API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.runtime` - runtime API
 - `client.system` - system API
+- `client.runtime` - runtime API
+- `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+
+```swift
+// Accounts Current Summary Retrieve
+let result = try await client.commerce.accountsCurrentSummaryRetrieve()
+print(result)
+```
 
 ### agents
 
 ```swift
-// List user agents
+// List Playground agent definitions
 let params: [String: Any] = [
     "page": 1,
     "page_size": 2,
@@ -108,14 +118,6 @@ print(result)
 ```swift
 // Retrieve current IAM session
 let result = try await client.auth.sessionsCurrentRetrieve()
-print(result)
-```
-
-### billing
-
-```swift
-// Retrieve account points
-let result = try await client.billing.accountPointsRetrieve()
 print(result)
 ```
 
@@ -181,11 +183,28 @@ let result = try await client.notification.notificationsList(params: params)
 print(result)
 ```
 
+### open_platform
+
+```swift
+// Create open platform QR auth session
+let body = OpenPlatformQrAuthSessionCreateRequest(purpose: "login")
+let result = try await client.openPlatform.qrAuthSessionsCreate(body: body)
+print(result)
+```
+
 ### platform
 
 ```swift
 // Get categories
 let result = try await client.platform.appsStoreCategoriesList()
+print(result)
+```
+
+### system
+
+```swift
+// Retrieve public IAM verification policy
+let result = try await client.system.iamVerificationPolicyRetrieve()
 print(result)
 ```
 
@@ -206,15 +225,16 @@ let result = try await client.runtime.invocationsList(params: params)
 print(result)
 ```
 
-### system
+### sdk_reference
 
 ```swift
-// Retrieve public site runtime branding settings
-let params: [String: Any] = [
-    "tenant_code": "ok",
-    "organization_code": "ok"
-]
-let result = try await client.system.siteRuntimeRetrieve(params: params)
+// Generate SDK archive
+let body = SdkReferenceArchiveGenerateRequest(
+    config: [:],
+    language: "language",
+    spec: [:]
+)
+let result = try await client.sdkReference.archivesCreate(body: body)
 print(result)
 ```
 

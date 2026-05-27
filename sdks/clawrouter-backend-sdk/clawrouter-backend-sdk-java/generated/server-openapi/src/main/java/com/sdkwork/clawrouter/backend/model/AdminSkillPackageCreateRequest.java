@@ -18,7 +18,7 @@ public class AdminSkillPackageCreateRequest {
     public String getCategoryId() {
         return this.categoryId;
     }
-    
+
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
@@ -26,7 +26,7 @@ public class AdminSkillPackageCreateRequest {
     public String getCoverImage() {
         return this.coverImage;
     }
-    
+
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
@@ -34,7 +34,7 @@ public class AdminSkillPackageCreateRequest {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -42,7 +42,7 @@ public class AdminSkillPackageCreateRequest {
     public Boolean getEnabled() {
         return this.enabled;
     }
-    
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -50,7 +50,7 @@ public class AdminSkillPackageCreateRequest {
     public Boolean getFeatured() {
         return this.featured;
     }
-    
+
     public void setFeatured(Boolean featured) {
         this.featured = featured;
     }
@@ -58,7 +58,7 @@ public class AdminSkillPackageCreateRequest {
     public String getIcon() {
         return this.icon;
     }
-    
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -66,7 +66,7 @@ public class AdminSkillPackageCreateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -74,7 +74,7 @@ public class AdminSkillPackageCreateRequest {
     public String getPackageKey() {
         return this.packageKey;
     }
-    
+
     public void setPackageKey(String packageKey) {
         this.packageKey = packageKey;
     }
@@ -82,7 +82,7 @@ public class AdminSkillPackageCreateRequest {
     public Integer getSortWeight() {
         return this.sortWeight;
     }
-    
+
     public void setSortWeight(Integer sortWeight) {
         this.sortWeight = sortWeight;
     }
@@ -90,7 +90,7 @@ public class AdminSkillPackageCreateRequest {
     public String getSummary() {
         return this.summary;
     }
-    
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -98,7 +98,7 @@ public class AdminSkillPackageCreateRequest {
     public List<String> getTags() {
         return this.tags;
     }
-    
+
     public void setTags(List<String> tags) {
         this.tags = tags;
     }

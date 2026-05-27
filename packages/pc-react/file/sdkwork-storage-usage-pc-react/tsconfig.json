@@ -1,0 +1,17 @@
+{
+  "extends": "../../../../sdkwork-appbase/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@sdkwork/file-contracts": ["../../../common/file/sdkwork-file-contracts/src/index.ts"],
+      "@sdkwork/file-service": ["../../../common/file/sdkwork-file-service/src/index.ts"],
+      "react": ["../../../../sdkwork-appbase/node_modules/@types/react"],
+      "react/jsx-runtime": ["../../../../sdkwork-appbase/node_modules/@types/react/jsx-runtime.d.ts"]
+    },
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
+}

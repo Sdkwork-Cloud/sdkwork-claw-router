@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class FineTuningApi {
     private final HttpClient client;
-    
+
     public FineTuningApi(HttpClient client) {
         this.client = client;
     }

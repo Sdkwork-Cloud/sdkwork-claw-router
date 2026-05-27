@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ImagesNanoBananaApi {
     private final HttpClient client;
-    
+
     public ImagesNanoBananaApi(HttpClient client) {
         this.client = client;
     }

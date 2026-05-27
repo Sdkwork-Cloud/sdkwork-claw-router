@@ -13,7 +13,7 @@ public class OpenAiResponseInputContentPart {
     public String getDetail() {
         return this.detail;
     }
-    
+
     public void setDetail(String detail) {
         this.detail = detail;
     }
@@ -21,7 +21,7 @@ public class OpenAiResponseInputContentPart {
     public String getFileData() {
         return this.fileData;
     }
-    
+
     public void setFileData(String fileData) {
         this.fileData = fileData;
     }
@@ -29,7 +29,7 @@ public class OpenAiResponseInputContentPart {
     public String getFileId() {
         return this.fileId;
     }
-    
+
     public void setFileId(String fileId) {
         this.fileId = fileId;
     }
@@ -37,7 +37,7 @@ public class OpenAiResponseInputContentPart {
     public String getFilename() {
         return this.filename;
     }
-    
+
     public void setFilename(String filename) {
         this.filename = filename;
     }
@@ -45,7 +45,7 @@ public class OpenAiResponseInputContentPart {
     public String getImageUrl() {
         return this.imageUrl;
     }
-    
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -53,7 +53,7 @@ public class OpenAiResponseInputContentPart {
     public String getText() {
         return this.text;
     }
-    
+
     public void setText(String text) {
         this.text = text;
     }
@@ -61,7 +61,7 @@ public class OpenAiResponseInputContentPart {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

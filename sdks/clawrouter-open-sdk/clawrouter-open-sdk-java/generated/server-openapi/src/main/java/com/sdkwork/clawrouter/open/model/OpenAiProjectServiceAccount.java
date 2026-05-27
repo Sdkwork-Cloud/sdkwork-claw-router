@@ -12,7 +12,7 @@ public class OpenAiProjectServiceAccount {
     public OpenAiProjectApiKey getApiKey() {
         return this.apiKey;
     }
-    
+
     public void setApiKey(OpenAiProjectApiKey apiKey) {
         this.apiKey = apiKey;
     }
@@ -20,7 +20,7 @@ public class OpenAiProjectServiceAccount {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -28,7 +28,7 @@ public class OpenAiProjectServiceAccount {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -36,7 +36,7 @@ public class OpenAiProjectServiceAccount {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,7 +44,7 @@ public class OpenAiProjectServiceAccount {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -52,7 +52,7 @@ public class OpenAiProjectServiceAccount {
     public String getRole() {
         return this.role;
     }
-    
+
     public void setRole(String role) {
         this.role = role;
     }

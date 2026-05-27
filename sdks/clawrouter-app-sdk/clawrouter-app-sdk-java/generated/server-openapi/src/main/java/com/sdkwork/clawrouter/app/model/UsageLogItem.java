@@ -7,7 +7,11 @@ public class UsageLogItem {
     private String cacheReadPrice;
     private Integer cacheReadTokens;
     private String cost;
+    private String errorCode;
+    private String errorMessage;
+    private String errorType;
     private String group;
+    private Integer httpStatus;
     private String id;
     private Integer inputTokens;
     private String ip;
@@ -16,8 +20,11 @@ public class UsageLogItem {
     private String multiplier;
     private Integer outputTokens;
     private String path;
+    private String providerNativeModel;
     private String reasoningEffort;
     private String requestId;
+    private String requestedModelCatalogKey;
+    private String status;
     private String time;
     private String tokenName;
     private String totalTime;
@@ -27,7 +34,7 @@ public class UsageLogItem {
     public String getBaseInputPrice() {
         return this.baseInputPrice;
     }
-    
+
     public void setBaseInputPrice(String baseInputPrice) {
         this.baseInputPrice = baseInputPrice;
     }
@@ -35,7 +42,7 @@ public class UsageLogItem {
     public String getBaseOutputPrice() {
         return this.baseOutputPrice;
     }
-    
+
     public void setBaseOutputPrice(String baseOutputPrice) {
         this.baseOutputPrice = baseOutputPrice;
     }
@@ -43,7 +50,7 @@ public class UsageLogItem {
     public String getCacheReadPrice() {
         return this.cacheReadPrice;
     }
-    
+
     public void setCacheReadPrice(String cacheReadPrice) {
         this.cacheReadPrice = cacheReadPrice;
     }
@@ -51,7 +58,7 @@ public class UsageLogItem {
     public Integer getCacheReadTokens() {
         return this.cacheReadTokens;
     }
-    
+
     public void setCacheReadTokens(Integer cacheReadTokens) {
         this.cacheReadTokens = cacheReadTokens;
     }
@@ -59,23 +66,55 @@ public class UsageLogItem {
     public String getCost() {
         return this.cost;
     }
-    
+
     public void setCost(String cost) {
         this.cost = cost;
+    }
+
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public String getErrorType() {
+        return this.errorType;
+    }
+
+    public void setErrorType(String errorType) {
+        this.errorType = errorType;
     }
 
     public String getGroup() {
         return this.group;
     }
-    
+
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    public Integer getHttpStatus() {
+        return this.httpStatus;
+    }
+
+    public void setHttpStatus(Integer httpStatus) {
+        this.httpStatus = httpStatus;
     }
 
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -83,7 +122,7 @@ public class UsageLogItem {
     public Integer getInputTokens() {
         return this.inputTokens;
     }
-    
+
     public void setInputTokens(Integer inputTokens) {
         this.inputTokens = inputTokens;
     }
@@ -91,7 +130,7 @@ public class UsageLogItem {
     public String getIp() {
         return this.ip;
     }
-    
+
     public void setIp(String ip) {
         this.ip = ip;
     }
@@ -99,7 +138,7 @@ public class UsageLogItem {
     public Boolean getIsStream() {
         return this.isStream;
     }
-    
+
     public void setIsStream(Boolean isStream) {
         this.isStream = isStream;
     }
@@ -107,7 +146,7 @@ public class UsageLogItem {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -115,7 +154,7 @@ public class UsageLogItem {
     public String getMultiplier() {
         return this.multiplier;
     }
-    
+
     public void setMultiplier(String multiplier) {
         this.multiplier = multiplier;
     }
@@ -123,7 +162,7 @@ public class UsageLogItem {
     public Integer getOutputTokens() {
         return this.outputTokens;
     }
-    
+
     public void setOutputTokens(Integer outputTokens) {
         this.outputTokens = outputTokens;
     }
@@ -131,15 +170,23 @@ public class UsageLogItem {
     public String getPath() {
         return this.path;
     }
-    
+
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public String getProviderNativeModel() {
+        return this.providerNativeModel;
+    }
+
+    public void setProviderNativeModel(String providerNativeModel) {
+        this.providerNativeModel = providerNativeModel;
     }
 
     public String getReasoningEffort() {
         return this.reasoningEffort;
     }
-    
+
     public void setReasoningEffort(String reasoningEffort) {
         this.reasoningEffort = reasoningEffort;
     }
@@ -147,15 +194,31 @@ public class UsageLogItem {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public String getRequestedModelCatalogKey() {
+        return this.requestedModelCatalogKey;
+    }
+
+    public void setRequestedModelCatalogKey(String requestedModelCatalogKey) {
+        this.requestedModelCatalogKey = requestedModelCatalogKey;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getTime() {
         return this.time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -163,7 +226,7 @@ public class UsageLogItem {
     public String getTokenName() {
         return this.tokenName;
     }
-    
+
     public void setTokenName(String tokenName) {
         this.tokenName = tokenName;
     }
@@ -171,7 +234,7 @@ public class UsageLogItem {
     public String getTotalTime() {
         return this.totalTime;
     }
-    
+
     public void setTotalTime(String totalTime) {
         this.totalTime = totalTime;
     }
@@ -179,7 +242,7 @@ public class UsageLogItem {
     public String getTtft() {
         return this.ttft;
     }
-    
+
     public void setTtft(String ttft) {
         this.ttft = ttft;
     }
@@ -187,7 +250,7 @@ public class UsageLogItem {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

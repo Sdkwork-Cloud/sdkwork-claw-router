@@ -2,12 +2,12 @@ package types
 
 // Open platform account update request schema exposed by Claw Router.
 type OpenPlatformAccountUpdateRequest struct {
-	AesKeyRef string `json:"aesKeyRef"`
 	AppId string `json:"appId"`
+	AppSecret string `json:"appSecret"`
 	DefaultEntryId string `json:"defaultEntryId"`
+	EncodingAesKey string `json:"encodingAesKey"`
 	Name string `json:"name"`
 	QrDefault bool `json:"qrDefault"`
-	SecretRef string `json:"secretRef"`
 	Status string `json:"status"`
-	TokenRef string `json:"tokenRef"`
+	Token string `json:"token"`
 }

@@ -40,7 +40,7 @@ adapters, and calling appbase service facades.
   bootstrap contract validation.
 - `sdkwork-commerce-membership-sqlx-rust` already behaves like a reusable
   finished block: it provides concrete SQLite/Postgres stores and app/admin
-  routers for VIP membership.
+  routers for membership.
 
 The platform is not complete yet:
 
@@ -72,7 +72,7 @@ complete commercial-grade appbase platform.
 
 - The portal has clear commercial workspaces: console account, billing,
   recharge, checkout, settlements, admin finance, admin marketing, admin user
-  balance adjustment, and VIP.
+  balance adjustment, and membership.
 - Portal commercial calls are routed through
   `sdkwork-claw-router-commons/src/commerce-runtime.ts`, then through generated
   `@sdkwork/clawrouter-app-sdk` or `@sdkwork/clawrouter-backend-sdk`.
@@ -86,7 +86,7 @@ complete commercial-grade appbase platform.
   generated SDK operation ids for app and backend surfaces.
 - Appbase SQL migration already owns a broad `commerce_*` schema with
   idempotency, account, ledger, coupon, order, payment intent, payment attempt,
-  webhook event, payment method, refund, exchange rule, recharge package, VIP,
+  webhook event, payment method, refund, exchange rule, recharge package, membership,
   and invoice tables.
 
 These are useful building blocks. They are not enough to declare the system
@@ -107,7 +107,7 @@ reusable appbase runtime/storage/router implementation.
 
 2. Backend implementation is wider than appbase implementation.
 
-   Admin coupon management, coupon batches/codes, recharge records/packages,
+   Admin promotion management, coupon stocks/codes, recharge records/packages,
    exchange rules, payment attempts, finance ledger, usage statements, account
    summary, checkout, recharge, and payment callback have real Rust API/store
    shape in `sdkwork-claw-product`. Those are generic commerce concerns and
@@ -116,7 +116,7 @@ reusable appbase runtime/storage/router implementation.
 3. Appbase runtime is not yet the source of truth for all exposed operations.
 
    `sdkwork-commerce-runtime-rust` registers account summary, coupons, orders,
-   payment intents/records, VIP, and invoices. It does not yet register the
+   payment intents/records, membership, and invoices. It does not yet register the
    wallet, points recharge, account points, token, exchange, coupon catalog,
    coupon usage rollback, checkout status, payment webhook, refund,
    settlements, finance, or backend marketing operations currently exposed by
@@ -348,11 +348,13 @@ Domain crates keep their narrow responsibilities:
   order status lifecycle, paid order reference.
 - `sdkwork-commerce-payment-rust`: payment intent, payment attempt, refund,
   provider command contract, webhook verification contract.
-- `sdkwork-commerce-promotion-rust`: coupon template, issue batch, coupon
-  instance, claim, redeem, rollback, expiry.
+- `sdkwork-commerce-promotion-rust`: promotion offers, immutable offer
+  versions, scopes, audience rules, time windows, budgets, stocks, codes, user
+  coupons, discount applications, allocations, ledgers, external bindings, and
+  event outbox.
 - `sdkwork-commerce-invoice-rust`: invoice title, invoice application, invoice
   item, invoice status lifecycle, provider command contract.
-- `sdkwork-commerce-membership-rust`: VIP membership, levels, entitlements,
+- `sdkwork-commerce-membership-rust`: membership, levels, entitlements,
   usage, benefits.
 
 These crates must stay storage-agnostic and host-agnostic.
@@ -461,7 +463,7 @@ Required routers:
 - app coupons router
 - app recharge router
 - app invoice router
-- app VIP router, wrapping the existing membership SQLx router
+- app membership router, wrapping the existing membership SQLx router
 - backend/admin commerce router for catalog, coupons, payment attempts, recharge
   packages, invoices, refunds, and ledger views
 

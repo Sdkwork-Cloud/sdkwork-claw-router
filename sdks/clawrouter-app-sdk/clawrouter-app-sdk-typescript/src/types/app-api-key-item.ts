@@ -4,6 +4,8 @@ export interface AppApiKeyItem {
   copyableKey?: string;
   /** Created field on app api key item. */
   created: string;
+  /** Whether this key is the current console default for backend runtime API key selection. */
+  defaultForRuntime: boolean;
   /** Expires field on app api key item. */
   expires: string;
   /** Group field on app api key item. */

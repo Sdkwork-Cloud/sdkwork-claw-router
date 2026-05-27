@@ -31,7 +31,7 @@ import {
 const USER_CENTER_DEFAULT_PLUGIN_CAPABILITIES = [
   "auth",
   "user",
-  "vip",
+  "membership",
 ] as const satisfies readonly UserCenterPluginCapabilityName[];
 
 function toUniquePackages(packageNames: readonly string[]): string[] {
@@ -44,8 +44,8 @@ function resolveCanonicalUserCenterRoutes(
 ): UserCenterRoutes {
   return {
     authBasePath: routes?.authBasePath ?? standardRoutes.authBasePath,
+    membershipRoutePath: routes?.membershipRoutePath ?? standardRoutes.membershipRoutePath,
     userRoutePath: routes?.userRoutePath ?? standardRoutes.userRoutePath,
-    vipRoutePath: routes?.vipRoutePath ?? standardRoutes.vipRoutePath,
   };
 }
 

@@ -33,7 +33,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -41,7 +41,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -49,7 +49,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -57,7 +57,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -65,7 +65,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getEndpointCode() {
         return this.endpointCode;
     }
-    
+
     public void setEndpointCode(String endpointCode) {
         this.endpointCode = endpointCode;
     }
@@ -73,7 +73,7 @@ public class IntegrationWebhookEndpointRecord {
     public Map<String, String> getEventTypes() {
         return this.eventTypes;
     }
-    
+
     public void setEventTypes(Map<String, String> eventTypes) {
         this.eventTypes = eventTypes;
     }
@@ -81,7 +81,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getFailureCount() {
         return this.failureCount;
     }
-    
+
     public void setFailureCount(String failureCount) {
         this.failureCount = failureCount;
     }
@@ -89,7 +89,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -97,7 +97,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getLastFailureAt() {
         return this.lastFailureAt;
     }
-    
+
     public void setLastFailureAt(String lastFailureAt) {
         this.lastFailureAt = lastFailureAt;
     }
@@ -105,7 +105,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getLastSuccessAt() {
         return this.lastSuccessAt;
     }
-    
+
     public void setLastSuccessAt(String lastSuccessAt) {
         this.lastSuccessAt = lastSuccessAt;
     }
@@ -113,7 +113,7 @@ public class IntegrationWebhookEndpointRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -121,7 +121,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -129,7 +129,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -137,7 +137,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -145,7 +145,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
@@ -153,7 +153,7 @@ public class IntegrationWebhookEndpointRecord {
     public Map<String, String> getRetryPolicy() {
         return this.retryPolicy;
     }
-    
+
     public void setRetryPolicy(Map<String, String> retryPolicy) {
         this.retryPolicy = retryPolicy;
     }
@@ -161,7 +161,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getSecretHash() {
         return this.secretHash;
     }
-    
+
     public void setSecretHash(String secretHash) {
         this.secretHash = secretHash;
     }
@@ -169,7 +169,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -177,7 +177,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getSigningAlg() {
         return this.signingAlg;
     }
-    
+
     public void setSigningAlg(String signingAlg) {
         this.signingAlg = signingAlg;
     }
@@ -185,7 +185,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -193,7 +193,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getTargetUrl() {
         return this.targetUrl;
     }
-    
+
     public void setTargetUrl(String targetUrl) {
         this.targetUrl = targetUrl;
     }
@@ -201,7 +201,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -209,7 +209,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -217,7 +217,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -225,7 +225,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -233,7 +233,7 @@ public class IntegrationWebhookEndpointRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

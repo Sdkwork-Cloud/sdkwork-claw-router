@@ -16,7 +16,7 @@ public class AdminProviderSecretItem {
     public String getAccountCode() {
         return this.accountCode;
     }
-    
+
     public void setAccountCode(String accountCode) {
         this.accountCode = accountCode;
     }
@@ -24,7 +24,7 @@ public class AdminProviderSecretItem {
     public String getAuthType() {
         return this.authType;
     }
-    
+
     public void setAuthType(String authType) {
         this.authType = authType;
     }
@@ -32,7 +32,7 @@ public class AdminProviderSecretItem {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -40,7 +40,7 @@ public class AdminProviderSecretItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -48,7 +48,7 @@ public class AdminProviderSecretItem {
     public String getMaskedLabel() {
         return this.maskedLabel;
     }
-    
+
     public void setMaskedLabel(String maskedLabel) {
         this.maskedLabel = maskedLabel;
     }
@@ -56,7 +56,7 @@ public class AdminProviderSecretItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -64,7 +64,7 @@ public class AdminProviderSecretItem {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -72,7 +72,7 @@ public class AdminProviderSecretItem {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -80,7 +80,7 @@ public class AdminProviderSecretItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -88,7 +88,7 @@ public class AdminProviderSecretItem {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }

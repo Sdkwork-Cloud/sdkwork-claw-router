@@ -19,8 +19,8 @@ use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::{
     ChatCompletionRelay, ChatCompletionRelayRequest, ChatCompletionRelayResponse,
-    ChatCompletionStreamRelay, ChatCompletionStreamRelayResponse, GatewayUsageRecordCommand,
-    GatewayUsageRecorder,
+    ChatCompletionStreamRelay, ChatCompletionStreamRelayResponse, GatewayRequestTraceCommand,
+    GatewayUsageRecordCommand, GatewayUsageRecorder,
 };
 use tower::ServiceExt;
 
@@ -117,6 +117,23 @@ fn catalog_with_hashed_api_key_without_routing(key_hash: String) -> InMemoryPric
         "openai/global/gpt-4o-mini",
         "gpt-4o-mini",
         PriceSide::OfficialReference,
+        BillingMeter::LlmCacheReadToken,
+        Money::usd("0.075000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmCacheReadToken,
+            Money::usd("0.055000").unwrap(),
+        )
+        .for_provider("openrouter", 3001),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-4o-mini",
+        "gpt-4o-mini",
+        PriceSide::OfficialReference,
         BillingMeter::LlmOutputToken,
         Money::usd("0.600000").unwrap(),
     ));
@@ -130,6 +147,59 @@ fn catalog_with_hashed_api_key_without_routing(key_hash: String) -> InMemoryPric
         )
         .for_provider("openrouter", 3001),
     );
+    catalog
+}
+
+fn catalog_with_hashed_api_key_without_provider_route_snapshot(
+    key_hash: String,
+) -> InMemoryPricingCatalog {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openai",
+        ModelVendor::OpenAi,
+        "OpenAI",
+    ));
+    catalog.add_model(AiModel::new(
+        "gpt-4o-mini",
+        "GPT-4o mini",
+        "openai",
+        vec!["chat", "tools"],
+    ));
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.200000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.100000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-4o-mini",
+        "gpt-4o-mini",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("0.150000").unwrap(),
+    ));
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-4o-mini",
+        "gpt-4o-mini",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmCacheReadToken,
+        Money::usd("0.075000").unwrap(),
+    ));
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-4o-mini",
+        "gpt-4o-mini",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmOutputToken,
+        Money::usd("0.600000").unwrap(),
+    ));
     catalog
 }
 
@@ -750,7 +820,7 @@ async fn openai_chat_completions_uses_group_account_pool_endpoint_for_selected_m
     let captured = captured.lock().unwrap();
     assert_eq!(1, captured.len());
     assert_eq!("openrouter", captured[0].provider_code);
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].provider_model);
+    assert_eq!("gpt-4o-mini", captured[0].provider_model);
     assert_eq!(
         Some("http://account-pool.internal/openrouter-standard"),
         captured[0].provider_base_url.as_deref()
@@ -768,6 +838,554 @@ async fn openai_chat_completions_uses_group_account_pool_endpoint_for_selected_m
         Some(ProviderRetryPolicy::new(4, vec![408, 429, 503], 50).unwrap()),
         captured[0].provider_retry_policy
     );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_routes_catalog_model_through_account_pool_without_model_route() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_model(
+        AiModel::new("gpt-5.5", "GPT-5.5", "openai", vec!["chat"])
+            .with_catalog_key("openai/global/gpt-5.5"),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-5.5",
+        "gpt-5.5",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("1.250000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-5.5",
+            "gpt-5.5",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.900000").unwrap(),
+        )
+        .for_provider("openrouter-gpt55", 3002),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter-gpt55", 3002)
+            .with_provider_endpoint(
+                Some("http://account-pool.internal/openrouter-gpt55"),
+                Some("vault://providers/openrouter-gpt55/account/group-10"),
+            )
+            .with_scoped_group_binding(10, 1, 100, vec!["openai/global/gpt-5.5"], vec!["llm"]),
+    );
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9001,
+        9101,
+        9102,
+        "standard-group-gpt-55",
+        "openai/global/gpt-5.5",
+        3002,
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"openai/global/gpt-5.5","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(10, captured[0].group_id);
+    assert_eq!(3002, captured[0].provider_channel_id);
+    assert_eq!("openrouter-gpt55", captured[0].provider_code);
+    assert_eq!("gpt-5.5", captured[0].provider_model);
+    assert_eq!(
+        Some("http://account-pool.internal/openrouter-gpt55"),
+        captured[0].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter-gpt55/account/group-10"),
+        captured[0].provider_secret_ref.as_deref()
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_accepts_slash_native_model_and_sends_native_model_upstream() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openrouter",
+        ModelVendor::Unknown,
+        "OpenRouter",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "anthropic/claude-3-opus",
+            "Claude 3 Opus via OpenRouter",
+            "openrouter",
+            vec!["chat"],
+        )
+        .with_catalog_key("openrouter/global/anthropic/claude-3-opus"),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openrouter/global/anthropic/claude-3-opus",
+        "anthropic/claude-3-opus",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("1.250000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openrouter/global/anthropic/claude-3-opus",
+            "anthropic/claude-3-opus",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.900000").unwrap(),
+        )
+        .for_provider("openrouter", 3003),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3003)
+            .with_provider_endpoint(
+                Some("http://account-pool.internal/openrouter"),
+                Some("vault://providers/openrouter/account/group-10"),
+            )
+            .with_scoped_group_binding(10, 1, 100, vec!["anthropic/claude-3-opus"], vec!["llm"]),
+    );
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9201,
+        9202,
+        9203,
+        "standard-group-openrouter-claude",
+        "openrouter/global/anthropic/claude-3-opus",
+        3003,
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"anthropic/claude-3-opus","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!("openrouter", captured[0].provider_code);
+    assert_eq!("anthropic/claude-3-opus", captured[0].provider_model);
+    assert_eq!(
+        Some("http://account-pool.internal/openrouter"),
+        captured[0].provider_base_url.as_deref()
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_routes_alibaba_regional_model_through_region_scoped_group_account_pool(
+) {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "alibaba",
+        ModelVendor::Alibaba,
+        "Alibaba",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "qwen3.6-max-preview",
+            "Qwen3.6 Max Preview",
+            "alibaba",
+            vec!["chat"],
+        )
+        .with_catalog_key("alibaba/cn/qwen3.6-max-preview"),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "alibaba/cn/qwen3.6-max-preview",
+        "qwen3.6-max-preview",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("1.500000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "alibaba/cn/qwen3.6-max-preview",
+            "qwen3.6-max-preview",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("1.000000").unwrap(),
+        )
+        .for_provider("dashscope", 3101),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("dashscope", 3101)
+            .with_provider_endpoint(
+                Some("http://account-pool.internal/dashscope-cn"),
+                Some("vault://providers/dashscope/account/group-10"),
+            )
+            .with_scoped_group_binding(10, 1, 100, vec!["alibaba/cn"], vec!["llm"]),
+    );
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9301,
+        9401,
+        9402,
+        "standard-group-alibaba-cn",
+        "alibaba/cn/qwen3.6-max-preview",
+        3101,
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"alibaba/cn/qwen3.6-max-preview","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(10, captured[0].group_id);
+    assert_eq!(3101, captured[0].provider_channel_id);
+    assert_eq!("dashscope", captured[0].provider_code);
+    assert_eq!("qwen3.6-max-preview", captured[0].provider_model);
+    assert_eq!(
+        Some("http://account-pool.internal/dashscope-cn"),
+        captured[0].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/dashscope/account/group-10"),
+        captured[0].provider_secret_ref.as_deref()
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_routes_group_bound_account_pool_without_explicit_policy_rule() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "alibaba",
+        ModelVendor::Alibaba,
+        "Alibaba",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "qwen3.6-max-preview",
+            "Qwen3.6 Max Preview",
+            "alibaba",
+            vec!["chat"],
+        )
+        .with_catalog_key("alibaba/cn/qwen3.6-max-preview"),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "alibaba/cn/qwen3.6-max-preview",
+        "qwen3.6-max-preview",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("1.500000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "alibaba/cn/qwen3.6-max-preview",
+            "qwen3.6-max-preview",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("1.000000").unwrap(),
+        )
+        .for_provider("dashscope", 3101),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("dashscope", 3101)
+            .with_provider_endpoint(
+                Some("http://account-pool.internal/dashscope-cn"),
+                Some("vault://providers/dashscope/account/group-10"),
+            )
+            .with_scoped_group_binding(10, 1, 100, vec!["alibaba/cn"], vec!["llm"]),
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"alibaba/cn/qwen3.6-max-preview","messages":[{"role":"user","content":"ping"}],"temperature":0.2}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(10, captured[0].group_id);
+    assert_eq!(3101, captured[0].provider_channel_id);
+    assert_eq!("dashscope", captured[0].provider_code);
+    assert_eq!("qwen3.6-max-preview", captured[0].provider_model);
+    assert_eq!(
+        Some("http://account-pool.internal/dashscope-cn"),
+        captured[0].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/dashscope/account/group-10"),
+        captured[0].provider_secret_ref.as_deref()
+    );
+    assert_eq!(
+        serde_json::json!({
+            "model": "alibaba/cn/qwen3.6-max-preview",
+            "messages": [{"role":"user","content":"ping"}],
+            "temperature": 0.2
+        }),
+        captured[0].request_body
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_routes_model_candidates_through_bound_group_account_pool() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key_without_routing(key_hash);
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter-unbound",
+            3001,
+            "gpt-4o-mini-unbound",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter-unbound"),
+            Some("vault://providers/openrouter-unbound/account/main"),
+        ),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter-bound",
+            3002,
+            "gpt-4o-mini-bound",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter-bound"),
+            Some("vault://providers/openrouter-bound/account/main"),
+        ),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter-unbound", 3001).with_provider_endpoint(
+            Some("http://account-pool.internal/openrouter-unbound"),
+            Some("vault://providers/openrouter-unbound/account/main"),
+        ),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter-bound", 3002)
+            .with_provider_endpoint(
+                Some("http://account-pool.internal/openrouter-bound"),
+                Some("vault://providers/openrouter-bound/account/group-10"),
+            )
+            .with_scoped_group_binding(10, 1, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"]),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.120000").unwrap(),
+        )
+        .for_provider("openrouter-bound", 3002),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmOutputToken,
+            Money::usd("0.480000").unwrap(),
+        )
+        .for_provider("openrouter-bound", 3002),
+    );
+    add_group_routing_policy(
+        &mut catalog,
+        10,
+        9001,
+        9101,
+        9102,
+        "standard-group-gpt-4o-mini",
+        "openai/global/gpt-4o-mini",
+        3001,
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9103,
+            10,
+            20,
+            9101,
+            "standard-group-weighted-account-pool",
+            0,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![
+            RouteCandidate::new(3001, 100),
+            RouteCandidate::new(3002, 50),
+        ]),
+    );
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(10, captured[0].group_id);
+    assert_eq!(3002, captured[0].provider_channel_id);
+    assert_eq!("openrouter-bound", captured[0].provider_code);
+    assert_eq!("gpt-4o-mini-bound", captured[0].provider_model);
+    assert_eq!(
+        Some("http://account-pool.internal/openrouter-bound"),
+        captured[0].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter-bound/account/group-10"),
+        captured[0].provider_secret_ref.as_deref()
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_sanitizes_empty_route_snapshot_errors() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog_with_hashed_api_key_without_provider_route_snapshot(
+            key_hash,
+        )),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    assert!(captured.lock().unwrap().is_empty());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let message = payload["error"]["message"].as_str().unwrap();
+
+    assert_eq!("provider_route_snapshot_empty", payload["error"]["code"]);
+    assert!(message.contains("provider route snapshot is empty for model"));
+    assert!(!message.contains("route diagnostics"), "{message}");
+    assert!(!message.contains("api_key_id"), "{message}");
+    assert!(!message.contains("tenant_id"), "{message}");
+    assert!(!message.contains("organization_id"), "{message}");
+    assert!(!message.contains("user_id"), "{message}");
+    assert!(!message.contains("api_key_group_code"), "{message}");
 }
 
 #[tokio::test]
@@ -1164,6 +1782,49 @@ impl ChatCompletionRelay for RecordingRelay {
 }
 
 #[derive(Debug)]
+struct CachedUsageRelay;
+
+impl ChatCompletionRelay for CachedUsageRelay {
+    fn create_chat_completion<'a>(
+        &'a self,
+        _request: ChatCompletionRelayRequest,
+    ) -> std::pin::Pin<
+        Box<
+            dyn std::future::Future<
+                    Output = sdkwork_claw_product::domain::DomainResult<
+                        ChatCompletionRelayResponse,
+                    >,
+                > + Send
+                + 'a,
+        >,
+    > {
+        Box::pin(async {
+            Ok(ChatCompletionRelayResponse::json(
+                200,
+                serde_json::json!({
+                    "id": "chatcmpl-cached-usage",
+                    "object": "chat.completion",
+                    "model": "gpt-4o-mini",
+                    "choices": [
+                        {
+                            "index": 0,
+                            "message": {"role": "assistant", "content": "pong"},
+                            "finish_reason": "stop"
+                        }
+                    ],
+                    "usage": {
+                        "prompt_tokens": 1_000_000,
+                        "completion_tokens": 500_000,
+                        "total_tokens": 1_500_000,
+                        "prompt_tokens_details": {"cached_tokens": 250_000}
+                    }
+                }),
+            ))
+        })
+    }
+}
+
+#[derive(Debug)]
 struct FailingRelay;
 
 impl ChatCompletionRelay for FailingRelay {
@@ -1453,15 +2114,40 @@ impl ChatCompletionRelay for MissingUsageRelay {
 #[derive(Debug)]
 struct RecordingUsageRecorder {
     captured: Arc<Mutex<Vec<GatewayUsageRecordCommand>>>,
+    traces: Arc<Mutex<Vec<GatewayRequestTraceCommand>>>,
 }
 
 impl RecordingUsageRecorder {
     fn new(captured: Arc<Mutex<Vec<GatewayUsageRecordCommand>>>) -> Self {
-        Self { captured }
+        Self {
+            captured,
+            traces: Arc::new(Mutex::new(Vec::new())),
+        }
+    }
+
+    fn with_traces(
+        captured: Arc<Mutex<Vec<GatewayUsageRecordCommand>>>,
+        traces: Arc<Mutex<Vec<GatewayRequestTraceCommand>>>,
+    ) -> Self {
+        Self { captured, traces }
     }
 }
 
 impl GatewayUsageRecorder for RecordingUsageRecorder {
+    fn record_gateway_trace<'a>(
+        &'a self,
+        command: GatewayRequestTraceCommand,
+    ) -> std::pin::Pin<
+        Box<
+            dyn std::future::Future<Output = sdkwork_claw_product::domain::DomainResult<()>>
+                + Send
+                + 'a,
+        >,
+    > {
+        self.traces.lock().unwrap().push(command);
+        Box::pin(async { Ok(()) })
+    }
+
     fn record_gateway_usage<'a>(
         &'a self,
         command: GatewayUsageRecordCommand,
@@ -1796,7 +2482,7 @@ async fn openai_chat_completions_fails_over_to_rule_fallback_after_primary_relay
 
     let usage_records = usage_records.lock().unwrap();
     assert_eq!(1, usage_records.len());
-    assert_eq!("req-failover", usage_records[0].request_id);
+    assert_server_generated_request_id(&usage_records[0].request_id, "req-failover");
     assert_eq!("openrouter-fallback", usage_records[0].provider_code);
     assert_eq!(3002, usage_records[0].channel_id);
     assert_eq!(2, usage_records[0].prompt_tokens);
@@ -2236,7 +2922,7 @@ async fn openai_chat_completions_stream_fails_over_to_rule_fallback_before_respo
 
     let usage_records = usage_records.lock().unwrap();
     assert_eq!(1, usage_records.len());
-    assert_eq!("req-stream-failover", usage_records[0].request_id);
+    assert_server_generated_request_id(&usage_records[0].request_id, "req-stream-failover");
     assert!(usage_records[0].streaming);
     assert_eq!("openrouter-fallback", usage_records[0].provider_code);
     assert_eq!(3002, usage_records[0].channel_id);
@@ -2371,7 +3057,7 @@ async fn openai_chat_invocation_plugin_observes_provider_relay_errors() {
 }
 
 #[tokio::test]
-async fn openai_chat_invocation_plugin_can_override_selected_provider_account_before_relay() {
+async fn openai_chat_invocation_plugin_cannot_override_selected_provider_account_before_relay() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
@@ -2398,23 +3084,22 @@ async fn openai_chat_invocation_plugin_can_override_selected_provider_account_be
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(StatusCode::INTERNAL_SERVER_ERROR, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!(
+        "provider_route_mutation_not_allowed",
+        payload["error"]["code"]
+    );
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("plugin mutated selected provider route"));
 
     let captured = captured.lock().unwrap();
-    assert_eq!(1, captured.len());
-    assert_eq!(
-        Some("http://plugin-account-pool.internal/openrouter"),
-        captured[0].provider_base_url.as_deref()
-    );
-    assert_eq!(
-        Some("vault://providers/openrouter/account/plugin"),
-        captured[0].provider_secret_ref.as_deref()
-    );
-    assert_eq!(
-        ProviderAuthProfile::header("x-api-key"),
-        captured[0].provider_auth_profile
-    );
-    assert_eq!(Some(12_000), captured[0].provider_timeout_ms);
+    assert!(captured.is_empty());
 }
 
 #[tokio::test]
@@ -2464,7 +3149,7 @@ async fn openai_chat_completions_relays_non_stream_request_after_auth_model_and_
     assert_eq!("standard", captured[0].pricing_plan_code);
     assert_eq!("gpt-4o-mini", captured[0].model);
     assert_eq!("openrouter", captured[0].provider_code);
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].provider_model);
+    assert_eq!("gpt-4o-mini", captured[0].provider_model);
     assert_eq!(
         Some("http://provider-proxy.internal/openrouter"),
         captured[0].provider_base_url.as_deref()
@@ -2560,7 +3245,7 @@ async fn openai_chat_completions_records_non_stream_usage_after_provider_success
     let captured = usage_captured.lock().unwrap();
     assert_eq!(1, captured.len());
     let command = &captured[0];
-    assert_eq!("req-chat-usage-1", command.request_id);
+    assert_server_generated_request_id(&command.request_id, "req-chat-usage-1");
     assert_eq!(Some("trace-chat-usage-1"), command.trace_id.as_deref());
     assert_eq!(10, command.tenant_id);
     assert_eq!(20, command.organization_id);
@@ -2571,9 +3256,14 @@ async fn openai_chat_completions_records_non_stream_usage_after_provider_success
     assert_eq!("sk-live", command.api_key_name_snapshot);
     assert_eq!("openai/global/gpt-4o-mini", command.catalog_key);
     assert_eq!("gpt-4o-mini", command.requested_model);
+    assert_eq!(
+        "openai/global/gpt-4o-mini",
+        command.requested_model_catalog_key
+    );
     assert_eq!("openrouter", command.provider_code);
     assert_eq!(3001, command.channel_id);
-    assert_eq!("openai/global/gpt-4o-mini", command.provider_model);
+    assert_eq!("gpt-4o-mini", command.provider_model);
+    assert_eq!("gpt-4o-mini", command.provider_native_model);
     assert_eq!("/v1/chat/completions", command.request_path);
     assert_eq!("POST", command.http_method);
     assert_eq!(200, command.http_status);
@@ -2584,10 +3274,76 @@ async fn openai_chat_completions_records_non_stream_usage_after_provider_success
     assert_eq!(2, command.total_tokens);
     assert_eq!("0.198000", command.base_input_unit_price);
     assert_eq!("0.792000", command.base_output_unit_price);
-    assert_eq!("0.990000", command.customer_charge_amount);
-    assert_eq!("0.550000", command.upstream_cost_amount);
+    assert_eq!("0.099000", command.cache_read_unit_price);
+    assert_eq!("1.000000", command.rate_multiplier);
+    assert_eq!("1.320000", command.reference_multiplier);
+    assert_eq!("0.000000750000", command.official_reference_amount);
+    assert_eq!("0.000000990000", command.customer_charge_amount);
+    assert_eq!("0.000000550000", command.upstream_cost_amount);
     assert_eq!("USD", command.currency);
     assert_eq!("standard", command.pricing_plan_code);
+    let pricing_snapshot: serde_json::Value =
+        serde_json::from_str(&command.pricing_snapshot).unwrap();
+    assert_eq!(
+        "openai",
+        pricing_snapshot["vendor"]["code"].as_str().unwrap()
+    );
+    assert_eq!(
+        "openai/global/gpt-4o-mini",
+        pricing_snapshot["model"]["catalogKey"].as_str().unwrap()
+    );
+    assert_eq!(
+        "0.198000",
+        pricing_snapshot["meters"]["input"]["customerUnitPrice"]
+            .as_str()
+            .unwrap()
+    );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_records_spend_per_million_with_cache_read_price() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let usage_captured = Arc::new(Mutex::new(Vec::new()));
+    let recorder = Arc::new(RecordingUsageRecorder::new(Arc::clone(&usage_captured)));
+    let router =
+        sdkwork_claw_product::api::openai_chat_completions_router_with_relay_and_usage_recorder(
+            Arc::new(catalog_with_hashed_api_key(key_hash)),
+            hasher,
+            Arc::new(CachedUsageRelay),
+            recorder,
+        );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-live-secret")
+                .header("content-type", "application/json")
+                .header("x-request-id", "req-chat-cached-usage")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+
+    let captured = usage_captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    let command = &captured[0];
+    assert_eq!(1_000_000, command.prompt_tokens);
+    assert_eq!(250_000, command.cached_tokens);
+    assert_eq!(500_000, command.completion_tokens);
+    assert_eq!("0.198000", command.base_input_unit_price);
+    assert_eq!("0.099000", command.cache_read_unit_price);
+    assert_eq!("0.792000", command.base_output_unit_price);
+    assert_eq!("0.569250000000", command.customer_charge_amount);
+    assert_eq!("0.316250000000", command.upstream_cost_amount);
 }
 
 #[tokio::test]
@@ -2629,11 +3385,11 @@ async fn openai_chat_completions_records_usage_even_when_after_relay_observer_fa
     );
     let captured = usage_captured.lock().unwrap();
     assert_eq!(1, captured.len());
-    assert_eq!(
+    assert_server_generated_request_id(
+        &captured[0].request_id,
         "req-chat-after-relay-observer-fails",
-        captured[0].request_id
     );
-    assert_eq!("0.990000", captured[0].customer_charge_amount);
+    assert_eq!("0.000000990000", captured[0].customer_charge_amount);
 }
 
 #[tokio::test]
@@ -2725,10 +3481,82 @@ async fn openai_chat_completions_relays_stream_request_after_auth_model_and_pric
     assert_eq!(101, captured[0].api_key_id);
     assert_eq!("standard-group", captured[0].group_code);
     assert_eq!("openrouter", captured[0].provider_code);
-    assert_eq!("openai/global/gpt-4o-mini", captured[0].provider_model);
+    assert_eq!("gpt-4o-mini", captured[0].provider_model);
     assert_eq!(Some(30_000), captured[0].provider_timeout_ms);
     assert_eq!(true, captured[0].request_body["stream"]);
     assert_eq!("ping", captured[0].request_body["messages"][0]["content"]);
+}
+
+#[tokio::test]
+async fn openai_chat_completions_records_failed_provider_status_trace_without_usage_fact() {
+    let hasher = HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap();
+    let key_hash = hasher.hash_secret("sk-live").unwrap();
+    let catalog = Arc::new(catalog_with_hashed_api_key(key_hash));
+    let usage_captured = Arc::new(Mutex::new(Vec::new()));
+    let trace_captured = Arc::new(Mutex::new(Vec::new()));
+    let recorder = Arc::new(RecordingUsageRecorder::with_traces(
+        Arc::clone(&usage_captured),
+        Arc::clone(&trace_captured),
+    ));
+    let router =
+        sdkwork_claw_product::api::openai_chat_completions_router_with_relay_and_usage_recorder(
+            catalog,
+            Arc::new(hasher),
+            Arc::new(RetryableStatusPrimaryRelay::new(
+                Arc::new(Mutex::new(Vec::new())),
+                "openrouter",
+            )),
+            recorder,
+        );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-live")
+                .header("x-request-id", "req-chat-upstream-503")
+                .header("x-trace-id", "trace-chat-upstream-503")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    assert!(usage_captured.lock().unwrap().is_empty());
+    let traces = trace_captured.lock().unwrap();
+    assert_eq!(1, traces.len());
+    let trace = &traces[0];
+    assert_server_generated_request_id(&trace.request_id, "req-chat-upstream-503");
+    assert_eq!(Some("trace-chat-upstream-503"), trace.trace_id.as_deref());
+    assert_eq!(10, trace.tenant_id);
+    assert_eq!(20, trace.organization_id);
+    assert_eq!(30, trace.user_id);
+    assert_eq!(101, trace.api_key_id);
+    assert_eq!("standard-group", trace.api_key_group_snapshot);
+    assert_eq!("gpt-4o-mini", trace.requested_model);
+    assert_eq!(
+        "openai/global/gpt-4o-mini",
+        trace.requested_model_catalog_key
+    );
+    assert_eq!("openrouter", trace.provider_code);
+    assert_eq!(3001, trace.channel_id);
+    assert_eq!("gpt-4o-mini", trace.provider_model);
+    assert_eq!("gpt-4o-mini", trace.provider_native_model);
+    assert_eq!(Some(503), trace.http_status);
+    assert_eq!(Some("overloaded"), trace.provider_error_code.as_deref());
+    assert_eq!(Some("server_error"), trace.error_type.as_deref());
+    assert_eq!(
+        Some("upstream overloaded"),
+        trace.error_message_masked.as_deref()
+    );
+    assert_eq!(0, trace.total_tokens);
+    assert!(!trace.streaming);
+    assert!(trace.latency_ms.is_some_and(|value| value >= 1));
 }
 
 #[tokio::test]
@@ -2776,7 +3604,7 @@ async fn openai_chat_completions_records_stream_usage_after_provider_success() {
     let captured = usage_captured.lock().unwrap();
     assert_eq!(1, captured.len());
     let command = &captured[0];
-    assert_eq!("req-chat-stream-usage-1", command.request_id);
+    assert_server_generated_request_id(&command.request_id, "req-chat-stream-usage-1");
     assert_eq!(
         Some("trace-chat-stream-usage-1"),
         command.trace_id.as_deref()
@@ -2785,8 +3613,8 @@ async fn openai_chat_completions_records_stream_usage_after_provider_success() {
     assert_eq!(1, command.prompt_tokens);
     assert_eq!(1, command.completion_tokens);
     assert_eq!(2, command.total_tokens);
-    assert_eq!("0.990000", command.customer_charge_amount);
-    assert_eq!("0.550000", command.upstream_cost_amount);
+    assert_eq!("0.000000990000", command.customer_charge_amount);
+    assert_eq!("0.000000550000", command.upstream_cost_amount);
 }
 
 #[tokio::test]
@@ -2836,27 +3664,31 @@ async fn openai_chat_completions_records_stream_usage_from_crlf_sse_events() {
     let captured = usage_captured.lock().unwrap();
     assert_eq!(1, captured.len());
     let command = &captured[0];
-    assert_eq!("req-chat-stream-usage-crlf-1", command.request_id);
+    assert_server_generated_request_id(&command.request_id, "req-chat-stream-usage-crlf-1");
     assert!(command.streaming);
     assert_eq!(3, command.prompt_tokens);
     assert_eq!(5, command.completion_tokens);
     assert_eq!(8, command.total_tokens);
-    assert_eq!("4.554000", command.customer_charge_amount);
-    assert_eq!("2.530000", command.upstream_cost_amount);
+    assert_eq!("0.000004554000", command.customer_charge_amount);
+    assert_eq!("0.000002530000", command.upstream_cost_amount);
 }
 
 #[tokio::test]
-async fn openai_chat_completions_fails_stream_body_when_provider_omits_usage() {
+async fn openai_chat_completions_records_zero_token_usage_when_stream_provider_omits_usage() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
     let relay_captured = Arc::new(Mutex::new(Vec::new()));
     let usage_captured = Arc::new(Mutex::new(Vec::new()));
+    let trace_captured = Arc::new(Mutex::new(Vec::new()));
     let stream_relay = Arc::new(RecordingStreamRelay::with_body(
         Arc::clone(&relay_captured),
         "data: {\"id\":\"chatcmpl-stream-missing-usage\",\"choices\":[{\"delta\":{\"content\":\"pong\"}}]}\n\ndata: [DONE]\n\n",
     ));
-    let recorder = Arc::new(RecordingUsageRecorder::new(Arc::clone(&usage_captured)));
+    let recorder = Arc::new(RecordingUsageRecorder::with_traces(
+        Arc::clone(&usage_captured),
+        Arc::clone(&trace_captured),
+    ));
     let router =
         sdkwork_claw_product::api::openai_chat_completions_router_with_relays_and_usage_recorder(
             Arc::new(catalog_with_hashed_api_key(key_hash)),
@@ -2883,30 +3715,49 @@ async fn openai_chat_completions_fails_stream_body_when_provider_omits_usage() {
         .unwrap();
 
     assert_eq!(StatusCode::OK, response.status());
-    let body_error = axum::body::to_bytes(response.into_body(), usize::MAX)
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
-        .unwrap_err();
-    assert!(body_error
-        .to_string()
-        .contains("provider streaming chat completion response is missing usage"));
+        .unwrap();
+    let body = String::from_utf8(body.to_vec()).unwrap();
+    assert!(body.contains("chatcmpl-stream-missing-usage"), "{body}");
+    assert!(body.ends_with("data: [DONE]\n\n"), "{body}");
 
     let captured = usage_captured.lock().unwrap();
-    assert!(captured.is_empty());
+    assert_eq!(1, captured.len());
+    let command = &captured[0];
+    assert_server_generated_request_id(&command.request_id, "req-chat-stream-missing-usage-1");
+    assert!(command.streaming);
+    assert_eq!("llm_input_token", command.billing_meter_code);
+    assert_eq!("0", command.billable_quantity);
+    assert_eq!(1, command.request_count);
+    assert_eq!(0, command.prompt_tokens);
+    assert_eq!(0, command.completion_tokens);
+    assert_eq!(0, command.cached_tokens);
+    assert_eq!(0, command.total_tokens);
+    assert_eq!("0.000000000000", command.customer_charge_amount);
+    assert_eq!("0.000000000000", command.upstream_cost_amount);
+
+    let traces = trace_captured.lock().unwrap();
+    assert!(traces.is_empty());
 }
 
 #[tokio::test]
-async fn openai_chat_completions_reports_stream_usage_recording_failures_to_invocation_plugins() {
+async fn openai_chat_completions_treats_stream_missing_usage_as_success_for_plugins() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
     let relay_captured = Arc::new(Mutex::new(Vec::new()));
     let usage_captured = Arc::new(Mutex::new(Vec::new()));
+    let trace_captured = Arc::new(Mutex::new(Vec::new()));
     let events = Arc::new(Mutex::new(Vec::new()));
     let stream_relay = Arc::new(RecordingStreamRelay::with_body(
         Arc::clone(&relay_captured),
         "data: {\"id\":\"chatcmpl-stream-missing-usage\",\"choices\":[{\"delta\":{\"content\":\"pong\"}}]}\n\ndata: [DONE]\n\n",
     ));
-    let recorder = Arc::new(RecordingUsageRecorder::new(Arc::clone(&usage_captured)));
+    let recorder = Arc::new(RecordingUsageRecorder::with_traces(
+        Arc::clone(&usage_captured),
+        Arc::clone(&trace_captured),
+    ));
     let router =
         sdkwork_claw_product::api::openai_chat_completions_router_with_relays_and_usage_recorder_and_plugins(
             Arc::new(catalog_with_hashed_api_key(key_hash)),
@@ -2934,16 +3785,34 @@ async fn openai_chat_completions_reports_stream_usage_recording_failures_to_invo
         .unwrap();
 
     assert_eq!(StatusCode::OK, response.status());
-    let body_error = axum::body::to_bytes(response.into_body(), usize::MAX)
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
-        .unwrap_err();
-    assert!(body_error
-        .to_string()
-        .contains("provider streaming chat completion response is missing usage"));
-    assert!(usage_captured.lock().unwrap().is_empty());
+        .unwrap();
+    let body = String::from_utf8(body.to_vec()).unwrap();
+    assert!(body.contains("chatcmpl-stream-missing-usage"), "{body}");
+    assert_eq!(1, usage_captured.lock().unwrap().len());
+    assert!(trace_captured.lock().unwrap().is_empty());
 
     let events = events.lock().unwrap();
     assert!(events.contains(&"route_success:openrouter:200".to_owned()));
     assert!(events.contains(&"after_relay:200".to_owned()));
-    assert!(events.contains(&"route_fault:openrouter:provider_usage_record_failed".to_owned()));
+    assert!(!events
+        .iter()
+        .any(|event| event.starts_with("route_fault:openrouter:")));
+}
+
+fn assert_server_generated_request_id(actual: &str, rejected_client_request_id: &str) {
+    assert_ne!(rejected_client_request_id, actual);
+    assert!(is_uuid(actual), "expected server-generated UUID, got {actual}");
+}
+
+fn is_uuid(value: &str) -> bool {
+    let bytes = value.as_bytes();
+    bytes.len() == 36
+        && bytes.iter().enumerate().all(|(index, byte)| {
+            matches!(index, 8 | 13 | 18 | 23) && *byte == b'-'
+                || !matches!(index, 8 | 13 | 18 | 23) && byte.is_ascii_hexdigit()
+        })
+        && bytes.get(14) == Some(&b'4')
+        && matches!(bytes.get(19), Some(b'8' | b'9' | b'a' | b'b'))
 }

@@ -48,7 +48,7 @@ function createDashboard() {
       featuredOfferCount: 1,
       isAuthenticated: true,
       subscriptionPlanCount: 2,
-      vipRemainingDays: 18,
+      membershipRemainingDays: 18,
     },
     topAction: {
       capability: "subscription" as const,
@@ -78,7 +78,7 @@ function createEmptyDashboard() {
       featuredOfferCount: 0,
       isAuthenticated: false,
       subscriptionPlanCount: 0,
-      vipRemainingDays: null,
+      membershipRemainingDays: null,
     },
     topAction: null,
   };

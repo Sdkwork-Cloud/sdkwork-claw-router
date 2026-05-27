@@ -1,188 +1,208 @@
 import {
   createRequestToken,
-  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
-  isRecord,
-  readBoolean,
-  readNullableString,
-  readRequiredApiItem,
-  readRequiredApiItems,
-  readRequiredString,
-  readString,
-  type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 
-type BackendOpenPlatform = ReturnType<typeof getClawRouterBackendSdkClient>['openPlatform'];
-type OpenPlatformAccountCreateRequest = Parameters<BackendOpenPlatform['accounts']['create']>[0];
+type BackendServiceProviders = ReturnType<typeof getClawRouterBackendSdkClient>['serviceProviders'];
+type ListParams<TList> = TList extends (params?: infer TParams) => unknown ? TParams : never;
+export type ServiceProviderListParams = ListParams<BackendServiceProviders['providerRegistry']['list']>;
 
-export type ServiceProviderCode = 'wechat' | 'alipay' | 'douyin' | 'baidu' | 'kuaishou' | 'feishu';
-export type ServiceProviderStatus = 'active' | 'inactive';
-export type ServiceProviderAccountStatus = 'active' | 'inactive';
-export type ServiceProviderAccountType = 'official_account' | 'mini_app' | 'life_account' | 'bot';
-
-interface ServiceProviderItem {
+export type ServiceProviderDashboardItem = {
   id: string;
-  name: string;
-  provider: ServiceProviderCode;
-  status: ServiceProviderStatus;
-}
+  status: string;
+  incomeAmount: string;
+  expenseAmount: string;
+  marginAmount: string;
+  requestCount: number;
+  activeDownstreamCount: number;
+  riskProviderCount: number;
+};
 
-export interface ServiceProviderAccountItem {
+export type ServiceProviderResourceItem = {
   id: string;
-  key: string;
-  name: string;
-  provider: ServiceProviderCode;
-  type: ServiceProviderAccountType;
-  status: ServiceProviderAccountStatus;
-  qrDefault: boolean;
-  appId: string;
-  tokenRef: string;
-  secretRef: string;
-  aesKeyRef: string;
-  createdAt: string;
-  updatedAt: string;
+  providerNo: string;
+  displayName: string;
+  providerType: string;
+  status: string;
+  riskLevel: string;
+  incomeAmount: string;
+  expenseAmount: string;
+  marginAmount: string;
+};
+
+export type ServiceProviderRelationItem = {
+  id: string;
+  edgeNo: string;
+  sellerProviderId: string;
+  buyerProviderId: string;
+  edgeType: string;
+  settlementMode: string;
+  status: string;
+};
+
+export type ServiceProviderPricingRuleItem = {
+  id: string;
+  planCode: string;
+  catalogKey: string;
+  model: string;
+  billingMeterCode: string;
+  tokenKind: string;
+  unitPrice: string;
+  currency: string;
+  priority: number;
+};
+
+export type ServiceProviderUsageEdgeItem = {
+  id: string;
+  usageFactId: string;
+  sellerProviderId: string;
+  buyerProviderId: string;
+  billingMeterCode: string;
+  tokenKind: string;
+  billableQuantity: string;
+  chargeAmount: string;
+  currency: string;
+};
+
+export type ServiceProviderStatementItem = {
+  id: string;
+  statementNo: string;
+  sellerProviderId: string;
+  buyerProviderId: string;
+  period: string;
+  receivableAmount: string;
+  payableAmount: string;
+  currency: string;
+  statementStatus: string;
+};
+
+export type ServiceProviderPriceSimulationInput = Parameters<BackendServiceProviders['priceSimulation']['create']>[0];
+export type ServiceProviderDownstreamCreateInput = Parameters<BackendServiceProviders['downstreams']['create']>[0];
+export type ServiceProviderPricingRuleCreateInput = Parameters<BackendServiceProviders['pricingRules']['create']>[0];
+export type ServiceProviderPricingRuleUpdateInput = Parameters<BackendServiceProviders['pricingRules']['update']>[1];
+
+export const DEFAULT_SERVICE_PROVIDER_PAGE_PARAMS = {
+  page: 1,
+  pageSize: 100,
+} as const;
+
+export async function backendServiceProviderDashboardRetrieve(
+  params?: ListParams<BackendServiceProviders['dashboard']['retrieve']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.dashboard.retrieve(params);
 }
 
-export interface ServiceProviderAccountRow {
-  providerId: string;
-  providerCode: ServiceProviderCode;
-  providerName: string;
-  providerStatus: ServiceProviderStatus;
-  account: ServiceProviderAccountItem | null;
+export async function backendServiceProvidersList(
+  params?: ListParams<BackendServiceProviders['providerRegistry']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.providerRegistry.list(params);
 }
 
-export interface ServiceProviderAccountCreateInput {
-  key: string;
-  name: string;
-  provider: ServiceProviderCode;
-  type: ServiceProviderAccountType;
-  appId?: string;
-  tokenRef?: string;
-  secretRef?: string;
-  aesKeyRef?: string;
+export async function backendServiceProviderRelationsList(
+  params?: ListParams<BackendServiceProviders['relations']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.relations.list(params);
 }
 
-export class ServiceProviderAccountService {
-  static async fetchAccounts(): Promise<ServiceProviderAccountRow[]> {
-    const providersResult = await getClawRouterBackendSdkClient().openPlatform.providers.list();
-    const accountsResult = await getClawRouterBackendSdkClient().openPlatform.accounts.list({ pageSize: 200 });
-    const providers = readRequiredApiItems(providersResult, 'Service providers are required')
-      .map(normalizeProvider);
-    const accounts = readRequiredApiItems(accountsResult, 'Service provider accounts are required')
-      .map(normalizeAccount);
-
-    const accountByProvider = new Map<ServiceProviderCode, ServiceProviderAccountItem>();
-    for (const account of accounts) {
-      if (!accountByProvider.has(account.provider)) {
-        accountByProvider.set(account.provider, account);
-      }
-    }
-
-    return providers.map((provider) => ({
-      providerId: provider.id,
-      providerCode: provider.provider,
-      providerName: provider.name,
-      providerStatus: provider.status,
-      account: accountByProvider.get(provider.provider) ?? null,
-    }));
-  }
-
-  static async createAccount(input: ServiceProviderAccountCreateInput): Promise<ServiceProviderAccountItem> {
-    const request: OpenPlatformAccountCreateRequest = {
-      key: input.key.trim(),
-      name: input.name.trim(),
-      provider: input.provider,
-      type: input.type,
-      appId: optionalString(input.appId),
-      tokenRef: optionalString(input.tokenRef),
-      secretRef: optionalString(input.secretRef),
-      aesKeyRef: optionalString(input.aesKeyRef),
-    };
-    const result = await getClawRouterBackendSdkClient().openPlatform.accounts.create(request, {
-      xRequestId: createRequestToken('admin-service-provider-account-create'),
-    });
-    ensureSdkworkApiSuccess(result, 'Failed to create service provider account');
-    return normalizeAccount(readRequiredApiItem(result, 'Service provider account is required'));
-  }
+export async function backendServiceProviderDownstreamsList(
+  params?: ListParams<BackendServiceProviders['downstreams']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.downstreams.list(params);
 }
 
-function normalizeProvider(value: unknown): ServiceProviderItem {
-  const item = readRequiredRecord(value, 'Service provider record is required');
-  return {
-    id: readRequiredString(item, 'id', 'Service provider id is required'),
-    name: readRequiredString(item, 'name', 'Service provider name is required'),
-    provider: readProviderCode(item, 'provider'),
-    status: readProviderStatus(item, 'status'),
-  };
+export async function backendServiceProviderDownstreamCreate(input: ServiceProviderDownstreamCreateInput) {
+  const requestToken = createRequestToken('admin-service-provider-downstream-create');
+  return getClawRouterBackendSdkClient().serviceProviders.downstreams.create(input, {
+    idempotencyKey: requestToken,
+  });
 }
 
-function normalizeAccount(value: unknown): ServiceProviderAccountItem {
-  const item = readRequiredRecord(value, 'Service provider account record is required');
-  return {
-    id: readRequiredString(item, 'id', 'Service provider account id is required'),
-    key: readRequiredString(item, 'key', 'Service provider account key is required'),
-    name: readRequiredString(item, 'name', 'Service provider account name is required'),
-    provider: readProviderCode(item, 'provider'),
-    type: readAccountType(item, 'type'),
-    status: readAccountStatus(item, 'status'),
-    qrDefault: readBoolean(item, 'qrDefault', false),
-    appId: readNullableString(item, 'appId') ?? '',
-    tokenRef: readNullableString(item, 'tokenRef') ?? '',
-    secretRef: readNullableString(item, 'secretRef') ?? '',
-    aesKeyRef: readNullableString(item, 'aesKeyRef') ?? '',
-    createdAt: readString(item, 'createdAt'),
-    updatedAt: readString(item, 'updatedAt'),
-  };
+export async function backendServiceProviderMembersList(
+  params?: ListParams<BackendServiceProviders['members']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.members.list(params);
 }
 
-function readProviderCode(record: ApiRecord, key: string): ServiceProviderCode {
-  const value = readRequiredString(record, key, 'Service provider code is required');
-  if (isProviderCode(value)) {
-    return value;
-  }
-  throw new Error(`Unsupported service provider code: ${value}`);
+export async function backendServiceProviderBindingsList(
+  params?: ListParams<BackendServiceProviders['bindings']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.bindings.list(params);
 }
 
-function readProviderStatus(record: ApiRecord, key: string): ServiceProviderStatus {
-  const value = readRequiredString(record, key, 'Service provider status is required');
-  if (value === 'active' || value === 'inactive') {
-    return value;
-  }
-  throw new Error(`Unsupported service provider status: ${value}`);
+export async function backendServiceProviderContractsList(
+  params?: ListParams<BackendServiceProviders['contracts']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.contracts.list(params);
 }
 
-function readAccountStatus(record: ApiRecord, key: string): ServiceProviderAccountStatus {
-  const value = readRequiredString(record, key, 'Service provider account status is required');
-  if (value === 'active' || value === 'inactive') {
-    return value;
-  }
-  throw new Error(`Unsupported service provider account status: ${value}`);
+export async function backendServiceProviderPricingRulesList(
+  params?: ListParams<BackendServiceProviders['pricingRules']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.pricingRules.list(params);
 }
 
-function readAccountType(record: ApiRecord, key: string): ServiceProviderAccountType {
-  const value = readRequiredString(record, key, 'Service provider account type is required');
-  if (isAccountType(value)) {
-    return value;
-  }
-  throw new Error(`Unsupported service provider account type: ${value}`);
+export async function backendServiceProviderPricingRuleCreate(input: ServiceProviderPricingRuleCreateInput) {
+  const requestToken = createRequestToken('admin-service-provider-pricing-rule-create');
+  return getClawRouterBackendSdkClient().serviceProviders.pricingRules.create(input, {
+    idempotencyKey: requestToken,
+  });
 }
 
-function isProviderCode(value: string): value is ServiceProviderCode {
-  return ['wechat', 'alipay', 'douyin', 'baidu', 'kuaishou', 'feishu'].includes(value);
+export async function backendServiceProviderPricingRuleUpdate(
+  ruleId: string,
+  input: ServiceProviderPricingRuleUpdateInput,
+) {
+  const requestToken = createRequestToken('admin-service-provider-pricing-rule-update');
+  return getClawRouterBackendSdkClient().serviceProviders.pricingRules.update(ruleId, input, {
+    idempotencyKey: requestToken,
+  });
 }
 
-function isAccountType(value: string): value is ServiceProviderAccountType {
-  return ['official_account', 'mini_app', 'life_account', 'bot'].includes(value);
+export async function backendServiceProviderPriceSimulationCreate(input: ServiceProviderPriceSimulationInput) {
+  const requestToken = createRequestToken('admin-service-provider-price-simulation');
+  return getClawRouterBackendSdkClient().serviceProviders.priceSimulation.create(input, {
+    idempotencyKey: requestToken,
+  });
 }
 
-function optionalString(value: string | undefined): string | null {
-  const normalized = value?.trim();
-  return normalized ? normalized : null;
+export async function backendServiceProviderUsageList(
+  params?: ListParams<BackendServiceProviders['usage']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.usage.list(params);
 }
 
-function readRequiredRecord(value: unknown, message: string): ApiRecord {
-  if (!isRecord(value)) {
-    throw new Error(message);
-  }
-  return value;
+export async function backendServiceProviderWalletAccountsList(
+  params?: ListParams<BackendServiceProviders['providerWalletAccounts']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.providerWalletAccounts.list(params);
+}
+
+export async function backendServiceProviderStatementsList(
+  params?: ListParams<BackendServiceProviders['statements']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.statements.list(params);
+}
+
+export async function backendServiceProviderReconciliationRunsList(
+  params?: ListParams<BackendServiceProviders['reconciliationRuns']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.reconciliationRuns.list(params);
+}
+
+export async function backendServiceProviderAdjustmentsList(
+  params?: ListParams<BackendServiceProviders['adjustments']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.adjustments.list(params);
+}
+
+export async function backendServiceProviderRiskEventsList(
+  params?: ListParams<BackendServiceProviders['riskEvents']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.riskEvents.list(params);
+}
+
+export async function backendServiceProviderAuditEventsList(
+  params?: ListParams<BackendServiceProviders['auditEvents']['list']>,
+) {
+  return getClawRouterBackendSdkClient().serviceProviders.auditEvents.list(params);
 }

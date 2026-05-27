@@ -1,5 +1,6 @@
 use crate::domain::{
-    BillingMeter, DomainError, DomainResult, ModelPrice, ModelVendor, Money, PriceSide,
+    BillingMeter, DecimalValue, DomainError, DomainResult, ModelPrice, ModelVendor, Money,
+    PriceSide,
 };
 use crate::ports::PricingCatalog;
 
@@ -32,6 +33,9 @@ pub struct ResolvedModelPrice {
     pub billing_meter: BillingMeter,
     pub official_reference: ModelPrice,
     pub upstream_cost: Option<ModelPrice>,
+    pub customer_charge_before_rate: Money,
+    pub rate_multiplier: DecimalValue,
+    pub reference_multiplier: DecimalValue,
     pub customer_charge: Money,
     pub gross_margin_per_unit: Option<crate::domain::DecimalValue>,
     pub source: ResolvedPriceSource,
@@ -62,23 +66,24 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
             None,
             Some(&plan.plan_code),
         );
-        let (customer_charge, source) = match explicit_customer {
+        let reference_multiplier = plan
+            .default_multiplier
+            .checked_multiply(group.official_price_multiplier)?;
+        let (customer_charge_before_rate, source) = match explicit_customer {
             Some(price) => (
-                price.unit_price.multiply(group.rate_multiplier),
+                price.unit_price,
                 ResolvedPriceSource::ExplicitCustomerCharge,
             ),
             None => (
                 add_default_markup(
-                    official
-                        .unit_price
-                        .multiply(plan.default_multiplier)
-                        .multiply(group.official_price_multiplier),
+                    official.unit_price.checked_multiply(reference_multiplier)?,
                     &plan.default_markup_amount,
-                )?
-                .multiply(group.rate_multiplier),
+                )?,
                 ResolvedPriceSource::DerivedFromOfficialReference,
             ),
         };
+        let customer_charge =
+            customer_charge_before_rate.checked_multiply(group.rate_multiplier)?;
         let gross_margin_per_unit = upstream
             .as_ref()
             .map(|price| customer_charge.subtract(&price.unit_price))
@@ -93,6 +98,9 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
             billing_meter: query.billing_meter,
             official_reference: official,
             upstream_cost: upstream,
+            customer_charge_before_rate,
+            rate_multiplier: group.rate_multiplier,
+            reference_multiplier,
             customer_charge,
             gross_margin_per_unit,
             source,
@@ -180,7 +188,7 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
         provider_code: &str,
         channel_id: Option<i64>,
     ) -> DomainResult<()> {
-        let route = self
+        if self
             .catalog
             .list_provider_routes(model)
             .into_iter()
@@ -190,19 +198,35 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                         .map(|channel_id| route.channel_id == channel_id)
                         .unwrap_or(true)
             })
-            .ok_or_else(|| {
-                if let Some(channel_id) = channel_id {
-                    DomainError::new(format!(
-                        "provider route not found for model {model}, provider {provider_code}, and channel {channel_id}"
-                    ))
-                } else {
-                    DomainError::new(format!(
-                        "provider route not found for model {model} and provider {provider_code}"
-                    ))
-                }
-            })?;
-        let _ = route;
-        Ok(())
+            .is_some()
+        {
+            return Ok(());
+        }
+
+        if self
+            .catalog
+            .list_provider_account_pool_routes()
+            .into_iter()
+            .find(|route| {
+                route.provider_code == provider_code
+                    && channel_id
+                        .map(|channel_id| route.channel_id == channel_id)
+                        .unwrap_or(true)
+            })
+            .is_some()
+        {
+            return Ok(());
+        }
+
+        Err(if let Some(channel_id) = channel_id {
+            DomainError::new(format!(
+                "provider route not found for model {model}, provider {provider_code}, and channel {channel_id}"
+            ))
+        } else {
+            DomainError::new(format!(
+                "provider route not found for model {model} and provider {provider_code}"
+            ))
+        })
     }
 }
 

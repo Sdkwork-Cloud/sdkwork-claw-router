@@ -28,6 +28,8 @@ import {
 } from "./packages/sdkwork-claw-router-commons/src/portal-auth.ts";
 import { normalizeGeneratedSdkBaseUrl } from "./packages/sdkwork-claw-router-commons/src/sdk-base-url.ts";
 import {
+  createClawRouterAiSdkClient,
+  getClawRouterAiSdkClient,
   resetClawRouterSdkClients,
   SDK_SYSTEM_CONFIG,
 } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
@@ -72,15 +74,21 @@ function withCrypto<T>(cryptoValue: Crypto | undefined, fn: () => T): T {
   }
 }
 
-test("createRequestToken uses randomUUID when available", () => {
+test("createRequestToken uses cryptographic random bytes without crypto.randomUUID", () => {
   const token = withCrypto(
     {
       randomUUID: () => "11111111-2222-4333-8444-555555555555",
+      getRandomValues: (array: Uint8Array) => {
+        for (let index = 0; index < array.length; index += 1) {
+          array[index] = index + 1;
+        }
+        return array;
+      },
     } as unknown as Crypto,
     () => createRequestToken(" api-key "),
   );
 
-  assert.equal(token, "api-key-11111111-2222-4333-8444-555555555555");
+  assert.equal(token, "api-key-01020304-0506-4708-890a-0b0c0d0e0f10");
 });
 
 test("createRequestToken falls back only to cryptographic random bytes", () => {
@@ -96,7 +104,7 @@ test("createRequestToken falls back only to cryptographic random bytes", () => {
     () => createRequestToken("request"),
   );
 
-  assert.equal(token, "request-0102030405060708090a0b0c0d0e0f10");
+  assert.equal(token, "request-01020304-0506-4708-890a-0b0c0d0e0f10");
 });
 
 test("createRequestToken fails closed when secure randomness is unavailable", () => {
@@ -119,15 +127,21 @@ test("createRequestToken rejects an all-zero random byte result", () => {
   );
 });
 
-test("createRequestParams creates request id and idempotency key for generated SDK write calls", () => {
-  let sequence = 0;
+test("createRequestParams creates only idempotency keys for generated SDK write calls", () => {
   const params = withCrypto(
     {
-      randomUUID: () => {
-        sequence += 1;
-        return sequence === 1
-          ? "11111111-2222-4333-8444-555555555555"
-          : "66666666-7777-4888-9999-aaaaaaaaaaaa";
+      getRandomValues: (array: Uint8Array) => {
+        const bytes = [
+          0x11, 0x11, 0x11, 0x11,
+          0x22, 0x22,
+          0x43, 0x33,
+          0x84, 0x44,
+          0x55, 0x55, 0x55, 0x55, 0x55, 0x55,
+        ];
+        for (let index = 0; index < array.length; index += 1) {
+          array[index] = bytes[index];
+        }
+        return array;
       },
     } as unknown as Crypto,
     () => createRequestParams(" commerce-wallet-topup "),
@@ -135,7 +149,6 @@ test("createRequestParams creates request id and idempotency key for generated S
 
   assert.deepEqual(params, {
     idempotencyKey: "commerce-wallet-topup-11111111-2222-4333-8444-555555555555",
-    xRequestId: "commerce-wallet-topup-request-66666666-7777-4888-9999-aaaaaaaaaaaa",
   });
 });
 
@@ -200,6 +213,38 @@ test("generated SDK metadata declares independent runtime base URL variables for
   assert.equal(SDK_SYSTEM_CONFIG.gateway.runtimeEnvName, "VITE_CLAWROUTER_OPEN_API_BASE_URL");
   assert.equal(SDK_SYSTEM_CONFIG.app.runtimeEnvName, "VITE_CLAWROUTER_APP_API_BASE_URL");
   assert.equal(SDK_SYSTEM_CONFIG.backend.runtimeEnvName, "VITE_CLAWROUTER_BACKEND_API_BASE_URL");
+});
+
+test("open gateway SDK clients never inherit portal session tokens", () => {
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+
+  try {
+    storeAppSessionFromResult({
+      accessToken: "access-token-open-gateway",
+      authToken: "auth-token-open-gateway",
+      expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    });
+
+    const implicitClient = getClawRouterAiSdkClient() as unknown as {
+      httpClient?: { authConfig?: { authMode?: string; tokenManager?: { getAccessToken?: () => string | undefined } } };
+    };
+    assert.equal(implicitClient.httpClient?.authConfig?.tokenManager?.getAccessToken?.(), undefined);
+
+    const explicitClient = createClawRouterAiSdkClient({
+      accessToken: "access-token-unsafe",
+      apiKey: "sk-open-gateway",
+      authToken: "auth-token-unsafe",
+    }) as unknown as {
+      httpClient?: { authConfig?: { apiKey?: string; authMode?: string; tokenManager?: { getAccessToken?: () => string | undefined } } };
+    };
+    assert.equal(explicitClient.httpClient?.authConfig?.authMode, "apikey");
+    assert.equal(explicitClient.httpClient?.authConfig?.apiKey, "sk-open-gateway");
+    assert.equal(explicitClient.httpClient?.authConfig?.tokenManager?.getAccessToken?.(), undefined);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+  }
 });
 
 test("commons exports an adaptive admin table shell with a fixed footer slot", () => {
@@ -362,28 +407,83 @@ test("console layout keeps readable navigation labels and valid logout markup", 
   );
 
   for (const label of [
-    "仪表盘",
-    "令牌管理",
-    "调用统计",
-    "充值兑换",
-    "账单与报表",
-    "消息中心",
-    "工具配置",
-    "本地路由",
-    "账户详情",
-    "配置中心",
-    "退出登录",
+    "Dashboard",
+    "Token management",
+    "Call statistics",
+    "Recharge exchange",
+    "Bills and Reports",
+    "Message Center",
+    "Account details",
+    "Configuration center",
+    "Log out",
   ]) {
     assert.match(source, new RegExp(`['">]${label}['"<]`));
   }
 
-  assert.doesNotMatch(source, /浠|璋|閽|璐|娑|宸|鏈|閰|閫/);
+  assert.doesNotMatch(source, /[\u3400-\u9fff]|浠|璋|閽|璐|娑|宸|鏈|閰|閫/u);
   assert.doesNotMatch(source, /path:\s*'\/console\/recharge'/);
   assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
   assert.doesNotMatch(source, /console\.recharge\.nav\.recharge/);
   assert.doesNotMatch(source, /console\.checkout\.nav\.checkout/);
-  assert.match(source, /<span>\{t\("console\.core\.consolelayout\.text\.12hokt7", "退出登录"\)\}<\/span>/);
+  assert.match(source, /<span>\{t\("console\.core\.consolelayout\.text\.12hokt7", "Log out"\)\}<\/span>/);
   assert.doesNotMatch(source, /<span>[^<]*\/span>/);
+});
+
+test("console sidebar keeps dashboard top-level and groups the remaining menus by workflow", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-core/src/ConsoleLayout.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /const CONSOLE_SIDEBAR_GROUPS_DEFAULT_OPEN = true;/);
+  assert.match(source, /const consoleSidebarItems = \[/);
+  assert.match(source, /const consoleSidebarGroups = \[/);
+  assert.match(source, /function ConsoleSidebarGroup/);
+  assert.match(source, /defaultOpen=\{CONSOLE_SIDEBAR_GROUPS_DEFAULT_OPEN\}/);
+  assert.match(source, /t\(group\.groupKey, group\.fallbackLabel\)/);
+  assert.match(source, /t\(item\.labelKey, item\.fallbackLabel\)/);
+
+  assert.match(
+    source,
+    /itemBlock\(\{\s*path: '\/console\/dashboard',\s*labelKey: 'console\.menu\.dashboard'/,
+    "Dashboard should be a top-level console sidebar item.",
+  );
+  assert.doesNotMatch(
+    source,
+    /groupBlock\('console\.menu\.group\.[^']+',\s*'[^']+',\s*\[[\s\S]{0,320}path: '\/console\/dashboard'/,
+    "Dashboard must not be nested inside a sidebar group.",
+  );
+
+  for (const groupKey of [
+    "console.menu.group.observability",
+    "console.menu.group.integration",
+    "console.menu.group.accountBusiness",
+    "console.menu.group.notificationsSettings",
+  ]) {
+    assert.match(source, new RegExp(`groupBlock\\('${groupKey}'`));
+  }
+
+  for (const path of [
+    "/console/usage",
+    "/console/api-keys",
+    "/console/account",
+    "/console/wallet",
+    "/console/memberships",
+    "/console/settlements",
+    "/console/notifications",
+    "/console/settings",
+  ]) {
+    assert.match(source, new RegExp(`path: '${path.replace(/\//g, "\\/")}'`));
+  }
+
+  assert.doesNotMatch(source, /to="\/console\/settings"/);
+  assert.doesNotMatch(source, /mainNavigation\.map/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/recharge'/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
+  assert.doesNotMatch(source, /console\.menu\.group\.aiWorkspace/);
+  assert.doesNotMatch(source, /console\.menu\.agents/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/agents'/);
+  assert.doesNotMatch(source, /\bBot\b/);
 });
 
 test("console wallet uses recharge exchange wording and concise tabs", () => {
@@ -391,8 +491,12 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
     new URL("./packages/sdkwork-claw-router-console-wallet/src/WalletView.tsx", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+  const billingI18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/console/billing.ts", import.meta.url),
+    "utf8",
+  );
+  const rechargeI18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/console/recharge.ts", import.meta.url),
     "utf8",
   );
   const walletPackageJson = readFileSync(
@@ -404,18 +508,22 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
     "utf8",
   );
 
-  assert.match(walletSource, /"充值兑换"/);
+  assert.doesNotMatch(walletSource, /console\.billing\.billingview\.text\.gd62li/);
+  assert.doesNotMatch(walletSource, /<h1[^>]*>/);
+  assert.doesNotMatch(walletSource, /w-6 h-6 text-lobster-500/);
+  assert.doesNotMatch(walletSource, /py-2 border-b border-slate-200/);
   assert.match(walletSource, /"兑换"/);
   assert.match(walletSource, /"充值"/);
-  assert.match(i18nSource, /"console\.billing\.billingview\.text\.gd62li": "充值兑换"/);
-  assert.match(i18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "兑换"/);
-  assert.match(i18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "充值"/);
-  assert.match(i18nSource, /"console\.recharge\.tabs\.redeem": "兑换"/);
-  assert.match(i18nSource, /"console\.recharge\.tabs\.online": "充值"/);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "充值兑换"/);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "兑换"/);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "充值"/);
+  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "兑换"/);
+  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.online": "充值"/);
   assert.match(walletPackageJson, /"sdkwork-claw-router-console-recharge": "workspace:\*"/);
-  assert.match(walletSource, /import \{ RechargePanel \} from 'sdkwork-claw-router-console-recharge';/);
+  assert.match(walletSource, /import \{ RechargePanel, RechargeRecordsTabs \} from 'sdkwork-claw-router-console-recharge';/);
   assert.match(walletSource, /const \[activeTab, setActiveTab\] = useState<'redeem' \| 'recharge'>\('redeem'\);/);
   assert.match(walletSource, /<RechargePanel embedded showTabs=\{false\} \/>/);
+  assert.match(walletSource, /<RechargeRecordsTabs refreshSignal=\{recordsRefreshSeed\} \/>/);
   assert.doesNotMatch(walletSource, /const \[historyTab, setHistoryTab\]/);
   assert.doesNotMatch(walletSource, /setHistoryTab\('recharge'\)/);
   assert.doesNotMatch(walletSource, /historyTab === 'recharge'/);
@@ -424,11 +532,11 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(walletSource, /"钱包与充值"|"卡密兑换"/);
   assert.doesNotMatch(rechargeSource, /"卡密兑换"|"在线充值"/);
   assert.doesNotMatch(walletSource, /璐︽埛|鍏戞崲|姝ｅ湪|涓撳睘|鐘舵|鏈湀|棰勮|杈撳叆|渚嬪|绔嬪嵆|閭€璇|浜岀淮|閲戦|鏀粯|澶辫触|鏆傛棤|鍏呭€/);
-  assert.doesNotMatch(i18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u94b1\u5305\u4e0e\u5145\u503c"/u);
-  assert.doesNotMatch(i18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5361\u5bc6\u5151\u6362"/u);
-  assert.doesNotMatch(i18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5728\u7ebf\u5145\u503c"/u);
-  assert.doesNotMatch(i18nSource, /"console\.recharge\.tabs\.redeem": "\u5361\u5bc6\u5151\u6362"/u);
-  assert.doesNotMatch(i18nSource, /"console\.recharge\.tabs\.online": "\u5728\u7ebf\u5145\u503c"/u);
+  assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u94b1\u5305\u4e0e\u5145\u503c"/u);
+  assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5361\u5bc6\u5151\u6362"/u);
+  assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5728\u7ebf\u5145\u503c"/u);
+  assert.doesNotMatch(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "\u5361\u5bc6\u5151\u6362"/u);
+  assert.doesNotMatch(rechargeI18nSource, /"console\.recharge\.tabs\.online": "\u5728\u7ebf\u5145\u503c"/u);
 });
 
 test("portal auth helpers preserve the current route for login-required actions", () => {
@@ -762,7 +870,7 @@ test("createAppSession stores dual IAM tokens returned as generated SDK data obj
     assert.equal(captured.length, 1);
     assert.equal(captured[0].url, "/app/v3/api/auth/sessions");
     assert.equal(captured[0].method, "POST");
-    assert.match(captured[0].headers["x-request-id"], /^app-session-/);
+    assert.equal(captured[0].headers["x-request-id"], undefined);
     assert.equal(getStoredAppSessionAuthToken(), "auth-token-2026");
     assert.equal(getStoredAppSessionAccessToken(), "access-token-2026");
     assert.equal(result.authToken, "auth-token-2026");
@@ -846,7 +954,7 @@ test("revokeAppSession deletes the persisted server session before clearing loca
     assert.equal(captured[0].url, "/app/v3/api/auth/sessions/current");
     assert.equal(captured[0].method, "DELETE");
     assert.equal(captured[0].headers.authorization, "Bearer auth-token-logout");
-    assert.equal(captured[0].headers["sdkwork-access-token"], "access-token-logout");
+    assert.equal(captured[0].headers["access-token"], "access-token-logout");
     assert.equal(getStoredAppSessionAuthToken(), undefined);
     assert.equal(getStoredAppSessionAccessToken(), undefined);
   } finally {

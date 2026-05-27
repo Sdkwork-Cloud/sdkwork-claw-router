@@ -16,7 +16,7 @@ public class OpenAiOrganizationAuditLog {
     public String getActor() {
         return this.actor;
     }
-    
+
     public void setActor(String actor) {
         this.actor = actor;
     }
@@ -24,7 +24,7 @@ public class OpenAiOrganizationAuditLog {
     public String getApiKeyId() {
         return this.apiKeyId;
     }
-    
+
     public void setApiKeyId(String apiKeyId) {
         this.apiKeyId = apiKeyId;
     }
@@ -32,7 +32,7 @@ public class OpenAiOrganizationAuditLog {
     public Integer getEffectiveAt() {
         return this.effectiveAt;
     }
-    
+
     public void setEffectiveAt(Integer effectiveAt) {
         this.effectiveAt = effectiveAt;
     }
@@ -40,7 +40,7 @@ public class OpenAiOrganizationAuditLog {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -48,7 +48,7 @@ public class OpenAiOrganizationAuditLog {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -56,7 +56,7 @@ public class OpenAiOrganizationAuditLog {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -64,7 +64,7 @@ public class OpenAiOrganizationAuditLog {
     public String getProject() {
         return this.project;
     }
-    
+
     public void setProject(String project) {
         this.project = project;
     }
@@ -72,7 +72,7 @@ public class OpenAiOrganizationAuditLog {
     public String getRequest() {
         return this.request;
     }
-    
+
     public void setRequest(String request) {
         this.request = request;
     }
@@ -80,7 +80,7 @@ public class OpenAiOrganizationAuditLog {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }

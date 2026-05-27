@@ -33,7 +33,7 @@ Choose exactly one mode for the same client instance.
 ```dart
 final client = SdkworkAppClient.withBaseUrl(baseUrl: 'http://localhost:18082');
 client.setApiKey('your-api-key');
-// Sends: Sdkwork-Access-Token: <apiKey>
+// Sends: Access-Token: <apiKey>
 ```
 
 ### Mode B: Dual Token
@@ -44,7 +44,7 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 // Sends:
 // Authorization: Bearer <authToken>
-// Sdkwork-Access-Token: <accessToken>
+// Access-Token: <accessToken>
 ```
 
 > Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
@@ -60,25 +60,34 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
+- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
-- `client.billing` - billing API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.runtime` - runtime API
 - `client.system` - system API
+- `client.runtime` - runtime API
+- `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
 
+### commerce
+```dart
+// Accounts Current Summary Retrieve
+final result = await client.commerce.accountsCurrentSummaryRetrieve();
+print(result);
+```
+
 ### agents
 ```dart
-// List user agents
+// List Playground agent definitions
 final params = <String, dynamic>{
   'page': 1,
   'page_size': 2,
@@ -99,13 +108,6 @@ print(result);
 ```dart
 // Retrieve current IAM session
 final result = await client.auth.sessionsCurrentRetrieve();
-print(result);
-```
-
-### billing
-```dart
-// Retrieve account points
-final result = await client.billing.accountPointsRetrieve();
 print(result);
 ```
 
@@ -165,10 +167,27 @@ final result = await client.notification.notificationsList(params);
 print(result);
 ```
 
+### open_platform
+```dart
+// Create open platform QR auth session
+final body = OpenPlatformQrAuthSessionCreateRequest(
+  purpose: 'login',
+);
+final result = await client.openPlatform.qrAuthSessionsCreate(body);
+print(result);
+```
+
 ### platform
 ```dart
 // Get categories
 final result = await client.platform.appsStoreCategoriesList();
+print(result);
+```
+
+### system
+```dart
+// Retrieve public IAM verification policy
+final result = await client.system.iamVerificationPolicyRetrieve();
 print(result);
 ```
 
@@ -188,14 +207,15 @@ final result = await client.runtime.invocationsList(params);
 print(result);
 ```
 
-### system
+### sdk_reference
 ```dart
-// Retrieve public site runtime branding settings
-final params = <String, dynamic>{
-  'tenant_code': 'ok',
-  'organization_code': 'ok',
-};
-final result = await client.system.siteRuntimeRetrieve(params);
+// Generate SDK archive
+final body = SdkReferenceArchiveGenerateRequest(
+  config: { 'apiPrefix': 'apiprefix', 'apiSpecPath': 'apispecpath', 'author': 'author', 'baseUrl': 'baseurl', 'description': 'description', 'language': 'language', 'license': 'license', 'name': 'name', 'outputPath': 'outputpath', 'packageName': 'name', 'sdkType': 'app', 'version': 'version' },
+  language: 'language',
+  spec: { 'value': 'value' },
+);
+final result = await client.sdkReference.archivesCreate(body);
 print(result);
 ```
 

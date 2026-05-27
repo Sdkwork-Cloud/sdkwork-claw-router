@@ -3,14 +3,14 @@ frontend_operations:
 - route: /auth/login
   source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthRuntimeSettings
-  operation_id: runtimeSettings.retrieve
+  operation_id: iam.runtime.retrieve
   kind: read
   api_surface: app
   api_method: GET
-  api_path: /app/v3/api/auth/runtime_settings
-  sdk_domain: auth
-  summary: Retrieve public IAM auth runtime settings
-  description: Returns public login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime without requiring an app session.
+  api_path: /app/v3/api/system/iam/runtime
+  sdk_domain: iam
+  summary: Retrieve public IAM runtime settings
+  description: Returns public login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork IAM runtime without requiring an app session.
   read_sources:
   - ops_config_snapshot
   query_parameters:
@@ -127,7 +127,6 @@ frontend_operations:
   sdk_domain: auth
   summary: Create IAM session
   description: Creates a standard SDKWork IAM session for password, email-code, phone-code, or signed session-bridge grants and returns dual auth/access tokens with AppContext.
-  request_id_header: true
   read_sources:
   - iam_user
   - iam_credential
@@ -196,7 +195,7 @@ frontend_operations:
       accessToken:
         type: string
         minLength: 1
-        description: Data isolation and tenant access token. Clients send it as Sdkwork-Access-Token.
+        description: Data isolation and tenant access token. Clients send it as Access-Token.
       authToken:
         type: string
         minLength: 1
@@ -354,7 +353,6 @@ frontend_operations:
   api_path: /app/v3/api/auth/sessions
   sdk_domain: auth
   openapi_exposed: false
-  request_id_header: true
   read_sources:
   - iam_user
   - iam_session
@@ -387,7 +385,6 @@ frontend_operations:
   api_path: /app/v3/api/auth/sessions
   sdk_domain: auth
   openapi_exposed: false
-  request_id_header: true
   read_sources:
   - iam_user
   - iam_credential
@@ -406,7 +403,6 @@ frontend_operations:
   api_path: /app/v3/api/auth/sessions
   sdk_domain: auth
   openapi_exposed: false
-  request_id_header: true
   read_sources:
   - iam_user
   - iam_credential
@@ -426,7 +422,6 @@ frontend_operations:
   sdk_domain: auth
   summary: Create IAM registration
   description: Registers a tenant-scoped user through email or phone verification and returns the same IAM session payload used by login.
-  request_id_header: true
   read_sources:
   - iam_user
   - iam_user_identity
@@ -483,12 +478,12 @@ frontend_operations:
 - route: /auth/login
   source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthVerificationPolicy
-  operation_id: verificationPolicy.retrieve
+  operation_id: iam.verificationPolicy.retrieve
   kind: read
   api_surface: app
   api_method: GET
-  api_path: /app/v3/api/auth/verification_policy
-  sdk_domain: auth
+  api_path: /app/v3/api/system/iam/verification_policy
+  sdk_domain: iam
   summary: Retrieve public IAM verification policy
   description: Returns the public email and phone verification policy flags consumed by appbase IAM.
   read_sources:
@@ -602,7 +597,7 @@ frontend_operations:
   api_path: /app/v3/api/auth/password_reset_requests
   sdk_domain: auth
   summary: Create password reset request
-  description: Starts password recovery by issuing an email or SMS verification challenge.
+  description: Starts password recovery by issuing an IAM verification challenge through the messaging delivery port.
   read_sources:
   - iam_user
   - iam_user_identity
@@ -690,10 +685,16 @@ frontend_operations:
   api_path: /app/v3/api/auth/verification_codes
   sdk_domain: auth
   summary: Create verification code
-  description: Sends an email or phone verification code for login, registration, or password reset.
+  description: Creates an IAM verification challenge and sends the code through the messaging SMS or email delivery port.
   read_sources:
   - iam_user_identity
+  - iam_verification_scene_policy
+  - messaging_template
+  - messaging_route_rule
   write_tables:
+  - iam_verification_challenge
+  - messaging_send_request
+  - messaging_rate_limit_bucket
   - iam_security_event
   request_schema:
     name: IamVerificationCodeCreateRequest
@@ -726,10 +727,10 @@ frontend_operations:
       expiresAt:
         type: string
         format: date-time
-      debugCode:
+      deliveryRequestId:
         type: string
-        maxLength: 32
-        description: Local/private deployment development code returned only when no notification adapter is configured.
+        maxLength: 128
+        description: Messaging send request id that carries the external SMS or email delivery audit trail.
 - route: /auth/login
   source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
   operation: verifyCode
@@ -740,10 +741,13 @@ frontend_operations:
   api_path: /app/v3/api/auth/verification_codes/verify
   sdk_domain: auth
   summary: Verify verification code
-  description: Verifies a one-time email or phone code for auth flows.
+  description: Verifies a one-time email or phone code against the IAM verification challenge store.
   read_sources:
-  - iam_security_event
+  - iam_verification_challenge
   write_tables:
+  - iam_verification_challenge
+  - iam_verification_attempt
+  - messaging_rate_limit_bucket
   - iam_security_event
   request_schema:
     name: IamVerificationCodeVerifyRequest

@@ -11,7 +11,7 @@ public class OpenAiRealtimeTranslationSessionCreateRequest {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -19,7 +19,7 @@ public class OpenAiRealtimeTranslationSessionCreateRequest {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -27,7 +27,7 @@ public class OpenAiRealtimeTranslationSessionCreateRequest {
     public String getSourceLanguage() {
         return this.sourceLanguage;
     }
-    
+
     public void setSourceLanguage(String sourceLanguage) {
         this.sourceLanguage = sourceLanguage;
     }
@@ -35,7 +35,7 @@ public class OpenAiRealtimeTranslationSessionCreateRequest {
     public String getTargetLanguage() {
         return this.targetLanguage;
     }
-    
+
     public void setTargetLanguage(String targetLanguage) {
         this.targetLanguage = targetLanguage;
     }

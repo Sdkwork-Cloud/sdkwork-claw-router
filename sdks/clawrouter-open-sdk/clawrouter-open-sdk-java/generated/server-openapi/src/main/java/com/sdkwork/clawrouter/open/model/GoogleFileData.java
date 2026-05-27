@@ -8,7 +8,7 @@ public class GoogleFileData {
     public String getFileUri() {
         return this.fileUri;
     }
-    
+
     public void setFileUri(String fileUri) {
         this.fileUri = fileUri;
     }
@@ -16,7 +16,7 @@ public class GoogleFileData {
     public String getMimeType() {
         return this.mimeType;
     }
-    
+
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
     }

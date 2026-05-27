@@ -14,12 +14,13 @@ public class PlatformApi {
     }
 
     /** List apps */
-    public AppsListResult appsList(String q, String status, String marketStatus, String appType, Integer page, Integer pageSize, String xRequestId) throws Exception {
+    public AppsListResult appsList(String q, String status, String marketStatus, String appType, Integer categoryId, Integer page, Integer pageSize, String xRequestId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("status", status, "form", true, false, null),
             new QueryParameterSpec("market_status", marketStatus, "form", true, false, null),
             new QueryParameterSpec("app_type", appType, "form", true, false, null),
+            new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ));
@@ -75,6 +76,85 @@ public class PlatformApi {
         );
         Object raw = client.put(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<AppsCategoriesUpdateResult>() {});
+    }
+
+    /** List app templates */
+    public AppsTemplatesListResult appsTemplatesList(String q, String publishStatus, String templateType, String runtime, Integer categoryId, Integer page, Integer pageSize, String xRequestId) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("q", q, "form", true, false, null),
+            new QueryParameterSpec("publish_status", publishStatus, "form", true, false, null),
+            new QueryParameterSpec("template_type", templateType, "form", true, false, null),
+            new QueryParameterSpec("runtime", runtime, "form", true, false, null),
+            new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps/templates"), query), null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<AppsTemplatesListResult>() {});
+    }
+
+    /** Create app template */
+    public AppsTemplatesCreateResult appsTemplatesCreate(AdminAppTemplateCreateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AppsTemplatesCreateResult>() {});
+    }
+
+    /** Delete app template */
+    public AppsTemplatesDeleteResult appsTemplatesDelete(String templateId, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<AppsTemplatesDeleteResult>() {});
+    }
+
+    /** List app template */
+    public AppsTemplatesRetrieveResult appsTemplatesRetrieve(String templateId, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.get(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<AppsTemplatesRetrieveResult>() {});
+    }
+
+    /** Update app template */
+    public AppsTemplatesUpdateResult appsTemplatesUpdate(String templateId, AdminAppTemplateUpdateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.put(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AppsTemplatesUpdateResult>() {});
+    }
+
+    /** Publish app template */
+    public AppsTemplatesPublishResult appsTemplatesPublish(String templateId, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/publish"), null, null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<AppsTemplatesPublishResult>() {});
+    }
+
+    /** Offline app template */
+    public AppsTemplatesUnpublishResult appsTemplatesUnpublish(String templateId, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/unpublish"), null, null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<AppsTemplatesUnpublishResult>() {});
     }
 
     /** Delete app */

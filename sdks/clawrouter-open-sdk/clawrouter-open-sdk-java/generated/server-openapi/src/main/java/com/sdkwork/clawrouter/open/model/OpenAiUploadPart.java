@@ -10,7 +10,7 @@ public class OpenAiUploadPart {
     public Integer getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
@@ -18,7 +18,7 @@ public class OpenAiUploadPart {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -26,7 +26,7 @@ public class OpenAiUploadPart {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -34,7 +34,7 @@ public class OpenAiUploadPart {
     public String getUploadId() {
         return this.uploadId;
     }
-    
+
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }

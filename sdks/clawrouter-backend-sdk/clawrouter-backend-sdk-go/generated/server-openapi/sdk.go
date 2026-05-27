@@ -14,9 +14,14 @@ type SdkworkBackendClient struct {
     Ecosystem *api.EcosystemApi
     Iam *api.IamApi
     Integration *api.IntegrationApi
+    Mcp *api.McpApi
+    Messaging *api.MessagingApi
     OpenPlatform *api.OpenPlatformApi
     Platform *api.PlatformApi
     System *api.SystemApi
+    Prompts *api.PromptsApi
+    ServiceProviders *api.ServiceProvidersApi
+    Storage *api.StorageApi
 }
 
 func NewSdkworkBackendClient(baseURL string) *SdkworkBackendClient {
@@ -35,9 +40,14 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         Ecosystem: api.NewEcosystemApi(client),
         Iam: api.NewIamApi(client),
         Integration: api.NewIntegrationApi(client),
+        Mcp: api.NewMcpApi(client),
+        Messaging: api.NewMessagingApi(client),
         OpenPlatform: api.NewOpenPlatformApi(client),
         Platform: api.NewPlatformApi(client),
         System: api.NewSystemApi(client),
+        Prompts: api.NewPromptsApi(client),
+        ServiceProviders: api.NewServiceProvidersApi(client),
+        Storage: api.NewStorageApi(client),
     }
 }
 

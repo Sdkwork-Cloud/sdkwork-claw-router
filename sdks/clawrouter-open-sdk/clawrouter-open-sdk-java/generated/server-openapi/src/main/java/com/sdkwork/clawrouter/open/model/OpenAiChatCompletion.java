@@ -16,7 +16,7 @@ public class OpenAiChatCompletion {
     public List<OpenAiChatCompletionChoice> getChoices() {
         return this.choices;
     }
-    
+
     public void setChoices(List<OpenAiChatCompletionChoice> choices) {
         this.choices = choices;
     }
@@ -24,7 +24,7 @@ public class OpenAiChatCompletion {
     public Integer getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(Integer created) {
         this.created = created;
     }
@@ -32,7 +32,7 @@ public class OpenAiChatCompletion {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -40,7 +40,7 @@ public class OpenAiChatCompletion {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -48,7 +48,7 @@ public class OpenAiChatCompletion {
     public String getObject() {
         return this.object;
     }
-    
+
     public void setObject(String object) {
         this.object = object;
     }
@@ -56,7 +56,7 @@ public class OpenAiChatCompletion {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -64,7 +64,7 @@ public class OpenAiChatCompletion {
     public String getServiceTier() {
         return this.serviceTier;
     }
-    
+
     public void setServiceTier(String serviceTier) {
         this.serviceTier = serviceTier;
     }
@@ -72,7 +72,7 @@ public class OpenAiChatCompletion {
     public String getSystemFingerprint() {
         return this.systemFingerprint;
     }
-    
+
     public void setSystemFingerprint(String systemFingerprint) {
         this.systemFingerprint = systemFingerprint;
     }
@@ -80,7 +80,7 @@ public class OpenAiChatCompletion {
     public OpenAiTokenUsage getUsage() {
         return this.usage;
     }
-    
+
     public void setUsage(OpenAiTokenUsage usage) {
         this.usage = usage;
     }

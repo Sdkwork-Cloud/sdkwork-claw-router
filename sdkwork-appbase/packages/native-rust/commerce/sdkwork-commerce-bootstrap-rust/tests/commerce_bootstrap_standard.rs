@@ -1,7 +1,13 @@
 use sdkwork_commerce_bootstrap::{
-    commerce_experience_seed_manifest, commerce_local_private_bootstrap_manifest,
-    commerce_membership_package_group_seeds, commerce_membership_package_seeds,
-    commerce_membership_plan_seeds, commerce_payment_method_seeds, commerce_recharge_package_seeds,
+    commerce_benefit_definition_seeds, commerce_experience_seed_manifest,
+    commerce_local_private_bootstrap_manifest, commerce_payment_channel_seeds,
+    commerce_payment_method_seeds, commerce_payment_provider_account_seeds,
+    commerce_payment_provider_seeds, commerce_payment_route_rule_seeds,
+    commerce_promotion_code_seeds, commerce_promotion_coupon_stock_seeds,
+    commerce_promotion_offer_seeds, commerce_promotion_offer_version_seeds,
+    commerce_promotion_user_coupon_seeds, commerce_recharge_package_seeds,
+    membership_package_group_seeds, membership_package_seeds, membership_plan_benefit_seeds,
+    membership_plan_seeds, membership_plan_version_seeds,
     run_commerce_local_private_bootstrap_preflight, CommerceBootstrapHostRequirement,
     CommerceBootstrapStartupStage,
 };
@@ -40,8 +46,8 @@ fn bootstrap_manifest_is_complete_for_first_slice_host_startup() {
         manifest.runtime.operation_contracts.len(),
         operation_contracts().len()
     );
-    assert_eq!(manifest.storage.tables.len(), 39);
-    assert_eq!(manifest.storage.business_repositories.len(), 11);
+    assert_eq!(manifest.storage.tables.len(), 53);
+    assert_eq!(manifest.storage.business_repositories.len(), 14);
     assert_eq!(
         manifest.http.execution_metadata.len(),
         manifest.http.app_routes.len()
@@ -88,28 +94,97 @@ fn bootstrap_manifest_validates_cross_layer_contract_alignment() {
 fn bootstrap_manifest_validates_storage_migration_plan_for_host_preflight() {
     let manifest = commerce_local_private_bootstrap_manifest();
 
-    assert_eq!(manifest.storage.migration_plan.len(), 10);
+    assert_eq!(manifest.storage.migration_plan.len(), 13);
     assert_eq!(manifest.validate(), Ok(()));
 }
 
 #[test]
 fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharge_catalogs() {
     let manifest = commerce_experience_seed_manifest();
-    let plans = commerce_membership_plan_seeds();
-    let groups = commerce_membership_package_group_seeds();
-    let packages = commerce_membership_package_seeds();
+    let benefits = commerce_benefit_definition_seeds();
+    let plans = membership_plan_seeds();
+    let plan_versions = membership_plan_version_seeds();
+    let plan_benefits = membership_plan_benefit_seeds();
+    let groups = membership_package_group_seeds();
+    let packages = membership_package_seeds();
     let _recharge_packages = commerce_recharge_package_seeds();
     let payment_methods = commerce_payment_method_seeds();
+    let payment_providers = commerce_payment_provider_seeds();
+    let payment_provider_accounts = commerce_payment_provider_account_seeds();
+    let payment_channels = commerce_payment_channel_seeds();
+    let payment_route_rules = commerce_payment_route_rule_seeds();
+    let offers = commerce_promotion_offer_seeds();
+    let offer_versions = commerce_promotion_offer_version_seeds();
+    let coupon_stocks = commerce_promotion_coupon_stock_seeds();
+    let promotion_codes = commerce_promotion_code_seeds();
+    let user_coupons = commerce_promotion_user_coupon_seeds();
 
     assert_eq!(manifest.name, "sdkwork-commerce-experience-seed");
+    assert_eq!(manifest.benefit_definition_count, 4);
     assert_eq!(manifest.membership_plan_count, 4);
-    assert_eq!(manifest.membership_package_group_count, 4);
-    assert_eq!(manifest.membership_package_count, 16);
+    assert_eq!(manifest.membership_plan_version_count, 4);
+    assert_eq!(manifest.membership_plan_benefit_count, 13);
+    assert_eq!(manifest.membership_package_group_count, 2);
+    assert_eq!(manifest.membership_package_count, 6);
+    assert_eq!(manifest.promotion_offer_count, 2);
+    assert_eq!(manifest.promotion_offer_version_count, 2);
+    assert_eq!(manifest.promotion_coupon_stock_count, 2);
+    assert_eq!(manifest.promotion_code_count, 2);
+    assert_eq!(manifest.promotion_user_coupon_count, 2);
     assert_eq!(manifest.recharge_package_count, 4);
-    assert_eq!(manifest.payment_method_count, 3);
+    assert_eq!(manifest.payment_method_count, 7);
+    assert_eq!(manifest.payment_provider_count, 6);
+    assert_eq!(manifest.payment_provider_account_count, 6);
+    assert_eq!(manifest.payment_channel_count, 36);
+    assert_eq!(manifest.payment_route_rule_count, 36);
+    assert_eq!(
+        benefits
+            .iter()
+            .map(|benefit| (
+                benefit.benefit_code,
+                benefit.value_unit,
+                benefit.measurement_type
+            ))
+            .collect::<Vec<_>>(),
+        vec![
+            ("ai_quota", "points", "metered"),
+            ("priority_speed_up", "priority", "ranked"),
+            ("member_discount", "percent", "discount"),
+            ("monthly_coupon_grant", "coupon", "grant"),
+        ],
+    );
     assert_eq!(
         plans.iter().map(|plan| plan.plan_no).collect::<Vec<_>>(),
-        vec!["free", "basic", "pro", "premium"]
+        vec!["free", "pro", "max", "vip"]
+    );
+    assert_eq!(
+        plan_versions
+            .iter()
+            .map(|version| (
+                version.plan_no,
+                version.version_no,
+                version.lifecycle_status
+            ))
+            .collect::<Vec<_>>(),
+        vec![
+            ("free", "v1", "published"),
+            ("pro", "v1", "published"),
+            ("max", "v1", "published"),
+            ("vip", "v1", "published"),
+        ],
+    );
+    assert_eq!(
+        plan_benefits
+            .iter()
+            .filter(|benefit| benefit.plan_no == "vip")
+            .map(|benefit| benefit.benefit_code)
+            .collect::<Vec<_>>(),
+        vec![
+            "ai_quota",
+            "priority_speed_up",
+            "member_discount",
+            "monthly_coupon_grant",
+        ],
     );
     assert_eq!(
         groups
@@ -124,8 +199,6 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
         vec![
             (1, "membership-month", "month", 30),
             (2, "membership-year", "year", 365),
-            (3, "membership-day", "day", 1),
-            (4, "membership-week", "week", 7),
         ],
     );
     assert_eq!(
@@ -134,11 +207,11 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
             .filter(|package| package.package_group_no == "membership-month")
             .map(|package| package.external_id)
             .collect::<Vec<_>>(),
-        vec![301, 302, 303, 304],
+        vec![301, 302, 303],
     );
     let monthly_pro = packages
         .iter()
-        .find(|package| package.external_id == 303)
+        .find(|package| package.external_id == 301)
         .expect("monthly pro package seed");
     assert_eq!(monthly_pro.plan_no, "pro");
     assert_eq!(monthly_pro.price_amount, "69.90");
@@ -151,30 +224,162 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
             .iter()
             .map(|method| method.method_key)
             .collect::<Vec<_>>(),
-        vec!["wechat", "alipay", "stripe"],
+        vec![
+            "wechat_pay",
+            "alipay",
+            "paypal",
+            "card",
+            "apple_pay",
+            "google_pay",
+            "wallet_balance",
+        ],
     );
+    assert_eq!(
+        payment_providers
+            .iter()
+            .map(|provider| provider.provider_code)
+            .collect::<Vec<_>>(),
+        vec![
+            "wechat_pay",
+            "alipay",
+            "paypal",
+            "stripe",
+            "apple_pay",
+            "google_pay",
+        ],
+    );
+    assert!(payment_provider_accounts
+        .iter()
+        .all(|account| account.status == "active" && account.environment == "sandbox"));
+    assert_eq!(
+        payment_channels
+            .iter()
+            .filter(|channel| channel.method_key == "card")
+            .map(|channel| channel.provider_code)
+            .collect::<std::collections::BTreeSet<_>>(),
+        ["stripe"].into_iter().collect(),
+    );
+    assert!(payment_channels
+        .iter()
+        .all(|channel| channel.status == "active"));
+    assert!(payment_route_rules
+        .iter()
+        .all(|rule| rule.status == "active"));
+    assert!(payment_route_rules.iter().all(|rule| payment_channels
+        .iter()
+        .any(|channel| channel.id == rule.channel_id)));
+    assert!(
+        !payment_channels
+            .iter()
+            .any(|channel| channel.method_key == "wallet_balance"),
+        "wallet balance is an internal method and must not create an external channel",
+    );
+    assert_eq!(
+        offers
+            .iter()
+            .map(|offer| {
+                (
+                    offer.offer_code,
+                    offer.offer_type,
+                    offer.current_offer_version_id,
+                )
+            })
+            .collect::<Vec<_>>(),
+        vec![
+            (
+                "new_user_coupon",
+                "coupon",
+                "seed-promotion-offer-version-new-user-v1",
+            ),
+            (
+                "vip_monthly_coupon",
+                "coupon",
+                "seed-promotion-offer-version-vip-monthly-v1",
+            ),
+        ],
+    );
+    assert_eq!(
+        offer_versions
+            .iter()
+            .map(|version| {
+                (
+                    version.id,
+                    version.offer_code,
+                    version.version_no,
+                    version.discount_type,
+                )
+            })
+            .collect::<Vec<_>>(),
+        vec![
+            (
+                "seed-promotion-offer-version-new-user-v1",
+                "new_user_coupon",
+                "v1",
+                "fixed_amount",
+            ),
+            (
+                "seed-promotion-offer-version-vip-monthly-v1",
+                "vip_monthly_coupon",
+                "v1",
+                "percent_off",
+            ),
+        ],
+    );
+    assert_eq!(
+        coupon_stocks
+            .iter()
+            .map(|stock| (stock.offer_code, stock.offer_version_id, stock.name))
+            .collect::<Vec<_>>(),
+        vec![
+            (
+                "new_user_coupon",
+                "seed-promotion-offer-version-new-user-v1",
+                "New user coupon stock",
+            ),
+            (
+                "vip_monthly_coupon",
+                "seed-promotion-offer-version-vip-monthly-v1",
+                "VIP monthly coupon stock",
+            ),
+        ],
+    );
+    assert_eq!(
+        promotion_codes
+            .iter()
+            .map(|code| (code.promotion_code, code.offer_version_id))
+            .collect::<Vec<_>>(),
+        vec![
+            ("NEWUSER2026", "seed-promotion-offer-version-new-user-v1"),
+            (
+                "VIPMONTHLY2026",
+                "seed-promotion-offer-version-vip-monthly-v1",
+            ),
+        ],
+    );
+    assert_eq!(
+        user_coupons
+            .iter()
+            .map(|coupon| coupon.coupon_no)
+            .collect::<Vec<_>>(),
+        vec!["seed-coupon-new-user", "seed-coupon-vip-monthly"],
+    );
+    assert!(manifest.payload_json.contains("\"benefitDefinitions\""));
     assert!(manifest
         .payload_json
         .contains("\"membershipPackageGroups\""));
-    assert!(!manifest.payload_json.contains("vip"));
-    assert!(!manifest.payload_json.contains("VIP"));
+    assert!(manifest.payload_json.contains("\"promotionOffers\""));
+    assert!(manifest.payload_json.contains("\"paymentProviders\""));
+    assert!(manifest.payload_json.contains("\"paymentChannels\""));
+    assert!(manifest.payload_json.contains("\"paymentRouteRules\""));
     assert!(!manifest.payload_json.contains("base_url_template"));
     assert!(!manifest.payload_json.contains("base_url_override"));
 }
 
 #[test]
-fn commerce_experience_seed_public_contract_uses_membership_names_without_vip_debt() {
+fn commerce_experience_seed_public_contract_uses_membership_names_without_legacy_vip_types() {
     let source = include_str!("../src/lib.rs");
 
-    for banned in [
-        "CommerceVip",
-        "commerce_vip",
-        "vip_",
-        "vip-",
-        "VIP",
-        "\"vip",
-        "vip\"",
-    ] {
+    for banned in ["CommerceVip", "commerce_vip", "vip_level", "vip_package"] {
         assert!(
             !source.contains(banned),
             "bootstrap seed source must not contain legacy membership fragment {banned}"
@@ -182,7 +387,9 @@ fn commerce_experience_seed_public_contract_uses_membership_names_without_vip_de
     }
 
     assert!(source.contains("CommerceMembershipPlanSeed"));
-    assert!(source.contains("commerce_membership_plan_seeds"));
+    assert!(source.contains("membership_plan_seeds"));
+    assert!(source.contains("commerce_benefit_definition_seeds"));
+    assert!(source.contains("commerce_promotion_offer_seeds"));
 }
 
 #[test]
@@ -265,8 +472,8 @@ fn bootstrap_preflight_exposes_host_startup_plan_after_validation() {
         preflight.runtime_operations,
         manifest.runtime.operation_contracts.len()
     );
-    assert_eq!(preflight.storage_tables, 39);
-    assert_eq!(preflight.storage_repositories, 12);
+    assert_eq!(preflight.storage_tables, 53);
+    assert_eq!(preflight.storage_repositories, 15);
     assert_eq!(
         preflight.storage_migration_lock_table,
         "commerce_schema_migration_lock"
@@ -289,24 +496,24 @@ fn bootstrap_preflight_exposes_host_startup_plan_after_validation() {
         preflight.operation_output_type,
         "CommerceRuntimeOperationEnvelope"
     );
-    assert_eq!(preflight.storage_pending_migrations, 10);
+    assert_eq!(preflight.storage_pending_migrations, 13);
     assert_eq!(
         preflight.storage_next_migration,
         Some("0001_core_idempotency.sql"),
     );
-    assert_eq!(preflight.storage_migration_execution_steps, 25);
+    assert_eq!(preflight.storage_migration_execution_steps, 31);
     assert_eq!(
         preflight.storage_first_migration_step,
         Some("ensure_lock_table"),
     );
-    assert_eq!(preflight.storage_migration_final_applied_count, 10);
+    assert_eq!(preflight.storage_migration_final_applied_count, 13);
     assert_eq!(preflight.storage_migration_final_pending_count, 0);
     assert!(preflight.storage_schema_is_current_after_migrations);
     assert_eq!(
         preflight.storage_migration_failure_resume_migration,
         Some("0001_core_idempotency.sql"),
     );
-    assert_eq!(preflight.storage_migration_failure_pending_count, 10);
+    assert_eq!(preflight.storage_migration_failure_pending_count, 13);
     assert!(preflight.storage_migration_failure_rollback_required);
     assert!(preflight.storage_migration_failure_lock_release_required);
     assert!(preflight.storage_migration_failure_lock_owner_required);

@@ -9,7 +9,7 @@ public class GoogleFileListResponse {
     public List<GoogleFile> getFiles() {
         return this.files;
     }
-    
+
     public void setFiles(List<GoogleFile> files) {
         this.files = files;
     }
@@ -17,7 +17,7 @@ public class GoogleFileListResponse {
     public String getNextPageToken() {
         return this.nextPageToken;
     }
-    
+
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
     }

@@ -100,9 +100,6 @@ export interface SdkworkIamRuntimeAuthRuntimeLike {
       registrations: {
         create: (body: Record<string, unknown>) => Promise<SdkworkIamRuntimeAuthSessionLike>;
       };
-      verificationPolicy?: {
-        retrieve?: () => Promise<unknown>;
-      };
       sessions: {
         create: (body: Record<string, unknown>) => Promise<SdkworkIamRuntimeAuthSessionLike>;
         current: {
@@ -115,6 +112,13 @@ export interface SdkworkIamRuntimeAuthRuntimeLike {
       verificationCodes: {
         create: (body: Record<string, unknown>) => Promise<unknown>;
         verify: (body: Record<string, unknown>) => Promise<unknown>;
+      };
+    };
+    system?: {
+      iam?: {
+        verificationPolicy?: {
+          retrieve?: () => Promise<unknown>;
+        };
       };
     };
     openPlatform?: {
@@ -183,7 +187,9 @@ export function createSdkworkIamRuntimeAuthService(
     }
 
     try {
-      return toAuthSession(await runtime.service.auth.sessions.current.retrieve());
+      const session = toAuthSession(await runtime.service.auth.sessions.current.retrieve());
+      await persistStoredSession(runtime, session);
+      return session;
     } catch {
       if (!hasStoredSession(storedSession)) {
         return null;
@@ -219,30 +225,34 @@ export function createSdkworkIamRuntimeAuthService(
 
   async function signIn(input: SdkworkAuthLoginInput): Promise<SdkworkAuthSession> {
     const runtime = await readRuntime();
-    return toAuthSession(await runtime.service.auth.sessions.create({
+    const session = toAuthSession(await runtime.service.auth.sessions.create({
       grantType: "password",
       password: input.password,
       username: input.username.trim(),
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function signInWithSessionBridge(
     input: SdkworkAuthSessionBridgeLoginInput,
   ): Promise<SdkworkAuthSession> {
     const runtime = await readRuntime();
-    return toAuthSession(await runtime.service.auth.sessions.create({
+    const session = toAuthSession(await runtime.service.auth.sessions.create({
       email: input.email.trim(),
       grantType: "session_bridge",
       name: normalizeOptionalScalar(input.name),
       subject: normalizeOptionalScalar(input.subject),
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function signInWithEmailCode(
     input: SdkworkAuthEmailLoginInput,
   ): Promise<SdkworkAuthSession> {
     const runtime = await readRuntime();
-    return toAuthSession(await runtime.service.auth.sessions.create({
+    const session = toAuthSession(await runtime.service.auth.sessions.create({
       appVersion: normalizeOptionalScalar(input.appVersion),
       code: input.code.trim(),
       deviceId: normalizeOptionalScalar(input.deviceId),
@@ -251,13 +261,15 @@ export function createSdkworkIamRuntimeAuthService(
       email: input.email.trim(),
       grantType: "email_code",
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function signInWithPhoneCode(
     input: SdkworkAuthPhoneLoginInput,
   ): Promise<SdkworkAuthSession> {
     const runtime = await readRuntime();
-    return toAuthSession(await runtime.service.auth.sessions.create({
+    const session = toAuthSession(await runtime.service.auth.sessions.create({
       appVersion: normalizeOptionalScalar(input.appVersion),
       code: input.code.trim(),
       deviceId: normalizeOptionalScalar(input.deviceId),
@@ -266,12 +278,14 @@ export function createSdkworkIamRuntimeAuthService(
       grantType: "phone_code",
       phone: input.phone.trim(),
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function register(input: SdkworkAuthRegisterInput): Promise<SdkworkAuthSession> {
     const runtime = await readRuntime();
     const verificationCode = normalizeOptionalScalar(input.verificationCode);
-    return toAuthSession(await runtime.service.auth.registrations.create({
+    const session = toAuthSession(await runtime.service.auth.registrations.create({
       channel: input.channel,
       confirmPassword: input.confirmPassword || input.password,
       email: normalizeOptionalScalar(input.email),
@@ -280,11 +294,13 @@ export function createSdkworkIamRuntimeAuthService(
       username: input.username.trim(),
       ...(verificationCode ? { verificationCode } : {}),
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function getVerificationPolicy(): Promise<SdkworkAuthResolvedVerificationPolicy> {
     const runtime = await readRuntime();
-    const retrieveVerificationPolicy = runtime.service.auth.verificationPolicy?.retrieve;
+    const retrieveVerificationPolicy = runtime.service.system?.iam?.verificationPolicy?.retrieve;
     if (!retrieveVerificationPolicy) {
       return { ...DEFAULT_SDKWORK_AUTH_VERIFICATION_POLICY };
     }
@@ -341,11 +357,13 @@ export function createSdkworkIamRuntimeAuthService(
       throw new Error(methodUnavailableMessage);
     }
     const storedSession = await readStoredSession(runtime);
-    return toAuthSession(await runtime.service.auth.sessions.refresh({
+    const session = toAuthSession(await runtime.service.auth.sessions.refresh({
       ...input,
       refreshToken: normalizeOptionalScalar(input.refreshToken)
         || normalizeOptionalScalar(storedSession.refreshToken),
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function updateCurrentSession(
@@ -355,7 +373,9 @@ export function createSdkworkIamRuntimeAuthService(
     if (!runtime.service.auth.sessions.current.update) {
       throw new Error(methodUnavailableMessage);
     }
-    return toAuthSession(await runtime.service.auth.sessions.current.update(input));
+    const session = toAuthSession(await runtime.service.auth.sessions.current.update(input));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function getOAuthAuthorizationUrl(
@@ -384,24 +404,20 @@ export function createSdkworkIamRuntimeAuthService(
     input: SdkworkAuthOAuthLoginInput,
   ): Promise<SdkworkAuthSession> {
     const runtime = await readRuntime();
-    return toAuthSession(await runtime.service.auth.oauthSessions.create({
+    const session = toAuthSession(await runtime.service.auth.oauthSessions.create({
       code: input.code.trim(),
       deviceId: normalizeOptionalScalar(input.deviceId),
       deviceType: normalizeOptionalScalar(input.deviceType),
       provider: mapSocialProvider(input.provider),
       state: normalizeOptionalScalar(input.state),
     }));
+    await persistStoredSession(runtime, session);
+    return session;
   }
 
   async function signOut(): Promise<void> {
     const runtime = await readRuntime();
-    try {
-      await runtime.service.auth.sessions.current.delete();
-    } catch (error) {
-      await runtime.tokenStore?.clear?.();
-      await runtime.contextStore?.clear?.();
-      throw error;
-    }
+    await runtime.service.auth.sessions.current.delete();
   }
 
   async function generateLoginQrCode(
@@ -439,6 +455,7 @@ export function createSdkworkIamRuntimeAuthService(
       throw error;
     }
     if (result.status === "confirmed" && result.session) {
+      await persistStoredSession(runtime, result.session);
       return {
         ...result,
         session: toAuthSession(result.session),
@@ -489,11 +506,7 @@ export function createSdkworkIamRuntimeAuthService(
     }), "confirmed");
 
     if (result.session) {
-      await runtime.tokenStore?.set?.({
-        accessToken: result.session.accessToken,
-        authToken: result.session.authToken,
-        refreshToken: result.session.refreshToken,
-      });
+      await persistStoredSession(runtime, result.session);
       return {
         ...result,
         user: result.session.user ?? result.user,
@@ -532,6 +545,17 @@ async function readStoredSession(
   runtime: SdkworkIamRuntimeAuthRuntimeLike,
 ): Promise<SdkworkIamRuntimeAuthStoredSessionLike> {
   return runtime.tokenStore?.get ? (await runtime.tokenStore.get()) ?? {} : {};
+}
+
+async function persistStoredSession(
+  runtime: SdkworkIamRuntimeAuthRuntimeLike,
+  session: SdkworkAuthSession,
+): Promise<void> {
+  await runtime.tokenStore?.set?.({
+    accessToken: session.accessToken,
+    authToken: session.authToken,
+    refreshToken: session.refreshToken,
+  });
 }
 
 function hasStoredSession(session: SdkworkIamRuntimeAuthStoredSessionLike): boolean {
@@ -713,9 +737,9 @@ function resolveQrExpireTime(record: Record<string, unknown>): number | undefine
 
 function resolveQrImageUrl(record: Record<string, unknown>): string | undefined {
   return normalizeOptionalQrImageUrl(record.qrUrl)
-    || normalizeOptionalScalar(record.qrCodeUrl)
-    || normalizeOptionalScalar(record.qrImageUrl)
-    || normalizeOptionalScalar(record.imageUrl);
+    || normalizeOptionalQrImageUrl(record.qrCodeUrl)
+    || normalizeOptionalQrImageUrl(record.qrImageUrl)
+    || normalizeOptionalQrImageUrl(record.imageUrl);
 }
 
 function normalizeOptionalQrImageUrl(value: unknown): string | undefined {
