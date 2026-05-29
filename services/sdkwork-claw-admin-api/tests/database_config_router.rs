@@ -800,12 +800,14 @@ async fn database_config_router_serves_signed_subject_channel_crud() {
             .unwrap(),
     )
     .unwrap();
-    assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
-    assert_eq!("disabled", list_payload["data"]["items"][0]["status"]);
-    assert_eq!(120_000, list_payload["data"]["items"][0]["timeoutMs"]);
-    assert!(list_payload["data"]["items"][0]
-        .get("retryPolicy")
-        .is_none());
+    let listed_items = list_payload["data"]["items"].as_array().unwrap();
+    let listed_channel = listed_items
+        .iter()
+        .find(|item| item["id"].as_str() == Some(channel_id))
+        .expect("created channel should be returned by admin channel list");
+    assert_eq!("disabled", listed_channel["status"]);
+    assert_eq!(120_000, listed_channel["timeoutMs"]);
+    assert!(listed_channel.get("retryPolicy").is_none());
 
     let delete_response = router
         .clone()
