@@ -110,6 +110,8 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                 &command.requested_at,
             )
             .await?;
+            let resource_codes =
+                merge_capability_resource_codes(&command.resource_codes, &command.capabilities);
             replace_ai_resource_bindings(
                 &mut tx,
                 AiResourceBindingScope {
@@ -124,7 +126,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     request_id: command.request_id.clone(),
                     requested_at: command.requested_at.clone(),
                 },
-                &command.resource_codes,
+                &resource_codes,
             )
             .await?;
             insert_config_snapshot(
@@ -158,7 +160,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "channelType": &command.channel_type,
                     "models": &command.models,
                     "capabilities": &command.capabilities,
-                    "resourceCodes": &command.resource_codes,
+                    "resourceCodes": &resource_codes,
                     "secretStoredAsRef": true
                 }),
             )
@@ -198,7 +200,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
             }
             update_channel_credential(&mut tx, &command, self.api_key_secret_codec.as_deref())
                 .await?;
-            if let Some(resource_codes) = command.resource_codes.as_ref() {
+            if command.resource_codes.is_some() || command.capabilities.is_some() {
                 let Some(binding_context) = load_resource_binding_context(
                     &mut tx,
                     command.channel_id,
@@ -212,29 +214,40 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     })?;
                     return Ok(None);
                 };
-                replace_ai_resource_bindings(
-                    &mut tx,
-                    AiResourceBindingScope {
-                        channel_id: binding_context.channel_id,
-                        tenant_id: command.subject.tenant_id,
-                        organization_id: command.subject.organization_id,
-                        operator_id: command.subject.operator_id,
-                        provider_code: command
-                            .provider_code
-                            .clone()
-                            .unwrap_or(binding_context.provider_code),
-                        channel_code: binding_context.channel_code,
-                        channel_type: command
-                            .channel_type
-                            .clone()
-                            .unwrap_or(binding_context.channel_type),
-                        weight: command.weight.unwrap_or(binding_context.weight),
-                        request_id: command.request_id.clone(),
-                        requested_at: command.requested_at.clone(),
-                    },
-                    resource_codes,
-                )
-                .await?;
+                let binding_scope = AiResourceBindingScope {
+                    channel_id: binding_context.channel_id,
+                    tenant_id: command.subject.tenant_id,
+                    organization_id: command.subject.organization_id,
+                    operator_id: command.subject.operator_id,
+                    provider_code: command
+                        .provider_code
+                        .clone()
+                        .unwrap_or(binding_context.provider_code),
+                    channel_code: binding_context.channel_code,
+                    channel_type: command
+                        .channel_type
+                        .clone()
+                        .unwrap_or(binding_context.channel_type),
+                    weight: command.weight.unwrap_or(binding_context.weight),
+                    request_id: command.request_id.clone(),
+                    requested_at: command.requested_at.clone(),
+                };
+                if let Some(resource_codes) = command.resource_codes.as_ref() {
+                    let resource_codes = if let Some(capabilities) = command.capabilities.as_ref() {
+                        merge_capability_resource_codes(resource_codes, capabilities)
+                    } else {
+                        resource_codes.clone()
+                    };
+                    replace_ai_resource_bindings(&mut tx, binding_scope, &resource_codes).await?;
+                } else if let Some(capabilities) = command.capabilities.as_ref() {
+                    let modality_resource_codes = modality_resource_codes(capabilities);
+                    replace_channel_modality_resource_bindings(
+                        &mut tx,
+                        binding_scope,
+                        &modality_resource_codes,
+                    )
+                    .await?;
+                }
             }
             if let Some(models) = command.models.as_ref() {
                 let scope = DeleteAdminChannelModelScope::from(&command);
@@ -972,12 +985,75 @@ struct ResourceBindingContext {
     weight: i64,
 }
 
+fn is_modality_capability(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "llm" | "image" | "audio" | "music" | "sfx" | "video"
+    )
+}
+
+fn modality_resource_codes(capabilities: &[String]) -> Vec<String> {
+    let mut resource_codes: Vec<String> = Vec::new();
+    for capability in capabilities {
+        let capability = capability.trim().to_ascii_lowercase();
+        if is_modality_capability(&capability) {
+            let resource_code = format!("modality.{capability}");
+            if !resource_codes
+                .iter()
+                .any(|existing| existing.eq_ignore_ascii_case(&resource_code))
+            {
+                resource_codes.push(resource_code);
+            }
+        }
+    }
+    if resource_codes.is_empty() {
+        resource_codes.push("modality.llm".to_owned());
+    }
+    resource_codes
+}
+
+fn merge_capability_resource_codes(
+    resource_codes: &[String],
+    capabilities: &[String],
+) -> Vec<String> {
+    let mut merged: Vec<String> = resource_codes.to_vec();
+    for resource_code in modality_resource_codes(capabilities) {
+        if !merged
+            .iter()
+            .any(|existing| existing.eq_ignore_ascii_case(&resource_code))
+        {
+            merged.push(resource_code);
+        }
+    }
+    merged
+}
+
 async fn replace_ai_resource_bindings(
     tx: &mut Transaction<'_, Sqlite>,
     scope: AiResourceBindingScope,
     resource_codes: &[String],
 ) -> DomainResult<()> {
     soft_delete_removed_resources(tx, &scope, resource_codes).await?;
+    upsert_ai_resource_bindings(tx, &scope, resource_codes, 0).await?;
+    replace_channel_vendor_bindings(tx, &scope, resource_codes).await
+}
+
+async fn replace_channel_modality_resource_bindings(
+    tx: &mut Transaction<'_, Sqlite>,
+    scope: AiResourceBindingScope,
+    resource_codes: &[String],
+) -> DomainResult<()> {
+    soft_delete_removed_modality_resources(tx, &scope, resource_codes).await?;
+    let priority_offset = load_non_modality_resource_priority_ceiling(tx, &scope).await?;
+    upsert_ai_resource_bindings(tx, &scope, resource_codes, priority_offset).await
+}
+
+async fn upsert_ai_resource_bindings(
+    tx: &mut Transaction<'_, Sqlite>,
+    scope: &AiResourceBindingScope,
+    resource_codes: &[String],
+    priority_offset: i64,
+) -> DomainResult<()> {
     for (index, resource_code) in resource_codes.iter().enumerate() {
         let uuid_suffix = digest_hex(&format!(
             "{}:{}:{}",
@@ -986,7 +1062,7 @@ async fn replace_ai_resource_bindings(
         .chars()
         .take(32)
         .collect::<String>();
-        let priority = i64::try_from(index + 1).unwrap_or(i64::MAX);
+        let priority = priority_offset.saturating_add(i64::try_from(index + 1).unwrap_or(i64::MAX));
         let resource_row = sqlx::query(
             r#"
             SELECT id
@@ -1080,7 +1156,7 @@ async fn replace_ai_resource_bindings(
         .await
         .map_err(|error| store_error("failed to upsert channel resource", error))?;
     }
-    replace_channel_vendor_bindings(tx, &scope, resource_codes).await
+    Ok(())
 }
 
 async fn soft_delete_removed_resources(
@@ -1136,6 +1212,109 @@ async fn soft_delete_removed_resources(
     .await
     .map_err(|error| store_error("failed to replace channel resources", error))?;
     Ok(())
+}
+
+async fn soft_delete_removed_modality_resources(
+    tx: &mut Transaction<'_, Sqlite>,
+    scope: &AiResourceBindingScope,
+    resource_codes: &[String],
+) -> DomainResult<()> {
+    let keep_json = string_array_json(resource_codes)?;
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_resource
+        SET status = -1, deleted_at = ?, deleted_by = ?, updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND channel_id = ?
+          AND deleted_at IS NULL
+          AND (
+              COALESCE(resource_code, '') LIKE 'modality.%'
+              OR COALESCE(resource_group_code, '') LIKE 'modality.%'
+              OR COALESCE(resource_id, 0) IN (
+                  SELECT id
+                  FROM ai_resource
+                  WHERE tenant_id = ?
+                    AND organization_id = ?
+                    AND resource_type = 'modality'
+                    AND deleted_at IS NULL
+              )
+              OR COALESCE(resource_group_id, 0) IN (
+                  SELECT id
+                  FROM ai_resource_group
+                  WHERE tenant_id = ?
+                    AND organization_id = ?
+                    AND group_type = 'modality'
+                    AND deleted_at IS NULL
+              )
+          )
+          AND COALESCE(NULLIF(resource_code, ''), resource_group_code) NOT IN (SELECT value FROM json_each(?))
+        "#,
+    )
+    .bind(&scope.requested_at)
+    .bind(scope.operator_id)
+    .bind(&scope.requested_at)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(scope.channel_id)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(keep_json)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to replace channel modality resources", error))?;
+    Ok(())
+}
+
+async fn load_non_modality_resource_priority_ceiling(
+    tx: &mut Transaction<'_, Sqlite>,
+    scope: &AiResourceBindingScope,
+) -> DomainResult<i64> {
+    let row = sqlx::query(
+        r#"
+        SELECT COALESCE(MAX(COALESCE(priority, 100)), 0) AS priority_ceiling
+        FROM ai_channel_resource
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND channel_id = ?
+          AND deleted_at IS NULL
+          AND status = 1
+          AND NOT (
+              COALESCE(resource_code, '') LIKE 'modality.%'
+              OR COALESCE(resource_group_code, '') LIKE 'modality.%'
+              OR COALESCE(resource_id, 0) IN (
+                  SELECT id
+                  FROM ai_resource
+                  WHERE tenant_id = ?
+                    AND organization_id = ?
+                    AND resource_type = 'modality'
+                    AND deleted_at IS NULL
+              )
+              OR COALESCE(resource_group_id, 0) IN (
+                  SELECT id
+                  FROM ai_resource_group
+                  WHERE tenant_id = ?
+                    AND organization_id = ?
+                    AND group_type = 'modality'
+                    AND deleted_at IS NULL
+              )
+          )
+        "#,
+    )
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(scope.channel_id)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load channel resource priority ceiling", error))?;
+    Ok(optional_integer_cell(&row, "priority_ceiling").unwrap_or(0))
 }
 
 async fn replace_channel_vendor_bindings(
@@ -1878,10 +2057,11 @@ fn item_from_sqlite_row(
     api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<AdminChannelItem> {
     let id: i64 = row.try_get("id").map_err(row_error)?;
-    let capabilities = parse_string_array(
+    let capabilities = channel_capabilities_from_resources(
         row.try_get::<String, _>("capabilities_json")
             .map_err(row_error)?
             .as_str(),
+        ai_resources.get(&id).map(Vec::as_slice).unwrap_or(&[]),
     )?;
     let errors = optional_integer_cell(&row, "channel_errors").unwrap_or(0)
         + optional_integer_cell(&row, "credential_errors").unwrap_or(0);
@@ -2011,6 +2191,48 @@ fn parse_string_array(value: &str) -> DomainResult<Vec<String>> {
         parsed.push("llm".to_owned());
     }
     Ok(parsed)
+}
+
+fn channel_capabilities_from_resources(
+    capabilities_json: &str,
+    resource_codes: &[String],
+) -> DomainResult<Vec<String>> {
+    let parsed = parse_string_array(capabilities_json)?;
+    let mut capabilities = Vec::new();
+    for value in parsed.iter().chain(resource_codes.iter()) {
+        if let Some(capability) = channel_capability_from_resource_code(value) {
+            if !capabilities.iter().any(|existing| existing == capability) {
+                capabilities.push(capability.to_owned());
+            }
+        }
+    }
+    if capabilities.is_empty() {
+        capabilities.push("llm".to_owned());
+    }
+    capabilities.sort_by_key(|capability| {
+        channel_capability_index(capability).unwrap_or(CHANNEL_CAPABILITY_ORDER.len())
+    });
+    Ok(capabilities)
+}
+
+const CHANNEL_CAPABILITY_ORDER: [&str; 6] = ["llm", "image", "audio", "music", "sfx", "video"];
+
+fn channel_capability_index(value: &str) -> Option<usize> {
+    CHANNEL_CAPABILITY_ORDER
+        .iter()
+        .position(|capability| capability.eq_ignore_ascii_case(value.trim()))
+}
+
+fn channel_capability_from_resource_code(value: &str) -> Option<&str> {
+    let value = value.trim();
+    let capability = value
+        .strip_prefix("modality.")
+        .or_else(|| value.strip_prefix("capability."))
+        .unwrap_or(value);
+    CHANNEL_CAPABILITY_ORDER
+        .iter()
+        .copied()
+        .find(|candidate| candidate.eq_ignore_ascii_case(capability))
 }
 
 fn digest_hex(value: &str) -> String {

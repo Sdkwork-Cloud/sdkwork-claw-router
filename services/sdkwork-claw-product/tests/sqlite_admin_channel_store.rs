@@ -252,7 +252,10 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
         .unwrap()
         .expect("channel should update");
 
-    assert_eq!(vec!["llm".to_owned(), "image".to_owned()], updated.capabilities);
+    assert_eq!(
+        vec!["llm".to_owned(), "image".to_owned()],
+        updated.capabilities
+    );
     assert_eq!(
         vec![
             "vendor.openai".to_owned(),
